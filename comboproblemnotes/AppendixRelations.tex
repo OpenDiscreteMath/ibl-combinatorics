@@ -1,0 +1,684 @@
+\appendix 
+\chapter{Relations}
+\label{Relations}
+
+\section{Relations as sets of Ordered Pairs}
+\subsection{The relation of a function}\label{functionrelation}
+%\begin{enumerate}
+\label{relationsandfunctions}
+\bp
+
+\item Consider the functions from $S=\{-2,-1,0,1,2\}$ to
+$T=\{1,2,3,4,5\}$ defined by
+$f(x) = x+3$, and $g(x) = x^5-5x^3+5x +3$.  Write down the set
+of ordered pairs $(x,f(x))$ for $x \in S$  and the set of
+ordered pairs
+$(x,g(x))$ for $x \in S$.  Are the two functions the same or
+different?
+\solution{We get $\{(-2,1),(-1,2),(0,3),(1,4),(2,5)\}$ in both
+cases, so the functions are the same.}
+\label{functionsasorderedpairs}
+
+\ep
+
+Problem
+\ref{functionsasorderedpairs} points out how two functions
+which appear to be different are actually the same on some
+domain of interest to us.   Most of the time when we are
+thinking about functions it is fine to think of a function
+casually as a relationship between two sets.  In Problem
+\ref{functionsasorderedpairs} the set of ordered pairs you
+wrote down for each function is called the \index{relation!of a
+function}\index{function!relation of}{\em relation} of the function. 
+When we want to distinguish between the casual and the careful in
+talking about relationships, our casual term will be ``relationship''
+and our careful term will be ``relation.''  So {\em relation}
+ is a technical word in mathematics, and as such it has
+a technical definition.  A \index{relation}{\em relation} from a set
+$S$ to a set $T$ is a set of ordered pairs whose first elements are in
+$S$ and whose second elements are in $T$.  Another way to say this is
+that a {\em relation} from $S$ to $T$ is a subset of $S\times T$.
+
+A typical way to define a {\em function}\index{function} $f$ from a
+set
+$S$ to a set
+$T$ is that $f$ is a relationship between $S$ to $T$ that relates
+one and only one member of $T$ to each element of $X$. We use
+$f(x)$ to stand for the element of $T$ that is related to the
+element $x$ of $S$.  If we wanted to make our definition more
+precise, we could substitute the word ``relation'' for the word
+``relationship'' and we would have a more precise definition.  For
+our purposes, you can choose whichever definition you prefer. 
+However, in any case, there is a relation associated with each
+function.  As we said above, the relation of a function $f:
+S\rightarrow T$ (which is the standard shorthand for ``$f$ is a
+function from $S$ to $T$'' and is usually read as $f$ {\em maps}
+$S$ to $T$) is the set of all ordered pairs
+$(x,f(x))$ such that $x$ is in $S$.  
+
+
+\bp
+\item Here are some questions that will help you get used to
+the formal idea of a relation and the related formal idea of a
+function.  $S$ will stand for a set of size
+$s$ and
+$T$ will stand for a set of size $t$.\label{formalrelations} 
+
+\begin{enumerate}
+\item What is the size of the largest relation from $S$ to $T$?
+\solution{$st$ because that is the size of the relation that has
+all the ordered pairs $(x,y)$ with $x\in S$ and $y\in T$.}
+\item What is the size of the smallest relation from $S$ to
+$T$?\solution{0, because the empty set of ordered pairs is a
+relation.}
+\iffalse
+\item  How many relations are there from the set
+$S$ to the set
+$T$?
+\fi
+\item The relation of a function $f:S\rightarrow T$ is the set
+of all ordered pairs $(x,f(x))$ with $x\in S$.  What is the
+size of the relation of a function from $S$ to $T$?  That is, how many
+ordered pairs are in the relation of a function from $S$ to $T$?
+\solution{The size of the relation of $f:S\rightarrow T$ is $s$.}
+
+\item We say $f$ is a {\em 
+one-to-one}\index{function!one-to-one}\index{one-to-one
+function}\index{injection} function or {\em injection} from
+$S$ to
+$T$ if each member of $S$ is related to a {\em different} element
+of $T$. How many different elements must appear as second elements
+of the ordered pairs in the relation of a one-to-one function
+(injection) from
+$S$ to
+$T$?  
+\solution{$s$ different elements must appear, one for each element
+of $S$.}
+\item  A function $f:S\rightarrow T$ is called an \index{onto
+function}\index{function!onto}{\em onto function} or
+\index{surjection}\index{function!surjection}{\em surjection} if each
+element of
+$T$ is $f(x)$ for some $x\in S$ What is the minimum size that
+$S$ can have if there is a  surjection from
+$S$ to
+$T$?\label{onto}
+\solution{In order to have a surjection from $S$ to $T$, the size
+of $S$ must be at least $t$.}
+\end{enumerate}
+
+\item When $f$ is  a function from $S$ to $T$, the sets $S$ and
+$T$ play a big role in determining whether a function is
+one-to-one or onto (as defined in Problem \ref{formalrelations}). 
+For example, if $S$ and $T$ are both the nonnegative real numbers,
+and $f:S\rightarrow T$ is given by $f(x) =x^2$, is $f$
+one-to-one?  Is $f$ onto?  Now assume $S'$ is the set of all real
+numbers and $g:S'\rightarrow T$ is given by $g(x) = x^2$.  Is $g$
+one-to-one?  Is $g$ onto?  Assume that $T'$ is the set of all
+real numbers and $h:S\rightarrow T'$ is given by $h(x) = x^2$.  Is
+$h$ one-to-one?  Is $h$ onto?  And if the function
+$j:S'\rightarrow T'$ is given by $j(x)=x^2$, is $j$ one-to-one? 
+Is $j$ onto?
+\solution{With $S$ as domain, $f$ is both one-to-one and onto.
+The function $g$ is not one-to-one, but it is onto.  The function
+$h$ is  one-to-one but not onto.  The function $j$ is neither
+one-to-one nor onto.}
+
+\item  If $f:S\rightarrow T$ is a function, we say that $f${\em 
+maps}
+$x$ to $y$ as another way to say that $f(x)=y$.  Suppose
+$S=T=\{1,2,3\}$.  Give a function from
+$S$ to
+$T$ that is not onto.  Notice that two different members of $S$
+have mapped to the same element of $T$.  Thus when we say that $f$
+associates one and only one element of $T$ to each element of $S$,
+it is quite possible that the one and only one element $f(1)$ that
+$f$ maps 1 to is exactly the same as the one and only one element
+$f(2)$ that $f$ maps 2 to.
+\solution{The function given by $f(x)=1$ for all $x$ in $S$ is
+not onto.}  
+\ep
+
+\subsection{Directed graphs}\label{relationdigraph} We visualize
+numerical functions like $f(x)=x^2$ with their graphs in
+Cartesian coordinate systems.  We will call these kinds of graphs
+\index{graph!coordinate}{\em coordinate graphs} to distinguish them
+from other kinds of graphs used to visualize relations that are
+non-numerical. 
+\begin{figure}[htb]\caption{The alphabet
+digraph.}\label{alphabetdigraph}\smallskip
+\begin{center}\mbox{\psfig{figure=alphabetdigraph.eps%,height=1.0in
+}}
+\end{center}  
+\end{figure}In Figure
+\ref{alphabetdigraph} we illustrate another kind of graph, a
+``directed graph'' or ``digraph'' of the ``comes before in
+alphabetical order" relation on the letters $a$, $b$, $c$, and
+$d$.  To draw a \index{graph!directed}\index{directed
+graph}\index{digraph}{\em directed graph} of a relation on a set
+$S$, we draw a circle (or dot, if we prefer), which we call a
+\index{vertex}{\em vertex}\index{vertex!of a complete graph}, for
+each element of the set, we usually label the vertex with the set
+element it corresponds to, and we draw an arrow from the vertex
+for $a$
+ to that for  $b$ if $a$ is related to $b$, that is, if
+the ordered pair
+$(a,b)$ is in our relation.  We call such an arrow an \index{edge}{\em
+edge}\index{edge! in a digraph} or a {\em directed edge}.  We draw
+the arrow from
+$a$ to
+$b$, for example, because $a$ comes before $b$ in alphabetical
+order.  We try to choose the locations where we draw our
+vertices so that the arrows capture what we are trying to
+illustrate as well as possible.  Sometimes this entails
+redrawing our directed graph several times until we think the
+arrows capture the relationship well.
+
+
+
+We also draw digraphs for relations from a set $S$ to a  set
+$T$; we simply draw vertices for the elements of $S$ (usually
+in a row) and vertices for the elements of $T$ (usually in a
+parallel row) draw an arrow from
+$x$ in $S$ to $y$ in $T$ if $x$ is related to $y$.  Notice
+that instead of referring to the vertex representing $x$, we
+simply referred to $x$.  This is a common shorthand.  Here are
+some exercises just to practice drawing digraphs.
+
+\bp
+\item Draw the digraph of the ``is a proper subset of" relation
+on the set of subsets of a two element set.  How many arrows
+would you have had to draw if this problem asked you to draw
+the digraph for the subsets of a three-element set?
+\solution{
+\begin{center}\mbox{\psfig{figure=subsetsof2set.eps%,height=1.0in
+}}
+\end{center} 
+We would need to draw 19 arrows, some of them curved,
+for the subsets of a three-element set.}
+
+\item Draw the digraph of the relation from the set \{A, M, P,
+S\} to the set \{Sam, Mary, Pat, Ann, Polly, Sarah\}  given by
+``is the first letter of."
+\solution{\begin{center}
+\mbox{\psfig{figure=initialdigraph.eps%,height=1.0in }}
+}}
+\end{center} }
+\ep
+
+\subsection{Equivalence relations}\label{equivalencerelations} So
+far we've used relations primarily to talk about functions. 
+There is another kind of relation, called an equivalence
+relation, that comes up in the counting problems with which we
+began.
+ In Problem
+\ref{icecreaminpints} with three distinct flavors, it was
+probably tempting to say there are 12 flavors for the first
+pint, 11 for the second, and 10 for the third, so there are
+$12\cdot 11\cdot 10$ ways to choose the pints of ice cream. 
+However, once the pints have been chosen, bought, and put into a
+bag, there is no way to tell which is first, which is second and
+which is third.  What we just counted is lists of three
+distinct flavors---one to one functions from the set
+$\{1,2,3\}$ in to the set of ice cream flavors.  Two of those
+lists become equivalent once the ice cream purchase is
+made if they list the same ice cream.  In other words, two of
+those lists become equivalent (are related) if they list same
+subset of the set of ice cream flavors.  To visualize this
+relation with a digraph, we would need one vertex for each of
+the 
+$12\cdot 11\cdot 10$ lists.  Even with
+ five flavors of ice cream, we would need one vertex for each
+of
+$5\cdot4\cdot3=60$ lists.  So for now we will work with the easier
+to draw question of choosing three pints of ice cream of different
+flavors from four flavors of ice cream.
+
+\bp
+\item Suppose we have four flavors of ice cream, V(anilla),
+C(hocolate), S(trawberry) and P(each).  Draw the directed
+graph whose vertices consist of all lists of three distinct
+flavors of the ice cream, and whose edges connect two lists if
+they list the same three flavors.  This graph makes it
+pretty clear in how many ways we may choose 3 flavors
+out of four.  How many is it?\label{fourchoosethree}
+\solution{\begin{center}
+\mbox{\psfig{figure=flavordigraph.eps,height=2.5in }}
+\end{center}
+We used double-headed arrows in place of one arrow going in each
+direction to reduce the clutter in the picture. Note that there is
+an arrow from each vertex to itself. We may choose 3 flavors in
+four ways.}
+
+\itemi Now suppose again we are choosing three distinct flavors of
+ice cream out of four, but instead of putting scoops in a cone or
+choosing pints, we are going to have the three scoops arranged
+symmetrically in a circular dish.  Similarly to choosing three
+pints, we can describe a selection of ice cream in terms of which
+one goes in the dish first, which one goes in second (say to the
+right of the first), and which one goes in third (say to the right
+of the second scoop, which makes it to the left of the first
+scoop).  But again, two of these lists will sometimes be
+equivalent.  Once they are in the dish, we can't tell which one
+went in first.  However, there is a subtle difference between
+putting each flavor in its own small dish and putting all three
+flavors in a circle in a larger dish.  Think about what makes the
+lists of flavors equivalent, and draw the directed graph whose
+vertices consist of all lists of     three of the flavors of ice
+cream and whose edges connect two lists that we cannot tell the
+difference between as dishes of ice cream.  How many dishes of ice
+cream can we distinguish from one another?\label{icecreaminadish}
+\solution{\begin{center}
+\mbox{\psfig{figure=icecreamindish.eps,%height=2.5in }}
+}}\end{center}We can distinguish eight different dishes of ice
+cream.}
+
+
+\item Draw the digraph for Problem \ref{roundtable} in the
+special case where we have four people sitting around the table.
+\label{roundtablefour} 
+\solution{\begin{center}
+\mbox{\psfig{figure=4AROUNDATABLE.eps,%height=2.5in }}
+}}\end{center}}
+\ep
+
+In Problems \ref{fourchoosethree}, \ref{icecreaminadish}, and
+\ref{roundtablefour} (as well as Problems
+\ref{twelvechoosethree}, \ref{roundtable}, and
+\ref{formulanchoosek}) we can begin with a
+set of lists, and say when two lists are equivalent as
+representations of the objects we are trying to count.  In
+particular, in Problems
+\ref{fourchoosethree}, \ref{icecreaminadish}, and
+\ref{roundtablefour} you drew the directed graph for this
+relation of equivalence.  Technically, you should have had an
+arrow from each vertex (list) to itself.  This is what we mean
+when we say a relation is {\em reflexive}.  Whenever you had an
+arrow from one vertex to a second, you had an arrow back to the
+first.  This is what we mean when we say a relation is {\em
+symmetric}.    
+
+When people sit
+around a round table, each list is equivalent to itself:
+if List1 and List 2 are identical, then everyone has the same
+person to the right in both lists (including the first person in
+the list being to the right of the last person).  To see the
+symmetric property of the equivalence of seating arrangements, if
+List1 and List2 are different, but everyone has the same person to
+the right when they sit according to List2 as when they sit
+according to List1, then everybody better have the same person to
+the right when they sit according to List1 as when they sit
+according to List2.  
+
+
+
+ In Problems
+\ref{fourchoosethree}, \ref{icecreaminadish} and
+\ref{roundtablefour} there is another property of those relations
+you may have noticed from the directed graph.  Whenever you had
+an arrow from
+$L_1$ to
+$L_2$ and an arrow from
+$L_2$ to $L_3$, then there was an arrow from $L_1$ to $L_3$. 
+This is what we mean when we say a relation is {\em
+transitive}.  You also undoubtedly noticed how the directed
+graph divides up into clumps of mutually connected vertices. 
+This is what equivalence relations are all about.  Let's be a
+bit more precise in our description of what it means for a
+relation to be reflexive, symmetric or transitive.  
+
+\begin{itemize} 
+\item If $R$ is a relation on a set $X$, we say $R$ is
+\index{reflexive}\index{relation!reflexive}{\em reflexive}  if $(x,x)\in
+R$ for every
+$x\in X$.  
+\item If $R$ is a relation on a set $X$, we say $R$ is
+\index{symmetric}\index{relation!reflexive}{\em symmetric} if $(x,y)$ is
+in
+$R$ whenever
+$(y,x)$ is in $R$.
+\item If $R$ is a relation on a set $X$, we say $R$ is
+\index{transitive}\index{relation!transitive}{\em transitive} if
+whenever
+$(x,y)$ is in
+$R$ and
+$(y,z)$ is in
+$R$, then $(x,z)$ is in
+$R$ as well.
+\end{itemize}
+
+Each of the relations of equivalence you worked with in the
+Problem \ref{fourchoosethree}, \ref{icecreaminadish} and
+\ref{roundtablefour}  had these three properties.  Can you
+visualize the same three properties in the relations of
+equivalence that you would use in problems
+\ref{twelvechoosethree}, \ref{roundtable}, and
+\ref{formulanchoosek}? We call a relation an {\bf equivalence
+relation}\index{equivalence
+relation}\index{relation!equivalence} if it is reflexive,
+symmetric and transitive. 
+
+ 
+After some more examples, we will see how to show that
+equivalence relations have the kind of clumping property you
+saw in the directed graphs.  In our first example, using the
+notation $(a,b) \in R$ to say that $a$ is related to $B$ is
+going to get in the way.  It is really more common to write $a
+R b$ to mean that $a$ is related to $b$. For example, if our
+relation is the less than relation on $\{1,2,3\}$, you are
+much more likely to use $x<y$ than you are $(x,y)\in \ <$,
+aren't you? The reflexive law then says
+$xRx$ for every
+$x$ in
+$X$, the symmetric law says that if $xRy$, then $yRx$, and the
+transitive law says that if
+$xRy$ and $yRz$, then $xRz$.
+
+\bp 
+\item For the necklace problem, Problem \ref{necklace}, our
+lists are lists of beads.  What makes two lists equivalent for
+the purpose of describing a necklace?  Verify explicitly that
+this relationship of equivalence is reflexive, symmetric, and
+transitive.
+\solution{Two lists are equivalent if I can get one from the other
+by some combination of cyclic permutations (putting the last thing
+in the list at the front and moving everything else one place
+right) and reversals.  The combination could include no
+operation at all.  Since it is possible to have no operation, the
+relation is reflexive. (Even without the opportunity to do no
+operation, if we do two reversals to a list we get the original
+list back so it is equivalent to itself.) Suppose we have $n$
+beads.  Then if I can get from list $A$ to list $B$ with a cyclic
+permutations, then $n-1$ more cyclic permutations give us the
+original list.  Also if I get from a list $A$ to a list $B$ by a
+reversal, then another reversal takes $B$ to $A$.  Thus any
+sequence of cyclic permutations and reversals can be undone. 
+Therefore if list $A$ is equivalent to list $B$, then list $B$ is
+equivalent to list $A$.  Following one combination of operations
+with another one still gives a combination of operations, so our
+relation is transitive.}
+
+\item  Which of the reflexive, symmetric and transitive
+properties does the $<$ relation on the integers have?
+\solution{It is transitive, but not reflexive or symmetric.}
+
+\item A relation $R$ on the set of ordered pairs of positive
+integers that you learned about in grade school in another
+notation is the relation that says $(m,n)$ is related to
+$(h,k)$ if $mk =hn$.  Show that this relation is an
+equivalence relation.  In what context did you learn about
+this relation in grade school?
+\solution{$mn=mn$ so the relation is reflexive.  If $mk=hn$, then
+$hn=mk$, so if $(m,n)$ is related to $(h,k)$, then $(h,k)$ is
+related to $(m,n)$. If $(m,n)$ is related to $(h,k)$ and $(h,k)$
+is related to $(p,q)$, then $mk=hn$ and $hq=pk$, which gives us
+$mkhq=hnpk$, and cancelling $h$ and $k$ gives us $mq=np=pn$, so
+$(m,n)$ is related to $(p,q)$.  Therefore, the relation is
+transitive.  This is the relation of equality of the fractions
+$m\over n$ and $h\over k$.}
+
+\item  Another relation that you may have learned about in school,
+perhaps in the guise of ``clock arithmetic," is the
+relation of equivalence modulo
+$n$.  For integers (positive, negative, or zero) $a$ and $b$,
+we write $a
+\equiv b \pmod{n}$ to mean that $a-b$ is an integer multiple
+of $n$, and in this case, we say that $a$ is \index{congruence
+modulo $n$}{\em congruent to
+$b$ modulo $n$} and write $a\equiv b \pmod{n}$..  Show that the
+relation of congruence modulo
+$n$ is an equivalence relation.
+\solution{$a-a=0=0\cdot n$, so $a\equiv a\pmod{n}$.  Thus the
+relation is reflexive.  If $a-b=kn$ for some integer $k$, then
+$b-a=-kn$, and -k is an integer, so if $a\equiv b \pmod{n}$, then
+$b\equiv a \pmod{n}$.  If $a-b=kn$ and $b-c= jn$, then
+$a-b+b-c=kn+jn$, so $a-c=(k+j)n$ and since $k+j$ is an integer
+this means that $a\equiv c\pmod{n}$.  Therefore the relation of
+congruence mod $n$ is an equivalence relation.}
+
+\item  Define a relation on the set of all lists of $n$ distinct
+integers chosen from $\{1,2,\ldots, n\}$, by saying two lists are
+related if they have the same elements (though perhaps in a
+different order) in the first
+$k$ places, and the same elements (though perhaps in a
+different order) in the last $n-k$ places.  Show this
+relation is an equivalence relation.\label{nchoosekanotherway}
+\solution{The relation is reflexive, for a list $L$ has the same
+elements as the list $L$ in the first $k$ places and the last
+$n-k$ places.  If $L_1$ and $L_2$ have the same elements in the
+first $k$ places and have the same elements in the last $k$
+places, then $L_2$ and $L_1$ have the same elements in the first
+$k$ places and have the same elements in the last $n-k$ places,
+so our relation is symmetric.  If $L_1$ and $L_2$ have the same
+elements in the first
+$k$ places and $L_2$ and $L_3$ have the same elements in the first
+$k$ places, then $L_1$ and $L_3$ have the same elements in the
+first
+$k$ places.  Similarly with the last $n-k$ places.  Therefore our
+relation is transitive, and so it is an equivalence relation.}
+
+\item Suppose that $R$ is an equivalence relation on a set $X$
+and for each $x\in X$, let $C_x = \{y| y\in X \mbox{ and }
+yRx\}$.  If $C_x$ and
+$C_z$ have an element $y$ in common, what can you conclude
+about $C_x$ and $C_z$ (besides the fact that they have an
+element in common!)?  Be explicit about what property(ies) of
+equivalence relations justify your answer.  Why is every
+element of
+$X$ in some set
+$C_x$?  Be explicit about what property(ies) of equivalence
+relations you are using to answer this question.  Notice that
+we might simultaneously denote a set by $C_x$ and $C_y$. 
+Explain why the union of the sets $C_x$ is $X$.  Explain why
+two distinct sets $C_x$ and $C_z$ are disjoint.  What do these
+sets have to do with the ``clumping'' you saw in the digraph
+of Problem \ref{fourchoosethree} and
+\ref{icecreaminadish}?\label{equivalenceclasses}
+\solution{If $C_x$ and $C_y$ have the  element $z$ in common,
+then by symmetry and transitivity, all elements in $C_x$ are
+related to
+$z$ and by symmetry and  transitivity, all elements in $C_y$ are
+related to
+$z$.  Then by symmetry and transitivity again, all elements of
+$C_y$ are related to $x$, so $C_y\subseteq C_x$.  By the same kind
+of reasoning, $C_x\subseteq C_y$.  Therefore, $C_x=C_y$. Every
+element $x$ is in the set $C_x$ by reflexivity Thus the union of
+the sets $C_x$ is $X$.  The sets
+$C_x$ and $C_y$ are disjoint if they are different, because if
+they have a common element $z$ then they are equal. By definition,
+the sets $C_x$ form a partition of $X$.  The clumps that we saw in
+those problems are the blocks of the partition.}
+\ep
+
+In Problem \ref{equivalenceclasses} the sets $C_x$ are called
+\index{equivalence class}{\em equivalence classes} of the equivalence
+relation
+$R$.  You have just proved that if
+$R$ is an equivalence relation of the set $X$, then each
+element of $X$ is in exactly one equivalence class of $R$.  
+Recall that a \index{partition (of a set)}{\em partition} of a set
+$X$ is a set of disjoint sets whose union is $X$.  For example,
+$\{1,3\}$,
+$\{2,4,6\}$, $\{5\}$ is a partition of the set
+$\{1,2,3,4,5,6\}$.  Thus another way to describe what you
+proved in Problem \ref{equivalenceclasses} is the following:
+\begin{theorem} If $R$
+is an equivalence relation on $X$, then the set of equivalence
+classes of $R$ is a partition of $X$.
+\end{theorem}
+  Since a partition of
+$S$ is a set of subsets of $S$, it is common to call the
+subsets into which we partition $S$ the \index{block of a
+partition}{\em blocks} of the partition so that we don't find ourselves
+in the uncomfortable position of referring to a set and not being
+sure whether it is the set being partitioned or one of the
+blocks of the partition.
+
+
+\bp 
+\item In each of Problems \ref{roundtable}, \ref{formulanchoosek},
+\ref{necklace},
+\ref{fourchoosethree},
+and
+\ref{icecreaminadish},
+ what does an equivalence
+class correspond to? (Five answers are expected here.)
+\solution{In Problem \ref{roundtable} the equivalence classes
+correspond to seating arrangements.  In Problem
+\ref{formulanchoosek} the equivalence classes correspond to the
+$k$-element subsets of our $n$-element set $S$.  In Problem
+\ref{necklace}, the equivalence classes correspond to necklaces. 
+In Problem \ref{fourchoosethree} the equivalence classes
+correspond to choices of three flavors of ice cream out of a
+possible four flavors.  In Problem \ref{icecreaminadish} the
+equivalence classes correspond to the ways we can choose 
+scoops of ice cream of three different flavors out of four and put
+them into a dish in a symmetric fashion.}
+
+\item  Given the partition $\{1,3\}$, $\{2,4,6\}$, $\{5\}$ 
+of the set
+$\{1,2,3,4,5,6\}$, define two elements of $\{1,2,3,4,5,6\}$ to
+be related if they are in the same part of the partition. 
+That is, define 1 to be related to 3 (and 1 and 3 each related
+to itself), define 2 and 4, 2 and 6, and 4 and 6 to be related
+(and each of 2, 4, and 6 to be related to itself), and define
+5 to be related to itself.  Show that this relation is an
+equivalence relation.
+\solution{We have said for each element of our set that it is
+related to itself, so the relation is reflexive.  If $x$ and $y$
+are in a given one of those sets, then $y$ and $x$  are in that
+same given set.  If $x$ and $y$ are in the same set, and if $y$
+and $z$ are in the same set, then $x$ and $z$ must be in the same
+set because there is one and only one set that $y$ is in.  Thus
+the relation is an equivalence relation.}
+
+\item Suppose $P = \{S_1, S_2, S_3, \ldots, S_k\}$ is a
+partition of
+$S$.  Define two elements of $S$ to be related if they are in
+the same set $S_i$, and otherwise not to be related.  Show
+that this relation is an equivalence relation.  Show that the
+equivalence classes of the equivalence relation are the sets
+$S_i$.\label{partitiontoequivalence}
+\solution{Each element is in a set $S_i$ with itself, so the
+relation is reflexive.   If $x$ and $y$
+are in a given one of those sets $S_i$, then $y$ and $x$  are in
+that same set $S_i$.  If $x$ and $y$ are in the same set $S_i$, and
+if
+$y$ and $z$ are in the same set $S_j$, then $S_i$ must equal
+$S_j$ because $y$ is in one and only one block of the partition.
+ Therefore, $x$ and
+$z$ must be in the same set $S_i$.  Thus the relation is an
+equivalence relation. If $x\in S_i$, then by definition $S_i$
+consists of all elements related to $x$, so it is the equivalence
+class containing $x$.}
+\ep
+
+In Problem \ref{partitiontoequivalence} you just proved that
+each partition of a set gives rise to an equivalence relation
+whose classes are just the parts of the partition.  Thus in
+Problem
+\ref{equivalenceclasses} and Problem
+\ref{partitiontoequivalence} you proved the following Theorem.
+
+\begin{theorem} A relation $R$ is an equivalence relation on a
+set $S$ if and only if
+$S$ may be partitioned into sets $S_1$, $S_2$, \ldots, $S_n$
+in such a way that $x$ and $y$ are related by $R$ if and only
+if they are in the same block $S_i$ of the partition.
+\end{theorem}\index{equivalence
+relation}\index{relation!equivalence}
+
+
+In Problems \ref{fourchoosethree}, \ref{icecreaminadish},
+\ref{roundtable} and \ref{necklace} what we were doing in
+each case was counting equivalence classes of an equivalence
+relation.  There was a special structure to the problems that
+made this somewhat easier to do.  For example, in
+\ref{fourchoosethree}, we had $4\cdot3\cdot2 =24 $ lists of
+three distinct flavors chosen from V, C, S, and P.  Each list
+was equivalent to  $3\cdot2\cdot1=3!=6$ lists, including
+itself, from the point of view of serving 3 small dishes of
+ice cream.  The order in which we selected the three flavors
+was unimportant.  Thus the set of all
+$4\cdot3\cdot2$ lists was a union of some number $n$ of
+equivalence classes, each of size 6.  By the product
+principle, if we have a union of $n$ disjoint sets, each of
+size 6, the union has $6n$ elements.  But we already knew that
+the union was the set of all 24 lists of three distinct
+letters chosen from our four letters.  Thus we have $6n=24$,
+or
+$n=4$ equivalence classes.
+
+In Problem \ref{icecreaminadish} there is a subtle change.  In
+the language we adopted for seating people around a round
+table, if we choose the flavors V, C, and S, and arrange them
+in the dish with C to the right of V and S to the right of C,
+then the scoops are in different relative positions than if we
+arrange them instead with S to the right of V and C to the
+right of S.  Thus the order in which the scoops go into the
+dish is somewhat important---somewhat, because putting in V
+first, then C to its right and S to its right is the same as
+putting in S first, then V to its right and C to its right. 
+In this case, each list of three flavors is equivalent to
+only three lists, including itself, and so if there are
+$n$ equivalence classes, we have $3n=24$, so there are $24/3=8$
+equivalence classes.
+
+\bp
+\item If we have an equivalence relation that divides a set
+with $k$ elements up into  equivalence classes each of size $m$, what
+is the number $n$ of equivalence classes? 
+Explain why.\label{EquivPrincipleProblem}
+\solution{The number of equivalence classes is $k/m$, because by
+the product principle, $mn=k$.}
+\item In Problem \ref{nchoosekanotherway}, what is the number
+of equivalence classes?  Explain in words the relationship
+between this problem and the Problem
+\ref{formulanchoosek}.\label{twowaynchoosek}
+\solution{There are $n!$ lists, and each is in an equivalence
+class of size $k!(n-k)!$, so the number of equivalence classes is
+$n!\over k!(n-k)!$ by Problem \ref{EquivPrincipleProblem}.  This
+is a way of computing the number of $k$-element subsets that shows
+why the final answer we got in Problem \ref{formulanchoosek} is
+symmetric in $k$ and $n-k$.}
+
+\item Describe explicitly what makes two lists of beads
+equivalent in Problem \ref{necklace} and how Problem
+\ref{EquivPrincipleProblem} can be used to compute the number
+of different necklaces.
+\solution{Two lists are equivalent if I can get one from the other
+by some combination of cyclic shifts and reversals.  A cyclic
+shift on the list $a_1,a_2,\ldots,a_{n-1},a_n$ gives either the
+list $a_n,a_1,a_2,\ldots ,a_{n-1}$ or the list
+$a_2,\ldots,a_{n-1},a_n,a_1$.  There are $n$ possible results of
+repeated cyclic shifts, and each of them may be reversed to give a
+new list if $n\ge 3$.  Further, these are the only lists we can
+get from shifts and reversals.  ($a_1$ must go to one of $n$
+places, and that leaves two choices for where $a_2$ goes.  Then
+the rest of the list is determined.)  Thus we can get exactly $2n$
+lists from combinations of cyclic shifts and reversals.  We define
+two lists to be equivalent if they give the same necklace; we've
+seen that this is an equivalence relation and that it has $2n$
+elements per equivalence class.  Since there are $n!$ lists, this
+gives us $(n-1)!/2$ equivalence classes, or necklaces.}
+
+\item What are the equivalence classes (write them out as sets
+of lists) in Problem \ref{twocolorsofbeads}, and why can't we
+use Problem
+\ref{EquivPrincipleProblem} to compute the number of
+equivalence classes?
+\solution{The equivalence classes are $$\{RRBB, BRRB, BBRR, RBBR\}
+\mbox{~and~}
+\{RBRB, BRBR\}.$$  We can't use Problem
+\ref{EquivPrincipleProblem} to compute the number of
+equivalence classes because the equivalence classes don't have the
+same size.}
+
+\ep In Problem \ref{EquivPrincipleProblem} you proved our next
+theorem.  In Chapter 1 (Problem \ref{quotientprinciple}) we
+discovered and stated this theorem in the context of partitions
+and called it the
+\index{quotient principle}\index{principle!quotient}{\em
+Quotient Principle}
+\begin{theorem} If an equivalence relation on a set $S$ size
+$k$ has $n$ equivalence classes each of size $m$, then the
+number of equivalence classes is $k/m$.\end{theorem}

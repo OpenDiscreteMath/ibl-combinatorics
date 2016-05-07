@@ -1,0 +1,2033 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% makeindex portable version 2.13 (beta) [11-Apr-1994]
+
+%% Input style file specifiers
+
+actual                  '@'
+arg_close               '}'
+arg_open                '{'
+encap                   '|'
+escape                  '\\'
+keyword                 "\\indexentry"
+level                   '!'
+page_compositor         "-"
+quote                   '\"'
+range_close             ')'
+range_open              '('
+
+%% Output style file specifiers
+
+delim_0                 ", "
+delim_1                 ", "
+delim_2                 ", "
+delim_n                 ", "
+delim_r                 "--"
+delim_t                 ""
+encap_infix             "{"
+encap_prefix            "\\"
+encap_suffix            "}"
+group_skip              "\n\n  \\indexspace\n"
+heading_prefix          ""
+heading_suffix          ""
+headings_flag           0
+indent_length           16
+indent_space            "\t\t"
+item_0                  "\n  \\item "
+item_01                 "\n    \\subitem "
+item_1                  "\n    \\subitem "
+item_12                 "\n      \\subsubitem "
+item_2                  "\n      \\subsubitem "
+item_x1                 "\n    \\subitem "
+item_x2                 "\n      \\subsubitem "
+line_max                72
+numhead_negative        "numbers"
+numhead_positive        "Numbers"
+page_precedence         "rnaRA"
+postamble               "\n\n\\end{theindex}\n"
+preamble                "\\begin{theindex}\n"
+setpage_prefix          "\n  \\setcounter{page}{"
+setpage_suffix          "}\n"
+suffix_2p               ""
+suffix_3p               ""
+suffix_mp               ""
+symhead_negative        "symbols"
+symhead_positive        "Symbols"
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 48
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 96
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 144
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 192
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 240
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 288
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 336
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 384
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 432
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 480
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 528
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 576
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 624
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 672
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 720
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 768
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 816
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 864
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 912
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 960
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1008
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1056
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1104
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1152
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1200
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1248
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1296
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1344
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1392
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1440
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1488
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1536
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1584
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1632
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1680
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1728
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1776
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1824
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1872
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1920
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 1968
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2016
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2064
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2112
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2160
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2208
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2256
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2304
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2352
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2400
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2448
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2496
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2544
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2592
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2640
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2688
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2736
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2784
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2832
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2880
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2928
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 2976
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3024
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3072
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3120
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3168
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3216
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3264
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3312
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3360
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3408
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3456
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3504
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3552
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3600
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3648
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3696
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3744
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3792
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3840
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3888
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3936
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 3984
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4032
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4080
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4128
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4176
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4224
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4272
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4320
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4368
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4416
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4464
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4512
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4560
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4608
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4656
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4704
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4752
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4800
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4848
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4896
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4944
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 4992
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5040
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5088
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5136
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5184
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5232
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5280
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5328
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5376
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5424
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5472
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5520
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5568
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5616
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5664
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5712
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5760
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5808
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5856
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5904
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 5952
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6000
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6048
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6096
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6144
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6192
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6240
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6288
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6336
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6384
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6432
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6480
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6528
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6576
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6624
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6672
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6720
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6768
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6816
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6864
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6912
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 6960
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7008
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7056
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7104
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7152
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7200
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7248
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7296
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7344
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7392
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7440
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7488
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7536
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7584
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7632
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7680
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7728
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7776
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7824
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7872
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7920
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 7968
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8016
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8064
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8112
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8160
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8208
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8256
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8304
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8352
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8400
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8448
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8496
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8544
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8592
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8640
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8688
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8736
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8784
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8832
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8880
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8928
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 8976
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9024
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9072
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9120
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9168
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9216
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9264
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9312
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9360
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9408
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9456
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9504
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9552
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9600
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9648
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9696
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9744
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9792
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9840
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9888
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9936
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 9984
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10032
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10080
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10128
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10176
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10224
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10272
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10320
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10368
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10416
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10464
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10512
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10560
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10608
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10656
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10704
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10752
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10800
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10848
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10896
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10944
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 10992
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11040
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11088
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11136
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11184
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11232
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11280
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11328
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11376
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11424
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11472
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11520
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11568
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11616
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11664
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11712
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11760
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11808
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11856
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11904
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 11952
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12000
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12048
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12096
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12144
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12192
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12240
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12288
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12336
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12384
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12432
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12480
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12528
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12576
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12624
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12672
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12720
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12768
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12816
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12864
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12912
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 12960
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13008
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13056
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13104
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13152
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13200
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13248
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13296
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13344
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13392
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13440
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13488
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13536
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13584
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13632
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13680
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13728
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13776
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13824
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13872
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13920
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 13968
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14016
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14064
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14112
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14160
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14208
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14256
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14304
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14352
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14400
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14448
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14496
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14544
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14592
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14640
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14688
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14736
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14784
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14832
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14880
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14928
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 14976
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15024
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15072
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15120
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15168
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15216
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15264
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15312
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15360
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15408
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15456
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15504
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15552
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15600
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15648
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15696
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15744
+
+DEBUG: make_key(): chkalloc(48,4)	totmem = 15792
+
+DEBUG: prepare_idx(): chkalloc(1312,4)	totmem = 17104
+
+DEBUG: sort_idx(): keys before sort
+	idx_key[0]	[ordered pair][   3]
+			(pno=100000003 type=2 page=[3])
+	idx_key[1]	[pair,ordered][   3]
+			(pno=100000003 type=2 page=[3])
+	idx_key[2]	[one-to-one][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[3]	[function  ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[4]	[injection ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[5]	[function  ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[6]	[disjoint  ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[7]	[sets      ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[8]	[sets      ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[9]	[sum principle][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[10]	[principle ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[11]	[principle ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[12]	[product principle][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[13]	[Cartesian product][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[14]	[product   ][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[15]	[partition ][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[16]	[partition ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[17]	[block of a partition][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[18]	[principle ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[19]	[sum principle][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[20]	[principle ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[21]	[product principle][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[22]	[factorial ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[23]	[$n!$      ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[24]	[graph     ][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[25]	[directed graph][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[26]	[digraph   ][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[27]	[onto function][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[28]	[function  ][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[29]	[surjection][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[30]	[function  ][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[31]	[bijection ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[32]	[function  ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[33]	[principle ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[34]	[bijection principle][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[35]	[binomial coefficient][  13]
+			(pno=100000013 type=2 page=[13])
+	idx_key[36]	[combinations][  13]
+			(pno=100000013 type=2 page=[13])
+	idx_key[37]	[Pascal's Triangle][  14]
+			(pno=100000014 type=2 page=[14])
+	idx_key[38]	[product principle][  19]
+			(pno=100000019 type=2 page=[19])
+	idx_key[39]	[product principle][  19]
+			(pno=100000019 type=2 page=[19])
+	idx_key[40]	[functions ][  20]
+			(pno=100000020 type=2 page=[20])
+	idx_key[41]	[functions ][  20]
+			(pno=100000020 type=2 page=[20])
+	idx_key[42]	[functions ][  20]
+			(pno=100000020 type=2 page=[20])
+	idx_key[43]	[permutation][  21]
+			(pno=100000021 type=2 page=[21])
+	idx_key[44]	[permutation][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[45]	[falling factorial power][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[46]	[factorial power][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[47]	[factorial ][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[48]	[characteristic function][  23]
+			(pno=100000023 type=2 page=[23])
+	idx_key[49]	[function  ][  23]
+			(pno=100000023 type=2 page=[23])
+	idx_key[50]	[Stirling's formula for $n!$][  25]
+			(pno=100000025 type=2 page=[25])
+	idx_key[51]	[$n!$      ][  25]
+			(pno=100000025 type=2 page=[25])
+	idx_key[52]	[quotient principle][  28]
+			(pno=100000028 type=2 page=[28])
+	idx_key[53]	[lattice path][  29]
+			(pno=100000029 type=2 page=[29])
+	idx_key[54]	[path      ][  29]
+			(pno=100000029 type=2 page=[29])
+	idx_key[55]	[lattice path][  30]
+			(pno=100000030 type=2 page=[30])
+	idx_key[56]	[path      ][  30]
+			(pno=100000030 type=2 page=[30])
+	idx_key[57]	[Catalan Number][  31]
+			(pno=100000031 type=2 page=[31])
+	idx_key[58]	[Dyck path ][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[59]	[Catalan Path][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[60]	[Chung-Feller Theorem][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[61]	[Binomial Theorem][  34]
+			(pno=100000034 type=2 page=[34])
+	idx_key[62]	[pigeonhole principle][  35]
+			(pno=100000035 type=2 page=[35])
+	idx_key[63]	[pigeonhole principle][  35]
+			(pno=100000035 type=2 page=[35])
+	idx_key[64]	[graph     ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[65]	[vertex    ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[66]	[edge      ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[67]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[68]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[69]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[70]	[compositions][  38]
+			(pno=100000038 type=2 page=[38])
+	idx_key[71]	[Grey Code ][  38]
+			(pno=100000038 type=2 page=[38])
+	idx_key[72]	[mathematical induction][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[73]	[principle of mathematical induction][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[74]	[induction ][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[75]	[inductive definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[76]	[definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[77]	[recursive definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[78]	[definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[79]	[product principle][  44]
+			(pno=100000044 type=2 page=[44])
+	idx_key[80]	[general product principle][  44]
+			(pno=100000044 type=2 page=[44])
+	idx_key[81]	[double induction][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[82]	[induction ][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[83]	[mathematical induction][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[84]	[relation  ][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[85]	[recurrence relation][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[86]	[recurrence][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[87]	[recurrence][  47]
+			(pno=100000047 type=2 page=[47])
+	idx_key[88]	[arithmetic progression][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[89]	[progression][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[90]	[series    ][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[91]	[arithmetic series][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[92]	[recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[93]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[94]	[driving function][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[95]	[function  ][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[96]	[homogeneous linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[97]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[98]	[recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[99]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[100]	[constant coefficient linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[101]	[geometric progression][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[102]	[progression][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[103]	[geometric series][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[104]	[series    ][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[105]	[graph     ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[106]	[vertex    ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[107]	[edge      ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[108]	[vertex    ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[109]	[degree of a vertex][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[110]	[tree      ][  52]
+			(pno=100000052 type=2 page=[52])
+	idx_key[111]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[112]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[113]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[114]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[115]	[cost of a spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[116]	[minimum cost spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[117]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[118]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[119]	[deletion  ][  56]
+			(pno=100000056 type=2 page=[56])
+	idx_key[120]	[contraction][  56]
+			(pno=100000056 type=2 page=[56])
+	idx_key[121]	[deletion-contraction recurrence][  57]
+			(pno=100000057 type=2 page=[57])
+	idx_key[122]	[recurrence][  57]
+			(pno=100000057 type=2 page=[57])
+	idx_key[123]	[path      ][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[124]	[length (of a path)][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[125]	[distance in a weighted graph][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[126]	[graph     ][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[127]	[Dijkstra's algorithm][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[128]	[distance in a graph][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[129]	[Twentyfold Way][  62]
+			(pno=100000062 type=2 page=[62])
+	idx_key[130]	[functions ][  63]
+			(pno=100000063 type=2 page=[63])
+	idx_key[131]	[functions ][  64]
+			(pno=100000064 type=2 page=[64])
+	idx_key[132]	[ordered function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[133]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[134]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[135]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[136]	[ordered onto function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[137]	[onto function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[138]	[factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[139]	[rising factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[140]	[factorial ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[141]	[factorial ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[142]	[falling factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[143]	[broken permutation][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[144]	[permutation][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[145]	[Lah number][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[146]	[multiset  ][  69]
+			(pno=100000069 type=2 page=[69])
+	idx_key[147]	[multiset  ][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[148]	[multiplicity function][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[149]	[recurrence][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[150]	[partition ][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[151]	[Stirling Number][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[152]	[Stirling's triangle][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[153]	[partition of a set][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[154]	[type vector of a partition of a set][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[155]	[Bell Number][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[156]	[partitions of a set][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[157]	[function  ][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[158]	[onto function][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[159]	[multinomial coefficient][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[160]	[coefficient][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[161]	[basis (for polynomials)][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[162]	[Stirling Number][  74]
+			(pno=100000074 type=2 page=[74])
+	idx_key[163]	[Stirling's triangle][  74]
+			(pno=100000074 type=2 page=[74])
+	idx_key[164]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[165]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[166]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[167]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[168]	[type vector for a partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[169]	[Ferrers diagram][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[170]	[Young diagram][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[171]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[172]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[173]	[diagram   ][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[174]	[diagram   ][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[175]	[conjugate of an integer partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[176]	[partition of an integer][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[177]	[self-conjugate partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[178]	[partition of an integer][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[179]	[complement of a partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[180]	[sum principle][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[181]	[principle of inclusion and exclusion][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[182]	[inclusion and exclusion principle][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[183]	[inclusion and exclusion principle ][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[184]	[principle of inclusion and exclusion][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[185]	[hatcheck problem][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[186]	[derangement problem][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[187]	[derangement][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[188]	[inclusion and exclusion principle][  89]
+			(pno=100000089 type=2 page=[89])
+	idx_key[189]	[principle of inclusion and exclusion][  89]
+			(pno=100000089 type=2 page=[89])
+	idx_key[190]	[menage problem][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[191]	[onto functions][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[192]	[surjections][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[193]	[functions ][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[194]	[Stirling Number][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[195]	[coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[196]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[197]	[coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[198]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[199]	[proper coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[200]	[connected component of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[201]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[202]	[graph     ][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[203]	[chromatic polynomial of a graph][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[204]	[deletion-contraction recurrence][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[205]	[picture enumerator][  95]
+			(pno=100000095 type=2 page=[95])
+	idx_key[206]	[product principle][  96]
+			(pno=100000096 type=2 page=[96])
+	idx_key[207]	[picture enumerators][  96]
+			(pno=100000096 type=2 page=[96])
+	idx_key[208]	[generating function][  97]
+			(pno=100000097 type=2 page=[97])
+	idx_key[209]	[product principle for generating functions][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[210]	[generating function][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[211]	[geometric series][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[212]	[series    ][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[213]	[binomial theorem][ 101]
+			(pno=100000101 type=2 page=[101])
+	idx_key[214]	[extended binomial theorem][ 101]
+			(pno=100000101 type=2 page=[101])
+	idx_key[215]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[216]	[second order recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[217]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[218]	[linear recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[219]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[220]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[221]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[222]	[linear recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[223]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[224]	[partial fractions][ 106]
+			(pno=100000106 type=2 page=[106])
+	idx_key[225]	[Fibonacci numbers][ 107]
+			(pno=100000107 type=2 page=[107])
+	idx_key[226]	[Catalan Number][ 108]
+			(pno=100000108 type=2 page=[108])
+	idx_key[227]	[Catalan number][ 108]
+			(pno=100000108 type=2 page=[108])
+	idx_key[228]	[Catalan Number][ 109]
+			(pno=100000109 type=2 page=[109])
+	idx_key[229]	[composition of functions][ 112]
+			(pno=100000112 type=2 page=[112])
+	idx_key[230]	[functions ][ 112]
+			(pno=100000112 type=2 page=[112])
+	idx_key[231]	[function  ][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[232]	[identity function][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[233]	[identity property (for permutations)][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[234]	[inverse function][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[235]	[function  ][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[236]	[identity property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[237]	[inverse property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[238]	[closure property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[239]	[group of permutations][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[240]	[permutation group][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[241]	[rotation group][ 115]
+			(pno=100000115 type=2 page=[115])
+	idx_key[242]	[associative law][ 116]
+			(pno=100000116 type=2 page=[116])
+	idx_key[243]	[symmetric group][ 116]
+			(pno=100000116 type=2 page=[116])
+	idx_key[244]	[symmetric group][ 116]
+			(pno=100000116 type=2 page=[116])
+	idx_key[245]	[permutation][ 117]
+			(pno=100000117 type=2 page=[117])
+	idx_key[246]	[two row notation][ 117]
+			(pno=100000117 type=2 page=[117])
+	idx_key[247]	[commutative law][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[248]	[subgroup  ][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[249]	[cycle (of a permutation)][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[250]	[permutation][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[251]	[cycle of a permutation][ 121]
+			(pno=100000121 type=2 page=[121])
+	idx_key[252]	[permutation][ 121]
+			(pno=100000121 type=2 page=[121])
+	idx_key[253]	[disjoint cycles][ 122]
+			(pno=100000122 type=2 page=[122])
+	idx_key[254]	[cycles    ][ 122]
+			(pno=100000122 type=2 page=[122])
+	idx_key[255]	[involution][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[256]	[permutation][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[257]	[sign of a permutation][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[258]	[transposition][ 124]
+			(pno=100000124 type=2 page=[124])
+	idx_key[259]	[alternating group][ 124]
+			(pno=100000124 type=2 page=[124])
+	idx_key[260]	[group acting on a set][ 126]
+			(pno=100000126 type=2 page=[126])
+	idx_key[261]	[action of a group on a set][ 126]
+			(pno=100000126 type=2 page=[126])
+	idx_key[262]	[orbit     ][ 128]
+			(pno=100000128 type=2 page=[128])
+	idx_key[263]	[coset     ][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[264]	[left coset][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[265]	[right coset][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[266]	[Burnside's Lemma][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[267]	[Cauchy-Frobenius-Burnside Theorem][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[268]	[Catalan Number][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[269]	[orbit enumerator][ 139]
+			(pno=100000139 type=2 page=[139])
+	idx_key[270]	[fixed point enumerator][ 139]
+			(pno=100000139 type=2 page=[139])
+	idx_key[271]	[Orbit-Fixed Point Theorem][ 140]
+			(pno=100000140 type=2 page=[140])
+	idx_key[272]	[cycle index][ 141]
+			(pno=100000141 type=2 page=[141])
+	idx_key[273]	[Polya-Redfield Theorem][ 142]
+			(pno=100000142 type=2 page=[142])
+	idx_key[274]	[relation  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[275]	[function  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[276]	[relation  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[277]	[function  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[278]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[279]	[one-to-one function][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[280]	[injection ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[281]	[onto function][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[282]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[283]	[surjection][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[284]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[285]	[graph     ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[286]	[graph     ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[287]	[directed graph][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[288]	[digraph   ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[289]	[vertex    ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[290]	[edge      ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[291]	[reflexive ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[292]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[293]	[symmetric ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[294]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[295]	[transitive][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[296]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[297]	[equivlaence relation][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[298]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[299]	[congruence modulo $n$][ 151]
+			(pno=100000151 type=2 page=[151])
+	idx_key[300]	[equivalence class][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[301]	[partition (of a set)][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[302]	[block of a partition][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[303]	[equivlaence relation][ 153]
+			(pno=100000153 type=2 page=[153])
+	idx_key[304]	[relation  ][ 153]
+			(pno=100000153 type=2 page=[153])
+	idx_key[305]	[quotient principle][ 154]
+			(pno=100000154 type=2 page=[154])
+	idx_key[306]	[principle ][ 154]
+			(pno=100000154 type=2 page=[154])
+	idx_key[307]	[mathematical induction][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[308]	[principle of mathematical induction][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[309]	[induction ][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[310]	[indicator polynomials][ 163]
+			(pno=100000163 type=2 page=[163])
+	idx_key[311]	[exponential generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[312]	[generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[313]	[EGF       ][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[314]	[generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[315]	[ordinary generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[316]	[product principle for exponential generating functions][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[317]	[exponential generating functions][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[318]	[generating function][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[319]	[connected structures and EGFs][ 183]
+			(pno=100000183 type=2 page=[183])
+	idx_key[320]	[exponential generating functions for connected structures][ 183]
+			(pno=100000183 type=2 page=[183])
+	idx_key[321]	[exponential formula][ 184]
+			(pno=100000184 type=2 page=[184])
+	idx_key[322]	[connected component of a graph][ 187]
+			(pno=100000187 type=2 page=[187])
+	idx_key[323]	[graph     ][ 187]
+			(pno=100000187 type=2 page=[187])
+	idx_key[324]	[connected component graph][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[325]	[graph     ][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[326]	[simple graph][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[327]	[exponential formula][ 189]
+			(pno=100000189 type=2 page=[189])
+DEBUG: sort_idx(): keys after sort
+	idx_key[0]	[$n!$      ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[1]	[$n!$      ][  25]
+			(pno=100000025 type=2 page=[25])
+	idx_key[2]	[action of a group on a set][ 126]
+			(pno=100000126 type=2 page=[126])
+	idx_key[3]	[alternating group][ 124]
+			(pno=100000124 type=2 page=[124])
+	idx_key[4]	[arithmetic progression][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[5]	[arithmetic series][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[6]	[associative law][ 116]
+			(pno=100000116 type=2 page=[116])
+	idx_key[7]	[basis (for polynomials)][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[8]	[Bell Number][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[9]	[bijection ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[10]	[bijection principle][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[11]	[binomial coefficient][  13]
+			(pno=100000013 type=2 page=[13])
+	idx_key[12]	[Binomial Theorem][  34]
+			(pno=100000034 type=2 page=[34])
+	idx_key[13]	[binomial theorem][ 101]
+			(pno=100000101 type=2 page=[101])
+	idx_key[14]	[block of a partition][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[15]	[block of a partition][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[16]	[broken permutation][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[17]	[Burnside's Lemma][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[18]	[Cartesian product][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[19]	[Catalan Number][  31]
+			(pno=100000031 type=2 page=[31])
+	idx_key[20]	[Catalan Number][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[21]	[Catalan number][ 108]
+			(pno=100000108 type=2 page=[108])
+	idx_key[22]	[Catalan Number][ 108]
+			(pno=100000108 type=2 page=[108])
+	idx_key[23]	[Catalan Number][ 109]
+			(pno=100000109 type=2 page=[109])
+	idx_key[24]	[Catalan Path][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[25]	[Cauchy-Frobenius-Burnside Theorem][ 135]
+			(pno=100000135 type=2 page=[135])
+	idx_key[26]	[characteristic function][  23]
+			(pno=100000023 type=2 page=[23])
+	idx_key[27]	[chromatic polynomial of a graph][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[28]	[Chung-Feller Theorem][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[29]	[closure property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[30]	[coefficient][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[31]	[coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[32]	[coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[33]	[combinations][  13]
+			(pno=100000013 type=2 page=[13])
+	idx_key[34]	[commutative law][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[35]	[complement of a partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[36]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[37]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[38]	[composition][  37]
+			(pno=100000037 type=2 page=[37])
+	idx_key[39]	[composition of functions][ 112]
+			(pno=100000112 type=2 page=[112])
+	idx_key[40]	[compositions][  38]
+			(pno=100000038 type=2 page=[38])
+	idx_key[41]	[congruence modulo $n$][ 151]
+			(pno=100000151 type=2 page=[151])
+	idx_key[42]	[conjugate of an integer partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[43]	[connected component graph][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[44]	[connected component of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[45]	[connected component of a graph][ 187]
+			(pno=100000187 type=2 page=[187])
+	idx_key[46]	[connected structures and EGFs][ 183]
+			(pno=100000183 type=2 page=[183])
+	idx_key[47]	[constant coefficient linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[48]	[contraction][  56]
+			(pno=100000056 type=2 page=[56])
+	idx_key[49]	[coset     ][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[50]	[cost of a spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[51]	[cycle (of a permutation)][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[52]	[cycle index][ 141]
+			(pno=100000141 type=2 page=[141])
+	idx_key[53]	[cycle of a permutation][ 121]
+			(pno=100000121 type=2 page=[121])
+	idx_key[54]	[cycles    ][ 122]
+			(pno=100000122 type=2 page=[122])
+	idx_key[55]	[definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[56]	[definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[57]	[degree of a vertex][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[58]	[deletion  ][  56]
+			(pno=100000056 type=2 page=[56])
+	idx_key[59]	[deletion-contraction recurrence][  57]
+			(pno=100000057 type=2 page=[57])
+	idx_key[60]	[deletion-contraction recurrence][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[61]	[derangement][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[62]	[derangement problem][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[63]	[diagram   ][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[64]	[diagram   ][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[65]	[digraph   ][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[66]	[digraph   ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[67]	[Dijkstra's algorithm][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[68]	[directed graph][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[69]	[directed graph][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[70]	[disjoint  ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[71]	[disjoint cycles][ 122]
+			(pno=100000122 type=2 page=[122])
+	idx_key[72]	[distance in a graph][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[73]	[distance in a weighted graph][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[74]	[double induction][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[75]	[driving function][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[76]	[Dyck path ][  32]
+			(pno=100000032 type=2 page=[32])
+	idx_key[77]	[edge      ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[78]	[edge      ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[79]	[edge      ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[80]	[EGF       ][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[81]	[equivalence class][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[82]	[equivlaence relation][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[83]	[equivlaence relation][ 153]
+			(pno=100000153 type=2 page=[153])
+	idx_key[84]	[exponential formula][ 184]
+			(pno=100000184 type=2 page=[184])
+	idx_key[85]	[exponential formula][ 189]
+			(pno=100000189 type=2 page=[189])
+	idx_key[86]	[exponential generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[87]	[exponential generating functions][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[88]	[exponential generating functions for connected structures][ 183]
+			(pno=100000183 type=2 page=[183])
+	idx_key[89]	[extended binomial theorem][ 101]
+			(pno=100000101 type=2 page=[101])
+	idx_key[90]	[factorial ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[91]	[factorial ][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[92]	[factorial ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[93]	[factorial ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[94]	[factorial power][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[95]	[factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[96]	[falling factorial power][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[97]	[falling factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[98]	[Ferrers diagram][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[99]	[Fibonacci numbers][ 107]
+			(pno=100000107 type=2 page=[107])
+	idx_key[100]	[fixed point enumerator][ 139]
+			(pno=100000139 type=2 page=[139])
+	idx_key[101]	[function  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[102]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[103]	[function  ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[104]	[function  ][  23]
+			(pno=100000023 type=2 page=[23])
+	idx_key[105]	[function  ][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[106]	[function  ][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[107]	[function  ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[108]	[function  ][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[109]	[function  ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[110]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[111]	[function  ][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[112]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[113]	[function  ][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[114]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[115]	[function  ][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[116]	[function  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[117]	[function  ][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[118]	[function  ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[119]	[functions ][ 112]
+			(pno=100000112 type=2 page=[112])
+	idx_key[120]	[functions ][  20]
+			(pno=100000020 type=2 page=[20])
+	idx_key[121]	[functions ][  20]
+			(pno=100000020 type=7 page=[20])
+	idx_key[122]	[functions ][  63]
+			(pno=100000063 type=2 page=[63])
+	idx_key[123]	[functions ][  20]
+			(pno=100000020 type=2 page=[20])
+	idx_key[124]	[functions ][  64]
+			(pno=100000064 type=2 page=[64])
+	idx_key[125]	[functions ][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[126]	[general product principle][  44]
+			(pno=100000044 type=2 page=[44])
+	idx_key[127]	[generating function][  97]
+			(pno=100000097 type=2 page=[97])
+	idx_key[128]	[generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[129]	[generating function][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[130]	[generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[131]	[generating function][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[132]	[geometric progression][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[133]	[geometric series][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[134]	[geometric series][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[135]	[graph     ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[136]	[graph     ][   9]
+			(pno=100000009 type=2 page=[9])
+	idx_key[137]	[graph     ][  92]
+			(pno=100000092 type=2 page=[92])
+	idx_key[138]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[139]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[140]	[graph     ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[141]	[graph     ][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[142]	[graph     ][ 187]
+			(pno=100000187 type=2 page=[187])
+	idx_key[143]	[graph     ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[144]	[graph     ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[145]	[graph     ][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[146]	[graph     ][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[147]	[Grey Code ][  38]
+			(pno=100000038 type=2 page=[38])
+	idx_key[148]	[group acting on a set][ 126]
+			(pno=100000126 type=2 page=[126])
+	idx_key[149]	[group of permutations][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[150]	[hatcheck problem][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[151]	[homogeneous linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[152]	[identity function][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[153]	[identity property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[154]	[identity property (for permutations)][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[155]	[inclusion and exclusion principle][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[156]	[inclusion and exclusion principle][  89]
+			(pno=100000089 type=2 page=[89])
+	idx_key[157]	[inclusion and exclusion principle ][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[158]	[indicator polynomials][ 163]
+			(pno=100000163 type=2 page=[163])
+	idx_key[159]	[induction ][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[160]	[induction ][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[161]	[induction ][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[162]	[inductive definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[163]	[injection ][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[164]	[injection ][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[165]	[inverse function][ 113]
+			(pno=100000113 type=2 page=[113])
+	idx_key[166]	[inverse property][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[167]	[involution][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[168]	[Lah number][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[169]	[lattice path][  29]
+			(pno=100000029 type=2 page=[29])
+	idx_key[170]	[lattice path][  30]
+			(pno=100000030 type=2 page=[30])
+	idx_key[171]	[left coset][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[172]	[length (of a path)][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[173]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[174]	[linear recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[175]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[176]	[linear recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[177]	[linear recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[178]	[mathematical induction][  45]
+			(pno=100000045 type=2 page=[45])
+	idx_key[179]	[mathematical induction][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[180]	[mathematical induction][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[181]	[menage problem][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[182]	[minimum cost spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[183]	[multinomial coefficient][  73]
+			(pno=100000073 type=2 page=[73])
+	idx_key[184]	[multiplicity function][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[185]	[multiset  ][  69]
+			(pno=100000069 type=2 page=[69])
+	idx_key[186]	[multiset  ][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[187]	[one-to-one][   5]
+			(pno=100000005 type=2 page=[5])
+	idx_key[188]	[one-to-one function][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[189]	[onto function][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[190]	[onto function][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[191]	[onto function][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[192]	[onto function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[193]	[onto functions][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[194]	[orbit     ][ 128]
+			(pno=100000128 type=2 page=[128])
+	idx_key[195]	[orbit enumerator][ 139]
+			(pno=100000139 type=2 page=[139])
+	idx_key[196]	[Orbit-Fixed Point Theorem][ 140]
+			(pno=100000140 type=2 page=[140])
+	idx_key[197]	[ordered function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[198]	[ordered onto function][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[199]	[ordered pair][   3]
+			(pno=100000003 type=2 page=[3])
+	idx_key[200]	[ordinary generating function][ 165]
+			(pno=100000165 type=2 page=[165])
+	idx_key[201]	[pair,ordered][   3]
+			(pno=100000003 type=2 page=[3])
+	idx_key[202]	[partial fractions][ 106]
+			(pno=100000106 type=2 page=[106])
+	idx_key[203]	[partition ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[204]	[partition ][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[205]	[partition ][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[206]	[partition (of a set)][ 152]
+			(pno=100000152 type=2 page=[152])
+	idx_key[207]	[partition of a set][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[208]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[209]	[partition of an integer][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[210]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[211]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[212]	[partition of an integer][  75]
+			(pno=100000075 type=2 page=[75])
+	idx_key[213]	[partition of an integer][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[214]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[215]	[partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[216]	[partitions of a set][  72]
+			(pno=100000072 type=2 page=[72])
+	idx_key[217]	[Pascal's Triangle][  14]
+			(pno=100000014 type=2 page=[14])
+	idx_key[218]	[path      ][  29]
+			(pno=100000029 type=2 page=[29])
+	idx_key[219]	[path      ][  30]
+			(pno=100000030 type=2 page=[30])
+	idx_key[220]	[path      ][  58]
+			(pno=100000058 type=2 page=[58])
+	idx_key[221]	[permutation][  21]
+			(pno=100000021 type=2 page=[21])
+	idx_key[222]	[permutation][  22]
+			(pno=100000022 type=2 page=[22])
+	idx_key[223]	[permutation][  68]
+			(pno=100000068 type=2 page=[68])
+	idx_key[224]	[permutation][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[225]	[permutation][ 121]
+			(pno=100000121 type=2 page=[121])
+	idx_key[226]	[permutation][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[227]	[permutation][ 117]
+			(pno=100000117 type=2 page=[117])
+	idx_key[228]	[permutation group][ 114]
+			(pno=100000114 type=2 page=[114])
+	idx_key[229]	[picture enumerator][  95]
+			(pno=100000095 type=2 page=[95])
+	idx_key[230]	[picture enumerators][  96]
+			(pno=100000096 type=2 page=[96])
+	idx_key[231]	[pigeonhole principle][  35]
+			(pno=100000035 type=2 page=[35])
+	idx_key[232]	[pigeonhole principle][  35]
+			(pno=100000035 type=2 page=[35])
+	idx_key[233]	[Polya-Redfield Theorem][ 142]
+			(pno=100000142 type=2 page=[142])
+	idx_key[234]	[principle ][  12]
+			(pno=100000012 type=2 page=[12])
+	idx_key[235]	[principle ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[236]	[principle ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[237]	[principle ][ 154]
+			(pno=100000154 type=2 page=[154])
+	idx_key[238]	[principle ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[239]	[principle ][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[240]	[principle of inclusion and exclusion][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[241]	[principle of inclusion and exclusion][  89]
+			(pno=100000089 type=2 page=[89])
+	idx_key[242]	[principle of inclusion and exclusion][  87]
+			(pno=100000087 type=2 page=[87])
+	idx_key[243]	[principle of mathematical induction][  41]
+			(pno=100000041 type=2 page=[41])
+	idx_key[244]	[principle of mathematical induction][ 157]
+			(pno=100000157 type=2 page=[157])
+	idx_key[245]	[product   ][   7]
+			(pno=100000007 type=2 page=[7])
+	idx_key[246]	[product principle][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[247]	[product principle][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[248]	[product principle][  19]
+			(pno=100000019 type=2 page=[19])
+	idx_key[249]	[product principle][  19]
+			(pno=100000019 type=2 page=[19])
+	idx_key[250]	[product principle][  44]
+			(pno=100000044 type=2 page=[44])
+	idx_key[251]	[product principle][  96]
+			(pno=100000096 type=2 page=[96])
+	idx_key[252]	[product principle for exponential generating functions][ 177]
+			(pno=100000177 type=2 page=[177])
+	idx_key[253]	[product principle for generating functions][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[254]	[progression][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[255]	[progression][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[256]	[proper coloring of a graph][  91]
+			(pno=100000091 type=2 page=[91])
+	idx_key[257]	[quotient principle][  28]
+			(pno=100000028 type=2 page=[28])
+	idx_key[258]	[quotient principle][ 154]
+			(pno=100000154 type=2 page=[154])
+	idx_key[259]	[recurrence][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[260]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[261]	[recurrence][ 105]
+			(pno=100000105 type=7 page=[105])
+	idx_key[262]	[recurrence][  57]
+			(pno=100000057 type=2 page=[57])
+	idx_key[263]	[recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[264]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[265]	[recurrence][ 105]
+			(pno=100000105 type=7 page=[105])
+	idx_key[266]	[recurrence][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[267]	[recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[268]	[recurrence][ 105]
+			(pno=100000105 type=7 page=[105])
+	idx_key[269]	[recurrence][  47]
+			(pno=100000047 type=2 page=[47])
+	idx_key[270]	[recurrence][  70]
+			(pno=100000070 type=2 page=[70])
+	idx_key[271]	[recurrence relation][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[272]	[recursive definition][  43]
+			(pno=100000043 type=2 page=[43])
+	idx_key[273]	[reflexive ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[274]	[relation  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[275]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[276]	[relation  ][ 153]
+			(pno=100000153 type=2 page=[153])
+	idx_key[277]	[relation  ][ 145]
+			(pno=100000145 type=2 page=[145])
+	idx_key[278]	[relation  ][  46]
+			(pno=100000046 type=2 page=[46])
+	idx_key[279]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[280]	[relation  ][ 150]
+			(pno=100000150 type=7 page=[150])
+	idx_key[281]	[relation  ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[282]	[right coset][ 132]
+			(pno=100000132 type=2 page=[132])
+	idx_key[283]	[rising factorial power][  67]
+			(pno=100000067 type=2 page=[67])
+	idx_key[284]	[rotation group][ 115]
+			(pno=100000115 type=2 page=[115])
+	idx_key[285]	[second order recurrence][ 105]
+			(pno=100000105 type=2 page=[105])
+	idx_key[286]	[self-conjugate partition][  77]
+			(pno=100000077 type=2 page=[77])
+	idx_key[287]	[series    ][  48]
+			(pno=100000048 type=2 page=[48])
+	idx_key[288]	[series    ][  49]
+			(pno=100000049 type=2 page=[49])
+	idx_key[289]	[series    ][ 100]
+			(pno=100000100 type=2 page=[100])
+	idx_key[290]	[sets      ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[291]	[sets      ][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[292]	[sign of a permutation][ 123]
+			(pno=100000123 type=2 page=[123])
+	idx_key[293]	[simple graph][ 188]
+			(pno=100000188 type=2 page=[188])
+	idx_key[294]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[295]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[296]	[spanning tree][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[297]	[Stirling Number][  74]
+			(pno=100000074 type=2 page=[74])
+	idx_key[298]	[Stirling Number][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[299]	[Stirling Number][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[300]	[Stirling's formula for $n!$][  25]
+			(pno=100000025 type=2 page=[25])
+	idx_key[301]	[Stirling's triangle][  74]
+			(pno=100000074 type=2 page=[74])
+	idx_key[302]	[Stirling's triangle][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[303]	[subgroup  ][ 120]
+			(pno=100000120 type=2 page=[120])
+	idx_key[304]	[sum principle][   6]
+			(pno=100000006 type=2 page=[6])
+	idx_key[305]	[sum principle][   8]
+			(pno=100000008 type=2 page=[8])
+	idx_key[306]	[sum principle][  85]
+			(pno=100000085 type=2 page=[85])
+	idx_key[307]	[surjection][  11]
+			(pno=100000011 type=2 page=[11])
+	idx_key[308]	[surjection][ 146]
+			(pno=100000146 type=2 page=[146])
+	idx_key[309]	[surjections][  90]
+			(pno=100000090 type=2 page=[90])
+	idx_key[310]	[symmetric ][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[311]	[symmetric group][ 116]
+			(pno=100000116 type=2 page=[116])
+	idx_key[312]	[symmetric group][ 116]
+			(pno=100000116 type=7 page=[116])
+	idx_key[313]	[transitive][ 150]
+			(pno=100000150 type=2 page=[150])
+	idx_key[314]	[transposition][ 124]
+			(pno=100000124 type=2 page=[124])
+	idx_key[315]	[tree      ][  52]
+			(pno=100000052 type=2 page=[52])
+	idx_key[316]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[317]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[318]	[tree      ][  55]
+			(pno=100000055 type=2 page=[55])
+	idx_key[319]	[Twentyfold Way][  62]
+			(pno=100000062 type=2 page=[62])
+	idx_key[320]	[two row notation][ 117]
+			(pno=100000117 type=2 page=[117])
+	idx_key[321]	[type vector for a partition of an integer][  76]
+			(pno=100000076 type=2 page=[76])
+	idx_key[322]	[type vector of a partition of a set][  71]
+			(pno=100000071 type=2 page=[71])
+	idx_key[323]	[vertex    ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[324]	[vertex    ][ 147]
+			(pno=100000147 type=2 page=[147])
+	idx_key[325]	[vertex    ][  50]
+			(pno=100000050 type=2 page=[50])
+	idx_key[326]	[vertex    ][  36]
+			(pno=100000036 type=2 page=[36])
+	idx_key[327]	[Young diagram][  76]
+			(pno=100000076 type=2 page=[76])

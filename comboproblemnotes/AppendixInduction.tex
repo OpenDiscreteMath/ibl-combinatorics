@@ -1,0 +1,411 @@
+\chapter{Mathematical Induction}\label{Induction}
+\section{The Principle of Mathematical Induction}
+\subsection{The ideas behind mathematical induction}
+There is a variant of one of  the bijections we used to prove the Pascal
+Equation that comes up in counting the subsets of a set. In the next
+problem it will help us compute the total number of subsets of a set,
+regardless of their size.  Our main goal in this problem, however, is to
+introduce some ideas that will  lead us to one of the most powerful proof
+techniques in combinatorics (and many other branches of mathematics), the
+principle of mathematical induction.
+\bp
+\item \label{subsetsbysmallestcounterexample}
+\begin{enumerate}
+\item Write down a list of the subsets of $\{ 1, 2 \}$.
+Don't forget the empty set! Group the sets containing containing 2
+separately from the others.
+\solution{$\emptyset$, $\{1\}$,\qquad $\{2\}$, $\{1, 2\}$.}
+\item Write down a list of the subsets of $\{ 1, 2, 3 \}$. Group the sets
+ containing 3 separately from the others.
+\solution{$\emptyset$, $\{1\}$, $\{2\}$, $\{1, 2\}$,\qquad $\{3\}$,
+$\{1,3\}$, $\{2,3\}$, $\{1,2,3\}$.}
+
+\item Look for a natural way to match up the subsets containing 2 in
+Part (a) with those not containing 2. Look for a way to match up
+the subsets containing 3 in Part (b) containing 3 with those not
+containing 3.
+\solution{Adjoin $2$ to each subset not containing $2$ and you get each set
+containing 2.  Adjoin 3 to each subset not containing 3, and you get each
+subset containing 3.}
+
+\item On the basis of the previous part, you should be able to find a
+bijection between the collection of subsets of $\{1, 2, \ldots , n \}$
+containing $n$ and those not containing $n$. (If you are having difficulty
+figuring out the bijection, try rethinking Parts (a) and (b), perhaps by
+doing a similar exercise with the set $\{1,2,3,4\}$.) Describe the
+bijection (unless you are very familiar with the notation of sets, it is
+probably easier to describe to describe the function in words rather than
+symbols) and explain why it is a bijection. Explain why the number of
+subsets of
+$\{ 1, 2, \ldots , n \}$ containing
+$n$ equals the number of subsets of $\{ 1, 2, \ldots, n-1 \}$. 
+\solution{If we adjoin $n$ to the subsets not containing $n$ we get the
+subsets containing $n$.  This is a bijection because if we start with two
+different sets, adjoining $n$ to them can't make them the same, and every
+subset $S$ containing $n$ must arise in this way from the set $S-\{n\}$ not
+containing $n$.}
+
+\item Parts (a) and (b) suggest
+strongly that the number of subsets of a $n$-element set is $2^n$. In
+particular, the empty set has $2^0$ subsets, a one-element set has $2^1$
+subsets, itself and the empty set, and in Parts a and b we saw that
+two-element and three-element sets have $2^2$ and $2^3$ subsets
+respectively. So there are certainly some values of $n$ for which an
+$n$-element set has $2^n$ subsets. One way to prove that an $n$-element
+set has $2^n$ subsets for all values of $n$ is to argue by contradiction.
+For this purpose, suppose there is a nonnegative integer $n$ such that an
+$n$-element set doesn't have exactly $2^n$ subsets. In that case there may
+be more than one such $n$. Choose $k$ to be the smallest such $n$. Notice
+that $ k -1$ is still a positive integer, because $k$ can't be 0, 1, 2,
+or 3. Since $k$ was the smallest value of $n$ we could choose to make the
+statement
+``An $n$-element set has $2^n$ subsets" false, what do you know about the
+number of subsets of a $(k - 1)$-element set? What do you know about the
+number of subsets of the $k$-element set $\{ 1, 2, \ldots, k \}$ that
+don't contain $k$? What do you know about the number of subsets of $\{ 1,
+2, \ldots,  k \}$ that do contain $k$? What does the sum principle tell
+you about the number of subsets of $\{ 1, 2, \ldots, k \}$? Notice that
+this contradicts the way in which we chose $k$, and the only assumption
+that went into our choice of $k$ was that ``there is a nonnegative integer
+$n$ such that an $n$-element set doesn't have exactly $2^n$ subsets."
+Since this assumption has led us to a contradiction, it must be false.
+What can you now conclude about the statement ``for every nonnegative
+integer $n$, an n-element set has exactly $2^n$ subsets?"
+\solution{We know that the number of subsets of a $(k-1)$-element set is
+$2^{k-1}$.  The number of subsets of $\{1,2,\ldots,k\}$ that do not contain
+$k$ is the number of subsets of the $k-1$-element set $\{1,2,\ldots,
+k-1\}$, so we know this number is $2^{k-1}$.  We know that  the number of
+subsets that do contain $k$ equals the number that don't, so the number
+that do contain $k$ is also $2^{k-1}$.  The sum principle tells us that the
+number os subsets of $\{1,2,\ldots, k\}$ is $2^{k-1}+2^{k-1}=2^k$.  We can
+conclude that the statement ``for every nonnegative integer $n$, an
+$n$-element set has exactly $2^n$ subsets" is true.}
+\end{enumerate}
+
+\item The expression\label{sumodd}
+$$1+3+5+\cdots+2n-1$$
+is the sum of the first $n$ odd integers.  Experiment a bit with the sum
+for the first few positive integers and guess its value in terms of $n$. 
+Now apply the technique of Problem
+\ref{subsetsbysmallestcounterexample} to prove that you are right.
+\solution{We guess that $1+3+5+\cdots+2n-1=n^2$.  Clearly this is true when
+$n$ is 1, 2, or 3.  Suppose there is an $n$ for which this formula is not
+true, and let $k$ be the smallest such $n$.  Then $1+3+5+\cdots+2(k-1)-1 =
+(k-1)^2$.  Simplifying, $1+3+5+\cdots+2k-3 =
+(k-1)^2$.  Now suppose we add $2k-1$ to both sides of this equation.  Then
+we get $$1+3+5+\cdots+2k-3 +2k-1 =
+(k-1)^2+2k-1 = k^2-2k+1+2k-1=k^2.$$
+But this is a contradiction, because we assumed that $k$ was the
+smallest value of $n$ for which the sum on the left is not $n^2$. 
+Therefore the assumption that there is an $n$ for which $1+3+5+\cdots+2n-1
+\not=n^2$ must be false, so the equation $1+3+5+\cdots+2n-1=n^2$ must be
+true for all positive integers $n$.}
+
+\ep
+
+In Problems \ref{subsetsbysmallestcounterexample} and \ref{sumodd} our
+proofs had several distinct elements.  We had a statement involving an
+integer $n$.  We knew the statement was true for the first few
+nonnegative integers in Problem \ref{subsetsbysmallestcounterexample} and
+for the first few positive integers in problem \ref{sumodd}.  We wanted
+to prove that the statement was true for all nonnegative integers in
+Problem \ref{subsetsbysmallestcounterexample} and for all positive
+integers in Problem \ref{sumodd}.  In both cases we used the method of
+proof by contradiction; for that purpose we assumed that there was a value
+of
+$n$ for which our formula wasn't true.  We then chose $k$ to be the
+smallest value of $n$ for which our formula wasn't true.  This meant that
+when $n$ was $k-1$, our formula was true, (or else that $k-1 $ wasn't a
+nonnegative integer in Problem \ref{subsetsbysmallestcounterexample} or
+that $k-1$ wasn't a positive integer in Problem \ref{sumodd}).  What we
+did next was the crux of the proof.  We showed that the truth of our
+statement for
+$n=k-1$ implied the truth of our statement for $n=k$.  This gave us a
+contradiction to the assumption that there was an $n$ that made the
+statement false.  In fact, we will see that we can bypass entirely the
+use of proof by contradiction.  We used it to help you discover the
+central ideas of the technique of proof by mathematical induction.
+
+The central core of mathematical induction is the proof
+that the truth of a statement about the integer $n$ for $n=k-1$ implies
+the truth of the statement for $n=k$.  For example, once we know that a
+set of size 0 has $2^0$ subsets, if we have proved our implication, we
+can then conclude that a set of size 1 has $2^1$ subsets, from which
+we can conclude that a set of size 2 has $2^2$ subsets, from which we can
+conclude that a set of size 3 has $2^3$ subsets, and so on up to a set of
+size $n$ having $2^n$ subsets for any nonnegative integer $n$ we choose. 
+In other words, although it was the idea of proof by contradiction that
+led us to think about such an implication, we can now do without the
+contradiction at all.  What we need to prove a statement about $n$ by
+this method is a place to start, that is a value $b$ of $n$ for which we
+know the statement to be true, and then a proof that  the truth of our
+statement for $n=k-1$ implies the truth of the statement for $n=k$
+whenever $k>b$.
+
+\subsection{Mathematical induction}  The {\bf principle of mathematical
+induction}\index{mathematical induction!principle of}\index{principle of
+mathematical induction}\index{induction!mathematical, the principle of}
+states that
+\begin{quote}
+In order to prove a statement about an integer $n$, if we
+can\begin{enumerate}
+\item Prove the statement when $n=b$, for some fixed integer $b$
+\item Show that the truth of the statement for $n=k-1$ implies the truth
+of the statement for $n=k$ whenever $k>b$,
+\end{enumerate}
+then we can conclude the statement is true for all integers $n\ge
+b$.\end{quote} As an example, let us return to Problem
+\ref{subsetsbysmallestcounterexample}.  The statement we wish to prove is
+the statement that ``A set of size $n$ has $2^n$ subsets."  
+
+\begin{quote}Our statement
+is true when $n=0$, because a set of size 0 is the empty set and the
+empty set has $1=2^0$ subsets. (This step of our proof is called a {\em
+base step}.)
+
+Now suppose that $k>0$ and every set with $k-1$ elements has $2^{k-1}$
+subsets.  Suppose $S=\{a_1,a_2,\ldots a_k\}$ is a set with $k$ elements. 
+We partition the subsets of $S$ into two blocks.  Block $B_1$ consists of
+the subsets that do not contain $a_n$ and block $B_2$ consists of the
+subsets that do contain $a_n$.  Each set in $B_1$ is a subset of
+$\{a_1,a_2,\ldots a_{k-1}\}$, and each subset of $\{a_1,a_2, \ldots
+a_{k-1}\}$ is in $B_1$.  Thus $B_1$ is the set of all subsets of
+$\{a_1,a_2,\ldots a_{k-1}\}$.  Therefore by our assumption in the first
+sentence of this paragraph, the size of $B_1$ is $2^{k-1}$.  Consider the
+function from $B_2$ to $B_1$ which takes a subset of $S$ including $a_n$
+and removes $a_n$ from it.  This function is defined on $B_2$, because
+every set in $B_2$ contains $a_n$.  This function is onto, because if
+$T$ is a set in $B_1$, then $T\cup \{a_k\}$ is a set in $B_2$ which the
+function sends to $T$.  This function is one-to-one because if $V$ and
+$W$ are two different sets in $B_2$, then removing $a_k$ from them gives
+two different sets in $B_1$.  Thus we have a bijection between $B_1$ and
+$B_2$, so $B_1$ and $B_2$ have the same size.  Therefore by the sum
+principle the size of
+$B_1\cup B_2$ is $2^{k-1} +2^{k-1}=2^k$.  Therefore $S$ has $2^k$
+subsets.  This shows that if a set of size $k-1$ has $2^{k-1}$ subsets,
+then a set of size $k$ has $2^k$ subsets.  Therefore by the principle of
+mathematical induction, a set of size $n$ has $2^n$ subsets for every
+nonnegative integer $n$.
+\end{quote}
+
+The first sentence of the last paragraph is called the {\em inductive
+hypothesis}.  In an inductive proof we always make an inductive
+hypothesis as part of proving that the truth of our statement when
+$n=k-1$ implies the truth of our statement when $n=k$.  The last
+paragraph itself is called the {\em inductive step} of our proof.  In an
+inductive step we derive the statement for $n=k$ from the statement for
+$n=k-1$, thus proving that the truth of our statement when $n=k-1$
+implies the truth of our statement when $n=k$.  The last sentence in the
+last paragraph is called the {\em inductive conclusion}.  All inductive
+proofs should have a base step, an inductive hypothesis, an inductive
+step, and an inductive conclusion.  
+
+There are a couple details worth noticing.  First, in this problem, our
+base step was the case $n=0$, or in other words, we had $b=0$.  However,
+in other proofs,
+$b$ could be any integer, positive, negative, or 0.  Second, our proof
+that the truth of our statement for $n=k-1$ implies the truth of our
+statement for
+$n=k$ required that $k$ be at least 1, so that there would be an element
+$a_k$ we could take away in order to describe our bijection.  However,
+condition (2) of the principle of mathematical induction only requires
+that we be able to prove the implication for $k>0$, so we were allowed to
+assume $k>0$.
+\bp \item Use mathematical induction to prove your formula from
+Problem \ref{sumodd}.
+\ep
+\subsection{Proving algebraic statements by induction}
+\bp
+\item Use mathematical induction to prove the well-known formula that for
+all positive integers $n$,
+$$1+2 + \cdots +n = {n(n+1)\over 2}.$$
+\solution{When $n=0$, $0=0(0+1)/2$, so our formula holds.  Now suppose
+that$k>0$ and that our formula holds when $n=k-1$, so that
+$1+2+\cdots+k-1=(k-1)k/2$.  Add $k$ to both sides of this equation to get
+\begin{eqnarray*}
+1+2+\cdots+(k-1)+k&=& (k-1)k/2 +k\\ &=& k^2/2-k/2+k\\&=&
+k^2/2+k/2\\&=&k(k+1)/2.
+\end{eqnarray*}
+ Thus the truth of our formula for $n=k-1$ implies its
+truth for $n=k$.  Therefore by the principle of mathematical induction, our
+formula holds for all nonnegative integers $n$.}
+
+\item Experiment with various values of $n$ in the sum
+$${1\over 1\cdot2}+{1\over 2\cdot3} + {1\over3\cdot
+4}+\cdots+{1\over n\cdot (n+1)} = \sum_{i=1}^n {1\over i\cdot(i+1)}.$$ 
+Guess a formula for this sum and prove your guess is correct by induction.
+\solution{We guess the formula 
+$$\sum_{i=1}^n{1\over i(i+1)} = {n\over
+n+1}.$$  When $n=1$ this formula says that ${1\over 1\cdot2}={1\over 1\cdot
+2}$, so our formula holds when $n=1$.  Now assume that $k>1$ and that our
+formula holds when $n=k-1$.  Then
+$$\sum_{i=1}^{k-1} {1\over i(i+1)}= {k-1\over k}.$$
+Adding $1\over k(k+1)$ to both sides of this equation gives us
+\begin{eqnarray*}
+\sum_{i=1}^{k-1} {1\over i(i+1)}+{1\over k(k+1)} &=& {k-1\over k}+{1\over
+k(k+1)}\\
+\sum_{i=1}^k {1\over i(i+1)}&=&{(k-1)(k+1)\over k(k+1)}+{1\over k(k+1)}\\
+&=&{k^2 -1 +1\over k(k+1)} \\&=& {k\over k+1}.
+\end{eqnarray*}  
+Thus whenever our formula is true with $n=k-1$, it is true with $n=k$ as
+well.  Therefore by the principle of mathematical induction, our formula is
+true for all positive integers.}
+
+\item For large values of $n$, which is larger, $n^2$ or $2^n$?  Use
+mathematical induction to prove that you are correct.
+\solution{We note that $0^2=0$, while $2^0=1$, that $1^2=1$, while
+$2^1=2$, that $2^2=4$, while $2^2=4$, that $3^2=9$ while $2^3=8$, that
+$4^2=16$ while $2^4=16$, and $5^2=25$ while $2^5=32$.  We suspect that
+$2^n>n^2$ for $n\ge 5$, so we try to prove this by induction.  We have
+already shown that $2^5>5^2$.  Now suppose that $k>5$ and
+$2^{k-1}>(k-1)^2$.  Then $2^k=2\cdot2^{k-1}>2(k-1)^2=2k^2-4k +1$. Now since
+$k>5$, $k^2>5k$, so that $k^2-4k+1=k^2+k^2-4k+1>k^2+5k-4k+1=k^2+k+1>k^2$. 
+Thus for $k>5$, the statement $2^{k-1}>(k-1)^2$ implies the statement
+$2^k>k^2$.  Therefore, by the principle of mathematical induction,
+$2^n>n^2$ for all $n\ge 5$.}
+
+\item What is wrong with the following attempt at an inductive proof that
+all  integers in any consecutive set of $n$ integers are equal for
+every positive integer $n$?  For an arbitrary integer $i$, all integers
+from $i$ to $i$ are equal, so our statement is true when $n=1$.  Now
+suppose $k>1$ and all integers in any consecutive set of $k-1$ integers
+are equal.  Let $S$ be a set of $k$ consecutive integers.  By the
+inductive hypothesis, the first $k-1$ elements of $S$ are equal and the
+last $k-1$ elements of $S$ are equal.  Therefore
+all the elements in the set $S$ are equal.  Thus by the principle of
+mathematical induction, for every positive $n$, every $n$ consecutive
+integers are equal.
+\solution{One possible value of $k$ that is greater than 1 is 2.  When we
+have a set $S$ of two elements and we argue that the first $k-1$ elements
+are equal and the last $k-1$ elements are equal, we cannot conclude from
+those equalities that all elements of $S$ are equal, because there is no
+overlap among the first $k-1=1$ elements of $S$ and the last $k-1=1$
+elements of $S$.  Thus our inductive step does not cover the possibility
+that $k=2$.  Therefore our inductive step does not show that the truth of
+our statement for $n=k-1$ implies the truth of our statement for $n=k$ for
+{\bf all} integers $n>1$.  Therefore the principle of mathematical
+induction does not apply.}
+\ep
+\subsection{Strong Induction}
+One way of looking at the principle of mathematical induction is that it
+tells us that if we know the ``first" case of a theorem and we can derive
+each other case of the theorem from a smaller case, then the theorem is
+true in all cases.  However the particular way in which we stated the
+theorem is rather restrictive in that it requires us to derive each
+case from the immediately preceding case.  This restriction is
+not necessary, and removing it leads us to a more general statement of
+the principal of mathematical induction which people often call the {\bf
+strong principle of mathematical induction}.  It states:
+\begin{quote}In order to prove a
+statement about an integer $n$ if we can
+\begin{enumerate}
+\item prove our statement when $n=b$ and
+\item prove that the statements we get with $n=b$, $n=b+1$, \ldots
+$n=k-1$ imply the statement with $n=k$,
+\end{enumerate}
+then our statement is true for all integers $n\ge b$.
+\end{quote} 
+\bp
+\item What postage do you think we can make with five and six cent
+stamps?  Is there a number $N$ such that if $n\ge N$, then we can make
+$n$ cents worth of postage?
+\solution{We can make 10, 11, and 12 cents in postage, but not 13 cents. 
+We can also make 15, 16, 17, and 18, but not 19 cents.  However when we try
+starting with 20 cents, we can make 20, 21, 22, 23, 24, 25, 26,
+27,...cents, and so it seems for all $n\ge 20$, we can make $n$ cents in
+stamps.  Once we know we can make 20 cents through 24 cents, by adding 5
+cents to each of these we can get 25 through 29 cents, and so we expect to
+be able to keep going.  However making 29 cents does not depend on our
+ability to make 28 cents; rather we know we can make 29 cents because we
+know we can make 24 cents and $24+5=29$ or we know we can make $23$ cents
+and $23+6=29$.  Thus it certainly seems as if for all $n\ge 20$ we can make
+$n$ cents in postage.}
+\ep
+
+You probably see that we can make $n$ cents worth of postage as long as
+$n$ is at least 20.  However you didn't try to make 26 cents in postage
+by working with 25 cents; rather you saw that you could get 20 cents and
+then add six cents to that to get 26 cents.  Thus if we want to prove by
+induction that we are right that if $n\ge 20$, then we can make $n$ cents
+worth of postage, we are going to have to use the strong version of the
+principle of mathematical induction.  
+
+We know that  we can make 20 cents
+with four five-cent stamps.  Now we let $k$ be a number greater than 20,
+and assume that it is possible to make any amount between 20 and $k-1$
+cents in postage with five and six cent stamps.  Now if $k$ is less than
+25, it is 21, 22, 23, or 24.  We can make 21 with three fives and one
+six.  We can make 22 with two fives and two sixes, 23 with one five and
+three sixes, and 24 with four sixes.  Otherwise $k-5$ is  between 20 and
+$k-1$ (inclusive) and so by our inductive hypothesis, we know that $k-5$
+cents can be made with five and six cent stamps, so with one more five
+cent stamp, so can $k$ cents.  Thus by the (strong) principle of
+mathematical induction, we can make $n$ cents in stamps with five and six
+cent stamps for each $n\ge 20$.
+
+Some people might say that we really
+had five base cases,
+$n=20$, 21, 22, 23, and 24, in the proof above and once we had proved
+those five consecutive base cases, then we could reduce any other case to
+one of these base cases by successively subtracting 5.  That is an
+appropriate way to look at the proof.  A logician would say that it
+is also the case that, for example, by proving we could make 22 cents, we
+also proved that if we can make 20 cents and 21 cents in stamps, then we
+could also make 22 cents.  We just didn't bother to use the assumption
+that we could make 20 cents and 21 cents!  So long as one point of view
+or the other satisfies you, you are ready to use this kind of argument in
+proofs.
+
+
+\bp
+\item A number greater than one is called prime if it has no factors other
+than itself and one. Show that each positive number is either a prime or
+a power of a prime or a product of powers of prime numbers.
+\solution{We note that $1=2^0$, so 1 is a power of a prime.  Now suppose
+that all positive numbers less than $n$ are primes, powers of primes, or
+products of powers of primes. If $n$ has no proper factors, it is a prime. 
+If it does have proper factors, say $n=mk$, both factors are less than $n$
+and greater than 1.  Therefore each factor is a prime, a power of a prime,
+or a product of powers of primes.  When we multiply $m$ and $k$ together,
+the result will still be a power of a prime or a product of powers of
+primes. Thus the  statement that all positive numbers less than
+$n$ are primes, powers of primes, or products of powers of primes implies
+ the statement that $n$ is a prime, a power of a prime, or a product of 
+powers of primes.  Therefore by the strong principle of mathematical
+induction, all positive numbers are either primes, powers of primes, or
+products of powers of primes.}
+
+\item Show that the number of prime factors of a positive number $n\ge 2$
+is less than or equal to $\log_2 n$.  (If a prime occurs to the $k$th
+power in a factorization of $n$, you can consider that power as $k$ prime
+factors.)  (There is a way to do this by induction and a way to do it
+without induction.  It would be ideal to find both ways.)
+\solution{First, we will prove this by induction.  The number of prime
+factors of $2$ is 1, which is less than or equal to $\log_2 2=1$. Now
+assume that the number of prime factors of any number $k$ greater than 1 and
+less than $n$ is no more than $\log_2 k$.  If $n$ is prime, then its number
+of prime factors is less than or equal to $\log_2 n$.  Otherwise $n$ is a
+product of two factors, $n=mk$.  Then by our inductive hypothesis,  the
+number of prime factors of $m$ is less than or equal to $\log_2 m$ and the
+number of prime factors of $k$ is less than or equal to $\log_2 k$.  But
+the number of prime factors of the product is the sum of the number of
+prime factors of each factor, so the number of prime factors of $n$ is no
+more than $\log_2 m +\log_2 k=\log_2 mk= \log_2 n$.  Thus statement that the
+number of prime factors of any number $k$ between 2 and $n-1$ inclusive is
+no more than $\log_2 k$, implies the statement that the number of prime
+factors of $n$ is no more than $\log_2 n$.  Therefore, by the principle of
+mathematical induction, the number of prime factors of $n$ is less than or
+equal to
+$\log_2 n$ for all integers $n\ge 2$.
+
+For a noninductive proof, note that all factors of $n$ are at least 2.  If
+$n$ is a power of two, then the number of times $2$ is a factor of $n$ is
+exactly
+$\log_2 n$. But if $n$ is not a power of 2, we still have that
+$2^{\log_2 n}=n$, so the product of $\lceil\log_2 n\rceil$ numbers
+including some greater than 2 must be greater than $n$. Therefore, the
+number of prime factors of $n$ is no more than
+$\log_2 n$. Thus for all $n\ge2$,the number of prime factors of
+$n$ must be less than or equal to
+$\log_2 n$.}
+\ep

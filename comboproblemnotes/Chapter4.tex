@@ -1,0 +1,2656 @@
+\chapter{Algebraic Counting Techniques}
+\section{The Principle of Inclusion and Exclusion}
+\subsection{The size of a union of sets}  One of our  very first counting
+principles was the {sum principle}\index{sum principle} which says that
+the size of a union of disjoint sets is the sum of their sizes. 
+Computing the size of overlapping sets requires, quite naturally,
+information about how they overlap.  Taking such information into account
+will allow us to develop a powerful extension of the sum principle known
+as the ``principle of inclusion and exclusion."\index{principle of
+inclusion and exclusion}\index{inclusion and exclusion principle}
+  \bp
+\itemm In a biology lab study of the effects of basic fertilizer
+ingredients on plants, 16 plants are treated with potash, 16 plants are
+treated with phosphate, and among these plants, eight are treated with
+both phosphate and potash. No other treatments are used.  How many plants
+receive at least one treatment?  If 32 plants are studied, how many
+receive no treatment?\label{fertilizer2}
+\solution{The number of plants receiving treatment was $16+16-8 = 24$.
+The number of plants receiving no treatment was eight.}
+\items  Give a formula for the size of the union $A\cup B$ of two
+sets
+$A$ in terms of the sizes $|A|$ of $A$, $|B|$ of $B$, and $|A\cap B|$ of
+$A\cap B$. If $A$ and $B$ are subsets of some ``universal" set $U$,
+express the size of the complement $U-(A\cup B)$ in terms of the sizes
+$|U|$ of $U$, $|A|$ of $A$, $|B|$ of $B$, and $|A\cap B|$ of
+$A\cap B$.
+\solution{$|A\cup B|=|A| + |B| - |A\cap B|$.\\  $|U-(A\cup B)| = |U|-|A|-|B| + |A
+\cap B|$.}
+
+\itemm In Problem \ref{fertilizer2}, there were just two fertilizers used
+to treat the sample plants.  Now suppose there are three fertilizer
+treatments, and 15 plants are treated with nitrates, 16 with potash, 16
+with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate,
+8 with  potash and phosphate and 4 with all three.  Now how many plants
+have been treated?  If 32 plants were studied, how many received no
+treatment at all?
+\solution{$15+16+16-7-9-8+4=27$ plants were treated and five received
+no treatment.}
+
+\iteme Give a formula for the size of $A_1\cup A_2\cup A_3$ in terms of
+the sizes of $A_1$, $A_2$, $A_3$ and the intersections of these
+sets.\label{threesetintersection}
+\solution{\\$|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
+C| +|A\cap B\cap C|$.}
+
+\iteme Conjecture a formula for the size of a union of sets $$A_1\cup
+A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i$$ in terms of the sizes of
+the sets $A_i$ and their intersections.\label{nsetintersection}
+\solution{
+$$\left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
+\sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
+A_2\cap\cdots \cap A_n|.$$}
+\ep
+The difficulty of generalizing Problem \ref{threesetintersection} to
+Problem \ref{nsetintersection} is not likely to be one of being able to
+see what the right conjecture is, but of finding a good notation to
+express your conjecture.  In fact, it would be easier for some people to
+express the conjecture in words than to express it in a notation. Here
+is some notation that will make your task easier.  Let us define
+$$\bigcap_{i:i\in I}A_i$$ to mean the intersection over all elements $i$
+in the set $I$ of
+$A_i$.  Thus
+  \begin{equation}
+\bigcap_{i:i\in
+\{1,3,4,6\}} = A_1\cap A_3\cap A_4 \cap A_6.\label{intersectionnotation}
+  \end{equation}
+This kind of notation, consisting of an operator with a description
+underneath of the values of a dummy variable of interest to us, can be
+extended in many ways.  For example
+\begin{eqnarray}\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
+A_i| &=& |A_1\cap A_2|+ |A_1\cap A_3|
+ +|A_1\cap A_4|\nonumber\\ &+& |A_2\cap A_3|+
+|A_2\cap A_4| +|A_3\cap A_4|.\label{notationsolution}
+\end{eqnarray}
+  \bp
+ \iteme Use notation something like that of Equation
+\ref{intersectionnotation} and Equation \ref{notationsolution} to express
+the answer to Problem \ref{nsetintersection}.  Note there are many
+different correct ways to do this problem.  Try to write down  more
+than one and choose the nicest one you can.  Say why you chose it
+(because your view of what makes a formula nice may be different from
+somebody else's).  The nicest formula won't necessarily involve all the
+elements of Equations
+\ref{intersectionnotation} and 
+\ref{notationsolution}.\label{inclusion-exclusionunion}
+\solution{$$\left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
+S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|$$ I chose this
+way of writing the formula partly because it is efficient with symbols;
+for example, it uses only one sum sign. But more importantly I chose it
+because it captures what I would want to say in words: ``You sum, over
+all ways of choosing an intersection of the sets $A_i$, the size of the
+intersection times a sign factor that is -1 if you are intersecting
+an even number of sets and 1 if you are intersecting an odd number." 
+If I were writing my solution out in words, I would probably assume
+that nobody would think about the possibility of an intersection of the
+empty set of the
+$A_i$s, but I had to put the $S\not=\emptyset$ in my formula because
+otherwise the formula would have had us consider the possibility that
+$S$ was empty.}
+
+\iteme  A group of $n$ students goes to a restaurant carrying backpacks. 
+The manager invites everyone to check their backpack at the check desk and
+everyone does.  While they are eating, a child playing in the check room
+randomly moves around the claim check stubs on the backpacks.  What is
+the probability that, at the end of the meal, at least one student
+receives his or her own backpack?  In other words, in what fraction of
+the total number of ways to pass the backpacks back does at least one
+student get his or her own backpack back?  (Hint: For each student, how
+big is the set of backpack distributions in which that student gets the
+correct backpack? It might be a good idea to
+first consider cases with $n=3$, 4, and 5.) 
+\label{hatcheck}  What is the probability that no student gets his or her
+own backpack?
+\solution{First we compute the number of ways to pass out the
+backpacks so that at least one student gets the correct one, then we
+divide by $n!$ the total number of ways to pass out the backpacks to
+get the probability that at least one student gets the correct one. 
+If we let $A_i$ be the set of backpack distributions in which student
+$i$ gets the correct backpack, then the number we want to compute is
+the size of the union of the sets $A_i$.  For this purpose we need to
+know, for every subset $S\subseteq [n]$ the size of $\cap_{i\in S}A_i$.
+That is, we need to know the number of ways to pass out the backpacks
+so that student $i$ gets the correct one for each $i$ in $S$.  It
+won't matter whether or not other students get the correct backpacks,
+so we can just assume that for each $i\in S$, student $i$ gets the
+correct backpack and then hand out the remaining $n-|S|$ backpacks to
+the remaining $n-|S|$ students in $(n-|S|)!$ ways.  Thus $(n-|S|)!$ is
+$|\cap_{i:i\in S}A_i|$.  Using our formula from Problem
+\ref{inclusion-exclusionunion} we get
+\begin{eqnarray*}\left|\bigcup_{i=1}^n A_i \right| &=& \sum_{S:
+S\subseteq [n], S\not=\emptyset}
+(-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|\\ &=&\sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\\ &=&
+\sum_{s=1}^n {n\choose
+s}(-1)^{s-1}(n-s)!\\&=&\sum_{s=1}^n
+(-1)^{s-1}{n!\over s!}\end{eqnarray*} Dividing this by
+$n!$, the total number of ways to pass back the backpacks, we get
+$\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}$ for the probability
+that at least one student gets the correct backpack.  Subtracting from
+1 to get the probability that no student gets the correct backpack
+gives us $$1- \sum_{s=1}^n {(-1)^{s-1}\over
+s!}=\sum_{s=0}^n{(-1)^s\over s!}.$$}
+\itemi As the number of students becomes large, what does the probability
+that no student gets the correct backpack approach? 
+\solution{From calculus, we know that $e^x=\sum_{j=0}^\infty {x^j\over
+j!}$.  Substituting $x=-1$ gives us $e^{-1}=\sum_{j=0}^\infty
+{(-1)^j\over j!}$ which is the limit as $n$ becomes infinite of the
+probability in the solution to Problem \ref{hatcheck}.  Thus the
+probability approaches $1/e$.}
+  \ep
+The formula you have given in Problem \ref{inclusion-exclusionunion} is
+often called {\bf the principle of inclusion and
+exclusion}\index{inclusion and exclusion principle
+!for unions of sets}\index{principle of inclusion and exclusion!for
+unions of sets} for unions of sets.  The reason is the pattern in which
+the formula first adds (includes) all the sizes of the sets, then
+subtracts (excludes) all the sizes of the intersections of two sets, then
+adds (includes) all the sizes of the intersections of three sets, and so
+on.  Notice that we haven't yet proved the principle.  We will first
+describe the principle in an apparently more general situation that
+doesn't require us to translate each application into the language of
+sets.  While this new version of the principle might seem more general
+than the principle for unions of sets; it is equivalent.  However once one
+understands the notation used to express it, it is more convenient to
+apply.
+
+Problem \ref{hatcheck} is ``classically'' called the {\em hatcheck
+problem}\index{hatcheck problem}; the name comes from substituting hats
+for backpacks.  If is also sometimes called the {\em derangement
+problem}\index{derangement problem}.  A {\em
+derangement}\index{derangement} of an
+$n$-element set is a permutation of that set (thought of as a bijection)
+that maps no element of the set to itself.  One can think of a way of
+handing back the backpacks as a permutation $f$ of the students: $f(i)$ is
+the owner of the backpack that student $i$ receives.  Then a derangement
+is a way to pass back the backpacks so that no student gets his or her
+own.
+
+\subsection{The hatcheck problem restated}  The last question in Problem
+\ref{hatcheck} requires that we compute the number of ways to hand back
+the backpacks so that nobody gets his or her own backpack.  We can think
+of the set of ways to hand back the backpacks so that student $i$ gets
+the correct one as the set of permutations of the backpacks with the
+property that student $i$ gets his or her own backpack.  Since there are
+$n-1$ other students and they can receive any of the remaining $n-1$
+backpacks in $(n-1)$ ways, the number of permutations with the property
+that student $i$ gets the correct backpack is $(n-1)!$. How many
+permutations are there with the properties that student $i$ gets the
+correct backpack {\em and} student $j$ gets the correct backpack?  (Let's
+call these properties $i$ and $j$ for short.)  Since there are $n-2$
+remaining students and $n-2$ remaining backpacks, the number of
+permutations with properties $i$ and $j$ is $(n-2)!$.  Similarly, the
+number of permutations with properties $i_1,i_2,\ldots,i_k$ is $(n-k)!$. 
+Thus when we compute the size of the union of the sets
+$$S_i=\{f: f\mbox{ is a permutation with property }i\},$$ we are
+computing the number of ways to pass back the backpacks so that at least
+one student gets the correct backpack.  This answers the first question
+in Problem \ref{hatcheck}.  The last question in Problem \ref{hatcheck}
+is asking us for the number of ways to pass back the backpacks that have
+{\em none} of the properties.  To say this in a different way, the
+question is asking us to compute the number of ways of passing back the
+backpacks that have exactly the {\em empty set}, $\emptyset$, of
+properties.  
+
+\subsection{Basic counting functions: $N_{\mbox{at least}}$ and
+$N_{\mbox{exactly}}$}
+Notice that the quantities that we were able to count easily were the
+number of ways to pass back the backpacks so that we satisfy a certain
+subset
+$K= \{i_1,i_2,\ldots,i_k\}$ of our properties.  In fact, among the $(n-k)$
+ways to pass back the backpacks with this particular set $K$ of
+properties is the permutation that gives each student the correct
+backpack, and has not just the properties in $K$, but the whole set of
+properties.  Similarly, for any set $M$ of properties with $K\subseteq
+M$, the permutations that have all the properties in $M$ are among the
+$(n-k)!$ permutations that have the properties in the set $K$.  Thus we
+can think of $(n-k)!$ as counting the number of permutations that have
+{\em at least} the properties in $K$.  In particular, $n!$ is the number
+of ways to pass back the backpacks that have at least the empty set of
+properties.  We thus write $N_{\mbox{at least}}(\emptyset)=n!$, or
+$N_{\mbox{a}}(\emptyset)=n!$ for short.  For a $k$-element subset $K$ of
+the properties, we write $N_{\mbox{at least}}(K) =(n-k)!$ or
+$N_{\mbox{a}}(K) =(n-k)!$ for short.
+
+The question we are trying to answer is ``How many of the
+distributions of backpacks have exactly the empty set of properties?" 
+For this purpose we introduce one more piece of notation.  We use
+$N_{\mbox{exactly}}(\emptyset)$ or $N_{\mbox{e}}(\emptyset)$ to stand for
+the number of backpack distributions with exactly the empty set of
+properties, and for any set $K$ of properties we use
+$N_{\mbox{exactly}}(K)$ or $N_{\mbox{e}}(K)$ to stand for the number of
+backpack distributions with exactly the set $K$ of properties.  Thus
+$N_{\mbox{e}}(K)$ is the number of distributions in which the students
+represented by the set $K$ of properties get the correct backpacks back
+and no other students do.  
+
+\subsection{The principle of inclusion and exclusion for properties}
+For the principle of inclusion and exclusion for properties, suppose we
+have a set of arrangements (like backpack distributions) and a set $P$ of
+properties (like student $i$ gets the correct backpack) that the
+arrangements might or might not have.  We suppose that we know (or can
+easily compute) the numbers $N_{\mbox{a}}(K)$ for every subset $K$ of
+$P$.  We are most interested in computing $N_{\mbox{e}}(\emptyset)$, the
+number of arrangements with none of the properties, but it will turn out
+that with no more work we can compute $N_{\mbox{e}}(K)$ for every subset
+$K$ of $P$.  Based on our answer to Problem \ref{hatcheck} we expect that
+\begin{equation}
+N_{\mbox{e}}(\emptyset) = \sum_{S: S\subseteq P} (-1)^{|S|}N_{\mbox{a}}(S)
+\label{incexempty}\end{equation}
+and it is a natural guess that, for every subset $K$ of $S$,
+\begin{equation}
+N_{\mbox{e}}(K) = \sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}N_{\mbox{a}}(S).\label{incexnonempty}\end{equation}
+Equations  \ref{incexempty} and \ref{incexnonempty} are called {\bf the
+principle of inclusion and exclusion for properties}.\index{inclusion and
+exclusion principle!for properties}\index{principle of inclusion and
+exclusion!for properties}
+\bp
+\itemm Verify that the formula for the number of ways to pass back the
+backpacks in Problem
+\ref{hatcheck} so that nobody gets the correct backpack has the form of
+Equation
+\ref{incexempty}.
+\solution{Suppose we take property $i$ to be the property that student $i$
+gets the correct backpack.  In our solution to Problem \ref{hatcheck} we
+thought of $S$ as a subset of $[n]$.  Since we are numbering our
+properties from $1$ to $n$, each set $S$ determines a corresponding set
+$S'$ of properties: those properties numbered by the elements of $S$.  We
+will use $P$ to stand for the set of all properties, that is property 1
+through property $n$. The number of ways to pass back the hats so that
+nobody gets the correct hat is $n!$ minus the number of ways to pass back
+the hats so that somebody does get the correct hat back.  From our
+solution to Problem
+\ref{hatcheck}, we see that one way to express this is as
+   \begin{eqnarray*}
+n!-\sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!&=&
+n!+\sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!\\&=&
+\sum_{S:
+S\subseteq [n]}(-1)^{|S|} (n-|S|)!\\
+&=&\sum_{S:
+S\subseteq [n]}(-1)^{|S|} N_{\mbox{a}}(S')\\&=&
+\sum_{S':
+S'\subseteq P}(-1)^{|S|} N_{\mbox{a}}(S')
+  \end{eqnarray*}
+because $N_{\mbox{a}}(S')$ is the number of ways to pass back the backpacks
+so that at least the students in $S$ get the correct backpacks, which is
+the same as the size of $\bigcap_{i:i\in S} A_i$, and which we computed to
+be $(n-|S|)!$.}
+
+\iteme Find a way to express $N_{\mbox{a}}(S)$ in terms of
+$N_{\mbox{e}}(J)$ for subsets $J$ of $P$ containing $S$.  In particular,
+what is the equation that expresses $N_{\mbox{a}}(\emptyset)$ in terms of
+$N_{\mbox{e}}(J)$ for subsets $J$ of $P$?\label{incexsystemeq}
+\solution{$N_{\mbox{a}}(S) = \sum_{J: S\subseteq
+J\subseteq P}N_{\mbox{e}}(J)$.  In particular, we get by substitution  that
+$N_{\mbox{a}}(\emptyset)=\sum_{J:J\subseteq P} N_{\mbox{e}}(J)$.}
+
+\iteme Substitute the formula for $N_{\mbox{a}}$ from Problem
+\ref{incexsystemeq} into the right hand sides of the formulas of Equations
+\ref{incexempty} and
+\ref{incexnonempty} and simplify what you get to show that for Equations
+\ref{incexempty} and \ref{incexnonempty} the right-hand sides are indeed
+equal to the left-hand sides.  This will prove that those equations are
+true. (Hint:  You will get a double sum.  If you can figure out how to
+reverse the order of the two summations, the binomial theorem may help you
+simplify the formulas you get.)
+\solution{Since Equation \ref{incexempty} is a special case of Equation
+\ref{incexnonempty}, we will just substitute the formula from Problem
+\ref{incexsystemeq} into the right-hand side of Equation
+\ref{incexnonempty}.  This gives us
+\begin{eqnarray*}\hspace*{-.25 in}\sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}N_{\mbox{a}}(S)&=&\sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}\sum_{J: S\subseteq
+J\subseteq P}N_{\mbox{e}}(J)\\
+&=&\sum_{S: K\subseteq S\subseteq P}
+\sum_{J: S\subseteq
+J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e}}(J)\\
+&=&\sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+(-1)^{|S|-|K|}N_{\mbox{e}}(J)\\
+&=&\sum_{J:K\subseteq J\subseteq P}N_{\mbox{e}}(J)\sum_{S:K\subseteq
+S\subseteq J} (-1)^{|S|-|K|}\\
+&=&\sum_{J:K\subseteq J\subseteq P}N_{\mbox{e}}(J)\sum_{s=|K|}^{|J|}
+{|J|-|K|
+\choose s-|K|}(-1)^{s-|K|}\\
+&=&\sum_{J:K\subseteq J\subseteq P}N_{\mbox{e}}(J)\sum_{i=0}^{|J|-|K|}
+{|J|-|K|
+\choose i}(-1)^{i}\\
+&=&\sum_{J:K\subseteq J\subseteq
+P}N_{\mbox{e}}(J)(1-1)^{|J|-|K|}\\&=&N_{\mbox{e}}(K).
+\end{eqnarray*}
+In the fourth-to-last line of our equations, we used the fact that the
+number of subsets $S$ of $J$ that contain $K$ is the number of ways to
+choose the elements of the set $S-K$ of elements in $S$ but not $K$ from
+the elements of $J-K$, the set of elements of $J$ that are not in $K$.  In
+the second-to-last line of the equations, we recognized that the second
+sum in the third-to-last line is the kind of sum we would get by applying
+the binomial theorem to something of the form $(x+y)^{|J|-|K|}$ for a
+suitable $x$ and $y$, and then saw that $x=1$ and $y=-1$ would give us
+exactly the second sum in the third-to-last line.  In going from the
+second-to-last line to the last line we used the facts that $0^n=o$ if $n>0$
+and $0^0=1$.  This proves that Equation
+\ref{incexnonempty} is true for all
+$K$, and in particular when
+$K=\emptyset$, which also proves Equation \ref{incexempty}.  We have just
+proved the Principle of inclusion and exclusion.}
+
+\item In how many ways may we distribute $k$ identical apples to $n$
+children so that no child gets more than three apples?
+\solution{Let property $i$ be ``Child $i$ gets four or more apples."  Then
+we are asking for the number of ways to pass out the apples that have none
+of the properties, so we are asking for $N_{\mbox{e}}(\emptyset)$.  From
+Equation \ref{incexempty} we see that to find this number we need to know
+$N_{\mbox{a}}(S)$ for every subset $S$ of our set of properties.  But if
+$S$ has size $s$, then having the properties in $S$ means that all the
+children in a particular set of size $s$ will get four or more apples.  We
+already know how to pass out the apples so that the children in a
+particular set
+$\hat S$ of children get at least four apples:  we give everyone in $\hat
+S$ four apples, and then pass out the remaining $k-4s$ apples to the
+children in ${k-4s+n-1\choose k-4s}= {k-4s+n-1\choose n-1}$ ways. This
+counts the number of ways to give at least four apples to every child in
+$\hat S$, and maybe give four apples to some other children as well. Thus
+$N_{\mbox{a}}(S) = {k-4|S|+n-1\choose n-1}$.  Applying Equation
+\ref{incexempty} gives us
+\begin{eqnarray*} N_{\mbox{e}}(\emptyset)&=&\sum_{S:S\subseteq
+P}(-1)^{|S|}N_{\mbox{a}}(S)\\
+&=&\sum_{s=0}^k {k\choose s}(-1)^s {k-4s+n-1\choose n-1}\\
+&=&\sum_{s=0}^k (-1)^s{k\choose s}{k-4s+n-1\choose n-1}
+\end{eqnarray*}}
+
+\itemi A group of $n$ married couples comes to a group discussion session
+where they all sit around a round table.  In how many ways can they sit
+so that no person is next to his or her spouse? 
+(Note that two people of the same sex can sit next to
+each other.)\label{relaxedmenage}
+\solution{Let Property $i$ be that couple $i$ sits together.  We are
+interested in the number of seating arrangements that have none of the
+properties.  Thus for a set $S$ of properties, we need to compute
+$N_{\mbox{a}}(S)$.  If we let each couple described by $S$ sit together,
+we will seat $|S|$ couples and $2n-2|S|$ individuals around the table.  We
+can do this in $2^{|S|}(|S| + 2n-2 |S|-1)!$ ways, because once we chose a
+place for a couple (i.e. two adjacent seats) there are two ways the couple
+can sit down.  Thus $N_{\mbox{a}}(S) =2^{|S|}(2n-|S|-1)!$. 
+Substituting this into Equation \ref{incexempty} with $P$ as the set of
+all properties gives us
+\begin{eqnarray*}N_{\mbox{e}}(\emptyset) &=& \sum_{S:S\subseteq P}
+(-1)^{|S|} N_{\mbox{a}}(S)\\
+&=&\sum_{s=0}^n(-1)^s{n\choose s}2^{s}(2n- s-1)!
+\end{eqnarray*}}
+
+\itemih A group of $n$ married couples comes to a group
+discussion session where they all sit around a round table.  In how many
+ways can they sit so that no person is next to his or her spouse or a
+person of the same sex?  This problem is called the {\em menage
+problem}.\index{menage problem}  (Hint:  Reason somewhat as you did in Problem
+\ref{relaxedmenage}, noting that if the set of couples who do sit
+side-by-side is nonempty, then the sex of the person at each place at the
+table is determined once we seat one couple in that set.)
+\solution{We are going to consider arrangements of the couples alternating
+sex around the table.  Property $i$ of an arrangement is that couple $i$
+sits together.  We are interested in the number of arrangements that have
+exactly none of the properties.  Thus for each subset $S$ of the
+properties, we consider the number of arrangements that has at least the
+set $S$ of properties.  We distinguish the case that $S$ is empty from the
+others.  $N_{\mbox{a}}(\emptyset)$ is just the number of ways to seat $2n$
+couples around the table, alternating sex, but with no other
+restrictions.  We can arrange one of the sexes in a circle in $n-1!$ ways
+and then assign the members of the opposite sex to the places between them
+in  $n!$ ways, so $N_{\mbox{a}}(\emptyset) = (n-1)!n!$. (Another way to
+get this result is to let one person sit down.  This determines the sex
+of the person at each place of the table, so there are $(n-1)!$ ways to
+assign the people of the same sex of the first person, and $n!$ ways to
+assign the people of the opposite.  It appears that there are $2n$
+choices for where the first person sits, but we can break the seating
+charts up into blocks of $2n$ seating charts, each of which gives the
+same circular arrangement.  Thus there are $(n-1)!n!$ inequivalent ways
+to seat the people with at least the empty set of properties.)
+
+   Now if
+$S$ is nonempty, and has $s$ members, we seat one of the couples that must
+sit together (say the first in alphabetical order), and this determines the
+sex of the person that must sit at each other place.  There are $2n$ pairs
+of adjacent seats where we can seat that couple and two ways they can sit
+in the pair of adjacent seats that we choose.  Then we have $s-1$ couples,
+$n-s$ men and $n-s$ women to seat in the remaining places.  First we
+arrange the $s-1$ couples and $2n-2s$ identical empty chairs in places at
+the table in $(2n-2s+s-1)!/(2n-2s)!=(2n-s-1)!/(2n-2s)!$ ways.  Each couple
+can sit in only one way in the places they have chosen, because the sex of
+the person in a given place has been determined by how the first couple
+sits.  The sex of the person in each of the remaining chairs has been
+determined, so we assign the men to their seats in $(n-s)!$ ways and we
+assign the women to their seats in $(n-s)!$ ways.  Thus we have
+$2\cdot2n(2n-s-1)!(n-s)!^2/(2n-2s)!$ ways to place the people.  But we can
+partition the placements into blocks of $2n$ equivalent placements,
+because shifting everyone the same number of places to the right or left
+gives an equivalent placement.  Thus the number of inequivalent seating
+arrangements is
+   \begin{eqnarray*}
+{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}&=&{2(2n-s-1)!(n-s)!^2\over
+2(n-s)(2n-2s-1)!}\\&=&{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+    \end{eqnarray*}
+ Notice that
+if we take
+$s=0$, this formula reduces to $(n-1)!n!$.  Thus for all sets $S$
+$$N_{\mbox{a}}(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.$$
+Then from Equation \ref{incexempty}
+\begin{eqnarray*}
+N_{\mbox{e}} &=& \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+\over(2n-2|S|-1)!}\\
+&=&\sum_{s=0}^n(-1)^s{n\choose s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
+&=&\sum_{s=0}^n(-1)^s{n!\over
+s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
+&=&\sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}\\
+&=&\sum_{s=0}^n(-1)^s{2n-s-1\choose s}n!(n-s-1)!
+\end{eqnarray*} is the number of ways to seat the people, alternating sex, so
+that no couple sits together.}
+
+\ep
+
+\subsection{Counting onto functions}
+\bp
+\iteme Given a function $f$ from the $k$-element set $K$ to the
+$n$-element set $[n]$, we say $f$ has property $i$ if $f(x)\not= i$ for
+every $x$ in
+$K$.  How many of these properties does an onto function have?  What is
+the number of functions from a $k$-element set onto an $n$-element
+set?\index{onto functions!number of}\index{surjections!number
+ of}\index{functions!onto!number of}\label{numontofun}
+\solution{An onto function has none of these properties.  Thus, using this set
+$P$ of properties, the number of onto functions is
+$N_{\mbox{e}}(\emptyset)$.  For a set $S$ of these properties,
+$N_{\mbox{a}}(S)$ is the number of functions from $K$ to $[n]-S'$, where $S'$
+is the set of all $i$ such that property $i$ is in $S$.  This number of
+functions is $(n-|S|)^k$.  Thus by Equation
+\ref{incexempty} 
+    \begin{eqnarray*}
+N_{\mbox{e}}(\emptyset) &=& \sum_{S:s\subseteq P} (-1)^{|S|}
+(n-|S|)^k\\
+&=&\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k
+   \end{eqnarray*}
+is the number of functions from $K$ onto $[n]$.}
+
+\itemi  Find a formula for the Stirling number (of the second kind)
+$S(k,n)$.\index{Stirling Number!second kind} 
+\solution{Since the number of functions from $[k]$ onto $[n]$ is $S(k,n)n!$,
+we get from the solution to Problem \ref{numontofun}
+$$S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k.$$}
+\ep
+
+\subsection{The chromatic polynomial of a graph}
+We defined a graph to consist of set $V$ of elements called
+vertices and a set $E$ of elements called edges such that each edge joins
+two vertices.  A {\em coloring}\index{coloring of a
+graph}\index{graph!coloring of} of a graph by the elements of a set
+$C$ (of colors) is an assignment of an element of $C$ to each vertex of
+the graph; that is, a function from the vertex set $V$ of the graph to
+$C$.  A coloring is called {\em proper}\index{coloring of a
+graph!proper}\index{graph!coloring of!proper}\index{proper coloring of 
+a graph} if for each edge joining two distinct vertices\footnote{If a
+graph had a loop connecting a vertex to itself, that loop would connect a
+vertex to a vertex of the same color.  It is because of this that we only
+consider edges with two distinct vertices in our definition.}, the two
+vertices it joins have different colors. You may have heard of the famous
+four color theorem of graph theory that says if a graph may be drawn in
+the plane so that no two edges cross (though they may touch at a vertex),
+then the graph has a proper coloring with four colors.  Here we are
+interested in a different, though related, problem: namely, in how many
+ways may we properly color a graph (regardless of whether it can be drawn
+in the plane or not) using
+$k$ or fewer colors?  When we studied trees, we restricted ourselves to
+connected graphs. (Recall that a graph is connected if, for each pair of
+vertices, there is a walk between them.)  Here, disconnected graphs will
+also be important to us.  Given a graph which might or might not be
+connected, we partition its vertices into blocks called {\em connected
+components}\index{connected component of a graph}\index{graph!connected
+component of} as follows.  For each vertex
+$v$ we put all vertices connected to it by a walk into a block together. 
+Clearly each vertex is in at least one block, because vertex
+$v$ is connected to vertex $v$ by the trivial walk consisting of the
+single vertex $v$ and no edges.  To have a partition, each vertex must be
+in one and only one block.  To prove that we have defined a
+partition, suppose that vertex
+$v$ is in the blocks
+$B_1$ and $B_2$.  Then $B_1$ is the set of all
+vertices connected by walks to some vertex $v_1$ and $B_2$ is the set of
+all vertices connected by walks to some vertex $v_2$.  
+\bp
+\itemes (Relevant in Appendix \ref{expogenfun} as well as this section.) Show
+that
+$B_1=B_2$.\label{conncomp}
+\solution{Since $v$ is in $B_1$, there is a walk from $v_1$ to $v$.  Since
+there is a walk from every  vertex in $B_1$ to $v_1$, there is a walk from
+every vertex in in $B_1$ to $v$.  But there is a walk from $v$ to $v_2$ since
+$v\in B_2$.  Thus there is a walk from every vertex in $B_1$ to $v_2$.  Then
+by our description of $B_2$ just before the problem, every vertex in $B_1$ is
+also in $B_2$.  A similar argument shows that every vertex in $B_2$ is also in
+$B_1$.  Thus $B_1=B_2$.}
+\ep
+Since $B_1=B_2$, these two sets are the same block, and thus all blocks
+containing $v$ are identical, so $v$ is in only one block.  Thus we have
+a partition of the vertex set, and the blocks of the partition are the
+connected components of the graph.  Notice that the connected components
+depend on the edge set of the graph.  If we have a graph on the vertex
+set $V$ with edge set
+$E$ and another graph on the vertex set
+$V$ with edge set $E'$, then these two graphs could have different
+connected components.  It is traditional to use the Greek letter
+$\gamma$ (gamma)\footnote{The greek  letter gamma is pronounced gam-uh,
+where gam rhymes with ham.} to stand for the number of connected
+components of a graph; in particular,  $\gamma(V,E)$ stands for the
+number of connected components of the graph with vertex set $V$ and edge
+set $E$.  We are going to show how the principle of inclusion and
+exclusion may be used to compute the number of ways to properly color a
+graph using colors from a set $C$ of $c$ colors.  
+\bp  
+\itemes Suppose  we have a graph G with vertex set V and edge set $E$. 
+Suppose $F$ is a subset of $E$.  Suppose we have a set $C$ of $c$ colors
+with which to color the vertices.
+\begin{enumerate}
+  \item In terms of $\gamma(V,F)$, in how many
+ways may we color the vertices of $G$ so that each edge in $F$ connects
+two vertices of the same color?
+\solution{For each edge in $F$ to connect two vertices of the same color, we
+must have all the vertices in a connected component of the graph with vertex
+set $V$ and edge set $F$ colored the same color.  Thus the number of such
+colorings is
+$c^{\gamma(V,F)}$.}
+  \item Given a coloring of $G$, for each edge $e$ in $E$, let us consider
+the property that the endpoints of $e$ are colored the same color.  Let us
+call this property ``property $e$."  In this way each set of properties
+can be thought of as a subset of $E$.  What set of properties does a
+proper coloring have?  
+\solution{A proper coloring has none of the properties.}
+\item Find a formula (which may involve summing over all subsets $F$ of
+the edge set of the graph and using the number $\gamma(V,F)$ of connected
+components of the graph with vertex set $V$ and edge set $F$) for the
+number of proper colorings of
+$G$ using colors in the set $C$.\label{chromaticpoly}
+\solution{$N_{\mbox{e}}(\emptyset)=\sum_{F:F\subseteq E}
+ (-1)^{|F|}c^{\gamma(V,F)}.$}
+\end{enumerate}
+
+\ep
+
+The formula you found in Problem \ref{chromaticpoly} is a formula that
+involves powers of $c$, and so it is a polynomial function of $c$. Thus
+it is called the ``chromatic polynomial\index{graph!chromatic
+polynomial of}\index{chromatic polynomial of a graph} of the graph
+$G$.    Since we like to think about polynomials as having a
+variable $x$ and we like to think of $c$ as standing for some constant,
+people often use $x$ as the notation for the number of colors we are
+using to color $G$. Frequently people will use
+$\Chi_G(x)$ to stand for the number of way to color
+$G$ with $x$ colors, and call $\Chi_G(x)$ the {\em chromatic polynomial} of
+$G$.  
+
+\bp
+
+\itemi In Chapter 2 we introduced the deletion-contraction
+recurrence\index{deletion-contraction recurrence} for counting spanning
+trees of a graph.  Figure out how the chromatic polynomial of a graph is
+related to those resulting from deletion of an edge $e$ and from
+contraction of that same edge $e$.  Try to find a recurrence like the one
+for counting spanning trees that expresses the chromatic polynomial of a
+graph in terms of the chromatic polynomials of $G-e$ and $G/e$ for an
+arbitrary edge $e$.  Use this recurrence to give another proof that the
+number of ways to color a graph with $x$ colors is a polynomial function
+of $x$.  \label{chrompolydel/cont}
+\solution{The number of colorings of $G-e$ is equal to the number of proper
+colorings of $G$ plus the number of colorings of $G$ that are proper except
+for giving both ends of $e$ the same color.  But the number of colorings of
+$G$ that are proper except for giving both ends of $e$ the same color is the
+number of proper colorings of $G/e$.  Therefore $\Chi_{G-e}(x) =\Chi_G(x)
+-\Chi_{G/e}(x)$.  This gives us $\chi_G(x) = \Chi_{G-e}(x)
+-\Chi_{G/e}(x)$. We can use this to prove inductively that $\Chi_G(x)$ is a
+polynomial in $x$.  If $G$ has one vertex, then the number of ways to color
+$G$ properly with $x$ colors is $x$.  This is a polynomial in $x$.  Now
+suppose inductively that $G$ has more than one vertex and whenever a graph $H$
+has fewer vertices than
+$G$, the function $\Chi_H(x)$ is a polynomial function in $x$.  Then
+$\Chi_G(x)= \chi_{G-e}(x)-\Chi_{G/e}(x)$, is a difference of of two polynomial
+functions in $x$, so it is a polynomial function in $x$.  Therefore by the
+principle of mathematical induction, for all graphs $G$ on a finite vertex
+set, the number of ways to properly color $G$ in $x$ colors is a polynomial in
+$x$.}
+
+
+
+\item Use the deletion-contraction recurrence to compute the
+chromatic polynomial of the graph in Figure \ref{del-cont}.  (You can
+simplify your computations by thinking about the effect on the chromatic
+polynomial of deleting an edge that is a loop, or deleting one of several
+edges between the same two vertices.)
+\solution{If a graph has a loop it has no proper colorings.  The graph in
+Figure \ref{del-cont} has no loops and no multiple edges between two
+vertices.  The only way we could get a loop is by contracting one of several
+multiple edges between two vertices, and the resulting graph would have no
+contribution to the chromatic polynomial of the original graph.  Thus whenever
+a contraction gives us a graph with multiple edges between two vertices, we
+can replace the multiple edges by one edge and go on with our computation from
+there.  The graphs we get when we delete and contract the edges $\{1,2\}$ and
+$\{2,3\}$ are $(G-\{1,2\})-\{2,3\}$, $(G-\{1,2\})/\{2,3\}$,
+$(G-\{2,3\})/\{1,2\}$,  and $(G/\{2,3\})/\{1,2\}$.  These are shown in the
+following picture.
+\begin{center}\mbox{\psfig{figure=spantreeexerciseresult.eps%,height=1.0in
+}}\end{center}
+The chromatic polynomial of a triangle is $x(x-1)(x-2)$ because
+for one vertex we have $x$ colors, for a second we have $x-1$, and for the
+third vertex, because it is adjacent to both of the other vertices,  we have
+$x-2$ choices of colors. For a vertex of degree 1 there are $x-1$ choices of
+colors, those colors not used on the one vertex it is adjacent to.  As we
+mentioned, the extra edges do not change the chromatic polynomial, so we have
+that the chromatic polynomial of $(G-\{1,2\})-\{2,3\}$ is $x(x-1)^3(x-2)$, the
+chromatic polynomial of $(G-\{1,2\})/\{2,3\}$ is $x(x-1)^2(x-2)$, as is that of
+$(G-\{2,3\})/\{1,2\}$, and the chromatic polynomial of $(G/\{2,3\})/\{1,2\}$ is
+$(x-1)(x-2)(x-3)$.  Using the deletion-contraction recurrence, we get that
+\begin{eqnarray*}\Chi_G(x) &=& \Chi_{G-\{1,2\}}(x) - \Chi_{G/\{1,2\}}(x)\\&=&
+\Chi_{G-\{1,2\}-\{2,3\}}(x)-\Chi_{(G-\{1,2\})/\{2,3\}}(x)-
+\Chi_{(G/\{1,2\})-\{2,3\}}(x)\\ &+& \Chi_{G/\{1,2\}/\{2,3\}}(x)\\
+&=& x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)\\
+&=& x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)\\
+&=& x^3(x-1)(x-2)
+\end{eqnarray*}
+for the chromatic polynomial of $G$.}
+
+
+
+\begin{figure}[htb]\caption{A
+graph.}\label{del-cont}\vglue-1in
+\begin{center}\mbox{\psfig{figure=spantreeexercise.eps%,height=1.0in
+}}\end{center}\end{figure}
+
+\itemi In how many ways may you properly color the vertices of a path on
+$n$ vertices with
+$x$ colors? Describe any dependence of the chromatic polynomial of a path
+on the number of vertices. In how many ways may you properly color the
+vertices of a cycle on $n$ vertices with
+$x$ colors?  Describe any dependence of the chromatic polynomial of a
+cycle on the number of vertices. 
+\solution{To color the vertices of a path, start at one end.  There are $x$
+colors for that vertex, and $x-1$ colors for each of the next $n-1$, since
+each of them must be different from the preceding one.  Thus the chromatic
+polynomial of a path on $n$ vertices is $x(x-1)^{n-1}$.  The dependence on the
+number of vertices appears in the exponent on $x-1$.  If we use $C_n$ to stand
+for a path on $n$ vertices and $P_n$ to stand for a path on $n$ vertices, then
+by the deletion-contraction recurrence, we may write 
+\begin{eqnarray*}\hspace*{-.4 in}\Chi_{C_n}(x) &=&
+\Chi_{P_n}(x)-\Chi_{C_{n-1}}(x)\\
+&=&\Chi_{P_n}(x)-\Chi_{P_{n-1}}(x)+\Chi_{C_{n-2}}(x)\\&=&
+\Chi_{P_n}(x)-\Chi_{P_{n-1}}(x)+\Chi_{P_{n-3}}(x)-
+\cdots+(-1)^{n-3}(\Chi_{P_3}(x)-\Chi_{C_2}(x))\\
+&=&x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots\\
+&+&(-1)^{n-3}[x(x-1)^2-x(x-1)]\\
+&=&x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}\\
+&=&x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i\\
+&=&x(x-1)(-1)^{n-2}{1-(1-x)^{n-1}\over 1-(1-x)}\\
+&=&(x-1)[(x-1)^{n-1}+(-1)^n].\end{eqnarray*} Here the dependence on $n$ is
+interesting; effectively, we are taking $(x-1)$ times the result of dropping
+the constant term from $(x-1)^{n-1}$.}
+
+\item In how many ways may you properly color the vertices of a tree on
+$n$ vertices with
+$x$ colors?
+\solution{Color an arbitrary vertex; you have $x$ choices for the color of
+that vertex. No two vertices adjacent to it are adjacent (otherwise we'd have
+a cycle), so for for each of them you have $x-1$ choices of colors.  No two
+vertices adjacent to colored vertices  are adjacent to each other, nor is
+one of them adjacent to two colored vertices (in either case you'd have a
+cycle), so for each of them you'd have $x-1$ colors.  You can continue this
+argument until all vertices are colored, so you have $x(x-1)^{n-1}$ ways to
+color the vertices.
+
+You can also prove by induction that the chromatic polynomial of a tree is
+$x(x-1)^{n-1}$.  This is clearly true if there is one vertex.  Otherwise,
+choose a vertex of degree 1 in an $n$-vertex tree and remove it. You may
+inductively assume that the chromatic polynomial of the remaining tree is
+$x(x-1)^{n-2}$. Now there are $x-1$ choices for the color of the vertex you
+removed since it has degree 1, and so the chromatic polynomial of the tree is
+$x(x-1)^{n-1}$.  There is also an inductive argument in which you delete and
+contract an arbitrary edge.}
+
+\itemi What do you observe about the signs of the coefficients of the
+chromatic polynomial of the graph in Figure \ref{del-cont}?  What about
+the signs of the coefficients of the chromatic polynomial of a path?  Of
+a cycle?  Of a tree?  Make a conjecture about the signs of the
+coefficients of a chromatic polynomial and prove it.
+\solution{not all powers of $x$ appear,  but the signs alternate as the power
+of
+$x$ increases; that is, the sign of
+$x^i$ is opposite that of $x^{i+1}$. More precisely, if $c_i$ is the
+coefficient of $x^i$, then $(-1)^{n-i}c_i\ge 0$. To prove this, note it is
+trivially true for a graph with no edges.  Choose an edge $e$ of
+$G$.  Then
+$\Chi_G(x) =
+\Chi_{G-e}(x)-\Chi_{G/e}(x)$.  In $G-e$, we may assume inductively that
+$(-1)^{n-i}c'_i\ge0$ and in $G-/e$ we can assume inductively that
+$c''_i(-1)^{n-1-i}\ge0$, where we use $c'_i$ and $c''_i$ as the coefficient of
+$x^i$ in $\Chi_{G-e}(x)$ and $\Chi_{G/e}(x)$, respectively.  Then $c_i=c'_i
+-c''_i$, and
+$$c_i(-1)^{n-i}=c'_i(-1)^{n-i}-c''_i(-1)^{n-i}=c'_i(-1)^{n-i}+c''_i(-1)^{n-1-i}
+\ge0.$$ Therefore by the principle of mathematical induction, $c_i(-1)^i\ge0$
+for all finite graphs.}
+\ep 
+
+
+\section{The Idea of Generating Functions} Suppose you are going to choose
+three pieces of fruit from among apples, pears and bananas for a snack. 
+We can symbolically represent all your choices as
+$$\ap\ap\ap+\pe\pe\pe+\ba\ba\ba+\ap\ap\pe+\ap\ap\ba+\ap\pe\pe +\pe\pe\ba
++\ap\ba\ba+\pe\ba\ba+\ap\pe\ba.$$
+Here we are using a picture of a piece of fruit to stand for taking a
+piece of that fruit.  Thus $\ap$ stands for taking an apple, $\ap\pe$ for
+taking an apple and a pear, and
+$\ap\ap$ for taking two apples.  
+You can think of the plus sign as standing for the ``exclusive or," that
+is,
+$\ap+\ba$ would stand for ``I take an apple or a banana but not both."  To
+say ``I take both an apple and a banana," we would write $\ap\ba$.  We can
+extend the analogy to mathematical notation by condensing our statement
+that we take three pieces of fruit to
+$$\ap^3+\pe^3+\ba^3+\ap^2\pe+\ap^2\ba +\ap\pe^2+\pe^2\ba+
+\ap\ba^2+\pe\ba^2 +\ap\pe\ba.$$
+In this notation $\ap^3$ stands for taking a multiset of three apples,
+while $\ap^2\ba$ stands for taking a multiset of two apples and a banana,
+and so on.  What our notation is really doing is giving us a convenient
+way to list all three element multisets chosen from the
+set $\{\ap,\pe,\ba\}$.\footnote{This approach was inspired by George
+P\'olya's paper ``Picture Writing," in the December, 1956 issue of the
+{\em American Mathematical Monthly}, page 689. While we are taking a
+somewhat more formal approach than P\'olya, it is still completely in the
+spirit of his work.}
+
+Suppose now that we plan to choose between one and three apples, between
+one and two pears, and between one and two bananas.  In a somewhat clumsy
+way we could describe our fruit selections as
+\begin{equation} \ap\pe\ba+\ap^2\pe\ba+\cdots+\ap^2\pe^2\ba+\cdots +
+\ap^2\pe^2\ba^2+\ap^3\pe\ba+
+\cdots +\ap^3\pe^2\ba+\cdots +
+\ap^3\pe^2\ba^2.\label{uptothreefruits}\end{equation}
+
+\bp \iteme Using an $A$ in place of the picture of an apple, a $P$ in
+place of the picture of a pear, and a $B$ in place of the picture of a
+banana, write out the formula similar to Formula \ref{uptothreefruits}
+without any dots for left out terms.  (You may use pictures instead of
+letters if you prefer, but it gets tedious quite quickly!)  Now expand
+the product
+$(A+A^2+A^3)(P+P^2)(B+B^2)$ and compare the result with your formula.
+\label{twopiecesoffruit}
+\solution{$APB+APB^2 +AP^2B+ AP^2B^2+ A^2PB+A^2PB^2+ A^2P^2B+ A^2P^2B^2+
+A^3PB+A^3PB^2 +A^3P^2B+ A^3P^2B^2$
+\begin{eqnarray*}&&(A+A^2+A^3)(P+P^2)(B+B^2)\\
+&=&APB+APB^2+AP^2B+AP^2B^2+A^2PB+A^2PB^2+A^2P^2B\\&+&A^2P^2B^2+
+A^3PB+A^3PB^2+A^3P^2B+A^3P^2B^2.
+\end{eqnarray*} We get the same expression in both cases.}
+
+\iteme Substitute 
+$x$ for all of $A$, $P$ and $B$ (or for the corresponding pictures) in
+the formula you got in Problem \ref{twopiecesoffruit} and expand the
+result in powers of $x$.  Give an interpretation of the coefficient
+of $x^n$.
+\solution{$x^3+3x^4+4x^5+3x^6+x^7$. There is one way to choose three pieces of
+fruit, there are three ways to choose four pieces, four ways to chose 5
+pieces, three ways to choose 6 pieces , and there is one way to choose 7
+pieces of fruit.  The coefficient of $x^n$ is the number of ways to choose $n$
+pieces of fruit.}
+\ep
+
+If we were to expand the formula
+\begin{equation}(\ap+\ap^2+\ap^3)(\pe+\pe^2)(\ba+\ba^2).
+\label{threefruitsagain}
+\end{equation}
+we would get Formula \ref{uptothreefruits}.  Thus formula
+\ref{uptothreefruits} and formula \ref{threefruitsagain} each describe
+the number of multisets we can choose from the set ${\ap,\pe,\ba}$ in
+which \ap\ appears  between 1 and three times and \pe, and \ba\ each
+appear once or twice.  We interpret Formula \ref{uptothreefruits} as
+describing each individual multiset we can choose, and we interpret
+Formula
+\ref{threefruitsagain} as saying that we first decide how many apples to
+take, and then decide how many pears to take, and then decide how many
+bananas to take.  At this stage it might seem a bit magical that doing
+ordinary algebra with the second formula yields the first, but in fact we
+could define addition and multiplication with these pictures more
+formally so we could explain in detail why things work out.  However
+since the pictures are for motivation, and are actually difficult to
+write out on paper, it doesn't make much sense to work out these
+details.  We will see an explanation in another context later on.
+
+\subsection{Picture functions}  As you've seen, in our descriptions of
+ways of choosing fruits, we've treated the pictures of the fruit as if
+they are variables.  You've also likely noticed that it is much easier to
+do algebraic manipulations with letters rather than pictures, simply
+because it is time consuming to draw the same picture over and over
+again, while we are used to writing letters quickly.  In the theory of
+generating functions, we associate variables or polynomials or even power
+series with members of a set.  There is no standard language describing
+how we associate variables with members of a set, so we shall invent
+some.  By a {\em picture} of a member of a set we will mean a variable, or
+perhaps a product of powers of variables (or even a sum of products of
+powers of variables).  A function that assigns a picture $P(s)$ to each
+member $s$ of a set $S$ will be called a {\em picture
+function}\label{picturefunction}.  The {\bf picture
+enumerator}\index{picture enumerator} for a picture function
+$P$ defined on  a set
+$S$ will be 
+
+$$E_P(S) = \sum_{s: s\in S}  P(s).$$
+
+We choose this language because the picture enumerator lists, or
+enumerates, all the elements of $S$ according to their pictures.  Thus
+Formula \ref{uptothreefruits} is the picture enumerator the set of all
+multisets of fruit with between one and three apples, one and two pears,
+and one and two bananas.
+\bp
+\itemm How would you write down a polynomial in the variable $A$ that says
+you should take between zero and three apples?
+\label{zerotothreeapples}\solution{$A^0+A^1+A^2+A^3$.}
+
+\iteme How would you write down a picture enumerator that says we take
+between zero and three apples, between zero and three pears, and between
+zero and three bananas?\label{zerotothreefruits} 
+\solution{\\
+$(A^0+A^1+A^2+A^3)(P^0+P^1+P^2+P^3)(B^0+B^1+B^2+B^3).$}
+
+\itemes (Used in Chapter \ref{groupsonsets}.) Notice that when we used $A^2$ to
+stand for taking two apples, and
+$P^3$ to stand for taking three pears, then we used the product
+$A^2P^3$ to stand for taking two apples and three pears.  Thus we have
+chosen the picture of the ordered pair (2 apples, 3 pears) to be the
+product of the pictures of a multiset of two apples and a multiset of
+three pears.  Show that if $S_1$ and $S_2$ are sets with picture
+functions $P_1$ and $P_2$ defined on them, and if we define the picture
+of an ordered pair $(x_1,x_2)\in S_1\times S_2$ to be
+$P((x_1,x_2))= P_1(x_1)P_2(x_2)$, then the picture enumerator of $P$ on
+the set $S_1\times S_2$ is $E_{P_1}(S_1)E_{P_2}(S_2)$.  We call this the
+{\bf product principle for picture enumerators}.\index{product
+principle!picture enumerators}\index{picture enumerators!product
+principle for}
+\solution{\begin{eqnarray*}E_P(S_1\times S_2)&=&\sum_{(x_1,x_2)\in S_1\times
+S_2} P(x_1)P(x_2)\\ &=&
+\sum_{x_1:x_1\in S_1}\sum_{x_2:x_2\in S_2} P(x_1)P(x_2)\\
+&=&\sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)\\
+&=&\sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)\\
+&=&\left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)\\
+&=&E_{P_1}(S_1)E_{P_2}(S_2)
+\end{eqnarray*}}
+\ep
+\subsection{Generating functions}
+\bp 
+\iteme Suppose you are going to choose a snack of between zero and three
+apples, between zero and three pears, and between zero and three
+bananas.  Write down a polynomial in one variable $x$ such that the
+coefficient of $x^n$ is the number of ways to choose a snack with $n$
+pieces of fruit.  Hint:  substitute something for $A$, $P$ and $B$ in
+your formula from Problem \ref{zerotothreefruits}.
+\solution{$(1+x+x^2+x^3)^3$}
+\itemm Suppose an apple costs 20 cents, a banana costs 25 cents, and a
+pear costs 30 cents.  What should you substitute for $A$, $P$, and $B$ in
+Problem \ref{zerotothreefruits} in order to get a polynomial in which the
+coefficient of $x^n$ is the number of ways to choose a selection of fruit
+that costs $n$ cents?
+\solution{Substitute $x^{20}$ for $A$, $x^{25}$ for $B$ and $x^{30}$ for $P$.}
+\iteme Suppose an apple has 40 calories, a pear has 60 calories, and a
+banana has 80 calories.  What should you substitute for $A$, $P$, and $B$ 
+in Problem \ref{zerotothreefruits} in order to get a polynomial in which
+the coefficient of $x^n$ is the number of ways to choose a selection of
+fruit with a total of $n$ calories?
+\solution{Substitute $x^{40}$ for $A$, $x^{60}$ for $P$, and $x^{80}$ for $B$.}
+\iteme We are going to choose a subset of the set $[n]=\{1,2,\ldots,
+n\}$.  Suppose we use $x_1$ to be the picture of choosing 1 to be in our
+subset.  What is the picture enumerator for either choosing 1 or not
+choosing 1?  Suppose that for each $i$ between 1 and $n$, we use $x_i$ to
+be the picture of choosing
+$i$ to be in our subset.  What is the picture enumerator for either
+choosing $i$ or not choosing $i$ to be in our subset?  What is the
+picture enumerator for all possible choices of subsets of $[n]$?  What
+should we substitute for $x_i$ in order to get a polynomial in $x$ such
+that the coefficient of $x^k$ is the number of ways to choose a
+$k$-element subset of $n$?  What theorem have we just
+reproved (a special case of)?\label{reprovingbinomialtheorem}
+\solution{The picture enumerator for choosing $1$ or not choosing 1 is
+$x_1+1$.  The picture enumerator for choosing or not choosing $i$ is $x_i+1$. 
+The picture enumerator for choosing all possible subsets of $[n]$ is 
+$(x_1+1)(x_2+1)\cdots(x_n+1).$
+We should substitute $x$ for $x_i$, thus getting $(1+x)^n$.  Since the number
+of ways to choose an $n$-element subset is $n\choose k$, we have just proved
+the version of the binomial theorem that says
+$$(x+1)^n=\sum_{i=0}^n {n\choose i}x^i.$$}
+\ep
+In Problem \ref{reprovingbinomialtheorem} we see that we can think of the
+process of expanding the polynomial $(1+x)^n$ as a way of ``generating"
+the binomial coefficients $n\choose k$ as the coefficients of $x^k$ in the
+expansion of $(1+x)^n$.  For this reason, we say that $(1+x)^n$ is the
+``generating function" for the binomial coefficients $n\choose k$.  More
+generally, the {\bf generating function} for a sequence $a_i$, defined for
+$i$ with $0\le i\le n$ is the expression $\sum_{i=0}^n a_ix^i$, and the
+{\bf generating function}\index{generating function} for the sequence
+$a_i$ with $i\ge 0$ is the expression $\sum_{i=0}^\infty a_ix^i$.  This
+last expression is an example of a power series.  In calculus it is
+important to think about whether a power series converges in order to
+determine whether or not it represents a function.  In a nice twist of
+language, even though we use the phrase generating function as the name
+of a power series in combinatorics, we don't require the power series to
+actually represent a function in the usual sense, and so we don't have to
+worry about convergence.\footnote{In the evolution of our current
+mathematical terminology, the word function evolved through several
+meanings, starting with  very imprecise meanings and ending with our
+current rather precise meaning.  The terminology ``generating function''
+may be thought of as an example of one of the earlier usages of the term
+function.}  Instead we think of a power series as a convenient way of
+representing the terms of a sequence of numbers of interest to us.  The
+only justification for saying that such a representation is convenient is
+because of the way algebraic properties of power series capture some of
+the important properties of some sequences that are of combinatorial
+importance.  The remainder of this chapter
+is devoted to giving examples of how the algebra of power series reflects
+combinatorial ideas.  
+
+Because we choose to think of power series  as strings of symbols that we
+manipulate by using the ordinary rules of algebra and we choose to ignore
+issues of convergence, we have to avoid manipulating power series in a way that
+would require us to add infinitely many real numbers.  For example, we
+cannot make the substitution of $y+1$ for
+$x$ in the power series $\sum_{i=0}^\infty x^i$, because in order to
+interpret $\sum_{i=0}^\infty (y+1)^i$ as a power series we would have to
+apply the binomial theorem to each of the $(y+1)^i$ terms, and then
+collect like terms, giving us infinitely many ones added together as the
+coefficient of
+$y^0$, and in fact infinitely many numbers added together for the
+coefficient of any~$y^i$.  (On the other hand, it would be fine to
+substitute $y+y^2$ for $x$.  Can you see why?)
+
+\subsection{Power series}  For now, most of our uses of power series will
+involve just simple algebra.  Since we use power series in a different
+way in combinatorics than we do in calculus, we should review a bit of
+the algebra of power series. 
+\bp
+\iteme In the polynomial $(a_0 +a_1x+a_2x^2)(b_0+b_1x+b_2x^2+b_3x^3)$,
+what is the coefficient of $x^2$?  What is the coefficient of $x^4$?
+\label{coeffinproduct} 
+\solution{$a_0b^2+a_1b_1+a_2b_0$ is the coefficient of $x^2$.  $a_1b_3+a_2b_2$
+is the coefficient of $x^4$.}
+
+\iteme In Problem \ref{coeffinproduct} why is there a $b_0$ and a $b_1$ in
+your expression for the coefficient of $x^2$ but there is not a $b_0$
+or a $b_1$ in your  expression for the coefficient of  $x^4$?  What is the
+coefficient of $x^4$ in $$(a_0+a_1x+a_2x^2+a_3x^3+a_4x^4)(b_0+b_1x+b_2x^2
++b_3x^3+b_4x^4)?$$
+Express this coefficient in the form
+$$\sum_{i=0}^4 \mbox{ something},$$
+where the something is an expression you need to figure out.  Now suppose
+that $a_3=0$, $a_4=0$ and $b_4=0$.  To what is your expression equal
+after you substitute these values?  In particular, what does this have to
+do with Problem \ref{coeffinproduct}?\label{coeffinproduct1}
+\solution{There is a $b_0$ because it can be paired with an $a_2$ to give the
+term $a_2b_0x^4$.  Similarly there is a $b_1$ because it can be paired with
+$a_1$ for the same purpose.  However there is no $a_i$ that we can pair with
+$b_0$ to get a coefficient of $x^4$ and no $a_i$ that we can pair with $b_3$
+to get a coefficient of $x^4$.  
+
+The coefficient of $x^4$ in
+$$(a_0+a_1x+a_2x^2+a_3x^3+a_4x^4)(b_0+b_1x+b_2x^2
++b_3x^3+b_4x^4)$$
+is $\sum_{i=0}^4 a_ib_{4-i}$.  If we substitute $a_3=0$, $a_4=0$,
+and
+$b_4 =0$, we get the coefficient of $x^4$ in $(a_0
++a_1x+a_2x^2)(b_0+b_1x+b_2x^2+b_3x^3)$.  This exemplifies the idea that we can
+get a uniform formula for the coefficient of $x^i$ (namely, sum all
+$a_jb_{i-j}$ from $j=0$ to $i$) in a product of two polynomials if we are
+willing to say that the coefficient of a power of
+$x$ that does not appear in a polynomial is 0.}
+
+
+\iteme The point of the Problems \ref{coeffinproduct} and
+\ref{coeffinproduct1} is that so long as we are willing to assume $a_i=0$
+for $i>n$ and $b_j =0$
+ for $j>m$, then there is a very nice formula for the coefficient of
+$x^k$ in the product
+$$\left(\sum_{i=0}^n a_ix^i\right)\left(\sum_{j=0}^m b_jx^j\right).$$ 
+Write down this formula explicitly.
+\solution{$\sum_{i=0}^k a_ib_{k-i}$.}
+
+\iteme Assuming that the rules you use to do arithmetic with polynomials
+apply to power series, write down a formula for the coefficient of $x^k$
+in the product \label{coeffinpowerseries}
+$$\left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
+b_jx^j\right).$$
+\solution{$\sum_{i=0}^k a_ib_{k-i}$.}
+\ep
+
+We use the expression you obtained in Problem \ref{coeffinpowerseries} to
+{\em define} the product of power series.  That is, we define the product
+$$\left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
+b_jx^j\right)$$ to be the power series $\sum_{k=0}^\infty c_k x^k$, where
+$c_k$ is the expression you found in Problem \ref{coeffinpowerseries}.
+Since you derived this expression by using the usual rules of algebra for
+polynomials, it should not be surprising that the product of power series
+satisfies these rules.\footnote{Technically we should explicitly state
+these rules and prove that they are all valid for power series
+multiplication, but it seems like overkill at this point to do so!}
+\subsection{Product principle for generating functions}
+
+
+
+ Each time that
+we converted a picture function to a generating function by substituting
+$x$ or some power of $x$ for each picture, the coefficient of $x$ had a
+meaning that was significant to us.  For example, with the
+picture enumerator for selecting between zero and three each of apples,
+pears, and bananas, when we substituted $x$ for each of our pictures, the
+exponent $i$ in the power $x^i$ is the number of pieces of fruit in the
+fruit selection that led us to $x^i$.  After we simplify our product by
+collecting together all like powers of $x$, the coefficient of $x^i$ is
+the number of fruit selections that use $i$ pieces of fruit.  In the same
+way, if we substitute $x^c$ for a picture, where $c$ is the number of
+calories in that particular kind of fruit, then the $i$ in an $x^i$ term
+in our generating function stands for the number of calories in a fruit
+selection that gave rise to $x^i$, and the coefficient of $x^i$ in our
+generating function is the number of fruit selections with $i$ calories. 
+The product principle of picture enumerators translates directly into a
+product principle for generating functions.
+
+\bp 
+\iteme Suppose that we have two sets $S_1$ and $S_2$.  Let $v_1$ ($v$
+stands for value) be a function from $S_1$ to the nonnegative integers
+and let $v_2$ be a function from $S_2$ to the nonnegative integers. 
+Define a new function $v$ on the set $S_1 \times S_2$ by $v(x_1,x_2) =
+v_1(x_1) +v_2(x_2)$.  Suppose further that $\sum_{i=0}^\infty a_ix^i$ is
+the generating function for the number of elements $x_1$ of $S_1$ of value
+$i$, that is with $v_1(x_1)=i$.  Suppose also
+that
+$\sum_{j=0}^\infty b_j x^j$ is the generating function for the number of
+elements of $x_2$ of $S_2$ of value $j$, that is with $v_2(x_2) = j$. 
+Prove that the coefficient of $x^k$ in  
+$$\left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
+b_jx^j\right)$$ is the number of ordered pairs $(x_1,x_2)$ in $S_1\times
+S_2$ with total value $k$, that is with $v_1(x_1) +v_2(x_2) =k$.  This is
+called the {\bf product principle for generating functions}.\index{product
+principle for generating functions}\index{generating function!product
+principle for}\label{ProductPrincipleOGF}
+\solution{The generating function for ordered pairs of total value $k$ will
+have the number of ordered pairs of total value $k$ as the coefficient of
+$x^k$.  But we get a total value $k$ by taking something of value $i$ in $S_1$
+and something of value $k-i$ in $j$.  And since values cannot be negative, the
+only $i$s available to us are the ones between $0$ and $k$.  By the product
+principle for pairs, the number of ordered pairs $(x,y)$ with $v_1(x)=i$ and
+$v_2(y)=k-i$ is $a_ib_{k-i}$.  To get the number of pairs of total value $k$,
+we have to sum over all possible pairs $(i,k-i)$ of values, that is, we have
+to take the sum $\sum_{i=0}^k a_ib_{k-i}$.  And this is the coefficient of
+$x^k$ in the product $$\left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
+b_jx^j\right).$$  This proves the product principle for generating functions.}
+
+\iteme Let $i$ denote an integer between 1 and $n$. 
+\begin{enumerate}\item
+What is the generating function for the number of subsets of $\{i\}$ of
+each possible size? (Notice that the only subsets of $\{i\}$ are
+$\emptyset$ and $\{i\}$.)
+\solution{$1+x$.}
+\item Use the product principle for generating functions to prove the
+binomial theorem. \end{enumerate}
+\solution{The generating function for number of $n$-tuples of 0s and 1s with
+$k$ ones is, by the product principle for generating functions (extended to
+$n$ factors) $(1+x)^n$.  However the number of $n$-tuples of 0s and 1s with
+$k$ ones is the number of $k$-element subsets of an $n$-element set. 
+Therefore $(1+x)^n =\sum_{i=0}^n {n\choose i}x^i$.  To get the $(x+y)^n$ form
+of the binomial theorem, note that $x+y = y(1+{x\over y})$, so that
+\begin{eqnarray*}(x+y)^n &=& y^n\left({x\over y}+1\right)^n\\
+&=&y^n\sum_{i=0}^n {n\choose i}{x^i\over y^i}\\
+&=& \sum_{i=0}^n{n\choose i}x^iy^{n-i}.\end{eqnarray*}}
+
+
+\ep
+
+
+\subsection{The extended binomial theorem and multisets}
+\bp \iteme Suppose once again that $i$ is an integer between 1 and $n$.
+\begin{enumerate}
+\item What is the generating function in which the coefficient
+of
+$x^k$ is the number of multisets of size $k$ chosen from $\{i\}$?  This
+series is an example of what is called an {\em infinite geometric
+series}.\index{geometric series}\index{series!geometric}
+\solution{$1+x+x^2+\cdots+x^i+\cdots=\sum_{i=0}^\infty x^i$.}
+\item Express the generating function in which the coefficient of $x^k$
+is the number of multisets chosen from $[n]$ as a power of a power
+series.  What does Problem \ref{multiset} (in which your answer could
+be expressed as a binomial coefficient) tell you about what this
+generating function equals?  
+\solution{The generating function is $\left(\sum_{i=0}^\infty x^i\right)^n$. 
+Problem \ref{multiset} tells us that this equals
+$\sum_{i=0}^\infty{n+i-1\choose i}x^i$.} 
+\end{enumerate}
+
+ \itemm  What is the product $(1-x)\sum_{k=0}^n x^k$?  What is 
+the product $$(1-x)\sum_{k=0}^\infty x^k?$$
+\solution{$$(1-x)\sum_{k=0}^n x^k=1-x+x-x^2+\cdots+x^{n-1}-x^n+x^n-x^{n+1} =
+1-x^{n+1}.$$
+$$(1-x)\sum_{k=0}^\infty x^k=\sum_{i=0}^\infty x^i-\sum_{i=0}^\infty
+x^{i+1}=\sum_{i=0}^\infty x^i-\sum_{i=1}^\infty x^i = 1.$$}
+
+\itemei Express the generating function for the number of multisets of
+size
+$k$ chosen from $[n]$ (where $n$ is fixed but $k$ can be any nonnegative
+integer) as a 1 over something relatively simple.
+\solution{Since $(1-x)\sum_{k=0}^\infty x^k=1$, we have that
+$$\sum_{k=0}^\infty x^k={1\over 1-x}.$$  Therefore $\left(\sum_{k=0}^\infty
+x^k\right)^n= {1\over(1-x)^n}$ is the generating function for multisets of
+size $k$ chosen from an $n$ element set.}
+
+\iteme Find a formula for $(1+x)^{-n}$ as a power series whose coefficients
+involve binomial coefficients.   What does this formula tell you about
+how we should define
+$-n\choose k$ when $n$ is positive? \label{negnchoosek} 
+\solution{$$\hspace*{-.25 in}(1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
+{n+i-1\choose i}(-x)^i=\sum_{i=0}^\infty (-1)^i{n+i-1\choose i}x^i.$$  We want
+the coefficient of
+$x^k$ in
+$(1+x)^{-n}$ to be $-n\choose k$, so we want ${-n \choose k}=
+(-1)^k{n+k-1\choose k}$.}
+
+\itemei  If you define $-n \choose k$ in the way you described in Problem
+\ref{negnchoosek}, you can write down a version of the binomial theorem
+for $(x+y)^n$ that is valid for both nonnegative and negative values of
+$n$.  Do so.  This is called the {\em extended binomial
+theorem}\index{binomial theorem! extended}\index{extended binomial
+theorem}.
+\solution{$(x+y)^n=\sum_{i=0}^\infty{n\choose i}x^i$.  The proof consists of
+writing $(x+y)=y({x\over y}+1)$ and applying the Problem \ref{negnchoosek} when
+$n$ is negative. When $n$ is positive, we recall that $n\choose k$ is zero
+when $k>n$, so replacing the upper limit of $n$ in the standard version of the
+binomial theorem by $\infty$ doesn't change the value of the sum.}
+
+\itemei Write down the generating function for the number of ways to
+distribute identical pieces of candy to three children so that no
+child gets more than 4 pieces.  Write this generating function as a
+quotient of polynomials.  Using both the extended binomial theorem and
+the original binomial theorem, find out in how many ways we can pass out
+exactly ten pieces.  Use one of our earlier counting techniques to verify
+your answer.
+\solution{$(1+x+x^2+x^3+x^4)^3$.  We can write
+\begin{eqnarray*} &&(1+x+x^2+x^3+x^4)^3 \>=\>\left({1-x^5\over 1-x}\right)^3\\
+&=&(1-x^5)^3(1-x)^{-3}\\
+&=&(1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty {3+i-1\choose i}x^i\\
+&=&(1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty {2+i\choose i}x^i
+%&=&\sum_{i=0}^\infty \left({2+i\choose i} -3{2+i-5\choose i-5}
+%+3{2-i-10\choose i-10} -{2+i-15\choose i-15}\right)x^i\\
+%&=&\sum_{i=0}^\infty \left({2+i\choose i} -3{i-3\choose i-5} + 3{i-8\choose
+%i-10} - {i-13\choose i-15}\right)x^i
+\end{eqnarray*}
+The coefficient of $x^{10}$ is the number of ways to pass out ten pieces of
+candy, and is ${12\choose 10}-3{7\choose 5} +3{2\choose 0}$. 
+ Thus the number of ways to pass out ten pieces of candy is
+$66-3\cdot21+3=6$.)
+
+A second solution technique that is appropriate is inclusion-exclusion
+counting.  We let property $i$ be that child $i$ gets more than four pieces of
+fruit.  The number of ways to pass out $n$ pieces of fruit with a set $J$ of
+size
+$j$ properties is ${n-5j+3-1\choose n-5j}={n-5j+2\choose 2}$.  By
+Equation \ref{incexempty} we have 
+$N_{\mbox{e}}(\emptyset) = \sum_{j=0}^3
+(-1)^j{3\choose j}{n-5j+2\choose 2}$.  Using $n=10$ gives us
+${12\choose2}-3{7\choose2} +3{2\choose2} =6.$  (You can either note that
+${-3\choose 2}$ is 0 or note that with 10 pieces of candy, there is no way to
+pass out five pieces to each of three children.  In this second case we would
+revise our statement about the number of ways to pass out $n$ pieces of fruit
+to three children with the properties in $J$ to note that it is zero if
+$5j>n$, and otherwise is $n-5j+2\choose2$.)}
+
+\iteme  What is the generating function for the number of multisets chosen
+from an $n$-element set so that each element appears at least $j$ times
+and less than $m$ times.  Write this generating function as a quotient of
+polynomials, then as a product of a polynomial and a power series. 
+\solution{
+\begin{eqnarray*}(x^j+x^{j+1}+\cdots+x^{m-1})&=&x^j
+\left(\sum_{i=0}^{m-j-1}x^i\right)^n\\&=&
+\left(x^j{1-x^{m-j}\over 1-x}\right)^n\\
+&=&\left({x^j-x^m\over1-x}\right)^n\\
+&=& (x^j-x^m)^n\sum_{i=0}^\infty {n+i-1\choose i}x^i.
+\end{eqnarray*}}
+\ep
+
+\subsection{Generating functions for integer partitions}
+\bp
+\iteme If we have five identical pennies, five identical nickels, five
+identical dimes, and five identical quarters, give the picture enumerator
+for the combinations of coins we can form and convert it to a generating
+function for the number of ways to make $k$ cents with the coins we
+have.  Do the same thing assuming we have an unlimited supply of pennies,
+nickels, dimes, and quarters.\label{change-making}
+\solution{$(1+P+P^2+P^3+P^4+P^5)(1+N+N^2+N^3+N^4+N^5)(1+D+D^2+D^3+D^4+D^5)
+(1+Q+Q^2+Q^3+Q^4+Q^5)$.  Substituting $x$ for $P$, $x^5$ for $N$, $x^{10}$ for
+$D$ and $x^{25}$ for $Q$ gives us
+$$\sum_{i=0}^5x^i\sum_{i=0}^5x^{5i}\sum_{i=0}^5 x^{10i} \sum_{i=0}^5
+x^{25i}={1-x^6\over1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
+1-x^{10}}\cdot{1-x^{150}\over 1-x^{25}}.$$ Although we could write this as a
+polynomial times a product of four power series, doing so would not
+significantly increase our understanding, though it would let us make some
+painful computations of the number of ways to make a certain number of
+cents. If we actually wanted such numbers we would be better off asking a
+computer algebra package to expand the product of the polynomials on the
+left.  With unlimited supplies the generating function becomes
+$${1\over1-x}\cdot{1\over 1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.$$ 
+Again, we could write this as a product of power series, and that would allow us
+to painfully compute the number of ways to create a certain number of cents.  If
+we actually wanted to know the number of ways to make up 200 cents, say, it
+would be more sensible to ask a computer algebra package to extract the
+coefficient of $x^{200}$ in the product of the four quotients.}
+
+\iteme  Recall that a partition of an integer $k$ is a multiset of numbers
+that adds to $k$.  In Problem \ref{change-making} we found the
+generating function for the number of partitions of an integer into parts
+of size 1, 5, 10, and 25.   Give the generating function for the number
+partitions of an integer into parts of size one through ten.  Give the
+generating function for the number of partitions of an integer $k$ into
+parts of size at most $m$. (Where $m$ is fixed but $k$ may vary.)  Notice this
+is the generating function for partitions whose Young diagram fits into the space
+between the line
+$x=0$ and the line $x=m$ in a coordinate plane.  (We assume the boxes in the
+Young diagram are one unit by one unit.)\label{largestpartatmostm}  When
+working with generating functions for partitions, it is becoming standard
+to use $q$ rather than $x$ as the variable in the generating function. 
+Write your answers in this notation.\footnote{The reason for this change
+in the notation relates to the subject of finite fields in abstract
+algebra, where $q$ is the standard notation for the size of a finite
+field.  While we will make no use of this connection, it will be easier
+for you to read more advanced work if you get used to the different
+notation.}
+\solution{$\prod_{i=1}^{10}{1\over1-q^i}$, $\prod_{i=1}^m{1\over 1-q^i}$.}
+
+\iteme In Problem \ref{largestpartatmostm} you gave the generating
+function for the number of partitions of an integer into parts of size at
+most
+$m$.  Explain why this is also the generating function for partitions of
+an integer into at most $m$ parts.  Notice that this is the generating
+function for the number of partitions whose Young diagram fits into the
+space between the line $y=0$ and the line $y=m$.\label{atmostmparts}
+\solution{Conjugation is a bijection between partitions with largest part at
+most
+$m$ and partitions with at most $m$ parts. Thus the coefficient of $q^i$ (the
+number of partitions of $i$ into parts of size at most $m$) in the generating
+function for the number of partitions of integers into parts of size at most
+$m$ will be the coefficient of
+$q^i$ (the number of partitions of $i$ with at most $m$ parts) in the
+generating function for the number of partitions of integers into parts of
+size at most
+$m$.  Thus the two generating functions are the same.}
+
+
+
+\iteme Give the
+generating function for the number of partitions of an integer into parts
+of any size. Don't forget to use $q$ rather than $x$ as your variable.
+This generating function involves an infinite product.  Describe the kinds
+of terms you actually multiply and add together to
+get the last generating function.  Rewrite any
+power series that appear in your product as
+quotients of polynomials or as integers divided
+by polynomials.\label{genfunpartitions}
+\solution{We start with 
+$$(1+q+q^2+\cdots)(1+q^2+q^4+\cdots)\cdots(1+q^i+q^{2i})\cdots,$$
+which we can write more precisely as 
+$$\prod_{i=1}^\infty \sum_{j=0}^\infty q^{ij}.$$  To get the coefficient of
+$q^k$ in this product, we look at all ways of choosing one summand from each
+of the infinite series and multiplying them together to get $q^k$, and add all
+these products up.  That is, the coefficient of $q^k$ is the number of ways of
+making these choices of one summand from each series so that the product of
+our choices is $q^k$.  We can rewrite the infinite product as
+$\displaystyle\prod_{i=0}^\infty{1\over 1-q^i}$.}
+
+\itemi In Problem \ref{genfunpartitions}, we multiplied together
+infinitely many power series.  Here are two notations for infinite
+products that look rather similar:
+$$\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\quad\mbox{and}\quad
+\prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}. $$
+ However, one makes sense and one doesn't.  Figure
+out which one makes sense and explain why it makes sense and the other one
+doesn't.  If we want a product of the form
+$$\prod_{i=1}^\infty 1 +p_i(x),$$
+where each $p_i(x)$ is a nonzero polynomial in $x$
+to make sense, describe a relatively simple assumption
+about the polynomials $p_i(x)$ that will make the product make
+sense.  If we assumed the terms $p_i(x)$ were nonzero power series, is
+there a relatively simple assumption we could make about them in order to
+make the product make sense?  (Describe such a condition or explain why
+you think there couldn't be one.)
+\solution{$\prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}$ makes sense
+because when we look for ways of choosing one summand from each factor so that
+the summands multiply together to give us $x^k$, we will find only finitely
+many ways of making those choices, so the coefficient of $x^k$ can be taken to
+be the number of such choices.  On the other hand, in the expression
+$\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i$, there are infinitely many ways
+to choose $x$ from one term and $1$ from all the rest of the terms so that the
+product of these summands is $x$.  Thus we can't even specify what the
+coefficient of $x$ is in the product.  On the basis of this analysis, we see
+that for $\prod_{i=1}^\infty 1 +p_i(x)$ to make sense, we need to assume that
+for each possible positive integer $n$, there are only a finite number of
+polynomials $p_i$ whose lowest degree term has degree less than
+or equal to
+$n$.  In that way, for each positive integer, there will be only finitely many
+ways to chose a summand from each factor so that the product of the summands
+is a multiple of $x^k$. The same assumption works when the $p_i$ are power
+series, for the same reason.} 
+
+\iteme What is the generating function (using $q$ for the variable) for
+the number of partitions of an integer in which each part is even?
+\solution{$(1+q^2+q^4+\cdots)(1+q^4+q^8+\cdots)(1+q^6+q^{12}+\cdots)\cdots$,
+which can be written more precisely as $\displaystyle\prod_{i=1}^\infty
+\sum_{j=0}^\infty q^{2ij}$.}
+
+\iteme  What is the generating function (using $q$ as the variable) for
+the number of partitions of an integer into distinct parts, that is, in
+which each part is used at most once?
+\solution{$\displaystyle (1+q)(1+q^2)(1+q^3)\cdots=
+\prod_{i=1}^\infty(1+q^i)$.}
+
+
+\iteme  Use generating functions to explain why the number of partitions
+of an integer in which each part is used an even number of times equals
+the generating function for the number of partitions of an integer in
+which each part is even.
+\solution{In the generating function $\displaystyle\prod_{i=1}^\infty
+\sum_{j=0}^\infty q^{2ij}$, we may interpret the $2ij$ in $q^{2ji}$ the value
+of using $2i$ as a part $j$ times or as the value of using $i$ as a part $2j$
+times.  Therefore this is the generating function both for the number of
+partitions of integers into parts that are even and the number of partitions
+into parts that are used an even number of times. Therefore the number of
+partitions of $n$ in which each part is even equals the number of partitions
+of $n$ in which each part is used an even number of times.}
+
+\itemei Use the fact that $${1-q^{2i}\over 1-q^i}= 1+q^i$$ and the
+generating function for the number of partitions of an integer into
+distinct parts to show how the number of partitions of an integer $k$
+into distinct parts is related to the number of partitions of an integer
+$k$ into odd parts.
+\solution{$\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n {1-q^{2i} \over
+1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
+=\prod_{i=j}^\infty {1\over1-q^{2j-1}}$, because all the terms in the numerator
+cancel with alternate terms in the denominator leaving only terms with odd
+powers of $q$. But \begin{eqnarray*}&&\prod_{j=1}^\infty{1\over
+1-q^{2j-1}}\>=\>\prod_{j=1}^\infty
+\sum_{i=0}^\infty
+(q^{2j-1})^i\\&=&(1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
++q^5+q^{2\cdot5}+\cdots)\cdots,
+\end{eqnarray*}
+which is the generating function for partitions of integers into parts that
+are odd numbers.}
+
+\item Write down the generating function for the number of ways to
+partition an integer into parts of size no more than $m$, each used an
+odd number of times.  Write down the generating function for the number
+of partitions of an integer into parts of size no more than $m$, each
+used an even number of times.  Use these two generating functions to get
+a relationship between the two sequences for which you wrote down the
+generating functions. 
+\solution{$$\displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
+m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^{n+1\choose 2}\prod_{i=1}^m{1\over
+1-q^2}$$
+is the generating function for the number of ways to partition an integer into
+parts of size at most $m$, each used an odd number of times. $$\displaystyle
+\prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m {1\over1-q^{2i}}$$
+is the generating function for the number of partitions of an integer into
+parts of size no more than $m$, each used an even number of times. Therefore
+the number of partitions of $k$ into parts of size no more than $m$, each used
+an even number of times is the number of partitions of $k+{m+1\choose 2}$,
+into parts of size no more than $m$, each used an odd number of times.}
+
+
+
+\itemi In Problem \ref{largestpartatmostm} and Problem \ref{atmostmparts}
+you gave the generating functions for, respectively, the number of
+partitions of $k$ into parts the largest of which is at most $m$ and for
+the number of partitions of $k$ into at most $m$ parts.  In this problem
+we will give the generating function for the number of partitions of $k$
+into at most $n$ parts, the largest of which is at most $m$.  That is we
+will analyze $\sum_{i=0}^\infty a_kq^k$ where $a_k$ is the number of
+partitions of $k$ into at most $n$ parts, the largest of which is at most
+$m$.  Geometrically, it is the generating function for partitions whose
+Young diagram fits into an $m$ by $n$ rectangle, as in Problem
+\ref{rectanglecomplement}.  This generating function has significant
+analogs to the binomial coefficient
+$m+n\choose n$, and so it is denoted by $\qchoose{m+n}{n}$.  It is called
+a {\em $q$-binomial coefficient}.\index{$q$-binomial
+coefficient}\index{binomial coefficient!$q$-binomial}
+\begin{enumerate}
+\item Compute $\qchoose{4}{2}=\qchoose{2+2}{2}$.
+\solution{A partition with up to two parts of size up to two can have no
+parts, one part of size 1, which makes it a partition of 1, one part of
+size 2 which makes it a partition of 2, two parts of size 1, which makes
+it a partition of 2, a part of size 2 and a part of size 1, which makes
+it a partition of 3, or two parts of size 2, which makes it a partition
+of 4.  Thus $\qchoose{4}{2}=1+q+2q^2+q^3+q^4$.}
+\item Find  explicit formulas for $\qchoose{n}{1}$ and
+$\qchoose{n}{n-1}$.
+\solution{Both are $1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}$,
+because they are the generating function for the number of partitions
+whose Young diagram fits into a rectangle $n-1$ units wide and 1 unit
+deep or into a rectangle 1 unit wide and $n-1$ units deep respectively.}
+\item How are $\qchoose{m+n}{n}$ and $\qchoose{m+n}{n}$ related?  Prove
+it.  (Note this is the same as asking how $\qchoose{r}{s}$ and
+$\qchoose{r}{r-s}$ are related.)
+\solution{By conjugation, $\qchoose{m+n}{n}=\qchoose{m+n}{m}$.}
+\item So far the analogy to $m+n\choose n$ is rather thin!  If we had a
+recurrence like the Pascal recurrence, that would demonstrate a real
+analogy.  Is $\qchoose{m+n}{n}=
+\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}$?
+\solution{No. $\qchoose{4}{2}=1+q+2q^2+q^3+q^4$, but
+$\qchoose{3}{1}=1+q+q^2$ and
+$\qchoose{3}{2}=1+q+q^2$.}
+\item Recall the two operations we studied in Problem
+\ref{numberpartitionrecurrence}.  
+\begin{enumerate}
+\item The largest part of a partition counted
+by $\qchoose{m+n}{n}$ is either $m$ or is less than or equal to $m-1$. 
+In the second case, the partition fits into a rectangle that is at most 
+$m-1$ units wide and at most $n$ units deep.  What is the generating
+function for partitions of this type?  In the first case, what kind of
+rectangle does the partition we get by removing the largest part sit in? 
+What is the generating function for partitions that sit in this kind of
+rectangle?  What is the generating function for partitions that sit in
+this kind of rectangle after we remove a largest part of size $m$?  What
+recurrence relation does this give you?
+\solution{The generating function for partitions that arise in the second
+case is $\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}$.  In the first case,
+after we delete the largest part, the Young diagram sits in a rectangle
+of width $m$ and depth $n-1$.  The generating function for partitions that
+arise in the first case {\em after} we have deleted a part of size
+$m$ is $\qchoose{m+n-1}{n-1}$.  Thus the generating function for
+partitions that arise in the first case ({\em before} we delete the part
+of size $m$) is $q^m\qchoose{m+n-1}{n-1}$.  Thus by the sum principle the
+generating function for all partitions that fit into a rectangle of width
+$m$ and depth $n$ is given by
+$$\qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.$$
+If you don't use the symmetry $\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}$,
+you get
+$$\qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.$$ 
+While this doesn't {quite} look like the Pascal recurrence, it is still a
+correct answer.}
+\item What recurrence do you get from the other operation we studied in
+Problem \ref{numberpartitionrecurrence}?
+\solution{
+We either have exactly $k$ parts or fewer than $k$ parts.  In
+the first case, removing one from each part gives us a partition whose
+Young diagram fits into a $m-1$ by $n$ box, while in the second case
+doing nothing gives us a partition that fits into a $m$ by $n-1$ box.  In
+the first case the partition we get partitions $k-n$, and in the second
+case it still partitions $k$.  Thus we get
+$$\qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.$$}
+\item It is quite likely that the two recurrences you got are different. 
+One would expect that they might give different values for
+$\qchoose{m+n}{n}$.  Can you resolve this potential conflict?
+\solution{Yes, by conjugation.}
+\end{enumerate}
+\item Define $[n]_q$ to be $1+q+\cdots+q^{n-1}$ for $n>0$ and $[0]_q =1$. 
+We read this simply as
+$n$-sub-$q$.  Define $[n]!_q$ to be $[n]_q[n-1]_q\cdots
+[3]_q[2]_q[1]_q$.  We read this as $n$ cue-torial, and refer to it as a
+$q$-ary factorial.\index{factorial!$q$-ary}\index{$q$-ary factorial}  Show
+that\label{qtorialformula}
+$$\qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.$$
+\solution{
+Note that $\qchoose{n}{0}= \qchoose{n}{n} = 1$, because only
+the partition with no parts sits in a rectangle of width or depth 0. But 
+${[m+0]!_q \over [m]!_q[0]!_q} =1$ and ${[0+n]!_q \over [0]!_q[n]!_q}
+=1$.  Thus the formula holds when $m=0$ or $n=0$.  But 
+\begin{eqnarray*} 
+&&q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}\\
+&=&\relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
++{1\over[n]!_q[m-1]!_q}\right)\\
+&&\relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
+[n]!_q[m]!_q}\right)\\
+&=&\relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+1+q+\cdots+q^{m-1}\right)\\
+&=&\relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}\\
+&=&\qchoose{m+n}{n}.
+\end{eqnarray*}
+Thus $[m+n]!_q \over [m]!_q[n]!_q$ satisfies our recurrence and so by the
+principle of mathematical induction, $\qchoose{m+n}{n} = {[m+n]!_q \over
+[m]!_q[n]!_q}.$
+}
+\item Now think of $q$ as a variable that we will let approach $1$. Find
+an explicit formula for 
+\begin{enumerate}
+\item $\displaystyle\lim_{q\rightarrow 1} [n]_q$.
+\solution{$n$}
+\item  $\displaystyle\lim_{q\rightarrow 1} [n]!_q$.
+\solution{$n!$}
+\item  $\displaystyle\lim_{q\rightarrow 1}
+\qchoose{m+n}{n}$.\label{partiii}
+\solution{
+$m+n\choose n$}
+\end{enumerate}  Why is the limit in Part iii %\ref{partiii} 
+equal to the
+number of partitions (of any number) with at most $n$ parts all of size
+most
+$m$?  Can you explain bijectively why this quantity equals the formula
+you got?
+\solution{
+Since the generating function is a finite sum (we are talking
+about partitions whose Young diagram into a finite rectangle), the limit
+is obtained by setting $q=1$, and this sums the number of partitions of
+each possible number $k$ that have at most $n$ parts all of size at most
+$m$.  We want a bijection between such partitions and the  $n$
+element subsets of an $m+n$ element set.  Recall that there is a
+bijection between subsets of an $n$ element set and lattice paths from
+$(0,0)$ to $m,n$ in a coordinate plane.  If we draw our rectangle of
+width $m$ and depth $n$ with its lower left corner at $(0,0)$, then each
+Young diagram gives us such a lattice path and each such lattice path
+gives us a Young diagram.}
+\itemitemh What happens to $\qchoose{m+n}{n}$ if we let $q$
+approach -1?
+\solution{$\qchoose{m+n}{n}$ is the generating function for the
+number of partitions whose Young diagram fits into an $m$ by $n$
+rectangle. That is, 
+$$\qchoose{m+n}{n}=\sum_{k=0}^\infty a_kq^k,$$
+where $a_k$ is the number of partitions of $k$ whose Young diagram fits into an
+$m$ by $n$ rectangle.  In particular $a_k=0$ if $k>mn$, because the Young
+diagram of a partition of a number larger than $mn$ certainly cannot fit into
+an $m$ by $n$ rectangle.  Thus
+$$\qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.$$
+Furthermore, $a_k=a_{mn-k}$, because the complement in an $m$ by $n$ rectangle
+of a partition of $k$ is a partition of $mn-k$, and complementation in an $m$
+by $n$ rectangle is a bijection between partitions of $k$ that fit into the
+rectangle and partitions of $mn-k$ that fit into the rectangle.  Thus
+$\qchoose{m+n}{n}$ is a polynomial of degree $mn$ in which the coefficient of
+$q_k$ equals the coefficient of $q^{mn-k}$.  For this reason we can compute the
+limit as $q$ approaches $-1$ simply by substituting $-1$ for $q$ in the
+polynomial; the only trouble being that the formula we know for
+$\qchoose{m+n}{n}$ is quotient of polynomials that has zero in both the
+numerator and denominator when we substitute in $q=-1$.  Nonetheless, when we
+substitute $-1$ for $q$ we get the alternating sum $\sum_{i=0}^{mn} (-1)^ia_i$. 
+Thus if $a_i$ and $a_{mn-i}$ have opposite sign, they will cancel out.  If $mn$
+is even, $i$ is even exactly when $mn-i$ is even, and so $a_i$ and $a_{mn-i}$
+have the same sign.  However when $mn$ is odd, $a_i$ and $a_{mn-i}$ have
+opposite signs in the sum $\sum_{i=0}^{mn} (-1)^ia_i$, and so the sum is zero. 
+Thus the polynomial
+$\qchoose{m+n}{n}$ is zero at $q=-1$ whenever $mn$ is odd.
+
+Our experience with binomial coefficients might lead us to hope that the
+alternating sum of the coefficients $a_k$ will always be zero.  However, we
+computed that
+$\qchoose{4}{2}=1+q+2q^2+q^3+q^4$, so 
+$$\lim_{q\rightarrow -1}\qchoose{4}{2}=1-1+2-1+1=1.$$ 
+\iffalse Drawing a few Young
+diagrams shows us that
+$$\qchoose{5}{2}=\qchoose{5}{3}=1+1q+2q^2+2q^3+2q^4+1q^5+1q^6$$ and
+$$\qchoose{6}{2}=\qchoose{6}{4}=1+q+2q^2+2q^3+3q^4+2q^5+2q^6+1q^7+1q^8.$$
+Thus $\lim_{q\rightarrow-1}\qchoose{5}{2}=2$ and
+$\lim_{q\rightarrow-1}\qchoose{6}{2}=3$.  It seems unlikely that we will be
+able to work out enough cases to make a good guess by drawing Young diagrams. 
+Part \ref{qtorialformula} tells us that
+\begin{eqnarray*}&&\qchoose{m+n}{n} = {[m+n]!_q \over
+[m]!_q[n]!_q}\\
+&=&{[m+n]_q[m+n-1]_q\cdots[m+1]_q\over [n]_q\cdot[n-1]_q\cdots [2]_q[1]_q}\\
+&=&{(1+q+\cdots+q^{m+n-1})\cdots(1+q+\cdots+q^{m})\over (1+q+\cdots
+q^{n-1})\cdots(1+q)(1)}\\
+&=&{(1+q+\cdots+q^{m+n-1})\cdots(1+q+\cdots+q^{m})\over (1+q+\cdots
+q^{n-1})\cdots(1+q)(1)}\cdot{(1-q)^n\over (1-q)^n}\\
+&=&{(1-q^{m+n})\cdots(1-q^{m+1})\over (1-
+q^{n})\cdots(1-q^2)(1-q)}.
+\end{eqnarray*}
+
+Since $\qchoose{m+n}{n}$ is a polynomial in $q$, the factors in the denominator
+should divide into the factors of the numerator to give us that polynomial. 
+For example,
+$$\qchoose{7}{2}={(1-q^7)(1-q^6)\over(1-q^2)(1-q)} =(1+q+q^2+q^3+q^4+q^4+q^6)
+(1+q^2+q^4)$$
+so $\neg1choose{7}{2}=1\cdot3=3$.  Unfortunately this breaks the pattern we had
+with $\neg1choose{4}{2}=1$, $\neg1choose{5}{2}=2$, $\neg1choose{6}{2}=3$. 
+However, this method of calculation is sufficiently straightforward to allow us
+to compute more complicated values of $\neg1choose{m+n}{n}$.  It is also
+reasonable for someone moderately comfortable with a symbolic algebra program
+to implement on a computer.   Either these computations or the recurrence gives
+us the following table.\fi
+We could compute some more values of the limit  by going back to the
+definition in this way, but it seems unlikely that we could get enough data to
+make a good conjecture.  However we have the recurrence, and setting
+$q=-1$ in the recurrence gives us the table
+
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
+$m+n\backslash n$&0&1&2&3&4&5&6&7&8&9\\
+\hline
+0&1&0&0&0&0&0&0&0&0&0\\
+1&1&1&0&0&0&0&0&0&0&0\\
+2&1&0&1&0&0&0&0&0&0&0\\
+3&1&1&1&1&0&0&0&0&0&0\\
+4&1&0&2&0&1&0&0&0&0&0\\
+5&1&1&2&2&1&1&0&0&0&0\\
+6&1&0&3&0&3&0&1&0&0&0\\
+7&1&1&3&3&3&3&1&1&0&0\\
+8&1&0&4&0&6&0&4&0&1&0\\
+9&1&1&4&4&6&6&4&4&1&1
+\end{tabular}
+
+From the table, it is clear that we get binomial coefficients interspersed with
+0s in the even numbered rows of our table and repeated binomial coefficients in
+the odd numbered rows of our table.  In particular when $m+n$ and $n$ are both
+even, $\neg1choose{m+n}{n}={(m+n)/2\choose n/2}$, and if $m+n$ is even and $n$
+is odd, $\neg1choose{m+n}{n}=0$.  In our table, at least, if $m+n$ is odd, it
+appears that we get $\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose
+\lfloor n/2\rfloor}$.  In fact, using the recurrence just as we used it to
+construct the table, we can prove by induction that
+$$\neg1choose{m+n}{n}=\left\{ 
+\begin{array}{ll}0&\mbox{if $mn$ is odd}\\
+{\lfloor(m+n)/2\rfloor\choose
+\lfloor n/2\rfloor}&\mbox{otherwise.}
+\end{array}\right.$$
+(Note that $mn$ is odd if and only if $m+n$ is even and $n$ is odd.)  It would
+be fascinating to know what we are counting here!}
+
+\iffalse
+ \solution $ \qchoose{n}{k} with q=-1 equals
+
+              ( 0                               if k(n-k) is odd
+              <
+              ( (floor(n/2) choose floor(k/2))  if k(n-k) is even$
+
+Note that the limit _always_ exists, since [n choose k]_q is actually
+a _polynomial_ in q (via either of the two q-Pascal recurrences).  This
+means that in the explicit product formula for [n choose k]_q, which
+makes it look a priori like a rational function in q, there must be
+cancellation of all the 1+q factors in the denominator by 1+q factors
+in the numerator, so that L'Hopital's rule has to work (even if it is
+messy).
+
+Probably better than L'Hopital would be to just guess the above
+formula empirically, by checking enough special cases via a computer
+algebra package, and then using either q-Pascal recurrence (with q=-1)
+to verify it by induction (making use of the usual Pascal recurrence
+for binomial coefficients).  Note that the case where k(n-k) is odd
+giving 0 is trivial by the symmetry of the coefficients in the polynomial
+[n choose k]_q, since k(n-k) is the degree of this polynomial
+(a symmetric polynomial of odd degree evaluated at -1 is always 0).
+
+So in terms of stating a problem for the students, perhaps it's better
+to
+
+  (a) ask them to explain why you get 0 if k(n-k) is odd
+      (hint about symmetry?)
+
+  (b) then ask them to use a computer algebra package
+      or pencil and paper to get data allowing them to guess
+      the formula when k(n-k) is even,
+
+  (c) then see if they can prove it
+      (hint about the q-Pascal recurrences?).}\fi
+
+\end{enumerate}
+\ep
+
+\section{Generating Functions and Recurrence Relations} Recall that a
+recurrence relation for a sequence $a_n$ expresses $a_n$ in terms of
+values $a_i$ for $i<n$.  For example, the equation $a_i=3a_{i-1} +2^i$ is
+a first order linear constant coefficient recurrence.
+\subsection{How generating functions are relevant}  Algebraic
+manipulations with generating functions can sometimes reveal the
+solutions to a recurrence relation. 
+
+\bp
+\iteme Suppose that $a_i=3a_{i-1} + 3^i$.  \label{substituteandsolve}
+\begin{enumerate}
+\item Multiply both sides by $x^i$ and
+sum both the left hand side and right hand side from $i=1$ to infinity. 
+In the left-hand side use the fact that 
+ $$\sum_{i=1}^\infty a_ix^i = (\sum_{i=0}^\infty x^i) -a_0$$ and in the
+right hand side, use the fact that 
+ $$\sum_{i=1}^\infty a_{i-1}x^i = x\sum_{i=1}^\infty a_ix^{i-1}
+=x\sum_{j=0}^\infty a_jx^j =x\sum_{i=0}^\infty a_ix^i$$ (where we substituted
+$j$ for $i-1$ to see explicitly how to change the limits of summation, a
+surprisingly useful trick) to rewrite the equation in terms of the power series
+$\sum_{i=0}^\infty a_ix^i$.  Solve the resulting equation for the power series
+$\sum_{i=0}^\infty a_ix^i$.
+\solution{\begin{eqnarray*}\sum_{i=1}^\infty a_ix^i &=&3\sum_{i=1}^\infty
+a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
+\sum_{i=1}^\infty a_ix^i&=&3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
+\sum_{i=0}^\infty 3^ix^i-3^0x^0\\
+\sum_{i=0}^\infty a_ix^i -a_0&=&3x\sum_{i=0}^\infty a_{i}x^{i}+
+{1\over 1-3x}-1\\
+(1-3x)\sum_{i=0}^\infty a_ix^i &=&a_0+{1\over 1-3x} -1\\
+\sum_{i=0}^\infty a_ix^i &=&{a_0-1\over 1-3x}+{1\over (1-3x)^2} 
+\end{eqnarray*}}
+
+\item Use the previous part to get a formula for $a_i$ in terms of $a_0$.
+\solution{\begin{eqnarray*}\sum_{i=0}^\infty a_i x^i &=& {a_0-1\over 1-3x} +
+{1\over(1-3x)^2} \\
+&=&(a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty {i+1\choose i}3^ix^i,
+\end{eqnarray*}
+which gives us $a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i$.}
+
+\item Now suppose that $a_i=3a_{i-1} + 2^i$.  Repeat the previous two
+steps for this recurrence relation.  (There is a way to do this part
+using what you already know.  Later on we shall introduce yet another way
+to deal with the kind of generating function that arises here.)
+\solution{
+\begin{eqnarray*}\sum_{i=1}^\infty a_ix^i&=&3\sum_{i=1}^\infty
+a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i\\
+\sum_{i=0}^\infty a_ix^i -a_0 &=&3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
++\sum_{i=0}^\infty (2x)^i -1\\
+\sum_{i=0}^\infty a_ix^i -a_0 &=&3x\sum_{i=0}^\infty a_ix^i +{1\over 1-2x} -1\\
+(1-3x)\sum_{i=0}^\infty a_ix^i&=&a_0 +{1\over 1-2x}-1\\
+\sum_{i=0}^\infty a_ix^i&=& {a_0-1\over 1-3x}+{1\over(1-2x)(1-3x)} \\
+\sum_{i=0}^\infty a_ix^i&=&(a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
+2^ix^i\sum_{j=0}^\infty 3^jx^j \\
+\end{eqnarray*} 
+But\ \  $\displaystyle\sum_{i=0}^\infty
+2^ix^i\sum_{j=0}^\infty 3^jx^j=
+\sum_{k=0}^\infty
+\sum_{i=0}^k 2^i3^{k-i}x^k=
+\sum_{k=0}^\infty3^kx^k
+\sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left({2\over
+3}\right)^{k+1}\over 1-{2\over 3}}3^kx^k=\sum_{k=0}^\infty
+(3^{k+1}-2^{k+1})x^k$. Substituting this into the equation for
+$\sum_{i=0}^\infty a_ix^i$ gives us
+$a_i =(a_0+2)3^i -2^{i+1}$.}
+\end{enumerate}
+
+
+\itemm Suppose we deposit \$5000 in a savings certificate that pays ten
+percent interest and also participate in a program to add \$1000 to the
+certificate at the end of each year (from the end of the first year on)
+that follows (also subject to interest.)  Assuming we make the \$5000
+deposit at the end of year 0, and letting $a_i$ be the amount of money in
+the account at the end of year
+$i$, write a recurrence for the amount of money the certificate is worth
+at the end of year $n$.  Solve this recurrence.  How much money do we
+have in the account (after our year-end deposit) at the end of ten years? 
+At the end of 20 years?
+\solution{$a_n=1.1a_{n-1}+1000$, and $a_0=5000$.  
+\begin{eqnarray*}\sum_{i=1}^\infty
+a_ix^i&=&1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i\\
+\hspace*{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0&=&
+1.1x\sum_{i=0}^\infty a_ix^i +1000(\sum_{i=0}^\infty x^i-1)\\ 
+\hspace*{-.5
+in}(1-1.1x)\sum_{i=0}^\infty a_ix^i &=& a_0 +1000\sum_{i=10}^\infty x^i-1000\\
+\sum_{i=0}^\infty a_i x^i&=& a_0\sum_{i=0}^\infty (1.1)^ix^i
++1000\sum_{i=0}^\infty (1.1)^ix^i\sum_{i=0}^\infty x^i -1000\\
+\sum_{i=0}^\infty a_i x^i&=& a_0\sum_{i=0}^\infty (1.1)^ix^i
++1000\sum_{k=0}^\infty \left(\sum_{i=0}^k(1.1)^i\right)x^k
+- 1000\sum_{i=0}^\infty (1.1)^ix^i
+\end{eqnarray*} This gives us that $a_n= 4000(1.1)^n +1000{1-(1.1)^{n+1}\over
+-.1}$.  This simplifies to $a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
+15,000(1.1)^n-10000$. Courtesy of Maple, after ten years we have \$28,906.14
+and after 20 years we have \$90,912.50.}
+
+
+\ep 
+
+\subsection{Fibonacci Numbers}
+
+The sequence of problems that follows describes a number of hypotheses we
+might make about a fictional population of rabbits.  We use the example
+of a rabbit population for historic reasons; our goal is a classical
+sequence of numbers called Fibonacci numbers.  When
+Fibonacci\footnote{Apparently Leanardo de Pisa was given the name Fibonacci
+posthumously} introduced them, he did so with a fictional population of rabbits.
+
+\subsection{Second order linear recurrence relations}
+\bp
+\iteme Suppose we start (at the end of month 0) with 10 pairs of baby rabbits,
+and that after baby rabbits mature for one month they begin to reproduce, with
+each pair producing two new pairs at the end of each month afterwards.  Suppose
+further that over the time we observe the rabbits, none die. Let $a_n$ be the
+number of rabbits we have at the end of month $n$. Show that
+$a_n=a_{n-1} + 2a_{n-2}$.  This is an example of a {\em second
+order}\index{recurrence!second order}\index{second order recurrence}
+{\em linear}\index{recurrence!linear}\index{linear recurrence!second
+order} recurrence with constant coefficients.\index{recurrence!constant
+coefficient}  Using a method similar to that  of Problem
+\ref{substituteandsolve}, show that 
+ $$\sum_{i=0}^\infty a_ix^i = {10\over 1-x-2x^2}.$$
+This gives us the generating function for the sequence $a_i$ giving the
+population in month $i$; shortly we shall see a method for converting
+this to a solution to the recurrence. \label{secondorderintroduction}
+\solution{
+\begin{eqnarray*}\sum_{n=2}^\infty a_nx^n&=&\sum_{n=2}^\infty a_{n-1}x^n +
+2\sum_{n=2}^\infty a_{n-2}x^n\\
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x &=&x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
+2x^2\sum_{n=2}^\infty a_{n-2}x^{n-2}\\
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x&=&x\sum_{n=1}^\infty a_{n}x^{n} +
+2x^2\sum_{n=0}^\infty a_{n}x^n\\
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x&=&x\left(\sum_{n=0}^\infty
+a_{n}x^{n}-a_0\right) + 2x^2\sum_{n=0}^\infty a_{n}x^n\\
+(1-x-2x^2)\sum_{n=0}^\infty a_nx^n&=&a_0+a_1x-a_0x\\
+\sum_{n=0}^\infty a_nx^n&=&{a_0+a_1x-a_0x\over (1-x-2x^2)} 
+\end{eqnarray*}
+In this problem
+$a_0=a_1=10$ because we start with ten pairs of baby rabbits, so they have to
+mature for a month before they begin reproducing.  Thus
+$\displaystyle\sum_{n=0}^\infty a_nx^n = {10\over (1-x-2x^2)}$}
+
+\iteme In Fibonacci's original problem, each pair of mature rabbits
+produces one new pair at the end of each month, but otherwise the
+situation is the same as in Problem \ref{secondorderintroduction}. 
+Assuming that we start with one pair of baby rabbits (at the end of month
+0), find the generating function for the number of pairs of rabbits we
+have at the end on $n$ months.\label{originalFibonacci}
+\solution{Our recurrence becomes $a_n=a_{n-1}+a_{n-2}$, and following the
+pattern of Problem \ref{secondorderintroduction} we get
+\begin{eqnarray*}
+\sum_{n=2}^\infty a_nx^n&=&\sum_{n=2}^\infty a_{n-1}x^n +
+\sum_{n=2}^\infty a_{n-2}x^n\\
+\sum_{n=0}^\infty a_nx^n-a_0-a_1x &=&x\left(\sum_{n=0}^\infty
+a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n\\
+(1-x-x^2)\sum_{n=0}^\infty a_nx^n&=&a_0+a_1x-a_0x\\
+\sum_{n=0}^\infty a_nx^n&=&{a_0+a_1x-a_0x\over (1-x-x^2)}
+\end{eqnarray*} 
+Since now $a_0=a_1=1$, we have $\displaystyle \sum_{n=0}^\infty a_nx^n=
+{1\over 1-x-x^2}$.}
+
+\itemi Find the generating function for the solutions to the recurrence
+$$a_i=5a_{i-1}-6a_{i-2} + 2^i.$$\label{secondordernonhomo}
+\solution{\begin{eqnarray*}\sum_{i=2}^\infty a_ix^i &=& \sum_{i=2}^\infty
+5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i\\
+\hspace*{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x &=&
+5x\left(\sum_{i=0}^\infty
+a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
+2^ix^i-1-2x\\
+\hspace*{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i&=&a_0-1+(a_1-5a_0-2)x +
+\sum_{n=0}^\infty 2^ix^i\\
+\sum_{i=0}^\infty a_ix^i&=& {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ {1\over
+1-5x+6x^2}\cdot{1\over 1-2x}
+\end{eqnarray*}}
+
+
+
+\ep
+
+The recurrence relations we have seen in this section are called
+{\em second order}\index{recurrence!second order} because they specify
+$a_i$ in terms of
+$a_{i-1}$ and
+$a_{i-2}$, they are called {\em
+linear}\index{recurrence!linear}\index{linear recurrence} because
+$a_{i-1}$ and
+$a_{i-2}$ each appear to the first power, and they are called {\em
+constant coefficient recurrences}\index{recurrence!constant coefficient}
+because the coefficients in front of
+$a_{i-1}$ and $a_{i-2}$ are constants.
+\subsection{Partial fractions}  The generating functions you found in the
+previous section all can be expressed in terms of the reciprocal of a
+quadratic polynomial.  However without a power series representation, the
+generating function doesn't tell us what the sequence is.  It turns out
+that whenever you can factor a polynomial into linear factors (and over
+the complex numbers such a factorization always exists) you can use that
+factorization to express the reciprocal in terms of power series.
+
+\bp
+\iteme Express ${1\over x-3 } + {2\over x-2}$ as a single
+fraction.\label{simplifysumoffractions}
+\solution{${x-2 +2(x-3)\over(x-3)(x-2)}={3x-8\over x^2-5x+6}$}
+
+\itemm In Problem \ref{simplifysumoffractions} you see that when we added
+numerical multiples of the reciprocals of first degree polynomials we got
+a fraction in which the denominator is a quadratic polynomial.  This will
+always happen unless the two denominators are multiples of each other,
+because their least common multiple will simply be their product, a
+quadratic polynomial.  This leads us to ask whether a fraction whose
+denominator is a quadratic polynomial can always be expressed as a sum of
+fractions whose denominators are first degree polynomials.  Find numbers
+$c$ and $d$ so that
+$${5x+1\over(x-3)(x+5)} = {c\over x-3} + {d\over
+x+5}.$$\label{partialfractionsintro}
+\solution{
+\begin{eqnarray*}{5x+1\over(x-3)(x+5)} &=& {c\over x-3} + {d\over
+x+5}\\
+{5x+1\over(x-3)(x-5)} &=&cx+5c+dx-3d
+\end{eqnarray*}
+gives us 
+\begin{eqnarray*}
+5x&=&cx+dx\\
+1&=&5c-3d\\
+\tallstrut{18}5&=&c+d\\
+1&=&5c-3d\\
+\end{eqnarray*} Which gives us $16=8c$ so that $c=2$ and then $d=3$.}
+
+
+\iteme In Problem \ref{partialfractionsintro} you may have simply guessed
+at values of
+$c$ and $d$, or you may have solved a system of equations in the two
+unknowns
+$c$ and $d$.  Given constants $a$, $b$, $r_1$, and $r_2$ (with $r_1\not=
+r_2$), write down a system of equations we can solve for
+$c$ and
+$d$ to write 
+$${ax+b\over (x-r_1)(x-r_2)} = {c\over x-r_1} + {d\over
+x-r_2}.$$\label{partialfractions1}\solution{To have
+$$
+{ax+b\over (x-r_1)(x-r_2)} =  {c\over x-r_1} + {d\over
+x-r_2}$$
+we must have
+$$cx-r_2c+dx-r_2d = ax+b.
+$$
+This gives us the equations $cx+dx=ax$ and $-r_2c-r_1d=b$. Since $x$ can
+be any value, in particular it can be nonzero, so we can divide by it.  This
+gives us the equations $c+d=a$ and $r_2c+r_1d=-b$.}
+
+
+\ep
+Writing down the equations in Problem \ref{partialfractions1} and solving
+them is called the {\em method of partial fractions}.\index{partial
+fractions!method of}  This method will let you find power series
+expansions for generating functions of the type you found in Problems
+\ref{secondorderintroduction} to
+\ref{secondordernonhomo}.  However you have to be able to factor the
+quadratic polynomials that are in the denominators of your generating
+functions.  
+
+\bp
+\iteme Use the method of partial fractions to convert the generating
+function of Problem \ref{secondorderintroduction} into the form
+$${c\over x-r_1} + {d\over x-r_2}.$$  Use this
+to find a formula for $a_n$.
+\solution{${10\over (1-x-2x^2)}={10\over (1-2x)(1+x)} = {c\over1-2x} +{d\over
+1+x}$.  This gives us the equations $c+d=10$ and  $c-2d=0$. Thus $3d=10$, so
+$d={10\over3}$, and $c=2d$ so $c={20\over3}$.  Thus
+\begin{eqnarray*}\sum_{i=0}^\infty a_ix^i &=& {10\over 1-x-2x^2}\\
+&=&{20/3\over 1-2x} + {10/3\over 1+x}\\
+&=&{20\over 3}\sum_{i=0}^\infty (2x)^i + {10\over 3}\sum_{i=0}^\infty (-1)^ix^i
+\end{eqnarray*}
+Thus $a_i={20\over3}2^i +{10\over3}(-1)^i$.}
+
+\iteme Use the quadratic formula to find the solutions to $x^2+x-1=0$, and
+use that information to factor $x^2+x-1$.\label{factorFibonacci}
+\solution{$r_1={-1+\sqrt{5}\over2}$, $r_2 = {-1-\sqrt{5}\over 2}$.  These roots
+give us the equation 
+$x^2+x-1=(x-{-1+\sqrt{5}\over2})(x-{-1-\sqrt{5}\over 2})$.}
+
+\iteme Use the factors you found in Problem \ref{factorFibonacci}  to
+write $$1\over x^2+x-1$$
+in the form 
+ $${c\over x-r_1} + {d\over x-r_2}.$$
+(Hint:  You can save yourself a tremendous amount of frustrating algebra
+if you arbitrarily choose one of the solutions and call it $r_1$ and
+call the other solution $r_2$ and solve the problem using
+these algebraic symbols in place of the actual roots.\footnote{We use the
+words roots and solutions interchangeably.}  Not only will you save
+yourself some work, but you will get a formula you could use in other
+problems.  When you are done, substitute in the actual values of the
+solutions and simplify.\label{fractionFibonacci})
+\solution{${1\over x^2+x-1}={c\over x-r_1}+{d\over x-r_2}$ gives us
+$cx-cr_2+dx-dr_1=1$.  Thus $c+d=0$, and $cr_2+dr_1 =-1$. This gives us $d=-c$
+and so $cr_2-cr_1=-1$, which yields $c={1\over r_1-r_2}$, and $d={1\over
+r_2-r_1}
+$.  By substitution, $c=1/\sqrt{5}$ and $d=-1/\sqrt{5}$.   This gives
+us $${1\over x^2+x-1} = {1/\sqrt{5}\over x-{-1+\sqrt{5}\over2}}
++{-1/\sqrt{5}\over x- {-1-\sqrt{5}\over2}}.$$}
+
+\iteme
+\begin{enumerate}
+\item Use the partial fractions decomposition you found in
+Problem
+\ref{factorFibonacci} to write the generating function you found in
+Problem \ref{originalFibonacci} in the form $$\sum_{n=0}^\infty a_nx^i$$
+and use this to give an explicit formula for $a_n$.  (Hint: once again it
+will save a lot of tedious algebra if you use the symbols $r_1$ and $r_2$
+for the solutions as in Problem \ref{fractionFibonacci} and substitute
+the actual values of the solutions once you have a formula for $a_n$ in
+terms of $r_1$ and $r_2$.)  
+\begin{eqnarray*}\sum_{n=0}^\infty a_nx^n &=&{1\over 1-x-x^2}\>=\>-{1\over
+x^2+x-1}\\ 
+&=&{1\over\sqrt{5}}\cdot{1\over r_1-x} -{1\over\sqrt{5}}\cdot{1\over r_2-x}\\
+&=&{1\over r_1\sqrt{5}}\cdot{1\over1-x/r_1} -{1\over r_2\sqrt{5}}\cdot{1\over
+1-x/r_2}\\ 
+&=&{1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left({x\over r_1}\right)^n
+-{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left({x\over r_2}\right)^n
+\end{eqnarray*}
+This gives us that \begin{eqnarray*}a_n&=&{1\over\sqrt{5}\cdot r_1^{n+1}}
++{1\over\sqrt{5}\cdot r_2^{n+1}}\\
+&=&{2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
++{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}\\&=&{2^{n+1}(1+\sqrt{5})^{n+1}\over
+\sqrt{5}\cdot
+4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}\\
+&=&{1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+{1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.\end{eqnarray*}
+
+\item When we have
+$a_0=1$ and $a_1=1$, i.e. when we start with one pair of baby rabbits, the
+numbers
+$a_n$ are called {\em Fibonacci Numbers}\index{Fibonacci numbers}.  Use
+either the recurrence or your final formula to find $a_2$ through $a_8$. 
+Are you amazed that your general formula produces integers, or for that
+matter produces rational numbers?  Why does the recurrence equation tell
+you that the Fibonacci numbers are all integers?  
+\solution{Using the recurrence, the Fibonacci numbers from $a_0$ to $a_8$ are
+1, 1, 2, 3, 5, 8, 13, 21, 34.  The recurrence says each term is the sum of the
+two preceding terms, and since the first two terms are integers, all the sums
+must be integers.}
+
+\itemitemi Find an algebraic
+explanation (not using the recurrence equation) of what happens to make the
+square roots of five go away. Explain why there is a real number
+$b$ such that, for large values of $n$, the value of the
+$n$th Fibonacci number is almost exactly (but not quite) some constant
+times
+$b^n$.  (Find $b$ and the constant.)
+\solution{From the binomial theorem, 
+\begin{eqnarray*} &&{1\over \sqrt{5}}\left({1+\sqrt{5}\over
+2}\right)^{n+1}- {1\over \sqrt{5}}\left({1-\sqrt{5}
+\over2}\right)^{n+1}\\&=&
+{1\over2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}{n+1\choose
+i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} {n+1\choose
+i}(-1)^i\left(\sqrt{5}\right)^i\right]\\ &=&{1\over2^{n+1}\sqrt{5}}\sum_{i:i\in
+[n+1],\ i\mbox{\scriptsize~is odd}}{n+1\choose i}\left(\left(\sqrt{5}\right)^i
+-(-1)^i\left(\sqrt{5}\right)^i\right)\\
+&=&{1\over2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+odd}}	2{n+1\choose
+i}\left(\sqrt{5}\right)^i \\
+&=&{1\over2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+odd}}	{n+1\choose
+i}\left(\sqrt{5}\right)^{i-1}\\
+&=&{1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+even}}	{n+1\choose
+i+1}5^{i/2} \\
+&=&{1\over 2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}{n+1\choose 2k+1}5^k,
+\end{eqnarray*} which makes it clear that $a_n$ is at least a rational
+number. It is not clear from this new formula why the result is always an
+integer. Since
+$\left|{1-\sqrt{5}\over 2}\right|<1$,
+${1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}$ approaches 0 as $n$
+becomes large.  Therefore if we take $b$ to be $\left({1+\sqrt{5}\over
+2}\right)^n$ and we take $c$ to be ${1+\sqrt{5}\over 2\sqrt{5}}$ then then
+$n$th Fibonacci number is almost exactly $cb^n$ when $n$ is large.  In
+particular, it is the nearest integer to $cb^n$.}
+\itemitemih As a challenge (which the author has not yet done), see if you can
+find a way to show algebraically (not using the recurrence relation, but rather
+the formula you get by removing the square roots of five) that the formula for
+the Fibonacci numbers yields integers.
+\solution{None is yet available.} 
+\end{enumerate}
+
+\item  Solve the recurrence $a_n= 4a_{n-1} - 4a_{n-2}$.
+\solution{\begin{eqnarray*}
+\sum_{n=2}^\infty a_nx^n &=& 4\sum_{n=2}^\infty a_{n-1}x^n -
+4\sum_{n=2}^\infty a_{n-2}x^n\\
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x &=& 4x(\sum_{n=0}^\infty a_{n}x^n
+-a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n\\
+(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  &=& 
+a_0+a_1x-4a_0x \\
+\sum_{n=0}^\infty a_nx^n&=&{a_0+a_1x-4a_0x\over (1-4x+4x^2)}\\
+\sum_{n=0}^\infty a_nx^n&=&{a_0+a_1x-4a_0x\over (1-2x)^2}\\
+\sum_{n=0}^\infty a_nx^n&=&(a_0+a_1x-4a_0x)\sum_{n=0}^\infty {n+2-1\choose n}
+2^nx^n\\
+\sum_{n=0}^\infty a_nx^n&=&(a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
+2^nx^n
+\end{eqnarray*}Thus $a_n=a_0(n+1)2^n
++(a_1-4a_0)n2^{n-1}=a_02^n+(a_1-2a_0)n2^{n-1}$.}
+
+\ep
+
+
+\subsection{Catalan Numbers}
+
+\bp
+\itemi Using either lattice paths or diagonal lattice paths, explain why
+the Catalan Number\index{Catalan Number!recurrence for} $c_n$ satisfies
+the recurrence
+
+$$C_n = \sum_{i=1}^{n-1} C_{i-1}C_{n-i}.$$
+
+Show that if we use $y$ to stand for the power series $\sum_{i=0}^\infty
+c_nx^n$, then we can find $y$ by solving a quadratic equation.  Solve for
+$y$.  Taylor's theorem from calculus tells us that the extended binomial
+theorem  $$(1+x)^r = \sum_{i=0}^\infty {r\choose i}x^i$$
+holds for any number real number $r$, where $r\choose i$ is defined to be
+$${r^{\underline{i}}\over i!} = {r(r-1)\cdots(r-i+1)\over i!}.$$
+Use this and your solution for $y$ (note that of the two possible values
+for $y$ that you get from the quadratic formula, only one gives an actual
+power series) to get a formula for the Catalan numbers.\index{Catalan
+number!generating function for}\label{CatalanRecurrence}
+\solution{Recall that  a Dyck Path is a diagonal lattice path that never goes
+lower than its starting point and a Catalan Path of length $2n$ is a Dyck path
+that goes from
+$(0,0)$ to $(2n,0)$  The Catalan number $C_n$ is the number of Catalan paths
+of length $2n$.  We take $C_0=1$.  A Catalan path could touch the $x$-axis
+several times before it reaches $(2n,0)$.  Its first touch can be any point
+$(2i,0)$ between
+$(2,0)$ and
+$(2n,0)$.  For the path to touch first at $(0,2i)$, the path must start with
+an upstep and then proceed as a Dyck path from $(1,1)$ to $(2i-1,1)$.  From
+there it must take a downstep.  But the number of Dyck paths from $(1,1)$ to
+$(2i-1,1)$ is the same as the number of Catalan paths from $(0,0)$ to
+$(2i-2,0)$.  The number of Catalan paths is the number whose first touch of the
+$x$-axis is at $x=2$ plus the number whose first touch is at $x=4$,\ldots,
+through the number whose first touch is at $2n$.  After the first touch at
+$x=2i$, the path then behaves as a Catalan path from $(2i,0)$ to $(2n,0)$.  The
+number of such paths is $C_{n-i}$.  By the product principle, the number of
+Catalan paths whose first touch is at $x=2i$ is $C_{i-1}C_{n-i}$.  Then by the
+sum principle, the number of Catalan paths of length 1 or more is
+$$C_n=\sum_{i=1}^nC_{i-1}C_{n-i}.$$
+
+To solve for $C_n$, write
+\begin{eqnarray*}
+\sum_{n=0}^\infty C_nx^n &=&1+\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}C_{n-i}x^n\\
+\sum_{n=0}^\infty C_nx^n
+&=&1+x\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}x^{i-1}C_{n-i}x^{n-i}\\
+\sum_{n=0}^\infty C_nx^n
+&=&1+x\sum_{i=1}^\infty C_{i-1}x^{i-1}\sum_{j=0}^\infty C_{j}x^{j}\\
+y&=&1 + xy^2
+\end{eqnarray*}
+This gives us $xy^2-y+1=0$, and solving for $y$ by the quadratic formula gives us
+$y={1\pm \sqrt{1-4x}\over 2x}$.  By the extended binomial theorem,
+$$\sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty {1/2\choose i}(-4x)^i=
+\sum_{i=0}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i.$$
+The first term of this power series is 1, so to get a power series for $y$, we must
+take the negative square root so that the $x$ in the denominator will cancel
+out.  Thus $y=-{1\over2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over
+i!}(-1)^i4^ix^i$. But
+$(1/2)^{\underline{i}}=({1\over2})({-1\over2})({-3\over2})({-5\over2})\cdots
+({-2i+3\over 2})$, so 
+\begin{eqnarray*}y&=&-{1\over2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
+i!}(-1)^{2i-1}2^ix^{i-1}\\
+&=& \sum_{i=1}^\infty {(2i-2)!\over
+(i-1)!2^{i}i!}2^ix^{i-1}\\&=& \sum_{i=1}^\infty{2i-2!\over i!(i-1)!}x^{i-1}\\
+&=&\sum_{j=0}^\infty{2j!\over (j+1)!j!}x^j
+\end{eqnarray*}
+giving us $C_j={1\over j+1}{2j\choose j}$, which is our earlier formula for the
+Catalan Number $C_j$.}
+
+
+\ep
+
+\section{Supplementary Problems}
+\begin{enumerate}
+\item Each person attending a party has been asked to bring a prize.  The
+person planning the party has arranged to give out exactly as many prizes
+as there are guests, but any person may win any number of prizes.  If
+there are $n$ guests, in how many ways may the prizes be given out so
+that nobody gets the prize that he or she brought?
+\solution{We use inclusion and exclusion.  Property $P_i$ is that person $i$
+gets the prize he or she brought.  We are interested in
+$N_{\mbox{e}}(\emptyset)$.  If
+$P$ is the set of all properties, we need to compute $N_{\mbox{a}}(S)$ for every
+subset
+$S$ of
+$P$. But $N_{\mbox{a}}(S)$ is the number of
+functions from the prizes to the people that give each prize represented by a
+property in
+$S$ to the person who brought it.  Think in terms of distributing those prizes
+first. Then there are
+$n-|S|$ other prizes that we may pass out to the $n$ people as we please, so we
+may do that in $n^{n-|S|}$ ways.  Thus $N_{\mbox{a}}(S)=n^{n-|S|}$.  Applying
+Equation \ref{incexempty}, we get
+$$N_{\mbox{e}}(\emptyset)=\sum_{S:s\subseteq P}(-1)^{|S|} n^{n-|S|} =
+\sum_{s=0}^n (-1)^{|S|}{n\choose s}n^{n-s}.$$}
+ 
+\item There are $m$ students attending a seminar in a room with $n$
+seats.  The seminar is a long one, and in the middle the group takes a
+break.  In how many ways may the students return to the room and sit down
+so that nobody is in the same seat as before?
+\solution{We use inclusion and exclusion.  We let property $P_i$ be the
+property that student $i$ sits in the same seat as before.  We are interested
+in $N_{\mbox{e}}(\emptyset)$. For this purpose, for each subset $S$ of the set
+$P$ of all properties, we need to  compute $N_{\mbox{a}}(S)$, the number of
+ways for the students to return so that every student represented by a property
+in $S$ sits in his or her previous seat.  This leaves us with $n-|S|$ seats to
+be filled in a one-to-one fashion in $m-|S|$ students. There are
+$(n-|S|)^{\underline{m-|S|}}$ such seating arrangements, so $N_{\mbox{a}}(S)=
+(n-|S|)^{\underline{m-|S|}}$.  Thus we have
+$$N_{\mbox{e}}(\emptyset)=\sum_{S:S\subseteq P}
+(-1)^{|S|}(n-|S|)^{\underline{m-|S|}} = \sum_{s=0}^m (-1)^s{m\choose
+s}(n-s)^{\underline{m-s}}$$ ways for the students to return so that nobody sits
+in his or her previous place.}
+
+
+\itemi In how many ways may $k$ distinct books be arranged on $n$ shelves
+so that no shelf gets more than $m$ books?
+\solution{We use inclusion and exclusion.  Let property $P_i$ be that shelf $i$
+gets more than $m$ books.  Then the number of arrangements of books with at
+least the properties in a subset $S$ of the set $P$ of all properties is
+$N_{\mbox{a}}(S) = k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}$, because
+in order to have at least the properties in $S$ we may choose $(m+1)|S|$ books
+and arrange $m+1$ of them on each of the shelves represented by the properties in
+$S$, after which we arrange the remainder of the books.  Thus
+$$N_{\mbox{e}}(\emptyset)=\sum_{S:S\subseteq P} (-1)^{|S|}
+k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}=\sum_{s=0}^n
+(-1)^s{n\choose s}k^{\underline{(m+1)s}}n^{\underline{k-(m+1)s}}$$
+is the number of ways to arrange the books so that no shelf gets more than $m$.}
+
+\itemi We have said that for nonnegative $i$ and positive $n$ we want to define
+$-n\choose i$ to be $n+i-1\choose i$. If we want the Pascal recurrence to be
+valid, how should we define $-n\choose -i$ when $n$ and $i$ are both positive?
+\solution{The number $n\choose k$ is the number in row $n$ and column $k$ of
+the Pascal (right) triangle.  We have said we want to have ${-n\choose
+0}={n+0-1\choose 0}$, so we want ones everywhere in that column.  Now the Pascal
+recurrence gives us that
+${-n\choose 0}={-n-1\choose-1} +{-n-1\choose 0}$, so that ${-n\choose-1}=0$,
+as does $0\choose -1$.  Applying the Pascal recurrence again gives us
+${-n\choose -1}= {-n-1\choose -2} +{-n-1\choose -1}$, so we have ${-n-1\choose
+-2}=0$ as well.  Following this pattern, we can prove by induction that
+$-n\choose -k$ is zero whenever $k$ and $n$ are positive.}
+
+\itemi Suppose that $n$ children join hands in a circle for a game at
+nursery school. The game involves everyone falling down (and letting
+go).  In how many ways may they join hands in  a circle again so that
+nobody is to the right of the same child that was previously to his or
+her right?
+\solution{We use inclusion and exclusion, with property $i$ being the property
+that child $i$ has the same child to the right the second time they join hands.
+Given a set $S$ of properties, we can think of arranging units consisting of
+individual children and strings of children holding hands in a circle.  If we
+have $s$ properties, then we have $n-s$ of these units.  Each string of
+children can be arranged in only one way, because our set specifies who has to
+have the same child on the right.  Thus $N_{\mbox{a}}(S) = (n-s-1)!$.  This
+gives us 
+\begin{eqnarray*}N_{\mbox{e}}(\emptyset)=\sum_{S:S\subseteq P}
+(-1)^{|S|}(n-|S|-1)!&=&
+\sum_{s=0}^n (-1)^s {n\choose s} (n-s-1)!\\ &=&\sum_{s=0}^n (-1)^s {n!\over
+s!(n-s)}
+\end{eqnarray*}
+ ways for the children to join hands the second time so that none
+of them has the same child to the right.}
+
+\itemih Suppose that $n$ people link arms in a folk-dance and dance in a
+circle.  Later on they let go and dance some more, after which they
+link arms in a circle again.  In how many ways can they link arms the
+second time so that no-one is next to a person with whom he or she
+linked arms before.\label{Hora}
+\solution{We use the Principle of Inclusion and Exclusion.  Property $P_i$ will
+be the property that person $i$ links arms with someone previously to his or
+her right.  (Saying it is the person to the right gives us more control over
+our formulas.)  Given a subset $S$ of the set $P$ of all properties, the number
+of ways for the people in that set to link arms with the people previously on
+their right is the number of ways to arrange $n-|S|$ strings of people around a
+circle with strings of length more than 1 having two ways to arrange themselves. 
+(Once we have two or more people linked, another person can be added to this
+string only at one end or not at all, because this person must have been to the
+right of one of the people on an end of the string. However a string of length
+two or more can unlink and then link in the opposite order, and each person will
+still be linked to exactly the same people.)  Thus $N_{\mbox{a}}(S)=
+(n-|S|-1)!2^{m(S)}$, where $m(S)$ is the number of strings of length more than
+one determined by $S$. The number $m(S)$ can be any number from 1 to $S$, so
+long as
+$S$ is not too big; namely so long as $|S|\le \lfloor n/1\rfloor$.  (This is
+because if $m(S)=|S|$, then each person determined by a property in $S$ must be
+adjacent to a person not determined by a property in $S$.)  In particular,
+$N_{\mbox{a}}(S)$ is not completely determined by the size of $S$, as in all our
+other inclusion-exclusion problems.  How do we compute $m(S)$?  Let us call a
+subset $R$ of $S$ a run if 
+\begin{enumerate}
+\item the people determined by $R$ sit together in a
+row in both seatings, and 
+\item no other person in $S$ is in a row with these
+people in both seatings. 
+\end{enumerate} Some runs might determine just one person, but a run could
+also equal all of $S$.  Each run will have one more person not in $S$ who was
+originally to the right of the person in the run who was rightmost in the first
+seating, and so this person will have to sit in a row with the people in $R$ in
+the second seating as well.  Thus the number $r$ of runs in $S$ is the number of
+strings
+$m(S)$ that may be seated in two ways, and there are $n-|S|-r$ people who do not
+have to be seated with runs.  Thus $N_{\mbox{a}}(S) = (n-|S|-1)!2^r$, because
+the total number of strings of people (including strings of just one person) we
+need to seat is $n-|S| -r$, and there are $(k-1)!$ ways to arrange $k$ objects
+in a circle.. If we try to use the information we have so far to compute
+$N_{\mbox{e}}(\emptyset)$, we get
+$$N_{\mbox{e}}(\emptyset)=\sum_{S:S\subseteq P}(-1)^{|S|}(n-|S|_1)!2^r
+=\sum_{s=0}^n\sum_{r=1}^{|S|}N(s,r)(n-s-1)!2^r,$$ in which $N(s,r)$ stands for
+the number of property sets with size $s$ and $r$ runs.
+
+Picking out runs in a circular arrangement adds a layer of difficulty, so to
+compute $N(s,r)$, we first compute how many subsets of $[n]$ we have with $r$
+runs and then adjust for putting $1$ through $n$ around a circle in order.
+Imagine writing 1 through
+$n$ in a straight line, each integer occupying one unit of distance along the
+line. We now place
+$r$  sticks whose lengths add to
+$s$ (each stick has positive integer length) along that line. Each stick
+picks out a set of consecutive integers, as many as its length, so the
+sticks together pick out $s$ integers.  In order to be sure the sticks
+correspond to runs, we need to make sure they do not touch each other, so we
+place $n-s$ identical stones along the line too, making sure there is at
+least one stone between any two sticks.  The stones thus pick out the integers
+not in $S$.  The sticks are not quite identical, though the sticks of a given
+length are.  In other words, which lengths of sticks are in which places is
+what matters.  So the sticks give us a composition of $s$, a list of distinct
+positive integers that add to $s$.  We know there are $s-1\choose r-1$ such
+compositions. Once we have chosen an ordering for the sticks, we need to
+distribute the stones among the sticks so that no two sticks are adjacent. 
+Since the stones are identical, we can do this by putting one stone between
+each pair of sticks in our composition, and then distribute the remaining
+$n-s-r+1$  stones in any way we want among the $r-1$ places between the sticks
+and the two places to the left and right of all the sticks..  We can do this in
+$${r+1 + (n-s-r+1)-1\choose n-s-r+1}={n-s+1\choose n-s-r+1}={n-s+1\choose r}$$
+ways. Thus there are
+${s-1\choose r-1}{n-s+1\choose r}$ ways to choose a subset $S$ of $[n]$ that
+has
+$r$ runs.
+
+Now we have to deal with the fact that our $n$ people (who we have replaced
+with the integers 1 through $n$ in order) were arranged around a circle. That
+means that a run is now a set of consecutive integers on the circle, where $n$
+and 1 are considered consecutive.  Recall that the set $S$ is picked out by the
+sticks. If we arrange 1 through
+$n$ around a circle in order, the set
+$S$ that originally had
+$r$ runs will have $r-1$ runs if sticks covered both the first and last integer
+(1 and $n$), but otherwise it will still have $n$ runs.  Thus the number of
+subsets of $[n]$ that have $n$ runs when $1$ through $n$ are  arranged in a
+circle is the number of subsets of $[n]$ with $r+1$ runs that have both 1 and
+$n$ in $S$ plus the number of subsets of $[n]$ with $r$ runs that do not have
+both $1$ and
+$n$ in $S$. To compute the number of subsets $S$ that {\em do} contain both 1
+and $n$, we compute the number of arrangements of  $r$ sticks and $n-s$ stones
+that do start and end with a stick; that means that after we choose our
+composition into $r$ parts to get our arrangement of sticks and place one stone
+between each pair of previously adjacent sticks, we now place the remaining
+$n-s-r+1$ stones in the $r-1$ places between previously adjacent sticks in
+$${r-1 + (n-s-r+1)-1\choose n-s-r+1}={n-s-1\choose n-s-r+1}={n-s-1\choose r-2}$$
+ways. For the sticks and stones to determine a subset we must assign lengths to
+the sticks; the number of ways to do this is, as above, $s-1\choose r-1$, the
+number of compositions of $s$ with $r$ parts. Thus there are
+${s-1\choose r-1}{n-s-1\choose r-2}$ subsets of
+$[n]$ that have
+$r$ runs and include both 1 and $n$.  For our computation we will also want the
+number of subsets of $[n]$ that have $r+1$ runs and contain both $1$ and $n$
+this is
+${s-1\choose r}{n-s-1\choose r-1}$.
+
+On the other hand, the number of subsets of $[n]$ that have $r$ runs and do not
+contain both $1$ and $n$ is the total number of subsets with $r$ runs minus the
+number that do contain both $1$ and $n$; this is $${s-1\choose
+r-1}\left({n-s+1\choose r}- {n-s-1\choose
+r-2}\right).$$ 
+
+
+This gives us $$N(s,r) ={s-1\choose r}{n-s-1\choose r-1}+{s-1\choose
+r-1}\left({n-s+1\choose r}- {n-s-1\choose
+r-2}\right)$$ 
+ways to choose an $s$-element subset of $[n]$ that has $r$ runs when $[n]$ is
+arranged around a circle.  Thus there are\\
+$\tallstrut{24}\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[{s-1\choose
+r}{n-s-1\choose r-1}+{s-1\choose r-1}\left({n-s+1\choose r}- {n-s-1\choose
+r-2}\right)\right](n-s-1)!2^r$
+\\\tallstrut{18} ways for people to arrange themselves in the
+second circle so that no-one is adjacent to anyone he or she was previously
+adjacent to.
+}
+
+\itemih (A challenge; the author has not tried to solve this one!)  Redo
+Problem \ref{Hora} in the case that there are $n$ men and $n$ women and
+when people arrange themselves in a circle they do so alternating gender.
+
+\item  What is the generating function for the number of ways to pass out
+ $k$ pieces of candy from
+an unlimited supply of identical candy to  $n$ children (where
+$n$ is fixed) so that each child gets between three and six pieces of
+candy (inclusive)?  Use the fact that
+$$(1+x+x+x^3)(1-x) = 1-x^4$$ to find a formula for the number of ways to
+pass out the candy.  Reformulate this problem as an inclusion-exclusion
+problem and describe what you would need to do to solve it.
+\solution{$(x^3+x^4+x^5+x^6)^n$; 
+\begin{eqnarray*}(x^3+x^4+x^5+x^6)^n&=&x^{3n}(1+x+x^2+x^3)^n\\
+&=&x^{3n}\left({1-x^4\over 1-x}\right)^n\\
+&=&x^{3n}\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty
+{n+i-1\choose i}x^i
+\end{eqnarray*}  The number of ways to pass out $k$ pieces of candy is the
+coefficient of $x^k$ in this expression.  Thus the answer is zero if $k< 3n$
+because of the $x^{3n}$ in front.  Otherwise the answer is the coefficient of
+$^{k-3n}$ in $\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty
+{n+i-1\choose i}x^i$, which is $$\sum_{i,j:4j+i=k-3n}(-1)^j{n\choose
+j}{n+i-1\choose i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j{n\choose
+j}{k-2n-4j-1\choose n-1}.$$
+
+As an inclusion-exclusion problem, we would let property $i$ be that child $i$
+gets more than six pieces of candy. We would then observe that the number of
+ways to pass out the candy so that the children determined by a set $S$ of
+properties all get more than six pieces, and everyone else gets at least 3, is
+the number of ways to pass out the remaining candy after giving 7 pieces to each
+child identified by $S$ and 3 pieces to each other child.  This number is
+${k-7|S|-3(n-|S|)-1\choose n-1}={k-2n-4|S|-1\choose n-1}$.  From here we would
+substitute into Equation
+\ref{incexempty}, make any simplifications we could, and we would be done.}
+
+\itemm
+\begin{enumerate}
+\item In paying off a mortgage loan with initial amount A,
+annual interest rate
+$p$\% on a monthly basis with a monthly payment of $m$, what recurrence
+describes the amount owed after $n$ months of payments in terms of the
+amount owed after $n-1$ months?  Some technical details:  You make the
+first payment after one month.  The amount of interest included in your
+monthly payment is $.01p/12$.  This interest rate is applied to the amount
+you owed immediately after making your last monthly payment.  
+\solution{$a_n=(1+{.01p\over 12})a_{n-1}-m$.}
+
+\item Find a
+formula for the amount owed after $n$ months.  
+\solution{From Problem
+\ref{firstordlinconst} or by applying generating functions we have 
+\begin{eqnarray*}a_n &=& A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
+12})^n\over 1-(1+{.01p\over 12})}\\ &=& \left(A-{1200m\over
+p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}\end{eqnarray*}}
+
+\item Find a formula for the
+number of months needed to bring the amount owed to zero.  Another
+technical point:  If you were to make the standard monthly payment $m$ in
+the last month, you might actually end up owing a negative amount of
+money.  Therefore it is ok if the result of your formula for the number
+of months needed gives a non-integer number of months.  The bank would
+just round up to the next integer and adjust your payment so your balance
+comes out to zero.
+\solution{$\left(A-{1200m\over
+p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0$ gives us the
+equation $\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}$. Taking
+logarithms to any base we choose gives us $n\log (1+{.01p\over 12})=\log
+1200m-\log (1200m-Ap)$ and so $n={\log
+1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}$.}
+
+\item What should the monthly payment be to pay off the loan over a period of 30
+years?
+\solution{$360={\log
+1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}$ is the equation we need to
+solve for $m$, the monthly payment.  We need to chose some base for the
+logarithm so we can write its inverse function; suppose we use logs to the base
+10.  Then 
+\begin{eqnarray*}360\log (1+{.01p\over 12}) &=& \log
+1200m-\log (1200m-Ap)\\
+10^{360\log (1+{.01p\over 12})}&=&10^{\log
+1200m/(1200m-Ap)}\\
+ (1+{.01p\over 12})^{360} &=&1200m/(1200m-Ap)\\
+\left(1200m-Ap\right)(1+{.01p\over 12})^{360}&=&1200m\\
+1200m\left((1+{.01p\over 12})^{360}-1\right)&=& Ap(1+{.01p\over 12})^{360}\\
+m &=& {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
+12})^{360}-1\right)} 
+\end{eqnarray*}
+is our monthly payment.}
+\end{enumerate}
+
+\itemi Find a recurrence relation for the number of ways to divide a
+convex $n$-gon into triangles by means of non-intersecting diagonals. 
+How do these numbers relate to the Catalan numbers?\index{Catalan
+Number!recurrence for}
+\solution{Let $d_n$ be the number of ways to divide an $n$-gon into triangles
+by means of nonintersecting diagonals.  Take an $n$-gon and label its vertices
+cyclically from 1 to $n$.    Any triangulation must have a triangle containing
+the edge $1n$ between vertex 1 and vertex $n$.  The third vertex can be any
+number between 2 and
+$n-1$. We consider two cases. First, if the third vertex is 2 or $n-1$, then we
+have divided our polygon up into a triangle and an
+$(n-1)$-gon, and any triangulation of that $(n-1)$-gon joins with our original
+triangle to give us a triangulation of the $n$-gon. Second, if the third vertex
+of our original triangle is vertex $i$ with $3\le i\le n-2$ then we have divided
+our polygon into the polygon with the $i$ edges $12$, $23$, \ldots,
+$(i-1)i$, $i1$, the polygon with $n-i+1$ edges $ni$, $i(i+1)$, \ldots, $(n-1)n$,
+and the original triangle with edges
+$n1$, $1i$, $in$. Triangulations of the first two of these polygons join with the
+original triangle to give us a triangulation of the original polygon.
+
+The number of triangulations of the original polygon that we get from case 1 is
+$2d_{n-1}$.  The number of triangulations we get from the second case is
+$\sum_{i=3}^{n-2} d_id_{n-i+1}$.  Thus the total number of triangulations is
+$2d_{n-1}+d_{n-2}d_3 + d_{n-3}d_4 +\cdots + d_3d_{n-2}$.  If we take $d_2=1$,
+then we may write $d_n = d_{n-1}d_2+d_{n-2}d_3 +\cdots+d_3d_{n-2} +
+d_2d_{n-1}=\sum\limits_{i=2}^{n-1} d_id_{n-i+1}$.  This is very similar to the
+recurrence in Problem \ref{CatalanRecurrence} for the Catalan numbers.  We could
+apply the generating function method we used with the Catalan numbers to find a
+formula for $d_n$.  We could also experiment with the first few Catalan numbers
+and the first few ``triangulation'' numbers to see if they are related.  We
+have $C_0=1$, $C_1=1$, $C_2=2$, $C_3=C_0C_2+C_1C_1 +C_2C_0=5$, and
+$C_4=C_0C_3+C_1C_2+C_2C_1+C_3C_0=14$.  We have that $d_2=1$, $d_3=1$, $d_4=2$,
+$d_5=d_4d_2+d_3d_3+d_2d_4=5$, and $d_6=d_5d_2+d_4d_3+d_3d_4+d_5d_2=14$.  This
+makes pretty convincing evidence that $d_i= C_{i-2}$.  We have already done a
+base case (and more) for an inductive proof. So assume inductively that
+$d_{i}=C_{i-2}$ for $i<n$.  Then 
+\begin{eqnarray*}d_n&=&\sum\limits_{i=2}^{n-1} d_id_{n-i+1}\\
+&=&\sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i+1-2}\\
+&=&\sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i-1}\\
+&=&\sum\limits_{k=1}^{n-2} C_{k-1}C_{n-(k+1)-1}\\
+&=&\sum\limits_{k=1}^{n-2} C_{k-1}C_{(n-2)-k}\\
+&=&C_{n-2}
+\end{eqnarray*}
+Thus by the principle of mathematical induction, $d_n=C_{n-2}$ for all integers
+$n\ge 2$.}
+
+\itemi How does $\sum_{k=0}^n{n-k\choose k}$ relate to the Fibonacci
+Numbers?
+\solution{We begin by computing a few values of 
+$a_n=\sum_{k=0}^n{n-k\choose
+k}$.  We have $a_0=1$, $a_1=1$, $a_2=2$, $a_3=1+2=3$, $a_4=1+3+1=5$,
+$a_5=1+4+3=8$ and $a_6=1+5+6+1=13$.  So far the sequence agrees with the
+Fibonacci Numbers.  Each term of the sequence is the sum of the two preceding
+terms, so it makes sense to try to prove that $a_n=a_{n-1}+a_{n-2}$.  We may
+write
+\begin{eqnarray*}
+a_{n-1}+a_{n-2}
+&=&\sum_{k=0}^{n-1} {n-1-k\choose k}
++\sum_{k=0}^{n-2} {n-2-k\choose k}\\
+&=&\sum_{k=0}^{n-1} {n-1-k\choose k}+\sum_{j=1}^{n-1}{n-1-j\choose j-1}\\
+&=&1+\sum_{k=1}^{n-1}{n-1-k\choose k}+{n-1-k\choose k-1}\\
+&=&1+\sum_{k=1}^{n-1}{n-k\choose k} \>=\> \sum_{k=0}^{n-1}{n-k\choose k}
+\>=\> a_n
+\end{eqnarray*}Thus the sequence satisfies the same recurrence as the Fibonacci
+numbers and its first two values are the same as the Fibonacci numbers.  This
+lets us prove by induction that $a_n$ is the $n$th Fibonacci number.  More
+generally, given any second order recurrence, if two sequences satisfy that
+recurrence and have the same first two values, then they are equal.}
+
+\item Let $m$ and $n$ be fixed.  Express the generating function for the
+number of
+$k$-element multisets of an $n$-element set such that no element appears
+more than
+$m$ times as a quotient of two polynomials.  Use this expression to get a
+formula for the number of $k$-element
+multisets of an $n$-element set such that no element appears more than
+$m$ times.\solution{$(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}$. 
+Expanding this gives us ${(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i
+{n\choose i}x^{(m+1)i} \sum_{j=0}^\infty {n+j-1\choose j}$.  The coefficient of
+$x^k$ in this product is the number of $k$-element multisets chosen from an
+$n$-element set in which no element appears more than $m$ times.  This
+coefficient is
+$\sum\limits_{i,j:(m+1)i+j=k}(-1)^i{n\choose i}{n+j-1\choose
+j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i{n\choose
+i}{n+k-(m+1)i-1\choose n-1}$.}
+
+\item One natural but oversimplified model for the growth of a tree is
+that all new wood grows  from the previous year's growth and is
+proportional to it in amount.  To be more precise, assume that the
+(total) length of the new growth in a given year is the constant $c$
+times the (total) length of new growth in the previous year.  Write down
+a recurrence for the total length $a_n$ of all the branches of the tree
+at the end of growing season
+$n$.  Find the general solution to your recurrence relation.  Assume that
+we begin with a one meter cutting of new wood (from the previous year) which
+branches out and grows a total of two meters of new wood in the first year. 
+What will the total length of all the branches of the tree be at the end of $n$
+years?
+\solution{$a_n= a_{n-1} +c(a_{n-1}-a_{n-2})=(1+c)a_{n-1}-ca_{n-2}$.
+\begin{eqnarray*}\sum_{n=2}^\infty
+a_nx^n&=&\sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n\\
+(1-(1+c)x +cx^2)\sum_{n=0}^\infty
+a_nx^n&=&a_0+a_1x-a_0(1+c)x\\
+\sum_{n=0}^\infty a_nx^n &=& {a_0+(a_1-a_0(1+c))x\over 1-(1+c)x +cx^2}\\
+&=& {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}
+\end{eqnarray*} Assuming $c\not=1$ and using the method of partial fractions
+gives us 
+\begin{eqnarray*}
+&&{a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}\\ &=& (a_0+(a_1-a_0(1+c))x)
+\left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]\\
+&=& (a_0+(a_1-a_0(1+c))x)\left[{1\over 1-c}\sum_{i=0}^\infty x^i-{c\over
+1-c}\sum_{i=0}^\infty c^ix^i\right]\\
+&=& {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
+(1-c^{i+1})x^i.
+\end{eqnarray*}
+From this we get that $$a_i={a_0\over 1-c}(1-c^{i+1}) +{a_1-a_0(1+c)\over
+1-c}(1-c^i).$$
+
+Assuming that we begin with one meter of new wood means $a_0=1$, and assuming
+we have a total of two meters of new wood at the end of the first year means
+$c=2$ and $a_1=3$. Substituting these into our formula for $a_i$ gives us
+$a_i=2^{i+1}-1$}
+
+\itemi (Relevant to Appendix \ref{expogenfun}) We have some chairs which we are
+going to paint with red, white, blue, green, yellow and purple paint.  Suppose
+that we may paint any number of chairs red or white, that we may paint at most
+one chair blue, at most three chairs green, only an even number of chairs
+yellow, and only a multiple of four chairs purple.  In how many ways may we
+paint $n$ chairs?
+\solution{The generating function for the number of ways to paint $n$ chairs is 
+{\small
+\begin{eqnarray*}
+&&\hspace*{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
+(1+x^4+x^8+\cdots)\\ &=&
+{(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\>=\> {1\over
+(1-x)^4}\end{eqnarray*}} Thus the number of ways to paint $n$ chairs is
+${n+4-1\choose n}={n+3\choose n}$}
+
+\item What is the generating function for the number of partitions of an
+integer in which  each part is used at most $m$ times?  Why is this also
+the generating function for partitions in which consecutive parts (in a
+decreasing list representation) differ by at most $m$?
+\solution{
+$$(1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
+=\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
+=\prod_{i=1}^\infty {1-q^{i(m+1)}\over 1-q^i}
+$$ This is also the generating function for the number of
+partitions of an integer in which consecutive parts differ by at most $m$,
+because when we conjugate a partition in which each part is used at most $m$
+times, we get a partition in which each distinct column of the Young diagram
+occurs at most $m$ times, which means that the difference between two
+consecutive parts (in the decreasing list representation) is at most $m$.}
+
+\itemi Suppose we take two graphs $G_1$ and $G_2$ with disjoint vertex sets, we
+choose one vertex on each graph, and connect these two graphs by an edge $e$ to
+get a graph $G_{12}$.  How does   the chromatic polynomial of $G_{12}$ relate to
+those of
+$G_1$ and
+$G_2$?
+\solution{By the deletion-contraction recurrence, $$\Chi_{G_{12}}(x) =
+\Chi_{G_{12}-e}(x)-\Chi_{G_{12/e}}(x).$$ 
+Now $\Chi_{G_{12}-e}(x)=\Chi_{G_1}(x)\times \Chi_{G_2}(x)$ because 
+each ordered pair of proper colorings of $G_1$ and $G_2$ is a proper coloring of
+$G_{12}-e$.  $G_{12}/e$ is the graph we get by identifying the endpoint of $e$
+in $G_1$ with the endpoint of $e$ in $G_2$. Notice that if you fix one vertex
+of a graph $G$, fix one color, and ask how many proper colorings with $x$
+colors
+$G$ has in which the fixed vertex is the fixed color, you get $\Chi_G(x)/x$. 
+(By the quotient principle.)  Thus $\Chi_{G_2}(x)/x$
+is the number of ways to extend a proper coloring of
+$G_1$ to a proper coloring of $G_{12}/e$.  Then, by the product principle, the
+number of proper colorings of $G_{12}/e$ with $x$ colors is
+$\Chi_{G_1}(x)\Chi_{G_2}(x)/x$.  Therefore by the deletion-contraction
+recurrence,
+$\Chi_{G_{12}}(x) = \Chi_{G_1}(x)\Chi_{G_2}(x)(1-{1\over x})$.}
+
+%%%%%%% These are repeats
+\iffalse
+\item  What is the number of proper colorings of a cycle on five vertices
+in 4 colors?
+
+\item What are the possible chromatic polynomials for a tree on $n$
+vertices?
+\fi
+  
+\end{enumerate}

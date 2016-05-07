@@ -1,0 +1,1354 @@
+\chapter{Exponential Generating Functions}\label{expogenfun}
+\section{Indicator Functions}
+When we introduced the idea of a generating function, we said that the
+formal sum
+  $$\sum_{i=0}^n a_ix^i$$
+may be thought of as a convenient way to keep track of the sequence
+$a_i$.  We then did quite a few examples that showed how combinatorial
+properties of arrangements counted by the coefficients in a generating
+function could be mirrored by algebraic properties of the generating
+functions themselves.  The monomials $x^i$ are called {\em indicator
+polynomials}\index{indicator polynomials}.  (They indicate the position of
+the coefficient
+$a_i$.)  One example of a generating function is given by 
+$$(1+x)^n = \sum_{i=0}^\infty {n\choose i}x^i.$$
+Thus we say that $(1+x)^n$  is the generating function for the
+binomial coefficients $n \choose i$.  The notation tells us that we are
+assuming that only $i$ varies in the sum on the right, but that the
+equation holds for each fixed integer $n$.  This is implicit when we say
+that $(1+x)^n$ is the generating function for $n\choose i$, because we
+haven't written $i$ anywhere in $(1+x)^n$, so it is free to vary.
+
+Another example of a generating function is given by
+$$x^{\underline{n}} = \sum_{i=0}^\infty s(n,i)x^i.$$
+Thus we say that $x^{\underline{n}}$ is the generating function for the
+Stirling numbers of the first kind, $s(n,i)$.  There is a similar
+equation for Stirling numbers of the second kind, namely
+$$x^n = \sum_{i=0}^\infty S(n,i)x^{\underline{i}}.$$
+However with our previous definition of generating functions, this
+equation would not give a generating function for the Stirling numbers
+of the second kind, because $S(n,i)$ is not the coefficient of $x^i$.  If
+we were willing to consider the falling factorial powers
+$x^{\underline{i}}$ as indicator polynomials, then we could say that
+$x^n$ is the generating function for the numbers $S(n,i)$ relative to
+these indicator polynomials.  This suggests that perhaps different sorts
+of indicator polynomials go naturally with different sequences of
+numbers.  
+
+The binomial theorem gives us yet another example. 
+\bp
+\itemm Write $(1+x)^n$ as a sum of multiples of
+$x^i\over i!$ rather than as a sum of multiples of
+$x^i$.\solution{$$(1+x)^n =
+\sum_{i=0}^\infty {n\choose i}x^i=\sum_{i=0}^\infty {n!\over i!(n-i)!}x^i
+=
+\sum_{i=0}^\infty {n!\over (n-i)!}{x^i\over i!} = \sum_{i=0}^\infty
+n^{\underline{i}} {x^i\over i!}.$$}
+\ep
+
+This example suggests that we could say that $(1+x)^n$
+is the generating function for the falling factorial powers
+$n^{\underline{i}}$ relative to the indicator polynomials $x^i\over i!$. 
+In general, a sequence  of polynomials is called a family of {\bf
+indicator polynomials} if there is one polynomial of each nonnegative
+integer degree in the sequence.  Those familiar with linear algebra will
+recognize that this says that a family of indicator polynomials form a
+basis for the vector space of polynomials.  This means that each
+polynomial way can be expressed as a sum of numerical multiples of
+indicator polynomials in one and only one way.  One could use the
+language of linear algebra to define indicator polynomials in an even
+more general way, but a definition in such generality would not be useful
+to us at this point.  
+
+\section{Exponential Generating Functions}
+We say that the expression $\sum_{i=0}^\infty a_i{x^i\over i!}$ is the
+{\bf exponential generating function}\index{exponential generating
+function}\index{generating function!exponential} for the sequence
+$a_i$.  It is standard to use {\bf EGF}\index{EGF} as a shorthand for
+exponential generating function.  In this context we call the generating
+function
+$\sum_{i=0}^n a_ix^i$ that we originally studied the {\bf ordinary
+generating function}\index{generating function!ordinary}\index{ordinary
+generating function} for the sequence
+$a_i$.  You can see why we use the term exponential generating function
+by thinking about the exponential generating function (EGF) for the all
+ones sequence,
+$$\sum_{i=0}^\infty 1{x^i\over i!} = \sum_{i=0}^\infty {x^i\over i!}
+=e^x,$$
+which we also denote by $\exp (x)$.  Recall from calculus that the usual
+definition of
+$e^x$ or $\exp(x)$ involves limits at least implicitly.  We work our way
+around that by defining $e^x$ to be the power series $ \sum_{i=0}^\infty
+{x^i\over i!}$.
+
+\bp 
+
+\itemm Find the EGF (exponential generating function) for the sequence
+$a_n=2^n$.  What does this say about the EGF
+for the number of subsets of an $n$-element set?
+\solution{$\sum_{i=0}^\infty {2^i}{x^i\over i!}=e^{2x}$.  It says
+that the EGF for subsets of an $n$-element set is $e^{2x}$.}
+
+\itemm Find the EGF (exponential generating function) for the number of
+ways to paint the $n$ streetlight poles that run along the north side of
+Main Street in Anytown, USA using four colors.\label{paintinglightpoles}
+\solution{The number of ways to paint the streetlights is $4^n$,
+so the EGF is $\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}$.}
+
+\item For what sequence is ${e^x-e^{-x}\over 2} =\cosh x$ the EGF
+(exponential generating function)?
+\solution{For the sequence $1-(-1)^n\over 2$ which, starting with $n=0$ is
+the alternating sequence 0,1,0,1\ldots of zeros and ones.}
+
+\itemes For what sequence is $\ln({1\over 1-x})$ the EGF?
+\label{ln1over1-x}($\ln (y)$ stands for the natural logarithm of $y$. 
+People often write
+$\log(y)$ instead.) Hint:  Think of the definition of the logarithm as an
+integral, and don't worry at this stage whether or not the usual laws of
+calculus apply, just use them as if they do!  We will then define
+$\ln({ 1-x})$ to be the power series you
+get.\label{naturallog}\footnote{It is possible to define the derivatives
+and integrals of power series by the formulas
+$${d\over dx}
+\sum_{i=0}^\infty b_ix^i = \sum_{i=1}^\infty ib_ix^{i-1}$$ and $$\int_0^x
+\sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty {b_i\over i+1}x^{i+1}$$
+rather than by using the limit definitions from calculus.  It is then
+possible to prove that the sum rule, product rule, etc. apply.  (There is
+a little technicality involving the meaning of composition for power
+series that turns into a technicality involving the chain rule, but it
+needn't concern us at this time.)}
+\solution{
+\begin{eqnarray*}\ln({1\over 1-x}) =-\ln(1-x) &=&
+\int_0^x {1\over 1-t}dt\\ &=&\int_0^x (1+t+t^2+\cdots)dt\\
+&=&\sum_{i=1}^\infty {x^i\over i}\\ &=& \sum_{i=1}^\infty (i-1)!{x^i\over
+i!}\end{eqnarray*} so the sequence is
+$a_n = (n-1)!$.
+}
+
+
+\itemes What is the EGF for the number of
+permutations of an $n$-element set?\label{exponentialpermutations}
+\solution{$1\over 1-x$.}
+
+\itemesi  What is the EGF for the number of ways
+to arrange $n$ people around a round table?  Notice that we may think of
+this as the EGF for the number of
+permutations on $n$ elements that are cycles.\label{exponentialroundtable}
+\solution{By Problem \ref{ln1over1-x} the EGF is $\ln{1\over 1-x}$.}
+
+\itemesi What is the EGF $\sum_{n=0}^\infty
+p_{2n}{x^{2n}\over (2n)!}$ for the number of ways $p_{2n}$ to pair up $2n$
+people to play a total of
+$n$ tennis matches (as in Problems
+\ref{tennispairings1} and
+\ref{tennispairings2})?\label{exponentialtennisparings}
+\solution{Recall that $p_{2n} = (2n-1)(2n-3)\cdots 1= {(2n)!\over 2^n
+n!}$.  Thus $$\sum_{n=0}^\infty
+p_{2n}{x^{2n}\over (2n)!}= \sum_{n=0}^\infty {x^{2n}\over 2^n n!} =
+\sum_{n=0 }^\infty {({x^2/2})^n\over n!} = e^{x^2/2} .$$}
+
+\itemm What is the EGF for the sequence
+$0,1,2,3,\ldots$?  You may think of this as the EFG for the number of ways
+to select one element from an $n$ element set.  What is the EGF for the
+number of ways to select two elements from an
+$n$-element set?
+\solution{\hspace*{-10pt}
+$\sum_{n=0}^\infty{ nx^n\over n!}=\sum_{n=1}^\infty{
+x^n\over(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x$. \\
+$\sum_{n=0}^\infty{ n(n-1)x^n\over 2 n!}=\sum_{i=2}^\infty {x^n\over
+2(n-2)!}=x^2e^x/2$.}
+
+\itemes What is the EGF for the sequence
+$1,1,\cdots,1,\cdots$?  Notice that we may think of this as the
+EGF for the number of identity permutations
+on an $n$-element set, which is the same as the number of permutations of
+$n$ elements that are products of 1-cycles, or as the EGF for the number
+of ways to select an
+$n$-element set (or, if you prefer, an empty set) from an
+$n$-element set.\label{allonessequence}
+\solution{$e^x$.}
+
+\itemm  What is the EGF for the number of ways
+to select $n$ elements from a one-element set?  What is the EGF for the
+number of ways to select a positive number $n$ of elements from a one
+element set? 
+\solution{$1+x$, $x$.}
+
+\itemes What is the EGF for the number of partitions of a
+$k$-element set into exactly one block?  (Hint:
+is there a partition of the empty set into
+exactly one block?)\label{oneblockpartitions}
+\solution{$e^x-1$.}
+
+\itemes What is the EGF for the number of ways
+to arrange $k$ books on one shelf (assuming they all fit)?  What is the
+EGF for the number of ways to arrange $k$
+books on a fixed number
+$n$ of shelves, assuming that all the books can fit on any one
+shelf?\label{exponentialbookshelf}
+\solution{$1\over 1-x$, $ \sum_{k=0}^\infty {n+k-1 \choose k}k!{x^k\over
+k!} = (1-x)^{-n}$.}
+
+\ep
+
+  
+
+\section{Applications to recurrences.} 
+We saw that ordinary generating functions often play a role in solving
+recurrence relations.  We found them most useful in the constant
+coefficient case.  Exponential generating functions are useful in solving
+recurrence relations where the coefficients involve simple functions of
+$n$, because the $n!$ in the denominator can cancel out factors of $n$ in
+the numerator.  
+
+\bp 
+\itemm  Consider the recurrence
+$a_n=na_{n-1} +n(n-1)$.  Multiply both sides by $x^n\over n!$, and sum
+from $n=2$ to $\infty$.  (Why do we sum from $n=2$ to infinity instead 
+of $n=1$ or $n=0$?)  Letting
+$y =
+\sum_{i=0}^\infty a_ix^i$, show that the left-hand side of the equation
+is $y-a_0 -a_1x$.  Express the right hand side in terms of $y$, $x$, and
+$e^x$.  Solve the resulting equation for $y$ and use the result to get an
+equation for
+$a_n$.  (A finite summation is acceptable in your answer for $a_n$.)
+\solution{\begin{eqnarray*}\sum_{n=2}^\infty a_n{x^n\over n!}
+&=&\sum_{n=2}^\infty a_{n-1}{x^n\over (n-1)!} + \sum_{n=2}^\infty
+{x^n\over (n-2)!}\\
+&=& x\left(\sum_{n=0}^\infty a_n{x^n\over n!} - a_0\right) +
+x^2\sum_{n=0}^\infty {x^n\over n!}\\
+&=& x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
++x^2e^x\end{eqnarray*} 
+We sum from $n=2$ because otherwise we would have a factorial of a
+negative number in the denominator. Thus $\sum_{n=0}^\infty a_n{x^n\over
+n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
++x^2e^x$, or
+$$(1-x)\sum_{n=0}^\infty a_n{x^n\over n!}=a_0+a_1x-a_0x +x^2e^x.$$
+This gives us
+$$\sum_{n=0}^\infty a_n{x^n\over n!}={1\over 1-x}(a_0+a_1x-a_0x
++x^2e^x).$$
+computing the coefficient of $a_n$ gives us $a_n = a_1 +\sum_{i=0}^{n-2}
+{1\over i!}$. }
+
+\itemesi The telephone company in a city has $n$ subscribers.  Assume a
+telephone call involves exactly two subscribers (that is, there are no
+calls to outside the network and no conference calls), and that the
+configuration of the telephone network is determined by which pairs of
+subscribers are talking.  Give a recurrence for the number
+$c_n$ of configurations of the network.  )Hint: Person $n$ is either on
+the phone or not.)  What are $c_0$ and $c_1$?  What are $c_2$ through
+$c_6$?  Notice that we may think of a configuration of the telephone
+network as a permutation that is a product of disjoint two-cycles (and
+one-cycles\footnote{When we think of writing a
+permutation as a product of disjoint cycles, we often do not include the
+one-cycles in our notation because a one-cycle is an identity
+permutation.  However any element not moved by the cycles we do write
+down is in a one cycle, and those one cycles are implicit in the product
+of cycles we do write down.}), that is, we may think of a configuration
+as an involution in the symmetric group $S_n$.
+\label{telephonenetwork}
+ \solution{$c_n =(n-1)c_{n-2} + c_{n-1}$.  (The first term counts the
+number of network configurations in which person $n$ is in a phone call
+with someone else, and the second term counts the number of network
+configurations in which person
+$n$ is not in a phone call.) $c_0 =1$ and $c_1=1$, because there is only
+one configuration of a network with 0 or one phones.)  Then $c_2 =2$,
+$c_3 =2\cdot1 +2=4$, $c_4= 3\cdot2+4=10$, $c_5= 4\cdot4 +10 = 26$, and
+$c_6 = 5\cdot 10+26=76$.
+}
+
+\itemesi Recall that a {\em derangement} of $[n]$ is a permutation of
+$[n]$ that has no fixed points, or equivalently is a way to pass out
+$n$ hats to their $n$ different owners so that nobody gets the correct
+hat.  Use
+$d_n$ to stand for the number of derangements of $[n]$.  We can think of
+derangement of $[n]$ as a list of $1$ through $n$ so that
+$i$ is not in the $i$th place for any $n$.  Thus in a derangement, some
+number
+$k$ different from $n$ is in position $n$.  Consider two cases: either
+$n$ is in position $k$ or it is not.  Notice that in the second case, if
+we erase position $n$ and replace $n$ by $k$, we get a derangement of
+$[n-1]$.  Based on these two cases, find a recurrence for $d_n$.  What is
+$d_1$?  What is $d_2$?  What is $d_0$?  What are $d_3$ through
+$d_6$?\label{derangementrecurrence}
+ \solution{
+$d_n = (n-1)d_{n-1} + (n-1)d_{n-2}$.  $d_1 = 0$ and $d_2 = 1$.  Thus
+$d_0$ must be 1 for our recurrence to be valid.  (For those familiar with
+functions as sets of ordered pairs, the empty function is not only a
+permutation, but it does not map $i$ to $i$ for any integer $i$, so it is
+a derangement as well!  Thus the definition of a derangement also gives
+us that $d_0=1$.)  $d_3= 2$, $d_4=3\cdot1+3\cdot 2=9$,
+$d_5=4\cdot2+4\cdot 9 = 44$, and $d_6 = 5\cdot9+5\cdot44 = 256$.}
+
+\subsection{Using calculus  with exponential generating functions}
+
+\itemesi Your recurrence in Problem \ref{telephonenetwork} should be a
+second order recurrence.  
+\begin{enumerate}
+\item Assuming that the left hand side is $c_n$ and
+the right hand side involves $c_{n-1}$ and $c_{n-2}$, decide on an
+appropriate power of $x$ divided by an appropriate factorial by which to
+multiply both sides of the recurrence.  Using the fact that the
+derivative of $x^n\over n!$ is $x^{n-1}\over (n-1)!$, write down a
+differential equation for the EGF $T(x) =
+\sum_{i=0}^\infty c_i{x^i\over i!}$.  Note that it makes sense to
+substitute 0 for
+$x$ in $T(x)$.  What is $T(0)$?  Solve your differential equation to find
+an equation for
+$T(x)$.\label{telephonenetworkEGF}
+ \solution{
+\begin{eqnarray*}\sum_{n=2}^\infty c_n{x^{n-1}\over (n-1)!}
+\!&=&\!\sum_{n=2}^\infty(n-1) c_{n-2}{x^{n-1}\over (n-1)!} +
+\sum_{n=2}^\infty c_{n-1}{x^{n-1}\over (n-1)!}\\ 
+\sum_{n=1}^\infty c_n{x^{n-1}\over (n-1)!}- c_1 \!&=&\! x\sum_{n=2}^\infty
+c_{n-2}{x^{n-2}\over (n-2)!} + \sum_{n=0}^\infty c_n{x^n\over n!} -c_0\\
+T'(x)\!&=&\!xT(x) +T(x)
+\end{eqnarray*}
+$T(0) = c_0 =1$.  Then ${T'(x)\over T(x)} = x+1$, giving $\ln T(x)
+=x^2/2+x+k$, and $T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }$, since $T(0)=1$. 
+ }
+\item Use your generating function to compute a formula for $c_n$.
+ \solution
+{
+$T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!$.  By the binomial
+theorem, this gives $T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i {i\choose
+j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
+i!}=\sum_{i=0}^\infty{\sum_{j=0}^i{i\choose j}x^{2i-j}2^{j-i}\over i!}$. 
+Then the coefficient $c_n$ of $x^n$ is the sum over all $i$ and $j$ with
+$2i-j=n$ and $j\le i$ of ${i\choose j}{n!\over i!}2^{j-i}$.  But if
+$2i-j=n$, then $j= 2i-n$, and if $2i-n\le i$, then $i\le n$, so that $c_n
+= {n!\over 2^n}\sum_{i=0}^n{i\choose 2i-n}{2^i\over i!}$.  Note that
+$i\choose 2i-n$ is the same as $i\choose n-i$, which is 0 unless $i\ge
+n/2$, which reduces our sum to $c_n = {n!\over
+2^n}\sum_{i=\lceil n/2\rceil}^n{i\choose n-i}{2^i\over i!}$.
+}
+\end{enumerate}
+
+\itemesi Your recurrence in  Problem \ref{derangementrecurrence}
+should be a second order recurrence.\label{exponentialderangements}
+\begin{enumerate}  
+\item Assuming that the left-hand side is $d_n$ and the right hand side
+involves $d_{n-1}$ and $d_{n-2}$, decide on an appropriate power of $x$
+divided by an appropriate factorial by which to multiply both sides of
+the recurrence.  Using the fact that the
+derivative of $x^n\over n!$ is $x^{n-1}\over (n-1)!$, write down a
+differential equation for the EGF $D(x) =
+\sum_{i=0}^\infty d_i{x^i\over i!}$. What is $D(0)$?  Solve your
+differential equation to find an equation for $D(x)$.
+\item Use the equation you found for $D(x)$ to find an equation for
+$d_n$.  Compare this result with the one you computed by inclusion and
+exclusion. 
+ \solution{
+\begin{eqnarray*}
+\sum_{n=2}^\infty d_n{x^{n-1}\over (n-1)!}
+&=&\sum_{n=2}^\infty d_{n-1}{x^{n-1} \over (n-2)!} +\sum_{n=2}^\infty
+d_{n-2}{x^{n-1}
+\over (n-2)!} \\
+\sum_{n=1}^\infty d_n{x^{n-1}\over (n-1)!} -d_1 &=&
+x\sum_{n=2}^\infty d_{n-1}{x^{n-2}\over (n-2)!} +xD(x)\\
+D'(x) -d_1 &=& xD'(x) +xD(x)\\
+D'(x)(1-x) &=& xD(x)\\
+D'(x)\over D(x) &=& x\over 1-x
+\end{eqnarray*}
+This gives us $\ln D(x) = -\ln(1-x) -x +c$, so that $D(x) = {1\over
+1-x}e^{-x}e^c$.  Since $d_0=1$, we have $d(0)=1$, so $c=0$ and 
+\begin{eqnarray*}D(x) &=& {e^{-x}\over 1-x}\\ &=&
+\sum_{i=0}^\infty(-1)^i{x^i\over i!}\cdot\sum_{j=0}^\infty
+x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i {(-1)^j\over j!}\right)
+x^i.\end{eqnarray*} Thus $d_n = n!\sum_{j=0}^n{(-1)^j\over j!}$, as we
+computed by inclusion and exclusion.
+ }
+\end{enumerate}
+
+\ep
+
+\section{The product principle}  One of our major tools for ordinary
+generating functions was the product principle.  It is thus natural to
+ask if there is a product principle for exponential generating functions.
+In Problem \ref{exponentialbookshelf} you likely found that the
+EGF for the number of ways of arranging $n$
+books on one shelf was exactly the same as the EGF for the number of
+permutations of $[n]$, namely $1\over 1-x$ or
+$(1-x)^{-1}$.  Then using our formula from Problem \ref{bookcase} and the
+generating function for multisets, you probably found that the EGF for
+number of ways of arranging $n$ books on some fixed number
+$m$ of bookshelves was $(1-x)^{-m}$.  Thus the EGF for $m$ shelves is a
+product of $m$ copies of the EGF for one
+shelf. 
+
+\bp
+\itemm In Problem \ref{paintinglightpoles} what would
+the exponential generating function have been if we had asked for the
+number of ways to paint the poles with just one color of paint? With two
+colors of paint? What is the relationship between the EGF for painting the
+$n$ poles with one color of paint and the EGF for painting the
+$n$ poles with four colors of paint?  What is the
+relationship between the EGF
+for painting the $n$ poles with two colors of
+paint and the EGF for painting
+the poles with four colors of paint?\label{paintinglightpoles2}
+\solution{With one color of paint, there would have been one way to paint
+each pole so our EGF would be $\sum_{n=0}^\infty {x^n\over n!}$, or
+$e^x$.  With two colors of paint, it would be $e^{2x}$ by analogy with
+the solution to Problem \ref{paintinglightpoles}.  Thus the EGF for two
+colors of paint would be the square of the EGF for one color of paint. 
+The EGF for four colors of paint is the fourth power of the EGF for one
+color of paint and the square of the EGF for two colors of paint.}
+\ep
+
+ In Problem \ref{telephonenetwork} you
+likely found that the EGF for the number of
+network configurations with $n$ customers was $e^{x+x^2/2}= e^x \cdot
+e^{x^2/2}$.  In Problem \ref{allonessequence} you saw that the generating
+function for the number of  permutations on $n$ elements that are
+products of one cycles was
+$e^x$, and in Problem \ref{exponentialtennisparings} you likely found that
+the EGF for the number of tennis pairings of
+$2n$ people, or equivalently, the number of permutations of $2n$ objects
+that are products of $n$ two-cycles is $e^{x^2/2}$.  
+\bp
+\itemes What can you say about the relationship among the EGF for the
+number of permutations that are products of disjoint two-cycles and
+one-cycles, i.e., are involutions, the exponential generating function for
+the number of permutations that are the product of disjoint two-cycles
+only and the generating function for the number of permutations that are
+the product of disjoint one cycles
+only?\label{2cyclesand1cycles}\solution{The EGF for involutions in $S_n$
+is the product of the EGF for the permutations in $S_n$ that are products
+of $n/2$ two-cycles, and the EGF for permutations in $S_n$ that are
+products of $n$ one-cycles.}
+\ep
+
+In Problem \ref{exponentialderangements} you likely found that the
+EGF for the number of permutations of $[n]$
+that are derangements is $e^{-x}\over 1-x$.  But every permutation is a
+product of derangements and one cycles, because the permutation that
+sends $i$ to $i$ is a one-cycle, so that when you factor a permutation as
+a product of disjoint cycles, the cycles of size greater than one
+multiply together to give a derangement, and the elements not moved by
+the permutation are one-cycles.  
+\bp
+\itemes If we multiply the generating function for derangements times the
+generating function for the number of permutations that are products of
+one-cycles only, what EGF for what set of permutations do
+we get? (Notice that there are two questions
+here.)\label{derangementsand1cycles}\solution{We get the EGF $1\over 1-x$
+for all permutations of $[n]$. Notice that any permutation is a product
+of a derangement of the elements not fixed by the permutation times the
+one cycles of elements that are fixed by the permutation.}
+\ep
+
+We now have four examples in which the EGF
+for a sequence or a pair of objects is the product of the EGFs for the
+individual objects making up the sequence or pair.
+
+\bp 
+\itemes What is the coefficient of $x^n\over n!$ in the product of two
+EGFs $\sum_{i=0}^\infty a_i{x^i\over i!}$ and $\sum_{j=0}^\infty
+b_j{x^j\over j!}$? (A summation sign is appropriate in your
+answer.)\label{exponentialpp1}
+ \solution{
+$$\sum_{i,j\mbox{:\ }
+i+j=n} n!{a_i\over i!}{b_j \over j!},$$ which can be better
+written as $$\sum_{i=0}^n{n!\over i!(n-i)!} a_i
+b_{n-i}=\sum_{i=0}^n{n\choose i} a_i b_{n-i}.$$  
+ }
+\ep
+
+Our product principle for ordinary generating functions involved the idea
+of a value function.  In particular, if we have a set $S$ of objects we
+call a function $v$ from $S$ into the nonnegative
+integers a {\em value function}.  Our combinatorial interpretation of the
+product of ordinary generating functions in Problem
+\ref{ProductPrincipleOGF} is the following theorem.
+
+\begin{theorem} Suppose we have a set $S$ with a value function $v$ from
+$S$ into the nonnegative integers and a set
+$T$ with a value function
+$u$
+ from $T$ into the nonnegative integers.  If
+$a_i$ is the number of objects $s$ in $S$ with value $v(s) =i$ and $b_j$
+is the number of objects $t$ in $T$ with value $u(t)= j$, and $c_n$ is
+the number of ordered pairs $(s,t)$ of objects in $S\times T$ with total
+value $v(s) + u(t) =n$, then the ordinary  generating function for $c_n$
+is the product of the ordinary generating function for $a_i$ and the
+ordinary generating function for $b_j$. 
+\end{theorem}
+
+
+We ask if there is a similar
+interpretation for the products of exponential generating functions we
+have just seen.  In the case of painting streetlight poles in Problem
+\ref{paintinglightpoles2}, what is important is not just how many
+light poles are painted with each color, but which set of poles is painted
+with each color.  Let us examine the relationship between the EGF for
+painting poles with two colors, $e^{2x}$ and the EGF for painting poles
+with four colors,
+$e^{4x}$.  To be specific, the EGF for painting poles red and white is
+$e^{2x}$ and the EGF for painting poles blue and yellow is $e^{2x}$.  To
+decide how to paint poles with red, white, blue, and yellow, we can decide
+which set of poles is to be painted with red and white, and which set of
+poles is to be painted with blue and yellow.  Notice that the number of
+ways to paint a set of poles with red and white depends only on the size
+of that set, and the number of ways to paint a
+set of poles with blue and yellow depends only on the size of that set. 
+(It is a coincidence that the number of ways to paint a set of poles with
+red and white equals the number of ways to paint the same set of poles
+with blue and yellow.  The coincidence is the result of trying to keep our
+example simple!)
+
+\bp
+\itemes Suppose that $a_i$ is the number of ways to paint a set of $i$
+poles with red and white, and $b_j$ is the number of ways to paint a set
+of
+$j$ poles with blue and yellow.  In how many ways may we take a set $N$
+of 
+$n$ poles, divide it up into two sets $I$ and $J$ (using $i$ to stand for
+the size of $I$ and $j$ to stand for the size of the set $J$, and
+allowing $i$ and $j$ to vary) and paint the poles in $I$ red and white
+and the poles in $J$ blue and yellow?  (Don't figure out formulas for
+$a_i$ and $b_j$ to use in your answer; that will make it harder to get
+the point of the problem!)  How does this relate to Problem
+\ref{exponentialpp1}?\label{exponentialpp2}
+ \solution{
+${n\choose i}a_ib_j$.  This shows that the coefficient of $x^n\over n!$
+in the EGF for painting poles with four colors is the coefficient of
+$x^n\over n!$ in the product of the EGF for painting poles with two
+colors and the EGF for painting poles with two colors.
+ }
+\ep
+
+Problem \ref{exponentialpp2} shows that the formula you got for the
+coefficient of $x^n\over n!$ in the product of two EGFs is the formula we
+get by splitting a set $N$ of poles into two parts and painting the poles
+in the first part with red and white and the poles in the second part with
+blue and yellow.  More generally, you could interpret your result in
+Problem \ref{exponentialpp1} to say that the coefficient of $x^n\over
+n!$ in the product $\sum_{i=0}^\infty a_i {x^i\over i!}
+\sum_{j=0}^\infty b_j{x^j\over j!}$ of two EGFs  is the sum, over all
+ways of splitting a set
+$N$ of size
+$n$ into an ordered pair of disjoint sets $I$ and $J$, of the product
+$a_{|I|}b_{|J|}$.   In contrast, when we multiplied ordinary generating
+functions, the coefficient of
+$x^n$ in
+$\sum_{i=0}^\infty a_i x^i
+\sum_{j=0}^\infty b_j x^j$ is the sum of all $a_ib_j$ over  ordered
+pairs of integers $i$ and $j$ with $i + j=n$.  In our combinatorial
+interpretation of the product of two ordinary generating functions, we
+had two sets $S$ and $T$ of objects, $a_i$ was the number of objects in
+$S$ of value $i$, $b_j$ was the number of objects in $T$ of value $j$, and
+$i+j$ was the total value of an ordered pair of objects, one from $S$ and
+one from $T$.  In painting poles for streetlights, what was important was
+not only the number of poles we selected to paint red and white, but the
+actual {\em set} of poles we selected to paint red and white.  This
+suggests that the value of a selection in this context ought to be a set
+instead of simply an integer, even though the size of the set will still
+play a role.  For example, the number of ways of paint the poles in a set
+red and white depends only on the size of the set, and not which set we
+choose, but in forming the product of the exponential generating
+functions, we have to analyze all ways of choosing a set of that size. 
+This suggests that to get a combinatorial interpretation of the product of
+EGFs we should consider a different kind of value function, one whose
+values are sets and not integers.  Thus what we want to consider is a
+``set-valued value function."  Since this is a mouthful to say, we will
+shorten it in the definition that follows.  We define a {\em set-value
+function} from  a set
+$S$ to a set
+$Y$ to be a function
+$V$ from $S$ to the set of subsets of $Y$ such that for all subsets $I$ of
+$Y$ of the same size, the number of elements $s$ of $S$ whose value
+$V(s)$ is $I$ is the same.  For example if $S$ is all ways of painting
+some of the street light poles on the north side on Main Street using red
+and white, and if
+$V(s)$ is the set of poles actually painted red or white, then the number
+of ways to paint some of the poles red and white  depends on the size of
+the set of poles being painted, so for each set of poles of a given size,
+the number of ways to paint that set of poles using red and white is the
+same.
+
+\bp 
+\itemes In Problem \ref{exponentialbookshelf}, why is the set of books
+that we actually put onto a shelf a set-value function on the set of
+all ways to put some of the books on that shelf? 
+ \solution{Because the number of ways to put a set $S$ of books onto a
+shelf is the same (namely $|S|!$) for all sets $S$ of the same size.
+ } 
+
+\itemes In Problem \ref{telephonenetwork}, why is the set of people
+actually using their phones a set-value function (assume nobody is
+calling outside the telephone network)? Equivalently, given an
+involution, that is, a permutation that is a product of two cycles and one
+cycles, why is the set of elements that are actually in two-cycles a
+set-value function?  Why is the set of people who are not using their
+phones (or, equivalently, the set of elements in a product of two-cycles
+and one-cycles that are in one-cycles) a set-value function?
+ \solution{
+Because the number of ways to break a given set of $2n$ people into
+two-cycles depends only on $n$ and not the particular set of $2n$ people
+we choose.  The number of ways to break up a set of size $n$ into
+one-cycles is one, so it doesn't depend on which set of size $n$ we are
+breaking up.  (In fact it doesn't depend on $n$ either, but that is
+irrelevant here.)
+ }
+
+\itemesi If $S$ is a set of objects with $V$  a set-value function from
+$S$ to some set $Y$ and $T$ is a set of objects with $U$ a set-value
+function from $T$ to the same set $Y$, then what is the relationship
+among the EGF for the number
+$a_i$ of elements of $S$ whose set-value is any one particular  set of
+size
+$i$, the EGF for the number $b_j$ of elements of $T$ whose set-value is
+any one particular set of size
+$j$ and the EGF for the number $c_n$ of ordered pairs $(s,t)$ in $S\times
+T$ such that the set values of $s$ and $t$ are disjoint sets whose union
+is any one particular set of size $n$?\label{exponentialpp3}
+ \solution{
+The EGF for $a_i$ times the EGF for $b_j$ is the EGF for $c_n$.  Stated
+as a theorem, 
+ \begin{solutiontheorem} 
+If $S$ is a set of objects with $V$  a set-value function from $S$
+to some set $Y$ and the EGF for the number $a_i$ of elements of $S$ whose
+$V$-value is any particular set $N$ of size $n$ is $f(x)=\sum_{n=0}^\infty
+a_n{x^n\over n!}
+$ and
+$T$ is a set of objects with
+$U$ a set-value function from $T$ to the same set $Y$ and the EGF for the
+number of elements $b_n$ of $T$ whose $U$-value is any particular set $N$
+of size $n$ is $g(x) = \sum_{i=0}^\infty b_n{x^n\over n!}$, then  the EGF
+for
+ the number $c_n$ of ordered pairs $(s,t)$ in
+$S\times T$ such that the set values of $s$ and $t$ are disjoint sets
+whose union is any one particular set of size $n$ is $f(x)g(x)$.  That
+is, the number of ordered pairs of the type described is the coefficient
+of $x^n\over n!$ in $f(x)g(x)$.
+\end{solutiontheorem}  The proof consists of interpreting Problem
+\ref{exponentialpp1} in this context.
+ } 
+
+\ep
+The theorem you proved in Problem \ref{exponentialpp3} is called the {\bf
+product principle for exponential generating functions}\index{product
+principle for exponential generating functions}\index{exponential
+generating functions!product principle for}\index{generating
+function!exponential!product principle for}.
+
+
+
+\bp
+\itemes Use the product principle for EGFs to explain the results of
+Problems \ref{2cyclesand1cycles} and \ref{derangementsand1cycles}. 
+ \solution{Every involution is a unique product of disjoint two-cycles and
+one-cycles, so we can think of it as an ordered pair of whose first entry
+is a set of disjoint two-cycles and whose second element is a set of
+disjoint one-cycles.  The value of a set of two-cycles is the union of
+their support sets and the value of a set of one-cycles is the union of
+their support sets.  Then the EGF for involutions is the product of the
+EGF for permutations that are the product of only disjoint two-cycles and
+the EGF for permutations that are the product of only disjoint one-cycles
+(i.e. identity permutations).  
+
+We noted in the solution to Problem \ref{derangementsand1cycles} that
+every permutation is the product of a derangement (on the elements that
+are not fixed by the permutation) and a product of one cycles (on the
+elements that are fixed by the permutation).  Thus we can think of every
+permutation as an ordered pair consisting of a derangement and a product
+of one-cycles, and the product principle tells us that the EGF for all
+permutations is the product of the EGF for derangements and the EGF for
+identity permutations.
+ }
+
+
+
+\ep
+
+The product principle for EGFs has a natural extension to a product of
+some arbitrary number $k$ of exponential generating functions.  Instead
+of dealing with ordered pairs, it deals with (ordered) $k$-tuples.  Since
+it is inconvenient to state unless one is careful with notation, we will
+state it here.  The proof would be quite similar to your proof in Problem
+\ref{exponentialpp3}.
+
+\begin{theorem} If $f_1(x)$, $f_2(x)$, \ldots, $f_k(x)$ are the
+exponential generating functions for sets $S_1$, $S_2$, \ldots, $S_k$
+according to the set-value functions $V_1$, $V_2$, \ldots, $V_k$, then
+$f_1(x)f_2(x)\cdots f_k(x)$ is the exponential generating function for the
+number
+$c_n$ of (ordered) $k$-tuples $(s_1,s_2,\ldots,s_k)$ with $s_i\in S_i$
+such that
+$V_1(s_1)$, $V_2(s_2)$, \ldots, $V_k(s_k)$ are disjoint sets whose union
+is any one particular set $N$ of size $n$.
+\end{theorem}
+
+\begin{corollary} If $f(x)$ is the exponential generating function for
+a set $S$ according to the set-value function $V$, then $f(x)^k$ is the
+exponential generating function in which $a_n$ is the number of
+$k$-tuples of elements of $S$ whose values are disjoint sets whose union
+is any particular set of size $n$.\label{EGFtothen}\end{corollary}
+
+\bp 
+
+\itemes Use the general product principle for EGFs or its corollary to
+explain the relationship between the EGF for painting streetlight poles
+in only one color and the EGF for painting streetlight poles in $4$
+colors in Problems \ref{paintinglightpoles} and \ref{paintinglightpoles2}.
+What is the generating function
+for the number $p_n$ of ways to paint  $n$ streetlight poles
+with some fixed number $k$ of colors of paint.
+ \solution{
+We can think of a painting of a set of street poles as a four-tuple of
+sets, the sets painted each of the four colors.  Then Corollary
+\ref{EGFtothen} tells us that the EGF for such four-tuples is the fourth
+power of the EGF for the number of ways to paint streetlight poles with
+one color.  The EGF for painting streetlight poles with $k$ colors of
+paint is $e^{kx}$.} 
+
+\itemes Use the general product principle for EGFs or its corollary to
+explain the relationship between the EGF for arranging books on one shelf
+and the EGF for arranging books on
+$n$ shelves in Problem
+\ref{exponentialbookshelf}.
+ \solution{
+An arrangement of books on $n$ shelves may be thought of as a $n$-tuple
+of arrangements of books on one shelf, and the value of an arrangement
+may be taken to be the set of books actually on the shelf (or shelves). 
+The Corollary \ref{EGFtothen} tells us that the EGF is the $n$th power of
+the EGF for arranging books on one shelf, which is the EGF for
+permutations.  Thus the EGF for arranging books on $n$ shelves is
+$(1-x)^{-n}$.}
+
+
+\itemi (Optional) Our very first example of exponential generating
+functions used the binomial theorem to show that the EGF for $k$-element
+permutations of an $n$ element set is $(1+x)^n$.  Use the EGF for
+$k$-element permutations of a one-element set and the product principle
+to prove the same thing. Hint: Review the alternate definition of a
+function in Section \ref{orderedfunctionsection}.
+ \solution{In Section \ref{orderedfunctionsection} we remarked that an
+alternate definition of a function from $S$ to $T$ is that it is an
+assignment of disjoint subsets of $S$ to elements of $T$ so that the
+union of the subsets is $S$.  Thus a function from $[k]$ to $[n]$ may be
+thought of as an $n$-tuple of disjoint subsets of $S$ whose union is
+$[k]$.  In  particular, an injection from $[k]$ to $[n]$ (which is a
+$k$-element permutation of $[n]$) can be thought of as a $n$-tuple of
+disjoint singleton sets and empty sets whose union is $n$.  The number of
+such $n$-tuples is therefore the number of $k$-element permutations of
+$[n]$.  If $n=1$, the possible $n$-tuples are $(\emptyset)$ and $\{1\}$,
+and so the EGF for such $n$-tuples is $1+x$.  Then by
+Corollary \ref{EGFtothen}, if we let the value of an $n$-tuple of
+disjoint singletons and empty sets be the union of the sets in the
+$n$-tuple, the EGF for the number of $n$-tuples whose value is $[k]$ is
+$(1+x)^n$.  Thus this is the EGF for $k$-element permutations of
+$[n]$.}
+
+\item What is the EGF for the number of ways to paint $n$
+streetlight poles red, white blue, green and yellow, assuming an even
+number of poles must be painted green and an even number of poles must be
+ painted yellow?
+\solution{By the product principle for exponential generating functions it
+is 
+$$e^{2x}\left(1+{(2x)^2\over 2!}+ {(2x)^4\over 4!} + \cdots \right) =
+e^{2x}{e^{2x}-e^{-2x}\over2}=e^{2x}\cosh(2x). $$}
+
+\itemesi What is the EGF for the number of functions from an
+$n$-element set onto a one-element set?  (Can there be any functions
+from the empty set onto a one-element set?)  What is the EGF for the
+number
+$c_n$ of functions from an $n$-element set onto a
+$k$ element set (where $k$ is fixed)?  Use this EGF to find an explicit
+expression for the number of functions from a $k$-element set onto an
+$n$-element set and compare the result with what you got by inclusion and
+exclusion.
+ \solution{
+There are no onto functions from a $0$-element set to a
+$1$-element set; otherwise there is exactly one function from an
+$n$-element set onto a one element set so the EGF for functions from an
+$n$-element set onto a one element set is $e^x-1$.  A function from an
+$n$-element set onto a $k$-element set may be thought of as a $k-tuple$
+of functions from disjoint subsets whose union is the $n$-element set
+onto the one element subsets of the $k$-element set.  Therefore by the
+corollary to the product principle for EGFs the EGF for functions from an
+$n$-element set onto a $k$-element set is $(e^x-1)^k$.  By the binomial
+theorem, this is $$\kern-.25 in\sum_{i=0}^k{k\choose i}(-1)^{k-i}e^{ix} 
+=
+\sum_{i=0}^k {k\choose i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
+\sum_{i=0}^k (-1)^{k-i}{k\choose i} \sum_{j=0}^\infty i^j{(x)^j\over
+j!}.$$
+Thus $c_n= \sum_{i=0}^k(-1)^{k-i}{k\choose i}n^i$, which is consistent
+with the formula we got by inclusion and exclusion.}
+
+\itemesi In Problem \ref{BellNumberIntro} You showed that the Bell Numbers
+$B_n$ satisfy the equation
+$B_{n+1} =
+\sum_{k=0}^{n} {n\choose k}B_{n-k}$ (or a similar equation for $B_n$.)
+Multiply both sides of this equation by $x^n\over n!$ and sum from $n=0$
+to infinity.  On the left hand side you have a derivative of a certain
+EGF we might call $B(x)$.  On the right hand side, you
+have a product of two EGFs, one of which is $B(x)$.  What is the other
+one?  What differential equation involving $B(x)$ does this give you. 
+Solve the differential equation for $B(x)$.  This is the EGF for the
+Bell numbers!.  \label{BellNumbersEGF}
+ \solution{
+$$\sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty{n\choose
+k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
+(i)!}\sum_{j=0}^\infty {x^j\over j!}.$$
+Thus $B'(x) = B(x)e^x$, which gives us $\ln B(x) = e^x+c$, or $B(x) =
+e^{ex+c} =e^ce^{(e^x)}$.  Since $B_0=B(0)$ and $B_0=1$, we have $c=-1$ and
+$B(x) = \exp(e^x-1)$.}
+
+ \itemi Prove that  $n2^{n-1} = \sum_{k=1}^n {n\choose k}k$ by using
+EGFs.
+\solution{By the product principle for EGFs, the EGF for the right hand
+side is $$e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty {(2x)^i\over i!} =
+\sum_{j=1}^\infty 2^{j-1}{x^j\over (j-1)!}=\sum_{j=1}^\infty
+j2^{j-1}{x^j\over j!}.$$  Thus the coefficient of $x^n\over n!$ is
+$n2^{n-1}$, as well as $\sum_{k=1}^n {n\choose k}k$.}
+
+\itemes In light of Problem \ref{oneblockpartitions}, why is the EGF for
+the Stirling numbers
+$S(n,k)$ of the second kind not
+$(e^x -1)^n$?  What is it equal to instead?
+ \solution{Notice that a one block partition is the same thing as a
+function from that block onto a one element set.  However a partition
+with $n$ blocks is not an $n$-tuple of blocks, but rather a set of $n$
+blocks.  An $n$-tuple of blocks corresponds to a function from the union
+of the blocks onto an $n$-element set, and $n!$ different onto functions
+correspond to the same partition into $n$ blocks.  Thus the EGF for
+partitions of an $n$-element set into $k$ parts (where $n$ is fixed but
+$k$ varies) is ${1\over n!} (e^x -1)^n$.
+ }
+\ep
+
+The idea of the set-value function in the product principle for
+exponential generating functions helps to resolve a mystery that you may
+have been consciously or unconsciously wondering about.  How do we know
+when ordinary generating functions will be most useful and how do we know
+when exponential generating functions will be most useful?  When we are
+in a situation---such as distributing fruit to children, or partitioning
+an integer---where a combinatorial structure is determined by the number
+of objects of a certain type (for example a partition of an integer is
+determined by the number of ones, the number of twos and so on), ordinary
+generating functions are most likely to be useful.  However when what
+determines a combinatorial structure is the set of objects, or some
+structure (such as a permutation) on a set of objects, then exponential
+generating functions are most likely to be useful.  In particular, in
+situations where our structure comes with labels, then exponential
+generating functions are likely to be useful.  However there is a grey
+area.  When we are distributing identical candy to children, the children
+are labelled (they have names), but the candy is not.  Experience tells
+us, though that since the candy is not labelled, ordinary generating
+functions are useful.  So while the question of whether the most natural
+value function seems to be an integer value or a set-value is a good
+guideline, in the end experience helps tremendously! 
+
+\section{The Exponential Formula}
+Exponential generating functions turn out to be quite useful in advanced
+work in combinatorics.  One reason why is that it is often possible to
+give a combinatorial interpretation to the composition of two exponential
+generating functions. In particular, if
+$f(x) =
+\sum_{i=0}^n a_i{x^i\over i!}$ and
+$g(x) = \sum_{j=1}^\infty b_j {x^j\over j!}$, it makes sense to form the
+composition $f(g(x))$ because in so doing we need add together only
+finitely many terms in order to find the coefficient of $x^n\over n!$ in
+$f(g(x))$ since in the EGF  $g(x)$ the dummy variable $j$ starts at 1.
+Since our study of combinatorial structures has not been advanced enough
+to give us applications of a general formula for the composition of the
+EGF, we will not give here the combinatorial interpretation of this
+composition.  However we have seen some examples where one particular
+composition can be applied.  Namely, if $f(x) = e^x = \exp(x)$, then
+$f(g(x)) =\ exp(g(x))$ is well defined when $b_0=0$.  We have seen three
+examples in which an EGF is $e^{f(x)}$
+where $f(x)$ is another EGF.  There is a fourth example in which the
+exponential function is slightly hidden.
+
+\bp
+\itemes If $f(x)$ is the EGF for the number of partitions of an $n$-set
+into one block, and $g(x)$ is the EGF for the total number of partitions
+of an
+$n$-element set, that is, for the Bell numbers $B_n$, how are the two
+generating functions related?  \label{exp(oneblock)}
+ \solution{
+The EGF for one-block partitions is $e^x-1$ and for the Bell
+numbers is $\exp(e^x-1)$, and so the EGF for the Bell numbers is
+composition of the exponential function with the EGF for one block
+partitions.
+ }
+
+\itemes Let  $f(x)$ be the EGF for the number of
+permutations of an $n$-element set with one cycle of size one or two. 
+What is
+$f(x)$?  What is the EGF $g(x)$ for the number of permutations of an
+$n$-element set all of whose cycles have size one or two, that is, the
+number of involutions in $S_n$?  How are these two exponential generating
+functions related?\label{exp(oneortwo-cycle)}
+ \solution{
+There is one permutation with one cycle of size 1, and one
+permutation with one cycle of size 2.  Therefore the EGF for such
+permutations is $x+{x^2\over 2!}= x+x^2/2$.  The EGF for involutions
+is $e^{x+x^2/2}$.  Thus $g(x) = \exp(f(x))$.
+ }
+
+\itemesi Let $f(x)$ be the EGF for the number of permutations of an
+$n$-element set that have exactly one two-cycle and no other cycles. 
+Let
+$g(x)$ be the EGF for the number of permutations which are products of
+two-cycles only, that is, for tennis pairings.  (That is, they are not
+a product of two-cycles and a nonzero number of one-cycles).  What is
+$f(x)$?  What is
+$g(x)$?  How are these to exponential generating functions
+related?\label{exp(two-cycle)}
+ \solution{
+The EGF $f(x)$ for permutations of an $n$ element set that have exactly
+one two-cycle (and no other cycles) is $x^2\over 2!$ or $x^2/2$.  By
+Problem
+\ref{exponentialtennisparings}, the EGF to permutations that are products
+of two-cycles only is $\exp(x^2/2)$.  Thus $g(x)=\exp(f(x))=e^{x^2/2}$.
+ }
+
+\itemes Let $f(x)$ be the EGF for the number of
+permutations of an $n$-element set that have exactly one cycle.  (This is
+the same as the EGF for the number of ways to arrange $n$ people around a
+round table.)  Let $g(x)$ be the EGF for the total number of permutations
+of an $n$-element set.  What is $f(x)$?  What is $g(x)$?  How are $f(x)$
+and $g(x)$ related?\label{exp(onecycle)}
+ \solution{
+In Problem \ref{exponentialroundtable} we showed that $f(x) =
+\ln\left({1\over 1-x}\right)$.  In Problem \ref{exponentialpermutations}
+we showed that $g(x)={1\over 1-x}$.  Therefore $g(x)= \exp(f(x))$.}
+\ep
+
+There was one element that our last four problems had in common.  In each
+case our EGF $f(x)$ involved the number of structures of
+a certain type (partitions, telephone networks, tennis pairings,
+permutations) that used only one set of an appropriate kind.  (That is, we
+had a partition with one part, a telephone network consisting either of
+one person or two people connected to each other, a tennis pairing of one
+set of two people, or a permutation with one cycle.)  Our EGF $g(x)$ was
+the number of structures of the same ``type" (we put type in quotation
+marks here because we don't plan to define it formally) that could consist
+of any number of sets of the appropriate kind.  Notice that the order of
+these sets was irrelevant.  For example we don't order the blocks of a
+partition and a product of disjoint cycles is the same no matter what
+order we use to write down the product.  Thus we were relating the EGF for
+structures which were somehow ``building blocks" to the EGF for structures
+which were sets of building blocks. For a reason that you will see
+later, it is common to call the building blocks {\em
+connected}\index{connected structures and EGFs}\index{exponential
+generating functions for connected structures} structures. Notice that
+our connected structures were all based on nonempty sets, so we had no
+connected structures whose value was the empty set.  Thus in each case,
+if $f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}$, we would have $a_0=0$.
+The relationship between the EGFs was always
+$g(x) = e^{f(x)}$.  We now give a combinatorial explanation for
+this relationship.
+
+\bp  
+
+\itemes Suppose that $S$ is a set with a set-value function $V$ from $S$
+to a set
+$Y$ such that no element of $S$ has the empty set as a value.  Let $f(x)$
+be the generating function for $S$ according to the value function
+$V$.\label{exponentialformula}
+\begin{enumerate}
+\item In the power series $$e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
+\cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},$$
+the product principle tells us that the coefficient of $x^n\over n!$ in
+$f(x)^k$ is the number of $k$-tuples of elements of $S$ whose
+values are disjoint sets whose union is any one particular subset $N$ of
+$Y$ of size $n$.  How do you know that all of the elements of the
+$k$-tuple are different?
+ \solution{
+Because the coefficient of $x^0$ is 0, there are no elements in $S$ whose
+value is the empty set.
+ }
+\item When you divide the coefficient of $x^n\over n!$ in $f(x)^k$ by
+$k!$, it no longer counts $k$-tuples whose values are disjoint sets whose
+union is that set $N$.  What does it count instead?  (Hint: how many
+$k$-tuples can you form with a set of $k$ distinct elements?)
+ \solution{It counts $k$-element subsets since the entries of the
+$k$-tuples are distinct.
+ }
+\item Why does this prove that the coefficient of $x^n\over n!$ in
+$e^{f(x)}$ is the number of subsets of $S$ such that the values of th
+elements of the subset partition any one particular set $N\subseteq T$ of
+size
+$n$?
+\solution{We know that the coefficient of $x^n\over n!$ in $e^{f(x)}$ is
+the sum over all $k$ of the number of $k$-element subsets of $S$ whose
+values partition a particular set $N$.  (The values must partition $N$
+because none of them are empty, they are disjoint, and their union is
+$N$.)  This sum is the number of subsets of $S$ such that the values of
+the elements of the subset partition a particular set $N$ of size $n$.
+}
+\end{enumerate}
+\ep
+In Problem \ref{exponentialformula} we proved the following theorem,
+which is called the {\bf exponential formula}.\index{exponential formula}
+
+\begin{theorem}  Suppose that $S$ is a set with a set-value function $V$ from it to a
+set
+$Y$ such that no element of $S$ has the empty set as a value.  Let $f(x)$
+be the generating function for $S$ according to the value function
+$V$.  Then the coefficient of $x^n\over n!$ in
+$e^{f(x)}$ is the number of subsets of $S$ such that the values of the
+elements of the subset partition any one particular set $N\subseteq T$ of
+size
+$n$.
+\end{theorem}
+
+Since the statement of the theorem is rather abstract, let us see how it
+applies to the examples in Problems \ref{exp(oneblock)},
+\ref{exp(oneortwo-cycle)}, \ref{exp(two-cycle)} and \ref{exp(onecycle)}. 
+In Problem \ref{oneblockpartitions} our set $S$ should consist of
+one-block partitions of sets; that is, it should be a set of nonempty
+sets.  The value of a one-block partition will be the set it partitions,
+and we want every subset (of a given size) of our set $Y$ to be the value
+of the same number of partitions.  Thus we can take $S$ to be the set of
+all nonempty finite subsets of the positive integers and take $Y$ to be
+the set of positive integers.  Since a partition of a set is a set of
+blocks whose union is
+$S$, a one block partition whose block is $B$ is the set $\{B\}$.  We take
+$V(\{B\}) =B$.  Then any nonempty finite subset of of the positive
+integers is the value of exactly one member of $S$, and the empty set and
+all infinite subsets of the positive integers are the value of exactly
+zero members of $S$.  Thus we have a value function.  As you showed in
+Problem 
+\ref{oneblockpartitions} the generating function for partitions with just
+one block is $e^x-1$.  Thus by the exponential formula, $\exp(e^x-1)$ is
+the generating function for sets of subsets of the positive integers
+whose values are disjoint sets whose union is any particular set $N$ of
+size $n$.  Since the values are nonempty sets, this means they partition
+the set $N$.  Thus $\exp(e^x-1)$ is the generating function for partitions
+of sets of size $n$.  (Technically, it is the generating function for
+partitions of subsets of the integers of size $n$, but any two
+$n$-element sets have the same number of partitions.)
+
+\bp 
+\itemes Explain how the exponential formula proves the relationship we saw
+in Problem \ref{exp(onecycle)}.
+\solution{We take $S$ to be the set of permutations of sets of positive
+integers that have just one-cycle.  We take the value of a one-cycle
+permutation to be the support set of the cycle.  The number of one-cycle
+permutations whose value is any given $n$-element set of positive
+integers is $(n-1)!$, so we have defined a value function.  We take the
+set
+$Y$ to be the set of positive integers.  Then by the Exponential Formula,
+if
+$f(x)$ is the EGF for permutations with one cycle, $\exp(f(x))=g(x)$ is
+the EGF in which the coefficient of $x^n\over n!$ is the number of sets of
+permutations with one cycle whose support sets partition any given set $N$
+of size
+$n$.  That is, the coefficient of $x^n\over n!$ in $g(x)$ is the the
+number of products of disjoint cycles which partition any given set $N$;
+that is, it is the EGF for permutations of
+$N$.
+}
+
+\itemes Explain how the exponential formula proves the relationship we saw
+in Problem \ref{exp(two-cycle)}.
+ \solution{We let $S$ be the set of permutations of sets of positive
+integers that consist of exactly one two-cycle. We take the set $Y$
+to be the set of positive integers.  We take the value of a
+two-cycle to be its support set.  Since the number of two-cycles with a
+given support set is one, this is a value function.  We saw in Problem
+\ref{exp(two-cycle)} that the EGF for
+$S$ with this value function is $x^2/2$. By the exponential formula, the
+EGF for sets of disjoint two-cycles is $\exp(x^2/2)$.  But a sets of
+disjoint two-cycles correspond bijectively with permutations of subsets
+of the positive integers which are products of disjoint two-cycles
+(only), and this confirms the result of Problem
+\ref{exponentialtennisparings}.
+}
+
+\itemes Explain how the exponential formula proves the relationship we saw
+in Problem \ref{exp(oneortwo-cycle)}.
+\solution{
+We let the set $S$ be the set of permutations of subsets of the
+positive integers that consist of a one-cycle or consist of a two-cycle.
+We let the set
+$Y$ be the set of positive integers.  We let the value of a permutation
+in $S$ be the support set of its cycle.  We saw in problem
+\ref{exp(oneortwo-cycle)} that the EGF for $S$ is $x+x^2/2$.  By the
+exponential formula, the EGF for sets of disjoint one and two-cycles is
+$e^x+x^2/2$.  But there is a bijection between the sets of disjoint one
+and two-cycles and permutations that are a product of disjoint one and
+two-cycles.  This confirms the result of Problem
+\ref{telephonenetworkEGF}.
+}
+
+\itemes In Problem \ref{paintinglightpoles} we saw that the generating
+function for the number of ways to use four colors of paint to paint $n$
+light poles along the north side of Main Street in Anytown was $e^{4x}$. 
+We should expect an explanation of this generating function using the
+exponential formula.  Let $S$ be the set of all ordered pairs consisting
+of a light pole and a color.  Thus a given light pole occurs in four
+ordered pairs.  What is a natural set-value function on $S$?  What is the
+exponential generating function $f(x)$ for $S$ according to that value? 
+Assuming that there is no upper limit on the number of light poles, what
+subsets of $S$ does the exponential formula 
+tell us are counted by the coefficient of $x^n$ in $e^{f(x)}$?  How do
+the sets being counted relate to ways to paint light poles?
+ \solution{
+A natural set-value function on $S$ assigns to each ordered pair the
+singleton set consisting of the light pole in the pair.  The EGF for $S$
+according to that value is $4x$, because there are four ordered pairs
+with any given value.  Note that a set of ordered pairs whose values
+partition a set $N$ of light poles $N$ is exactly a function from the set
+$N$ of light poles to the set of colors.  Then by the exponential
+formula, the generating function for the number of ways to paint $n$
+light poles with four colors is $e^{4x}$.
+}
+
+\ep
+
+
+
+
+
+One of the most spectacular applications of the exponential formula
+is also the reason why, when we regard a combinatorial structure as a set
+of building block structures, we call the building block structures {\em
+connected}.  In Chapter 2 we introduced the idea of a connected graph and
+in Problem
+\ref{connectedanddisconnected} we saw examples of graphs which were
+connected and were not connected.  A subset $C$ of the vertex set of a
+graph is called a {\bf connected component}\index{connected component
+of a graph}\index{graph!connected component of} of the graph if
+\begin{itemize}
+\item every vertex in $C$ is
+connected to every other vertex in that set by a walk whose vertices lie
+in $C$, and
+\item no other vertex in the graph is connected by a walk to any vertex
+in $C$.
+\end{itemize}
+In Problem \ref{conncomp} we showed that each connected component of a
+graph consists of a vertex and all vertices connected to it by walks in
+the graph.
+
+\bp
+\itemes Show that every vertex of a graph lies in one and only one
+connected component of a graph.  (Notice that this shows that the
+connected components of a graph form a partition of the vertex set of the
+graph.)
+\solution{
+Let $C$ be the set of all vertices connected by a walk to a vertex $x$. 
+Then
+\begin{itemize}
+\item Each pair of vertices $u$ and $v$ in $C$ is connected by the walk
+that goes from $u$ to $x$ and then from $x$ to $v$.
+\item If a vertex $w$ is connected by a walk to a vertex $v$ in $C$, then
+it is connected to $x$ by the walk that goes from $w$ to $v$ and then
+from $v$ to $x$.  Thus no  vertex $w$ in the graph other than a member of
+$C$ is connected by a walk to any vertex in $C$.
+\end{itemize}
+Therefore $C$ is a connected component containing $x$.  If 
+connected component $D$ contained $x$, then every vertex in $D$ would be
+connected by a walk to $x$ and then by a walk from $x$ to $v$ for each
+other vertex in $C$, and similarly, each vertex in $C$ would be connected
+to each vertex in $D$.  Thus by the definition of connected component,
+$C$ and $D$ would have to be the same set.  Therefore each vertex lies in
+one and only one connected component.
+}
+
+
+\itemes Explain why no edge of the graph connects two vertices in
+different connected components.
+\solution{If an edge connected two vertices in different connected
+components, that edge would give a walk from a vertex in one of the
+connected components to a vertex in the other connected component, and
+thus not in the first component, violating the second part of the
+definition of a connected component.
+}
+
+\itemes  Explain why it is that if $C$ is a connected component of a
+graph and
+$E'$ is the set of all edges of the graph that connect vertices in $C$,
+then the graph with vertex set $C$ and edge set
+$E'$ is a connected graph.  We call this graph a {\em connected component
+graph}\index{connected component graph} of the original graph.
+\solution{
+If there is a walk between two vertices in a connected component, all
+edges of the walk must connect two vertices in the connected component,
+because if there were an edge in the walk that did not do so, it would
+violate the second part of the definition of a connected component.
+}
+
+\ep
+The last sequence of problems shows that we may think of any graph as the
+set of its connected component graphs.  (Once we know them, we  know all
+the vertices and all the edges of the graph).  Notice that a graph is
+connected if and only if it has exactly one connected component.  Since
+the connected components form a partition of the vertex set of a graph,
+the exponential formula will relate the generating function for the
+number of connected graphs on $n$ vertices with the generating function
+for the number of graphs (connected or not) on $n$ vertices. However
+because we can draw as many edges as we want between two vertices of a
+graph, there are infinitely many graphs on $n$ vertices, and so the
+problem of counting them is uninteresting.  We can make it interesting by
+considering {\bf simple graphs},\index{graph!simple}\index{simple graph}
+namely graphs in which each edge has two distinct endpoints and no two
+edges connect the same two vertices. It is because connected graphs form
+the building blocks for viewing all graphs as sets of connected components
+that we refer to the building blocks for structures counted by the
+generating functions in the exponential formula as connected
+structures.\index{exponential formula!connected structures for}
+
+\bp
+\itemesi Suppose that $f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}$ is
+the exponential generating function for the number of simple
+connected graphs on
+$n$ vertices and $g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}$ is the
+exponential generating function for the number of simple graphs on $i$
+vertices.  
+\begin{enumerate}
+\item Is $f(x) = e^{g(x)}$, is $f(x) = e^{g(x)-1}$, is $g(x) = e^{f(x)-1}$
+or is
+$g(x) = e^{f(x)}$?
+\solution{To apply the exponential formula, we must take the exponential
+function of an EGF whose constant term is zero, or in other words for a
+set of elements whose values are nonempty sets.  We can let $S$ be the
+set of nonempty connected graphs. (Technically, the graph with the empty
+set of vertices and the empty set of edges is connected.)  Therefore
+$f(x) -1$ is the EGF for $S$. By the exponential formula,
+$g(x)=e^{f(x)-1}$ because a simple graph may be thought of as a set of
+simple connected graphs, namely its connected component graphs. (Note that
+$g(x)$ has 1 for its constant term, which corresponds to thinking of the
+empty graph as having an empty set of nonempty connected components.)
+}
+\item One of $a_i$ and $c_n$ can be computed by recognizing that a
+simple graph on a vertex set $V$ is completely determined by its edge set
+and its edge set is a subset of the set of two element subsets of $V$. 
+Figure out which it is and compute it.
+\solution{To specify a simple graph on a vertex set $V$, we have to
+specify its set of edges.  The possible sets of edges thus correspond
+bijectively to sets of two-element subsets of $V$.  But if $V$ has size
+$i$ the set of all two element subsets of $V$ has $i\choose 2$ elements. 
+Thus the number of sets of two element subsets of $V$ is $2^{i\choose
+2}$.  Therefore $a_i = 2^{i\choose 2}$.
+}
+\item Write $g(x)$ in terms of the natural logarithm of $f(x)$
+or $f(x)$ in terms of the natural logarithm of  $g(x)$.
+\solution{
+Since $g(x) = e^{f(x)-1}$, $f(x) = 1+ \ln g(x)$.
+}
+
+\item Write $\log(1+y)$ as a power series in $y$.
+\solution{$$\log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
+(-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.$$
+}
+\item   Why is the coefficient
+of
+$x^0\over 0!$ in $g(x)$ equal to one?  Write $f(x)$ as a power series in
+$g(x) -1$.
+\solution{The coefficient of $x^0\over 0!$ is 1 because there is one
+graph on the empty set; the one with no edges.  $$f(x) = 1 +\ln(1 +
+(g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.$$
+}
+\item You can now use the previous parts of the Problem to find a formula
+for $c_n$ that involves summing over all partitions of the integer $n$. 
+(It isn't the simplest formula in the world, and it isn't the easiest
+formula in the world to figure out, but it is nonetheless a formula
+with which one could actually make computations!)  Find such a  formula.
+ \solution{
+$$f(x) = 1+\sum_{j=1}^\infty
+(-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
+(-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.$$
+From the right-hand expression, we get a term involving $x^n$ whenever we
+have an $x^n$ term in the $j$th power of $\sum_{i=1}^\infty 2^{i\choose
+2}{x^i\over i!}$.  So the coefficient of
+$x^n\over n!$ is the sum over all $j$ and all sequences
+$i_1,i_2,\ldots,i_j$ with
+$i_1+i_2+\cdots+i_j = n$ of terms of the form $$ {n!\over
+j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
+\over i_k!},$$ where  each $i_k>0$.  Notice that reordering the numbers
+$i_1$, $i_2$, \ldots $i_k$ does not change the value of the expression. 
+The sequence of $i_k$s is a composition of $n$ into positive parts.  If
+we knew how many compositions of $n$ into $j$ parts correspond to one
+partition of $n$ into $j$ parts, we could sum over a much smaller set of
+terms.  If we use the type vector notation for a partition, namely that
+it has $p_1$ parts of size 1, $p_2$ parts of size 2, \ldots, $p_n$ parts
+of size $n$, then the number of compositions corresponding to that
+partition, i.e. the number of compositions with the type vector
+$(p_1,p_2, \ldots, p_n)$ is the number of ways to take $j$ places in a
+vector and label $p_1$ of them with 1, $p_2$ of them with 2, and so on
+until we label $p_n$ of them with $n$.  This number is the multinomial
+coefficient $j\choose p_1,p_2,\ldots, p_n$.  Thus our sum over all j and
+all compositions of $n$ into $j$ parts becomes
+$$\sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+rp_r =n \atop \mbox{and} \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
+p_n}
+\prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+\over (r!)^{p_r}}.$$  We can remove one of the summation signs and the
+condition that $\sum_{r=1}^n p_r=j$ by substituting $\sum_{r=1}^n p_r$
+for $j$, and we get
+$$\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
+\prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+\over (r!)^{p_r}p_r!}$$
+for the number of connected graphs on $n$ vertices.  If we want to
+shorten the appearance of the formula we can keep $j$ in our sum and
+explain its value afterwards, as in
+$$\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+rp_r =n }}{n!}(-1)^j(j-1)!
+\prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+\over (r!)^{p_r}p_r!},$$
+where $j=\sum_{r=1}^n p_r$.
+}
+\end{enumerate}
+\ep
+
+The point to the last problem is that we can use the exponential formula
+in reverse to say that if $g(x)$ is the generating function for the
+number of (nonempty) connected structures of size $n$ in a given family of
+combinatorial structures and $f(x)$ is the generating function for all
+the structures of size $n$ in that family, then not only is $f(x) =
+e^{g(x)}$, but $g(x) = \ln(f(x))$ as well.  Further, if we happen to have
+a formula for either the coefficients of $f(x)$ or the coefficients of
+$g(x)$, we can get a formula for the coefficients of the other one!
+
+
+\section{Supplementary Problems}
+\begin{enumerate} 
+
+\item Use product principle for EGFs and the idea of coloring
+a set in two colors to prove the formula $e^x\cdot e^x = e^{2x}.$
+
+\item Find the EGF for the number of ordered functions from a $k$-element
+set to an $n$-element set.
+
+\item Find the EGF for the number of ways to string $n$ distinct beads
+onto a necklace.
+
+\item Find the exponential generating function for the number of broken
+permutations of a $k$-element set into $n$ parts.
+
+\item Find the EGF for the total number of broken permutations of a
+$k$-element set.
+
+\item Find the EGF for the number of graphs on $n$ vertices in which every
+vertex has degree 2.
+
+\item Recall that a cycle of a permutation cannot be empty.
+\begin{enumerate}  
+\item What is the generating function for the number of
+cycles on an even number of elements (i.e. permutations of an even number
+$n$ of elements that form an
+$n$-cycle)?  Your answer should not have a summation sign in it.  Hint: 
+If
+$y=
+\sum_{i=0}^\infty {x^{2i}\over 2i}$, what is the derivative of $y$?
+\item What is the generating function for the number of permutations on
+$n$ elements that are a product of even cycles?
+\item What is the generating function for the number of cycles on an odd
+number of elements?
+\item What is the generating function for the number of permutations on
+$n$ elements that are a product of odd cycles?
+\item How do the generating functions in parts (b) and (d) of this
+problem related to the generating function for all permutations on $n$
+elements?
+
+\end{enumerate}
+
+\end{enumerate}
+
