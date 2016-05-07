@@ -1,3 +1,5 @@
+# Combinatorics through Guided Discovery
+
 The contents of this archive are released under the terms of the
 GNU Free Documentation License Version 1.3, 3 November 2008,
 http://www.gnu.org/licenses/fdl-1.3.txt 
