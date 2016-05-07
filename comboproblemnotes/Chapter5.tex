@@ -1,0 +1,2733 @@
+\chapter{Groups acting on sets}
+
+\label{groupsonsets}
+\section{Permutation Groups}
+Until now we have thought of permutations mostly as ways of listing the
+elements of a set.  In this chapter we will find it very useful to think
+of permutations as functions.  This will help us in using permutations to
+solve enumeration problems that cannot be solved by the quotient
+principle because they involve counting the blocks of a partition in
+which the  blocks don't have the same size.  We begin by studying the
+kinds of permutations that arise in situations where we have used the quotient
+principle in the past.
+
+\subsection{The rotations of a square}
+\begin{figure}[htb]\caption{The four
+possible results of rotating a square
+and maintaining its position.}\label{RotationsOfSquare}\smallskip
+\begin{center}\mbox{\psfig{figure=RotationsOfSquare.eps,width = 5.4in
+}}
+\end{center}  
+\end{figure} 
+
+In Figure \ref{RotationsOfSquare} we show a square with its four vertices
+labelled 1, 2, 3, and 4.  We have also labeled the spot in the plane
+where each of these vertices falls with the same label.  Then we have
+shown the effect of rotating the square clockwise through 90, 180, 270, and 360
+degrees (which is the same as rotating through 0 degrees).  Underneath
+each of the rotated squares we have named the function that carries
+out the rotation.  We use $\rho$, the Greek letter pronounced ``row," to
+stand for a 90 degree clockwise rotation.  We use $\rho^2$ to stand for two 90
+degree rotations, and so on.  We can think of the function $\rho$ as a
+function on the four element set\footnote{What we are doing is
+restricting the rotation $\rho$ to the set $\{1,2,3,4\}$.}
+$\{1,2,3,4\}$.  In particular, for any function $\varphi$ (the Greek letter
+phi, usually pronounced ``fee," but sometimes ``fie") from the plane back
+to itself that may move the square around but otherwise leaves it in the
+same place, we let $\varphi(i)$ be the label of the place where vertex 
+previously in
+position
+$i$ is now.  Thus
+$\rho(1) =2$, $\rho(2)=3$, $\rho(3)=4$ and $\rho(4) =1$.  Notice that
+$\rho$ is a permutation on the set $\{1,2,3,4\}$.
+\bp
+\itemm Find $\rho^2$ of 1, 2, 3, and 4.  Find $\rho^3$ of 1, 2, 3, and 4.
+Are $\rho^2$ and $\rho^3$ permutations of $\{1,2,3,4\}$?
+\solution{$\rho^2(1)=3$, $\rho^2(2)=4$, $\rho^2(3)=1$, $\rho^2(4) =2$.  $\rho^3(1)=4$,
+$\rho^3(2)=1$, $\rho^3(3)=2$, $\rho^3(4)=3$.  Yes, $\rho^2$ and $\rho^3$ are
+permutations of $\{1,2,3,4\}$.
+}
+
+\iteme The composition\index{composition of
+functions}\index{functions!composition of}
+$f\circ g$ of two functions
+$f$ and
+$g$ is defined by $f\circ g(x) = f(g(x))$.  Is $\rho^3$ the composition of
+$\rho$ and
+$\rho^2$?  Does the answer depend on the order in which we write $\rho$
+and
+$\rho^2$? How is
+$\rho^2$ related to
+$\rho$? \label{composition1}
+\solution{Yes, $\rho^3$ is the composition of $\rho$ and $\rho^2$, and also of $\rho^2$
+and $\rho$, so it doesn't matter in which order we write them.  $\rho^2=\rho\circ\rho$.
+}
+
+\iteme Is the composition of two permutations always a permutation?
+\solution{Yes, because the composition of one-to-one functions is one-to-one and the
+composition of onto functions is onto.
+}
+
+\ep 
+
+In Problem \ref{composition1} you see that we can think of
+$\rho^2\circ\rho$ as the result of first rotating by 90 degrees and then
+by another 180 degrees.  In other words, the composition of two rotations
+is the same thing as first doing one and then doing the other. If we
+first rotate by 90 degrees and then by 270 degrees then we have rotated
+by 360 degrees, which does nothing visible to the square.  Thus we say
+that $\rho^4$ is the ``identity function.''  In general the {\bf identity
+function}\index{function!identity}\index{identity function} on a set $S$,
+denoted by
+$\iota$ (the Greek letter iota, pronounced eye-oh-ta) is the function
+that takes each element of the set to itself.  In symbols, $\iota(x) =x$
+for every
+$x$ in
+$S$.  Of course the identity function on a set is a permutation of that
+set. 
+
+\subsection{Groups of Permutations}
+\bp
+\iteme For any function $\varphi$ from a set $S$ to itself, we define
+$\varphi^n$ (for nonnegative integers $n$) inductively by $\varphi^0 =
+\iota$ and $\varphi^n = \varphi^{n-1}\circ\varphi$ for every positive
+integer $n$.  If $\varphi$ is a permutation, is $\varphi^n$ a permutation?
+Based on your experience with previous inductive proofs, what do you
+expect $\varphi^n\circ \varphi^m$ to be?  What do you expect
+$(\varphi^m)^n$ to be?  There is no need to prove these last two answers
+are correct, for you have, in effect, already done so in Chapter 2.
+\solution{It is a permutation because the computation of permutations is a
+permutation.  (You could be more precise and use the inductive definition
+of $\varphi^n$ to prove inductively that $\varphi^n$ is a permutation.)  We
+expect
+$\varphi^m\circ\varphi^n=\varphi^{m+n}$, and we expect
+$(\varphi^m)n=\varphi^{mn}$, and we would prove this by induction.}
+
+\iteme If we perform the composition $\iota\circ \varphi$ for any function
+$\varphi$ from $S$ to $S$, what function do we get?  What if we perform the
+composition $\varphi\circ\iota$?\label{identityproperty}
+\solution{$\iota\circ\varphi=\varphi\circ\iota=\varphi$}
+\ep
+What you have observed about iota in Problem \ref{identityproperty} is
+called the {\em identity property}\index{identity property (for
+permutations)} of iota.  In the context of permutations, people usually
+call the function
+$\iota$ ``the identity'' rather than calling it ``iota.''
+
+Since rotating first by 90 degrees and then by 270 degrees has the same
+effect as doing nothing, we can think of the 270 degree rotation as
+undoing what the 90 degree rotation does.  For this reason we say that in
+the rotations of the square, $\rho^3$ is the ``inverse'' of $\rho$.  In
+general, a function $\varphi:T\rightarrow S$ is called an {\bf
+inverse}\index{inverse function}\index{function!inverse} of a function $\sigma:S
+\rightarrow T$ (the lower case Greek letter sigma) if $\varphi\circ \sigma= \sigma
+\circ\varphi =
+\iota$. 
+
+\bp
+\iteme Does every permutation have an inverse?   If so, why, and is it
+unique, i.e. could a permutation have two distinct inverse functions?  If
+not, give an example of a permutation without an inverse or a permutation with two
+distinct inverses.
+\solution{Let $\varphi$ be a permutation of $S$.  Then for each $S$ in
+$S$ there is one and only one $x$ in $S$ such that $\varphi(x) = s$
+because
+$\varphi$ is one-to-one and onto.  Thus if we define $\sigma(s)$ to be
+the unique $x$ such that $\varphi(x) = s$, we have defined a function,
+and $$\varphi\circ\sigma (s) = \varphi(\sigma(s)) = \varphi(x) = s.$$
+Thus we have that $\varphi\circ\sigma = \iota$.  To show that $\sigma$ is
+an inverse to $\varphi$, we must show that $\sigma\circ\varphi = \iota$
+as well.  However $\sigma(\varphi(y))$ is the unique $x$ such that
+$\varphi(x) = \varphi(y)$, that is $\sigma(\varphi(y)) = y$.  Thus
+$\sigma\circ\varphi = \iota$, and $\sigma$ is an inverse to $\varphi$.}
+
+ \iteme  Show that if $\sigma$ is an inverse of the permutation
+$\varphi$  of
+$S$, then $\sigma$ is a permutation of $S$ also. 
+\solution{The function $\sigma$ must be one-to-one because if $\sigma(x)=\sigma(y)$,
+then
+$x=\varphi\circ\sigma(x)=\varphi\circ\sigma(y)=y$.  The function $\sigma$ must be onto
+because for each $y$ in its range, $\sigma(\varphi(y)) = y$}
+
+\ep
+
+We use $\varphi^{-1}$ to denote the inverse of the permutation $\varphi$.
+We've seen that the rotations of the square are functions that return the
+square to its original position but may move the vertices to different
+places.  In this way we create permutations of the vertices of the
+square.  We've observed three important properties of these permutations.
+
+\begin{itemize}\item (Identity Property)\index{identity property} These
+permutations include the identity permutation.  
+\item (Inverse Property)\index{inverse property} Whenever these
+permutations include
+$\varphi$, they also include $\varphi^{-1}$.
+\item (Closure Property)\index{closure property}  Whenever these
+permutations include
+$\varphi$ and $\sigma$, they also include $\varphi\circ\sigma$.
+\end{itemize}
+
+A set of permutations with these three properties is called a {\bf
+permutation group}\footnote{The concept of a permutation group is a
+special case of the concept of a {\em group} that one studies in abstract
+algebra.  When we refer to a group in what follows, if you  know what
+groups are in the more abstract sense, you may use the word in this way. 
+If you do not know about groups in this more abstract sense, then you may
+assume we mean permutation group when we say group.} or a group of
+permutations.\index{group of permutations}\index{permutation group}  We
+will denote the group of permutations corresponding to rotations of the
+square  by $R_4$ and call it the {\em rotation group}\index{rotation
+group} of the square.  There is a similar rotation group with $n$
+elements for any regular $n$-gon.
+
+\bp \iteme If a finite set of permutations  satisfies the closure
+property is it a permutation group?
+\solution{Yes, because the permutations $\sigma$, $\sigma^2$, \ldots, $\sigma^n$,
+\ldots must eventually start repeating.  But if $\sigma^i=\sigma^j$, and $i<j$, then
+$\sigma^{j-i} =1$, so $\sigma^{j-i-1}$ is the inverse of $\sigma$.  This means that
+every member of the set of permutations has an inverse in that set.  But then since
+$\sigma\circ\sigma^{-1} = \iota$, we have that the identity is in the set as well. 
+Thus it is a permutation group.}
+
+\iteme \begin{enumerate}
+\item How should we define $\varphi^{-n}$ for an element
+$\varphi$ of a permutation group? 
+\solution{We define $\varphi^{-n}=\left(\varphi^{-1}\right)^n$.}
+\item  Will the two standard rules for exponents
+$$a^ma^n=a^{m+n} \mbox{\ and\ } (a^m)^n = a^{mn}$$ still hold if one or more of the
+exponents may be negative? 
+\solution{Yes.}  
+\item What would
+we have to prove to show that the rules still hold? 
+\solution{ To prove this we need to show that for nonnegative $m$ and $n$
+we have that
+$\varphi^m\circ\varphi^{-n} =
+\varphi^{m-n}$, that $\varphi^{-m}\varphi^{-n} = \varphi^{-m-n}$, that
+$(\varphi^m)^{-n} = \varphi^{-mn}$, that $(\varphi^{-m})^n = \varphi^{-mn}$ and that
+$(\varphi^{-m})^{-n}= \varphi^{mn}$. }
+\item If the rules hold, give
+enough of the proof to show that you know how to do it; otherwise give a
+counterexample.
+\solution{
+ We give the first and last proof. We will induct
+on $n$ in the first proof.  If $n=0$ the formula automatically holds.  Assume inductively
+that
+$\varphi^m\circ\varphi^{-(n-1)} = \varphi^{m-(n-1)}$.  Compose both sides of this
+equation on the right by $\sigma^{-1}$ and use the associative law for composition of
+functions to get, in the case that $m-n$ is nonnegative
+\begin{eqnarray*}
+\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) &=&
+\varphi^{m-(n-1)}\circ\varphi^{-1}\\
+\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}&=&
+(\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}\\
+\varphi^m\circ(\varphi^{-1})^n &=& \varphi^{m-n}.
+\end{eqnarray*}
+We do the same in the case that $m-n$ is negative, getting
+\begin{eqnarray*}
+\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) &=&
+\varphi^{m-(n-1)}\circ\varphi^{-1}\\
+\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}&=&
+(\varphi^{-1})^{n-m-1}\circ\varphi^{-1}\\
+\varphi^m\circ(\varphi^{-1})^n &=& (\varphi^{-1})^{n-m}\\
+\varphi^m\circ\varphi^{-n}&=&\varphi^{m-n}.
+\end{eqnarray*}
+To prove the last statement we need to prove, we write the following, in which the line
+marked \ref{crucialline} follows from the first equation we proved and the line marked
+\ref{modestlyimportant} follows from the fact that $(\varphi^{-1})^{-1} = \varphi$.
+\begin{eqnarray}
+(\varphi^{-m})^{-n} &=& ([\varphi^{-1})^m]^{-1})^n\nonumber\\
+&=&[(\varphi^{-1})^{-m}]^n\label{crucialline}\\
+&=&([(\varphi^{-1})^{-1}]^m)^n\nonumber\\
+&=&(\varphi^m)^n\label{modestlyimportant}\\
+&=&\varphi^{mn}\nonumber
+\end{eqnarray}
+}\end{enumerate}
+
+\iteme There are three dimensional geometric motions of the square that
+return it to its original position but move some of the vertices to other
+positions. For example, if we flip the square around a diagonal, most of it moves out of
+the plane during the flip, but  the square ends up in the same place.  Draw a figure
+like Figure
+\ref{RotationsOfSquare} that shows all the possible results of such motions, including
+the ones shown in Figure \ref{RotationsOfSquare}.  Do the corresponding permutations
+form a group?\label{dihedral1}
+
+\iteme If $f:S\rightarrow T$, $g:T\rightarrow X$, and
+$h:X \rightarrow Y$, is $h\circ(g\circ f) = (h\circ g)\circ f$? 
+What does this say about the status of the {\em associative
+law}\index{associative law}
+$$\rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi$$ in a
+group of permutations?
+\solution{Since $(h\circ(g\circ f)) (x) = h((g\circ f)(x)) = h(g(f(x)))$ and $((h\circ
+g)\circ f) (x) = (h\circ g)(f(x)) = h(g(f(x)))$, we have that $$h\circ (g\circ f) =
+(h\circ g)\circ f.$$  This says that the associative law holds for the composition
+operation in a group of permutations.}
+
+\itemei If $\sigma$ and $\varphi$ are permutations, why must
+$\sigma\circ\varphi$ have an inverse?  Is $(\sigma\circ\varphi)^{-1}=
+\sigma^{-1}\varphi^{-1}$?  (Prove or give a counter-example.)  Is 
+$(\sigma\circ\varphi)^{-1}=
+\varphi^{-1}\sigma^{-1}$? (Prove or give a counter-example.)
+\solution{
+One could either say that the composition of one-to-one and onto functions
+is one-to-one and onto,  or note that $(\sigma\circ\varphi)\circ (\varphi^{-1}\circ
+\sigma^{-1}) =\iota$ by the associative law.  Note that this says that $(\sigma \circ
+\varphi)^{-1}= \varphi^{-1}\circ \sigma^{-1}$.  In the dihedral group $D_4$,
+$\rho^{-1}= \rho^3$ and $\varphi_{1/3}^{-1} = \varphi{1/3}$.  Thus
+\begin{eqnarray*} (\rho\circ \varphi_{1/3})\circ (\rho^{-1}\circ
+\varphi_{1/3}^{-1})&=&\rho\circ
+\varphi_{1/3})\circ(\rho^3\varphi_{1/3})\\
+&=&\varphi_{12/34}\circ \varphi_{14/23}\\
+&=&\rho^2.\end{eqnarray*}  This shows that $(\sigma\circ\varphi)^{-1}\not=
+\sigma^{-1}\varphi^{-1}$.
+}
+
+\iteme Explain why the set of all permutations of four elements is a
+permutation group.  How many elements does this group have?  This group
+is called the {\em symmetric group on four letters}\index{symmetric
+group} and is denoted by $S_4$. 
+\solution{It is a finite set of permutations that satisfies the closure property.  It
+has $4!= 24$ elements.}
+\ep
+
+\subsection{The symmetric group}
+In general, the set of all permutations of an $n$-element set is a
+group.  It is called the {\bf symmetric group on $\mathbf n$
+letters}\index{symmetric group}.  We don't have nice geometric
+descriptions (like rotations) for all its elements, and it would be
+inconvenient to have to write down something like ``Let $\sigma(1) =3$,
+$\sigma(2) =1$, $\sigma(3)=4$, and $\sigma(4)=1$'' each time we need to
+introduce a new permutation.  We introduce a new notation for
+permutations that allows us to denote them {\em reasonably} compactly and
+compose them reasonably quickly.  If
+$\sigma$ is the permutation of
+$\{1,2,3,4\}$ given by
+$\sigma(1)=3$, $\sigma(2)=1$,
+$\sigma(3) =4$ and $\sigma(4) =2$,
+we write 
+$$\sigma =\left( \matrix{1&2&3&4\cr3&1&4&2}\right).$$
+
+We call this notation the {\em two row notation}\index{permutation!two
+row notation}\index{two row notation} for permutations.  In the two row
+notation for a permutation of $\{a_1,a_2,\ldots, a_n\}$, we write the
+numbers $a_1$ through
+$a_n$ in a one row and we write $\sigma(a_1)$ through $\sigma(a_n)$ in a
+row right below, enclosing both rows in parentheses.  Notice that 
+ $$\left( \matrix{1&2&3&4\cr3&1&4&2}\right) = \left(
+\matrix{2&1&4&3\cr1&3&2&4}\right),$$
+ although the second ordering of the columns is rarely used.
+
+If $\varphi$ is given by
+$$\varphi = \pmatrix{1&2&3&4\cr4&1&2&3},$$
+then, by applying the definition of composition of functions, we may compute
+$\sigma\circ
+\varphi$ as shown in Figure
+\ref{permutationproduct}. 
+
+
+\begin{figure}[htb]\caption{How to
+multiply permutations in two-row
+notation.}\label{permutationproduct}\vspace*{-1in}
+%\begin{center}
+\mbox{\psfig{figure=productofpermutations.eps
+}}
+%\end{center}  
+\end{figure}
+
+ We don't normally put the circle between two
+permutations in two row notation when we are composing them, and refer to
+the operation as multiplying the permutations, or as the product of the
+permutations. To see how  Figure
+\ref{permutationproduct} illustrates composition, notice that the arrow
+starting at 1 in
+$\varphi$ goes to 4.  Then from the 4 in $\varphi$ it goes to the 4 in
+$\sigma$ and then to 2.  This illustrates that $\varphi(1)=4$ and
+$\sigma(4) =2$, so that
+$\sigma(\varphi(1))=2$.  
+
+\bp
+\item For practice, compute $\pmatrix{1&2&3&4&5\cr3&4&1&5&2}
+\pmatrix{1&2&3&4&5\cr 4&3&5&1&2}$.
+\solution{$\pmatrix{1&2&3&4&5\cr5&1&2&3&4}$}
+\ep
+
+\subsection{The dihedral group}
+We found four permutations that correspond to rotations of the square. 
+In Problem \ref{dihedral1} you found four permutations that correspond to
+flips of the square in space.  One flip fixes the vertices in positions 1
+and 3 and interchanges those in positions 2 and 4.  (Notice we did not say
+it fixes the vertices labelled 1 and 3.)\footnote{There is room for tremendous confusion
+here, and professional mathematicians sometimes suffer from it.  Just try to remember
+that when we describe the axis of a flip, we describe it relative to points given in
+space, not points on the square or other object we are flipping.}  Let us denote it by
+$\varphi_{1/3}$.  One flip fixes the vertices in positions 2 and 4 and
+interchanges those in positions 1 and 3.  Let us denote it by
+$\varphi_{2/4}$.  One flip interchanges the vertices in positions 
+1 and 2 and also interchanges those in positions 3 and 4.  Let us denote
+it by
+$\varphi_{12/34}$. The fourth flip interchanges the vertices in positions
+1 and 4 and interchanges those in positions 2 and 3.  Let us denote it by
+$\varphi_{14/23}$. Notice that $\varphi_{1/3}$ is a permutation that takes vertex
+1 to vertex 1 and vertex 3 to vertex 3, while $\varphi_{12/34}$ is a permutation
+that takes the edge from 1 to 2 to the edge from 1 to 2 and takes the edge from 3
+to 4 to the edge from 3 to 4.
+
+\bp
+\iteme Write down the two-row notation for $\rho^3$, $\varphi_{2/4}$,
+$\varphi_{12/34}$ and $\varphi_{2/4}\circ \varphi_{12/34}$.  Remember that $\sigma(i)$
+stands for the position where the vertex that originated in position $i$ is after we
+apply $\sigma$.
+\solution{\par\noindent$\pmatrix{1&2&3&4\cr4&1&2&3}$,
+$\pmatrix{1&2&3&4\cr3&2&1&4}$,
+$\pmatrix{1&2&3&4\cr2&1&4&3}$, $\pmatrix{1&2&3&4\cr2&3&4&1}$.}
+\item (You may have already done this problem in Problem
+\ref{dihedral1}, in which case you need not do it again!)  In Problem
+\ref{dihedral1}, if a rigid motion of three-dimensional space returns the
+square to its original position, in how many places can vertex number one
+land?  Once the location of vertex number one is decided, how many
+possible locations are there for vertex two?  Once the locations of
+vertex one and vertex two are decided, how many locations are there for
+vertex three?  Answer the same  question for vertex four.  What does this
+say about the relationship between the four rotations and four flips
+described above and the permutations you described in Problem
+\ref{dihedral1}?\label{dihedral2}
+\solution{Vertex number one can go in four places.  After the place for vertex 1 is
+chosen, there are two choices for vertex 2.  After vertices 1 and 2 are placed, one
+side of the square has been placed, and there is only one way the rest of the square
+can fill in the same place the square used to be, so there is only one choice for
+where vertex 3 goes and one choice for where vertex 4 goes.  Thus the permutations
+described in Problem \ref{dihedral1} are exactly the rotations and flips.}
+\ep
+
+The four rotations and four flips of the square described before Problem
+\ref{dihedral2} form a group called the dihedral group of the square. 
+Sometimes the group is denoted $D_8$ because it has eight elements, and
+sometimes the group is denoted by $D_4$ because it deals with four
+vertices!  Let us agree to use the notation $D_4$ for the dihedral group
+of the square.  There is a similar dihedral group, denoted by $D_{n}$, of
+all the rigid motions of three-dimensional space that return a regular
+$n$-gon to its original position (but might put the vertices in different
+places.) 
+
+\bp
+\itemei How many elements does the group $D_n$ have? Prove that you are
+correct.
+  \solution{$D_n$ has $2n$ elements, because once you have chosen one of the
+$n$ places for vertex one, there are two choices for vertex two, and the
+remaining vertices can go in only one place each.}
+\ep
+
+\subsection{Group tables}
+We can always figure out the composition of two permutations of the same
+set by using the definition of composition, but if we are going to work
+with a given permutation group again and again, it is worth making the
+computations once and recording them in a table.  For example the group
+of rotations of the square may be represented as in Table
+\ref{rotationgrouptable}.  We list the elements of our group, with the
+identity first, across the top of the table and down the left side of the
+table, using the same order both times.  Then in the row labeled by the
+group element $\sigma$ and the column labelled by the group element
+$\varphi$, we write the composition $\sigma\circ \varphi$, expressed in
+terms of the elements we have listed on the top and on the left side. 
+Since a group of permutations is closed under composition, the result
+$\sigma\circ \varphi$ will always be expressible as one of these elements.
+
+
+\begin{table}[htb]\caption{The group
+table for the rotations of a square.}\label{rotationgrouptable}\smallskip
+\begin{center}
+\begin{tabular}{|c|c c c c|}
+\hline
+$\circ$&$\iota$&$\rho$&$\rho^2$&$\rho^3$\\
+\hline
+$\iota$&$\iota$&$\rho$&$\rho^2$&$\rho^3$\\
+$\rho$&$\rho$&$\rho^2$&$\rho^3$&$\iota$\\
+$\rho^2$&$\rho^2$&$\rho^3$&$\iota$&$\rho$\\
+$\rho^3$&$\rho^3$&$\iota$&$\rho$&$\rho^2$\\
+\hline
+\end{tabular}
+\end{center}  
+\end{table}
+
+\bp
+\item In Table \ref{rotationgrouptable}, all the entries in a row (not
+including the first entry, the one to the left of the line) are
+different.  Will this be true in any group table for a permutation
+group?  Why or why not? Also in Table
+\ref{rotationgrouptable} all the entries in a column (not including the
+first entry, the one above the line) are different.  Will this be true in
+any group table for a permutation group?  Why or why not?
+\solution{It will always be the case that all the entries of a row or column below and
+to the left of the lines in a group table are different.  If two entries of the row
+labelled by $\sigma$ were equal, that would mean $\sigma\circ\varphi_1 =
+\sigma\circ\varphi_2$ for two different elements $\varphi_1$ and $\varphi_2$.  But if
+we multiply both sides of the equation by $\sigma^{-1}$ we get 
+$\sigma^{-1}(\sigma\circ\varphi_1) =
+\sigma^{-1}(\sigma\circ\varphi_2)$, and by using the associative law and the identity
+property, we get $\varphi_1=\varphi_2$, a contradiction.  The same sort of argument
+(with $\sigma$ on the right) works for columns.}
+
+\item In Table \ref{rotationgrouptable}, every element of the group
+appears in every row (even if you don't include the first element, the
+one before the  line).  Will this be true in any group table for a
+permutation group?  Why or why not?  Also in Table
+\ref{rotationgrouptable} every element of the group appears in every
+column (even if you don't include the first entry, the one before the
+line).  Will this be true in any group table for a permutation group?  Why
+or why not?
+\solution{Every element appears in each row and every element appears in
+each column (after and below the lines).  This is because the number of
+entries in a row or column is the number of elements of the group.  By the
+pigeonhole principle, if not all the elements appear in a row, then two are
+the same, so $\tau\circ \sigma_1 =\tau\circ\sigma_2$ for some
+$\sigma_1$,
+$\sigma_2$, and $\tau$ ($\tau$ is the greek letter tau that rhymes with cow)
+in the group with
+$\sigma_1\not=
+\sigma_2$.  Multiplying on the right gives us $\sigma_1 = \sigma_2$, a
+contradiction.  The same kind of argument works on columns, though you now
+have  
+$\sigma_1\circ \tau =\sigma_2\circ \tau$ for some $\sigma_1$,
+$\sigma_2$, and $\tau$ in the group with $\sigma_1\not= \sigma_2$.}
+
+\iteme Write down the group table for the dihedral group $D_4$.  Use the
+$\varphi$ notation described above to denote the flips.  (Hints:  Part of the
+table has already been written down.  Will you need to think hard to write
+down the last row?  Will you need to think hard to write down the last
+column?\label{dihedral3}  When you multiply a product like $\varphi_{1/3}
+\circ \rho$ remember that we defined $\varphi_{1/3}$ to be the flip that
+fixes the vertex in position 1 and the vertex in position 3, {\em not} the
+one that fixes the vertex on the square labelled 1 and the vertex on the
+square labelled 3.)
+\solution{\\
+\hglue-.25in\begin{tabular}{|c|c c c c c c c c|}
+\hline
+$\circ$&$\iota$&$\rho$&$\rho^2$&$\rho^3$&$\varphi_{1/3}$ &$\varphi_{2/4}$
+&$\varphi_{12/34}$&$\varphi_{14/23}$\\
+\hline
+$\iota$&$\iota$&$\rho$&$\rho^2$&$\rho^3$&$\varphi_{1/3}$ &$\varphi_{2/4}$
+&$\varphi_{12/34}$&$\varphi_{14/23}$\\
+$\rho$&$\rho$&$\rho^2$&$\rho^3$&$\iota$&$\varphi_{12/34}$&$\varphi_{23/14}$
+&$\varphi_{2/4}$&$\varphi_{1/3}$\\
+$\rho^2$&$\rho^2$&$\rho^3$&$\iota$&$\rho$&$\varphi_{2/4}$&$\varphi_{1/3}$
+&$\varphi_{14/23}$&$\varphi_{12/34}$\\
+$\rho^3$&$\rho^3$&$\iota$&$\rho$&$\rho^2$&$\varphi_{23/14}$&$\varphi_{12/34}$
+&$\varphi_{1/3}$&$\varphi_{2/4}$\\
+$\varphi_{1/3}$&$\varphi_{1/3}$&$\varphi_{14/23}$&$\varphi_{2/4}$
+&$\varphi_{12/34}$ &$\iota$&$\rho^2$&$\rho$&$\rho^3$\\
+$\varphi_{2/4}$&$\varphi_{2/4}$& $\varphi_{12/34}$&$\varphi_{1/3}$&
+$\varphi_{14/23}$&$\rho^2$&$\iota$&$\rho^3$&$\rho$\\
+$\varphi_{12/34}$&$\varphi_{13/24}$&$\varphi_{1/3}$&$\varphi_{14/23}$&$
+\varphi_{2/4}$&$\rho$&$\rho^3$&$\iota$&$\rho^2$\\
+$\varphi_{14/23}$&$\varphi_{14/23}$&$\varphi_{2/4}$&$\varphi_{12/34}$&
+$\varphi_{1/3}$&$\rho^3$&$\rho$&$\rho^2$&$\iota$\\
+\hline
+\end{tabular}
+}
+\ep
+
+You may notice that the associative law, the identity property, and the
+inverse property are three of the most important rules that we use in
+regrouping parentheses in algebraic expressions when solving equations. 
+There is one property we have not yet mentioned, the {\em commutative
+law}\index{commutative law} which would say that $\sigma\circ \varphi =
+\varphi\circ\sigma$.  It is easy to see from the group table of $R_4$ that it
+satisfies the commutative law.
+
+\bp \item Does the commutative law hold in all permutation groups?
+\solution{No.  In the group $D_3$ a nontrivial rotation does not commute
+with a flip.}
+\ep
+
+In your group table for the dihedral group $D_4$, you have a copy of the
+group of rotations of the square.  When one group $G$ of permutations of a
+set $S$ is a subset of another group $G'$ of permutations of $S$, we say
+that $G$ is a {\bf subgroup}\index{subgroup} of $G'$.  The reason why we
+introduce the new word subgroup is to emphasize that the composition
+operation gives the same result whether it is performed in the larger
+group or the smaller group.
+
+\bp 
+\iteme Find all subgroups of the group $D_4$.
+\solution{\hspace*{-12 pt}
+$\{\rho^2,\!\iota\}$, $\{\varphi_{1/3},\!\iota\}$, $\{\varphi_{2/4},\!\iota\}$,
+$\{\varphi_{12/34},\!\iota\}$, $\{\varphi_{14/23},\!\iota\}$,
+$\{\iota,\rho,\rho^2,\rho^3\}$,\break
+ $\{\iota,\varphi_{1/3},\rho^2,\varphi_{2/4}\}$, 
+$\{\iota,\varphi_{12/34},\rho^2,\varphi_{12/34}\}$, $\{\iota\}$, and all of $D_4$. 
+Notice that once a subgroup has $\rho$ or $\rho^3$ in it, it has all powers of $\rho$,
+and if it has all powers of $\rho$ and just one flip, it has all the flips in it.  But
+the product of two ``different kinds'' of flips is $\rho$ or $\rho^3$, and this shows
+that our list of subgroups is complete.
+}
+
+
+\item  Can you find subgroups of the symmetric group $S_4$
+ with two elements? Three elements?  Four elements?  Six
+elements? (For each positive answer, describe a subgroup.  For each
+negative answer, explain why not.)\label{S4}
+\solution{Yes to all of the above.  For two elements,
+$\{\iota,\pmatrix{1&2&3&4\cr2&1&3&4}\}$, for three elements, 
+$\{\iota,\pmatrix{1&2&3&4\cr3&1&2&4}, \pmatrix{1&2&3&4\cr2&3&1&4}\}$ (which is the
+rotations of a triangle on $\{1,2,3\}$), for  four elements,  the rotations of a
+square as above, and for six elements, the rotations and flips of a triangle on
+$\{1,2,3\}$.  (There is no subgroup with five elements, but at this point, that is
+too hard to verify.)}
+
+
+
+\ep
+
+
+
+\subsection{The cycle structure of a permutation}
+There is an even more efficient way to write down permutations.  Notice
+that the product in Figure \ref{permutationproduct} is
+$\pmatrix{1&2&3&4\cr2&3&1&4}$. 
+  We have drawn the directed graph of this
+permutation in Figure \ref{permutationcycledigraph}. 
+\begin{figure}[htb]\caption{The
+directed graph of the permutation
+$\protect\pmatrix{1&2&3&4\cr2&3&1&4}$.}
+\label{permutationcycledigraph}\smallskip
+\begin{center}\mbox{\psfig{figure=permutationcycledigraph.eps
+}}
+\end{center}  
+\end{figure}
+  You see that the
+graph has two directed cycles, the rather trivial one with vertex 4
+pointing to itself, and the nontrivial one with vertex 1 pointing to
+vertex 2 pointing to vertex 3 which points back to vertex 1.  A
+permutation is called a {\bf cycle}\index{cycle (of a
+permutation)}\index{permutation!cycle of} if its digraph consists of
+exactly one
+ cycle.  Thus $\pmatrix{1&2&3\cr2&3&1}$ is a cycle but
+$\pmatrix{1&2&3&4\cr2&3&1&4}$ is not a cycle by our definition.  We write
+$(1\ 2\ 3)$ or $(2\ 3\ 1)$ or $(3\ 1\ 2)$ to stand for the cycle
+$\sigma =\pmatrix{1&2&3\cr2&3&1}$.  We can describe cycles in another way
+as well.  A {\bf cycle}\index{cycle of a
+permutation}\index{permutation!cycle of} of the permutation
+$\sigma$ is a list
+$(i\ 
+\sigma(i)\ 
+\sigma^2(i)
+\ \ldots\ 
+\sigma^n(i))$ that does not have repeated elements
+while the list $(i\ \sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))$  does have repeated
+elements. We say that the cycles $(i\ 
+\sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))$ and $(j\ 
+\sigma(j)\ 
+\sigma^2(j)\ \ldots\ \sigma^n(j))$ are {\em equivalent} if there is an
+integer $k$ such that 
+$j=
+\sigma^k(i)$.
+
+\bp
+\iteme Find the cycles of the permutations $\rho$, $\varphi_{1/3}$ and
+$\varphi_{12/34}$ in the group $D_4$.
+\solution{$\rho$ has one cycle, $(1\ 2\ 3\ 4)$, $\varphi_{1/3}$ has one cycle
+$(2\ 4)$, $\varphi_{12/34}$ has two cycles, namely $(1\ 2)$ and
+$(3\ 4)$.}
+\item Find the cycles of the permutation $\pmatrix{1&2&3&4&5&6&7&8&9\cr
+3&4&6&2&9&7&1&5&8}$.
+\solution{
+$\pmatrix{1&3&6&7}$, $\pmatrix{2&4}$, and $\pmatrix{5&9&8}$.}
+
+\item Show that if $(i\ 
+\sigma(i)\ 
+\sigma^2(i)
+\ \ldots\ 
+\sigma^n(i))$  does not have repeated elements\label{firstrepeat} 
+while the list $(i\ \sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))$  does have repeated
+elements, then $\sigma^{n+1}(i)=i$, and so all other $\sigma^s(i)$ are in the cycle.
+\solution{If $\sigma^{n+1}(i) = \sigma^p(i)$ and $0\le p\le n$, then $\sigma^{n+1-p}(i)
+=i$, and so the first repeat was not $\sigma^{n+1}(i)$ after all.  Therefore
+$\sigma^{n+1}(i)=i$, and acting on $i$ with succeeding powers of $\sigma$ just carries
+us through the list again and again.}
+
+\iffalse \item Show that if $(i\ 
+\sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))$ and $(j\ 
+\sigma(j)\ 
+\sigma^2(j)\ \ldots\ \sigma^n(j))$ are equivalent (with $j=
+\sigma^k(i)$), then
+$$(\sigma^k(i)\ \sigma^{k+1}(i)\ \ldots\  \sigma^n(i)\  i\ 
+\sigma(i)\ \ldots\ 
+\sigma^{k-1}(i))
+=(j\ 
+\sigma(j)\ 
+\sigma^2(j)\ \ldots\ \sigma^n(j)).$$
+\solution{The hardest thing here is reading the problem!  The point is that if
+$j=\sigma^k(i)$, then $\sigma(j) = \sigma(\sigma^{k}(i))=\sigma^{k+1}(i)$, and so on,
+so the cycles starting with $\sigma^i(k)$ and $j$ are identical.}
+
+\item If two cycles of $\sigma$ have an element in common, what can we
+say about them? 
+\solution{They are the same cycle, by the previous problem since as permutations,}
+\fi
+
+\iteme The support set of the cycle $(a_1\ a_2\ \ldots\ a_n)$ is the set
+$\{a_1,a_2,\ldots,a_n\}$.  Show that the support sets of the cycles of a permutation of
+the set $S$ form a partition of $S$.\label{cyclepartition}
+\solution{Every element is in a cycle by the definition of cycles, so suppose two
+support sets have an element in common.  If the cycles are 
+$(i\ 
+\sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))$  and $(j\ 
+\sigma(j)\ 
+\sigma^2(j)\ \ldots\ \sigma^m(j))$ and $\sigma^p(i) =\sigma^q(j)$ is a common
+element, then,
+$j=\sigma^{p-q}(i)$.  Thus if $p\ge q$, $j$ is in the first cycle.  Otherwise $i$ is in
+the second cycle.  If $j$ is in the first cycle, it is $\sigma^k(i)$ for some $i$, and
+as we take successive powers, we get, by Problem \ref{firstrepeat} that $i$ is
+$\sigma^h(j)$, and then successive powers of $\sigma$ just give us the rest of the
+cycle beginning with $i$.  Therefore the two support sets are identical. A similar
+argument works if $i$ is in the second cycle. Thus the support sets partition  $S$.}
+
+
+\ep
+
+We regard a cycle $(i\ 
+\sigma(i)\ 
+\sigma^2(i)\ \ldots\ \sigma^n(i))$ as standing for the permutation 
+$$\pmatrix{i&
+\sigma(i)&
+\cdots&\sigma^{n-1}(i)&\sigma^n(i)\cr
+\sigma(i)&
+\sigma^2(i)&\cdots&\sigma^n(i)&i}.$$  Since interchanging the columns in
+the two row notation for a permutation does not change the permutation\footnote{Note
+that not all ways of interchanging the columns list the bottom row in the order of a
+cycle of $\sigma$, though.}, this means that equivalent cycles represent the same
+permutation.  Thus we consider equivalent cycles to be equal in the same way we
+consider
+${1\over 2}$ and $2\over 4$ to be equal.  In particular, this means that $(i_1\ i_2\
+\ldots i_n) = (i_j\ \ i_{j+1}\ \ldots\ i_n\ \ i_1\ \ i_2\ \ldots\ i_{j-1})$.
+
+ If
+$\gamma_1$,
+$\gamma_2$,
+\ldots, $\gamma_n$  are the (inequivalent) cycles of a
+permutation
+$\sigma$ of the set $S$, then we write
+$$\sigma = \gamma_1\gamma_2\cdots\gamma_n= \gamma_{i_1}\gamma_{i_2}
+\cdots \gamma_{i_n},$$
+that is, we say that $\sigma$ is the product of its cycles in any order. 
+There are two ways to think of this notation.  You can think of it as a
+brand new kind of multiplication where we multiply a permutation of one
+set by a permutation of  a disjoint set to get a new permutation of the
+union of the two sets. In this notation $\sigma(x)$ is determined by which
+cycle $\gamma_k$ contains $x$ in its support set and $\sigma(x) =
+\gamma_k(x)$. You can also think of identifying
+$\gamma$ with the product of $\gamma$ with a collection of one-cycles, one
+one-cycle for each element of $S$ not in the support set of $\gamma$. For example we
+identify the  cycle $(2\  4\ 5)$ in $S_6$ with $(1)(2\  4\ 5)(3)(6)$. Similarly we
+identify $(3)$ with $(1)(2)(3)(4)(5)(6)$.  But when we use $(3)$ as a notation for
+$(1)(2)(3)(4)(5)(6)$, we still say its support set is $\{3\}$.  Then the product above
+is simply composition of functions.  We can summarize this discussion with the
+following theorem\index{disjoint cycles}\index{cycles!disjoint}\footnote{In the
+statement of the theorem we use the word disjoint; two cycles are said to be {\em
+disjoint} if their support sets are disjoint.}.  The proof of the theorem is
+essentially your solution to Problem
+\ref{cyclepartition}.
+
+\begin{theorem} Every permutation can be written, up to order, in one and
+only one way as a product of disjoint cycles.\end{theorem}
+
+We usually don't bother writing down one-cycles when we write a permutation as a
+product of cycles; it is a convention to make less work for us.  We just have to
+remember that they are implicitly there. You should recognize that the first
+interpretation we gave for the multiplication of disjoint cycles applies only when the
+cycles are disjoint.  From now on  we will use the phrase ``product of permutations"
+to mean the same thing as ``composition of permutations," and will use either the
+notation
+$\sigma\circ\varphi$ or
+$\sigma\varphi$ for the composition of
+$\sigma$ and $\varphi$, whichever is convenient.
+
+\bp
+\iteme Write the permutations $\rho$, $\varphi_{1/3}$ and $\varphi_{12/34}$
+in $D_4$ as products of disjoint cycles.
+\solution{$\rho = (1\ 2\ 3\ 4)$, $\varphi_{1/3} = (2\ 4) = (1)(2\ 4)(3)$ (either side
+of the equation is a right answer), $\varphi_{12/34} = (1\ 2)(3\        4)$.}
+
+\item Write the permutation $\pmatrix{1&2&3&4&5&6&7&8&9\cr
+3&4&6&2&9&7&1&5&8}$ as a product of disjoint cycles.
+\solution{$(1\ 3\ 6\ 7)(1\ 4)(5\ 9\ 8)$.}
+
+
+\item Explain why, if $\gamma$ and $\gamma'$ are
+two disjoint cycles, then $\gamma\gamma' =
+\gamma'\gamma$.\label{disjoint-commutative}
+\solution{When we compute $\gamma\gamma'(i)$, the element $i$ is fixed (i.e. mapped to
+itself) by either $\gamma$ or $\gamma'$.  But if $\gamma'$ fixes $i$ and
+$\gamma(i)=j$, with $j\not=i$ then $j$ is in the support set of $\gamma$, so it is not
+in the support set of $\gamma'$.  Thus $(\gamma\circ\gamma')(i) =j$.  However since
+$\gamma'$ fixes $j$ as well, then $(\gamma'\circ\gamma)(i) =\gamma'(j) =j$ also.  If
+$\gamma(i)=i$ also, then $\gamma\gamma'(i) =\gamma'\gamma(i) = i$.  A similar argument
+works if $\gamma$ fixes $i$, so in all cases, $\gamma\gamma'(i) = \gamma'\gamma(i)$,
+which is what it means to say that $\gamma\gamma'=\gamma'\gamma$.}
+
+
+
+\itemi Write a recurrence for the number $c(k,n)$ for the number of
+permutations of $[k]$ that have exactly $n$ cycles, including 1-cycles. 
+Use it to write a table of $c(k,n)$ for $k$ between 1 and 7 inclusive. 
+Can you find a relationship between $c(k,n)$ and any of the other
+families of special numbers such as binomial coefficients, Stirling
+numbers, Lah numbers, etc. we have studied?  If you find such a
+relationship, prove you are right.
+\solution{The element $k$ is either in a cycle by itself or it isn't.  The number of
+permutations in which it is in a cycle by itself is $c(k-1,n-1)$.  If it is in a cycle
+with something else, it can come after any of the $k-1$ elements, and each choice of
+which one it comes after gives a different permutation.  (You can always shift a cycle
+around so that $k$ doesn't come first.)  Thus $c(k,n) = c(k-1,n-1) + (k-1)c(k-1,n)$. 
+The table is:\par
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+$k/n$&0&1&2&3&4&5&6&7\\
+\hline
+0&1&0&0&0&0&0&0&0\\
+1&0&1&0&0&0&0&0&0\\
+2&0&1&1&0&0&0&0&0\\
+3&0&2&3&1&0&0&0&0\\
+4&0&6&11&6&1&0&0&0\\
+5&0&24&50&35&10&1&0&0\\
+6&0&120&274&225&85&15&1&0\\
+7&0&720&1764&1624&735&175&21&1
+\end{tabular}\par
+We see that the table is identical with our earlier table of the Stirling numbers of
+the first kind, except that in that table there was an alternating pattern of minus
+signs, offset by one place in successive rows.  Thus it must be the case that $c(k,n)=
+|s(k,n)|$.  To prove this, note that it is the case when $k=0$, and also when $n=1$. 
+Now assume inductively it is true when $k= m-1$ and notice that if $n>0$,
+$s(m,n)=s(m-1,n-1)-(m-1)s(m-1,n)$, that
+$s(m-1,n-1)$ and $s(m-1,n)$ have opposite signs, so
+\begin{eqnarray*}\hspace*{-.5in}|s(m-1)-(m-1)s(m-1,n)|&=& |s(m-1| + 
+(m-1)|s(m-1,n)|\\
+&=&c(m-1,n-1)+(m-1)c(m-1,n)\\ &=& c(m,n).\end{eqnarray*} Thus by the
+principle of mathematical induction $c(k,n) = |s(k,n)|$ for all nonnegative numbers
+$k$ (and all
+$n$ between 0 and $k$.)
+}
+
+\itemesi (Relevant to Appendix \ref{expogenfun}.) A permutation $\sigma$ is called an
+{\bf involution}\index{involution} if $\sigma^2=\iota$.  When you write an
+involution as a product of disjoint cycles, what is special about the
+cycles?
+\solution{They are all 2-cycles or 1-cycles.}
+
+
+
+\item Write the product $(1\ 2)(1\ 3)(1\ 4)$ in two row notation and
+then write it in terms of of {\em disjoint} cycles.
+\solution{$\pmatrix{1&2&3&4\cr4&1&2&3}$, $(1\ 4\ 3\ 2)$.}
+
+\iteme How many permutations in $S_n$ may be written as a product of not
+necessarily disjoint two cycles?
+\solution{All of them, because each cycle can be written as a product on
+non-disjoint cycles.}
+
+\subsection{Signs of permutations and the alternating group}
+
+\item (May be time-consuming.) Consider the permutations of $\{1,2,3,4\}$ which
+are
+$\iota$ or have one of the forms $(i\ j\ k)$ or $(i\ j)(h\ k)$, where $i$,
+$j$, $k$, and $h$ are distinct.  Do these permutations form a subgroup of
+the group $S_4$?  How many of these permutations are there?
+\solution{Note that two cycles in $S_4$ of the form $(i\ j\ k)$ have two or three
+elements in common, so they have the same kind of overlap as $(1\ 2\ 3)$ and $(2\ 3\
+4)$,
+$(1\ 2\ 3)$ and $(3\ 2\ 4)$,  $(1\ 2\ 3)$ and $(1\ 3\ 2)$, or $(1\ 2\ 3)$ and $(1\
+2\ 3)$.  The products of these four pairs are, respectively, $(2\ 1)(3\ 4)$, $(2\ 4\
+1)$,
+$(1)(2)(3)= (1)(2)(3)(4)=\iota$, and $(1\ 3\ 2)$.  If we take a three-cycle times a
+product of two two-cycles it will have the same form as $(1\ 2\ 3)(1\ 2)(3\ 4)$ or
+$(1\ 2\ 3)(1\ 3)(2\ 4)$.  The first of these products is $(1\ 3\ 4)$ and the second
+is $(2\ 4\ 3)$.  If we have a product of two elements each of which is a product of
+two two-cycles, it will have the same form as either $(1\ 2)(3\ 4)(1\ 2)(3\ 4)$ or
+$(1\ 2)(3\ 4)(1\ 3)(2\ 4)$.  The first of these is $\iota$ and the second is $(1\
+4)(2\ 3)$.  Thus our set is closed under composition, and so it is a subgroup of
+$S_4$.  The subgroup has size 12.}
+
+\itemes The {\em sign} of a 1-cycle, 3-cycle, \ldots, $(2k-1)$-cycle is
+defined to be 1, while the {\em sign} of a 2-cycle, 4-cycle, \ldots,
+$2k$-cycle is defined to be -1.  The {\bf sign} of a product of disjoint
+cycles is the product of the signs of its cycles.\index{permutation!sign
+of}\index{sign of a permutation}
+\begin{enumerate}
+\item What happens to the sign of an $n$-cycle if you multiply it by a
+2-cycle (which might or might not be disjoint from it)?
+\solution{If the $m$-cycle and 2-cycle are disjoint, then by definition, the sign
+changes to the opposite value.  If they are not disjoint, and the two cycle is $(i\
+j)$, either
+$i$ or $j$ or both are in the original cycle.  Suppose that only $i$ is in the cycle
+(and the same argument works if only $j$ is in the cycle), and the original cycle is
+$(i\ i_2\ \ldots\ i_n)$. Then the product
+$(i\ i_2\
+\ldots\ i_n)(i\ j)$ is
+$(i\ j\ i_2\ \ldots\ i_n)$, and the product $(i\ j)(i\ i_2\ \ldots\ i_n)$ is $(j\ i\
+i_2\
+\ldots\ i_n)$.  Thus the sign changes to the opposite sign.  Suppose that $i$ and $j$
+are both in the original cycle.  Then $j= i_k$ for some $k$.  Then $(i\ i_2\ \ldots\
+i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})$.  If the
+original sign was 1, then we started with an cycle on an odd number of entries  and
+so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed.  It the
+original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
+of two cycles on an odd number of entries, which gives sign 1, or a product of two
+cycles on an even number of entries, which gives us sign 1. Thus in every case, the
+sign changes to the opposite sign.} 
+\item What happens to the sign of a product of an $n$-cycle and a
+disjoint $m$-cycle if you multiply it by a two cycle which is disjoint
+from neither of the other two?
+\solution{The product becomes an $m+n$ cycle, and so if both cycles were on an even
+number of entries or both were on an odd number, we now have an cycle on an even
+number of entries, so its sign is -1, but previously the product had sign 1.  Thus
+the sign changes.  If one of the original cycles was on an even number of entries
+and one was on an odd number, we now have a cycle on an odd number of entries, so it
+has sign 1, while the original product has sign -1.  Thus the sign changes.}
+\item What happens to the sign of a permutation if you multiply it by a
+2-cycle?\solution{The cases we just analyzed cover all the possibilities, so the sign
+changes.}
+\item A 2-cycle is often called a {\em
+transposition}\index{transposition}.  What is the sign of a product of
+$k$ (not necessarily disjoint) transpositions? (Don't forget to prove you are
+correct.)
+\solution{$(-1)^k$.  The proof is probably easiest by induction, for the sign of one
+transposition is -1, and if we take a product of $i$ transpositions and multiply by
+one more transposition, the sign changes.  Thus if the product of $i$ transpositions
+has sign $(-1)^i$, the product of $i+1$ transpositions has sign $(-1)^{i+1}$, and so
+by the principle of mathematical induction, the sign of a product of $k$
+transpositions if
+$(-1)^k$ for all positive integers $k$.  In fact, had we taken $\iota$ for our base
+case, we could have concluded the same result for all nonnegative integers.}
+\item Can you compute the sign of a product of two permutations from the
+signs of the permutations?  Why or why not?
+\solution{You can compute it; it is the product of the signs.  Just write them as
+products of transpositions, multiply all those transpositions together and use the fact
+that, for transpositions, the sign of the product is the product of the signs.}
+\end{enumerate}
+\itemes Do the elements of $S_n$ with  sign -1 form a subgroup of $S_n$? 
+Do the elements of $S_n$ with sign 1 form a subgroup of $S_n$?
+\solution{The elements of sign $-1$ are not closed under composition so they do not
+form a subgroup.  The elements of sign $1$ are closed under composition so they do
+form a subgroup.}
+\itemes Describe a subgroup of $S_n$ of size $n!/2$.  This subgroup is
+called the {\bf alternating group}\index{alternating group} $A_n$. 
+Describe explicitly a partition of $S_n$ that you can use with the
+quotient principle to prove bijectively that the subgroup you described has size
+$n!/2$.\label{alternatinggroup}
+\solution{Partition $S_n$ into the permutations of sign 1 and sign -1.  Choose a
+transposition.  Multiplying the elements in one block gives you elements in the other
+block.  Multiplying by the transposition twice gives you the same permutation back, so
+the function that multiplies by this transposition has an inverse and so is a
+bijection.}
+\ep
+
+\section{Groups Acting on Sets}
+We defined the rotation group $R_4$ and the dihedral group $D_4$ as
+groups of permutations of the vertices of a square.  These permutations
+represent rigid motions of the square in the plane and in three
+dimensional space respectively.   The square has geometric features of interest other
+than its vertices; for example its diagonals, or
+its edges. Any geometric motion of the square that returns it to its
+original position takes each diagonal to a possibly different diagonal,
+and takes each edge to a possibly different edge.  
+
+We could similarly
+define the  group $R$ of rigid motions of a cube as the group of
+permutations of its eight vertices that correspond to three dimensional
+motions that return the cube to its original position, but perhaps with
+vertices in different places than they were originally.  Now each of
+these motions also takes the 12 edges of the cube to (possibly different)
+edges and takes the six faces of the cube to (possible different) faces. 
+So we can think of our group $R$ as acting not only on the vertices of our
+geometric figure, but on edges, diagonals, faces, or perhaps other
+geometric features.  
+
+We have seen above that the fact that we have defined a permutation group
+as the permutations of some specific set doesn't preclude us from
+thinking of the elements of that group as permuting the elements of some
+other set as well.  In order to keep track of which permutations of which
+set we are using to define our group and which other set is being
+permuted as well, we introduce some new language.  We are going to say
+that the group $D_4$ ``acts" on the edges and diagonals of  a square and
+the group $R$   of permutations of the vertices of a cube
+that arise from rigid motions of the cube ``acts" on the edges, faces,
+ diagonals, etc. of the cube.  Instead of talking
+about permutations of these edges, faces, etc., we will use an equivalent
+word and talk about bijections of these objects.  In this way it will be
+easier for us to keep track of which permutations form our original group
+and how this group relates to other objects of interest. 
+
+\begin{figure}[htb]\caption{A cube with the positions of its vertices and
+faces labelled.  The curved arrows point to the positions that are blocked by
+the cube.}
+\label{cube1}\smallskip
+\begin{center}\mbox{\psfig{figure=cube1.eps
+}}
+\end{center}  
+\end{figure}
+
+\bp 
+\iteme In Figure \ref{cube1} we show a cube with the positions of its
+vertices and faces labelled.  As with motions of the square, we let we let 
+$\varphi(x)$ be the label of the place where vertex  previously in
+position
+$x$ is now.
+\begin{enumerate}
+\item Write in two row-notation the permutation $\rho$ of the vertices
+that corresponds to rotating the cube 90 degrees around a vertical axis
+through the faces $t$ (for top) and $u$ (for underneath).  (Rotate in a
+right-handed fashion around this axis, meaning that vertex 6 goes to the
+back and vertex 8 comes to the front.)  Write in two-row notation the
+bijection
+$\beta_{\rho}$ of the faces that corresponds to this member $\rho$ of
+$R$.\label{actsonparta}
+\solution{$\!\!\!\pmatrix{1&2&3&4&5&6&7&8\cr
+2&3&4&1&6&7&8&5}$~~$\pmatrix{t&f&r&b&l&u\cr t&r&b&l&f&u}$}
+\item Write in two-row notation the permutation $\varphi$ that rotates
+the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and
+carries vertex 8 to vertex 6.  Write in two-row notation the bijection
+$\beta_\varphi$ of the faces that corresponds to this member of $R$.
+\solution{$\!\!\!\pmatrix{1&2&3&4&5&6&7&8\cr1&4&8&5&2&3&7&6}~
+~\pmatrix{t&f&r&b&l&u\cr r&u&b&t&f&l}$}
+\item Compute the two-row notation for $\rho\circ\varphi$, for
+$\beta_{\rho}\circ\beta_{\varphi}$ ($\beta_{\rho}$ was defined in Part
+\ref{actsonparta}), and write in two-row notation the bijection 
+$\beta_{\rho\circ\varphi}$ of the faces that corresponds to the action of
+the permutation $\rho\circ\varphi$ on the faces of the cube (for this
+question it helps to think geometrically about what motion of the cube is
+carried out by $\rho\circ\varphi$).  What do you observe about
+$\beta_{\rho\circ\varphi}$ and
+$\beta_{\rho}\circ\beta_{\varphi}$?\label{cube2}
+\solution{\begin{eqnarray*}
+\pmatrix{1&2&3&4&5&6&7&8\cr
+2&3&4&1&6&7&8&5}\pmatrix{1&2&3&4&5&6&7&8\cr1&4&8&5&2&3&7&6}&=&\\
+\pmatrix{1&2&3&4&5&6&7&8\cr 2&1&5&6&3&4&8&7}&&
+\end{eqnarray*}
+\begin{eqnarray*}
+\pmatrix{t&f&r&b&l&u\cr t&r&b&l&f&u}\pmatrix{t&f&r&b&l&u\cr r&u&b&t&f&l}&=&\\
+\pmatrix{t&f&r&b&l&u\cr b&u&l&t&r&f}&&
+\end{eqnarray*}
+$$\beta_{\rho\circ\varphi} =\pmatrix{t&f&r&b&l&u\cr
+b&u&l&t&r&f}=\beta_{\rho}\circ\beta_{\varphi}$$ }
+\end{enumerate}
+
+\itemei How many permutations are in the group $R$?  $R$ is sometimes
+called the ``rotation group" of the cube.  Can you justify this?
+\solution{There are eight places where vertex one can go.  Once vertex 1 is
+placed, there are three ways the three edges ``sticking out" of it can be
+placed, and then the location of all the vertices is determined.  Thus there
+are 24 elements of the group.  Of them, we have the identity, three
+rotations about each of the three axes through the midpoints of the faces,
+one additional rotation about each of the six axes joining opposite faces,
+and $2\cdot4=8$ additional rotations about each of the four axes joining a
+vertex to the diagonally (in three dimensions) opposite vertex.  This gives
+us a total of 10+6+8=24 rotations, so every element of the group is a
+rotation.}
+\ep
+
+We say that a permutation group $G$ {\bf acts}\index{group acting on a
+set}\index{action of a group on a set} on a set
+$S$ if, for each member
+$\sigma$ of $G$ there is a bijection $\beta_{\sigma}$ of $S$ such
+that
+$$\beta_{\sigma\circ\varphi} = \beta_{\sigma}\circ\beta_{\varphi}$$ for
+every member $\sigma$ and $\varphi$ of $G$. In Problem \ref{cube2} you
+saw one example of this condition.  If we think intuitively of $\rho$ and
+$\varphi$ as motions in space, then following the action of $\varphi$ by
+the action of $\rho$ does give us the action of $\rho\circ\varphi$.  We
+can also reason directly with the permutations in $R$ to show that $R$
+acts on the faces of the cube.  
+
+\bp 
+\iteme Suppose that $\sigma$ and $\varphi$ are permutations in the group
+$R$ of rigid motions of the cube. We have argued already that each rigid
+motion sends a face to a face.  Thus $\sigma$ and $\varphi$ both send the
+vertices on one face to the vertices on another face. Let
+$\{h,i,j,k\}$ be the set of vertices on a face $F$.
+\begin{enumerate}
+\item  What
+are the vertices of the face
+$F'$ that
+$F$ is sent to by $\varphi$?  
+\solution{$\varphi(h)$, $\varphi(i)$, $\varphi(j)$, $\varphi(k)$.}
+\item What are the vertices of the face $F''$
+that
+$F'$ is sent to by $\sigma$? 
+\solution{$\sigma(\varphi(h))$, $\sigma(\varphi(i))$, $\sigma(\varphi(j))$,
+$\sigma(\varphi(k))$.}
+\item What are the vertices of the face $F'''$
+that $F$ is sent to by $\sigma\circ\varphi$? 
+\solution{$(\sigma\circ\varphi)(h)=\sigma(\varphi(h))$, $\sigma(\varphi(i))$,
+$\sigma(\varphi(j))$,
+$\sigma(\varphi(k))$.}
+\item How have you just shown
+that the group
+$R$ acts on the faces?
+\solution{ We have just shown that for each face $F$,
+$\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)$,
+so that $\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
+\beta_{\varphi}$.}
+\end{enumerate}
+\iteme The group $D_4$ is a group of permutations of
+$\{1,2,3,4\}$ as in Problem \ref{dihedral1}.  We are going to show in this 
+problem and in Problem
+\ref{orbits1} how this group acts in a natural way on the two-element subsets of
+$\{1,2,3,4\}$.  In particular, for each two-element subset $\{i,j\}$ of
+$\{1,2,3,4\}$ and each member
+$\sigma$ of
+$D_4$ we define $\beta_{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}$. 
+Show that with this definition of $\beta$, the group $D_4$ acts on the
+two-element subsets of $\{1,2,3,4\}$.\label{D_4on2-sets}
+\solution{
+The action has been defined for us, so all we need to show is that
+it is indeed an action.  We must show that for each permutation $\sigma$ in
+$D_4$,
+$\beta_{\sigma}$ is a bijection and in addition we must show that
+$\beta_{\sigma}\circ\beta_{\tau}=
+\beta_{\sigma\circ\tau}$.  If
+$\beta_{\sigma}(\{i,j\})=\beta_{\sigma}(\{h,k\})$, then either
+$\sigma(i)=\sigma(h)$ and $\sigma(j)=\sigma(k)$ or else
+$\sigma(i)=\sigma(k)$ and $\sigma(j) =\sigma(h)$.  Since $\sigma$ is a
+permutation, in the first case we get $i=h$ and $j=k$, so that $\{i,j\}=
+\{h,k\}$, and in the second case we get that $i=k$ and $j=h$ so that
+$\{i,j\} = \{k,h\} =\{h,k\}$.  Thus in either case $\{i,j\} = \{h,k\}$, so
+that $\beta_{\sigma}$ a one-to-one function from the finite set of two
+element subsets of $\{1,2,3,4\}$ to itself, and so it is a bijection.
+
+To show that $\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}$, we
+note that 
+\begin{eqnarray*}(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) &=&
+\beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
+\tau(j)\})=\\
+\sigma({\tau(i),\tau(j)})&=&\{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =\\
+&&\beta_{\sigma\circ\tau}(\{i,j\})\end{eqnarray*}
+
+}
+\iteme In Problem \ref{D_4on2-sets}, what is the
+set of two element subsets that you get by computing
+$\beta_{\sigma}(\{1,2\})$ for all $\sigma$ in $D_4$?  What is the set of
+two-element subsets you get by computing $\beta_{\sigma}(\{1,3\})$ for all
+$\sigma$ in $D_4$?  Describe these two sets geometrically in terms of the
+square.\label{orbits1}
+\solution{From $\{1,2\}$ we get $\{1,2\}$, $\{2,3\}$, $\{3,4\}$, and
+$\{3,4\}$.  From $\{1,3\}$ we get $\{1,3\}$ and $\{2,4\}$.  Thus we get the
+set of edges and the set of diagonals of the square.
+}
+\iteme Using the notation of Problem \ref{dihedral3}, what is the effect
+ of a 180 degree rotation on the diagonals of a square?  What is the
+effect of the flip $\varphi_{1/3}$ on the diagonals of a square?  How many
+elements of $D_4$ send each diagonal to itself?  How many elements of
+$D_4$ interchange the diagonals of a square?
+\solution{The 180 degree rotation sends the diagonals to themselves, i.e.,
+it fixes the diagonals. 
+$\varphi_{1/3}$  fixes the
+diagonals.  So does $\varphi_{2/4}$ and the identity.  However, $\rho$,
+$\rho^3$, $\varphi_{12/34}$ and $\varphi_{14/23}$ all exchange the
+diagonals.  Thus four elements fix each diagonal and four elements
+interchange them.
+}
+ \begin{figure}[htb]\caption{The colored square corresponding to the
+function $f$ with $f(1) =R$, $f(2)
+= R$,
+$f(3)=B$, $f(4)=B$.}\label{ColoredSquare}\smallskip
+\begin{center}\mbox{\psfig{figure=ColoredSquare.eps}}
+\vspace*{-.3in}
+\end{center}  
+\end{figure}
+\iteme Recall that when you were asked in Problem \ref{twocolorsofbeads} to
+find the number of ways to place two red beads and two blue beads at the
+corners of a square free to move in three dimensional space, you were
+not able to apply the quotient principle to answer the question.  This is
+a simple prototype of the problems we will solve by using permutation
+groups.  Though we don't yet have the tools to solve it, we can get an
+interesting example of a group acting on a set from it.  An assignment of
+red and blue beads to the corners of a square can be thought of as a
+function $f$ from the vertices of the square to the set $\{R,B\}$.  
+For example, in Figure \ref{ColoredSquare} we would have $f(1) =R$, $f(2)
+= R$,
+$f(3)=B$, $f(4)=B$.  What is the original position of the vertex that
+$\sigma$ moves to position
+$j$?  In terms of $f$, $\sigma$ and $j$, give an expression that
+represents the color of the vertex in position $j$ after we apply the
+permutation
+$\sigma$ to the vertices.\label{actiononfunctions}
+\solution{The original position of the vertex that $\sigma$ moves to
+position $j$ is $\sigma^{-1}(j)$.  Thus the color of the vertex in position
+$j$ after we apply $\sigma$ is $f(\sigma^{-1}(j))$, which is also $(f\circ
+\sigma^{-1})(j)$.
+}
+
+  
+\iteme 
+Problem \ref{actiononfunctions} suggests that when we have a group of
+permutations of a set
+$S$ and we want to know how it acts on the functions from $S$ to a set $C$
+(of ``colors''), we should define
+$\beta_{\sigma}(f)$ to be $f\circ\sigma^{-1}$.   For the coloring function 
+$f$ in Figure
+\ref{ColoredSquare}, let $g=f\circ\rho^{-1}$ and compute $g(1)$, $g(2)$,
+$g(3)$, and $g(4)$ so you can see how in this case $f\circ\rho^{-1}$ is
+the coloring that results from rotating the colored square by the
+rotation $\rho$. Show if a group
+$G$ of permutations acts on a set
+$S$, then
+$\beta_{\sigma}(f) =f\circ\sigma^{-1}$ satisfies the definition of of $G$
+acting on the set of functions $f$ from $S$ to $C$, while 
+$\beta_{\sigma}(f) =f\circ\sigma$ does not.\label{actingonfunctions2}
+\solution{
+$g(1)=B$, $g(2)=R$, $g(3)=R$, and $g(4)=B$.
+
+If $\beta_{\sigma}(f) = f\circ\sigma^{-1}$, then
+\begin{eqnarray*}
+(\beta_{\sigma}\circ\beta_{\tau})(f)&=&\beta_{\sigma}(\beta_{\tau}(f))\\
+&=&
+\beta_{\sigma}(f\circ \tau^{-1})\\ &=&(f\circ\tau^{-1})\circ\sigma^{-1}\\ &=&
+f\circ(\tau^{-1}\circ \sigma^{-1})\\ &=& f\circ (\sigma\circ\tau)^{-1}\\
+&=&\beta_{\sigma\circ\tau}(f).
+\end{eqnarray*} Therefore $\beta_{\sigma}(f) = f\circ\sigma^{-1}$ defines an
+action of a group of permutations of a set $X$ on functions defined from the
+set $X$ to a set $Y$.  
+
+On the other hand, defining $\beta_{\sigma}(f) = f\circ\sigma$ does not
+define a group action.  For example, if we consider the function $f(i)=i$
+on the four numbered corners of the square in Figure  \ref{ColoredSquare},
+and take the permutations $\rho$ and $\varphi_{1/3}$, we know from the fact
+that $f$ is the identity function and $\rho$ and $\varphi_{1/3}$ do not
+commute that
+$\beta_{\varphi_{1/3}\circ\rho}(f) = f\circ(\varphi_{1/3}\circ\rho)\not =
+f\circ(\rho\circ\varphi_{1/3})=(f\circ\rho)\circ\varphi_{1/3}=\beta_{\rho}(f)
+\circ\varphi_{1/3}= \beta_{\varphi_{13}}(\beta_\rho(f)) =(\beta_{\varphi_{1/3}}\circ
+\beta_{\rho})(f).$  Thus defining $\beta_\sigma(f)= f\circ \sigma$ does not give
+an action of $D_4$ on functions from the vertices of the square to $\{1,2,3,4\}$.}
+
+
+\iteme  If we are interested in something like the number of ways of
+painting the faces of a cube, and we know how the rotation group of the
+cube acts on the faces of the cube, then we are interested in how the
+rotation group acts on functions from the set of faces of the cube to the
+set of colors.  The difference between this problem and Problem
+\ref{actingonfunctions2} is that in Problem \ref{actingonfunctions2} it
+was the members $\sigma$ of our permutation group that were permuting the
+elements of $S$, while now we have bijections $\beta_{\sigma}$ that are
+permuting the elements of $S$, in this case the faces of the cube.  We
+want to define a new action $\beta'_{\sigma}$ of our permutation group on
+functions from $S$ to a set $C$.  How should we define
+$\beta'_{\sigma}(f)$?  (Hint: think about the example of the faces of the
+square.  After we act on the faces with $\beta_{\sigma}$, what is the
+color of the vertex of the cube that is now in
+position~$x$?)\label{actingonfunctions3}
+\solution{We should define $\beta'_{\sigma}(f) = f\circ
+\beta_{\sigma}^{-1}$.  The color of the vertex now in position $x$ is
+$f(\beta_{\sigma}^{-1}(x))$ (which is the same as
+$(f\circ\beta_{\sigma}^{-1})(x)$.
+}
+
+\ep
+
+\subsection{Orbits} In Problem \ref{orbits1} you saw that the action of
+the dihedral group $D_4$ on two element subsets of $\{1,2,3,4\}$ seems to
+split them into two sets, one with two elements and one with 4.  We call
+these two sets the ``orbits" of $D_4$ acting on the two elements subsets
+of $\{1,2,3,4\}$.  More generally, the {\bf orbit}\index{orbit} of a
+permutation group
+$G$  determined by an element $x$ of a set $S$ on which $G$ acts is 
+$$\{\beta_{\sigma}(x)| \sigma \in G\},$$ and is denoted by $Gx$. 
+
+When we used the quotient principle to count circular seating
+arrangements or necklaces, we partitioned up a set of lists of people or
+beads into blocks of equivalent lists.  In the case of seating $n$ people
+around a round table, what made two lists equivalent was, in retrospect,
+the action of the rotation group $R_n$.  In the case of stringing $n$
+beads on a string to make a necklace, what made two lists equivalent was
+the action of the dihedral group.  Thus the blocks of our partitions were
+orbits of the rotation group or the dihedral group, and we were counting
+the number of orbits of the group action.  With this understanding, we
+will aim to develop tools that allow us to count the number of orbits
+of a group acting on a set even when the orbits have different sizes. 
+First, though, we have to learn to analyze what the possible sizes of
+orbits are.
+
+\begin{figure}[htb]\caption{The four
+possible results of rotating a colored square
+and maintaining its position.}\label{RotationsOfColoredSquare}\smallskip
+\begin{center}\mbox{\psfig{figure=RotationsOfColoredSquare.eps,width =
+5.4in }}
+\end{center}  
+\end{figure}
+ In
+Figure \ref{RotationsOfColoredSquare} we show a square which has had its
+vertices colored with three colors, and we show how the rotation group
+$R_4$ acts on this coloring.   
+If we denote our original coloring by $f$,
+then $g=f\circ\rho^{-1}$ is the function with $g(1)=B$, $g(2) = R$,
+$g(3)=B$, and $g(4)=G$. The other functions in the orbit containing $f$
+are shown in Figure \ref{RotationsOfColoredSquare}.
+
+\bp
+\iteme Draw a figure like Figure \ref{RotationsOfColoredSquare} that
+illustrates the action of the dihedral group on the function $f$ above. 
+How many elements are in the orbit of $f$ under the action of dihedral
+group? How many elements of the dihedral group fix $f$; that is, for how
+many $\sigma \in D_4$ is $\beta_{\sigma}(f) =
+f$?\label{dihedralorbits1}  
+ How many elements of the dihedral group take $f$ to $g$ (where $g=f\circ
+\rho^{-1}$ as earlier)?
+\solution{\begin{center}\hspace*{-.4in}\mbox{\psfig{figure=MotionsOfColoredSquare.eps,width
+= 5.4in }}
+\end{center}
+There are four elements in the orbit.  Two elements fix $f$.  Two elements
+take
+$f$ to
+$g$.}
+
+\itemm If $f_1(1)=R$, $f_1(2) = B$, $f_1(3) = G$ and $f_1(4) = G$, how many
+elements are in the orbit of $f_1$ under the action of the dihedral group?
+How many elements of the dihedral group fix $f_1$; that is, for how
+many $\sigma \in D_4$ is $\beta_{\sigma}(f_1) =
+f_1$?\label{dihedralorbits2}  How many elements of the dihedral group
+take $f_1$ to $f_1\circ\rho^{-1}$?
+\solution{8,1,1.}
+
+\itemm If $f_2(1)=R$, $f_2(2) = B$, $f_2(3) = R$ and $f_2(4) = B$, how many
+elements are in the orbit of $f_2$ under the action of the dihedral group?
+How many elements of the dihedral group fix $f_2$; that is, for how
+many $\sigma \in D_4$ is $\beta_{\sigma}(f_2) =
+f_2$?\label{dihedralorbits3}   How many elements of the dihedral group
+take $f_2$ to $f_2\circ\rho^{-1}$?
+\solution{2,4,4.} 
+
+
+\itemm The rotation group of the square with vertices 1, 2, 3, and 4 in
+Figure \ref{cube1} can be thought of as a subgroup of the rotation group
+of the cube.  Namely it corresponds to the rotations of the cube around
+the axis that joins the center of the bottom face with the center of the
+top face. Recall that we have used $R$ to stand for the rotation group of the
+cube.  Does
+$\beta_{\rho^i}(\sigma)=\rho^i\circ
+\sigma$ define an action of $R_4$ on $R$?  Does $\beta_{\rho^i}(\sigma) =
+\sigma\circ\rho^i$ define a group action of $R_4$ on $R$?  Does
+$\beta_{\rho^i}(\sigma) =
+\sigma\circ\rho^{-i}$ define a group action of $R_4$ on $R$?  For each
+group action that you found, describe the orbits as simply as you
+can.  How many orbits are there and what are their sizes?  (Hint:  to
+do this problem, you don't need to know anything about the
+rotation group of the cube except for the fact that it is a group that
+has $R_4$ as a subgroup and the sizes of $R_4$ and $R$ to answer this
+question.)\label{cosets1}
+\solution{Yes, $\beta_{\rho^i}(\sigma)=\rho^i\circ
+\sigma$ does define an action of $R_4$ on $R$. The orbits are sets of the form
+$\{\rho^i\circ\sigma|i=0,1,2,3\}$ for fixed elements $\sigma$ of $R$.  (For each
+fixed element $\sigma$ we get an orbit, but four different elements $\sigma$ can
+give the same orbit.) Yes, 
+$\beta_{\rho^i}(\sigma) =
+\sigma\circ\rho^{i}$ does  define a group action of $R_4$ on $R$.  Notice
+that this gives a group action only because the group $R_4$ is commutative.  The
+orbits  are sets of the form $\{\sigma\circ\rho^i|i=0,1,2,3\}$ for fixed elements
+$\sigma$ of $R$.  Yes, 
+$\beta_{\rho^i}(\sigma) =
+\sigma\circ\rho^{-i}$ does define a group action of $R_4$ on $R$.  The orbits
+consist again of sets of the form $\{\sigma\circ\rho^i|i=0,1,2,3\}$ for fixed
+elements $\sigma$ of $R$.  In each case the orbits have size 4 (because if
+$\rho^i\circ\sigma=\rho^j\circ\sigma$, then $\rho^i =\rho^j$, and similarly for
+$\sigma\circ\rho^i$), and there are six of them. }
+
+\iteme What are the sizes of the orbits, and how many have each size, for
+the action of
+$D_6$ on the two element subsets of $\{1,2,3,4,5,6\}$.
+\solution{There are two orbits of size 6 and one orbit of size 3.  (Think of
+the two-element subsets as the edges and diagonals of a hexagon.  The edges
+form one orbit of size six; the diagonals that jump over two edges form
+another orbit of size six; and the diagonals connecting opposite vertices
+form an orbit of size three.}
+
+\iteme Suppose we draw identical circles at the vertices of a regular
+hexagon.  Suppose we color these circles with two colors, red and blue.  We
+may think of a coloring as a function from the set $\{1,2,3,4,5,6\}$ to the
+set $\{R,B\}$ by numbering the vertices from one to six consecutively around
+the hexagon.  To do this problem it will be helpful to use the notation
+$RBRRBB$ to stand for the function $f$ with $f(1) =R$,
+$f(2)=B$,
+$f(3)=R$, $f(4) = R$, $f(5)=B$, $f(6)=B$.  How many functions are there from the set
+$\{1,2,3,4,5,6\}$ to the set $\{R,B\}$?  These functions are partitioned into orbits by
+the action of the rotation group on the hexagon.  Using our simplified notation, write
+down all these orbits and observe what the possible sizes of orbits
+are.\label{coloredhex} 
+\solution{There are 64 functions from a six-element set to a
+two-element set.
+
+\hspace*{-.25 in}$\{RRRRRR\}$,\\ \hspace*{-.25 in}$\{RRRRRB, BRRRRR, RBRRRR, RRBRRR,
+RRRBRR, RRRRBR\}$,\\
+\hspace*{-.25 in}$\{RRRRBB, BRRRRB, BBRRRR, RBBRRR, RRBBRR, RRRBBR\}$,\\
+\hspace*{-.25 in}$\{RRRBRB, BRRRBR, RBRRRB, BRBRRR, RBRBRR, RRBRBR\}$,\\
+\hspace*{-.25 in}$\{RRRBBB, BRRRBB, BBRRRB, BBBRRR, RBBBRR, RRBBBR\}$,\\
+\hspace*{-.25 in}$\{RRBRRB, BRRBRR, RBRRBR\}$,\\
+\hspace*{-.25 in}$\{RRBRBB, BRRBRB, BBRRBR, RBBRRB, BRBBRR, RBRBBR\}$,\\
+\hspace*{-.25 in}$\{RRBBRR, RRRBBR, RRRRBB, BRRRRB, BBRRRR, RBBRRR\}$,\\ 
+\hspace*{-.25 in}$\{RRBBRB, BRRBBR, RBRRBB, BRBRRB, BBRBRR, RBBRBR\}$\\
+\hspace*{-.25 in}$\{RRBBBB, BRRBBB, BBRRBB, BBBRRB, BBBBRR, RBBBBR\}$\\
+\hspace*{-.25 in}$\{RBRBRB,
+BRBRBR\}$\\
+\hspace*{-.25 in}$\{RBBRBB, BRBBRB, BBRBBR \}$\\
+\hspace*{-.25 in}$\{RBBBBB, BRBBBB, BBRBBB, BBBRBB,BBBBRB, BBBBBR\}$\\
+\hspace*{-.25 in}$\{BBBBBB\}$\\
+We have two orbits of size one, one of size two, two of size three, and nine
+of size six. }
+
+\iteme Either show that, when $G$ is a group acting on a set $S$, the
+orbits of $G$ partition $S$ or give a counter-example.
+\solution{Each element $x$ is in at least one orbit, namely $Gx$.  But if
+$x\in Gy$, then $x=\sigma y$ for some $\sigma \in G$, so $$Gx=\{\tau x|\tau
+\in G\} =
+\{\tau\sigma y|\tau\in G\}= \{\tau' y|\tau' \in G\} = Gy.$$  Thus each
+element of $S$ is in one and only one orbit of $G$, so the orbits of $G$
+partition $S$.
+}
+
+\itemm In Problems \ref{dihedralorbits1}, \ref{dihedralorbits2}, and
+\ref{dihedralorbits3}, what set of elements fixes $f$ and what set of
+elements takes $f$ to $g$, what set of elements fixes $f_1$ and what set
+of elements takes $f_1$ to $f_1\circ\rho^{-1}$, and what set of elements
+fixes $f_2$ and what set of elements takes $f_2$ to
+$f_2\circ\rho^{-1}$?\label{fixandmove}
+\solution{In Problem \ref{dihedralorbits1}, the set of elements fixing $f$
+is $\{\iota=\rho^0, \varphi_{1/3}\}$.  The set of orbits taking $f$ to $g$
+is $\{\rho, \varphi_{12/34}\}$.   In Problem
+\ref{dihedralorbits2} the set of elements fixing $f_1$ is $\{\iota\}$, and
+the set of elements taking $f_1$ to $f_1\circ\rho^{-1}$ is $\{\rho\}$.  In
+Problem \ref{dihedralorbits3}, the set of elements fixing $f_2$ is $\{\iota,\rho^2, 
+\varphi_{1/3}, \varphi_{2/4}\}
+$, and the set of elements taking $f_2$ to
+$f_2\circ\rho^{-1}$ is
+$\{\rho,
+\rho^3, \varphi_{12/34}, \varphi_{14/23}\}$.
+}
+
+\itemei In Problem \ref{fixandmove} the subsets of $D_4$ that fix a function
+have a special property.  What is it?\label{subgroupfixingfunction}
+\solution{In each case, the subsets that fix a function form a subgroup.  To
+prove this, note that the subset of group elements fixing a function is
+closed under composition.}
+
+\item Could there be a function $h$ from $\{1,2,3,4\}$ to the set $\{R, B,
+G\}$ such that the orbit of $h$ under the action of $D_4$ has size 3 or
+5?  If so, find one.  If not, explain why not.
+\solution{This is difficult to do at this stage except by ``brute force." 
+Here is an organized brute force solution.  There is no orbit of size
+3 or 5.  If a function is constant, then clearly its orbit has size one.  If
+a function has exactly one $R$ (or
+$B$ or $G$), then its orbit under the rotations has size 4. Since every flip
+is a rotation times
+$\varphi_{1/3}$, if $\varphi_{1/3}$ fixes the function, then the orbit has
+size 4, but if $\varphi_{1/3}$ does not take the function to the result of a
+rotation, then neither does a rotation times $\varphi_{1/3}$, so the orbit
+has size 8.  If the function has exactly three $R$'s, then it has exactly
+one element of some other color, so the argument is the same.  If the
+function has exactly two $R$'s and exactly two elements of another color,
+then if the elements of the same color are adjacent, the orbit under the
+rotations has size 4, and the result of a flip is the same as the result of
+a rotation so the orbit has size 4.  If the two $R$'s are not adjacent, then
+the orbit under the rotations has size 2 and the result of each flip is the
+same as the result of a rotation, so the orbit has size 2.  If the function
+has exactly two $R$'s, one $G$, and one $B$, then the size of the orbit is
+the same as the orbit in Problem \ref{dihedral1} or \ref{dihedral3}. Any
+other case is equivalent to one we just covered by changing the names of the
+colors. Thus there are no orbits of size 3 or 5 (or 6 or 7 either).    One
+can also argue as we will in Problem
+\ref{orbitsize}. }
+ 
+\itemei Make a conjecture about how the size of an orbit of the permutation
+group $G$ acting on the set $S$ relates to the size of
+$G$.\label{orbitsize}  Prove your conjecture.
+\solution{The size of an orbit divides the size of the group.  To prove the
+conjecture, the most natural approach is to try to use the quotient
+principle.  This requires that we divide the group up into disjoint subsets
+of the same size.  The elements of the group that fix a given element $x$
+form a subgroup $H$ of $G$.  In each case we have seen, the elements that
+take $x$ to $\sigma(x)$ were of the form $\sigma\circ\tau$, where $\tau$ was
+in the subgroup fixing $H$.  Clearly any such element takes $x$ to
+$\sigma(x)$.  The number of such elements is the size of $H$.  And if
+$\sigma'(x) = \sigma(x)$, then $\sigma^{-1}\circ \sigma'$ fixes $x$ and so is
+a member $\tau$ of  the subgroup. But then $\sigma'=\sigma\circ\tau$, where
+$\tau=\sigma^{-1}\sigma'$. Thus the number of elements
+$\sigma$ that take $x$ to an element $\sigma(x)$ is the size of $H$.  And the
+set of elements that take $x$ to $\sigma(x)$ has nothing in common with the
+set of elements that take $x$ to $\sigma_1(x)$, so we have partitioned up
+the group into subsets each of which has the same size as $H$, and therefore
+the size of $H$ time the number of subsets is the size of $G$.  However the
+number of subsets is the number of orbits, and so the number of orbits
+divides the size of the group.}
+
+\iteme Make a conjecture about how the size a subgroup of the permutation
+group $G$ relates to the size of $G$. \label{sizeofsubgroup}
+\solution{The size of a subgroup of a permutation group $G$ divides the size
+of
+$G$.}
+\ep
+
+Problems \ref{alternatinggroup}, \ref{cosets1}, \ref{fixandmove} and
+\ref{subgroupfixingfunction} (and less directly Problems
+\ref{actiononfunctions}, \ref{actingonfunctions2} and
+\ref{actingonfunctions3}) have a common theme.  
+
+In Problem
+\ref{alternatinggroup}, a natural way to show that the group of even
+permutations, those with sign 1, has size $n!/2$ is to observe that for
+any two-cycle (or any odd permutation) $\tau$, the element  $\sigma\tau$ is odd
+whenever
+$\sigma$ is even and is even whenever $\sigma$ is odd.  Thus if we let $\tau
+A_n$ stand for the set
+$$\tau A_n = \{\tau\sigma|\sigma \in A_n\},$$
+then $A_n$ and $tA_n$ are two disjoint sets that partition $S_n$. 
+\bp
+\iteme Explain why, for any subgroup $H$ of a permutation group $G$, $H$
+and
+$\tau H$ have the same size.  \label{cosetsize}
+\solution{There is a bijection between $H$ and $\tau H$ given by $f(\sigma)
+= \tau \sigma$.  (It is a bijection because $\tau$ has an inverse.)}
+\ep
+By problem \ref{cosetsize} $A_n$ and $\tau A_n$ have the same size and
+since their union has $n!$ elements, each has size $n!/2$.  The set $\tau
+A_n$ is called a {\em left coset} of the subgroup $A_n$ of $S_n$. 
+
+In Problem \ref{cosets1} you probably saw that $\beta_{\rho^i}(\sigma) =
+\rho^i\circ\sigma$ and $\beta_{\rho^i}(\sigma) = \sigma\circ\rho^{-i}$
+both describe actions of $R_4$ on $R$.  The orbits for the first action
+are of the form
+$$R_4\sigma=\{\rho^i \sigma| i=1,2,3,4\},$$
+for various elements $\sigma$  of $R$.  The orbits of the second action
+are
+$$\{\sigma r^{-i}| i=1,2,3,4\} = \{\sigma r^i|i = 1,2,3,4\} = \sigma
+R_4,$$ for various elements $\sigma$ of $R$.  The set $R_4\sigma$ is
+called a {\em right coset} of $R_4$ in $R$, and as before, the set $\sigma
+R_4$ is called a left coset of $R_4$ in $R$.  In general when $H$ is a
+subgroup of $G$ and $\sigma \in G$, we call
+$$\sigma H = \{\sigma \varphi|\varphi \in H\}$$
+a {\bf left coset} of $H$ in $G$ and we call
+$$H\sigma  = \{\varphi\sigma  |\varphi \in H\}$$
+a {\bf right coset}\index{coset}\index{left coset}\index{right coset} of
+$H$ in $G$.  Notice that $H$ is a coset of itself, since we may take
+$\sigma=\iota$.  In Problem \ref{cosetsize} you showed that a subgroup
+and all its (left) cosets have the same size.  Of course the right cosets
+have that size too.
+
+When a group $G$ acts on a set $S$, we say that an element $\sigma \in
+G$ fixes an element $x\in S$ if $\beta_{\sigma}(x) = x$.  We say that an
+element $\sigma$ takes $x$ to $y$ if $\beta_{\sigma}(x) =y$.   In Problem
+\ref{subgroupfixingfunction} the subset of
+$D_4$ that fixed
+$f$ was a subgroup of $D_4$, the subset of $D_4$ fixing $f_2$ was a
+subgroup of $D_4$ and the subset of $D_4$ fixing $f_3$ was a subgroup of
+$D_4$.  The set of group elements that sent $f$ to $g$, $f_2$ to
+$f_2\circ\rho^{-1}$ and $f_3$ to $f_3\circ\rho^{-1}$ was a coset of the
+subset that fixed the function in each case.
+
+\bp
+\iteme Can two distinct cosets of a subgroup $H$ of a group $G$ have an
+element in common?\label{cosetspartitionG}
+\solution{No, because if $\tau\in \sigma H$, then $\tau H =\sigma H$
+and if $\tau \in \varphi H$, then $\tau H = \varphi H$, so that $\sigma
+H=\varphi H$.}
+
+\iteme Prove your conjecture in Problem \ref{sizeofsubgroup}.
+\solution{By Problem \ref{cosetspartitionG}, the cosets of a subgroup of $G$
+partition $G$.  But by problem \ref{cosetsize}, the cosets all have the same
+size, namely the size of $H$.  Thus by the quotient principle, the size of
+$H$ is a factor of the size of $G$.}
+
+\iteme Show that whenever a group $G$ acts on a set $S$, then for each $x$
+in $S$, the set of all elements $\sigma$ fixing $x$ is a subgroup of $G$.    We will
+denote this subgroup by ${\rm Fix}(x)$.
+\solution{The set of elements fixing $x$ is closed under composition, and
+therefore ${\rm Fix}(x)$ is a subgroup of $G$.}
+
+\iteme Show that whenever a group $G$ acts on a set $S$, then for each $x$
+and $y$ the set of all $\tau \in G$ such that $\beta_{\tau}(x) = y$
+is a coset of the subgroup ${\rm Fix}(x)$ of all elements of $G$ fixing $x$.
+\solution{First, if $\beta_{\tau}(x)=y$ and $\beta_{\sigma}$ fixes $x$, then
+$\beta_{\tau}\circ \beta_{\sigma}=\beta_{\tau\circ\sigma}$ takes $x$ to
+$y$.  Second, if $\beta_{\varphi}(x)=y$ as well, then
+$\beta_{\tau^{-1}}\circ\beta_{\varphi}=\beta_{\tau^{-1}\circ\varphi}$
+fixes $x$ and so is in ${\rm Fix}(x)$, so that $\varphi$ is $\tau$ times
+an element (namely $\tau^{-1}\varphi$) of ${\rm Fix}(x)$.  Thus every element of the
+coset
+$\tau{\rm Fix}(x)$ takes $x$ to $y$, and every element that takes $x$ to $y$ is an
+element of the coset $\tau{\rm
+Fix}(x)$.  Thus the set of elements $\tau$ such that $\beta_{\tau}(x)=y$
+is a coset of ${\rm Fix}(x)$.}
+
+
+\iteme When a group $G$ acts on a set $S$, how is the number of elements
+in the orbit containing the element $x$ of $S$ related to the size of $G$
+and the size of ${\rm Fix}(x)$?  Find a bijection that proves that what
+you say is correct.
+\solution{The number of elements in the orbit containing the element $x$ is
+the number of  cosets of ${\rm Fix}(x)$, which is also
+$|G|/|{\rm Fix}(x)|$.  A bijection that proves this is the function $f$
+that takes the coset $\varphi{\rm Fix}(x)$ to the element $\varphi(x)$. 
+This function is well-defined because all the elements in $\varphi{\rm
+Fix}(x)$ take $x$ to $\varphi(x)$.  It is onto because if $\tau(x) =y$,
+then the coset $\tau{\rm Fix}(x)$ is mapped to $y$.  It is one-to-one
+because if $f(\varphi{\rm Fix}(x))=f(\tau{\rm Fix}(x))$, then 
+$\varphi\in \tau{\rm Fix}(x)$ and $\tau \in \varphi{\rm Fix}(x)$, which
+means the two cosets are identical.  The cosets all have the same size,
+namely $|{\rm Fix}(x)|$ and therefore by the quotient principle, the number
+of cosets is $|G|/|{\rm Fix}(x)|$.}
+\ep
+
+We can summarize our findings in this section with a theorem.
+
+\begin{theorem}  When a group $G$ acts on a set, the set ${\rm Fix}(x)$ of
+group elements fixing any given any given element $x$ of $S$  is a
+subgroup of $G$.  The set of group elements $\tau$ such that
+$\beta_{\tau}(x) = y$ is a coset of ${\rm Fix}(x)$, and the size of the
+orbit of $x$ under the action of $G$ is $|G|/|{\rm Fix}(x)|$.\end{theorem}
+
+\subsection{Multiorbits}
+\bp 
+\item Draw  figures like Figure \ref{RotationsOfColoredSquare} to show
+the eight results of acting with the dihedral group on the squares
+corresponding to the functions $f$, $f_1$, and $f_2$ of Problems
+\ref{dihedralorbits1},
+\ref{dihedralorbits2}, and $\ref{dihedralorbits3}$. \label{multiorbits1}
+\solution{\begin{center}\hspace*{-.4in}\mbox{\psfig{figure=
+MotionsOfColoredSquare.eps,height=1.45in }}
+\end{center}
+\begin{center}\hspace*{-.4in}\mbox{\psfig{figure=
+MotionsOfColoredSquare1.eps,height=1.45 in }}
+\end{center}
+\begin{center}\hspace*{-.4in}\mbox{\psfig{figure=
+MotionsOfColoredSquare2.eps,height= 1.45in}}
+\end{center}}
+\ep
+
+As Problem \ref{multiorbits1} shows, in some ways it is more natural to
+think of an orbit as a multiset rather than a set.  For example with the
+function $f_2$ from Problem \ref{dihedralorbits3} we get $f_2$ itself four
+times when we act with the dihedral group and we get $f_2\circ\rho^{-1}$
+four times when we act on $f_2$ with the dihedral group.  If we think
+only about the orbit of the dihedral group, then, we lose some
+information.  To avoid this, we define the {\bf multiorbit} of an element
+$x$ of a set $S$ under the action of a group $G$ to be the multiset
+$$Gx_{\mbox{\scriptsize multi}} = \{\beta_{\sigma}(x)|\sigma \in
+G\}_{\mbox{\scriptsize multi}}.$$
+It is immediate that the size of each multiorbit is then exactly the size
+of
+$G$. 
+
+\bp
+\iteme In how many different multiorbits of the action of $G$ on $S$ will
+a given element of $S$ appear?\label{NumberContainingx}
+\solution{Only one, because the orbits partition $S$, and there is a
+bijection between the orbits and the multiorbits given by $f(Gx) =
+Gx_{\mbox{\scriptsize multi}}$.}
+
+\iteme What will the multiplicity of $x$ be in
+$Gx_{\mbox{\scriptsize multi}}$?
+\solution{$|{\rm Fix}(x)|$.}
+\ep
+
+It is also immediate from Problem \ref{NumberContainingx} that the number
+of orbits is the number of multiorbits, because we get the orbits from the
+multiorbits by deleting repeated elements, and the problem shows that
+each orbit corresponds to exactly one multiorbit\footnote{You might want to
+argue that we have a multiset of multiorbits, one for each element of $S$,
+ but that would defeat our purpose since
+we have  bijection between the set of orbits and the {\em set} of
+multiorbits, and this bijection will let us count the number of orbits by
+computing the size of the set of multiorbits.}.  We define the union of multisets
+$M_1$,
+$M_2$,
+\ldots,
+$M_n$ to be the multiset in which the multiplicity of an element $x$ is
+the sum of its multiplicities in the individual multisets $M_i$.  Thus
+$$\{a,a,b,b,b\}\cup \{a,b,b,c,c,c\}=\{a,a,a,b,b,b,b,b,c,c,c\}.$$  We will
+now get a formula for the number of multiorbits by using the fact that
+they all have the same size and the idea of multiset union.
+
+\bp
+\iteme How does the size of the union of the set of multiorbits of a group
+$G$ acting on a set $S$ relate to the number of multiorbits and the size
+of
+$G$?\label{numbermultiorbits1}
+\solution{It is simply the product of the number of multiorbits and the size
+of $G$.}
+
+\iteme How does the size of the union of the set of multiorbits of a group
+$G$ acting on a set $S$ relate to the numbers $|{\rm
+Fix}(x)|$?\label{numbermultiorbits2}
+\solution{Since it is the sum of the multiplicities of the elements of $S$
+in the union, it is the sum of $|{\rm Fix}(x)|$ over all $x$ in $S$.}
+\iteme In Problems \ref{numbermultiorbits1} and \ref{numbermultiorbits2}
+you computed the size of the union of the set of multiorbits of a group
+$G$ acting on a set $S$ in two different ways, getting two different
+expressions which must be equal.  Write the
+equation that says they are equal and solve for the number of multiorbits, and
+therefore the number of orbits.\label{numbermultiorbits3}
+\solution{Using $m$ for the number of multiorbits, we get 
+$$m|G|=\sum_{x:x\in S} |{\rm Fix}(x).$$  Therefore, $$m={1\over
+|G|}\sum_{x:x\in S} |{\rm Fix}(x)|.$$}\ep
+
+\subsection{The Cauchy-Frobenius-Burnside Theorem}
+\bp
+\iteme In Problem \ref{numbermultiorbits3} you stated and proved a theorem
+that expresses the number of orbits in terms of the number of group
+elements fixing each element of $S$.  It is often easier to find the
+number of elements fixed by a given group element than to find the number
+of group elements fixing an element of $S$.  For this purpose,
+  \begin{enumerate} 
+\item Let $\chi(\sigma,x)=1$ if $\sigma(x)=x$ and let
+$\chi(\sigma,x) =0$ otherwise.  Use $\chi$ to convert the single summation
+in Problem
+\ref{numbermultiorbits3} into a double summation over elements $x$ of $S$
+and elements $\sigma$ of $G$.
+\solution{$$m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
+\chi(\sigma,x).$$}
+\item Reverse the order of the previous summation in order to convert it
+into a single sum involving the function $\chi$ given by\footnote{The reason
+for using the Greek letter $\chi$ is that $\chi(\sigma)$ is an example of
+what is called a group character.  Character theory is a major ingredient of
+the representation theory of groups, an advanced subject that combines
+abstract beauty with amazing utility.}
+$$\chi(\sigma) =
+\mbox{the number of elements of $S$ left fixed by $\sigma$}.$$
+\solution{$$m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).$$}
+\end{enumerate}\label{numbermultiorbits4}
+
+
+\ep
+
+In Problem \ref{numbermultiorbits4} you gave a formula for the number of
+orbits of a group $G$  acting on a set $X$.  This formula was first
+worked out by Cauchy in the case of the symmetric group, and then for
+more general groups by Frobenius.  In his pioneering book on Group
+Theory, Burnside used this result as a lemma, and while he attributed the
+result to Cauchy and Frobenius in the first edition of his book, in later
+editions, he did not.  Later on, other mathematicians who used his book
+named the result ``Burnside's Lemma,"\index{Burnside's Lemma} which is the
+name by which it is still most commonly known.  Let us agree to call this
+result the Cauchy-Frobenius-Burnside
+Theorem,\index{Cauchy-Frobenius-Burnside Theorem} or CFB Theorem for short
+in a compromise between historical accuracy and common usage.
+
+  \bp 
+\itemi In how many ways may we string four (identical) red, six (identical)
+blue, and seven (identical)  green beads on a necklace?
+\solution{We are stringing 17 beads on our necklace, so we are asking for
+the number of orbits of the group $D_{17}$ on lists of four $R$s, six $B$s,
+and seven $G$s.  For a rotation $\rho^i$ to fix a list, it must take an $R$
+to a
+$R$.  The powers of $\rho^i$ form a group.  Thus the set of places that
+contain an
+$R$ in a list that is fixed by
+$\rho^i$ must be an orbit of that group.  But the size of the orbit must be
+a divisor of the size of the subgroup, which must be a divisor of seventeen,
+so the size of the orbit is one or 17.  If it is 1, then $i=0$.  Thus no
+elements are fixed by any nontrivial rotation, and all $17\choose 4,6,7$ 
+lists of $R$s, $B$s and $G$s are fixed by the identity.  Each flip will be a
+flip \strut around a line from a bead to the spot between the two ``opposite"
+beads.  This line divides the list into the eight beads on its left, the
+eight beads on its right and the one bead it goes through.  If a flip fixes
+a list, the eight beads on the left must be identical to the eight beads on
+the right, meaning that the bead the line goes through must be one of the
+seven green beads.  Thus the number of lists that are fixed by a flip is the
+number of ways to place three green beads, two red beads, and three blue
+beads in 8 slots, which is
+$8\choose3,2,3$, or $8!\over3!2!3!$.  There are 17 flips, so there are
+$17\cdot8!\over3!2!3!$ elements fixed by flips.  Therefore we have $${1\over
+2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
+{8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400$$ necklaces.  The
+numerical answer, which is unimportant here, was obtained from Maple.}
+
+\itemi If we have an unlimited supply of identical red beads and identical
+blue beads, in how many ways may we string 17 of them on a necklace?
+\solution{We are asking for the number of orbits of $D_{17}$ on the set of
+functions from $[17]$ to $\{R,B\}$.   Every function is fixed by the
+identity.  The only functions fixed by a nontrivial rotation are the constant
+functions.  Each flip is around a line from a bead to the space between the
+two ``opposite" beads.  The bead the line goes through can be either color,
+and then the eight beads to the left of this one must be identical to the
+eight beads to the right of this one.  There are $2^8$ ways to assign beads
+to the positions on the left, so a flip fixes $2^9$ functions.  Therefore by
+the CFB theorem, we have
+$${1\over 2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
+17}+2^8 +{2^4\over 17}=16{4097\over17}+256=4112$$ necklaces.}
+
+\itemi If we have five (identical) red, five (identical)  blue, and five
+(identical) green beads, in how many ways may we string them on a
+necklace?
+\solution{Here we need to consider the action of $D_{15}$ on lists
+(functions from $[15]$ to $\{R,B,G\}$) with  five $R$s, five $B$s, and five
+$G$s. The identity will fix $15\choose5,5,5$ lists.  A rotation through
+3,6,9,or 12 places will fix any function that has the same value in places
+1, 4, 7, 10, and 13, the same value in places 2, 5, 8, 11, and 14, and the
+same value in places 3, 6, 9, 12, and 15.  There are $3!$ such lists.  There
+is no other rotation that fixes any lists.  Each flip is around an axis that
+goes from bead to the space between two opposite beads.  If it fixed a list,
+the seven colors to the left of the axis would have to equal the seven
+colors to the right of the axis.  Thus the number of beads of each color on
+the left and right sides would have to be equal.  So except for the color of
+the bead the axis goes through, we would have to have an even number of
+beads of each color for a flip to fix a list of beads.  Thus no flip fixes
+any functions. Therefore by the CFB theorem we have
+$${1\over2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226$$
+necklaces.  (The numerical answer, which was obtained from Maple, is not
+important here.)}
+
+
+\itemi In how many ways may we paint the faces of a cube with six
+different colors, using all six?
+\solution{Here we must consider the action of the rotation group of the cube
+on lists of six distinct colors.  But no nontrivial rotation will fix a cube
+with all its faces colored differently.  The identity rotation will fix all
+$6!$ lists, and there are 24 members of the rotation group, so we have
+$6!/24=6\cdot5=30$ ways to paint the faces of a cube with six distinct
+colors, using each color}
+
+\item In how many ways may we paint the faces of a cube with two colors
+of paint?  What if both colors must be used?
+\solution{We must consider the action of the rotation group of the cube on
+functions from $[6]$ to  $\{R,B\}$ or some other two-element set of colors. 
+There are five kinds of elements in the rotation group of the cube.  There
+is one identity, there are six rotations by 90 degrees or  270 degrees around
+an axis connecting the centers of two opposite faces, there are three
+rotations of 180 degrees around such an axis, there are 8 rotations (of 120
+degrees and 240 degrees, respectively) around an axis connecting two
+diagonally opposite vertices, and there are 6 rotations of 180 degrees
+around an axis connecting the centers of two opposite edges.  The identity
+fixes $2^6$ functions.  There are eight functions fixed by a 90 degree or
+270 degree rotation.  There are 16 functions fixed by a 180 degree rotation
+along an axis through two faces.  There are 8 functions fixed by a 180
+degree rotation along an axis joining the centers of two opposite sides. 
+There are 4 functions fixed by a 120 degree or 240 degree rotation.  Thus by
+the CFB theorem, we have
+$${1\over24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10$$ ways to paint
+the faces of a cube with two colors of paint. Two of these colorings use
+only one color, so there are eight colorings that use both colors.}
+
+\itemi In how many ways may we color the edges of a (regular) $(2n+1)$-gon
+free to move around in the {\em plane} (so it cannot be flipped) if  we use
+red $n$ times and blue
+$n+1$ times?  If this is a number you have seen before, identify
+it.\label{Catalancircle}\index{Catalan Number!(Problem
+\ref{Catalancircle})}
+\solution{The set of all powers of a rotation is a subgroup of the
+rotation group of the $(2n+1)$-gon.  If a given rotation fixes a
+coloring, all powers of that rotation fix the coloring.  The set of
+edges to which a given edge is taken by that rotation is an orbit of the
+group of powers of the rotation.  The size of this orbit is a divisor of
+the size of the subgroup, which is a divisor of $2n+1$.  If the edge is
+colored red, the size of the orbit is also a divisor of $n$, and if the
+edge is colored blue, the size of the orbit is also a divisor of $n+1$. 
+But neither $n$ nor $n+1$ have common divisors with $2n+1$, except for
+one.  Therefore the only rotation that fixes a coloring is the identity
+rotation, and it fixes all $2n+1\choose n$ colorings.  Thus the number of
+orbits is $${1\over 2n+1}{2n+1 \choose n} = {1\over n+1}{2n\choose n},$$ a
+Catalan number.}
+
+\itemih In how many ways may we color the edges of a (regular) $(2n+1)$-gon
+free to move in  {\em three-dimensional space} so that $n$ edges are 
+colored red and
+$n+1$ edges are colored blue.  Hint: your answer may depend on whether $n$ is even or
+odd.
+\solution{
+The set of all powers of a rotation is a subgroup of the
+dihedral group of the $(2n+1)$-gon.  If a given rotation fixes a
+coloring, all powers of that rotation fix the coloring.  The set of
+edges to which a given edge is taken by that rotation is an orbit of the
+group of powers of the rotation.  The size of this orbit is a divisor of
+the size of the subgroup, which is a divisor of $2n+1$.  If the edge is
+colored red, the size of the orbit is also a divisor of $n$, and if the
+edge is colored blue, the size of the orbit is also a divisor of $n+1$. 
+But neither $n$ nor $n+1$ have common divisors with $2n+1$, except for
+one.  Therefore the only rotation that fixes a coloring is the identity
+rotation, and it fixes all $2n+1\choose n$ colorings.  
+
+A flip, on the
+other hand can fix some colorings.  In particular, if $n$ is even, we
+color one edge blue, leaving an even number $n$ of edges to be colored
+blue and an even number $n$ of edges to be colored red.  It the flip over
+the axis perpendicular to the side we picked fixes the coloring, the $n$
+edges to the right of the chosen edge must be colored identically with
+the $n$ edges to the left of the chosen edge.  There are $n\choose n/2$
+ways to color the $n$ edges to the right of the chosen edge (choose which
+edges get red), and so this is the number of colorings fixed by this
+flip.  We have $2n+1$ flips, and since we have one flip of the type described for each
+edge, all flips have the form given above. Thus each flip fixes
+$n\choose n/2$ colorings.
+
+Thus the number of orbits is $${1\over 2(2n+1)}\left({2n+1\choose n} +
+(2n+1){n\choose n/2}\right).$$
+If $n$ is odd, we color one edge red, leaving an even number $n-1$ of edges to be
+colored red and an even number $n+1$ of edges to be colored blue.  With an argument
+similar to the previous one we see that there are
+$${1\over 2(2n+1)}\left({2n+1\choose n} + (2n+1)({n\choose (n-1)/2}\right)$$ orbits. 
+}
+
+
+\itemih (Not unusually hard for someone who has worked on chromatic
+polynomials.) How many different  proper colorings with four colors are there
+of the vertices of a graph which is cycle on five vertices? (If we get one
+coloring by rotating or flipping another one, they aren't really different.)
+\solution{We are asking for the number of orbits of $D_5$ on lists of five 
+colors chosen from the given four with no two adjacent colors equal; we consider the
+first and last position adjacent as well.  The identity fixes all such colorings. 
+For those who are familiar with the chromatic polynomial, as in Problem
+\ref{chrompolydel/cont}, the number of such colorings is the chromatic
+polynomial of the cycle on five vertices evaluated at 4.  The number of ways
+to properly color a cycle on five vertices is the number of ways to color a
+path on five vertices minus the number of ways to color a path on five
+vertices so that its first and last vertices are identical, which is the
+number of ways to color a cycle on four vertices.  The number of ways to
+color a cycle on four vertices is the number of ways to color a path on four
+vertices minus the number of ways to color a path on four vertices so that
+the first and last vertices are the same color, which is the same as the
+number of ways to color a cycle on three vertices.  The number of ways to
+properly color a path on five vertices with four colors is $4\cdot3^4$.  The
+number of ways to properly color a path on four vertices with four colors is
+$4\cdot3^3$.  The number ways to properly color a cycle on three vertices
+with four colors is $4\cdot3\cdot2$.  Thus the number of proper colorings of
+a five vertex cycle with four colors is $4\cdot3^4-4\cdot3^3
++4\cdot3\cdot2=240$.  This is the number of colorings fixed by the
+identity.  No proper coloring is fixed by a nontrivial rotation, because
+if a rotation of the five cycle fixes a coloring, all the vertices must
+have the same color.  No proper coloring is fixed by a flip, because for a
+flip to fix a coloring, the coloring must give the same color to two
+adjacent vertices.  Thus the number of really different proper four-colorings
+of a cycle on 5 vertices is ${240\over 10}=24$.}
+
+\itemih How many different  proper colorings with four colors are there of the
+graph in Figure \ref{starhexagon}?  Two graphs are the same if we
+can redraw one of the graphs, not changing the vertex set or edge set, so that it is
+identical to the other one.  This is equivalent to permuting the vertices in some
+way so that when we apply the permutation to the endpoints of the edges to get a new
+edge set, the new edge set is equal to the old one.  Such a permutation is called an
+{\em automorphism}\index{automorphism (of a graph)} of the graph.  Thus two
+colorings are different if there is no automorphism of the graph that carries one to
+the other one.
+\begin{figure}[htb]\caption{A graph on six vertices.}\label{starhexagon}\smallskip
+\begin{center}\mbox{\psfig{figure=NumberedHexagonalNetwork.eps
+}}
+\end{center}  
+\end{figure}
+\solution{
+We want the number of orbits of the set of proper colorings under the action of the group
+of automorphisms of the graph.  An automorphism $\sigma$
+maps vertex 1 to any of six vertices.  Vertex 2 can be mapped to any of the four
+vertices adjacent to the image of vertex 1.  Vertex 3 is adjacent to vertices 1 and
+2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and
+vertex 2; by checking cases you can see that there are always exactly two vertices
+adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of
+these vertices preserves all the edges among vertices 1, 2, and 3.  However each of
+the other three vertices is adjacent to exactly two vertices of the set
+$\{1,2,3\}$, and thus it must be mapped to the unique vertex adjacent to the
+corresponding two of
+$\sigma(1)$,
+$\sigma(2)$ and $\sigma(3)$.  (It is always the case that each vertex is adjacent to
+exactly two of these, as you can see by considering the cases with $\sigma(1)=1$.)  Thus
+there are $6\cdot4\cdot2=48$ elements in the group.  Now to apply the CFB theorem we would
+need to know how many proper colorings are fixed by each group element, so we would need
+to know what the group elements are.   We have observed that a permutation that preserves
+the edges is determined by where the triangle $\{1,2,3\}$ goes.  We can see eight
+triangles in the graph, triangles of the form $\{i,i+1,i+2\}$, where we identify 7 with 1
+and 8 with 2, and the triangles $\{1,3,5\}$ and $\{2,4,6\}$.  We can map the set
+$\{1,2,3\}$ to any of these eight sets by six one-to-one maps, so each group element is
+determined uniquely by one of these mappings.   However focusing on these triangles
+makes our job here simpler in another way.  In a proper coloring, vertices 1, 2, and
+3 must be colored differently.  We have four choices for the color of vertex 1,
+three different ones for vertex 2 and two still different ones for vertex 3, so
+there are 24 ways to color this triangle.  Clearly the only difference among these
+ways is the actual names of the colors.  That is, we can assume that vertex 1 is
+colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine
+the proper colorings starting with these three colors, and up to changing the names
+of the colors, we will have determined all the proper colorings.  Then we can ask
+which group elements fix a coloring rather than which colorings are fixed by a group
+element.  This turns out to be easier.  Let us write
+$RBGRBG$ for the coloring that colors vertices 1 and 4 red, two and five blue, and three
+and six green. An examination of the figure shows that this is a proper coloring.  In
+fact, it is the only proper coloring that starts $RBG$ and uses only three colors.  Suppose
+we were to use a fourth color, $Y$.  Then among vertices 4, 5, and 6, it could be used in
+just one place, because those three vertices are mutually adjacent.  Each of the other two
+vertices is adjacent to two of the original three vertices colored $RBG$, and so there is
+only one color available to use on it.  In summary, the colorings that start $RBG$ are
+\begin{enumerate}\item $RBGRBG$\label{coloring1}
+\item $RBGYBG$\label{coloring2}
+\item $RBGRYG$\label{coloring3}
+\item $RBGRBY$.\label{coloring4}
+\end{enumerate}
+Thus for any of the 24 choices of colorings of the first three vertices, there are four
+ways to complete it to a proper coloring of the whole graph, so there are 96 proper
+colorings of the graph.  Among the ones that start RGB, let us analyze which group
+elements fix them.  Note that the 2-cycles $(1\ 4)$, $(2\ 5)$ and $(3\ 6)$ are all
+permutations that fix coloring one. Further, interchanging vertices 1 and 4 does not
+change the endpoints of any edges, nor does interchanging 2 and 5 nor 3 and 6.  So all
+these two cycles are automorphisms of the graph.  A composition of automorphisms must be an
+automorphism(this follows directly from the definition of automorphism) and so the eight
+permutations $\iota$, $(1\ 4)$, $(2\ 5)$, $(3\ 6)$, $(1\ 4)(2\ 5)$, $(1\ 4)
+(3\ 6)$, $(2\ 5)(3\ 6)$, and $(1\ 4)(2\ 5)(3\ 6)$ all are automorphisms of the graph, and
+they are all in the subgroup of the automorphism group that fixes the coloring in
+\ref{coloring1}.  Any permutation not in the list will take some vertex to a vertex of
+another color, and so the eight permutations we listed are the subgroup fixing the
+coloring in \ref{coloring1}.  The subgroup fixing the coloring in \ref{coloring2} is
+$\iota$, $(1\ 3)$, $(2\ 4)$, and $(1\ 3)(2\ 4)$. The subgroups fixing the colorings in
+\ref{coloring3} and \ref{coloring4} also have size 4.  Thus there are $8+12=20$ pairs of a
+coloring with $R$, $B$, and $G$, in that order, on vertices 1, 2, and 3 and an automorphism
+fixing that coloring.  Since there are $4\cdot3\cdot2=24$ ways to color vertices 1, 2, and
+3 properly, and each gives rise to 20 pairs of a proper coloring and an automorphism fixing
+that coloring, there are $20\cdot24=480$ such pairs.  Since the automorphism group has
+size 48, this means that there are 10 proper colorings of this graph, up to
+automorphisms.  Note that we did not really use the CFB theorem, though we did use the
+fact that its formula is proved by dividing the number of ordered pairs of a set member
+and a group element fixing that member by the size of the group.}
+
+
+
+
+\ep
+
+\section{P\'olya-Redfield Enumeration Theory}
+George P\'olya and Robert Redfield independently developed a theory of
+generating functions that describe the action of a group $G$ on functions
+from a set $S$ to a set $T$ when we know the action of $G$ on $S$.  P\'olya's
+work on the subject is very accessible in its exposition, and so the
+subject has become popularly known as P\'olya theory, though
+P\'olya-Redfield theory would be a better name.  In this section we
+develop the elements of this theory.
+
+
+Our language will be more intuitive if we think of $T$ as a set of ``colors." 
+To illustrate that using this language is not restrictive, the set $S$ might be
+the positions in a hydrocarbon molecule which are occupied by hydrogen, and the
+group could be the group of spatial symmetries of the molecule (that is, the group of
+permutations of the atoms of the molecule that move the molecule around so that in its
+final position the molecule cannot be distinguished from the original molecule).  
+The colors could then be radicals (including hydrogen itself) that we could
+substitute for each hydrogen position in the molecule.  Then the number of orbits
+of colorings is the number of chemically different compounds we could create by
+using these substitutions.\footnote{There is a fascinating subtle issue of what
+makes two molecules different.  For example, suppose we have a molecule in the
+form of a cube, with one atom at each vertex.  If we interchange the top and
+bottom faces of the cube, each atom is still connected to exactly the same atoms
+as before.   However we cannot achieve this permutation of the vertices by a
+member of the rotation group of the cube.  It could well be that the two versions
+of the molecule interact with other molecules in different ways, in which case we
+would consider them chemically different.  On the other hand if the two versions
+interact with other molecules in the same way, we would have no reason to
+consider them chemically different.  This kind of symmetry is an example of what is
+called {\em chirality} in chemistry.}
+
+So think intuitively about some ``figure'' that has places to be colored. 
+(Think of the faces of a cube, the beads on a necklace, circles at the
+vertices
+of an $n$-gon, etc.)  How can we picture the coloring?  If we number the places
+to be colored, say 1 to $n$, then a function from $[n]$ to the colors is
+exactly
+our coloring; if our colors are blue, green and red,  then $BBGRRGBG$ describes
+a
+typical coloring of 8 such places.  Unless the places are somehow ``naturally''
+numbered, this idea of a coloring imposes structure that is not really there. 
+Even if the structure is there, visualizing  our colorings in this way doesn't
+``pull together'' any common features of different colorings; we are simply
+visualizing all possible functions. We have a group (think of it as symmetries
+of
+the figure you are imagining) that acts on the places.  That group then acts in
+a
+natural way on the colorings of the places and we are interested in orbits of
+the
+colorings.  Thus we want a picture that pulls together the common features of
+the
+colorings in an orbit.   One way to pull together similarities of colorings
+would
+be to let the letters we are using as pictures of colors commute as we did with
+our pictures in Chapter 4; then our picture
+$BBGRRGBG$ becomes $B^3G^3R^2$, so our picture now records simply how many
+times
+we use each color. If you think about how we defined the action of a group on a
+set of functions, you will see that a group element won't change how many times
+each color is used;
+it simply moves colors to different places.  Thus the picture we now have of a
+given coloring is an equally appropriate picture for each coloring in an orbit. 
+One natural question for us to ask is ``How many orbits have a given picture?'' 
+We can think of a multivariable generating function in which the letters we use
+to picture individual colors are the variables, and the coefficient of a
+picture
+is the number of orbits with that picture.  Such a generating function is an
+answer to our natural question, and so it is this sort of generating function
+we
+will seek.  Since the CFB theorem was our primary tool for saying how many
+orbits
+we have, it makes sense to think about whether the CFB theorem has an analog in
+terms of pictures of orbits.
+
+\subsection{The Orbit-Fixed Point Theorem}
+
+\bp
+
+
+\iteme   Suppose that $P_1$ and $P_2$ are picture functions on sets $S_1$ and
+$S_2$ in the sense of Section \ref{picturefunction}. Define $P$ on $S_1 \times
+S_2$ by
+$P(x_1,x_2) = P_1(x_1)P_2(x_2)$.  How are
+$E_{P_1}$, $E_{P_1}$, and $E_{P}$ related?  (Hint: you may have already done this
+problem in another context!)\label{ProdPrincPictureEnumerators}
+\solution{\begin{eqnarray*}E_P(S_1\times S_2)&=&\sum_{x_1\in S_1,\ x_2\in
+S_2}P(x_1)P(x_2)=\sum_{x_1\in S_1}\sum_{x_2 \in S_2}P(x_1)P(x_2)\\&=& \sum_{x_1\in
+S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2).\end{eqnarray*}}
+
+\iteme   Suppose $P$ is a picture function on a set $T$.  Suppose that we define
+the picture of a function from some other set $S$ to the set $T$ to be the
+product
+of the pictures of the values of $f$, i.e.
+
+$$\hat P(f) = \prod_{x:x\in S}P(f(x)).$$
+
+How does the picture enumerator $E_{\hat P}$ of the set $T^S$ of all functions
+from
+$S$ to $T$ relate to the picture enumerator of $P$ on the set $T$?  (You may assume
+that both
+$S$ and
+$T$ are finite.)\label{PictureEnumeratorforFunctions}
+\solution{$E_{\hat P}(T^S)=E_P(T)^{|S|}$.  To prove this, note that we can think of a
+function $f$ from $S$ to $T$ as an $|S|$-tuple of values, $$(f(x_1),f(x_2),\ldots,
+f(x_{|S|}),$$ then think of an $|S|$-tuple an the ordered pair $$(f(x_1),(f(x_2),
+f(x_3),\ldots f(x_{|S|})),$$ and apply induction and Problem
+\ref{ProdPrincPictureEnumerators}.}
+
+\iteme   Suppose now we have a  group $G$ acting on a set and we have a picture
+function on that set with the additional feature that for each orbit of the
+group, all its elements have the same picture. In this circumstance we define
+the
+picture of an orbit or multiorbit to be the picture of any one of its members. The
+{\em orbit
+enumerator}\index{orbit enumerator} ${\rm Orb}(G,S)$ is the sum of all the pictures
+of all the orbits.  The
+{\em fixed point enumerator}\index{fixed point enumerator} ${\rm Fix}(G,S)$ is
+the sum of all the pictures of all
+the fixed points of all the elements of $G$.  We are going to construct a
+generating function analog of the CFB theorem. The main idea of the proof of
+the
+CFB theorem was to try to compute in two different ways the number of elements
+(i.e. the sum of all the multiplicities of the elements) in the union of all
+the
+multiorbits of a group acting on a set.  Suppose instead we try to compute the
+sum of all the pictures of all the elements in the union of the multiorbits of
+a
+group acting on a set.  By thinking about how this sum relates to ${\rm Orb}(G,S)$
+and
+${\rm Fix}(G,S)$, find an analog of the CFB theorem that relates these two
+enumerators. 
+State and prove this theorem.\label{Orbit-FixedPoint}
+\solution{
+Let $E$, for enumerator, be the sum of all the pictures of all the elements in the
+union of the multiorbits of $G$ acting on a set $S$. Recall that for any multiorbit
+$M$ the picture
+$P(M)$ is the picture $P(x)$ of any element $x$ of $M$, and the number of elements
+of a multiorbit $M$ is always the size of $G$. This lets us write
+\begin{eqnarray*}
+E&=&\sum_{M:M\mbox{\ is a multiorbit of $G$\ \ }}\sum_{x:x\in M} P(x)\\
+&=&\sum_{M:M\mbox{\ is a multiorbit of $G$} }|G|P(M)\\
+&=&|G|\sum_{M:M\mbox{\ is a multiorbit  of $G$}} P(M)\\
+&=&|G|{\rm Orb}(G,S)
+\end{eqnarray*}
+Recall also that the multiplicity of an element $x$ in its multiorbit, and thus in
+the union of the multiorbits is $|Fix(x)|$.  This lets us write
+\begin{eqnarray*}E&=&\sum_{x: x\in S} {\rm|Fix}(x)|P(x)\\
+&=&\sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)\\
+&=&\sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)\\
+&=& {\rm Fix}(G,S).  
+\end{eqnarray*}
+Setting these two values of $E$ equal and solving for ${\rm Orb}(G,S)$ gives  us
+$${\rm Orb}(G,S) ={1\over |G|}{\rm Fix}(G,S).$$}
+
+
+\iteme  We will call the theorem of  Problem
+\ref{Orbit-FixedPoint}\index{Orbit-Fixed Point Theorem} the {\em Orbit-Fixed Point
+Theorem}.  Use it  to determine the Orbit Enumerator for the colorings, with two
+colors (red and blue), of six circles placed at the vertices of a hexagon which is
+free to move in the plane.  Compare the coefficients of the resulting polynomial
+with the various orbits you found in Problem \ref{coloredhex}.\label{polya1}
+\solution{Let us take the  pictures of red and blue to be  $R$ and
+$B$.  Since the hexagon is free to move in the plane, our group
+$G$ is the group
+$R_6$ of rotations of a regular hexagon. There are four kinds of elements of $G$: the
+identity, the rotation $\rho$ through 60 degrees and the rotation $\rho^5$ through
+300 degrees (when written as a product of disjoint cycles, the corresponding
+permutations are six-cycles), the rotations $\rho^2$ and $\rho^4$ through 120 and
+240 degrees respectively (when written as a product of disjoint cycles, the
+corresponding permutations are products of two three cycles), and the rotation
+$\rho^3$ through 180 degrees (when written as a product of disjoint cycles this is a
+product of three two-cycles).  All $2^6$ functions are fixed by the identity. By
+Problem \ref{PictureEnumeratorforFunctions} the enumerator for these functions is
+$(R+B)^6$.  Only the two constant functions (that color every circle the same color)
+are fixed by
+$\rho$ or $\rho^5$. The picture enumerator of the two constant functions is
+$R^6+B^6$. If the vertices are numbered one through six clockwise, then
+$\rho^2$ is $(1\ 3\ 5)(2\ 4\ 6)$. Thus for a function $f$ to be fixed by $\rho^2$,
+$f(1)=f(3)=f(5)$ and $f(2)=f(4)=f(6)$.   Thus the
+color of vertex 1 is repeated on vertex 3 and 5, and the color of vertex 2 is
+repeated on vertices 4 and 6.  Therefore the picture enumerator for functions fixed
+by
+$\rho^2$ and $\rho^4$ is $R^3R^3 +R^3B^3+B^3R^3 +B^3B^3=(R^3+B^3)^2$.  We can also
+think of this as the picture enumerator for functions defined on the cycles of the
+permutation.  There are two possible pictures of a colored cycle, $R^3$ and $B^3$,
+so the picture enumerator for one cycle is $R^3+B^3$.  That is, the picture of
+assigning red to a cycle is $R^3$ and the picture of assigning blue to a cycle is
+$B^3$.  By Problem
+\ref{PictureEnumeratorforFunctions}, the picture enumerator for functions defined on
+the two cycles is then $(R^3+B^3)^2$. If a function
+$f$ is fixed by
+$\rho^3=(1\ 4)(2\ 5)(3\ 6)$, then $f(1)=f(4)$, $f(2)=f(5)$, and $f(3)=f(6)$, so $f$
+is determined by the three values $f(1)$, $f(2)$, and $f(3)$.   The picture
+enumerator for these functions is, by Problem
+\ref{PictureEnumeratorforFunctions} applied to colorings of the cycles,
+$(R^2+B^2)^3$.  Therefore the fixed point enumerator for the action of $G$ on the
+colorings is
+$${\rm Fix}(G,S)= (R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3) + 2(R^6+B^6).$$  Then the orbit
+enumerator for the action of $G$ on the colorings is
+$${\rm Orb}(G,S)={1\over 6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
+2(R^6+B^6)\right).$$  Expanding this gives us
+$$R^6+R^5B+3R^4B^2+4R^3B^3+3R^2B^4+RB5+B^6.$$  Thus we have one all-red orbit, one
+all-blue orbit, one orbit with five reds and a blue, one with five blues and a red,
+three orbits with four reds and two blues as well as three with two reds and four
+blues, and four orbits with three reds and three blues.}
+
+\item   Find the generating function (in variables $R$, $B$) for colorings of
+the
+faces of a cube with two colors (red and blue).\label{polya2}  What does the
+generating function tell you about the number of ways to color the cube (up to
+spatial movement) with various combinations of the two colors.
+\solution{
+We want to think of the rotation group of the cube acting on the faces of
+the cube, in order to see what kinds of colorings are left fixed.  For this purpose
+we note that each element of the rotation group gives us a permutation of the faces
+of the cube, and if two faces are in the same cycle of this permutation, they must
+have the same color, but if they are in different cycles, they may get different
+colors.  The 90 and 270 degree rotations around an axis through two faces have a
+four-cycle and two one-cycles.  The 180 degree rotation around an axis through two
+faces has two two-cycles and two one-cycles.  The 120 and 240 degree rotations
+around an axis connecting diagonally opposite vertices have two three-cycles.  The
+180 degree rotations around an axis connecting two opposite edges have three
+two-cycles, and the identity has six one-cycles. A coloring is
+fixed by a permutation if and only if it is constant on (i.e. assigns the same color
+to all elements of) each cycle of the permutation.  The picture enumerator for
+(constant) colorings of an
+$i$-cycle is
+$R^i+B^i$.  Thus, using Problem \ref{PictureEnumeratorforFunctions}, if $\sigma$ is a
+90 or 270 degree rotation, its fixed point enumerator is $(R^4+B^4)(R+B)^2$, if it
+is a 180 degree rotation around an axis connecting two opposite faces, its fixed
+point enumerator is
+$(R^2+B^2)^2(R+B)^2$, if it is a 180 degree rotation around an axis connecting two
+opposite edges, its fixed point enumerator is $(R^2+B^2)^3$,  if it is a 120 or 240
+degree rotation its fixed point enumerator is
+$(R^3+B^3)^2$, and if it is the identity, then its fixed point enumerator is
+$(R+B)^6$.  Therefore the generating function is
+\begin{eqnarray*}&&{1\over 24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +\\
+&&6
+(R^2+B^2)^3 + 6 (R^4+B^4)(R+B)^2\big),\end{eqnarray*} which expands to
+$$RB^5+2R^4B^2+R^5B+2R^3B^3+2R^2B^4+R^6+B^6.$$  There is one way to color the
+cube all red or all blue, one way to color it with exactly five red or exactly five
+blue faces, there are two ways to color it with exactly four red or four blue faces
+and two ways to color it with exactly three red (and three blue) faces.}
+
+
+
+\ep  
+
+\subsection{The P\'olya-Redfield Theorem}
+
+P\'olya's (and Redfield's) famed enumeration theorem deals with situations such as
+those in Problems
+\ref{polya1} and \ref{polya2} in which we want a generating function for the
+set
+of all functions from a set $S$ to a set $T$ on which a picture function is
+defined, and the picture of a function is the product of the pictures of its
+multiset of values.  The point of the next series of problems is to analyze the
+solution to Problems \ref{polya1} and \ref{polya2} in order to see what P\'olya and
+Redfield saw (though they didn't see it in this notation or using this
+terminology).
+
+\bp
+
+\iteme   In Problem \ref{polya1} we have four kinds of group elements: the
+identity
+(which fixes every coloring), the rotations through 60 or 300 degrees, the
+rotations through 120 and 240 degrees, and the rotation through 180 degrees. 
+The fixed point enumerator for the rotation group acting on the functions is by
+definition the sum of the fixed point enumerators of colorings fixed by the
+identity, of colorings fixed by 60 or 300 degree rotations, of colorings fixed by
+120 or 240 degree rotations, and of
+colorings fixed by the 180 degree rotation.   Write down each of these
+enumerators (one for each kind of permutation) individually and factor each one
+(over the integers) as completely as you can.
+\label{polya3}
+\solution{In the solution to Problem \ref{polya1} we wrote: ``The picture enumerator
+of the two constant functions is
+$R^6+B^6$. If the vertices are numbered one through six clockwise, then
+$\rho^2$ is $(1\ 3\ 5)(2\ 4\ 6)$. Thus for a function $f$ to be fixed by $\rho^2$,
+$f(1)=f(3)=f(5)$ and $f(2)=f(4)=f(6)$.   Thus the
+color of vertex 1 is repeated on vertex 3 and 5, and the color of vertex 2 is
+repeated on vertices 4 and 6.  Therefore the picture enumerator for functions fixed
+by
+$\rho^2$ and $\rho^4$ is $R^3R^3 +R^3B^3+B^3R^3 +B^3B^3=(R^3+B^3)^2$.  We can also
+think of this as the picture enumerator for functions defined on the cycles of the
+permutation.  There are two possible pictures of a colored cycle, $R^3$ and $B^3$,
+so the picture enumerator for one cycle is $R^3+B^3$.  Thus the picture of assigning
+red to a cycle is $R^3$ and the picture of assigning blue to a cycle is $B^3$.  By
+Problem
+\ref{PictureEnumeratorforFunctions}, the picture enumerator for functions defined on
+the two cycles is then $(R^3+B^3)^2$. If a function
+$f$ is fixed by
+$\rho^3=(1\ 4)(2\ 5)(3\ 6)$, then $f(1)=f(4)$, $f(2)=f(5)$, and $f(3)=f(6)$, so $f$
+is determined by the three values $f(1)$, $f(2)$, and $f(3)$.   The picture
+enumerator for these functions is, by Problem
+\ref{PictureEnumeratorforFunctions} applied to colorings of the cycles,
+$(R^2+B^2)^3$.''  In factored form, these enumerators are $R^6+B^6$, $(R+B)^6$,
+$(R^3+B^3)^2$,  and
+$R^2+B^2)^3$.}
+
+\iteme  In Problem \ref{polya2} we have five different kinds of group elements,
+and
+the fixed point enumerator is the sum of the fixed point enumerators of each of
+these kinds of group elements.  For each kind of element, write down the fixed
+point enumerator for the elements of that kind.  Factor the enumerators as
+completely as you can.\label{polya4}
+\solution{ In the solution to Problem \ref{polya2}, we wrote ``Thus, using Problem
+\ref{PictureEnumeratorforFunctions}, if $\sigma$ is a 90 or 270 degree rotation, its
+fixed point enumerator is $(R^4+B^4)(R+B)^2$, if it is a 180 degree rotation around
+an axis connecting two opposite faces, its fixed point enumerator is
+$(R^2+B^2)^2(R+B)^2$, if it is a 180 degree rotation around an axis connecting two
+opposite edges, its fixed point enumerator is $(R^2+B^2)^3$,  if it is a 120 or 240
+degree rotation its fixed point enumerator is
+$(R^3+B^3)^2$, and if it is the identity, then its fixed point enumerator is
+$(R+B)^6$.''  We just wrote the enumerators out in factored form.}
+
+
+
+
+
+\iteme  In Problem \ref{polya3}, each
+``kind" of group element
+has a ``kind" of cycle structure.  For example, a rotation through 180 degrees has three
+cycles of size two. What kind of cycle structure does a rotation through 60 or 300
+degrees have?  What kind of cycle structure does a rotation through 120 or 240 degrees
+have? Discuss the relationship between the cycle structures and the factored 
+enumerators of fixed points of the permutations in
+ Problem \ref{polya3}.\label{polya3.5}
+\solution{A rotation through 60 or 300 degrees is a five-cycle; a rotation through
+120 or 240 degrees is a product of two three-cycles.  The cycle structure determines
+the factored enumerator; a cycle of size $i$ gives a factor of $(R^i+B^i)$.  That is
+because a coloring fixed by a group element has to be constant on the cycles of that
+group element.  If a cycle has size $i$, it contributes a summand of $P^i$ to the
+picture enumerator for colorings of that cycle for each picture $P$ of a possible
+value of the function.  Problem
+\ref{PictureEnumeratorforFunctions} tells us to multiply these individual picture
+enumerators together.}
+
+\ep
+
+
+Recall that we said that a group of permutations acts on a set if, for each
+member
+$\sigma$ of $G$ there is a bijection $\beta_{\sigma}$ of $S$ such
+that
+$$\beta_{\sigma\circ\varphi} = \beta_{\sigma}\circ\beta_{\varphi}$$ for
+every member $\sigma$ and $\varphi$ of $G$.  Since $\beta_{\sigma}$ is a bijection of $S$
+to itself, it is in fact a permutation of $S$.  Thus $\beta_{\sigma}$ has a cycle
+structure (that is, it is a product of disjoint cycles) as a permutation of $S$ (in
+addition to whatever its cycle structure is in the original permutation group $G$).
+
+\bp
+
+\iteme  In Problem \ref{polya4}, each
+``kind" of group element
+has a ``kind" of cycle structure in the action of the rotation group of the cube on the
+faces of the cube.  For example, a rotation of the cube through 180 degrees around a
+vertical axis through the centers of the top and bottom faces has two cycles of size two
+and two cycles of size one. How many such rotations does the group have? What are the
+other ``kinds" of group elements, and what are their cycle structures? Discuss the
+relationship between the cycle structure and the factored enumerator in
+ Problem \ref{polya4}.
+\solution{We effectively answered this question in our solution to Problem \ref{polya2}.
+In particular, there are three rotations of 180 degrees through the centers of opposite
+faces.  The other kinds of group elements are as follows.
+\begin{itemize}
+\item the 90 and 270 degree rotations around an axis
+through two faces, of which we have six.  Their cycle structure consists of a four-cycle
+and two one-cycles.
+\item the 120 and 240 degree rotations around an axis connecting two diagonally opposite
+vertices.  Their cycle structure consists of two three-cycles.  We have eight of these.
+\item the 180 degree rotations around an axis connecting two opposite edges; their cycle
+structure consists of three two-cycles.  We have six of these.
+\item the identity, whose cycle structure is six one-cycles.  
+\end{itemize}  As we said in the solution to Problem \ref{polya3.5} ``The cycle structure
+determines the factored enumerator; a cycle of size $i$ gives a factor of $(R^i+B^i)$. 
+That is because a coloring fixed by a group element has to be constant on the cycles
+of that group element.  If a cycle has size $i$, it contributes a summand of $P^i$
+to the picture enumerator for colorings of that cycle for each picture $P$ of a
+possible value of the function.  Problem
+\ref{PictureEnumeratorforFunctions} tells us to multiply these individual picture
+enumerators together.''}
+
+\iteme   The usual way of describing the P\'olya-Redfield enumeration theorem
+involves the ``cycle indicator'' or ``cycle index'' of a group acting on a set. 
+Suppose we have a group $G$  acting on a finite set $S$.  Since each group element
+$\sigma$ gives us a permutation $\beta_{\sigma}$ of $S$, as such it has a
+decomposition into disjoint cycles as a permutation of $S$.  Suppose $\sigma$ has
+$c_1$ cycles of size 1, $c_2$ cycles of size 2, ...,
+$c_n$ cycles of size $n$.  Then the {\it cycle monomial} of $\sigma$ is 
+$$z(\sigma) = z_1^{c_1}z_2^{c_2}\cdots z_n^{c_n}.$$  The {\bf cycle indicator} or
+{\bf cycle index}\index{cycle index} of $G$ acting on $S$ is
+$$Z(G,S) = {1\over |G|}\sum_{\sigma: \sigma \in G} z(\sigma).$$
+What is the cycle index for the group $D_6$ acting on the vertices of a hexagon?  What is
+the cycle index for the group of rotations of the cube acting on the faces of the cube?
+\solution{For $D_6$, we get\begin{eqnarray*}{1\over 12}\left(z_1^6
++2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right) &=&\\
+{1\over 12}\left(z_1^6
++2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)&&
+\end{eqnarray*}
+For the rotation group of the cube, we get
+\begin{eqnarray*}{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)&=&\\
+{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)&&
+\end{eqnarray*}} 
+
+\itemei
+How can you compute the Orbit Enumerator of
+$G$ acting on functions from
+$S$ to a
+finite set $T$ from the cycle index of $G$ acting on $S$? (Use $P(t)$ as the notation
+for the picture of an element $t$ of $T$.)  State and prove the relevant theorem!  This is
+P\'olya's and Redfield's famous enumeration theorem.\index{P\'olya-Redfield Theorem}
+\solution{To compute the orbit enumerator of $G$ acting on functions from $S$ to a finite
+set $T$, we substitute $\sum_{t:t\in T}P(t)^i$ for $z_i$ in the cycle index for $G$
+acting on $S$.  (This is the P\'olya-Redfield Theorem.)  By the Orbit-Fixed  Point
+Theorem, we need to sum the fixed point enumerators of the permutations in $G$. 
+However if $\sigma$ fixes $f$, then
+$f$ is constant on the cycles of
+$\sigma$. Thus we may think of our function $f$ as a function defined on the cycles of
+$\sigma$. If an
+$i$-cycle is sent to the member
+$t$ of
+$T$, then the picture of the restriction of our function to that cycle is $P(t)^i$.  The
+picture enumerator for all functions defined and constant on that cycle is then
+$\sum_{t:t\in T} P(t)^i$.  By Problem
+\ref{PictureEnumeratorforFunctions} the picture enumerator for all functions constant on
+the cycles of $\sigma$, then is the result of substituting $\sum_{t:t\in T}P(t)^i$ for
+$z_i$ in $z(\sigma)$. This proves the P\'olya-Redfield Theorem.}  
+
+\itemi   Suppose we make a necklace by stringing 12 pieces of brightly colored
+plastic tubing onto a string and fastening the ends of the string together.  We
+have ample supplies blue, green, red, and yellow tubing available.  Give a
+generating function in which the coefficient of $B^iG^jR^kY^h$ is the number of
+necklaces we can make with $i$ blues, $j$ greens, $k$ reds, and $h$ yellows.  How many
+terms would this generating function have if you expanded it in terms of powers of $B$,
+$G$, $R$, and $Y$?  Does it make sense to do this expansion?  How many of these
+necklaces have 3 blues, 3 greens, 2 reds, and 4 yellows? 
+\solution{
+We are asking for a generating function for the orbits of a colored 12-gon under
+the action of $D_{12}$.  To apply the P\'olya-Redfield theorem we need the cycle
+index for
+$D_{12}$.  If $\rho$ is a 30 degree rotation, then $\rho$, $\rho^5$, $\rho^7$ and
+$\rho^{11}$ are 12-cycles.  The elements $\rho^2$ and $\rho^{10}$ are products of two
+six-cycles.  The elements $\rho^3$ and $\rho^9$ are products of three four-cycles.  The
+elements $\rho^4$ and $\rho^8$ are products of four three-cycles.  The element $\rho^6$ is
+a product of six two-cycles.  The element $\iota=\rho^0$ is a product of 12 one-cycles. 
+There are six flips around axes through opposite vertices; each is a product of five
+two-cycles and two one-cycles.  There are six flips around axes perpendicular to two
+opposite sides; each is a product of six two-cycles.  Summarizing this in the cycle index,
+we write
+\begin{eqnarray*}
+Z(G,S) &=&{1\over 24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
+6z_2^5z_1^2 + 6z_2^6\right)\\ &=&{1\over24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
+2z_6^2 +4z_{12} + 6z_2^5z_1^2\right).
+\end{eqnarray*}
+When we substitute $B^i+G^i+R^i+Y^i$ for $z_i$ and expand, we would get get $12^4$
+terms, one for each possible term $B^iG^jR^kY^h$.  Thus it does not make sense to
+expand the polynomial.  The unexpanded form is
+
+${1\over 24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
+2(B^3+G^3+R^3+Y^3)^4+\\
+2(B^4+G^4+R^4+Y^4)^3 +  2(B^6+G^6+R^6+Y^6)^2
++\\4(B^{12}+G^{12}+R^{12}+Y^{12}) +  6((B^2+G^2+R^2+Y^2)^5)(B+G+R+Y)^2\Big)
+$
+
+We can compute the
+coefficient of
+$B^3G^3R^2Y^4$ by computing the contribution of each term of the sum to the coefficient.
+We get
+\begin{eqnarray*}{1\over24}\left({12\choose 3,3,2,4}+ 6{5\choose
+1,1,1,2}{2\choose1,1}\right)&=&{12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
+24\cdot2!}\\&=&{11!\over2\cdot3!3!2!4!}+5
+\cdot3\cdot2\\ 
+&=&11\cdot5\cdot3\cdot2\cdot7\cdot5+30\\
+&=&11,550+30=11,580\end{eqnarray*}
+}
+
+\itemei What should we substitute for the pictures of each of the elements of $T$ in
+the orbit enumerator of $G$ acting on the set of functions from $S$ to $T$ in order to
+compute the total number of orbits of $G$ acting on the set of functions?  What should we
+substitute into the variables in the cycle index of a group $G$ acting on a set $S$ in
+order to compute the total number of orbits of $G$ acting on the functions from $S$ to a
+set $T$?
+  Find the
+number of ways to color the faces of a cube with four colors. 
+\solution{Substitute the number one for each picture in the picture enumerator. 
+Substitute
+$|T|$ for each variable in the cycle index. The cycle index for the rotation group of
+the cube acting on the faces is 
+$${1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)$$  Substituting 4 for
+each variable gives us ${1\over 24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228$.
+}
+
+\itemi  We have red, green, and blue sticks all of the same length, with a dozen
+sticks of each color.  We are going to make the skeleton of a cube by taking eight
+identical lumps of modeling clay and pushing three sticks into each lump so that the
+lumps become the vertices of the cube.  (Clearly we won't need all the sticks!)  In
+how many different ways could we make our cube?  How many cubes have four edges of
+each color?  How many have two red, four green, and six blue
+edges?\label{coloredsticks}
+%\solution{
+For this problem we are interested in the action of the rotation group of the
+cube on the edges. Now we think of the group elements as permutations of the edges and
+analyze their cycle structure.
+\begin{itemize}
+\item The identity is a product of 12 one-cycles.
+\item A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+product of three four-cycles.
+\item A 180 degree rotation around an axis perpendicular to two opposite faces is a
+product of six two-cycles.
+\item A 180 degree rotation around an axis perpendicular to two opposite edges is a
+product of five two-cycles and two one-cycles.
+\item A 120 degree rotation around an axis connecting two diagonally opposite vertices is
+a product of four three-cycles.
+\end{itemize}
+Thus the cycle index is 
+$${1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).$$  We substitute
+the number three for each of the variables to get
+$${1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815$$ ways to
+make the cube.  To compute the number of ways with four sticks of each color, we
+need to apply the P\'olya-Redfield theorem.  Substituting $R^i+B^i+G^i$ for $z_i$ in
+the cycle index gives us 
+
+${1\over
+24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
++8(R^3+B^3+G^3)^4\Big)$. 
+
+The coefficient of $R^4B^4G^4$ is
+\begin{eqnarray*}{1\over
+24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
+6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
+\right)&=&\\
+{1\over
+24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479&&
+\end{eqnarray*}
+
+The coefficient of $R^2B^4G^6$ is 
+\begin{eqnarray*}{1\over 24}\left({12\choose2,4,6}
++3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
+1,1,3}+{5\choose1,2,2}\right)\right)&=&\\
+{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
++{5!\over1!2!2!}\right)\right)=600.
+\end{eqnarray*}
+%}
+
+\itemi  How many cubes can we make in Problem \ref{coloredsticks} if
+the lumps of modelling clay can be any of four colors?
+\solution{We can first consider all ways of coloring the vertices of the cube with the
+four colors; once those vertices are in place, the number of ways to put the sticks in is
+the result of Problem \ref{coloredsticks}, so by the product principle then number of
+ways to choose the colors of the vertices and edges is the product of the number of
+ways to choose each.  Thus we just need to consider the action of the rotation group
+of the cube on the vertices:
+\begin{itemize}
+\item The identity is the product of eight one-cycles.
+\item A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+product of two four-cycles.
+\item A 180 degree rotation around an axis perpendicular to two opposite faces is a
+product of four two-cycles.
+\item A 180 degree rotation around an axis joining two opposite edges is a product of four
+two-cycles.
+\item A 120 or 240 degree rotation around an axis through two diagonally opposite vertices
+is a product of two three-cycles and two one-cycles.
+\end{itemize}
+Thus the cycle index for this action is
+$${1\over 24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).$$
+Substituting 4 for each variable gives us 
+$${1\over 24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.$$  Thus we
+have  $22815\cdot2916=66,528,540$ possible colored cubes.}
+
+\begin{figure}[htb]\caption{A possible
+computer network.}\label{HexNet}\smallskip
+\begin{center}\mbox{\psfig{figure=NumberedHexagonalNetwork.eps
+}}
+\end{center}  
+\end{figure} 
+
+\itemi In Figure \ref{HexNet} we see a graph with six vertices.  Suppose we
+have three different kinds of computers that can be placed at the six vertices
+of the graph to form a network.  In how many different ways may the computers
+be placed? (Two graphs are not different if we
+can redraw one of the graphs so that it is identical to
+the other one.)  This is equivalent to permuting the vertices in some way so that when we
+apply the permutation to the endpoints of the edges to get a new edge set, the new edge
+set is equal to the old one.  Such a permutation is called an {\em
+automorphism}\index{automorphism (of a graph)} of the graph.  Then two computer
+placements are the same if there is an automorphism of the graph that carries one to the
+other.  
+\solution{
+The computer placements are functions from the vertices of the graph to the set
+of three kinds of computers, say $\{A,B,C\}$.  Thus we are asking for the number of
+orbits of the automorphism group of the graph on functions from the vertices of $\{A, B, 
+C\}$.  To find this number we need to compute the cycle index of the automorphism group. 
+An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually
+connected; i.e. a triangle.  Further, each of vertices 4, 5, and 6 is adjacent to exactly
+two of vertices of 1, 2, and 3.  In fact, for any of the eight triangles in the graph,
+each vertex not in the triangle is adjacent to exactly two vertices of the triangle (and a
+different two for each vertex).  Therefore we can send the vertices 1, 2, and 3, to
+any of the eight triangles in any of six orders, and this completely determines an
+automorphism.  Thus there are $6\cdot8=48$ elements in the group of automorphisms. 
+The dihedral group
+$D_6$ is a subgroup of the group of automorphisms.  The two-cycles $(1\ 4)$, $(2\ 5)$, and
+$(3\ 6)$ are also in the group of automorphisms.  (For example, 1 is adjacent to
+everything but 4, and 4 is adjacent to everything but 1, so interchanging them leaves us
+with exactly the same edges.)  We will write out $D_6$ in disjoint cycle notation, and
+then the coset $(1\ 4)D_6$, and from those we will be able to get the cycle index of the
+automorphism group acting on the vertices.  In cycle notation, $D_6$ is
+$$\begin{array}{cccc}
+(1\ 2\ 3\ 4\ 5\ 6)&(1\ 3\ 5)(2\ 4\ 6)&(1\ 4)(2\ 5)(3 \ 6)& (1\ 5\ 3)(2\ 6\ 4)\\(1\ 6\ 5\ 4\
+3\ 2)&(1)(2)(3)(4)(5)(6)&(1)(4)(2\ 6)(3\ 5)&(2)(5)(1\ 3)(4\ 6)\\
+(3)(6)(1\ 5)(2\ 4)&(1\ 2)(3\ 6)(4\ 5)&(1\ 6)(2\ 5)(3\ 4)&(1\ 4)(2\ 3)(5\ 6)
+\end{array}$$
+and $(1\ 4)D_6$ is
+$$\begin{array}{cccc}
+(1\ 2\ 3) (4\ 5\ 6)&(1\ 3\ 5\ 4\ 6\ 2)&(1) (4)(2\ 5)(3 \ 6)& (1\ 5\ 3\ 4\ 2\ 6)\\(1\ 6\
+5)(2\ 4\ 3)&(1\ 4)(2)(3)(5)(6)&(1\ 4)(2\ 6)(3\ 5)&(2)(5)(1\ 3\ 4\ 6)\\
+(3)(6)(1\ 5\ 4\ 2)&(1\ 2\ 4\ 5)(3\ 6)&(1\ 6\ 4\ 3)(2\ 5)&(1)(4)(2\ 3)(5\ 6).
+\end{array}$$
+Notice that neither $(2\ 5)$ nor $(3\ 6)$ is in the coset, so our group is the union
+$$D_6\cup (1\ 4)D_6 \cup(2\ 5)D_6 \cup (3\ 6)D_6.$$ But by symmetry, the cycle structure of
+$(1\ 4)D_6$,
+$(2\ 5)D_6$ and
+$(3\ 6)D_6$ will be the same, so the  cycle index for our group is.
+$${1 \over 48} \left(Z^6_1 + 8Z^2_3 
++8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
+6z_2z_4+6z_1^2z_4\right).$$
+Since we have three kinds of computers, we substitute 3 for each variable to get
+$${1 \over 48} \left(3^6 + 8\cdot3^2 
++8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
+6\cdot3^2+6\cdot3^3\right)=56.$$}
+
+\itemi Two simple graphs on the set $[n]= \{1,2,\ldots, n\}$ with edge sets $E$ and
+$E'$ (which we think of a sets of two-element sets for this problem) are said to be
+{\em isomorphic} if there is a permutation $\sigma$ of 
+$[n]$ which, in its action of two-element sets, carries $E$ to $E'$.  We say two graphs
+are different if they are not isomorphic.  Thus the number of different graphs is the
+number of orbits of the set of all two-element subsets of $[n]$ under the action of the
+group $S_n$.  We can represent an edge set by its characteristic function (as in
+problem \ref{charfunction}).  That is we define $$\Chi_E(\{u,v\}) = \left\{
+\begin{array}{ll}
+1 & \mbox{if $\{u,v\}\in E$}\\
+0 & \mbox{otherwise.}\end{array}\right. $$  Thus we can think of the set of graphs as a
+set of functions defined on the set of all two-element subsets of $[n]$.  The number of
+different graphs with vertex set $[n]$ is thus the number of orbits of this set of
+characteristic functions under the action of the symmetric group $S_n$ on the set of
+two-element subsets of $[n]$.  Use this to find the number of different graphs on five
+vertices. 
+\solution{For this problem we need the cycle index for the action of the symmetric group
+on five letters acting on two-element subsets of those five letters.  Each way of
+partitioning the number five describes the cycle structure of an element of $S_5$ acting
+on $[5]$.  The cycle structure of a permutation $\sigma$ on the two-element subsets of
+$[5]$ will be determined by its cycle structure on $[5]$.  The partitions of five and
+the cycle structures they give on two-element subsets are:
+\begin{itemize}
+\item $(1,1,1,1,1) =1^5$ is the cycle structure of the identity; acting on two-element
+subsets the identity is a product of ${5\choose2}=10$ one-cycles.  Of course there is only
+one identity permutation.
+\item A permutation with cycle structure $2^1 1^3$ will fix the two element set in
+the two cycle and each pair of the three elements outside for a total of four
+one-cycles; each pair of an element in the two cycle and an element not will be in a
+two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
+has 3 two-cycles and four one-cycles.  There are ${5\choose 2}=10$ such permutations.
+\item A permutation with cycle structure $2^2 1^1$ will have a one-cycle of two-sets
+for each two cycle, any other two-set will be in a  two cycle.  There are $4+2+2=8$
+such two-sets and thus four two-cycles, so such a permutation has four two cycles
+and two one cycles.  There are ${5\choose2}{3\choose2}/2 =15$ such permutations.
+\item A permutation with cycle structure $3^1 1^2$ will have one cycle of size 1 on
+two-sets from the two one-element cycles of the original action; each other two-element
+subset will be in a three cycle.  There are ${3\choose 2}+3\cdot2=9$ such pairs, and so
+there are three three-cycles of two-element subsets.  Thus such a permutation has one
+one-cycle and three three-cycles in its action of two-sets. There are $2{5\choose 3}=20$
+such permutations.
+\item A permutation with cycle structure $3^1 2^1$ will have one one-cycle on two-sets from
+the two-cycle of the original action, it will have $3\choose 2$  two-sets in three
+cycles,  and will have six two-sets in
+six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
+permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
+two-sets.  There are $2{5\choose 3}=20$ such permutations.
+\item A permutation with cycle structure $4^1 1^1$ has a four-cycle of two-subsets
+and one two-cycle of two-subsets from its own four-cycle and another four cycle of
+pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
+two one-cycles There are
+$6{5\choose4}=30$ such permutations.
+\item A permutation with cycle structure $5^1$ will have two five-cycles in its action on
+two-sets.  There are $4!=24$ such permutations.
+\end{itemize}
+Thus for the group $S_5$ acting on pairs from $[5]$, the cycle index is
+$${1\over120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
+30z_4^2z_2+ 24z_5^2\right).$$  Substituting 2 for each variable gives us that there
+are 
+$${1\over120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
+24\cdot2^2\right)=30$$ graphs on five vertices.}
+\ep
+
+
+\section{Supplementary Problems}
+\begin{enumerate}
+\item Show that a function from $S$ to $T$ has an inverse (defined on $T$)
+if and only if it is a bijection.
+
+\item How many elements are in the dihedral group $D_3$?  The symmetric
+group $S_3$?  What can you conclude about $D_3$ and $S_3$?
+
+\item A tetrahedron is a thee dimensional geometric figure with four
+vertices, six edges, and four triangular faces.  Suppose we start with a
+tetrahedron in space and consider the set of all permutations of the
+vertices of the tetrahedron that correspond to moving the tetrahedron in
+space and returning it to its original location, perhaps with the
+vertices in different places.  Explain why these permutations form a
+group.  What is the size of this group?  Write down in two-row notation a
+permutation that is {\em not} in this group.
+
+\item Find a three-element subgroup of the group $S_3$.  Can you find a
+different three-element subgroup of $S_3$?
+
+\item  Prove true or demonstrate false with a counterexample:  ``In a
+permutation group, $(\sigma\varphi)^n = \sigma^n\varphi^n$.''
+
+
+\item Describe a permutation group with 60 elements.
+
+\item If a group $G$ acts on a set $S$, and if $\sigma(x) =y$, is there
+anything interesting we can say about the subgroups ${\rm Fix}(x)$ and
+${\rm Fix}(y)$?
+
+\item Find the number of ways to color the faces of a tetrahedron with
+two colors.
+
+\item Find the number of ways to color the faces of a tetrahedron with
+four colors so that each color is used.
+
+\item Find the cycle index of the group of spatial symmetries of the tetrahedron
+acting on the vertices.  Find the cycle index for the same group acting on the
+faces.
+
+\item Find the generating function for the number of ways to color the faces of
+the tetrahedron with red, blue, green and yellow.
+
+\itemi Find the generating function for the number of ways to color the faces of a
+cube with four colors so that all four colors are used.
+
+\itemi How many different graphs are there on six vertices with seven edges?
+\end{enumerate}

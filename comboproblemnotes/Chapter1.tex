@@ -1,0 +1,1954 @@
+\chapter{What is Combinatorics?} Combinatorial mathematics
+arises from studying how we can {\em combine} objects into
+arrangements. For example, we might be combining sports teams
+into a tournament, samples of tires into plans to mount them
+on cars for testing,  students into classes to compare
+approaches to teaching a subject, or members of a tennis club into pairs to
+play tennis.  There are many questions one can ask about such arrangements of
+objects.  Here we will focus on questions about {\em how many ways} we may
+combine the objects into arrangements of the desired type.  Sometimes,
+though, we ask if an arrangement is possible (if we have ten baseball teams,
+and each team has to play each other team once, can we schedule all the games
+if we only have the fields available at enough times for forty games?). 
+Sometimes we will ask if all the arrangements we might be able to make have a
+certain desirable property (Do all ways of testing 5 brands of tires on 5
+different cars [with certain additional properties] compare each brand with
+each other brand on at least one common car?).    Problems of these sorts
+come up throughout physics, biology, computer science, statistics, and many
+other subjects.  However, to demonstrate all these relationships, we would
+have to take detours into all these subjects.  While we will give some
+important applications, we will usually phrase our discussions around everyday
+experience and mathematical experience so that the student does not have to
+learn a new context before learning mathematics in context!
+
+
+\section{About These Notes}  These notes are based on the
+philosophy that you learn the most about a subject when you
+are figuring it out  directly for yourself, and learn the
+least when you are trying to figure out what someone else is
+saying about it.  On the other hand, there is a subject called
+combinatorial mathematics, and that is what we are going to be
+studying, so we will have to tell you some basic facts.  What
+we are going to try to do is to give you a chance to discover
+many of the interesting examples that usually appear as
+textbook examples and discover the principles that appear as
+textbook theorems.  Your main activity will be solving problems designed
+to lead you to discover the basic principles of combinatorial
+mathematics.  Some of the problems lead you through a new idea, some give
+you a chance to describe what you have learned in a sequence of problems,
+and some are quite challenging.  When you find a problem challenging,
+don't give up on it, but don't let it stop you from going on with other
+problems.  Frequently you will find an idea in a later problem that you
+can take back to the one you skipped over or only partly finished in order
+to finish it off.  With that in mind, let's get started.  
+
+
+\section{Basic Counting Principles}
+
+\bp
+\itemm Five schools are going to send their baseball teams to a
+tournament, in which each team must play each other team
+exactly once.  How many games are
+required?\label{fiveteamtournament}
+\solution{Think of numbering the five teams.  The first team must play all
+four  others, the second team will be in one of these games but must play in
+three more games, with the third, fourth and fifth team.  The third team is
+in two of the games we've already mentioned, and must still play the fourth
+and fifth team for two more games, and the fourth team must play the fifth
+team in addition to playing in three of the games already mentioned.   Thus
+there are $ 4+3+2+1 = 10$ games.  Alternatively, there are five teams, each of
+which must play in four games, giving us 20 pairings of two teams each. 
+However each game involves two of these pairings, so there are $20/2 =10$
+games.}
+\iteme Now some number $n$ of schools are going to send their
+baseball teams to a tournament, and each team must play each
+other team exactly once.  Let us think of the teams as
+numbered 1 through $n$.\label{baseball2}
+\begin{enumerate}
+\item How many games does  team 1 have to play in?
+\solution{$n-1$}
+\item How many games, other than the one with team 1, does
+team two have to play in?\solution{$n-2$}
+\item How many games, other than those with the first $i-1$
+teams, does team $i$ have to play in?\solution{$n-i$}
+\item In terms of your answers to the previous parts of this
+problem, what is the total number of games that must be played?
+\solution{$1+2 +\cdots+ n-1$.  Although this need not be part of the answer, a
+formula that we usually use in both algebra and calculus courses tells us
+this sum is $n(n-1)/2$.}
+\end{enumerate}
+
+\iteme One of the schools sending its team to the tournament
+has to send its players from some distance, and so it is
+making sandwiches for team members to eat along the way. 
+There are three choices for the kind of bread and five choices
+for the kind of filling.   How many different kinds of
+sandwiches are available? \label{basicsandwiches}
+\solution{$3\cdot5=15$, or $5+5+5=15$.}
+
+\items An \index{ordered pair}\index{pair,ordered}{\em ordered pair}
+$(a,b)$ consists of two things we call $a$ and
+$b$.  We say $a$ is the first member of the pair and $b$ is
+the second member of the pair. If $M$ is an $m$ element set
+and $N$ is an
+$n$-element set, how many ordered pairs are there whose first
+member is in $M$ and whose second member is in $N$?  Does this problem have
+anything to do with any of the previous problems?
+\label{orderedpair}
+\solution{$m\cdot n$. This is because if $M = \{x_1,x_2,\ldots, x_m\}$, then
+we have $n$ ordered pairs starting with $x_1$, $n$ ordered pairs starting
+with $x_2$, and so on, so the total number of ordered pairs is a sum of $m$
+terms, all equal to $n$. In problem
+\ref{basicsandwiches} we were looking at ordered pairs of bread and filling. 
+Less directly, and so not required for the answer, In Problem
+\ref{fiveteamtournament} we have 20 ordered pairs, and each baseball game
+involved two of the ordered pairs so we had 10 baseball games.  The same
+argument applies to Problem \ref{baseball2}; namely we have $n$ teams each of
+which is in an ordered pair with $n-1$ other teams, so we have $n(n-1)$
+ordered pairs, and each game corresponds to two ordered pairs so we have
+$n(n-1)/2$ games.  This gives us one proof of the formula we mentioned in the
+solution to that problem.}
+
+\itemm  Since a sandwich by itself is pretty boring, students
+from the school in Problem \ref{basicsandwiches} are offered a
+choice of a drink (from among five different kinds), a
+sandwich, and a fruit (from among four different kinds).   In
+how many ways may a student make a choice of the three items
+now?\label{completelunch}
+\solution{$5\cdot15\cdot4 = 300$.  Why do we multiply?  Multiplying five by 15
+is equivalent to adding 15, the number of sandwiches, once for each drink,
+giving us 75 combinations of drink and sandwich.  For each such pair we have
+4 choices of fruit, and we can either think of adding 75 fours or adding four
+75s to get three hundred.  Thus we multiply because multiplication is
+repeated addition.}
+
+\iteme  The coach of the team in Problem \ref{basicsandwiches}
+knows of an ice cream parlor along the way where she plans to
+stop to buy each team member a triple decker cone.  There are
+12 different flavors of ice cream, and triple decker cones are made in
+homemade waffle cones.  Having chocolate ice cream as the bottom scoop is
+different from having chocolate ice cream as the top scoop. How many possible
+ice cream cones are going to be available to the team
+members?\label{tripledeckercone}  How many cones with three different kinds
+of ice cream will be available?
+\solution{$12\cdot12\cdot12 =1728$ possible cones.  If the flavors must be
+different, we have $12\cdot11\cdot 10 = 1320$ possible cones.  In both cases,
+the reason we are multiplying is as a shortcut for repeated addition.}
+
+
+
+\iteme The idea of a function is ubiquitous in mathematics.  A
+function\index{function} $f$ from a set $S$ to a set $T$ is a relationship
+between the two sets that associates exactly one member $f(x)$
+of $T$ with each element $x$ in $S$.    We
+will come back to the ideas of functions and relationships in more detail and
+from different points of view from time to time.  However, the quick review
+above should probably let you answer these questions.  If you have difficulty
+with them, it would be a good idea to go now to Appendix~\ref{Relations} and
+work through Section \ref{relationsandfunctions} which covers this definition
+in more detail.
+\begin{enumerate} 
+\item Using $f$, $g$, \ldots, to stand for the various
+functions, write down all the different functions you can
+from the set
+$\{1,2\}$ to the set $\{a,b\}$.  For example, you might start
+with
+$f(1)=a$, $f(2)=b$.  How many functions are there from the
+set $\{1,2\}$ to the set
+$\{a,b\}$?\label{countingfunctionsparta}
+\solution{$f(1) =a$, $f(2) = b$. Or, $h(1) =a$,
+$h(2) =a$.  Or, $g(1)=b$, $g(2) = a$.   Or $j(1) =b$, $j(2) =b$. We have
+exhausted all the possibilities for functions that associate a with 1 and
+all possibilities for functions that associate $b$ with 1, so we have
+exhausted all possibilities.  There are four such functions.} 
+\item How many functions are there from the three element set
+$\{1,2,3\}$
+ to the two element set $\{a,b\}$?
+\solution{$2\cdot2\cdot2 = 8$}
+\item How many functions are there from the two element set $\{a,b\}$ to the
+three element set $\{1,2,3\}$?
+\solution{$3\cdot3=9$}
+\item  How many functions are there from a three element set
+to a 12 element set? 
+\solution{$12\cdot12\cdot12 = 1728$}
+\item The function $f$ is called
+\index{one-to-one}\index{function!one-to-one}{\bf one-to-one} or an
+\index{injection}\index{function!injection}{\em injection} if whenever
+$x$ is different from
+$y$,
+$f(x)$ is different from $f(y)$.  How many one-to-one
+functions are there from a three element set to a  12 element
+set? 
+\solution{$12\cdot11\cdot10= 1320$}
+\item Explain the relationship between this problem and Problem
+\ref{tripledeckercone}.
+\solution{When we counted the number of possible ice cream cones we were
+counting functions from the three places in the cone where ice cream would
+sit to the 12 flavors.  When we counted the number of possible ice cream
+cones with different flavors, we were counting the number of one-to-one
+functions from the three places in the cone where ice cream would sit to the
+12 flavors.}
+\end{enumerate}\label{countingfunctions}
+
+
+
+\iteme A group of hungry team members in Problem
+\ref{tripledeckercone} notices it would be cheaper to buy three
+pints of ice cream for them to split than to buy a triple decker cone for
+each of them, and that way they would get more ice cream. They ask their
+coach if they can buy three pints of ice cream.  In how many ways can they
+choose three pints of different flavors out of the 12 flavors?  In how many
+ways may they choose three pints if the flavors don't have to be
+different?\label{icecreaminpints}
+\solution{
+There are $12\cdot11\cdot 10 = 1320$ ways to make a list of three
+flavors.  But a choice of three flavors accounts for $3\cdot2\cdot1 = 6$ of
+those lists.  Therefore there are $1320/6=220$ ways to choose the pints if
+the flavors are different.
+
+If the flavors need not be different, we must  add in the number of ways
+to choose two pints of one flavor and one of a second and also the number fo
+ways to choose three pints of one flavor. the first of these is $12\cdot11
+=132$ and the third is 12, so we have $220+132+12=364$ ways to choose three 
+pints.  We can do a more elegant solution after we learn about multisets in
+Problem \ref{multiset}.
+}
+
+
+
+\iteme Two  sets are said to be
+\index{disjoint}\index{sets!disjoint}{\em disjoint} if they have no
+elements in common.  For example,
+$\{1,3,12\}$ and $\{6, 4, 8, 2\}$ are disjoint, but $\{1,3,12\}$ and
+$\{3,5,7\}$ are not. Three or more sets are said to be
+\index{sets!mutually disjoint}{\em mutually disjoint} if no two of them
+have any elements in common.  What can you say about the  size of the
+union of a  finite number of finite (mutually) disjoint sets?  Does
+this have anything to do with any of the previous problems?
+\label{sum}
+\solution{The size of a union of disjoint sets is the sum of their sizes.  We
+used this principle in problems 1 and two directly, and indirectly in every
+other problem when we multiplied the number of ways of doing one thing times
+the number of ways of doing another.  Note that we used this principle
+informally in the explanation in the solution of Problem~\ref{orderedpair}.}
+
+\iteme Disjoint subsets are defined in Problem \ref{sum}.  What can you
+say about the size of the union of $m$ (mutually) disjoint sets, each
+of size
+$n$?  Does this have anything to do with any of the previous problems?
+\label{product}
+\solution{The size of the union is $m\cdot n$.  This is because the size of a
+union of disjoint sets is the sum of their sizes, and a sum of $m$ terms each
+equal to $n$ is $m\cdot n$.}
+
+\ep
+
+
+\subsection{The sum and product principles} These problems
+contain among them the kernels of many of the fundamental
+ideas of combinatorics.   For example, with luck, you just \index{sum
+principle}\index{principle!sum}\index{principle!product} \index{product
+principle}stated the sum principle (illustrated in Figure
+\ref{sumprinc}), and product principle (illustrated in Figure
+\ref{prodprinc}) in Problems
+\ref{sum} and
+\ref{product}.    These are two of the most basic
+principles of combinatorics.  
+\begin{figure}[htb]\caption{The union of these
+two disjoint sets has size 17.}\label{sumprinc}\smallskip
+\begin{center}\mbox{\psfig{figure=SumPrinc.eps%,height=1.0in
+}}
+\end{center}  
+\end{figure}
+\begin{figure}[htb]\caption{The
+union of four disjoint sets of size
+five.}\label{prodprinc}\smallskip
+\begin{center}\mbox{\psfig{figure=ProdPrinc.eps%,height=1.0in
+}}
+\end{center}  
+\end{figure}
+
+
+You may have noticed some standard mathematical words and
+phrases such as {\em set}, {\em ordered pair}, {\em function}
+and so on creeping into the problems.  One of our goals in
+these notes is to show how most counting problems can
+be recognized as counting all or some of the elements of a set
+of standard mathematical objects.  For example Problem
+\ref{orderedpair} is meant to suggest that the question we
+asked in Problem \ref{basicsandwiches} was really a problem of
+counting all the ordered pairs consisting of a bread choice
+and a filling choice.  We use $A\times B$ to stand for the set
+of all ordered pairs whose first element is in $A$ and whose
+second element is in $B$ and we call $A\times B$ the
+\index{Cartesian product}\index{product!Cartesian}{\em Cartesian
+product} of
+$A$ and
+$B$, so you can think of Problem
+\ref{orderedpair} as asking you for the size of the Cartesian
+product of
+$M$ and $N$. 
+
+When a set $S$ is a union of disjoint sets $B_1, B_2, \ldots, B_m$ we say
+that the sets $B_1, B_2, \ldots, B_m$ are a {\bf
+partition}\index{partition!of a set} of the set
+$S$.  Thus a partition of $S$ is a (special kind of) set of sets.  So that
+we don't find ourselves getting confused between the set $S$ and the sets
+$B_i$ into which we have divided it, we often call the sets $B_1, B_2,
+\ldots, B_m$ the {\em blocks}\index{partition!blocks of}\index{block of a
+partition} of the partition.  In this language, the
+\index{principle!sum}\index{sum principle}{\bf sum principle} says that 
+\begin{quote}if we have a partition of a set $S$, then the size of $S$ is the
+sum of the sizes of the blocks of the partition.\end{quote}  The
+\index{principle!product}\index{product principle}{\bf product principle} says
+that
+\begin{quote}if we have a partition of a set $S$ into $m$ blocks, each of size
+$n$, then
+$S$ has size $mn$.\end{quote}
+There is another version of the product principle that applies directly in
+problems like Problem \ref{completelunch} and Problem \ref{tripledeckercone},
+where we were not just taking a union of $m$ disjoint sets of size $n$, but
+rather $m$ disjoint sets of size $n$, each of which was a union of $m'$
+disjoint sets of size $n'$.  This is an inconvenient way to have to think
+about a counting problem, so we may rephrase the product principle in terms
+of a sequence of decisions:
+\bp 
+\itemm If we make a sequence of $n$   choices for
+which\label{generalproductprincipleintro}
+\begin{itemize} 
+\item There are $k_1$ possible first choices, and
+\item for each way of making the first $i-1$ choices, there are $k_i$ ways to
+make the $i$th choice,
+\end{itemize}
+then in how many ways may we
+make our sequence of choices?  (You need not prove your answer correct at
+this time.)
+\ep
+ 
+  The principle you gave in Problem \ref{generalproductprincipleintro} is
+called the {\em general product principle}.\index{general product
+principle}\index{product principle!general}\index{principle!product!general}
+ We will study the general  product principle in more detail in
+Problems
+\ref{generalproductprinciple} and \ref{generalproductprincipleproof}.  For
+now, notice how much easier it makes it to explain why we multiplied the
+things we did in Problem
+\ref{completelunch} and Problem \ref{tripledeckercone}.
+\bp
+
+\itemi A tennis club has $2n$ members.  We want to pair up the
+members by twos for singles matches.  In how many ways may we pair up all the
+members of the club?  Suppose that in addition to specifying who plays whom,
+for each pairing we say who serves first.  Now in how many ways may we
+specify our pairs?\label{tennispairings1}  (Hint: consider the cases of 2, 4,
+and 6 members.)
+\solution{Suppose we list the people in the club in some way, and keep that
+list for the remainder of the problem.  Take the first person from the list
+and pair that person with any of the $2n-1$ remaining people.  Now take the
+next {\em unpaired} person from the list and pair that person with any of the
+remaining $2n-3$ unpaired people.  Continuing in this way, once $k$ pairs have
+been selected, take the next unpaired person from the list and pair that
+person with any of the remaining $2n-2k-1$ unpaired people.  Every pairing
+can arise in this way, and no pairing can arise twice in this process.  Thus
+the number of outcomes is $\prod_{i=0}^{n-1} 2n-2i-1$.}
+\ep
+
+\subsection{Functions} As another example how standard mathematical language
+relates to counting problems, Problem \ref{countingfunctions} explicitly asked
+you to relate the idea of counting functions to the question of
+Problem \ref{tripledeckercone}.
+  You have probably learned in algebra or calculus how to draw graphs in the
+Cartesian plane of functions from a set of numbers to a set of numbers.  You
+may recall how we can determine whether a graph is a graph of a function by
+examining whether each vertical straight line crosses the graph at most one
+time.  You might also recall how we can determine whether such a function is
+one-to-one by examining whether each horizontal straight line crosses the
+graph at most one time.  The functions we deal with will often involve
+objects which are not numbers, and will often be functions from one finite
+set to another.  Thus graphs in the cartesian plane will often not be
+available to us for visualizing functions.  However, there is another kind of
+graph called a
+{\em directed graph}\index{graph! directed}\index{directed graph} or
+{\em digraph}\index{digraph}\index{function!digraph of} that is especially useful
+when dealing with functions between finite sets.  In Figure
+\ref{functiondigraphs} we show several examples.
+\begin{figure}[hbt]\caption{What is a digraph of a
+function?}\label{functiondigraphs}\smallskip
+\begin{center}\psfig{figure=functiondigraph.eps,height=4.5in
+}\end{center}
+\end{figure}
+ If we have a function
+$f$ from a set
+$S$ to a set $T$, we draw a line of dots or circles to represent the elements
+of
+$S$ and another (usually parallel) line of circles or dots to represent the
+elements of
+$T$.  We then draw an arrow from the circle for $x$ to the circle for $y$ if
+$f(x) = y$.
+
+
+
+Notice that there is a simple test for whether a digraph whose vertices
+represent the elements of the sets $S$ and $T$ is the digraph of a function
+from $S$ to $T$.  There must be one and only one arrow leaving each vertex of
+the digraph representing an element of $S$.  The fact that there is one arrow
+means that $f(x)$ is defined for each $x$ in $S$.  The fact that there is
+only one arrow means that each $x$ in $S$ is related to exactly one element of
+$T$.  For further discussion of functions and digraphs see Sections
+\ref{functionrelation} and \ref{relationdigraph} of {Appendix~\ref{Relations}}.
+
+\bp
+\itemm Draw the digraph of the function from the set $\{$Alice, Bob, Dawn,
+Bill$\}$ to the set $\{$A, B, C, D, E$\}$ given by $$f(X) = \mbox{the first
+letter of the name $X$}.$$ 
+\solution{
+\mbox{\psfig{figure=AliceBobdigraph.eps, height=.75 in }}
+}
+\iteme A function
+$f:S\rightarrow T$ is called an
+\index{onto function}\index{function!onto}{\em onto function} or
+\index{surjection}\index{function!surjection}{\em surjection} if each
+element of
+$T$ is $f(x)$ for some $x\in S$.  Choose a set $S$ and a set $T$ so that you
+can draw the digraph of a function from $S$ to $T$ that is one-to-one but not
+onto, and draw the digraph of such a function.
+\solution{The digraph of one such function  follows\\
+\mbox{\psfig{figure=OnetoOneNotOnto.eps}}
+}
+\itemm Choose a set $S$ and a set $T$ so that you can draw the digraph of a
+function from $S$ to $T$ that is onto but not one-to-one, and draw the
+digraph of such a function.
+\solution{The digraph of one such function follows\\
+\mbox{\psfig{figure=OntoNotOnetoOne.eps}}
+}
+\iteme What does the digraph of a one-to-one function
+(injection) from a finite set $X$ to a finite set $Y$ look
+like? (Look for a test somewhat similar to the one we  described for
+when a digraph is the digraph of a function.)  What does the digraph of an
+onto function look like?  What does the digraph of a one-to-one and onto 
+function  from a finite set
+$S$ to a set
+$T$ look like? \label{bijectiondigraph}
+\solution{One-to-one: One arrow comes out of each vertex representing a member
+of
+$X$ and at most one arrow goes into each vertex representing a member of $Y$. 
+Onto:  : One arrow comes out of each vertex representing a
+member of $X$ and at least one arrow goes into each vertex representing a
+member of
+$Y$.  One-to-one and onto: One arrow comes out of each vertex representing a
+member of
+$X$ and at exactly one arrow goes into each vertex representing a member of $Y$.
+(The first half of each sentence is optional.)}
+
+
+\ep
+
+\subsection{The bijection principle} Another name for a one-to-one
+and onto function is \index{bijection}\index{function!bijection}{\bf
+bijection}.  The first two digraphs in Figure \ref{functiondigraphs} are
+digraphs of bijections.  The description in Problem
+\ref{bijectiondigraph} of the digraph of a bijection  from
+$X$ to
+$Y$ illustrates one of the fundamental principles of combinatorial
+mathematics, the
+\index{principle!bijection}\index{bijection principle}{\bf bijection
+principle};
+\begin{quote}  Two sets have the same size if and only if
+there is a bijection between them.
+\end{quote} It is surprising how this innocent sounding
+principle guides us into finding insight into some otherwise
+very complicated proofs.
+
+\subsection{Counting subsets of a set}
+\bp 
+\item The {\em binary} representation of a number $m$ is a list, or string,
+$a_1a_2\ldots a_k$ of zeros and ones such that $m=a_12^{k-1} + a_2 2^{k-2}
++\cdots+ a_k 2^0.$  Describe a bijection between the binary representations of
+the integers between 0 and $2^n-1$ and the subsets of an $n$-element set. 
+What does this tell you about the number of subsets of an $n$-element
+set?\label{SubsetsBinaryRepresentation}\solution{The sequence $a_1a_2\ldots
+a_k$ corresponds to the set of $i$ such that $a_i = 1$.  This is a bijection
+because each sequence gives a set, and each set can be the set of places
+where a sequence is 1.  Since there are $2^n$ integers which are between 0
+and $2^n-1$, and they correspond to sequences of length $n$ (notice, we have
+another bijection, the one between a number and its binary representation),
+there are $2^n$ subsets of an $n$-element set.}
+
+\iteme Notice that the first question in Problem \ref{icecreaminpints} asked
+you for the number of ways to choose a three element subset from a 12
+element subset.  You may have seen a notation like
+$n\choose k$, $C(n,k)$, or $_nC_k$ which stands for the number of ways to
+choose a
+$k$-element subset from an
+$n$-element set.  The number $n\choose k$ is read as ``$n$ choose $k$'' and is
+called a
+\index{binomial coefficient}{\bf binomial coefficient}  for
+reasons we will see later on.  Another frequently used  way to read the
+binomial coefficient notation  is ``the number of combinations
+\index{combinations} of
+$n$ things taken $k$ at a time." You are going to be asked to construct
+two bijections that relate to these numbers and figure out what famous
+formula they prove.  We are going to think about subsets of the
+$n$-element set $[n] =
+\{1,2,3,\ldots, n\}$. As an example, the set of two-element subsets of
+$[4]$ is
+$$\{\{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}.$$  This
+example tells us that ${4\choose 2} = 6$. Let
+$C$ be the set of $k$-element subsets of $[n]$ that contain
+the number
+$n$, and let
+$D$ be the set of $k$-element subsets of $[n]$ that don't
+contain $n$.  
+\begin{enumerate} 
+\item Let $C'$ be the set of $(k-1)$-element subsets of
+$[n-1]$.  Describe a bijection from $C$ to $C'$.  (A verbal
+description is fine.)
+\solution{Let $f(X) = X-\{n\}$, the set $X$ with $n$ removed.  This is a
+bijection because two different sets containing $n$ must yield different sets
+when $n$ is removed (one-to-one), and each $(k-1)$-element subset $X$ of
+$[n-1]$ may be obtained from the $k$-element subset $X\cup \{n\}$ of $[n]$ by
+removing
+$n$ (onto).}
+\item Let $D'$ be the set of $k$-element subsets of
+$[n-1]=\{1,2,\ldots n-1\}$.  Describe a bijection from $D$ to
+$D'$. (A verbal description is fine.)
+\solution{Simply let $f(X) =X$.  This is one-to-one by definition, and onto
+because the subsets of $[n-1]$ are identical with the subsets of $[n]$ not
+containing $n$.}
+\item Based on the two previous parts, express the sizes of
+$C$ and $D$ in terms of binomial coefficients involving $n-1$
+instead of $n$.\solution{$|C|= {n-1\choose k-1}$; $|D| = {n-1\choose k}$}
+\item Apply the sum principle to $C$ and $D$ and obtain a
+formula that expresses $n\choose k$ in terms of two binomial
+coefficients involving
+$n-1$.  You have just derived the Pascal Equation that is the
+basis for the famous Pascal's Triangle.
+\solution{${n\choose k} = {n-1\choose k-1} +{n-1\choose k}$.}
+\end{enumerate}\label{Pascal} 
+
+\ep
+
+\subsection{Pascal's Triangle}
+
+The Pascal Equation that you derived in Problem \ref{Pascal}
+gives us the triangle in Figure \ref{Pascaltriangle}.  This
+figure has the number of $k$-element subsets of an $n$-element
+set as the $k$th number over in the
+$n$th row (we call the top row the zeroth row and the
+beginning entry of a row the zeroth number over).  You'll see
+that your formula doesn't say anything about
+$n\choose k$ if
+$k=0$ or
+$k=n$, but otherwise it says that each entry is the sum of
+the two that are above it and just to the left or right.  
+
+\begin{figure}[h]\caption{Pascal's
+Triangle}\label{Pascaltriangle}
+$$\matrix{&&&&&&&1&&&&&&\cr &&&&&&1&&1&&&&&&\cr
+&&&&&1&&2&&1&&&&&\cr &&&&1&&3&&3&&1&&&&\cr
+&&&1&&4&&6&&4&&1&&\cr &&1&&5&&10&&10&&5&&1&\cr
+&1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\end{figure}\index{Pascal's Triangle}
+
+
+\bp
+\item Just for practice, what is the next row of Pascal's triangle?
+\solution{1,8,28,56,70,56,28,8,1}
+
+\itemi Without writing out the rows completely, write out enough of Pascal's
+triangle to get a numerical answer for the first question  in Problem
+\ref{icecreaminpints}.
+\solution{Starting with row 9, we get
+$$\matrix{&&&1&&9&&36&&84 \cr&&1&&10&&45&&120\cr&1&&11&&55&&165\cr
+1&&12&&66&&220}$$ so the answer is 220.}
+\ep
+
+It is less common to see Pascal's triangle as a right
+triangle, but it actually makes your formula easier to
+interpret.  In Pascal's Right Triangle, the element in row $n$
+and column $k$ (with the convention that the first row is row
+zero and the first column is column zero) is $n\choose k$.  In
+this case your formula says each entry in a row is the sum of
+the one above and the one above and to the left, except for
+the leftmost and right most entries of a row, for which that
+doesn't make sense.  Since the leftmost entry is $n\choose 0$
+and the rightmost entry is
+$n\choose n$, these entries are both one (why is that?), and
+your formula then tells how to fill in the rest of the table.
+
+\begin{figure}[ht]\caption{Pascal's Right
+Triangle}\label{Pascalrighttriangle}
+$$\matrix{1&&&&&&\cr 1&&1&&&&&&\cr 1&&2&&1&&&&&\cr
+1&&3&&3&&1&&&&\cr 1&&4&&6&&4&&1&&\cr 1&&5&&10&&10&&5&&1&\cr
+1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\end{figure}
+
+Seeing this right triangle leads us to ask whether there is
+some natural way to extend the right triangle to a rectangle. 
+If we did have a rectangular table of binomial coefficients, counting
+the first row as row zero (i.e., $n=0$) and the first column as column
+zero (i.e., $k=0$), the entries we don't yet have are values of
+$n\choose k$ for $k>n$.  But how many $k$-element subsets does
+an
+$n$-element set have if $k>n$?  The answer, of course, is
+zero, so all the other entries we would fill in would be zero,
+giving us the rectangular array in Figure \ref{Pascal'sRectangle}.   
+It is straightforward to check that Pascal's equation now works for all
+the entries in the rectangle that have an entry above them and an
+entry above and to the left.
+
+\begin{figure}[ht]\caption{Pascal's
+Rectangle}\label{Pascal'sRectangle}
+$$\matrix{1&&0&&0&&0&&0&&0&&0&&0\cr 1&&1&&0&&0&&0&&0&&0&&0\cr
+1&&2&&1&&0&&0&&0&&0&&0\cr 1&&3&&3&&1&&0&&0&&0&&0\cr
+1&&4&&6&&4&&1&&0&&0&&0\cr 1&&5&&10&&10&&5&&1&&0&&0\cr
+1&&6&&15&&20&&15&&6&&1&&0\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\end{figure}
+
+\bp
+\itemi We defined $n \choose k$ to be 0 when $k>n$ in order
+to get a rectangular table of numbers that satisfies the Pascal
+Equation.  
+\begin{enumerate}
+\item Is there any other way to define $n \choose k$ when $k>n$
+in order to get a rectangular table that agrees with Pascal's Right
+Triangle for $k\le n$ and satisfies the Pascal Equation?  
+\solution{No, because there must be a zero above each one not in column zero. 
+Then above each zero not in column zero or one, there must be yet another zero
+and so on.}
+\item Suppose we
+want to extend Pascal's Rectangle to the left and define $n\choose -k$
+for $n\ge 0$ and $k>0$ so that $-k<0$. What should we put into row
+$n$ and column
+$-k$ of Pascal's Rectangle in order for the Pascal Equation to
+hold true?  
+  \solution{To the left of all the ones in column zero, we must have zeros
+for the Pascal Equation to hold.  To the left of those zeros, we must again
+have zeros, and so on. }
+\itemitemh What should we put into row $-n$ and column $k$ or
+column $-k$ in order for the Pascal Equation to continue to
+hold?  Do we have any freedom of choice?
+\solution{
+ Above row zero, we have some freedom. The
+-1,-1 and the -1,0 entry must add to one, so they can be $-x$ and $x+1$ for
+any number $x$.  To the right of the -1,0 entry they must alternate between
+$(-x-1)$ and $x+1$ while to the left of the -1,1 entry they must alternate
+between $-x$ and $x$, ending with the $-x$ in position -1,1.  Now if we know
+the entry in row -2 and column zero, we can use the Pascal equation (in the
+form ${n-1\choose k-1} = {n\choose k} - {n-1\choose k}$) to compute all the
+entries to the left of it, and (in a different form) to compute all the
+entries to the right of it.  Thus we may be arbitrary about the entries in
+column 0 (or, in fact, one entry in each row) and then the Pascal Equation
+tells us how to fill in the rest of each row.  We shall see later on that
+there is one very natural choice for how to fill in all the rows above row
+zero.} 
+\end{enumerate}
+
+
+
+\iteme There are  variants of  the bijections we used to prove the
+\label{SubsetsByInduction} Pascal Equation that can be used to give another
+proof of a formula (as in Problem \ref{SubsetsBinaryRepresentation}) for the
+number of subsets of an
+$n$-element set using the Principle of Mathematical Induction.  If you are
+familiar with Mathematical Induction, try to find the proof.  If not, now is
+the time to visit the Appendix on Mathematical Induction (and work through
+the problems there).  From this point forward, we shall assume that you are
+familiar with the principle of mathematical induction.
+\solution{We prove inductively that the number of subsets of an the
+$n$-element set $[n]$ is $2^n$.  The bijection between $[n]$ and an arbitrary
+$n$-element set extends to a bijection between their sets of subsets, so it
+suffices to consider the $n$-element set $[n]$.  In particular, when
+$n=0$, we have the empty set, and it has just $1=2^0$ subset, the empty set
+itself.  Now assume that $[n-1]$  has
+$2^{n-1}$ subsets.  The subsets of $[n]$ may be divided into those that
+contain
+$n$ and those that do not.  There is a bijection between the subsets that do
+contain $n$ and the subsets of the set $[n-1]$.  Thus there are $2^{n-1}$
+subsets that do contain $n$.  There is also a bijection between the subsets
+that do not contain $n$ and the subsets of the set $[n-1]$.  Thus there are
+$2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
+total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
+Therefore by the principle of mathematical induction, for all $n$ the number
+of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
+
+\subsection{The  General Product Principle}
+\iteme  Let us now return to Problem \ref{countingfunctionsparta} and
+justify---or perhaps finish---our answer to the question about the
+number of functions from a three-element set to a 12-element
+set.\label{countingfunctions2}
+\begin{enumerate}
+\item We begin with a question to which we can apply the product
+principle directly.  Namely, how many functions $f$ are there from the
+set $[2]=\{1,2\}$ to the set $[12]$?  How many functions are there
+with $f(2)=1$?  With $f(2) =2$?  With $f(2)=3$?  With $f(2) =i$ for
+any fixed $i$ between 1 and 12?  The set of functions from $[2]$ to
+$[12]$ is the union of 12 sets: the set of $f$ with $f(2)=1$, the set
+of $f$ with $f(2) = 2$, \ldots, the set of $f$ with $f(2) = 12$.  How
+many functions does each of these sets have?  From the product
+principle, what may you conclude about the number of functions in the
+union of these 12 sets?  
+ \solution{The number of functions $f$ from $[2]$ to $[12]$ with $f(2) = 1$ is
+12, one for each possible value of $f(1)$.  The same is true with $f(2)=2$, 3,
+or any particular value.  Thus the set of functions from $[21]$ to $[12]$ is
+a union of twelve sets of size 12, and thus by the product principle has size
+144.}
+\item Now consider the set of functions from $[3]$ to $[12]$.  How
+many of these functions have $f(3) =1$?  What bijection (just describe
+it in words) are you using (implicitly, if not explicitly) to answer this
+question?  How many of these functions have $f(3) =2$?  How many have $f(3) =
+i$ for any
+$i$ between 1 and 12?  For each $i$, let $S_i$ be the set of functions
+$f$ from $[3]$ to $[12]$ with $f(3) = i$.  What is the size $S_i$? 
+What is the size of the union of the sets $S_i$?  How many functions
+are there from $[3]$ to $[12]$?
+ \solution{The number of functions from $[3]$ to $[12]$ with $f(3) =1$ is the
+number of functions from $[2]$ to $[12]$, namely 144.  The same is true for
+the number of functions with $f(3)=2$ and $f(3)=3$, and the size of the set
+$S_i$.  The union of the sets $S_i$ is the set of all functions from $[3]$ to
+$[12]$, and since there are twelve sets $S_i$, this union has size
+ $12\cdot144= 1728$.}
+\item Based on the examples you've seen so far, make a conjecture
+about how many functions there are from $[m]$ to
+$[n]$.\label{numberoffunctionsconjecture}
+ \solution{$n^m$.}
+\item A common notation for the set of all functions from a set $M$ to a
+set $N$ is $N^M$.  Why is this a good notation? 
+\solution{Because there are $n^m$ such functions, at least according to our
+conjecture.}
+\end{enumerate}
+
+\iteme Now suppose we are thinking about a set $S$ of functions $f$ 
+from
+$[m]$ to some set $X$.  (For example, we might be thinking of the set of
+functions from the three possible places for scoops in an ice-cream cone to 12
+flavors of ice cream.)  Suppose there are
+$k_1$ choices for
+$f(1)$.  Suppose that for each choice of $f(1)$ there are $k_2$ choices for
+$f(2)$.  (For example, in counting one-to-one functions from $[3]$    
+to
+$[12]$, there are 12 choices for $f(1)$, and for each choice of  
+$f(1)$ there are $11$ choices for $f(2)$.)  In general suppose that  
+for each choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$
+choices for
+$f(i)$. (For example, in counting one-to-one functions from $[3]$ to $[12]$,
+for each choice of $f(1)$ and $f(2)$, there are 10 choices for $f(3)$.)  What
+we have assumed so far about the functions in $S$ may be summarized as
+\begin{itemize}
+\item There are $k_1$ choices for $f(1)$.
+\item For each choice of $f(1)$, $f(2)$, \ldots, $f(i-1)$, there are $k_i$
+choices for~$f(i)$.
+\end{itemize}  How many functions do you think are in the set
+$S$?\label{generalproductprinciple}      
+ This is called the 
+{\em product principle for functions}\index{product
+principle!for functions} or the 
+{\bf general product principle}\index{product principle!general}. 
+ \solution{$\prod_{i=1}^m k_i$. }
+\ep
+
+We will take up the proof of the general product principle in Chapter 2.
+
+
+\bp
+\itemi  A roller coaster car has $n$ rows of seats, each of which
+has room for two people.  If $n$ men and $n$ women get into the car with a
+man and a woman in each row,  in how many ways may they choose their seats?
+\solution{$(n!)^22^n$}
+
+\iteme
+ How does the general product principle relate to counting  functions
+from
+$[m]$ to
+$[n]$?  How does it relate to counting    one-to-one functions from
+$[m]$ to
+$[n]$?  \index{functions!one-to-one!number of}\index{functions!number of}
+ \solution{It tells us there are $\prod_{i=1}^m n =n^m$ functions from $[m]$
+to
+$[n]$ and that there are $\prod_{i=1}^m n-i+1 $ one-to-one
+functions.}
+\items  Prove 
+the conjecture (about the number of functions in $S$) in Problem
+\ref{numberoffunctionsconjecture} when
+$m=2$ and  when $m=3$.  Prove the conjecture for an
+arbitrary positive integer
+$m$. \label{provenumberoffunctionsconjecture}\index{functions!number of}
+ \solution{When $m=2$, we have $n$ functions $f$ for each value of $f(1)$,
+and thus the set of all functions is a union of $n$ sets of size $n$, which
+by the product principle has size $n^2$. (Alternatively, we could apply the
+general product principle with $k_i=n$ for $i=1,2$.)  When
+$m=3$,  there is a bijection between the functions from $[m]$ to $[2]$ and
+functions
+$f$ from
+$[m]$ to
+$[3]$ with $f(3) =i$ for any particular $i$ between 1 and $n$.  Thus the
+set of all functions is a union of $n$ sets of size $n^2$ and so by the
+product principle has size $n^3$.  (Alternatively, we could apply the
+general product principle with $k_i=n$ for $i=1,2,3$.)  To prove the
+conjecture in general we apply the general product principle to get
+$\prod_{i=1}^n m =n^m$ functions from
+$[m]$ to
+$[n]$. 
+
+  As another option, we also prove by induction on
+$m$ that there are $n^m$ functions from $[m]$ to $[n]$.  When $m=0$ there is
+one function (the so-called "empty function" from $[m]$ to $[n]$).  Now assume
+inductively that when $m=k-1$ there are $n^{k-1}$ functions from $[m]$ to
+$[n]$.  For each value $i$ between 1 and $n$ there is a bijection between the
+functions from $[k-1]$ to $[n]$ and the functions $f$ from $k$ to $n$ with
+$f(k)=i$.  Thus the set of all functions from $[k]$ to $[n]$ is a union of
+$n$ sets of size $n^{k-1}$ and so by the ordinary product principle this set
+has size $n^k$.  Thus by the principle of mathematical induction, then number
+of functions from $m$ to $n$ is $m^n$ for all nonnegative integers $m$.}
+
+
+\items How does the general product principle apply to Problem
+\ref{tripledeckercone}?
+\solution{By the general product principle, there are $12\cdot 11\cdot 10$
+triple decker cones.}
+
+\iteme In how many ways can we pass out $k$ distinct pieces of
+fruit to
+$n$ children (with no restriction on how many pieces of fruit a child may
+get)?  
+ \solution{Either by the formula for the number of functions from an
+$m$-element set to an $n$-element set or the general product principle, there
+are $k^n$ ways.  (Each distribution is a function from the set of fruit to
+the set of children, because each piece of fruit goes to one and only one
+child.)}
+
+\iteme Another name for a list, in a specific order, of $k$ distinct things
+chosen from a set $S$ is a  $\mathbf k$-{\bf element permutation of}
+$\mathbf S$\index{permutation!
+$k$-element}  We can also think of a $k$-element permutation of $S$ as a
+one-to-one function (or, in other words, injection) from
+$[k]=\{1,2,\ldots, k\}$ to $S$.  How many $k$-element permutations does an
+$n$-element set have?\label{kelementpermutation}  (For this problem it is
+natural to assume $k\le n$.  However the question makes sense even if $k>n$. 
+What is the number of $k$-element permutations of an $n$-element set if $k>n$?
+ \solution{By the general product principle, the number is $$\prod_{i=1}^k
+n-i+1 $$.  In the case that $k>n$, there are no such lists
+with distinct entries, and that is what the formula gives us, because
+$n-(n+1)+1=0$.}
+
+\iteme  Assuming $k\le n$, in how many ways can we pass out  $k$
+distinct pieces of fruit to
+$n$ children if each child may get at most one?  What is the number if
+$k>n$?  Assume for both questions that we pass out all the fruit.
+\solution{We are asking for the number of $k$-element permutations of $n$
+children, which is $\prod_{i=1}^k n-i+1$, and is zero if $k>n$.}
+
+\iteme The word {\em permutation} is actually used in two different ways in
+mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
+$S$ is a bijection from $S$ to
+$S$.  How many permutations does an $n$-element set have?
+\label{permutationasbijection}
+\solution{$n!$.}
+\ep 
+
+Notice that
+there is a great deal of consistency between this use of the word permutation
+and the use in the previous problem.  If we have some way
+$a_1,a_2,\ldots,a_n$ of listing our set, then any other list
+$b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is $f(a_i) =b_i$, and
+any bijection, say the one given by $g(a_i)=c_i$ gives us a list
+$c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really very little difference
+between the idea of a permutation of $S$ and an
+$n$-element permutation of $S$ when $n$ is the size of $S$.
+
+There are a number of different notations for the number of $k$-element
+permutations of an $n$-element set.  The one we shall use was introduced by
+Don Knuth; namely $n^{\underline{k}}$, read ``$n$ to the $k$ falling'' or
+``$n$ to the $k$ down". In Problem \ref{kelementpermutation} you may have
+shown that 
+\begin{equation}n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
+n-i+1).\label{productnotation}
+\end{equation}
+  It is standard to call $n^{\underline{k}}$\index{$n^{\underline{k}}$}  the
+{\bf
+$k$-th falling factorial power of $n$}\index{falling factorial
+power}\index{factorial power!falling}, which explains why we use exponential
+notation.  Of course we call it a {\em factorial} power since
+$n^{\underline{n}} = n(n-1)\cdots 1$ which we call {\em $n$-factorial} and
+denote by
+$n!$.\index{factorial}\index{$n"!$}  If you are unfamiliar with the Pi
+notation, or {\em product notation}\index{product notation}\index{Pi
+notation} we introduced for products in Equation
+\ref{productnotation}, it works just like the Sigma notation works for
+summations.
+
+\bp
+\iteme Express $n^{\underline{k}}$ as a quotient of factorials.
+\solution{$n^{\underline{k}}=n!/(n-k)!$}
+
+ 
+
+
+
+\item  There is yet another bijection that lets us prove  that a set of
+size $n$ has $2^n$ subsets.  Namely, for each subset $S$ of
+$[n]=\{1,2,\ldots, n\}$, define a function (traditionally
+denoted by $\Chi_S$) as follows.\footnote{The symbol
+$\Chi$ is the Greek letter chi that is pronounced Ki, with the
+$i$ sounding like ``eye."} 
+$$\Chi_S(i) = \cases{1 \mbox{ if } i\in S \cr 0 \mbox{ if } i\not\in
+S}$$ The function $\Chi_S$ is called the \index{characteristic
+function}\index{function!characteristic}{\em
+characteristic function} of
+$S$.  Notice that the characteristic function is a function
+from $[n]$ to
+$\{0,1\}$.\label{charfunction}
+\begin{enumerate}
+\item For practice, consider the function $\Chi_{\{1,3\}}$ for
+the subset
+$\{1,3\}$ of the set $\{1,2,3,4\}$.  What are
+\begin{enumerate}
+\item $\Chi_{\{1,3\}}(1)$?
+\solution{1}
+\item $\Chi_{\{1,3\}}(2)$?
+\solution{0}
+\item $\Chi_{\{1,3\}}(3)$?
+\solution{1}
+\item $\Chi_{\{1,3\}}(4)$?
+\solution{0}
+\end{enumerate}
+\item We define a function $f$ from the set of subsets of
+$[n]=\{1,2,\ldots, n\}$ to the set of functions from $[n]$ to
+$\{0,1\}$ by $f(S)=\Chi_S$.  Explain why $f$ is a bijection. 
+\solution{
+If $i\in S$ but $i\not\in T$, then $\Chi_S(i)=1$ but $\Chi_T(i)=0$. 
+Thus if $S\not= T$, the $\Chi_S\not=\Chi_T$.  Therefore $f$ is one-to-one. 
+Given a function $g$ from $[n]$ to $\{0,1\}$, let $S=\{i|g(i)=1\}$.  Then by
+definition, $g=\Chi_S=f(S)$.  Therefore  $f$ is onto, so it is a bijection.}
+\item Why does the fact that $f$ is a bijection prove that
+$[n]$ has $2^n$ subsets?
+\solution{We have seen that there are $2^n$ functions from $[n]$ to a
+two-element set, and we have a bijection between the set of all such
+functions and the subsets of $[n]$.}
+\end{enumerate}
+
+
+\ep
+
+In Problems \ref{SubsetsBinaryRepresentation}, \ref{SubsetsByInduction}, and
+\ref{charfunction} you gave three proofs of the following
+theorem.
+
+\begin{theorem} The number of subsets of an $n$-element set is
+$2^n$.
+\end{theorem}
+
+
+The proofs in Problem \ref{SubsetsBinaryRepresentation} and
+\ref{charfunction} use essentially the same bijection, but they interpret
+sequences of zeros and ones differently, and so end up being different proofs.
+
+
+\subsection{The quotient principle}
+
+\bp
+\iteme As we noted in Problem \ref{Pascal}, the first question in
+Problem \ref{icecreaminpints} asked us for the number of three-element
+subsets of a twelve-element set.  We were able to use the Pascal Equation to
+get a numerical answer to that question.  Had we had twenty or thirty flavors
+of ice cream to choose from, using the Pascal Equation to get our answer
+would have entailed a good bit more work. We have seen how the general
+product principle gives us an answer to Problem \ref{tripledeckercone}.  Thus
+we might think that the number of ways to choose a three element set from 12
+elements is the number of ways to choose the first element times the number
+of ways to choose the second element times the number of ways to choose the
+third element, which is $12\cdot11\cdot10=1320$.  However, our result in
+Problem \ref{Pascal} shows that this is wrong.  What is it that is different
+between the number of ways to stack ice cream in  a triple decker cone with
+three different flavors of ice cream and the number of ways to simply choose
+three different flavors of ice cream?  In particular, how many different
+triple decker cones use the same three flavors?  Using this, compute the
+number of ways to choose three different flavors of ice cream (from 12
+flavors) from the number of ways to choose a triple decker cone with three
+different flavors (from 12 flavors).\label{twelvechoosethree}
+\solution{What is different is that the order in which we put the scoops into
+the cone matters, but for simply choosing three flavors, the order of the
+choices doesn't matter.  Six different triple decker cones have the same
+three flavors.  Thus we have $1320/6=220$ different ways to choose three
+flavors of ice cream from 12 flavors.}
+
+\iteme  Based on what you observed in Problem
+\ref{twelvechoosethree}, how many $k$-element subsets does an
+$n$-element set have?\label{nchoosek}
+\solution{Following the reasoning of Problem \ref{twelvechoosethree}, there
+are $n^{\underline{k}}$ $k$-element permutations of an $n$-element set, and
+$k!$ of these permutations list the same set of $k$ elements, so the number of
+$k$-element sets is ${n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}$.}
+
+\iteme The formula you proved in Problem \ref{nchoosek} is symmetric in $k$
+and $n-k$; that is, it gives the same number for $n\choose k$ as it gives
+for $n\choose n-k$.  Whenever two quantities are counted by the same formula
+it is good for our insight to find a bijection that demonstrates the two sets
+being counted have the same size.  In fact this is a guiding principle of
+research in combinatorial mathematics.  Find a bijection that proves that
+$n\choose k$ equals $n\choose n-k$.
+\solution{For each $k$-element subset $K$ of the $n$-element set $N$, define
+$f(K)$ to be the set of all elements of $N$ {\em not} in $K$.  Then $f$ is
+the desired bijection.}
+
+\iteme In how many ways can we pass out $k$ (identical) ping-pong balls to $n$
+children if each child may get at most one?\label{ping-pong}
+\solution{$n\choose k$, because we choose the $k$ children to whom we give
+ping-pong balls.}
+
+\itemi While the formula you proved in Problem \ref{nchoosek} is very useful,
+it doesn't give us a sense of how big the binomial coefficients are.  We can
+get a very rough idea, for example, of the size of $2n\choose n$ by
+recognizing that we can write $(2n)^{\underline{n}}/n!$ as ${2n\over n}\cdot
+{2n-1\over n-1}\cdots {n+1\over 1}$, and each quotient is at least $2$, so the
+product is at least $2^n$.  If this were an accurate estimate, it would mean
+the fraction of $n$-element subsets of a $2n$-element set would be
+about
+$2^n/2^{2n}=1/2^n$, which is becomes very small as $n$ becomes large. 
+However it is pretty clear the approximation will not be a very good one,
+because some of the terms in that product are much larger than 2.  In fact,
+if $2n\choose k$ were the same for every $k$, then each would be the fraction
+$1\over 2n+1$, so we know this is a bad approximation.  For estimates like
+this, James Stirling developed a formula to approximate
+$n!$  when $n$ is large, namely $n!$ is about $ \left(\sqrt{2\pi
+n}\right){n^n/ e^n}$.\index{Stirling's formula for
+$n"!$}\index{$n"!$!Stirling's formula for}  In fact the ratio of
+$n!$ to this expression approaches 1 as
+$n$ becomes infinite.\footnote{Proving this takes more of a detour than is
+advisable here; however there is an elementary proof which you can work
+through in the problems of the end of Section 1 of Chapter 1 of {\em
+Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press,
+(2000).}  We write this as $$n!\sim \sqrt{2\pi
+n}{n^n\over e^n}.$$  Use Stirling's formula to show that the fraction of 
+subsets of size
+$n$ in an
+$2n$-element set is approximately $1/\sqrt{\pi n}$.  This is a much bigger
+fraction than $1\over 2^n$!\label{Stirling'sapproximation}
+
+
+
+\iteme In how many ways may $n$ people sit around a round
+table?  (Assume
+ that when people are sitting around a round table, all that
+really matters is who is to each person's right.  For example, if we can get
+one arrangement of people around the table from another by having everyone
+get up and move to the right one place and sit back down, we get an
+equivalent arrangement of people.  Notice that you can get a
+list from a seating arrangement by marking a place at the
+table, and then listing the people at the table, starting at
+that place and moving around to the right.)  There are at least two
+different ways of doing this problem.   Try to find them both.
+\label{roundtable}
+\solution{The total number of ways to list how the $n$ people sit around the
+table is $n!$.  However, two lists are the same if we get one from the other
+by shifting everyone right the same number of places.  This divides the set
+of lists up into sets  of  $n$ mutually equivalent lists.  The number $m$ of
+such sets is the number of seating arrangements.  However by the product
+principle, $mn=n!$, because we have partitioned up the set of $n!$ lists into
+$m$ sets of size $n$.  Therefore $m=(n-1)!$  A second solution may be
+obtained by choosing one of the $n$ people and letting this person sit
+anywhere.  Since all that matters is who is to the right of each person, it
+doesn't matter where this person sits.  Once this person is seated, let
+everybody else  sit down. If they sit down first in one order clockwise around
+the table and then in some other order, the person to the right of somebody
+has changed.    Thus there are
+$(n-1)!$ ways (the number of ways to seat everybody else) to seat the people
+around the table.}
+
+
+\iteme A given $k$-element subset
+can be listed as a $k$-element permutation in $k!$ ways.  We can partition the
+set of all $k$-element permutations of $S$ up into blocks by letting $B_K$ be
+the set of all $k$-element permutations of $K$ for each $k$-element subset $K$
+of
+$S$.  How many permutations are there in a block?  If $S$ has $n$ elements,
+what does problem \ref{kelementpermutation} tell you about the total number
+of $k$-element permutations of $S$?  Describe a bijection between the
+set of blocks of the partition and the set of $k$-element subsets of $S$. 
+What formula does this give you for the number $n\choose k$ of $k$-element
+subsets of an
+$n$-element set? \label{formulanchoosek}
+\solution{The number of permutations in a block is $k!$.  Problem
+\ref{kelementpermutation} tells us that the total number of $k$-element
+permutations is $n^{\underline{k}}={n!\over (n-k)!}$.  Each $k$-element set
+corresponds to the block of all permutations of that set.  It is immediate
+that this is a bijection.  Assuming there are $s$ subsets, we have
+$k!s$ permutations in total, so $k!s={n!\over (n-k)!}$ or $s= {n!\over
+k!(n-k)!}$.}
+
+\itemi A basketball team has 12 players.  However, only five players play at
+any given time during a game.  In how may ways may the coach choose the five
+players?  To be more realistic, the five players playing a game normally
+consist of two guards, two forwards, and one center.  If there are five
+guards, four forwards, and three centers on the team, in how many ways can the
+coach choose two guards, two forwards, and one center?  What if one of the
+centers is equally skilled at playing forward?
+\solution{$12\choose 5$. In the more realistic version,
+${5\choose2}{4\choose2}{3\choose1}=180$. Finally,  either the versatile
+player is playing center or not, and in the second case is available to play
+forward.  This gives us
+${5\choose2}{4\choose2}{1\choose1}+{5\choose2}{5\choose2}{2\choose1}=260$ ways
+to choose the players.}
+
+
+
+\iteme In Problem \ref{roundtable}, describe a way to partition the
+$n$-element permutations of the $n$ people into blocks so that there is a
+bijection between the set of blocks of the partition and the set of
+arrangements of the
+$n$ people around a round table.  What method of solution for Problem
+\ref{roundtable} does this correspond to? \label{roundtablepartition}
+\solution{Put two permutations in the same block if we can get one from the
+other by moving everyone (circularly) some number $r$ places to the right. 
+This corresponds to the method that gives $n!/n$ as the answer.  Many
+students should be able to answer this question by saying ``See the answer to
+Problem \ref{roundtable}."}
+
+\iteme In Problems \ref{formulanchoosek} and \ref{roundtablepartition}, you
+have been using the product principle in a new way.  One of the ways in which
+we previously stated the product principle was ``If we partition a set into
+$m$ blocks each of size $n$, then the set has size $m\cdot n$.''  In problems
+\ref{formulanchoosek} and \ref{roundtablepartition} we knew the size $p$ of a
+set
+$P$ of permutations of a set, and we knew we had partitioned $P$ into some
+unknown number of blocks, each of a certain known size $r$.  If we let
+$q$ stand for the number of blocks, what does the product principle tell us
+about $p$, $q$, and
+$r$?  What do we get when we solve for $q$?\label{quotientprinciple}
+\solution{$p=qr$, so that $q=p/r$.}
+\ep
+
+The formula you found in the Problem \ref{quotientprinciple} is so useful that
+we are going to single it out as another principle.  The {\bf quotient
+principle}\index{quotient principle} says: 
+\begin{quote}If we partition a set $P$ 
+into $q$ blocks, each of size $r$, then $q=p/r.$
+\end{quote}
+The quotient principle is really just a restatement of the product principle,
+but thinking about it as a principle in its own right often leads us to find
+solutions to problems.  Notice that it does not always give us a formula for
+the number of blocks of a partition; it only works when all the blocks have
+the same size.
+
+In Section \ref{equivalencerelations} of Appendix \ref{Relations} we
+introduce the idea of an equivalence relation, see what equivalence relations
+have to do with partitions, and discuss the quotient principle from that
+point of view.  While that appendix is not required for what we are doing
+here, if you want a more thorough discussion of the quotient principle, this
+would be a good time to work through that appendix.
+
+\bp
+\itemei In how many ways may we string $n$ distinct beads on a necklace
+without a clasp? (Assume someone can pick up the necklace,
+move it around in space and put it back down, giving an
+apparently different way of stringing the beads that is
+equivalent to the first.  How could we get a list of beads
+from a necklace?)\label{necklace}
+\solution{We can obtain a permutation of the beads by cutting the necklace and
+stretching it out in a straight line.  We can partition the permutations
+according to which necklace they come from in this process. Two permutations
+are in the same block if we get one either by circularly permuting the other
+or by reversing the other (this corresponds to flipping the necklace over in
+space).  Thus each necklace corresponds to $2n$ permutations so by the
+quotient principle we have $n!/2n=(n-1)!/2$ ways to string $n$ distinct beads
+on a necklace.}
+
+\itemi We first gave this problem as Problem
+\ref{tennispairings1} Now we have several ways to approach the problem.  A
+tennis club has
+$2n$ members.  We want to pair up the members by twos for singles matches. 
+In how many ways may we pair up all the members of the club?  Suppose that in
+addition to specifying who plays whom, for each pairing we say who serves
+first.  Now in how many ways may we specify our pairs?\label{tennispairings2}
+\solution{Suppose we list the people in the club in some way, and keep that
+list for the remainder of the problem.  Take the first person from the list
+and pair that person with any of the $2n-1$ remaining people.  Now take the
+next {\em unpaired} person from the list and pair that person with any of the
+remaining $2n-3$ unpaired people.  Continuing in this way, once $k$ pairs have
+been selected, take the next unpaired person from the list and pair that
+person with any of the remaining $2n-2k-1$ unpaired people.  Every pairing
+can arise in this way, and no pairing can arise twice in this process.  Thus
+the number of outcomes is $\prod_{i=0}^{n-1} 2n-2i-1$.  
+
+For another solution,
+choose people in pairs.  There are $2n\choose 2$ ways to choose one pair,
+$2n-2\choose 2$ ways to choose a second pair, and once $k$ pairs have been
+chosen, there are $2n-2k\choose 2$ ways to choose the next pair.  The number
+of {\em lists} of pairs we get in this way is $\prod_{i=0}^{n-1}
+{2n-2i\choose 2}= {(2n)!\over 2^i}$.  However each way of pairing people gets
+listed $n!$ times since we see all possible length $n$ lists of pairs. 
+Therefore the number of actual pairings is ${(2n)!\over 2^n n!}= ={2n!\over
+2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1$.
+
+For yet another solution, we can list the $2n$ members in $(2n)!$ ways.  Then
+we can take the first two as a tennis pair, the next two, and so on.  There
+are $n!$ ways that a given set of tennis pairings could be arranged, and
+each of the $n$ pairs could appear in 2 ways, so the tennis pairings
+partition the set of all permutations of the $2n$ members into blocks of size
+$n!2^n$.  Thus we have $(2n)!\over n!2^n$ tennis pairings once again. }
+
+\iteme In how many ways may we attach two identical red beads
+and two identical blue beads to the corners of a square free
+to move around in (three-dimensional) space? \label{twocolorsofbeads}
+\solution{Two ways; either the red beads are side-by-side or diagonally
+opposite.  If we think about partitioning lists of 2 $R$s and 2 $B$s so that
+two are in the same block if we get one from the other by moving the square,
+we get two blocks, $\{RRBB, BRRB, BBRR, RBBR\}$ and $\{RBRB, BRBR\}$.}
+\ep
+
+\section{Some Applications of the Basic Principles}
+
+\subsection{Lattice paths and Catalan Numbers} 
+\bp
+\itemm In a part of a city, all streets run either north-south or east-west,
+and there are no dead ends.  Suppose we are standing on a street corner.  In
+how many ways may we walk to a corner that is four blocks north and six blocks
+east, using as few blocks as possible?\label{blockwalking}
+\solution{The shortest possible walk is going to be ten blocks.  To plan a
+walk, we must choose which four of those ten blocks go north; the other six
+blocks we will have to go east.  There are $10\choose 4$ ways to make this
+selection.}
+
+\itemes Problem \ref{blockwalking} has a geometric interpretation in a
+coordinate plane.  A {\em lattice path}\index{lattice
+path}\index{path!lattice} in the plane is a ``curve" made up of line segments
+that either go from a point
+$(i,j)$ to the point
+$(i+1,j)$ or from a point $(i,j)$ to the point $(i,j+1)$, where $i$ and $j$
+are integers. (Thus lattice paths always move either up or to the right.) The
+length of the path is the number of such line segments.  What is the length
+of a  lattice path from
+$(0,0)$ to
+$(m,n)$?    How many such lattice paths of that length are
+there? How many lattice paths are there from $(i,j)$ to $(m,n)$,
+assuming $i$,
+$j$,
+$m$, and
+$n$ are integers?\label{latticepaths}
+\solution{The length of a lattice path from $(0,0)$ to $(m,n)$ is $m+n$.  The
+number of such paths is $m+n\choose n$.  Since lattice paths move up and to
+the right, there are no paths from $(i,j)$ to $(m,n)$ unless $i\le m$ and
+$j\le n$.  In that case, the number of paths is $m+n-i-j\choose n-j$ which is
+the same as $m+n-i-j\choose m-i$.}
+
+
+\itemes Another kind of geometric path in the plane is a {\em diagonal lattice
+path}\index{lattice path!diagonal}\index{path!lattice!diagonal}.  Such a path
+is a path made up of line segments that go from a point $(i,j)$ to
+$(i+1,j+1)$ (this is often called an {\em upstep}) or
+$(i+1,j-1)$ (this is often called a {\em downstep}), again where
+$i$ and
+$j$ are integers. (Thus diagonal lattice paths always move towards the right
+but may move up or down.) Describe which points are connected to
+$(0,0)$ by diagonal lattice paths.  What is the  length of a diagonal
+lattice path from $(0,0)$ to $(m,n)$?  Assuming that
+$(m,n)$ is such a point, how many  diagonal lattice paths are there
+from
+$(0,0)$ to
+$(m,n)$?\label{diagonallattice}
+\solution{The points $(m,n)$ connected to $(0,0)$ by diagonal lattice paths
+will have $m+n$ is even, because each upstep adds two
+to the sum of $i$ and $j$ while each downstep does not change the sum. 
+Further, since we go one step to the right each time we go up or down, we
+cannot get above the line $y=x$ or below the line $y=-x$.  However for any
+point $(m,n)$ with $m$ and $n$ nonnegative integers such that $m+n$ even and
+$-m\le n\le m$, we can get to $m,n$ by making $m-n\over 2$ downsteps and
+$m+n\over2$ upsteps. In this way we will make a total of $m$ steps, and our
+total motion parallel to the $y$ axis will be ${m+n\over2}-{m-n\over2} = n$. 
+The length of such a path is $m\sqrt{2}$; we might informally just call it
+$m$ steps.  The number of possible paths is the number of ways we can choose
+which of the $m$steps are upsteps (or equivalently downsteps) this number is
+$m\choose{m+n\over2}$.}
+
+\itemm A school play requires a ten dollar donation per person; the donation
+goes into the student activity fund.  Assume that each person who comes to
+the play pays with a ten dollar bill or a twenty dollar bill.  The teacher
+who is collecting the money forgot to get change before the event.  If there
+are  always at least as many people who have paid with a ten as a twenty as
+they arrive the teacher won't  have to give anyone an IOU for change.  Suppose
+$2n$ people come to the play, and exactly half of them pay with ten dollar
+bills.  
+\begin{enumerate}
+\item Describe a bijection between the set of sequences of tens and
+twenties people give the teacher and the set of lattice paths from $(0,0)$ to
+$(n,n)$.  
+\solution{For each ten dollar bill take a rightstep and for each twenty dollar
+bill take an upstep (where rightstep and upstep have the hopefully natural
+meaning).  The assumption that there are an equal number of ten and twenty
+dollar bills means that the path will end up at $(n,n)$.  Each sequence of
+tens and twenties gives a lattice path and each lattice path corresponds to
+such a sequence, so we have a bijection.}
+\item Describe a bijection between the set of sequences of tens and
+twenties that people give the teacher and the set of diagonal lattice paths
+from $(0,0)$ and $(0,2n)$.  
+\solution{For each ten dollar bill take an upstep and for each twenty dollar
+bill take a downstep.  Each sequence of tens and twenties will give us a
+diagonal lattice path from $(0,0)$, and each diagonal lattice path
+from$(0,0)$ to $(0,2n)$ will give us a sequence of tens and twenties with
+an equal number of tens and twenties, so we have a bijection.}
+\item In each case, what is the geometric
+interpretation of a sequence that does not require the teacher to give any
+IOUs?
+\solution{In the first case a sequence that does not require the teacher to
+give any IOUs will correspond to a lattice path that stays on or below the
+line $y=x$, and in the second case such a sequence will correspond to a
+diagonal lattice path that stays on or above the $x$-axis.}
+\end{enumerate}
+
+\itemesi Notice that a  lattice path from $(0,0)$ to $(n,n)$ stays
+inside (or on the edges of) the square whose sides are the $x$-axis, the
+$y$-axis, the line
+$x=n$ and the line $y=n$.  In this problem we will compute the number of
+lattice paths from (0,0) to
+$(n,n)$ that stay inside (or on the edges of) the triangle whose sides are the
+$x$-axis, the line $x=n$ and the line $y=x$.  For example, in Figure
+\ref{CatalanPaths} we show the grid of points with integer coordinates for
+the triangle whose sides are the $x$-axis, the line $x=4$ and the line $y=x$.
+\begin{figure}[htb]\caption{The lattice paths
+from $(0,0)$ to $(i,i)$ for $i=0,1,2,3,4$. 
+The number of paths to the point $(i,i)$ is
+shown just above that point.}\label{CatalanPaths}
+\begin{center}\mbox{\psfig{figure=CatalanPaths.eps%,height=1.0in
+}}
+\end{center}
+\end{figure}
+\begin{enumerate}
+\item Explain why the number of lattice paths from $(0,0)$ to
+$(n,n)$ that go outside the triangle is the number of lattice paths from
+$(0,0)$ to
+$(n,n)$ that either touch or cross the line $y=x+1$.
+\solution{If a lattice path between $(0,0)$ and $(n,n)$ goes outside the
+triangle, it can only do so on an upstep. (A step from $(i,j)$ to
+$(i,j+1)$.)  And an upstep must originate at a point with integer
+coordinates.  If $j<i$ an upstep from $(i,j))$ cannot leave the triangle. 
+Thus to leave the triangle, the upstep must leave from a point of the form
+$(i,i)$, and go to $(i,i+1)$, which is on the line $y=x+1$.
+\item Find a bijection between  lattice paths from $(0,0)$ to $(n,n)$
+that touch (or cross) the line $y=x+1$ and lattice paths from
+$(-1,1)$ to $(n,n)$.
+}
+\solution{Suppose we have a lattice path form $(0,0)$ to $(n,n)$ which
+touches or crosses the line $y=x+1$.  Let $(k,k+1)$ be the first point on the
+line $y=x+1$ that the lattice path touches.  From that point, work backwards,
+replacing every upstep with a step one unit to the left and every rightstep
+with a step one unit down.  The segment of the path you just changed will
+have moved left $k+1$ times, so its leftmost $x$ coordinate will be $-1$, and
+it will have moved down $k$ times, so its lowest $y$ coordinate will be 1. 
+Thus we now have a lattice path from $(-1,1)$ to $(n,n)$.  Further, given a
+lattice path from $(-1,1)$ to $(n,n)$, it must cross the line $y=x+1$ at least
+once, because it starts above the line and ends below it.  At the first point
+where such a path touches the line $y=x+1$, say $(k',k'+1)$, work backwards
+replacing every upstep with a step to the left and every rightstep with a
+step downwards.  The leftmost point on this path will have $x$ coordinate 0,
+and the lowest point will have $y$ coordinate 0, so the new path will be a
+lattice path from $(0,0)$ to $(n,n)$ that touches the line $y=x+1$.  Clearly
+these two processes reverse each other, and so they give us a bijection
+between paths form $(0,0)$ to $(n,n)$ that touch the line $y=x+1$ and lattice
+lattice paths from $(-1,1)$ to $(n,n)$.  Notice that geometrically what we
+are doing to get the bijection is to take the portion of a lattice path that
+goes from the initial point till the first touch of the line $y=x+1$ and
+reflecting it around that line.  This idea of reflection was introduced by
+Feller, and is called Feller's reflection principle.}
+
+\item Find a formula for the number of lattice paths from $(0,0)$ to $(n,n)$
+that do not cross the line $y=x$.  The number of such paths is called a {\em
+Catalan Number}\index{Catalan Number} and is usually denoted by $C_n$.
+\solution{$C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.$}
+\end{enumerate}
+
+\itemi Your formula for the Catalan Number can be expressed as a binomial
+coefficient divided by an integer.  Whenever we have a formula that calls
+for division by an integer, an ideal combinatorial explanation of the
+formula is one that uses the quotient principle.  The purpose of this
+problem is to find such an explanation using diagonal lattice
+paths.\footnote{The result we will derive is called the Chung-Feller
+Theorem\index{Chung-Feller Theorem}; this approach is based of a paper of
+Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller
+Generalizations," {\bf American Mathematics Monthly 58} June/July 2001,
+p556.}  A diagonal lattice path that never goes below the
+$y$-coordinate of its first point is called a {\em Dyck Path}\index{Dyck
+path}.  We will call a Dyck Path from
+$(0,0)$ to
+$(2n,0)$ a {\em Catalan Path}\index{Catalan Path} of length $2n$.  Thus the
+number of Catalan Paths of length $2n$ is the Catalan Number $C_n$.
+\begin{enumerate} 
+\item If a Dyck Path has $n$ steps (each an upstep or
+downstep), why do the first $k$ steps form a Dyck Path for each nonnegative
+$k\le n$?\solution{If no points on the path are lower than the first point,
+then no points among the first $k$ steps are lower than the first point.}
+\item Thought of as a curve in the plane, a diagonal lattice path can have many
+local maxima and minima, and can have several absolute maxima and minima, that is,
+several highest points and several lowest points. What is the $y$-coordinate
+of an absolute minimum point of a Dyck Path starting at $(0,0)$?  Explain why
+a Dyck Path whose rightmost absolute minimum point is its last point is a
+Catalan Path.
+\solution{Since the path starts at $(0,0)$ and can't go below it, the $y$
+coordinate of an absolute minimum must be zero.  If the last point is an
+absolute minimum, then (because it ends with the same $y$ coordinate with
+which it starts) the path has an even number
+$2k$ of steps and ends at
+$(2k,0)$.}
+\item Let $D$ be the set of all diagonal lattice paths from $(0,0)$ to
+$(2n,0)$.  (Thus these paths can go below the $x$-axis.) Suppose we partition
+$D$ by letting
+$B_i$ be the set of lattice paths in $D$ that have $i$ upsteps (perhaps mixed
+with some downsteps) following the last absolute minimum.  How many blocks
+does this partition have?  Give a succinct description of the block $B_0$.
+\solution{The path must have $n$ upsteps total, and so can have any number
+between 0 and $n$ upsteps after the rightmost absolute minimum.  Thus the
+partition has $n+1$ blocks.  Block $B_0$ consists of the Catalan Paths.}
+\item How many upsteps are in a Catalan Path? \solution{$n$.} 
+\itemitemh We are going to give a bijection between the set of Catalan Paths and
+the block $B_i$ for each $i$ between $1$ and $n$.  For now, suppose the
+value of $i$, while unknown, is fixed.  We take a Catalan path and break it
+into three pieces.  The piece $F$ (for ``front") consists of all steps before
+the
+$i$th upstep in the Catalan path.  The piece $U$ (for ``up") consists of the
+$i$th upstep.  The piece
+$B$ (for ``back") is the portion of the path that follows the $i$th upstep. 
+Thus we can think of the path as $FUB$.  Show that the function that takes
+$FUB$ to
+$BUF$ is a bijection from the set of Catalan Paths onto the block $B_i$ of the
+partition.  (Notice that $BUF$ can go below the $x$ axis.)
+\solution{Since we are starting with a Catalan path, the point on the path at
+the beginning of the $i$th upstep must have $y$ coordinate greater or equal
+to  than zero.  Thus wherever we start the sequence $F$ of upsteps and
+downsteps, a path constructed by this sequence never goes lower than its
+starting point. Thus  in $BUF$ the last absolute minimum is either right
+before the
+$U$ or earlier.  But $B$ is the final segment of a Catalan Path, so its final
+point is at least as low as its starting point.  Thus the point at the
+beginning of the $U$ in $BUF$ is an absolute minimum, and there are $i$
+upsteps after that local minimum.  If we take two different sequences and
+rearrange them in the same way, we get two different sequences, so the
+function we just described is a one-to-one function.  If we take an arbitrary
+diagonal lattice path from $(0,0)$ to $(2n,0)$, let $U'$ be the first upstep
+after the last absolute minimum, $F'$ be the portion of the path that follows
+$U'$, and $B'$ be the portion that precedes $U'$, then $F'U'B'$ is a Catalan
+Path, and $U'$ is its $i$th upstep if and only if in $B'U'F'$ there are $i$
+upsteps after the last absolute minimum.  Thus the mapping from $FUB$ to
+$BUF$ is a bijection.}
+\item Explain how you have just given another proof of the formula for the
+Catalan Numbers.
+\solution{We have taken the set of all $2n\choose n$ diagonal lattice paths
+of length $2n$ from $(0,0)$ to $(2n,0)$ and partitioned it into $n+1$ blocks
+all of size $C_n$.  Thus by the quotient principle, $C_n={1\over
+n+1}{2n
+\choose n}$.}
+\end{enumerate}
+
+\subsection{The Binomial Theorem}
+\itemm We know that $(x+y)^2 = x^2+2xy+y^2$.  Multiply both sides by $(x+y)$
+to get a formula for $(x+y)^3$ and repeat to get a formula for $(x+y)^4$.  Do
+you see a pattern?  If so, what is it?  If not, repeat the process to get a
+formula for $(x+y)^5$ and look back at Figure \ref{Pascaltriangle} to see the
+pattern.  Conjecture a formula for $(x+y)^n$. \label{Conjecturebinomthm}
+\solution{$(x+y)^3=x^3+2x^2y +xy^2+x^2y+ +2xy^2 +y^3=x^3+3x^2y++3xy^2+y^3$.\\
+Similarly, $(x+4)^4=x^4+4x^3y+6x^2y^2+4xy^3+y^4$,\\
+and $(x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5.$
+The pattern is that the coefficient of $x^iy^j$ is $i+j\choose i$ which is
+the same as $i+j\choose j$.  Said differently, the coefficient of
+$x^{n-i}y^i$ is $n\choose i$ or the coefficient of $x^iy^{n-i}$ is $n\choose
+i$.  We conjecture that $$(x+y)^n=\sum_{i=0}^n {n\choose i}x^{n-i}y^i.$$
+(The reason for putting $x^{n-i}y^i$ into the sum is so that as $i$ goes from
+0 to $n$, the powers of $x$ decrease from $n$ to 0.)}
+
+\iteme  When we apply the distributive law $n$ times to $(x+y)^n$, we get a
+sum of terms of the form $x^iy^{n-i}$ for various values of the integer $i$.  
+\begin{enumerate}
+\item If it is clear to you that each term of the form $x^iy^{n-i}$ that we
+get comes from choosing an $x$ from $i$ of the $(x+y)$ factors and a $y$ from
+the remaining
+$n-i$ of the factors and multiplying these choices together, then answer this
+part of the problem and skip the next part.  Otherwise, do the next part
+instead of this one.  In how many ways can we choose an $x$ from $i$ terms
+and a $y$ from
+$n-i$ terms?\solution{The number of ways to choose an $x$ from $i$ of the
+factors and a $y$ from the remaining ones is the way to choose the $i$
+factors from the $n$ factors; that is, $n\choose i$.}
+\item  Expand the product $(x_1 +y_1)(x_2 +y_2)(x_3+y_3)$.  What do you get
+when you substitute $x$ for each $x_i$ and $y$ for each $y_i$?  Now imagine
+expanding $$(x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).$$  Once you apply the
+commutative law to the individual terms you get, you will have a sum of terms
+of the form $$x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
+y_{j_{n-i}}.$$
+What is the set $\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}$?  In
+how many ways can you choose the set  $\{k_1,k_2,\ldots, k_i\}$?  Once you
+have chosen this set, how many choices do you have for $\{j_1,j_2,\ldots,
+j_{n-i}\}$?  If you substitute $x$ for each $x_i$ and $y$ for each $y_i$, how
+many terms of the form $x^iy^{n-i}$ will you have in the expanded product
+$$(x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?$$  How many terms of the form
+$x^{n-i}y^i$ will you have?
+\solution{\begin{eqnarray*}
+(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!&+&\!\!x_1x_2y_3+x_1y_2x_3+\\
+y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!&+&\!\! y_1y_2x_3+y_1y_2y_3.\end{eqnarray*} 
+When you substitute $x$ for each $x_i$ and
+$y$ for each
+$y_i$, you get $(x+y)^3=x^3+3x^2y+3xy^2+y^3$.
+
+$\{k_1,k_2,\ldots, k_i\}\cup
+\{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}$.  You can choose the set
+$\{k_1,k_2,\ldots k_i\}$ in $n\choose i$ ways.  Then there is just one way to
+choose the set of $j$s.  If you substitute $x$ for $x_i$ and substitute $y$
+for $y_i$, you will get $n\choose i$ terms of the form $x^iy^{n-i}$.  You
+will also get $n\choose i$ terms of the form $x^{n-i}y^i$.}
+\item Explain how you have just proved your conjecture from Problem
+\ref{Conjecturebinomthm}.  The theorem you have proved is called the
+{\bf Binomial Theorem}.\index{Binomial Theorem}
+\solution{We have proved that the coefficient of $x^iy^{n-i}$ in $(x+y)^n$ is
+$n\choose i$, or equivalently that the coefficient of $x^{n-i}y^i$ in
+$(x+y)^n$ is $n\choose i$.}
+\end{enumerate}
+\item What is $\sum_{i=1}^n {10\choose i}3^i$?
+\solution{\hspace*{-6 pt}$\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
+{10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1$}
+\item What is ${n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+{n\choose n}$ if $n$ is an integer bigger than 0?
+\itemei Explain why $$\sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
+k}.$$  Find two different explanations.
+%%%%Changed upper limit of sum from n to m.
+\solution{When we expand both sides of $(x+y)^m(x+y)^n=(x+y)^{m+n}$ by the
+binomial theorem we get $\sum_{i=0}^m{m\choose i}{n\choose  k-i}$ as the
+coefficient of $x^{m+n-k}y^k$ on the left hand side and $m+n\choose k$ on the
+right hand side.  For a second explanation, to choose $k$ elements out of the
+union of an $m$-element set and a disjoint $n$-element set, chose some number
+$i\le m$ of them from the $m$-element set and the remaining $k-i$ of them
+from the
+$n$-element set.  The sum on the left hand side of the equation simply sums
+the number of such choices over all possible $i$, and the binomial
+coefficient on the right hand side of the equation says we will end up
+choosing $k$ elements from among our $m+n$ elements.}
+\itemi  From the symmetry of the binomial coefficients, it is not too hard to
+see that when
+$n$ is an odd number, the number of subsets of $\{1,2,\ldots,n\}$ of odd size
+equals the number of subsets of $\{1,2,\ldots,n\}$  of even size.  Is it true
+that when $n$ is even the number of subsets of $\{1,2,\ldots,n\}$ of even
+size equals the number of subsets of odd size?  Why or why not?
+\solution{It is true, because if $n>0$, when you expand $(1-1)^n$ by the
+binomial theorem, you get an alternating sum of binomial coefficients equal
+to 0, and so the sum of the binomial coefficients $n\choose i$ with $i$ even
+must equal the sum of the binomial coefficients $n\choose i$ with $i$ odd.}
+
+\itemi What is $\sum_{i=0}^n i{n\choose i}$?   (Hint: think about how you
+might use calculus.)
+\solution{$\sum_{i=0}^n({n\choose i}x^i = (1+x)^n$.  Taking derivatives of
+both sides gives us $\sum_{i=0}^ni{n\choose i}x^{i-1} = n(1+x)^{n-1}.$.  Now
+substitute 1 for $x$ and you get $\sum_{i=0}^n i{n\choose i} = n2^{n-1}$.}
+
+
+\ep
+
+\subsection{The pigeonhole principle}
+\bp 
+\itemm American coins are all marked with the year in which they were made. 
+How many coins do you need to have in your hand to guarantee that on two (at
+least) of them, the date has the same last digit?\label{elevencoins}
+\solution{Since there are ten possible last digits, you need at least 11
+coins, and with 11 coins, at least two last digits must be the same.}
+\ep
+ 
+There are many ways in which you might explain your answer to Problem
+\ref{elevencoins}.  For example, you can partition the coins according to the
+last digit of their date; that is, you put all the coins with a given last
+digit in a block together, and put no other coins in that block; repeating
+until all coins are in some block.  Then you have a partition of your set of
+coins.  If no two coins have the same last digit, then each block has exactly
+one coin.  Since there are only ten digits, there are at most ten blocks and
+so by the sum principle there are at most ten coins. In fact with ten coins
+it is possible to have no two with the same last digit, but with 11 coins
+some block must have at least two coins in order for the sum of the sizes of
+at most ten blocks to be 11.  This is one explanation of why we need 11
+coins in Problem \ref{elevencoins}.  This kind of situation arises often in
+combinatorial situations, and so rather than always using the sum principle
+to explain our reasoning , we enunciate another principle which we can think
+of as yet another variant of the sum principle.  The {\bf pigeonhole
+principle}\index{pigeonhole principle} states that
+\begin{quote} If we partition a set with more than $n$ elements into 
+$n$ parts, then at least one part has more than one element.\end{quote}  The
+pigeonhole principle gets its name from the idea of a grid of little boxes
+that might be used, for example, to sort mail, or as mailboxes for a group of
+people in an office.  The boxes in such grids are sometimes called
+pigeonholes in analogy with stacks of boxes used to house homing pigeons when
+homing pigeons were used to carry messages.  People will sometimes state the
+principle in a more colorful way as ``if we put more than $n$ pigeons into
+$n$ pigeonholes, then some pigeonhole has more than one pigeon.''
+
+\bp 
+\item Show that if we have a function from a set of size $n$ to a set of
+size less than $n$, then $f$ is not one-to-one.
+\solution{Let $T$ be the set of size less than $n$, and $S$ be the set of
+size $n$.  Let $B_j=\{i|f(i)=j\}$ for each $j$ in $T$.  Then the nonempty
+sets among the $B_j$s form a partition of $S$ and the number of blocks is
+less than the size of $S$.  Therefore by the pigeonhole principle, there is
+at least one block with at least two elements, so there are two elements
+$i_1$ and $i_2$ such that $f(i_1)=f(i_2)$.}
+
+\iteme Show that if $S$ and $T$ are finite sets of the same size, then a
+function
+$f$ from $S$ to $T$ is one-to-one if and only if it is onto.
+\solution{First suppose that $f$ is a one-to-one function from $S$ to $T$,
+sets which have the same size. Let $B_j=\{i|f(i)=j\}$ for each $j$ in $T$.. 
+If
+$f$ is not onto, then the number of nonempty sets $B_j$ is smaller than the
+number of elements of
+$T$ and thus is smaller than the size of $S$. The nonempty sets $B_j$ are a
+partition of
+$S$. But then by the pigeonhole principle, some nonempty
+$B_j$ has two or more elements, contradicting the assumption that $f$ is
+one-to-one.  Therefore if $f$ is one-to-one, then it is onto.  Now suppose
+that $f$ is an onto function from $S$ to $T$, sets of the same size.  Again
+let $B_j =\{i|f(i)=j\}$ for each $j$ in $T$.  The size of the union of the
+sets $B_j$ is, by the sum principle, the sum of their sizes. Since $f$ is
+onto, each $B_j$ has at least one element. Since the number of sets $B_j$ is
+the number of elements of
+$S$, if one of those sets has more than one element, the the size of their
+union is more than the size of $S$, which is a contradiction since they are
+subsets of $S$.  Therefore each set $B_j$ has exactly one element and
+therefore $f$ is one-to-one.}
+
+\itemes There is a {\em generalized pigeonhole principle}\index{pigeonhole
+principle! generalized} which says that if we partition a set with more than
+$kn$ elements into $n$ blocks, then at least one block has at least $k+1$
+elements.  Prove the generalized pigeonhole principle.
+\solution{Suppose we partition a set $S$ of more than $kn$ elements into $n$
+blocks.  If each block has at most $k$ elements, the by the sum principle
+the size of  $S$ is at most $kn$.  But this is a contradiction, so some block
+has at least $k+1$ elements.}
+
+\item All the powers of five end in a five, and all the powers of two are
+even.  Show that for for some integer $n$, if you take the first $n$ powers of
+a prime other than two or five, one must have ``01'' as the last two digits.
+\solution{If we take  40 powers  of such a
+prime, either one will end in ``01'' or some two, say
+$p^i$ and $p^j$ with $i>j$ must have the same last two digits by the pigeon
+hole principle.  Then $p^i-p^j=100k$ for some integer $k$.  Thus $p^j(p^{i-j}
+-1)$ must be a multiple of 100, and since neither 2 nor 5 divide $p$, $p^{i-j}
+-1 = 100k'$ for some integer $k'$ then $p^{i-j} = 100k'+1$, so the last two
+digits of $p^{i-j}$ must be ``01.''}
+
+\itemesi Show that in a set of six people, there is a set of at least three
+people who all know each other, or a set of at least three people none of
+whom know each other.  (We assume that if person A knows person B, then person
+B knows person A.)\label{R(3,3)}
+\solution{By the generalized pigeonhole principle, person 1 either knows at
+least three people or doesn't know at least three people.  Suppose person 1
+knows three people.  Then either two of these people know each other, giving
+us, with person 1, three mutual acquaintances, or no two of these people know
+each other, giving us three mutual strangers.  On the other hand if there are
+three people person 1 does not know, then either two of these people don't
+know each other, giving us, with person 1, three mutual strangers, or all
+three of these people know each other, giving us three mutual acquaintances.}
+
+\itemes Draw five circles labeled Al, Sue, Don, Pam, and Jo.  Find a way to
+draw red and green lines between people so that every pair of people is
+joined by a line and there is neither a triangle consisting entirely of red
+lines or a triangle consisting of green lines.  What does Problem
+\ref{R(3,3)} tell you about the possibility of doing this with six people's
+names?  What does this problem say about the conclusion of Problem
+\ref{R(3,3)} holding when there are five people in our set rather than
+six?\label{notR(3,3)}
+\solution{\begin{center}
+\mbox{\psfig{figure=NonRamsey5.eps%,height=1.0in
+}}\vspace*{-.5in}\end{center}Problem \ref{R(3,3)} says you can't do this with
+six people's names.  This problem says that the conclusion of Problem
+\ref{R(3,3)} does not hold when you have five people.}
+
+\ep
+
+\subsection{Ramsey Numbers}\label{Ramseysection}
+Problems \ref{R(3,3)} and \ref{notR(3,3)}  together show that six is the
+smallest number $R$ with the property that if we have $R$ people in a room,
+then there is either a set of (at least) three mutual acquaintances or a
+set of (at least) three mutual strangers.  Another way to say the same
+thing is to say that six is the smallest number so that no matter how we
+connect 6 points in the plane (no three on a line) with red and green lines,
+we can find either a red triangle or a green triangle.  There is a name for
+this property.  The {\bf Ramsey Number} $R(m,n)$ is the smallest number $R$
+so that if we have $R$ people in a room, then there is a set of at least $m$
+mutual acquaintances or at least $n$ mutual strangers.  There is also a
+geometric description of Ramsey Numbers; it uses the idea of a {\em complete
+graph}  on $R$ vertices.  A {\bf complete graph}\index{graph!complete} on $R$
+vertices consists of $R$ points in the plane together with line segments (or
+curves) connecting each two of the $R$ vertices.\footnote{As you may have
+guessed, a complete graph is a special case of something called a graph. 
+THe word graph will be defined in Section \ref{graphsection}.} The points are
+called {\em vertices}\index{vertex!of a complete graph}\index{vertex} and the line
+segments are called {\em edges}\index{edge!of a complete graph}\index{edge}. In
+Figure
+\ref{completegraph} we show three different ways to draw a complete graph on
+four vertices.  We use $K_n$ to stand for a complete graph on $n$ vertices.
+
+\begin{figure}[htb]\caption{Three ways to draw a
+complete graph on four vertices}\label{completegraph}\vglue-1in
+\begin{center}\vglue-.5in\mbox{\psfig{figure=threeK4s.eps%,height=1.0in
+}}
+\end{center}
+\end{figure}
+
+Our geometric description of $R(3,3)$ may be translated into the language
+of graph theory (which is the subject that includes complete graphs) by
+saying $R(3,3)$ is the smallest number $R$ so that if we color the edges of a
+$K_R$ with two colors, then we can find in our picture a
+$K_3$  all of whose edges have the same color.  
+The graph theory description of $R(m,n)$ is that $R(m,n)$ is the smallest
+number $R$ so that if we color the edges of a $K_R$ with red and
+green, then we can find in our picture either a $K_m$ all of whose edges are
+red or a
+$K_n$ all of whose edges are green.  Because we could have said our colors in
+the opposite order, we may conclude that $R(m,n) = R(n,m)$.  In particular
+$R(n,n)$ is the smallest number $R$ such that if we color the edges of a
+$K_R$ with two colors, then our picture contains a $K_n$ all of whose edges
+have the same color. 
+
+\bp 
+\itemm Since $R(3,3)=6$, an uneducated guess might be that $R(4,4)=8$.   Show
+that this is not the case. 
+\solution{In the graph
+\begin{center}\vglue-.75in\mbox{\psfig{figure=NonRamsey8.eps%,height=1.0in
+}}
+\end{center}
+each vertex has three dashed lines emanating from it, and there are no dashed
+lines connecting any of the three vertices adjacent to it by dashed lines. 
+Each vertex has four solid lines emanating from it, and no three of the four
+vertices adjacent to it by solid lines are all adjacent by solid lines.  Thus
+there is no solid line $K_4$ and there is no dashed line $K_4$.}
+
+\itemes Show that among ten people, there are either four mutual acquaintances
+or three mutual strangers.  What does this say about $R(4,3)$?
+\solution{Take a person, say person 1.  If person has six acquaintances, then
+by Problem \ref{R(3,3)} among them there are either three mutual strangers,
+in which case we are done, or three mutual acquaintances.  These three
+acquaintances together with person 1 form a set of 4 mutual acquaintances in
+which case we are again done.  Thus we may assume Person 1 has at most 5
+acquaintances, and so has four non-acquaintances.  Now either all four of
+these people are acquainted, in which case we are done, or else two of them
+are not acquainted.  Then these two people, together with person 1 make three
+mutual nonacquaintances.  Therefore in every possible case, we have either
+four mutual acquaintances or three mutual strangers.  This means that $R(4,3)
+\le 10$.}
+
+\itemes Show that among an odd number of people there is at least one person
+who is an acquaintance of an even number of people and therefore also a
+stranger to an even number of people.\label{OddNoPeople}
+\solution{Suppose we add, for each person, the number of people with whom he
+or she is acquainted.  Then we get twice the number of acquaintance edges in
+the graph of acquaintance and non-acquaintance relationships.  Thus the sum
+must be even.  But if each person among an odd number of people were
+acquainted with an odd number of people, then the sum would be odd.  Since
+this is a contradiction, among an odd number of people, there must be at
+least one who is acquainted with an even number of people.  Since the number
+of people different from this person is even, the number of people with whom
+this person is not acquainted is also even.}
+
+\itemes Find a way to color the edges of a $K_8$ with red and green so that
+there is no red $K_4$ and no green $K_3$.\label{R(4,3)not8}
+\solution{In the graph
+\begin{center}\vglue-.75in\mbox{\psfig{figure=NonRamsey8.eps%,height=1.0in
+}}
+\end{center}
+there is no $K_3$ whose edges are dashed, and no $K_4$ whose edges are
+solid.  By symmetry, to verify this you need only look at vertex 1 and
+vertices connected to it by either dashed lines or by solid lines.}
+
+\itemesi Find $R(4,3)$.
+\solution{$R(4,3)=9$. In Problem \ref{R(4,3)not8} we showed that $R(4,3)$ is
+more than 8.  So we must show that if we have nine people, we either have 4
+mutual acquaintances or three mutual strangers.  By Problem \ref{OddNoPeople}
+there is at least one person (say person A) who is acquainted with an even
+number of people.  If person A is acquainted with six or more people, then
+among these six people, there are either three mutual acquaintances or three
+mutual strangers.  If there are three mutual strangers, we are done; if there
+are three mutual acquaintances, they, together with Person A
+are four mutual acquaintances.  Thus we may assume Person A is acquainted
+with at most four people.  Thus person A is a stranger to at least four
+people.  If two of these people are strangers, then they, together with
+person A form three mutual strangers and we are done.  Otherwise all of these
+people know each other and we have at least four mutual acquaintances, and so
+in every possible situation, we have either four mutual acquaintances or
+three mutual strangers.}
+\ep
+
+As of this writing, relatively few Ramsey Numbers are known.  $R(3,n)$ is
+known for $n<10$, $R(4,4) = 18$, and $R(5,4)=R(4,5)=25$.
+
+
+\section{Supplementary Chapter Problems}
+\begin{enumerate}
+\itemi Remember that we can write $n$ as a sum of $n$ ones.  How many plus
+signs do we use?  In how many ways may we write $n$ as a sum of a list of $k$
+positive numbers?  Such a list is called a {\em
+composition}\index{composition} of $n$ into $k$ parts.\index{composition!$k$
+parts}\index{composition!$k$ parts!number of}
+\label{compositiondefinition}
+\solution{We use $ n-1$ plus signs.  Write down such a sum and choose $k-1$
+of the plus signs.  Then each string of ones and plusses between two chosen
+plus signs, before the first chosen plus sign or after the last chosen one
+corresponds to a part of a composition of
+$n$.  Thus the number of compositions of $n$ with $k$ parts is the number of
+ways to choose the $k-1$ places, which is
+$n-1\choose k-1$.}
+
+\item In Problem \ref{compositiondefinition} we defined a composition of $n$
+into $k$ parts.  What is the total number of compositions of $n$ (into any
+number of parts).\label{composition:numberof}\index{compositions!number of}
+\solution{The total number of compositions is the number of ways to choose a
+subset of the plus signs which is $2^{n-1}$.}
+
+\itemes Write down a list of all 16 0-1 sequences of length four starting
+with 0000 in such a way that each entry differs from the precious one by
+changing just one digit.  This is called a Grey Code.\index{Grey Code}  That
+is, a {\em Grey Code} for 0-1 sequences of length $n$ is a list of the
+sequences so that each entry differs from the previous one in exactly one
+place.  Can you describe how to get a Grey Code for 0-1 sequences of length
+five from the one you found for sequences of length 4?  Can you describe how
+to prove that there is a Grey code for sequences of length
+$n$?\label{GreyCode}
+\solution{(One of many) 0000, 
+0001, 
+0011, 
+0010, 
+0110, 
+0111, 
+0101, 
+0100, 
+1100, 
+1101, 
+1111, 
+1110, 
+1010, 
+1011, 
+1001, 
+1000.  To get a code for sequences of length 5, put a zero at the end of each
+of the sequences we have.  Follow that revised sequence by 10001, and write
+the remainder of the sequence in reverse order with a 1 at the end of each
+term.  (Don't reverse the individual length four sequences, just the sequence
+of sequences!) We just, in essence, described the inductive step of an
+inductive proof that Grey Codes exist for sequences of any length. } 
+
+\itemi Use the idea of a Grey Code from Problem \ref{GreyCode} to prove
+bijectively that the number of even-sized subsets of an $n$-element set
+equals the number of odd-sized subsets of an $n$-element set.
+\solution{Each sequence in the Grey Code is the characteristic function of a
+set, and the number of elements of the set is the number of ones in the
+sequence.  Since each sequence differs in just one place from the preceding
+one, the sequences alternate between having an even  number of ones and an
+odd number of ones.  Since the first sequence is all zeros and there are
+$2^n$ sequences, the last one has an odd number of zeros.  Thus the map that
+takes each sequence except the last to the next one, and takes the last to the
+first is a bijection between the characteristic functions of sets with an
+even number of elements and sets with an odd number of elements.}
+
+\itemi A list of parentheses is said to be balanced if there are the same
+number of left parentheses as right, and as we count from left to right we
+always find at least as many left parentheses as right parentheses.  For
+example, (((()()))()) is balanced and ((()) and (()()))(() are not.  How
+many balanced lists of $n$ left and $n$  right parentheses are there?
+\solution{The number is the Catalan number: we get a bijection between
+balanced lists of parentheses and Catalan paths by sending each left paren to
+an upstep and each right paren to a downstep.  The condition that there are
+always as many left parentheses as right ensures we never go below the $x$
+axis.}
+
+\itemh Suppose we plan to put six distinct computers in a network as shown in
+Figure
+\ref{hexagonalnetwork}.  The lines show which computers can communicate
+directly with which others.  Consider two ways of assigning computers to the
+nodes of the network different if there are two computers that communicate
+directly in one assignment and that don't communicate directly in the
+other.  In how many different ways can we assign computers to the network? 
+\begin{figure}[htb]\caption{A computer
+network.}\label{hexagonalnetwork}\smallskip
+\begin{center}\mbox{\psfig{figure=HexagonalNetwork.eps%,height=1.0in
+}}
+\end{center}  
+\end{figure}
+\solution{We consider two assignments of computers to be equivalent if in
+both assignments, each computer communicates directly with exactly the same
+computers.  This partitions the set of all $6!$ computer assignments into
+blocks of $48$ computers each.  Thus we have $720/48=15$ ways to assign the
+computers to the network.}
+
+\itemi In a circular ice cream dish we are going to put four distinct scoops
+of ice cream chosen from among twelve flavors.  Assuming we place four scoops
+of the same size as if they were at the corners of a square, and recognizing
+that moving the dish doesn't change the way in which we have put the ice
+cream into the dish, in how many ways may we choose the ice cream and put it
+into the dish?
+\solution{Each ice cream arrangement is equivalent to three others, the ones
+we get by rotating the dish.  This divides the arrangements of four flavors
+of ice cream into blocks of size 4.  Thus we may arrange the ice cream we have
+chosen in the dish in
+$4!/4=6$ ways.  We may choose the ice cream in ${12\choose 4}=495$ ways, and
+so we may choose it and put it into the dish in 2970 ways.}
+
+\itemi In as many ways as you can, show that ${n\choose k}{n-k\choose m} =
+{n\choose m}{n-m\choose k}$.
+\solution{You can prove this by plugging in the formula for $n\choose k$ on
+both sides and cancelling stuff until you get the same thing on both sides. 
+However a much more interesting proof is that the right hand side counts the
+number of ways to choose a $k$-element set form an $n$-element set and then
+choose an $m$-element set from what remains.  The left hand side counts the
+number of ways to first chose a $k$-element subset from the $n$-element set
+and then choose an $m$-element subset from what remains.  Thus in both cases
+you are counting the number of ways to choose an ordered pair consisting of an
+$m$-element subset and a disjoint $k$-element subset from an $n$-element set.
+You can also base a proof on the observation that $(x+y+x)^n=
+\sum_{k=0}^n{n\choose k}(x+y)^kz^{n-k}$ and
+$(x+y+z)^n=\sum_{m=0}^n{n\choose m}x^m(y+z)^{n-m}$ and asking for the
+coefficient of $x^my^{n-m-k}z^k$.  You do have to use the binomial theorem
+with an eye to the result you are looking for, however.}
+
+\itemi A tennis club has $4n$ members.  To specify a doubles match, we choose
+two teams of two people.  In how many ways may we arrange the members into
+doubles matches so that each player is in one doubles match?  In how many
+ways may we do it if we specify in addition who serves first on each team?
+\solution{We now have many methods for solving this problem.  Perhaps the
+easiest is to list all $(4n)$ people and take them in groups of four for
+doubles matches, with the first two in a group of four as one team and the
+second two as another team.  We note that interchanging the $n$ blocks of 4
+does not change the matches, nor does interchanging the two people on a
+team nor interchanging the two teams.  Thus we have $(4n)!/n!2^{3n}$ ways to
+arrange the matches.  If we are to say who serves first on each team, we
+might as well say it is the first of the two listed, so now we have
+$(4n)!/n!2^n$ ways to arrange the matches.}
+
+
+\item A town has $n$ streetlights running along the north side of main
+street.  The poles on which they are mounted need to be painted so that they
+do not rust.  In how many ways may they be painted with red, white, blue, and
+green if an even number of them are to be painted green?
+\solution{We can think of first choosing the set of even size of poles to
+be painted green, and the painting the remaining poles red, white, and blue. 
+We may do this in $\sum_{k=0}^{\lfloor n/2\rfloor}{n\choose 2k}3^{n-2k}$
+ways.}
+
+\item We have $n$ identical ping-pong balls.  In how many ways may we
+paint them red, white, blue, and green?\label{pingpongpaint}
+\solution{We can line up the identical ping-pong balls and break them into
+four groups, those of each color, by inserting dividers.  If we want to paint
+at least one in each color, we can choose three of the spaces between the
+balls in which to insert dividers, so we can paint them in $n-1\choose k$.
+But the problem didn't require us to use each color, so we can put two
+dividers adjacent to each other.  Thus there are $n+1$ places where we can
+put the first divider (putting it before all the balls means we use no red,
+and putting it after all of them means we use no green.  Now there are $n+2$
+places where we can put the second divider, including before or after the
+first, and $n+3$ places where we can put the third divider.  However if we
+interchange two dividers we still paint the balls before the first divider
+red, those between then next two white, and so on.  Thus $3!=6$ of these
+arrangements of balls and dividers correspond to the same paint job, so the
+number of ways to paint the balls is ${(n+1)(n+2)(n+3)\over6} ={n+3\choose
+3}$.  This suggests that another way to think of the problem is to consider
+$n+3$ slots in a row, and fill $n$ of them with balls and $3$ of them with
+dividers; since the balls are identical and the dividers might as well be
+identical, the number of ways to do this is the number of ways to choose the
+slots that get dividers.}
+
+\item We have $n$ identical ping-pong balls.  In how many ways may we
+paint them red, white, blue, and green if we use green paint on an even
+number of them?
+\solution{We first decide how many balls to paint green, then paint the
+remainder with the other three colors as in Problem \ref{pingpongpaint} This
+gives us
+$$\sum_{k=0}^{\lfloor n/2\rfloor}{n-2k+2\choose 2}$$ ways to paint the balls.}
+\end{enumerate}
