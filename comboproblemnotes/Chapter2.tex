@@ -1,0 +1,1757 @@
+\chapter{Applications of Induction and Recursion in Combinatorics and
+Graph Theory}
+\section{Some Examples of Mathematical Induction}
+\markboth{CHAPTER 2.  APPLICATIONS OF INDUCTION IN COMBINATORICS}{SOME
+EXAMPLES OF MATHEMATICAL INDUCTION} In Chapter 1 (Problem
+\ref{SubsetsByInduction}), we used the principle of mathematical
+induction to prove that a set of size $n$ has
+$2^n$ subsets.  If you were unable to do that problem and you haven't yet
+read Appendix \ref{Induction} (a portion of which is repeated here), you
+should do so now.
+\subsection{Mathematical induction}  The {\bf principle of mathematical
+induction}\index{mathematical induction!principle of}\index{principle of
+mathematical induction}\index{induction!mathematical, the principle of}
+states that
+\begin{quote}
+In order to prove a statement about an integer $n$, if we
+can\begin{enumerate}
+\item Prove the statement when $n=b$, for some fixed integer $b$
+\item Show that the truth of the statement for $n=k-1$ implies the truth
+of the statement for $n=k$ whenever $k>b$,
+\end{enumerate}
+then we can conclude the statement is true for all integers $n\ge
+b$.\end{quote} As an example, let us return to Problem
+\ref{SubsetsByInduction}.  The statement we wish to prove is the
+statement that ``A set of size $n$ has $2^n$ subsets."  
+
+\begin{quote}Our statement
+is true when $n=0$, because a set of size 0 is the empty set and the
+empty set has $1=2^0$ subsets. (This step of our proof is called a {\em
+base step}.)
+
+Now suppose that $k>0$ and every set with $k-1$ elements has $2^{k-1}$
+subsets.  Suppose $S=\{a_1,a_2,\ldots a_k\}$ is a set with $k$ elements. 
+We partition the subsets of $S$ into two blocks.  Block $B_1$ consists of
+the subsets that do not contain $a_n$ and block $B_2$ consists of the
+subsets that do contain $a_n$.  Each set in $B_1$ is a subset of
+$\{a_1,a_2,\ldots a_{k-1}\}$, and each subset of $\{a_1,a_2, \ldots
+a_{k-1}\}$ is in $B_1$.  Thus $B_1$ is the set of all subsets of
+$\{a_1,a_2,\ldots a_{k-1}\}$.  Therefore by our assumption in the first
+sentence of this paragraph, the size of $B_1$ is $2^{k-1}$.  Consider the
+function from $B_2$ to $B_1$ which takes a subset of $S$ including $a_k$
+and removes $a_k$ from it.  This function is defined on $B_2$, because
+every set in $B_2$ contains $a_k$.  This function is onto, because if
+$T$ is a set in $B_1$, then $T\cup \{a_k\}$ is a set in $B_2$ which the
+function sends to $T$.  This function is one-to-one because if $V$ and
+$W$ are two different sets in $B_2$, then removing $a_k$ from them gives
+two different sets in $B_1$.  Thus we have a bijection between $B_1$ and
+$B_2$, so $B_1$ and $B_2$ have the same size.  Therefore by the sum
+principle the size of
+$B_1\cup B_2$ is $2^{k-1} +2^{k-1}=2^k$.  Therefore $S$ has $2^k$
+subsets.  This shows that if a set of size $k-1$ has $2^{k-1}$ subsets,
+then a set of size $k$ has $2^k$ subsets.  Therefore by the principle of
+mathematical induction, a set of size $n$ has $2^n$ subsets for every
+nonnegative integer $n$.
+\end{quote}
+
+The first sentence of the last paragraph is called the {\em inductive
+hypothesis}.  In an inductive proof we always make an inductive
+hypothesis as part of proving that the truth of our statement when
+$n=k-1$ implies the truth of our statement when $n=k$.  The last
+paragraph itself is called the {\em inductive step} of our proof.  In an
+inductive step we derive the statement for $n=k$ from the statement for
+$n=k-1$, thus proving that the truth of our statement when $n=k-1$
+implies the truth of our statement when $n=k$.  The last sentence in the
+last paragraph is called the {\em inductive conclusion}.  All inductive
+proofs should have a base step, an inductive hypothesis, an inductive
+step, and an inductive conclusion.  
+
+There are a couple details worth noticing.  First, in this problem, our
+base step was the case $n=0$, or in other words, we had $b=0$.  However,
+in other proofs,
+$b$ could be any integer, positive, negative, or 0.  Second, our proof
+that the truth of our statement for $n=k-1$ implies the truth of our
+statement for
+$n=k$ required that $k$ be at least 1, so that there would be an element
+$a_k$ we could take away in order to describe our bijection.  However,
+condition (2) of the principle of mathematical induction only requires
+that we be able to prove the implication for $k>0$, so we were allowed to
+assume $k>0$.
+
+\subsubsection{Strong Mathematical Induction}
+One way of looking at the principle of mathematical induction is that it
+tells us that if we know the ``first" case of a theorem and we can derive
+each other case of the theorem from a smaller case, then the theorem is
+true in all cases.  However the particular way in which we stated the
+theorem is rather restrictive in that it requires us to derive each
+case from the immediately preceding case.  This restriction is
+not necessary, and removing it leads us to a more general statement of
+the principal of mathematical induction which people often call the {\bf
+strong principle of mathematical induction}.  It states:
+\begin{quote}In order to prove a
+statement about an integer $n$ if we can
+\begin{enumerate}
+\item prove our statement when $n=b$ and
+\item prove that the statements we get with $n=b$, $n=b+1$, \ldots
+$n=k-1$ imply the statement with $n=k$,
+\end{enumerate}
+then our statement is true for all integers $n\ge b$.
+\end{quote}
+You will find some explicit examples of the use of the strong principle of
+mathematical induction in Appendix \ref{Induction} and will find some uses for
+it in this chapter.
+
+\subsection{Binomial Coefficients and the Binomial Theorem}
+\bp
+\iteme When we studied the Pascal Equation and subsets in Chapter 1, it
+may have appeared that there is no connection between the Pascal relation
+${n\choose k} = {n-1\choose k-1} +{n-1\choose k}$ and the formula
+${n\choose k}={n!\over k!(n-k)!}$.  Of course you probably realize you
+can prove the Pascal relation by substituting the values the formula
+gives you into the right-hand side of the equation and simplifying to
+give you the left hand side.  In fact, from the Pascal Relation and the
+facts that ${n\choose 0}=1$ and ${n\choose n}=1$, you can actually prove
+the formula for $n\choose k$ by induction on $n$.  Do so.
+\solution{We wish to prove that ${n\choose i} ={n!\over i!(n-i)!}$.  We
+note that since ${n\choose 0}=1$ and ${n\choose n} =1$ are in agreement
+with this formula, we only have to consider the cases in which $0<i<n$,
+which by the way, requires that $n\ge 2$.  We will prove that our formula
+holds by induction on $n$ for $n\ge 2$.  If $n=2$, the only $i$ we need
+to consider is $i=1$, and we know that ${2\choose1}=2$, the number of
+one-element subsets of a two-element set.  But $2!\over1!(2-1)!$ is 2
+also, so our formula holds when $n=2$.  Now suppose our formula holds
+when $n=k-1$, so that for every $i$ with $0<i<n-1$, ${k-1\choose i} =
+{(k-1)!\over i!(k-1-i)!}$.  Then by the Pascal Equation
+\begin{eqnarray*}{k\choose i}&=&{k-1\choose i-1}+{k-1\choose i}\\ &=&
+{(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
+i!(k-1-i)!}\\ &=&{(k-1)!i+(k-1)!(k-i)\over i!(k-i)!} \ =\  {k!\over
+i!(k-i)!}.\end{eqnarray*}  Thus the truth of our formula for $n=k-1$
+implies its truth for $n=k$.  Therefore by the principle of mathematical
+induction, our formula is true for all integers $n\ge 2$.  We have
+already seen is is true when $i=0$ or
+$i=1$, so it is true for all nonnegative
+$n$ and all numbers $i$ with $0\le i\le n$.}
+
+\itemi Use the fact that $(x+y)^n = (x+y)(x+y)^{n-1}$ to give an inductive
+proof of the binomial theorem.
+\solution{We prove the binomial theorem by induction on $n$.  When $n=0$,
+$(x+y)^n=(x+y)^0=1=\sum_{i=0}^0 {n\choose i}x^{0-i}y^i$ since that last
+summation consists of the one term ${0\choose 0}x^0y^0$.
+
+Now suppose that when $n=k-1$, $(x+y)^n=\sum_{i=0}^n {n\choose
+i}x^{n-i}y^i.$  This gives us
+\begin{eqnarray*}(x+y)^k&=&(x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}{k-1\choose
+i}x^{k-1-i}y^i\\
+&=&\sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=0}^{k-1} {k-1\choose
+i}x^{k-1-i}y^{i+1}\\
+&=&\sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=1}^{k} {k-1\choose
+i-1}x^{k-i}y^{i}\\
+&=& x^k+\left(\sum_{i=1}^{k-1}{k-1\choose i}x^{k-i}y^i+{k-1\choose
+i-1}x^{k-i}y^i\right) +y^k\\
+&=& x^k+\left(\sum_{i=1}^{k-1} {k\choose i}x^{k-i}y^i\right) +y^k\ =\
+\sum_{i=0}^k {k\choose i}x^{k-i}y^i.
+\end{eqnarray*}Thus the truth of the binomial theorem for $n=k-1$ implies
+its truth for $n=k$.  Then by the principle of mathematical induction, the
+binomial theorem must be true for all integers $n\ge 0$.}
+
+\item Suppose that $f$ is a function defined on the nonnegative integers
+such that $f(0)=3$ and $f(n)=2f(n-1)$.  Find a formula for $f(n)$ and
+prove your formula is correct.
+\solution{$f(n)=3\cdot2^n$.  We prove our formula is correct by
+induction.  When $n=0$ our formula gives $f(0)=3$, which is what we were
+given.  Now suppose that when $n=k-1$, $f(n) =3\cdot2^n$.  Then
+$f(k)=2\cdot  f(k-1) =2\cdot 3\cdot2^{k-1}=3\cdot2^k$.  Therefore the
+truth of our formula when $n=k-1$ implies its truth when $n=k$ and so by
+the principle of mathematical induction, $f(n)=3\cdot 2^n$ for all
+nonnegative integers $n$.}
+\ep
+\subsection{Inductive definition}
+You may have seen $n!$\index{factorial} described by the two equations
+$0!=1$ and
+$n!=n(n-1)!$ for $n>0$.  By the principle of mathematical induction we
+know that this pair of equations defines $n!$ for all nonnegative numbers
+$n$.  For this reason we call such a definition an {\bf inductive
+definition}\index{inductive definition}\index{definition!inductive}.  An
+inductive definition is sometimes called a {\em recursive
+definition}\index{recursive definition}\index{definition!recursive}. 
+Often we can get very easy proofs of useful facts by using inductive
+definitions.
+\bp 
+\itemi An inductive definition of $a^n$ for nonnegative $n$ is given by
+$a^0=1$ and $a^n=aa^{n-1}$.  (Notice the similarity to the inductive
+definition of $n!$.)  We remarked above that inductive definitions often
+give us easy proofs of useful facts.  Here we apply this inductive
+definition to prove two useful facts about exponents that you have been
+using almost since you learned the meaning of exponents.
+\begin{enumerate}
+\item Use this definition to prove the rule of
+exponents $a^{m+n}=a^ma^n$ for nonnegative $m$ and $n$.
+\solution{We use induction on $n$ to prove this.  When $n=0$, the formula
+gives us
+$a^{m+0} =a^ma^0=a^m\cdot 1=a^m$, so the rule of exponents holds when
+$n=0$.  Now assume it holds when $n=k-1$ so that $a^{m+k-1}=a^ma^{k-1}$. 
+Then, starting and ending with our inductive definition, we may write
+$$a^{m+n}=aa^{m+n-1}=aa^ma^{k-1}=a^m\cdot a\cdot a^{k-1}=a^ma^k.$$  Thus
+the truth of our law for $n=k-1$ implies its truth for $n=k$. 
+Therefore, by the principle of mathematical induction, $a^{m+n}=a^ma^n$
+for all nonnegative integers $n$.}
+
+\item Use this definition to prove the rule of exponents $a^{mn} =
+(a^m)^n$.
+\solution{We will use induction on $n$ and part (a) of this problem to
+prove that $a^{mn}=(a^m)^n$.  First, when $n=0$ the left and right hand
+sides of the equation are both 1, so $a^{mn}=(a^m)^n$ holds when $n=0$. 
+Now assume that $a^{m(k-1)} =(a^m)^{k-1}$.  This may be rewritten as
+$a^{mk-m}=(a^m)^{k-1}$  Multiply both sides by $a^m$ and apply part (a)
+of the problem and then the inductive definition (with $a^m$ replacing $a$)
+to get
+\begin{eqnarray*}
+a^{mk-m}a^m&=&(a^m)^{k-1}a^m\\
+a^{mk}&=&(a^m)^{k-1}a^m\\
+a^{mk}&=&(a^m)^k.
+\end{eqnarray*}
+Thus the truth of our formula when $n=k-1$ implies its truth when $n=k$. 
+Therefore by the principle of mathematical induction, the formula is true
+for all nonnegative integers $n$.}
+\end{enumerate}
+
+\items Suppose that $f$ is a function on the nonnegative integers such
+that $f(0)=0$ and $f(n) = n+f(n-1)$.  Prove that $f(n) = n(n+1)/2$.  Notice
+that this gives a third proof that $1+2+\cdots+n=n(n+1)/2$, because this sum
+satisfies the two conditions for $f$.  (The sum has no terms and is thus 0
+when $n=0$.)
+\solution{We prove the formula for $f$ by induction on $n$.  If $n=0$,
+then $n(n+1)/2=0$ which is what we were given.  Now assume that $f(k-1)=
+(k-1)k/2$.  Then $f(k)= k+f(k-1)= k+(k-1)k/2=(k^2+2k-k)/2=k(k+1)/2$.
+Therefore the truth of the formula for $n=k-1$ implies its truth for
+$n=k$, and thus by the principle of mathematical induction, the formula
+for $f$ holds for all nonnegative integers $n$.}
+
+\itemi Give an inductive definition of the summation notation
+$\sum_{i=1}^n a_i$.  Use it and the distributive law $b(a+c) = ba+bc$ to
+prove the distributive law
+$$b\sum_{i=1}^n a_i = \sum_{i=1}^n ba_i.$$
+\solution{
+We define $\sum_{i=1}^1a_i = a_1$ and for $n>1$, $\sum_{i=1}^n
+a_i =  \left(\sum_{i=1}^{n-1}a_i\right) +a_n$.  When $n=1$,
+$b\sum_{i=1}^1a_i =ba_1$ by the base step of our inductive definition.
+Assume that $k>1$ and $b\sum_{i=1}^{k-1}a_i=\sum_{i=1}^{k-1}ba_i$. Now we
+can write
+$$b\sum_{i=1}^k a_i\!=\! b\left[\left(\sum_{i=1}^{k-1}a_i\right)+a_k\right]
+\!=\!
+\left(b\sum_{i=1}^{k-1}a_i\right) +ba_k \!=\! \left(\sum_{i=1}^{k-1}ba_i\right)
++ ba_k \!=\! \sum_{i=1}^k ba_i,$$
+where the last step is justified by the inductive step of our inductive
+definition with $a_i$ replaced by $ba_i$.  Thus the truth of our
+statement for $k-1$ implies its truth for $i=k$, and therefore by the
+principle of mathematical induction, for all positive integers $n$, 
+$b\sum_{i=1}^na_i= \sum_{i=1}^nba_i$.}
+
+\ep
+
+
+\subsection{Proving the general product principle (Optional)}
+We stated the sum principle as 
+\begin{quote}If we have a partition of a set $S$, then the size of $S$ is
+the sum of the sizes of the blocks of the partition.\end{quote}
+In fact, the simplest form of the sum principle says that the size of the
+sum of two disjoint (finite) sets is the sum of their sizes.  
+\bp 
+\item Prove the sum principle we stated for partitions of a set from the
+simplest form of the sum principle.
+\solution{We prove by induction on $n$ that the size of the union of $n$
+disjoint sets is the sum of their sizes.  We assume that the size of the
+union of two disjoint sets is the sum of their sizes.  Now assume $k>2$
+and the size of the union of $k-1$ disjoint sets is the sum of their
+sizes.  Then we may write
+$$|\cup_{i=1}^k S_i|=|\left(\cup_{i=1}^{k-1}S_i\right)\cup
+S_k|=\left(\sum_{i=1}^{k-1}|S_i|\right) +|S_k|=\sum_{i=1}^k|S_i|.$$
+Thus whenever the size of the union of $k-1$ disjoint sets is the sum of
+their sizes, then the size of a union of $k$ disjoint sets is the sum of
+their sizes.  Thus by the principle of mathematical induction, the size
+of the union of $n$ disjoint sets is the sum of their sizes for all
+$n>1$.  The statement holds trivially when $n=1$ as well.}
+\ep
+
+We stated the simplest form of the product principle as 
+\begin{quote}If we have a partition of a set $S$ into $m$ blocks, each of
+size
+$n$, then
+$S$ has size $mn$.\end{quote}
+In Problem \ref{generalproductprinciple} we gave  a more
+general form of the product principle which can be stated as
+\index{product principle!general}\index{general product
+principle}\begin{quote} Let $S$ be a set of functions $f$ 
+from
+$[n]$ to some set $X$.  Suppose that
+\begin{itemize}
+\item there are $k_1$ choices for $f(1)$, and 
+\item  suppose that  
+for each choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$
+choices for
+$f(i)$.
+\end{itemize} Then the number of functions in the set
+$S$ is $k_1k_2\cdots k_n$.\end{quote}
+\bp
+\items Prove the general form of the product
+principle from the simplest form of the product
+principle.\label{generalproductprincipleproof}
+\solution{We prove by induction that if $S$ is a set of functions defined on
+$[m]$ such that 
+\begin{itemize}
+\item There are $k_1$ choices for $f(1)$ and
+\item when $2\le i\le m$, for each choice of $f(1)$, $f(2)$, \ldots $f(i-1)$,
+there are
+$k_i$ choices for
+$f(i)$,
+\end{itemize}
+then there are $\prod_{i=1}^m k_i$ functions in $S$.  When $m=1$, the product
+is $k_1$ and there are $k_1$ functions in $S$.  Now assume inductively that
+when 
+ $S'$ is a set of functions defined on $[m-1]$ such that 
+\begin{itemize}
+\item There are $k_1$ choices for $f(1)$ and
+\item when $2\le i\le m-1$, for each choice of $f(1)$, $f(2)$, \ldots
+$f(i-1)$, there are
+$k_i$ choices for
+$f(i)$,
+\end{itemize}
+then there are $\prod_{i=1}^{m-1} k_i$ functions in $S'$.  Now partition $S$
+into $k_1$ sets $S_j$, where $S_j$ is  the set of functions $f$ in $S$ with
+$f(n) = y_j$ for each of the $k_n$ values $y_j$ that are possible for
+$f(1)$.   Thus $S$ is a union of $k_n$ sets $S_j$ each of
+size $\prod_{i=1}^{m-1} k_i$ (by the inductive hypothesis), and so by the
+product principle for unions of sets, $S$ has size $\prod_{i=1}^{m} k_i$. 
+Therefore, by the principle of mathematical induction, we have proved the
+general product principle. }
+\ep       
+\subsection{Double Induction and Ramsey Numbers}
+In Section \ref{Ramseysection} we gave two different descriptions of the
+Ramsey number $R(m,n)$.  However if you look carefully, you will see that
+we never showed that Ramsey numbers actually exist; we merely described
+what they were and showed that $R(3,3)$ and $R(3,4)$ exist by computing
+them directly.  As long as we can show that there is some number $R$ such
+that when there are $R$ people together, there are either $m$ mutual
+acquaintances or $n$ mutual strangers, this shows that the Ramsey Number
+$R(m,n)$ exists, because it is the smallest such $R$.  Mathematical
+induction allows us to show that one such $R$ is $m+n-2\choose m-1$.  The
+question is, what should we induct on, $m$ or $n$?  In other words, do we
+use the fact that with $m+n-3\choose m-2 $ people in a room there are at
+least $m-1$ mutual acquaintances or $n$ mutual strangers, or do we use
+the fact that with at least $m+n-3\choose n-2$ people in a room there are
+at least $m$ mutual acquaintances or at least $n-1$ mutual strangers?  It
+turns out that we use both.  Thus we want to be able to simultaneously
+induct on $m$ and $n$.  One way to do that is to use yet another
+variation on the principle of mathematical induction, the {\em Principle
+of Double Mathematical Induction}\index{double
+induction}\index{induction!double}\index{mathematical induction!double}.
+This principle (which can be derived from one of our earlier ones) states
+that
+\begin{quote}In order to prove a statement about  integers $m$ and $n$, if
+we can
+\begin{enumerate}
+\item Prove the statement when $m=a$ and $n=b$, for  fixed integers $a$
+and
+$b$
+\item Prove the statement when $m=a$ and $n>b$ and when $m>a$  and $n=b$
+(for the same fixed integers $a$ and $b$), 
+\item Show that the truth of the statement for $m=j$ and $n=k-1$ (with
+$j\ge a$ and $k>j$) and the truth of the statement for $m=j-1$ and $n=k$
+(with $j>a$ and $k\ge b$) imply the truth of the statement for $m=j$ and
+$n=k$,
+\end{enumerate}
+then we can conclude the statement is true for all pairs of integers $m\ge
+a$ and
+$n\ge b$.\end{quote}
+
+\bp
+\itemesi Prove that $R(m,n)$ exists by proving that if there are
+$m+n-2\choose m-1$ people in a room, then there are either at least $m$
+mutual acquaintances or at least $n$ mutual strangers.\label{Ramseybound}
+\solution{We use double induction on $m$ and $n$ to prove this for
+$m,n\ge 2$.    Note first that $R(m,2)=m={m+2-2\choose m-1}$ and $R(2,n)
+=n={2+n-2\choose 1}$.  (In words, if there are
+$m$ people in a room, then either all $m$ people know each other or there
+are two mutual nonacquaintances, and if there are $n$ people in a room,
+then either there are two people who know each other or they are all
+mutual strangers.)\footnote{Note that we have covered both steps 1 and 2
+of a double induction proof now.}  Now assume that whenever there are
+$m+n-3\choose m-1$ people in a room there are either at least $m$ mutual
+acquaintances or $n-1$ mutual strangers, and that whenever there are at
+least $m+n-3\choose m-2$ people in a room there are either at least
+$m-1$ mutual acquaintances or $n$ mutual strangers.  Suppose that we have
+$m+n-2\choose m-1$ people in a room.  Choose a person, say $P$.  Then
+since ${m+n-2\choose m-1} = {m-n-3\choose m-1} +{m+n-3\choose m-2}$,
+person $P$ is, by the generalized pigeonhole principle, either acquainted
+with $m+n-3\choose m-2$ people or unacquainted with $m+n-3\choose m-1$
+people.  In the first case, among the people with whom $P$ is
+acquainted, either $m-1$ are mutual acquaintances or $n$ are mutual
+strangers.  If $m$ are mutual strangers, we are done, while if $m-1$ are
+mutual acquaintances, these $m-1$ people, together with person $P$, are
+$m$ mutual acquaintances, in which case we are done as well.  In the
+second case, among the $m+n-3\choose m-1$ people with whom person $P$ is
+unacquainted, there are either $m$ mutual acquaintances, in which case we
+are done, or there are $n-1$ mutual strangers. In this event, these $n-1$
+mutual strangers, along with person $P$ make up $n$ mutual strangers. 
+Thus in every case, if we know that with $m+n-3\choose m-2$ people in a
+room there are either $m-1$ mutual acquaintances or $n$ mutual strangers,
+and we know that with $m+n-3\choose m-1$ people in a  room there are
+either $m$ mutual acquaintances or $n-1$ mutual strangers, we can
+conclude that with $m+n-2\choose m-1$ people in a room there are either
+$m$ mutual acquaintances or $n$ mutual strangers.  Therefore by the
+principle of double mathematical induction we know that for all $m$ and
+$n$ greater than or equal to 2, if there are $m+n-2\choose m-1$ people
+in a room, then there are either $m$ mutual acquaintances of $n$ mutual
+strangers.  This shows that $R(m,n)$ exists and is no more than
+$m+n-2\choose m-1$.}
+
+\itemes Prove that $R(m,n)\le R(m-1,n) + R(m,n-1)$.\label{Ramseyrecurrence}
+\solution{If there are $R(m-1,n) +R(m,n-1)$ people in a room, choose one
+person, say person $P$.  By the generalized pigeonhole principle, there
+are either $R(m-1,n)$ people with whom $P$ is acquainted or $R(m,n-1)$
+people with whom person $P$ is unacquainted.  In the first case, among
+the people with whom person $P$ is acquainted, there are either $n$
+mutual strangers, in which case we are done, or there are  $m-1$
+people with whom person $P$ is acquainted.  These $m-1$ people and person
+$P$ form $m$ people who are mutually acquainted, and so we have $m$
+mutual acquaintances.  On the other hand, if $P$ is unacquainted with
+$R(m,n-1)$ people, then among these people, there are either $m$ mutually
+acquainted people, in which case we are done, or among these people there
+are $m-1$ mutually unacquainted people, and these $m-1$ people together
+with $P$ make $m$ mutual strangers.  Thus in every case, if there are
+$R(m-1,n)+R(m,n-1)$ people in a room, there are either at least $m$ mutual
+acquaintances or at least $n$ mutual strangers.  Therefore $R(m,n)\le
+R(m-1,n)+R(m,n-1)$.}
+
+\itemesi \begin{enumerate}
+\item What does the equation in Problem
+\ref{Ramseyrecurrence} tell us about $R(4,4)$? 
+\solution{$R(4,4)\le R(3,4) + R(4,3) =9+9 = 18$.}
+\itemitemh Consider 17 people arranged in a circle such that each person is
+acquainted with the first, second, fourth, and eighth person to the right
+and the first, second, fourth, and eighth person to the left.  can you
+find a set of four mutual acquaintances?  Can you find a set of four
+mutual strangers?
+\solution{You cannot find either.  If there were a set of four mutual
+acquaintances, you could assume by symmetry that it includes person 1,
+and two people from among those one, two, four, and eight places to the
+right.  Thus you can assume your set of four acquaintances contains
+person 1 and two from among persons 2, 3, 5, and 9.  However persons 2
+and 5, 2 and 9 and 3 and 9 are not acquainted.  Thus three of the
+mutually acquainted people are either persons 1, 2, and 3, persons 1, 5
+and 9 or persons 1, 3, and 5.  However person 5 is not acquainted with the
+person one, two,  or eight places to the left of person 1, so if person 5 is in
+the set of mutual acquaintances, then person 14 must be as well. However
+person 3 and person 9 are not acquainted with person 14. Thus our set
+must contain persons 1, 2, and 3.  However person 3 is not acquainted
+with the person one, two,  four, or eight persons to the left of person 1, so
+there is no set of four mutual acquaintances.  A similar argument holds for
+nonacquaintances.}
+\item What is $R(4,4)$?
+\solution{18.}\end{enumerate}
+
+\item (Optional) Prove the inequality of Problem
+\ref{Ramseybound} by induction on $m+n$. 
+\solution{
+We want to prove that if $m\ge 2$ and $n\ge 2$, then when there are
+$m+n-2\choose m-1$ people in a room, there are either $m$ mutual
+acquaintances or $n$ mutual strangers.  If $m+n=4$, then $m=2$ and
+$n=2$, and if there are ${2+2-2\choose1}=2$ people in a room, there are
+either two  who know each other or two who don't.
+
+Now assume that when $m+n=k-1$, it is the case that if there are $m+n-2\choose
+m-1$ people in a room, then there are either $m$ mutual acquaintances or $n$
+mutual strangers.  Suppose that $m'+n'=k$ and there are  $m'+n'-2\choose m'-1$
+people in a room.   If $n'=2$, then we know that with
+${m'+2-2\choose m'-1}=m'$ people in a room, there are either $m'$ mutual
+acquaintances or two mutual strangers, and similarly if $m'=2$ there are
+either two mutual acquaintances or $n$ mutual strangers among
+$m'+n'-2\choose m-1$ people. Thus we may assume that both
+$m'$ and $n'$ are greater than two.  Since ${m'+n'-2\choose m-1}=
+{(m'-1)+n-2\choose m'-2} +{m+(n-1) -2\choose m-1}$, if there are
+$m'+n'-2\choose m'-1$ people in a room, then a given person, say person
+$P$, is either acquainted with $(m'-1)+n'-2\choose m'-1$ of them (call
+this case 1) or is a stranger with $m'+(n-1)-2\choose m-1$ of them (call
+this case 2).  Notice that
+$m'-1+n'=k-1$ and $m'+n'-1=k-1$.  Thus in case 1, our inductive hypothesis
+tells us that either $m'-1$ of person $P$'s acquaintances are mutually
+acquainted, in which case they and person $P$ form $m'$ mutual
+acquaintances, or $n'$ of $P$'s acquaintances are mutual strangers, in
+which case we have $n'$ mutual strangers.  Similarly in case 2 we have
+either $m'$ mutual acquaintances or $n'$ mutual strangers.  Thus by the
+principle of mathematical induction, for all values of $m+n$ greater than
+or equal to 4, if we have $m+n-2\choose m-1$ people in a room, then we
+have either $m$ mutual acquaintances or $n$ mutual strangers, so that
+$R(m,n)$ exists and is no more than $m+n-2\choose m-1$.}
+
+\item Use Stirling's approximation (Problem \ref{Stirling'sapproximation})
+to convert the upper bound for $R(n,n)$ that you get from Problem
+\ref{Ramseybound} to a multiple of a power of an
+integer.\label{Ramseybound2}
+\solution{$R(n,n)\le {n+n-2\choose m-1}={(2n-2)!\over (n-1)!^2}$.  For
+$n$ sufficiently large, this is approximately
+\begin{eqnarray*}&&\sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
+\sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
+(n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}\\
+&=&{2^{2n-2}(n-1)^{2n-2}\over\sqrt{\pi
+(n-1)}(n-1)^{2n-2}}\\
+&=&{1\over \sqrt{\pi
+(n-1)}}2^{2n-2}\end{eqnarray*}
+}
+\ep
+
+\subsection{A bit of asymptotic combinatorics}
+Problem \ref{Ramseybound2} gives us an upper bound on $R(n,n)$.  A very
+clever technique due to Paul Erd\"os, called the ``probabilistic method,''
+will give a lower bound.  Since both bounds are exponential in $n$, they
+show that $R(n,n)$ grows exponentially as $n$ gets large.  An analysis of
+what happens to a function of $n$ as $n$ gets large is usually called an
+{\em asymptotic analysis}.\index{asymptotic combinatorics}  The {\em
+probabilistic method}\index{probabilistic method}\index{method!probabilistic},
+at least in its simpler forms, can be expressed in terms of averages, so one
+does not need to know the language of probability in order to understand it. 
+We will apply it to Ramsey numbers in the next problem.  Combined with the
+result of Problem
+\ref{Ramseybound2}, this problem will give us that
+$\sqrt{2}^{\>n}<R(n,n)<2^{2n-2}$, so that we know that the Ramsey number
+$R(n,n)$ grows exponentially with~$n$.
+\bp 
+\itemi Suppose we have two numbers $n$ and $m$.  We consider
+all possible ways to color the edges of the complete graph $K_m$
+with two colors, say red and blue.  For each coloring, we look at each
+$n$-element subset
+$N$  of the vertex set $M$ of $K_m$.  Then $N$ together with the edges of
+of $K_m$ connecting vertices in $N$ forms a complete graph on $n$
+vertices.  This graph, which we denote by $K_N$, has its edges colored by
+the original coloring of the edges of $K_m$. 
+\begin{enumerate}
+\item Why is it that if there is no subset $N\subseteq M$
+so that all the edges of $K_N$ are colored the same color, then
+$R(n,n)>m$? 
+\solution{Another way to say there is no such subset is to say that it
+is not possible to find a $K_n$ all of whose edges are red or a $K_n$
+all of whose edges are blue.  This means that $R(n,n)>n$.} 
+\item To apply the probabilistic method, we are going to compute
+the average, over all colorings of $K_m$, of the number of sets
+$N\subseteq M$ with
+$|N|=n$ such that $K_N$ {\em does} have all its edges the same color.
+Explain why it is that if the average is less than 1, then for some
+coloring there is no set $N$ such that $K_N$ has all its edges colored
+the same color.  Why does this mean that $R(n,n)>m$?
+\solution{If the average of $n$ nonnegative integers is less than one,
+they cannot all be one or more, so one has to be zero.  Thus in this
+context there must be some coloring that has no set $N$ so that $K_N$ has
+all its edges colored the same color.}
+\item We call a $K_N$ {\em monochromatic}\index{monochromatic subgraph}
+for a coloring $c$ of $K_m$ if the color $c(e)$ assigned to edge $e$ is
+the same for every edge $e$ of $K_N$.  Let us define ${\rm mono}(c,N)$ to
+be 1 if $N$ is monochromatic for $c$ and to be 0 otherwise.  Find a
+formula for the average number of monochromatic $K_N$s over all colorings
+of $K_m$ that involves a double sum first over all edge colorings $c$ of
+$K_m$ and then over all $n$-element subsets $N\subseteq M$ of ${\rm
+mono}(c,N)$.
+\solution{$${1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+of~}K_m}\sum_{N:N\subseteq M,~|N|=n}{\rm mono}(c,N).$$}
+\item  Show that your formula for the average reduces to $2{m\choose
+n}\cdot2^{-{n\choose 2}}$
+\solution{
+\begin{eqnarray*}
+&&{1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+of~}K_m}\sum_{N:N\subseteq M,~|N|=n}{\rm mono}(c,N)\\
+&=&{1\over 2^{^{m\choose 2}}} \sum_{N:N\subseteq
+M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~}K_m}{\rm mono}(c,N)\\&=&
+2^{-{m\choose2}}\sum_{N:N\subseteq
+M,~|N|=n}2\cdot2^{{m\choose2}-{n\choose2}}\\
+&=& 2{m\choose n}2^{-{n\choose 2}}
+\end{eqnarray*}}
+\item Explain why $R(n,n)>m$ if ${m\choose n}\le 2^{{n\choose 2} -1}$.
+\solution{$R(n,n)>m$ if the average above is less than 1.  Thus $R(n,n)>m$
+if
+$2{m\choose 2}2^{-{n\choose 2}}<1$, which is equivalent to
+${m\choose n}<2^{{n\choose 2}-1}$.}
+\itemitemh Explain why $R(n,n)>\root n \of {n!2^{{n\choose 2}-1}}$.
+\solution{${m\choose n} <2^{{n\choose 2}-1}$  is the same as
+${m^{\underline{n}}\over n!}<2^{{n\choose 2}-1}$.  And since
+$m^{\underline{n}}<m^n$, the inequality ${m^{\underline{n}}\over
+n!}< 2^{{n\choose 2}-1}$ holds if the inequality ${m^n\over
+n!}\le2^{{n\choose2}-1}$ holds. And this last inequality holds if
+$m\le\root n
+\of {n!2^{{n\choose2}-1}}$ holds.  Thus $R(n,n)>m$ for any $m$ such that
+$m\le\root n
+\of {n!2^{{n\choose2}-1}}$, which implies that $R(n,n)> \root n
+\of {n!2^{{n\choose2}-1}}$.}
+\item By using Stirling's formula, show that if $n$ is large enough, then
+$R(n,n) > \sqrt{2^n} = \sqrt{2}^{\>n}$
+\solution{
+Using Stirling's approximation to $n!$ we get $$R(n,n)>\root n \of
+{{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}={n\over
+e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
+n}>2^n/2=\sqrt{2}^{\>n}.$$}
+\end{enumerate}
+ 
+
+\ep
+
+
+\section{Recurrence Relations}  We have seen in 
+Problem \ref{SubsetsByInduction} (or Problem 
+\ref{subsetsbysmallestcounterexample} in the Appendix on Induction) that
+the number of subsets of an $n$-element set is twice the number of
+subsets of an $(n-1)$-element set.  
+\bp \item Explain why it is that the number of
+bijections from an $n$-element set to an $n$-element set is equal to $n$
+times the number of bijections from an $(n-1)$-element subset to an
+$(n-1)$-element set.  What does this have to do with Problem
+\ref{permutationasbijection}?
+\solution{To specify a bijection $f$ from an $n$-element set $\{a_1,a_2, 
+\ldots a_n\}$ to an $n$-element set, we have $n$ choices for $f(a_1)$,
+and then $b_{n-1}$ choices for how to define $f$ from the elements
+$\{a_2,a_3, \ldots,a_n\}$ to the remaining $n-1$ elements of our range. 
+By the product principle this gives us $b_n=nb_{n-1}$ for the number
+$b_n$ of bijections from an $n$-element set to an $n$-element set.}
+\ep
+We can summarize these observations as follows.  If $s_n$ stands for the
+number of subsets of an $n$-element set, then 
+\begin{equation} s_n =2s_{n-1},\label{subsetequation}\end{equation} and if
+$b_n$ stands for the number of bijections from an $n$-element set to an
+$n$-element set, then \begin{equation} b_n =
+nb_{n-1}.\label{bijectionequation}\end{equation}
+Equations \ref{subsetequation} and \ref{bijectionequation} are examples
+of {\em recurrence equations} or {\em recurrence relations}.  A {\bf
+recurrence relation}\index{relation!recurrence}\index{recurrence
+relation} or simply a {\bf recurrence}\index{recurrence} is an equation
+that expresses the $n$th term of a sequence $a_n$ in terms of values of
+$a_i$ for $i<n$.  Thus Equations \ref{subsetequation} and
+\ref{bijectionequation} are examples of recurrences. 
+
+\subsection{Examples of recurrence relations}
+ Other examples of
+recurrences are 
+\begin{equation} a_n = a_{n-1} +
+7,\label{arithmeticexample}\end{equation}
+\begin{equation} a_n =3a_{n-1} + 2^n,\label{geometricdriven}\end{equation}
+\begin{equation} a_n = a_{n-1} + 3a_{n-2},\mbox{
+and}\label{secondorderlinear}\end{equation}
+\begin{equation} a_n= a_1a_{n-1} + a_2a_{n-2}+\cdots +
+a_{n-1}a_1.\label{Catalanrecurrence}\end{equation}  A {\bf
+solution}\index{recurrence!solution to} to a recurrence relation is a
+sequence that satisfies the recurrence relation.  Thus a solution to
+Recurrence \ref{subsetequation} is $s_n =2^n$.  Note that
+$s_n=17\cdot2^n$ and
+$s_n=-13\cdot2^n$ are also solutions to Recurrence \ref{subsetequation}. 
+What this shows is that a recurrence can have infinitely many solutions. 
+In a given problem, there is generally one solution that is of interest
+to us.  For example, if we are interested in the number of subsets of a
+set, then the solution to Recurrence \ref{subsetequation} that we care
+about is $s_n=2^n$.  Notice this is the only solution we have mentioned
+that satisfies
+$s_0=1$.
+\bp 
+\item Show that there is only one solution to Recurrence
+\ref{subsetequation} that satisfies $s_0=1$. 
+\solution{We prove by induction on $n$ that there is one and only one
+value
+$s_n$ that satisfies both $s_n=2s_{n-1}$ for $n>0$ and $s_0=1$.  First,
+there is clearly one and only one value $s_0$ that satisfies $s_0=1$.  Now
+assume that $k>0$ and there is one and only one value $s_{k-1}$ that satisfies
+the two equations.  Then $s_k=2s_{k-1}$ is the one and only one value
+that satisfies the two equations.  Therefore by the principle of
+mathematical induction, for all nonnegative integers $n$ there is one and
+only one value
+$s_n$ that satisfies the equations $s_0=1$ and $s_k=2s_{k-1}$ for all
+$k>0$.  (Note that since we were making a statement about $s_n$ for all
+nonnegative integers $n$ it was not appropriate to use $n$ as the dummy
+variable in the recursive equation $s_k=2s_{k-1}$.)}
+
+\item A first-order recurrence relation is one which expresses $a_n$ in
+terms of $a_{n-1}$ and other functions of $n$, but which does not
+include any of the terms $a_i$ for $i<n-1$ in the equation. 
+\begin{enumerate}\item Which of
+the recurrences \ref{subsetequation} through \ref{Catalanrecurrence} are
+first order recurrences?
+\solution{ The recurrences \ref{subsetequation}, \ref{bijectionequation},
+\ref{arithmeticexample}, and \ref{geometricdriven} are all examples
+of first order recurrences.  The recurrences \ref{secondorderlinear} and
+\ref{Catalanrecurrence} are not.}
+\item Show that there is one and only one sequence $a_n$ that is defined
+for every nonnegative integer
+$n$, satisfies a given first order recurrence, and satisfies $a_0=a$ for some
+fixed constant $a$.
+\solution{A first order recurrence will give $a_n$ in terms of $a_{n-1}$, that
+is, there will be a function $f$ such that $a_n=f(a_{n-1})$ for all $n>0$.  We
+prove by induction that there is one and only one solution to a first order
+recurrence that satisfies $a_0=a$ for some fixed constant $a$.  First, there
+is one and only one value for $a_0$.  Now suppose that when $n=k-1$, there is
+one and only one value possible for $a_{n-1}$.  Then $a_k$ is uniquely
+determined by $a_k=f(a_{k-1}$.  Thus the truth of the statement that $a_{k-1}$
+is uniquely determined by the equations $a_0=a$ and $a_n=f(a_{n-1})$ implies
+the truth of the statement that $a_k$ is determined uniquely by the equations
+$a_0=a$ and $a_n=f(a_{n-1})$.  Therefore by the principle of mathematical
+induction, $a_k$ is uniquely determined by the equations $a_0=a$ and
+$a_n=f(a_{n-1})$ for all nonnegative integers $k$.}
+\end{enumerate}
+\begin{figure}[htb]\caption{The
+Towers of Hanoi Puzzle}\label{Hanoi}\vglue-1in
+\begin{center}\mbox{\psfig{figure=Hanoi.eps%,height=1.0in
+}}
+\end{center}
+\end{figure}
+
+\itemi The ``Towers of Hanoi'' puzzle has three rods rising from a
+rectangular base with $n$ rings of different sizes stacked in decreasing
+order of size on one rod.  A legal move consists of moving a ring from
+one rod to another so that it does not land on top of a smaller ring.  If
+$m_n$ is the number of moves required to move all the rings from the
+initial rod to another rod that you choose, give a recurrence for $m_n$. 
+(Hint: suppose you already knew the number of moves needed to solve the
+puzzle with $n-1$ rings.)\label{HanoiProblem}
+\solution{We can solve the puzzle in one step if there is one ring, so
+$m_1=1$.  If $n>0$ and we want to move all the rings from the initial rod to
+rod 3, then first we solve the problem of moving all but the bottom ring to
+rod 2; this takes $m_{n-1}$ steps, then we move the bottom ring to rod 3, then
+we solve the problem of moving all the remaining rings from rod 2 to rod 3. 
+Thus we have $m_n=2m_{n-1}+1$. }
+
+\itemi We draw $n$ mutually intersecting circles in the plane so that
+each one crosses each other one exactly twice and no three intersect in
+the same point.  (As examples, think of Venn diagrams with two or three
+mutually intersecting sets.)  Find a recurrence for the number
+$r_n$ of regions into which the plane is divided by $n$ circles.  (One
+circle divides the plane into two regions, the inside and the outside.) 
+Find the number of regions with $n$ circles.  For what values of $n$ can
+you draw a Venn diagram showing all the possible intersections of $n$
+sets using circles to represent each of the sets? \label{circlesinplane} 
+\solution{One circle defines two regions, the inside and outside.  When we
+draw a second circle that intersects the first, we can start at one of the
+intersection points and go inside the first circle, cutting its region into
+two pieces, and then when we leave it we cut the outside region into two
+pieces.  This suggests the general pattern.  If we have drawn $n-1$ circles and
+start a new one, each time we enter a circle, we start dividing a region into
+two pieces.  Each time we leave a circle, we also start dividing a region into
+two pieces.  Thus if we have $r_n$ regions with $n$ circles, to get the number
+of regions, we note that in going from $n-1$ circles to $n$ circles, we start
+with $r_{n-1}$ regions, and divide $2(n-1)$ of them in half, so we get $2n-2$
+new regions.  This gives us $r_n=r_{n-1}+2(n-1)$. Notice that by substitution
+of the formula $r_{n-1}=r_{n-2} +2(n-2)$, we get $r_n=r_{n-2}+ 2(n-2)
++2(n-1)$, and would guess that $r_n=r_{n-3}+2(n-3)+2(n-2) +2(n-1)$.  This
+leads to the conjecture
+$$r_n=r_1  +2\cdot1+2\cdot2+\cdots+2\cdot(n-1)=r_1+2\sum_{i=1}^{n-1}
+i=2+n(n-1).$$
+We can prove this formula by induction.  When $n=1$ we have $2+1\cdot0$
+regions.  Assuming that $n-1$ circles give us $2+(n-1)(n-2)$ regions, for $n$
+circles we have $2+(n-1)(n-2) +2(n-1)=2+n(n-1)$ regions.  Thus the
+correctness of our formula for $n-1$ circles implies its correctness when we
+have $n$ circles, so for all positive integers $n$, we get $2+n(n-1)$ regions
+determined by $n$ mutually intersecting circles.
+Two circles cannot touch more than twice, and if we let some of our $n$ circles
+touch just once, or not at all, that would reduce the number of regions we
+would get.  Similarly, allowing a circle to go through the intersection point
+of two other circles could only reduce the number of regions.  So with $n$
+circles we could never have more than $2+n(n-1)$ regions.  In particular
+with 4 circles we get just 14 regions, rather than the 16 that would be
+required in a Venn diagram for four sets.  We could prove, again by
+induction, that $2+n(n-1)<2^n$ for all $n>3$, so it is not possible to draw a
+Venn diagram using circles to illustrate the intersections of four or more
+sets. 
+ }
+
+\ep
+
+\subsection{Arithmetic Series (optional)}
+\bp
+\item A child puts away two dollars from her allowance each week.  If she
+starts with twenty dollars, give a recurrence for the amount $a_n$ of
+money she has after $n$ weeks and find out how much money she has at the
+end of 
+$n$ weeks. \label{childsaving}
+\solution{$a_n=a_{n-1} +2$.  Then by substitution $a_n=a_{n-2}+2+2$, and so we
+conjecture that $a_n = 20 +2n$.  Since she adds two dollars to her savings
+each week for $n$ weeks, she has adds 2n dollars to her original 20, which
+proves the formula.  We could have used induction to prove it as well.}
+
+\item A sequence that satisfies a recurrence of the form $a_n=a_{n-1} +c$
+is called an {\em arithmetic progression}\index{arithmetic
+progression}\index{progression!arithmetic}. Find a formula in terms of
+the initial value
+$a_0$ and the common difference $c$ for the term
+$a_n$ in an arithmetic progression and prove you are
+right.\label{arithmeticprogression}
+\solution{$a_n =a_o+cn$.  The formula is valid with $n=0$, and if $a_{n-1}=a_0
++c(n-1)$, then $a_n = a_0 +c(n-1) +c =a_0+cn$.  Therefore the fact that
+$a_{n-1}=a_0+ca_{n-1}$ implies the fact that $a_n=a_0+cn$.  Therefore by the
+principle of mathematical induction, $a_n=a_0+cn$ for all nonnegative integers
+$n$.}
+\item A person who is earning \$50,000 per year gets a raise of \$3000 a
+year for $n$ years in a row.  Find a recurrence for the amount $a_n$ of
+money the person earns over $n+1$ years. What is the total amount of money
+that the person earns over a period of $n+1$ years?  (In
+$n+1$ years, there are
+$n$ raises.) \label{constantraise}
+\solution{By Problem \ref{arithmeticprogression} we saw that if $b_n$ is the
+salary in year $n$, then $b_n=50,000 + 3000n$. If $a_n$ is the total amount
+earned over the period of from year 0 through the end of year $n$, a period of
+$n+1$ years,  then $a_n=a_{n-1}+b_n=a_{n-1}+ 50,000+3000n$.  Further,
+$a_n=\sum_{i=0}^n b_i=\sum_{i=0}^n50,000 +3000i = 50,000(n+1)+3000\sum_{i=0}^n
+i= 50,000(n+1) + 1500(n(n+1)$.}
+\item An {\em arithmetic
+series}\index{series!arithmetic}\index{arithmetic series} is a sequence
+$s_n$ equal to the sum of the terms
+$a_0$ through
+$a_n$ of of an arithmetic progression.  Find a recurrence for the sum
+$s_n$ of an arithmetic progression with initial value $a_0$ and common
+difference
+$c$ (using the language of Problem \ref{arithmeticprogression}).  Find a
+formula for general term $s_n$ of an arithmetic  series.
+\solution{$s_n=\sum_{i=0}^n a_0 +ci =(n+1)a_0+c\sum_{i=0}^n i = (n+1)a_0
++cn(n+1)/2$.}
+\ep
+
+
+\subsection{First order linear recurrences}  Recurrences such as those in
+Equations \ref{subsetequation} through \ref{secondorderlinear} are called
+{\em linear recurrences}, as are the recurrences of Problems
+\ref{HanoiProblem} and
+\ref{circlesinplane}.  A {\bf linear recurrence}\index{recurrence!linear}\index{linear
+recurrence} is one in which $a_n$ is expressed as a sum of functions of
+$n$ times values of (some of the terms) $a_i$ for $i<n$ plus (perhaps)
+another function (called the {\em driving function}\index{driving
+function}\index{function!driving}) of
+$n$.  A linear equation is called {\em homogeneous}\index{homogeneous
+linear recurrence}\index{linear
+recurrence!homogeneous}\index{recurrence!linear homogeneous} if  the
+driving function is zero (or, in other words, there is no driving
+function).  It is called a {\em constant coefficient linear
+recurrence}\index{linear recurrence!constant coefficient}\index{constant
+coefficient linear recurrence} if the functions that are multiplied by the
+$a_i$ terms are all constants (but the driving function need not
+be constant).
+\bp 
+\item Classify the recurrences in Equations \ref{subsetequation} through
+\ref{secondorderlinear} and Problems \ref{HanoiProblem} and
+\ref{circlesinplane} according to whether or not they are constant
+coefficient, and whether or not they are
+homogeneous.\label{classifyrecurrences}
+\solution{Recurrence \ref{subsetequation} is first order, linear, constant
+coefficient, and homogeneous.  Recurrence \ref{bijectionequation} is first
+order, linear, and homogeneous, but not constant coefficient.
+ Recurrence \ref{arithmeticexample} is first order, linear, constant
+coefficient but not homogeneous.
+Recurrence \ref{geometricdriven} is first order, linear, constant coefficient
+but not homogeneous.  Recurrence \ref{secondorderlinear} is not first order
+(it is second order), is linear, constant coefficient and homogeneous. 
+The recurrence of Problem \ref{HanoiProblem} is first order, linear, and
+constant coefficient, and that of Problem \ref{circlesinplane} is first
+order, linear, and constant coefficient.}
+
+\iteme As you can see from Problem \ref{classifyrecurrences} some
+interesting sequences satisfy first order linear recurrences, including
+many that have constant coefficients, have constant driving term, or are
+homogeneous. Find a formula in terms of $b$, $d$, $a_0$ and $n$ for the
+general term $a_n$ of a sequence that satisfies a constant coefficient first
+order linear recurrence $a_n = ba_{n-1} + d$ and prove you are
+correct.  If your formula involves a summation, try to replace the
+summation by a more compact expression.  \label{firstordlinconst}
+\solution{Note that by the formula, $a_{n-1}=ba_{n-2} +d$.  Substituting this
+into the original equation for $a_n$ gives $a_n=b^2a_{n-2}+bd +d$.  Repeating
+this kind of substitution gives us $a_n=b^3a_{n-3} +b^2d +bd +d$.  This
+suggests that $a_n = a_0b^n +\sum_{i=0}^{n-1}db^i$.  We would guess the same
+formula by writing out the first few values of $a_i$, namely, $a_0$, $a_0b+d$,
+$a_0b^2+db+d$, $a_0b^3+b^2d+bd+d$, and so on.  We prove our general formula by
+induction on $n$.  It is clearly true when $n=0$ as there are no terms in the
+sum and $b^0=1$.  If we assume the formula is true when $n=k-1$, we may write
+\begin{eqnarray*}
+a_k &=& ba_{k-1}+d\\
+&=&b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d\\
+&=&a_0b^n +\sum_{i=0}^{n-1}db^i
+\end{eqnarray*}
+Thus the truth of our formula for $n=k-1$ implies its truth for $n=k$ and
+therefore by the principle of mathematical induction, it is true for all
+nonnegative integers $n$.  
+
+We can give a more compact expression for the sum
+$\sum_{i=0}^{n-1}db^i=d\sum_{i=0}^{n-1}b^i$.  Recall from algebra that
+$(1+x)(1-x)= 1-x^2$, $(1+x+x^2)(1-x) = 1-x^3$, and in general $(1+x+x^2+\cdots
+x^{n-1}))(1-x) = 1-x^n$.  If you do not recall this formula, you can prove it
+by induction, or observe that 
+\begin{eqnarray*}
+&&(1+x+x^2+\cdots
+x^{n-1}))(1-x)\\ &=& (1+x+x^2+\cdots
+x^{n-1})\cdot 1-(1+x+x^2+\cdots
+x^{n-1})\cdot x\\&=& 1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\>=\> 1-x^n.
+\end{eqnarray*}
+Dividing the first and last terms by $1-x$ gives us
+$$\sum_{i=1}^{n-1}x^i={1-x^n\over 1-x}.$$  Using this in our formula for $a_n$
+gives us
+$a_n =a_ob^n+d{1-b^n\over 1-b}.$ This is valid except in the case $b=1$ (in
+our computation with $x$ above, we would be dividing by 0.)  If $b=1$ we get
+$a_n =a_0 +nd$ for the sum.}
+\ep
+
+\subsection{Geometric Series}
+A sequence that satisfies a recurrence of the form $a_n=ba_{n-1}$ is
+called a {\em geometric progression}\index{geometric
+progression}\index{progression!geometric}.  Thus the sequence satisfying
+Equation
+\ref{subsetequation}, the recurrence for the number of subsets of an
+$n$-element set, is an example of a geometric progression. From your
+solution to Problem \ref{firstordlinconst}, a geometric progression has
+the form $a_n=a_0b^n$.  In your solution to Problem
+\ref{firstordlinconst} you may have had to deal with the sum of a
+geometric progression in just slightly different notation, namely
+$\sum_{i=0}^{n-1}db^i$.  A sum of this form is called a {\bf (finite)
+geometric series}.\index{geometric series}\index{series!geometric}
+
+\bp 
+\item Do this problem only if your final answer (so far) to Problem
+\ref{firstordlinconst} contained the sum   $\sum_{i=0}^{n-1}db^i$.
+\label{sumgeometricseries} 
+\begin{enumerate}\item Expand $(1-x)(1+x)$.  Expand $(1-x)(1+x+x^2)$. 
+Expand $(1-x)(1+x+x^2+x^3)$.  
+\solution{$(1-x)(1+x)=1-x^2$.  $(1-x)(1+x+x^2)=1-x^3$. 
+$(1-x)(1+x+x^2+x^3)=1-x^4$.}
+\item What do you expect $(1-b)\sum_{i=0}^{n-1} db^i$ to be?  What
+formula for $\sum_{i=0}^{n-1}db^i$ does this give you?  Prove that you
+are correct.
+\solution{We expect $(1-b)\sum_{i=0}^{n-1} db^i$ to be $d(1-b^n)$.  If
+$b\not=1$, this gives us  $\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.$  We can
+prove this by induction on $n$.  If $n=0$ we get 0 for $1-b^n\over 1-b$, and
+also for the sum $\sum_{i=0}^{-1}db^i$, since that sum has no terms.  Assuming
+the formula holds when $n=k-1$, we may write
+\begin{eqnarray*}&&\sum_{i=0}^{k-1} db^i\\
+&=&\sum_{i=0}^{k-2}db^i+db^{k-1}\\
+&=&d{1-b^{k-1}\over 1-b}+db^{k-1}\\
+&=&{ d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\>=\> d{1-b^k\over 1-b}.
+\end{eqnarray*}
+Since the truth of the formula for $n=k-1$ implies its truth for $n=k$, by the
+principle of mathematical induction the formula is true for all nonnegative
+integers $n$. If
+$b=1$ we get the formula
+$\sum_{i=0}^{n-1}db^i=dn$.}
+\end{enumerate}
+\ep 
+
+In Problem \ref{firstordlinconst} and perhaps \ref{sumgeometricseries}
+you proved an important theorem.
+
+\begin{theorem} If $b\not=1$ and $a_n=ba_{n-1} +d$, then $\displaystyle a_n =
+a_0b^n + d{1-b^n\over 1-b}$. If $b=1$, then,   $\displaystyle a_n =
+a_0 +nd$ \end{theorem}
+
+\begin{corollary} If $b\not=1$, then $\displaystyle \sum_{i=0}^{n-1}b^i =
+{1-b^n\over 1-b}$.  If $b=1$, $\displaystyle \sum_{i=0}^{n-1}b^i =n$.
+\end{corollary}
+
+
+
+
+\section{Graphs and Trees}
+\subsection{Undirected graphs} \label{graphsection}
+In Section \ref{Ramseysection} we introduced the idea of a directed
+graph.  Graphs consist of vertices and edges.  We describe vertices and
+edges in much the same way as we describe points and lines in geometry:
+we don't really say what vertices and edges are, but we say what they
+do.  We just don't have a complicated axiom system the way we do in
+geometry.  A {\bf graph}\index{graph} consists of a set $V$ called a
+vertex set and a set $E$ called an edge set.  Each member of $V$ is
+called a {\em vertex}\index{vertex} and each member of $E$ is called an
+{\em edge}.\index{edge} Associated with each edge are two (not necessarily
+different) vertices called its endpoints.    We draw pictures of graphs by
+drawing points to represent the vertices and line segments (curved if we
+choose) whose endpoints are at vertices to represent the edges. In
+Figure
+\ref{Threegraphs} we show three pictures of graphs.
+\begin{figure}[htb]\caption{Three different
+graphs}\label{Threegraphs}
+\begin{center}\mbox{\psfig{figure=threegraphs.eps%,height=1.0in
+}}
+\end{center}
+\end{figure}
+Each grey circle in the figure represents a vertex; each line segment
+represents an edge.  You will note that we labelled
+the vertices; these labels are names we chose to give the vertices.  We
+can choose names or not as we please.  The third graph also shows that it
+is possible to have an edge that connects a vertex (like the one labelled
+$y$) to itself or it is possible to have two or more edges (like those
+between vertices $v$ and $y$) between two vertices.  The {\em
+degree}\index{vertex!degree of}\index{degree of a vertex} of a vertex is
+the number of times it appears as the endpoint of edges; thus the degree
+of
+$y$ in the third graph in the figure is four.
+\bp 
+\itemm In the graph on the left in Figure \ref{Threegraphs}, what is the
+degree of each vertex?  
+\solution{The degree of vertex 1 is one, of vertex 2 is two, of vertex 3 is
+three, of vertex 4 is three, of vertex 5 is one, of vertex 6 is one, of vertex
+7 is two, of vertex 8 is one.}
+
+\itemm  For each graph in Figure \ref{Threegraphs} is the number of
+vertices of odd degree even or odd?
+\solution{In all three cases it is even.}
+
+\itemesi
+The sum of the degrees of the vertices of a (finite) graph is related in a
+natural way to the number of edges.  
+\begin{enumerate}
+\item What is the relationship?  \solution{The sum of the degrees of the
+vertices is twice the number of edges.}
+\item Find a proof that what you say is correct that uses induction on
+the number of edges.  Hint:  To make your inductive step, think about
+what happens to a graph if you delete an edge. \solution{If a graph has
+no edges, then the sum of the degrees of the vertices is 0, which is
+twice the number of edges.  Now suppose that whenever a graph has $n-1$
+edges, the sum of the degrees of the vertices is twice the number of edges. 
+Let
+$G$ be  a graph with $n$ edges, and delete an edge from $G$ to get $G'$.  The
+the sum of the degrees of $G'$ is $2(n-1)$, and adding the edge back into
+$G'$ to get $G$ either increases the degrees of exactly two vertices by
+one each or increases the degree of one vertex by 2.  Thus the sum of the
+degrees of the vertices of $G$ is $2n$, which is twice the number of
+edges.  Thus by the principle of mathematical induction, for all nonnegative
+integers
+$n$, if a graph has $n$ edges, then the sum of the degrees of the vertices is
+twice the number of edges.}
+\item Find a proof that what you say is correct that uses induction on
+the number of vertices.
+\solution{If a graph has no vertices, then the sum of the degrees of the
+vertices is 0, which is twice the number of edges.  Now suppose that whenever
+a graph has
+$n-1$ vertices, the sum of the degrees is twice the number of edges.  Let $G$
+be a graph with $n$ vertices.  Delete one vertex $x$ and all edges it is
+incident with.  By our inductive hypothesis the sum of the degrees of the
+vertices of the resulting graph is twice the number of edges. Now replace the
+vertex
+$x$ and add in the edges connecting it to other vertices in the graph.  Each
+time you add in an edge, you increase the degree of $x$ by one and of one other
+vertex by one. Finally add in any edges connecting $x$ to itself.  Each of
+these increases the degree of $x$ by two.  Thus for each edge we added, the
+sum of the degrees of the vertices increased by two, so the sum of the degrees
+of the vertices of
+$G$ is still twice the number of edges.  Therefore by the principle of
+mathematical induction, for all nonnegative integers $n$, if a graph has $n$
+vertices, then the sum of the degrees of its vertices is even.}
+\item Find a proof that what you say is correct that does not use
+induction.
+\solution{The sum of the degrees of the vertices is the sum over all
+edges of the number of times that edge touches a vertex, which is twice
+the number of edges.}
+\end{enumerate}
+
+\itemes What can you say about the number of vertices of odd degree in a
+graph?
+\solution{The number of vertices of odd degree must be even, because otherwise
+the sum of the degrees of the vertices would be odd.}
+\ep
+
+
+
+\subsection{Walks and paths in graphs}
+A {\em walk} in a graph is an alternating sequence $v_0e_1v_1\ldots
+e_iv_i$ of vertices and edges such that edge $e_i$ connects vertices
+$v_{i-1}$ and $v_i$.  A graph is called connected if, for any pair of
+vertices, there is a walk starting at one and ending at the other.
+\bp\item
+Which of the graphs in Figure \ref{Threegraphs} is
+connected?\label{connectedanddisconnected} 
+\solution{They first two connected; the third is not.}
+
+\itemm 
+A {\em path} in a graph is a walk with no repeated vertices.  Find the
+longest path you can in the third graph of Figure \ref{Threegraphs}.
+\solution{The path from $y$ to $v$ to $x$ to $w$ is a typical longest path.
+There are quite a few others.  Notice you have two choices for the edge to use
+to get from $y$ to $v$. } 
+ 
+\itemm A {\em cycle} in a graph is a walk whose first and last vertex are
+equal but which has no other repeated vertices.  Which graphs in Figure
+\ref{Threegraphs} have cycles?  What is the largest number of edges in a
+cycle in the second graph in Figure \ref{Threegraphs}?  What is the
+smallest number of edges in a cycle in the third graph in Figure
+\ref{Threegraphs}?\solution{The second and third graphs have cycles.  The
+largest number of edges in a cycle in the second graph is six; the smallest
+number of edges in a cycle in the third graph is one.}
+
+\itemm A connected graph with no cycles is called a {\bf
+tree}\index{tree}.  Which graphs, if any, in Figure \ref{Threegraphs} are
+trees?
+\solution{The first graph is a tree.}
+\ep
+
+\subsection{Counting vertices, edges, and paths in trees}
+\bp 
+\itemesi
+Draw some trees and on the basis of your examples, make a conjecture
+about the relationship between the number of vertices and edges in a
+tree.  Prove your conjecture.  (Hint:  what happens if you choose an edge
+and delete it, but not its endpoints?)\label{Noverticesandedgesoftree}
+\solution{The number of edges of a tree is one less than the number of
+vertices.  We prove this by strong induction on the number of edges.  First, if
+a tree has no edges, it can have only one vertex (otherwise it is not
+connected).  Thus the number of edges is one less than the number of vertices. 
+Now suppose that if a tree has fewer than $n$ edges, it the number of edges is
+one less than the number of vertices.  Choose an edge $e$ with endpoints $x$
+and $y$ in the tree and remove it.  The resulting graph is not connected, for
+if it were, the path remaining between the endpoints of $e$, together with
+$e$, would form a cycle.  Every vertex in the tree is connected to $x$ by a
+path; those connected by a path not using $e$ still remain connected to $x$. 
+Similarly those connected to $y$ by a path in the tree that does not use the
+edge $e$ remain connected to $y$ after $e$ is deleted. Every vertex is
+connected to $x$ by a path in the tree and every vertex is connected to $y$ by
+a path in the tree. If a vertex $v$ were connected to $x$ by a path using the
+edge $e$ and to $y$ by a path using the edge $e$, that would mean that we have
+a path from
+$v$ to $x$ and then through $e$ to $y$ and also a path from $v$ to $y$ and
+then through $e$ to $x$.  Thus taking $e$ out of these two paths would give us
+a path from $v$ to $x$ and a path from $v$ to $y$, neither of which used
+$e$.  Thus when we removed the edge $e$, there would still be a path from $x$
+to $y$, and adding $e$ to this path would give a cycle.  Therefore each vertex
+is connected to either $x$ or $y$, but not both, by a path that does not use
+$e$.  Therefore when we remove $e$, the graph that remains consists of two
+trees, the tree of all vertices connected to $x$ and the tree of all vertices
+connected to $y$.  Each of these trees has fewer edges than the original tree,
+so if they have $m_1$ and $m_2$ vertices respectively, they have, by the
+inductive hypothesis, $m_1-1$ and $m_2-1$ edges respectively.  But together
+they have all the vertices of the original tree, so the original tree has
+$m_1+m_2$ vertices, and has $m_1-1+m_2-1 +1=m)_1+m_2-1$ edges, the edges of
+each of the two smaller trees as well as the edge $e$.  Therefore the number
+of edges of the original tree is one less than the number of vertices. 
+Therefore by the strong principle of mathematical induction, the number of
+edges of a tree is one less than the number of vertices.}
+
+\itemes What is the minimum number of vertices of degree one in a finite
+tree?  What is it if the number of vertices is bigger than one?  Prove
+that you are correct.
+\solution{The minimum is zero, which happens with a tree
+with one vertex.  If the tree has more than one vertex, the minimum number of
+vertices of degree one is two.  To prove this, we prove that every tree with
+two or more vertices has at least two vertices of degree two. Note that a
+tree with two vertices has exactly two vertices of degree 2.  Now take a tree
+with more than two vertices.  Remove an edge
+$e$ without removing its endpoints.  As in the solution to Problem
+\ref{Noverticesandedgesoftree} this gives two trees.  We may assume
+inductively that each has at least two vertices of degree 1, or else is a
+single vertex.  When we put $e$ back in, it connects one vertex in one tree to
+one in the other.  If both these vertices have degree 1 in their trees, there
+will be at least one vertex of degree 1 remaining in each tree, so there will
+be at least two vertices of degree 1 in the tree we get.  If exactly one of
+these vertices is a tree with one vertex after the removal of  $e$, when we
+connect it to the other tree, we will remove at most one increase the degree
+of at most one vertex of degree 1 and will create a new vertex of degree 1, so
+the tree that results still has at least two vertices of degree 1.  Therefore  
+by the strong principle of mathematical induction, every tree with more than
+two vertices has at least two vertices of degree 1.  Since a two-vertex tree
+has two vertices of degree 1, the minimum number of vertices of degree 1 in a
+tree with two or more vertices is two.  (In fact a path with $n$ vertices is a
+tree and it has exactly two vertices of degree one also.)}
+
+\itemesi In a tree, given two vertices, how many paths can you find between
+them?  Prove that you are correct.
+\solution{Exactly one.  Suppose there were two distinct paths $P_1$ and $P_2$
+from $x$ to $y$.  As they leave $x$, they might leave on the same edge or on
+different edges.  However, since they are different, there must be some first
+vertex $x'$ on both paths so that when leave $x'$ (as we go from $x$ to $y$),
+they leave on different edges.  Then since they must both enter $y$, there must
+be some first vertex $y'$, following $x'$ on both paths as we go from $x$ to
+$y$, such that the two paths enter $y'$ on two different edges.  Then the
+portion of path 1 from $x'$ to $y'$ followed by the portion of path 2 from
+$y'$ to $x'$ will be a cycle.  This is impossible in a tree, so the
+supposition that there were two distinct paths is impossible.}
+
+\itemih  How many trees are there on the vertex set $\{1,2\}$?  On the
+vertex set $\{1,2,3\}$?  When we label the vertices of our tree, we
+consider the tree which has edges between vertices 1 and 2 and between
+vertices 2 and 3 different from the tree that has edges between vertices
+1 and 3 and between 2 and 3.  See Figure \ref{differenttrees}.
+\begin{figure}[htb]\caption{The three labelled
+trees on three vertices}\label{differenttrees}
+\begin{center}\mbox{\psfig{figure=threetrees%,height=1.0in
+}}
+\end{center}
+\end{figure}  How many
+(labelled) trees are there on four vertices?  You don't have a lot of data
+to guess from, but try to guess a formula for the number of labelled trees
+with vertex set
+$\{1,2,\cdots,n\}$.  (If you organize carefully, you can figure out how
+many labelled trees there are with vertex set $\{1,2,3,4,5\}$ to help you
+make your conjecture.)  Given a tree with two or more vertices, labelled
+with positive integers, we define a sequence $b_1,b_2,\ldots$ of
+integers inductively as follows:  If the tree has two vertices, the
+sequence  consists of one entry, namely the label of the vertex with the
+larger label.  Otherwise, let
+$a_1$ be the lowest numbered vertex of degree 1 in the tree.  Let $b_1$
+be the label of the unique vertex in the tree adjacent to $a_1$ and write
+down
+$b_1$.  
+Given $a_{i-1}$ and $b_{i-1}$, let $a_i$ be the lowest numbered vertex of
+degree 1 in the tree you get by deleting $a_1$ through $a_{i-1}$ and let $b_i$
+be the unique vertex in this new tree adjacent to $a_i$.
+We use $b$ to stand for the sequence of $b_i$s we get in this way. For example
+in the tree (the first graph) in Figure
+\ref{Threegraphs}, $a_1$ is 1 and the sequence $b$ is 234478. (If you are
+unfamiliar with inductive (recursive) definition, you might want to write
+down some other labelled trees on eight vertices and construct the
+sequence of $b_i$s.) How long will the sequence
+$b$ be if it is applied to a tree with
+$n$ vertices (labelled with 1 through
+$n$)?  What can you say about the last member of the sequence of $b_i$s? 
+Can you tell from the sequence of
+$b_i$s what
+$a_1$ is?  Find a bijection between labelled trees and something you can
+``count" that will tell you how many labelled trees there are on $n$
+labelled vertices.\label{Prufer}
+\solution{There is one labelled tree on two vertices.  We know there are three
+labelled trees on three vertices, and they all are paths.  The difference
+among them is which vertex is the central vertex on the path.  On four
+vertices a tree either has a vertex of degree 3 (there are four such trees) or
+it is a path, in which case there are six choices for the two vertices of
+degree 2, and for each choice of these two vertices, there are two different
+ways to attach the remaining vertices to them as vertices of degree 1.  Thus
+there are $12+4=16$ trees on four vertices.  Assuming this is not enough data
+for a good guess, note that on five vertices, we either have a vertex of
+degree 4 (there are five such trees), or we have a vertex of degree three
+which must be adjacent to a vertex of degree two in order to have five
+vertices.  There are $5\cdot4=20$ ways to choose these two vertices; then
+three more choices we can make for the degree one vertex attached to the degree
+2 vertex.  Thus we have 60 trees with a vertex of degree three.  If we have
+neither a vertex of degree four nor a vertex of degree three, then the tree is
+a path.  We have ${5\choose2}=10$ ways to choose the two vertices of degree
+one, and then there are $3!=6$ ways to arrange the remaining vertices along
+the path, so we have 60 paths.  Thus we have $125$ trees on five vertices. 
+These computations suggest there are $n^{n-2}$ labelled trees on $n$ vertices,
+which is what we shall prove with the sequences of $a$\/s and $b$\/s.
+
+On a tree with $n$ vertices, the sequence $b$ will have length $n-1$.  The
+last member of the sequence $b$ will be $n$.  Vertex $n$ can not be in the
+sequence $a$, because the tree that remains after we delete an $a_i$ will have
+at least two vertices of degree 1, so the one of smaller degree will be
+$a_{i+1}$.  Thus we never delete the vertex $n$ from the tree.  Therefore when
+we choose the last $b$, we have vertex $n$ and one other vertex, so the other
+vertex is our $a$-vertex and $n$ is the vertex adjacent to it.  $a_1$ will be
+the smallest number that is not in the sequence of $b$'s.  This tells us one
+edge of the tree, namely the edge between $a_1$ and $b_1$.  The vertex $a_2$
+will be the smallest number different from $a_1$ not in the sequence $b_2$
+through
+$b_{n-1}$. 
+ In general, $a_i$
+will be the smallest vertex different from $a_1$ through $a_{i-1}$ not in the
+sequence
+$b_i$ through
+$b_{n-1}$, which gives us all $n-1$ edges of the tree (edge $i$ goes from
+$a_i$ to
+$b_i$).  Thus there is a bijection between trees and the sequences $b_1$
+through $b_{n-1}$. But since $b_{n-1}=n$, there is also a bijection between
+trees and the sequences $b_1$ through $b_{n-2}$.  But given a sequence of
+numbers $c_1,c_2,\ldots,c_{n-2},c_{n-1}$, all between 1 and $n$ and with
+$c_{n-1}=n$, there is always a smallest number $a_1$ not in the sequence, and
+given
+$a_1,
+a_2, \ldots a_{i-1}$, there is always a smallest number 
+not in the sequence $c_i$ through $c_{n-1}$ and different from the $a_i$s
+already chosen, so we can construct the edges from $a_i$ to $c_i$.  Further,
+if we start with the edge from $a_{n-1}$ to $c_{n-1}$ and work backwards, we
+will always have a connected graph and will always be adding a vertex of
+degree 1 to it, so we will have no cycles.  Therefore we will get  a tree. 
+Thus we have a bijection between labelled trees on $n$ vertices and sequences
+of length $n-2$ consisting of members of $[n]$.  There are $n^{n-2}$ such
+sequences, and thus $n^{n-2}$ labelled trees on $n$ vertices.}
+
+\ep
+The sequence $b_1,b_2,\ldots, b_{n-2}$ in Problem \ref{Prufer} is called a
+{\em Pr\"ufer coding} or {\em Pr\"ufer code} for the tree.  There is a good bit
+of interesting information encoded into the Pr\"ufer code for a tree.
+
+\bp
+\item What can you say about the Pr\"ufer code for a tree with exactly
+two vertices of degree 1? Does this characterize such trees? 
+\solution{It consists of
+$n-2$ distinct numbers between 1 and $n$.  Any such Pr\"ufer code is the code
+of a tree with exactly two vertices of degree one.}
+
+\itemi What can you determine about the degree of
+the vertex labelled $i$ from the Prufer code of the tree?
+\solution{The degree of a vertex in a tree is one more than the number of
+times the vertex appears in the Pr\"ufer code of the tree.}
+
+\itemi What is the number of (labelled) trees on $n$ vertices with three
+vertices of degree 1? (Assume they are labelled with the integers 1
+through $n$.)
+\solution{There are $n\choose 3$ ways to choose the three vertices of degree
+one.  Each of the other $n-3$ vertices must appear in the Pr\"ufer Code, so one
+must appear twice.  We have $n-3$ ways to choose that one vertex and
+${n-2\choose 2}{n-4\choose1}{n-5\choose1}\cdots{1\choose1} ={(n-2)!\over 2!}$
+ways to choose which of the
+$n-2$ places to use for which vertices in the Pr\"ufer code. 
+Thus there are
+${n\choose3}(n-3){(n-2)!\over 2}= {n!(n-2)(n-3)\over 12}$ labelled trees with
+three vertices of degree one.}
+
+
+
+
+\ep
+\subsection{Spanning trees}
+
+Many of the applications of trees arise from trying to find an efficient
+way to connect all the vertices of a graph.  For example, in a telephone
+network, at any given time we have a certain number of wires (or
+microwave channels, or cellular channels) available for use.  These wires
+or channels go from a specific place to a specific place. Thus the wires
+or channels may be thought of as edges of a graph and the places the wires
+connect may be thought of as vertices of that graph.  A tree whose edges
+are some of the edges of a graph $G$ and whose vertices are all of the
+vertices of the graph $G$ is called a {\bf spanning tree}\index{spanning
+tree}\index{tree!spanning} of $G$.  A spanning tree for a telephone
+network will give us a way to route calls between any two vertices in the
+network. In Figure \ref{spanningtrees} we show a graph and all its
+spanning trees.
+\begin{figure}[htb]\caption{A graph
+and all its spanning trees.}\label{spanningtrees}
+\begin{center}\mbox{\psfig{figure=spanningtrees.eps,height=1.5in
+}}\end{center}\end{figure}
+
+
+\bp
+\item Show that every connected graph has a spanning tree.  It is
+possible to find a proof that starts with the graph and works ``down"
+towards the spanning tree and to find a proof that starts with just the
+vertices and works ``up" towards the spanning tree.  Can you find both
+kinds of proof?
+\solution{Here are three proofs:
+
+Start with a connected graph, and if you can
+find a cycle, remove one edge of that cycle.  Repeat this process until you
+get a tree.  You will get a tree, because removing an edge of a cycle reduces
+the number of cycles but leaves the graph connected.  This tree will be a
+spanning tree of the original graph.
+
+Start with the original vertex set and no edges for a graph $H$.  Go through
+the edges of the original graph $G$ one at a time, and if you can add an edge
+of $G$ to the graph $H$ without creating a cycle, do so.  Otherwise
+discard the edge and go on to the next one.  This will give you a graph $H$
+with no cycles, and if it were not connected, there would be an edge in $G$
+between two vertices not yet connected in $H$.  (If there weren't, the graph
+you just constructed would be connected.)  Thus you get a spanning tree.
+
+Start with vertex 1 and no edges as a graph $H$.  Take an edge from it to
+another vertex.  Add that edge and vertex to $H$.  Now take an edge from one of
+the vertices you currently have to yet another vertex of the original graph.
+Add that vertex and edge to $H$. Repeat this process until you can find no such
+edge.  You will get a tree because each edge you add connects a vertex of
+degree 1 to a tree you have already constructed.  Since the original graph is
+connected, there must always be an edge from the current set of vertices you
+are considering to something not in that set.}
+\ep
+
+\subsection{Minimum cost spanning trees}
+Our motivation for talking about spanning trees was the idea of finding a
+minimum number of edges we need to connect all the edges of a
+communication network together.  In many cases edges of a communication
+network come with costs associated with them.  For example, one
+cell-phone operator charges another one when a customer of the first uses
+an antenna of the other.  Suppose a company has offices in a number of
+cities and wants to put together a communication network connecting its
+various locations with high-speed computer communications, but to do so at
+minimum cost.  Then it wants to take a graph whose vertices are the
+cities in which it has offices and whose edges represent possible
+communications lines between the cities.  Of course there will not
+necessarily be lines between each pair of cities, and the company will
+not want to pay for a line connecting city $i$ and city $j$ if it can
+already connect them indirectly by using other lines it has chosen.  Thus
+it will want to choose a spanning tree of minimum cost among all spanning
+trees of the communications graph.   For reasons of this application, if
+we have a graph with numbers assigned to its edges, the sum of the numbers
+on the edges of a spanning tree of
+$G$ will be called the {\em cost}\index{spanning tree!cost
+of}\index{tree!spanning!cost of}\index{cost of a spanning tree} of the
+spanning tree.  
+\bp
+\itemi Describe a method (or better, two methods different in at least one
+aspect) for finding a spanning tree of minimum cost in a graph whose edges
+are labelled with costs, the cost on an edge being the cost for including
+that edge in a spanning tree.  Prove that your method(s)
+work.\index{minimum cost spanning tree}\index{spanning tree!minimum
+cost}\index{tree!spanning!minimum cost}\label{mincostspantree}
+\solution{Start with  vertex, number it vertex 1, and choose
+the least costly edge leaving it.  Number the new vertex 2.  Given your current
+set of vertices and edges, choose the least costly edge leaving that set, and
+if your set has $i-1$ vertices, label the new vertex $i$.  You will always
+have a tree as you go along since you are adding a vertex of degree 1 to a
+tree you already have.  You will get a spanning tree because the graph you
+start with is connected.  If your tree did not have the lowest cost among all
+spanning trees, there would be some smallest $i$ such that there is an edge
+from vertex
+$i$ in a least cost spanning tree that is not in your tree.  Since we chose
+the least $i$, the edge we just chose from vertex $i$ goes to a
+higher-numbered vertex.  Thus you could have chosen that edge as you were
+constructing your tree, so there cannot be a tree of lower total cost than the
+one you chose.
+
+Alternatively, start with the vertex set of the graph and no edges.  Choose an
+edge of least cost.  Repeat the following until it cannot be repeated. Given
+the set of edges you have so far, choose an edge of least cost among all edges
+that do not form a cycle with edges you already have.  The graph you get will
+have no cycles, and it will have to be connected, because otherwise there
+would be an edge in the original graph that connects two vertices in the graph
+you just constructed.  Thus you will have a tree.  Suppose there is another
+tree with lower total cost.  Choose such a tree with as many edges as common
+with your tree as possible.  Then there is some edge
+$e$ of this tree of lowest cost among all edges connecting two vertices that
+are not connected by an edge in your tree.  Suppose the cost of this edge is
+$c$.  Since these vertices are connected by some path in your tree, when you
+were considering edges of cost
+$c$, these two vertices were already connected by a path in your tree.  There
+must be some edge $f$ on that path not in the least cost tree.  The edge $f$
+was already in your tree while you were considering edges of cost $c$, so its
+cost is no more than $c$.  Adding $f$ to the tree of least cost gives a
+cycle.  All edges on that cycle that are not in your tree have cost at least
+$c$ by our choice of $e$.  But since $f$ was from your tree, there must be
+some edge $g$ of the cycle that is  in the least cost tree that but not in
+your tree.  Removing $g$ from the least cost tree and adding $f$ cannot
+increase the cost of the tree, but it gives a tree that has one more edge in
+common with your tree.  This contradicts the choice of the least cost tree, so
+there must have been no tree of lower total cost than the one you constructed.}
+\ep
+
+The method you used in Problem \ref{mincostspantree} is called a {\em
+greedy method}\index{greedy method}, because each time you made a choice of
+an edge, you chose the least costly edge available to you.
+
+\subsection{The deletion/contraction recurrence for spanning trees} 
+
+There are two operations on graphs that we can apply to get a
+recurrence (though a more general kind than those we have studied for
+sequences) which will let us compute the number of spanning trees of a
+graph.  The operations each apply to an edge $e$ of a graph $G$.  
+The first is called {\em deletion};\index{deletion} we {\em delete} the
+edge
+$e$ from the graph by removing it from the edge set.  Figure
+\ref{twodeletions} shows how we can delete edges from a graph to get a
+spanning tree.
+\begin{figure}[htb]\caption{Deleting
+two appropriate edges from this graph gives a spanning
+tree.}\label{twodeletions}
+\begin{center}\mbox{\psfig{figure=twodeletions.eps,height=.5in
+}}
+\end{center}\end{figure}
+
+  The second operation is called {\em
+contraction}.
+\begin{figure}[hbt]\caption{The results of
+contracting three different edges in a
+graph.}\label{threecontractions}\vglue-1in
+\begin{center}\mbox{\psfig{figure=threecontractions.eps,height=2in
+}}
+\end{center}
+\end{figure} 
+  Contractions of three
+different edges in the same graph are shown in Figure
+\ref{threecontractions}. Intuitively, we contract an edge by shrinking it
+in length until its endpoints coincide; we let the rest of the graph ``go
+along for the ride.''  To be more precise, we
+{\em contract}\index{contraction} the edge
+$e$ with endpoints
+$v$ and
+$w$ as follows:
+\begin{enumerate}
+\item remove all edges having either
+$v$ or $w$ or both as an endpoint from the edge set, 
+\item remove $v$ and $w$ from the vertex set,
+\item add a new vertex
+$E$ to the vertex set, 
+\item add an edge from $E$ to each remaining
+vertex that used to be an endpoint of an edge whose other endpoint was
+$v$ or $w$, and add an edge from $E$ to $E$ for any edge other than
+$e$ whose endpoints were in the set $\{v,w\}$.
+\end{enumerate}
+ We use $G-e$ (read as $G$
+minus $e$) to stand for the result of deleting $e$ from $G$, and we use
+$G/e$ (read as $G$ contract $e$) to stand for the result of contracting
+$e$ from $G$.
+\bp
+\itemesi How do the number of spanning trees of $G$ not containing the edge
+$e$ and the number of spanning trees of $G$ containing $e$ relate to the
+number of spanning trees of $G-e$ and $G/e$?  Use $\#(G)$ to stand for
+the number of spanning trees of $G$ (so that, for example, $\#(G/e)$
+stands for the number of spanning trees of $G/e$).  Find an expression
+for
+$\#(G)$ in terms of $\#(G/e)$ and $\#(G-e)$.  This expression is called
+the {\em deletion-contraction recurrence}\index{deletion-contraction
+recurrence}\index{recurrence!deletion-contraction}.  Use it to compute the
+number of spanning trees of the graph in Figure
+\ref{spantreeexercise}.  
+\begin{figure}[htb]\caption{A
+graph.}\label{spantreeexercise}%\vglue-1in
+\begin{center}\mbox{\psfig{figure=spantreeexercise.eps,height=1.0in
+}}
+\end{center}
+\end{figure}
+\solution{The number of spanning trees of $G$ not containing $e$ is the number
+of spanning trees of $G-e$.  The number of spanning trees of $G$ containing the
+edge $e$ is the number of spanning trees of $G/e$.  Therefore $\#(G) =\#(G-e)
++\#(G/e)$.  Applying the formula twice to $G$ gives 
+\begin{eqnarray*}\#(G)
+&=&\#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})\\ &+&
+\#((G/\{1,2\})-\{2,3\}) +
+\#(G/\{1,2\}/\{2,3\}).
+\end{eqnarray*}
+We now show the four graphs on the right hand side of the equation.
+\begin{center}\mbox{\psfig{figure=spantreeexerciseresult.eps%,height=1.0in
+}}
+\end{center}
+We could now convert each of these graphs to trees with multiple edges by
+deleting and contracting one more edge, say edge $\{1,5\}$, which would make
+the analysis easier but the picture twice as big.  Since we can easily count
+spanning trees of a triangle, we can also stop here, noting that the first
+graph has three spanning trees, the second has six, the third has five, and
+the fourth has seven, so the total number of spanning trees is $3+6+5+7=21$.}
+\ep 
+
+
+
+\subsection{Shortest paths in graphs}  Suppose that a company has a
+main office in one city and regional offices in other cities.  Most of
+the communication in the company is between the main office and the
+regional offices, so the company wants to find a spanning tree that
+minimizes not the total cost of all the edges, but rather the cost of
+communication between the main office and each of the regional offices.
+It is not clear that such a spanning tree even exists.   This problem is
+a special case of the following.  We have a connected graph with nonnegative
+numbers assigned to its edges.  (In this situation these numbers are often
+called weights.)  The {\em (weighted) length}\index{path!length
+of}\index{length (of a path)} of a path in the graph is the sum of the weights
+of its edges.  The {\em distance}\index{distance in a weighted
+graph}\index{graph!distance in} between two vertices is  the least
+(weighted) length of any path between the two vertices.  Given a vertex
+$v$, we would like to know the distance between $v$ and each other
+vertex, and we would like to know if there is a spanning tree in $G$ such
+that the length of the path in the spanning tree from $v$ to each vertex
+$x$  is the distance from $v$ to $x$ in $G$.
+\bp \item\label{Dijkstra}
+Show that the following algorithm (known as
+Dijkstra's\index{Dijkstra's algorithm}\index{distance in a graph}
+algorithm) applied to a weighted graph whose vertices are labelled 1 to
+$n$ gives, for each
+$i$, the distance from vertex 1 to i as
+$d(i)$.
+\begin{enumerate}
+\item Let $d(1) = 0$. Let $d(i) = \infty$ for all other $i$.  Let
+$v(1)$=1. Let
+$v(j) = 0$ for all other
+$j$.  For each $i$ and $j$, let $w(i,j)$ be the minimum weight of an edge
+between $i$ and $j$, or $\infty$ if there are no such edges.  Let
+$k=1$.  Let $t=1$.
+\item For each $i$, if $d(i)>d(k) + w(k,i)$ let $d(i)= d(k) +w(k,i)$.
+\item Among those $i$ with $v(i)=0$, choose one with $d(i)$ a minimum,
+and let $k=i$.  Increase $t$ by 1. Let $v(i) =1.$
+\item Repeat the previous two steps until $t=n$ 
+\end{enumerate} 
+\solution{We prove that the distance from vertex 1 of a vertex $i$ with
+$v(i)=1$ is $d(i)$.  We use induction on the number $t$ of vertices with
+$v(i)=1$. If $t=1$, then $d(1)=0$ is the distance from vertex 1 to vertex 1. 
+Now when $t=s-1$, we have vertices $i_1$, $i_2$, \ldots $i_{s-1}$ such that
+$v(i_p)=1$.  Suppose inductively that  $d(i_p)$ is the distance from
+vertex
+$i_p$ to vertex 1 for
+$p=1,2,\ldots,s-1$. When $t=s$, we choose a vertex $i$ with $d(i)$ a minimum. 
+Suppose $u_1,u_2,\ldots, u_r$ is the sequence of vertices of a shortest (least
+total weight) path from vertex $u_1=1$ to vertex
+$u_r=i$ and that the length (total weight) of this path is less than 
+$d(i)$. Suppose that some vertex $u_p$ has $v(u_p)=0$, and choose the smallest
+$p$ such that this is so.  Then $d(u_{p-1})$ is the distance from vertex $1$ to
+vertex $u_{p-1}$, and $d(u_{p-1}) + w(u_{p-1},u_p)$ is less than $d(i)$
+because the length of the path from $u_1$ to $u_r$ is less than $d(i)$. 
+Then we would not have chosen the vertex $i$ after all, but rather the
+vertex $u_p$, which is a contradiction, so all the vertices $u_p$ with $p<r$
+must have
+$v(u_p)=1$, and, by our inductive hypothesis, $d(u_p)$ must be the distance
+from vertex 1 to vertex $u_p$ for $p<r$.  Thus when we were computing $d(i)$,
+we would have found that $d(i)\le d(u_{r-1}) +w(u_{r-1},i)$.  Thus $d(i)$
+must be the distance from vertex 1 to vertex $i$ after all.  Therefore the
+fact that Dijkstra's algorithm works when $t=s-1$ implies that it works when
+$t=s$, so that, by the principle of mathematical induction, it works for all
+nonnegative integers
+$t$.}
+
+\item Is there a spanning tree such that the distance from vertex $1$ to
+vertex $i$ given by the algorithm in Problem \ref{Dijkstra} is the
+distance for vertex 1 to vertex $i$ in the tree (using the same weights
+on the edges, of course)?
+\solution{Yes, when we choose the $i$ with $d(i)$ a  minimum, before we change
+$k$ to $i$, we add an edge from vertex $k$ to vertex $i$ to the edge set of a
+graph on the vertex set $[n]$.  We get a tree each time we do this step,
+because we are adding a vertex of degree 1 to a smaller tree.  We essentially
+proved in the solution to Problem \ref{Dijkstra} that the path from vertex 1
+to vertex
+$i$ in this tree has length (total weight) $d(i)$.  Using the same approach we
+could prove it directly by induction on the number of vertices in our tree.}
+\ep\vfil\break\vfilneg
+
+\section{Supplementary Problems}
+\begin{enumerate}
+\item Use the inductive definition of $a^n$ to prove that $(ab)^n=a^nb^n$ for
+all nonnegative integers $n$.
+\solution{If $n=0$ we get $(ab)^0=1$ and $a^0b^0=1$.  Assume inductively that
+$(ab)^{n-1}=a^{n-1}b^{n-1}$.  Then by the inductive definition, inductive
+hypothesis,  and commutative law, 
+$$(ab)^n= (ab)^{n-1}ab=a^{n-1}b^{n-1}ab=a^{n-1}ab^{n-1}b=a^nb^n.$$
+Thus the fact that $(ab)^{n-1}=a^{n-1}b^{n-1}$ implies the fact that $(ab)^n=
+a^nb^n$.  Therefore by the principle of mathematical induction,
+$(ab)^n=a^nb^n$ for all nonnegative integers $n$.}
+
+\item Give an inductive definition of $\displaystyle \bigcup_{i=1}^nS_i$ and
+use it and the two set distributive law to prove the distributive law
+$\displaystyle{A\cap \bigcup_{i=1}^n S_i=\bigcup_{i=1}^n A\cap S_i}$.
+\solution{We define $\displaystyle\bigcup_{i=1}^1S_i= S_i$ and $\displaystyle
+\bigcup_{i=1}^n S_i =
+\bigcup_{i=1}^{n-1}S_i
+\cup S_n$.  Then $$\displaystyle A\cap\bigcup_{i=1}^1S_i=
+A\cap S_1=\bigcup_{i=1}^1 A\cap S_i.$$ Assume that $n>1$ and
+$\displaystyle A\cap\bigcup_{i=1}^{n-1}=\bigcup_{i=1}^{n-1}A\cap S_i$.  Now
+\begin{eqnarray*}
+A\cap\bigcup_{i=1}^nS_i &=& A\cap\left(\bigcup_{i=1}^{n-1}S_i
+\cup S_n\right)=\left(A\cap\bigcup_{i=1}^{n-1}S_i\right) \cup\left( A\cap
+S_n\right)\\&=&\left(\bigcup_{i=1}^{n-1}A\cap
+S_i\right)\cup\left(A\cap S_n\right)=\bigcup_{i=1}^n A\cap S_i.
+\end{eqnarray*}
+  Thus the
+truth of the distributive law for distributing an intersection over a union of
+$n-1$ sets implies its truth for distributing an intersection over a union of
+$n$ sets.  Therefore by the principle of mathematical induction, the
+distributive law
+$\displaystyle A\cap\bigcup_{i=1}^nS_i=
+\bigcup_{i=1}^nA\cap S_i$ holds for all positive integers $n$.}
+
+\itemi A hydrocarbon molecule is a molecule whose only atoms are
+either carbon atoms or hydrogen atoms.  In a simple molecular model of a
+hydrocarbon, a carbon atom will bond to exactly four other atoms and
+hydrogen atom will bond to exactly one other atom.  We represent a
+hydrocarbon compound with a graph whose vertices are labelled with C's
+and H's so that each C vertex has degree four and each H vertex has
+degree one.  A hydrocarbon is called an ``alkane" (common examples are
+methane (natural gas), propane, hexane (ordinary gasoline), octane (to
+make gasoline burn more slowly), etc.) if the graph is a tree.  How many
+vertices are labelled
+$H$ in the graph of an alkane with exactly
+$n$ vertices labelled
+$C$?
+\solution{We have $n$ vertices of degree four, and so if we have $m$ vertices
+of degree 1, we get $4n+m=2(m+n-1)$ from the fact that the sum of the degrees
+of the vertices must be twice the number of edges. Thus we have $m=2n+2$
+hydrogen atoms.}
+\iffalse
+How many different alkanes have exactly
+$n$ vertices labelled
+$C$?  (Here we say two trees are the same if we can make their drawings
+congruent by shortening and lengthening lines, or moving  the vertices
+and edges around, making sure that after we move things around, the edges
+are attached to the same vertices as before.)\fi
+
+\item \begin{enumerate}
+\item Give a recurrence for the number of ways to divide
+$2n$ people into sets of two for tennis games.  (Don't worry about who
+serves first.) \solution{$t_{2n}=(2n-1)t_{2n-2}$}
+ 
+\itemi Give a recurrence for the number of ways to divide $4n$
+people into sets of four for games of bridge.  (Don't worry about how
+they sit around the bridge table or who is the first dealer.)
+\solution{$b_{4n}={4n-1\choose 3}b_{4n-4}$.}
+\end{enumerate}
+
+\item Use induction to prove your result in Supplementary Problem
+\ref{composition:numberof} at the end of Chapter 1.
+\solution{A composition of $n$ is an ordered list of positive numbers that
+adds to $n$. We wish to show that there are $2^{n-1}$ compositions of $n$.
+There is one composition of the number 1, and
+$2^{1-1}=1$.  Now assume inductively that there are $2^{n-2}$ compositions of
+the number
+${n-1}$.  From a composition of $n-1$, we can get a composition of $n$ either
+by making a new last part of size 1, or by adding one to the last part. 
+Clearly these two operations give different partitions of $n$; what is not so
+clear is that they give all partitions of $n$, but they do:  Either the last
+part of a partition of $n$ is 1, in which case it comes from the first kind of
+operation, or it is larger than one, in which case it comes from the second
+operation.  Thus the number of compositions of $n$ is twice the number of
+compositions of $n-1$, and so is $2\cdot2^{n-2}=2^{n-1}$.  Therefore the
+statement that there are $2^{n-2} $ compositions of $n-1$ implies the statement
+that there are $2^{n-1}$ compositions of $n$.  Thus by the principle of
+mathematical induction, there are $2^{n-1}$ compositions of $n$ for every
+positive integer $n$.}
+
+\item Give an inductive definition of the product notation $\displaystyle
+\prod_{i=1}^n a_i$.  \label{inductiveprodnotation}
+\solution{$\displaystyle\prod_{i=1}^1a_i=a_1$, and $\displaystyle\prod_{i=1}^n
+a_i= \left(\prod_{i=1}^{n-1}a_i\right)\cdot a_n$.}
+
+\item Using the fact that $(ab)^k =a^kb^k$, use your inductive definition
+of product notation in Problem \ref{inductiveprodnotation} to prove that
+$\displaystyle \left(\prod_{i=1}^n a_i\right)^k=\prod_{i=1}^n a_i^k$.
+\solution{When $n=1$ we get $\displaystyle\left(\prod_{i=1}^1 a_i\right)^k=
+a_i^k =\prod_{i=1}^1a_i^k$.  Now assume inductively that
+$\displaystyle\left(\prod_{i=1}^{m-1}a_i\right)^k=\prod_{i=1}^{m-1}a_i^k$. 
+Then we may write
+$$\left(\prod_{i=1}^ma_i\right)^k=\left(\left(\prod_{i=1}^{m-1}
+a_i\right)\cdot a_m\right)^k=\left(\prod_{i=1}^{m-1}
+a_i^k\right)\cdot a_m^k=\prod_{i=1}^m a_i^k.$$  Thus the correctness of  the
+formula for $n=m-1$ implies its correctness for $n=m$.  Therefore by the
+principle of mathematical induction, the formula holds for all positive
+integers $n$.}
+
+\itemi How many labelled trees on $n$ vertices have exactly four vertices of
+degree 1?
+\solution{The vertices of degree 1 are the vertices that do not appear in the
+Grey code for the tree.  So we first choose four vertices out of $n$ in
+$n\choose 4$ ways to be our vertices of degree 1, and then we use the
+remaining $n-4$ vertices to fill in our list of $n-2$ vertices, using each of
+the $n-4$ at least once.  Thus we either use one of them 3 times and the rest
+once, or two of them twice and the rest once. There are $n-4$ ways to choose
+the one we use three times and ${n-2\choose 3}{n-5\choose
+1}{n-6\choose1}\cdots{1\choose1}={(n-2)!\over3!}$ ways to label the
+$n-2$ places with the chosen vertices.  There are $n-4\choose 2$ ways to choose
+the vertices we would use twice, and ${n-2\choose
+2}{n-4\choose2}{n-6\choose1}{n-7\choose1}\cdots {1\choose1}={(n-2)!\over 2!2!}$
+ways to assign the chosen vertices to the
+$n-2$ places in the Pr\"ufer Code.  Thus we have 
+\begin{eqnarray*}
+&&{n\choose 4}\left((n-4){(n-2)!\over 3!} +{(n-4)(n-3)\over
+2}{(n-2)!\over 4}\right)\\
+&=&{n!\over 48}(n-2)^{\underline{3}}\left({1\over3} +{n-3\over 4}\right)
+\end{eqnarray*} 
+possible Pr\"ufer codes and therefore the same number of
+labelled trees.}
+
+\itemih The degree sequence of a tree is a list of the degrees of the
+vertices in nonincreasing order.  For example the degree sequence of the
+first graph in Figure \ref{spanningtrees} is 43221.  How many labelled
+trees are there on $n$ vertices with degree sequence $d_1,d_2,\ldots d_n$, or,
+equivalently, with the degree sequence in which the degree $d$ appears $i_d$
+times?
+\solution{
+We first solve the simpler problem in which we assume $d_i$ is the
+degree of vertex $i$.  The number of times
+$i$ appears in the Pr\"ufer code of a tree is one less than the degree of $i$,
+so vertex
+$i$ appears
+$d_i-1$ times.  Thus the sum of the $d_i-1$ should be $2n-2-n=n-2$.  Of the
+$n-2$ places in the Pr\"ufer code, we want to label $d_1-1$ of them with 1,
+$d_2-1$ of them with 2 and in general $d_i-1$ of them with $i$.  There are
+$${n-2\choose
+d_1-1}{n-2-(d_1-1)\choose d_2-1}{n-2-(d_1-1+d_2-1)\choose
+d_3-1}\cdots{d_n-1\choose d_n-1}$$ ways to do this, so the number of trees
+in which vertex $i$ has degree $d_i$ is ${(n-2)!\over
+(d_1-1)!(d_2-1)!\cdots(d_n-1)!}$.
+
+Now we modify the solution by observing that to count all graphs with a given
+degree sequence, the actual vertices which have the given degrees is
+irrelevant, so we must multiply the result of the easier problem by the number
+of ways to assign the degrees to the vertices.  To assign the degrees, we can
+list the vertices in $n!$ ways, choose the first $i_1$ of these vertices to
+have degree 1, then next $i_2$ to have degree 2, and so on.  But the order
+in which we list the vertices of a given degree is irrelevant.  Thus the number
+of ways to assign the degrees is
+$n!\over i_1!i_2!\cdots i_n!$.  Once the degrees are assigned, there are
+$(n-2)!\over
+\prod_{d=1}^n (d-1)!^{i_d}$, by translating our easier result.  Thus the total
+number of trees with the degree sequence in which there are $i_d$ vertices of
+degree $d$ is
+$$n!(n-2)!\over\prod_{j=1}^n i_j!(j-1)!^{i_j}.$$}
+
+\end{enumerate}

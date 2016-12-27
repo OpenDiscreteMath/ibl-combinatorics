@@ -1,0 +1,1943 @@
+\chapter{Distribution Problems}
+\section{The idea of a distribution}
+Many of the problems we solved in Chapter 1 may be thought of as problems
+of distributing objects (such as pieces of fruit or ping-pong balls) to
+recipients (such as children).  Some of the ways of viewing counting
+problems as distribution problems are somewhat indirect.  For example, in
+Problem
+\ref{ping-pong} you probably noticed that the number of ways to pass out
+$k$ ping-pong balls to $n$ children so that no child gets more than one is
+the number of ways that we may choose a
+$k$-element subset of
+an $n$-element set.  We think of the children as recipients and objects we
+are distributing as the identical ping-pong balls, distributed so that
+each recipient gets at most one ball.  Those children who receive an
+object are in our set.  It is helpful to have more than one way to think
+of solutions to problems.  In the case of distribution problems, another
+popular model for distributions is to think of putting balls in boxes
+rather than distributing objects to recipients.  Passing out identical
+objects is modeled by putting identical balls into boxes.  Passing out
+distinct objects is modeled by putting distinct balls into boxes.
+
+
+\subsection{The twenty-fold way}
+When we are passing out objects to recipients, we may think of the
+objects as being either identical or distinct.  We may also think of the
+recipients as being either identical (as in the case of putting fruit
+into plastic bags in the grocery store) or distinct (as in the case of
+passing fruit out to children).  We may restrict the distributions to
+those that give at least one object to each recipient, or those that give
+exactly one object to each recipient, or those that give at most one
+object to each recipient, or we may have no such restrictions.  If the
+objects are distinct, it may be that the order in which the objects are
+received is relevant (think about putting books onto the shelves in a
+bookcase) or that the order in which the objects are received is
+irrelevant (think about dropping a handful of candy into a child's trick
+or treat bag).  If we ignore the possibility that the order in which
+objects are received matters, we have created
+$2\cdot2\cdot4=16$ distribution problems.  In the cases where a recipient
+can receive more than one distinct object, we also have four more
+problems when the order objects are received matters.  Thus we have 20
+possible distribution problems.  
+\begin{table}[t]
+\caption{An incomplete table of the number of ways to
+distribute $k$ objects to $n$ recipients, with
+restrictions on how the objects are
+received}\label{firstdistributiontable}
+\begin{center}
+\fbox{\hglue-3.5pt
+{\footnotesize\begin{tabular}{|l||c |c|}\hline
+\multicolumn{3}{|c|}{The Twentyfold Way: A Table of Distribution
+Problems}
+\\ %\multicolumn{3}{|c|}{\hrulefil}
+\hline\hline
+$k$ objects and conditions&\multicolumn{2}{|c|}{ $n$ recipients and
+mathematical model for distribution}\\
+\cline{2-3}
+on how they are received&Distinct&Identical\\
+\hline\hline 1.  Distinct &$n^k$& 
+?\\
+no conditions&functions&set partitions ($\le n$ parts)\\ \hline
+2.  Distinct&$n^{\underline{k}}$ &1 if
+$k\le n$; 0 otherwise\\ Each gets at most one&\kern -2pt $k$-element
+permutations\kern -2 pt&\\
+\hline
+3.  Distinct&?& ?
+\\ Each gets at least one&onto functions& set partitions
+($n$ parts)\\\hline 
+4. Distinct&$k!=n!$&1 if $k=n$; 0 otherwise\\ Each
+gets exactly one&bijections&\\
+\hline
+5.  Distinct, order matters&?& ?\\
+&?& ?\\
+\hline
+6.  Distinct, order
+matters&?&?\\
+Each gets at least one&?&?\\
+\hline
+7.  Identical  &?&?\\
+no conditions&?& ?\\ \hline
+8.  Identical&$n\choose k$&1 if $k\le n$; 0 otherwise\\
+Each gets at most one&	subsets&\\ \hline
+9.  Identical&?&? \\
+Each gets at least one&? &? \\
+\hline 10.  Identical&1 if $k=n$; 0 otherwise&1 if $k=n$; 0 otherwise\\
+Each gets exactly one&&\\
+\hline
+\end{tabular}\hglue-3pt}}\end{center}\vspace*{-12 pt}
+\end{table}
+
+We describe these problems in Table
+\ref{firstdistributiontable}.  Since there are twenty possible
+distribution problems, we call the table the ``Twentyfold
+Way,"\index{Twentyfold Way} adapting terminology suggested by Joel Spencer
+for a more restricted class of distribution problems. In the first column
+of the table we state whether the objects are distinct (like people) or
+identical (like ping-pong balls) and then give any conditions on how the
+objects may be received.  The conditions we consider are whether each
+recipient gets at most one object, whether each recipient gets at least
+one object, whether each recipient gets exactly one object, and whether
+the order in which the objects are received matters.  In the second
+column we give the solution to the problem and the name of the
+mathematical model for this kind of distribution problem when the
+recipients are distinct, and in the third column we give the same
+information when the recipients are identical.  We use question marks as
+the answers to problems we have not yet solved and models we have not yet
+studied.   We give explicit answers to problems we solved in Chapter 1
+and problems whose answers are immediate.  The goal of this chapter is to
+develop methods that will allow us to fill in the table with formulas or
+at least quantities we know how to compute, and we will give a completed
+table at the end of the chapter.  We will now justify the answers that
+are not question marks and replace some question
+marks with answers as we cover relevant material. 
+
+If we pass out  $k$ distinct objects (say pieces of fruit) to $n$ distinct
+recipients (say children), we are saying for each object which recipient
+it goes to.  Thus we are defining a function from the set of objects to
+the recipients.  We saw the following theorem in Problem
+\ref{numberoffunctionsconjecture}. 
+\begin{theorem} There are
+$n^k$\index{functions!number of} functions from a
+$k$-element set to an $n$-element set.
+\end{theorem} We proved it in Problem
+\ref{provenumberoffunctionsconjecture}.   If we pass out $k$ distinct
+objects (say pieces of fruit) to $n$ indistinguishable recipients (say
+identical paper bags) then we are dividing the objects up into 
+disjoint sets; that is we are forming a partition of the objects into
+some number, certainly no more than the number $k$ of objects, of parts. 
+Later in this chapter (and again in  the next chapter) we shall discuss
+how to compute the number of partitions of a
+$k$-element set into
+$n$ parts.  This explains the entries in row one of our table.
+
+If we pass out $k$ distinct objects to $n$ recipients so that each gets
+at most one, we still determine a function, but the function must be
+one-to-one.  The number of one-to-one functions from a $k$-element set to
+an $n$ element set is the same as the number of one-to-one functions
+from the set $[k] =\{1,2,\ldots,k\}$ to an $n$-element set.  In Problem
+\ref{kelementpermutation} we proved the following theorem.
+ \begin{theorem} If $0\le k\le n$, then the number of
+$k$-element permutations of an $n$-element set is 
+$$n^{\underline{k}} = n(n-1)\cdots(n-k+1) =
+n!/(n-k)!.$$\index{functions!one-to-one!number
+of}\label{numberofinjections}
+ \end{theorem}
+ If $k>n$ there are no one-to-one functions from a $k$ element set to an
+$n$ element, so we define $n^{\underline{k}}$ to be zero in this case. 
+Notice that this is what the indicated product in the middle term of our
+formula gives us. If we are supposed to distribute
+$k$ distinct objects to
+$n$ identical recipients so that each gets at most one, we cannot do so
+if $k>n$, so there are 0 ways to do so.  On the other hand, if $k\le n$,
+then it doesn't matter which recipient gets which object, so there is
+only one way to do so.  This explains the entries in row two of our table.
+
+If we distribute $k$ distinct objects to $n$ distinct recipients so that
+each recipient gets at least one, then we are counting functions again,
+but this time functions from a $k$-element set {\em onto} an $n$-element
+set.  At present we do not know how to compute the number of such
+functions, but we will discuss how to do so later in this chapter and in
+the next chapter.  If we distribute $k$ identical objects to $n$
+recipients, we are again simply partitioning the objects, but the
+condition that each recipient gets at least one means that we are
+partitioning the objects into exactly $n$ blocks.  Again, we will discuss
+how compute the number of ways of partitioning a set of $k$ objects into
+$n$ blocks later in this chapter.  This explains the entries in row three
+of our table.
+
+If we pass out $k$ distinct objects to $n$ recipients so that each gets
+exactly one, then $k=n$ and the function that our distribution gives us
+is a bijection.  The number of bijections from an $n$-element set to an
+$n$-element set is $n!$ by Theorem \ref{numberofinjections}.  If we pass
+out $k$ distinct objects of $n$ identical recipients so that each gets
+exactly 1, then in this case it doesn't matter which recipient gets which
+object, so the number of ways to do so is 1 if $k=n$.  If $k\not=n$, then
+the number of such distributions is zero.  This explains the entries in
+row four of our table.
+
+We now jump to row eight of our table.  We saw  in Problem
+\ref{ping-pong} that the number of ways to pass out $k$ identical
+ping-pong balls to $n$ children is simply the number of $k$-element
+subsets of an $n$-element set.  In Problem \ref{formulanchoosek} we proved
+the following theorem.
+\begin{theorem}  If $0\le k \le n$, the number of $k$-element subsets of
+an
+$n$-element set is given by $${n\choose k} = {n^{\underline{k}}\over k!}
+= {n!\over k!(n-k)!}.$$
+\end{theorem}
+We define $n \choose k$ to be 0 if $k>n$, because then there are no
+$k$-element subsets of an $n$-element set.  Notice that this is what the
+middle term of the formula in the theorem gives us.  This explains the
+entries of row 8 of our table.  For now we jump over row 9.
+
+In row 10 of our table, if we are passing out $k$ identical objects to
+$n$ recipients so that each gets exactly one, it doesn't matter whether
+the recipients are identical or not; there is only one way to pass out
+the objects if $k=n$ and otherwise it is impossible to make the
+distribution, so there are no ways of distributing the objects.    This
+explains the entries of row 10 of our table.  Several other rows of our
+table can be computed using the methods of Chapter 1.
+
+\subsection{Ordered functions}
+\bp 
+\itemei Suppose we wish to place $k$ distinct books onto the shelves of
+a bookcase with $n$ shelves.  For simplicity, assume for now that all of
+the books would fit on any of the shelves.  Also, let's imagine pushing
+the books on a shelf as far to the left as we can, so that we are only
+thinking about how the books sit relative to each other, not about the
+exact places where we put the books. Since the books are distinct, we can
+think of a the first book, the second book and so on.  How many places
+are there where we can place the first book?  When we place the second
+book, if we decide to place it on the shelf that already has a book, does
+it matter if we place it to the left or right of the book that is already
+there?  How many places are there where we can place the second book? 
+Once we have $i-1$ books placed, if we want to place  book $i$
+on a shelf that already has some books, is sliding it in to the left of
+all the books already there different from placing it to the right of
+all the books already or between two books already there?  In how many
+ways may we place the
+$i$th book into the bookcase? In how many ways may we place all the
+books?\label{bookcase}
+\solution{There are $n$ places where we can place the first book.  Once
+we have placed it, there are $n+1$ places where we can place the second
+book, because on the shelf that has one book, we could put the second
+book to the left or to the right of the book already there.  Once we have
+$i-1$ books on the shelves the $i$th book could go on any shelf to the
+left of all books there, if any, giving us $n$ places, or it could go to
+the immediate right of any book already there, giving us another $i-1$
+places.  Thus there are $n+i-1$ places where we could place book $i$. 
+From this, we can see that the number of ways to place all the books is
+$$\prod_{i=1}^k (n+i-1).$$
+}
+\item Suppose we wish to place the books in Problem \ref{bookcase}
+(satisfying the assumptions we made there) so that each shelf gets at
+least one book.  Now in how many ways may we place the books? (Hint: how
+can you make sure that each shelf gets at least one book before you start
+the process described in Problem
+\ref{bookcase}?)\label{bookcaseeveryshelf}
+\solution{Choose $n$ books from the $k$ books in $k\choose n$ ways, and
+assign them to the $n$ places shelves in $n!$ ways, giving us $k!/(k-n)!$
+ways to put a book on each shelf.  Now leaving these books at the far
+left of each shelf, place the remaining books in $$\prod_{i=1}^{k-n}
+(n+i-1)={(n+(k-n)-1)!\over (n-1)!}={(k-1)!\over (n-1)!}$$ ways.  Thus we
+have $${k!(k-1)!\over(k-n)!(n-1)!}=k!{k-1\choose n-1}$$
+ways to place the books.  Of course the right hand side of that equation
+cries out for a combinatorial explanation.  Here it is.  Imagine lining
+up the $k$ books in a row.  Then there are $k-1$ places in between them. 
+Choose $n-1$ of these places, and slide a piece of paper in there as a
+divider.  Now put the books before the first divider on shelf one, and
+the books after divider $i$ on shelf $i+1$.  This gives an arrangement of
+the books on the shelves so that every shelf has a book!
+ }
+
+
+\ep
+The assignment of which books go to which shelves of a bookcase is simply
+a function from the books to the shelves.  But a function doesn't
+determine which book sits to the left of which others on the shelf, and
+this information is part of how the books are arranged on the shelves.  In
+other words, the order in which the shelves receive their books matters. 
+Our function must thus assign an ordered list of books to each shelf.  We
+will call such a function an ordered function.  More precisely, an {\bf
+ordered function}\index{ordered function}\index{function!ordered} from a
+set $S$ to a set $T$ is a function that assigns an (ordered) list of
+elements of
+$S$ to some, but not necessarily all, elements of $T$ in such a way that
+each element of $S$ appears on one and only one of the lists.\footnote{The phrase ordered function is not a
+standard one, because there is as yet no standard name for the result of
+an ordered distribution problem.}  (Notice that although it is not the
+usual definition of a function from $S$ to $T$, a
+function\index{function!alternate definition} can be described as an
+assignment of  subsets of $S$ to some, but not necessarily all, elements
+of $T$ so that each element of $S$ is in one and only one of these
+subsets.) Thus the number of ways to place the books into the bookcase is
+the entry in the middle column of row 5 of our table.  If in addition we
+require each shelf to get at least one book, we are discussing the entry
+in the middle column of row 6 of our table.  An {\em ordered onto
+function}\index{function!ordered!onto}\index{ordered onto
+function}\index{onto function!ordered} is one which assigns a list to
+each element of $T$.  \label{orderedfunctionsection}
+
+In Problem \ref{bookcase} you showed that the number of ordered functions
+from a $k$-element set to an $n$-element set is $\displaystyle
+\prod_{i=1}^n (n+i-1)$.  This product occurs frequently enough that it
+has a name; it is called the $k$\/th {\em rising factorial
+power}\index{factorial power!rising}\index{rising factorial power} of
+$n$ and is denoted by $n^{\overline{k}}$.\index{$n^{\overline{k}}$}  It is
+read as ``$n$ to the
+$k$ rising." (This notation is due to Don Knuth, who also suggested the
+notation for falling factorial powers.)\index{factorial}  We can summarize
+with a theorem that adds two more
+formulas for the number of ordered
+functions.\index{factorial!falling}\index{falling factorial power}
+\begin{theorem} The number of ordered functions from a $k$-element set to
+an $n$-element set is
+$$n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
+(n+k-1)^{\underline{k}}.$$\end{theorem}
+
+\subsection{Broken permutations and Lah numbers}  
+\bp  
+\itemesi In how many ways may we stack $k$ distinct books into $n$
+identical boxes so that there is a stack in every box? (Hint:  Imagine
+taking a stack of
+$k$ books, and breaking it up into stacks to put into the boxes in the
+same order they were originally stacked.  If you are going to use $n$
+boxes, in how many places will you have to break the stack up into smaller
+stacks, and how many ways can you do this?)  (Alternate hint: How many
+different bookcase arrangements correspond to the same way of stacking
+$k$ books into $n$ boxes so that each box has at least one book?).  The
+hints may suggest that you can do this problem in more than one way!
+\label{brokenpermutation}
+\solution{We can make a list of the $k$ distinct books in $k!$ ways. 
+Then we have to choose $n-1$ of the $k-1$ places between the lists as the
+places where we will break the list.  However the order in which we
+list the boxes is irrelevant, so we have equivalence classes of $n!$
+arrangements for each way of putting the books into boxes.  Thus we can
+put  the books in boxes in
+$k!{k-1\choose n-1}/n!$ ways.
+
+Alternately, we can take the number of ways to put $k$ books onto $n$
+bookshelves so that each shelf gets at least one, and then divide by the
+number of shelves factorial.  That gives us $k!{k-1\choose n-1}/n!$ ways
+to arrange the books.}
+\ep
+
+We can think of stacking books into identical boxes as partitioning the
+books and then ordering the blocks of the partition.  This turns out not
+to be a useful computational way of visualizing the problem because the
+number of ways to order the books in the various stacks depends on the
+sizes of the stacks and not just the number of stacks.  However this way
+of thinking actually led to the first hint in Problem
+\ref{brokenpermutation}.  Instead of dividing a set up into
+nonoverlapping parts, we may think of dividing a {\em permutation}
+(thought of as a list) of our $k$ objects up into $n$ ordered blocks.  We
+will say that a set of ordered lists of elements of a set $S$ is a {\bf
+broken permutation}\index{broken permutation}\index{permutation!broken}
+of $S$ if each element of $S$ is in one and only one of these
+lists.\footnote{The phrase broken permutation is not standard,
+because there is no standard name for the solution to this kind  of
+distribution problem.}   The number of broken permutations of a
+$k$-element set with
+$n$ blocks is denoted by $L(k,n)$.  The number $L(k,n)$ is called a
+{\em Lah Number} and, from our solution to Problem
+\ref{brokenpermutation}, is equal to $k!{k-1\choose n-1}/n!$.\index{Lah
+number}
+
+The Lah numbers are the solution to the question ``In how many ways may we
+distribute $k$ distinct objects to $n$ identical recipients if order
+matters and each recipient must get at least one?"  Thus they give the
+entry in row 6 and column 6 of our table.  The entry in row 5 and column
+6 of our table will be the number of broken permutations with less than
+or equal to $n$ parts.  Thus it is a sum of Lah numbers.
+
+We have seen that ordered functions and broken permutations explain the
+entries in rows 5 and 6 of our table.
+\subsection{Compositions of integers}
+\bp 
+\itemes In how many ways may we put $k$ identical books onto $n$ shelves
+if each shelf must get at least one book?
+\solution{In problem \ref{bookcaseeveryshelf} we showed that with $k$
+distinct books we could place the books in $k!{k-1\choose n-1}$ ways.  
+We can partition these arangements of distinct books into blocks, where
+each block consists of all arrangements that we get just by permuting the
+books among themselves.  Thus each block has $k!$ arrangements in it, and
+each arrangement corresponds to an arrangement of identical books.  Thus
+there are $k-1\choose n-1$ ways to arrange identical books.}
+
+\itemes A {\bf composition} of the integer $k$ into $n$ parts is 
+ a list of $n$ positive integers that add to $k$. 
+How many compositions are there of an integer $k$ into $n$
+parts?\label{compositionagian}
+\solution{There is a bijection between compositions of $k$ into $n$ parts
+and arrangements of $k$ identical books on $n$ shelves so that each shelf
+gets a book.  Namely, the number of books on shelf $i$ is the $i$th
+element of the list.  Thus the number of compositions of $k$ into $n$
+parts is $k-1 \choose n-1$.}
+
+\itemi Your answer in Problem \ref{compositionagian} can be expressed as a
+binomial coefficient.  This means it should be possible to interpret a
+composition as a subset of some set.  Find a bijection between
+compositions of $k$ into $n$ parts and certain subsets of some set. 
+Explain explicitly how to get the composition from the subset and the
+subset from the composition.
+\solution{If we line up $k$ identical books, there are $k-1$ places in
+between two books.  If we choose $n-1$ of these places and slip dividers
+into those places, then we have a first clump of books, a second clump of
+books, and so on.  The $i$th element of our list is the number of books
+in the $i$th clump.  Clearly using books is irrelevant; we could line up
+any $k$ identical objects and make the same argument.  Our bijection is
+between compositions and $n-1$-element subsets of the set of $k-1$ spaces
+between our objects.}
+
+\itemes Explain the connection between compositions of $k$ into $n$ parts
+and the problem of distributing $k$ identical objects to $n$ recipients
+so that each recipient gets at least one.  
+\solution{Since the recipients are distinct, we can think of them as
+a first recipient, a second, and so on.  Given a composition of
+$k$ into
+$n$ parts, let the
+$i$th element of the list be the number of objects given to recipient
+number
+$i$.}
+\ep
+The sequence of problems you just completed should explain the entry in
+the middle column of row 9 of our table of distribution problems.
+
+\subsection{Multisets}
+In the middle column of row 7 of our table, we are asking for the number
+of ways to distribute $k$ identical objects (say ping-pong balls) to $n$
+distinct recipients (say children).   
+\bp
+\iteme In how many ways may we distribute $k$ identical books on the
+shelves of a bookcase with $n$ shelves, assuming that any shelf can hold
+all the books?  \label{identicalbooks}
+\solution{We saw that we could arrange $k$ distinct books on $n$ shelves
+in $\prod_{i=1}^k (n+i-1)$ ways.  We partition these arrangements into
+blocks by putting two arrangements  in the same block if we can get one
+from the other by permuting the books among themselves.  Then the number
+of blocks is the number of ways to place identical books on the shelves. 
+However, there are $k!$ arrangements per block, so there are
+$${\prod_{i=1}^k (n+i-1)\over k!}=(n+k-1)^{\underline{k}}= {n+k-1\choose
+k}$$ ways to arrange identical books.}
+
+\iteme A {\em multiset}\index{multiset} chosen from a set $S$ may be
+thought of as a subset with repeated elements allowed.  For example the
+multiset of letters of the word Mississippi is
+$\{i,i,i,i,m,p,p,s,s,s,s\}$.  To determine a multiset we must say how
+many times (including, perhaps, zero) each member of $S$ appears in the
+multiset. The number of times an element appears is called its
+{\em multiplicity}.\index{multiplicity in a multiset} The size of a
+multiset chosen from
+$S$ is the total number of times any member of $S$ appears.  For example,
+the size of the multiset of letters of Mississippi is 11.  What is the
+number of multisets of size
+$k$ that can be chosen from an $n$-element set? \label{multiset}
+\solution{There is a bijection between arrangements of identical books on
+$n$ shelves and  multisets chosen from an $n$-element set: the
+multiplicity of element $i$ is the number of books on shelf $i$.  Thus we
+have $n+k-1\choose k$ ways to choose a $k$-element multiset from an
+$n$-element set by Problem \ref{identicalbooks}.}
+
+\itemi Your answer in the previous problem should be expressible as a
+binomial coefficient.  Since a binomial coefficient counts subsets, find
+a bijection between subsets of something and multisets chosen from a set
+$S$.
+\solution{Note that ${n+k-1\choose k} = {n+k-1 \choose n-1}$.  We will
+show a bijection between ways of choosing $n-1$ things our of $n+k-1$
+things and multisets.  Namely,  take $n+k-1$ objects and line them up in
+a row.  Choose $n-1$ of them.  Now let the multiplicity of element 1 of
+our multiset be the number of objects before the first thing we chose. 
+if $1<i<n$, let the multiplicity of element $i$ of our multiset be the
+number of things between the $i-1$th thing we chose and the $i$th thing
+we choose.  Let the multiplicity of the $n$th element of our multiset be
+the number of objects after the last one we chose.  Another way to say
+the essentially same thing is to make a list of $n+k-1$ blank spaces.  We
+choose $k$ of them in which we put ones and $n-1$ of them in which we put
+plus signs.  Then the multiplicity of element 1 is the number of ones
+before the first plus sign, the multiplicity of element $n$ is the number
+of ones after the last plus sign and if $1<i<n$, the multiplicity of
+element $i$ is the number of ones between the $(i-1)$th plus sign and the
+$i$th plus sign.}
+
+\item How many solutions are there in nonnegative integers to the
+equation $x_1+x_2+ \cdots +x_m = r$, where $m$ and $r$ are constants?
+\solution{We can think of $x_i$ as the multiplicity of element $i$ of a
+multiset chosen from among $m$ things.  The total number of elements of
+the multiset will be
+$r$.  Thus we have $m+r-1\choose r$ solutions.
+}
+\ep 
+
+A more precise definition of a {\bf multiset}\index{multiset} chosen from
+a set
+$S$ is that it is a function $m$, called a {\em multiplicity
+function}\index{multiplicity function}, from
+$S$ to the nonnegative integers.  For each $x$ in $S$, $m(x)$ specifies
+how many times $x$ appears in the multiset.  In our example of the word
+Mississippi above, our set $S$ can be taken to be the set of alphabet
+letters and the multiplicity function $m$ is given by $m({\rm i})=4$,
+$m({\rm m}) =1$, $m({\rm p})=2$, $m({\rm s}) =4$, and $m$ of any other
+member of $S$ is 0.  When we list the members of a multiset in braces, it
+will be clear from context that we are thinking of a multiset.  However
+when we use braces in another way, it may not be clear what we mean.  For
+example, when we write
+$$\{x|x \mbox{~is a letter of Mississippi}\},$$
+do we mean the set $\{i,m,p,s\}$ or the multiset
+$\{i,i,i,i,m,p,p,s,s,s,s\}$?  To resolve this, whenever it is not clear
+from context whether we are talking about a set or multiset we will use
+the subscript multi on the right brace enclosing the multiset to
+distinguish a multiset. Thus we write
+$$\{x|x \mbox{\ is a letter of
+Mississippi}\}_{\mbox{\scriptsize multi}}=\{i,i,i,i,m,p,p,s,s,s,s\}.$$
+In this case it is probably clear from the right-hand side of the equation
+that we are thinking of the left-hand side as a multiset, but we will
+always try to err in the direction of clarity rather than brevity.
+
+The
+sequence of problems you just completed should explain the entry in the
+middle column  of row 7 of our table of distribution problems.  In the
+next two sections we will give ways of computing the remaining entries.
+
+
+\section{Partitions and Stirling Numbers} We have seen how the number of
+partitions of a set of $k$ objects into $n$ blocks corresponds to the
+distribution of $k$ distinct objects to $n$ identical recipients.  While
+there is a formula that we shall eventually learn for this number, it
+requires more machinery than we now have available.  However there is a
+good method for computing this number that is similar to Pascal's
+equation.  Now that we have studied recurrences in one variable, we will
+point out that Pascal's equation is in fact a {\em recurrence in two
+variables}\index{recurrence!two
+variable}; that is it lets us compute $n\choose k$ in terms of values of
+$m\choose i$ in which either $m<n$ or $i<k$ or both.  It was the fact
+that we had such a recurrence and knew $n\choose 0$ and $n\choose n$ that
+let us create Pascal's triangle.
+\subsection{Stirling Numbers of the second kind}
+We use the notation $S(k,n)$ to stand for the number of partitions of a
+$k$ element set with $n$ blocks.  For historical reasons, $S(k,n)$ is
+called a {\em Stirling number of the second kind}. \index{partition!of a
+set}\index{partition!of a set!!Stirling Numbers}\index{Stirling
+Number!second kind}\index{$S(k,n)$}
+\bp
+\itemei In a partition of the set $[k]$, the number $k$ is either in a
+block by itself, or it is not.  How does the number of partitions of
+$[k]$ with $n$ parts in which $k$ is in a block with other elements of
+$[k]$ compare to the number of partitions of $[k-1]$ into $n$ blocks? 
+Find a two variable recurrence for $S(n,k)$, valid for  $n$ and
+$k$ larger than one.\label{secondstirlingrecurrence}
+\solution{The number of partitions of $[k]$ into $n$ parts in which $k$ is
+in a block with other elements of $[k]$ is equal $n$ times the number
+of partitions of $[k-1]$ into $n$ blocks, because $k$ could be in any
+of the
+$n$ parts, and since it is in a block with other elements of $[k-1]$,
+removing it leaves a partition of $[k-1]$ into $n$ blocks.  The number of
+partitions of $[k]$ into $n$ blocks in which $k$ is in a block by itself
+is the number of partitions of $[k]$ into $n-1$ blocks, because you can
+get any such partition in by deleting the block containing $k$ from a
+partition of $[k]$ in which $k$ is in a block by itself.  Thus
+$S(k,n))=S(k-1,n-1) +nS(k-1,n)$.}
+
+\item What is $S(k,1)$?  What is $S(k,k)$?  Create a table of values of
+$S(k,n)$ for $k$ between 1 and 5 and $n$ between 1 and $k$.  This table
+is sometimes called {\em Stirling's Triangle (of the
+second kind)}\index{Stirling's triangle!second kind}  How would you define
+$S(k,n)$ for the nonnegative values of
+$k$ and
+$n$ that are not both positive?  Now for what values of $k$ and $n$ is
+your two variable recurrence valid?
+\solution{$S(k,1)=1$ and $S(k,k)=1$. 
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+$k\backslash n$&0&1&2&3&4&5&6\\
+\hline
+0&1&0&0&0&0&0&0\\
+1&0&1&0&0&0&0&0\\
+2&0&1&1&0&0&0&0\\
+3&0&1&3&1&0&0&0\\
+4&0&1&7&6&1&0&0\\
+5&0&1&15&25&10&1&0\\
+\end{tabular}
+
+As you see in the table, we
+define $S(0,0)=1$, and $S(0,n)$ or $S(k,0)$ to be 0 otherwise.  This
+makes sense because for $n>0$ there is no partition of an empty set
+into $n$ parts, and for $k>0$ there is no partition of a $k$-element
+set into no parts, but saying there is one partition of the empty set
+into no parts allows us to use our recurrence to compute $S(1,1)$. 
+This makes our recurrence valid for all nonnegative values of $k$ and
+$n$.
+}
+
+\item  Extend Stirling's triangle enough to allow you to answer the
+following question and answer it.  (Don't fill in the rows all the way;
+the work becomes quite tedious if you do.  Only fill in what you need to
+answer this question.)  A caterer is preparing three bag lunches for
+hikers.  The caterer has nine different sandwiches.  In how many ways can
+these nine sandwiches be distributed into three identical lunch bags so
+that each bag gets at least one?\label{sandwiches}
+\solution{We need $S(9,3)$.  Thus we need to extend our table for four
+more rows, but only out to the column labelled 3.  These rows are
+6,0,1,31,90, 7,0,1,63,301, 7,0,1,127,966, 8,0,1,255,3025,
+9,0,1,511,9330.  Thus there are 9330 ways to distribute the sandwiches
+into the lunch bags.}
+
+\item  The question in Problem \ref{sandwiches} naturally suggests a more
+realistic question; in how many ways may the caterer distribute the nine
+sandwich's into three identical bags so that each bag gets exactly
+three?  Answer this question.  (Hint, what if the question asked about
+six sandwiches and two distinct bags?  How does having identical bags
+change the answer?)\label{caterer2}
+\solution{${9\choose 3}{6\choose 3}{3\choose 3}/3!$.  First we choose
+three sandwiches for bag 1, then three for bag 2, and put the remainder in
+bag 3.  However, it doesn't matter which bags the sandwiches
+are in so we have counted each partition $3!$ times.}
+
+\iteme In how many ways can we partition $k$ items into $n$ blocks so that
+we have $k_i$ blocks of size $i$ for each $i$?  (Notice that
+$\sum_{i=1}^k k_i = n$ and $
+\sum_{i=1}^k ik_i = k$.)\label{partitionsgivenpartsize}  The sequence
+$k_1,k_2,\ldots,k_n$ is called the {\em type vector} of the
+partition.\index{partition of a set! type vector}\index{type vector of a
+partition of a set}
+\solution{$n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}$.  We can make a
+list in $n!$ ways, and then break it into first $k_1$ blocks of size 1,
+then $k_2$ blocks of size 2, $k_3$ blocks of size 3 up to $k_n$ blocks
+of size $n$.  But then we realize that we get the same partition if we
+permute the $i!$ elements of a block of size $i$ and we get the same
+partition if we permute the $k_i$ blocks of size $i$ so we apply the
+quotient principle.}
+
+\item Describe how to compute $S(n,k)$ in terms of quantities given by
+the formula you found in Problem \ref{partitionsgivenpartsize}.
+\solution{We can find $S(n,k)$ by summing $n!\over \prod_{i=1}^n
+(i!)^{k_i}{k_i!}$ over all type vectors $(k_1,k_2,\ldots,k_n)$ such
+that
+$k_1+k_2+\cdots+k_n=k$.}
+
+\itemi Find a recurrence similar to the one in Problem
+\ref{secondstirlingrecurrence} for the Lah numbers $L(k,n)$.
+\solution{$L(k,n)$ is the number of broken permutations of a
+$k$-element set into $n$ parts.  Either $k$ is in an ordered block by
+itself or it is not.  If it is, it can go after any of the $k-1$ other
+elements, or it can go at the beginning of any of the $n$ blocks.  If
+it is not, deleting it gives a broken permutation of a $k-1$-element
+set into $n-1$ blocks.  Thus $L(k,n)=L(k-1,n-1) + (n+k-1)L(k,n)$.}
+
+\itemes (Relevant in Appendex \ref{expogenfun}.) The total number of
+partitions of a
+$k$-element set is denoted by
+$B(k)$ and is called the $k$-th {\em Bell number}\index{Bell
+Number}\index{partitions of a set!number of}.  Thus
+$B(1)=1$ and
+$B(2) =2$.\label{BellNumberIntro}
+\begin{enumerate}\item Show, by explicitly exhibiting the partitions, that
+$B(3)=5$.
+\solution{The five partitions of $[3]$ are the sets $\{\{1\},
+\{2\},\{3\}\}$,
+$\{\{1,2\},\{3\}\}$, $\{\{1,3\},\{2\}\}$, $\{\{1\},\{2,3\}\}$, and
+$\{\{1,2,3\}\}$.}
+\item Find a recurrence that expresses $B(k)$ in terms of $B(n)$ for
+$n< k$ and prove your formula correct in as many ways as you can.
+\solution{If we delete the block containing $k$, we get a partition of
+a subset of $[k-1]$. Thus $B(k)$ is the sum over all subsets of
+$[k-1]$ of the number of partitions of that subset.  This gives us
+$B(k)= \sum_{n=0}^{k-1}{k-1\choose n}B(n)$.
+
+Alternatively, we can show by the same sort of argument that
+$S(k,n)=\sum_{i=0}^{k-1} {k-1\choose i}S(i,n-1)$ and then use the fact
+that $B(k)=\sum_{n=0}^k S(k,n)$ to get the recurrence for $B(k)$.}
+
+\item Find $B(k)$ for $k=4,5,6$.
+\solution{$$B(4) ={3\choose 0}B_0 +{3\choose1}B_1 +{3\choose2}B_2 +
+{3\choose3}B_3=1 +3+3\cdot2 +5=15$$
+$$B(5) = \sum_{n=0}^4 {4\choose n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52$$
+$$B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
++5\cdot 15 +52=203$$}
+\end{enumerate}
+\ep
+
+\subsection{Stirling Numbers and onto functions}
+\bp 
+
+\itemm Given a function $f$ from a $k$-element set $K$ to an $n$-element
+set, we can define a partition of $K$ by putting $x$ and $y$ in the same
+block of the partition if and only if $f(x)=f(y)$.  How many blocks does
+the partition have if $f$ is onto?  How is the number of functions from a
+$k$-element set onto an $n$-element set related to a Stirling number?   Be
+as precise in your answer as you can.\index{function!onto!and Stirling
+Numbers}\index{onto function!counting}
+\solution{If $f$ is onto, the number of blocks of the partition is
+$n$.  The number of onto functions from a $k$-element set onto an
+$n$-element set is $S(k,n)n!$, because we have a one-to-one function
+from the blocks to the $n$-element set.}
+\iteme Each function from a $k$-element set $K$ to an $n$-element set $N$
+is a function from $K$ onto {\em some} subset of $N$.  If $J$ is a subset
+of $N$ of size $j$, you know how to compute the number of functions that
+map onto $J$ in terms of Stirling numbers.  Suppose you add the number of
+functions mapping onto $J$ over all possible subsets $J$ of $N$.  What
+simple value should this sum equal?  Write  the equation this gives
+you.\label{Stirlingfalling}
+\solution{The sum should equal the number of functions, $n^k$.  Thus
+we get $\sum_{j=0}^n {n\choose j}S(k,j)j! = n^k$.  By using the fact
+that ${n\choose j}= n^{\underline{j}}/j!$, this may be rewritten as
+$\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k.$}
+\itemm In how many ways can the sandwiches of Problem \ref{sandwiches} be
+placed into three distinct bags so that each bag gets at least one?
+\solution{$S(9,3)\cdot3!= 55,980$.}
+\itemm In how many ways can the sandwiches of Problem \ref{caterer2} be
+placed into distinct bags so that each bag gets exactly three?
+\solution{Choose three sandwiches for bag one in $9\choose3$ ways,
+three for bag two in $6\choose3$ ways and put the remainder in bag 3. 
+This gives us ${9\choose3}{6\choose3}={9!\over3!3!3!}=1680$ ways.  
+
+The $9!\over3!3!3!$ suggests another solution.  We can line up the
+sandwiches in 9! ways.  We take the first three for bag one, the
+second three for bag two and the last three for bag 3.  The order of
+the sandwiches in the bag does not matter though, so each there are
+$3!3!3!$ listings corresponding to each way of putting sandwiches in
+bags, giving us $9!\over3!3!3!$ ways to put the sandwiches in bags.}
+
+\iffalse
+\item  If $f:X\rightarrow Y$, we say that $y$ is the {\em
+image}\index{image of an element under a function} of $x$ under $f$ if
+$f(x)=y$. How many functions are there from a set
+$K$ with
+$k$ elements to a set $N$ with $n$ elements so that for each $i$ from 1
+to
+$n$, $k_i$ elements of
+$N$ are each the images of $i$ different elements of $K$?  (Said
+differently, we have $k_1$ elements of $N$ that are images of one
+element of $K$, we have $k_2$ elements of $N$ that are images of two
+elements of $K$, and in general $k_i$ elements of $N$ that are images
+of $i$ elements of $K$.)  (We say
+$y$ is the {\em image}\index{image (under a function} of $x$ if
+$y=f(x)$.) 
+\solution{We can think of this as using the elements of $K$ to label
+the elements of $N$ so that $k_1$ elements of $K$ label one element
+each of $N$, $k_2$ elements of $K$ label two elements each of $N$, and
+in general, $k_i$ elements of $K$ label $i$ elements of $N$.  We can
+think of lining up the elements of $N$ in $n!$ ways, and taking the
+first $k_1$ of them to be labelled by the 
+\fi
+ 
+\iteme How many functions are there from a $k$-element set $K$ to a set
+$N=\{y_1,y_2,\ldots y_n\}$ so that $y_i$ is the image of $j_i$ elements of
+$K$ for each $i$ from 1 to $n$?  This number is called a {\em multinomial
+coefficient}\index{multinomial
+coefficient}\index{coefficient!multinomial} and denoted by $${k\choose
+j_1,j_2,\ldots, j_n}.$$ 
+\solution{${k\choose j_1,j_2,\ldots, j_n} =
+{k!\over j_1!j_2!\cdots j_n!}$.  We get this either as the
+product of binomial coefficients $${k\choose j_1}{k-j_1\choose
+j_2}{k-j_1-j_2\choose j_3}\cdots{j_n\choose j_n},$$ or more elegantly,
+by lining up the elements of the domain in $k!$ ways, taking the first
+$j_1$ elements to $y_1$, the next $j_2$ elements to $y_2$ and so on. 
+However the order of the $j_i$ elements that go to $y_i$ is
+irrelevant, so $j_1!j_2!\cdots j_n!$ lists all correspond to the same
+function, giving us $k!\over j_1!j_2!,\cdots j_n!$ functions.}
+
+\item Explain how to compute the number of functions from a $k$-element
+set $K$ onto an $n$-element set $N$ by using multinomial coefficients.
+\solution{Add the multinomial coefficients $k\choose
+j_1,j_2,\ldots,j_n$ in which each $j_i$ is different from zero.  To
+see why, let $N=\{y_1,y_2,\ldots,y_n\}$ and note that we are counting
+functions that send at least one element of $K$ to each element $y_i$.}
+
+\iteme What do multinomial coefficients have to do with expanding the
+$k$th power of a multinomial $x_1+x_2+\cdots+x_n$?  This result is called
+the {\em multinomial theorem}.
+\solution{When we use the distributive law to multiply out
+$(x_1+x_2+\cdots +x_n)^k$, we will get a sum of a bunch of terms of the
+form
+$x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ where $i_1+i_2+\cdots+ i_n=k$. 
+The terms with a given sequence $i_1,i_2,\ldots, i_n$ of
+exponents will arise from choosing, as we apply the distributive law
+over and over again, 
+$x_1$ from
+$i_1$ of the factors,
+$x_2$ from $i_2$ of the factors, and so on. Thus the number of terms
+$x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ will be the number of ways to
+label $i_1$ of the factors with a 1, $i_2$ of the factors with a 2,
+\ldots, and $i_n$ of the factors with an $n$.  The number of ways to do
+this is a multinomial coefficient, as we now explain.    This labeling
+gives us a function from
+$[k]$ to $[n]$ as follows.  If factor $i$ is labelled $j$ we let $f(i)
+=j$.  Further each function $f$ from $[k]$ to $[n]$ gives us that maps
+$i_j$ elements of $[k]$ to $j$ will give us such a labelling.  Thus the
+coefficient of
+$x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}$ will be the multinomial
+coefficient $k\choose i_1,i_2,\ldots, i_n$.}
+
+\ep
+\subsection{Stirling Numbers and bases for polynomials}
+\bp 
+\itemes Find a way to express $n^k$ in terms of 
+$k^{\underline{j}}$ for appropriate values $j$.  You may use Stirling
+numbers if they help you.  Notice that
+$x^{\underline{j}}$ makes sense for a numerical variable $x$ (that could
+range over the rational numbers, the real numbers, or even the complex
+numbers instead of only the nonnegative integers, as we are implicitly
+assuming $n$ does), just as
+$x^j$ does.  Find a way to express the power $x^k$ in terms of the
+polynomials $x^{\underline{j}}$ for appropriate values of $j$ and explain 
+why your formula is correct.\label{powersfromfalling}
+\solution{In Problem \ref{Stirlingfalling}, we saw that $\sum_{j=0}^n
+{n\choose j}S(k,j)j! = n^k$.  Using the relationship between binomial
+coefficients and falling factorials, we may rewrite this as 
+$\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k$.  This expresses $n^k$
+in terms of $k^{\underline{j}}$.  To be precise, we define
+$x^{\underline{j}}$ to be $ x(x-1)\cdots (x-j+1)$. At first glance it
+looks like we could express $x^{\underline{j}}$ in terms of powers of
+$x$ by simply substituting $x$ for $n$   in the equation $\sum_{j=0}^n
+n^{\underline{j}}S(k,j) = n^k$.  However this gives us $\sum_{j=0}^x
+x^{\underline{j}}S(k,j) = x^k$, and we have never defined what we mean
+by a sum whose upper limit is a variable $x$.  Thus we need to examine
+the equation $\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k$ to see if we
+can replace the $n$ that is the upper limit of the sum with something
+else.    Notice that
+$S(k,j)=0$ when $j>k$.  This means that if $k\le j$, then $\sum_{j=0}^n
+n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)$.
+Notice also that $n^{\underline{j}}= n(n-1)\cdots(n-j+1)$ is zero when
+$j>n$ because one of its factors is zero then.  This implies that if
+$k>j$, then $\sum_{j=0}^n
+n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)$. 
+Therefore, regardless of the relative size of $k$ and $n$,  we have
+that
+$\sum_{j=0}^n n^{\underline{j}}S(k,j)=\sum_{j=0}^k
+n^{\underline{j}}S(k,j)$.  Therefore 
+\begin{equation}
+\sum_{j=0}^k
+n^{\underline{j}}S(k,j)=n^k.\label{changeupperlimit}
+\end{equation}
+  It
+makes sense to write the polynomial
+$\sum_{j=0}^k
+x^{\underline{j}}S(k,j)$; this is simply a polynomial of degree $k$ in
+the variable $x$.  The expression $\sum_{j=0}^k
+x^{\underline{j}}S(k,j)-x^k$ is also a polynomial in $x$, but it
+might not be of degree $k$ since we are subtracting a degree $k$ term
+from a degree $k$ polynomial.  In fact for every positive integer
+value $n$ of $x$, this polynomial is zero.  That is, $\sum_{j=0}^k
+n^{\underline{j}}S(k,j)-n^k=0$, which is just a restatement of
+Equation \ref{changeupperlimit}.  But it is a fact of algebra that the
+number of solutions of a nontrivial polynomial equation is no more
+than the degree of the polynomial. Since the polynomial equation 
+$\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k$ has infinitely many
+different solutions, it must be a trivial equation; that is
+$\sum_{j=0}^k
+x^{\underline{j}}S(k,j)-x^k$ must be zero for every real (and even
+every complex) number $x$.  Thus $\sum_{j=0}^k
+x^{\underline{j}}S(k,j)=x^k$, and we have expressed $x^k$ in terms of
+$x^{\underline{j}}$ for $j\le k$.
+}
+
+\ep
+You showed in Problem \ref{powersfromfalling} how to
+get each power of $x$ in terms of the falling factorial powers
+$x^{\underline{j}}$.  Therefore every polynomial in $x$ is expressible in
+terms of a sum of numerical multiples of falling factorial powers.  Using
+the language of linear algebra, we say that the ordinary powers of $x$ and
+the falling factorial powers of
+$x$ each form a  basis for the
+``space'' of polynomials, and that the numbers
+$S(k,n)$ are ``change of basis coefficients.'' If you are not familiar
+with linear algebra, a {\em basis}\index{basis (for polynomials)} for the
+{\em space of polynomials}\footnote{The space of polynomials is just
+another name for the set of all polynomials.\index{space of polynomials}}
+is a set of polynomials such that each polynomial, whether in that set or
+not, can be expressed in one and only one way as a sum of numerical
+multiples of polynomials in the set.
+
+\bp 
+\itemm Show that every power of $x+1$ is expressible as a sum of
+numerical multiples of powers of $x$.  Now show that every power of $x$
+(and thus every polynomial in
+$x$) is a sum of numerical multiples (some of which could be negative) of
+powers of
+$x+1$.  This means that the powers of
+$x+1$ are a basis for the space of polynomials as well.  Describe the
+change of basis coefficients that we use to express the binomial powers
+$(x+1)^n$ in terms of the ordinary $x^j$ explicitly.  Find the change of
+basis coefficients we use to express the ordinary powers $x^n$ in terms
+of the binomial powers $(x+1)^k$.
+\solution{We know that 
+\begin{equation}
+(x+1)^n=\sum_{i=0}^n {n\choose
+i}x^{i}\label{usingbinomialtheorem}
+\end{equation}
+ from the binomial
+theorem. (In the way we stated the binomial theorem, instead of
+${n\choose i}x^i$ we would have gotten
+${n\choose i}x^{n-i}$. There are two ways to fix this.  One is to
+observe that the coefficient of
+$x^i$ in that expansion is $n\choose n-i$, which equals $n\choose
+i$.  The other is to observe that when we expand $(1+x)^n$ according
+to the binomial theorem we get exactly what we wrote on the right hand
+side in Equation
+\ref{usingbinomialtheorem}.)  Therefore every power of $x+1$ is
+expressible in terms of powers of $x$.
+
+How do we express powers of $x$ in terms of powers of $x+1$?  Some
+experimentation would help us guess how to do so; however there is a
+really nice trick that also isn't hard to see.  Namely, we can write
+\begin{eqnarray*}
+x^n =(x+1-1)^n= [(x+1) -1]^n&=& \sum_{i=0}^n {n\choose
+i}(x+1)^{n-i}(-1)^i\\ &=&
+\sum_{i=0}^n {n\choose i}(x+1)^i(-1)^{n-i}%\label{x+1tox}
+\end{eqnarray*}
+This means that every power of $x$ is expressible in terms of powers
+of $x+1$ and the change of basis coefficients to express powers of $x$
+in terms of powers of $x+1$ are $(-1)^{n-i}{n\choose i}$ while the
+change of basis coefficients used to express powers of $x+1$ in terms
+of powers of $x$ are $n\choose i$.
+}
+
+\itemesi By multiplication, we can see that every falling factorial
+polynomial can be expressed as a sum of numerical multiples of powers of
+$x$.  In symbols, this means that there are numbers $s(k,n)$ (notice that
+this $s$ is lower case, not upper case) such that we may write
+$x^{\underline{k}} =
+\sum_{n=0}^k s(k,n)x^n$.  These numbers $s(k,n)$\index{$s(k,n)$} are
+called Stirling Numbers of the first kind.\index{Stirling Number!first
+kind}  By thinking algebraically about what the formula 
+ \begin{equation} 
+x^{\underline{k}} =
+x^{\underline{k-1}}(x-k+1)\label{stirling1}
+ \end{equation} 
+means, we can
+find a recurrence for Stirling numbers of the first kind that gives us
+another triangular array of numbers called Stirling's triangle of the
+first kind.\index{Stirling's triangle!first kind}  Explain why Equation
+\ref{stirling1} is true and use it to derive a recurrence for $s(k,n)$ in
+terms of $s(k-1,n-1)$ and $s(k-1,n)$.\label{Stirlingfirst}
+\solution{Equation \ref{stirling1} is effectively the inductive step
+of an inductive definition of $x^{\underline{k}}$.  With this
+equation we can write
+\begin{eqnarray*} \sum_{n=0}^k s(k,n)x^n&=&x^{\underline{k}} =
+x^{\underline{k-1}}(x-k+1)\\
+&=&\left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)\\
+&=&\sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n\\
+&=&\sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.
+\end{eqnarray*}
+Equating the coefficients of $x^n$ in the first and last line of this
+equation, we get
+$s(k,n) = s(k-1,n-1) -(k-1)s(k-1,n)$, for $n$ between 1 and $k-1$..}
+\item Write down the  rows of Stirling's triangle of the first kind
+ for $k=0$ to~6.
+\solution{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+$k\backslash n$&0&1&2&3&4&5&6\\
+\hline
+0&1&0&0&0&0&0&0\\
+1&0&1&0&0&0&0&0\\
+2&0&-1&1&0&0&0&0\\
+3&0&2&-3&1&0&0&0\\
+4&0&-6&11&-6&1&0&0\\
+5&0&24&-50&35&-10&1&0\\
+6&0&-120&274&-225&85&-15&1
+\end{tabular}
+}
+\ep
+
+By definition, the Stirling numbers of the first kind are also change of
+basis coefficients.
+The Stirling numbers of the first and second kind are change of basis
+coefficients from the falling factorial powers of $x$ to the ordinary
+factorial powers, and vice versa. 
+\bp 
+\itemi Explain why every rising factorial polynomial $x^{\overline{k}}$
+can be expressed in terms of the falling factorial polynomials
+$x^{\underline{n}}$.  Let $b(k,n)$ stand for the change of basis
+coefficients that allow us to express 
+ $x^{\overline{k}}$  in terms of the falling factorial polynomials
+$x^{\underline{n}}$; that is, define $b(k,n)$ by the equations
+$$x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.$$ 
+\begin{enumerate}
+\item Find a recurrence
+for $b(k,n)$. 
+\solution{
+\begin{eqnarray*}
+&&\sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
+x^{\overline{k-1}}(x+k-1)\\
+&=&\left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)\\
+&=&\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)\\
+&=&\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)\\
+&=&\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
+x^{\underline{n}}\\
+&=&\sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
+(n+k-1)b(k-1,n)x^{\underline{n}}
+\end{eqnarray*}
+Thus if $n$ is not 0 or $k$, we equate the coefficient of
+$x^{\underline{n}}$ in the first line and last line to get $$b(k,n) =
+b(k-1,n-1) + (n+k-1)b(k-1,n).$$  The trick of subtracting $n$ and
+adding $n$ in the middle of the computation was the result of wanting
+to mimic the way in which we increased the power on $x$ in the
+solution to Problem \ref{Stirlingfirst}.}
+\item Find a formula for $b(k,n)$ and prove the correctness of what you
+say in as many ways as you can.
+\solution{We will answer the next part of the problem here!  The
+recurrence for $b(k,n)$ is exactly the same as the recurrence for
+$L(k,n)$.  Further, $b(0,0)=1=L(0,0)$, $b(0,n) = 0=L(0,n)$ for $n>0$,
+and
+$b(k,k)=L(k,k) =1$.  Thus $b(k,n)$ and $L(k,n)$ are identical.  This and
+the formula from Problem \ref{brokenpermutation} gives one proof that
+$b(k,n)=k!{k-1\choose n-1}/n!$.
+
+A second proof that the change of basis coefficients are Lah numbers
+goes as follows.  $n^{\overline{k}}$ counts the number of ordered
+functions from a $k$-element set to an $n$-element set.  One way to
+determine such an ordered function is to take a broken permutation of
+the $k$-element set into $n$ or fewer parts, and then take a
+one-to-one function from the parts to the $n$-element set.  More
+informally we assign the parts of the broken permutation to distinct
+elements of the $n$-element set.  If the broken permutation has $i$
+parts, the number of ways to do this assignment is the number of
+$i$-element permutations of an
+$n$-element set, $n^{\underline{i}}$.  Thus
+$n^{\overline{k}}=\sum_{i=0}^n L(k,i)n^{\underline{i}}$.  However we
+can change the upper limit of the sum to $k$ because
+$L(k,i)$ is zero when $i>k$ and $n^{\underline{i}}$ is zero when $i>n$. 
+Now we change
+$n$ to
+$x$ because we have a polynomial equality which is valid for infinitely
+many of the values of the variable.  This gives us
+$x^{\overline{k}}=\sum_{i=0}^k L(k,i)x^{\underline{i}}$.  Thus $b(k,i) =
+L(k,i)$.}
+\item Is $b(k,n)$ the same as any of the other families of numbers
+(binomial coefficients, Bell numbers, Stirling numbers, Lah numbers,
+etc.) we have studied?
+\solution{As we said in our solution to the previous part, $b(k,n)$ is
+the Lah number $L(k,n)$.}
+\item Say as much as you can (but say it precisely) about the change of
+basis coefficients for expressing $x^{\underline{k}}$ in terms of
+$x^{\overline{n}}$.
+\solution{There are several ways of finding this relationship, but the
+most concise way is to observe that
+$(-x)^{\underline{k}}=(-1)^kx^{\overline{k}}$ and
+$(-x)^{\overline{k}}= (-1)^k x^{\underline{k}}$.  This lets us write
+\begin{eqnarray*}(-x)^{\overline{k}}&=&\sum_{n=0}^k
+b(k,n)(-x)^{\underline{n}}\\
+(-1)^kx^{\underline{k}}&=&\sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}\\
+x^{\underline{k}}&=&\sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}. 
+\end{eqnarray*}
+Therefore the change of basis coefficients are $(-1)^{n-k}b(k,n)$.}
+
+\end{enumerate}
+\ep
+\section{Partitions of Integers}  We have now completed all our
+distribution problems except for those in which both the objects and the
+recipients are identical.  For example, we might be putting identical
+apples into identical paper bags.  In this case all that matters is how
+many bags get one apple (how many recipients get one object), how many
+get two, how many get three, and so on.  Thus for each bag we have a
+number, and the multiset of numbers of apples in the various bags is
+what determines our distribution of apples into identical bags.  A
+multiset of positive integers that add to $n$ is called a {\bf
+partition}\index{partition of an integer} of
+$n$.  Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1)
+and 3.  The number of partitions of $k$ is denoted by $P(k)$; in
+computing the partitions of 3 we showed that $P(3) = 3$.  It is
+traditional to use Greek letters like $\lambda$ (the Greek letter
+$\lambda$ is pronounced LAMB duh)  to stand for partitons;
+we might write $\lambda= 1,1,1$, $\gamma= 2,1$ and $\tau = 3$
+to stand for the three partitions we just described.  We also write
+$\lambda = 1^3$ as a shorthand for $\lambda = 1,1,1$, and we write
+$\lambda \dashv 3$ as a shorthand for ``$\lambda$ is a partition of
+three."
+
+\bp
+\itemm Find all partitions of 4 and find all partitions of 5, thereby
+computing $P(4)$ and $P(5)$.
+\solution{$4=1+1+1+1$, $4=2+1+1$, $4=2+1$, $4=3+1$, $4=4$, so that
+$P(4)=5$.  $5=1+1+1+1+1$, $5=2+1+1+1$, $5=2+2+1$, $5=3+1+1$, $5=3+2$,
+$5=4+1$, $5=5$, so that $P(5)=7$.}
+\ep
+
+\subsection{The number of partitions of $k$ into $n$ parts}
+ A {\em partition of the integer $k$ into $n$ parts}\index{partition
+of an integer!into $n$ parts} is a multiset of
+$n$ positive integers that add to $k$.  We use $P(k,n)$ to denote the
+number of partitions of $k$ into $n$ parts.  Thus $P(k,n)$ is the number
+of ways to distribute $k$ identical objects to $n$ identical recipients
+so that each gets at least one.  
+\bp
+\itemm Find
+$P(6,3)$ by finding all partitions of 6 into 3 parts.  What does this say
+about the number of ways to put six identical apples into three identical
+bags so that each bag has at least one apple? 
+\solution{$6=4+1+1$, $6=3+2+1$, $6=2+2+2$, so $P(6,3)=3$.  This says
+there are three ways to put six identical apples into three identical
+bags so that each bag gets at least one apple.}
+\ep
+
+\subsection{Representations of partitions}
+\bp
+\itemm  How many solutions are there in the positive integers to the
+equation $x_1+x_2+x_3 =7$ with $x_1\ge x_2\ge x_3$?
+\solution{This problem is asking for $P(7,3)$ and suggests an
+organized way to go about finding it: list the partitions starting
+with the largest part and work down.  $7=5+1+1$, $7=4+2+1$,
+$7=3+3+1$, $7=3+2+2$, and if we have three numbers that add to seven,
+one must be larger than two, so there are four such solutions.}
+\item Explain the relationship between partitions of $k$ into $n$ parts
+and lists $x_1,x_2$,\ldots, $x_n$ of positive integers with
+$x_1\ge x_2\ge\ldots
+\ge x_n$.  Such a representation of a partition is called a {\em
+decreasing list}\index{partition of an integer!decreasing list}
+representation of the partition. 
+\solution{There is a bijection between partitions of $k$ into $n$
+parts and lists, in nonincreasing order, of $n$ positive integers that
+add to $k$, because each multiset of numbers that adds to $k$ can be
+listed in nonincreasing order in exactly one way.}
+
+\itemm Describe the relationship between partitions of $k$ and lists or
+vectors $(x_1,x_2,\ldots,x_n)$ such that $x_1+2x_2+\ldots kx_k = k$.
+Such a representation of a partition is called a {\em type vector}
+representation of a partition, and it is typical to leave the trailing
+zeros out of such a representation; for example $(2,1)$ stands for the
+same partition as $(2,1,0,0)$.  What is the decreasing list
+representation for this partition, and what number does it
+partition?\index{partition of an integer!type vector}\index{type vector
+for a partition of an integer}
+\solution{The type vector of a partition of $k$ is a way of
+representing the multiplicity function of the multiset of integers
+that adds to $k$.  Thus there is a bijection between type vectors and
+partitions.}
+
+\item How does the number of partitions of $k$ relate to the number of
+partitions of $k+1$ whose smallest part is one?
+\solution{They are equal, because if we take two different partitions
+of $k-1$ and increase the multiplicity of 1 in each (by one), they are
+still different; also if we take two different partitions of $k$ that
+have parts of size one, and decrease the multiplicity of 1 in each (by
+one), they are still different.}
+\ep
+
+When we write a partition as
+$\lambda =
+\lambda_1,\lambda_2,\ldots,\lambda_n$, it is customary to write the list of
+$\lambda_i$s as a decreasing list.  When we have a type vector
+$(t_1,t_2,\ldots,t_m)$ for a partition, we write either $\lambda =
+1^{t_1}2^{t_2}\cdots m^{t_m}$ or $\lambda =  m^{t_m}(m-1)^{t_{m-1}}\cdots
+2^{t_2}1^{t_1}$.  Henceforth we will use the second of these.  When we
+write $\lambda=\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}$, we
+will assume that $\lambda_i>\lambda_i+1$.
+
+
+
+\subsection{Ferrers and Young Diagrams and the conjugate of a partition}
+The decreasing list representation of partitions leads us to a handy way
+to visualize partitions.  Given a decreasing list
+$(\lambda_1,\lambda_2,\ldots \lambda_n)$, we draw a figure made up of
+rows of dots that has $\lambda_1$ equally spaced dots in the first row,
+$\lambda_2$ equally spaced dots in the second row, starting out right
+below the beginning of the first row and so on.  Equivalently, instead of
+dots, we may use identical squares, drawn so that a square touches each
+one to its immediate right or immediately below it along an edge.  See
+Figure
+\ref{FerrersYoung} for examples.\index{Ferrers diagram}\index{Young
+diagram}\index{partition of an integer!Ferrers diagram}\index{partition
+of an integer!Young diagram}\index{diagram!of a
+partition!Ferrers}\index{diagram!of a partition!Young} The figure we draw
+with dots is called the Ferrers diagram of the partition; sometimes the
+figure with squares is also called a Ferrers diagram; sometimes it is
+called a Young diagram.  At this stage it is irrelevant which name we
+choose and which kind of figure we draw; in more advanced work the squares
+are handy because we can put things like numbers or variables into them. 
+From now on we will use squares and call the diagrams Young diagrams.
+
+\begin{figure}[htb]\caption{The Ferrers
+and Young diagrams of the partition
+(5,3,3,2)}\label{FerrersYoung}
+\begin{center}\psfig{figure=FerrersYoung.eps%,height=1.0in
+} \end{center}
+\end{figure}
+\bp
+\iteme Draw the Young diagram of the partition (4,4,3,1,1).  Describe the
+geometric relationship between the Young diagram of (5,3,3,2) and the
+Young diagram of (4,4,3,1,1).
+\solution{\begin{center}\vspace*{-24 pt} 
+\psfig{figure=Young44311.eps}
+\end{center}We get the Young diagram of $(5,3,3,2)$ by flipping the
+Young diagram of $(4,4,3,1,1)$ around a line that includes the diagonal
+of the upper left box; if we think of the top left corner of the
+diagram as being at the origin, we flip around the line $y=-x$.}
+\iteme The partition $(\lambda_1,\lambda_2,\ldots, \lambda_n)$ is called
+the {\em conjugate}\index{conjugate of an integer
+partition}\index{partition of an integer!conjugate of} of the partition
+$(\gamma_1,\gamma_2,\ldots, \gamma_m)$ if we obtain the Young diagram of
+one from the Young diagram of the other by flipping one around the line
+with slope -1 that extends the diagonal of the top left square.  See Figure
+\ref{conjugateYoung} for an example.
+\begin{figure}[htb]\caption{The Ferrers
+diagram the partition
+(5,3,3,2) and its conjugate.}\label{conjugateYoung}
+\begin{center}\psfig{figure=conjugateYoung.eps%,height=1.0in
+} \end{center}
+\end{figure}  
+What is the conjugate of
+(4,4,3,1,1)?  How is the largest part of a partition related to the
+number of parts of its conjugate?  What does this tell you about the
+number of partitions of a positive integer $k$ with largest part $m$?
+\solution{$(5,3,3,2)$.  The largest part of a partition equals the
+number of parts of its conjugate.  The number of partitions of $k$
+with largest part $m$ equals the number of partitions of $k$ with $m$
+parts.}
+
+\itemi A partition is called {\em self-conjugate}\index{self-conjugate
+partition}\index{partition of an integer!self conjugate} if it is equal
+to its conjugate.  Find a relationship between the number of
+self-conjugate partitions of $k$ and the number of partitions of $k$ into
+distinct odd parts.
+\solution{The number of self-conjugate partitons of $k$ equals the
+number of partitions of $k$ with distinct odd parts.  Here is a
+geometric description of a bijection from self conjugate partitions of
+$k$ to partitions into distinct odd parts. 
+\begin{center} 
+\psfig{figure=selfconjugate.eps}
+\end{center}
+ Take the top row and left
+column of squares of the Young diagram, and make them into one row in  a
+new diagram.  (Only include the square that is in both the row and column
+once.) Now take the remaining squares in the next row and column and make
+a new row of the Young diagram of the second partition with them.
+Continue this process with succeeding rows and columns, not using any
+squares you have already used. Because the first partition is self
+conjugate, the diagram has the same number of rows as columns and row
+$i$ and column
+$i$ have the same length.  Because row $i$ and column $i$ share one
+square, and we only use that square once when we create a new row, each row
+we create has odd length.  Thus we get a partition with the same number of
+squares, so it is a partition of $k$ and each part is odd.  The parts are
+distinct because when we take off the squares of a row and column, we
+reduce the number of squares in each row and column that remains.  Given
+a partition of $k$ into distinct odd parts, we use the fact that each
+row has a unique middle element, and each is shorter than the one
+above (by at least two squares) to reverse the process.  Thus we have a
+bijection.}
+
+\item Explain the relationship between the number of partitions of $k$
+into even parts and the number of partitions of $k$ into parts of even
+multiplicity, i.e. parts which are each used an  even number of times as
+in (3,3,3,3,2,2,1,1).
+\solution{The number of partitions of $k$ into even parts equals the
+number of partitions of parts of even multiplicity, because if we take
+the Young diagram of a partition of $k$ into even parts and conjugate
+it, the resulting diagram has columns of even length.  Thus the
+difference in heights of two successive columns is an even number,
+but this difference is the multiplicity of one of the parts of the
+conjugate. Further the height of the last column of a partition is
+the multiplicity of the first part. Since the multiplicity of any part
+of a partition is either the difference in height of two successive
+columns of the Young diagram or the height of the last column, then
+each part of the conjugate has even multiplicity.  This bijection can
+be reversed, because if all the differences in height of the columns are
+even and the height of the last column is even, then when we
+conjugate this partition, the last row will be an even length, and
+all differences in length of the rows will be even, so all the parts
+of the resulting partition will be even.}
+  
+\itemi Show that the number of partitions of $k$ into $4$ parts equals
+the number of partitions of $3k$ (or $3k+4$ or $3k-4$) into $4$ parts.
+\solution{Think about putting the Young diagram of the partition into
+the upper left corner of a rectangle that is $k$ units wide and four
+units high.  Subdivide the rectangle into $4k$ squares of unit area. 
+The Young diagram covers $k$ of these squares.  The uncovered squares
+are in rows of length $r_1\le r_2\le r_3\le r_4$.  Thus if we list
+these lengths in the opposite order, we have a decreasing list
+representation of a partition of $3k$. Even $r_1$ will have to be
+positive, because the first part of the original partition will be at 
+most $k-3$. To get partitions of $3k+4$, use a rectangle of width
+$k+1$, and to get partitions of $3k-4$, use a rectangle of width
+$k-1$.  Since the first row of the Young diagram has at most $k-3$
+squares, we will still have four nonzero parts in the partition that
+results.}
+
+\item The idea of conjugation of a partition could be defined without the
+geometric interpretation of a Young diagram, but it would seem far less
+natural without the geometric interpretation.  Another idea that seems
+much more natural in a geometric context is this.  Suppose we have a
+partition of $k$ into $n$ parts with largest part $m$.  Then the Young
+diagram of the partition can fit into a rectangle that is $m$ or more
+units wide (horizontally) and $n$ or more units deep.  Suppose we place
+the Young diagram of our partition in the top left-hand corner of an $m'$
+unit wide and
+$n'$ unit deep rectangle with $m'\ge m$ and $n' \ge n$, as in Figure
+\ref{complementpartition}.
+\begin{figure}[htb]\caption{To complement the partition
+(5,3,3,2) in a 6 by 5 rectangle: enclose it in
+the rectangle, rotate, and cut out the
+original Young diagram.}\label{complementpartition}
+\begin{center}\psfig{figure=complementpartition.eps%,height=1.0in
+} \end{center}
+\end{figure}  Why can we interpret the part of the rectangle
+not occupied by our Young diagram, rotated in the
+plane, as the Young diagram of another partition?  This is called the
+{\em complement}\index{complement of a partition} of our partition in the
+rectangle.  What integer is being partitioned by the complement?  What
+conditions on
+$m'$ and $n'$ guarantee that the complement has the same number of parts
+as the original one?  What conditions on $m'$ and $n'$ guarantee that the
+complement has the same largest part as the original one?  Is it possible
+for the complement to have both the same number of parts and the same
+largest part as the original one?  If we complement a partition in an
+$m'$ by $n'$ box and then complement that partition in an $m'$ by $n'$
+box again, do we get the same partition that we started
+with?\label{rectanglecomplement}
+\solution{If we fill the rectangle with unit squares, those not in the
+Young diagram of the original partition $\lambda$ will fall into rows. 
+The lengths of the rows are nonnegative, and are nondecreasing as we
+move down.  Therefore, after we rotate through 180 degrees, these same
+rows will be listed in the opposite order, lined up along the left sides, 
+and will have nonincreasing length.  Thus they will be the Young
+diagram of a partition.  The integer being partitioned will be
+$m'n'-k$.  If
+$m'>m$ and $n'=n$. the two partitions will have the same number of
+parts, because we will have a nonzero number of empty squares at the end
+of each row of the Young diagram of $\lambda$.  If $m'=m$ and $n'-n$
+is the multiplicity of the largest part of $\lambda$, they
+will have the same number of parts.  Otherwise, their numbers of
+parts will differ.  If
+$n'>n$ and
+$m=m'$, then the two partitions will have the same largest part.  If
+$n'=n$ and $m'-m$ is the smallest part of $\lambda$,
+then they will have the same largest part.  Otherwise, their largest
+parts will differ.  Thus for the two partitions to have the same
+number of parts, either $m'=m$ or $n'=n$.  If $m'=m$ and they have the
+same largest part, then $n'>n$.  But this is consistent with $n'-n$
+being the multiplicity of the largest part of $\lambda$.  Thus they can
+have the same number of parts and the same largest part if $m'=m$ and
+$n'-n$ is the multiplicity of the largest part of $\lambda$, or
+similarly if
+$n=n'$ and $m'-m$ is the smallest part of $\lambda$.}
+
+
+\itemi  Suppose we take a partition of $k$ into $n$ parts with largest
+part $m$, complement it in the smallest rectangle it will fit into,
+complement the result in the smallest rectangle it will fit into, and
+continue the process until we get the partition 1 of one into one part. 
+What can you say about the partition with which we started?
+\solution{Let us call the process of enclosing $\lambda$ in the smallest
+rectangle possible and then forming the complement in that rectangle
+{\em encomplementation} (This is short for {\em en}\/closure
+and {\em complementation} and is not a standard term---there is no
+standard term for this operation.) and call the result of it the {\em
+encomplement}\index{encomplement of a partition} of
+$\lambda$.
+The result of two encomplementations on the Young diagram
+of a partition is to remove all rows of maximum length and all columns
+of maximum length from the Young diagram.  Thus the description of the
+result of an even number $2j$ of encomplementations is straightforward;
+we remove all the rows of the $j$ largest distinct lengths and all
+columns of the $j$ largest distinct lengths.  So if an even number of
+encomplementations brings us to a partition with one block of size
+one, we should be able to describe the original partition fairly
+easily.  To deal with the result of an odd number of
+encomplementations, we ask what happens if we encomplement just once.
+If the complement of
+$\lambda$ in the smallest rectangle in which if fits has one square, then
+$\lambda =\lambda_1^{n_1}\lambda_1-1$.  Thus we are asking for the
+partitions which, after an even number of encomplementations, give us
+either the partition with one block or a partition of the form
+$\lambda_1^{n_1}(\lambda_1-1)$.  First we  ask what
+kind of partition results in the second one after two
+encomplementations.  If we get
+$\lambda_1^{n_1}(\lambda_1-1)$ from two
+encomplementations, the partition we started with had the form
+$$\lambda_0^{n_0}(\lambda_1+\lambda_{2})^{n_1}(\lambda_1+
+\lambda_2-1)\lambda_2^{n_2}.$$  If
+we get $\lambda_1^{n_1}(\lambda_1-1)$ from four
+encomplementations, then we started with a partition of the form
+$$\lambda_{-1}^{n_{-1}}(\lambda_0+\lambda_{3})^{n_0}(\lambda_1+
+\lambda_2 +
+\lambda_{3})^{n_1}(\lambda_1+\lambda_2 +\lambda_3-1)(\lambda_2+
+\lambda_{3})^{n_3}
+\lambda_3^{n_3}.$$
+From this pattern we see that a partition that results in
+$\lambda_1^{n_1}(\lambda_1-1)$ after $2j$ encomplementations has the
+form
+  \begin{equation}
+\lambda_{1-j}^{n_{1-j}}\lambda_{2-j}^{n_{2-j}}\cdots
+\lambda_0^{n_0}
+{\lambda'_1}^{n_1}
+(\lambda'_1-1)\lambda_2^{n_2}\cdots
+\lambda_{j+1}^{n_{j+1}},\label{form1}
+  \end{equation}
+where $\lambda_i>\lambda_{i+1}$ and $\lambda_0>\lambda'_1>\lambda_2+1$.
+
+On the other hand, a partition $\lambda$ that results in $1$ after
+two encomplementations has the form
+$\lambda_0^{n_0}(\lambda_1+1)\lambda_1^{n_1}$, and so a partition that
+results in 1 after $j$ encomplementations is of the form
+  \begin{equation}
+\lambda_{1-j}^{n_{1-j}}\lambda_{2-j}^{n_{2-j}}\cdots
+\lambda_0^{n_0}(\lambda_1+1)\lambda_1^{n_1}\lambda_2^{n_2}\cdots
+\lambda_j^{n_j},\label{form2}
+  \end{equation} 
+where $\lambda_i>\lambda_{i+1}$ and $\lambda_0>\lambda_1+1$.  Thus a
+partition results in a single part of size 1 after some number of
+encomplementations if and only if it has the form of Equation
+\ref{form1} or Equation \ref{form2}.}
+
+
+
+\item Show that $P(k,n)$ is at least ${1\over n!}{k-1\choose n-1}$.
+\solution{The number of compositions of $k$ into $n$ parts is
+$k-1\choose n-1$.  We can divide the compositions into blocks,
+where two compositions are in the same block if and only if one is a
+rearrangement of the other.  Then the blocks correspond bijectively to
+partitions of $k$ into $n$ parts.  However we cannot compute the
+number of blocks by dividing by the number of compositions per block
+since the number of compositions per block ranges from $1$ to $n!$. 
+But then if we divide the number of compositions by $n!$ we will get a
+number less than the number of blocks because $n!$ times the number of
+blocks would be, by the sum principle, greater than the number of
+partitions.}
+\ep
+
+ With the binomial coefficients, with Stirling numbers of the
+ second kind, and with the Lah numbers, we were able to find a
+recurrence by asking what happens to our subset, partition, or broken
+permutation of a set $S$ of numbers if we remove the largest element of
+$S$.  Thus it is natural to look for a recurrence to count the number of
+partitions of $k$ into $n$ parts by doing something similar. 
+Unfortunately, since we are counting distributions in which all the
+objects are identical, there is no way for us to identify a largest
+element. However if we think geometrically, we can ask what we could
+remove from a Young diagram to get a Young diagram. Two natural ways to
+get a partition of a smaller integer from a partition of
+$n$ would be to remove the top row of the Young diagram of the partition
+and to remove the left column of the Young diagram of the partition. 
+These two operations correspond to removing the largest part from the
+partition and to subtracting 1 from each part of the partition
+respectively.  Even though they are symmetric with respect to
+conjugation, they aren't symmetric with respect to the number of parts. 
+Thus one might be much more useful than the other for finding a recurrence
+for the number of partitions of
+$k$ into $n$ parts.
+
+\bp \itemesi In this problem we will study the two operations and see
+which one seems more useful for getting a recurrence for
+$P(k,n)$.\label{numberpartitionrecurrence}
+\begin{enumerate}
+
+\item How many parts does the remaining partition
+have when we remove the largest part (more precisely, we reduce its
+multiplicity by one) from a partition of
+$k$ into
+$n$ parts?  What can you say about the number of parts of the remaining
+partition if we remove one from each part?
+\solution{Reducing the multiplicity of the largest part by one reduces
+the number of parts by one.  Removing 1 from each part reduces the
+number of parts by the multiplicity of the smallest part, so it
+strictly reduces the number of parts, perhaps even to one.}
+
+\item If the largest part of a partition is $j$ and we remove it,
+what integer is being partitioned by the remaining parts of the
+partition? If we remove one from each part of a partition of $k$ into
+$n$ parts, what integer is being partitioned by the remaining parts? 
+\solution{If we remove the largest part, the integer being partitioned
+is $k$ minus the largest part.  Thus it is a number less than $k$ and
+at least $n-1$. If we remove one from each part of the partition, the
+integer being partitioned is $k-n$.}
+
+\item The last two questions are designed to get you thinking about how
+we can get a bijection between the set of  partitions of $k$ into
+$n$ parts and some other set of partitions that are partitions of a
+smaller number.  These questions describe two different strategies for
+getting that set of partitions of a smaller number or of smaller numbers. 
+Each strategy leads to a bijection between partitions of $k$ into $n$
+parts and a set of partitions of a smaller number or numbers.  For each
+strategy, use the answers to the last two questions to find and describe 
+this set of partitions into a smaller number and a bijection between
+partitions of
+$k$ into
+$n$ parts and partitions of the smaller integer or integers into
+appropriate numbers of parts.
+\solution{Removing the largest part of a partition of $k$ into $n$
+parts gives us a bijection between partitions of $k$ into $n$ parts and
+and partitions of numbers $k'$ between
+$n-1$ and $k-1$ into $n-1$ parts of size at most $k-k'$.  (Removing
+the largest part gives us such a partition, and adjoining a part of
+size $k-k'$ to such a partition gives us a partition of $k$ with $n$
+parts.)
+
+Removing one from each part of a partition of $k$ into $n$
+parts gives us a bijection between partitions of $k$ into $n$ parts
+and and partitions $k-n$ into $n$ or fewer parts.  (Removing one from
+each part of a partition of $k$ into $n$ parts  gives us such a
+partition, and, given such a partition, we get a partition of $k$ into
+$n$ parts by adding one to each part and then creating enough parts of
+size 1 to have $n$ parts.)}
+\item Find a recurrence (which need not have just two terms on the
+right hand side) that describes how to compute $P(k,n)$ in terms of the
+number of partitions of smaller integers into a smaller number of
+parts. (Hint: One of the two sets of partitions of smaller numbers
+from the previous part is more amenable to finding a recurrence than the
+other.)
+\solution{The second bijection is to the set of partitions of $k-1$
+into $n$ or fewer parts, and this makes the second bijection sound
+easier to work with.  We get $P(k,n)=\sum_{i=1}^n P(k-n,i)$.  The
+proof is the bijection we already described; in particular a partition
+of $k-n$ into $i$ parts corresponds to the partition of $k$ we get by
+adding one to each of the $i$ parts and then creating $n-i$ parts of
+size one.}
+
+\item What is $P(k,1)$ for a positive integer $k$?
+\solution{$P(k,1)=1$.}
+
+\item What is $P(k,k)$ for a positive integer $k$?
+\solution{$P(k,k)=1$.}
+
+\item Use your recurrence to compute a table with the values of
+$P(k,n)$ for values of $k$ between 1 and 7.
+\solution{
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+$k\backslash n$&1&2&3&4&5&6&7\\
+\hline
+1&1&0&0&0&0&0&0\\
+2&1&1&0&0&0&0&0\\
+3&1&1&1&0&0&0&0\\
+4&1&2&1&1&0&0&0\\
+5&1&2&2&1&1&0&0\\
+6&1&3&3&2&1&1&0\\
+7&1&3&4&3&2&1&1\\
+\end{tabular}}
+
+\item What would you want to fill
+into row 0 and column 0 of your table in order to make it consistent with
+your recurrence.  What does this say $P(0,0)$ should be?  We usually
+define a sum with no terms in it to be zero. Is that consistent with the
+way the recurrence says we should define $P(0,0)$?
+\solution{We would want to have $P(0,0)=1$ and $P(k,0)=P(0,n)=0$ for
+positive integer $k$ or $n$.  Since the sum of the empty multiset of
+positive integers is zero, this gives us one partition of the number
+zero, namely the empty multiset of positive integers.}
+\end{enumerate}
+\ep 
+It is remarkable that
+there is no known formula for $P(k,n)$, nor is there one for $P(k)$.  This
+section was are devoted to developing
+methods for computing values of $P(n,k)$ and finding properties of
+$P(n,k)$ that we can prove even without knowing a formula.  Some future
+sections will attempt to develop other methods.
+
+We have seen that the number of partitions of $k$ into $n$ parts is equal
+to the number of ways to distribute $k$ identical objects to $n$
+recipients so that each receives at least one.  If we relax the condition
+that each recipient receives at least one, then we see that the number of
+distributions of $k$ identical objects to $n$ recipients is $\sum_{i=1}^n
+P(k,i)$ because if some recipients receive nothing, it does not matter
+which recipients these are.  This completes rows 7 and 8 of our table of
+distribution problems.  The completed table is shown in Figure
+\ref{lastdistributiontable}.  There are quite a few theorems that you
+have proved which are summarized by Table \ref{lastdistributiontable}. 
+It would be worthwhile to try to write them all down!
+
+
+\begin{table}[htb]\caption{The number of ways to
+distribute $k$ objects to $n$ recipients, with
+restrictions on how the objects are
+received}\label{lastdistributiontable}
+\begin{center}
+\fbox{\hglue-3.5pt
+{\footnotesize\begin{tabular}{|l||c |c|}\hline
+\multicolumn{3}{|c|}{The Twentyfold Way: A Table of Distribution
+Problems}
+\\ %\multicolumn{3}{|c|}{\hrulefil}
+\hline\hline
+$k$ objects and conditions&\multicolumn{2}{|c|}{ $n$ recipients and
+mathematical model for distribution}\\
+\cline{2-3}
+on how they are received&Distinct&Identical\\
+\hline\hline 1.  Distinct &$n^k$& 
+$\sum_{i=1}^kS(n,i)$\tallstrut{12}\\
+no conditions&functions&set partitions ($\le n$ parts)\\ \hline
+2.  Distinct&$n^{\underline{k}}\tallstrut{12}$ &1 if
+$k\le n$; 0 otherwise\\ Each gets at most one&\kern -2pt $k$-element
+permutations\kern -2 pt&\\
+\hline
+3.  Distinct&$S(k,n)n!$& $S(k,n)$
+\\ Each gets at least one&onto functions& set partitions
+($n$ parts)\\\hline 
+4. Distinct&$k!=n!$&1 if $k=n$; 0 otherwise\\ Each
+gets exactly one&permutations&\\
+\hline
+5.  Distinct, order matters&$(k+n-1)^{\underline{k}}\tallstrut{12}$&
+$\sum_{i=1}^n L(k,i)$\tallstrut{11}\\
+&ordered functions&\hglue -3 pt broken permutations ($\le n$
+parts)\kern -3 pt\\
+\hline
+6.  Distinct, order
+matters&$(k)^{\underline{n}}(k-1)^{\underline{k-n}}$&\tallstrut{12}$L(k,n)=
+{ k\choose n}(k-1)^{\underline{k-n}}$\\ Each
+gets at least one&ordered onto functions&broken permutations ($n$ parts)\\
+\hline
+7.  Identical  & $n+k-1\choose k$\tallstrut{12}&$\sum_{i=1}^nP(k,i)$\\
+no conditions&multisets& number partitions ($\le n$ parts)\\ \hline
+8.  Identical&$n\choose k$\tallstrut{12}&1 if $k\le n$; 0 otherwise\\
+Each gets at most one&	subsets&\\ \hline
+9.  Identical&$k-1\choose n-1$\tallstrut{12}& $P(k,n) $\\
+Each gets at least one&compositions ($n$ parts) &number partitions ($n$
+parts)
+\\
+\hline 10.  Identical&1 if $k=n$; 0 otherwise&1 if $k=n$; 0 otherwise\\
+Each gets exactly one&&\\
+\hline
+\end{tabular}\hglue-3pt}}\end{center}
+\end{table}
+
+\subsection{Partitions into distinct parts}
+ Often $Q(k,n)$ is used to denote the number of partitions of $k$ into
+distinct parts, that is, parts that are different from each other.  
+\bp 
+\item Show that $$Q(k,n) \le {1\over n!}{k-1\choose n-1}.$$
+\solution{The number of compositions of $k$ into $n$ parts is
+$k-1\choose n-1$.  Thus the number of compositions of $k$ into $n$
+distinct parts is less than $k-1\choose n-1$.  Divide the compositions
+of $k$ into $n$ distinct parts into blocks with two compositions in
+the same block if one is a rearrangement of the other.  Because the
+parts are distinct, each block has $n!$ members.  Further, there is a
+bijection between the blocks of this partition and the partitions of
+$k$ into $n$ distinct parts.  Since the number of compositions of $k$
+into $n$ distinct parts is less than $k-1 \choose n-1$, the number of
+partitions of $k$ into $n$ distinct parts is less than ${1\over n!}
+{k-1\choose n-1}$.}
+
+\itemi Show that the number of partitions of 7 into 3 parts equals the
+number of partitions of 10 into three distinct parts.  
+\solution{Given a
+partition $\lambda$ of 7 in decreasing list form
+$\lambda_1,\lambda_2,\lambda_3$, if we add 0 to $\lambda_3$, $1$ to
+$\lambda_2$ and 2 to $\lambda_1$ the resulting partition of 10 has
+distinct parts.  If we take a partition $\lambda'$ of 10 with distinct
+parts, then $\lambda'_1\ge\lambda'_2+1$,  $\lambda'_1\ge\lambda'_2+2$,
+and
+$\lambda'_2\ge \lambda'_3+1$. Therefore if we subtract 2 from 
+$\lambda'_1$ to get $\lambda_1$, subtract 1 from $\lambda'_2$ to get
+$\lambda_2$ and let $\lambda_3= \lambda'_3$, then
+$\lambda_1,\lambda_2,\lambda_3$ is the decreasing list representation
+of a partition of $10-3=7$.  Thus there is a bijection between
+partitions of $7$ into three parts and partitions of $10$ into three
+distinct parts.}
+
+\itemesi There is a relationship between $P(k,n)$ and $Q(m,n)$ for some
+other number $m$.  Find the number $m$ that gives you the nicest possible
+relationship.
+\solution{The number of partitions of $k$ into $n$ parts is equal to
+the number of partitions of $k+{n\choose2}$ into n distinct parts. 
+The bijection from partitions of $k$ with $n$ parts to partitions of
+$k+{n\choose2}$ with $n$ distinct parts that proves this is the one
+that takes a partition $\lambda_n\lambda_{n-1}\cdots\lambda_1$ of $k$ with
+$\lambda_i>\lambda_{i+1}$ and adds $i-1$ to $\lambda_i$ to get
+$\lambda'_i$.  Then
+$\lambda'$ is a partition into distinct parts, and the number it
+partitions is
+$k+1+2+\cdots+n-1=k+{n\choose 2}$.  The proof that it is a bijection is
+the fact that subtracting $n-i$ from the $i$\/th part of a partition of
+$k$ into distinct parts yields a partition of $k$, because part $i+j$
+is at least $j$ smaller than part $i$.}
+
+\itemes Find a recurrence that expresses $Q(k,n)$ as a sum  of $Q(k-n,m)$
+for appropriate values of $m$.
+\solution{Suppose $\lambda$ is a partition of $k$ into $n$ distinct
+parts.  Either 1 is one of those parts or not.  Thus if we subtract
+1 from each part, we either get a partition of $k-n$ into $n-1$ parts
+or a partition of $k-n$ into $n$ parts. If $\lambda$ and $\lambda'$
+are different partitions of $k$ into $n$ distinct parts, they go to
+different partitions.  Each partition of
+$k-n$ into
+$n-1$ parts or $n$ parts can be gotten in this way from a
+corresponding partition of $k$ into $n$ parts. Thus we have a
+bijective correspondence and $Q(k,n)=Q(k-n,n-1) +Q(k-n,n)$.}
+
+\itemih Show that the number of partitions of $k$ into distinct
+parts equals the number of partitions of $k$ into odd parts.
+\solution{We start by giving a function from the set of partitions of
+$k$ to the set of partitions of $k$ with (only) odd parts.  Clearly
+such a function cannot be one to one.  Then we show that when
+restricted to the partitions with distinct parts it is one-to-one and
+onto by constructing an inverse.  Given a partition
+$\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}$, write
+$\lambda_i=\gamma_i2^{k_i}$, where $\gamma_i$ is odd.  (Thus $2^{k_i}$
+is the highest power of 2 that is a factor of $\lambda_i$, so it is 1 if
+$\lambda_i$ is odd.).  It is possible that $\gamma_i=\gamma_j$, for
+example if $\lambda_i=36$ and $\lambda_j=18$, then
+$\gamma_i=\gamma_j=9$.  We construct a new partition $\pi$ whose parts
+are the numbers $\gamma_j$ as follows:  Given an odd number $p$, let
+the multiplicity $m(p)$ of $p$ in $\pi$ be $\sum_{j: \gamma_j=m}
+2^{k_j}$. Thus $\sum_{p: m(p)\not=0}m(p)p = k$.  Therefore, $\pi$ is a
+partition of $k$ whose parts are all odd.
+
+Now consider a partition $\pi$ of $k$ whose parts are all odd.  Let
+$\pi=\pi_1^{r_1}\pi_2^{r_2}\cdots \pi_t^{r_t}$, with
+$\pi_i>\pi_{i+1}$.  (In terms of the multiplicity function $m$,
+$m(\pi_i) =r_i$, and $\sum_{i=1}^t r_i\pi_i = k$.)  We are going to
+write the binary expansion of each $r_i$  as $r_i = \sum_{j=
+0}^{\lfloor
+\log_2 r_i\rfloor} 2^{ja_{ij}}$, where $a_{ij}$ is 1 if $2^j$ appears in
+the binary expansion of $r_i$, and 0 otherwise.  All of the numbers
+$\pi_i2^{ja_{ij}}$ are distinct, because a power of two times one odd
+number cannot equal a  power of two times another odd
+number.  The numbers $\pi_i2^{ja_{ij}}$ add to $k$, so they are the
+parts of a partition $\pi'$ of $k$ into distinct parts.  When we apply
+the function constructed in the first part of the solution to $\pi'$,
+we get $\pi$, so the correspondence between $\pi$ and $\pi'$ is a
+bijection.}
+
+\itemih  Euler showed that if $k\not= {3j^2+j\over 2}$, then the
+number of partitions of $k$ into an even number of distinct parts is the
+same as the number of partitions of $k$ into an odd number of distinct
+parts. Prove this, and in the exceptional case find out how the two
+numbers relate to each other.
+\solution{This solution is taken largely from the book Introduction to
+Combinatorics by Ioan Tomescu (published in London by Collet's in
+1975).  Tomescu calls a collection of rows in a Young diagram a
+``trapezoid" if each row contains one less cell than the row above and
+the number of cells in the rows above and below the trapezoid differ by
+two or more from the number of cells in rows of the trapezoid.  Thus in
+(8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows,
+and the last two.  Since we are dealing with partitions with distinct
+parts, we don't have to worry about how two equal rows  affect the
+definition of a trapezoid.   We will describe a way to transform a
+partition with an even number of distinct parts into a partition with
+an odd number of distinct parts and vice versa.
+
+First we describe a transformation on Young
+diagrams.  Here is the first part of the description. Suppose the smallest
+ part
+$m$ of $\lambda$ is less than or equal to the number $j$ of rows in the
+top trapezoid.  Suppose further that if we have only one trapezoid,
+then $j>m$.  Then we construct a partition with one less part by
+adding 1 to each of the
+$m$ largest parts and discarding the part
+$m$.  We still have a diagram for a partition of the same integer,
+but now the parity of the number of parts has changed, and we {\it may}
+have increased the number of trapezoids by 1.  The smallest part
+will now be larger than the number (now $m$) of rows in the top
+trapezoid.  (Notice that the construction would not work if we had
+only one trapezoid and $j=m$ because we would first remove one
+row of the trapezoid and thus have no row to which to attach one of
+our squares.)
+
+Here is the second part of the description of the
+transformation.  Suppose now that
+$m$ is larger than the number $j$ of rows of the top trapezoid in
+the Young diagram.   Suppose also that
+the Young diagram has at least two trapezoids or  it
+has one trapezoid and $j\ge m-2$. Take one square from each of the
+$j$ rows  of the top trapezoid (which is the whole diagram if there
+is only one trapezoid) and also add a row of
+$j$ squares at the bottom of the diagram.  (Since $m>j$, this gives us
+a Young diagram of a partition of the same integer into distinct
+parts.)  The parity of the number of rows has changed, and now the
+number of rows of the top trapezoid is at least as large as the
+smallest part of the partition.  (Note, two previously distinct
+trapezoids may have joined together to form one on top.) 
+(Notice that if we have one trapezoid and $j= m+1$, then the
+construction yields a partition with two equal parts, which is why
+we made the special assumption above.)  Now let $T$ be the
+transformation  described by the two constructions above.  Its
+domain is all Young diagrams except those with one trapezoid and
+$m\le j\le m+1$.  $T^2$ is the identity, and so $T$ is a bijection. 
+When restricted to partitions with an odd number of parts, $T$
+gives partitions with an even number of parts, so on its domain it
+gives a bijection between partitions with an even number of parts
+and partitions with an odd number of parts.
+
+If $m=j$ and the diagram has just one trapezoid, then the diagram has
+$3j^2-j\over 2$ squares, and if
+$m=j+1$ and the diagram has just one trapezoid, then the diagram has
+$3j^2+j\over 2$ squares.   Thus if
+$k\ne {3j^2\pm j\over 2}$, the number of partitions of $k$ into distinct
+even parts equals the number of partitions of $k$ into distinct odd
+parts.  
+
+If
+$k= {3j^2\pm j\over 2}$ and $j$ is even, then there is one diagram of
+a partition of $k$ that is not in the domain of the bijection and has
+an even number of rows, so in this case there will be one more
+partition with an even number of parts than with an odd number.  If
+ $k=
+{3j^2\pm j\over 2}$ and $j$ is odd, there is one diagram with an
+odd number of rows not in the domain and so in this case there is
+one more partition with an odd number of parts than with an even
+number.  This completes the exceptional cases of the problem.}
+\ep
+
+
+
+\subsection{Supplementary Problems}  
+\begin{enumerate}
+\item Answer each of the following questions with $n^k$,
+$k^n$, $n!$,
+$k!$,
+$n \choose k$, $k \choose n$, $n^{\underline{k}}$, $k^{\underline{n}}$,
+$n^{\overline{k}}$, $k^{\overline{n}}$, $n+k-1\choose k$, 
+$n+k-1\choose n$, $n-1\choose k-1$, $k-1\choose n-1$, or ``none of the
+above".
+\begin{enumerate} 
+\item In how many ways may we pass out $k$ identical pieces of candy to
+$n$ children?
+  \solution{$n+k-1\choose k$
+  }
+
+\item  In how many ways may we pass out $k$ distinct pieces of candy to
+$n$ children?
+
+
+    \solution{$n^k$}
+
+
+
+\item  In how many ways may we pass out $k$ identical pieces of candy to
+$n$ children so that each gets at most one?  (Assume $k\le n$.) 
+\solution{$n\choose k$.}
+
+
+\item  In how many ways may we pass out $k$ distinct pieces of candy to
+$n$ children so that each gets at most one?  (Assume $k\le n$.)
+\solution{$n^{\underline{k}}$}
+
+\item In how many ways may we pass out $k$ distinct pieces of
+candy to $n$ children so that each gets at least one?  (Assume $k\ge n$.)
+\solution{ None of the above.
+ }
+
+\item  In how many ways may we pass out $k$ identical pieces of candy to
+$n$ children so that each gets at least one?  (Assume $k\ge n$.)
+\solution{
+$k-1\choose n-1$}
+\end{enumerate}
+
+\item The neighborhood betterment committee has been given $r$ trees to
+distribute to $s$ families living along one side of a street.
+\begin{enumerate}
+\item In how many ways can they distribute all of
+them if the trees are distinct, there are more families than trees, and
+each family can get at most one? 
+\solution{$s^{\underline{r}}$}
+
+\item In how many ways can they
+distribute all of them if the trees are distinct, any family can get any
+number, and a family may plant its trees where it chooses?
+\solution{$s^r$}
+
+\item In how many ways can they distribute all the trees if the trees are
+identical, there are no more trees than families,   and any family
+receives at most one?   
+\solution{$s\choose r$}
+
+\item In how many ways can they distribute them if the trees are
+distinct, there are more trees than families, and each family
+receives at most one (so there could be some leftover trees)?
+\solution{ $\sum_{k=0}^s {s\choose k}r^{\underline{k}}$ \quad or\quad
+$\sum_{k=0}^s s^{\underline{k}}{r\choose k}$}
+
+\item In how many ways can they distribute all the trees if they are
+identical and anyone may receive any number of trees?
+\label{multisetproblem}
+\solution{$r+s-1\choose r$}
+
+\item  In how many ways can all the trees be distributed and planted if
+the trees are distinct, any family can get any number, and a family must
+plant its trees in an evenly spaced row along the road? 
+\label{orderedfunctionproblem}
+\solution{$s^{\overline{r}}=(r+s-1)^{\underline{r}}$}
+
+\item  Answer the question in Part \ref{orderedfunctionproblem}
+assuming that every family must get a tree.
+\solution{$r!{r-1\choose s-1}$}
+
+\item  Answer the question in Part \ref{multisetproblem} assuming that
+each family must get at least one tree.
+\solution{$r-1\choose s-1$}
+\end{enumerate}
+
+\item  In how many ways can $n$ identical chemistry books, $r$ identical
+mathematics books, $s$ identical physics books, and $t$ identical astronomy books
+be arranged on three bookshelves?
+(Assume there is no limit on the number of books per shelf.)
+\solution{${(n+r+s+t+2)! \over n!r!s!t!2!}$}
+
+
+\itemi One formula for the Lah numbers is
+$$L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}$$ 
+Find a proof that explains this product.
+\solution{
+ First choose the $n$ elements which will be the first
+member of the part they lie in.  (This, in effect, labels the $n$
+parts.)  Then assign the remaining $k-n$ elements to their parts
+by making an ordered function of $n-k$ objects to $n$
+recipients in $(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}$ ways.}
+
+\item What is the number of partitions of $n$ into two parts?
+\solution{$n/2$ if $n$ is even and $(n-1)/2$ if $n$ is odd, equivalently,
+$\lfloor n/2\rfloor$}
+
+\item Show that the number of partitions of $k$ into $n$ parts of size at
+most $m$ equals the number of partitions of $mn-k$ into no more than $n$
+parts of size at most $m-1$.
+\solution{If we take the complement of the Young diagram of a partition
+of $k$ into $n$ parts of size at most $m$ in an rectangle with $n$ rows
+and $m$ columns, the number we partition will be $mn-k$, and we will have
+no more than $n$ parts, each of size at most $m-1$.  And if we take the
+complement of a partition of this second kind in the same rectangle, we
+will get a partition of the first kind.}
+
+\item Show that the number of partitions of $k$ into parts of size at
+most $m$ is equal to the number of partitions of of $k+m$ into $m$ parts.
+\solution{Given the first kind of partition, take the conjugate (giving a
+partition of $k$ into at most $m$ parts), add one to each part, and then
+add enough parts of size 1 to get a total of $m$ parts.  It is
+straightforward that this process can be reversed.}
+
+\item  You can say something pretty specific about 
+self-conjugate partitions of $k$ into distinct parts.  Figure out what
+it is and prove it.  With that, you should be able to find a relationship
+between these partitions and partitions whose parts are consecutive
+integers, starting with 1.  What is that relationship?
+\solution{In a self-conjugate partition, the number of parts is the size
+of the largest part.  If these parts are distinct, this means that each
+number between 1 and the largest part appears once as a part.  That is,
+the parts are a list of consecutive integers, starting with 1.}
+
+\item What is $s(k,1)$?
+\solution{Since s$(k,1)$ is the coefficient of $x^1$ in
+$$x^{\underline{k}} = x(x-1)
+(x-2)\cdot (x-(k-1)),$$ it is $(-1)^{k-1}(k-1)!$.}
+
+\item Show that the Stirling numbers of the second kind satisfy the
+recurrence 
+$$S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.$$
+\solution{A partition of $[k]$ into $n$ blocks has a block containing
+$k$.  If this block has size $i$, when you remove it, you get a partition
+of a set of size $k-i$ into $n-1$ blocks.  The number of possible sets of
+size $i$ containing $k$ is $k-1\choose i-1$, and $i$ can be any number
+between 1 and $k$.  Each partition of $k$ into $n$ blocks may be
+constructed exactly once by first choosing the block containing $k$ and
+then partitioning the remaining elements into $n-1$ blocks.  This proves
+the formula.}
+
+\itemi Let $c(k,n)$ be the number of ways for $k$ children to hold hands
+to form $n$ circles, where one child clasping his or her hands together
+and holding them out to form a circle is considered a circle.  Find a
+recurrence for $c(k,n)$.  Is the family of numbers $c(k,n)$ related to any
+of the other families of numbers we have studied? If so, how?
+\solution{The $k$th child is either in a circle by him/her self, and
+there are $c(k-1,n-1)$ ways for this to happen, or is in a circle with
+some other children.  In the second case child $i$ can be to the
+immediate right of any of the other $k-1$ children, so there are
+$(k-1)c(k-1,n)$ ways for this to happen.  Thus $c(k,n)=c(k-1,n-1)
++(k-1)c(k-1,n)$.  This recurrence is almost the same as the recurrence for
+$s(k,n)$, except it has a plus sign where the recurrence for the Stirling
+numbers of the first kind has a minus sign.  Further $c(k,1)=(k-1)!$ and
+$c(k,k)=1$, which agrees, except for sign, with the Stirling numbers of
+the first kind.  If we experiment with applying the recurrence, we see
+that whenever we use it to compute $c(k,n)$, we get that
+$c(k,n)=|s(k,n)|$.  It is now straightforward to prove by induction that
+$c(k,n)=|s(k,n)|$.}
+
+
+
+\end{enumerate}

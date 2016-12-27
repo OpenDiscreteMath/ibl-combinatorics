@@ -1,0 +1,131 @@
+
+\documentclass[12 pt]{book}
+
+\usepackage{epsfig}
+\usepackage{makeidx}
+\usepackage{hyperref}
+%\setlength{\topmargin}{0in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\evensidemargin}{0in}
+%\setlength{\textheight}{8.625in}
+%\setlength{\textwidth}{6.5in}
+%\setlength{\footskip}{24 pt}
+\newcounter{problemnumber}
+\newcounter{solutionfigurenumber}
+\newcounter{temporaryfigurenumber}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newcommand{\tallstrut}[1]{\vrule height #1pt width 0 pt}
+%\newcommand{\solution}[1]{\par\noindent {\bf
+%Solution:}\quad #1~\rule{3pt}{9pt}}
+\newcommand{\solution}[1]{}
+\newcommand{\cycle}[1]{\arraycolsep 5 pt
+\left(\begin{array}#1\end{array}\right)}
+
+\newcommand{\iteme}{\refstepcounter{enumi}
+\item[\hspace*{-7pt}$\bullet$\hspace*{1pt}\theenumi.]}
+
+\newcommand{\items}{\refstepcounter{enumi}
+\item[\hspace*{-7pt}\raisebox{2pt}{\tiny$+$}\hspace*{2pt}\theenumi.]}
+
+\newcommand{\itemh}{\refstepcounter{enumi}
+\item[\hspace*{-7pt}{$*$}\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemes}{\refstepcounter{enumi}
+\item[\hspace*{-7pt}\raisebox{-1pt}{\Large$\cdot$}\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemesi}{\refstepcounter{enumi}
+ \item[\hspace*{-19pt}\importantarrow\hspace*{1pt}\raisebox{-1pt}{\Large
+$\cdot$}\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemm}{\refstepcounter{enumi}
+\item[\hspace*{-7pt}$\circ$\hspace*{1pt}\theenumi.]}
+
+\newcommand{\importantarrow}{\psfig{figure=arrow.eps}}
+
+\newcommand{\itemi}{\refstepcounter{enumi}
+\item[\hspace*{-11pt}\importantarrow\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemitemi}{\refstepcounter{enumii}
+\item[\hspace*{-11pt}\importantarrow\hspace*{1pt}(\theenumii)]}
+
+
+\newcommand{\itemei}{\refstepcounter{enumi}
+\item[\hspace*{-19pt}\importantarrow\hspace*{1pt}$\bullet$\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemih}{\refstepcounter{enumi}
+\item[\hspace*{-19pt}\importantarrow\hspace*{1pt}$*$\hspace*{1pt}\theenumi.]}
+
+\newcommand{\itemitemih}{\refstepcounter{enumii}
+\item[\hspace*{-19pt}\importantarrow\hspace*{1pt}$*$\hspace*{1pt}(\theenumii)]}
+
+\newcommand{\itemitemh}{\refstepcounter{enumii}
+\item[\hspace*{-7pt}$*$\hspace*{1pt}(\theenumii)]}
+
+\def\qchoose#1#2{\left[{#1\atop#2}\right]_q}
+\def\neg1choose#1#2{\left[{#1\atop#2}\right]_{-1}}
+
+\newcommand{\Chi}{\raisebox{2pt}{$\chi$}}
+%\font\mathbf=cmmib10 
+
+\newtheorem{solutiontheorem}{Solution-Theorem}
+
+\newcommand{\bp}{%\addtocounter{problemnumber}{1}
+\begin{enumerate}{\setcounter{enumi}{\value{problemnumber}}}}
+\newcommand{\ep}{\setcounter{problemnumber}{\value{enumi}}
+\end{enumerate}}
+\newcommand\ignore[1]{}
+\renewcommand\bottomfraction{.8}
+\renewcommand\topfraction{.8}
+\makeindex
+
+\newcommand{\apple}{\mbox{\psfig{figure=apple.eps,height=10 pt}}}
+\newcommand{\ap}{\apple}
+\newcommand\banana{\mbox{\psfig{figure=Banana.eps,height=10 pt}}}
+\newcommand{\ba}{\banana}
+\newcommand\pear{\mbox{\psfig{figure=Pear.eps,height=10 pt}}}
+\newcommand{\pe}{\pear}
+\title{Combinatorics Through Guided Discovery\thanks{Development of this 
+project was supported by National Science Foundation Grant Number
+DUE-0087466}}
+\author{Kenneth P. Bogart}
+%\date{}
+
+%\includeonly{Chapter5}
+%\includeonly{AppendixRelations}
+
+
+\begin{document}
+
+\frontmatter
+\maketitle
+%\vspace*{\fill}\copyright Kenneth P. Bogart, 2002
+\vspace*{\fill}
+Copyright (c) 2004 Kenneth P. Bogart.  
+
+Permission is granted to copy, distribute and/or modify the contents
+of this archive under the terms of the GNU Free Documentation License,
+Version 1.3 or any later version published by the Free Software
+Foundation; with no Invariant Sections, no Front-Cover Texts, and no
+Back-Cover Texts.  A copy of the license is included in the
+LICENSE.txt file in the top level of this archive.
+
+\tableofcontents
+
+%\input preface
+\input{PrefaceForStudents}
+
+\mainmatter
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+\include{Chapter4}
+\include{Chapter5} 
+
+
+\include{AppendixRelations}
+\include{AppendixInduction}
+\include{AppendixExponentialGenFun}
+\backmatter
+\printindex
+\end{document} 
