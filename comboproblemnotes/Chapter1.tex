@@ -6,11 +6,12 @@ on cars for testing,  students into classes to compare
 approaches to teaching a subject, or members of a tennis club into pairs to
 play tennis.  There are many questions one can ask about such arrangements of
 objects.  Here we will focus on questions about {\em how many ways} we may
-combine the objects into arrangements of the desired type.  Sometimes,
-though, we ask if an arrangement is possible (if we have ten baseball teams,
+combine the objects into arrangements of the desired type.  These are
+called \emph{counting problems}. Sometimes,
+though, combinatorial mathematicians ask if an arrangement is possible (if we have ten baseball teams,
 and each team has to play each other team once, can we schedule all the games
 if we only have the fields available at enough times for forty games?). 
-Sometimes we will ask if all the arrangements we might be able to make have a
+Sometimes they ask if all the arrangements we might be able to make have a
 certain desirable property (Do all ways of testing 5 brands of tires on 5
 different cars [with certain additional properties] compare each brand with
 each other brand on at least one common car?).    Problems of these sorts
@@ -40,9 +41,28 @@ and some are quite challenging.  When you find a problem challenging,
 don't give up on it, but don't let it stop you from going on with other
 problems.  Frequently you will find an idea in a later problem that you
 can take back to the one you skipped over or only partly finished in order
-to finish it off.  With that in mind, let's get started.  
+to finish it off.  With that in mind, let's get started.  In the
+problems that follow, you will see some problems marked on the left
+with various symbols. The preface gives a full explanation of these
+symbols and discusses in greater detail why the book is organized as
+it is! Table~\ref{tab:prob-symbs}, which is repeated from the preface, summarizes
+the meaning of the symbols.
 
-
+\begin{table}[h]
+  \centering
+  \caption{The meaning of the symbols to the left of problem numbers.}
+  \label{tab:prob-symbs}
+\ \\
+  \begin{tabular}{|c|l|}
+    \hline
+    $\bullet$& essential\\
+    $\circ$ & motivational material\\
+    $+$ & summary\\
+    \importantarrow & especially interesting\\
+    $*$ & difficult\\
+    $\cdot$ & essential for this section or the next\\\hline
+  \end{tabular}
+\end{table}
 \section{Basic Counting Principles}
 
 \bp
@@ -146,7 +166,10 @@ from different points of view from time to time.  However, the quick review
 above should probably let you answer these questions.  If you have difficulty
 with them, it would be a good idea to go now to Appendix~\ref{Relations} and
 work through Section \ref{relationsandfunctions} which covers this definition
-in more detail.
+in more detail. You might also want to study Section~\ref{digraphsoffunctions} to learn
+to visualize the properties of functions. We will take up the topic of
+this section later in this chapter as well, but in less detail than is
+in the appendix.
 \begin{enumerate} 
 \item Using $f$, $g$, \ldots, to stand for the various
 functions, write down all the different functions you can
@@ -196,25 +219,23 @@ functions from the three places in the cone where ice cream would sit to the
 \ref{tripledeckercone} notices it would be cheaper to buy three
 pints of ice cream for them to split than to buy a triple decker cone for
 each of them, and that way they would get more ice cream. They ask their
-coach if they can buy three pints of ice cream.  In how many ways can they
-choose three pints of different flavors out of the 12 flavors?  In how many
-ways may they choose three pints if the flavors don't have to be
-different?\label{icecreaminpints}
-\solution{
+coach if they can buy three pints of ice cream. \label{icecreaminpints}
+\begin{enumerate}
+\item In how many ways can they choose three pints of different
+  flavors out of the 12 flavors? \solution{
 There are $12\cdot11\cdot 10 = 1320$ ways to make a list of three
 flavors.  But a choice of three flavors accounts for $3\cdot2\cdot1 = 6$ of
 those lists.  Therefore there are $1320/6=220$ ways to choose the pints if
-the flavors are different.
-
-If the flavors need not be different, we must  add in the number of ways
+the flavors are different.}
+\item In how many ways may they choose three pints if the flavors
+  don't have to be different?\solution{If the flavors need not be different, we must  add in the number of ways
 to choose two pints of one flavor and one of a second and also the number fo
 ways to choose three pints of one flavor. the first of these is $12\cdot11
 =132$ and the third is 12, so we have $220+132+12=364$ ways to choose three 
 pints.  We can do a more elegant solution after we learn about multisets in
 Problem \ref{multiset}.
 }
-
-
+\end{enumerate}
 
 \iteme Two  sets are said to be
 \index{disjoint}\index{sets!disjoint}{\em disjoint} if they have no
@@ -287,7 +308,8 @@ $A$ and
 $B$, so you can think of Problem
 \ref{orderedpair} as asking you for the size of the Cartesian
 product of
-$M$ and $N$. 
+$M$ and $N$, that is, asking you to count the number of elements of
+this Cartesian product.
 
 When a set $S$ is a union of disjoint sets $B_1, B_2, \ldots, B_m$ we say
 that the sets $B_1, B_2, \ldots, B_m$ are a {\bf
@@ -302,18 +324,22 @@ partition} of the partition.  In this language, the
 sum of the sizes of the blocks of the partition.\end{quote}  The
 \index{principle!product}\index{product principle}{\bf product principle} says
 that
-\begin{quote}if we have a partition of a set $S$ into $m$ blocks, each of size
-$n$, then
-$S$ has size $mn$.\end{quote}
-There is another version of the product principle that applies directly in
-problems like Problem \ref{completelunch} and Problem \ref{tripledeckercone},
-where we were not just taking a union of $m$ disjoint sets of size $n$, but
-rather $m$ disjoint sets of size $n$, each of which was a union of $m'$
-disjoint sets of size $n'$.  This is an inconvenient way to have to think
-about a counting problem, so we may rephrase the product principle in terms
-of a sequence of decisions:
-\bp 
-\itemm If we make a sequence of $n$   choices for
+\begin{quote}if we have a partition of a set $S$ into $m$ blocks, each
+  of size $n$, then $S$ has size $mn$.\end{quote} You'll notice that
+in our formal statement of the sum and product pinciple we talked
+about a partition of a finite set. We could modify our language a bit
+to cover infinite sizes, but whenever we talk about sizes of sets in
+what follows, we will be working with finite sets. So as to avoid
+possible complications in the future, let us agree that when we refer
+to the size of a set, we are implicitly assuming the set is
+finite. There is another version of the product principle that applies
+directly in problems like Problem \ref{completelunch} and Problem
+\ref{tripledeckercone}, where we were not just taking a union of $m$
+disjoint sets of size $n$, but rather $m$ disjoint sets of size $n$,
+each of which was a union of $m'$ disjoint sets of size $n'$.  This is
+an inconvenient way to have to think about a counting problem, so we
+may rephrase the product principle in terms of a sequence of
+decisions: \bp \iteme If we make a sequence of $m$ choices for
 which\label{generalproductprincipleintro}
 \begin{itemize} 
 \item There are $k_1$ possible first choices, and
@@ -325,24 +351,22 @@ make our sequence of choices?  (You need not prove your answer correct at
 this time.)
 \ep
  
-  The principle you gave in Problem \ref{generalproductprincipleintro} is
-called the {\em general product principle}.\index{general product
-principle}\index{product principle!general}\index{principle!product!general}
- We will study the general  product principle in more detail in
-Problems
-\ref{generalproductprinciple} and \ref{generalproductprincipleproof}.  For
-now, notice how much easier it makes it to explain why we multiplied the
-things we did in Problem
-\ref{completelunch} and Problem \ref{tripledeckercone}.
+The counting principle you gave in Problem
+\ref{generalproductprincipleintro} is called the {\em general product
+  principle}.\index{general product principle}\index{product
+  principle!general}\index{principle!product!general} We will outline
+a proof of the general product pinciple from the original product
+principle in Problem~\ref{generalproductprincipleproof}.  Until then,
+let us simply accept it as another counting principle. For now, notice
+how much easier it makes it to explain why we multiplied the things we
+did in Problem \ref{completelunch} and Problem \ref{tripledeckercone}.
 \bp
 
 \itemi A tennis club has $2n$ members.  We want to pair up the
-members by twos for singles matches.  In how many ways may we pair up all the
-members of the club?  Suppose that in addition to specifying who plays whom,
-for each pairing we say who serves first.  Now in how many ways may we
-specify our pairs?\label{tennispairings1}  (Hint: consider the cases of 2, 4,
-and 6 members.)
-\solution{Suppose we list the people in the club in some way, and keep that
+members by twos for singles matches. \label{tennispairings1} 
+\begin{enumerate}
+\item In how many ways may we pair up all the members of the club? (Hint: consider the cases
+  of 2, 4, and 6 members.) \solution{Suppose we list the people in the club in some way, and keep that
 list for the remainder of the problem.  Take the first person from the list
 and pair that person with any of the $2n-1$ remaining people.  Now take the
 next {\em unpaired} person from the list and pair that person with any of the
@@ -351,7 +375,217 @@ been selected, take the next unpaired person from the list and pair that
 person with any of the remaining $2n-2k-1$ unpaired people.  Every pairing
 can arise in this way, and no pairing can arise twice in this process.  Thus
 the number of outcomes is $\prod_{i=0}^{n-1} 2n-2i-1$.}
+
+\item Suppose that in addition to specifying who plays whom, for each
+  pairing we say who serves first.  Now in how many ways may we
+  specify our pairs?
+\end{enumerate}
+
+
+\items  Let us now return to Problem \ref{countingfunctions} and
+justify---or perhaps finish---our answer to the question about the
+number of functions from a three-element set to a 12-element
+set.\label{countingfunctions2}
+\begin{enumerate}
+\item How can you justify your answer in
+  Problem~\ref{countingfunctions} to the question ``How many functions
+  are there from a three element set (say $[3]=\{1,2,3\}$) to a twelve
+  element set (say [12])?''  \solution{The number of functions from $[3]$ to $[12]$ with $f(3) =1$ is the
+number of functions from $[2]$ to $[12]$, namely 144.  The same is true for
+the number of functions with $f(3)=2$ and $f(3)=3$, and the size of the set
+$S_i$.  The union of the sets $S_i$ is the set of all functions from $[3]$ to
+$[12]$, and since there are twelve sets $S_i$, this union has size
+ $12\cdot144= 1728$.}
+\item Based on the examples you've seen so far, make a conjecture
+  about how many functions there are from the set
+  \[[m] = \{1,2,3,\dots,m\}\]
+  to $[n]=\{1,2,3,\dots,n\}$ and prove it.
+\label{numberoffunctionsconjecture}
+ \solution{$n^m$.}
+\item A common notation for the set of all functions from a set $M$ to a
+set $N$ is $N^M$.  Why is this a good notation? 
+\solution{Because there are $n^m$ such functions, at least according to our
+conjecture.}
+\end{enumerate}
+
+\items Now suppose we are thinking about a set $S$ of functions $f$
+from $[m]$ to some set $X$.  (For example, in
+Problem~\ref{tripledeckercone} we were thinking of the set of
+functions from the three possible places for scoops in an ice-cream
+cone to $12$ flavors of ice cream.) Suppose there are $k_1$ choices
+for $f(1)$.  (In Problem~\ref{tripledeckercone}, $k_1$ was $12$,
+because there were $12$ ways to choose the first scoop.) Suppose that
+for each choice of $f(1)$ there are $k_2$ choices for $f(2)$.  (For
+example, in Problem~\ref{tripledeckercone} $k_2$ was $12$ if the
+second flavor could be the same as the first, but $k_2$ was $11$ if
+the flavors had to be different.) In general, suppose that for each
+choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$ choices for
+$f(i)$. (For example, in Problem~\ref{tripledeckercone}, if the
+flavors have to be different, then for each coice of $f(1)$ and
+$f(2)$, there are $10$ choices for $f(3)$.)
+
+What we have assumed so far about the functions in $S$ may be
+summarized as
+\begin{itemize}
+\item There are $k_1$ choices for $f(1)$.
+\item For each choice of $f(1)$, $f(2)$, \ldots, $f(i-1)$, there are $k_i$
+choices for~$f(i)$.
+\end{itemize}  How many functions are in the set
+$S$? Is there any practical difference between the result of this
+problem and the general product principle?\label{generalproductprinciple}      
+%  This is called the 
+% {\em product principle for functions}\index{product
+% principle!for functions} or the 
+% {\bf general product principle}\index{product principle!general}. 
+ \solution{$\prod_{i=1}^m k_i$. }
 \ep
+
+The point of Problem~\ref{generalproductprinciple} is that the general
+product principle can be stated informally, as we did originally, or
+as a statement about counting sets of standard concrete mathematical
+objects, namely functions.
+
+\bp
+\itemi  A roller coaster car has $n$ rows of seats, each of which
+has room for two people.  If $n$ men and $n$ women get into the car with a
+man and a woman in each row,  in how many ways may they choose their seats?
+\solution{$(n!)^22^n$}
+
+% \iteme
+%  How does the general product principle relate to counting  functions
+% from
+% $[m]$ to
+% $[n]$?  How does it relate to counting    one-to-one functions from
+% $[m]$ to
+% $[n]$?  \index{functions!one-to-one!number of}\index{functions!number of}
+%  \solution{It tells us there are $\prod_{i=1}^m n =n^m$ functions from $[m]$
+% to
+% $[n]$ and that there are $\prod_{i=1}^m n-i+1 $ one-to-one
+% functions.}
+% \items  Prove 
+% the conjecture (about the number of functions in $S$) in Problem
+% \ref{numberoffunctionsconjecture} when
+% $m=2$ and  when $m=3$.  Prove the conjecture for an
+% arbitrary positive integer
+% $m$. \label{provenumberoffunctionsconjecture}\index{functions!number of}
+%  \solution{When $m=2$, we have $n$ functions $f$ for each value of $f(1)$,
+% and thus the set of all functions is a union of $n$ sets of size $n$, which
+% by the product principle has size $n^2$. (Alternatively, we could apply the
+% general product principle with $k_i=n$ for $i=1,2$.)  When
+% $m=3$,  there is a bijection between the functions from $[m]$ to $[2]$ and
+% functions
+% $f$ from
+% $[m]$ to
+% $[3]$ with $f(3) =i$ for any particular $i$ between 1 and $n$.  Thus the
+% set of all functions is a union of $n$ sets of size $n^2$ and so by the
+% product principle has size $n^3$.  (Alternatively, we could apply the
+% general product principle with $k_i=n$ for $i=1,2,3$.)  To prove the
+% conjecture in general we apply the general product principle to get
+% $\prod_{i=1}^n m =n^m$ functions from
+% $[m]$ to
+% $[n]$. 
+
+%   As another option, we also prove by induction on
+% $m$ that there are $n^m$ functions from $[m]$ to $[n]$.  When $m=0$ there is
+% one function (the so-called "empty function" from $[m]$ to $[n]$).  Now assume
+% inductively that when $m=k-1$ there are $n^{k-1}$ functions from $[m]$ to
+% $[n]$.  For each value $i$ between 1 and $n$ there is a bijection between the
+% functions from $[k-1]$ to $[n]$ and the functions $f$ from $k$ to $n$ with
+% $f(k)=i$.  Thus the set of all functions from $[k]$ to $[n]$ is a union of
+% $n$ sets of size $n^{k-1}$ and so by the ordinary product principle this set
+% has size $n^k$.  Thus by the principle of mathematical induction, then number
+% of functions from $m$ to $n$ is $m^n$ for all nonnegative integers $m$.}
+
+
+\items How does the general product principle apply to Problem
+\ref{tripledeckercone}?
+\solution{By the general product principle, there are $12\cdot 11\cdot 10$
+triple decker cones.}
+
+\iteme In how many ways can we pass out $k$ distinct pieces of
+fruit to
+$n$ children (with no restriction on how many pieces of fruit a child may
+get)?  
+ \solution{Either by the formula for the number of functions from an
+$m$-element set to an $n$-element set or the general product principle, there
+are $k^n$ ways.  (Each distribution is a function from the set of fruit to
+the set of children, because each piece of fruit goes to one and only one
+child.)}
+
+\iteme How many subsets does a set $S$ with $n$ elements have?
+\solution{For each of the $n$ elements of $S$, we have two options:
+  either we put the element into the subset or we do not. Thus, the
+  general product principle tells us that there are $2^n$ subsets of $S$.}
+
+\itemm  Assuming $k\le n$, in how many ways can we pass out  $k$
+distinct pieces of fruit to
+$n$ children if each child may get at most one?  What is the number if
+$k>n$?  Assume for both questions that we pass out all the fruit.
+\solution{We are asking for the number of $k$-element permutations of $n$
+children, which is $\prod_{i=1}^k n-i+1$, and is zero if $k>n$.}
+
+
+\iteme Another name for a list, in a specific order, of $k$ distinct things
+chosen from a set $S$ is a  $\mathbf k$-{\bf element permutation of}
+$\mathbf S$.\index{permutation!
+$k$-element}  We can also think of a $k$-element permutation of $S$ as a
+one-to-one function (or, in other words, injection) from
+$[k]=\{1,2,\ldots, k\}$ to $S$.  How many $k$-element permutations does an
+$n$-element set have?\label{kelementpermutation}  (For this problem it is
+natural to assume $k\le n$.  However the question makes sense even if $k>n$. 
+What is the number of $k$-element permutations of an $n$-element set if $k>n$?
+ \solution{By the general product principle, the number is $$\prod_{i=1}^k
+n-i+1 $$.  In the case that $k>n$, there are no such lists
+with distinct entries, and that is what the formula gives us, because
+$n-(n+1)+1=0$.}
+
+
+% \iteme The word {\em permutation} is actually used in two different ways in
+% mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
+% $S$ is a bijection from $S$ to
+% $S$.  How many permutations does an $n$-element set have?
+% \label{permutationasbijection}
+% \solution{$n!$.}
+\ep 
+
+% Notice that
+% there is a great deal of consistency between this use of the word permutation
+% and the use in the previous problem.  If we have some way
+% $a_1,a_2,\ldots,a_n$ of listing our set, then any other list
+% $b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is $f(a_i) =b_i$, and
+% any bijection, say the one given by $g(a_i)=c_i$ gives us a list
+% $c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really very little difference
+% between the idea of a permutation of $S$ and an
+% $n$-element permutation of $S$ when $n$ is the size of $S$.
+
+There are a number of different notations for the number of $k$-element
+permutations of an $n$-element set.  The one we shall use was introduced by
+Don Knuth; namely $n^{\underline{k}}$, read ``$n$ to the $k$ falling'' or
+``$n$ to the $k$ down". In Problem \ref{kelementpermutation} you may have
+shown that 
+\begin{equation}n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
+n-i+1).\label{productnotation}
+\end{equation}
+  It is standard to call $n^{\underline{k}}$\index{$n^{\underline{k}}$}  the
+{\bf
+$k$-th falling factorial power of $n$}\index{falling factorial
+power}\index{factorial power!falling}, which explains why we use exponential
+notation.  Of course we call it a {\em factorial} power since
+$n^{\underline{n}} = n(n-1)\cdots 1$ which we call {\em $n$-factorial} and
+denote by
+$n!$.\index{factorial}\index{$n"!$}  If you are unfamiliar with the Pi
+notation, or {\em product notation}\index{product notation}\index{Pi
+notation} we introduced for products in Equation
+\ref{productnotation}, it works just like the Sigma notation works for
+summations.
+
+\bp
+\iteme Express $n^{\underline{k}}$ as a quotient of factorials.
+\solution{$n^{\underline{k}}=n!/(n-k)!$}
+\itemi How should we define $n^{\underline{0}}$?\solution{We define
+  $n^{\underline{0}}$ to be $1$.}
+\ep
+
 
 \subsection{Functions} As another example how standard mathematical language
 relates to counting problems, Problem \ref{countingfunctions} explicitly asked
@@ -671,215 +905,6 @@ $2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
 total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
 Therefore by the principle of mathematical induction, for all $n$ the number
 of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
-
-\subsection{The  General Product Principle}
-\iteme  Let us now return to Problem \ref{countingfunctionsparta} and
-justify---or perhaps finish---our answer to the question about the
-number of functions from a three-element set to a 12-element
-set.\label{countingfunctions2}
-\begin{enumerate}
-\item We begin with a question to which we can apply the product
-principle directly.  Namely, how many functions $f$ are there from the
-set $[2]=\{1,2\}$ to the set $[12]$?  How many functions are there
-with $f(2)=1$?  With $f(2) =2$?  With $f(2)=3$?  With $f(2) =i$ for
-any fixed $i$ between 1 and 12?  The set of functions from $[2]$ to
-$[12]$ is the union of 12 sets: the set of $f$ with $f(2)=1$, the set
-of $f$ with $f(2) = 2$, \ldots, the set of $f$ with $f(2) = 12$.  How
-many functions does each of these sets have?  From the product
-principle, what may you conclude about the number of functions in the
-union of these 12 sets?  
- \solution{The number of functions $f$ from $[2]$ to $[12]$ with $f(2) = 1$ is
-12, one for each possible value of $f(1)$.  The same is true with $f(2)=2$, 3,
-or any particular value.  Thus the set of functions from $[21]$ to $[12]$ is
-a union of twelve sets of size 12, and thus by the product principle has size
-144.}
-\item Now consider the set of functions from $[3]$ to $[12]$.  How
-many of these functions have $f(3) =1$?  What bijection (just describe
-it in words) are you using (implicitly, if not explicitly) to answer this
-question?  How many of these functions have $f(3) =2$?  How many have $f(3) =
-i$ for any
-$i$ between 1 and 12?  For each $i$, let $S_i$ be the set of functions
-$f$ from $[3]$ to $[12]$ with $f(3) = i$.  What is the size $S_i$? 
-What is the size of the union of the sets $S_i$?  How many functions
-are there from $[3]$ to $[12]$?
- \solution{The number of functions from $[3]$ to $[12]$ with $f(3) =1$ is the
-number of functions from $[2]$ to $[12]$, namely 144.  The same is true for
-the number of functions with $f(3)=2$ and $f(3)=3$, and the size of the set
-$S_i$.  The union of the sets $S_i$ is the set of all functions from $[3]$ to
-$[12]$, and since there are twelve sets $S_i$, this union has size
- $12\cdot144= 1728$.}
-\item Based on the examples you've seen so far, make a conjecture
-about how many functions there are from $[m]$ to
-$[n]$.\label{numberoffunctionsconjecture}
- \solution{$n^m$.}
-\item A common notation for the set of all functions from a set $M$ to a
-set $N$ is $N^M$.  Why is this a good notation? 
-\solution{Because there are $n^m$ such functions, at least according to our
-conjecture.}
-\end{enumerate}
-
-\iteme Now suppose we are thinking about a set $S$ of functions $f$ 
-from
-$[m]$ to some set $X$.  (For example, we might be thinking of the set of
-functions from the three possible places for scoops in an ice-cream cone to 12
-flavors of ice cream.)  Suppose there are
-$k_1$ choices for
-$f(1)$.  Suppose that for each choice of $f(1)$ there are $k_2$ choices for
-$f(2)$.  (For example, in counting one-to-one functions from $[3]$    
-to
-$[12]$, there are 12 choices for $f(1)$, and for each choice of  
-$f(1)$ there are $11$ choices for $f(2)$.)  In general suppose that  
-for each choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$
-choices for
-$f(i)$. (For example, in counting one-to-one functions from $[3]$ to $[12]$,
-for each choice of $f(1)$ and $f(2)$, there are 10 choices for $f(3)$.)  What
-we have assumed so far about the functions in $S$ may be summarized as
-\begin{itemize}
-\item There are $k_1$ choices for $f(1)$.
-\item For each choice of $f(1)$, $f(2)$, \ldots, $f(i-1)$, there are $k_i$
-choices for~$f(i)$.
-\end{itemize}  How many functions do you think are in the set
-$S$?\label{generalproductprinciple}      
- This is called the 
-{\em product principle for functions}\index{product
-principle!for functions} or the 
-{\bf general product principle}\index{product principle!general}. 
- \solution{$\prod_{i=1}^m k_i$. }
-\ep
-
-We will take up the proof of the general product principle in Chapter 2.
-
-
-\bp
-\itemi  A roller coaster car has $n$ rows of seats, each of which
-has room for two people.  If $n$ men and $n$ women get into the car with a
-man and a woman in each row,  in how many ways may they choose their seats?
-\solution{$(n!)^22^n$}
-
-\iteme
- How does the general product principle relate to counting  functions
-from
-$[m]$ to
-$[n]$?  How does it relate to counting    one-to-one functions from
-$[m]$ to
-$[n]$?  \index{functions!one-to-one!number of}\index{functions!number of}
- \solution{It tells us there are $\prod_{i=1}^m n =n^m$ functions from $[m]$
-to
-$[n]$ and that there are $\prod_{i=1}^m n-i+1 $ one-to-one
-functions.}
-\items  Prove 
-the conjecture (about the number of functions in $S$) in Problem
-\ref{numberoffunctionsconjecture} when
-$m=2$ and  when $m=3$.  Prove the conjecture for an
-arbitrary positive integer
-$m$. \label{provenumberoffunctionsconjecture}\index{functions!number of}
- \solution{When $m=2$, we have $n$ functions $f$ for each value of $f(1)$,
-and thus the set of all functions is a union of $n$ sets of size $n$, which
-by the product principle has size $n^2$. (Alternatively, we could apply the
-general product principle with $k_i=n$ for $i=1,2$.)  When
-$m=3$,  there is a bijection between the functions from $[m]$ to $[2]$ and
-functions
-$f$ from
-$[m]$ to
-$[3]$ with $f(3) =i$ for any particular $i$ between 1 and $n$.  Thus the
-set of all functions is a union of $n$ sets of size $n^2$ and so by the
-product principle has size $n^3$.  (Alternatively, we could apply the
-general product principle with $k_i=n$ for $i=1,2,3$.)  To prove the
-conjecture in general we apply the general product principle to get
-$\prod_{i=1}^n m =n^m$ functions from
-$[m]$ to
-$[n]$. 
-
-  As another option, we also prove by induction on
-$m$ that there are $n^m$ functions from $[m]$ to $[n]$.  When $m=0$ there is
-one function (the so-called "empty function" from $[m]$ to $[n]$).  Now assume
-inductively that when $m=k-1$ there are $n^{k-1}$ functions from $[m]$ to
-$[n]$.  For each value $i$ between 1 and $n$ there is a bijection between the
-functions from $[k-1]$ to $[n]$ and the functions $f$ from $k$ to $n$ with
-$f(k)=i$.  Thus the set of all functions from $[k]$ to $[n]$ is a union of
-$n$ sets of size $n^{k-1}$ and so by the ordinary product principle this set
-has size $n^k$.  Thus by the principle of mathematical induction, then number
-of functions from $m$ to $n$ is $m^n$ for all nonnegative integers $m$.}
-
-
-\items How does the general product principle apply to Problem
-\ref{tripledeckercone}?
-\solution{By the general product principle, there are $12\cdot 11\cdot 10$
-triple decker cones.}
-
-\iteme In how many ways can we pass out $k$ distinct pieces of
-fruit to
-$n$ children (with no restriction on how many pieces of fruit a child may
-get)?  
- \solution{Either by the formula for the number of functions from an
-$m$-element set to an $n$-element set or the general product principle, there
-are $k^n$ ways.  (Each distribution is a function from the set of fruit to
-the set of children, because each piece of fruit goes to one and only one
-child.)}
-
-\iteme Another name for a list, in a specific order, of $k$ distinct things
-chosen from a set $S$ is a  $\mathbf k$-{\bf element permutation of}
-$\mathbf S$\index{permutation!
-$k$-element}  We can also think of a $k$-element permutation of $S$ as a
-one-to-one function (or, in other words, injection) from
-$[k]=\{1,2,\ldots, k\}$ to $S$.  How many $k$-element permutations does an
-$n$-element set have?\label{kelementpermutation}  (For this problem it is
-natural to assume $k\le n$.  However the question makes sense even if $k>n$. 
-What is the number of $k$-element permutations of an $n$-element set if $k>n$?
- \solution{By the general product principle, the number is $$\prod_{i=1}^k
-n-i+1 $$.  In the case that $k>n$, there are no such lists
-with distinct entries, and that is what the formula gives us, because
-$n-(n+1)+1=0$.}
-
-\iteme  Assuming $k\le n$, in how many ways can we pass out  $k$
-distinct pieces of fruit to
-$n$ children if each child may get at most one?  What is the number if
-$k>n$?  Assume for both questions that we pass out all the fruit.
-\solution{We are asking for the number of $k$-element permutations of $n$
-children, which is $\prod_{i=1}^k n-i+1$, and is zero if $k>n$.}
-
-\iteme The word {\em permutation} is actually used in two different ways in
-mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
-$S$ is a bijection from $S$ to
-$S$.  How many permutations does an $n$-element set have?
-\label{permutationasbijection}
-\solution{$n!$.}
-\ep 
-
-Notice that
-there is a great deal of consistency between this use of the word permutation
-and the use in the previous problem.  If we have some way
-$a_1,a_2,\ldots,a_n$ of listing our set, then any other list
-$b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is $f(a_i) =b_i$, and
-any bijection, say the one given by $g(a_i)=c_i$ gives us a list
-$c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really very little difference
-between the idea of a permutation of $S$ and an
-$n$-element permutation of $S$ when $n$ is the size of $S$.
-
-There are a number of different notations for the number of $k$-element
-permutations of an $n$-element set.  The one we shall use was introduced by
-Don Knuth; namely $n^{\underline{k}}$, read ``$n$ to the $k$ falling'' or
-``$n$ to the $k$ down". In Problem \ref{kelementpermutation} you may have
-shown that 
-\begin{equation}n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
-n-i+1).\label{productnotation}
-\end{equation}
-  It is standard to call $n^{\underline{k}}$\index{$n^{\underline{k}}$}  the
-{\bf
-$k$-th falling factorial power of $n$}\index{falling factorial
-power}\index{factorial power!falling}, which explains why we use exponential
-notation.  Of course we call it a {\em factorial} power since
-$n^{\underline{n}} = n(n-1)\cdots 1$ which we call {\em $n$-factorial} and
-denote by
-$n!$.\index{factorial}\index{$n"!$}  If you are unfamiliar with the Pi
-notation, or {\em product notation}\index{product notation}\index{Pi
-notation} we introduced for products in Equation
-\ref{productnotation}, it works just like the Sigma notation works for
-summations.
-
-\bp
-\iteme Express $n^{\underline{k}}$ as a quotient of factorials.
-\solution{$n^{\underline{k}}=n!/(n-k)!$}
 
  
 
@@ -1952,3 +1977,7 @@ remainder with the other three colors as in Problem \ref{pingpongpaint} This
 gives us
 $$\sum_{k=0}^{\lfloor n/2\rfloor}{n-2k+2\choose 2}$$ ways to paint the balls.}
 \end{enumerate}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "MainProbsNotesCombinatorics"
+%%% End:
