@@ -512,7 +512,7 @@ are $k^n$ ways.  (Each distribution is a function from the set of fruit to
 the set of children, because each piece of fruit goes to one and only one
 child.)}
 
-\iteme How many subsets does a set $S$ with $n$ elements have?
+\iteme \label{SubsetsFirstTime}How many subsets does a set $S$ with $n$ elements have?
 \solution{For each of the $n$ elements of $S$, we have two options:
   either we put the element into the subset or we do not. Thus, the
   general product principle tells us that there are $2^n$ subsets of $S$.}
@@ -538,25 +538,8 @@ What is the number of $k$-element permutations of an $n$-element set if $k>n$?
 n-i+1 $$.  In the case that $k>n$, there are no such lists
 with distinct entries, and that is what the formula gives us, because
 $n-(n+1)+1=0$.}
+\ep
 
-
-% \iteme The word {\em permutation} is actually used in two different ways in
-% mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
-% $S$ is a bijection from $S$ to
-% $S$.  How many permutations does an $n$-element set have?
-% \label{permutationasbijection}
-% \solution{$n!$.}
-\ep 
-
-% Notice that
-% there is a great deal of consistency between this use of the word permutation
-% and the use in the previous problem.  If we have some way
-% $a_1,a_2,\ldots,a_n$ of listing our set, then any other list
-% $b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is $f(a_i) =b_i$, and
-% any bijection, say the one given by $g(a_i)=c_i$ gives us a list
-% $c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really very little difference
-% between the idea of a permutation of $S$ and an
-% $n$-element permutation of $S$ when $n$ is the size of $S$.
 
 There are a number of different notations for the number of $k$-element
 permutations of an $n$-element set.  The one we shall use was introduced by
@@ -587,38 +570,49 @@ summations.
 \ep
 
 
-\subsection{Functions} As another example how standard mathematical language
-relates to counting problems, Problem \ref{countingfunctions} explicitly asked
+\subsection{Functions and directed graphs} 
+
+As another example how standard mathematical language relates to
+counting problems, Problem \ref{countingfunctions} explicitly asked
 you to relate the idea of counting functions to the question of
-Problem \ref{tripledeckercone}.
-  You have probably learned in algebra or calculus how to draw graphs in the
-Cartesian plane of functions from a set of numbers to a set of numbers.  You
-may recall how we can determine whether a graph is a graph of a function by
-examining whether each vertical straight line crosses the graph at most one
-time.  You might also recall how we can determine whether such a function is
-one-to-one by examining whether each horizontal straight line crosses the
-graph at most one time.  The functions we deal with will often involve
-objects which are not numbers, and will often be functions from one finite
-set to another.  Thus graphs in the cartesian plane will often not be
-available to us for visualizing functions.  However, there is another kind of
-graph called a
-{\em directed graph}\index{graph! directed}\index{directed graph} or
-{\em digraph}\index{digraph}\index{function!digraph of} that is especially useful
-when dealing with functions between finite sets.  In Figure
-\ref{functiondigraphs} we show several examples.
+Problem \ref{tripledeckercone}.  You have probably learned in algebra
+or calculus how to draw graphs in the Cartesian plane of functions
+from a set of numbers to a set of numbers.  You may recall how we can
+determine whether a graph is a graph of a function by examining
+whether each vertical straight line crosses the graph at most one
+time.  You might also recall how we can determine whether such a
+function is one-to-one by examining whether each horizontal straight
+line crosses the graph at most one time.  The functions we deal with
+will often involve objects which are not numbers, and will often be
+functions from one finite set to another.  Thus graphs in the
+cartesian plane will often not be available to us for visualizing
+functions.  
+
+However, there is another kind of graph called a {\em directed
+  graph}\index{graph! directed}\index{directed graph} or {\em
+  digraph}\index{digraph}\index{function!digraph of} that is
+especially useful when dealing with functions between finite sets. We
+take up this topic in more detail in Appendix~\ref{Relations},
+particularly Section~\ref{relationdigraph} and Section~\ref{digraphsoffunctions}. In
+Figure \ref{functiondigraphs} we show several examples of digraphs of functions.
 \begin{figure}[hbt]\caption{What is a digraph of a
 function?}\label{functiondigraphs}\smallskip
 \begin{center}\psfig{figure=functiondigraph.eps,height=4.5in
 }\end{center}
 \end{figure}
- If we have a function
-$f$ from a set
-$S$ to a set $T$, we draw a line of dots or circles to represent the elements
-of
-$S$ and another (usually parallel) line of circles or dots to represent the
-elements of
-$T$.  We then draw an arrow from the circle for $x$ to the circle for $y$ if
-$f(x) = y$.
+If we have a function $f$ from a set $S$ to a set $T$, we draw a line
+of dots or circles, called \emph{vertices} to represent the elements of $S$ and another
+(usually parallel) line of circles or dots to represent the elements
+of $T$.  We then draw an arrow from the circle for $x$ to the circle
+for $y$ if $f(x) = y$. Sometimes, as in part (e) of the figure, if we
+have a function from a set $S$ to itself, we draw only one set of
+vertices representing the elements of $S$, in which case we can have
+arrows both entering and leaving a given vertex. As you see, the
+digraph can be more enlightening in this case if we experiment with
+the function to find a nice placement of the vertices rather than
+putting them in a row.
+
+\textbf{The figure needs to have part (e) added to it.}
 
 
 
@@ -628,7 +622,9 @@ from $S$ to $T$.  There must be one and only one arrow leaving each vertex of
 the digraph representing an element of $S$.  The fact that there is one arrow
 means that $f(x)$ is defined for each $x$ in $S$.  The fact that there is
 only one arrow means that each $x$ in $S$ is related to exactly one element of
-$T$.  For further discussion of functions and digraphs see Sections
+$T$. (Note that these remarks hold as well if we have a function from
+$S$ to $S$ and draw only one set of vertices representing the elements
+of $S$.) For further discussion of functions and digraphs see Sections
 \ref{functionrelation} and \ref{relationdigraph} of {Appendix~\ref{Relations}}.
 
 \bp
@@ -655,14 +651,20 @@ digraph of such a function.
 \solution{The digraph of one such function follows\\
 \mbox{\psfig{figure=OntoNotOnetoOne.eps}}
 }
-\iteme What does the digraph of a one-to-one function
-(injection) from a finite set $X$ to a finite set $Y$ look
-like? (Look for a test somewhat similar to the one we  described for
-when a digraph is the digraph of a function.)  What does the digraph of an
-onto function look like?  What does the digraph of a one-to-one and onto 
-function  from a finite set
-$S$ to a set
-$T$ look like? \label{bijectiondigraph}
+\iteme Digraphs of functions help us visualize the ideas of one-to-one
+functions and onto functions.
+\begin{enumerate}
+\item What does the digraph of a one-to-one function (injection) from
+  a finite set $X$ to a finite set $Y$ look like? (Look for a test
+  somewhat similar to the one we described for when a digraph is the
+  digraph of a function.)
+\item   What does the digraph of an onto function
+  look like?
+\item   What does the digraph of a one-to-one and onto function
+  from a finite set $S$ to a set $T$ look
+  like? \label{bijectiondigraph}
+\end{enumerate}
+
 \solution{One-to-one: One arrow comes out of each vertex representing a member
 of
 $X$ and at most one arrow goes into each vertex representing a member of $Y$. 
@@ -674,8 +676,24 @@ member of
 $X$ and at exactly one arrow goes into each vertex representing a member of $Y$.
 (The first half of each sentence is optional.)}
 
+\iteme The word {\em permutation} is actually used in two different ways in
+mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
+$S$ is a bijection from $S$ to
+$S$.  How many permutations does an $n$-element set have?
+\label{permutationasbijection}
+\solution{$n!$.}
+\ep 
 
-\ep
+Notice that there is a great deal of consistency between the use of
+the word permutation in Problem~\ref{permutationasbijection} and the
+use in Problem~\ref{kelementpermutation}.  If we have
+some way $a_1,a_2,\ldots,a_n$ of listing our set, then any other list
+$b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is
+$f(a_i) =b_i$, and any bijection, say the one given by $g(a_i)=c_i$
+gives us a list $c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really
+very little difference between the idea of a permutation of $S$ and an
+$n$-element permutation of $S$ when $n$ is the size of $S$.
+
 
 \subsection{The bijection principle} Another name for a one-to-one
 and onto function is \index{bijection}\index{function!bijection}{\bf
@@ -706,9 +724,10 @@ because each sequence gives a set, and each set can be the set of places
 where a sequence is 1.  Since there are $2^n$ integers which are between 0
 and $2^n-1$, and they correspond to sequences of length $n$ (notice, we have
 another bijection, the one between a number and its binary representation),
-there are $2^n$ subsets of an $n$-element set.}
+there are $2^n$ subsets of the $n$-element set $[n]$.}
+\ep
 
-\iteme Notice that the first question in Problem \ref{icecreaminpints} asked
+Notice that the first question in Problem \ref{icecreaminpints} asked
 you for the number of ways to choose a three element subset from a 12
 element subset.  You may have seen a notation like
 $n\choose k$, $C(n,k)$, or $_nC_k$ which stands for the number of ways to
@@ -727,7 +746,10 @@ $n$-element set $[n] =
 \{1,2,3,\ldots, n\}$. As an example, the set of two-element subsets of
 $[4]$ is
 $$\{\{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}.$$  This
-example tells us that ${4\choose 2} = 6$. Let
+example tells us that ${4\choose 2} = 6$. 
+
+\bp
+\iteme Let
 $C$ be the set of $k$-element subsets of $[n]$ that contain
 the number
 $n$, and let
@@ -778,10 +800,16 @@ the two that are above it and just to the left or right.
 
 \begin{figure}[h]\caption{Pascal's
 Triangle}\label{Pascaltriangle}
-$$\matrix{&&&&&&&1&&&&&&\cr &&&&&&1&&1&&&&&&\cr
-&&&&&1&&2&&1&&&&&\cr &&&&1&&3&&3&&1&&&&\cr
-&&&1&&4&&6&&4&&1&&\cr &&1&&5&&10&&10&&5&&1&\cr
-&1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+$$\begin{matrix}
+&&&&&&&1&&&&&&&\\
+&&&&&&1&&1&&&&&&\\
+&&&&&1&&2&&1&&&&&\\
+&&&&1&&3&&3&&1&&&&\\
+&&&1&&4&&6&&4&&1&&\\
+&&1&&5&&10&&10&&5&&1&\\
+&1&&6&&15&&20&&15&&6&&1\\
+1&&7&&21&&35&&35&&21&&7&&1
+\end{matrix}$$
 \end{figure}\index{Pascal's Triangle}
 
 
@@ -793,8 +821,8 @@ $$\matrix{&&&&&&&1&&&&&&\cr &&&&&&1&&1&&&&&&\cr
 triangle to get a numerical answer for the first question  in Problem
 \ref{icecreaminpints}.
 \solution{Starting with row 9, we get
-$$\matrix{&&&1&&9&&36&&84 \cr&&1&&10&&45&&120\cr&1&&11&&55&&165\cr
-1&&12&&66&&220}$$ so the answer is 220.}
+$$\begin{matrix}&&&1&&9&&36&&84 \cr&&1&&10&&45&&120\cr&1&&11&&55&&165\cr
+1&&12&&66&&220\end{matrix}$$ so the answer is 220.}
 \ep
 
 It is less common to see Pascal's triangle as a right
@@ -807,14 +835,26 @@ the one above and the one above and to the left, except for
 the leftmost and right most entries of a row, for which that
 doesn't make sense.  Since the leftmost entry is $n\choose 0$
 and the rightmost entry is
-$n\choose n$, these entries are both one (why is that?), and
+$n\choose n$, these entries are both one (to see why, ask yourself how
+many $0$-element subsets and how many $n$-element subsets an
+$n$-element set has), and
 your formula then tells how to fill in the rest of the table.
 
 \begin{figure}[ht]\caption{Pascal's Right
 Triangle}\label{Pascalrighttriangle}
-$$\matrix{1&&&&&&\cr 1&&1&&&&&&\cr 1&&2&&1&&&&&\cr
-1&&3&&3&&1&&&&\cr 1&&4&&6&&4&&1&&\cr 1&&5&&10&&10&&5&&1&\cr
-1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\begin{center}
+  \begin{tabular}{c|cccccccc}
+    &$k=0$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
+    $n=0$  &1&&&&&&\\
+    1& 1&1&&&&&\\
+    2& 1&2&1&&&&&\\
+    3&1&3&3&1&&&&\\
+    4& 1&4&6&4&1&&&\\
+    5& 1&5&10&10&5&1&&\\
+    6&1&6&15&20&15&6&1&\\
+    7& 1&7&21&35&35&21&7&1
+  \end{tabular}
+\end{center}
 \end{figure}
 
 Seeing this right triangle leads us to ask whether there is
@@ -833,15 +873,24 @@ entry above and to the left.
 
 \begin{figure}[ht]\caption{Pascal's
 Rectangle}\label{Pascal'sRectangle}
-$$\matrix{1&&0&&0&&0&&0&&0&&0&&0\cr 1&&1&&0&&0&&0&&0&&0&&0\cr
-1&&2&&1&&0&&0&&0&&0&&0\cr 1&&3&&3&&1&&0&&0&&0&&0\cr
-1&&4&&6&&4&&1&&0&&0&&0\cr 1&&5&&10&&10&&5&&1&&0&&0\cr
-1&&6&&15&&20&&15&&6&&1&&0\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\begin{center}
+  \begin{tabular}{c|cccccccc}
+    &$k=0$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
+    $n=0$  &1&0&0&0&0&0&0&0\\
+    1& 1&1&0&0&0&0&0&0\\
+    2& 1&2&1&0&0&0&0&0\\
+    3&1&3&3&1&0&0&0&0\\
+    4& 1&4&6&4&1&0&0&0\\
+    5& 1&5&10&10&5&1&0&0\\
+    6&1&6&15&20&15&6&1&0\\
+    7& 1&7&21&35&35&21&7&1
+  \end{tabular}
+\end{center}
 \end{figure}
 
 \bp
-\itemi We defined $n \choose k$ to be 0 when $k>n$ in order
-to get a rectangular table of numbers that satisfies the Pascal
+\itemi Because our definition told us that $\binom{n}{k}$ is 0 when
+$k>n$, we got a rectangular table of numbers that satisfies the Pascal
 Equation.  
 \begin{enumerate}
 \item Is there any other way to define $n \choose k$ when $k>n$
@@ -880,31 +929,31 @@ zero.}
 
 
 
-\iteme There are  variants of  the bijections we used to prove the
-\label{SubsetsByInduction} Pascal Equation that can be used to give another
-proof of a formula (as in Problem \ref{SubsetsBinaryRepresentation}) for the
-number of subsets of an
-$n$-element set using the Principle of Mathematical Induction.  If you are
-familiar with Mathematical Induction, try to find the proof.  If not, now is
-the time to visit the Appendix on Mathematical Induction (and work through
-the problems there).  From this point forward, we shall assume that you are
-familiar with the principle of mathematical induction.
-\solution{We prove inductively that the number of subsets of an the
-$n$-element set $[n]$ is $2^n$.  The bijection between $[n]$ and an arbitrary
-$n$-element set extends to a bijection between their sets of subsets, so it
-suffices to consider the $n$-element set $[n]$.  In particular, when
-$n=0$, we have the empty set, and it has just $1=2^0$ subset, the empty set
-itself.  Now assume that $[n-1]$  has
-$2^{n-1}$ subsets.  The subsets of $[n]$ may be divided into those that
-contain
-$n$ and those that do not.  There is a bijection between the subsets that do
-contain $n$ and the subsets of the set $[n-1]$.  Thus there are $2^{n-1}$
-subsets that do contain $n$.  There is also a bijection between the subsets
-that do not contain $n$ and the subsets of the set $[n-1]$.  Thus there are
-$2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
-total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
-Therefore by the principle of mathematical induction, for all $n$ the number
-of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
+% \iteme There are  variants of  the bijections we used to prove the
+% \label{SubsetsByInduction} Pascal Equation that can be used to give another
+% proof of a formula (as in Problem \ref{SubsetsBinaryRepresentation}) for the
+% number of subsets of an
+% $n$-element set using the Principle of Mathematical Induction.  If you are
+% familiar with Mathematical Induction, try to find the proof.  If not, now is
+% the time to visit the Appendix on Mathematical Induction (and work through
+% the problems there).  From this point forward, we shall assume that you are
+% familiar with the principle of mathematical induction.
+% \solution{We prove inductively that the number of subsets of an the
+% $n$-element set $[n]$ is $2^n$.  The bijection between $[n]$ and an arbitrary
+% $n$-element set extends to a bijection between their sets of subsets, so it
+% suffices to consider the $n$-element set $[n]$.  In particular, when
+% $n=0$, we have the empty set, and it has just $1=2^0$ subset, the empty set
+% itself.  Now assume that $[n-1]$  has
+% $2^{n-1}$ subsets.  The subsets of $[n]$ may be divided into those that
+% contain
+% $n$ and those that do not.  There is a bijection between the subsets that do
+% contain $n$ and the subsets of the set $[n-1]$.  Thus there are $2^{n-1}$
+% subsets that do contain $n$.  There is also a bijection between the subsets
+% that do not contain $n$ and the subsets of the set $[n-1]$.  Thus there are
+% $2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
+% total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
+% Therefore by the principle of mathematical induction, for all $n$ the number
+% of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
 
  
 
@@ -916,8 +965,8 @@ $[n]=\{1,2,\ldots, n\}$, define a function (traditionally
 denoted by $\Chi_S$) as follows.\footnote{The symbol
 $\Chi$ is the Greek letter chi that is pronounced Ki, with the
 $i$ sounding like ``eye."} 
-$$\Chi_S(i) = \cases{1 \mbox{ if } i\in S \cr 0 \mbox{ if } i\not\in
-S}$$ The function $\Chi_S$ is called the \index{characteristic
+$$\Chi_S(i) = \begin{cases}1 &\mbox{ if } i\in S \\ 0 &\mbox{ if } i\not\in
+S\end{cases}$$ The function $\Chi_S$ is called the \index{characteristic
 function}\index{function!characteristic}{\em
 characteristic function} of
 $S$.  Notice that the characteristic function is a function
@@ -955,7 +1004,7 @@ functions and the subsets of $[n]$.}
 
 \ep
 
-In Problems \ref{SubsetsBinaryRepresentation}, \ref{SubsetsByInduction}, and
+In Problems \ref{SubsetsFirstTime}, \ref{SubsetsBinaryRepresentation}, and
 \ref{charfunction} you gave three proofs of the following
 theorem.
 
@@ -965,8 +1014,11 @@ $2^n$.
 
 
 The proofs in Problem \ref{SubsetsBinaryRepresentation} and
-\ref{charfunction} use essentially the same bijection, but they interpret
-sequences of zeros and ones differently, and so end up being different proofs.
+\ref{charfunction} use essentially the same bijection, but they
+interpret sequences of zeros and ones differently, and so end up being
+different proofs. We will give yet another proof, using bijections
+similar to those we used in proving the Pascal Equation, at the
+beginning of Chapter~\ref{InductionRecursion}.
 
 
 \subsection{The quotient principle}
