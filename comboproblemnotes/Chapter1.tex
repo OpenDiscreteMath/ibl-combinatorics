@@ -366,7 +366,7 @@ did in Problem \ref{completelunch} and Problem \ref{tripledeckercone}.
 members by twos for singles matches. \label{tennispairings1} 
 \begin{enumerate}
 \item In how many ways may we pair up all the members of the club? (Hint: consider the cases
-  of 2, 4, and 6 members.) \solution{Suppose we list the people in the club in some way, and keep that
+  of 2, 4, and 6 members.)\label{tennispairings1a} \solution{Suppose we list the people in the club in some way, and keep that
 list for the remainder of the problem.  Take the first person from the list
 and pair that person with any of the $2n-1$ remaining people.  Now take the
 next {\em unpaired} person from the list and pair that person with any of the
@@ -1035,14 +1035,23 @@ we might think that the number of ways to choose a three element set from 12
 elements is the number of ways to choose the first element times the number
 of ways to choose the second element times the number of ways to choose the
 third element, which is $12\cdot11\cdot10=1320$.  However, our result in
-Problem \ref{Pascal} shows that this is wrong.  What is it that is different
-between the number of ways to stack ice cream in  a triple decker cone with
-three different flavors of ice cream and the number of ways to simply choose
-three different flavors of ice cream?  In particular, how many different
-triple decker cones use the same three flavors?  Using this, compute the
-number of ways to choose three different flavors of ice cream (from 12
-flavors) from the number of ways to choose a triple decker cone with three
-different flavors (from 12 flavors).\label{twelvechoosethree}
+Problem \ref{Pascal} shows that this is wrong. \label{twelvechoosethree}
+\begin{enumerate}
+\item What is it that is different between the number of ways to stack
+  ice cream in a triple decker cone with three different flavors of
+  ice cream and the number of ways to simply choose three different
+  flavors of ice cream? 
+\item  In particular, how many different triple
+  decker cones use the same three flavors?  (Of course any three
+  distinct flavors could substitute for vanilla, chocolate and
+  strawberry without changing the answer.)\label{twelvechoosethreethree}
+\item Using your answer from part \ref{twelvechoosethreethree},
+  compute the number of ways to choose three different flavors of ice
+  cream (out of twelve flavors) from the number of ways to choose a
+  triple decker cone with three different flavors (out of twelve
+  flavors).\label{twelvechoosethreefinal}
+\end{enumerate}
+
 \solution{What is different is that the order in which we put the scoops into
 the cone matters, but for simply choosing three flavors, the order of the
 choices doesn't matter.  Six different triple decker cones have the same
@@ -1050,14 +1059,14 @@ three flavors.  Thus we have $1320/6=220$ different ways to choose three
 flavors of ice cream from 12 flavors.}
 
 \iteme  Based on what you observed in Problem
-\ref{twelvechoosethree}, how many $k$-element subsets does an
+\ref{twelvechoosethreefinal}, how many $k$-element subsets does an
 $n$-element set have?\label{nchoosek}
 \solution{Following the reasoning of Problem \ref{twelvechoosethree}, there
 are $n^{\underline{k}}$ $k$-element permutations of an $n$-element set, and
 $k!$ of these permutations list the same set of $k$ elements, so the number of
 $k$-element sets is ${n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}$.}
 
-\iteme The formula you proved in Problem \ref{nchoosek} is symmetric in $k$
+\itemi The formula you proved in Problem \ref{nchoosek} is symmetric in $k$
 and $n-k$; that is, it gives the same number for $n\choose k$ as it gives
 for $n\choose n-k$.  Whenever two quantities are counted by the same formula
 it is good for our insight to find a bijection that demonstrates the two sets
@@ -1072,37 +1081,6 @@ the desired bijection.}
 children if each child may get at most one?\label{ping-pong}
 \solution{$n\choose k$, because we choose the $k$ children to whom we give
 ping-pong balls.}
-
-\itemi While the formula you proved in Problem \ref{nchoosek} is very useful,
-it doesn't give us a sense of how big the binomial coefficients are.  We can
-get a very rough idea, for example, of the size of $2n\choose n$ by
-recognizing that we can write $(2n)^{\underline{n}}/n!$ as ${2n\over n}\cdot
-{2n-1\over n-1}\cdots {n+1\over 1}$, and each quotient is at least $2$, so the
-product is at least $2^n$.  If this were an accurate estimate, it would mean
-the fraction of $n$-element subsets of a $2n$-element set would be
-about
-$2^n/2^{2n}=1/2^n$, which is becomes very small as $n$ becomes large. 
-However it is pretty clear the approximation will not be a very good one,
-because some of the terms in that product are much larger than 2.  In fact,
-if $2n\choose k$ were the same for every $k$, then each would be the fraction
-$1\over 2n+1$, so we know this is a bad approximation.  For estimates like
-this, James Stirling developed a formula to approximate
-$n!$  when $n$ is large, namely $n!$ is about $ \left(\sqrt{2\pi
-n}\right){n^n/ e^n}$.\index{Stirling's formula for
-$n"!$}\index{$n"!$!Stirling's formula for}  In fact the ratio of
-$n!$ to this expression approaches 1 as
-$n$ becomes infinite.\footnote{Proving this takes more of a detour than is
-advisable here; however there is an elementary proof which you can work
-through in the problems of the end of Section 1 of Chapter 1 of {\em
-Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press,
-(2000).}  We write this as $$n!\sim \sqrt{2\pi
-n}{n^n\over e^n}.$$  Use Stirling's formula to show that the fraction of 
-subsets of size
-$n$ in an
-$2n$-element set is approximately $1/\sqrt{\pi n}$.  This is a much bigger
-fraction than $1\over 2^n$!\label{Stirling'sapproximation}
-
-
 
 \iteme In how many ways may $n$ people sit around a round
 table?  (Assume
@@ -1132,34 +1110,92 @@ has changed.    Thus there are
 $(n-1)!$ ways (the number of ways to seat everybody else) to seat the people
 around the table.}
 
+\ep
 
-\iteme A given $k$-element subset
-can be listed as a $k$-element permutation in $k!$ ways.  We can partition the
-set of all $k$-element permutations of $S$ up into blocks by letting $B_K$ be
-the set of all $k$-element permutations of $K$ for each $k$-element subset $K$
-of
-$S$.  How many permutations are there in a block?  If $S$ has $n$ elements,
-what does problem \ref{kelementpermutation} tell you about the total number
-of $k$-element permutations of $S$?  Describe a bijection between the
-set of blocks of the partition and the set of $k$-element subsets of $S$. 
-What formula does this give you for the number $n\choose k$ of $k$-element
-subsets of an
-$n$-element set? \label{formulanchoosek}
+We are now going to analyze the result of Problem~\ref{nchoosek} in
+more detail in order to tease out another counting principle that we
+can sue in a wide variety of situations.
+
+\begin{table}[h]
+  \centering
+  \caption{The $3$-element permutations of $\{a,b,c,d,e\}$ organized
+    by which $3$-element set they permute.}
+  \label{tab:permsof3}
+  \begin{tabular}{cccccc}
+    $abc$&$acb$&$bac$&$bca$&$cab$&$cab$\\
+    $abd$ & $adb$ & $bad$ & $bda$& $dab$ & $dba$\\
+    $abe$ & $aeb$ & $bae$ & $bea$& $eab$ & $eba$\\
+    $acd$ & $adc$ & $cad$ & $cda$& $dac$ & $dca$\\
+    $ace$ & $aec$ & $cae$ & $cea$& $eac$ & $eca$\\
+    $ade$ & $aed$ & $dae$ & $dea$& $ead$ & $eda$\\
+    $bcd$ & $bdc$ & $cbd$ & $cdb$& $dbc$ & $dcb$\\
+    $bce$ & $bec$ & $cbe$ & $ceb$& $ebc$ & $ecb$\\
+    $bde$ & $bed$ & $dbe$ & $deb$& $ebd$ & $edb$\\
+    $cde$ & $ced$ & $dce$ & $dec$& $ecd$ & $edc$
+  \end{tabular}
+\end{table}
+
+In Table~ref{tab:permsof3} we list all three-element permutations of
+the $5$-element set $\{a,b,c,d,e\}$. Each row consists of all
+$3$-element permutations of some subset of $\{a,b,c,d,e\}$. Because a
+given $k$-element subset can be listed as a $k$-element permutation in
+$k!$ ways, there are $3!=6$ permutations in each row. Because each
+$3$-element permutation appears exactly once in the table, each row is
+a block of a partition of the set of $3$-element permutations of
+$\{a,b,c,d,e\}$. Each block has size six. Each block consists of all
+$3$-element permutations of some three-element subset of
+$\{a,b,c,d,e\}$. Since there are ten rows, we see that there are ten
+$3$-element subsets of $\{a,b,c,d,e\}$. An alternate way to see this
+is to observe that we partitioned the set of all $60$ three-element
+permutations of $\{a,b,c,d,e\}$ into some number $q$ of blocks, each
+of size six. Thus by the product principle, $q\cdot 6=60$, so $q=10$.
+
+\bp
+
+\iteme Rather than restricting ourselves to $n=5$ and $k=3$, we can
+partition the set of all $k$-element permutations of $S$ up into
+blocks. We do so by letting $B_K$ be the set (block) of all $k$-element
+permutations of $K$ for each $k$-element subset $K$ of $S$. Thus as in
+our preceding example, each block consists of all permutations of some
+subset $K$ of our $n$-element set. For example, the permutations of
+$\{a,b,c\}$ are listed in the first row of
+Table~\ref{tab:permsof3}. In fact each row of that table is a
+block. The questions that follow are about the corresponding partition
+of the set of $k$-element permutations of $S$, where $S$ and $k$ are
+arbitrary. \label{formulanchoosek}
+\begin{enumerate}
+\item How many permutations are there in a block?
+\item Since $S$ has $n$
+  elements, what does problem \ref{kelementpermutation} tell you about
+  the total number of $k$-element permutations of $S$?  
+\item Describe a
+  bijection between the set of blocks of the partition and the set of
+  $k$-element subsets of $S$.  
+\item What formula does this give you for the
+  number $n\choose k$ of $k$-element subsets of an $n$-element set?\label{formulanchoosekfinal}
+\end{enumerate}
+
 \solution{The number of permutations in a block is $k!$.  Problem
-\ref{kelementpermutation} tells us that the total number of $k$-element
-permutations is $n^{\underline{k}}={n!\over (n-k)!}$.  Each $k$-element set
-corresponds to the block of all permutations of that set.  It is immediate
-that this is a bijection.  Assuming there are $s$ subsets, we have
-$k!s$ permutations in total, so $k!s={n!\over (n-k)!}$ or $s= {n!\over
-k!(n-k)!}$.}
+  \ref{kelementpermutation} tells us that the total number of
+  $k$-element permutations is $n^{\underline{k}}={n!\over (n-k)!}$.
+  Each $k$-element set corresponds to the block of all permutations of
+  that set.  It is immediate that this is a bijection.  Assuming there
+  are $s$ subsets, we have $k!s$ permutations in total, so
+  $k!s={n!\over (n-k)!}$ or $s= {n!\over k!(n-k)!}$.}
 
 \itemi A basketball team has 12 players.  However, only five players play at
-any given time during a game.  In how may ways may the coach choose the five
-players?  To be more realistic, the five players playing a game normally
-consist of two guards, two forwards, and one center.  If there are five
-guards, four forwards, and three centers on the team, in how many ways can the
-coach choose two guards, two forwards, and one center?  What if one of the
-centers is equally skilled at playing forward?
+any given time during a game.
+\begin{enumerate}
+\item In how may ways may the coach choose the five players?  
+\item To be
+  more realistic, the five players playing a game normally consist of
+  two guards, two forwards, and one center.  If there are five guards,
+  four forwards, and three centers on the team, in how many ways can
+  the coach choose two guards, two forwards, and one center?  
+\item What if
+  one of the centers is equally skilled at playing forward?
+\end{enumerate}
+
 \solution{$12\choose 5$. In the more realistic version,
 ${5\choose2}{4\choose2}{3\choose1}=180$. Finally,  either the versatile
 player is playing center or not, and in the second case is available to play
@@ -1181,11 +1217,11 @@ This corresponds to the method that gives $n!/n$ as the answer.  Many
 students should be able to answer this question by saying ``See the answer to
 Problem \ref{roundtable}."}
 
-\iteme In Problems \ref{formulanchoosek} and \ref{roundtablepartition}, you
+\iteme In Problems \ref{formulanchoosekfinal} and \ref{roundtablepartition}, you
 have been using the product principle in a new way.  One of the ways in which
 we previously stated the product principle was ``If we partition a set into
 $m$ blocks each of size $n$, then the set has size $m\cdot n$.''  In problems
-\ref{formulanchoosek} and \ref{roundtablepartition} we knew the size $p$ of a
+\ref{formulanchoosekfinal} and \ref{roundtablepartition} we knew the size $p$ of a
 set
 $P$ of permutations of a set, and we knew we had partitioned $P$ into some
 unknown number of blocks, each of a certain known size $r$.  If we let
@@ -1205,9 +1241,13 @@ The quotient principle is really just a restatement of the product principle,
 but thinking about it as a principle in its own right often leads us to find
 solutions to problems.  Notice that it does not always give us a formula for
 the number of blocks of a partition; it only works when all the blocks have
-the same size.
+the same size. In Chapter~\ref{groupsonsets}, we develop a way to solve problems
+with different block sizes in cases where there is a good deal of
+symmetry in the problem. (The roundness of the table was a symmetry in
+the problem of people at a table; the fact that we can order the sets
+in any order is the symmetry in the problem of counting $k$-element subsets.)
 
-In Section \ref{equivalencerelations} of Appendix \ref{Relations} we
+In Section~\ref{equivalencerelations} of Appendix~\ref{Relations} we
 introduce the idea of an equivalence relation, see what equivalence relations
 have to do with partitions, and discuss the quotient principle from that
 point of view.  While that appendix is not required for what we are doing
@@ -1216,11 +1256,12 @@ would be a good time to work through that appendix.
 
 \bp
 \itemei In how many ways may we string $n$ distinct beads on a necklace
-without a clasp? (Assume someone can pick up the necklace,
+without a clasp? (Perhaps we make the necklace by stringing the beads
+on a strong, and then carefully gluing the two ends of the string
+together so that the joint can't be seen. Assume someone can pick up the necklace,
 move it around in space and put it back down, giving an
 apparently different way of stringing the beads that is
-equivalent to the first.  How could we get a list of beads
-from a necklace?)\label{necklace}
+equivalent to the first.)\label{necklace}
 \solution{We can obtain a permutation of the beads by cutting the necklace and
 stretching it out in a straight line.  We can partition the permutations
 according to which necklace they come from in this process. Two permutations
@@ -1231,12 +1272,20 @@ quotient principle we have $n!/2n=(n-1)!/2$ ways to string $n$ distinct beads
 on a necklace.}
 
 \itemi We first gave this problem as Problem
-\ref{tennispairings1} Now we have several ways to approach the problem.  A
+\ref{tennispairings1a}. Now we have several ways to approach the problem.  A
 tennis club has
-$2n$ members.  We want to pair up the members by twos for singles matches. 
-In how many ways may we pair up all the members of the club?  Suppose that in
-addition to specifying who plays whom, for each pairing we say who serves
-first.  Now in how many ways may we specify our pairs?\label{tennispairings2}
+$2n$ members.  We want to pair up the members by twos for singles matches. \label{tennispairings2}
+\begin{enumerate}
+\item In how many ways may we pair up all the members of the club?
+  Give at least two solutions different from the one you gave in
+  Problem~\ref{tennispairings1a}. (You may not have done
+  Problem~\ref{tennispairings1a}. In that case, see if you can find
+  three solutions.)
+\item   Suppose that in addition to specifying who plays whom, for each
+  pairing we say who serves first.  Now in how many ways may we
+  specify our pairs? Try to find as many solutions as you can
+\end{enumerate}
+
 \solution{Suppose we list the people in the club in some way, and keep that
 list for the remainder of the problem.  Take the first person from the list
 and pair that person with any of the $2n-1$ remaining people.  Now take the
@@ -1264,14 +1313,52 @@ each of the $n$ pairs could appear in 2 ways, so the tennis pairings
 partition the set of all permutations of the $2n$ members into blocks of size
 $n!2^n$.  Thus we have $(2n)!\over n!2^n$ tennis pairings once again. }
 
-\iteme In how many ways may we attach two identical red beads
-and two identical blue beads to the corners of a square free
+\iteme (This becomes especially relevant in
+Chapter~\ref{groupsonsets}, though it makes an important point here.) In how many ways may we attach two identical red beads
+and two identical blue beads to the corners of a square (with one bead
+per corner) free
 to move around in (three-dimensional) space? \label{twocolorsofbeads}
 \solution{Two ways; either the red beads are side-by-side or diagonally
 opposite.  If we think about partitioning lists of 2 $R$s and 2 $B$s so that
 two are in the same block if we get one from the other by moving the square,
 we get two blocks, $\{RRBB, BRRB, BBRR, RBBR\}$ and $\{RBRB, BRBR\}$.}
-\ep
+
+\itemi While the formula you proved in Problems \ref{nchoosek} and
+\ref{formulanchoosekfinal} is very useful,
+it doesn't give us a sense of how big the binomial coefficients are.  We can
+get a very rough idea, for example, of the size of $2n\choose n$ by
+recognizing that we can write $(2n)^{\underline{n}}/n!$ as ${2n\over n}\cdot
+{2n-1\over n-1}\cdots {n+1\over 1}$, and each quotient is at least $2$, so the
+product is at least $2^n$.  If this were an accurate estimate, it would mean
+the fraction of $n$-element subsets of a $2n$-element set would be
+about
+$2^n/2^{2n}=1/2^n$, which becomes very small as $n$ becomes large. 
+However it is pretty clear the approximation will not be a very good one,
+because some of the terms in that product are much larger than 2.  In fact,
+if $2n\choose k$ were the same for every $k$, then each would be the fraction
+$1\over 2n+1$ of $2^{2n}$. This is much larger than the fraction
+$\frac{1}{2^n}$. But our intuition suggets that $\binom{2n}{n}$ is
+much larger than $\binom{2n}{1}$ and is likely larger than
+$\binom{2n}{n-1}$ so we can be sure our approximation is a bad one. For estimates like
+this, James Stirling developed a formula to approximate
+$n!$  when $n$ is large, namely $n!$ is about $ \left(\sqrt{2\pi
+n}\right){n^n/ e^n}$.\index{Stirling's formula for
+$n"!$}\index{$n"!$!Stirling's formula for}  In fact the ratio of
+$n!$ to this expression approaches 1 as
+$n$ becomes infinite.\footnote{Proving this takes more of a detour than is
+advisable here; however there is an elementary proof which you can work
+through in the problems of the end of Section 1 of Chapter 1 of {\em
+Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press,
+(2000).}  We write this as $$n!\sim \sqrt{2\pi
+n}{n^n\over e^n}.$$  We read this notation as $n!$ is asymptotic to
+$\sqrt{2\pi n}\frac{n^n}{e^n}$. Use Stirling's formula to show that the fraction of 
+subsets of size
+$n$ in an
+$2n$-element set is approximately $1/\sqrt{\pi n}$.  This is a much bigger
+fraction than $1\over 2^n$!\label{Stirling'sapproximation}
+\ep 
+
+
 
 \section{Some Applications of the Basic Principles}
 
