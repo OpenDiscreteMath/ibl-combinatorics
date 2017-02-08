@@ -1,0 +1,264 @@
+
+<section>
+  <title>Supplementary Chapter Problems</title>
+  <ol>
+    <li xml:id="compositiondefinition" ><p>
+      (interesting)
+      Remember that we can write <m>n</m> as a sum of <m>n</m> ones.  How many plus
+      signs do we use?  In how many ways may we write <m>n</m> as a sum of a list of <m>k</m>
+      positive numbers?  Such a list is called a <em>composition</em><index><main>composition</main></index> of <m>n</m> into <m>k</m> parts.<index><main>composition</main><sub><m>k</m>
+      parts</sub></index><index><main>composition</main><sub><m>k</m> parts!number of</sub></index>
+      <solution>
+        <p>
+          We use <m>n-1</m> plus signs. Write down such a sum and choose <m>k-1</m>
+          of the plus signs. Then each string of ones and plusses between two chosen
+          plus signs, before the first chosen plus sign or after the last chosen one
+          corresponds to a part of a composition of
+          <m>n</m>. Thus the number of compositions of <m>n</m> with <m>k</m> parts is the number of
+          ways to choose the <m>k-1</m> places, which is
+          <m>n-1\choose k-1</m>.
+        </p>
+      </solution>
+      </p></li>
+
+    <li xml:id="composition_numberof" ><p>
+      In <xref ref="compositiondefinition">Problem</xref> we defined a composition of <m>n</m>
+      into <m>k</m> parts.  What is the total number of compositions of <m>n</m> (into any
+      number of parts). <index><main>compositions</main><sub>number of</sub></index>
+      <solution>
+        <p>
+          The total number of compositions is the number of ways to choose a
+          subset of the plus signs which is <m>2^{n-1}</m>.
+        </p>
+      </solution>
+      </p></li>
+
+    <li xml:id="GreyCode" ><p>
+      (essential for this or the next section)
+      Write down a list of all 16 0-1 sequences of length four starting
+      with 0000 in such a way that each entry differs from the precious one by
+      changing just one digit.  This is called a Grey Code.<index><main>Grey Code</main></index>  That
+      is, a <em>Grey Code</em> for 0-1 sequences of length <m>n</m> is a list of the
+      sequences so that each entry differs from the previous one in exactly one
+      place.  Can you describe how to get a Grey Code for 0-1 sequences of length
+      five from the one you found for sequences of length 4?  Can you describe how
+      to prove that there is a Grey code for sequences of length
+      <m>n</m>?
+      <solution>
+        <p>
+          (One of many) 0000,
+          0001,
+          0011,
+          0010,
+          0110,
+          0111,
+          0101,
+          0100,
+          1100,
+          1101,
+          1111,
+          1110,
+          1010,
+          1011,
+          1001,
+          1000. To get a code for sequences of length 5, put a zero at the end of each
+          of the sequences we have. Follow that revised sequence by 10001, and write
+          the remainder of the sequence in reverse order with a 1 at the end of each
+          term. (Don't reverse the individual length four sequences, just the sequence
+          of sequences!) We just, in essence, described the inductive step of an
+          inductive proof that Grey Codes exist for sequences of any length.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (interesting)
+      Use the idea of a Grey Code from <xref ref="GreyCode">Problem</xref> to prove
+      bijectively that the number of even-sized subsets of an <m>n</m>-element set
+      equals the number of odd-sized subsets of an <m>n</m>-element set.
+      <solution>
+        <p>
+          Each sequence in the Grey Code is the characteristic function of a
+          set, and the number of elements of the set is the number of ones in the
+          sequence. Since each sequence differs in just one place from the preceding
+          one, the sequences alternate between having an even number of ones and an
+          odd number of ones. Since the first sequence is all zeros and there are
+          <m>2^n</m> sequences, the last one has an odd number of zeros. Thus the map that
+          takes each sequence except the last to the next one, and takes the last to the
+          first is a bijection between the characteristic functions of sets with an
+          even number of elements and sets with an odd number of elements.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (interesting)
+      A list of parentheses is said to be balanced if there are the same
+      number of left parentheses as right, and as we count from left to right we
+      always find at least as many left parentheses as right parentheses.  For
+      example, (((()()))()) is balanced and ((()) and (()()))(() are not.  How
+      many balanced lists of <m>n</m> left and <m>n</m>  right parentheses are there?
+      <solution>
+        <p>
+          The number is the Catalan number: we get a bijection between
+          balanced lists of parentheses and Catalan paths by sending each left paren to
+          an upstep and each right paren to a downstep. The condition that there are
+          always as many left parentheses as right ensures we never go below the <m>x</m>
+          axis.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (difficult)
+      Suppose we plan to put six distinct computers in a network as shown in
+      <xref ref="hexagonalnetwork">Figure</xref>.  The lines show which computers can communicate
+      directly with which others.  Consider two ways of assigning computers to the
+      nodes of the network different if there are two computers that communicate
+      directly in one assignment and that don't communicate directly in the
+      other.  In how many different ways can we assign computers to the network?
+
+      <figure xml:id="hexagonalnetwork" >
+        <caption>A computer
+        network.</caption>
+        \mbox{
+        <image width="73%" source="images/" />
+        }
+      </figure>
+      <solution>
+        <p>
+          We consider two assignments of computers to be equivalent if in
+          both assignments, each computer communicates directly with exactly the same
+          computers. This partitions the set of all <m>6!</m> computer assignments into
+          blocks of <m>48</m> computers each. Thus we have <m>720/48=15</m> ways to assign the
+          computers to the network.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (interesting)
+      In a circular ice cream dish we are going to put four distinct scoops
+      of ice cream chosen from among twelve flavors.  Assuming we place four scoops
+      of the same size as if they were at the corners of a square, and recognizing
+      that moving the dish doesn't change the way in which we have put the ice
+      cream into the dish, in how many ways may we choose the ice cream and put it
+      into the dish?
+      <solution>
+        <p>
+          Each ice cream arrangement is equivalent to three others, the ones
+          we get by rotating the dish. This divides the arrangements of four flavors
+          of ice cream into blocks of size 4. Thus we may arrange the ice cream we have
+          chosen in the dish in
+          <m>4!/4=6</m> ways. We may choose the ice cream in <m>{12\choose 4}=495</m> ways, and
+          so we may choose it and put it into the dish in 2970 ways.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (interesting)
+      In as many ways as you can, show that <m>{n\choose k}{n-k\choose m} =
+      {n\choose m}{n-m\choose k}</m>.
+      <solution>
+        <p>
+          You can prove this by plugging in the formula for <m>n\choose k</m> on
+          both sides and cancelling stuff until you get the same thing on both sides.
+          However a much more interesting proof is that the right hand side counts the
+          number of ways to choose a <m>k</m>-element set form an <m>n</m>-element set and then
+          choose an <m>m</m>-element set from what remains. The left hand side counts the
+          number of ways to first chose a <m>k</m>-element subset from the <m>n</m>-element set
+          and then choose an <m>m</m>-element subset from what remains. Thus in both cases
+          you are counting the number of ways to choose an ordered pair consisting of an
+          <m>m</m>-element subset and a disjoint <m>k</m>-element subset from an <m>n</m>-element set.
+          You can also base a proof on the observation that <m>(x+y+x)^n=
+          \sum_{k=0}^n{n\choose k}(x+y)^kz^{n-k}</m> and
+          <m>(x+y+z)^n=\sum_{m=0}^n{n\choose m}x^m(y+z)^{n-m}</m> and asking for the
+          coefficient of <m>x^my^{n-m-k}z^k</m>. You do have to use the binomial theorem
+          with an eye to the result you are looking for, however.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      (interesting)
+      A tennis club has <m>4n</m> members.  To specify a doubles match, we choose
+      two teams of two people.  In how many ways may we arrange the members into
+      doubles matches so that each player is in one doubles match?  In how many
+      ways may we do it if we specify in addition who serves first on each team?
+      <solution>
+        <p>
+          We now have many methods for solving this problem. Perhaps the
+          easiest is to list all <m>(4n)</m> people and take them in groups of four for
+          doubles matches, with the first two in a group of four as one team and the
+          second two as another team. We note that interchanging the <m>n</m> blocks of 4
+          does not change the matches, nor does interchanging the two people on a
+          team nor interchanging the two teams. Thus we have <m>(4n)!/n!2^{3n}</m> ways to
+          arrange the matches. If we are to say who serves first on each team, we
+          might as well say it is the first of the two listed, so now we have
+          <m>(4n)!/n!2^n</m> ways to arrange the matches.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      A town has <m>n</m> streetlights running along the north side of main
+      street.  The poles on which they are mounted need to be painted so that they
+      do not rust.  In how many ways may they be painted with red, white, blue, and
+      green if an even number of them are to be painted green?
+      <solution>
+        <p>
+          We can think of first choosing the set of even size of poles to
+          be painted green, and the painting the remaining poles red, white, and blue.
+          We may do this in <m>\sum_{k=0}^{\lfloor n/2\rfloor}{n\choose 2k}3^{n-2k}</m>
+          ways.
+        </p>
+      </solution>
+      </p></li>
+
+    <li xml:id="pingpongpaint" ><p>
+      We have <m>n</m> identical ping-pong balls.  In how many ways may we
+      paint them red, white, blue, and green?
+      <solution>
+        <p>
+          We can line up the identical ping-pong balls and break them into
+          four groups, those of each color, by inserting dividers. If we want to paint
+          at least one in each color, we can choose three of the spaces between the
+          balls in which to insert dividers, so we can paint them in <m>n-1\choose k</m>.
+          But the problem didn't require us to use each color, so we can put two
+          dividers adjacent to each other. Thus there are <m>n+1</m> places where we can
+          put the first divider (putting it before all the balls means we use no red,
+          and putting it after all of them means we use no green. Now there are <m>n+2</m>
+          places where we can put the second divider, including before or after the
+          first, and <m>n+3</m> places where we can put the third divider. However if we
+          interchange two dividers we still paint the balls before the first divider
+          red, those between then next two white, and so on. Thus <m>3!=6</m> of these
+          arrangements of balls and dividers correspond to the same paint job, so the
+          number of ways to paint the balls is <m>{(n+1)(n+2)(n+3)\over6} ={n+3\choose
+          3}</m>. This suggests that another way to think of the problem is to consider
+          <m>n+3</m> slots in a row, and fill <m>n</m> of them with balls and <m>3</m> of them with
+          dividers; since the balls are identical and the dividers might as well be
+          identical, the number of ways to do this is the number of ways to choose the
+          slots that get dividers.
+        </p>
+      </solution>
+      </p></li>
+
+    <li><p>
+      We have <m>n</m> identical ping-pong balls.  In how many ways may we
+      paint them red, white, blue, and green if we use green paint on an even
+      number of them?
+      <solution>
+        <p>
+          We first decide how many balls to paint green, then paint the
+          remainder with the other three colors as in <xref ref="pingpongpaint">Problem</xref> This
+          gives us
+          <me>
+            \sum_{k=0}^{\lfloor n/2\rfloor}{n-2k+2\choose 2}
+          </me>
+          ways to paint the balls.
+        </p>
+      </solution>
+      </p></li>
+  </ol>
+</section>
