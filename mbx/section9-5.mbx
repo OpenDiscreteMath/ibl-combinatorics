@@ -1,0 +1,638 @@
+
+<section>
+  <title>The Exponential Formula</title>
+  <p>
+    Exponential generating functions turn out to be quite useful in advanced
+    work in combinatorics. One reason why is that it is often possible to
+    give a combinatorial interpretation to the composition of two exponential
+    generating functions. In particular, if
+    <m>f(x) =
+    \sum_{i=0}^n a_i{x^i\over i!}</m> and
+    <m>g(x) = \sum_{j=1}^\infty b_j {x^j\over j!}</m>, it makes sense to form the
+    composition <m>f(g(x))</m> because in so doing we need add together only
+    finitely many terms in order to find the coefficient of <m>x^n\over n!</m> in
+    <m>f(g(x))</m> since in the EGF <m>g(x)</m> the dummy variable <m>j</m> starts at 1.
+    Since our study of combinatorial structures has not been advanced enough
+    to give us applications of a general formula for the composition of the
+    EGF, we will not give here the combinatorial interpretation of this
+    composition. However we have seen some examples where one particular
+    composition can be applied. Namely, if <m>f(x) = e^x = \exp(x)</m>, then
+    <m>f(g(x)) =\ exp(g(x))</m> is well defined when <m>b_0=0</m>. We have seen three
+    examples in which an EGF is <m>e^{f(x)}</m>
+    where <m>f(x)</m> is another EGF. There is a fourth example in which the
+    exponential function is slightly hidden.
+  </p>
+
+  <problem xml:id="exp_oneblock_">
+    <p>
+      (essential for this or the next section)
+      If <m>f(x)</m> is the EGF for the number of partitions of an <m>n</m>-set
+      into one block, and <m>g(x)</m> is the EGF for the total number of partitions
+      of an
+      <m>n</m>-element set, that is, for the Bell numbers <m>B_n</m>, how are the two
+      generating functions related?
+    </p>
+    <solution>
+      <p>
+        The EGF for one-block partitions is <m>e^x-1</m> and for the Bell
+        numbers is <m>\exp(e^x-1)</m>, and so the EGF for the Bell numbers is
+        composition of the exponential function with the EGF for one block
+        partitions.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exp_oneortwo-cycle_">
+    <p>
+      (essential for this or the next section)
+      Let <m>f(x)</m> be the EGF for the number of
+      permutations of an <m>n</m>-element set with one cycle of size one or two.
+      What is
+      <m>f(x)</m>? What is the EGF <m>g(x)</m> for the number of permutations of an
+      <m>n</m>-element set all of whose cycles have size one or two, that is, the
+      number of involutions in <m>S_n</m>? How are these two exponential generating
+      functions related?
+    </p>
+    <solution>
+      <p>
+        There is one permutation with one cycle of size 1, and one
+        permutation with one cycle of size 2. Therefore the EGF for such
+        permutations is <m>x+{x^2\over 2!}= x+x^2/2</m>. The EGF for involutions
+        is <m>e^{x+x^2/2}</m>. Thus <m>g(x) = \exp(f(x))</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exp_two-cycle_">
+    <p>
+      (essential for this or the next section, and interesting)
+      Let <m>f(x)</m> be the EGF for the number of permutations of an
+      <m>n</m>-element set that have exactly one two-cycle and no other cycles.
+      Let
+      <m>g(x)</m> be the EGF for the number of permutations which are products of
+      two-cycles only, that is, for tennis pairings. (That is, they are not
+      a product of two-cycles and a nonzero number of one-cycles). What is
+      <m>f(x)</m>? What is
+      <m>g(x)</m>? How are these to exponential generating functions
+      related?
+    </p>
+    <solution>
+      <p>
+        The EGF <m>f(x)</m> for permutations of an <m>n</m> element set that have exactly
+        one two-cycle (and no other cycles) is <m>x^2\over 2!</m> or <m>x^2/2</m>. By
+        <xref ref="exponentialtennisparings">Problem</xref>, the EGF to permutations that are products
+        of two-cycles only is <m>\exp(x^2/2)</m>. Thus <m>g(x)=\exp(f(x))=e^{x^2/2}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exp_onecycle_">
+    <p>
+      (essential for this or the next section)
+      Let <m>f(x)</m> be the EGF for the number of
+      permutations of an <m>n</m>-element set that have exactly one cycle. (This is
+      the same as the EGF for the number of ways to arrange <m>n</m> people around a
+      round table.) Let <m>g(x)</m> be the EGF for the total number of permutations
+      of an <m>n</m>-element set. What is <m>f(x)</m>? What is <m>g(x)</m>? How are <m>f(x)</m>
+      and <m>g(x)</m> related?
+    </p>
+    <solution>
+      <p>
+        In <xref ref="exponentialroundtable">Problem</xref> we showed that <m>f(x) =
+        \ln\left({1\over 1-x}\right)</m>. In <xref ref="exponentialpermutations">Problem</xref>
+        we showed that <m>g(x)={1\over 1-x}</m>. Therefore <m>g(x)= \exp(f(x))</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    There was one element that our last four problems had in common. In each
+    case our EGF <m>f(x)</m> involved the number of structures of
+    a certain type (partitions, telephone networks, tennis pairings,
+    permutations) that used only one set of an appropriate kind. (That is, we
+    had a partition with one part, a telephone network consisting either of
+    one person or two people connected to each other, a tennis pairing of one
+    set of two people, or a permutation with one cycle.) Our EGF <m>g(x)</m> was
+    the number of structures of the same ``type" (we put type in quotation
+    marks here because we don't plan to define it formally) that could consist
+    of any number of sets of the appropriate kind. Notice that the order of
+    these sets was irrelevant. For example we don't order the blocks of a
+    partition and a product of disjoint cycles is the same no matter what
+    order we use to write down the product. Thus we were relating the EGF for
+    structures which were somehow ``building blocks" to the EGF for structures
+    which were sets of building blocks. For a reason that you will see
+    later, it is common to call the building blocks <em>connected</em><index><main>connected structures and EGFs</main></index><index><main>exponential
+    generating functions for connected structures</main></index> structures. Notice that
+    our connected structures were all based on nonempty sets, so we had no
+    connected structures whose value was the empty set. Thus in each case,
+    if <m>f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}</m>, we would have <m>a_0=0</m>.
+    The relationship between the EGFs was always
+    <m>g(x) = e^{f(x)}</m>. We now give a combinatorial explanation for
+    this relationship.
+  </p>
+
+  <problem xml:id="exponentialformula">
+    <p>
+    (essential for this or the next section)
+    Suppose that <m>S</m> is a set with a set-value function <m>V</m> from <m>S</m>
+    to a set
+    <m>Y</m> such that no element of <m>S</m> has the empty set as a value. Let <m>f(x)</m>
+    be the generating function for <m>S</m> according to the value function
+    <m>V</m>.
+    <ol>
+      <li><p>
+        In the power series
+        <me>
+          e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
+          \cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
+        </me>
+        the product principle tells us that the coefficient of <m>x^n\over n!</m> in
+        <m>f(x)^k</m> is the number of <m>k</m>-tuples of elements of <m>S</m> whose
+        values are disjoint sets whose union is any one particular subset <m>N</m> of
+        <m>Y</m> of size <m>n</m>.  How do you know that all of the elements of the
+        <m>k</m>-tuple are different?
+        <solution>
+          <p>
+            Because the coefficient of <m>x^0</m> is 0, there are no elements in <m>S</m> whose
+            value is the empty set.
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+        When you divide the coefficient of <m>x^n\over n!</m> in <m>f(x)^k</m> by
+        <m>k!</m>, it no longer counts <m>k</m>-tuples whose values are disjoint sets whose
+        union is that set <m>N</m>.  What does it count instead?  (Hint: how many
+        <m>k</m>-tuples can you form with a set of <m>k</m> distinct elements?)
+        <solution>
+          <p>
+            It counts <m>k</m>-element subsets since the entries of the
+            <m>k</m>-tuples are distinct.
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+        Why does this prove that the coefficient of <m>x^n\over n!</m> in
+        <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of th
+        elements of the subset partition any one particular set <m>N\subseteq T</m> of
+        size
+        <m>n</m>?
+        <solution>
+          <p>
+            We know that the coefficient of <m>x^n\over n!</m> in <m>e^{f(x)}</m> is
+            the sum over all <m>k</m> of the number of <m>k</m>-element subsets of <m>S</m> whose
+            values partition a particular set <m>N</m>. (The values must partition <m>N</m>
+            because none of them are empty, they are disjoint, and their union is
+            <m>N</m>.) This sum is the number of subsets of <m>S</m> such that the values of
+            the elements of the subset partition a particular set <m>N</m> of size <m>n</m>.
+          </p>
+        </solution>
+        </p></li>
+    </ol>
+    </p>
+  </problem>
+
+  <p>
+    In <xref ref="exponentialformula">Problem</xref> we proved the following theorem,
+    which is called the <em>exponential formula</em>.<index><main>exponential formula</main></index>
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        Suppose that <m>S</m> is a set with a set-value function <m>V</m> from it to a
+        set
+        <m>Y</m> such that no element of <m>S</m> has the empty set as a value. Let <m>f(x)</m>
+        be the generating function for <m>S</m> according to the value function
+        <m>V</m>. Then the coefficient of <m>x^n\over n!</m> in
+        <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of the
+        elements of the subset partition any one particular set <m>N\subseteq T</m> of
+        size
+        <m>n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    Since the statement of the theorem is rather abstract, let us see how it
+    applies to the examples in <xref ref="exp_oneblock_">Problems</xref>, <xref ref="exp_oneortwo-cycle_"></xref>, <xref ref="exp_two-cycle_"></xref> and <xref ref="exp_onecycle_"></xref>.
+    In <xref ref="oneblockpartitions">Problem</xref> our set <m>S</m> should consist of
+    one-block partitions of sets; that is, it should be a set of nonempty
+    sets. The value of a one-block partition will be the set it partitions,
+    and we want every subset (of a given size) of our set <m>Y</m> to be the value
+    of the same number of partitions. Thus we can take <m>S</m> to be the set of
+    all nonempty finite subsets of the positive integers and take <m>Y</m> to be
+    the set of positive integers. Since a partition of a set is a set of
+    blocks whose union is
+    <m>S</m>, a one block partition whose block is <m>B</m> is the set <m>\{B\}</m>. We take
+    <m>V(\{B\}) =B</m>. Then any nonempty finite subset of of the positive
+    integers is the value of exactly one member of <m>S</m>, and the empty set and
+    all infinite subsets of the positive integers are the value of exactly
+    zero members of <m>S</m>. Thus we have a value function. As you showed in
+    <xref ref="oneblockpartitions">Problem</xref> the generating function for partitions with just
+    one block is <m>e^x-1</m>. Thus by the exponential formula, <m>\exp(e^x-1)</m> is
+    the generating function for sets of subsets of the positive integers
+    whose values are disjoint sets whose union is any particular set <m>N</m> of
+    size <m>n</m>. Since the values are nonempty sets, this means they partition
+    the set <m>N</m>. Thus <m>\exp(e^x-1)</m> is the generating function for partitions
+    of sets of size <m>n</m>. (Technically, it is the generating function for
+    partitions of subsets of the integers of size <m>n</m>, but any two
+    <m>n</m>-element sets have the same number of partitions.)
+  </p>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Explain how the exponential formula proves the relationship we saw
+      in <xref ref="exp_onecycle_">Problem</xref>.
+    </p>
+    <solution>
+      <p>
+        We take <m>S</m> to be the set of permutations of sets of positive
+        integers that have just one-cycle. We take the value of a one-cycle
+        permutation to be the support set of the cycle. The number of one-cycle
+        permutations whose value is any given <m>n</m>-element set of positive
+        integers is <m>(n-1)!</m>, so we have defined a value function. We take the
+        set
+        <m>Y</m> to be the set of positive integers. Then by the Exponential Formula,
+        if
+        <m>f(x)</m> is the EGF for permutations with one cycle, <m>\exp(f(x))=g(x)</m> is
+        the EGF in which the coefficient of <m>x^n\over n!</m> is the number of sets of
+        permutations with one cycle whose support sets partition any given set <m>N</m>
+        of size
+        <m>n</m>. That is, the coefficient of <m>x^n\over n!</m> in <m>g(x)</m> is the the
+        number of products of disjoint cycles which partition any given set <m>N</m>;
+        that is, it is the EGF for permutations of
+        <m>N</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Explain how the exponential formula proves the relationship we saw
+      in <xref ref="exp_two-cycle_">Problem</xref>.
+    </p>
+    <solution>
+      <p>
+        We let <m>S</m> be the set of permutations of sets of positive
+        integers that consist of exactly one two-cycle. We take the set <m>Y</m>
+        to be the set of positive integers. We take the value of a
+        two-cycle to be its support set. Since the number of two-cycles with a
+        given support set is one, this is a value function. We saw in <xref ref="exp_two-cycle_">Problem</xref> that the EGF for
+        <m>S</m> with this value function is <m>x^2/2</m>. By the exponential formula, the
+        EGF for sets of disjoint two-cycles is <m>\exp(x^2/2)</m>. But a sets of
+        disjoint two-cycles correspond bijectively with permutations of subsets
+        of the positive integers which are products of disjoint two-cycles
+        (only), and this confirms the result of <xref ref="exponentialtennisparings">Problem</xref>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Explain how the exponential formula proves the relationship we saw
+      in <xref ref="exp_oneortwo-cycle_">Problem</xref>.
+    </p>
+    <solution>
+      <p>
+        We let the set <m>S</m> be the set of permutations of subsets of the
+        positive integers that consist of a one-cycle or consist of a two-cycle.
+        We let the set
+        <m>Y</m> be the set of positive integers. We let the value of a permutation
+        in <m>S</m> be the support set of its cycle. We saw in <xref ref="exp_oneortwo-cycle_">problem</xref> that the EGF for <m>S</m> is <m>x+x^2/2</m>. By the
+        exponential formula, the EGF for sets of disjoint one and two-cycles is
+        <m>e^x+x^2/2</m>. But there is a bijection between the sets of disjoint one
+        and two-cycles and permutations that are a product of disjoint one and
+        two-cycles. This confirms the result of <xref ref="telephonenetworkEGF">Problem</xref>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      In <xref ref="paintinglightpoles">Problem</xref> we saw that the generating
+      function for the number of ways to use four colors of paint to paint <m>n</m>
+      light poles along the north side of Main Street in Anytown was <m>e^{4x}</m>.
+      We should expect an explanation of this generating function using the
+      exponential formula. Let <m>S</m> be the set of all ordered pairs consisting
+      of a light pole and a color. Thus a given light pole occurs in four
+      ordered pairs. What is a natural set-value function on <m>S</m>? What is the
+      exponential generating function <m>f(x)</m> for <m>S</m> according to that value?
+      Assuming that there is no upper limit on the number of light poles, what
+      subsets of <m>S</m> does the exponential formula
+      tell us are counted by the coefficient of <m>x^n</m> in <m>e^{f(x)}</m>? How do
+      the sets being counted relate to ways to paint light poles?
+    </p>
+    <solution>
+      <p>
+        A natural set-value function on <m>S</m> assigns to each ordered pair the
+        singleton set consisting of the light pole in the pair. The EGF for <m>S</m>
+        according to that value is <m>4x</m>, because there are four ordered pairs
+        with any given value. Note that a set of ordered pairs whose values
+        partition a set <m>N</m> of light poles <m>N</m> is exactly a function from the set
+        <m>N</m> of light poles to the set of colors. Then by the exponential
+        formula, the generating function for the number of ways to paint <m>n</m>
+        light poles with four colors is <m>e^{4x}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+  One of the most spectacular applications of the exponential formula
+  is also the reason why, when we regard a combinatorial structure as a set
+  of building block structures, we call the building block structures <em>connected</em>. In Chapter 2 we introduced the idea of a connected graph and
+  in <xref ref="connectedanddisconnected">Problem</xref> we saw examples of graphs which were
+  connected and were not connected. A subset <m>C</m> of the vertex set of a
+  graph is called a <em>connected component</em><index><main>connected component
+  of a graph</main></index><index><main>graph</main><sub>connected component of</sub></index> of the graph if
+  <ul>
+    <li><p>
+        every vertex in <m>C</m> is
+        connected to every other vertex in that set by a walk whose vertices lie
+        in <m>C</m>, and
+      </p></li>
+
+    <li><p>
+        no other vertex in the graph is connected by a walk to any vertex
+        in <m>C</m>.
+      </p></li>
+  </ul>
+  </p>
+
+  <p>
+    In <xref ref="conncomp">Problem</xref> we showed that each connected component of a
+    graph consists of a vertex and all vertices connected to it by walks in
+    the graph.
+  </p>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Show that every vertex of a graph lies in one and only one
+      connected component of a graph. (Notice that this shows that the
+      connected components of a graph form a partition of the vertex set of the
+      graph.)
+    </p>
+    <solution>
+      <p>
+      Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
+      Then
+      <ul>
+        <li><p>
+            Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
+            that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
+          </p></li>
+
+        <li><p>
+            If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
+            it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
+            from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
+            <m>C</m> is connected by a walk to any vertex in <m>C</m>.
+          </p></li>
+      </ul>
+      </p>
+
+      <p>
+        Therefore <m>C</m> is a connected component containing <m>x</m>. If
+        connected component <m>D</m> contained <m>x</m>, then every vertex in <m>D</m> would be
+        connected by a walk to <m>x</m> and then by a walk from <m>x</m> to <m>v</m> for each
+        other vertex in <m>C</m>, and similarly, each vertex in <m>C</m> would be connected
+        to each vertex in <m>D</m>. Thus by the definition of connected component,
+        <m>C</m> and <m>D</m> would have to be the same set. Therefore each vertex lies in
+        one and only one connected component.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Explain why no edge of the graph connects two vertices in
+      different connected components.
+    </p>
+    <solution>
+      <p>
+        If an edge connected two vertices in different connected
+        components, that edge would give a walk from a vertex in one of the
+        connected components to a vertex in the other connected component, and
+        thus not in the first component, violating the second part of the
+        definition of a connected component.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Explain why it is that if <m>C</m> is a connected component of a
+      graph and
+      <m>E'</m> is the set of all edges of the graph that connect vertices in <m>C</m>,
+      then the graph with vertex set <m>C</m> and edge set
+      <m>E'</m> is a connected graph. We call this graph a <em>connected component
+      graph</em><index><main>connected component graph</main></index> of the original graph.
+    </p>
+    <solution>
+      <p>
+        If there is a walk between two vertices in a connected component, all
+        edges of the walk must connect two vertices in the connected component,
+        because if there were an edge in the walk that did not do so, it would
+        violate the second part of the definition of a connected component.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    The last sequence of problems shows that we may think of any graph as the
+    set of its connected component graphs. (Once we know them, we know all
+    the vertices and all the edges of the graph). Notice that a graph is
+    connected if and only if it has exactly one connected component. Since
+    the connected components form a partition of the vertex set of a graph,
+    the exponential formula will relate the generating function for the
+    number of connected graphs on <m>n</m> vertices with the generating function
+    for the number of graphs (connected or not) on <m>n</m> vertices. However
+    because we can draw as many edges as we want between two vertices of a
+    graph, there are infinitely many graphs on <m>n</m> vertices, and so the
+    problem of counting them is uninteresting. We can make it interesting by
+    considering <em>simple graphs</em>,<index><main>graph</main><sub>simple</sub></index><index><main>simple graph</main></index>
+    namely graphs in which each edge has two distinct endpoints and no two
+    edges connect the same two vertices. It is because connected graphs form
+    the building blocks for viewing all graphs as sets of connected components
+    that we refer to the building blocks for structures counted by the
+    generating functions in the exponential formula as connected
+    structures.<index><main>exponential formula</main><sub>connected structures for</sub></index>
+  </p>
+
+  <problem>
+    <p>
+    (essential for this or the next section, and interesting)
+    Suppose that <m>f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}</m> is
+    the exponential generating function for the number of simple
+    connected graphs on
+    <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}</m> is the
+    exponential generating function for the number of simple graphs on <m>i</m>
+    vertices.
+    <ol>
+      <li><p>
+        Is <m>f(x) = e^{g(x)}</m>, is <m>f(x) = e^{g(x)-1}</m>, is <m>g(x) = e^{f(x)-1}</m>
+        or is
+        <m>g(x) = e^{f(x)}</m>?
+        <solution>
+          <p>
+            To apply the exponential formula, we must take the exponential
+            function of an EGF whose constant term is zero, or in other words for a
+            set of elements whose values are nonempty sets. We can let <m>S</m> be the
+            set of nonempty connected graphs. (Technically, the graph with the empty
+            set of vertices and the empty set of edges is connected.) Therefore
+            <m>f(x) -1</m> is the EGF for <m>S</m>. By the exponential formula,
+            <m>g(x)=e^{f(x)-1}</m> because a simple graph may be thought of as a set of
+            simple connected graphs, namely its connected component graphs. (Note that
+            <m>g(x)</m> has 1 for its constant term, which corresponds to thinking of the
+            empty graph as having an empty set of nonempty connected components.)
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+        One of <m>a_i</m> and <m>c_n</m> can be computed by recognizing that a
+        simple graph on a vertex set <m>V</m> is completely determined by its edge set
+        and its edge set is a subset of the set of two element subsets of <m>V</m>. 
+        Figure out which it is and compute it.
+        <solution>
+          <p>
+            To specify a simple graph on a vertex set <m>V</m>, we have to
+            specify its set of edges. The possible sets of edges thus correspond
+            bijectively to sets of two-element subsets of <m>V</m>. But if <m>V</m> has size
+            <m>i</m> the set of all two element subsets of <m>V</m> has <m>i\choose 2</m> elements.
+            Thus the number of sets of two element subsets of <m>V</m> is <m>2^{i\choose
+            2}</m>. Therefore <m>a_i = 2^{i\choose 2}</m>.
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+        Write <m>g(x)</m> in terms of the natural logarithm of <m>f(x)</m>
+        or <m>f(x)</m> in terms of the natural logarithm of  <m>g(x)</m>.
+        <solution>
+          <p>
+            Since <m>g(x) = e^{f(x)-1}</m>, <m>f(x) = 1+ \ln g(x)</m>.
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+          Write <m>\log(1+y)</m> as a power series in <m>y</m>.
+          <solution>
+            <me>
+              \log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
+              (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
+            </me>
+          </solution>
+        </p></li>
+
+      <li><p>
+        Why is the coefficient
+        of
+        <m>x^0\over 0!</m> in <m>g(x)</m> equal to one?  Write <m>f(x)</m> as a power series in
+        <m>g(x) -1</m>.
+        <solution>
+          <p>
+            The coefficient of <m>x^0\over 0!</m> is 1 because there is one
+            graph on the empty set; the one with no edges.
+            <me>
+              f(x) = 1 +\ln(1 +
+              (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
+            </me>
+          </p>
+        </solution>
+        </p></li>
+
+      <li><p>
+        You can now use the previous parts of the Problem to find a formula
+        for <m>c_n</m> that involves summing over all partitions of the integer <m>n</m>. 
+        (It isn't the simplest formula in the world, and it isn't the easiest
+        formula in the world to figure out, but it is nonetheless a formula
+        with which one could actually make computations!)  Find such a  formula.
+        <solution>
+          <me>
+            f(x) = 1+\sum_{j=1}^\infty
+            (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
+            (-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.
+          </me>
+          <p>
+            From the right-hand expression, we get a term involving <m>x^n</m> whenever we
+            have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{i\choose
+            2}{x^i\over i!}</m>. So the coefficient of
+            <m>x^n\over n!</m> is the sum over all <m>j</m> and all sequences
+            <m>i_1,i_2,\ldots,i_j</m> with
+            <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
+            <me>
+              {n!\over
+              j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
+              \over i_k!},
+            </me>
+            where each <m>i_k>0</m>. Notice that reordering the numbers
+            <m>i_1</m>, <m>i_2</m>, <ellipsis /> <m>i_k</m> does not change the value of the expression.
+            The sequence of <m>i_k</m>s is a composition of <m>n</m> into positive parts. If
+            we knew how many compositions of <m>n</m> into <m>j</m> parts correspond to one
+            partition of <m>n</m> into <m>j</m> parts, we could sum over a much smaller set of
+            terms. If we use the type vector notation for a partition, namely that
+            it has <m>p_1</m> parts of size 1, <m>p_2</m> parts of size 2, <ellipsis />, <m>p_n</m> parts
+            of size <m>n</m>, then the number of compositions corresponding to that
+            partition, i.e. the number of compositions with the type vector
+            <m>(p_1,p_2, \ldots, p_n)</m> is the number of ways to take <m>j</m> places in a
+            vector and label <m>p_1</m> of them with 1, <m>p_2</m> of them with 2, and so on
+            until we label <m>p_n</m> of them with <m>n</m>. This number is the multinomial
+            coefficient <m>j\choose p_1,p_2,\ldots, p_n</m>. Thus our sum over all j and
+            all compositions of <m>n</m> into <m>j</m> parts becomes
+            <me>
+              \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+              rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
+              p_n}
+              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+              \over (r!)^{p_r}}.
+            </me>
+          </p>
+
+          <p>
+            We can remove one of the summation signs and the
+            condition that <m>\sum_{r=1}^n p_r=j</m> by substituting <m>\sum_{r=1}^n p_r</m>
+            for <m>j</m>, and we get
+            <me>
+              \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+              rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
+              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+              \over (r!)^{p_r}p_r!}
+            </me>
+            for the number of connected graphs on <m>n</m> vertices. If we want to
+            shorten the appearance of the formula we can keep <m>j</m> in our sum and
+            explain its value afterwards, as in
+            <me>
+              \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+              rp_r =n }}{n!}(-1)^j(j-1)!
+              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+              \over (r!)^{p_r}p_r!},
+            </me>
+            where <m>j=\sum_{r=1}^n p_r</m>.
+          </p>
+        </solution>
+        </p></li>
+    </ol>
+    </p>
+  </problem>
+
+  <p>
+    The point to the last problem is that we can use the exponential formula
+    in reverse to say that if <m>g(x)</m> is the generating function for the
+    number of (nonempty) connected structures of size <m>n</m> in a given family of
+    combinatorial structures and <m>f(x)</m> is the generating function for all
+    the structures of size <m>n</m> in that family, then not only is <m>f(x) =
+    e^{g(x)}</m>, but <m>g(x) = \ln(f(x))</m> as well. Further, if we happen to have
+    a formula for either the coefficients of <m>f(x)</m> or the coefficients of
+    <m>g(x)</m>, we can get a formula for the coefficients of the other one!
+  </p>
+</section>

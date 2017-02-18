@@ -1,0 +1,655 @@
+
+<section>
+  <title>The product principle</title>
+  <p>
+    One of our major tools for ordinary
+    generating functions was the product principle. It is thus natural to
+    ask if there is a product principle for exponential generating functions.
+    In <xref ref="exponentialbookshelf">Problem</xref> you likely found that the
+    EGF for the number of ways of arranging <m>n</m>
+    books on one shelf was exactly the same as the EGF for the number of
+    permutations of <m>[n]</m>, namely <m>1\over 1-x</m> or
+    <m>(1-x)^{-1}</m>. Then using our formula from <xref ref="bookcase">Problem</xref> and the
+    generating function for multisets, you probably found that the EGF for
+    number of ways of arranging <m>n</m> books on some fixed number
+    <m>m</m> of bookshelves was <m>(1-x)^{-m}</m>. Thus the EGF for <m>m</m> shelves is a
+    product of <m>m</m> copies of the EGF for one
+    shelf.
+  </p>
+
+  <problem xml:id="paintinglightpoles2">
+    <p>
+      (motivation)
+      In <xref ref="paintinglightpoles">Problem</xref> what would
+      the exponential generating function have been if we had asked for the
+      number of ways to paint the poles with just one color of paint? With two
+      colors of paint? What is the relationship between the EGF for painting the
+      <m>n</m> poles with one color of paint and the EGF for painting the
+      <m>n</m> poles with four colors of paint? What is the
+      relationship between the EGF
+      for painting the <m>n</m> poles with two colors of
+      paint and the EGF for painting
+      the poles with four colors of paint?
+    </p>
+    <solution>
+      <p>
+        With one color of paint, there would have been one way to paint
+        each pole so our EGF would be <m>\sum_{n=0}^\infty {x^n\over n!}</m>, or
+        <m>e^x</m>. With two colors of paint, it would be <m>e^{2x}</m> by analogy with
+        the solution to <xref ref="paintinglightpoles">Problem</xref>. Thus the EGF for two
+        colors of paint would be the square of the EGF for one color of paint.
+        The EGF for four colors of paint is the fourth power of the EGF for one
+        color of paint and the square of the EGF for two colors of paint.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    In <xref ref="telephonenetwork">Problem</xref> you
+    likely found that the EGF for the number of
+    network configurations with <m>n</m> customers was <m>e^{x+x^2/2}= e^x \cdot
+    e^{x^2/2}</m>. In <xref ref="allonessequence">Problem</xref> you saw that the generating
+    function for the number of permutations on <m>n</m> elements that are
+    products of one cycles was
+    <m>e^x</m>, and in <xref ref="exponentialtennisparings">Problem</xref> you likely found that
+    the EGF for the number of tennis pairings of
+    <m>2n</m> people, or equivalently, the number of permutations of <m>2n</m> objects
+    that are products of <m>n</m> two-cycles is <m>e^{x^2/2}</m>.
+  </p>
+
+  <problem xml:id="x2cyclesand1cycles">
+    <p>
+      (essential for this or the next section)
+      What can you say about the relationship among the EGF for the
+      number of permutations that are products of disjoint two-cycles and
+      one-cycles, i.e., are involutions, the exponential generating function for
+      the number of permutations that are the product of disjoint two-cycles
+      only and the generating function for the number of permutations that are
+      the product of disjoint one cycles
+      only?
+    </p>
+    <solution>
+      <p>
+        The EGF for involutions in <m>S_n</m>
+        is the product of the EGF for the permutations in <m>S_n</m> that are products
+        of <m>n/2</m> two-cycles, and the EGF for permutations in <m>S_n</m> that are
+        products of <m>n</m> one-cycles.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    In <xref ref="exponentialderangements">Problem</xref> you likely found that the
+    EGF for the number of permutations of <m>[n]</m>
+    that are derangements is <m>e^{-x}\over 1-x</m>. But every permutation is a
+    product of derangements and one cycles, because the permutation that
+    sends <m>i</m> to <m>i</m> is a one-cycle, so that when you factor a permutation as
+    a product of disjoint cycles, the cycles of size greater than one
+    multiply together to give a derangement, and the elements not moved by
+    the permutation are one-cycles.
+  </p>
+
+  <problem xml:id="derangementsand1cycles">
+    <p>
+      (essential for this or the next section)
+      If we multiply the generating function for derangements times the
+      generating function for the number of permutations that are products of
+      one-cycles only, what EGF for what set of permutations do
+      we get? (Notice that there are two questions
+      here.)
+    </p>
+    <solution>
+      <p>
+        We get the EGF <m>1\over 1-x</m>
+        for all permutations of <m>[n]</m>. Notice that any permutation is a product
+        of a derangement of the elements not fixed by the permutation times the
+        one cycles of elements that are fixed by the permutation.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    We now have four examples in which the EGF
+    for a sequence or a pair of objects is the product of the EGFs for the
+    individual objects making up the sequence or pair.
+  </p>
+
+  <problem xml:id="exponentialpp1">
+    <p>
+      (essential for this or the next section)
+      What is the coefficient of <m>x^n\over n!</m> in the product of two
+      EGFs <m>\sum_{i=0}^\infty a_i{x^i\over i!}</m> and <m>\sum_{j=0}^\infty
+      b_j{x^j\over j!}</m>? (A summation sign is appropriate in your
+      answer.)
+    </p>
+    <solution>
+      <me>
+        \sum_{i,j\mbox{:\ } 
+        i+j=n} n!{a_i\over i!}{b_j \over j!},
+      </me>
+      <p>
+        which can be better
+        written as
+        <me>
+          \sum_{i=0}^n{n!\over i!(n-i)!} a_i
+          b_{n-i}=\sum_{i=0}^n{n\choose i} a_i b_{n-i}.
+        </me>
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    Our product principle for ordinary generating functions involved the idea
+    of a value function. In particular, if we have a set <m>S</m> of objects we
+    call a function <m>v</m> from <m>S</m> into the nonnegative
+    integers a <em>value function</em>. Our combinatorial interpretation of the
+    product of ordinary generating functions in <xref ref="ProductPrincipleOGF">Problem</xref> is the following theorem.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        Suppose we have a set <m>S</m> with a value function <m>v</m> from
+        <m>S</m> into the nonnegative integers and a set
+        <m>T</m> with a value function
+        <m>u</m>
+        from <m>T</m> into the nonnegative integers. If
+        <m>a_i</m> is the number of objects <m>s</m> in <m>S</m> with value <m>v(s) =i</m> and <m>b_j</m>
+        is the number of objects <m>t</m> in <m>T</m> with value <m>u(t)= j</m>, and <m>c_n</m> is
+        the number of ordered pairs <m>(s,t)</m> of objects in <m>S\times T</m> with total
+        value <m>v(s) + u(t) =n</m>, then the ordinary generating function for <m>c_n</m>
+        is the product of the ordinary generating function for <m>a_i</m> and the
+        ordinary generating function for <m>b_j</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <p>
+    We ask if there is a similar
+    interpretation for the products of exponential generating functions we
+    have just seen. In the case of painting streetlight poles in <xref ref="paintinglightpoles2">Problem</xref>, what is important is not just how many
+    light poles are painted with each color, but which set of poles is painted
+    with each color. Let us examine the relationship between the EGF for
+    painting poles with two colors, <m>e^{2x}</m> and the EGF for painting poles
+    with four colors,
+    <m>e^{4x}</m>. To be specific, the EGF for painting poles red and white is
+    <m>e^{2x}</m> and the EGF for painting poles blue and yellow is <m>e^{2x}</m>. To
+    decide how to paint poles with red, white, blue, and yellow, we can decide
+    which set of poles is to be painted with red and white, and which set of
+    poles is to be painted with blue and yellow. Notice that the number of
+    ways to paint a set of poles with red and white depends only on the size
+    of that set, and the number of ways to paint a
+    set of poles with blue and yellow depends only on the size of that set.
+    (It is a coincidence that the number of ways to paint a set of poles with
+    red and white equals the number of ways to paint the same set of poles
+    with blue and yellow. The coincidence is the result of trying to keep our
+    example simple!)
+  </p>
+
+  <problem xml:id="exponentialpp2">
+    <p>
+      (essential for this or the next section)
+      Suppose that <m>a_i</m> is the number of ways to paint a set of <m>i</m>
+      poles with red and white, and <m>b_j</m> is the number of ways to paint a set
+      of
+      <m>j</m> poles with blue and yellow. In how many ways may we take a set <m>N</m>
+      of
+      <m>n</m> poles, divide it up into two sets <m>I</m> and <m>J</m> (using <m>i</m> to stand for
+      the size of <m>I</m> and <m>j</m> to stand for the size of the set <m>J</m>, and
+      allowing <m>i</m> and <m>j</m> to vary) and paint the poles in <m>I</m> red and white
+      and the poles in <m>J</m> blue and yellow? (Don't figure out formulas for
+      <m>a_i</m> and <m>b_j</m> to use in your answer; that will make it harder to get
+      the point of the problem!) How does this relate to <xref ref="exponentialpp1">Problem</xref>?
+    </p>
+    <solution>
+      <p>
+        <m>{n\choose i}a_ib_j</m>. This shows that the coefficient of <m>x^n\over n!</m>
+        in the EGF for painting poles with four colors is the coefficient of
+        <m>x^n\over n!</m> in the product of the EGF for painting poles with two
+        colors and the EGF for painting poles with two colors.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    <xref ref="exponentialpp2">Problem</xref> shows that the formula you got for the
+    coefficient of <m>x^n\over n!</m> in the product of two EGFs is the formula we
+    get by splitting a set <m>N</m> of poles into two parts and painting the poles
+    in the first part with red and white and the poles in the second part with
+    blue and yellow. More generally, you could interpret your result in
+    <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>x^n\over
+    n!</m> in the product <m>\sum_{i=0}^\infty a_i {x^i\over i!}
+    \sum_{j=0}^\infty b_j{x^j\over j!}</m> of two EGFs is the sum, over all
+    ways of splitting a set
+    <m>N</m> of size
+    <m>n</m> into an ordered pair of disjoint sets <m>I</m> and <m>J</m>, of the product
+    <m>a_{|I|}b_{|J|}</m>. In contrast, when we multiplied ordinary generating
+    functions, the coefficient of
+    <m>x^n</m> in
+    <m>\sum_{i=0}^\infty a_i x^i
+    \sum_{j=0}^\infty b_j x^j</m> is the sum of all <m>a_ib_j</m> over ordered
+    pairs of integers <m>i</m> and <m>j</m> with <m>i + j=n</m>. In our combinatorial
+    interpretation of the product of two ordinary generating functions, we
+    had two sets <m>S</m> and <m>T</m> of objects, <m>a_i</m> was the number of objects in
+    <m>S</m> of value <m>i</m>, <m>b_j</m> was the number of objects in <m>T</m> of value <m>j</m>, and
+    <m>i+j</m> was the total value of an ordered pair of objects, one from <m>S</m> and
+    one from <m>T</m>. In painting poles for streetlights, what was important was
+    not only the number of poles we selected to paint red and white, but the
+    actual <em>set</em> of poles we selected to paint red and white. This
+    suggests that the value of a selection in this context ought to be a set
+    instead of simply an integer, even though the size of the set will still
+    play a role. For example, the number of ways of paint the poles in a set
+    red and white depends only on the size of the set, and not which set we
+    choose, but in forming the product of the exponential generating
+    functions, we have to analyze all ways of choosing a set of that size.
+    This suggests that to get a combinatorial interpretation of the product of
+    EGFs we should consider a different kind of value function, one whose
+    values are sets and not integers. Thus what we want to consider is a
+    ``set-valued value function." Since this is a mouthful to say, we will
+    shorten it in the definition that follows. We define a <em>set-value
+    function</em> from a set
+    <m>S</m> to a set
+    <m>Y</m> to be a function
+    <m>V</m> from <m>S</m> to the set of subsets of <m>Y</m> such that for all subsets <m>I</m> of
+    <m>Y</m> of the same size, the number of elements <m>s</m> of <m>S</m> whose value
+    <m>V(s)</m> is <m>I</m> is the same. For example if <m>S</m> is all ways of painting
+    some of the street light poles on the north side on Main Street using red
+    and white, and if
+    <m>V(s)</m> is the set of poles actually painted red or white, then the number
+    of ways to paint some of the poles red and white depends on the size of
+    the set of poles being painted, so for each set of poles of a given size,
+    the number of ways to paint that set of poles using red and white is the
+    same.
+  </p>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      In <xref ref="exponentialbookshelf">Problem</xref>, why is the set of books
+      that we actually put onto a shelf a set-value function on the set of
+      all ways to put some of the books on that shelf?
+    </p>
+    <solution>
+      <p>
+        Because the number of ways to put a set <m>S</m> of books onto a
+        shelf is the same (namely <m>|S|!</m>) for all sets <m>S</m> of the same size.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      In <xref ref="telephonenetwork">Problem</xref>, why is the set of people
+      actually using their phones a set-value function (assume nobody is
+      calling outside the telephone network)? Equivalently, given an
+      involution, that is, a permutation that is a product of two cycles and one
+      cycles, why is the set of elements that are actually in two-cycles a
+      set-value function? Why is the set of people who are not using their
+      phones (or, equivalently, the set of elements in a product of two-cycles
+      and one-cycles that are in one-cycles) a set-value function?
+    </p>
+    <solution>
+      <p>
+        Because the number of ways to break a given set of <m>2n</m> people into
+        two-cycles depends only on <m>n</m> and not the particular set of <m>2n</m> people
+        we choose. The number of ways to break up a set of size <m>n</m> into
+        one-cycles is one, so it doesn't depend on which set of size <m>n</m> we are
+        breaking up. (In fact it doesn't depend on <m>n</m> either, but that is
+        irrelevant here.)
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exponentialpp3">
+    <p>
+      (essential for this or the next section, and interesting)
+      If <m>S</m> is a set of objects with <m>V</m> a set-value function from
+      <m>S</m> to some set <m>Y</m> and <m>T</m> is a set of objects with <m>U</m> a set-value
+      function from <m>T</m> to the same set <m>Y</m>, then what is the relationship
+      among the EGF for the number
+      <m>a_i</m> of elements of <m>S</m> whose set-value is any one particular set of
+      size
+      <m>i</m>, the EGF for the number <m>b_j</m> of elements of <m>T</m> whose set-value is
+      any one particular set of size
+      <m>j</m> and the EGF for the number <m>c_n</m> of ordered pairs <m>(s,t)</m> in <m>S\times
+      T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets whose union
+      is any one particular set of size <m>n</m>?
+    </p>
+    <solution>
+      <p>
+        The EGF for <m>a_i</m> times the EGF for <m>b_j</m> is the EGF for <m>c_n</m>. Stated
+        as a theorem,
+      </p>
+
+      <paragraphs>
+        <title>Solution-Theorem</title>
+        <p>
+          If <m>S</m> is a set of objects with <m>V</m> a set-value function from <m>S</m>
+          to some set <m>Y</m> and the EGF for the number <m>a_i</m> of elements of <m>S</m> whose
+          <m>V</m>-value is any particular set <m>N</m> of size <m>n</m> is <m>f(x)=\sum_{n=0}^\infty
+          a_n{x^n\over n!}</m> and
+          <m>T</m> is a set of objects with
+          <m>U</m> a set-value function from <m>T</m> to the same set <m>Y</m> and the EGF for the
+          number of elements <m>b_n</m> of <m>T</m> whose <m>U</m>-value is any particular set <m>N</m>
+          of size <m>n</m> is <m>g(x) = \sum_{i=0}^\infty b_n{x^n\over n!}</m>, then the EGF
+          for
+          the number <m>c_n</m> of ordered pairs <m>(s,t)</m> in
+          <m>S\times T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets
+          whose union is any one particular set of size <m>n</m> is <m>f(x)g(x)</m>. That
+          is, the number of ordered pairs of the type described is the coefficient
+          of <m>x^n\over n!</m> in <m>f(x)g(x)</m>.
+        </p>
+      </paragraphs>
+      <p>
+        The proof consists of interpreting <xref ref="exponentialpp1">Problem</xref> in this context.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    The theorem you proved in <xref ref="exponentialpp3">Problem</xref> is called the <em>product principle for exponential generating functions</em><index><main>product
+    principle for exponential generating functions</main></index><index><main>exponential
+    generating functions</main><sub>product principle for</sub></index><index><main>generating
+    function</main><sub>exponential!product principle for</sub></index>.
+  </p>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Use the product principle for EGFs to explain the results of
+      <xref ref="x2cyclesand1cycles">Problems</xref> and <xref ref="derangementsand1cycles"></xref>.
+    </p>
+    <solution>
+      <p>
+        Every involution is a unique product of disjoint two-cycles and
+        one-cycles, so we can think of it as an ordered pair of whose first entry
+        is a set of disjoint two-cycles and whose second element is a set of
+        disjoint one-cycles. The value of a set of two-cycles is the union of
+        their support sets and the value of a set of one-cycles is the union of
+        their support sets. Then the EGF for involutions is the product of the
+        EGF for permutations that are the product of only disjoint two-cycles and
+        the EGF for permutations that are the product of only disjoint one-cycles
+        (i.e. identity permutations).
+      </p>
+
+      <p>
+        We noted in the solution to <xref ref="derangementsand1cycles">Problem</xref> that
+        every permutation is the product of a derangement (on the elements that
+        are not fixed by the permutation) and a product of one cycles (on the
+        elements that are fixed by the permutation). Thus we can think of every
+        permutation as an ordered pair consisting of a derangement and a product
+        of one-cycles, and the product principle tells us that the EGF for all
+        permutations is the product of the EGF for derangements and the EGF for
+        identity permutations.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    The product principle for EGFs has a natural extension to a product of
+    some arbitrary number <m>k</m> of exponential generating functions. Instead
+    of dealing with ordered pairs, it deals with (ordered) <m>k</m>-tuples. Since
+    it is inconvenient to state unless one is careful with notation, we will
+    state it here. The proof would be quite similar to your proof in <xref ref="exponentialpp3">Problem</xref>.
+  </p>
+
+  <theorem>
+    <statement>
+      <p>
+        If <m>f_1(x)</m>, <m>f_2(x)</m>, <ellipsis />, <m>f_k(x)</m> are the
+        exponential generating functions for sets <m>S_1</m>, <m>S_2</m>, <ellipsis />, <m>S_k</m>
+        according to the set-value functions <m>V_1</m>, <m>V_2</m>, <ellipsis />, <m>V_k</m>, then
+        <m>f_1(x)f_2(x)\cdots f_k(x)</m> is the exponential generating function for the
+        number
+        <m>c_n</m> of (ordered) <m>k</m>-tuples <m>(s_1,s_2,\ldots,s_k)</m> with <m>s_i\in S_i</m>
+        such that
+        <m>V_1(s_1)</m>, <m>V_2(s_2)</m>, <ellipsis />, <m>V_k(s_k)</m> are disjoint sets whose union
+        is any one particular set <m>N</m> of size <m>n</m>.
+      </p>
+    </statement>
+  </theorem>
+
+  <corollary xml:id="EGFtothen">
+    <statement>
+      <p>
+        If <m>f(x)</m> is the exponential generating function for
+        a set <m>S</m> according to the set-value function <m>V</m>, then <m>f(x)^k</m> is the
+        exponential generating function in which <m>a_n</m> is the number of
+        <m>k</m>-tuples of elements of <m>S</m> whose values are disjoint sets whose union
+        is any particular set of size <m>n</m>.
+      </p>
+    </statement>
+  </corollary>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Use the general product principle for EGFs or its corollary to
+      explain the relationship between the EGF for painting streetlight poles
+      in only one color and the EGF for painting streetlight poles in <m>4</m>
+      colors in <xref ref="paintinglightpoles">Problems</xref> and <xref ref="paintinglightpoles2"></xref>.
+      What is the generating function
+      for the number <m>p_n</m> of ways to paint <m>n</m> streetlight poles
+      with some fixed number <m>k</m> of colors of paint.
+    </p>
+    <solution>
+      <p>
+        We can think of a painting of a set of street poles as a four-tuple of
+        sets, the sets painted each of the four colors. Then <xref ref="EGFtothen">Corollary</xref> tells us that the EGF for such four-tuples is the fourth
+        power of the EGF for the number of ways to paint streetlight poles with
+        one color. The EGF for painting streetlight poles with <m>k</m> colors of
+        paint is <m>e^{kx}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      Use the general product principle for EGFs or its corollary to
+      explain the relationship between the EGF for arranging books on one shelf
+      and the EGF for arranging books on
+      <m>n</m> shelves in <xref ref="exponentialbookshelf">Problem</xref>.
+    </p>
+    <solution>
+      <p>
+        An arrangement of books on <m>n</m> shelves may be thought of as a <m>n</m>-tuple
+        of arrangements of books on one shelf, and the value of an arrangement
+        may be taken to be the set of books actually on the shelf (or shelves).
+        The <xref ref="EGFtothen">Corollary</xref> tells us that the EGF is the <m>n</m>th power of
+        the EGF for arranging books on one shelf, which is the EGF for
+        permutations. Thus the EGF for arranging books on <m>n</m> shelves is
+        <m>(1-x)^{-n}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (interesting)
+      (Optional) Our very first example of exponential generating
+      functions used the binomial theorem to show that the EGF for <m>k</m>-element
+      permutations of an <m>n</m> element set is <m>(1+x)^n</m>. Use the EGF for
+      <m>k</m>-element permutations of a one-element set and the product principle
+      to prove the same thing. Hint: Review the alternate definition of a
+      function in <xref ref="orderedfunctionsection">Section</xref>.
+    </p>
+    <solution>
+      <p>
+        In <xref ref="orderedfunctionsection">Section</xref> we remarked that an
+        alternate definition of a function from <m>S</m> to <m>T</m> is that it is an
+        assignment of disjoint subsets of <m>S</m> to elements of <m>T</m> so that the
+        union of the subsets is <m>S</m>. Thus a function from <m>[k]</m> to <m>[n]</m> may be
+        thought of as an <m>n</m>-tuple of disjoint subsets of <m>S</m> whose union is
+        <m>[k]</m>. In particular, an injection from <m>[k]</m> to <m>[n]</m> (which is a
+        <m>k</m>-element permutation of <m>[n]</m>) can be thought of as a <m>n</m>-tuple of
+        disjoint singleton sets and empty sets whose union is <m>n</m>. The number of
+        such <m>n</m>-tuples is therefore the number of <m>k</m>-element permutations of
+        <m>[n]</m>. If <m>n=1</m>, the possible <m>n</m>-tuples are <m>(\emptyset)</m> and <m>\{1\}</m>,
+        and so the EGF for such <m>n</m>-tuples is <m>1+x</m>. Then by
+        <xref ref="EGFtothen">Corollary</xref>, if we let the value of an <m>n</m>-tuple of
+        disjoint singletons and empty sets be the union of the sets in the
+        <m>n</m>-tuple, the EGF for the number of <m>n</m>-tuples whose value is <m>[k]</m> is
+        <m>(1+x)^n</m>. Thus this is the EGF for <m>k</m>-element permutations of
+        <m>[n]</m>.
+      </p>
+    </solution>
+    <p>
+      \item What is the EGF for the number of ways to paint <m>n</m>
+      streetlight poles red, white blue, green and yellow, assuming an even
+      number of poles must be painted green and an even number of poles must be
+      painted yellow?
+    </p>
+    <solution>
+      <p>
+        By the product principle for exponential generating functions it
+        is
+        <me>
+          e^{2x}\left(1+{(2x)^2\over 2!}+ {(2x)^4\over 4!} + \cdots \right) =
+          e^{2x}{e^{2x}-e^{-2x}\over2}=e^{2x}\cosh(2x).
+        </me>
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section, and interesting)
+      What is the EGF for the number of functions from an
+      <m>n</m>-element set onto a one-element set? (Can there be any functions
+      from the empty set onto a one-element set?) What is the EGF for the
+      number
+      <m>c_n</m> of functions from an <m>n</m>-element set onto a
+      <m>k</m> element set (where <m>k</m> is fixed)? Use this EGF to find an explicit
+      expression for the number of functions from a <m>k</m>-element set onto an
+      <m>n</m>-element set and compare the result with what you got by inclusion and
+      exclusion.
+    </p>
+    <solution>
+      <p>
+        There are no onto functions from a <m>0</m>-element set to a
+        <m>1</m>-element set; otherwise there is exactly one function from an
+        <m>n</m>-element set onto a one element set so the EGF for functions from an
+        <m>n</m>-element set onto a one element set is <m>e^x-1</m>. A function from an
+        <m>n</m>-element set onto a <m>k</m>-element set may be thought of as a <m>k-tuple</m>
+        of functions from disjoint subsets whose union is the <m>n</m>-element set
+        onto the one element subsets of the <m>k</m>-element set. Therefore by the
+        corollary to the product principle for EGFs the EGF for functions from an
+        <m>n</m>-element set onto a <m>k</m>-element set is <m>(e^x-1)^k</m>. By the binomial
+        theorem, this is
+        <me>
+          \kern-.25 in\sum_{i=0}^k{k\choose i}(-1)^{k-i}e^{ix} 
+          =
+          \sum_{i=0}^k {k\choose i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
+          \sum_{i=0}^k (-1)^{k-i}{k\choose i} \sum_{j=0}^\infty i^j{(x)^j\over
+          j!}.
+        </me>
+      </p>
+
+      <p>
+        Thus <m>c_n= \sum_{i=0}^k(-1)^{k-i}{k\choose i}n^i</m>, which is consistent
+        with the formula we got by inclusion and exclusion.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="BellNumbersEGF">
+    <p>
+      (essential for this or the next section, and interesting)
+      In <xref ref="BellNumberIntro">Problem</xref> You showed that the Bell Numbers
+      <m>B_n</m> satisfy the equation
+      <m>B_{n+1} =
+      \sum_{k=0}^{n} {n\choose k}B_{n-k}</m> (or a similar equation for <m>B_n</m>.)
+      Multiply both sides of this equation by <m>x^n\over n!</m> and sum from <m>n=0</m>
+      to infinity. On the left hand side you have a derivative of a certain
+      EGF we might call <m>B(x)</m>. On the right hand side, you
+      have a product of two EGFs, one of which is <m>B(x)</m>. What is the other
+      one? What differential equation involving <m>B(x)</m> does this give you.
+      Solve the differential equation for <m>B(x)</m>. This is the EGF for the
+      Bell numbers!.
+    </p>
+    <solution>
+      <me>
+        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty{n\choose
+        k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
+        (i)!}\sum_{j=0}^\infty {x^j\over j!}.
+      </me>
+      <p>
+        Thus <m>B'(x) = B(x)e^x</m>, which gives us <m>\ln B(x) = e^x+c</m>, or <m>B(x) =
+        e^{ex+c} =e^ce^{(e^x)}</m>. Since <m>B_0=B(0)</m> and <m>B_0=1</m>, we have <m>c=-1</m> and
+        <m>B(x) = \exp(e^x-1)</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (interesting)
+      Prove that <m>n2^{n-1} = \sum_{k=1}^n {n\choose k}k</m> by using
+      EGFs.
+    </p>
+    <solution>
+      <p>
+        By the product principle for EGFs, the EGF for the right hand
+        side is
+        <me>
+          e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty {(2x)^i\over i!} =
+          \sum_{j=1}^\infty 2^{j-1}{x^j\over (j-1)!}=\sum_{j=1}^\infty
+          j2^{j-1}{x^j\over j!}.
+        </me>
+      </p>
+
+      <p>
+        Thus the coefficient of <m>x^n\over n!</m> is
+        <m>n2^{n-1}</m>, as well as <m>\sum_{k=1}^n {n\choose k}k</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (essential for this or the next section)
+      In light of <xref ref="oneblockpartitions">Problem</xref>, why is the EGF for
+      the Stirling numbers
+      <m>S(n,k)</m> of the second kind not
+      <m>(e^x -1)^n</m>? What is it equal to instead?
+    </p>
+    <solution>
+      <p>
+        Notice that a one block partition is the same thing as a
+        function from that block onto a one element set. However a partition
+        with <m>n</m> blocks is not an <m>n</m>-tuple of blocks, but rather a set of <m>n</m>
+        blocks. An <m>n</m>-tuple of blocks corresponds to a function from the union
+        of the blocks onto an <m>n</m>-element set, and <m>n!</m> different onto functions
+        correspond to the same partition into <m>n</m> blocks. Thus the EGF for
+        partitions of an <m>n</m>-element set into <m>k</m> parts (where <m>n</m> is fixed but
+        <m>k</m> varies) is <m>{1\over n!} (e^x -1)^n</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <p>
+    The idea of the set-value function in the product principle for
+    exponential generating functions helps to resolve a mystery that you may
+    have been consciously or unconsciously wondering about. How do we know
+    when ordinary generating functions will be most useful and how do we know
+    when exponential generating functions will be most useful? When we are
+    in a situation<mdash />such as distributing fruit to children, or partitioning
+    an integer<mdash />where a combinatorial structure is determined by the number
+    of objects of a certain type (for example a partition of an integer is
+    determined by the number of ones, the number of twos and so on), ordinary
+    generating functions are most likely to be useful. However when what
+    determines a combinatorial structure is the set of objects, or some
+    structure (such as a permutation) on a set of objects, then exponential
+    generating functions are most likely to be useful. In particular, in
+    situations where our structure comes with labels, then exponential
+    generating functions are likely to be useful. However there is a grey
+    area. When we are distributing identical candy to children, the children
+    are labelled (they have names), but the candy is not. Experience tells
+    us, though that since the candy is not labelled, ordinary generating
+    functions are useful. So while the question of whether the most natural
+    value function seems to be an integer value or a set-value is a good
+    guideline, in the end experience helps tremendously!
+  </p>
+</section>

@@ -1,0 +1,247 @@
+
+<section>
+  <title>Exponential Generating Functions</title>
+  <p>
+    We say that the expression <m>\sum_{i=0}^\infty a_i{x^i\over i!}</m> is the
+    <em>exponential generating function</em><index><main>exponential generating
+    function</main></index><index><main>generating function</main><sub>exponential</sub></index> for the sequence
+    <m>a_i</m>. It is standard to use <em>EGF</em><index><main>EGF</main></index> as a shorthand for
+    exponential generating function. In this context we call the generating
+    function
+    <m>\sum_{i=0}^n a_ix^i</m> that we originally studied the <em>ordinary
+    generating function</em><index><main>generating function</main><sub>ordinary</sub></index><index><main>ordinary
+    generating function</main></index> for the sequence
+    <m>a_i</m>. You can see why we use the term exponential generating function
+    by thinking about the exponential generating function (EGF) for the all
+    ones sequence,
+    <me>
+      \sum_{i=0}^\infty 1{x^i\over i!} = \sum_{i=0}^\infty {x^i\over i!}
+      =e^x,
+    </me>
+    which we also denote by <m>\exp (x)</m>. Recall from calculus that the usual
+    definition of
+    <m>e^x</m> or <m>\exp(x)</m> involves limits at least implicitly. We work our way
+    around that by defining <m>e^x</m> to be the power series <m>\sum_{i=0}^\infty
+    {x^i\over i!}</m>.
+  </p>
+
+  <problem>
+    <p>
+      (motivation)
+      Find the EGF (exponential generating function) for the sequence
+      <m>a_n=2^n</m>. What does this say about the EGF
+      for the number of subsets of an <m>n</m>-element set?
+    </p>
+    <solution>
+      <p>
+        <m>\sum_{i=0}^\infty {2^i}{x^i\over i!}=e^{2x}</m>. It says
+        that the EGF for subsets of an <m>n</m>-element set is <m>e^{2x}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="paintinglightpoles">
+    <p>
+      (motivation)
+      Find the EGF (exponential generating function) for the number of
+      ways to paint the <m>n</m> streetlight poles that run along the north side of
+      Main Street in Anytown, USA using four colors.
+    </p>
+    <solution>
+      <p>
+        The number of ways to paint the streetlights is <m>4^n</m>,
+        so the EGF is <m>\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}</m>.
+      </p>
+    </solution>
+    <p>
+      \item For what sequence is <m>{e^x-e^{-x}\over 2} =\cosh x</m> the EGF
+      (exponential generating function)?
+    </p>
+    <solution>
+      <p>
+        For the sequence <m>1-(-1)^n\over 2</m> which, starting with <m>n=0</m> is
+        the alternating sequence 0,1,0,1<ellipsis /> of zeros and ones.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="ln1over1-x">
+    <p>
+      (essential for this or the next section)
+      For what sequence is <m>\ln({1\over 1-x})</m> the EGF? (<m>\ln (y)</m> stands for the natural logarithm of <m>y</m>.
+      People often write
+      <m>\log(y)</m> instead.) Hint: Think of the definition of the logarithm as an
+      integral, and don't worry at this stage whether or not the usual laws of
+      calculus apply, just use them as if they do! We will then define
+      <m>\ln({ 1-x})</m> to be the power series you
+      get. <fn>It is possible to define the derivatives
+      and integrals of power series by the formulas
+      <me>
+        {d\over dx}
+        \sum_{i=0}^\infty b_ix^i = \sum_{i=1}^\infty ib_ix^{i-1}
+      </me>
+      and
+      <me>
+        \int_0^x
+        \sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty {b_i\over i+1}x^{i+1}
+      </me>
+      rather than by using the limit definitions from calculus.  It is then
+      possible to prove that the sum rule, product rule, etc. apply.  (There is
+      a little technicality involving the meaning of composition for power
+      series that turns into a technicality involving the chain rule, but it
+      needn't concern us at this time.)</fn>
+    </p>
+    <solution>
+      <md>
+        <mrow>\ln({1\over 1-x}) =-\ln(1-x) \amp =\amp 
+        \int_0^x {1\over 1-t}dt</mrow>
+        <mrow>\amp =\amp \int_0^x (1+t+t^2+\cdots)dt</mrow>
+        <mrow>\amp =\amp \sum_{i=1}^\infty {x^i\over i}</mrow>
+        <mrow>\amp =\amp  \sum_{i=1}^\infty (i-1)!{x^i\over
+        i!}</mrow>
+      </md>
+      <p>
+        so the sequence is
+        <m>a_n = (n-1)!</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exponentialpermutations">
+    <p>
+      (essential for this or the next section)
+      What is the EGF for the number of
+      permutations of an <m>n</m>-element set?
+    </p>
+    <solution>
+      <p>
+        <m>1\over 1-x</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exponentialroundtable">
+    <p>
+      (essential for this or the next section, and interesting)
+      What is the EGF for the number of ways
+      to arrange <m>n</m> people around a round table? Notice that we may think of
+      this as the EGF for the number of
+      permutations on <m>n</m> elements that are cycles.
+    </p>
+    <solution>
+      <p>
+        By <xref ref="ln1over1-x">Problem</xref> the EGF is <m>\ln{1\over 1-x}</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exponentialtennisparings">
+    <p>
+      (essential for this or the next section, and interesting)
+      What is the EGF <m>\sum_{n=0}^\infty
+      p_{2n}{x^{2n}\over (2n)!}</m> for the number of ways <m>p_{2n}</m> to pair up <m>2n</m>
+      people to play a total of
+      <m>n</m> tennis matches (as in <xref ref="tennispairings1">Problems</xref> and <xref ref="tennispairings2"></xref>)?
+    </p>
+    <solution>
+      <p>
+        Recall that <m>p_{2n} = (2n-1)(2n-3)\cdots 1= {(2n)!\over 2^n
+        n!}</m>. Thus
+        <me>
+          \sum_{n=0}^\infty
+          p_{2n}{x^{2n}\over (2n)!}= \sum_{n=0}^\infty {x^{2n}\over 2^n n!} =
+          \sum_{n=0 }^\infty {({x^2/2})^n\over n!} = e^{x^2/2} .
+        </me>
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (motivation)
+      What is the EGF for the sequence
+      <m>0,1,2,3,\ldots</m>? You may think of this as the EFG for the number of ways
+      to select one element from an <m>n</m> element set. What is the EGF for the
+      number of ways to select two elements from an
+      <m>n</m>-element set?
+    </p>
+    <solution>
+      <p>
+        <m>\sum_{n=0}^\infty{ nx^n\over n!}=\sum_{n=1}^\infty{
+        x^n\over(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x</m>.
+      </p>
+
+      <p>
+        <m>\sum_{n=0}^\infty{ n(n-1)x^n\over 2 n!}=\sum_{i=2}^\infty {x^n\over
+        2(n-2)!}=x^2e^x/2</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="allonessequence">
+    <p>
+      (essential for this or the next section)
+      What is the EGF for the sequence
+      <m>1,1,\cdots,1,\cdots</m>? Notice that we may think of this as the
+      EGF for the number of identity permutations
+      on an <m>n</m>-element set, which is the same as the number of permutations of
+      <m>n</m> elements that are products of 1-cycles, or as the EGF for the number
+      of ways to select an
+      <m>n</m>-element set (or, if you prefer, an empty set) from an
+      <m>n</m>-element set.
+    </p>
+    <solution>
+      <p>
+        <m>e^x</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem>
+    <p>
+      (motivation)
+      What is the EGF for the number of ways
+      to select <m>n</m> elements from a one-element set? What is the EGF for the
+      number of ways to select a positive number <m>n</m> of elements from a one
+      element set?
+    </p>
+    <solution>
+      <p>
+        <m>1+x</m>, <m>x</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="oneblockpartitions">
+    <p>
+      (essential for this or the next section)
+      What is the EGF for the number of partitions of a
+      <m>k</m>-element set into exactly one block? (Hint:
+      is there a partition of the empty set into
+      exactly one block?)
+    </p>
+    <solution>
+      <p>
+        <m>e^x-1</m>.
+      </p>
+    </solution>
+  </problem>
+
+  <problem xml:id="exponentialbookshelf">
+    <p>
+      (essential for this or the next section)
+      What is the EGF for the number of ways
+      to arrange <m>k</m> books on one shelf (assuming they all fit)? What is the
+      EGF for the number of ways to arrange <m>k</m>
+      books on a fixed number
+      <m>n</m> of shelves, assuming that all the books can fit on any one
+      shelf?
+    </p>
+    <solution>
+      <p>
+        <m>1\over 1-x</m>, <m>\sum_{k=0}^\infty {n+k-1 \choose k}k!{x^k\over
+        k!} = (1-x)^{-n}</m>.
+      </p>
+    </solution>
+  </problem>
+</section>
