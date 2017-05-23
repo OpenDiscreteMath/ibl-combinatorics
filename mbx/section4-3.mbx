@@ -24,12 +24,13 @@
       three."
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Find all partitions of 4 and find all partitions of 5, thereby
-        computing <m>P(4)</m> and <m>P(5)</m>.
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Find all partitions of 4 and find all partitions of 5, thereby
+          computing <m>P(4)</m> and <m>P(5)</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>4=1+1+1+1</m>, <m>4=2+1+1</m>, <m>4=2+1</m>, <m>4=3+1</m>, <m>4=4</m>, so that
@@ -51,14 +52,15 @@
       so that each gets at least one.
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Find
-        <m>P(6,3)</m> by finding all partitions of 6 into 3 parts. What does this say
-        about the number of ways to put six identical apples into three identical
-        bags so that each bag has at least one apple?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Find
+          <m>P(6,3)</m> by finding all partitions of 6 into 3 parts. What does this say
+          about the number of ways to put six identical apples into three identical
+          bags so that each bag has at least one apple?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>6=4+1+1</m>, <m>6=3+2+1</m>, <m>6=2+2+2</m>, so <m>P(6,3)=3</m>. This says
@@ -71,12 +73,13 @@
 
   <subsection>
     <title>Representations of partitions</title>
-    <problem>
-      <p>
-        (motivation)
-        How many solutions are there in the positive integers to the
-        equation <m>x_1+x_2+x_3 =7</m> with <m>x_1\ge x_2\ge x_3</m>?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          How many solutions are there in the positive integers to the
+          equation <m>x_1+x_2+x_3 =7</m> with <m>x_1\ge x_2\ge x_3</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           This problem is asking for <m>P(7,3)</m> and suggests an
@@ -103,19 +106,20 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (motivation)
-        Describe the relationship between partitions of <m>k</m> and lists or
-        vectors <m>(x_1,x_2,\ldots,x_n)</m> such that <m>x_1+2x_2+\ldots kx_k = k</m>.
-        Such a representation of a partition is called a <em>type vector</em>
-        representation of a partition, and it is typical to leave the trailing
-        zeros out of such a representation; for example <m>(2,1)</m> stands for the
-        same partition as <m>(2,1,0,0)</m>. What is the decreasing list
-        representation for this partition, and what number does it
-        partition?<index><main>partition of an integer</main><sub>type vector</sub></index><index><main>type vector
-        for a partition of an integer</main></index>
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Describe the relationship between partitions of <m>k</m> and lists or
+          vectors <m>(x_1,x_2,\ldots,x_n)</m> such that <m>x_1+2x_2+\ldots kx_k = k</m>.
+          Such a representation of a partition is called a <em>type vector</em>
+          representation of a partition, and it is typical to leave the trailing
+          zeros out of such a representation; for example <m>(2,1)</m> stands for the
+          same partition as <m>(2,1,0,0)</m>. What is the decreasing list
+          representation for this partition, and what number does it
+          partition?<index><main>partition of an integer</main><sub>type vector</sub></index><index><main>type vector
+          for a partition of an integer</main></index>
+        </p>
+      </statement>
       <solution>
         <p>
           The type vector of a partition of <m>k</m> is a way of
@@ -182,17 +186,17 @@
       <image width="73%" source="images/" />
     </figure>
 
-    <problem>
-      <p>
-        (essential)
-        Draw the Young diagram of the partition (4,4,3,1,1). Describe the
-        geometric relationship between the Young diagram of (5,3,3,2) and the
-        Young diagram of (4,4,3,1,1).
-      </p>
-      <solution>
-        \vspace{-24 pt}
-        <image width="73%" source="images/" />
+    <problem category="essential">
+      <statement>
         <p>
+          Draw the Young diagram of the partition (4,4,3,1,1). Describe the
+          geometric relationship between the Young diagram of (5,3,3,2) and the
+          Young diagram of (4,4,3,1,1).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <image width="73%" source="images/" />
           We get the Young diagram of <m>(5,3,3,2)</m> by flipping the
           Young diagram of <m>(4,4,3,1,1)</m> around a line that includes the diagonal
           of the upper left box; if we think of the top left corner of the
@@ -201,30 +205,31 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        The partition <m>(\lambda_1,\lambda_2,\ldots, \lambda_n)</m> is called
-        the <em>conjugate</em><index><main>conjugate of an integer
-        partition</main></index><index><main>partition of an integer</main><sub>conjugate of</sub></index> of the partition
-        <m>(\gamma_1,\gamma_2,\ldots, \gamma_m)</m> if we obtain the Young diagram of
-        one from the Young diagram of the other by flipping one around the line
-        with slope -1 that extends the diagonal of the top left square. See <xref ref="conjugateYoung">Figure</xref> for an example.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          The partition <m>(\lambda_1,\lambda_2,\ldots, \lambda_n)</m> is called
+          the <em>conjugate</em><index><main>conjugate of an integer
+          partition</main></index><index><main>partition of an integer</main><sub>conjugate of</sub></index> of the partition
+          <m>(\gamma_1,\gamma_2,\ldots, \gamma_m)</m> if we obtain the Young diagram of
+          one from the Young diagram of the other by flipping one around the line
+          with slope -1 that extends the diagonal of the top left square. See <xref ref="conjugateYoung">Figure</xref> for an example.
+        </p>
 
-      <figure xml:id="conjugateYoung" >
-        <caption>The Ferrers
-        diagram the partition
-        (5,3,3,2) and its conjugate.</caption>
-        <image width="73%" source="images/" />
-      </figure>
+        <figure xml:id="conjugateYoung" >
+          <caption>The Ferrers
+          diagram the partition
+          (5,3,3,2) and its conjugate.</caption>
+          <image width="73%" source="images/" />
+        </figure>
 
-      <p>
-        What is the conjugate of
-        (4,4,3,1,1)? How is the largest part of a partition related to the
-        number of parts of its conjugate? What does this tell you about the
-        number of partitions of a positive integer <m>k</m> with largest part <m>m</m>?
-      </p>
+        <p>
+          What is the conjugate of
+          (4,4,3,1,1)? How is the largest part of a partition related to the
+          number of parts of its conjugate? What does this tell you about the
+          number of partitions of a positive integer <m>k</m> with largest part <m>m</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>(5,3,3,2)</m>. The largest part of a partition equals the
@@ -235,24 +240,23 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        A partition is called <em>self-conjugate</em><index><main>self-conjugate
-        partition</main></index><index><main>partition of an integer</main><sub>self conjugate</sub></index> if it is equal
-        to its conjugate. Find a relationship between the number of
-        self-conjugate partitions of <m>k</m> and the number of partitions of <m>k</m> into
-        distinct odd parts.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          A partition is called <em>self-conjugate</em><index><main>self-conjugate
+          partition</main></index><index><main>partition of an integer</main><sub>self conjugate</sub></index> if it is equal
+          to its conjugate. Find a relationship between the number of
+          self-conjugate partitions of <m>k</m> and the number of partitions of <m>k</m> into
+          distinct odd parts.
+        </p>
+      </statement>
       <solution>
         <p>
           The number of self-conjugate partitons of <m>k</m> equals the
           number of partitions of <m>k</m> with distinct odd parts. Here is a
           geometric description of a bijection from self conjugate partitions of
           <m>k</m> to partitions into distinct odd parts.
-        </p>
-        <image width="73%" source="images/" />
-        <p>
+          <image width="73%" source="images/" />
           Take the top row and left
           column of squares of the Young diagram, and make them into one row in a
           new diagram. (Only include the square that is in both the row and column
@@ -302,12 +306,13 @@
       </solution>
     </problem>
 
-    <problem xml:id="rectanglecomplement">
-      <p>
-        (interesting)
-        Show that the number of partitions of <m>k</m> into <m>4</m> parts equals
-        the number of partitions of <m>3k</m> (or <m>3k+4</m> or <m>3k-4</m>) into <m>4</m> parts.
-      </p>
+    <problem xml:id="rectanglecomplement" category="interesting">
+      <statement>
+        <p>
+          Show that the number of partitions of <m>k</m> into <m>4</m> parts equals
+          the number of partitions of <m>3k</m> (or <m>3k+4</m> or <m>3k-4</m>) into <m>4</m> parts.
+        </p>
+      </statement>
       <solution>
         <p>
           Think about putting the Young diagram of the partition into
@@ -394,15 +399,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Suppose we take a partition of <m>k</m> into <m>n</m> parts with largest
-        part <m>m</m>, complement it in the smallest rectangle it will fit into,
-        complement the result in the smallest rectangle it will fit into, and
-        continue the process until we get the partition 1 of one into one part.
-        What can you say about the partition with which we started?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Suppose we take a partition of <m>k</m> into <m>n</m> parts with largest
+          part <m>m</m>, complement it in the smallest rectangle it will fit into,
+          complement the result in the smallest rectangle it will fit into, and
+          continue the process until we get the partition 1 of one into one part.
+          What can you say about the partition with which we started?
+        </p>
+      </statement>
       <solution>
         <p>
           Let us call the process of enclosing <m>\lambda</m> in the smallest
@@ -522,236 +528,253 @@
       <m>k</m> into <m>n</m> parts.
     </p>
 
-    <problem xml:id="numberpartitionrecurrence">
-      <p>
-      (essential for this or the next section, and interesting)
-      In this problem we will study the two operations and see
-      which one seems more useful for getting a recurrence for
-      <m>P(k,n)</m>.
-      <ol>
-        <li><p>
-          How many parts does the remaining partition
-          have when we remove the largest part (more precisely, we reduce its
-          multiplicity by one) from a partition of
-          <m>k</m> into
-          <m>n</m> parts?  What can you say about the number of parts of the remaining
-          partition if we remove one from each part?
-          <solution>
-            <p>
-              Reducing the multiplicity of the largest part by one reduces
-              the number of parts by one. Removing 1 from each part reduces the
-              number of parts by the multiplicity of the smallest part, so it
-              strictly reduces the number of parts, perhaps even to one.
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="numberpartitionrecurrence" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          In this problem we will study the two operations and see
+          which one seems more useful for getting a recurrence for
+          <m>P(k,n)</m>.
+          <ol>
+            <li>
+              <p>
+                How many parts does the remaining partition
+                have when we remove the largest part (more precisely, we reduce its
+                multiplicity by one) from a partition of
+                <m>k</m> into
+                <m>n</m> parts?  What can you say about the number of parts of the remaining
+                partition if we remove one from each part?
+                <solution>
+                <p>
+                  Reducing the multiplicity of the largest part by one reduces
+                  the number of parts by one. Removing 1 from each part reduces the
+                  number of parts by the multiplicity of the smallest part, so it
+                  strictly reduces the number of parts, perhaps even to one.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          If the largest part of a partition is <m>j</m> and we remove it,
-          what integer is being partitioned by the remaining parts of the
-          partition? If we remove one from each part of a partition of <m>k</m> into
-          <m>n</m> parts, what integer is being partitioned by the remaining parts?
-          <solution>
-            <p>
-              If we remove the largest part, the integer being partitioned
-              is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and
-              at least <m>n-1</m>. If we remove one from each part of the partition, the
-              integer being partitioned is <m>k-n</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                If the largest part of a partition is <m>j</m> and we remove it,
+                what integer is being partitioned by the remaining parts of the
+                partition? If we remove one from each part of a partition of <m>k</m> into
+                <m>n</m> parts, what integer is being partitioned by the remaining parts?
+                <solution>
+                <p>
+                  If we remove the largest part, the integer being partitioned
+                  is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and
+                  at least <m>n-1</m>. If we remove one from each part of the partition, the
+                  integer being partitioned is <m>k-n</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          The last two questions are designed to get you thinking about how
-          we can get a bijection between the set of  partitions of <m>k</m> into
-          <m>n</m> parts and some other set of partitions that are partitions of a
-          smaller number.  These questions describe two different strategies for
-          getting that set of partitions of a smaller number or of smaller numbers. 
-          Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m>
-          parts and a set of partitions of a smaller number or numbers.  For each
-          strategy, use the answers to the last two questions to find and describe 
-          this set of partitions into a smaller number and a bijection between
-          partitions of
-          <m>k</m> into
-          <m>n</m> parts and partitions of the smaller integer or integers into
-          appropriate numbers of parts.
-          <solution>
-            <p>
-              Removing the largest part of a partition of <m>k</m> into <m>n</m>
-              parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and
-              and partitions of numbers <m>k'</m> between
-              <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing
-              the largest part gives us such a partition, and adjoining a part of
-              size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m>
-              parts.)
-            </p>
+            <li>
+              <p>
+                The last two questions are designed to get you thinking about how
+                we can get a bijection between the set of  partitions of <m>k</m> into
+                <m>n</m> parts and some other set of partitions that are partitions of a
+                smaller number.  These questions describe two different strategies for
+                getting that set of partitions of a smaller number or of smaller numbers. 
+                Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m>
+                parts and a set of partitions of a smaller number or numbers.  For each
+                strategy, use the answers to the last two questions to find and describe 
+                this set of partitions into a smaller number and a bijection between
+                partitions of
+                <m>k</m> into
+                <m>n</m> parts and partitions of the smaller integer or integers into
+                appropriate numbers of parts.
+                <solution>
+                <p>
+                  Removing the largest part of a partition of <m>k</m> into <m>n</m>
+                  parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and
+                  and partitions of numbers <m>k'</m> between
+                  <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing
+                  the largest part gives us such a partition, and adjoining a part of
+                  size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m>
+                  parts.)
+                </p>
 
-            <p>
-              Removing one from each part of a partition of <m>k</m> into <m>n</m>
-              parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts
-              and and partitions <m>k-n</m> into <m>n</m> or fewer parts. (Removing one from
-              each part of a partition of <m>k</m> into <m>n</m> parts gives us such a
-              partition, and, given such a partition, we get a partition of <m>k</m> into
-              <m>n</m> parts by adding one to each part and then creating enough parts of
-              size 1 to have <m>n</m> parts.)
-            </p>
-          </solution>
-          </p></li>
+                <p>
+                  Removing one from each part of a partition of <m>k</m> into <m>n</m>
+                  parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts
+                  and and partitions <m>k-n</m> into <m>n</m> or fewer parts. (Removing one from
+                  each part of a partition of <m>k</m> into <m>n</m> parts gives us such a
+                  partition, and, given such a partition, we get a partition of <m>k</m> into
+                  <m>n</m> parts by adding one to each part and then creating enough parts of
+                  size 1 to have <m>n</m> parts.)
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Find a recurrence (which need not have just two terms on the
-          right hand side) that describes how to compute <m>P(k,n)</m> in terms of the
-          number of partitions of smaller integers into a smaller number of
-          parts. (Hint: One of the two sets of partitions of smaller numbers
-          from the previous part is more amenable to finding a recurrence than the
-          other.)
-          <solution>
-            <p>
-              The second bijection is to the set of partitions of <m>k-1</m>
-              into <m>n</m> or fewer parts, and this makes the second bijection sound
-              easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The
-              proof is the bijection we already described; in particular a partition
-              of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by
-              adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of
-              size one.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Find a recurrence (which need not have just two terms on the
+                right hand side) that describes how to compute <m>P(k,n)</m> in terms of the
+                number of partitions of smaller integers into a smaller number of
+                parts. (Hint: One of the two sets of partitions of smaller numbers
+                from the previous part is more amenable to finding a recurrence than the
+                other.)
+                <solution>
+                <p>
+                  The second bijection is to the set of partitions of <m>k-1</m>
+                  into <m>n</m> or fewer parts, and this makes the second bijection sound
+                  easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The
+                  proof is the bijection we already described; in particular a partition
+                  of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by
+                  adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of
+                  size one.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What is <m>P(k,1)</m> for a positive integer <m>k</m>?
-          <solution>
-            <p>
-              <m>P(k,1)=1</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What is <m>P(k,1)</m> for a positive integer <m>k</m>?
+                <solution>
+                <p>
+                  <m>P(k,1)=1</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What is <m>P(k,k)</m> for a positive integer <m>k</m>?
-          <solution>
-            <p>
-              <m>P(k,k)=1</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What is <m>P(k,k)</m> for a positive integer <m>k</m>?
+                <solution>
+                <p>
+                  <m>P(k,k)=1</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-            Use your recurrence to compute a table with the values of
-            <m>P(k,n)</m> for values of <m>k</m> between 1 and 7.
-            <solution>
-              <tabular>
-                <row>
-                  <cell><m>k\backslash n</m></cell>
-                  <cell>1</cell>
-                  <cell>2</cell>
-                  <cell>3</cell>
-                  <cell>4</cell>
-                  <cell>5</cell>
-                  <cell>6</cell>
-                  <cell>7</cell>
-                </row>
-                <row bottom="minor">
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                  <cell></cell>
-                </row>
-                <row>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>2</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>3</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>4</cell>
-                  <cell>1</cell>
-                  <cell>2</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>5</cell>
-                  <cell>1</cell>
-                  <cell>2</cell>
-                  <cell>2</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>6</cell>
-                  <cell>1</cell>
-                  <cell>3</cell>
-                  <cell>3</cell>
-                  <cell>2</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                  <cell>0</cell>
-                </row>
-                <row>
-                  <cell>7</cell>
-                  <cell>1</cell>
-                  <cell>3</cell>
-                  <cell>4</cell>
-                  <cell>3</cell>
-                  <cell>2</cell>
-                  <cell>1</cell>
-                  <cell>1</cell>
-                </row>
-              </tabular>
-            </solution>
-          </p></li>
+            <li>
+              <p>
+                Use your recurrence to compute a table with the values of
+                <m>P(k,n)</m> for values of <m>k</m> between 1 and 7.
+                <solution>
+                <tabular>
+                  <row>
+                    <cell><m>k\backslash n</m></cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                    <cell>3</cell>
+                    <cell>4</cell>
+                    <cell>5</cell>
+                    <cell>6</cell>
+                    <cell>7</cell>
+                  </row>
+                  <row bottom="minor">
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                    <cell></cell>
+                  </row>
+                  <row>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>2</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>3</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>4</cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>5</cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                    <cell>2</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>6</cell>
+                    <cell>1</cell>
+                    <cell>3</cell>
+                    <cell>3</cell>
+                    <cell>2</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                    <cell>0</cell>
+                  </row>
+                  <row>
+                    <cell>7</cell>
+                    <cell>1</cell>
+                    <cell>3</cell>
+                    <cell>4</cell>
+                    <cell>3</cell>
+                    <cell>2</cell>
+                    <cell>1</cell>
+                    <cell>1</cell>
+                  </row>
+                </tabular>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What would you want to fill
-          into row 0 and column 0 of your table in order to make it consistent with
-          your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually
-          define a sum with no terms in it to be zero. Is that consistent with the
-          way the recurrence says we should define <m>P(0,0)</m>?
-          <solution>
-            <p>
-              We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for
-              positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of
-              positive integers is zero, this gives us one partition of the number
-              zero, namely the empty multiset of positive integers.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                What would you want to fill
+                into row 0 and column 0 of your table in order to make it consistent with
+                your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually
+                define a sum with no terms in it to be zero. Is that consistent with the
+                way the recurrence says we should define <m>P(0,0)</m>?
+                <solution>
+                <p>
+                  We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for
+                  positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of
+                  positive integers is zero, this gives us one partition of the number
+                  zero, namely the empty multiset of positive integers.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
     <p>
@@ -985,12 +1008,14 @@
     </p>
 
     <problem>
-      <p>
-        Show that
-        <me>
-          Q(k,n) \le {1\over n!}{k-1\choose n-1}.
-        </me>
-      </p>
+      <statement>
+        <p>
+          Show that
+          <me>
+            Q(k,n) \le {1\over n!}{k-1\choose n-1}.
+          </me>
+        </p>
+      </statement>
       <solution>
         <p>
           The number of compositions of <m>k</m> into <m>n</m> parts is
@@ -1008,12 +1033,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Show that the number of partitions of 7 into 3 parts equals the
-        number of partitions of 10 into three distinct parts.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Show that the number of partitions of 7 into 3 parts equals the
+          number of partitions of 10 into three distinct parts.
+        </p>
+      </statement>
       <solution>
         <p>
           Given a
@@ -1034,13 +1060,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        There is a relationship between <m>P(k,n)</m> and <m>Q(m,n)</m> for some
-        other number <m>m</m>. Find the number <m>m</m> that gives you the nicest possible
-        relationship.
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          There is a relationship between <m>P(k,n)</m> and <m>Q(m,n)</m> for some
+          other number <m>m</m>. Find the number <m>m</m> that gives you the nicest possible
+          relationship.
+        </p>
+      </statement>
       <solution>
         <p>
           The number of partitions of <m>k</m> into <m>n</m> parts is equal to
@@ -1060,12 +1087,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        Find a recurrence that expresses <m>Q(k,n)</m> as a sum of <m>Q(k-n,m)</m>
-        for appropriate values of <m>m</m>.
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          Find a recurrence that expresses <m>Q(k,n)</m> as a sum of <m>Q(k-n,m)</m>
+          for appropriate values of <m>m</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           Suppose <m>\lambda</m> is a partition of <m>k</m> into <m>n</m> distinct
@@ -1082,12 +1110,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        Show that the number of partitions of <m>k</m> into distinct
-        parts equals the number of partitions of <m>k</m> into odd parts.
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          Show that the number of partitions of <m>k</m> into distinct
+          parts equals the number of partitions of <m>k</m> into odd parts.
+        </p>
+      </statement>
       <solution>
         <p>
           We start by giving a function from the set of partitions of
@@ -1127,21 +1156,22 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        Euler showed that if <m>k\not= {3j^2+j\over 2}</m>, then the
-        number of partitions of <m>k</m> into an even number of distinct parts is the
-        same as the number of partitions of <m>k</m> into an odd number of distinct
-        parts. Prove this, and in the exceptional case find out how the two
-        numbers relate to each other.
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          Euler showed that if <m>k\not= {3j^2+j\over 2}</m>, then the
+          number of partitions of <m>k</m> into an even number of distinct parts is the
+          same as the number of partitions of <m>k</m> into an odd number of distinct
+          parts. Prove this, and in the exceptional case find out how the two
+          numbers relate to each other.
+        </p>
+      </statement>
       <solution>
         <p>
           This solution is taken largely from the book Introduction to
           Combinatorics by Ioan Tomescu (published in London by Collet's in
           1975). Tomescu calls a collection of rows in a Young diagram a
-          ``trapezoid" if each row contains one less cell than the row above and
+          <q>trapezoid</q> if each row contains one less cell than the row above and
           the number of cells in the rows above and below the trapezoid differ by
           two or more from the number of cells in rows of the trapezoid. Thus in
           (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows,
@@ -1227,312 +1257,364 @@
   <subsection>
     <title>Supplementary Problems</title>
     <ol>
-    <li><p>
-    Answer each of the following questions with <m>n^k</m>,
-    <m>k^n</m>, <m>n!</m>,
-    <m>k!</m>,
-    <m>n \choose k</m>, <m>k \choose n</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>,
-    <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, 
-    <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the
-    above".
-    <ol>
-      <li><p>
-        In how many ways may we pass out <m>k</m> identical pieces of candy to
-        <m>n</m> children?
-        <solution>
-          <p>
-            <m>n+k-1\choose k</m>
-          </p>
-        </solution>
-        </p></li>
+    <li>
+      <p>
+        Answer each of the following questions with <m>n^k</m>,
+        <m>k^n</m>, <m>n!</m>,
+        <m>k!</m>,
+        <m>n \choose k</m>, <m>k \choose n</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>,
+        <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, 
+        <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the
+        above".
+        <ol>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children?
+              <solution>
+                <p>
+                  <m>n+k-1\choose k</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways may we pass out <m>k</m> distinct pieces of candy to
-        <m>n</m> children?
-        <solution>
-          <p>
-            <m>n^k</m>
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of candy to
+              <m>n</m> children?
+              <solution>
+                <p>
+                  <m>n^k</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways may we pass out <m>k</m> identical pieces of candy to
-        <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
-        <solution>
-          <p>
-            <m>n\choose k</m>.
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+              <solution>
+                <p>
+                  <m>n\choose k</m>.
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways may we pass out <m>k</m> distinct pieces of candy to
-        <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
-        <solution>
-          <p>
-            <m>n^{\underline{k}}</m>
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of candy to
+              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+              <solution>
+                <p>
+                  <m>n^{\underline{k}}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways may we pass out <m>k</m> distinct pieces of
-        candy to <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
-        <solution>
-          <p>
-            None of the above.
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of
+              candy to <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+              <solution>
+                <p>
+                  None of the above.
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways may we pass out <m>k</m> identical pieces of candy to
-        <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
-        <solution>
-          <p>
-            <m>k-1\choose n-1</m>
-          </p>
-        </solution>
-        </p></li>
-    </ol>
-    </p></li>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+              <solution>
+                <p>
+                  <m>k-1\choose n-1</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
 
-    <li><p>
-    The neighborhood betterment committee has been given <m>r</m> trees to
-    distribute to <m>s</m> families living along one side of a street.
-    <ol>
-      <li><p>
-        In how many ways can they distribute all of
-        them if the trees are distinct, there are more families than trees, and
-        each family can get at most one?
-        <solution>
-          <p>
-            <m>s^{\underline{r}}</m>
-          </p>
-        </solution>
-        </p></li>
+    <li>
+      <p>
+        The neighborhood betterment committee has been given <m>r</m> trees to
+        distribute to <m>s</m> families living along one side of a street.
+        <ol>
+          <li>
+            <p>
+              In how many ways can they distribute all of
+              them if the trees are distinct, there are more families than trees, and
+              each family can get at most one?
+              <solution>
+                <p>
+                  <m>s^{\underline{r}}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways can they
-        distribute all of them if the trees are distinct, any family can get any
-        number, and a family may plant its trees where it chooses?
-        <solution>
-          <p>
-            <m>s^r</m>
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways can they
+              distribute all of them if the trees are distinct, any family can get any
+              number, and a family may plant its trees where it chooses?
+              <solution>
+                <p>
+                  <m>s^r</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways can they distribute all the trees if the trees are
-        identical, there are no more trees than families,   and any family
-        receives at most one?
-        <solution>
-          <p>
-            <m>s\choose r</m>
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways can they distribute all the trees if the trees are
+              identical, there are no more trees than families,   and any family
+              receives at most one?
+              <solution>
+                <p>
+                  <m>s\choose r</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li><p>
-        In how many ways can they distribute them if the trees are
-        distinct, there are more trees than families, and each family
-        receives at most one (so there could be some leftover trees)?
-        <solution>
-          <p>
-            <m>\sum_{k=0}^s {s\choose k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}{r\choose k}</m>
-          </p>
-        </solution>
-        </p></li>
+          <li>
+            <p>
+              In how many ways can they distribute them if the trees are
+              distinct, there are more trees than families, and each family
+              receives at most one (so there could be some leftover trees)?
+              <solution>
+                <p>
+                  <m>\sum_{k=0}^s {s\choose k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}{r\choose k}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
 
-      <li xml:id="multisetproblem" ><p>
-        In how many ways can they distribute all the trees if they are
-        identical and anyone may receive any number of trees?
-        <solution>
-          <p>
-            <m>r+s-1\choose r</m>
-          </p>
-        </solution>
-        </p></li>
+          <li xml:id="multisetproblem" >
 
-      <li xml:id="orderedfunctionproblem" ><p>
-        In how many ways can all the trees be distributed and planted if
-        the trees are distinct, any family can get any number, and a family must
-        plant its trees in an evenly spaced row along the road?
-        <solution>
           <p>
-            <m>s^{\overline{r}}=(r+s-1)^{\underline{r}}</m>
+            In how many ways can they distribute all the trees if they are
+            identical and anyone may receive any number of trees?
+            <solution>
+              <p>
+                <m>r+s-1\choose r</m>
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        Answer the question in <xref ref="orderedfunctionproblem">Part</xref>
-        assuming that every family must get a tree.
-        <solution>
-          <p>
-            <m>r!{r-1\choose s-1}</m>
-          </p>
-        </solution>
-        </p></li>
+        <li xml:id="orderedfunctionproblem" >
 
-      <li><p>
-        Answer the question in <xref ref="multisetproblem">Part</xref> assuming that
-        each family must get at least one tree.
-        <solution>
-          <p>
-            <m>r-1\choose s-1</m>
-          </p>
-        </solution>
-        </p></li>
-    </ol>
-    </p></li>
-
-    <li><p>
-      In how many ways can <m>n</m> identical chemistry books, <m>r</m> identical
-      mathematics books, <m>s</m> identical physics books, and <m>t</m> identical astronomy books
-      be arranged on three bookshelves?
-      (Assume there is no limit on the number of books per shelf.)
-      <solution>
         <p>
-          <m>{(n+r+s+t+2)! \over n!r!s!t!2!}</m>
+          In how many ways can all the trees be distributed and planted if
+          the trees are distinct, any family can get any number, and a family must
+          plant its trees in an evenly spaced row along the road?
+          <solution>
+            <p>
+              <m>s^{\overline{r}}=(r+s-1)^{\underline{r}}</m>
+            </p>
+          </solution>
         </p>
-      </solution>
-      </p></li>
+        </li>
 
-    <li><p>
-      (interesting)
-      One formula for the Lah numbers is
-      <me>
-        L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}
-      </me>
-      Find a proof that explains this product.
-      <solution>
-        <p>
-          First choose the <m>n</m> elements which will be the first
-          member of the part they lie in. (This, in effect, labels the <m>n</m>
-          parts.) Then assign the remaining <m>k-n</m> elements to their parts
-          by making an ordered function of <m>n-k</m> objects to <m>n</m>
-          recipients in <m>(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}</m> ways.
-        </p>
-      </solution>
-      </p></li>
+        <li>
+          <p>
+            Answer the question in <xref ref="orderedfunctionproblem">Part</xref>
+            assuming that every family must get a tree.
+            <solution>
+              <p>
+                <m>r!{r-1\choose s-1}</m>
+              </p>
+            </solution>
+          </p>
+        </li>
 
-    <li><p>
-      What is the number of partitions of <m>n</m> into two parts?
-      <solution>
-        <p>
-          <m>n/2</m> if <m>n</m> is even and <m>(n-1)/2</m> if <m>n</m> is odd, equivalently,
-          <m>\lfloor n/2\rfloor</m>
-        </p>
-      </solution>
-      </p></li>
+        <li>
+          <p>
+            Answer the question in <xref ref="multisetproblem">Part</xref> assuming that
+            each family must get at least one tree.
+            <solution>
+              <p>
+                <m>r-1\choose s-1</m>
+              </p>
+            </solution>
+          </p>
+        </li>
+      </ol>
+    </p>
+    </li>
 
-    <li><p>
-      Show that the number of partitions of <m>k</m> into <m>n</m> parts of size at
-      most <m>m</m> equals the number of partitions of <m>mn-k</m> into no more than <m>n</m>
-      parts of size at most <m>m-1</m>.
-      <solution>
-        <p>
-          If we take the complement of the Young diagram of a partition
-          of <m>k</m> into <m>n</m> parts of size at most <m>m</m> in an rectangle with <m>n</m> rows
-          and <m>m</m> columns, the number we partition will be <m>mn-k</m>, and we will have
-          no more than <m>n</m> parts, each of size at most <m>m-1</m>. And if we take the
-          complement of a partition of this second kind in the same rectangle, we
-          will get a partition of the first kind.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        In how many ways can <m>n</m> identical chemistry books, <m>r</m> identical
+        mathematics books, <m>s</m> identical physics books, and <m>t</m> identical astronomy books
+        be arranged on three bookshelves?
+        (Assume there is no limit on the number of books per shelf.)
+        <solution>
+          <p>
+            <m>{(n+r+s+t+2)! \over n!r!s!t!2!}</m>
+          </p>
+        </solution>
+      </p>
+    </li>
 
-    <li><p>
-      Show that the number of partitions of <m>k</m> into parts of size at
-      most <m>m</m> is equal to the number of partitions of of <m>k+m</m> into <m>m</m> parts.
-      <solution>
-        <p>
-          Given the first kind of partition, take the conjugate (giving a
-          partition of <m>k</m> into at most <m>m</m> parts), add one to each part, and then
-          add enough parts of size 1 to get a total of <m>m</m> parts. It is
-          straightforward that this process can be reversed.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        (interesting)
+        One formula for the Lah numbers is
+        <me>
+          L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}
+        </me>
+        Find a proof that explains this product.
+        <solution>
+          <p>
+            First choose the <m>n</m> elements which will be the first
+            member of the part they lie in. (This, in effect, labels the <m>n</m>
+            parts.) Then assign the remaining <m>k-n</m> elements to their parts
+            by making an ordered function of <m>n-k</m> objects to <m>n</m>
+            recipients in <m>(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}</m> ways.
+          </p>
+        </solution>
+      </p>
+    </li>
 
-    <li><p>
-      You can say something pretty specific about 
-      self-conjugate partitions of <m>k</m> into distinct parts.  Figure out what
-      it is and prove it.  With that, you should be able to find a relationship
-      between these partitions and partitions whose parts are consecutive
-      integers, starting with 1.  What is that relationship?
-      <solution>
-        <p>
-          In a self-conjugate partition, the number of parts is the size
-          of the largest part. If these parts are distinct, this means that each
-          number between 1 and the largest part appears once as a part. That is,
-          the parts are a list of consecutive integers, starting with 1.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        What is the number of partitions of <m>n</m> into two parts?
+        <solution>
+          <p>
+            <m>n/2</m> if <m>n</m> is even and <m>(n-1)/2</m> if <m>n</m> is odd, equivalently,
+            <m>\lfloor n/2\rfloor</m>
+          </p>
+        </solution>
+      </p>
+    </li>
 
-    <li><p>
-      What is <m>s(k,1)</m>?
-      <solution>
-        <p>
-          Since s<m>(k,1)</m> is the coefficient of <m>x^1</m> in
-          <me>
-            x^{\underline{k}} = x(x-1)
-            (x-2)\cdot (x-(k-1)),
-          </me>
-          it is <m>(-1)^{k-1}(k-1)!</m>.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        Show that the number of partitions of <m>k</m> into <m>n</m> parts of size at
+        most <m>m</m> equals the number of partitions of <m>mn-k</m> into no more than <m>n</m>
+        parts of size at most <m>m-1</m>.
+        <solution>
+          <p>
+            If we take the complement of the Young diagram of a partition
+            of <m>k</m> into <m>n</m> parts of size at most <m>m</m> in an rectangle with <m>n</m> rows
+            and <m>m</m> columns, the number we partition will be <m>mn-k</m>, and we will have
+            no more than <m>n</m> parts, each of size at most <m>m-1</m>. And if we take the
+            complement of a partition of this second kind in the same rectangle, we
+            will get a partition of the first kind.
+          </p>
+        </solution>
+      </p>
+    </li>
 
-    <li><p>
-      Show that the Stirling numbers of the second kind satisfy the
-      recurrence
-      <me>
-        S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.
-      </me>
-      <solution>
-        <p>
-          A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
-          <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
-          of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
-          size <m>i</m> containing <m>k</m> is <m>k-1\choose i-1</m>, and <m>i</m> can be any number
-          between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
-          constructed exactly once by first choosing the block containing <m>k</m> and
-          then partitioning the remaining elements into <m>n-1</m> blocks. This proves
-          the formula.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        Show that the number of partitions of <m>k</m> into parts of size at
+        most <m>m</m> is equal to the number of partitions of of <m>k+m</m> into <m>m</m> parts.
+        <solution>
+          <p>
+            Given the first kind of partition, take the conjugate (giving a
+            partition of <m>k</m> into at most <m>m</m> parts), add one to each part, and then
+            add enough parts of size 1 to get a total of <m>m</m> parts. It is
+            straightforward that this process can be reversed.
+          </p>
+        </solution>
+      </p>
+    </li>
 
-    <li><p>
-      (interesting)
-      Let <m>c(k,n)</m> be the number of ways for <m>k</m> children to hold hands
-      to form <m>n</m> circles, where one child clasping his or her hands together
-      and holding them out to form a circle is considered a circle.  Find a
-      recurrence for <m>c(k,n)</m>.  Is the family of numbers <m>c(k,n)</m> related to any
-      of the other families of numbers we have studied? If so, how?
-      <solution>
-        <p>
-          The <m>k</m>th child is either in a circle by him/her self, and
-          there are <m>c(k-1,n-1)</m> ways for this to happen, or is in a circle with
-          some other children. In the second case child <m>i</m> can be to the
-          immediate right of any of the other <m>k-1</m> children, so there are
-          <m>(k-1)c(k-1,n)</m> ways for this to happen. Thus <m>c(k,n)=c(k-1,n-1)
-          +(k-1)c(k-1,n)</m>. This recurrence is almost the same as the recurrence for
-          <m>s(k,n)</m>, except it has a plus sign where the recurrence for the Stirling
-          numbers of the first kind has a minus sign. Further <m>c(k,1)=(k-1)!</m> and
-          <m>c(k,k)=1</m>, which agrees, except for sign, with the Stirling numbers of
-          the first kind. If we experiment with applying the recurrence, we see
-          that whenever we use it to compute <m>c(k,n)</m>, we get that
-          <m>c(k,n)=|s(k,n)|</m>. It is now straightforward to prove by induction that
-          <m>c(k,n)=|s(k,n)|</m>.
-        </p>
-      </solution>
-      </p></li>
+    <li>
+      <p>
+        You can say something pretty specific about 
+        self-conjugate partitions of <m>k</m> into distinct parts.  Figure out what
+        it is and prove it.  With that, you should be able to find a relationship
+        between these partitions and partitions whose parts are consecutive
+        integers, starting with 1.  What is that relationship?
+        <solution>
+          <p>
+            In a self-conjugate partition, the number of parts is the size
+            of the largest part. If these parts are distinct, this means that each
+            number between 1 and the largest part appears once as a part. That is,
+            the parts are a list of consecutive integers, starting with 1.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        What is <m>s(k,1)</m>?
+        <solution>
+          <p>
+            Since s<m>(k,1)</m> is the coefficient of <m>x^1</m> in
+            <me>
+              x^{\underline{k}} = x(x-1)
+              (x-2)\cdot (x-(k-1)),
+            </me>
+            it is <m>(-1)^{k-1}(k-1)!</m>.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Show that the Stirling numbers of the second kind satisfy the
+        recurrence
+        <me>
+          S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.
+        </me>
+        <solution>
+          <p>
+            A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
+            <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
+            of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
+            size <m>i</m> containing <m>k</m> is <m>k-1\choose i-1</m>, and <m>i</m> can be any number
+            between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
+            constructed exactly once by first choosing the block containing <m>k</m> and
+            then partitioning the remaining elements into <m>n-1</m> blocks. This proves
+            the formula.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        (interesting)
+        Let <m>c(k,n)</m> be the number of ways for <m>k</m> children to hold hands
+        to form <m>n</m> circles, where one child clasping his or her hands together
+        and holding them out to form a circle is considered a circle.  Find a
+        recurrence for <m>c(k,n)</m>.  Is the family of numbers <m>c(k,n)</m> related to any
+        of the other families of numbers we have studied? If so, how?
+        <solution>
+          <p>
+            The <m>k</m>th child is either in a circle by him/her self, and
+            there are <m>c(k-1,n-1)</m> ways for this to happen, or is in a circle with
+            some other children. In the second case child <m>i</m> can be to the
+            immediate right of any of the other <m>k-1</m> children, so there are
+            <m>(k-1)c(k-1,n)</m> ways for this to happen. Thus <m>c(k,n)=c(k-1,n-1)
+            +(k-1)c(k-1,n)</m>. This recurrence is almost the same as the recurrence for
+            <m>s(k,n)</m>, except it has a plus sign where the recurrence for the Stirling
+            numbers of the first kind has a minus sign. Further <m>c(k,1)=(k-1)!</m> and
+            <m>c(k,k)=1</m>, which agrees, except for sign, with the Stirling numbers of
+            the first kind. If we experiment with applying the recurrence, we see
+            that whenever we use it to compute <m>c(k,n)</m>, we get that
+            <m>c(k,n)=|s(k,n)|</m>. It is now straightforward to prove by induction that
+            <m>c(k,n)=|s(k,n)|</m>.
+          </p>
+        </solution>
+      </p>
+    </li>
     </ol>
   </subsection>
 </section>

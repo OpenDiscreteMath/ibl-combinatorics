@@ -10,12 +10,14 @@
     </p>
 
     <problem>
-      <p>
-        Explain why it is that the number of
-        bijections from an <m>n</m>-element set to an <m>n</m>-element set is equal to <m>n</m>
-        times the number of bijections from an <m>(n-1)</m>-element subset to an
-        <m>(n-1)</m>-element set. What does this have to do with <xref ref="permutationasbijection">Problem</xref>?
-      </p>
+      <statement>
+        <p>
+          Explain why it is that the number of
+          bijections from an <m>n</m>-element set to an <m>n</m>-element set is equal to <m>n</m>
+          times the number of bijections from an <m>(n-1)</m>-element subset to an
+          <m>(n-1)</m>-element set. What does this have to do with <xref ref="permutationasbijection">Problem</xref>?
+        </p>
+      </statement>
       <solution>
         <p>
           To specify a bijection <m>f</m> from an <m>n</m>-element set <m>\{a_1,a_2, 
@@ -90,10 +92,11 @@
     </p>
 
     <problem>
-      <p>
-        Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
-      </p>
-      <solution>
+      <statement>
+        <p>
+          Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
+        </p>
+        <solution>
         <p>
           We prove by induction on <m>n</m> that there is one and only one
           value
@@ -109,72 +112,77 @@
           nonnegative integers <m>n</m> it was not appropriate to use <m>n</m> as the dummy
           variable in the recursive equation <m>s_k=2s_{k-1}</m>.)
         </p>
-      </solution>
-      <p>
-      \item A first-order recurrence relation is one which expresses <m>a_n</m> in
-      terms of <m>a_{n-1}</m> and other functions of <m>n</m>, but which does not
-      include any of the terms <m>a_i</m> for <m>i\lt n-1</m> in the equation.
-      <ol>
-        <li><p>
-          Which of
-          the <xref ref="subsetequation">recurrences</xref> through <xref ref="Catalanrecurrence"></xref> are
-          first order recurrences?
-          <solution>
-            <p>
-              The <xref ref="subsetequation">recurrences</xref>, <xref ref="bijectionequation"></xref>, <xref ref="arithmeticexample"></xref>, and <xref ref="geometricdriven"></xref> are all examples
-              of first order recurrences. The <xref ref="secondorderlinear">recurrences</xref> and <xref ref="Catalanrecurrence"></xref> are not.
-            </p>
-          </solution>
-          </p></li>
+        </solution>
+        <p>
+          \item A first-order recurrence relation is one which expresses <m>a_n</m> in
+          terms of <m>a_{n-1}</m> and other functions of <m>n</m>, but which does not
+          include any of the terms <m>a_i</m> for <m>i\lt n-1</m> in the equation.
+          <ol>
+            <li>
+              <p>
+                Which of
+                the <xref ref="subsetequation">recurrences</xref> through <xref ref="Catalanrecurrence"></xref> are
+                first order recurrences?
+                <solution>
+                <p>
+                  The <xref ref="subsetequation">recurrences</xref>, <xref ref="bijectionequation"></xref>, <xref ref="arithmeticexample"></xref>, and <xref ref="geometricdriven"></xref> are all examples
+                  of first order recurrences. The <xref ref="secondorderlinear">recurrences</xref> and <xref ref="Catalanrecurrence"></xref> are not.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Show that there is one and only one sequence <m>a_n</m> that is defined
-          for every nonnegative integer
-          <m>n</m>, satisfies a given first order recurrence, and satisfies <m>a_0=a</m> for some
-          fixed constant <m>a</m>.
-          <solution>
-            <p>
-              A first order recurrence will give <m>a_n</m> in terms of <m>a_{n-1}</m>, that
-              is, there will be a function <m>f</m> such that <m>a_n=f(a_{n-1})</m> for all <m>n>0</m>. We
-              prove by induction that there is one and only one solution to a first order
-              recurrence that satisfies <m>a_0=a</m> for some fixed constant <m>a</m>. First, there
-              is one and only one value for <m>a_0</m>. Now suppose that when <m>n=k-1</m>, there is
-              one and only one value possible for <m>a_{n-1}</m>. Then <m>a_k</m> is uniquely
-              determined by <m>a_k=f(a_{k-1}</m>. Thus the truth of the statement that <m>a_{k-1}</m>
-              is uniquely determined by the equations <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m> implies
-              the truth of the statement that <m>a_k</m> is determined uniquely by the equations
-              <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m>. Therefore by the principle of mathematical
-              induction, <m>a_k</m> is uniquely determined by the equations <m>a_0=a</m> and
-              <m>a_n=f(a_{n-1})</m> for all nonnegative integers <m>k</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Show that there is one and only one sequence <m>a_n</m> that is defined
+                for every nonnegative integer
+                <m>n</m>, satisfies a given first order recurrence, and satisfies <m>a_0=a</m> for some
+                fixed constant <m>a</m>.
+                <solution>
+                <p>
+                  A first order recurrence will give <m>a_n</m> in terms of <m>a_{n-1}</m>, that
+                  is, there will be a function <m>f</m> such that <m>a_n=f(a_{n-1})</m> for all <m>n>0</m>. We
+                  prove by induction that there is one and only one solution to a first order
+                  recurrence that satisfies <m>a_0=a</m> for some fixed constant <m>a</m>. First, there
+                  is one and only one value for <m>a_0</m>. Now suppose that when <m>n=k-1</m>, there is
+                  one and only one value possible for <m>a_{n-1}</m>. Then <m>a_k</m> is uniquely
+                  determined by <m>a_k=f(a_{k-1}</m>. Thus the truth of the statement that <m>a_{k-1}</m>
+                  is uniquely determined by the equations <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m> implies
+                  the truth of the statement that <m>a_k</m> is determined uniquely by the equations
+                  <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m>. Therefore by the principle of mathematical
+                  induction, <m>a_k</m> is uniquely determined by the equations <m>a_0=a</m> and
+                  <m>a_n=f(a_{n-1})</m> for all nonnegative integers <m>k</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
 
-      <figure xml:id="Hanoi" >
-        <caption>The
-        Towers of Hanoi Puzzle</caption>
-        \vglue-1in
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
-
+        <figure xml:id="Hanoi" >
+          <caption>The
+          Towers of Hanoi Puzzle</caption>
+          \vglue-1in
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
+      </statement>
     </problem>
 
-    <problem xml:id="HanoiProblem">
-      <p>
-        (interesting)
-        The <q>Towers of Hanoi</q> puzzle has three rods rising from a
-        rectangular base with <m>n</m> rings of different sizes stacked in decreasing
-        order of size on one rod. A legal move consists of moving a ring from
-        one rod to another so that it does not land on top of a smaller ring. If
-        <m>m_n</m> is the number of moves required to move all the rings from the
-        initial rod to another rod that you choose, give a recurrence for <m>m_n</m>.
-        (Hint: suppose you already knew the number of moves needed to solve the
-        puzzle with <m>n-1</m> rings.)
-      </p>
+    <problem xml:id="HanoiProblem" category="interesting">
+      <statement>
+        <p>
+          The <q>Towers of Hanoi</q> puzzle has three rods rising from a
+          rectangular base with <m>n</m> rings of different sizes stacked in decreasing
+          order of size on one rod. A legal move consists of moving a ring from
+          one rod to another so that it does not land on top of a smaller ring. If
+          <m>m_n</m> is the number of moves required to move all the rings from the
+          initial rod to another rod that you choose, give a recurrence for <m>m_n</m>.
+          (Hint: suppose you already knew the number of moves needed to solve the
+          puzzle with <m>n-1</m> rings.)
+        </p>
+      </statement>
       <solution>
         <p>
           We can solve the puzzle in one step if there is one ring, so
@@ -187,19 +195,20 @@
       </solution>
     </problem>
 
-    <problem xml:id="circlesinplane">
-      <p>
-        (interesting)
-        We draw <m>n</m> mutually intersecting circles in the plane so that
-        each one crosses each other one exactly twice and no three intersect in
-        the same point. (As examples, think of Venn diagrams with two or three
-        mutually intersecting sets.) Find a recurrence for the number
-        <m>r_n</m> of regions into which the plane is divided by <m>n</m> circles. (One
-        circle divides the plane into two regions, the inside and the outside.)
-        Find the number of regions with <m>n</m> circles. For what values of <m>n</m> can
-        you draw a Venn diagram showing all the possible intersections of <m>n</m>
-        sets using circles to represent each of the sets?
-      </p>
+    <problem xml:id="circlesinplane" category="interesting">
+      <statement>
+        <p>
+          We draw <m>n</m> mutually intersecting circles in the plane so that
+          each one crosses each other one exactly twice and no three intersect in
+          the same point. (As examples, think of Venn diagrams with two or three
+          mutually intersecting sets.) Find a recurrence for the number
+          <m>r_n</m> of regions into which the plane is divided by <m>n</m> circles. (One
+          circle divides the plane into two regions, the inside and the outside.)
+          Find the number of regions with <m>n</m> circles. For what values of <m>n</m> can
+          you draw a Venn diagram showing all the possible intersections of <m>n</m>
+          sets using circles to represent each of the sets?
+        </p>
+      </statement>
       <solution>
         <p>
           One circle defines two regions, the inside and outside. When we
@@ -247,13 +256,15 @@
   <subsection>
     <title>Arithmetic Series (optional)</title>
     <problem xml:id="childsaving">
-      <p>
-        A child puts away two dollars from her allowance each week. If she
-        starts with twenty dollars, give a recurrence for the amount <m>a_n</m> of
-        money she has after <m>n</m> weeks and find out how much money she has at the
-        end of
-        <m>n</m> weeks.
-      </p>
+      <statement>
+        <p>
+          A child puts away two dollars from her allowance each week. If she
+          starts with twenty dollars, give a recurrence for the amount <m>a_n</m> of
+          money she has after <m>n</m> weeks and find out how much money she has at the
+          end of
+          <m>n</m> weeks.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>a_n=a_{n-1} +2</m>. Then by substitution <m>a_n=a_{n-2}+2+2</m>, and so we
@@ -340,11 +351,13 @@
     </p>
 
     <problem xml:id="classifyrecurrences">
-      <p>
-        Classify the recurrences in <xref ref="subsetequation">Equations</xref> through <xref ref="secondorderlinear"></xref> and <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref> according to whether or not they are constant
-        coefficient, and whether or not they are
-        homogeneous.
-      </p>
+      <statement>
+        <p>
+          Classify the recurrences in <xref ref="subsetequation">Equations</xref> through <xref ref="secondorderlinear"></xref> and <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref> according to whether or not they are constant
+          coefficient, and whether or not they are
+          homogeneous.
+        </p>
+      </statement>
       <solution>
         <p>
           <xref ref="subsetequation">Recurrence</xref> is first order, linear, constant
@@ -362,18 +375,19 @@
       </solution>
     </problem>
 
-    <problem xml:id="firstordlinconst">
-      <p>
-        (essential)
-        As you can see from <xref ref="classifyrecurrences">Problem</xref> some
-        interesting sequences satisfy first order linear recurrences, including
-        many that have constant coefficients, have constant driving term, or are
-        homogeneous. Find a formula in terms of <m>b</m>, <m>d</m>, <m>a_0</m> and <m>n</m> for the
-        general term <m>a_n</m> of a sequence that satisfies a constant coefficient first
-        order linear recurrence <m>a_n = ba_{n-1} + d</m> and prove you are
-        correct. If your formula involves a summation, try to replace the
-        summation by a more compact expression.
-      </p>
+    <problem xml:id="firstordlinconst" category="essential">
+      <statement>
+        <p>
+          As you can see from <xref ref="classifyrecurrences">Problem</xref> some
+          interesting sequences satisfy first order linear recurrences, including
+          many that have constant coefficients, have constant driving term, or are
+          homogeneous. Find a formula in terms of <m>b</m>, <m>d</m>, <m>a_0</m> and <m>n</m> for the
+          general term <m>a_n</m> of a sequence that satisfies a constant coefficient first
+          order linear recurrence <m>a_n = ba_{n-1} + d</m> and prove you are
+          correct. If your formula involves a summation, try to replace the
+          summation by a more compact expression.
+        </p>
+      </statement>
       <solution>
         <p>
           Note that by the formula, <m>a_{n-1}=ba_{n-2} +d</m>. Substituting this
@@ -447,50 +461,56 @@
     </p>
 
     <problem xml:id="sumgeometricseries">
-      <p>
-      Do this problem only if your final answer (so far) to <xref ref="firstordlinconst">Problem</xref> contained the sum <m>\sum_{i=0}^{n-1}db^i</m>.
-      <ol>
-        <li><p>
-          Expand <m>(1-x)(1+x)</m>.  Expand <m>(1-x)(1+x+x^2)</m>. 
-          Expand <m>(1-x)(1+x+x^2+x^3)</m>.
-          <solution>
-            <p>
-              <m>(1-x)(1+x)=1-x^2</m>. <m>(1-x)(1+x+x^2)=1-x^3</m>.
-              <m>(1-x)(1+x+x^2+x^3)=1-x^4</m>.
-            </p>
-          </solution>
-          </p></li>
+      <statement>
+        <p>
+          Do this problem only if your final answer (so far) to <xref ref="firstordlinconst">Problem</xref> contained the sum <m>\sum_{i=0}^{n-1}db^i</m>.
+          <ol>
+            <li>
+              <p>
+                Expand <m>(1-x)(1+x)</m>.  Expand <m>(1-x)(1+x+x^2)</m>. 
+                Expand <m>(1-x)(1+x+x^2+x^3)</m>.
+                <solution>
+                <p>
+                  <m>(1-x)(1+x)=1-x^2</m>. <m>(1-x)(1+x+x^2)=1-x^3</m>.
+                  <m>(1-x)(1+x+x^2+x^3)=1-x^4</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What do you expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be?  What
-          formula for <m>\sum_{i=0}^{n-1}db^i</m> does this give you?  Prove that you
-          are correct.
-          <solution>
-            <p>
-              We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
-              <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
-              prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
-              also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
-              the formula holds when <m>n=k-1</m>, we may write
-              <md>
-                <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
-                <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
-                <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
-                <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
-              </md>
-            </p>
+            <li>
+              <p>
+                What do you expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be?  What
+                formula for <m>\sum_{i=0}^{n-1}db^i</m> does this give you?  Prove that you
+                are correct.
+                <solution>
+                <p>
+                  We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
+                  <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
+                  prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
+                  also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
+                  the formula holds when <m>n=k-1</m>, we may write
+                  <md>
+                    <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
+                    <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
+                    <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
+                    <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
+                  </md>
+                </p>
 
-            <p>
-              Since the truth of the formula for <m>n=k-1</m> implies its truth for <m>n=k</m>, by the
-              principle of mathematical induction the formula is true for all nonnegative
-              integers <m>n</m>. If
-              <m>b=1</m> we get the formula
-              <m>\sum_{i=0}^{n-1}db^i=dn</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+                <p>
+                  Since the truth of the formula for <m>n=k-1</m> implies its truth for <m>n=k</m>, by the
+                  principle of mathematical induction the formula is true for all nonnegative
+                  integers <m>n</m>. If
+                  <m>b=1</m> we get the formula
+                  <m>\sum_{i=0}^{n-1}db^i=dn</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
     <p>
