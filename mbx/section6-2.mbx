@@ -33,9 +33,9 @@
       other set as well. In order to keep track of which permutations of which
       set we are using to define our group and which other set is being
       permuted as well, we introduce some new language. We are going to say
-      that the group <m>D_4</m> ``acts" on the edges and diagonals of a square and
+      that the group <m>D_4</m> <q>acts</q> on the edges and diagonals of a square and
       the group <m>R</m> of permutations of the vertices of a cube
-      that arise from rigid motions of the cube ``acts" on the edges, faces,
+      that arise from rigid motions of the cube <q>acts</q> on the edges, faces,
       diagonals, etc. of the cube. Instead of talking
       about permutations of these edges, faces, etc., we will use an equivalent
       word and talk about bijections of these objects. In this way it will be
@@ -52,72 +52,79 @@
       }
     </figure>
 
-    <problem>
-      <p>
-      (essential)
-      In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
-      vertices and faces labelled. As with motions of the square, we let we let
-      <m>\varphi(x)</m> be the label of the place where vertex previously in
-      position
-      <m>x</m> is now.
-      <ol>
-        <li xml:id="actsonparta" ><p>
-          Write in two row-notation the permutation <m>\rho</m> of the vertices
-          that corresponds to rotating the cube 90 degrees around a vertical axis
-          through the faces <m>t</m> (for top) and <m>u</m> (for underneath).  (Rotate in a
-          right-handed fashion around this axis, meaning that vertex 6 goes to the
-          back and vertex 8 comes to the front.)  Write in two-row notation the
-          bijection
-          <m>\beta_{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of
-          <m>R</m>.
-          <solution>
-            <p>
-              <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
-              2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
-              \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp /><m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
-              \end{pmatrix}</m>
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential">
+      <statement>
+        <p>
+          In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
+          vertices and faces labelled. As with motions of the square, we let we let
+          <m>\varphi(x)</m> be the label of the place where vertex previously in
+          position
+          <m>x</m> is now.
+          <ol>
+            <li xml:id="actsonparta" >
 
-        <li><p>
-          Write in two-row notation the permutation <m>\varphi</m> that rotates
-          the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and
-          carries vertex 8 to vertex 6.  Write in two-row notation the bijection
-          <m>\beta_\varphi</m> of the faces that corresponds to this member of <m>R</m>.
-          <solution>
             <p>
-              <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-              \end{pmatrix} ~
-              ~\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-              \end{pmatrix}</m>
+              Write in two row-notation the permutation <m>\rho</m> of the vertices
+              that corresponds to rotating the cube 90 degrees around a vertical axis
+              through the faces <m>t</m> (for top) and <m>u</m> (for underneath).  (Rotate in a
+              right-handed fashion around this axis, meaning that vertex 6 goes to the
+              back and vertex 8 comes to the front.)  Write in two-row notation the
+              bijection
+              <m>\beta_{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of
+              <m>R</m>.
+              <solution>
+              <p>
+                <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
+                2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
+                \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp /><m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
+                \end{pmatrix}</m>
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+            </li>
 
-        <li xml:id="cube2" ><p>
-            Compute the two-row notation for <m>\rho\circ\varphi</m>, for
-            <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection 
-            <m>\beta_{\rho\circ\varphi}</m> of the faces that corresponds to the action of
-            the permutation <m>\rho\circ\varphi</m> on the faces of the cube (for this
-            question it helps to think geometrically about what motion of the cube is
-            carried out by <m>\rho\circ\varphi</m>).  What do you observe about
-            <m>\beta_{\rho\circ\varphi}</m> and
-            <m>\beta_{\rho}\circ\beta_{\varphi}</m>?
-            <solution>
+            <li>
+              <p>
+                Write in two-row notation the permutation <m>\varphi</m> that rotates
+                the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and
+                carries vertex 8 to vertex 6.  Write in two-row notation the bijection
+                <m>\beta_\varphi</m> of the faces that corresponds to this member of <m>R</m>.
+                <solution>
+                <p>
+                  <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
+                  \end{pmatrix} ~
+                  ~\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
+                  \end{pmatrix}</m>
+                </p>
+                </solution>
+              </p>
+            </li>
+
+            <li xml:id="cube2" >
+
+            <p>
+              Compute the two-row notation for <m>\rho\circ\varphi</m>, for
+              <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection 
+              <m>\beta_{\rho\circ\varphi}</m> of the faces that corresponds to the action of
+              the permutation <m>\rho\circ\varphi</m> on the faces of the cube (for this
+              question it helps to think geometrically about what motion of the cube is
+              carried out by <m>\rho\circ\varphi</m>).  What do you observe about
+              <m>\beta_{\rho\circ\varphi}</m> and
+              <m>\beta_{\rho}\circ\beta_{\varphi}</m>?
+              <solution>
               <md>
                 <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
                 2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
                 \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-                \end{pmatrix} \amp =\amp</mrow>
-                <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
+                \end{pmatrix} \amp =\amp 
+                \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
                 \end{pmatrix} \amp \amp</mrow>
               </md>
               <md>
                 <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
                 \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-                \end{pmatrix} \amp =\amp</mrow>
-                <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
+                \end{pmatrix} \amp =\amp 
+                \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
                 \end{pmatrix} \amp \amp</mrow>
               </md>
               <me>
@@ -125,22 +132,25 @@
                 b\amp u\amp l\amp t\amp r\amp f
                 \end{pmatrix} =\beta_{\rho}\circ\beta_{\varphi}
               </me>
-            </solution>
-          </p></li>
-      </ol>
-      </p>
+              </solution>
+            </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (essential and interesting)
-        How many permutations are in the group <m>R</m>? <m>R</m> is sometimes
-        called the ``rotation group" of the cube. Can you justify this?
-      </p>
+    <problem category="essential and interesting">
+      <statement>
+        <p>
+          How many permutations are in the group <m>R</m>? <m>R</m> is sometimes
+          called the <q>rotation group</q> of the cube. Can you justify this?
+        </p>
+      </statement>
       <solution>
         <p>
           There are eight places where vertex one can go. Once vertex 1 is
-          placed, there are three ways the three edges ``sticking out" of it can be
+          placed, there are three ways the three edges <q>sticking out</q> of it can be
           placed, and then the location of all the vertices is determined. Thus there
           are 24 elements of the group. Of them, we have the identity, three
           rotations about each of the three axes through the midpoints of the faces,
@@ -171,81 +181,91 @@
       acts on the faces of the cube.
     </p>
 
-    <problem>
-      <p>
-      (essential)
-      Suppose that <m>\sigma</m> and <m>\varphi</m> are permutations in the group
-      <m>R</m> of rigid motions of the cube. We have argued already that each rigid
-      motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
-      vertices on one face to the vertices on another face. Let
-      <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
-      <ol>
-        <li><p>
-          What
-          are the vertices of the face
-          <m>F'</m> that
-          <m>F</m> is sent to by <m>\varphi</m>?
-          <solution>
-            <p>
-              <m>\varphi(h)</m>, <m>\varphi(i)</m>, <m>\varphi(j)</m>, <m>\varphi(k)</m>.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential">
+      <statement>
+        <p>
+          Suppose that <m>\sigma</m> and <m>\varphi</m> are permutations in the group
+          <m>R</m> of rigid motions of the cube. We have argued already that each rigid
+          motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
+          vertices on one face to the vertices on another face. Let
+          <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
+          <ol>
+            <li>
+              <p>
+                What
+                are the vertices of the face
+                <m>F'</m> that
+                <m>F</m> is sent to by <m>\varphi</m>?
+                <solution>
+                <p>
+                  <m>\varphi(h)</m>, <m>\varphi(i)</m>, <m>\varphi(j)</m>, <m>\varphi(k)</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What are the vertices of the face <m>F''</m>
-          that
-          <m>F'</m> is sent to by <m>\sigma</m>?
-          <solution>
-            <p>
-              <m>\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>, <m>\sigma(\varphi(j))</m>,
-              <m>\sigma(\varphi(k))</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What are the vertices of the face <m>F''</m>
+                that
+                <m>F'</m> is sent to by <m>\sigma</m>?
+                <solution>
+                <p>
+                  <m>\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>, <m>\sigma(\varphi(j))</m>,
+                  <m>\sigma(\varphi(k))</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What are the vertices of the face <m>F'''</m>
-          that <m>F</m> is sent to by <m>\sigma\circ\varphi</m>?
-          <solution>
-            <p>
-              <m>(\sigma\circ\varphi)(h)=\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>,
-              <m>\sigma(\varphi(j))</m>,
-              <m>\sigma(\varphi(k))</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What are the vertices of the face <m>F'''</m>
+                that <m>F</m> is sent to by <m>\sigma\circ\varphi</m>?
+                <solution>
+                <p>
+                  <m>(\sigma\circ\varphi)(h)=\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>,
+                  <m>\sigma(\varphi(j))</m>,
+                  <m>\sigma(\varphi(k))</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          How have you just shown
-          that the group
-          <m>R</m> acts on the faces?
-          <solution>
-            <p>
-              We have just shown that for each face <m>F</m>,
-              <m>\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)</m>,
-              so that <m>\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
-              \beta_{\varphi}</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                How have you just shown
+                that the group
+                <m>R</m> acts on the faces?
+                <solution>
+                <p>
+                  We have just shown that for each face <m>F</m>,
+                  <m>\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)</m>,
+                  so that <m>\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
+                  \beta_{\varphi}</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="D_4on2-sets">
-      <p>
-        (essential)
-        The group <m>D_4</m> is a group of permutations of
-        <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1">Problem</xref>. We are going to show in this
-        problem and in <xref ref="orbits1">Problem</xref> how this group acts in a natural way on the two-element subsets of
-        <m>\{1,2,3,4\}</m>. In particular, for each two-element subset <m>\{i,j\}</m> of
-        <m>\{1,2,3,4\}</m> and each member
-        <m>\sigma</m> of
-        <m>D_4</m> we define <m>\beta_{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.
-        Show that with this definition of <m>\beta</m>, the group <m>D_4</m> acts on the
-        two-element subsets of <m>\{1,2,3,4\}</m>.
-      </p>
+    <problem xml:id="D_4on2-sets" category="essential">
+      <statement>
+        <p>
+          The group <m>D_4</m> is a group of permutations of
+          <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1">Problem</xref>. We are going to show in this
+          problem and in <xref ref="orbits1">Problem</xref> how this group acts in a natural way on the two-element subsets of
+          <m>\{1,2,3,4\}</m>. In particular, for each two-element subset <m>\{i,j\}</m> of
+          <m>\{1,2,3,4\}</m> and each member
+          <m>\sigma</m> of
+          <m>D_4</m> we define <m>\beta_{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.
+          Show that with this definition of <m>\beta</m>, the group <m>D_4</m> acts on the
+          two-element subsets of <m>\{1,2,3,4\}</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           The action has been defined for us, so all we need to show is that
@@ -278,16 +298,17 @@
       </solution>
     </problem>
 
-    <problem xml:id="orbits1">
-      <p>
-        (essential)
-        In <xref ref="D_4on2-sets">Problem</xref>, what is the
-        set of two element subsets that you get by computing
-        <m>\beta_{\sigma}(\{1,2\})</m> for all <m>\sigma</m> in <m>D_4</m>? What is the set of
-        two-element subsets you get by computing <m>\beta_{\sigma}(\{1,3\})</m> for all
-        <m>\sigma</m> in <m>D_4</m>? Describe these two sets geometrically in terms of the
-        square.
-      </p>
+    <problem xml:id="orbits1" category="essential">
+      <statement>
+        <p>
+          In <xref ref="D_4on2-sets">Problem</xref>, what is the
+          set of two element subsets that you get by computing
+          <m>\beta_{\sigma}(\{1,2\})</m> for all <m>\sigma</m> in <m>D_4</m>? What is the set of
+          two-element subsets you get by computing <m>\beta_{\sigma}(\{1,3\})</m> for all
+          <m>\sigma</m> in <m>D_4</m>? Describe these two sets geometrically in terms of the
+          square.
+        </p>
+      </statement>
       <solution>
         <p>
           From <m>\{1,2\}</m> we get <m>\{1,2\}</m>, <m>\{2,3\}</m>, <m>\{3,4\}</m>, and
@@ -297,16 +318,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Using the notation of <xref ref="dihedral3">Problem</xref>, what is the effect
-        of a 180 degree rotation on the diagonals of a square? What is the
-        effect of the flip <m>\varphi_{1/3}</m> on the diagonals of a square? How many
-        elements of <m>D_4</m> send each diagonal to itself? How many elements of
-        <m>D_4</m> interchange the diagonals of a square?
-      </p>
-      <solution>
+    <problem category="essential">
+      <statement>
+        <p>
+          Using the notation of <xref ref="dihedral3">Problem</xref>, what is the effect
+          of a 180 degree rotation on the diagonals of a square? What is the
+          effect of the flip <m>\varphi_{1/3}</m> on the diagonals of a square? How many
+          elements of <m>D_4</m> send each diagonal to itself? How many elements of
+          <m>D_4</m> interchange the diagonals of a square?
+        </p>
+        <solution>
         <p>
           The 180 degree rotation sends the diagonals to themselves, i.e.,
           it fixes the diagonals.
@@ -316,41 +337,42 @@
           diagonals. Thus four elements fix each diagonal and four elements
           interchange them.
         </p>
-      </solution>
-      <figure xml:id="ColoredSquare" >
-        <caption>The colored square corresponding to the
-        function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
-        = R</m>,
-        <m>f(3)=B</m>, <m>f(4)=B</m>.</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        } 
-        \vspace{-.3in}
-      </figure>
-
+        </solution>
+        <figure xml:id="ColoredSquare" >
+          <caption>The colored square corresponding to the
+          function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
+          = R</m>,
+          <m>f(3)=B</m>, <m>f(4)=B</m>.</caption>
+          \mbox{
+          <image width="73%" source="images/" />
+          } 
+          \vspace{-.3in}
+        </figure>
+      </statement>
     </problem>
 
-    <problem xml:id="actiononfunctions">
-      <p>
-        (essential)
-        Recall that when you were asked in <xref ref="twocolorsofbeads">Problem</xref> to
-        find the number of ways to place two red beads and two blue beads at the
-        corners of a square free to move in three dimensional space, you were
-        not able to apply the quotient principle to answer the question. This is
-        a simple prototype of the problems we will solve by using permutation
-        groups. Though we don't yet have the tools to solve it, we can get an
-        interesting example of a group acting on a set from it. An assignment of
-        red and blue beads to the corners of a square can be thought of as a
-        function <m>f</m> from the vertices of the square to the set <m>\{R,B\}</m>.
-        For example, in <xref ref="ColoredSquare">Figure</xref> we would have <m>f(1) =R</m>, <m>f(2)
-        = R</m>,
-        <m>f(3)=B</m>, <m>f(4)=B</m>. What is the original position of the vertex that
-        <m>\sigma</m> moves to position
-        <m>j</m>? In terms of <m>f</m>, <m>\sigma</m> and <m>j</m>, give an expression that
-        represents the color of the vertex in position <m>j</m> after we apply the
-        permutation
-        <m>\sigma</m> to the vertices.
-      </p>
+    <problem xml:id="actiononfunctions" category="essential">
+      <statement>
+        <p>
+          Recall that when you were asked in <xref ref="twocolorsofbeads">Problem</xref> to
+          find the number of ways to place two red beads and two blue beads at the
+          corners of a square free to move in three dimensional space, you were
+          not able to apply the quotient principle to answer the question. This is
+          a simple prototype of the problems we will solve by using permutation
+          groups. Though we don't yet have the tools to solve it, we can get an
+          interesting example of a group acting on a set from it. An assignment of
+          red and blue beads to the corners of a square can be thought of as a
+          function <m>f</m> from the vertices of the square to the set <m>\{R,B\}</m>.
+          For example, in <xref ref="ColoredSquare">Figure</xref> we would have <m>f(1) =R</m>, <m>f(2)
+          = R</m>,
+          <m>f(3)=B</m>, <m>f(4)=B</m>. What is the original position of the vertex that
+          <m>\sigma</m> moves to position
+          <m>j</m>? In terms of <m>f</m>, <m>\sigma</m> and <m>j</m>, give an expression that
+          represents the color of the vertex in position <m>j</m> after we apply the
+          permutation
+          <m>\sigma</m> to the vertices.
+        </p>
+      </statement>
       <solution>
         <p>
           The original position of the vertex that <m>\sigma</m> moves to
@@ -361,27 +383,25 @@
       </solution>
     </problem>
 
-    <problem xml:id="actingonfunctions2">
-      <p>
-        (essential)
-      </p>
-
-      <p>
-        <xref ref="actiononfunctions">Problem</xref> suggests that when we have a group of
-        permutations of a set
-        <m>S</m> and we want to know how it acts on the functions from <m>S</m> to a set <m>C</m>
-        (of <q>colors</q>), we should define
-        <m>\beta_{\sigma}(f)</m> to be <m>f\circ\sigma^{-1}</m>. For the coloring function
-        <m>f</m> in <xref ref="ColoredSquare">Figure</xref>, let <m>g=f\circ\rho^{-1}</m> and compute <m>g(1)</m>, <m>g(2)</m>,
-        <m>g(3)</m>, and <m>g(4)</m> so you can see how in this case <m>f\circ\rho^{-1}</m> is
-        the coloring that results from rotating the colored square by the
-        rotation <m>\rho</m>. Show if a group
-        <m>G</m> of permutations acts on a set
-        <m>S</m>, then
-        <m>\beta_{\sigma}(f) =f\circ\sigma^{-1}</m> satisfies the definition of of <m>G</m>
-        acting on the set of functions <m>f</m> from <m>S</m> to <m>C</m>, while
-        <m>\beta_{\sigma}(f) =f\circ\sigma</m> does not.
-      </p>
+    <problem xml:id="actingonfunctions2" category="essential">
+      <statement>
+        <p>
+          <xref ref="actiononfunctions">Problem</xref> suggests that when we have a group of
+          permutations of a set
+          <m>S</m> and we want to know how it acts on the functions from <m>S</m> to a set <m>C</m>
+          (of <q>colors</q>), we should define
+          <m>\beta_{\sigma}(f)</m> to be <m>f\circ\sigma^{-1}</m>. For the coloring function
+          <m>f</m> in <xref ref="ColoredSquare">Figure</xref>, let <m>g=f\circ\rho^{-1}</m> and compute <m>g(1)</m>, <m>g(2)</m>,
+          <m>g(3)</m>, and <m>g(4)</m> so you can see how in this case <m>f\circ\rho^{-1}</m> is
+          the coloring that results from rotating the colored square by the
+          rotation <m>\rho</m>. Show if a group
+          <m>G</m> of permutations acts on a set
+          <m>S</m>, then
+          <m>\beta_{\sigma}(f) =f\circ\sigma^{-1}</m> satisfies the definition of of <m>G</m>
+          acting on the set of functions <m>f</m> from <m>S</m> to <m>C</m>, while
+          <m>\beta_{\sigma}(f) =f\circ\sigma</m> does not.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>g(1)=B</m>, <m>g(2)=R</m>, <m>g(3)=R</m>, and <m>g(4)=B</m>.
@@ -423,24 +443,25 @@
       </solution>
     </problem>
 
-    <problem xml:id="actingonfunctions3">
-      <p>
-        (essential)
-        If we are interested in something like the number of ways of
-        painting the faces of a cube, and we know how the rotation group of the
-        cube acts on the faces of the cube, then we are interested in how the
-        rotation group acts on functions from the set of faces of the cube to the
-        set of colors. The difference between this problem and <xref ref="actingonfunctions2">Problem</xref> is that in <xref ref="actingonfunctions2">Problem</xref> it
-        was the members <m>\sigma</m> of our permutation group that were permuting the
-        elements of <m>S</m>, while now we have bijections <m>\beta_{\sigma}</m> that are
-        permuting the elements of <m>S</m>, in this case the faces of the cube. We
-        want to define a new action <m>\beta'_{\sigma}</m> of our permutation group on
-        functions from <m>S</m> to a set <m>C</m>. How should we define
-        <m>\beta'_{\sigma}(f)</m>? (Hint: think about the example of the faces of the
-        square. After we act on the faces with <m>\beta_{\sigma}</m>, what is the
-        color of the vertex of the cube that is now in
-        position<nbsp /><m>x</m>?)
-      </p>
+    <problem xml:id="actingonfunctions3" category="essential">
+      <statement>
+        <p>
+          If we are interested in something like the number of ways of
+          painting the faces of a cube, and we know how the rotation group of the
+          cube acts on the faces of the cube, then we are interested in how the
+          rotation group acts on functions from the set of faces of the cube to the
+          set of colors. The difference between this problem and <xref ref="actingonfunctions2">Problem</xref> is that in <xref ref="actingonfunctions2">Problem</xref> it
+          was the members <m>\sigma</m> of our permutation group that were permuting the
+          elements of <m>S</m>, while now we have bijections <m>\beta_{\sigma}</m> that are
+          permuting the elements of <m>S</m>, in this case the faces of the cube. We
+          want to define a new action <m>\beta'_{\sigma}</m> of our permutation group on
+          functions from <m>S</m> to a set <m>C</m>. How should we define
+          <m>\beta'_{\sigma}(f)</m>? (Hint: think about the example of the faces of the
+          square. After we act on the faces with <m>\beta_{\sigma}</m>, what is the
+          color of the vertex of the cube that is now in
+          position<nbsp /><m>x</m>?)
+        </p>
+      </statement>
       <solution>
         <p>
           We should define <m>\beta'_{\sigma}(f) = f\circ
@@ -458,7 +479,7 @@
       In <xref ref="orbits1">Problem</xref> you saw that the action of
       the dihedral group <m>D_4</m> on two element subsets of <m>\{1,2,3,4\}</m> seems to
       split them into two sets, one with two elements and one with 4. We call
-      these two sets the ``orbits" of <m>D_4</m> acting on the two elements subsets
+      these two sets the <q>orbits</q> of <m>D_4</m> acting on the two elements subsets
       of <m>\{1,2,3,4\}</m>. More generally, the <em>orbit</em><index><main>orbit</main></index> of a
       permutation group
       <m>G</m> determined by an element <m>x</m> of a set <m>S</m> on which <m>G</m> acts is
@@ -504,23 +525,23 @@
       are shown in <xref ref="RotationsOfColoredSquare">Figure</xref>.
     </p>
 
-    <problem xml:id="dihedralorbits1">
-      <p>
-        (essential)
-        Draw a figure like <xref ref="RotationsOfColoredSquare">Figure</xref> that
-        illustrates the action of the dihedral group on the function <m>f</m> above.
-        How many elements are in the orbit of <m>f</m> under the action of dihedral
-        group? How many elements of the dihedral group fix <m>f</m>; that is, for how
-        many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f) =
-        f</m>? How many elements of the dihedral group take <m>f</m> to <m>g</m> (where <m>g=f\circ
-        \rho^{-1}</m> as earlier)?
-      </p>
-      <solution>
-        \hspace{-.4in}\mbox{
-        <image width="73%" source="images/" />
-        }
-
+    <problem xml:id="dihedralorbits1" category="essential">
+      <statement>
         <p>
+          Draw a figure like <xref ref="RotationsOfColoredSquare">Figure</xref> that
+          illustrates the action of the dihedral group on the function <m>f</m> above.
+          How many elements are in the orbit of <m>f</m> under the action of dihedral
+          group? How many elements of the dihedral group fix <m>f</m>; that is, for how
+          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f) =
+          f</m>? How many elements of the dihedral group take <m>f</m> to <m>g</m> (where <m>g=f\circ
+          \rho^{-1}</m> as earlier)?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           There are four elements in the orbit. Two elements fix <m>f</m>. Two elements
           take
           <m>f</m> to
@@ -529,55 +550,58 @@
       </solution>
     </problem>
 
-    <problem xml:id="dihedralorbits2">
-      <p>
-        (motivation)
-        If <m>f_1(1)=R</m>, <m>f_1(2) = B</m>, <m>f_1(3) = G</m> and <m>f_1(4) = G</m>, how many
-        elements are in the orbit of <m>f_1</m> under the action of the dihedral group?
-        How many elements of the dihedral group fix <m>f_1</m>; that is, for how
-        many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_1) =
-        f_1</m>? How many elements of the dihedral group
-        take <m>f_1</m> to <m>f_1\circ\rho^{-1}</m>?
-      </p>
+    <problem xml:id="dihedralorbits2" category="motivation">
+      <statement>
+        <p>
+          If <m>f_1(1)=R</m>, <m>f_1(2) = B</m>, <m>f_1(3) = G</m> and <m>f_1(4) = G</m>, how many
+          elements are in the orbit of <m>f_1</m> under the action of the dihedral group?
+          How many elements of the dihedral group fix <m>f_1</m>; that is, for how
+          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_1) =
+          f_1</m>? How many elements of the dihedral group
+          take <m>f_1</m> to <m>f_1\circ\rho^{-1}</m>?
+        </p>
+      </statement>
       <solution>
       </solution>
     </problem>
 
-    <problem xml:id="dihedralorbits3">
-      <p>
-        (motivation)
-        If <m>f_2(1)=R</m>, <m>f_2(2) = B</m>, <m>f_2(3) = R</m> and <m>f_2(4) = B</m>, how many
-        elements are in the orbit of <m>f_2</m> under the action of the dihedral group?
-        How many elements of the dihedral group fix <m>f_2</m>; that is, for how
-        many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_2) =
-        f_2</m>? How many elements of the dihedral group
-        take <m>f_2</m> to <m>f_2\circ\rho^{-1}</m>?
-      </p>
+    <problem xml:id="dihedralorbits3" category="motivation">
+      <statement>
+        <p>
+          If <m>f_2(1)=R</m>, <m>f_2(2) = B</m>, <m>f_2(3) = R</m> and <m>f_2(4) = B</m>, how many
+          elements are in the orbit of <m>f_2</m> under the action of the dihedral group?
+          How many elements of the dihedral group fix <m>f_2</m>; that is, for how
+          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_2) =
+          f_2</m>? How many elements of the dihedral group
+          take <m>f_2</m> to <m>f_2\circ\rho^{-1}</m>?
+        </p>
+      </statement>
       <solution>
       </solution>
     </problem>
 
-    <problem xml:id="cosets1">
-      <p>
-        (motivation)
-        The rotation group of the square with vertices 1, 2, 3, and 4 in
-        <xref ref="cube1">Figure</xref> can be thought of as a subgroup of the rotation group
-        of the cube. Namely it corresponds to the rotations of the cube around
-        the axis that joins the center of the bottom face with the center of the
-        top face. Recall that we have used <m>R</m> to stand for the rotation group of the
-        cube. Does
-        <m>\beta_{\rho^i}(\sigma)=\rho^i\circ
-        \sigma</m> define an action of <m>R_4</m> on <m>R</m>? Does <m>\beta_{\rho^i}(\sigma) =
-        \sigma\circ\rho^i</m> define a group action of <m>R_4</m> on <m>R</m>? Does
-        <m>\beta_{\rho^i}(\sigma) =
-        \sigma\circ\rho^{-i}</m> define a group action of <m>R_4</m> on <m>R</m>? For each
-        group action that you found, describe the orbits as simply as you
-        can. How many orbits are there and what are their sizes? (Hint: to
-        do this problem, you don't need to know anything about the
-        rotation group of the cube except for the fact that it is a group that
-        has <m>R_4</m> as a subgroup and the sizes of <m>R_4</m> and <m>R</m> to answer this
-        question.)
-      </p>
+    <problem xml:id="cosets1" category="motivation">
+      <statement>
+        <p>
+          The rotation group of the square with vertices 1, 2, 3, and 4 in
+          <xref ref="cube1">Figure</xref> can be thought of as a subgroup of the rotation group
+          of the cube. Namely it corresponds to the rotations of the cube around
+          the axis that joins the center of the bottom face with the center of the
+          top face. Recall that we have used <m>R</m> to stand for the rotation group of the
+          cube. Does
+          <m>\beta_{\rho^i}(\sigma)=\rho^i\circ
+          \sigma</m> define an action of <m>R_4</m> on <m>R</m>? Does <m>\beta_{\rho^i}(\sigma) =
+          \sigma\circ\rho^i</m> define a group action of <m>R_4</m> on <m>R</m>? Does
+          <m>\beta_{\rho^i}(\sigma) =
+          \sigma\circ\rho^{-i}</m> define a group action of <m>R_4</m> on <m>R</m>? For each
+          group action that you found, describe the orbits as simply as you
+          can. How many orbits are there and what are their sizes? (Hint: to
+          do this problem, you don't need to know anything about the
+          rotation group of the cube except for the fact that it is a group that
+          has <m>R_4</m> as a subgroup and the sizes of <m>R_4</m> and <m>R</m> to answer this
+          question.)
+        </p>
+      </statement>
       <solution>
         <p>
           Yes, <m>\beta_{\rho^i}(\sigma)=\rho^i\circ
@@ -600,13 +624,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        What are the sizes of the orbits, and how many have each size, for
-        the action of
-        <m>D_6</m> on the two element subsets of <m>\{1,2,3,4,5,6\}</m>.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          What are the sizes of the orbits, and how many have each size, for
+          the action of
+          <m>D_6</m> on the two element subsets of <m>\{1,2,3,4,5,6\}</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           There are two orbits of size 6 and one orbit of size 3. (Think of
@@ -618,22 +643,23 @@
       </solution>
     </problem>
 
-    <problem xml:id="coloredhex">
-      <p>
-        (essential)
-        Suppose we draw identical circles at the vertices of a regular
-        hexagon. Suppose we color these circles with two colors, red and blue. We
-        may think of a coloring as a function from the set <m>\{1,2,3,4,5,6\}</m> to the
-        set <m>\{R,B\}</m> by numbering the vertices from one to six consecutively around
-        the hexagon. To do this problem it will be helpful to use the notation
-        <m>RBRRBB</m> to stand for the function <m>f</m> with <m>f(1) =R</m>,
-        <m>f(2)=B</m>,
-        <m>f(3)=R</m>, <m>f(4) = R</m>, <m>f(5)=B</m>, <m>f(6)=B</m>. How many functions are there from the set
-        <m>\{1,2,3,4,5,6\}</m> to the set <m>\{R,B\}</m>? These functions are partitioned into orbits by
-        the action of the rotation group on the hexagon. Using our simplified notation, write
-        down all these orbits and observe what the possible sizes of orbits
-        are.
-      </p>
+    <problem xml:id="coloredhex" category="essential">
+      <statement>
+        <p>
+          Suppose we draw identical circles at the vertices of a regular
+          hexagon. Suppose we color these circles with two colors, red and blue. We
+          may think of a coloring as a function from the set <m>\{1,2,3,4,5,6\}</m> to the
+          set <m>\{R,B\}</m> by numbering the vertices from one to six consecutively around
+          the hexagon. To do this problem it will be helpful to use the notation
+          <m>RBRRBB</m> to stand for the function <m>f</m> with <m>f(1) =R</m>,
+          <m>f(2)=B</m>,
+          <m>f(3)=R</m>, <m>f(4) = R</m>, <m>f(5)=B</m>, <m>f(6)=B</m>. How many functions are there from the set
+          <m>\{1,2,3,4,5,6\}</m> to the set <m>\{R,B\}</m>? These functions are partitioned into orbits by
+          the action of the rotation group on the hexagon. Using our simplified notation, write
+          down all these orbits and observe what the possible sizes of orbits
+          are.
+        </p>
+      </statement>
       <solution>
         <p>
           There are 64 functions from a six-element set to a
@@ -705,12 +731,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Either show that, when <m>G</m> is a group acting on a set <m>S</m>, the
-        orbits of <m>G</m> partition <m>S</m> or give a counter-example.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Either show that, when <m>G</m> is a group acting on a set <m>S</m>, the
+          orbits of <m>G</m> partition <m>S</m> or give a counter-example.
+        </p>
+      </statement>
       <solution>
         <p>
           Each element <m>x</m> is in at least one orbit, namely <m>Gx</m>. But if
@@ -730,15 +757,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="fixandmove">
-      <p>
-        (motivation)
-        In <xref ref="dihedralorbits1">Problems</xref>, <xref ref="dihedralorbits2"></xref>, and <xref ref="dihedralorbits3"></xref>, what set of elements fixes <m>f</m> and what set of
-        elements takes <m>f</m> to <m>g</m>, what set of elements fixes <m>f_1</m> and what set
-        of elements takes <m>f_1</m> to <m>f_1\circ\rho^{-1}</m>, and what set of elements
-        fixes <m>f_2</m> and what set of elements takes <m>f_2</m> to
-        <m>f_2\circ\rho^{-1}</m>?
-      </p>
+    <problem xml:id="fixandmove" category="motivation">
+      <statement>
+        <p>
+          In <xref ref="dihedralorbits1">Problems</xref>, <xref ref="dihedralorbits2"></xref>, and <xref ref="dihedralorbits3"></xref>, what set of elements fixes <m>f</m> and what set of
+          elements takes <m>f</m> to <m>g</m>, what set of elements fixes <m>f_1</m> and what set
+          of elements takes <m>f_1</m> to <m>f_1\circ\rho^{-1}</m>, and what set of elements
+          fixes <m>f_2</m> and what set of elements takes <m>f_2</m> to
+          <m>f_2\circ\rho^{-1}</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           In <xref ref="dihedralorbits1">Problem</xref>, the set of elements fixing <m>f</m>
@@ -754,12 +782,13 @@
       </solution>
     </problem>
 
-    <problem xml:id="subgroupfixingfunction">
-      <p>
-        (essential and interesting)
-        In <xref ref="fixandmove">Problem</xref> the subsets of <m>D_4</m> that fix a function
-        have a special property. What is it?
-      </p>
+    <problem xml:id="subgroupfixingfunction" category="essential and interesting">
+      <statement>
+        <p>
+          In <xref ref="fixandmove">Problem</xref> the subsets of <m>D_4</m> that fix a function
+          have a special property. What is it?
+        </p>
+      </statement>
       <solution>
         <p>
           In each case, the subsets that fix a function form a subgroup. To
@@ -774,7 +803,7 @@
       </p>
       <solution>
         <p>
-          This is difficult to do at this stage except by ``brute force."
+          This is difficult to do at this stage except by <q>brute force.</q>
           Here is an organized brute force solution. There is no orbit of size
           3 or 5. If a function is constant, then clearly its orbit has size one. If
           a function has exactly one <m>R</m> (or
@@ -800,13 +829,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="orbitsize">
-      <p>
-        (essential and interesting)
-        Make a conjecture about how the size of an orbit of the permutation
-        group <m>G</m> acting on the set <m>S</m> relates to the size of
-        <m>G</m>. Prove your conjecture.
-      </p>
+    <problem xml:id="orbitsize" category="essential and interesting">
+      <statement>
+        <p>
+          Make a conjecture about how the size of an orbit of the permutation
+          group <m>G</m> acting on the set <m>S</m> relates to the size of
+          <m>G</m>. Prove your conjecture.
+        </p>
+      </statement>
       <solution>
         <p>
           The size of an orbit divides the size of the group. To prove the
@@ -831,12 +861,13 @@
       </solution>
     </problem>
 
-    <problem xml:id="sizeofsubgroup">
-      <p>
-        (essential)
-        Make a conjecture about how the size a subgroup of the permutation
-        group <m>G</m> relates to the size of <m>G</m>.
-      </p>
+    <problem xml:id="sizeofsubgroup" category="essential">
+      <statement>
+        <p>
+          Make a conjecture about how the size a subgroup of the permutation
+          group <m>G</m> relates to the size of <m>G</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           The size of a subgroup of a permutation group <m>G</m> divides the size
@@ -863,13 +894,14 @@
       then <m>A_n</m> and <m>tA_n</m> are two disjoint sets that partition <m>S_n</m>.
     </p>
 
-    <problem xml:id="cosetsize">
-      <p>
-        (essential)
-        Explain why, for any subgroup <m>H</m> of a permutation group <m>G</m>, <m>H</m>
-        and
-        <m>\tau H</m> have the same size.
-      </p>
+    <problem xml:id="cosetsize" category="essential">
+      <statement>
+        <p>
+          Explain why, for any subgroup <m>H</m> of a permutation group <m>G</m>, <m>H</m>
+          and
+          <m>\tau H</m> have the same size.
+        </p>
+      </statement>
       <solution>
         <p>
           There is a bijection between <m>H</m> and <m>\tau H</m> given by <m>f(\sigma)
@@ -928,12 +960,13 @@
       subset that fixed the function in each case.
     </p>
 
-    <problem xml:id="cosetspartitionG">
-      <p>
-        (essential)
-        Can two distinct cosets of a subgroup <m>H</m> of a group <m>G</m> have an
-        element in common?
-      </p>
+    <problem xml:id="cosetspartitionG" category="essential">
+      <statement>
+        <p>
+          Can two distinct cosets of a subgroup <m>H</m> of a group <m>G</m> have an
+          element in common?
+        </p>
+      </statement>
       <solution>
         <p>
           No, because if <m>\tau\in \sigma H</m>, then <m>\tau H =\sigma H</m>
@@ -943,11 +976,12 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Prove your conjecture in <xref ref="sizeofsubgroup">Problem</xref>.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Prove your conjecture in <xref ref="sizeofsubgroup">Problem</xref>.
+        </p>
+      </statement>
       <solution>
         <p>
           By <xref ref="cosetspartitionG">Problem</xref>, the cosets of a subgroup of <m>G</m>
@@ -958,13 +992,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Show that whenever a group <m>G</m> acts on a set <m>S</m>, then for each <m>x</m>
-        in <m>S</m>, the set of all elements <m>\sigma</m> fixing <m>x</m> is a subgroup of <m>G</m>. We will
-        denote this subgroup by <m>{ Fix}(x)</m>.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Show that whenever a group <m>G</m> acts on a set <m>S</m>, then for each <m>x</m>
+          in <m>S</m>, the set of all elements <m>\sigma</m> fixing <m>x</m> is a subgroup of <m>G</m>. We will
+          denote this subgroup by <m>{ Fix}(x)</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           The set of elements fixing <m>x</m> is closed under composition, and
@@ -973,13 +1008,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Show that whenever a group <m>G</m> acts on a set <m>S</m>, then for each <m>x</m>
-        and <m>y</m> the set of all <m>\tau \in G</m> such that <m>\beta_{\tau}(x) = y</m>
-        is a coset of the subgroup <m>{ Fix}(x)</m> of all elements of <m>G</m> fixing <m>x</m>.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Show that whenever a group <m>G</m> acts on a set <m>S</m>, then for each <m>x</m>
+          and <m>y</m> the set of all <m>\tau \in G</m> such that <m>\beta_{\tau}(x) = y</m>
+          is a coset of the subgroup <m>{ Fix}(x)</m> of all elements of <m>G</m> fixing <m>x</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           First, if <m>\beta_{\tau}(x)=y</m> and <m>\beta_{\sigma}</m> fixes <m>x</m>, then
@@ -997,14 +1033,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        When a group <m>G</m> acts on a set <m>S</m>, how is the number of elements
-        in the orbit containing the element <m>x</m> of <m>S</m> related to the size of <m>G</m>
-        and the size of <m>{ Fix}(x)</m>? Find a bijection that proves that what
-        you say is correct.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          When a group <m>G</m> acts on a set <m>S</m>, how is the number of elements
+          in the orbit containing the element <m>x</m> of <m>S</m> related to the size of <m>G</m>
+          and the size of <m>{ Fix}(x)</m>? Find a bijection that proves that what
+          you say is correct.
+        </p>
+      </statement>
       <solution>
         <p>
           The number of elements in the orbit containing the element <m>x</m> is
@@ -1043,19 +1080,25 @@
   <subsection>
     <title>Multiorbits</title>
     <problem xml:id="multiorbits1">
-      <p>
-        Draw figures like <xref ref="RotationsOfColoredSquare">Figure</xref> to show
-        the eight results of acting with the dihedral group on the squares
-        corresponding to the functions <m>f</m>, <m>f_1</m>, and <m>f_2</m> of <xref ref="dihedralorbits1">Problems</xref>, <xref ref="dihedralorbits2"></xref>, and <m><xref ref="dihedralorbits3"></xref></m>.
-      </p>
+      <statement>
+        <p>
+          Draw figures like <xref ref="RotationsOfColoredSquare">Figure</xref> to show
+          the eight results of acting with the dihedral group on the squares
+          corresponding to the functions <m>f</m>, <m>f_1</m>, and <m>f_2</m> of <xref ref="dihedralorbits1">Problems</xref>, <xref ref="dihedralorbits2"></xref>, and <m><xref ref="dihedralorbits3"></xref></m>.
+        </p>
+      </statement>
       <solution>
-        \hspace{-.4in}\mbox{
-        <image width="73%" source="images/" />
-        }  \hspace{-.4in}\mbox{
-        <image width="73%" source="images/" />
-        }  \hspace{-.4in}\mbox{
-        <image width="73%" source="images/" />
-        }
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </p>
       </solution>
     </problem>
 
@@ -1080,12 +1123,13 @@
       <m>G</m>.
     </p>
 
-    <problem xml:id="NumberContainingx">
-      <p>
-        (essential)
-        In how many different multiorbits of the action of <m>G</m> on <m>S</m> will
-        a given element of <m>S</m> appear?
-      </p>
+    <problem xml:id="NumberContainingx" category="essential">
+      <statement>
+        <p>
+          In how many different multiorbits of the action of <m>G</m> on <m>S</m> will
+          a given element of <m>S</m> appear?
+        </p>
+      </statement>
       <solution>
         <p>
           Only one, because the orbits partition <m>S</m>, and there is a
@@ -1095,12 +1139,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        What will the multiplicity of <m>x</m> be in
-        <m>Gx_{\mbox{\scriptsize multi} }</m>?
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          What will the multiplicity of <m>x</m> be in
+          <m>Gx_{\mbox{\scriptsize multi} }</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>|{ Fix}(x)|</m>.
@@ -1134,14 +1179,15 @@
       they all have the same size and the idea of multiset union.
     </p>
 
-    <problem xml:id="numbermultiorbits1">
-      <p>
-        (essential)
-        How does the size of the union of the set of multiorbits of a group
-        <m>G</m> acting on a set <m>S</m> relate to the number of multiorbits and the size
-        of
-        <m>G</m>?
-      </p>
+    <problem xml:id="numbermultiorbits1" category="essential">
+      <statement>
+        <p>
+          How does the size of the union of the set of multiorbits of a group
+          <m>G</m> acting on a set <m>S</m> relate to the number of multiorbits and the size
+          of
+          <m>G</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           It is simply the product of the number of multiorbits and the size
@@ -1150,13 +1196,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="numbermultiorbits2">
-      <p>
-        (essential)
-        How does the size of the union of the set of multiorbits of a group
-        <m>G</m> acting on a set <m>S</m> relate to the numbers <m>|{
-        Fix}(x)|</m>?
-      </p>
+    <problem xml:id="numbermultiorbits2" category="essential">
+      <statement>
+        <p>
+          How does the size of the union of the set of multiorbits of a group
+          <m>G</m> acting on a set <m>S</m> relate to the numbers <m>|{
+          Fix}(x)|</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           Since it is the sum of the multiplicities of the elements of <m>S</m>
@@ -1165,16 +1212,17 @@
       </solution>
     </problem>
 
-    <problem xml:id="numbermultiorbits3">
-      <p>
-        (essential)
-        In <xref ref="numbermultiorbits1">Problems</xref> and <xref ref="numbermultiorbits2"></xref>
-        you computed the size of the union of the set of multiorbits of a group
-        <m>G</m> acting on a set <m>S</m> in two different ways, getting two different
-        expressions which must be equal. Write the
-        equation that says they are equal and solve for the number of multiorbits, and
-        therefore the number of orbits.
-      </p>
+    <problem xml:id="numbermultiorbits3" category="essential">
+      <statement>
+        <p>
+          In <xref ref="numbermultiorbits1">Problems</xref> and <xref ref="numbermultiorbits2"></xref>
+          you computed the size of the union of the set of multiorbits of a group
+          <m>G</m> acting on a set <m>S</m> in two different ways, getting two different
+          expressions which must be equal. Write the
+          equation that says they are equal and solve for the number of multiorbits, and
+          therefore the number of orbits.
+        </p>
+      </statement>
       <solution>
         <p>
           Using <m>m</m> for the number of multiorbits, we get
@@ -1196,47 +1244,52 @@
 
   <subsection>
     <title>The Cauchy-Frobenius-Burnside Theorem</title>
-    <problem xml:id="numbermultiorbits4">
-      <p>
-      (essential)
-      In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
-      that expresses the number of orbits in terms of the number of group
-      elements fixing each element of <m>S</m>. It is often easier to find the
-      number of elements fixed by a given group element than to find the number
-      of group elements fixing an element of <m>S</m>. For this purpose,
-      <ol>
-        <li><p>
-            Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
-            <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
-            in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
-            and elements <m>\sigma</m> of <m>G</m>.
-            <solution>
-              <me>
-                m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
-                \chi(\sigma,x).
-              </me>
-            </solution>
-          </p></li>
+    <problem xml:id="numbermultiorbits4" category="essential">
+      <statement>
+        <p>
+          In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
+          that expresses the number of orbits in terms of the number of group
+          elements fixing each element of <m>S</m>. It is often easier to find the
+          number of elements fixed by a given group element than to find the number
+          of group elements fixing an element of <m>S</m>. For this purpose,
+          <ol>
+            <li>
+              <p>
+                Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
+                <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
+                in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
+                and elements <m>\sigma</m> of <m>G</m>.
+                <solution>
+                <me>
+                  m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
+                  \chi(\sigma,x).
+                </me>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-            Reverse the order of the previous summation in order to convert it
-            into a single sum involving the function <m>\chi</m> given by<fn>The reason
-            for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
-            what is called a group character.  Character theory is a major ingredient of
-            the representation theory of groups, an advanced subject that combines
-            abstract beauty with amazing utility.</fn>
-            <me>
-              \chi(\sigma) =
-              \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
-            </me>
-            <solution>
-              <me>
-                m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
-              </me>
-            </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Reverse the order of the previous summation in order to convert it
+                into a single sum involving the function <m>\chi</m> given by<fn>The reason
+                for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
+                what is called a group character.  Character theory is a major ingredient of
+                the representation theory of groups, an advanced subject that combines
+                abstract beauty with amazing utility.</fn>
+                <me>
+                  \chi(\sigma) =
+                  \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
+                </me>
+                <solution>
+                <me>
+                  m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
+                </me>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
     <p>
@@ -1254,12 +1307,13 @@
       in a compromise between historical accuracy and common usage.
     </p>
 
-    <problem>
-      <p>
-        (interesting)
-        In how many ways may we string four (identical) red, six (identical)
-        blue, and seven (identical) green beads on a necklace?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          In how many ways may we string four (identical) red, six (identical)
+          blue, and seven (identical) green beads on a necklace?
+        </p>
+      </statement>
       <solution>
         <p>
           We are stringing 17 beads on our necklace, so we are asking for
@@ -1274,7 +1328,7 @@
           so the size of the orbit is one or 17. If it is 1, then <m>i=0</m>. Thus no
           elements are fixed by any nontrivial rotation, and all <m>17\choose 4,6,7</m>
           lists of <m>R</m>s, <m>B</m>s and <m>G</m>s are fixed by the identity. Each flip will be a
-          flip \strut around a line from a bead to the spot between the two ``opposite"
+          flip \strut around a line from a bead to the spot between the two <q>opposite</q>
           beads. This line divides the list into the eight beads on its left, the
           eight beads on its right and the one bead it goes through. If a flip fixes
           a list, the eight beads on the left must be identical to the eight beads on
@@ -1295,19 +1349,20 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        If we have an unlimited supply of identical red beads and identical
-        blue beads, in how many ways may we string 17 of them on a necklace?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          If we have an unlimited supply of identical red beads and identical
+          blue beads, in how many ways may we string 17 of them on a necklace?
+        </p>
+      </statement>
       <solution>
         <p>
           We are asking for the number of orbits of <m>D_{17}</m> on the set of
           functions from <m>[17]</m> to <m>\{R,B\}</m>. Every function is fixed by the
           identity. The only functions fixed by a nontrivial rotation are the constant
           functions. Each flip is around a line from a bead to the space between the
-          two ``opposite" beads. The bead the line goes through can be either color,
+          two <q>opposite</q> beads. The bead the line goes through can be either color,
           and then the eight beads to the left of this one must be identical to the
           eight beads to the right of this one. There are <m>2^8</m> ways to assign beads
           to the positions on the left, so a flip fixes <m>2^9</m> functions. Therefore by
@@ -1321,13 +1376,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        If we have five (identical) red, five (identical) blue, and five
-        (identical) green beads, in how many ways may we string them on a
-        necklace?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          If we have five (identical) red, five (identical) blue, and five
+          (identical) green beads, in how many ways may we string them on a
+          necklace?
+        </p>
+      </statement>
       <solution>
         <p>
           Here we need to consider the action of <m>D_{15}</m> on lists
@@ -1353,12 +1409,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        In how many ways may we paint the faces of a cube with six
-        different colors, using all six?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          In how many ways may we paint the faces of a cube with six
+          different colors, using all six?
+        </p>
+      </statement>
       <solution>
         <p>
           Here we must consider the action of the rotation group of the cube
@@ -1400,15 +1457,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="Catalancircle">
-      <p>
-        (interesting)
-        In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
-        free to move around in the <em>plane</em> (so it cannot be flipped) if we use
-        red <m>n</m> times and blue
-        <m>n+1</m> times? If this is a number you have seen before, identify
-        it. <index><main>Catalan Number</main><sub>(<xref ref="Catalancircle">Problem</xref>)</sub></index>
-      </p>
+    <problem xml:id="Catalancircle" category="interesting">
+      <statement>
+        <p>
+          In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
+          free to move around in the <em>plane</em> (so it cannot be flipped) if we use
+          red <m>n</m> times and blue
+          <m>n+1</m> times? If this is a number you have seen before, identify
+          it. <index><main>Catalan Number</main><sub>(<xref ref="Catalancircle">Problem</xref>)</sub></index>
+        </p>
+      </statement>
       <solution>
         <p>
           The set of all powers of a rotation is a subgroup of the
@@ -1432,15 +1490,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
-        free to move in <em>three-dimensional space</em> so that <m>n</m> edges are
-        colored red and
-        <m>n+1</m> edges are colored blue. Hint: your answer may depend on whether <m>n</m> is even or
-        odd.
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
+          free to move in <em>three-dimensional space</em> so that <m>n</m> edges are
+          colored red and
+          <m>n+1</m> edges are colored blue. Hint: your answer may depend on whether <m>n</m> is even or
+          odd.
+        </p>
+      </statement>
       <solution>
         <p>
           The set of all powers of a rotation is a subgroup of the
@@ -1491,14 +1550,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        (Not unusually hard for someone who has worked on chromatic
-        polynomials.) How many different proper colorings with four colors are there
-        of the vertices of a graph which is cycle on five vertices? (If we get one
-        coloring by rotating or flipping another one, they aren't really different.)
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          (Not unusually hard for someone who has worked on chromatic
+          polynomials.) How many different proper colorings with four colors are there
+          of the vertices of a graph which is cycle on five vertices? (If we get one
+          coloring by rotating or flipping another one, they aren't really different.)
+        </p>
+      </statement>
       <solution>
         <p>
           We are asking for the number of orbits of <m>D_5</m> on lists of five
@@ -1530,84 +1590,97 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        How many different proper colorings with four colors are there of the
-        graph in <xref ref="starhexagon">Figure</xref>? Two graphs are the same if we
-        can redraw one of the graphs, not changing the vertex set or edge set, so that it is
-        identical to the other one. This is equivalent to permuting the vertices in some
-        way so that when we apply the permutation to the endpoints of the edges to get a new
-        edge set, the new edge set is equal to the old one. Such a permutation is called an
-        <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Thus two
-        colorings are different if there is no automorphism of the graph that carries one to
-        the other one.
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          How many different proper colorings with four colors are there of the
+          graph in <xref ref="starhexagon">Figure</xref>? Two graphs are the same if we
+          can redraw one of the graphs, not changing the vertex set or edge set, so that it is
+          identical to the other one. This is equivalent to permuting the vertices in some
+          way so that when we apply the permutation to the endpoints of the edges to get a new
+          edge set, the new edge set is equal to the old one. Such a permutation is called an
+          <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Thus two
+          colorings are different if there is no automorphism of the graph that carries one to
+          the other one.
+        </p>
 
-      <figure xml:id="starhexagon" >
-        <caption>A graph on six vertices.</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
+        <figure xml:id="starhexagon" >
+          <caption>A graph on six vertices.</caption>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
+      </statement>
       <solution>
         <p>
-        We want the number of orbits of the set of proper colorings under the action of the group
-        of automorphisms of the graph. An automorphism <m>\sigma</m>
-        maps vertex 1 to any of six vertices. Vertex 2 can be mapped to any of the four
-        vertices adjacent to the image of vertex 1. Vertex 3 is adjacent to vertices 1 and
-        2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and
-        vertex 2; by checking cases you can see that there are always exactly two vertices
-        adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of
-        these vertices preserves all the edges among vertices 1, 2, and 3. However each of
-        the other three vertices is adjacent to exactly two vertices of the set
-        <m>\{1,2,3\}</m>, and thus it must be mapped to the unique vertex adjacent to the
-        corresponding two of
-        <m>\sigma(1)</m>,
-        <m>\sigma(2)</m> and <m>\sigma(3)</m>. (It is always the case that each vertex is adjacent to
-        exactly two of these, as you can see by considering the cases with <m>\sigma(1)=1</m>.) Thus
-        there are <m>6\cdot4\cdot2=48</m> elements in the group. Now to apply the CFB theorem we would
-        need to know how many proper colorings are fixed by each group element, so we would need
-        to know what the group elements are. We have observed that a permutation that preserves
-        the edges is determined by where the triangle <m>\{1,2,3\}</m> goes. We can see eight
-        triangles in the graph, triangles of the form <m>\{i,i+1,i+2\}</m>, where we identify 7 with 1
-        and 8 with 2, and the triangles <m>\{1,3,5\}</m> and <m>\{2,4,6\}</m>. We can map the set
-        <m>\{1,2,3\}</m> to any of these eight sets by six one-to-one maps, so each group element is
-        determined uniquely by one of these mappings. However focusing on these triangles
-        makes our job here simpler in another way. In a proper coloring, vertices 1, 2, and
-        3 must be colored differently. We have four choices for the color of vertex 1,
-        three different ones for vertex 2 and two still different ones for vertex 3, so
-        there are 24 ways to color this triangle. Clearly the only difference among these
-        ways is the actual names of the colors. That is, we can assume that vertex 1 is
-        colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine
-        the proper colorings starting with these three colors, and up to changing the names
-        of the colors, we will have determined all the proper colorings. Then we can ask
-        which group elements fix a coloring rather than which colorings are fixed by a group
-        element. This turns out to be easier. Let us write
-        <m>RBGRBG</m> for the coloring that colors vertices 1 and 4 red, two and five blue, and three
-        and six green. An examination of the figure shows that this is a proper coloring. In
-        fact, it is the only proper coloring that starts <m>RBG</m> and uses only three colors. Suppose
-        we were to use a fourth color, <m>Y</m>. Then among vertices 4, 5, and 6, it could be used in
-        just one place, because those three vertices are mutually adjacent. Each of the other two
-        vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
-        only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
-        <ol>
-          <li xml:id="coloring1" ><p>
+          We want the number of orbits of the set of proper colorings under the action of the group
+          of automorphisms of the graph. An automorphism <m>\sigma</m>
+          maps vertex 1 to any of six vertices. Vertex 2 can be mapped to any of the four
+          vertices adjacent to the image of vertex 1. Vertex 3 is adjacent to vertices 1 and
+          2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and
+          vertex 2; by checking cases you can see that there are always exactly two vertices
+          adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of
+          these vertices preserves all the edges among vertices 1, 2, and 3. However each of
+          the other three vertices is adjacent to exactly two vertices of the set
+          <m>\{1,2,3\}</m>, and thus it must be mapped to the unique vertex adjacent to the
+          corresponding two of
+          <m>\sigma(1)</m>,
+          <m>\sigma(2)</m> and <m>\sigma(3)</m>. (It is always the case that each vertex is adjacent to
+          exactly two of these, as you can see by considering the cases with <m>\sigma(1)=1</m>.) Thus
+          there are <m>6\cdot4\cdot2=48</m> elements in the group. Now to apply the CFB theorem we would
+          need to know how many proper colorings are fixed by each group element, so we would need
+          to know what the group elements are. We have observed that a permutation that preserves
+          the edges is determined by where the triangle <m>\{1,2,3\}</m> goes. We can see eight
+          triangles in the graph, triangles of the form <m>\{i,i+1,i+2\}</m>, where we identify 7 with 1
+          and 8 with 2, and the triangles <m>\{1,3,5\}</m> and <m>\{2,4,6\}</m>. We can map the set
+          <m>\{1,2,3\}</m> to any of these eight sets by six one-to-one maps, so each group element is
+          determined uniquely by one of these mappings. However focusing on these triangles
+          makes our job here simpler in another way. In a proper coloring, vertices 1, 2, and
+          3 must be colored differently. We have four choices for the color of vertex 1,
+          three different ones for vertex 2 and two still different ones for vertex 3, so
+          there are 24 ways to color this triangle. Clearly the only difference among these
+          ways is the actual names of the colors. That is, we can assume that vertex 1 is
+          colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine
+          the proper colorings starting with these three colors, and up to changing the names
+          of the colors, we will have determined all the proper colorings. Then we can ask
+          which group elements fix a coloring rather than which colorings are fixed by a group
+          element. This turns out to be easier. Let us write
+          <m>RBGRBG</m> for the coloring that colors vertices 1 and 4 red, two and five blue, and three
+          and six green. An examination of the figure shows that this is a proper coloring. In
+          fact, it is the only proper coloring that starts <m>RBG</m> and uses only three colors. Suppose
+          we were to use a fourth color, <m>Y</m>. Then among vertices 4, 5, and 6, it could be used in
+          just one place, because those three vertices are mutually adjacent. Each of the other two
+          vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
+          only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
+          <ol>
+            <li xml:id="coloring1" >
+
+            <p>
               <m>RBGRBG</m>
-            </p></li>
+            </p>
+            </li>
 
-          <li xml:id="coloring2" ><p>
+            <li xml:id="coloring2" >
+
+            <p>
               <m>RBGYBG</m>
-            </p></li>
+            </p>
+            </li>
 
-          <li xml:id="coloring3" ><p>
+            <li xml:id="coloring3" >
+
+            <p>
               <m>RBGRYG</m>
-            </p></li>
+            </p>
+            </li>
 
-          <li xml:id="coloring4" ><p>
+            <li xml:id="coloring4" >
+
+            <p>
               <m>RBGRBY</m>.
-            </p></li>
-        </ol>
+            </p>
+            </li>
+          </ol>
         </p>
 
         <p>

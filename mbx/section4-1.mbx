@@ -239,7 +239,7 @@
           <cell></cell>
         </row>
       </tabular>
-      \hglue-3pt}} \vspace{-12 pt}
+      \hglue-3pt}}\vspace{-12 pt}
     </table>
 
     <p>
@@ -402,28 +402,29 @@
 
   <subsection xml:id="orderedfunctionsection">
     <title>Ordered functions</title>
-    <problem xml:id="bookcase">
-      <p>
-        (essential and interesting)
-        Suppose we wish to place <m>k</m> distinct books onto the shelves of
-        a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
-        the books would fit on any of the shelves. Also, let's imagine pushing
-        the books on a shelf as far to the left as we can, so that we are only
-        thinking about how the books sit relative to each other, not about the
-        exact places where we put the books. Since the books are distinct, we can
-        think of a the first book, the second book and so on. How many places
-        are there where we can place the first book? When we place the second
-        book, if we decide to place it on the shelf that already has a book, does
-        it matter if we place it to the left or right of the book that is already
-        there? How many places are there where we can place the second book?
-        Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
-        on a shelf that already has some books, is sliding it in to the left of
-        all the books already there different from placing it to the right of
-        all the books already or between two books already there? In how many
-        ways may we place the
-        <m>i</m>th book into the bookcase? In how many ways may we place all the
-        books?
-      </p>
+    <problem xml:id="bookcase" category="essential and interesting">
+      <statement>
+        <p>
+          Suppose we wish to place <m>k</m> distinct books onto the shelves of
+          a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
+          the books would fit on any of the shelves. Also, let's imagine pushing
+          the books on a shelf as far to the left as we can, so that we are only
+          thinking about how the books sit relative to each other, not about the
+          exact places where we put the books. Since the books are distinct, we can
+          think of a the first book, the second book and so on. How many places
+          are there where we can place the first book? When we place the second
+          book, if we decide to place it on the shelf that already has a book, does
+          it matter if we place it to the left or right of the book that is already
+          there? How many places are there where we can place the second book?
+          Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
+          on a shelf that already has some books, is sliding it in to the left of
+          all the books already there different from placing it to the right of
+          all the books already or between two books already there? In how many
+          ways may we place the
+          <m>i</m>th book into the bookcase? In how many ways may we place all the
+          books?
+        </p>
+      </statement>
       <solution>
         <p>
           There are <m>n</m> places where we can place the first book. Once
@@ -527,20 +528,21 @@
 
   <subsection>
     <title>Broken permutations and Lah numbers</title>
-    <problem xml:id="brokenpermutation">
-      <p>
-        (essential for this or the next section, and interesting)
-        In how many ways may we stack <m>k</m> distinct books into <m>n</m>
-        identical boxes so that there is a stack in every box? (Hint: Imagine
-        taking a stack of
-        <m>k</m> books, and breaking it up into stacks to put into the boxes in the
-        same order they were originally stacked. If you are going to use <m>n</m>
-        boxes, in how many places will you have to break the stack up into smaller
-        stacks, and how many ways can you do this?) (Alternate hint: How many
-        different bookcase arrangements correspond to the same way of stacking
-        <m>k</m> books into <m>n</m> boxes so that each box has at least one book?). The
-        hints may suggest that you can do this problem in more than one way!
-      </p>
+    <problem xml:id="brokenpermutation" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          In how many ways may we stack <m>k</m> distinct books into <m>n</m>
+          identical boxes so that there is a stack in every box? (Hint: Imagine
+          taking a stack of
+          <m>k</m> books, and breaking it up into stacks to put into the boxes in the
+          same order they were originally stacked. If you are going to use <m>n</m>
+          boxes, in how many places will you have to break the stack up into smaller
+          stacks, and how many ways can you do this?) (Alternate hint: How many
+          different bookcase arrangements correspond to the same way of stacking
+          <m>k</m> books into <m>n</m> boxes so that each box has at least one book?). The
+          hints may suggest that you can do this problem in more than one way!
+        </p>
+      </statement>
       <solution>
         <p>
           We can make a list of the <m>k</m> distinct books in <m>k!</m> ways.
@@ -598,12 +600,13 @@
 
   <subsection>
     <title>Compositions of integers</title>
-    <problem>
-      <p>
-        (essential for this or the next section)
-        In how many ways may we put <m>k</m> identical books onto <m>n</m> shelves
-        if each shelf must get at least one book?
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          In how many ways may we put <m>k</m> identical books onto <m>n</m> shelves
+          if each shelf must get at least one book?
+        </p>
+      </statement>
       <solution>
         <p>
           In <xref ref="bookcaseeveryshelf">problem</xref> we showed that with <m>k</m>
@@ -617,14 +620,15 @@
       </solution>
     </problem>
 
-    <problem xml:id="compositionagian">
-      <p>
-        (essential for this or the next section)
-        A <em>composition</em> of the integer <m>k</m> into <m>n</m> parts is
-        a list of <m>n</m> positive integers that add to <m>k</m>.
-        How many compositions are there of an integer <m>k</m> into <m>n</m>
-        parts?
-      </p>
+    <problem xml:id="compositionagian" category="essential for this or the next section">
+      <statement>
+        <p>
+          A <em>composition</em> of the integer <m>k</m> into <m>n</m> parts is
+          a list of <m>n</m> positive integers that add to <m>k</m>.
+          How many compositions are there of an integer <m>k</m> into <m>n</m>
+          parts?
+        </p>
+      </statement>
       <solution>
         <p>
           There is a bijection between compositions of <m>k</m> into <m>n</m> parts
@@ -636,16 +640,17 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Your answer in <xref ref="compositionagian">Problem</xref> can be expressed as a
-        binomial coefficient. This means it should be possible to interpret a
-        composition as a subset of some set. Find a bijection between
-        compositions of <m>k</m> into <m>n</m> parts and certain subsets of some set.
-        Explain explicitly how to get the composition from the subset and the
-        subset from the composition.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Your answer in <xref ref="compositionagian">Problem</xref> can be expressed as a
+          binomial coefficient. This means it should be possible to interpret a
+          composition as a subset of some set. Find a bijection between
+          compositions of <m>k</m> into <m>n</m> parts and certain subsets of some set.
+          Explain explicitly how to get the composition from the subset and the
+          subset from the composition.
+        </p>
+      </statement>
       <solution>
         <p>
           If we line up <m>k</m> identical books, there are <m>k-1</m> places in
@@ -660,13 +665,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        Explain the connection between compositions of <m>k</m> into <m>n</m> parts
-        and the problem of distributing <m>k</m> identical objects to <m>n</m> recipients
-        so that each recipient gets at least one.
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          Explain the connection between compositions of <m>k</m> into <m>n</m> parts
+          and the problem of distributing <m>k</m> identical objects to <m>n</m> recipients
+          so that each recipient gets at least one.
+        </p>
+      </statement>
       <solution>
         <p>
           Since the recipients are distinct, we can think of them as
@@ -694,13 +700,14 @@
       distinct recipients (say children).
     </p>
 
-    <problem xml:id="identicalbooks">
-      <p>
-        (essential)
-        In how many ways may we distribute <m>k</m> identical books on the
-        shelves of a bookcase with <m>n</m> shelves, assuming that any shelf can hold
-        all the books?
-      </p>
+    <problem xml:id="identicalbooks" category="essential">
+      <statement>
+        <p>
+          In how many ways may we distribute <m>k</m> identical books on the
+          shelves of a bookcase with <m>n</m> shelves, assuming that any shelf can hold
+          all the books?
+        </p>
+      </statement>
       <solution>
         <p>
           We saw that we could arrange <m>k</m> distinct books on <m>n</m> shelves
@@ -718,22 +725,23 @@
       </solution>
     </problem>
 
-    <problem xml:id="multiset">
-      <p>
-        (essential)
-        A <em>multiset</em><index><main>multiset</main></index> chosen from a set <m>S</m> may be
-        thought of as a subset with repeated elements allowed. For example the
-        multiset of letters of the word Mississippi is
-        <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how
-        many times (including, perhaps, zero) each member of <m>S</m> appears in the
-        multiset. The number of times an element appears is called its
-        <em>multiplicity</em>.<index><main>multiplicity in a multiset</main></index> The size of a
-        multiset chosen from
-        <m>S</m> is the total number of times any member of <m>S</m> appears. For example,
-        the size of the multiset of letters of Mississippi is 11. What is the
-        number of multisets of size
-        <m>k</m> that can be chosen from an <m>n</m>-element set?
-      </p>
+    <problem xml:id="multiset" category="essential">
+      <statement>
+        <p>
+          A <em>multiset</em><index><main>multiset</main></index> chosen from a set <m>S</m> may be
+          thought of as a subset with repeated elements allowed. For example the
+          multiset of letters of the word Mississippi is
+          <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how
+          many times (including, perhaps, zero) each member of <m>S</m> appears in the
+          multiset. The number of times an element appears is called its
+          <em>multiplicity</em>.<index><main>multiplicity in a multiset</main></index> The size of a
+          multiset chosen from
+          <m>S</m> is the total number of times any member of <m>S</m> appears. For example,
+          the size of the multiset of letters of Mississippi is 11. What is the
+          number of multisets of size
+          <m>k</m> that can be chosen from an <m>n</m>-element set?
+        </p>
+      </statement>
       <solution>
         <p>
           There is a bijection between arrangements of identical books on
@@ -745,14 +753,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Your answer in the previous problem should be expressible as a
-        binomial coefficient. Since a binomial coefficient counts subsets, find
-        a bijection between subsets of something and multisets chosen from a set
-        <m>S</m>.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Your answer in the previous problem should be expressible as a
+          binomial coefficient. Since a binomial coefficient counts subsets, find
+          a bijection between subsets of something and multisets chosen from a set
+          <m>S</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           Note that <m>{n+k-1\choose k} = {n+k-1 \choose n-1}</m>. We will

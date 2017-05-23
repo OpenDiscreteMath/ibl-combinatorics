@@ -3,14 +3,15 @@
   <title>Some Applications of the Basic Principles</title>
   <subsection>
     <title>Lattice paths and Catalan Numbers</title>
-    <problem xml:id="blockwalking">
-      <p>
-        (motivation)
-        In a part of a city, all streets run either north-south or east-west,
-        and there are no dead ends. Suppose we are standing on a street corner. In
-        how many ways may we walk to a corner that is four blocks north and six blocks
-        east, using as few blocks as possible?
-      </p>
+    <problem xml:id="blockwalking" category="motivation">
+      <statement>
+        <p>
+          In a part of a city, all streets run either north-south or east-west,
+          and there are no dead ends. Suppose we are standing on a street corner. In
+          how many ways may we walk to a corner that is four blocks north and six blocks
+          east, using as few blocks as possible?
+        </p>
+      </statement>
       <solution>
         <p>
           The shortest possible walk is going to be ten blocks. To plan a
@@ -21,26 +22,27 @@
       </solution>
     </problem>
 
-    <problem xml:id="latticepaths">
-      <p>
-        (essential for this or the next section)
-        <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
-        coordinate plane. A <em>lattice path</em><index><main>lattice
-        path</main></index><index><main>path</main><sub>lattice</sub></index> in the plane is a ``curve" made up of line segments
-        that either go from a point
-        <m>(i,j)</m> to the point
-        <m>(i+1,j)</m> or from a point <m>(i,j)</m> to the point <m>(i,j+1)</m>, where <m>i</m> and <m>j</m>
-        are integers. (Thus lattice paths always move either up or to the right.) The
-        length of the path is the number of such line segments. What is the length
-        of a lattice path from
-        <m>(0,0)</m> to
-        <m>(m,n)</m>? How many such lattice paths of that length are
-        there? How many lattice paths are there from <m>(i,j)</m> to <m>(m,n)</m>,
-        assuming <m>i</m>,
-        <m>j</m>,
-        <m>m</m>, and
-        <m>n</m> are integers?
-      </p>
+    <problem xml:id="latticepaths" category="essential for this or the next section">
+      <statement>
+        <p>
+          <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
+          coordinate plane. A <em>lattice path</em><index><main>lattice
+          path</main></index><index><main>path</main><sub>lattice</sub></index> in the plane is a <q>curve</q> made up of line segments
+          that either go from a point
+          <m>(i,j)</m> to the point
+          <m>(i+1,j)</m> or from a point <m>(i,j)</m> to the point <m>(i,j+1)</m>, where <m>i</m> and <m>j</m>
+          are integers. (Thus lattice paths always move either up or to the right.) The
+          length of the path is the number of such line segments. What is the length
+          of a lattice path from
+          <m>(0,0)</m> to
+          <m>(m,n)</m>? How many such lattice paths of that length are
+          there? How many lattice paths are there from <m>(i,j)</m> to <m>(m,n)</m>,
+          assuming <m>i</m>,
+          <m>j</m>,
+          <m>m</m>, and
+          <m>n</m> are integers?
+        </p>
+      </statement>
       <solution>
         <p>
           The length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m> is <m>m+n</m>. The
@@ -52,24 +54,25 @@
       </solution>
     </problem>
 
-    <problem xml:id="diagonallattice">
-      <p>
-        (essential for this or the next section)
-        Another kind of geometric path in the plane is a <em>diagonal lattice
-        path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path
-        is a path made up of line segments that go from a point <m>(i,j)</m> to
-        <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or
-        <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where
-        <m>i</m> and
-        <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right
-        but may move up or down.) Describe which points are connected to
-        <m>(0,0)</m> by diagonal lattice paths. What is the length of a diagonal
-        lattice path from <m>(0,0)</m> to <m>(m,n)</m>? Assuming that
-        <m>(m,n)</m> is such a point, how many diagonal lattice paths are there
-        from
-        <m>(0,0)</m> to
-        <m>(m,n)</m>?
-      </p>
+    <problem xml:id="diagonallattice" category="essential for this or the next section">
+      <statement>
+        <p>
+          Another kind of geometric path in the plane is a <em>diagonal lattice
+          path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path
+          is a path made up of line segments that go from a point <m>(i,j)</m> to
+          <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or
+          <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where
+          <m>i</m> and
+          <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right
+          but may move up or down.) Describe which points are connected to
+          <m>(0,0)</m> by diagonal lattice paths. What is the length of a diagonal
+          lattice path from <m>(0,0)</m> to <m>(m,n)</m>? Assuming that
+          <m>(m,n)</m> is such a point, how many diagonal lattice paths are there
+          from
+          <m>(0,0)</m> to
+          <m>(m,n)</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths
@@ -89,275 +92,298 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (motivation)
-      A school play requires a ten dollar donation per person; the donation
-      goes into the student activity fund. Assume that each person who comes to
-      the play pays with a ten dollar bill or a twenty dollar bill. The teacher
-      who is collecting the money forgot to get change before the event. If there
-      are always at least as many people who have paid with a ten as a twenty as
-      they arrive the teacher won't have to give anyone an IOU for change. Suppose
-      <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
-      bills.
-      <ol>
-        <li><p>
-          Describe a bijection between the set of sequences of tens and
-          twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
-          <m>(n,n)</m>.
-          <solution>
-            <p>
-              For each ten dollar bill take a rightstep and for each twenty dollar
-              bill take an upstep (where rightstep and upstep have the hopefully natural
-              meaning). The assumption that there are an equal number of ten and twenty
-              dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
-              tens and twenties gives a lattice path and each lattice path corresponds to
-              such a sequence, so we have a bijection.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="motivation">
+      <statement>
+        <p>
+          A school play requires a ten dollar donation per person; the donation
+          goes into the student activity fund. Assume that each person who comes to
+          the play pays with a ten dollar bill or a twenty dollar bill. The teacher
+          who is collecting the money forgot to get change before the event. If there
+          are always at least as many people who have paid with a ten as a twenty as
+          they arrive the teacher won't have to give anyone an IOU for change. Suppose
+          <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
+          bills.
+          <ol>
+            <li>
+              <p>
+                Describe a bijection between the set of sequences of tens and
+                twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
+                <m>(n,n)</m>.
+                <solution>
+                <p>
+                  For each ten dollar bill take a rightstep and for each twenty dollar
+                  bill take an upstep (where rightstep and upstep have the hopefully natural
+                  meaning). The assumption that there are an equal number of ten and twenty
+                  dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
+                  tens and twenties gives a lattice path and each lattice path corresponds to
+                  such a sequence, so we have a bijection.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Describe a bijection between the set of sequences of tens and
-          twenties that people give the teacher and the set of diagonal lattice paths
-          from <m>(0,0)</m> and <m>(0,2n)</m>.
-          <solution>
-            <p>
-              For each ten dollar bill take an upstep and for each twenty dollar
-              bill take a downstep. Each sequence of tens and twenties will give us a
-              diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
-              from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
-              an equal number of tens and twenties, so we have a bijection.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Describe a bijection between the set of sequences of tens and
+                twenties that people give the teacher and the set of diagonal lattice paths
+                from <m>(0,0)</m> and <m>(0,2n)</m>.
+                <solution>
+                <p>
+                  For each ten dollar bill take an upstep and for each twenty dollar
+                  bill take a downstep. Each sequence of tens and twenties will give us a
+                  diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
+                  from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
+                  an equal number of tens and twenties, so we have a bijection.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          In each case, what is the geometric
-          interpretation of a sequence that does not require the teacher to give any
-          IOUs?
-          <solution>
-            <p>
-              In the first case a sequence that does not require the teacher to
-              give any IOUs will correspond to a lattice path that stays on or below the
-              line <m>y=x</m>, and in the second case such a sequence will correspond to a
-              diagonal lattice path that stays on or above the <m>x</m>-axis.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                In each case, what is the geometric
+                interpretation of a sequence that does not require the teacher to give any
+                IOUs?
+                <solution>
+                <p>
+                  In the first case a sequence that does not require the teacher to
+                  give any IOUs will correspond to a lattice path that stays on or below the
+                  line <m>y=x</m>, and in the second case such a sequence will correspond to a
+                  diagonal lattice path that stays on or above the <m>x</m>-axis.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
-        inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
-        <m>y</m>-axis, the line
-        <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of
-        lattice paths from (0,0) to
-        <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the
-        <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for
-        the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
+          inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
+          <m>y</m>-axis, the line
+          <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of
+          lattice paths from (0,0) to
+          <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the
+          <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for
+          the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
+        </p>
 
-      <figure xml:id="CatalanPaths" >
-        <caption>The lattice paths
-        from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>. 
-        The number of paths to the point <m>(i,i)</m> is
-        shown just above that point.</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
+        <figure xml:id="CatalanPaths" >
+          <caption>The lattice paths
+          from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>. 
+          The number of paths to the point <m>(i,i)</m> is
+          shown just above that point.</caption>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
 
-      <ol>
-        <li><p>
-          Explain why the number of lattice paths from <m>(0,0)</m> to
-          <m>(n,n)</m> that go outside the triangle is the number of lattice paths from
-          <m>(0,0)</m> to
-          <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
-          <solution>
+        <ol>
+          <li>
             <p>
-              If a lattice path between <m>(0,0)</m> and <m>(n,n)</m> goes outside the
-              triangle, it can only do so on an upstep. (A step from <m>(i,j)</m> to
-              <m>(i,j+1)</m>.) And an upstep must originate at a point with integer
-              coordinates. If <m>j\lt i</m> an upstep from <m>(i,j))</m> cannot leave the triangle.
-              Thus to leave the triangle, the upstep must leave from a point of the form
-              <m>(i,i)</m>, and go to <m>(i,i+1)</m>, which is on the line <m>y=x+1</m>.
-              \item Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
-              that touch (or cross) the line <m>y=x+1</m> and lattice paths from
-              <m>(-1,1)</m> to <m>(n,n)</m>.
+              Explain why the number of lattice paths from <m>(0,0)</m> to
+              <m>(n,n)</m> that go outside the triangle is the number of lattice paths from
+              <m>(0,0)</m> to
+              <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
+              <solution>
+              <p>
+                If a lattice path between <m>(0,0)</m> and <m>(n,n)</m> goes outside the
+                triangle, it can only do so on an upstep. (A step from <m>(i,j)</m> to
+                <m>(i,j+1)</m>.) And an upstep must originate at a point with integer
+                coordinates. If <m>j\lt i</m> an upstep from <m>(i,j))</m> cannot leave the triangle.
+                Thus to leave the triangle, the upstep must leave from a point of the form
+                <m>(i,i)</m>, and go to <m>(i,i+1)</m>, which is on the line <m>y=x+1</m>.
+                \item Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
+                that touch (or cross) the line <m>y=x+1</m> and lattice paths from
+                <m>(-1,1)</m> to <m>(n,n)</m>.
+              </p>
+              </solution>
+              <solution>
+              <p>
+                Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which
+                touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the
+                line <m>y=x+1</m> that the lattice path touches. From that point, work backwards,
+                replacing every upstep with a step one unit to the left and every rightstep
+                with a step one unit down. The segment of the path you just changed will
+                have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and
+                it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.
+                Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a
+                lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least
+                once, because it starts above the line and ends below it. At the first point
+                where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards
+                replacing every upstep with a step to the left and every rightstep with a
+                step downwards. The leftmost point on this path will have <m>x</m> coordinate 0,
+                and the lowest point will have <m>y</m> coordinate 0, so the new path will be a
+                lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly
+                these two processes reverse each other, and so they give us a bijection
+                between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice
+                lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we
+                are doing to get the bijection is to take the portion of a lattice path that
+                goes from the initial point till the first touch of the line <m>y=x+1</m> and
+                reflecting it around that line. This idea of reflection was introduced by
+                Feller, and is called Feller's reflection principle.
+              </p>
+              </solution>
             </p>
-          </solution>
-          <solution>
-            <p>
-              Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which
-              touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the
-              line <m>y=x+1</m> that the lattice path touches. From that point, work backwards,
-              replacing every upstep with a step one unit to the left and every rightstep
-              with a step one unit down. The segment of the path you just changed will
-              have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and
-              it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.
-              Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a
-              lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least
-              once, because it starts above the line and ends below it. At the first point
-              where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards
-              replacing every upstep with a step to the left and every rightstep with a
-              step downwards. The leftmost point on this path will have <m>x</m> coordinate 0,
-              and the lowest point will have <m>y</m> coordinate 0, so the new path will be a
-              lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly
-              these two processes reverse each other, and so they give us a bijection
-              between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice
-              lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we
-              are doing to get the bijection is to take the portion of a lattice path that
-              goes from the initial point till the first touch of the line <m>y=x+1</m> and
-              reflecting it around that line. This idea of reflection was introduced by
-              Feller, and is called Feller's reflection principle.
-            </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li><p>
-          Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
-          that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
-          <solution>
+          <li>
             <p>
-              <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
+              Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
+              that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
+              <solution>
+              <p>
+                <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
-      </ol>
+          </li>
+        </ol>
+      </statement>
     </problem>
 
     <p>
-    \begin{problem}(interesting)
-    Your formula for the Catalan Number can be expressed as a binomial
-    coefficient divided by an integer. Whenever we have a formula that calls
-    for division by an integer, an ideal combinatorial explanation of the
-    formula is one that uses the quotient principle. The purpose of this
-    problem is to find such an explanation using diagonal lattice
-    paths.<fn>The result we will derive is called the Chung-Feller
-    Theorem<index><main>Chung-Feller Theorem</main></index>; this approach is based of a paper of
-    Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller
-    Generalizations," <em>American Mathematics Monthly 58</em> June/July 2001,
-    p556.</fn> A diagonal lattice path that never goes below the
-    <m>y</m>-coordinate of its first point is called a <em>Dyck Path</em><index><main>Dyck
-    path</main></index>. We will call a Dyck Path from
-    <m>(0,0)</m> to
-    <m>(2n,0)</m> a <em>Catalan Path</em><index><main>Catalan Path</main></index> of length <m>2n</m>. Thus the
-    number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
-    <ol>
-      <li><p>
-        If a Dyck Path has <m>n</m> steps (each an upstep or
-        downstep), why do the first <m>k</m> steps form a Dyck Path for each nonnegative
-        <m>k\le n</m>?
-        <solution>
+      \begin{problem}(interesting)
+      Your formula for the Catalan Number can be expressed as a binomial
+      coefficient divided by an integer. Whenever we have a formula that calls
+      for division by an integer, an ideal combinatorial explanation of the
+      formula is one that uses the quotient principle. The purpose of this
+      problem is to find such an explanation using diagonal lattice
+      paths.<fn>The result we will derive is called the Chung-Feller
+      Theorem<index><main>Chung-Feller Theorem</main></index>; this approach is based of a paper of
+      Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller
+      Generalizations," <em>American Mathematics Monthly 58</em> June/July 2001,
+      p556.</fn> A diagonal lattice path that never goes below the
+      <m>y</m>-coordinate of its first point is called a <em>Dyck Path</em><index><main>Dyck
+      path</main></index>. We will call a Dyck Path from
+      <m>(0,0)</m> to
+      <m>(2n,0)</m> a <em>Catalan Path</em><index><main>Catalan Path</main></index> of length <m>2n</m>. Thus the
+      number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
+      <ol>
+        <li>
           <p>
-            If no points on the path are lower than the first point,
-            then no points among the first <m>k</m> steps are lower than the first point.
+            If a Dyck Path has <m>n</m> steps (each an upstep or
+            downstep), why do the first <m>k</m> steps form a Dyck Path for each nonnegative
+            <m>k\le n</m>?
+            <solution>
+              <p>
+                If no points on the path are lower than the first point,
+                then no points among the first <m>k</m> steps are lower than the first point.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        Thought of as a curve in the plane, a diagonal lattice path can have many
-        local maxima and minima, and can have several absolute maxima and minima, that is,
-        several highest points and several lowest points. What is the <m>y</m>-coordinate
-        of an absolute minimum point of a Dyck Path starting at <m>(0,0)</m>?  Explain why
-        a Dyck Path whose rightmost absolute minimum point is its last point is a
-        Catalan Path.
-        <solution>
+        <li>
           <p>
-            Since the path starts at <m>(0,0)</m> and can't go below it, the <m>y</m>
-            coordinate of an absolute minimum must be zero. If the last point is an
-            absolute minimum, then (because it ends with the same <m>y</m> coordinate with
-            which it starts) the path has an even number
-            <m>2k</m> of steps and ends at
-            <m>(2k,0)</m>.
+            Thought of as a curve in the plane, a diagonal lattice path can have many
+            local maxima and minima, and can have several absolute maxima and minima, that is,
+            several highest points and several lowest points. What is the <m>y</m>-coordinate
+            of an absolute minimum point of a Dyck Path starting at <m>(0,0)</m>?  Explain why
+            a Dyck Path whose rightmost absolute minimum point is its last point is a
+            Catalan Path.
+            <solution>
+              <p>
+                Since the path starts at <m>(0,0)</m> and can't go below it, the <m>y</m>
+                coordinate of an absolute minimum must be zero. If the last point is an
+                absolute minimum, then (because it ends with the same <m>y</m> coordinate with
+                which it starts) the path has an even number
+                <m>2k</m> of steps and ends at
+                <m>(2k,0)</m>.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        Let <m>D</m> be the set of all diagonal lattice paths from <m>(0,0)</m> to
-        <m>(2n,0)</m>.  (Thus these paths can go below the <m>x</m>-axis.) Suppose we partition
-        <m>D</m> by letting
-        <m>B_i</m> be the set of lattice paths in <m>D</m> that have <m>i</m> upsteps (perhaps mixed
-        with some downsteps) following the last absolute minimum.  How many blocks
-        does this partition have?  Give a succinct description of the block <m>B_0</m>.
-        <solution>
+        <li>
           <p>
-            The path must have <m>n</m> upsteps total, and so can have any number
-            between 0 and <m>n</m> upsteps after the rightmost absolute minimum. Thus the
-            partition has <m>n+1</m> blocks. Block <m>B_0</m> consists of the Catalan Paths.
+            Let <m>D</m> be the set of all diagonal lattice paths from <m>(0,0)</m> to
+            <m>(2n,0)</m>.  (Thus these paths can go below the <m>x</m>-axis.) Suppose we partition
+            <m>D</m> by letting
+            <m>B_i</m> be the set of lattice paths in <m>D</m> that have <m>i</m> upsteps (perhaps mixed
+            with some downsteps) following the last absolute minimum.  How many blocks
+            does this partition have?  Give a succinct description of the block <m>B_0</m>.
+            <solution>
+              <p>
+                The path must have <m>n</m> upsteps total, and so can have any number
+                between 0 and <m>n</m> upsteps after the rightmost absolute minimum. Thus the
+                partition has <m>n+1</m> blocks. Block <m>B_0</m> consists of the Catalan Paths.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        How many upsteps are in a Catalan Path?
-        <solution>
+        <li>
           <p>
-            <m>n</m>.
+            How many upsteps are in a Catalan Path?
+            <solution>
+              <p>
+                <m>n</m>.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li>
-        <title>\ <m>*</m>\ (\theenumii)</title>
-        <p>
-        We are going to give a bijection between the set of Catalan Paths and
-        the block <m>B_i</m> for each <m>i</m> between <m>1</m> and <m>n</m>.  For now, suppose the
-        value of <m>i</m>, while unknown, is fixed.  We take a Catalan path and break it
-        into three pieces.  The piece <m>F</m> (for ``front") consists of all steps before
-        the
-        <m>i</m>th upstep in the Catalan path.  The piece <m>U</m> (for ``up") consists of the
-        <m>i</m>th upstep.  The piece
-        <m>B</m> (for ``back") is the portion of the path that follows the <m>i</m>th upstep. 
-        Thus we can think of the path as <m>FUB</m>.  Show that the function that takes
-        <m>FUB</m> to
-        <m>BUF</m> is a bijection from the set of Catalan Paths onto the block <m>B_i</m> of the
-        partition.  (Notice that <m>BUF</m> can go below the <m>x</m> axis.)
-        <solution>
+        <li>
+          <title>\ <m>*</m>\ (\theenumii)</title>
           <p>
-            Since we are starting with a Catalan path, the point on the path at
-            the beginning of the <m>i</m>th upstep must have <m>y</m> coordinate greater or equal
-            to than zero. Thus wherever we start the sequence <m>F</m> of upsteps and
-            downsteps, a path constructed by this sequence never goes lower than its
-            starting point. Thus in <m>BUF</m> the last absolute minimum is either right
-            before the
-            <m>U</m> or earlier. But <m>B</m> is the final segment of a Catalan Path, so its final
-            point is at least as low as its starting point. Thus the point at the
-            beginning of the <m>U</m> in <m>BUF</m> is an absolute minimum, and there are <m>i</m>
-            upsteps after that local minimum. If we take two different sequences and
-            rearrange them in the same way, we get two different sequences, so the
-            function we just described is a one-to-one function. If we take an arbitrary
-            diagonal lattice path from <m>(0,0)</m> to <m>(2n,0)</m>, let <m>U'</m> be the first upstep
-            after the last absolute minimum, <m>F'</m> be the portion of the path that follows
-            <m>U'</m>, and <m>B'</m> be the portion that precedes <m>U'</m>, then <m>F'U'B'</m> is a Catalan
-            Path, and <m>U'</m> is its <m>i</m>th upstep if and only if in <m>B'U'F'</m> there are <m>i</m>
-            upsteps after the last absolute minimum. Thus the mapping from <m>FUB</m> to
-            <m>BUF</m> is a bijection.
+            We are going to give a bijection between the set of Catalan Paths and
+            the block <m>B_i</m> for each <m>i</m> between <m>1</m> and <m>n</m>.  For now, suppose the
+            value of <m>i</m>, while unknown, is fixed.  We take a Catalan path and break it
+            into three pieces.  The piece <m>F</m> (for <q>front</q>) consists of all steps before
+            the
+            <m>i</m>th upstep in the Catalan path.  The piece <m>U</m> (for <q>up</q>) consists of the
+            <m>i</m>th upstep.  The piece
+            <m>B</m> (for <q>back</q>) is the portion of the path that follows the <m>i</m>th upstep. 
+            Thus we can think of the path as <m>FUB</m>.  Show that the function that takes
+            <m>FUB</m> to
+            <m>BUF</m> is a bijection from the set of Catalan Paths onto the block <m>B_i</m> of the
+            partition.  (Notice that <m>BUF</m> can go below the <m>x</m> axis.)
+            <solution>
+              <p>
+                Since we are starting with a Catalan path, the point on the path at
+                the beginning of the <m>i</m>th upstep must have <m>y</m> coordinate greater or equal
+                to than zero. Thus wherever we start the sequence <m>F</m> of upsteps and
+                downsteps, a path constructed by this sequence never goes lower than its
+                starting point. Thus in <m>BUF</m> the last absolute minimum is either right
+                before the
+                <m>U</m> or earlier. But <m>B</m> is the final segment of a Catalan Path, so its final
+                point is at least as low as its starting point. Thus the point at the
+                beginning of the <m>U</m> in <m>BUF</m> is an absolute minimum, and there are <m>i</m>
+                upsteps after that local minimum. If we take two different sequences and
+                rearrange them in the same way, we get two different sequences, so the
+                function we just described is a one-to-one function. If we take an arbitrary
+                diagonal lattice path from <m>(0,0)</m> to <m>(2n,0)</m>, let <m>U'</m> be the first upstep
+                after the last absolute minimum, <m>F'</m> be the portion of the path that follows
+                <m>U'</m>, and <m>B'</m> be the portion that precedes <m>U'</m>, then <m>F'U'B'</m> is a Catalan
+                Path, and <m>U'</m> is its <m>i</m>th upstep if and only if in <m>B'U'F'</m> there are <m>i</m>
+                upsteps after the last absolute minimum. Thus the mapping from <m>FUB</m> to
+                <m>BUF</m> is a bijection.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        Explain how you have just given another proof of the formula for the
-        Catalan Numbers.
-        <solution>
+        <li>
           <p>
-            We have taken the set of all <m>2n\choose n</m> diagonal lattice paths
-            of length <m>2n</m> from <m>(0,0)</m> to <m>(2n,0)</m> and partitioned it into <m>n+1</m> blocks
-            all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n={1\over
-            n+1}{2n
-            \choose n}</m>.
+            Explain how you have just given another proof of the formula for the
+            Catalan Numbers.
+            <solution>
+              <p>
+                We have taken the set of all <m>2n\choose n</m> diagonal lattice paths
+                of length <m>2n</m> from <m>(0,0)</m> to <m>(2n,0)</m> and partitioned it into <m>n+1</m> blocks
+                all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n={1\over
+                n+1}{2n
+                \choose n}</m>.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
-    </ol>
+        </li>
+      </ol>
     </p>
   </subsection>
 
@@ -367,15 +393,16 @@
       \end{problem}
     </p>
 
-    <problem xml:id="Conjecturebinomthm">
-      <p>
-        (motivation)
-        We know that <m>(x+y)^2 = x^2+2xy+y^2</m>. Multiply both sides by <m>(x+y)</m>
-        to get a formula for <m>(x+y)^3</m> and repeat to get a formula for <m>(x+y)^4</m>. Do
-        you see a pattern? If so, what is it? If not, repeat the process to get a
-        formula for <m>(x+y)^5</m> and look back at <xref ref="Pascaltriangle">Figure</xref> to see the
-        pattern. Conjecture a formula for <m>(x+y)^n</m>.
-      </p>
+    <problem xml:id="Conjecturebinomthm" category="motivation">
+      <statement>
+        <p>
+          We know that <m>(x+y)^2 = x^2+2xy+y^2</m>. Multiply both sides by <m>(x+y)</m>
+          to get a formula for <m>(x+y)^3</m> and repeat to get a formula for <m>(x+y)^4</m>. Do
+          you see a pattern? If so, what is it? If not, repeat the process to get a
+          formula for <m>(x+y)^5</m> and look back at <xref ref="Pascaltriangle">Figure</xref> to see the
+          pattern. Conjecture a formula for <m>(x+y)^n</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>(x+y)^3=x^3+2x^2y +xy^2+x^2y+ +2xy^2 +y^3=x^3+3x^2y++3xy^2+y^3</m>.
@@ -403,118 +430,126 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (essential)
-      When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
-      sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
-      <ol>
-        <li><p>
-          If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
-          get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
-          the remaining
-          <m>n-i</m> of the factors and multiplying these choices together, then answer this
-          part of the problem and skip the next part.  Otherwise, do the next part
-          instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
-          and a <m>y</m> from
-          <m>n-i</m> terms?
-          <solution>
-            <p>
-              The number of ways to choose an <m>x</m> from <m>i</m> of the
-              factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
-              factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential">
+      <statement>
+        <p>
+          When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
+          sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
+          <ol>
+            <li>
+              <p>
+                If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
+                get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
+                the remaining
+                <m>n-i</m> of the factors and multiplying these choices together, then answer this
+                part of the problem and skip the next part.  Otherwise, do the next part
+                instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
+                and a <m>y</m> from
+                <m>n-i</m> terms?
+                <solution>
+                <p>
+                  The number of ways to choose an <m>x</m> from <m>i</m> of the
+                  factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
+                  factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
-          when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
-          expanding
-          <me>
-            (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
-          </me>
-          Once you apply the
-          commutative law to the individual terms you get, you will have a sum of terms
-          of the form
-          <me>
-            x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
-            y_{j_{n-i}}.
-          </me>
-          What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
-          how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
-          have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
-          j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
-          many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
-          <me>
-            (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
-          </me>
-          How many terms of the form
-          <m>x^{n-i}y^i</m> will you have?
-          <solution>
-            <md>
-              <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
-              <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
-            </md>
-            <p>
-              When you substitute <m>x</m> for each <m>x_i</m> and
-              <m>y</m> for each
-              <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
-            </p>
+            <li>
+              <p>
+                Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
+                when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
+                expanding
+                <me>
+                  (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
+                </me>
+                Once you apply the
+                commutative law to the individual terms you get, you will have a sum of terms
+                of the form
+                <me>
+                  x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
+                  y_{j_{n-i}}.
+                </me>
+                What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
+                how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
+                have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
+                j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
+                many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
+                <me>
+                  (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
+                </me>
+                How many terms of the form
+                <m>x^{n-i}y^i</m> will you have?
+                <solution>
+                <md>
+                  <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
+                  <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
+                </md>
+                <p>
+                  When you substitute <m>x</m> for each <m>x_i</m> and
+                  <m>y</m> for each
+                  <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
+                </p>
 
-            <p>
-              <m>\{k_1,k_2,\ldots, k_i\}\cup
-              \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
-              <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
-              choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
-              for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
-              will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
-            </p>
-          </solution>
-          </p></li>
+                <p>
+                  <m>\{k_1,k_2,\ldots, k_i\}\cup
+                  \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
+                  <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
+                  choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
+                  for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
+                  will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
-          <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
-          <solution>
-            <p>
-              We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
-              <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
-              <m>(x+y)^n</m> is <m>n\choose i</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
+                <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
+                <solution>
+                <p>
+                  We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
+                  <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
+                  <m>(x+y)^n</m> is <m>n\choose i</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
 
-      <p>
-        \item What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
-      </p>
-      <solution>
+        <p>
+          \item What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
+        </p>
+        <solution>
         <p>
           <m>\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
           {10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
-      </solution>
-      <p>
-        \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
-        {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
-      </p>
+        </solution>
+        <p>
+          \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+          {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (essential and interesting)
-        Explain why
-        <me>
-          \sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
-          k}.
-        </me>
-      </p>
+    <problem category="essential and interesting">
+      <statement>
+        <p>
+          Explain why
+          <me>
+            \sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
+            k}.
+          </me>
+        </p>
 
-      <p>
-        Find two different explanations.
-      </p>
+        <p>
+          Find two different explanations.
+        </p>
+      </statement>
       <solution>
         <p>
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
@@ -532,16 +567,17 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        From the symmetry of the binomial coefficients, it is not too hard to
-        see that when
-        <m>n</m> is an odd number, the number of subsets of <m>\{1,2,\ldots,n\}</m> of odd size
-        equals the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size. Is it true
-        that when <m>n</m> is even the number of subsets of <m>\{1,2,\ldots,n\}</m> of even
-        size equals the number of subsets of odd size? Why or why not?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          From the symmetry of the binomial coefficients, it is not too hard to
+          see that when
+          <m>n</m> is an odd number, the number of subsets of <m>\{1,2,\ldots,n\}</m> of odd size
+          equals the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size. Is it true
+          that when <m>n</m> is even the number of subsets of <m>\{1,2,\ldots,n\}</m> of even
+          size equals the number of subsets of odd size? Why or why not?
+        </p>
+      </statement>
       <solution>
         <p>
           It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the
@@ -552,12 +588,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        What is <m>\sum_{i=0}^n i{n\choose i}</m>? (Hint: think about how you
-        might use calculus.)
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          What is <m>\sum_{i=0}^n i{n\choose i}</m>? (Hint: think about how you
+          might use calculus.)
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\sum_{i=0}^n({n\choose i}x^i = (1+x)^n</m>. Taking derivatives of
@@ -570,13 +607,14 @@
 
   <subsection>
     <title>The pigeonhole principle</title>
-    <problem xml:id="elevencoins">
-      <p>
-        (motivation)
-        American coins are all marked with the year in which they were made.
-        How many coins do you need to have in your hand to guarantee that on two (at
-        least) of them, the date has the same last digit?
-      </p>
+    <problem xml:id="elevencoins" category="motivation">
+      <statement>
+        <p>
+          American coins are all marked with the year in which they were made.
+          How many coins do you need to have in your hand to guarantee that on two (at
+          least) of them, the date has the same last digit?
+        </p>
+      </statement>
       <solution>
         <p>
           Since there are ten possible last digits, you need at least 11
@@ -620,10 +658,12 @@
     </p>
 
     <problem>
-      <p>
-        Show that if we have a function from a set of size <m>n</m> to a set of
-        size less than <m>n</m>, then <m>f</m> is not one-to-one.
-      </p>
+      <statement>
+        <p>
+          Show that if we have a function from a set of size <m>n</m> to a set of
+          size less than <m>n</m>, then <m>f</m> is not one-to-one.
+        </p>
+      </statement>
       <solution>
         <p>
           Let <m>T</m> be the set of size less than <m>n</m>, and <m>S</m> be the set of
@@ -636,13 +676,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a
-        function
-        <m>f</m> from <m>S</m> to <m>T</m> is one-to-one if and only if it is onto.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a
+          function
+          <m>f</m> from <m>S</m> to <m>T</m> is one-to-one if and only if it is onto.
+        </p>
+      </statement>
       <solution>
         <p>
           First suppose that <m>f</m> is a one-to-one function from <m>S</m> to <m>T</m>,
@@ -668,14 +709,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        There is a <em>generalized pigeonhole principle</em><index><main>pigeonhole
-        principle</main><sub> generalized</sub></index> which says that if we partition a set with more than
-        <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m>
-        elements. Prove the generalized pigeonhole principle.
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          There is a <em>generalized pigeonhole principle</em><index><main>pigeonhole
+          principle</main><sub> generalized</sub></index> which says that if we partition a set with more than
+          <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m>
+          elements. Prove the generalized pigeonhole principle.
+        </p>
+      </statement>
       <solution>
         <p>
           Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m>
@@ -702,14 +744,15 @@
       </solution>
     </problem>
 
-    <problem xml:id="R_3_3_">
-      <p>
-        (essential for this or the next section, and interesting)
-        Show that in a set of six people, there is a set of at least three
-        people who all know each other, or a set of at least three people none of
-        whom know each other. (We assume that if person A knows person B, then person
-        B knows person A.)
-      </p>
+    <problem xml:id="R_3_3_" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Show that in a set of six people, there is a set of at least three
+          people who all know each other, or a set of at least three people none of
+          whom know each other. (We assume that if person A knows person B, then person
+          B knows person A.)
+        </p>
+      </statement>
       <solution>
         <p>
           By the generalized pigeonhole principle, person 1 either knows at
@@ -724,23 +767,22 @@
       </solution>
     </problem>
 
-    <problem xml:id="notR_3_3_">
-      <p>
-        (essential for this or the next section)
-        Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to
-        draw red and green lines between people so that every pair of people is
-        joined by a line and there is neither a triangle consisting entirely of red
-        lines or a triangle consisting of green lines. What does <xref ref="R_3_3_">Problem</xref> tell you about the possibility of doing this with six people's
-        names? What does this problem say about the conclusion of <xref ref="R_3_3_">Problem</xref> holding when there are five people in our set rather than
-        six?
-      </p>
-      <solution>
-        \mbox{
-        <image width="73%" source="images/" />
-        } \vspace{-.5in}
-
+    <problem xml:id="notR_3_3_" category="essential for this or the next section">
+      <statement>
         <p>
-          <xref ref="R_3_3_">Problem</xref> says you can't do this with
+          Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to
+          draw red and green lines between people so that every pair of people is
+          joined by a line and there is neither a triangle consisting entirely of red
+          lines or a triangle consisting of green lines. What does <xref ref="R_3_3_">Problem</xref> tell you about the possibility of doing this with six people's
+          names? What does this problem say about the conclusion of <xref ref="R_3_3_">Problem</xref> holding when there are five people in our set rather than
+          six?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          } <xref ref="R_3_3_">Problem</xref> says you can't do this with
           six people's names. This problem says that the conclusion of <xref ref="R_3_3_">Problem</xref> does not hold when you have five people.
         </p>
       </solution>
@@ -798,22 +840,19 @@
       have the same color.
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show
-        that this is not the case.
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show
+          that this is not the case.
+        </p>
+      </statement>
       <solution>
         <p>
           In the graph
-        </p>
-
-        \vglue-.75in\mbox{
-        <image width="73%" source="images/" />
-        }
-
-        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           each vertex has three dashed lines emanating from it, and there are no dashed
           lines connecting any of the three vertices adjacent to it by dashed lines.
           Each vertex has four solid lines emanating from it, and no three of the four
@@ -823,12 +862,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        Show that among ten people, there are either four mutual acquaintances
-        or three mutual strangers. What does this say about <m>R(4,3)</m>?
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          Show that among ten people, there are either four mutual acquaintances
+          or three mutual strangers. What does this say about <m>R(4,3)</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           Take a person, say person 1. If person has six acquaintances, then
@@ -846,13 +886,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="OddNoPeople">
-      <p>
-        (essential for this or the next section)
-        Show that among an odd number of people there is at least one person
-        who is an acquaintance of an even number of people and therefore also a
-        stranger to an even number of people.
-      </p>
+    <problem xml:id="OddNoPeople" category="essential for this or the next section">
+      <statement>
+        <p>
+          Show that among an odd number of people there is at least one person
+          who is an acquaintance of an even number of people and therefore also a
+          stranger to an even number of people.
+        </p>
+      </statement>
       <solution>
         <p>
           Suppose we add, for each person, the number of people with whom he
@@ -868,22 +909,19 @@
       </solution>
     </problem>
 
-    <problem xml:id="R_4_3_not8">
-      <p>
-        (essential for this or the next section)
-        Find a way to color the edges of a <m>K_8</m> with red and green so that
-        there is no red <m>K_4</m> and no green <m>K_3</m>.
-      </p>
+    <problem xml:id="R_4_3_not8" category="essential for this or the next section">
+      <statement>
+        <p>
+          Find a way to color the edges of a <m>K_8</m> with red and green so that
+          there is no red <m>K_4</m> and no green <m>K_3</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           In the graph
-        </p>
-
-        \vglue-.75in\mbox{
-        <image width="73%" source="images/" />
-        }
-
-        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are
           solid. By symmetry, to verify this you need only look at vertex 1 and
           vertices connected to it by either dashed lines or by solid lines.
@@ -891,11 +929,12 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        Find <m>R(4,3)</m>.
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Find <m>R(4,3)</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8">Problem</xref> we showed that <m>R(4,3)</m> is

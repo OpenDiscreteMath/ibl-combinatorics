@@ -10,20 +10,21 @@
       Computing the size of overlapping sets requires, quite naturally,
       information about how they overlap. Taking such information into account
       will allow us to develop a powerful extension of the sum principle known
-      as the ``principle of inclusion and exclusion."<index><main>principle of
+      as the <q>principle of inclusion and exclusion.</q><index><main>principle of
       inclusion and exclusion</main></index><index><main>inclusion and exclusion principle</main></index>
     </p>
 
-    <problem xml:id="fertilizer2">
-      <p>
-        (motivation)
-        In a biology lab study of the effects of basic fertilizer
-        ingredients on plants, 16 plants are treated with potash, 16 plants are
-        treated with phosphate, and among these plants, eight are treated with
-        both phosphate and potash. No other treatments are used. How many plants
-        receive at least one treatment? If 32 plants are studied, how many
-        receive no treatment?
-      </p>
+    <problem xml:id="fertilizer2" category="motivation">
+      <statement>
+        <p>
+          In a biology lab study of the effects of basic fertilizer
+          ingredients on plants, 16 plants are treated with potash, 16 plants are
+          treated with phosphate, and among these plants, eight are treated with
+          both phosphate and potash. No other treatments are used. How many plants
+          receive at least one treatment? If 32 plants are studied, how many
+          receive no treatment?
+        </p>
+      </statement>
       <solution>
         <p>
           The number of plants receiving treatment was <m>16+16-8 = 24</m>.
@@ -32,17 +33,18 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (summary)
-        Give a formula for the size of the union <m>A\cup B</m> of two
-        sets
-        <m>A</m> in terms of the sizes <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
-        <m>A\cap B</m>. If <m>A</m> and <m>B</m> are subsets of some ``universal" set <m>U</m>,
-        express the size of the complement <m>U-(A\cup B)</m> in terms of the sizes
-        <m>|U|</m> of <m>U</m>, <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
-        <m>A\cap B</m>.
-      </p>
+    <problem category="summary">
+      <statement>
+        <p>
+          Give a formula for the size of the union <m>A\cup B</m> of two
+          sets
+          <m>A</m> in terms of the sizes <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>. If <m>A</m> and <m>B</m> are subsets of some <q>universal</q> set <m>U</m>,
+          express the size of the complement <m>U-(A\cup B)</m> in terms of the sizes
+          <m>|U|</m> of <m>U</m>, <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>|A\cup B|=|A| + |B| - |A\cap B|</m>.
@@ -55,17 +57,18 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (motivation)
-        In <xref ref="fertilizer2">Problem</xref>, there were just two fertilizers used
-        to treat the sample plants. Now suppose there are three fertilizer
-        treatments, and 15 plants are treated with nitrates, 16 with potash, 16
-        with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate,
-        8 with potash and phosphate and 4 with all three. Now how many plants
-        have been treated? If 32 plants were studied, how many received no
-        treatment at all?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          In <xref ref="fertilizer2">Problem</xref>, there were just two fertilizers used
+          to treat the sample plants. Now suppose there are three fertilizer
+          treatments, and 15 plants are treated with nitrates, 16 with potash, 16
+          with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate,
+          8 with potash and phosphate and 4 with all three. Now how many plants
+          have been treated? If 32 plants were studied, how many received no
+          treatment at all?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>15+16+16-7-9-8+4=27</m> plants were treated and five received
@@ -74,13 +77,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="threesetintersection">
-      <p>
-        (essential)
-        Give a formula for the size of <m>A_1\cup A_2\cup A_3</m> in terms of
-        the sizes of <m>A_1</m>, <m>A_2</m>, <m>A_3</m> and the intersections of these
-        sets.
-      </p>
+    <problem xml:id="threesetintersection" category="essential">
+      <statement>
+        <p>
+          Give a formula for the size of <m>A_1\cup A_2\cup A_3</m> in terms of
+          the sizes of <m>A_1</m>, <m>A_2</m>, <m>A_3</m> and the intersections of these
+          sets.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
@@ -89,17 +93,18 @@
       </solution>
     </problem>
 
-    <problem xml:id="nsetintersection">
-      <p>
-        (essential)
-        Conjecture a formula for the size of a union of sets
-        <me>
-          A_1\cup
-          A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i
-        </me>
-        in terms of the sizes of
-        the sets <m>A_i</m> and their intersections.
-      </p>
+    <problem xml:id="nsetintersection" category="essential">
+      <statement>
+        <p>
+          Conjecture a formula for the size of a union of sets
+          <me>
+            A_1\cup
+            A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i
+          </me>
+          in terms of the sizes of
+          the sets <m>A_i</m> and their intersections.
+        </p>
+      </statement>
       <solution>
         <me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
@@ -141,17 +146,18 @@
       </md>
     </p>
 
-    <problem xml:id="inclusion-exclusionunion">
-      <p>
-        (essential)
-        Use notation something like that of <xref ref="intersectionnotation">Equation</xref> and <xref ref="notationsolution">Equation</xref> to express
-        the answer to <xref ref="nsetintersection">Problem</xref>. Note there are many
-        different correct ways to do this problem. Try to write down more
-        than one and choose the nicest one you can. Say why you chose it
-        (because your view of what makes a formula nice may be different from
-        somebody else's). The nicest formula won't necessarily involve all the
-        elements of <xref ref="intersectionnotation">Equations</xref> and <xref ref="notationsolution"></xref>.
-      </p>
+    <problem xml:id="inclusion-exclusionunion" category="essential">
+      <statement>
+        <p>
+          Use notation something like that of <xref ref="intersectionnotation">Equation</xref> and <xref ref="notationsolution">Equation</xref> to express
+          the answer to <xref ref="nsetintersection">Problem</xref>. Note there are many
+          different correct ways to do this problem. Try to write down more
+          than one and choose the nicest one you can. Say why you chose it
+          (because your view of what makes a formula nice may be different from
+          somebody else's). The nicest formula won't necessarily involve all the
+          elements of <xref ref="intersectionnotation">Equations</xref> and <xref ref="notationsolution"></xref>.
+        </p>
+      </statement>
       <solution>
         <me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
@@ -175,22 +181,23 @@
       </solution>
     </problem>
 
-    <problem xml:id="hatcheck">
-      <p>
-        (essential)
-        A group of <m>n</m> students goes to a restaurant carrying backpacks.
-        The manager invites everyone to check their backpack at the check desk and
-        everyone does. While they are eating, a child playing in the check room
-        randomly moves around the claim check stubs on the backpacks. What is
-        the probability that, at the end of the meal, at least one student
-        receives his or her own backpack? In other words, in what fraction of
-        the total number of ways to pass the backpacks back does at least one
-        student get his or her own backpack back? (Hint: For each student, how
-        big is the set of backpack distributions in which that student gets the
-        correct backpack? It might be a good idea to
-        first consider cases with <m>n=3</m>, 4, and 5.) What is the probability that no student gets his or her
-        own backpack?
-      </p>
+    <problem xml:id="hatcheck" category="essential">
+      <statement>
+        <p>
+          A group of <m>n</m> students goes to a restaurant carrying backpacks.
+          The manager invites everyone to check their backpack at the check desk and
+          everyone does. While they are eating, a child playing in the check room
+          randomly moves around the claim check stubs on the backpacks. What is
+          the probability that, at the end of the meal, at least one student
+          receives his or her own backpack? In other words, in what fraction of
+          the total number of ways to pass the backpacks back does at least one
+          student get his or her own backpack back? (Hint: For each student, how
+          big is the set of backpack distributions in which that student gets the
+          correct backpack? It might be a good idea to
+          first consider cases with <m>n=3</m>, 4, and 5.) What is the probability that no student gets his or her
+          own backpack?
+        </p>
+      </statement>
       <solution>
         <p>
           First we compute the number of ways to pass out the
@@ -237,12 +244,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        As the number of students becomes large, what does the probability
-        that no student gets the correct backpack approach?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          As the number of students becomes large, what does the probability
+          that no student gets the correct backpack approach?
+        </p>
+      </statement>
       <solution>
         <p>
           From calculus, we know that <m>e^x=\sum_{j=0}^\infty {x^j\over
@@ -386,13 +394,14 @@
       exclusion</main><sub>for properties</sub></index>
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Verify that the formula for the number of ways to pass back the
-        backpacks in <xref ref="hatcheck">Problem</xref> so that nobody gets the correct backpack has the form of
-        <xref ref="incexempty">Equation</xref>.
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Verify that the formula for the number of ways to pass back the
+          backpacks in <xref ref="hatcheck">Problem</xref> so that nobody gets the correct backpack has the form of
+          <xref ref="incexempty">Equation</xref>.
+        </p>
+      </statement>
       <solution>
         <p>
           Suppose we take property <m>i</m> to be the property that student <m>i</m>
@@ -427,14 +436,15 @@
       </solution>
     </problem>
 
-    <problem xml:id="incexsystemeq">
-      <p>
-        (essential)
-        Find a way to express <m>N_{\mbox{a} }(S)</m> in terms of
-        <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m> containing <m>S</m>. In particular,
-        what is the equation that expresses <m>N_{\mbox{a} }(\emptyset)</m> in terms of
-        <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m>?
-      </p>
+    <problem xml:id="incexsystemeq" category="essential">
+      <statement>
+        <p>
+          Find a way to express <m>N_{\mbox{a} }(S)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m> containing <m>S</m>. In particular,
+          what is the equation that expresses <m>N_{\mbox{a} }(\emptyset)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>N_{\mbox{a} }(S) = \sum_{J: S\subseteq
@@ -444,15 +454,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Substitute the formula for <m>N_{\mbox{a} }</m> from <xref ref="incexsystemeq">Problem</xref> into the right hand sides of the formulas of <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> and simplify what you get to show that for <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> the right-hand sides are indeed
-        equal to the left-hand sides. This will prove that those equations are
-        true. (Hint: You will get a double sum. If you can figure out how to
-        reverse the order of the two summations, the binomial theorem may help you
-        simplify the formulas you get.)
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Substitute the formula for <m>N_{\mbox{a} }</m> from <xref ref="incexsystemeq">Problem</xref> into the right hand sides of the formulas of <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> and simplify what you get to show that for <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> the right-hand sides are indeed
+          equal to the left-hand sides. This will prove that those equations are
+          true. (Hint: You will get a double sum. If you can figure out how to
+          reverse the order of the two summations, the binomial theorem may help you
+          simplify the formulas you get.)
+        </p>
+      </statement>
       <solution>
         <p>
           Since <xref ref="incexempty">Equation</xref> is a special case of <xref ref="incexnonempty">Equation</xref>, we will just substitute the formula from <xref ref="incexsystemeq">Problem</xref> into the right-hand side of <xref ref="incexnonempty">Equation</xref>. This gives us
@@ -503,7 +514,7 @@
       </p>
       <solution>
         <p>
-          Let property <m>i</m> be ``Child <m>i</m> gets four or more apples." Then
+          Let property <m>i</m> be <q>Child <m>i</m> gets four or more apples.</q> Then
           we are asking for the number of ways to pass out the apples that have none
           of the properties, so we are asking for <m>N_{\mbox{e} }(\emptyset)</m>. From
           <xref ref="incexempty">Equation</xref> we see that to find this number we need to know
@@ -528,15 +539,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="relaxedmenage">
-      <p>
-        (interesting)
-        A group of <m>n</m> married couples comes to a group discussion session
-        where they all sit around a round table. In how many ways can they sit
-        so that no person is next to his or her spouse?
-        (Note that two people of the same sex can sit next to
-        each other.)
-      </p>
+    <problem xml:id="relaxedmenage" category="interesting">
+      <statement>
+        <p>
+          A group of <m>n</m> married couples comes to a group discussion session
+          where they all sit around a round table. In how many ways can they sit
+          so that no person is next to his or her spouse?
+          (Note that two people of the same sex can sit next to
+          each other.)
+        </p>
+      </statement>
       <solution>
         <p>
           Let Property <m>i</m> be that couple <m>i</m> sits together. We are
@@ -558,17 +570,18 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting and difficult)
-        A group of <m>n</m> married couples comes to a group
-        discussion session where they all sit around a round table. In how many
-        ways can they sit so that no person is next to his or her spouse or a
-        person of the same sex? This problem is called the <em>menage
-        problem</em>.<index><main>menage problem</main></index> (Hint: Reason somewhat as you did in <xref ref="relaxedmenage">Problem</xref>, noting that if the set of couples who do sit
-        side-by-side is nonempty, then the sex of the person at each place at the
-        table is determined once we seat one couple in that set.)
-      </p>
+    <problem category="interesting and difficult">
+      <statement>
+        <p>
+          A group of <m>n</m> married couples comes to a group
+          discussion session where they all sit around a round table. In how many
+          ways can they sit so that no person is next to his or her spouse or a
+          person of the same sex? This problem is called the <em>menage
+          problem</em>.<index><main>menage problem</main></index> (Hint: Reason somewhat as you did in <xref ref="relaxedmenage">Problem</xref>, noting that if the set of couples who do sit
+          side-by-side is nonempty, then the sex of the person at each place at the
+          table is determined once we seat one couple in that set.)
+        </p>
+      </statement>
       <solution>
         <p>
           We are going to consider arrangements of the couples alternating
@@ -648,17 +661,18 @@
 
   <subsection>
     <title>Counting onto functions</title>
-    <problem xml:id="numontofun">
-      <p>
-        (essential)
-        Given a function <m>f</m> from the <m>k</m>-element set <m>K</m> to the
-        <m>n</m>-element set <m>[n]</m>, we say <m>f</m> has property <m>i</m> if <m>f(x)\not= i</m> for
-        every <m>x</m> in
-        <m>K</m>. How many of these properties does an onto function have? What is
-        the number of functions from a <m>k</m>-element set onto an <m>n</m>-element
-        set?<index><main>onto functions</main><sub>number of</sub></index><index><main>surjections</main><sub>number
-        of</sub></index><index><main>functions</main><sub>onto!number of</sub></index>
-      </p>
+    <problem xml:id="numontofun" category="essential">
+      <statement>
+        <p>
+          Given a function <m>f</m> from the <m>k</m>-element set <m>K</m> to the
+          <m>n</m>-element set <m>[n]</m>, we say <m>f</m> has property <m>i</m> if <m>f(x)\not= i</m> for
+          every <m>x</m> in
+          <m>K</m>. How many of these properties does an onto function have? What is
+          the number of functions from a <m>k</m>-element set onto an <m>n</m>-element
+          set?<index><main>onto functions</main><sub>number of</sub></index><index><main>surjections</main><sub>number
+          of</sub></index><index><main>functions</main><sub>onto!number of</sub></index>
+        </p>
+      </statement>
       <solution>
         <p>
           An onto function has none of these properties. Thus, using this set
@@ -677,12 +691,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Find a formula for the Stirling number (of the second kind)
-        <m>S(k,n)</m>.<index><main>Stirling Number</main><sub>second kind</sub></index>
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Find a formula for the Stirling number (of the second kind)
+          <m>S(k,n)</m>.<index><main>Stirling Number</main><sub>second kind</sub></index>
+        </p>
+      </statement>
       <solution>
         <p>
           Since the number of functions from <m>[k]</m> onto <m>[n]</m> is <m>S(k,n)n!</m>,
@@ -736,13 +751,14 @@
       all vertices connected by walks to some vertex <m>v_2</m>.
     </p>
 
-    <problem xml:id="conncomp">
-      <p>
-        (essential for this or the next section)
-        (Relevant in <xref ref="expogenfun">Appendix</xref> as well as this section.) Show
-        that
-        <m>B_1=B_2</m>.
-      </p>
+    <problem xml:id="conncomp" category="essential for this or the next section">
+      <statement>
+        <p>
+          (Relevant in <xref ref="expogenfun">Appendix</xref> as well as this section.) Show
+          that
+          <m>B_1=B_2</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           Since <m>v</m> is in <m>B_1</m>, there is a walk from <m>v_1</m> to <m>v</m>. Since
@@ -775,56 +791,64 @@
       graph using colors from a set <m>C</m> of <m>c</m> colors.
     </p>
 
-    <problem>
-      <p>
-      (essential for this or the next section)
-      Suppose we have a graph G with vertex set V and edge set <m>E</m>.
-      Suppose <m>F</m> is a subset of <m>E</m>. Suppose we have a set <m>C</m> of <m>c</m> colors
-      with which to color the vertices.
-      <ol>
-        <li><p>
-          In terms of <m>\gamma(V,F)</m>, in how many
-          ways may we color the vertices of <m>G</m> so that each edge in <m>F</m> connects
-          two vertices of the same color?
-          <solution>
-            <p>
-              For each edge in <m>F</m> to connect two vertices of the same color, we
-              must have all the vertices in a connected component of the graph with vertex
-              set <m>V</m> and edge set <m>F</m> colored the same color. Thus the number of such
-              colorings is
-              <m>c^{\gamma(V,F)}</m>.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          Suppose we have a graph G with vertex set V and edge set <m>E</m>.
+          Suppose <m>F</m> is a subset of <m>E</m>. Suppose we have a set <m>C</m> of <m>c</m> colors
+          with which to color the vertices.
+          <ol>
+            <li>
+              <p>
+                In terms of <m>\gamma(V,F)</m>, in how many
+                ways may we color the vertices of <m>G</m> so that each edge in <m>F</m> connects
+                two vertices of the same color?
+                <solution>
+                <p>
+                  For each edge in <m>F</m> to connect two vertices of the same color, we
+                  must have all the vertices in a connected component of the graph with vertex
+                  set <m>V</m> and edge set <m>F</m> colored the same color. Thus the number of such
+                  colorings is
+                  <m>c^{\gamma(V,F)}</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Given a coloring of <m>G</m>, for each edge <m>e</m> in <m>E</m>, let us consider
-          the property that the endpoints of <m>e</m> are colored the same color.  Let us
-          call this property ``property <m>e</m>."  In this way each set of properties
-          can be thought of as a subset of <m>E</m>.  What set of properties does a
-          proper coloring have?
-          <solution>
-            <p>
-              A proper coloring has none of the properties.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Given a coloring of <m>G</m>, for each edge <m>e</m> in <m>E</m>, let us consider
+                the property that the endpoints of <m>e</m> are colored the same color.  Let us
+                call this property <q>property <m>e</m>.</q>  In this way each set of properties
+                can be thought of as a subset of <m>E</m>.  What set of properties does a
+                proper coloring have?
+                <solution>
+                <p>
+                  A proper coloring has none of the properties.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li xml:id="chromaticpoly" ><p>
-          Find a formula (which may involve summing over all subsets <m>F</m> of
-          the edge set of the graph and using the number <m>\gamma(V,F)</m> of connected
-          components of the graph with vertex set <m>V</m> and edge set <m>F</m>) for the
-          number of proper colorings of
-          <m>G</m> using colors in the set <m>C</m>.
-          <solution>
+            <li xml:id="chromaticpoly" >
+
             <p>
-              <m>N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
-               (-1)^{|F|}c^{\gamma(V,F)}.</m>
+              Find a formula (which may involve summing over all subsets <m>F</m> of
+              the edge set of the graph and using the number <m>\gamma(V,F)</m> of connected
+              components of the graph with vertex set <m>V</m> and edge set <m>F</m>) for the
+              number of proper colorings of
+              <m>G</m> using colors in the set <m>C</m>.
+              <solution>
+              <p>
+                <m>N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
+                 (-1)^{|F|}c^{\gamma(V,F)}.</m>
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
     <p>
@@ -841,21 +865,21 @@
       <m>G</m>.
     </p>
 
-    <problem xml:id="chrompolydel_cont">
-      <p>
-        (interesting)
-        In Chapter 2 we introduced the deletion-contraction
-        recurrence<index><main>deletion-contraction recurrence</main></index> for counting spanning
-        trees of a graph. Figure out how the chromatic polynomial of a graph is
-        related to those resulting from deletion of an edge <m>e</m> and from
-        contraction of that same edge <m>e</m>. Try to find a recurrence like the one
-        for counting spanning trees that expresses the chromatic polynomial of a
-        graph in terms of the chromatic polynomials of <m>G-e</m> and <m>G/e</m> for an
-        arbitrary edge <m>e</m>. Use this recurrence to give another proof that the
-        number of ways to color a graph with <m>x</m> colors is a polynomial function
-        of <m>x</m>.
-      </p>
-      <solution>
+    <problem xml:id="chrompolydel_cont" category="interesting">
+      <statement>
+        <p>
+          In Chapter 2 we introduced the deletion-contraction
+          recurrence<index><main>deletion-contraction recurrence</main></index> for counting spanning
+          trees of a graph. Figure out how the chromatic polynomial of a graph is
+          related to those resulting from deletion of an edge <m>e</m> and from
+          contraction of that same edge <m>e</m>. Try to find a recurrence like the one
+          for counting spanning trees that expresses the chromatic polynomial of a
+          graph in terms of the chromatic polynomials of <m>G-e</m> and <m>G/e</m> for an
+          arbitrary edge <m>e</m>. Use this recurrence to give another proof that the
+          number of ways to color a graph with <m>x</m> colors is a polynomial function
+          of <m>x</m>.
+        </p>
+        <solution>
         <p>
           The number of colorings of <m>G-e</m> is equal to the number of proper
           colorings of <m>G</m> plus the number of colorings of <m>G</m> that are proper except
@@ -875,15 +899,15 @@
           set, the number of ways to properly color <m>G</m> in <m>x</m> colors is a polynomial in
           <m>x</m>.
         </p>
-      </solution>
-      <p>
-        \item Use the deletion-contraction recurrence to compute the
-        chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>. (You can
-        simplify your computations by thinking about the effect on the chromatic
-        polynomial of deleting an edge that is a loop, or deleting one of several
-        edges between the same two vertices.)
-      </p>
-      <solution>
+        </solution>
+        <p>
+          \item Use the deletion-contraction recurrence to compute the
+          chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>. (You can
+          simplify your computations by thinking about the effect on the chromatic
+          polynomial of deleting an edge that is a loop, or deleting one of several
+          edges between the same two vertices.)
+        </p>
+        <solution>
         <p>
           If a graph has a loop it has no proper colorings. The graph in
           <xref ref="del-cont">Figure</xref> has no loops and no multiple edges between two
@@ -896,14 +920,9 @@
           <m>\{2,3\}</m> are <m>(G-\{1,2\})-\{2,3\}</m>, <m>(G-\{1,2\})/\{2,3\}</m>,
           <m>(G-\{2,3\})/\{1,2\}</m>, and <m>(G/\{2,3\})/\{1,2\}</m>. These are shown in the
           following picture.
-        </p>
-
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-
-        <p>
-          The chromatic polynomial of a triangle is <m>x(x-1)(x-2)</m> because
+          \mbox{
+          <image width="73%" source="images/" />
+          } The chromatic polynomial of a triangle is <m>x(x-1)(x-2)</m> because
           for one vertex we have <m>x</m> colors, for a second we have <m>x-1</m>, and for the
           third vertex, because it is adjacent to both of the other vertices, we have
           <m>x-2</m> choices of colors. For a vertex of degree 1 there are <m>x-1</m> choices of
@@ -925,29 +944,30 @@
           </md>
           for the chromatic polynomial of <m>G</m>.
         </p>
-      </solution>
-      <figure xml:id="del-cont" >
-        <caption>A
-        graph.</caption>
-        \vglue-1in
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
-
+        </solution>
+        <figure xml:id="del-cont" >
+          <caption>A
+          graph.</caption>
+          \vglue-1in
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        In how many ways may you properly color the vertices of a path on
-        <m>n</m> vertices with
-        <m>x</m> colors? Describe any dependence of the chromatic polynomial of a path
-        on the number of vertices. In how many ways may you properly color the
-        vertices of a cycle on <m>n</m> vertices with
-        <m>x</m> colors? Describe any dependence of the chromatic polynomial of a
-        cycle on the number of vertices.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          In how many ways may you properly color the vertices of a path on
+          <m>n</m> vertices with
+          <m>x</m> colors? Describe any dependence of the chromatic polynomial of a path
+          on the number of vertices. In how many ways may you properly color the
+          vertices of a cycle on <m>n</m> vertices with
+          <m>x</m> colors? Describe any dependence of the chromatic polynomial of a
+          cycle on the number of vertices.
+        </p>
+      </statement>
       <solution>
         <p>
           To color the vertices of a path, start at one end. There are <m>x</m>
@@ -1009,15 +1029,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        What do you observe about the signs of the coefficients of the
-        chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>? What about
-        the signs of the coefficients of the chromatic polynomial of a path? Of
-        a cycle? Of a tree? Make a conjecture about the signs of the
-        coefficients of a chromatic polynomial and prove it.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          What do you observe about the signs of the coefficients of the
+          chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>? What about
+          the signs of the coefficients of the chromatic polynomial of a path? Of
+          a cycle? Of a tree? Make a conjecture about the signs of the
+          coefficients of a chromatic polynomial and prove it.
+        </p>
+      </statement>
       <solution>
         <p>
           not all powers of <m>x</m> appear, but the signs alternate as the power

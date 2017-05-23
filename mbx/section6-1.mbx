@@ -32,13 +32,13 @@
       shown the effect of rotating the square clockwise through 90, 180, 270, and 360
       degrees (which is the same as rotating through 0 degrees). Underneath
       each of the rotated squares we have named the function that carries
-      out the rotation. We use <m>\rho</m>, the Greek letter pronounced ``row," to
+      out the rotation. We use <m>\rho</m>, the Greek letter pronounced <q>row,</q> to
       stand for a 90 degree clockwise rotation. We use <m>\rho^2</m> to stand for two 90
       degree rotations, and so on. We can think of the function <m>\rho</m> as a
       function on the four element set<fn>What we are doing is
       restricting the rotation <m>\rho</m> to the set <m>\{1,2,3,4\}</m>.</fn>
       <m>\{1,2,3,4\}</m>. In particular, for any function <m>\varphi</m> (the Greek letter
-      phi, usually pronounced ``fee," but sometimes ``fie") from the plane back
+      phi, usually pronounced <q>fee,</q> but sometimes <q>fie</q>) from the plane back
       to itself that may move the square around but otherwise leaves it in the
       same place, we let <m>\varphi(i)</m> be the label of the place where vertex
       previously in
@@ -48,12 +48,13 @@
       <m>\rho</m> is a permutation on the set <m>\{1,2,3,4\}</m>.
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Find <m>\rho^2</m> of 1, 2, 3, and 4. Find <m>\rho^3</m> of 1, 2, 3, and 4.
-        Are <m>\rho^2</m> and <m>\rho^3</m> permutations of <m>\{1,2,3,4\}</m>?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Find <m>\rho^2</m> of 1, 2, 3, and 4. Find <m>\rho^3</m> of 1, 2, 3, and 4.
+          Are <m>\rho^2</m> and <m>\rho^3</m> permutations of <m>\{1,2,3,4\}</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\rho^2(1)=3</m>, <m>\rho^2(2)=4</m>, <m>\rho^2(3)=1</m>, <m>\rho^2(4) =2</m>. <m>\rho^3(1)=4</m>,
@@ -63,21 +64,22 @@
       </solution>
     </problem>
 
-    <problem xml:id="composition1">
-      <p>
-        (essential)
-        The composition<index><main>composition of
-        functions</main></index><index><main>functions</main><sub>composition of</sub></index>
-        <m>f\circ g</m> of two functions
-        <m>f</m> and
-        <m>g</m> is defined by <m>f\circ g(x) = f(g(x))</m>. Is <m>\rho^3</m> the composition of
-        <m>\rho</m> and
-        <m>\rho^2</m>? Does the answer depend on the order in which we write <m>\rho</m>
-        and
-        <m>\rho^2</m>? How is
-        <m>\rho^2</m> related to
-        <m>\rho</m>?
-      </p>
+    <problem xml:id="composition1" category="essential">
+      <statement>
+        <p>
+          The composition<index><main>composition of
+          functions</main></index><index><main>functions</main><sub>composition of</sub></index>
+          <m>f\circ g</m> of two functions
+          <m>f</m> and
+          <m>g</m> is defined by <m>f\circ g(x) = f(g(x))</m>. Is <m>\rho^3</m> the composition of
+          <m>\rho</m> and
+          <m>\rho^2</m>? Does the answer depend on the order in which we write <m>\rho</m>
+          and
+          <m>\rho^2</m>? How is
+          <m>\rho^2</m> related to
+          <m>\rho</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           Yes, <m>\rho^3</m> is the composition of <m>\rho</m> and <m>\rho^2</m>, and also of <m>\rho^2</m>
@@ -86,11 +88,12 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Is the composition of two permutations always a permutation?
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Is the composition of two permutations always a permutation?
+        </p>
+      </statement>
       <solution>
         <p>
           Yes, because the composition of one-to-one functions is one-to-one and the
@@ -120,18 +123,19 @@
 
   <subsection>
     <title>Groups of Permutations</title>
-    <problem>
-      <p>
-        (essential)
-        For any function <m>\varphi</m> from a set <m>S</m> to itself, we define
-        <m>\varphi^n</m> (for nonnegative integers <m>n</m>) inductively by <m>\varphi^0 =
-        \iota</m> and <m>\varphi^n = \varphi^{n-1}\circ\varphi</m> for every positive
-        integer <m>n</m>. If <m>\varphi</m> is a permutation, is <m>\varphi^n</m> a permutation?
-        Based on your experience with previous inductive proofs, what do you
-        expect <m>\varphi^n\circ \varphi^m</m> to be? What do you expect
-        <m>(\varphi^m)^n</m> to be? There is no need to prove these last two answers
-        are correct, for you have, in effect, already done so in Chapter 2.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          For any function <m>\varphi</m> from a set <m>S</m> to itself, we define
+          <m>\varphi^n</m> (for nonnegative integers <m>n</m>) inductively by <m>\varphi^0 =
+          \iota</m> and <m>\varphi^n = \varphi^{n-1}\circ\varphi</m> for every positive
+          integer <m>n</m>. If <m>\varphi</m> is a permutation, is <m>\varphi^n</m> a permutation?
+          Based on your experience with previous inductive proofs, what do you
+          expect <m>\varphi^n\circ \varphi^m</m> to be? What do you expect
+          <m>(\varphi^m)^n</m> to be? There is no need to prove these last two answers
+          are correct, for you have, in effect, already done so in Chapter 2.
+        </p>
+      </statement>
       <solution>
         <p>
           It is a permutation because the computation of permutations is a
@@ -144,13 +148,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="identityproperty">
-      <p>
-        (essential)
-        If we perform the composition <m>\iota\circ \varphi</m> for any function
-        <m>\varphi</m> from <m>S</m> to <m>S</m>, what function do we get? What if we perform the
-        composition <m>\varphi\circ\iota</m>?
-      </p>
+    <problem xml:id="identityproperty" category="essential">
+      <statement>
+        <p>
+          If we perform the composition <m>\iota\circ \varphi</m> for any function
+          <m>\varphi</m> from <m>S</m> to <m>S</m>, what function do we get? What if we perform the
+          composition <m>\varphi\circ\iota</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\iota\circ\varphi=\varphi\circ\iota=\varphi</m>
@@ -177,14 +182,15 @@
       \iota</m>.
     </p>
 
-    <problem>
-      <p>
-        (essential)
-        Does every permutation have an inverse? If so, why, and is it
-        unique, i.e. could a permutation have two distinct inverse functions? If
-        not, give an example of a permutation without an inverse or a permutation with two
-        distinct inverses.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Does every permutation have an inverse? If so, why, and is it
+          unique, i.e. could a permutation have two distinct inverse functions? If
+          not, give an example of a permutation without an inverse or a permutation with two
+          distinct inverses.
+        </p>
+      </statement>
       <solution>
         <p>
           Let <m>\varphi</m> be a permutation of <m>S</m>. Then for each <m>S</m> in
@@ -208,13 +214,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Show that if <m>\sigma</m> is an inverse of the permutation
-        <m>\varphi</m> of
-        <m>S</m>, then <m>\sigma</m> is a permutation of <m>S</m> also.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Show that if <m>\sigma</m> is an inverse of the permutation
+          <m>\varphi</m> of
+          <m>S</m>, then <m>\sigma</m> is a permutation of <m>S</m> also.
+        </p>
+      </statement>
       <solution>
         <p>
           The function <m>\sigma</m> must be one-to-one because if <m>\sigma(x)=\sigma(y)</m>,
@@ -226,29 +233,35 @@
     </problem>
 
     <p>
-    We use <m>\varphi^{-1}</m> to denote the inverse of the permutation <m>\varphi</m>.
-    We've seen that the rotations of the square are functions that return the
-    square to its original position but may move the vertices to different
-    places. In this way we create permutations of the vertices of the
-    square. We've observed three important properties of these permutations.
-    <ul>
-      <li><p>
-          (Identity Property)<index><main>identity property</main></index> These
-          permutations include the identity permutation.
-        </p></li>
+      We use <m>\varphi^{-1}</m> to denote the inverse of the permutation <m>\varphi</m>.
+      We've seen that the rotations of the square are functions that return the
+      square to its original position but may move the vertices to different
+      places. In this way we create permutations of the vertices of the
+      square. We've observed three important properties of these permutations.
+      <ul>
+        <li>
+          <p>
+            (Identity Property)<index><main>identity property</main></index> These
+            permutations include the identity permutation.
+          </p>
+        </li>
 
-      <li><p>
-          (Inverse Property)<index><main>inverse property</main></index> Whenever these
-          permutations include
-          <m>\varphi</m>, they also include <m>\varphi^{-1}</m>.
-        </p></li>
+        <li>
+          <p>
+            (Inverse Property)<index><main>inverse property</main></index> Whenever these
+            permutations include
+            <m>\varphi</m>, they also include <m>\varphi^{-1}</m>.
+          </p>
+        </li>
 
-      <li><p>
-          (Closure Property)<index><main>closure property</main></index>  Whenever these
-          permutations include
-          <m>\varphi</m> and <m>\sigma</m>, they also include <m>\varphi\circ\sigma</m>.
-        </p></li>
-    </ul>
+        <li>
+          <p>
+            (Closure Property)<index><main>closure property</main></index>  Whenever these
+            permutations include
+            <m>\varphi</m> and <m>\sigma</m>, they also include <m>\varphi\circ\sigma</m>.
+          </p>
+        </li>
+      </ul>
     </p>
 
     <p>
@@ -265,12 +278,13 @@
       elements for any regular <m>n</m>-gon.
     </p>
 
-    <problem>
-      <p>
-        (essential)
-        If a finite set of permutations satisfies the closure
-        property is it a permutation group?
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          If a finite set of permutations satisfies the closure
+          property is it a permutation group?
+        </p>
+      </statement>
       <solution>
         <p>
           Yes, because the permutations <m>\sigma</m>, <m>\sigma^2</m>, <ellipsis />, <m>\sigma^n</m>,
@@ -283,125 +297,134 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (essential)
-      <ol>
-        <li><p>
-          How should we define <m>\varphi^{-n}</m> for an element
-          <m>\varphi</m> of a permutation group?
-          <solution>
+    <problem category="essential">
+      <statement>
+        <ol>
+          <li>
             <p>
-              We define <m>\varphi^{-n}=\left(\varphi^{-1}\right)^n</m>.
+              How should we define <m>\varphi^{-n}</m> for an element
+              <m>\varphi</m> of a permutation group?
+              <solution>
+              <p>
+                We define <m>\varphi^{-n}=\left(\varphi^{-1}\right)^n</m>.
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li><p>
-          Will the two standard rules for exponents
+          <li>
+            <p>
+              Will the two standard rules for exponents
+              <me>
+                a^ma^n=a^{m+n} \mbox{\ and\ }  (a^m)^n = a^{mn}
+              </me>
+              still hold if one or more of the
+              exponents may be negative?
+              <solution>
+              <p>
+                Yes.
+              </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              What would
+              we have to prove to show that the rules still hold?
+              <solution>
+              <p>
+                To prove this we need to show that for nonnegative <m>m</m> and <m>n</m>
+                we have that
+                <m>\varphi^m\circ\varphi^{-n} =
+                \varphi^{m-n}</m>, that <m>\varphi^{-m}\varphi^{-n} = \varphi^{-m-n}</m>, that
+                <m>(\varphi^m)^{-n} = \varphi^{-mn}</m>, that <m>(\varphi^{-m})^n = \varphi^{-mn}</m> and that
+                <m>(\varphi^{-m})^{-n}= \varphi^{mn}</m>.
+              </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              If the rules hold, give
+              enough of the proof to show that you know how to do it; otherwise give a
+              counterexample.
+              <solution>
+              <p>
+                We give the first and last proof. We will induct
+                on <m>n</m> in the first proof. If <m>n=0</m> the formula automatically holds. Assume inductively
+                that
+                <m>\varphi^m\circ\varphi^{-(n-1)} = \varphi^{m-(n-1)}</m>. Compose both sides of this
+                equation on the right by <m>\sigma^{-1}</m> and use the associative law for composition of
+                functions to get, in the case that <m>m-n</m> is nonnegative
+                <md>
+                  <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+                  \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
+                  <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+                  (\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}</mrow>
+                  <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  \varphi^{m-n}.</mrow>
+                </md>
+              </p>
+
+              <p>
+                We do the same in the case that <m>m-n</m> is negative, getting
+                <md>
+                  <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+                  \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
+                  <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+                  (\varphi^{-1})^{n-m-1}\circ\varphi^{-1}</mrow>
+                  <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  (\varphi^{-1})^{n-m}</mrow>
+                  <mrow>\varphi^m\circ\varphi^{-n}\amp =\amp \varphi^{m-n}.</mrow>
+                </md>
+              </p>
+
+              <p>
+                To prove the last statement we need to prove, we write the following, in which the line
+                <xref ref="crucialline">marked</xref> follows from the first equation we proved and the line <xref ref="modestlyimportant">marked</xref> follows from the fact that <m>(\varphi^{-1})^{-1} = \varphi</m>.
+                <md>
+                  <mrow>(\varphi^{-m})^{-n} \amp =\amp  ([\varphi^{-1})^m]^{-1})^n\nonumber</mrow>
+                  <mrow>\amp =\amp [(\varphi^{-1})^{-m}]^n</mrow>
+                  <mrow>\amp =\amp ([(\varphi^{-1})^{-1}]^m)^n\nonumber</mrow>
+                  <mrow>\amp =\amp (\varphi^m)^n</mrow>
+                  <mrow>\amp =\amp \varphi^{mn}\nonumber</mrow>
+                </md>
+              </p>
+              </solution>
+            </p>
+          </li>
+        </ol>
+      </statement>
+    </problem>
+
+    <problem xml:id="dihedral1" category="essential">
+      <statement>
+        <p>
+          There are three dimensional geometric motions of the square that
+          return it to its original position but move some of the vertices to other
+          positions. For example, if we flip the square around a diagonal, most of it moves out of
+          the plane during the flip, but the square ends up in the same place. Draw a figure
+          like <xref ref="RotationsOfSquare">Figure</xref> that shows all the possible results of such motions, including
+          the ones shown in <xref ref="RotationsOfSquare">Figure</xref>. Do the corresponding permutations
+          form a group?
+        </p>
+      </statement>
+    </problem>
+
+    <problem category="essential">
+      <statement>
+        <p>
+          If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
+          <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
+          What does this say about the status of the <em>associative
+          law</em><index><main>associative law</main></index>
           <me>
-            a^ma^n=a^{m+n} \mbox{\ and\ }  (a^m)^n = a^{mn}
+            \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
           </me>
-          still hold if one or more of the
-          exponents may be negative?
-          <solution>
-            <p>
-              Yes.
-            </p>
-          </solution>
-          </p></li>
-
-        <li><p>
-          What would
-          we have to prove to show that the rules still hold?
-          <solution>
-            <p>
-              To prove this we need to show that for nonnegative <m>m</m> and <m>n</m>
-              we have that
-              <m>\varphi^m\circ\varphi^{-n} =
-              \varphi^{m-n}</m>, that <m>\varphi^{-m}\varphi^{-n} = \varphi^{-m-n}</m>, that
-              <m>(\varphi^m)^{-n} = \varphi^{-mn}</m>, that <m>(\varphi^{-m})^n = \varphi^{-mn}</m> and that
-              <m>(\varphi^{-m})^{-n}= \varphi^{mn}</m>.
-            </p>
-          </solution>
-          </p></li>
-
-        <li><p>
-          If the rules hold, give
-          enough of the proof to show that you know how to do it; otherwise give a
-          counterexample.
-          <solution>
-            <p>
-              We give the first and last proof. We will induct
-              on <m>n</m> in the first proof. If <m>n=0</m> the formula automatically holds. Assume inductively
-              that
-              <m>\varphi^m\circ\varphi^{-(n-1)} = \varphi^{m-(n-1)}</m>. Compose both sides of this
-              equation on the right by <m>\sigma^{-1}</m> and use the associative law for composition of
-              functions to get, in the case that <m>m-n</m> is nonnegative
-              <md>
-                <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
-                \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
-                <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
-                (\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}</mrow>
-                <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  \varphi^{m-n}.</mrow>
-              </md>
-            </p>
-
-            <p>
-              We do the same in the case that <m>m-n</m> is negative, getting
-              <md>
-                <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
-                \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
-                <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
-                (\varphi^{-1})^{n-m-1}\circ\varphi^{-1}</mrow>
-                <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  (\varphi^{-1})^{n-m}</mrow>
-                <mrow>\varphi^m\circ\varphi^{-n}\amp =\amp \varphi^{m-n}.</mrow>
-              </md>
-            </p>
-
-            <p>
-              To prove the last statement we need to prove, we write the following, in which the line
-              <xref ref="crucialline">marked</xref> follows from the first equation we proved and the line <xref ref="modestlyimportant">marked</xref> follows from the fact that <m>(\varphi^{-1})^{-1} = \varphi</m>.
-              <md>
-                <mrow>(\varphi^{-m})^{-n} \amp =\amp  ([\varphi^{-1})^m]^{-1})^n\nonumber</mrow>
-                <mrow>\amp =\amp [(\varphi^{-1})^{-m}]^n</mrow>
-                <mrow>\amp =\amp ([(\varphi^{-1})^{-1}]^m)^n\nonumber</mrow>
-                <mrow>\amp =\amp (\varphi^m)^n</mrow>
-                <mrow>\amp =\amp \varphi^{mn}\nonumber</mrow>
-              </md>
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
-    </problem>
-
-    <problem xml:id="dihedral1">
-      <p>
-        (essential)
-        There are three dimensional geometric motions of the square that
-        return it to its original position but move some of the vertices to other
-        positions. For example, if we flip the square around a diagonal, most of it moves out of
-        the plane during the flip, but the square ends up in the same place. Draw a figure
-        like <xref ref="RotationsOfSquare">Figure</xref> that shows all the possible results of such motions, including
-        the ones shown in <xref ref="RotationsOfSquare">Figure</xref>. Do the corresponding permutations
-        form a group?
-      </p>
-    </problem>
-
-    <problem>
-      <p>
-        (essential)
-        If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
-        <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
-        What does this say about the status of the <em>associative
-        law</em><index><main>associative law</main></index>
-        <me>
-          \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
-        </me>
-        in a
-        group of permutations?
-      </p>
+          in a
+          group of permutations?
+        </p>
+      </statement>
       <solution>
         <p>
           Since <m>(h\circ(g\circ f)) (x) = h((g\circ f)(x)) = h(g(f(x)))</m> and <m>((h\circ
@@ -419,15 +442,16 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential and interesting)
-        If <m>\sigma</m> and <m>\varphi</m> are permutations, why must
-        <m>\sigma\circ\varphi</m> have an inverse? Is <m>(\sigma\circ\varphi)^{-1}=
-        \sigma^{-1}\varphi^{-1}</m>? (Prove or give a counter-example.) Is
-        <m>(\sigma\circ\varphi)^{-1}=
-        \varphi^{-1}\sigma^{-1}</m>? (Prove or give a counter-example.)
-      </p>
+    <problem category="essential and interesting">
+      <statement>
+        <p>
+          If <m>\sigma</m> and <m>\varphi</m> are permutations, why must
+          <m>\sigma\circ\varphi</m> have an inverse? Is <m>(\sigma\circ\varphi)^{-1}=
+          \sigma^{-1}\varphi^{-1}</m>? (Prove or give a counter-example.) Is
+          <m>(\sigma\circ\varphi)^{-1}=
+          \varphi^{-1}\sigma^{-1}</m>? (Prove or give a counter-example.)
+        </p>
+      </statement>
       <solution>
         <p>
           One could either say that the composition of one-to-one and onto functions
@@ -451,14 +475,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        Explain why the set of all permutations of four elements is a
-        permutation group. How many elements does this group have? This group
-        is called the <em>symmetric group on four letters</em><index><main>symmetric
-        group</main></index> and is denoted by <m>S_4</m>.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Explain why the set of all permutations of four elements is a
+          permutation group. How many elements does this group have? This group
+          is called the <em>symmetric group on four letters</em><index><main>symmetric
+          group</main></index> and is denoted by <m>S_4</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           It is a finite set of permutations that satisfies the closure property. It
@@ -541,12 +566,14 @@
     </p>
 
     <problem>
-      <p>
-        For practice, compute <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr3\amp 4\amp 1\amp 5\amp 2
-        \end{pmatrix} 
-        \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr 4\amp 3\amp 5\amp 1\amp 2
-        \end{pmatrix}</m>.
-      </p>
+      <statement>
+        <p>
+          For practice, compute <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr3\amp 4\amp 1\amp 5\amp 2
+          \end{pmatrix} 
+          \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr 4\amp 3\amp 5\amp 1\amp 2
+          \end{pmatrix}</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr5\amp 1\amp 2\amp 3\amp 4
@@ -580,14 +607,15 @@
       to 4 to the edge from 3 to 4.
     </p>
 
-    <problem xml:id="dihedral2">
-      <p>
-        (essential)
-        Write down the two-row notation for <m>\rho^3</m>, <m>\varphi_{2/4}</m>,
-        <m>\varphi_{12/34}</m> and <m>\varphi_{2/4}\circ \varphi_{12/34}</m>. Remember that <m>\sigma(i)</m>
-        stands for the position where the vertex that originated in position <m>i</m> is after we
-        apply <m>\sigma</m>.
-      </p>
+    <problem xml:id="dihedral2" category="essential">
+      <statement>
+        <p>
+          Write down the two-row notation for <m>\rho^3</m>, <m>\varphi_{2/4}</m>,
+          <m>\varphi_{12/34}</m> and <m>\varphi_{2/4}\circ \varphi_{12/34}</m>. Remember that <m>\sigma(i)</m>
+          stands for the position where the vertex that originated in position <m>i</m> is after we
+          apply <m>\sigma</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr4\amp 1\amp 2\amp 3
@@ -632,12 +660,13 @@
       places.)
     </p>
 
-    <problem>
-      <p>
-        (essential and interesting)
-        How many elements does the group <m>D_n</m> have? Prove that you are
-        correct.
-      </p>
+    <problem category="essential and interesting">
+      <statement>
+        <p>
+          How many elements does the group <m>D_n</m> have? Prove that you are
+          correct.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>D_n</m> has <m>2n</m> elements, because once you have chosen one of the
@@ -729,14 +758,16 @@
     </table>
 
     <problem>
-      <p>
-        In <xref ref="rotationgrouptable">Table</xref>, all the entries in a row (not
-        including the first entry, the one to the left of the line) are
-        different. Will this be true in any group table for a permutation
-        group? Why or why not? Also in <xref ref="rotationgrouptable">Table</xref> all the entries in a column (not including the
-        first entry, the one above the line) are different. Will this be true in
-        any group table for a permutation group? Why or why not?
-      </p>
+      <statement>
+        <p>
+          In <xref ref="rotationgrouptable">Table</xref>, all the entries in a row (not
+          including the first entry, the one to the left of the line) are
+          different. Will this be true in any group table for a permutation
+          group? Why or why not? Also in <xref ref="rotationgrouptable">Table</xref> all the entries in a column (not including the
+          first entry, the one above the line) are different. Will this be true in
+          any group table for a permutation group? Why or why not?
+        </p>
+      </statement>
       <solution>
         <p>
           It will always be the case that all the entries of a row or column below and
@@ -779,19 +810,20 @@
       </solution>
     </problem>
 
-    <problem xml:id="dihedral3">
-      <p>
-        (essential)
-        Write down the group table for the dihedral group <m>D_4</m>. Use the
-        <m>\varphi</m> notation described above to denote the flips. (Hints: Part of the
-        table has already been written down. Will you need to think hard to write
-        down the last row? Will you need to think hard to write down the last
-        column? When you multiply a product like <m>\varphi_{1/3}
-        \circ \rho</m> remember that we defined <m>\varphi_{1/3}</m> to be the flip that
-        fixes the vertex in position 1 and the vertex in position 3, <em>not</em> the
-        one that fixes the vertex on the square labelled 1 and the vertex on the
-        square labelled 3.)
-      </p>
+    <problem xml:id="dihedral3" category="essential">
+      <statement>
+        <p>
+          Write down the group table for the dihedral group <m>D_4</m>. Use the
+          <m>\varphi</m> notation described above to denote the flips. (Hints: Part of the
+          table has already been written down. Will you need to think hard to write
+          down the last row? Will you need to think hard to write down the last
+          column? When you multiply a product like <m>\varphi_{1/3}
+          \circ \rho</m> remember that we defined <m>\varphi_{1/3}</m> to be the flip that
+          fixes the vertex in position 1 and the vertex in position 3, <em>not</em> the
+          one that fixes the vertex on the square labelled 1 and the vertex on the
+          square labelled 3.)
+        </p>
+      </statement>
       <solution>
         <p>
           \hglue-.25in
@@ -944,9 +976,11 @@
     </p>
 
     <problem>
-      <p>
-        Does the commutative law hold in all permutation groups?
-      </p>
+      <statement>
+        <p>
+          Does the commutative law hold in all permutation groups?
+        </p>
+      </statement>
       <solution>
         <p>
           No. In the group <m>D_3</m> a nontrivial rotation does not commute
@@ -965,11 +999,12 @@
       group or the smaller group.
     </p>
 
-    <problem xml:id="S4">
-      <p>
-        (essential)
-        Find all subgroups of the group <m>D_4</m>.
-      </p>
+    <problem xml:id="S4" category="essential">
+      <statement>
+        <p>
+          Find all subgroups of the group <m>D_4</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\{\rho^2,\!\iota\}</m>, <m>\{\varphi_{1/3},\!\iota\}</m>, <m>\{\varphi_{2/4},\!\iota\}</m>,
@@ -1017,13 +1052,14 @@
       permutation in <xref ref="permutationcycledigraph">Figure</xref>.
     </p>
 
-    <figure>
-      \caption[The directed graph of the permutation
-        <m>(1\, 2\, 3)(4)</m>]{The
+    <figure xml:id="permutationcycledigraph" >
+      <caption>The
       directed graph of the permutation
-      <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\\
+      <m>\begin{pmatrix}1\amp 2\amp 3\amp 4
+
       2\amp 3\amp 1\amp 4
-      \end{pmatrix}</m>.} \mbox{
+      \end{pmatrix}</m>.</caption>
+      \mbox{
       <image width="73%" source="images/" />
       }
     </figure>
@@ -1063,12 +1099,13 @@
       \sigma^k(i)</m>.
     </p>
 
-    <problem xml:id="firstrepeat">
-      <p>
-        (essential)
-        Find the cycles of the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and
-        <m>\varphi_{12/34}</m> in the group <m>D_4</m>.
-      </p>
+    <problem xml:id="firstrepeat" category="essential">
+      <statement>
+        <p>
+          Find the cycles of the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and
+          <m>\varphi_{12/34}</m> in the group <m>D_4</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\rho</m> has one cycle, <m>(1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3}</m> has one cycle
@@ -1108,13 +1145,14 @@
       </solution>
     </problem>
 
-    <problem xml:id="cyclepartition">
-      <p>
-        (essential)
-        The support set of the cycle <m>(a_1\ a_2\ \ldots\ a_n)</m> is the set
-        <m>\{a_1,a_2,\ldots,a_n\}</m>. Show that the support sets of the cycles of a permutation of
-        the set <m>S</m> form a partition of <m>S</m>.
-      </p>
+    <problem xml:id="cyclepartition" category="essential">
+      <statement>
+        <p>
+          The support set of the cycle <m>(a_1\ a_2\ \ldots\ a_n)</m> is the set
+          <m>\{a_1,a_2,\ldots,a_n\}</m>. Show that the support sets of the cycles of a permutation of
+          the set <m>S</m> form a partition of <m>S</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           Every element is in a cycle by the definition of cycles, so suppose two
@@ -1203,20 +1241,21 @@
       product of cycles; it is a convention to make less work for us. We just have to
       remember that they are implicitly there. You should recognize that the first
       interpretation we gave for the multiplication of disjoint cycles applies only when the
-      cycles are disjoint. From now on we will use the phrase ``product of permutations"
-      to mean the same thing as ``composition of permutations," and will use either the
+      cycles are disjoint. From now on we will use the phrase <q>product of permutations</q>
+      to mean the same thing as <q>composition of permutations,</q> and will use either the
       notation
       <m>\sigma\circ\varphi</m> or
       <m>\sigma\varphi</m> for the composition of
       <m>\sigma</m> and <m>\varphi</m>, whichever is convenient.
     </p>
 
-    <problem xml:id="disjoint-commutative">
-      <p>
-        (essential)
-        Write the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and <m>\varphi_{12/34}</m>
-        in <m>D_4</m> as products of disjoint cycles.
-      </p>
+    <problem xml:id="disjoint-commutative" category="essential">
+      <statement>
+        <p>
+          Write the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and <m>\varphi_{12/34}</m>
+          in <m>D_4</m> as products of disjoint cycles.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\rho = (1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3} = (2\ 4) = (1)(2\ 4)(3)</m> (either side
@@ -1252,17 +1291,18 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Write a recurrence for the number <m>c(k,n)</m> for the number of
-        permutations of <m>[k]</m> that have exactly <m>n</m> cycles, including 1-cycles.
-        Use it to write a table of <m>c(k,n)</m> for <m>k</m> between 1 and 7 inclusive.
-        Can you find a relationship between <m>c(k,n)</m> and any of the other
-        families of special numbers such as binomial coefficients, Stirling
-        numbers, Lah numbers, etc. we have studied? If you find such a
-        relationship, prove you are right.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Write a recurrence for the number <m>c(k,n)</m> for the number of
+          permutations of <m>[k]</m> that have exactly <m>n</m> cycles, including 1-cycles.
+          Use it to write a table of <m>c(k,n)</m> for <m>k</m> between 1 and 7 inclusive.
+          Can you find a relationship between <m>c(k,n)</m> and any of the other
+          families of special numbers such as binomial coefficients, Stirling
+          numbers, Lah numbers, etc. we have studied? If you find such a
+          relationship, prove you are right.
+        </p>
+      </statement>
       <solution>
         <p>
           The element <m>k</m> is either in a cycle by itself or it isn't. The number of
@@ -1409,14 +1449,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        (Relevant to <xref ref="expogenfun">Appendix</xref>.) A permutation <m>\sigma</m> is called an
-        <em>involution</em><index><main>involution</main></index> if <m>\sigma^2=\iota</m>. When you write an
-        involution as a product of disjoint cycles, what is special about the
-        cycles?
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          (Relevant to <xref ref="expogenfun">Appendix</xref>.) A permutation <m>\sigma</m> is called an
+          <em>involution</em><index><main>involution</main></index> if <m>\sigma^2=\iota</m>. When you write an
+          involution as a product of disjoint cycles, what is special about the
+          cycles?
+        </p>
+      </statement>
       <solution>
         <p>
           They are all 2-cycles or 1-cycles.
@@ -1478,109 +1519,121 @@
       \end{problem}
     </p>
 
-    <problem>
-      <p>
-      (essential for this or the next section)
-      The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
-      defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
-      <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
-      cycles is the product of the signs of its cycles.<index><main>permutation</main><sub>sign
-      of</sub></index><index><main>sign of a permutation</main></index>
-      <ol>
-        <li><p>
-          What happens to the sign of an <m>n</m>-cycle if you multiply it by a
-          2-cycle (which might or might not be disjoint from it)?
-          <solution>
-            <p>
-              If the <m>m</m>-cycle and 2-cycle are disjoint, then by definition, the sign
-              changes to the opposite value. If they are not disjoint, and the two cycle is <m>(i\
-              j)</m>, either
-              <m>i</m> or <m>j</m> or both are in the original cycle. Suppose that only <m>i</m> is in the cycle
-              (and the same argument works if only <m>j</m> is in the cycle), and the original cycle is
-              <m>(i\ i_2\ \ldots\ i_n)</m>. Then the product
-              <m>(i\ i_2\
-              \ldots\ i_n)(i\ j)</m> is
-              <m>(i\ j\ i_2\ \ldots\ i_n)</m>, and the product <m>(i\ j)(i\ i_2\ \ldots\ i_n)</m> is <m>(j\ i\
-              i_2\
-              \ldots\ i_n)</m>. Thus the sign changes to the opposite sign. Suppose that <m>i</m> and <m>j</m>
-              are both in the original cycle. Then <m>j= i_k</m> for some <m>k</m>. Then <m>(i\ i_2\ \ldots\
-              i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})</m>. If the
-              original sign was 1, then we started with an cycle on an odd number of entries and
-              so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed. It the
-              original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
-              of two cycles on an odd number of entries, which gives sign 1, or a product of two
-              cycles on an even number of entries, which gives us sign 1. Thus in every case, the
-              sign changes to the opposite sign.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
+          defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
+          <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
+          cycles is the product of the signs of its cycles.<index><main>permutation</main><sub>sign
+          of</sub></index><index><main>sign of a permutation</main></index>
+          <ol>
+            <li>
+              <p>
+                What happens to the sign of an <m>n</m>-cycle if you multiply it by a
+                2-cycle (which might or might not be disjoint from it)?
+                <solution>
+                <p>
+                  If the <m>m</m>-cycle and 2-cycle are disjoint, then by definition, the sign
+                  changes to the opposite value. If they are not disjoint, and the two cycle is <m>(i\
+                  j)</m>, either
+                  <m>i</m> or <m>j</m> or both are in the original cycle. Suppose that only <m>i</m> is in the cycle
+                  (and the same argument works if only <m>j</m> is in the cycle), and the original cycle is
+                  <m>(i\ i_2\ \ldots\ i_n)</m>. Then the product
+                  <m>(i\ i_2\
+                  \ldots\ i_n)(i\ j)</m> is
+                  <m>(i\ j\ i_2\ \ldots\ i_n)</m>, and the product <m>(i\ j)(i\ i_2\ \ldots\ i_n)</m> is <m>(j\ i\
+                  i_2\
+                  \ldots\ i_n)</m>. Thus the sign changes to the opposite sign. Suppose that <m>i</m> and <m>j</m>
+                  are both in the original cycle. Then <m>j= i_k</m> for some <m>k</m>. Then <m>(i\ i_2\ \ldots\
+                  i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})</m>. If the
+                  original sign was 1, then we started with an cycle on an odd number of entries and
+                  so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed. It the
+                  original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
+                  of two cycles on an odd number of entries, which gives sign 1, or a product of two
+                  cycles on an even number of entries, which gives us sign 1. Thus in every case, the
+                  sign changes to the opposite sign.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What happens to the sign of a product of an <m>n</m>-cycle and a
-          disjoint <m>m</m>-cycle if you multiply it by a two cycle which is disjoint
-          from neither of the other two?
-          <solution>
-            <p>
-              The product becomes an <m>m+n</m> cycle, and so if both cycles were on an even
-              number of entries or both were on an odd number, we now have an cycle on an even
-              number of entries, so its sign is -1, but previously the product had sign 1. Thus
-              the sign changes. If one of the original cycles was on an even number of entries
-              and one was on an odd number, we now have a cycle on an odd number of entries, so it
-              has sign 1, while the original product has sign -1. Thus the sign changes.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What happens to the sign of a product of an <m>n</m>-cycle and a
+                disjoint <m>m</m>-cycle if you multiply it by a two cycle which is disjoint
+                from neither of the other two?
+                <solution>
+                <p>
+                  The product becomes an <m>m+n</m> cycle, and so if both cycles were on an even
+                  number of entries or both were on an odd number, we now have an cycle on an even
+                  number of entries, so its sign is -1, but previously the product had sign 1. Thus
+                  the sign changes. If one of the original cycles was on an even number of entries
+                  and one was on an odd number, we now have a cycle on an odd number of entries, so it
+                  has sign 1, while the original product has sign -1. Thus the sign changes.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          What happens to the sign of a permutation if you multiply it by a
-          2-cycle?
-          <solution>
-            <p>
-              The cases we just analyzed cover all the possibilities, so the sign
-              changes.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                What happens to the sign of a permutation if you multiply it by a
+                2-cycle?
+                <solution>
+                <p>
+                  The cases we just analyzed cover all the possibilities, so the sign
+                  changes.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
-          <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
-          correct.)
-          <solution>
-            <p>
-              <m>(-1)^k</m>. The proof is probably easiest by induction, for the sign of one
-              transposition is -1, and if we take a product of <m>i</m> transpositions and multiply by
-              one more transposition, the sign changes. Thus if the product of <m>i</m> transpositions
-              has sign <m>(-1)^i</m>, the product of <m>i+1</m> transpositions has sign <m>(-1)^{i+1}</m>, and so
-              by the principle of mathematical induction, the sign of a product of <m>k</m>
-              transpositions if
-              <m>(-1)^k</m> for all positive integers <m>k</m>. In fact, had we taken <m>\iota</m> for our base
-              case, we could have concluded the same result for all nonnegative integers.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
+                <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
+                correct.)
+                <solution>
+                <p>
+                  <m>(-1)^k</m>. The proof is probably easiest by induction, for the sign of one
+                  transposition is -1, and if we take a product of <m>i</m> transpositions and multiply by
+                  one more transposition, the sign changes. Thus if the product of <m>i</m> transpositions
+                  has sign <m>(-1)^i</m>, the product of <m>i+1</m> transpositions has sign <m>(-1)^{i+1}</m>, and so
+                  by the principle of mathematical induction, the sign of a product of <m>k</m>
+                  transpositions if
+                  <m>(-1)^k</m> for all positive integers <m>k</m>. In fact, had we taken <m>\iota</m> for our base
+                  case, we could have concluded the same result for all nonnegative integers.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Can you compute the sign of a product of two permutations from the
-          signs of the permutations?  Why or why not?
-          <solution>
-            <p>
-              You can compute it; it is the product of the signs. Just write them as
-              products of transpositions, multiply all those transpositions together and use the fact
-              that, for transpositions, the sign of the product is the product of the signs.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Can you compute the sign of a product of two permutations from the
+                signs of the permutations?  Why or why not?
+                <solution>
+                <p>
+                  You can compute it; it is the product of the signs. Just write them as
+                  products of transpositions, multiply all those transpositions together and use the fact
+                  that, for transpositions, the sign of the product is the product of the signs.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        Do the elements of <m>S_n</m> with sign -1 form a subgroup of <m>S_n</m>?
-        Do the elements of <m>S_n</m> with sign 1 form a subgroup of <m>S_n</m>?
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          Do the elements of <m>S_n</m> with sign -1 form a subgroup of <m>S_n</m>?
+          Do the elements of <m>S_n</m> with sign 1 form a subgroup of <m>S_n</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           The elements of sign <m>-1</m> are not closed under composition so they do not
@@ -1590,15 +1643,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="alternatinggroup">
-      <p>
-        (essential for this or the next section)
-        Describe a subgroup of <m>S_n</m> of size <m>n!/2</m>. This subgroup is
-        called the <em>alternating group</em><index><main>alternating group</main></index> <m>A_n</m>.
-        Describe explicitly a partition of <m>S_n</m> that you can use with the
-        quotient principle to prove bijectively that the subgroup you described has size
-        <m>n!/2</m>.
-      </p>
+    <problem xml:id="alternatinggroup" category="essential for this or the next section">
+      <statement>
+        <p>
+          Describe a subgroup of <m>S_n</m> of size <m>n!/2</m>. This subgroup is
+          called the <em>alternating group</em><index><main>alternating group</main></index> <m>A_n</m>.
+          Describe explicitly a partition of <m>S_n</m> that you can use with the
+          quotient principle to prove bijectively that the subgroup you described has size
+          <m>n!/2</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           Partition <m>S_n</m> into the permutations of sign 1 and sign -1. Choose a

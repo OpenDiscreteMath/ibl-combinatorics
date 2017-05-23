@@ -40,12 +40,13 @@
       <m>y</m> in the third graph in the figure is four.
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        In the graph on the left in <xref ref="Threegraphs">Figure</xref>, what is the
-        degree of each vertex?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          In the graph on the left in <xref ref="Threegraphs">Figure</xref>, what is the
+          degree of each vertex?
+        </p>
+      </statement>
       <solution>
         <p>
           The degree of vertex 1 is one, of vertex 2 is two, of vertex 3 is
@@ -55,12 +56,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (motivation)
-        For each graph in <xref ref="Threegraphs">Figure</xref> is the number of
-        vertices of odd degree even or odd?
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          For each graph in <xref ref="Threegraphs">Figure</xref> is the number of
+          vertices of odd degree even or odd?
+        </p>
+      </statement>
       <solution>
         <p>
           In all three cases it is even.
@@ -68,93 +70,103 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (essential for this or the next section, and interesting)
-      The sum of the degrees of the vertices of a (finite) graph is related in a
-      natural way to the number of edges.
-      <ol>
-        <li><p>
-          What is the relationship?
-          <solution>
-            <p>
-              The sum of the degrees of the
-              vertices is twice the number of edges.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          The sum of the degrees of the vertices of a (finite) graph is related in a
+          natural way to the number of edges.
+          <ol>
+            <li>
+              <p>
+                What is the relationship?
+                <solution>
+                <p>
+                  The sum of the degrees of the
+                  vertices is twice the number of edges.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Find a proof that what you say is correct that uses induction on
-          the number of edges.  Hint:  To make your inductive step, think about
-          what happens to a graph if you delete an edge.
-          <solution>
-            <p>
-              If a graph has
-              no edges, then the sum of the degrees of the vertices is 0, which is
-              twice the number of edges. Now suppose that whenever a graph has <m>n-1</m>
-              edges, the sum of the degrees of the vertices is twice the number of edges.
-              Let
-              <m>G</m> be a graph with <m>n</m> edges, and delete an edge from <m>G</m> to get <m>G'</m>. The
-              the sum of the degrees of <m>G'</m> is <m>2(n-1)</m>, and adding the edge back into
-              <m>G'</m> to get <m>G</m> either increases the degrees of exactly two vertices by
-              one each or increases the degree of one vertex by 2. Thus the sum of the
-              degrees of the vertices of <m>G</m> is <m>2n</m>, which is twice the number of
-              edges. Thus by the principle of mathematical induction, for all nonnegative
-              integers
-              <m>n</m>, if a graph has <m>n</m> edges, then the sum of the degrees of the vertices is
-              twice the number of edges.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Find a proof that what you say is correct that uses induction on
+                the number of edges.  Hint:  To make your inductive step, think about
+                what happens to a graph if you delete an edge.
+                <solution>
+                <p>
+                  If a graph has
+                  no edges, then the sum of the degrees of the vertices is 0, which is
+                  twice the number of edges. Now suppose that whenever a graph has <m>n-1</m>
+                  edges, the sum of the degrees of the vertices is twice the number of edges.
+                  Let
+                  <m>G</m> be a graph with <m>n</m> edges, and delete an edge from <m>G</m> to get <m>G'</m>. The
+                  the sum of the degrees of <m>G'</m> is <m>2(n-1)</m>, and adding the edge back into
+                  <m>G'</m> to get <m>G</m> either increases the degrees of exactly two vertices by
+                  one each or increases the degree of one vertex by 2. Thus the sum of the
+                  degrees of the vertices of <m>G</m> is <m>2n</m>, which is twice the number of
+                  edges. Thus by the principle of mathematical induction, for all nonnegative
+                  integers
+                  <m>n</m>, if a graph has <m>n</m> edges, then the sum of the degrees of the vertices is
+                  twice the number of edges.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Find a proof that what you say is correct that uses induction on
-          the number of vertices.
-          <solution>
-            <p>
-              If a graph has no vertices, then the sum of the degrees of the
-              vertices is 0, which is twice the number of edges. Now suppose that whenever
-              a graph has
-              <m>n-1</m> vertices, the sum of the degrees is twice the number of edges. Let <m>G</m>
-              be a graph with <m>n</m> vertices. Delete one vertex <m>x</m> and all edges it is
-              incident with. By our inductive hypothesis the sum of the degrees of the
-              vertices of the resulting graph is twice the number of edges. Now replace the
-              vertex
-              <m>x</m> and add in the edges connecting it to other vertices in the graph. Each
-              time you add in an edge, you increase the degree of <m>x</m> by one and of one other
-              vertex by one. Finally add in any edges connecting <m>x</m> to itself. Each of
-              these increases the degree of <m>x</m> by two. Thus for each edge we added, the
-              sum of the degrees of the vertices increased by two, so the sum of the degrees
-              of the vertices of
-              <m>G</m> is still twice the number of edges. Therefore by the principle of
-              mathematical induction, for all nonnegative integers <m>n</m>, if a graph has <m>n</m>
-              vertices, then the sum of the degrees of its vertices is even.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Find a proof that what you say is correct that uses induction on
+                the number of vertices.
+                <solution>
+                <p>
+                  If a graph has no vertices, then the sum of the degrees of the
+                  vertices is 0, which is twice the number of edges. Now suppose that whenever
+                  a graph has
+                  <m>n-1</m> vertices, the sum of the degrees is twice the number of edges. Let <m>G</m>
+                  be a graph with <m>n</m> vertices. Delete one vertex <m>x</m> and all edges it is
+                  incident with. By our inductive hypothesis the sum of the degrees of the
+                  vertices of the resulting graph is twice the number of edges. Now replace the
+                  vertex
+                  <m>x</m> and add in the edges connecting it to other vertices in the graph. Each
+                  time you add in an edge, you increase the degree of <m>x</m> by one and of one other
+                  vertex by one. Finally add in any edges connecting <m>x</m> to itself. Each of
+                  these increases the degree of <m>x</m> by two. Thus for each edge we added, the
+                  sum of the degrees of the vertices increased by two, so the sum of the degrees
+                  of the vertices of
+                  <m>G</m> is still twice the number of edges. Therefore by the principle of
+                  mathematical induction, for all nonnegative integers <m>n</m>, if a graph has <m>n</m>
+                  vertices, then the sum of the degrees of its vertices is even.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Find a proof that what you say is correct that does not use
-          induction.
-          <solution>
-            <p>
-              The sum of the degrees of the vertices is the sum over all
-              edges of the number of times that edge touches a vertex, which is twice
-              the number of edges.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Find a proof that what you say is correct that does not use
+                induction.
+                <solution>
+                <p>
+                  The sum of the degrees of the vertices is the sum over all
+                  edges of the number of times that edge touches a vertex, which is twice
+                  the number of edges.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        What can you say about the number of vertices of odd degree in a
-        graph?
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          What can you say about the number of vertices of odd degree in a
+          graph?
+        </p>
+      </statement>
       <solution>
         <p>
           The number of vertices of odd degree must be even, because otherwise
@@ -167,77 +179,87 @@
   <subsection>
     <title>Walks and paths in graphs</title>
     <p>
-    A <em>walk</em> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
-    e_iv_i</m> of vertices and edges such that edge <m>e_i</m> connects vertices
-    <m>v_{i-1}</m> and <m>v_i</m>. A graph is called connected if, for any pair of
-    vertices, there is a walk starting at one and ending at the other.
-    <ol>
-      {\setcounter{enumi}{\value{problemnumber}}}
+      A <em>walk</em> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
+      e_iv_i</m> of vertices and edges such that edge <m>e_i</m> connects vertices
+      <m>v_{i-1}</m> and <m>v_i</m>. A graph is called connected if, for any pair of
+      vertices, there is a walk starting at one and ending at the other.
+      <ol>
+        {\setcounter{enumi}{\value{problemnumber}}}
 
-      <li xml:id="connectedanddisconnected" ><p>
-        Which of the graphs in <xref ref="Threegraphs">Figure</xref> is
-        connected?
-        <solution>
+        <li xml:id="connectedanddisconnected" >
+
+        <p>
+          Which of the graphs in <xref ref="Threegraphs">Figure</xref> is
+          connected?
+          <solution>
+            <p>
+              They first two connected; the third is not.
+            </p>
+          </solution>
+        </p>
+        </li>
+
+        <li>
           <p>
-            They first two connected; the third is not.
+            (motivation)
+
+            A <em>path</em> in a graph is a walk with no repeated vertices.  Find the
+            longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
+            <solution>
+              <p>
+                The path from <m>y</m> to <m>v</m> to <m>x</m> to <m>w</m> is a typical longest path.
+                There are quite a few others. Notice you have two choices for the edge to use
+                to get from <m>y</m> to <m>v</m>.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        (motivation)
-
-        A <em>path</em> in a graph is a walk with no repeated vertices.  Find the
-        longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
-        <solution>
+        <li>
           <p>
-            The path from <m>y</m> to <m>v</m> to <m>x</m> to <m>w</m> is a typical longest path.
-            There are quite a few others. Notice you have two choices for the edge to use
-            to get from <m>y</m> to <m>v</m>.
+            (motivation)
+            A <em>cycle</em> in a graph is a walk whose first and last vertex are
+            equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a
+            cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the
+            smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
+            <solution>
+              <p>
+                The second and third graphs have cycles. The
+                largest number of edges in a cycle in the second graph is six; the smallest
+                number of edges in a cycle in the third graph is one.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        (motivation)
-        A <em>cycle</em> in a graph is a walk whose first and last vertex are
-        equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a
-        cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the
-        smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
-        <solution>
+        <li>
           <p>
-            The second and third graphs have cycles. The
-            largest number of edges in a cycle in the second graph is six; the smallest
-            number of edges in a cycle in the third graph is one.
+            (motivation)
+            A connected graph with no cycles is called a <em>tree</em><index><main>tree</main></index>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
+            trees?
+            <solution>
+              <p>
+                The first graph is a tree.
+              </p>
+            </solution>
+            \setcounter{problemnumber}{\value{enumi}}
           </p>
-        </solution>
-        </p></li>
-
-      <li><p>
-        (motivation)
-        A connected graph with no cycles is called a <em>tree</em><index><main>tree</main></index>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
-        trees?
-        <solution>
-          <p>
-            The first graph is a tree.
-          </p>
-        </solution>
-        \setcounter{problemnumber}{\value{enumi}}
-        </p></li>
-    </ol>
+        </li>
+      </ol>
     </p>
   </subsection>
 
   <subsection>
     <title>Counting vertices, edges, and paths in trees</title>
-    <problem xml:id="Noverticesandedgesoftree">
-      <p>
-        (essential for this or the next section, and interesting)
-        Draw some trees and on the basis of your examples, make a conjecture
-        about the relationship between the number of vertices and edges in a
-        tree. Prove your conjecture. (Hint: what happens if you choose an edge
-        and delete it, but not its endpoints?)
-      </p>
+    <problem xml:id="Noverticesandedgesoftree" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Draw some trees and on the basis of your examples, make a conjecture
+          about the relationship between the number of vertices and edges in a
+          tree. Prove your conjecture. (Hint: what happens if you choose an edge
+          and delete it, but not its endpoints?)
+        </p>
+      </statement>
       <solution>
         <p>
           The number of edges of a tree is one less than the number of
@@ -277,13 +299,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section)
-        What is the minimum number of vertices of degree one in a finite
-        tree? What is it if the number of vertices is bigger than one? Prove
-        that you are correct.
-      </p>
+    <problem category="essential for this or the next section">
+      <statement>
+        <p>
+          What is the minimum number of vertices of degree one in a finite
+          tree? What is it if the number of vertices is bigger than one? Prove
+          that you are correct.
+        </p>
+      </statement>
       <solution>
         <p>
           The minimum is zero, which happens with a tree
@@ -311,12 +334,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        In a tree, given two vertices, how many paths can you find between
-        them? Prove that you are correct.
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          In a tree, given two vertices, how many paths can you find between
+          them? Prove that you are correct.
+        </p>
+      </statement>
       <solution>
         <p>
           Exactly one. Suppose there were two distinct paths <m>P_1</m> and <m>P_2</m>
@@ -333,57 +357,58 @@
       </solution>
     </problem>
 
-    <problem xml:id="Prufer">
-      <p>
-        (interesting and difficult)
-        How many trees are there on the vertex set <m>\{1,2\}</m>? On the
-        vertex set <m>\{1,2,3\}</m>? When we label the vertices of our tree, we
-        consider the tree which has edges between vertices 1 and 2 and between
-        vertices 2 and 3 different from the tree that has edges between vertices
-        1 and 3 and between 2 and 3. See <xref ref="differenttrees">Figure</xref>.
-      </p>
+    <problem xml:id="Prufer" category="interesting and difficult">
+      <statement>
+        <p>
+          How many trees are there on the vertex set <m>\{1,2\}</m>? On the
+          vertex set <m>\{1,2,3\}</m>? When we label the vertices of our tree, we
+          consider the tree which has edges between vertices 1 and 2 and between
+          vertices 2 and 3 different from the tree that has edges between vertices
+          1 and 3 and between 2 and 3. See <xref ref="differenttrees">Figure</xref>.
+        </p>
 
-      <figure xml:id="differenttrees" >
-        <caption>The three labelled
-        trees on three vertices</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
+        <figure xml:id="differenttrees" >
+          <caption>The three labelled
+          trees on three vertices</caption>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
 
-      <p>
-        How many
-        (labelled) trees are there on four vertices? You don't have a lot of data
-        to guess from, but try to guess a formula for the number of labelled trees
-        with vertex set
-        <m>\{1,2,\cdots,n\}</m>. (If you organize carefully, you can figure out how
-        many labelled trees there are with vertex set <m>\{1,2,3,4,5\}</m> to help you
-        make your conjecture.) Given a tree with two or more vertices, labelled
-        with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of
-        integers inductively as follows: If the tree has two vertices, the
-        sequence consists of one entry, namely the label of the vertex with the
-        larger label. Otherwise, let
-        <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m>
-        be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write
-        down
-        <m>b_1</m>.
-        Given <m>a_{i-1}</m> and <m>b_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of
-        degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m> and let <m>b_i</m>
-        be the unique vertex in this new tree adjacent to <m>a_i</m>.
-        We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. For example
-        in the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and the sequence <m>b</m> is 234478. (If you are
-        unfamiliar with inductive (recursive) definition, you might want to write
-        down some other labelled trees on eight vertices and construct the
-        sequence of <m>b_i</m>s.) How long will the sequence
-        <m>b</m> be if it is applied to a tree with
-        <m>n</m> vertices (labelled with 1 through
-        <m>n</m>)? What can you say about the last member of the sequence of <m>b_i</m>s?
-        Can you tell from the sequence of
-        <m>b_i</m>s what
-        <m>a_1</m> is? Find a bijection between labelled trees and something you can
-        ``count" that will tell you how many labelled trees there are on <m>n</m>
-        labelled vertices.
-      </p>
+        <p>
+          How many
+          (labelled) trees are there on four vertices? You don't have a lot of data
+          to guess from, but try to guess a formula for the number of labelled trees
+          with vertex set
+          <m>\{1,2,\cdots,n\}</m>. (If you organize carefully, you can figure out how
+          many labelled trees there are with vertex set <m>\{1,2,3,4,5\}</m> to help you
+          make your conjecture.) Given a tree with two or more vertices, labelled
+          with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of
+          integers inductively as follows: If the tree has two vertices, the
+          sequence consists of one entry, namely the label of the vertex with the
+          larger label. Otherwise, let
+          <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m>
+          be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write
+          down
+          <m>b_1</m>.
+          Given <m>a_{i-1}</m> and <m>b_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of
+          degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m> and let <m>b_i</m>
+          be the unique vertex in this new tree adjacent to <m>a_i</m>.
+          We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. For example
+          in the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and the sequence <m>b</m> is 234478. (If you are
+          unfamiliar with inductive (recursive) definition, you might want to write
+          down some other labelled trees on eight vertices and construct the
+          sequence of <m>b_i</m>s.) How long will the sequence
+          <m>b</m> be if it is applied to a tree with
+          <m>n</m> vertices (labelled with 1 through
+          <m>n</m>)? What can you say about the last member of the sequence of <m>b_i</m>s?
+          Can you tell from the sequence of
+          <m>b_i</m>s what
+          <m>a_1</m> is? Find a bijection between labelled trees and something you can
+          <q>count</q> that will tell you how many labelled trees there are on <m>n</m>
+          labelled vertices.
+        </p>
+      </statement>
       <solution>
         <p>
           There is one labelled tree on two vertices. We know there are three
@@ -454,10 +479,12 @@
     </p>
 
     <problem>
-      <p>
-        What can you say about the Pr&#xfc;fer code for a tree with exactly
-        two vertices of degree 1? Does this characterize such trees?
-      </p>
+      <statement>
+        <p>
+          What can you say about the Pr&#xfc;fer code for a tree with exactly
+          two vertices of degree 1? Does this characterize such trees?
+        </p>
+      </statement>
       <solution>
         <p>
           It consists of
@@ -467,12 +494,13 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        What can you determine about the degree of
-        the vertex labelled <m>i</m> from the Prufer code of the tree?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          What can you determine about the degree of
+          the vertex labelled <m>i</m> from the Prufer code of the tree?
+        </p>
+      </statement>
       <solution>
         <p>
           The degree of a vertex in a tree is one more than the number of
@@ -481,13 +509,14 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        What is the number of (labelled) trees on <m>n</m> vertices with three
-        vertices of degree 1? (Assume they are labelled with the integers 1
-        through <m>n</m>.)
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          What is the number of (labelled) trees on <m>n</m> vertices with three
+          vertices of degree 1? (Assume they are labelled with the integers 1
+          through <m>n</m>.)
+        </p>
+      </statement>
       <solution>
         <p>
           There are <m>n\choose 3</m> ways to choose the three vertices of degree
@@ -531,13 +560,15 @@
     </figure>
 
     <problem>
-      <p>
-        Show that every connected graph has a spanning tree. It is
-        possible to find a proof that starts with the graph and works ``down"
-        towards the spanning tree and to find a proof that starts with just the
-        vertices and works ``up" towards the spanning tree. Can you find both
-        kinds of proof?
-      </p>
+      <statement>
+        <p>
+          Show that every connected graph has a spanning tree. It is
+          possible to find a proof that starts with the graph and works <q>down</q>
+          towards the spanning tree and to find a proof that starts with just the
+          vertices and works <q>up</q> towards the spanning tree. Can you find both
+          kinds of proof?
+        </p>
+      </statement>
       <solution>
         <p>
           Here are three proofs:
@@ -601,16 +632,17 @@
       spanning tree.
     </p>
 
-    <problem xml:id="mincostspantree">
-      <p>
-        (interesting)
-        Describe a method (or better, two methods different in at least one
-        aspect) for finding a spanning tree of minimum cost in a graph whose edges
-        are labelled with costs, the cost on an edge being the cost for including
-        that edge in a spanning tree. Prove that your method(s)
-        work.<index><main>minimum cost spanning tree</main></index><index><main>spanning tree</main><sub>minimum
-        cost</sub></index><index><main>tree</main><sub>spanning!minimum cost</sub></index>
-      </p>
+    <problem xml:id="mincostspantree" category="interesting">
+      <statement>
+        <p>
+          Describe a method (or better, two methods different in at least one
+          aspect) for finding a spanning tree of minimum cost in a graph whose edges
+          are labelled with costs, the cost on an edge being the cost for including
+          that edge in a spanning tree. Prove that your method(s)
+          work.<index><main>minimum cost spanning tree</main></index><index><main>spanning tree</main><sub>minimum
+          cost</sub></index><index><main>tree</main><sub>spanning!minimum cost</sub></index>
+        </p>
+      </statement>
       <solution>
         <p>
           Start with vertex, number it vertex 1, and choose
@@ -701,36 +733,44 @@
     </figure>
 
     <p>
-    Contractions of three
-    different edges in the same graph are shown in <xref ref="threecontractions">Figure</xref>. Intuitively, we contract an edge by shrinking it
-    in length until its endpoints coincide; we let the rest of the graph <q>go
-    along for the ride.</q> To be more precise, we
-    <em>contract</em><index><main>contraction</main></index> the edge
-    <m>e</m> with endpoints
-    <m>v</m> and
-    <m>w</m> as follows:
-    <ol>
-      <li><p>
-          remove all edges having either
-          <m>v</m> or <m>w</m> or both as an endpoint from the edge set,
-        </p></li>
+      Contractions of three
+      different edges in the same graph are shown in <xref ref="threecontractions">Figure</xref>. Intuitively, we contract an edge by shrinking it
+      in length until its endpoints coincide; we let the rest of the graph <q>go
+      along for the ride.</q> To be more precise, we
+      <em>contract</em><index><main>contraction</main></index> the edge
+      <m>e</m> with endpoints
+      <m>v</m> and
+      <m>w</m> as follows:
+      <ol>
+        <li>
+          <p>
+            remove all edges having either
+            <m>v</m> or <m>w</m> or both as an endpoint from the edge set,
+          </p>
+        </li>
 
-      <li><p>
-          remove <m>v</m> and <m>w</m> from the vertex set,
-        </p></li>
+        <li>
+          <p>
+            remove <m>v</m> and <m>w</m> from the vertex set,
+          </p>
+        </li>
 
-      <li><p>
-          add a new vertex
-          <m>E</m> to the vertex set,
-        </p></li>
+        <li>
+          <p>
+            add a new vertex
+            <m>E</m> to the vertex set,
+          </p>
+        </li>
 
-      <li><p>
-          add an edge from <m>E</m> to each remaining
-          vertex that used to be an endpoint of an edge whose other endpoint was
-          <m>v</m> or <m>w</m>, and add an edge from <m>E</m> to <m>E</m> for any edge other than
-          <m>e</m> whose endpoints were in the set <m>\{v,w\}</m>.
-        </p></li>
-    </ol>
+        <li>
+          <p>
+            add an edge from <m>E</m> to each remaining
+            vertex that used to be an endpoint of an edge whose other endpoint was
+            <m>v</m> or <m>w</m>, and add an edge from <m>E</m> to <m>E</m> for any edge other than
+            <m>e</m> whose endpoints were in the set <m>\{v,w\}</m>.
+          </p>
+        </li>
+      </ol>
     </p>
 
     <p>
@@ -740,28 +780,29 @@
       <m>e</m> from <m>G</m>.
     </p>
 
-    <problem>
-      <p>
-        (essential for this or the next section, and interesting)
-        How do the number of spanning trees of <m>G</m> not containing the edge
-        <m>e</m> and the number of spanning trees of <m>G</m> containing <m>e</m> relate to the
-        number of spanning trees of <m>G-e</m> and <m>G/e</m>? Use <m>\#(G)</m> to stand for
-        the number of spanning trees of <m>G</m> (so that, for example, <m>\#(G/e)</m>
-        stands for the number of spanning trees of <m>G/e</m>). Find an expression
-        for
-        <m>\#(G)</m> in terms of <m>\#(G/e)</m> and <m>\#(G-e)</m>. This expression is called
-        the <em>deletion-contraction recurrence</em><index><main>deletion-contraction
-        recurrence</main></index><index><main>recurrence</main><sub>deletion-contraction</sub></index>. Use it to compute the
-        number of spanning trees of the graph in <xref ref="spantreeexercise">Figure</xref>.
-      </p>
+    <problem category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          How do the number of spanning trees of <m>G</m> not containing the edge
+          <m>e</m> and the number of spanning trees of <m>G</m> containing <m>e</m> relate to the
+          number of spanning trees of <m>G-e</m> and <m>G/e</m>? Use <m>\#(G)</m> to stand for
+          the number of spanning trees of <m>G</m> (so that, for example, <m>\#(G/e)</m>
+          stands for the number of spanning trees of <m>G/e</m>). Find an expression
+          for
+          <m>\#(G)</m> in terms of <m>\#(G/e)</m> and <m>\#(G-e)</m>. This expression is called
+          the <em>deletion-contraction recurrence</em><index><main>deletion-contraction
+          recurrence</main></index><index><main>recurrence</main><sub>deletion-contraction</sub></index>. Use it to compute the
+          number of spanning trees of the graph in <xref ref="spantreeexercise">Figure</xref>.
+        </p>
 
-      <figure xml:id="spantreeexercise" >
-        <caption>A
-        graph.</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-      </figure>
+        <figure xml:id="spantreeexercise" >
+          <caption>A
+          graph.</caption>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </figure>
+      </statement>
       <solution>
         <p>
           The number of spanning trees of <m>G</m> not containing <m>e</m> is the number
@@ -779,13 +820,9 @@
 
         <p>
           We now show the four graphs on the right hand side of the equation.
-        </p>
-
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-
-        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           We could now convert each of these graphs to trees with multiple edges by
           deleting and contracting one more edge, say edge <m>\{1,5\}</m>, which would make
           the analysis easier but the picture twice as big. Since we can easily count
@@ -822,7 +859,9 @@
     <ol>
     {\setcounter{enumi}{\value{problemnumber}}}
 
-    <li xml:id="Dijkstra" ><p>
+    <li xml:id="Dijkstra" >
+
+    <p>
       Show that the following algorithm (known as
       Dijkstra's<index><main>Dijkstra's algorithm</main></index><index><main>distance in a graph</main></index>
       algorithm) applied to a weighted graph whose vertices are labelled 1 to
@@ -831,27 +870,35 @@
       <m>d(i)</m>.
     </p>
     <ol>
-      <li><p>
+      <li>
+        <p>
           Let <m>d(1) = 0</m>. Let <m>d(i) = \infty</m> for all other <m>i</m>.  Let
           <m>v(1)</m>=1. Let
           <m>v(j) = 0</m> for all other
           <m>j</m>.  For each <m>i</m> and <m>j</m>, let <m>w(i,j)</m> be the minimum weight of an edge
           between <m>i</m> and <m>j</m>, or <m>\infty</m> if there are no such edges.  Let
           <m>k=1</m>.  Let <m>t=1</m>.
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           For each <m>i</m>, if <m>d(i)>d(k) + w(k,i)</m> let <m>d(i)= d(k) +w(k,i)</m>.
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           Among those <m>i</m> with <m>v(i)=0</m>, choose one with <m>d(i)</m> a minimum,
           and let <m>k=i</m>.  Increase <m>t</m> by 1. Let <m>v(i) =1.</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           Repeat the previous two steps until <m>t=n</m>
-        </p></li>
+        </p>
+      </li>
     </ol>
     <solution>
       <p>
@@ -885,25 +932,27 @@
     </solution>
     </li>
 
-    <li><p>
-      Is there a spanning tree such that the distance from vertex <m>1</m> to
-      vertex <m>i</m> given by the algorithm in <xref ref="Dijkstra">Problem</xref> is the
-      distance for vertex 1 to vertex <m>i</m> in the tree (using the same weights
-      on the edges, of course)?
-      <solution>
-        <p>
-          Yes, when we choose the <m>i</m> with <m>d(i)</m> a minimum, before we change
-          <m>k</m> to <m>i</m>, we add an edge from vertex <m>k</m> to vertex <m>i</m> to the edge set of a
-          graph on the vertex set <m>[n]</m>. We get a tree each time we do this step,
-          because we are adding a vertex of degree 1 to a smaller tree. We essentially
-          proved in the solution to <xref ref="Dijkstra">Problem</xref> that the path from vertex 1
-          to vertex
-          <m>i</m> in this tree has length (total weight) <m>d(i)</m>. Using the same approach we
-          could prove it directly by induction on the number of vertices in our tree.
-        </p>
-      </solution>
-      \setcounter{problemnumber}{\value{enumi}}
-      </p></li>
+    <li>
+      <p>
+        Is there a spanning tree such that the distance from vertex <m>1</m> to
+        vertex <m>i</m> given by the algorithm in <xref ref="Dijkstra">Problem</xref> is the
+        distance for vertex 1 to vertex <m>i</m> in the tree (using the same weights
+        on the edges, of course)?
+        <solution>
+          <p>
+            Yes, when we choose the <m>i</m> with <m>d(i)</m> a minimum, before we change
+            <m>k</m> to <m>i</m>, we add an edge from vertex <m>k</m> to vertex <m>i</m> to the edge set of a
+            graph on the vertex set <m>[n]</m>. We get a tree each time we do this step,
+            because we are adding a vertex of degree 1 to a smaller tree. We essentially
+            proved in the solution to <xref ref="Dijkstra">Problem</xref> that the path from vertex 1
+            to vertex
+            <m>i</m> in this tree has length (total weight) <m>d(i)</m>. Using the same approach we
+            could prove it directly by induction on the number of vertices in our tree.
+          </p>
+        </solution>
+        \setcounter{problemnumber}{\value{enumi}}
+      </p>
+    </li>
     </ol>
     <p>
       \vfilneg

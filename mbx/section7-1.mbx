@@ -4,15 +4,17 @@
   <subsection xml:id="functionrelation">
     <title>The relation of a function</title>
     <problem xml:id="functionsasorderedpairs">
-      <p>
-        Consider the functions from <m>S=\{-2,-1,0,1,2\}</m> to
-        <m>T=\{1,2,3,4,5\}</m> defined by
-        <m>f(x) = x+3</m>, and <m>g(x) = x^5-5x^3+5x +3</m>. Write down the set
-        of ordered pairs <m>(x,f(x))</m> for <m>x \in S</m> and the set of
-        ordered pairs
-        <m>(x,g(x))</m> for <m>x \in S</m>. Are the two functions the same or
-        different?
-      </p>
+      <statement>
+        <p>
+          Consider the functions from <m>S=\{-2,-1,0,1,2\}</m> to
+          <m>T=\{1,2,3,4,5\}</m> defined by
+          <m>f(x) = x+3</m>, and <m>g(x) = x^5-5x^3+5x +3</m>. Write down the set
+          of ordered pairs <m>(x,f(x))</m> for <m>x \in S</m> and the set of
+          ordered pairs
+          <m>(x,g(x))</m> for <m>x \in S</m>. Are the two functions the same or
+          different?
+        </p>
+      </statement>
       <solution>
         <p>
           We get <m>\{(-2,1),(-1,2),(0,3),(1,4),(2,5)\}</m> in both
@@ -59,81 +61,94 @@
     </p>
 
     <problem xml:id="formalrelations">
-      <p>
-      Here are some questions that will help you get used to
-      the formal idea of a relation and the related formal idea of a
-      function. <m>S</m> will stand for a set of size
-      <m>s</m> and
-      <m>T</m> will stand for a set of size <m>t</m>.
-      <ol>
-        <li><p>
-          What is the size of the largest relation from <m>S</m> to <m>T</m>?
-          <solution>
-            <p>
-              <m>st</m> because that is the size of the relation that has
-              all the ordered pairs <m>(x,y)</m> with <m>x\in S</m> and <m>y\in T</m>.
+      <statement>
+        <p>
+          Here are some questions that will help you get used to
+          the formal idea of a relation and the related formal idea of a
+          function. <m>S</m> will stand for a set of size
+          <m>s</m> and
+          <m>T</m> will stand for a set of size <m>t</m>.
+          <ol>
+            <li>
+              <p>
+                What is the size of the largest relation from <m>S</m> to <m>T</m>?
+              </statement>
+              <solution>
+                <p>
+                  <m>st</m> because that is the size of the relation that has
+                  all the ordered pairs <m>(x,y)</m> with <m>x\in S</m> and <m>y\in T</m>.
+                </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li><p>
-          What is the size of the smallest relation from <m>S</m> to
-          <m>T</m>?
-          <solution>
+          <li>
             <p>
-              0, because the empty set of ordered pairs is a
-              relation.
+              What is the size of the smallest relation from <m>S</m> to
+              <m>T</m>?
+              <solution>
+                <p>
+                  0, because the empty set of ordered pairs is a
+                  relation.
+                </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li><p>
-          The relation of a function <m>f:S\rightarrow T</m> is the set
-          of all ordered pairs <m>(x,f(x))</m> with <m>x\in S</m>.  What is the
-          size of the relation of a function from <m>S</m> to <m>T</m>?  That is, how many
-          ordered pairs are in the relation of a function from <m>S</m> to <m>T</m>?
-          <solution>
+          <li>
             <p>
-              The size of the relation of <m>f:S\rightarrow T</m> is <m>s</m>.
+              The relation of a function <m>f:S\rightarrow T</m> is the set
+              of all ordered pairs <m>(x,f(x))</m> with <m>x\in S</m>.  What is the
+              size of the relation of a function from <m>S</m> to <m>T</m>?  That is, how many
+              ordered pairs are in the relation of a function from <m>S</m> to <m>T</m>?
+              <solution>
+                <p>
+                  The size of the relation of <m>f:S\rightarrow T</m> is <m>s</m>.
+                </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li><p>
-          We say <m>f</m> is a <em>one-to-one</em><index><main>function</main><sub>one-to-one</sub></index><index><main>one-to-one
-          function</main></index><index><main>injection</main></index> function or <em>injection</em> from
-          <m>S</m> to
-          <m>T</m> if each member of <m>S</m> is related to a <em>different</em> element
-          of <m>T</m>. How many different elements must appear as second elements
-          of the ordered pairs in the relation of a one-to-one function
-          (injection) from
-          <m>S</m> to
-          <m>T</m>?
-          <solution>
+          <li>
             <p>
-              <m>s</m> different elements must appear, one for each element
-              of <m>S</m>.
+              We say <m>f</m> is a <em>one-to-one</em><index><main>function</main><sub>one-to-one</sub></index><index><main>one-to-one
+              function</main></index><index><main>injection</main></index> function or <em>injection</em> from
+              <m>S</m> to
+              <m>T</m> if each member of <m>S</m> is related to a <em>different</em> element
+              of <m>T</m>. How many different elements must appear as second elements
+              of the ordered pairs in the relation of a one-to-one function
+              (injection) from
+              <m>S</m> to
+              <m>T</m>?
+              <solution>
+                <p>
+                  <m>s</m> different elements must appear, one for each element
+                  of <m>S</m>.
+                </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+          </li>
 
-        <li xml:id="onto" ><p>
-          A function <m>f:S\rightarrow T</m> is called an <index><main>onto
-          function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
-          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
-          element of
-          <m>T</m> is <m>f(x)</m> for some <m>x\in S</m> What is the minimum size that
-          <m>S</m> can have if there is a  surjection from
-          <m>S</m> to
-          <m>T</m>?
-          <solution>
-            <p>
-              In order to have a surjection from <m>S</m> to <m>T</m>, the size
-              of <m>S</m> must be at least <m>t</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
+          <li xml:id="onto" >
+
+          <p>
+            A function <m>f:S\rightarrow T</m> is called an <index><main>onto
+            function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
+            <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+            element of
+            <m>T</m> is <m>f(x)</m> for some <m>x\in S</m> What is the minimum size that
+            <m>S</m> can have if there is a  surjection from
+            <m>S</m> to
+            <m>T</m>?
+            <solution>
+              <p>
+                In order to have a surjection from <m>S</m> to <m>T</m>, the size
+                of <m>S</m> must be at least <m>t</m>.
+              </p>
+            </solution>
+          </p>
+          </li>
+        </ol>
       </p>
 
       <p>
@@ -234,18 +249,19 @@
     </p>
 
     <problem>
-      <p>
-        Draw the digraph of the ``is a proper subset of" relation
-        on the set of subsets of a two element set. How many arrows
-        would you have had to draw if this problem asked you to draw
-        the digraph for the subsets of a three-element set?
-      </p>
-      <solution>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-
+      <statement>
         <p>
+          Draw the digraph of the <q>is a proper subset of</q> relation
+          on the set of subsets of a two element set. How many arrows
+          would you have had to draw if this problem asked you to draw
+          the digraph for the subsets of a three-element set?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           We would need to draw 19 arrows, some of them curved,
           for the subsets of a three-element set.
         </p>
@@ -253,18 +269,13 @@
       <p>
         \item Draw the digraph of the relation from the set \{A, M, P,
         S\} to the set \{Sam, Mary, Pat, Ann, Polly, Sarah\} given by
-        ``is the first letter of."
+        <q>is the first letter of.</q>
       </p>
       <solution>
         <p>
-          \begin{center}
-           <img src="MISSINGFILE"  width="400" /> figure=initialdigraph.eps
+          <img src="MISSINGFILE"  width="400" /> figure=initialdigraph.eps
         </p>
       </solution>
-      <p>
-        }
-        \end{center} }
-      </p>
     </problem>
   </subsection>
 
@@ -308,21 +319,22 @@
     </p>
 
     <problem xml:id="fourchoosethree">
-      <p>
-        Suppose we have four flavors of ice cream, V(anilla),
-        C(hocolate), S(trawberry) and P(each). Draw the directed
-        graph whose vertices consist of all lists of three distinct
-        flavors of the ice cream, and whose edges connect two lists if
-        they list the same three flavors. This graph makes it
-        pretty clear in how many ways we may choose 3 flavors
-        out of four. How many is it?
-      </p>
-      <solution>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
-
+      <statement>
         <p>
+          Suppose we have four flavors of ice cream, V(anilla),
+          C(hocolate), S(trawberry) and P(each). Draw the directed
+          graph whose vertices consist of all lists of three distinct
+          flavors of the ice cream, and whose edges connect two lists if
+          they list the same three flavors. This graph makes it
+          pretty clear in how many ways we may choose 3 flavors
+          out of four. How many is it?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
           We used double-headed arrows in place of one arrow going in each
           direction to reduce the clutter in the picture. Note that there is
           an arrow from each vertex to itself. We may choose 3 flavors in
@@ -331,36 +343,36 @@
       </solution>
     </problem>
 
-    <problem xml:id="icecreaminadish">
-      <p>
-        (interesting)
-        Now suppose again we are choosing three distinct flavors of
-        ice cream out of four, but instead of putting scoops in a cone or
-        choosing pints, we are going to have the three scoops arranged
-        symmetrically in a circular dish. Similarly to choosing three
-        pints, we can describe a selection of ice cream in terms of which
-        one goes in the dish first, which one goes in second (say to the
-        right of the first), and which one goes in third (say to the right
-        of the second scoop, which makes it to the left of the first
-        scoop). But again, two of these lists will sometimes be
-        equivalent. Once they are in the dish, we can't tell which one
-        went in first. However, there is a subtle difference between
-        putting each flavor in its own small dish and putting all three
-        flavors in a circle in a larger dish. Think about what makes the
-        lists of flavors equivalent, and draw the directed graph whose
-        vertices consist of all lists of three of the flavors of ice
-        cream and whose edges connect two lists that we cannot tell the
-        difference between as dishes of ice cream. How many dishes of ice
-        cream can we distinguish from one another?
-      </p>
+    <problem xml:id="icecreaminadish" category="interesting">
+      <statement>
+        <p>
+          Now suppose again we are choosing three distinct flavors of
+          ice cream out of four, but instead of putting scoops in a cone or
+          choosing pints, we are going to have the three scoops arranged
+          symmetrically in a circular dish. Similarly to choosing three
+          pints, we can describe a selection of ice cream in terms of which
+          one goes in the dish first, which one goes in second (say to the
+          right of the first), and which one goes in third (say to the right
+          of the second scoop, which makes it to the left of the first
+          scoop). But again, two of these lists will sometimes be
+          equivalent. Once they are in the dish, we can't tell which one
+          went in first. However, there is a subtle difference between
+          putting each flavor in its own small dish and putting all three
+          flavors in a circle in a larger dish. Think about what makes the
+          lists of flavors equivalent, and draw the directed graph whose
+          vertices consist of all lists of three of the flavors of ice
+          cream and whose edges connect two lists that we cannot tell the
+          difference between as dishes of ice cream. How many dishes of ice
+          cream can we distinguish from one another?
+        </p>
+      </statement>
       <solution>
         <p>
-          \begin{center}
-           <img src="MISSINGFILE"  width="400" /> figure=icecreamindish.eps,
+          <img src="MISSINGFILE"  width="400" /> figure=icecreamindish.eps,
         </p>
       </solution>
       <p>
-        }\end{center}We can distinguish eight different dishes of ice
+        }We can distinguish eight different dishes of ice
         cream.}
       </p>
 
@@ -370,13 +382,9 @@
       </p>
       <solution>
         <p>
-          \begin{center}
-           <img src="MISSINGFILE"  width="400" /> figure=4AROUNDATABLE.eps,
+          <img src="MISSINGFILE"  width="400" /> figure=4AROUNDATABLE.eps,
         </p>
       </solution>
-      <p>
-        }\end{center}}
-      </p>
     </problem>
 
     <p>
@@ -406,44 +414,50 @@
     </p>
 
     <p>
-    In <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref> and <xref ref="roundtablefour"></xref> there is another property of those relations
-    you may have noticed from the directed graph. Whenever you had
-    an arrow from
-    <m>L_1</m> to
-    <m>L_2</m> and an arrow from
-    <m>L_2</m> to <m>L_3</m>, then there was an arrow from <m>L_1</m> to <m>L_3</m>.
-    This is what we mean when we say a relation is <em>transitive</em>. You also undoubtedly noticed how the directed
-    graph divides up into clumps of mutually connected vertices.
-    This is what equivalence relations are all about. Let's be a
-    bit more precise in our description of what it means for a
-    relation to be reflexive, symmetric or transitive.
-    <ul>
-      <li><p>
-          If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-          <index><main>reflexive</main></index><index><main>relation</main><sub>reflexive</sub></index><em>reflexive</em>  if <m>(x,x)\in
-          R</m> for every
-          <m>x\in X</m>.
-        </p></li>
+      In <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref> and <xref ref="roundtablefour"></xref> there is another property of those relations
+      you may have noticed from the directed graph. Whenever you had
+      an arrow from
+      <m>L_1</m> to
+      <m>L_2</m> and an arrow from
+      <m>L_2</m> to <m>L_3</m>, then there was an arrow from <m>L_1</m> to <m>L_3</m>.
+      This is what we mean when we say a relation is <em>transitive</em>. You also undoubtedly noticed how the directed
+      graph divides up into clumps of mutually connected vertices.
+      This is what equivalence relations are all about. Let's be a
+      bit more precise in our description of what it means for a
+      relation to be reflexive, symmetric or transitive.
+      <ul>
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <index><main>reflexive</main></index><index><main>relation</main><sub>reflexive</sub></index><em>reflexive</em>  if <m>(x,x)\in
+            R</m> for every
+            <m>x\in X</m>.
+          </p>
+        </li>
 
-      <li><p>
-          If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-          <index><main>symmetric</main></index><index><main>relation</main><sub>reflexive</sub></index><em>symmetric</em> if <m>(x,y)</m> is
-          in
-          <m>R</m> whenever
-          <m>(y,x)</m> is in <m>R</m>.
-        </p></li>
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <index><main>symmetric</main></index><index><main>relation</main><sub>reflexive</sub></index><em>symmetric</em> if <m>(x,y)</m> is
+            in
+            <m>R</m> whenever
+            <m>(y,x)</m> is in <m>R</m>.
+          </p>
+        </li>
 
-      <li><p>
-          If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-          <index><main>transitive</main></index><index><main>relation</main><sub>transitive</sub></index><em>transitive</em> if
-          whenever
-          <m>(x,y)</m> is in
-          <m>R</m> and
-          <m>(y,z)</m> is in
-          <m>R</m>, then <m>(x,z)</m> is in
-          <m>R</m> as well.
-        </p></li>
-    </ul>
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <index><main>transitive</main></index><index><main>relation</main><sub>transitive</sub></index><em>transitive</em> if
+            whenever
+            <m>(x,y)</m> is in
+            <m>R</m> and
+            <m>(y,z)</m> is in
+            <m>R</m>, then <m>(x,z)</m> is in
+            <m>R</m> as well.
+          </p>
+        </li>
+      </ul>
     </p>
 
     <p>
@@ -474,13 +488,15 @@
     </p>
 
     <problem xml:id="nchoosekanotherway">
-      <p>
-        For the necklace problem, <xref ref="necklace">Problem</xref>, our
-        lists are lists of beads. What makes two lists equivalent for
-        the purpose of describing a necklace? Verify explicitly that
-        this relationship of equivalence is reflexive, symmetric, and
-        transitive.
-      </p>
+      <statement>
+        <p>
+          For the necklace problem, <xref ref="necklace">Problem</xref>, our
+          lists are lists of beads. What makes two lists equivalent for
+          the purpose of describing a necklace? Verify explicitly that
+          this relationship of equivalence is reflexive, symmetric, and
+          transitive.
+        </p>
+      </statement>
       <solution>
         <p>
           Two lists are equivalent if I can get one from the other
@@ -533,7 +549,7 @@
       </solution>
       <p>
         \item Another relation that you may have learned about in school,
-        perhaps in the guise of ``clock arithmetic," is the
+        perhaps in the guise of <q>clock arithmetic,</q> is the
         relation of equivalence modulo
         <m>n</m>. For integers (positive, negative, or zero) <m>a</m> and <m>b</m>,
         we write <m>a
@@ -655,12 +671,14 @@
     </p>
 
     <problem xml:id="partitiontoequivalence">
-      <p>
-        In each of <xref ref="roundtable">Problems</xref>, <xref ref="formulanchoosek"></xref>, <xref ref="necklace"></xref>, <xref ref="fourchoosethree"></xref>,
-        and <xref ref="icecreaminadish"></xref>,
-        what does an equivalence
-        class correspond to? (Five answers are expected here.)
-      </p>
+      <statement>
+        <p>
+          In each of <xref ref="roundtable">Problems</xref>, <xref ref="formulanchoosek"></xref>, <xref ref="necklace"></xref>, <xref ref="fourchoosethree"></xref>,
+          and <xref ref="icecreaminadish"></xref>,
+          what does an equivalence
+          class correspond to? (Five answers are expected here.)
+        </p>
+      </statement>
       <solution>
         <p>
           In <xref ref="roundtable">Problem</xref> the equivalence classes
@@ -785,12 +803,14 @@
     </p>
 
     <problem xml:id="EquivPrincipleProblem">
-      <p>
-        If we have an equivalence relation that divides a set
-        with <m>k</m> elements up into equivalence classes each of size <m>m</m>, what
-        is the number <m>n</m> of equivalence classes?
-        Explain why.
-      </p>
+      <statement>
+        <p>
+          If we have an equivalence relation that divides a set
+          with <m>k</m> elements up into equivalence classes each of size <m>m</m>, what
+          is the number <m>n</m> of equivalence classes?
+          Explain why.
+        </p>
+      </statement>
       <solution>
         <p>
           The number of equivalence classes is <m>k/m</m>, because by

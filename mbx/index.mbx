@@ -48,10 +48,15 @@ $\cdot$\ \theenumi.]}
 </macros>
 
 <latex-image-preamble>
-
 \usepackage{tikz}
-\usetikzlibrary{positioning,matrix,arrows}
-\usetikzlibrary{shapes,decorations,shadows,fadings}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
 
 \usepackage{pgfplots}
 
@@ -88,7 +93,10 @@ $\cdot$\ \theenumi.]}
 <xi:include href="./Induction.mbx" />
 
 <xi:include href="./expogenfun.mbx" />
+
 <backmatter>
+
+<xi:include href="./bibliography.mbx" />
 <index-part>
 <title>Index</title>
 <index-list />

@@ -2,14 +2,15 @@
 <section>
   <title>Basic Counting Principles</title>
   <introduction>
-    <problem xml:id="fiveteamtournament">
-      <p>
-        (motivation)
-        Five schools are going to send their baseball teams to a
-        tournament, in which each team must play each other team
-        exactly once. How many games are
-        required?
-      </p>
+    <problem xml:id="fiveteamtournament" category="motivation">
+      <statement>
+        <p>
+          Five schools are going to send their baseball teams to a
+          tournament, in which each team must play each other team
+          exactly once. How many games are
+          required?
+        </p>
+      </statement>
       <solution>
         <p>
           Think of numbering the five teams. The first team must play all
@@ -26,68 +27,78 @@
       </solution>
     </problem>
 
-    <problem xml:id="baseball2">
-      <p>
-      (essential)
-      Now some number <m>n</m> of schools are going to send their
-      baseball teams to a tournament, and each team must play each
-      other team exactly once. Let us think of the teams as
-      numbered 1 through <m>n</m>.
-      <ol>
-        <li><p>
-          How many games does  team 1 have to play in?
-          <solution>
-            <p>
-              <m>n-1</m>
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="baseball2" category="essential">
+      <statement>
+        <p>
+          Now some number <m>n</m> of schools are going to send their
+          baseball teams to a tournament, and each team must play each
+          other team exactly once. Let us think of the teams as
+          numbered 1 through <m>n</m>.
+          <ol>
+            <li>
+              <p>
+                How many games does  team 1 have to play in?
+                <solution>
+                <p>
+                  <m>n-1</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          How many games, other than the one with team 1, does
-          team two have to play in?
-          <solution>
-            <p>
-              <m>n-2</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                How many games, other than the one with team 1, does
+                team two have to play in?
+                <solution>
+                <p>
+                  <m>n-2</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          How many games, other than those with the first <m>i-1</m>
-          teams, does team <m>i</m> have to play in?
-          <solution>
-            <p>
-              <m>n-i</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                How many games, other than those with the first <m>i-1</m>
+                teams, does team <m>i</m> have to play in?
+                <solution>
+                <p>
+                  <m>n-i</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          In terms of your answers to the previous parts of this
-          problem, what is the total number of games that must be played?
-          <solution>
-            <p>
-              <m>1+2 +\cdots+ n-1</m>. Although this need not be part of the answer, a
-              formula that we usually use in both algebra and calculus courses tells us
-              this sum is <m>n(n-1)/2</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                In terms of your answers to the previous parts of this
+                problem, what is the total number of games that must be played?
+                <solution>
+                <p>
+                  <m>1+2 +\cdots+ n-1</m>. Although this need not be part of the answer, a
+                  formula that we usually use in both algebra and calculus courses tells us
+                  this sum is <m>n(n-1)/2</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="basicsandwiches">
-      <p>
-        (essential)
-        One of the schools sending its team to the tournament
-        has to send its players from some distance, and so it is
-        making sandwiches for team members to eat along the way.
-        There are three choices for the kind of bread and five choices
-        for the kind of filling. How many different kinds of
-        sandwiches are available?
-      </p>
+    <problem xml:id="basicsandwiches" category="essential">
+      <statement>
+        <p>
+          One of the schools sending its team to the tournament
+          has to send its players from some distance, and so it is
+          making sandwiches for team members to eat along the way.
+          There are three choices for the kind of bread and five choices
+          for the kind of filling. How many different kinds of
+          sandwiches are available?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>3\cdot5=15</m>, or <m>5+5+5=15</m>.
@@ -95,18 +106,19 @@
       </solution>
     </problem>
 
-    <problem xml:id="orderedpair">
-      <p>
-        (summary)
-        An <index><main>ordered pair</main></index><index><main>pair,ordered</main></index><em>ordered pair</em>
-        <m>(a,b)</m> consists of two things we call <m>a</m> and
-        <m>b</m>. We say <m>a</m> is the first member of the pair and <m>b</m> is
-        the second member of the pair. If <m>M</m> is an <m>m</m> element set
-        and <m>N</m> is an
-        <m>n</m>-element set, how many ordered pairs are there whose first
-        member is in <m>M</m> and whose second member is in <m>N</m>? Does this problem have
-        anything to do with any of the previous problems?
-      </p>
+    <problem xml:id="orderedpair" category="summary">
+      <statement>
+        <p>
+          An <index><main>ordered pair</main></index><index><main>pair,ordered</main></index><em>ordered pair</em>
+          <m>(a,b)</m> consists of two things we call <m>a</m> and
+          <m>b</m>. We say <m>a</m> is the first member of the pair and <m>b</m> is
+          the second member of the pair. If <m>M</m> is an <m>m</m> element set
+          and <m>N</m> is an
+          <m>n</m>-element set, how many ordered pairs are there whose first
+          member is in <m>M</m> and whose second member is in <m>N</m>? Does this problem have
+          anything to do with any of the previous problems?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>m\cdot n</m>. This is because if <m>M = \{x_1,x_2,\ldots, x_m\}</m>, then
@@ -124,16 +136,17 @@
       </solution>
     </problem>
 
-    <problem xml:id="completelunch">
-      <p>
-        (motivation)
-        Since a sandwich by itself is pretty boring, students
-        from the school in <xref ref="basicsandwiches">Problem</xref> are offered a
-        choice of a drink (from among five different kinds), a
-        sandwich, and a fruit (from among four different kinds). In
-        how many ways may a student make a choice of the three items
-        now?
-      </p>
+    <problem xml:id="completelunch" category="motivation">
+      <statement>
+        <p>
+          Since a sandwich by itself is pretty boring, students
+          from the school in <xref ref="basicsandwiches">Problem</xref> are offered a
+          choice of a drink (from among five different kinds), a
+          sandwich, and a fruit (from among four different kinds). In
+          how many ways may a student make a choice of the three items
+          now?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>5\cdot15\cdot4 = 300</m>. Why do we multiply? Multiplying five by 15
@@ -146,19 +159,20 @@
       </solution>
     </problem>
 
-    <problem xml:id="tripledeckercone">
-      <p>
-        (essential)
-        The coach of the team in <xref ref="basicsandwiches">Problem</xref>
-        knows of an ice cream parlor along the way where she plans to
-        stop to buy each team member a triple decker cone. There are
-        12 different flavors of ice cream, and triple decker cones are made in
-        homemade waffle cones. Having chocolate ice cream as the bottom scoop is
-        different from having chocolate ice cream as the top scoop. How many possible
-        ice cream cones are going to be available to the team
-        members? How many cones with three different kinds
-        of ice cream will be available?
-      </p>
+    <problem xml:id="tripledeckercone" category="essential">
+      <statement>
+        <p>
+          The coach of the team in <xref ref="basicsandwiches">Problem</xref>
+          knows of an ice cream parlor along the way where she plans to
+          stop to buy each team member a triple decker cone. There are
+          12 different flavors of ice cream, and triple decker cones are made in
+          homemade waffle cones. Having chocolate ice cream as the bottom scoop is
+          different from having chocolate ice cream as the top scoop. How many possible
+          ice cream cones are going to be available to the team
+          members? How many cones with three different kinds
+          of ice cream will be available?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>12\cdot12\cdot12 =1728</m> possible cones. If the flavors must be
@@ -168,159 +182,179 @@
       </solution>
     </problem>
 
-    <problem xml:id="countingfunctions">
-      <p>
-      (essential)
-      The idea of a function is ubiquitous in mathematics. A
-      function<index><main>function</main></index> <m>f</m> from a set <m>S</m> to a set <m>T</m> is a relationship
-      between the two sets that associates exactly one member <m>f(x)</m>
-      of <m>T</m> with each element <m>x</m> in <m>S</m>. We
-      will come back to the ideas of functions and relationships in more detail and
-      from different points of view from time to time. However, the quick review
-      above should probably let you answer these questions. If you have difficulty
-      with them, it would be a good idea to go now to <xref ref="Relations">Appendix</xref> and
-      work through <xref ref="relationsandfunctions">Section</xref> which covers this definition
-      in more detail. You might also want to study <xref ref="digraphsoffunctions">Section</xref> to learn
-      to visualize the properties of functions. We will take up the topic of
-      this section later in this chapter as well, but in less detail than is
-      in the appendix.
-      <ol>
-        <li xml:id="countingfunctionsparta" ><p>
-          Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
-          functions, write down all the different functions you can
-          from the set
-          <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
-          with
-          <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
-          set <m>\{1,2\}</m> to the set
-          <m>\{a,b\}</m>?
-          <solution>
-            <p>
-              <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
-              <m>h(2) =a</m>. Or, <m>g(1)=b</m>, <m>g(2) = a</m>. Or <m>j(1) =b</m>, <m>j(2) =b</m>. We have
-              exhausted all the possibilities for functions that associate a with 1 and
-              all possibilities for functions that associate <m>b</m> with 1, so we have
-              exhausted all possibilities. There are four such functions.
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="countingfunctions" category="essential">
+      <statement>
+        <p>
+          The idea of a function is ubiquitous in mathematics. A
+          function<index><main>function</main></index> <m>f</m> from a set <m>S</m> to a set <m>T</m> is a relationship
+          between the two sets that associates exactly one member <m>f(x)</m>
+          of <m>T</m> with each element <m>x</m> in <m>S</m>. We
+          will come back to the ideas of functions and relationships in more detail and
+          from different points of view from time to time. However, the quick review
+          above should probably let you answer these questions. If you have difficulty
+          with them, it would be a good idea to go now to <xref ref="Relations">Appendix</xref> and
+          work through <xref ref="relationsandfunctions">Section</xref> which covers this definition
+          in more detail. You might also want to study <xref ref="digraphsoffunctions">Section</xref> to learn
+          to visualize the properties of functions. We will take up the topic of
+          this section later in this chapter as well, but in less detail than is
+          in the appendix.
+          <ol>
+            <li xml:id="countingfunctionsparta" >
 
-        <li><p>
-          How many functions are there from the three element set
-          <m>\{1,2,3\}</m>
-           to the two element set <m>\{a,b\}</m>?
-          <solution>
             <p>
-              <m>2\cdot2\cdot2 = 8</m>
+              Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
+              functions, write down all the different functions you can
+              from the set
+              <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
+              with
+              <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
+              set <m>\{1,2\}</m> to the set
+              <m>\{a,b\}</m>?
+              <solution>
+              <p>
+                <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
+                <m>h(2) =a</m>. Or, <m>g(1)=b</m>, <m>g(2) = a</m>. Or <m>j(1) =b</m>, <m>j(2) =b</m>. We have
+                exhausted all the possibilities for functions that associate a with 1 and
+                all possibilities for functions that associate <m>b</m> with 1, so we have
+                exhausted all possibilities. There are four such functions.
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
+            </li>
 
-        <li><p>
-          How many functions are there from the two element set <m>\{a,b\}</m> to the
-          three element set <m>\{1,2,3\}</m>?
-          <solution>
-            <p>
-              <m>3\cdot3=9</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                How many functions are there from the three element set
+                <m>\{1,2,3\}</m>
+                 to the two element set <m>\{a,b\}</m>?
+                <solution>
+                <p>
+                  <m>2\cdot2\cdot2 = 8</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          How many functions are there from a three element set
-          to a 12 element set?
-          <solution>
-            <p>
-              <m>12\cdot12\cdot12 = 1728</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                How many functions are there from the two element set <m>\{a,b\}</m> to the
+                three element set <m>\{1,2,3\}</m>?
+                <solution>
+                <p>
+                  <m>3\cdot3=9</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          The function <m>f</m> is called
-          <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><em>one-to-one</em> or an
-          <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><em>injection</em> if whenever
-          <m>x</m> is different from
-          <m>y</m>,
-          <m>f(x)</m> is different from <m>f(y)</m>.  How many one-to-one
-          functions are there from a three element set to a  12 element
-          set?
-          <solution>
-            <p>
-              <m>12\cdot11\cdot10= 1320</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                How many functions are there from a three element set
+                to a 12 element set?
+                <solution>
+                <p>
+                  <m>12\cdot12\cdot12 = 1728</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Explain the relationship between this problem and <xref ref="tripledeckercone">Problem</xref>.
-          <solution>
-            <p>
-              When we counted the number of possible ice cream cones we were
-              counting functions from the three places in the cone where ice cream would
-              sit to the 12 flavors. When we counted the number of possible ice cream
-              cones with different flavors, we were counting the number of one-to-one
-              functions from the three places in the cone where ice cream would sit to the
-              12 flavors.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                The function <m>f</m> is called
+                <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><em>one-to-one</em> or an
+                <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><em>injection</em> if whenever
+                <m>x</m> is different from
+                <m>y</m>,
+                <m>f(x)</m> is different from <m>f(y)</m>.  How many one-to-one
+                functions are there from a three element set to a  12 element
+                set?
+                <solution>
+                <p>
+                  <m>12\cdot11\cdot10= 1320</m>
+                </p>
+                </solution>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                Explain the relationship between this problem and <xref ref="tripledeckercone">Problem</xref>.
+                <solution>
+                <p>
+                  When we counted the number of possible ice cream cones we were
+                  counting functions from the three places in the cone where ice cream would
+                  sit to the 12 flavors. When we counted the number of possible ice cream
+                  cones with different flavors, we were counting the number of one-to-one
+                  functions from the three places in the cone where ice cream would sit to the
+                  12 flavors.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="icecreaminpints">
-      <p>
-      (essential)
-      A group of hungry team members in <xref ref="tripledeckercone">Problem</xref> notices it would be cheaper to buy three
-      pints of ice cream for them to split than to buy a triple decker cone for
-      each of them, and that way they would get more ice cream. They ask their
-      coach if they can buy three pints of ice cream.
-      <ol>
-        <li><p>
-          In how many ways can they choose three pints of different
-            flavors out of the 12 flavors?
-          <solution>
-            <p>
-              There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
-              flavors. But a choice of three flavors accounts for <m>3\cdot2\cdot1 = 6</m> of
-              those lists. Therefore there are <m>1320/6=220</m> ways to choose the pints if
-              the flavors are different.
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="icecreaminpints" category="essential">
+      <statement>
+        <p>
+          A group of hungry team members in <xref ref="tripledeckercone">Problem</xref> notices it would be cheaper to buy three
+          pints of ice cream for them to split than to buy a triple decker cone for
+          each of them, and that way they would get more ice cream. They ask their
+          coach if they can buy three pints of ice cream.
+          <ol>
+            <li>
+              <p>
+                In how many ways can they choose three pints of different
+                  flavors out of the 12 flavors?
+                <solution>
+                <p>
+                  There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
+                  flavors. But a choice of three flavors accounts for <m>3\cdot2\cdot1 = 6</m> of
+                  those lists. Therefore there are <m>1320/6=220</m> ways to choose the pints if
+                  the flavors are different.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          In how many ways may they choose three pints if the flavors
-            don't have to be different?
-          <solution>
-            <p>
-              If the flavors need not be different, we must add in the number of ways
-              to choose two pints of one flavor and one of a second and also the number fo
-              ways to choose three pints of one flavor. the first of these is <m>12\cdot11
-              =132</m> and the third is 12, so we have <m>220+132+12=364</m> ways to choose three
-              pints. We can do a more elegant solution after we learn about multisets in
-              <xref ref="multiset">Problem</xref>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                In how many ways may they choose three pints if the flavors
+                  don't have to be different?
+                <solution>
+                <p>
+                  If the flavors need not be different, we must add in the number of ways
+                  to choose two pints of one flavor and one of a second and also the number fo
+                  ways to choose three pints of one flavor. the first of these is <m>12\cdot11
+                  =132</m> and the third is 12, so we have <m>220+132+12=364</m> ways to choose three
+                  pints. We can do a more elegant solution after we learn about multisets in
+                  <xref ref="multiset">Problem</xref>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="sum">
-      <p>
-        (essential)
-        Two sets are said to be
-        <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><em>disjoint</em> if they have no
-        elements in common. For example,
-        <m>\{1,3,12\}</m> and <m>\{6, 4, 8, 2\}</m> are disjoint, but <m>\{1,3,12\}</m> and
-        <m>\{3,5,7\}</m> are not. Three or more sets are said to be
-        <index><main>sets</main><sub>mutually disjoint</sub></index><em>mutually disjoint</em> if no two of them
-        have any elements in common. What can you say about the size of the
-        union of a finite number of finite (mutually) disjoint sets? Does
-        this have anything to do with any of the previous problems?
-      </p>
+    <problem xml:id="sum" category="essential">
+      <statement>
+        <p>
+          Two sets are said to be
+          <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><em>disjoint</em> if they have no
+          elements in common. For example,
+          <m>\{1,3,12\}</m> and <m>\{6, 4, 8, 2\}</m> are disjoint, but <m>\{1,3,12\}</m> and
+          <m>\{3,5,7\}</m> are not. Three or more sets are said to be
+          <index><main>sets</main><sub>mutually disjoint</sub></index><em>mutually disjoint</em> if no two of them
+          have any elements in common. What can you say about the size of the
+          union of a finite number of finite (mutually) disjoint sets? Does
+          this have anything to do with any of the previous problems?
+        </p>
+      </statement>
       <solution>
         <p>
           The size of a union of disjoint sets is the sum of their sizes. We
@@ -332,14 +366,15 @@
       </solution>
     </problem>
 
-    <problem xml:id="product">
-      <p>
-        (essential)
-        Disjoint subsets are defined in <xref ref="sum">Problem</xref>. What can you
-        say about the size of the union of <m>m</m> (mutually) disjoint sets, each
-        of size
-        <m>n</m>? Does this have anything to do with any of the previous problems?
-      </p>
+    <problem xml:id="product" category="essential">
+      <statement>
+        <p>
+          Disjoint subsets are defined in <xref ref="sum">Problem</xref>. What can you
+          say about the size of the union of <m>m</m> (mutually) disjoint sets, each
+          of size
+          <m>n</m>? Does this have anything to do with any of the previous problems?
+        </p>
+      </statement>
       <solution>
         <p>
           The size of the union is <m>m\cdot n</m>. This is because the size of a
@@ -443,28 +478,33 @@
       decisions:
     </p>
 
-    <problem xml:id="generalproductprincipleintro">
-      <p>
-      (essential)
-      If we make a sequence of <m>m</m> choices for
-      which
-      <ul>
-        <li><p>
-            There are <m>k_1</m> possible first choices, and
-          </p></li>
+    <problem xml:id="generalproductprincipleintro" category="essential">
+      <statement>
+        <p>
+          If we make a sequence of <m>m</m> choices for
+          which
+          <ul>
+            <li>
+              <p>
+                There are <m>k_1</m> possible first choices, and
+              </p>
+            </li>
 
-        <li><p>
-            for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to
-            make the <m>i</m>th choice,
-          </p></li>
-      </ul>
-      </p>
+            <li>
+              <p>
+                for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to
+                make the <m>i</m>th choice,
+              </p>
+            </li>
+          </ul>
+        </p>
 
-      <p>
-        then in how many ways may we
-        make our sequence of choices? (You need not prove your answer correct at
-        this time.)
-      </p>
+        <p>
+          then in how many ways may we
+          make our sequence of choices? (You need not prove your answer correct at
+          this time.)
+        </p>
+      </statement>
     </problem>
 
     <p>
@@ -478,132 +518,151 @@
       did in <xref ref="completelunch">Problem</xref> and <xref ref="tripledeckercone">Problem</xref>.
     </p>
 
-    <problem xml:id="tennispairings1">
-      <p>
-      (interesting)
-      A tennis club has <m>2n</m> members. We want to pair up the
-      members by twos for singles matches.
-      <ol>
-        <li xml:id="tennispairings1a" ><p>
-          In how many ways may we pair up all the members of the club? (Hint: consider the cases
-            of 2, 4, and 6 members.)
-          <solution>
-            <p>
-              Suppose we list the people in the club in some way, and keep that
-              list for the remainder of the problem. Take the first person from the list
-              and pair that person with any of the <m>2n-1</m> remaining people. Now take the
-              next <em>unpaired</em> person from the list and pair that person with any of the
-              remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
-              been selected, take the next unpaired person from the list and pair that
-              person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
-              can arise in this way, and no pairing can arise twice in this process. Thus
-              the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="tennispairings1" category="interesting">
+      <statement>
+        <p>
+          A tennis club has <m>2n</m> members. We want to pair up the
+          members by twos for singles matches.
+          <ol>
+            <li xml:id="tennispairings1a" >
 
-        <li><p>
-            Suppose that in addition to specifying who plays whom, for each
-              pairing we say who serves first.  Now in how many ways may we
-              specify our pairs?
-          </p></li>
-      </ol>
-      </p>
+            <p>
+              In how many ways may we pair up all the members of the club? (Hint: consider the cases
+                of 2, 4, and 6 members.)
+              <solution>
+              <p>
+                Suppose we list the people in the club in some way, and keep that
+                list for the remainder of the problem. Take the first person from the list
+                and pair that person with any of the <m>2n-1</m> remaining people. Now take the
+                next <em>unpaired</em> person from the list and pair that person with any of the
+                remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
+                been selected, take the next unpaired person from the list and pair that
+                person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
+                can arise in this way, and no pairing can arise twice in this process. Thus
+                the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
+              </p>
+              </solution>
+            </p>
+            </li>
+
+            <li>
+              <p>
+                Suppose that in addition to specifying who plays whom, for each
+                  pairing we say who serves first.  Now in how many ways may we
+                  specify our pairs?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="countingfunctions2">
-      <p>
-      (summary)
-      Let us now return to <xref ref="countingfunctions">Problem</xref> and
-      justify<mdash />or perhaps finish<mdash />our answer to the question about the
-      number of functions from a three-element set to a 12-element
-      set.
-      <ol>
-        <li><p>
-          How can you justify your answer in
-            <xref ref="countingfunctions">Problem</xref> to the question <q>How many functions
-            are there from a three element set (say <m>[3]=\{1,2,3\}</m>) to a twelve
-            element set (say [12])?</q>
-          <solution>
-            <p>
-              The number of functions from <m>[3]</m> to <m>[12]</m> with <m>f(3) =1</m> is the
-              number of functions from <m>[2]</m> to <m>[12]</m>, namely 144. The same is true for
-              the number of functions with <m>f(3)=2</m> and <m>f(3)=3</m>, and the size of the set
-              <m>S_i</m>. The union of the sets <m>S_i</m> is the set of all functions from <m>[3]</m> to
-              <m>[12]</m>, and since there are twelve sets <m>S_i</m>, this union has size
-              <m>12\cdot144= 1728</m>.
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="countingfunctions2" category="summary">
+      <statement>
+        <p>
+          Let us now return to <xref ref="countingfunctions">Problem</xref> and
+          justify<mdash />or perhaps finish<mdash />our answer to the question about the
+          number of functions from a three-element set to a 12-element
+          set.
+          <ol>
+            <li>
+              <p>
+                How can you justify your answer in
+                  <xref ref="countingfunctions">Problem</xref> to the question <q>How many functions
+                  are there from a three element set (say <m>[3]=\{1,2,3\}</m>) to a twelve
+                  element set (say [12])?</q>
+                <solution>
+                <p>
+                  The number of functions from <m>[3]</m> to <m>[12]</m> with <m>f(3) =1</m> is the
+                  number of functions from <m>[2]</m> to <m>[12]</m>, namely 144. The same is true for
+                  the number of functions with <m>f(3)=2</m> and <m>f(3)=3</m>, and the size of the set
+                  <m>S_i</m>. The union of the sets <m>S_i</m> is the set of all functions from <m>[3]</m> to
+                  <m>[12]</m>, and since there are twelve sets <m>S_i</m>, this union has size
+                  <m>12\cdot144= 1728</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li xml:id="numberoffunctionsconjecture" ><p>
-          Based on the examples you've seen so far, make a conjecture
-            about how many functions there are from the set
-          <me>
-            [m] = \{1,2,3,\dots,m\}
-          </me>
-          to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.
-          <solution>
-            <p>
-              <m>n^m</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li xml:id="numberoffunctionsconjecture" >
 
-        <li><p>
-          A common notation for the set of all functions from a set <m>M</m> to a
-          set <m>N</m> is <m>N^M</m>.  Why is this a good notation?
-          <solution>
             <p>
-              Because there are <m>n^m</m> such functions, at least according to our
-              conjecture.
+              Based on the examples you've seen so far, make a conjecture
+                about how many functions there are from the set
+              <me>
+                [m] = \{1,2,3,\dots,m\}
+              </me>
+              to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.
+              <solution>
+              <p>
+                <m>n^m</m>.
+              </p>
+              </solution>
             </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            </li>
+
+            <li>
+              <p>
+                A common notation for the set of all functions from a set <m>M</m> to a
+                set <m>N</m> is <m>N^M</m>.  Why is this a good notation?
+                <solution>
+                <p>
+                  Because there are <m>n^m</m> such functions, at least according to our
+                  conjecture.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
 
-    <problem xml:id="generalproductprinciple">
-      <p>
-        (summary)
-        Now suppose we are thinking about a set <m>S</m> of functions <m>f</m>
-        from <m>[m]</m> to some set <m>X</m>. (For example, in
-        <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
-        functions from the three possible places for scoops in an ice-cream
-        cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices
-        for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>,
-        because there were <m>12</m> ways to choose the first scoop.) Suppose that
-        for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For
-        example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the
-        second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if
-        the flavors had to be different.) In general, suppose that for each
-        choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for
-        <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the
-        flavors have to be different, then for each coice of <m>f(1)</m> and
-        <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
-      </p>
+    <problem xml:id="generalproductprinciple" category="summary">
+      <statement>
+        <p>
+          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m>
+          from <m>[m]</m> to some set <m>X</m>. (For example, in
+          <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
+          functions from the three possible places for scoops in an ice-cream
+          cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices
+          for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>,
+          because there were <m>12</m> ways to choose the first scoop.) Suppose that
+          for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For
+          example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the
+          second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if
+          the flavors had to be different.) In general, suppose that for each
+          choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for
+          <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the
+          flavors have to be different, then for each coice of <m>f(1)</m> and
+          <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
+        </p>
 
-      <p>
-      What we have assumed so far about the functions in <m>S</m> may be
-      summarized as
-      <ul>
-        <li><p>
-            There are <m>k_1</m> choices for <m>f(1)</m>.
-          </p></li>
+        <p>
+          What we have assumed so far about the functions in <m>S</m> may be
+          summarized as
+          <ul>
+            <li>
+              <p>
+                There are <m>k_1</m> choices for <m>f(1)</m>.
+              </p>
+            </li>
 
-        <li><p>
-            For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m>
-            choices for<nbsp /><m>f(i)</m>.
-          </p></li>
-      </ul>
-      </p>
+            <li>
+              <p>
+                For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m>
+                choices for<nbsp /><m>f(i)</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
 
-      <p>
-        How many functions are in the set
-        <m>S</m>? Is there any practical difference between the result of this
-        problem and the general product principle?
-      </p>
+        <p>
+          How many functions are in the set
+          <m>S</m>? Is there any practical difference between the result of this
+          problem and the general product principle?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>\prod_{i=1}^m k_i</m>.
@@ -618,28 +677,30 @@
       objects, namely functions.
     </p>
 
-    <problem>
-      <p>
-        (interesting)
-        A roller coaster car has <m>n</m> rows of seats, each of which
-        has room for two people. If <m>n</m> men and <m>n</m> women get into the car with a
-        man and a woman in each row, in how many ways may they choose their seats?
-      </p>
-      <solution>
+    <problem category="interesting">
+      <statement>
+        <p>
+          A roller coaster car has <m>n</m> rows of seats, each of which
+          has room for two people. If <m>n</m> men and <m>n</m> women get into the car with a
+          man and a woman in each row, in how many ways may they choose their seats?
+        </p>
+        <solution>
         <p>
           <m>(n!)^22^n</m>
         </p>
-      </solution>
-      <p>
-        Prove
-      </p>
+        </solution>
+        <p>
+          Prove
+        </p>
+      </statement>
     </problem>
 
-    <problem>
-      <p>
-        (summary)
-        How does the general product principle apply to <xref ref="tripledeckercone">Problem</xref>?
-      </p>
+    <problem category="summary">
+      <statement>
+        <p>
+          How does the general product principle apply to <xref ref="tripledeckercone">Problem</xref>?
+        </p>
+      </statement>
       <solution>
         <p>
           By the general product principle, there are <m>12\cdot 11\cdot 10</m>
@@ -648,14 +709,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        In how many ways can we pass out <m>k</m> distinct pieces of
-        fruit to
-        <m>n</m> children (with no restriction on how many pieces of fruit a child may
-        get)?
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          In how many ways can we pass out <m>k</m> distinct pieces of
+          fruit to
+          <m>n</m> children (with no restriction on how many pieces of fruit a child may
+          get)?
+        </p>
+      </statement>
       <solution>
         <p>
           Either by the formula for the number of functions from an
@@ -667,10 +729,12 @@
       </solution>
     </problem>
 
-    <problem xml:id="SubsetsFirstTime">
-      <p>
-        (essential) How many subsets does a set <m>S</m> with <m>n</m> elements have?
-      </p>
+    <problem xml:id="SubsetsFirstTime" category="essential">
+      <statement>
+        <p>
+          How many subsets does a set <m>S</m> with <m>n</m> elements have?
+        </p>
+      </statement>
       <solution>
         <p>
           For each of the <m>n</m> elements of <m>S</m>, we have two options:
@@ -680,14 +744,15 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (motivation)
-        Assuming <m>k\le n</m>, in how many ways can we pass out <m>k</m>
-        distinct pieces of fruit to
-        <m>n</m> children if each child may get at most one? What is the number if
-        <m>k>n</m>? Assume for both questions that we pass out all the fruit.
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Assuming <m>k\le n</m>, in how many ways can we pass out <m>k</m>
+          distinct pieces of fruit to
+          <m>n</m> children if each child may get at most one? What is the number if
+          <m>k>n</m>? Assume for both questions that we pass out all the fruit.
+        </p>
+      </statement>
       <solution>
         <p>
           We are asking for the number of <m>k</m>-element permutations of <m>n</m>
@@ -696,19 +761,20 @@
       </solution>
     </problem>
 
-    <problem xml:id="kelementpermutation">
-      <p>
-        (essential)
-        Another name for a list, in a specific order, of <m>k</m> distinct things
-        chosen from a set <m>S</m> is a <m>\mathbf k</m>-<em>element permutation of</em>
-        <m>\mathbf S</m>.<index><main>permutation</main><sub>
-        <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
-        one-to-one function (or, in other words, injection) from
-        <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
-        <m>n</m>-element set have? (For this problem it is
-        natural to assume <m>k\le n</m>. However the question makes sense even if <m>k>n</m>.
-        What is the number of <m>k</m>-element permutations of an <m>n</m>-element set if <m>k>n</m>?
-      </p>
+    <problem xml:id="kelementpermutation" category="essential">
+      <statement>
+        <p>
+          Another name for a list, in a specific order, of <m>k</m> distinct things
+          chosen from a set <m>S</m> is a <m>\mathbf k</m>-<em>element permutation of</em>
+          <m>\mathbf S</m>.<index><main>permutation</main><sub>
+          <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
+          one-to-one function (or, in other words, injection) from
+          <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
+          <m>n</m>-element set have? (For this problem it is
+          natural to assume <m>k\le n</m>. However the question makes sense even if <m>k>n</m>.
+          What is the number of <m>k</m>-element permutations of an <m>n</m>-element set if <m>k>n</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           By the general product principle, the number is
@@ -730,7 +796,7 @@
       There are a number of different notations for the number of <m>k</m>-element
       permutations of an <m>n</m>-element set. The one we shall use was introduced by
       Don Knuth; namely <m>n^{\underline{k}}</m>, read <q><m>n</m> to the <m>k</m> falling</q> or
-      ``<m>n</m> to the <m>k</m> down". In <xref ref="kelementpermutation">Problem</xref> you may have
+      <q><m>n</m> to the <m>k</m> down</q>. In <xref ref="kelementpermutation">Problem</xref> you may have
       shown that
       <men xml:id="productnotation" >
         n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
@@ -751,11 +817,12 @@
       summations.
     </p>
 
-    <problem>
-      <p>
-        (essential)
-        Express <m>n^{\underline{k}}</m> as a quotient of factorials.
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Express <m>n^{\underline{k}}</m> as a quotient of factorials.
+        </p>
+      </statement>
       <solution>
         <p>
           <m>n^{\underline{k}}=n!/(n-k)!</m>
@@ -763,11 +830,12 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        How should we define <m>n^{\underline{0}}</m>?
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          How should we define <m>n^{\underline{0}}</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           We define
@@ -842,16 +910,17 @@
       of <m>S</m>.) For further discussion of functions and digraphs see <xref ref="functionrelation">Sections</xref> and <xref ref="relationdigraph"></xref> of {<xref ref="Relations">Appendix</xref>}.
     </p>
 
-    <problem>
-      <p>
-        (motivation)
-        Draw the digraph of the function from the set <m>\{</m>Alice, Bob, Dawn,
-        Bill<m>\}</m> to the set <m>\{</m>A, B, C, D, E<m>\}</m> given by
-        <me>
-          f(X) = \mbox{the first
-          letter of the name \(X\)} .
-        </me>
-      </p>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Draw the digraph of the function from the set <m>\{</m>Alice, Bob, Dawn,
+          Bill<m>\}</m> to the set <m>\{</m>A, B, C, D, E<m>\}</m> given by
+          <me>
+            f(X) = \mbox{the first
+            letter of the name \(X\)} .
+          </me>
+        </p>
+      </statement>
       <solution>
         <p>
           \mbox{
@@ -861,38 +930,19 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (essential)
-        A function
-        <m>f:S\rightarrow T</m> is called an
-        <index><main>onto function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
-        <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
-        element of
-        <m>T</m> is <m>f(x)</m> for some <m>x\in S</m>. Choose a set <m>S</m> and a set <m>T</m> so that you
-        can draw the digraph of a function from <m>S</m> to <m>T</m> that is one-to-one but not
-        onto, and draw the digraph of such a function.
-      </p>
-      <solution>
+    <problem category="essential">
+      <statement>
         <p>
-          The digraph of one such function follows
+          A function
+          <m>f:S\rightarrow T</m> is called an
+          <index><main>onto function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
+          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+          element of
+          <m>T</m> is <m>f(x)</m> for some <m>x\in S</m>. Choose a set <m>S</m> and a set <m>T</m> so that you
+          can draw the digraph of a function from <m>S</m> to <m>T</m> that is one-to-one but not
+          onto, and draw the digraph of such a function.
         </p>
-
-        <p>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
-        </p>
-      </solution>
-    </problem>
-
-    <problem>
-      <p>
-        (motivation)
-        Choose a set <m>S</m> and a set <m>T</m> so that you can draw the digraph of a
-        function from <m>S</m> to <m>T</m> that is onto but not one-to-one, and draw the
-        digraph of such a function.
-      </p>
+      </statement>
       <solution>
         <p>
           The digraph of one such function follows
@@ -906,31 +956,60 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (essential)
-      Digraphs of functions help us visualize the ideas of one-to-one
-      functions and onto functions.
-      <ol>
-        <li><p>
-            What does the digraph of a one-to-one function (injection) from
-              a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
-              somewhat similar to the one we described for when a digraph is the
-              digraph of a function.)
-          </p></li>
+    <problem category="motivation">
+      <statement>
+        <p>
+          Choose a set <m>S</m> and a set <m>T</m> so that you can draw the digraph of a
+          function from <m>S</m> to <m>T</m> that is onto but not one-to-one, and draw the
+          digraph of such a function.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The digraph of one such function follows
+        </p>
 
-        <li><p>
-            What does the digraph of an onto function
-              look like?
-          </p></li>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </p>
+      </solution>
+    </problem>
 
-        <li xml:id="bijectiondigraph" ><p>
-            What does the digraph of a one-to-one and onto function
-              from a finite set <m>S</m> to a set <m>T</m> look
-              like?
-          </p></li>
-      </ol>
-      </p>
+    <problem category="essential">
+      <statement>
+        <p>
+          Digraphs of functions help us visualize the ideas of one-to-one
+          functions and onto functions.
+          <ol>
+            <li>
+              <p>
+                What does the digraph of a one-to-one function (injection) from
+                  a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
+                  somewhat similar to the one we described for when a digraph is the
+                  digraph of a function.)
+              </p>
+            </li>
+
+            <li>
+              <p>
+                What does the digraph of an onto function
+                  look like?
+              </p>
+            </li>
+
+            <li xml:id="bijectiondigraph" >
+
+            <p>
+              What does the digraph of a one-to-one and onto function
+                from a finite set <m>S</m> to a set <m>T</m> look
+                like?
+            </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
       <solution>
         <p>
           One-to-one: One arrow comes out of each vertex representing a member
@@ -947,14 +1026,15 @@
       </solution>
     </problem>
 
-    <problem xml:id="permutationasbijection">
-      <p>
-        (essential)
-        The word <em>permutation</em> is actually used in two different ways in
-        mathematics. A <em>permutation</em><index><main>permutation</main><sub>as a bijection</sub></index> of a set
-        <m>S</m> is a bijection from <m>S</m> to
-        <m>S</m>. How many permutations does an <m>n</m>-element set have?
-      </p>
+    <problem xml:id="permutationasbijection" category="essential">
+      <statement>
+        <p>
+          The word <em>permutation</em> is actually used in two different ways in
+          mathematics. A <em>permutation</em><index><main>permutation</main><sub>as a bijection</sub></index> of a set
+          <m>S</m> is a bijection from <m>S</m> to
+          <m>S</m>. How many permutations does an <m>n</m>-element set have?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>n!</m>.
@@ -1003,14 +1083,16 @@
   <subsection>
     <title>Counting subsets of a set</title>
     <problem xml:id="SubsetsBinaryRepresentation">
-      <p>
-        The <em>binary</em> representation of a number <m>m</m> is a list, or string,
-        <m>a_1a_2\ldots a_k</m> of zeros and ones such that <m>m=a_12^{k-1} + a_2 2^{k-2}
-        +\cdots+ a_k 2^0.</m> Describe a bijection between the binary representations of
-        the integers between 0 and <m>2^n-1</m> and the subsets of an <m>n</m>-element set.
-        What does this tell you about the number of subsets of an <m>n</m>-element
-        set?
-      </p>
+      <statement>
+        <p>
+          The <em>binary</em> representation of a number <m>m</m> is a list, or string,
+          <m>a_1a_2\ldots a_k</m> of zeros and ones such that <m>m=a_12^{k-1} + a_2 2^{k-2}
+          +\cdots+ a_k 2^0.</m> Describe a bijection between the binary representations of
+          the integers between 0 and <m>2^n-1</m> and the subsets of an <m>n</m>-element set.
+          What does this tell you about the number of subsets of an <m>n</m>-element
+          set?
+        </p>
+      </statement>
       <solution>
         <p>
           The sequence <m>a_1a_2\ldots
@@ -1053,70 +1135,79 @@
       example tells us that <m>{4\choose 2} = 6</m>.
     </p>
 
-    <problem xml:id="Pascal">
-      <p>
-      (essential)
-      Let
-      <m>C</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that contain
-      the number
-      <m>n</m>, and let
-      <m>D</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that don't
-      contain <m>n</m>.
-      <ol>
-        <li><p>
-          Let <m>C'</m> be the set of <m>(k-1)</m>-element subsets of
-          <m>[n-1]</m>.  Describe a bijection from <m>C</m> to <m>C'</m>.  (A verbal
-          description is fine.)
-          <solution>
-            <p>
-              Let <m>f(X) = X-\{n\}</m>, the set <m>X</m> with <m>n</m> removed. This is a
-              bijection because two different sets containing <m>n</m> must yield different sets
-              when <m>n</m> is removed (one-to-one), and each <m>(k-1)</m>-element subset <m>X</m> of
-              <m>[n-1]</m> may be obtained from the <m>k</m>-element subset <m>X\cup \{n\}</m> of <m>[n]</m> by
-              removing
-              <m>n</m> (onto).
-            </p>
-          </solution>
-          </p></li>
+    <problem xml:id="Pascal" category="essential">
+      <statement>
+        <p>
+          Let
+          <m>C</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that contain
+          the number
+          <m>n</m>, and let
+          <m>D</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that don't
+          contain <m>n</m>.
+          <ol>
+            <li>
+              <p>
+                Let <m>C'</m> be the set of <m>(k-1)</m>-element subsets of
+                <m>[n-1]</m>.  Describe a bijection from <m>C</m> to <m>C'</m>.  (A verbal
+                description is fine.)
+                <solution>
+                <p>
+                  Let <m>f(X) = X-\{n\}</m>, the set <m>X</m> with <m>n</m> removed. This is a
+                  bijection because two different sets containing <m>n</m> must yield different sets
+                  when <m>n</m> is removed (one-to-one), and each <m>(k-1)</m>-element subset <m>X</m> of
+                  <m>[n-1]</m> may be obtained from the <m>k</m>-element subset <m>X\cup \{n\}</m> of <m>[n]</m> by
+                  removing
+                  <m>n</m> (onto).
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Let <m>D'</m> be the set of <m>k</m>-element subsets of
-          <m>[n-1]=\{1,2,\ldots n-1\}</m>.  Describe a bijection from <m>D</m> to
-          <m>D'</m>. (A verbal description is fine.)
-          <solution>
-            <p>
-              Simply let <m>f(X) =X</m>. This is one-to-one by definition, and onto
-              because the subsets of <m>[n-1]</m> are identical with the subsets of <m>[n]</m> not
-              containing <m>n</m>.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Let <m>D'</m> be the set of <m>k</m>-element subsets of
+                <m>[n-1]=\{1,2,\ldots n-1\}</m>.  Describe a bijection from <m>D</m> to
+                <m>D'</m>. (A verbal description is fine.)
+                <solution>
+                <p>
+                  Simply let <m>f(X) =X</m>. This is one-to-one by definition, and onto
+                  because the subsets of <m>[n-1]</m> are identical with the subsets of <m>[n]</m> not
+                  containing <m>n</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Based on the two previous parts, express the sizes of
-          <m>C</m> and <m>D</m> in terms of binomial coefficients involving <m>n-1</m>
-          instead of <m>n</m>.
-          <solution>
-            <p>
-              <m>|C|= {n-1\choose k-1}</m>; <m>|D| = {n-1\choose k}</m>
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Based on the two previous parts, express the sizes of
+                <m>C</m> and <m>D</m> in terms of binomial coefficients involving <m>n-1</m>
+                instead of <m>n</m>.
+                <solution>
+                <p>
+                  <m>|C|= {n-1\choose k-1}</m>; <m>|D| = {n-1\choose k}</m>
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Apply the sum principle to <m>C</m> and <m>D</m> and obtain a
-          formula that expresses <m>n\choose k</m> in terms of two binomial
-          coefficients involving
-          <m>n-1</m>.  You have just derived the Pascal Equation that is the
-          basis for the famous Pascal's Triangle.
-          <solution>
-            <p>
-              <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m>.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Apply the sum principle to <m>C</m> and <m>D</m> and obtain a
+                formula that expresses <m>n\choose k</m> in terms of two binomial
+                coefficients involving
+                <m>n-1</m>.  You have just derived the Pascal Equation that is the
+                basis for the famous Pascal's Triangle.
+                <solution>
+                <p>
+                  <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m>.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
     </problem>
   </subsection>
 
@@ -1157,19 +1248,22 @@
     </p>
 
     <problem>
-      <p>
-        Just for practice, what is the next row of Pascal's triangle?
-      </p>
+      <statement>
+        <p>
+          Just for practice, what is the next row of Pascal's triangle?
+        </p>
+      </statement>
       <solution>
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        Without writing out the rows completely, write out enough of Pascal's
-        triangle to get a numerical answer for the first question in <xref ref="icecreaminpints">Problem</xref>.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Without writing out the rows completely, write out enough of Pascal's
+          triangle to get a numerical answer for the first question in <xref ref="icecreaminpints">Problem</xref>.
+        </p>
+      </statement>
       <solution>
         <p>
           Starting with row 9, we get
@@ -1448,155 +1542,176 @@
       </tabular>
     </table>
 
-    <problem>
-      <p>
-      (interesting)
-      Because our definition told us that <m>\binom{n}{k}</m> is 0 when
-      <m>k>n</m>, we got a rectangular table of numbers that satisfies the Pascal
-      Equation.
-      <ol>
-        <li><p>
-          Is there any other way to define <m>n \choose k</m> when <m>k>n</m>
-          in order to get a rectangular table that agrees with Pascal's Right
-          Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
-          <solution>
-            <p>
-              No, because there must be a zero above each one not in column zero.
-              Then above each zero not in column zero or one, there must be yet another zero
-              and so on.
-            </p>
-          </solution>
-          </p></li>
+    <problem category="interesting">
+      <statement>
+        <p>
+          Because our definition told us that <m>\binom{n}{k}</m> is 0 when
+          <m>k>n</m>, we got a rectangular table of numbers that satisfies the Pascal
+          Equation.
+          <ol>
+            <li>
+              <p>
+                Is there any other way to define <m>n \choose k</m> when <m>k>n</m>
+                in order to get a rectangular table that agrees with Pascal's Right
+                Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
+                <solution>
+                <p>
+                  No, because there must be a zero above each one not in column zero.
+                  Then above each zero not in column zero or one, there must be yet another zero
+                  and so on.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li><p>
-          Suppose we
-          want to extend Pascal's Rectangle to the left and define <m>n\choose -k</m>
-          for <m>n\ge 0</m> and <m>k>0</m> so that <m>-k\lt 0</m>. What should we put into row
-          <m>n</m> and column
-          <m>-k</m> of Pascal's Rectangle in order for the Pascal Equation to
-          hold true?
-          <solution>
-            <p>
-              To the left of all the ones in column zero, we must have zeros
-              for the Pascal Equation to hold. To the left of those zeros, we must again
-              have zeros, and so on.
-            </p>
-          </solution>
-          </p></li>
+            <li>
+              <p>
+                Suppose we
+                want to extend Pascal's Rectangle to the left and define <m>n\choose -k</m>
+                for <m>n\ge 0</m> and <m>k>0</m> so that <m>-k\lt 0</m>. What should we put into row
+                <m>n</m> and column
+                <m>-k</m> of Pascal's Rectangle in order for the Pascal Equation to
+                hold true?
+                <solution>
+                <p>
+                  To the left of all the ones in column zero, we must have zeros
+                  for the Pascal Equation to hold. To the left of those zeros, we must again
+                  have zeros, and so on.
+                </p>
+                </solution>
+              </p>
+            </li>
 
-        <li>
-          <title>\ <m>*</m>\ (\theenumii)</title>
-          <p>
-          What should we put into row <m>-n</m> and column <m>k</m> or
-          column <m>-k</m> in order for the Pascal Equation to continue to
-          hold?  Do we have any freedom of choice?
-          <solution>
-            <p>
-              Above row zero, we have some freedom. The
-              -1,-1 and the -1,0 entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
-              any number <m>x</m>. To the right of the -1,0 entry they must alternate between
-              <m>(-x-1)</m> and <m>x+1</m> while to the left of the -1,1 entry they must alternate
-              between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position -1,1. Now if we know
-              the entry in row -2 and column zero, we can use the Pascal equation (in the
-              form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the
-              entries to the left of it, and (in a different form) to compute all the
-              entries to the right of it. Thus we may be arbitrary about the entries in
-              column 0 (or, in fact, one entry in each row) and then the Pascal Equation
-              tells us how to fill in the rest of each row. We shall see later on that
-              there is one very natural choice for how to fill in all the rows above row
-              zero.
-            </p>
-          </solution>
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <title>\ <m>*</m>\ (\theenumii)</title>
+              <p>
+                What should we put into row <m>-n</m> and column <m>k</m> or
+                column <m>-k</m> in order for the Pascal Equation to continue to
+                hold?  Do we have any freedom of choice?
+                <solution>
+                <p>
+                  Above row zero, we have some freedom. The
+                  -1,-1 and the -1,0 entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
+                  any number <m>x</m>. To the right of the -1,0 entry they must alternate between
+                  <m>(-x-1)</m> and <m>x+1</m> while to the left of the -1,1 entry they must alternate
+                  between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position -1,1. Now if we know
+                  the entry in row -2 and column zero, we can use the Pascal equation (in the
+                  form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the
+                  entries to the left of it, and (in a different form) to compute all the
+                  entries to the right of it. Thus we may be arbitrary about the entries in
+                  column 0 (or, in fact, one entry in each row) and then the Pascal Equation
+                  tells us how to fill in the rest of each row. We shall see later on that
+                  there is one very natural choice for how to fill in all the rows above row
+                  zero.
+                </p>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </p>
 
-      <p>
-        There are variants of the bijections we used to prove the
-      </p>
+        <p>
+          There are variants of the bijections we used to prove the
+        </p>
+      </statement>
     </problem>
 
     <problem xml:id="charfunction">
-      <p>
-        There is yet another bijection that lets us prove that a set of
-        size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of
-        <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally
-        denoted by <m>\chi_S</m>) as follows.<fn>The symbol
-        <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
-        <m>i</m> sounding like ``eye."</fn>
-        <me>
-          \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
-          S
-          \end{cases}
-        </me>
-      </p>
+      <statement>
+        <p>
+          There is yet another bijection that lets us prove that a set of
+          size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of
+          <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally
+          denoted by <m>\chi_S</m>) as follows.<fn>The symbol
+          <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
+          <m>i</m> sounding like <q>eye.</q></fn>
+          <me>
+            \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
+            S
+            \end{cases}
+          </me>
+        </p>
 
-      <p>
-        The function <m>\chi_S</m> is called the <index><main>characteristic
-        function</main></index><index><main>function</main><sub>characteristic</sub></index><em>characteristic function</em> of
-        <m>S</m>. Notice that the characteristic function is a function
-        from <m>[n]</m> to
-        <m>\{0,1\}</m>.
-      </p>
-      <ol>
-      <li><p>
-        For practice, consider the function <m>\chi_{\{1,3\}}</m> for
-        the subset
-        <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
-      </p>
-      <ol>
-        <li><p>
-            <m>\chi_{\{1,3\}}(1)</m>?
-            <solution>
-            </solution>
-          </p></li>
-
-        <li><p>
-            <m>\chi_{\{1,3\}}(2)</m>?
-            <solution>
-            </solution>
-          </p></li>
-
-        <li><p>
-            <m>\chi_{\{1,3\}}(3)</m>?
-            <solution>
-            </solution>
-          </p></li>
-
-        <li><p>
-            <m>\chi_{\{1,3\}}(4)</m>?
-            <solution>
-            </solution>
-          </p></li>
-      </ol>
-      </li>
-
-      <li><p>
-        We define a function <m>f</m> from the set of subsets of
-        <m>[n]=\{1,2,\ldots, n\}</m> to the set of functions from <m>[n]</m> to
-        <m>\{0,1\}</m> by <m>f(S)=\chi_S</m>.  Explain why <m>f</m> is a bijection.
-        <solution>
+        <p>
+          The function <m>\chi_S</m> is called the <index><main>characteristic
+          function</main></index><index><main>function</main><sub>characteristic</sub></index><em>characteristic function</em> of
+          <m>S</m>. Notice that the characteristic function is a function
+          from <m>[n]</m> to
+          <m>\{0,1\}</m>.
+        </p>
+        <ol>
+        <li>
           <p>
-            If <m>i\in S</m> but <m>i\not\in T</m>, then <m>\chi_S(i)=1</m> but <m>\chi_T(i)=0</m>.
-            Thus if <m>S\not= T</m>, the <m>\chi_S\not=\chi_T</m>. Therefore <m>f</m> is one-to-one.
-            Given a function <m>g</m> from <m>[n]</m> to <m>\{0,1\}</m>, let <m>S=\{i|g(i)=1\}</m>. Then by
-            definition, <m>g=\chi_S=f(S)</m>. Therefore <m>f</m> is onto, so it is a bijection.
+            For practice, consider the function <m>\chi_{\{1,3\}}</m> for
+            the subset
+            <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
           </p>
-        </solution>
-        </p></li>
+          <ol>
+            <li>
+              <p>
+                <m>\chi_{\{1,3\}}(1)</m>?
+                <solution>
+                </solution>
+              </p>
+            </li>
 
-      <li><p>
-        Why does the fact that <m>f</m> is a bijection prove that
-        <m>[n]</m> has <m>2^n</m> subsets?
-        <solution>
+            <li>
+              <p>
+                <m>\chi_{\{1,3\}}(2)</m>?
+                <solution>
+                </solution>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\chi_{\{1,3\}}(3)</m>?
+                <solution>
+                </solution>
+              </p>
+            </li>
+
+            <li>
+              <p>
+                <m>\chi_{\{1,3\}}(4)</m>?
+                <solution>
+                </solution>
+              </p>
+            </li>
+          </ol>
+        </li>
+
+        <li>
           <p>
-            We have seen that there are <m>2^n</m> functions from <m>[n]</m> to a
-            two-element set, and we have a bijection between the set of all such
-            functions and the subsets of <m>[n]</m>.
+            We define a function <m>f</m> from the set of subsets of
+            <m>[n]=\{1,2,\ldots, n\}</m> to the set of functions from <m>[n]</m> to
+            <m>\{0,1\}</m> by <m>f(S)=\chi_S</m>.  Explain why <m>f</m> is a bijection.
+            <solution>
+            <p>
+              If <m>i\in S</m> but <m>i\not\in T</m>, then <m>\chi_S(i)=1</m> but <m>\chi_T(i)=0</m>.
+              Thus if <m>S\not= T</m>, the <m>\chi_S\not=\chi_T</m>. Therefore <m>f</m> is one-to-one.
+              Given a function <m>g</m> from <m>[n]</m> to <m>\{0,1\}</m>, let <m>S=\{i|g(i)=1\}</m>. Then by
+              definition, <m>g=\chi_S=f(S)</m>. Therefore <m>f</m> is onto, so it is a bijection.
+            </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
-      </ol>
+        </li>
+
+        <li>
+          <p>
+            Why does the fact that <m>f</m> is a bijection prove that
+            <m>[n]</m> has <m>2^n</m> subsets?
+            <solution>
+            <p>
+              We have seen that there are <m>2^n</m> functions from <m>[n]</m> to a
+              two-element set, and we have a bijection between the set of all such
+              functions and the subsets of <m>[n]</m>.
+            </p>
+            </solution>
+          </p>
+        </li>
+        </ol>
+      </statement>
     </problem>
 
     <p>
@@ -1624,45 +1739,54 @@
 
   <subsection>
     <title>The quotient principle</title>
-    <problem xml:id="twelvechoosethree">
-      <p>
-      (essential)
-      As we noted in <xref ref="Pascal">Problem</xref>, the first question in
-      <xref ref="icecreaminpints">Problem</xref> asked us for the number of three-element
-      subsets of a twelve-element set. We were able to use the Pascal Equation to
-      get a numerical answer to that question. Had we had twenty or thirty flavors
-      of ice cream to choose from, using the Pascal Equation to get our answer
-      would have entailed a good bit more work. We have seen how the general
-      product principle gives us an answer to <xref ref="tripledeckercone">Problem</xref>. Thus
-      we might think that the number of ways to choose a three element set from 12
-      elements is the number of ways to choose the first element times the number
-      of ways to choose the second element times the number of ways to choose the
-      third element, which is <m>12\cdot11\cdot10=1320</m>. However, our result in
-      <xref ref="Pascal">Problem</xref> shows that this is wrong.
-      <ol>
-        <li><p>
-            What is it that is different between the number of ways to stack
-              ice cream in a triple decker cone with three different flavors of
-              ice cream and the number of ways to simply choose three different
-              flavors of ice cream?
-          </p></li>
+    <problem xml:id="twelvechoosethree" category="essential">
+      <statement>
+        <p>
+          As we noted in <xref ref="Pascal">Problem</xref>, the first question in
+          <xref ref="icecreaminpints">Problem</xref> asked us for the number of three-element
+          subsets of a twelve-element set. We were able to use the Pascal Equation to
+          get a numerical answer to that question. Had we had twenty or thirty flavors
+          of ice cream to choose from, using the Pascal Equation to get our answer
+          would have entailed a good bit more work. We have seen how the general
+          product principle gives us an answer to <xref ref="tripledeckercone">Problem</xref>. Thus
+          we might think that the number of ways to choose a three element set from 12
+          elements is the number of ways to choose the first element times the number
+          of ways to choose the second element times the number of ways to choose the
+          third element, which is <m>12\cdot11\cdot10=1320</m>. However, our result in
+          <xref ref="Pascal">Problem</xref> shows that this is wrong.
+          <ol>
+            <li>
+              <p>
+                What is it that is different between the number of ways to stack
+                  ice cream in a triple decker cone with three different flavors of
+                  ice cream and the number of ways to simply choose three different
+                  flavors of ice cream?
+              </p>
+            </li>
 
-        <li xml:id="twelvechoosethreethree" ><p>
-            In particular, how many different triple
-              decker cones use the same three flavors?  (Of course any three
-              distinct flavors could substitute for vanilla, chocolate and
-              strawberry without changing the answer.)
-          </p></li>
+            <li xml:id="twelvechoosethreethree" >
 
-        <li xml:id="twelvechoosethreefinal" ><p>
-            Using your answer from <xref ref="twelvechoosethreethree">part</xref>,
-              compute the number of ways to choose three different flavors of ice
-              cream (out of twelve flavors) from the number of ways to choose a
-              triple decker cone with three different flavors (out of twelve
-              flavors).
-          </p></li>
-      </ol>
-      </p>
+            <p>
+              In particular, how many different triple
+                decker cones use the same three flavors?  (Of course any three
+                distinct flavors could substitute for vanilla, chocolate and
+                strawberry without changing the answer.)
+            </p>
+            </li>
+
+            <li xml:id="twelvechoosethreefinal" >
+
+            <p>
+              Using your answer from <xref ref="twelvechoosethreethree">part</xref>,
+                compute the number of ways to choose three different flavors of ice
+                cream (out of twelve flavors) from the number of ways to choose a
+                triple decker cone with three different flavors (out of twelve
+                flavors).
+            </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
       <solution>
         <p>
           What is different is that the order in which we put the scoops into
@@ -1674,12 +1798,13 @@
       </solution>
     </problem>
 
-    <problem xml:id="nchoosek">
-      <p>
-        (essential)
-        Based on what you observed in <xref ref="twelvechoosethreefinal">Problem</xref>, how many <m>k</m>-element subsets does an
-        <m>n</m>-element set have?
-      </p>
+    <problem xml:id="nchoosek" category="essential">
+      <statement>
+        <p>
+          Based on what you observed in <xref ref="twelvechoosethreefinal">Problem</xref>, how many <m>k</m>-element subsets does an
+          <m>n</m>-element set have?
+        </p>
+      </statement>
       <solution>
         <p>
           Following the reasoning of <xref ref="twelvechoosethree">Problem</xref>, there
@@ -1690,17 +1815,18 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-        (interesting)
-        The formula you proved in <xref ref="nchoosek">Problem</xref> is symmetric in <m>k</m>
-        and <m>n-k</m>; that is, it gives the same number for <m>n\choose k</m> as it gives
-        for <m>n\choose n-k</m>. Whenever two quantities are counted by the same formula
-        it is good for our insight to find a bijection that demonstrates the two sets
-        being counted have the same size. In fact this is a guiding principle of
-        research in combinatorial mathematics. Find a bijection that proves that
-        <m>n\choose k</m> equals <m>n\choose n-k</m>.
-      </p>
+    <problem category="interesting">
+      <statement>
+        <p>
+          The formula you proved in <xref ref="nchoosek">Problem</xref> is symmetric in <m>k</m>
+          and <m>n-k</m>; that is, it gives the same number for <m>n\choose k</m> as it gives
+          for <m>n\choose n-k</m>. Whenever two quantities are counted by the same formula
+          it is good for our insight to find a bijection that demonstrates the two sets
+          being counted have the same size. In fact this is a guiding principle of
+          research in combinatorial mathematics. Find a bijection that proves that
+          <m>n\choose k</m> equals <m>n\choose n-k</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           For each <m>k</m>-element subset <m>K</m> of the <m>n</m>-element set <m>N</m>, define
@@ -1710,12 +1836,13 @@
       </solution>
     </problem>
 
-    <problem xml:id="ping-pong">
-      <p>
-        (essential)
-        In how many ways can we pass out <m>k</m> (identical) ping-pong balls to <m>n</m>
-        children if each child may get at most one?
-      </p>
+    <problem xml:id="ping-pong" category="essential">
+      <statement>
+        <p>
+          In how many ways can we pass out <m>k</m> (identical) ping-pong balls to <m>n</m>
+          children if each child may get at most one?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
@@ -1724,21 +1851,22 @@
       </solution>
     </problem>
 
-    <problem xml:id="roundtable">
-      <p>
-        (essential)
-        In how many ways may <m>n</m> people sit around a round
-        table? (Assume
-        that when people are sitting around a round table, all that
-        really matters is who is to each person's right. For example, if we can get
-        one arrangement of people around the table from another by having everyone
-        get up and move to the right one place and sit back down, we get an
-        equivalent arrangement of people. Notice that you can get a
-        list from a seating arrangement by marking a place at the
-        table, and then listing the people at the table, starting at
-        that place and moving around to the right.) There are at least two
-        different ways of doing this problem. Try to find them both.
-      </p>
+    <problem xml:id="roundtable" category="essential">
+      <statement>
+        <p>
+          In how many ways may <m>n</m> people sit around a round
+          table? (Assume
+          that when people are sitting around a round table, all that
+          really matters is who is to each person's right. For example, if we can get
+          one arrangement of people around the table from another by having everyone
+          get up and move to the right one place and sit back down, we get an
+          equivalent arrangement of people. Notice that you can get a
+          list from a seating arrangement by marking a place at the
+          table, and then listing the people at the table, starting at
+          that place and moving around to the right.) There are at least two
+          different ways of doing this problem. Try to find them both.
+        </p>
+      </statement>
       <solution>
         <p>
           The total number of ways to list how the <m>n</m> people sit around the
@@ -1870,43 +1998,53 @@
       of size six. Thus by the product principle, <m>q\cdot 6=60</m>, so <m>q=10</m>.
     </p>
 
-    <problem xml:id="formulanchoosek">
-      <p>
-      (essential)
-      Rather than restricting ourselves to <m>n=5</m> and <m>k=3</m>, we can
-      partition the set of all <m>k</m>-element permutations of <m>S</m> up into
-      blocks. We do so by letting <m>B_K</m> be the set (block) of all <m>k</m>-element
-      permutations of <m>K</m> for each <m>k</m>-element subset <m>K</m> of <m>S</m>. Thus as in
-      our preceding example, each block consists of all permutations of some
-      subset <m>K</m> of our <m>n</m>-element set. For example, the permutations of
-      <m>\{a,b,c\}</m> are listed in the first row of
-      <xref ref="tab_permsof3">Table</xref>. In fact each row of that table is a
-      block. The questions that follow are about the corresponding partition
-      of the set of <m>k</m>-element permutations of <m>S</m>, where <m>S</m> and <m>k</m> are
-      arbitrary.
-      <ol>
-        <li><p>
-            How many permutations are there in a block?
-          </p></li>
+    <problem xml:id="formulanchoosek" category="essential">
+      <statement>
+        <p>
+          Rather than restricting ourselves to <m>n=5</m> and <m>k=3</m>, we can
+          partition the set of all <m>k</m>-element permutations of <m>S</m> up into
+          blocks. We do so by letting <m>B_K</m> be the set (block) of all <m>k</m>-element
+          permutations of <m>K</m> for each <m>k</m>-element subset <m>K</m> of <m>S</m>. Thus as in
+          our preceding example, each block consists of all permutations of some
+          subset <m>K</m> of our <m>n</m>-element set. For example, the permutations of
+          <m>\{a,b,c\}</m> are listed in the first row of
+          <xref ref="tab_permsof3">Table</xref>. In fact each row of that table is a
+          block. The questions that follow are about the corresponding partition
+          of the set of <m>k</m>-element permutations of <m>S</m>, where <m>S</m> and <m>k</m> are
+          arbitrary.
+          <ol>
+            <li>
+              <p>
+                How many permutations are there in a block?
+              </p>
+            </li>
 
-        <li><p>
-            Since <m>S</m> has <m>n</m>
-              elements, what does <xref ref="kelementpermutation">problem</xref> tell you about
-              the total number of <m>k</m>-element permutations of <m>S</m>?
-          </p></li>
+            <li>
+              <p>
+                Since <m>S</m> has <m>n</m>
+                  elements, what does <xref ref="kelementpermutation">problem</xref> tell you about
+                  the total number of <m>k</m>-element permutations of <m>S</m>?
+              </p>
+            </li>
 
-        <li><p>
-            Describe a
-              bijection between the set of blocks of the partition and the set of
-              <m>k</m>-element subsets of <m>S</m>.
-          </p></li>
+            <li>
+              <p>
+                Describe a
+                  bijection between the set of blocks of the partition and the set of
+                  <m>k</m>-element subsets of <m>S</m>.
+              </p>
+            </li>
 
-        <li xml:id="formulanchoosekfinal" ><p>
-            What formula does this give you for the
-              number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
-          </p></li>
-      </ol>
-      </p>
+            <li xml:id="formulanchoosekfinal" >
+
+            <p>
+              What formula does this give you for the
+                number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
+            </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
       <solution>
         <p>
           The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
@@ -1919,30 +2057,37 @@
       </solution>
     </problem>
 
-    <problem>
-      <p>
-      (interesting)
-      A basketball team has 12 players. However, only five players play at
-      any given time during a game.
-      <ol>
-        <li><p>
-            In how may ways may the coach choose the five players?
-          </p></li>
+    <problem category="interesting">
+      <statement>
+        <p>
+          A basketball team has 12 players. However, only five players play at
+          any given time during a game.
+          <ol>
+            <li>
+              <p>
+                In how may ways may the coach choose the five players?
+              </p>
+            </li>
 
-        <li><p>
-            To be
-              more realistic, the five players playing a game normally consist of
-              two guards, two forwards, and one center.  If there are five guards,
-              four forwards, and three centers on the team, in how many ways can
-              the coach choose two guards, two forwards, and one center?
-          </p></li>
+            <li>
+              <p>
+                To be
+                  more realistic, the five players playing a game normally consist of
+                  two guards, two forwards, and one center.  If there are five guards,
+                  four forwards, and three centers on the team, in how many ways can
+                  the coach choose two guards, two forwards, and one center?
+              </p>
+            </li>
 
-        <li><p>
-            What if
-              one of the centers is equally skilled at playing forward?
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                What if
+                  one of the centers is equally skilled at playing forward?
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
       <solution>
         <p>
           <m>12\choose 5</m>. In the more realistic version,
@@ -1955,15 +2100,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="roundtablepartition">
-      <p>
-        (essential)
-        In <xref ref="roundtable">Problem</xref>, describe a way to partition the
-        <m>n</m>-element permutations of the <m>n</m> people into blocks so that there is a
-        bijection between the set of blocks of the partition and the set of
-        arrangements of the
-        <m>n</m> people around a round table. What method of solution for <xref ref="roundtable">Problem</xref> does this correspond to?
-      </p>
+    <problem xml:id="roundtablepartition" category="essential">
+      <statement>
+        <p>
+          In <xref ref="roundtable">Problem</xref>, describe a way to partition the
+          <m>n</m>-element permutations of the <m>n</m> people into blocks so that there is a
+          bijection between the set of blocks of the partition and the set of
+          arrangements of the
+          <m>n</m> people around a round table. What method of solution for <xref ref="roundtable">Problem</xref> does this correspond to?
+        </p>
+      </statement>
       <solution>
         <p>
           Put two permutations in the same block if we can get one from the
@@ -1975,20 +2121,21 @@
       </solution>
     </problem>
 
-    <problem xml:id="quotientprinciple">
-      <p>
-        (essential)
-        In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
-        have been using the product principle in a new way. One of the ways in which
-        we previously stated the product principle was <q>If we partition a set into
-        <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">problems</xref> and <xref ref="roundtablepartition"></xref> we knew the size <m>p</m> of a
-        set
-        <m>P</m> of permutations of a set, and we knew we had partitioned <m>P</m> into some
-        unknown number of blocks, each of a certain known size <m>r</m>. If we let
-        <m>q</m> stand for the number of blocks, what does the product principle tell us
-        about <m>p</m>, <m>q</m>, and
-        <m>r</m>? What do we get when we solve for <m>q</m>?
-      </p>
+    <problem xml:id="quotientprinciple" category="essential">
+      <statement>
+        <p>
+          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
+          have been using the product principle in a new way. One of the ways in which
+          we previously stated the product principle was <q>If we partition a set into
+          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">problems</xref> and <xref ref="roundtablepartition"></xref> we knew the size <m>p</m> of a
+          set
+          <m>P</m> of permutations of a set, and we knew we had partitioned <m>P</m> into some
+          unknown number of blocks, each of a certain known size <m>r</m>. If we let
+          <m>q</m> stand for the number of blocks, what does the product principle tell us
+          about <m>p</m>, <m>q</m>, and
+          <m>r</m>? What do we get when we solve for <m>q</m>?
+        </p>
+      </statement>
       <solution>
         <p>
           <m>p=qr</m>, so that <m>q=p/r</m>.
@@ -2028,17 +2175,18 @@
       would be a good time to work through that appendix.
     </p>
 
-    <problem xml:id="necklace">
-      <p>
-        (essential and interesting)
-        In how many ways may we string <m>n</m> distinct beads on a necklace
-        without a clasp? (Perhaps we make the necklace by stringing the beads
-        on a strong, and then carefully gluing the two ends of the string
-        together so that the joint can't be seen. Assume someone can pick up the necklace,
-        move it around in space and put it back down, giving an
-        apparently different way of stringing the beads that is
-        equivalent to the first.)
-      </p>
+    <problem xml:id="necklace" category="essential and interesting">
+      <statement>
+        <p>
+          In how many ways may we string <m>n</m> distinct beads on a necklace
+          without a clasp? (Perhaps we make the necklace by stringing the beads
+          on a strong, and then carefully gluing the two ends of the string
+          together so that the joint can't be seen. Assume someone can pick up the necklace,
+          move it around in space and put it back down, giving an
+          apparently different way of stringing the beads that is
+          equivalent to the first.)
+        </p>
+      </statement>
       <solution>
         <p>
           We can obtain a permutation of the beads by cutting the necklace and
@@ -2053,28 +2201,33 @@
       </solution>
     </problem>
 
-    <problem xml:id="tennispairings2">
-      <p>
-      (interesting)
-      We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
-      tennis club has
-      <m>2n</m> members. We want to pair up the members by twos for singles matches.
-      <ol>
-        <li><p>
-            In how many ways may we pair up all the members of the club?
-              Give at least two solutions different from the one you gave in
-              <xref ref="tennispairings1a">Problem</xref>. (You may not have done
-              <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
-              three solutions.)
-          </p></li>
+    <problem xml:id="tennispairings2" category="interesting">
+      <statement>
+        <p>
+          We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
+          tennis club has
+          <m>2n</m> members. We want to pair up the members by twos for singles matches.
+          <ol>
+            <li>
+              <p>
+                In how many ways may we pair up all the members of the club?
+                  Give at least two solutions different from the one you gave in
+                  <xref ref="tennispairings1a">Problem</xref>. (You may not have done
+                  <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
+                  three solutions.)
+              </p>
+            </li>
 
-        <li><p>
-            Suppose that in addition to specifying who plays whom, for each
-              pairing we say who serves first.  Now in how many ways may we
-              specify our pairs? Try to find as many solutions as you can
-          </p></li>
-      </ol>
-      </p>
+            <li>
+              <p>
+                Suppose that in addition to specifying who plays whom, for each
+                  pairing we say who serves first.  Now in how many ways may we
+                  specify our pairs? Try to find as many solutions as you can
+              </p>
+            </li>
+          </ol>
+        </p>
+      </statement>
       <solution>
         <p>
           Suppose we list the people in the club in some way, and keep that
@@ -2111,15 +2264,16 @@
       </solution>
     </problem>
 
-    <problem xml:id="twocolorsofbeads">
-      <p>
-        (essential)
-        (This becomes especially relevant in
-        <xref ref="groupsonsets">Chapter</xref>, though it makes an important point here.) In how many ways may we attach two identical red beads
-        and two identical blue beads to the corners of a square (with one bead
-        per corner) free
-        to move around in (three-dimensional) space?
-      </p>
+    <problem xml:id="twocolorsofbeads" category="essential">
+      <statement>
+        <p>
+          (This becomes especially relevant in
+          <xref ref="groupsonsets">Chapter</xref>, though it makes an important point here.) In how many ways may we attach two identical red beads
+          and two identical blue beads to the corners of a square (with one bead
+          per corner) free
+          to move around in (three-dimensional) space?
+        </p>
+      </statement>
       <solution>
         <p>
           Two ways; either the red beads are side-by-side or diagonally
@@ -2130,48 +2284,49 @@
       </solution>
     </problem>
 
-    <problem xml:id="Stirling_sapproximation">
-      <p>
-        (interesting)
-        While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
-        it doesn't give us a sense of how big the binomial coefficients are. We can
-        get a very rough idea, for example, of the size of <m>2n\choose n</m> by
-        recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>{2n\over n}\cdot
-        {2n-1\over n-1}\cdots {n+1\over 1}</m>, and each quotient is at least <m>2</m>, so the
-        product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
-        the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
-        about
-        <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
-        However it is pretty clear the approximation will not be a very good one,
-        because some of the terms in that product are much larger than 2. In fact,
-        if <m>2n\choose k</m> were the same for every <m>k</m>, then each would be the fraction
-        <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
-        <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
-        much larger than <m>\binom{2n}{1}</m> and is likely larger than
-        <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
-        this, James Stirling developed a formula to approximate
-        <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
-        n}\right){n^n/ e^n}</m>.<index><main>Stirling's formula for
-        <m>n"!</m></main></index><index><main><m>n"!</m></main><sub>Stirling's formula for</sub></index> In fact the ratio of
-        <m>n!</m> to this expression approaches 1 as
-        <m>n</m> becomes infinite.<fn>Proving this takes more of a detour than is
-        advisable here; however there is an elementary proof which you can work
-        through in the problems of the end of Section 1 of Chapter 1 of <em>Introductory Combinatorics</em> by Kenneth P. Bogart, Harcourt Academic Press,
-        (2000).</fn> We write this as
-        <me>
-          n!\sim \sqrt{2\pi
-          n}{n^n\over e^n}.
-        </me>
-      </p>
+    <problem xml:id="Stirling_sapproximation" category="interesting">
+      <statement>
+        <p>
+          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
+          it doesn't give us a sense of how big the binomial coefficients are. We can
+          get a very rough idea, for example, of the size of <m>2n\choose n</m> by
+          recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>{2n\over n}\cdot
+          {2n-1\over n-1}\cdots {n+1\over 1}</m>, and each quotient is at least <m>2</m>, so the
+          product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
+          the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
+          about
+          <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
+          However it is pretty clear the approximation will not be a very good one,
+          because some of the terms in that product are much larger than 2. In fact,
+          if <m>2n\choose k</m> were the same for every <m>k</m>, then each would be the fraction
+          <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
+          <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
+          much larger than <m>\binom{2n}{1}</m> and is likely larger than
+          <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
+          this, James Stirling developed a formula to approximate
+          <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
+          n}\right){n^n/ e^n}</m>.<index><main>Stirling's formula for
+          <m>n"!</m></main></index><index><main><m>n"!</m></main><sub>Stirling's formula for</sub></index> In fact the ratio of
+          <m>n!</m> to this expression approaches 1 as
+          <m>n</m> becomes infinite.<fn>Proving this takes more of a detour than is
+          advisable here; however there is an elementary proof which you can work
+          through in the problems of the end of Section 1 of Chapter 1 of <em>Introductory Combinatorics</em> by Kenneth P. Bogart, Harcourt Academic Press,
+          (2000).</fn> We write this as
+          <me>
+            n!\sim \sqrt{2\pi
+            n}{n^n\over e^n}.
+          </me>
+        </p>
 
-      <p>
-        We read this notation as <m>n!</m> is asymptotic to
-        <m>\sqrt{2\pi n}\frac{n^n}{e^n}</m>. Use Stirling's formula to show that the fraction of
-        subsets of size
-        <m>n</m> in an
-        <m>2n</m>-element set is approximately <m>1/\sqrt{\pi n}</m>. This is a much bigger
-        fraction than <m>1\over 2^n</m>!
-      </p>
+        <p>
+          We read this notation as <m>n!</m> is asymptotic to
+          <m>\sqrt{2\pi n}\frac{n^n}{e^n}</m>. Use Stirling's formula to show that the fraction of
+          subsets of size
+          <m>n</m> in an
+          <m>2n</m>-element set is approximately <m>1/\sqrt{\pi n}</m>. This is a much bigger
+          fraction than <m>1\over 2^n</m>!
+        </p>
+      </statement>
     </problem>
   </subsection>
 </section>

@@ -14,107 +14,119 @@
     </p>
 
     <problem xml:id="subsetsbysmallestcounterexample">
-      <ol>
-        <li><p>
-          Write down a list of the subsets of <m>\{ 1, 2 \}</m>.
-          Don't forget the empty set! Group the sets containing containing 2
-          separately from the others.
-          <solution>
+      <statement>
+        <ol>
+          <li>
             <p>
-              <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>.
-            </p>
-          </solution>
-          </p></li>
+              Write down a list of the subsets of <m>\{ 1, 2 \}</m>.
+              Don't forget the empty set! Group the sets containing containing 2
+              separately from the others.
+            </statement>
+            <solution>
+              <p>
+                <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>.
+              </p>
+            </solution>
+          </p>
+        </li>
 
-        <li><p>
-          Write down a list of the subsets of <m>\{ 1, 2, 3 \}</m>. Group the sets
-           containing 3 separately from the others.
-          <solution>
-            <p>
-              <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>, <m>\{3\}</m>,
-              <m>\{1,3\}</m>, <m>\{2,3\}</m>, <m>\{1,2,3\}</m>.
-            </p>
-          </solution>
-          </p></li>
+        <li>
+          <p>
+            Write down a list of the subsets of <m>\{ 1, 2, 3 \}</m>. Group the sets
+             containing 3 separately from the others.
+            <solution>
+              <p>
+                <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>, <m>\{3\}</m>,
+                <m>\{1,3\}</m>, <m>\{2,3\}</m>, <m>\{1,2,3\}</m>.
+              </p>
+            </solution>
+          </p>
+        </li>
 
-        <li><p>
-          Look for a natural way to match up the subsets containing 2 in
-          Part (a) with those not containing 2. Look for a way to match up
-          the subsets containing 3 in Part (b) containing 3 with those not
-          containing 3.
-          <solution>
-            <p>
-              Adjoin <m>2</m> to each subset not containing <m>2</m> and you get each set
-              containing 2. Adjoin 3 to each subset not containing 3, and you get each
-              subset containing 3.
-            </p>
-          </solution>
-          </p></li>
+        <li>
+          <p>
+            Look for a natural way to match up the subsets containing 2 in
+            Part (a) with those not containing 2. Look for a way to match up
+            the subsets containing 3 in Part (b) containing 3 with those not
+            containing 3.
+            <solution>
+              <p>
+                Adjoin <m>2</m> to each subset not containing <m>2</m> and you get each set
+                containing 2. Adjoin 3 to each subset not containing 3, and you get each
+                subset containing 3.
+              </p>
+            </solution>
+          </p>
+        </li>
 
-        <li><p>
-          On the basis of the previous part, you should be able to find a
-          bijection between the collection of subsets of <m>\{1, 2, \ldots , n \}</m>
-          containing <m>n</m> and those not containing <m>n</m>. (If you are having difficulty
-          figuring out the bijection, try rethinking Parts (a) and (b), perhaps by
-          doing a similar exercise with the set <m>\{1,2,3,4\}</m>.) Describe the
-          bijection (unless you are very familiar with the notation of sets, it is
-          probably easier to describe to describe the function in words rather than
-          symbols) and explain why it is a bijection. Explain why the number of
-          subsets of
-          <m>\{ 1, 2, \ldots , n \}</m> containing
-          <m>n</m> equals the number of subsets of <m>\{ 1, 2, \ldots, n-1 \}</m>.
-          <solution>
-            <p>
-              If we adjoin <m>n</m> to the subsets not containing <m>n</m> we get the
-              subsets containing <m>n</m>. This is a bijection because if we start with two
-              different sets, adjoining <m>n</m> to them can't make them the same, and every
-              subset <m>S</m> containing <m>n</m> must arise in this way from the set <m>S-\{n\}</m> not
-              containing <m>n</m>.
-            </p>
-          </solution>
-          </p></li>
+        <li>
+          <p>
+            On the basis of the previous part, you should be able to find a
+            bijection between the collection of subsets of <m>\{1, 2, \ldots , n \}</m>
+            containing <m>n</m> and those not containing <m>n</m>. (If you are having difficulty
+            figuring out the bijection, try rethinking Parts (a) and (b), perhaps by
+            doing a similar exercise with the set <m>\{1,2,3,4\}</m>.) Describe the
+            bijection (unless you are very familiar with the notation of sets, it is
+            probably easier to describe to describe the function in words rather than
+            symbols) and explain why it is a bijection. Explain why the number of
+            subsets of
+            <m>\{ 1, 2, \ldots , n \}</m> containing
+            <m>n</m> equals the number of subsets of <m>\{ 1, 2, \ldots, n-1 \}</m>.
+            <solution>
+              <p>
+                If we adjoin <m>n</m> to the subsets not containing <m>n</m> we get the
+                subsets containing <m>n</m>. This is a bijection because if we start with two
+                different sets, adjoining <m>n</m> to them can't make them the same, and every
+                subset <m>S</m> containing <m>n</m> must arise in this way from the set <m>S-\{n\}</m> not
+                containing <m>n</m>.
+              </p>
+            </solution>
+          </p>
+        </li>
 
-        <li><p>
-          Parts (a) and (b) suggest
-          strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
-          particular, the empty set has <m>2^0</m> subsets, a one-element set has <m>2^1</m>
-          subsets, itself and the empty set, and in Parts a and b we saw that
-          two-element and three-element sets have <m>2^2</m> and <m>2^3</m> subsets
-          respectively. So there are certainly some values of <m>n</m> for which an
-          <m>n</m>-element set has <m>2^n</m> subsets. One way to prove that an <m>n</m>-element
-          set has <m>2^n</m> subsets for all values of <m>n</m> is to argue by contradiction.
-          For this purpose, suppose there is a nonnegative integer <m>n</m> such that an
-          <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets. In that case there may
-          be more than one such <m>n</m>. Choose <m>k</m> to be the smallest such <m>n</m>. Notice
-          that <m>k -1</m> is still a positive integer, because <m>k</m> can't be 0, 1, 2,
-          or 3. Since <m>k</m> was the smallest value of <m>n</m> we could choose to make the
-          statement
-          ``An <m>n</m>-element set has <m>2^n</m> subsets" false, what do you know about the
-          number of subsets of a <m>(k - 1)</m>-element set? What do you know about the
-          number of subsets of the <m>k</m>-element set <m>\{ 1, 2, \ldots, k \}</m> that
-          don't contain <m>k</m>? What do you know about the number of subsets of <m>\{ 1,
-          2, \ldots,  k \}</m> that do contain <m>k</m>? What does the sum principle tell
-          you about the number of subsets of <m>\{ 1, 2, \ldots, k \}</m>? Notice that
-          this contradicts the way in which we chose <m>k</m>, and the only assumption
-          that went into our choice of <m>k</m> was that ``there is a nonnegative integer
-          <m>n</m> such that an <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets."
-          Since this assumption has led us to a contradiction, it must be false.
-          What can you now conclude about the statement ``for every nonnegative
-          integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
-          <solution>
-            <p>
-              We know that the number of subsets of a <m>(k-1)</m>-element set is
-              <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
-              <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
-              k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
-              subsets that do contain <m>k</m> equals the number that don't, so the number
-              that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
-              number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
-              conclude that the statement ``for every nonnegative integer <m>n</m>, an
-              <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
-            </p>
-          </solution>
-          </p></li>
+        <li>
+          <p>
+            Parts (a) and (b) suggest
+            strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
+            particular, the empty set has <m>2^0</m> subsets, a one-element set has <m>2^1</m>
+            subsets, itself and the empty set, and in Parts a and b we saw that
+            two-element and three-element sets have <m>2^2</m> and <m>2^3</m> subsets
+            respectively. So there are certainly some values of <m>n</m> for which an
+            <m>n</m>-element set has <m>2^n</m> subsets. One way to prove that an <m>n</m>-element
+            set has <m>2^n</m> subsets for all values of <m>n</m> is to argue by contradiction.
+            For this purpose, suppose there is a nonnegative integer <m>n</m> such that an
+            <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets. In that case there may
+            be more than one such <m>n</m>. Choose <m>k</m> to be the smallest such <m>n</m>. Notice
+            that <m>k -1</m> is still a positive integer, because <m>k</m> can't be 0, 1, 2,
+            or 3. Since <m>k</m> was the smallest value of <m>n</m> we could choose to make the
+            statement
+            <q>An <m>n</m>-element set has <m>2^n</m> subsets</q> false, what do you know about the
+            number of subsets of a <m>(k - 1)</m>-element set? What do you know about the
+            number of subsets of the <m>k</m>-element set <m>\{ 1, 2, \ldots, k \}</m> that
+            don't contain <m>k</m>? What do you know about the number of subsets of <m>\{ 1,
+            2, \ldots,  k \}</m> that do contain <m>k</m>? What does the sum principle tell
+            you about the number of subsets of <m>\{ 1, 2, \ldots, k \}</m>? Notice that
+            this contradicts the way in which we chose <m>k</m>, and the only assumption
+            that went into our choice of <m>k</m> was that ``there is a nonnegative integer
+            <m>n</m> such that an <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets."
+            Since this assumption has led us to a contradiction, it must be false.
+            What can you now conclude about the statement ``for every nonnegative
+            integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
+            <solution>
+              <p>
+                We know that the number of subsets of a <m>(k-1)</m>-element set is
+                <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
+                <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
+                k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
+                subsets that do contain <m>k</m> equals the number that don't, so the number
+                that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
+                number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
+                conclude that the statement ``for every nonnegative integer <m>n</m>, an
+                <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
+              </p>
+            </solution>
+          </p>
+        </li>
       </ol>
       <p>
         \item The expression
@@ -206,14 +218,18 @@
     In order to prove a statement about an integer <m>n</m>, if we
     can
     <ol>
-      <li><p>
+      <li>
+        <p>
           Prove the statement when <m>n=b</m>, for some fixed integer <m>b</m>
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           Show that the truth of the statement for <m>n=k-1</m> implies the truth
           of the statement for <m>n=k</m> whenever <m>k>b</m>,
-        </p></li>
+        </p>
+      </li>
     </ol>
     then we can conclude the statement is true for all integers <m>n\ge
     b</m>.
@@ -221,7 +237,7 @@
 
     <p>
       As an example, let us return to <xref ref="subsetsbysmallestcounterexample">Problem</xref>. The statement we wish to prove is
-      the statement that ``A set of size <m>n</m> has <m>2^n</m> subsets."
+      the statement that <q>A set of size <m>n</m> has <m>2^n</m> subsets.</q>
     </p>
 
     <blockquote>
@@ -283,23 +299,27 @@
     </p>
 
     <problem>
-      <p>
-        Use mathematical induction to prove your formula from
-        <xref ref="sumodd">Problem</xref>.
-      </p>
+      <statement>
+        <p>
+          Use mathematical induction to prove your formula from
+          <xref ref="sumodd">Problem</xref>.
+        </p>
+      </statement>
     </problem>
   </subsection>
 
   <subsection>
     <title>Proving algebraic statements by induction</title>
     <problem>
-      <p>
-        Use mathematical induction to prove the well-known formula that for
-        all positive integers <m>n</m>,
-        <me>
-          1+2 + \cdots +n = {n(n+1)\over 2}.
-        </me>
-      </p>
+      <statement>
+        <p>
+          Use mathematical induction to prove the well-known formula that for
+          all positive integers <m>n</m>,
+          <me>
+            1+2 + \cdots +n = {n(n+1)\over 2}.
+          </me>
+        </p>
+      </statement>
       <solution>
         <p>
           When <m>n=0</m>, <m>0=0(0+1)/2</m>, so our formula holds. Now suppose
@@ -418,7 +438,7 @@
     <title>Strong Induction</title>
     <p>
       One way of looking at the principle of mathematical induction is that it
-      tells us that if we know the ``first" case of a theorem and we can derive
+      tells us that if we know the <q>first</q> case of a theorem and we can derive
       each other case of the theorem from a smaller case, then the theorem is
       true in all cases. However the particular way in which we stated the
       theorem is rather restrictive in that it requires us to derive each
@@ -431,24 +451,30 @@
     In order to prove a
     statement about an integer <m>n</m> if we can
     <ol>
-      <li><p>
+      <li>
+        <p>
           prove our statement when <m>n=b</m> and
-        </p></li>
+        </p>
+      </li>
 
-      <li><p>
+      <li>
+        <p>
           prove that the statements we get with <m>n=b</m>, <m>n=b+1</m>, <ellipsis />
           <m>n=k-1</m> imply the statement with <m>n=k</m>,
-        </p></li>
+        </p>
+      </li>
     </ol>
     then our statement is true for all integers <m>n\ge b</m>.
     </blockquote>
 
     <problem>
-      <p>
-        What postage do you think we can make with five and six cent
-        stamps? Is there a number <m>N</m> such that if <m>n\ge N</m>, then we can make
-        <m>n</m> cents worth of postage?
-      </p>
+      <statement>
+        <p>
+          What postage do you think we can make with five and six cent
+          stamps? Is there a number <m>N</m> such that if <m>n\ge N</m>, then we can make
+          <m>n</m> cents worth of postage?
+        </p>
+      </statement>
       <solution>
         <p>
           We can make 10, 11, and 12 cents in postage, but not 13 cents.
@@ -492,87 +518,91 @@
     </p>
 
     <p>
-    Some people might say that we really
-    had five base cases,
-    <m>n=20</m>, 21, 22, 23, and 24, in the proof above and once we had proved
-    those five consecutive base cases, then we could reduce any other case to
-    one of these base cases by successively subtracting 5. That is an
-    appropriate way to look at the proof. A logician would say that it
-    is also the case that, for example, by proving we could make 22 cents, we
-    also proved that if we can make 20 cents and 21 cents in stamps, then we
-    could also make 22 cents. We just didn't bother to use the assumption
-    that we could make 20 cents and 21 cents! So long as one point of view
-    or the other satisfies you, you are ready to use this kind of argument in
-    proofs.
-    <ol>
-      {\setcounter{enumi}{\value{problemnumber}}}
+      Some people might say that we really
+      had five base cases,
+      <m>n=20</m>, 21, 22, 23, and 24, in the proof above and once we had proved
+      those five consecutive base cases, then we could reduce any other case to
+      one of these base cases by successively subtracting 5. That is an
+      appropriate way to look at the proof. A logician would say that it
+      is also the case that, for example, by proving we could make 22 cents, we
+      also proved that if we can make 20 cents and 21 cents in stamps, then we
+      could also make 22 cents. We just didn't bother to use the assumption
+      that we could make 20 cents and 21 cents! So long as one point of view
+      or the other satisfies you, you are ready to use this kind of argument in
+      proofs.
+      <ol>
+        {\setcounter{enumi}{\value{problemnumber}}}
 
-      <li><p>
-        A number greater than one is called prime if it has no factors other
-        than itself and one. Show that each positive number is either a prime or
-        a power of a prime or a product of powers of prime numbers.
-        <solution>
+        <li>
           <p>
-            We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose
-            that all positive numbers less than <m>n</m> are primes, powers of primes, or
-            products of powers of primes. If <m>n</m> has no proper factors, it is a prime.
-            If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m>
-            and greater than 1. Therefore each factor is a prime, a power of a prime,
-            or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together,
-            the result will still be a power of a prime or a product of powers of
-            primes. Thus the statement that all positive numbers less than
-            <m>n</m> are primes, powers of primes, or products of powers of primes implies
-            the statement that <m>n</m> is a prime, a power of a prime, or a product of
-            powers of primes. Therefore by the strong principle of mathematical
-            induction, all positive numbers are either primes, powers of primes, or
-            products of powers of primes.
+            A number greater than one is called prime if it has no factors other
+            than itself and one. Show that each positive number is either a prime or
+            a power of a prime or a product of powers of prime numbers.
+            <solution>
+              <p>
+                We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose
+                that all positive numbers less than <m>n</m> are primes, powers of primes, or
+                products of powers of primes. If <m>n</m> has no proper factors, it is a prime.
+                If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m>
+                and greater than 1. Therefore each factor is a prime, a power of a prime,
+                or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together,
+                the result will still be a power of a prime or a product of powers of
+                primes. Thus the statement that all positive numbers less than
+                <m>n</m> are primes, powers of primes, or products of powers of primes implies
+                the statement that <m>n</m> is a prime, a power of a prime, or a product of
+                powers of primes. Therefore by the strong principle of mathematical
+                induction, all positive numbers are either primes, powers of primes, or
+                products of powers of primes.
+              </p>
+            </solution>
           </p>
-        </solution>
-        </p></li>
+        </li>
 
-      <li><p>
-        Show that the number of prime factors of a positive number <m>n\ge 2</m>
-        is less than or equal to <m>\log_2 n</m>.  (If a prime occurs to the <m>k</m>th
-        power in a factorization of <m>n</m>, you can consider that power as <m>k</m> prime
-        factors.)  (There is a way to do this by induction and a way to do it
-        without induction.  It would be ideal to find both ways.)
-        <solution>
+        <li>
           <p>
-            First, we will prove this by induction. The number of prime
-            factors of <m>2</m> is 1, which is less than or equal to <m>\log_2 2=1</m>. Now
-            assume that the number of prime factors of any number <m>k</m> greater than 1 and
-            less than <m>n</m> is no more than <m>\log_2 k</m>. If <m>n</m> is prime, then its number
-            of prime factors is less than or equal to <m>\log_2 n</m>. Otherwise <m>n</m> is a
-            product of two factors, <m>n=mk</m>. Then by our inductive hypothesis, the
-            number of prime factors of <m>m</m> is less than or equal to <m>\log_2 m</m> and the
-            number of prime factors of <m>k</m> is less than or equal to <m>\log_2 k</m>. But
-            the number of prime factors of the product is the sum of the number of
-            prime factors of each factor, so the number of prime factors of <m>n</m> is no
-            more than <m>\log_2 m +\log_2 k=\log_2 mk= \log_2 n</m>. Thus statement that the
-            number of prime factors of any number <m>k</m> between 2 and <m>n-1</m> inclusive is
-            no more than <m>\log_2 k</m>, implies the statement that the number of prime
-            factors of <m>n</m> is no more than <m>\log_2 n</m>. Therefore, by the principle of
-            mathematical induction, the number of prime factors of <m>n</m> is less than or
-            equal to
-            <m>\log_2 n</m> for all integers <m>n\ge 2</m>.
-          </p>
+            Show that the number of prime factors of a positive number <m>n\ge 2</m>
+            is less than or equal to <m>\log_2 n</m>.  (If a prime occurs to the <m>k</m>th
+            power in a factorization of <m>n</m>, you can consider that power as <m>k</m> prime
+            factors.)  (There is a way to do this by induction and a way to do it
+            without induction.  It would be ideal to find both ways.)
+            <solution>
+              <p>
+                First, we will prove this by induction. The number of prime
+                factors of <m>2</m> is 1, which is less than or equal to <m>\log_2 2=1</m>. Now
+                assume that the number of prime factors of any number <m>k</m> greater than 1 and
+                less than <m>n</m> is no more than <m>\log_2 k</m>. If <m>n</m> is prime, then its number
+                of prime factors is less than or equal to <m>\log_2 n</m>. Otherwise <m>n</m> is a
+                product of two factors, <m>n=mk</m>. Then by our inductive hypothesis, the
+                number of prime factors of <m>m</m> is less than or equal to <m>\log_2 m</m> and the
+                number of prime factors of <m>k</m> is less than or equal to <m>\log_2 k</m>. But
+                the number of prime factors of the product is the sum of the number of
+                prime factors of each factor, so the number of prime factors of <m>n</m> is no
+                more than <m>\log_2 m +\log_2 k=\log_2 mk= \log_2 n</m>. Thus statement that the
+                number of prime factors of any number <m>k</m> between 2 and <m>n-1</m> inclusive is
+                no more than <m>\log_2 k</m>, implies the statement that the number of prime
+                factors of <m>n</m> is no more than <m>\log_2 n</m>. Therefore, by the principle of
+                mathematical induction, the number of prime factors of <m>n</m> is less than or
+                equal to
+                <m>\log_2 n</m> for all integers <m>n\ge 2</m>.
+              </p>
 
-          <p>
-            For a noninductive proof, note that all factors of <m>n</m> are at least 2. If
-            <m>n</m> is a power of two, then the number of times <m>2</m> is a factor of <m>n</m> is
-            exactly
-            <m>\log_2 n</m>. But if <m>n</m> is not a power of 2, we still have that
-            <m>2^{\log_2 n}=n</m>, so the product of <m>\lceil\log_2 n\rceil</m> numbers
-            including some greater than 2 must be greater than <m>n</m>. Therefore, the
-            number of prime factors of <m>n</m> is no more than
-            <m>\log_2 n</m>. Thus for all <m>n\ge2</m>,the number of prime factors of
-            <m>n</m> must be less than or equal to
-            <m>\log_2 n</m>.
+              <p>
+                For a noninductive proof, note that all factors of <m>n</m> are at least 2. If
+                <m>n</m> is a power of two, then the number of times <m>2</m> is a factor of <m>n</m> is
+                exactly
+                <m>\log_2 n</m>. But if <m>n</m> is not a power of 2, we still have that
+                <m>2^{\log_2 n}=n</m>, so the product of <m>\lceil\log_2 n\rceil</m> numbers
+                including some greater than 2 must be greater than <m>n</m>. Therefore, the
+                number of prime factors of <m>n</m> is no more than
+                <m>\log_2 n</m>. Thus for all <m>n\ge2</m>,the number of prime factors of
+                <m>n</m> must be less than or equal to
+                <m>\log_2 n</m>.
+              </p>
+            </solution>
+            \setcounter{problemnumber}{\value{enumi}}
           </p>
-        </solution>
-        \setcounter{problemnumber}{\value{enumi}}
-        </p></li>
-    </ol>
+        </li>
+      </ol>
     </p>
   </subsection>
 </section>
