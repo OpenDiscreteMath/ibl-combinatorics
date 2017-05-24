@@ -1,7 +1,7 @@
 
 <section>
   <title>Supplementary Problems</title>
-  <problem>
+  <activity>
     <statement>
       <p>
         Each person attending a party has been asked to bring a prize. The
@@ -52,9 +52,9 @@
         in his or her previous place.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         In how many ways may <m>k</m> distinct books be arranged on <m>n</m> shelves
@@ -74,9 +74,9 @@
         is the number of ways to arrange the books so that no shelf gets more than <m>m</m>.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define
@@ -93,9 +93,9 @@
         <m>-n\choose -k</m> is zero whenever <m>k</m> and <m>n</m> are positive.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         Suppose that <m>n</m> children join hands in a circle for a game at
@@ -122,9 +122,9 @@
         of them has the same child to the right.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem xml:id="Hora" category="interesting and difficult">
+  <activity xml:id="Hora" category="interesting and difficult">
     <statement>
       <p>
         Suppose that <m>n</m> people link arms in a folk-dance and dance in a
@@ -152,21 +152,18 @@
         <m>N_{\mbox{a} }(S)</m> is not completely determined by the size of <m>S</m>, as in all our
         other inclusion-exclusion problems. How do we compute <m>m(S)</m>? Let us call a
         subset <m>R</m> of <m>S</m> a run if
-        <ol>
-          <li>
-            <p>
-              the people determined by <m>R</m> sit together in a
-              row in both seatings, and
-            </p>
-          </li>
-
-          <li>
-            <p>
-              no other person in <m>S</m> is in a row with these
-              people in both seatings.
-            </p>
-          </li>
-        </ol>
+        <task>
+          <p>
+            the people determined by <m>R</m> sit together in a
+            row in both seatings, and
+          </p>
+        </task>
+        <task>
+          <p>
+            no other person in <m>S</m> is in a row with these
+            people in both seatings.
+          </p>
+        </task>
       </p>
 
       <p>
@@ -292,9 +289,9 @@
         }
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting and difficult">
+  <activity category="interesting and difficult">
     <statement>
       <p>
         (A challenge; the author has not tried to solve this one!) Redo
@@ -347,87 +344,82 @@
         substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="motivation">
+  <activity category="motivation">
     <statement>
-      <ol>
-        <li>
-          <p>
-            In paying off a mortgage loan with initial amount A,
-            annual interest rate
-            <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence
-            describes the amount owed after <m>n</m> months of payments in terms of the
-            amount owed after <m>n-1</m> months?  Some technical details:  You make the
-            first payment after one month.  The amount of interest included in your
-            monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount
-            you owed immediately after making your last monthly payment.  
-            \solution{<m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.}
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Find a
-            formula for the amount owed after <m>n</m> months.  
-            \solution{From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
-            <md>
-              <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
-              12})^n\over 1-(1+{.01p\over 12})}</mrow>
-              <mrow>\amp =\amp  \left(A-{1200m\over
-              p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
-            </md>
-            }
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Find a formula for the
-            number of months needed to bring the amount owed to zero.  Another
-            technical point:  If you were to make the standard monthly payment <m>m</m> in
-            the last month, you might actually end up owing a negative amount of
-            money.  Therefore it is ok if the result of your formula for the number
-            of months needed gives a non-integer number of months.  The bank would
-            just round up to the next integer and adjust your payment so your balance
-            comes out to zero.
-            \solution{<m>\left(A-{1200m\over
-            p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the
-            equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking
-            logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log
-            1200m-\log (1200m-Ap)</m> and so <m>n={\log
-            1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.}
-          </p>
-        </li>
-
-        <li>
-          <p>
-            What should the monthly payment be to pay off the loan over a period of 30
-            years?
-            \solution{<m>360={\log
-            1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
-            solve for <m>m</m>, the monthly payment.  We need to chose some base for the
-            logarithm so we can write its inverse function; suppose we use logs to the base
-            10.  Then
-            <md>
-              <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
-              1200m-\log (1200m-Ap)</mrow>
-              <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
-              1200m/(1200m-Ap)}</mrow>
-              <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
-              <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
-              <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
-              <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
-              12})^{360}-1\right)}</mrow>
-            </md>
-            is our monthly payment.}
-          </p>
-        </li>
-      </ol>
+      <task>
+        <p>
+          In paying off a mortgage loan with initial amount A,
+          annual interest rate
+          <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence
+          describes the amount owed after <m>n</m> months of payments in terms of the
+          amount owed after <m>n-1</m> months?  Some technical details:  You make the
+          first payment after one month.  The amount of interest included in your
+          monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount
+          you owed immediately after making your last monthly payment.  
+          \solution{<m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.}
+        </p>
+      </task>
+      <task>
+        <p>
+          Find a
+          formula for the amount owed after <m>n</m> months.  
+          \solution{From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
+          <md>
+            <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
+            12})^n\over 1-(1+{.01p\over 12})}</mrow>
+            <mrow>\amp =\amp  \left(A-{1200m\over
+            p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
+          </md>
+          }
+        </p>
+      </task>
+      <task>
+        <p>
+          Find a formula for the
+          number of months needed to bring the amount owed to zero.  Another
+          technical point:  If you were to make the standard monthly payment <m>m</m> in
+          the last month, you might actually end up owing a negative amount of
+          money.  Therefore it is ok if the result of your formula for the number
+          of months needed gives a non-integer number of months.  The bank would
+          just round up to the next integer and adjust your payment so your balance
+          comes out to zero.
+          \solution{<m>\left(A-{1200m\over
+          p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the
+          equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking
+          logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log
+          1200m-\log (1200m-Ap)</m> and so <m>n={\log
+          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.}
+        </p>
+      </task>
+      <task>
+        <p>
+          What should the monthly payment be to pay off the loan over a period of 30
+          years?
+          \solution{<m>360={\log
+          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
+          solve for <m>m</m>, the monthly payment.  We need to chose some base for the
+          logarithm so we can write its inverse function; suppose we use logs to the base
+          10.  Then
+          <md>
+            <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
+            1200m-\log (1200m-Ap)</mrow>
+            <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
+            1200m/(1200m-Ap)}</mrow>
+            <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
+            <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
+            <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
+            <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
+            12})^{360}-1\right)}</mrow>
+          </md>
+          is our monthly payment.}
+        </p>
+      </task>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         Find a recurrence relation for the number of ways to divide a
@@ -483,9 +475,9 @@
         <m>n\ge 2</m>.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         How does <m>\sum_{k=0}^n{n-k\choose k}</m> relate to the Fibonacci
@@ -588,9 +580,9 @@
         <m>a_i=2^{i+1}-1</m>}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         (Relevant to <xref ref="expogenfun">Appendix</xref>) We have some chairs which we are
@@ -637,9 +629,9 @@
         consecutive parts (in the decreasing list representation) is at most <m>m</m>.}
       </p>
     </statement>
-  </problem>
+  </activity>
 
-  <problem category="interesting">
+  <activity category="interesting">
     <statement>
       <p>
         Suppose we take two graphs <m>G_1</m> and <m>G_2</m> with disjoint vertex sets, we
@@ -672,5 +664,5 @@
         <m>\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-{1\over x})</m>.}
       </p>
     </statement>
-  </problem>
+  </activity>
 </section>

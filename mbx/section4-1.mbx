@@ -402,77 +402,83 @@
 
   <subsection xml:id="orderedfunctionsection">
     <title>Ordered functions</title>
-    <problem xml:id="bookcase" category="essential and interesting">
-      <statement>
-        <p>
-          Suppose we wish to place <m>k</m> distinct books onto the shelves of
-          a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
-          the books would fit on any of the shelves. Also, let's imagine pushing
-          the books on a shelf as far to the left as we can, so that we are only
-          thinking about how the books sit relative to each other, not about the
-          exact places where we put the books. Since the books are distinct, we can
-          think of a the first book, the second book and so on. How many places
-          are there where we can place the first book? When we place the second
-          book, if we decide to place it on the shelf that already has a book, does
-          it matter if we place it to the left or right of the book that is already
-          there? How many places are there where we can place the second book?
-          Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
-          on a shelf that already has some books, is sliding it in to the left of
-          all the books already there different from placing it to the right of
-          all the books already or between two books already there? In how many
-          ways may we place the
-          <m>i</m>th book into the bookcase? In how many ways may we place all the
-          books?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          There are <m>n</m> places where we can place the first book. Once
-          we have placed it, there are <m>n+1</m> places where we can place the second
-          book, because on the shelf that has one book, we could put the second
-          book to the left or to the right of the book already there. Once we have
-          <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the
-          left of all books there, if any, giving us <m>n</m> places, or it could go to
-          the immediate right of any book already there, giving us another <m>i-1</m>
-          places. Thus there are <m>n+i-1</m> places where we could place book <m>i</m>.
-          From this, we can see that the number of ways to place all the books is
-          <me>
-            \prod_{i=1}^k (n+i-1).
-          </me>
-        </p>
-      </solution>
-      <p>
-        \item Suppose we wish to place the books in <xref ref="bookcase">Problem</xref>
-        (satisfying the assumptions we made there) so that each shelf gets at
-        least one book. Now in how many ways may we place the books? (Hint: how
-        can you make sure that each shelf gets at least one book before you start
-        the process described in <xref ref="bookcase">Problem</xref>?)
-      </p>
-      <solution>
-        <p>
-          Choose <m>n</m> books from the <m>k</m> books in <m>k\choose n</m> ways, and
-          assign them to the <m>n</m> places shelves in <m>n!</m> ways, giving us <m>k!/(k-n)!</m>
-          ways to put a book on each shelf. Now leaving these books at the far
-          left of each shelf, place the remaining books in
-          <me>
-            \prod_{i=1}^{k-n}
-            (n+i-1)={(n+(k-n)-1)!\over (n-1)!}={(k-1)!\over (n-1)!}
-          </me>
-          ways. Thus we
-          have
-          <me>
-            {k!(k-1)!\over(k-n)!(n-1)!}=k!{k-1\choose n-1}
-          </me>
-          ways to place the books. Of course the right hand side of that equation
-          cries out for a combinatorial explanation. Here it is. Imagine lining
-          up the <m>k</m> books in a row. Then there are <m>k-1</m> places in between them.
-          Choose <m>n-1</m> of these places, and slide a piece of paper in there as a
-          divider. Now put the books before the first divider on shelf one, and
-          the books after divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
-          the books on the shelves so that every shelf has a book!
-        </p>
-      </solution>
-    </problem>
+    <activity xml:id="bookcase" category="essential and interesting">
+      <task>
+        <statement>
+          <p>
+            Suppose we wish to place <m>k</m> distinct books onto the shelves of
+            a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
+            the books would fit on any of the shelves. Also, let's imagine pushing
+            the books on a shelf as far to the left as we can, so that we are only
+            thinking about how the books sit relative to each other, not about the
+            exact places where we put the books. Since the books are distinct, we can
+            think of a the first book, the second book and so on. How many places
+            are there where we can place the first book? When we place the second
+            book, if we decide to place it on the shelf that already has a book, does
+            it matter if we place it to the left or right of the book that is already
+            there? How many places are there where we can place the second book?
+            Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
+            on a shelf that already has some books, is sliding it in to the left of
+            all the books already there different from placing it to the right of
+            all the books already or between two books already there? In how many
+            ways may we place the
+            <m>i</m>th book into the bookcase? In how many ways may we place all the
+            books?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There are <m>n</m> places where we can place the first book. Once
+            we have placed it, there are <m>n+1</m> places where we can place the second
+            book, because on the shelf that has one book, we could put the second
+            book to the left or to the right of the book already there. Once we have
+            <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the
+            left of all books there, if any, giving us <m>n</m> places, or it could go to
+            the immediate right of any book already there, giving us another <m>i-1</m>
+            places. Thus there are <m>n+i-1</m> places where we could place book <m>i</m>.
+            From this, we can see that the number of ways to place all the books is
+            <me>
+              \prod_{i=1}^k (n+i-1).
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Suppose we wish to place the books in <xref ref="bookcase">Problem</xref>
+            (satisfying the assumptions we made there) so that each shelf gets at
+            least one book. Now in how many ways may we place the books? (Hint: how
+            can you make sure that each shelf gets at least one book before you start
+            the process described in <xref ref="bookcase">Problem</xref>?)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Choose <m>n</m> books from the <m>k</m> books in <m>k\choose n</m> ways, and
+            assign them to the <m>n</m> places shelves in <m>n!</m> ways, giving us <m>k!/(k-n)!</m>
+            ways to put a book on each shelf. Now leaving these books at the far
+            left of each shelf, place the remaining books in
+            <me>
+              \prod_{i=1}^{k-n}
+              (n+i-1)={(n+(k-n)-1)!\over (n-1)!}={(k-1)!\over (n-1)!}
+            </me>
+            ways. Thus we
+            have
+            <me>
+              {k!(k-1)!\over(k-n)!(n-1)!}=k!{k-1\choose n-1}
+            </me>
+            ways to place the books. Of course the right hand side of that equation
+            cries out for a combinatorial explanation. Here it is. Imagine lining
+            up the <m>k</m> books in a row. Then there are <m>k-1</m> places in between them.
+            Choose <m>n-1</m> of these places, and slide a piece of paper in there as a
+            divider. Now put the books before the first divider on shelf one, and
+            the books after divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
+            the books on the shelves so that every shelf has a book!
+          </p>
+        </solution>
+      </task>
+    </activity>
 
     <p>
       The assignment of which books go to which shelves of a bookcase is simply
@@ -528,7 +534,7 @@
 
   <subsection>
     <title>Broken permutations and Lah numbers</title>
-    <problem xml:id="brokenpermutation" category="essential for this or the next section, and interesting">
+    <activity xml:id="brokenpermutation" category="essential for this or the next section, and interesting">
       <statement>
         <p>
           In how many ways may we stack <m>k</m> distinct books into <m>n</m>
@@ -561,7 +567,7 @@
           to arrange the books.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       We can think of stacking books into identical boxes as partitioning the
@@ -600,7 +606,7 @@
 
   <subsection>
     <title>Compositions of integers</title>
-    <problem category="essential for this or the next section">
+    <activity category="essential for this or the next section">
       <statement>
         <p>
           In how many ways may we put <m>k</m> identical books onto <m>n</m> shelves
@@ -618,9 +624,9 @@
           there are <m>k-1\choose n-1</m> ways to arrange identical books.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="compositionagian" category="essential for this or the next section">
+    <activity xml:id="compositionagian" category="essential for this or the next section">
       <statement>
         <p>
           A <em>composition</em> of the integer <m>k</m> into <m>n</m> parts is
@@ -638,9 +644,9 @@
           parts is <m>k-1 \choose n-1</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="interesting">
+    <activity category="interesting">
       <statement>
         <p>
           Your answer in <xref ref="compositionagian">Problem</xref> can be expressed as a
@@ -663,9 +669,9 @@
           between our objects.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential for this or the next section">
+    <activity category="essential for this or the next section">
       <statement>
         <p>
           Explain the connection between compositions of <m>k</m> into <m>n</m> parts
@@ -684,7 +690,7 @@
           <m>i</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       The sequence of problems you just completed should explain the entry in
@@ -700,7 +706,7 @@
       distinct recipients (say children).
     </p>
 
-    <problem xml:id="identicalbooks" category="essential">
+    <activity xml:id="identicalbooks" category="essential">
       <statement>
         <p>
           In how many ways may we distribute <m>k</m> identical books on the
@@ -723,9 +729,9 @@
           ways to arrange identical books.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="multiset" category="essential">
+    <activity xml:id="multiset" category="essential">
       <statement>
         <p>
           A <em>multiset</em><index><main>multiset</main></index> chosen from a set <m>S</m> may be
@@ -751,50 +757,56 @@
           <m>n</m>-element set by <xref ref="identicalbooks">Problem</xref>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="interesting">
-      <statement>
-        <p>
-          Your answer in the previous problem should be expressible as a
-          binomial coefficient. Since a binomial coefficient counts subsets, find
-          a bijection between subsets of something and multisets chosen from a set
-          <m>S</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Note that <m>{n+k-1\choose k} = {n+k-1 \choose n-1}</m>. We will
-          show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m>
-          things and multisets. Namely, take <m>n+k-1</m> objects and line them up in
-          a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of
-          our multiset be the number of objects before the first thing we chose.
-          if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the
-          number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing
-          we choose. Let the multiplicity of the <m>n</m>th element of our multiset be
-          the number of objects after the last one we chose. Another way to say
-          the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We
-          choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put
-          plus signs. Then the multiplicity of element 1 is the number of ones
-          before the first plus sign, the multiplicity of element <m>n</m> is the number
-          of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of
-          element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the
-          <m>i</m>th plus sign.
-        </p>
-      </solution>
-      <p>
-        \item How many solutions are there in nonnegative integers to the
-        equation <m>x_1+x_2+ \cdots +x_m = r</m>, where <m>m</m> and <m>r</m> are constants?
-      </p>
-      <solution>
-        <p>
-          We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a
-          multiset chosen from among <m>m</m> things. The total number of elements of
-          the multiset will be
-          <m>r</m>. Thus we have <m>m+r-1\choose r</m> solutions.
-        </p>
-      </solution>
-    </problem>
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            Your answer in the previous problem should be expressible as a
+            binomial coefficient. Since a binomial coefficient counts subsets, find
+            a bijection between subsets of something and multisets chosen from a set
+            <m>S</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Note that <m>{n+k-1\choose k} = {n+k-1 \choose n-1}</m>. We will
+            show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m>
+            things and multisets. Namely, take <m>n+k-1</m> objects and line them up in
+            a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of
+            our multiset be the number of objects before the first thing we chose.
+            if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the
+            number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing
+            we choose. Let the multiplicity of the <m>n</m>th element of our multiset be
+            the number of objects after the last one we chose. Another way to say
+            the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We
+            choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put
+            plus signs. Then the multiplicity of element 1 is the number of ones
+            before the first plus sign, the multiplicity of element <m>n</m> is the number
+            of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of
+            element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the
+            <m>i</m>th plus sign.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many solutions are there in nonnegative integers to the
+            equation <m>x_1+x_2+ \cdots +x_m = r</m>, where <m>m</m> and <m>r</m> are constants?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a
+            multiset chosen from among <m>m</m> things. The total number of elements of
+            the multiset will be
+            <m>r</m>. Thus we have <m>m+r-1\choose r</m> solutions.
+          </p>
+        </solution>
+      </task>
+    </activity>
 
     <p>
       A more precise definition of a <em>multiset</em><index><main>multiset</main></index> chosen from

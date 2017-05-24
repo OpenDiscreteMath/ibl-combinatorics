@@ -25,7 +25,7 @@
     {x^i\over i!}</m>.
   </p>
 
-  <problem category="motivation">
+  <activity category="motivation">
     <statement>
       <p>
         Find the EGF (exponential generating function) for the sequence
@@ -39,35 +39,41 @@
         that the EGF for subsets of an <m>n</m>-element set is <m>e^{2x}</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="paintinglightpoles" category="motivation">
-    <statement>
-      <p>
-        Find the EGF (exponential generating function) for the number of
-        ways to paint the <m>n</m> streetlight poles that run along the north side of
-        Main Street in Anytown, USA using four colors.
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The number of ways to paint the streetlights is <m>4^n</m>,
-        so the EGF is <m>\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}</m>.
-      </p>
-    </solution>
-    <p>
-      \item For what sequence is <m>{e^x-e^{-x}\over 2} =\cosh x</m> the EGF
-      (exponential generating function)?
-    </p>
-    <solution>
-      <p>
-        For the sequence <m>1-(-1)^n\over 2</m> which, starting with <m>n=0</m> is
-        the alternating sequence 0,1,0,1<ellipsis /> of zeros and ones.
-      </p>
-    </solution>
-  </problem>
+  <activity xml:id="paintinglightpoles" category="motivation">
+    <task>
+      <statement>
+        <p>
+          Find the EGF (exponential generating function) for the number of
+          ways to paint the <m>n</m> streetlight poles that run along the north side of
+          Main Street in Anytown, USA using four colors.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number of ways to paint the streetlights is <m>4^n</m>,
+          so the EGF is <m>\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          For what sequence is <m>{e^x-e^{-x}\over 2} =\cosh x</m> the EGF
+          (exponential generating function)?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For the sequence <m>1-(-1)^n\over 2</m> which, starting with <m>n=0</m> is
+          the alternating sequence 0,1,0,1<ellipsis /> of zeros and ones.
+        </p>
+      </solution>
+    </task>
+  </activity>
 
-  <problem xml:id="ln1over1-x" category="essential for this or the next section">
+  <activity xml:id="ln1over1-x" category="essential for this or the next section">
     <statement>
       <p>
         For what sequence is <m>\ln({1\over 1-x})</m> the EGF? (<m>\ln (y)</m> stands for the natural logarithm of <m>y</m>.
@@ -108,9 +114,9 @@
         <m>a_n = (n-1)!</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="exponentialpermutations" category="essential for this or the next section">
+  <activity xml:id="exponentialpermutations" category="essential for this or the next section">
     <statement>
       <p>
         What is the EGF for the number of
@@ -122,9 +128,9 @@
         <m>1\over 1-x</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="exponentialroundtable" category="essential for this or the next section, and interesting">
+  <activity xml:id="exponentialroundtable" category="essential for this or the next section, and interesting">
     <statement>
       <p>
         What is the EGF for the number of ways
@@ -138,9 +144,9 @@
         By <xref ref="ln1over1-x">Problem</xref> the EGF is <m>\ln{1\over 1-x}</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="exponentialtennisparings" category="essential for this or the next section, and interesting">
+  <activity xml:id="exponentialtennisparings" category="essential for this or the next section, and interesting">
     <statement>
       <p>
         What is the EGF <m>\sum_{n=0}^\infty
@@ -160,9 +166,9 @@
         </me>
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem category="motivation">
+  <activity category="motivation">
     <statement>
       <p>
         What is the EGF for the sequence
@@ -183,9 +189,9 @@
         2(n-2)!}=x^2e^x/2</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="allonessequence" category="essential for this or the next section">
+  <activity xml:id="allonessequence" category="essential for this or the next section">
     <statement>
       <p>
         What is the EGF for the sequence
@@ -203,9 +209,9 @@
         <m>e^x</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem category="motivation">
+  <activity category="motivation">
     <statement>
       <p>
         What is the EGF for the number of ways
@@ -219,9 +225,9 @@
         <m>1+x</m>, <m>x</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="oneblockpartitions" category="essential for this or the next section">
+  <activity xml:id="oneblockpartitions" category="essential for this or the next section">
     <statement>
       <p>
         What is the EGF for the number of partitions of a
@@ -235,9 +241,9 @@
         <m>e^x-1</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 
-  <problem xml:id="exponentialbookshelf" category="essential for this or the next section">
+  <activity xml:id="exponentialbookshelf" category="essential for this or the next section">
     <statement>
       <p>
         What is the EGF for the number of ways
@@ -254,5 +260,5 @@
         k!} = (1-x)^{-n}</m>.
       </p>
     </solution>
-  </problem>
+  </activity>
 </section>

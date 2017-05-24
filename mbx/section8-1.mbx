@@ -13,53 +13,56 @@
       principle of mathematical induction.
     </p>
 
-    <problem xml:id="subsetsbysmallestcounterexample">
+    <activity xml:id="subsetsbysmallestcounterexample">
       <statement>
-        <ol>
-          <li>
-            <p>
-              Write down a list of the subsets of <m>\{ 1, 2 \}</m>.
-              Don't forget the empty set! Group the sets containing containing 2
-              separately from the others.
-            </statement>
-            <solution>
-              <p>
-                <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>.
-              </p>
-            </solution>
+      <task>
+        <statement>
+          <p>
+            Write down a list of the subsets of <m>\{ 1, 2 \}</m>.
+            Don't forget the empty set! Group the sets containing containing 2
+            separately from the others.
+          </statement>
+        </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>.
           </p>
-        </li>
-
-        <li>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             Write down a list of the subsets of <m>\{ 1, 2, 3 \}</m>. Group the sets
              containing 3 separately from the others.
-            <solution>
-              <p>
-                <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>, <m>\{3\}</m>,
-                <m>\{1,3\}</m>, <m>\{2,3\}</m>, <m>\{1,2,3\}</m>.
-              </p>
-            </solution>
           </p>
-        </li>
-
-        <li>
+        </statement>
+        <solution>
+          <p>
+            <m>\emptyset</m>, <m>\{1\}</m>, <m>\{2\}</m>, <m>\{1, 2\}</m>, <m>\{3\}</m>,
+            <m>\{1,3\}</m>, <m>\{2,3\}</m>, <m>\{1,2,3\}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             Look for a natural way to match up the subsets containing 2 in
             Part (a) with those not containing 2. Look for a way to match up
             the subsets containing 3 in Part (b) containing 3 with those not
             containing 3.
-            <solution>
-              <p>
-                Adjoin <m>2</m> to each subset not containing <m>2</m> and you get each set
-                containing 2. Adjoin 3 to each subset not containing 3, and you get each
-                subset containing 3.
-              </p>
-            </solution>
           </p>
-        </li>
-
-        <li>
+        </statement>
+        <solution>
+          <p>
+            Adjoin <m>2</m> to each subset not containing <m>2</m> and you get each set
+            containing 2. Adjoin 3 to each subset not containing 3, and you get each
+            subset containing 3.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             On the basis of the previous part, you should be able to find a
             bijection between the collection of subsets of <m>\{1, 2, \ldots , n \}</m>
@@ -72,19 +75,20 @@
             subsets of
             <m>\{ 1, 2, \ldots , n \}</m> containing
             <m>n</m> equals the number of subsets of <m>\{ 1, 2, \ldots, n-1 \}</m>.
-            <solution>
-              <p>
-                If we adjoin <m>n</m> to the subsets not containing <m>n</m> we get the
-                subsets containing <m>n</m>. This is a bijection because if we start with two
-                different sets, adjoining <m>n</m> to them can't make them the same, and every
-                subset <m>S</m> containing <m>n</m> must arise in this way from the set <m>S-\{n\}</m> not
-                containing <m>n</m>.
-              </p>
-            </solution>
           </p>
-        </li>
-
-        <li>
+        </statement>
+        <solution>
+          <p>
+            If we adjoin <m>n</m> to the subsets not containing <m>n</m> we get the
+            subsets containing <m>n</m>. This is a bijection because if we start with two
+            different sets, adjoining <m>n</m> to them can't make them the same, and every
+            subset <m>S</m> containing <m>n</m> must arise in this way from the set <m>S-\{n\}</m> not
+            containing <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             Parts (a) and (b) suggest
             strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
@@ -112,22 +116,22 @@
             Since this assumption has led us to a contradiction, it must be false.
             What can you now conclude about the statement ``for every nonnegative
             integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
-            <solution>
-              <p>
-                We know that the number of subsets of a <m>(k-1)</m>-element set is
-                <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
-                <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
-                k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
-                subsets that do contain <m>k</m> equals the number that don't, so the number
-                that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
-                number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
-                conclude that the statement ``for every nonnegative integer <m>n</m>, an
-                <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
-              </p>
-            </solution>
           </p>
-        </li>
-      </ol>
+        </statement>
+        <solution>
+          <p>
+            We know that the number of subsets of a <m>(k-1)</m>-element set is
+            <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
+            <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
+            k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
+            subsets that do contain <m>k</m> equals the number that don't, so the number
+            that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
+            number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
+            conclude that the statement ``for every nonnegative integer <m>n</m>, an
+            <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
+          </p>
+        </solution>
+      </task>
       <p>
         \item The expression
         <me>
@@ -159,7 +163,7 @@
           true for all positive integers <m>n</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       In <xref ref="subsetsbysmallestcounterexample">Problems</xref> and <xref ref="sumodd"></xref> our
@@ -298,140 +302,154 @@
       assume <m>k>0</m>.
     </p>
 
-    <problem>
+    <activity>
       <statement>
         <p>
           Use mathematical induction to prove your formula from
           <xref ref="sumodd">Problem</xref>.
         </p>
       </statement>
-    </problem>
+    </activity>
   </subsection>
 
   <subsection>
     <title>Proving algebraic statements by induction</title>
-    <problem>
-      <statement>
-        <p>
-          Use mathematical induction to prove the well-known formula that for
-          all positive integers <m>n</m>,
-          <me>
-            1+2 + \cdots +n = {n(n+1)\over 2}.
-          </me>
-        </p>
-      </statement>
-      <solution>
-        <p>
-          When <m>n=0</m>, <m>0=0(0+1)/2</m>, so our formula holds. Now suppose
-          that<m>k>0</m> and that our formula holds when <m>n=k-1</m>, so that
-          <m>1+2+\cdots+k-1=(k-1)k/2</m>. Add <m>k</m> to both sides of this equation to get
-          <md>
-            <mrow>1+2+\cdots+(k-1)+k\amp =\amp  (k-1)k/2 +k</mrow>
-            <mrow>\amp =\amp  k^2/2-k/2+k</mrow>
-            <mrow>\amp =\amp 
-            k^2/2+k/2</mrow>
-            <mrow>\amp =\amp k(k+1)/2.</mrow>
-          </md>
-        </p>
+    <activity>
+      <task>
+        <statement>
+          <p>
+            Use mathematical induction to prove the well-known formula that for
+            all positive integers <m>n</m>,
+            <me>
+              1+2 + \cdots +n = {n(n+1)\over 2}.
+            </me>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            When <m>n=0</m>, <m>0=0(0+1)/2</m>, so our formula holds. Now suppose
+            that<m>k>0</m> and that our formula holds when <m>n=k-1</m>, so that
+            <m>1+2+\cdots+k-1=(k-1)k/2</m>. Add <m>k</m> to both sides of this equation to get
+            <md>
+              <mrow>1+2+\cdots+(k-1)+k\amp =\amp  (k-1)k/2 +k</mrow>
+              <mrow>\amp =\amp  k^2/2-k/2+k</mrow>
+              <mrow>\amp =\amp 
+              k^2/2+k/2</mrow>
+              <mrow>\amp =\amp k(k+1)/2.</mrow>
+            </md>
+          </p>
 
-        <p>
-          Thus the truth of our formula for <m>n=k-1</m> implies its
-          truth for <m>n=k</m>. Therefore by the principle of mathematical induction, our
-          formula holds for all nonnegative integers <m>n</m>.
-        </p>
-      </solution>
-      <p>
-        \item Experiment with various values of <m>n</m> in the sum
-        <me>
-          {1\over 1\cdot2}+{1\over 2\cdot3} + {1\over3\cdot
-          4}+\cdots+{1\over n\cdot (n+1)} = \sum_{i=1}^n {1\over i\cdot(i+1)}.
-        </me>
-      </p>
+          <p>
+            Thus the truth of our formula for <m>n=k-1</m> implies its
+            truth for <m>n=k</m>. Therefore by the principle of mathematical induction, our
+            formula holds for all nonnegative integers <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Experiment with various values of <m>n</m> in the sum
+            <me>
+              {1\over 1\cdot2}+{1\over 2\cdot3} + {1\over3\cdot
+              4}+\cdots+{1\over n\cdot (n+1)} = \sum_{i=1}^n {1\over i\cdot(i+1)}.
+            </me>
+          </p>
 
-      <p>
-        Guess a formula for this sum and prove your guess is correct by induction.
-      </p>
-      <solution>
-        <p>
-          We guess the formula
-          <me>
-            \sum_{i=1}^n{1\over i(i+1)} = {n\over
-            n+1}.
-          </me>
-        </p>
+          <p>
+            Guess a formula for this sum and prove your guess is correct by induction.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We guess the formula
+            <me>
+              \sum_{i=1}^n{1\over i(i+1)} = {n\over
+              n+1}.
+            </me>
+          </p>
 
-        <p>
-          When <m>n=1</m> this formula says that <m>{1\over 1\cdot2}={1\over 1\cdot
-          2}</m>, so our formula holds when <m>n=1</m>. Now assume that <m>k>1</m> and that our
-          formula holds when <m>n=k-1</m>. Then
-          <me>
-            \sum_{i=1}^{k-1} {1\over i(i+1)}= {k-1\over k}.
-          </me>
-        </p>
+          <p>
+            When <m>n=1</m> this formula says that <m>{1\over 1\cdot2}={1\over 1\cdot
+            2}</m>, so our formula holds when <m>n=1</m>. Now assume that <m>k>1</m> and that our
+            formula holds when <m>n=k-1</m>. Then
+            <me>
+              \sum_{i=1}^{k-1} {1\over i(i+1)}= {k-1\over k}.
+            </me>
+          </p>
 
-        <p>
-          Adding <m>1\over k(k+1)</m> to both sides of this equation gives us
-          <md>
-            <mrow>\sum_{i=1}^{k-1} {1\over i(i+1)}+{1\over k(k+1)} \amp =\amp  {k-1\over k}+{1\over
-            k(k+1)}</mrow>
-            <mrow>\sum_{i=1}^k {1\over i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+{1\over k(k+1)}</mrow>
-            <mrow>\amp =\amp {k^2 -1 +1\over k(k+1)}</mrow>
-            <mrow>\amp =\amp  {k\over k+1}.</mrow>
-          </md>
-        </p>
+          <p>
+            Adding <m>1\over k(k+1)</m> to both sides of this equation gives us
+            <md>
+              <mrow>\sum_{i=1}^{k-1} {1\over i(i+1)}+{1\over k(k+1)} \amp =\amp  {k-1\over k}+{1\over
+              k(k+1)}</mrow>
+              <mrow>\sum_{i=1}^k {1\over i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+{1\over k(k+1)}</mrow>
+              <mrow>\amp =\amp {k^2 -1 +1\over k(k+1)}</mrow>
+              <mrow>\amp =\amp  {k\over k+1}.</mrow>
+            </md>
+          </p>
 
-        <p>
-          Thus whenever our formula is true with <m>n=k-1</m>, it is true with <m>n=k</m> as
-          well. Therefore by the principle of mathematical induction, our formula is
-          true for all positive integers.
-        </p>
-      </solution>
-      <p>
-        \item For large values of <m>n</m>, which is larger, <m>n^2</m> or <m>2^n</m>? Use
-        mathematical induction to prove that you are correct.
-      </p>
-      <solution>
-        <p>
-          We note that <m>0^2=0</m>, while <m>2^0=1</m>, that <m>1^2=1</m>, while
-          <m>2^1=2</m>, that <m>2^2=4</m>, while <m>2^2=4</m>, that <m>3^2=9</m> while <m>2^3=8</m>, that
-          <m>4^2=16</m> while <m>2^4=16</m>, and <m>5^2=25</m> while <m>2^5=32</m>. We suspect that
-          <m>2^n>n^2</m> for <m>n\ge 5</m>, so we try to prove this by induction. We have
-          already shown that <m>2^5>5^2</m>. Now suppose that <m>k>5</m> and
-          <m>2^{k-1}>(k-1)^2</m>. Then <m>2^k=2\cdot2^{k-1}>2(k-1)^2=2k^2-4k +1</m>. Now since
-          <m>k>5</m>, <m>k^2>5k</m>, so that <m>k^2-4k+1=k^2+k^2-4k+1>k^2+5k-4k+1=k^2+k+1>k^2</m>.
-          Thus for <m>k>5</m>, the statement <m>2^{k-1}>(k-1)^2</m> implies the statement
-          <m>2^k>k^2</m>. Therefore, by the principle of mathematical induction,
-          <m>2^n>n^2</m> for all <m>n\ge 5</m>.
-        </p>
-      </solution>
-      <p>
-        \item What is wrong with the following attempt at an inductive proof that
-        all integers in any consecutive set of <m>n</m> integers are equal for
-        every positive integer <m>n</m>? For an arbitrary integer <m>i</m>, all integers
-        from <m>i</m> to <m>i</m> are equal, so our statement is true when <m>n=1</m>. Now
-        suppose <m>k>1</m> and all integers in any consecutive set of <m>k-1</m> integers
-        are equal. Let <m>S</m> be a set of <m>k</m> consecutive integers. By the
-        inductive hypothesis, the first <m>k-1</m> elements of <m>S</m> are equal and the
-        last <m>k-1</m> elements of <m>S</m> are equal. Therefore
-        all the elements in the set <m>S</m> are equal. Thus by the principle of
-        mathematical induction, for every positive <m>n</m>, every <m>n</m> consecutive
-        integers are equal.
-      </p>
-      <solution>
-        <p>
-          One possible value of <m>k</m> that is greater than 1 is 2. When we
-          have a set <m>S</m> of two elements and we argue that the first <m>k-1</m> elements
-          are equal and the last <m>k-1</m> elements are equal, we cannot conclude from
-          those equalities that all elements of <m>S</m> are equal, because there is no
-          overlap among the first <m>k-1=1</m> elements of <m>S</m> and the last <m>k-1=1</m>
-          elements of <m>S</m>. Thus our inductive step does not cover the possibility
-          that <m>k=2</m>. Therefore our inductive step does not show that the truth of
-          our statement for <m>n=k-1</m> implies the truth of our statement for <m>n=k</m> for
-          <em>all</em> integers <m>n>1</m>. Therefore the principle of mathematical
-          induction does not apply.
-        </p>
-      </solution>
-    </problem>
+          <p>
+            Thus whenever our formula is true with <m>n=k-1</m>, it is true with <m>n=k</m> as
+            well. Therefore by the principle of mathematical induction, our formula is
+            true for all positive integers.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            For large values of <m>n</m>, which is larger, <m>n^2</m> or <m>2^n</m>? Use
+            mathematical induction to prove that you are correct.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We note that <m>0^2=0</m>, while <m>2^0=1</m>, that <m>1^2=1</m>, while
+            <m>2^1=2</m>, that <m>2^2=4</m>, while <m>2^2=4</m>, that <m>3^2=9</m> while <m>2^3=8</m>, that
+            <m>4^2=16</m> while <m>2^4=16</m>, and <m>5^2=25</m> while <m>2^5=32</m>. We suspect that
+            <m>2^n>n^2</m> for <m>n\ge 5</m>, so we try to prove this by induction. We have
+            already shown that <m>2^5>5^2</m>. Now suppose that <m>k>5</m> and
+            <m>2^{k-1}>(k-1)^2</m>. Then <m>2^k=2\cdot2^{k-1}>2(k-1)^2=2k^2-4k +1</m>. Now since
+            <m>k>5</m>, <m>k^2>5k</m>, so that <m>k^2-4k+1=k^2+k^2-4k+1>k^2+5k-4k+1=k^2+k+1>k^2</m>.
+            Thus for <m>k>5</m>, the statement <m>2^{k-1}>(k-1)^2</m> implies the statement
+            <m>2^k>k^2</m>. Therefore, by the principle of mathematical induction,
+            <m>2^n>n^2</m> for all <m>n\ge 5</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is wrong with the following attempt at an inductive proof that
+            all integers in any consecutive set of <m>n</m> integers are equal for
+            every positive integer <m>n</m>? For an arbitrary integer <m>i</m>, all integers
+            from <m>i</m> to <m>i</m> are equal, so our statement is true when <m>n=1</m>. Now
+            suppose <m>k>1</m> and all integers in any consecutive set of <m>k-1</m> integers
+            are equal. Let <m>S</m> be a set of <m>k</m> consecutive integers. By the
+            inductive hypothesis, the first <m>k-1</m> elements of <m>S</m> are equal and the
+            last <m>k-1</m> elements of <m>S</m> are equal. Therefore
+            all the elements in the set <m>S</m> are equal. Thus by the principle of
+            mathematical induction, for every positive <m>n</m>, every <m>n</m> consecutive
+            integers are equal.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            One possible value of <m>k</m> that is greater than 1 is 2. When we
+            have a set <m>S</m> of two elements and we argue that the first <m>k-1</m> elements
+            are equal and the last <m>k-1</m> elements are equal, we cannot conclude from
+            those equalities that all elements of <m>S</m> are equal, because there is no
+            overlap among the first <m>k-1=1</m> elements of <m>S</m> and the last <m>k-1=1</m>
+            elements of <m>S</m>. Thus our inductive step does not cover the possibility
+            that <m>k=2</m>. Therefore our inductive step does not show that the truth of
+            our statement for <m>n=k-1</m> implies the truth of our statement for <m>n=k</m> for
+            <em>all</em> integers <m>n>1</m>. Therefore the principle of mathematical
+            induction does not apply.
+          </p>
+        </solution>
+      </task>
+    </activity>
   </subsection>
 
   <subsection>
@@ -467,7 +485,7 @@
     then our statement is true for all integers <m>n\ge b</m>.
     </blockquote>
 
-    <problem>
+    <activity>
       <statement>
         <p>
           What postage do you think we can make with five and six cent
@@ -490,7 +508,7 @@
           <m>n</m> cents in postage.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       You probably see that we can make <m>n</m> cents worth of postage as long as
