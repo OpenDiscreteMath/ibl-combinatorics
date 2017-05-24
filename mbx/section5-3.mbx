@@ -19,86 +19,84 @@
     </p>
 
     <activity xml:id="substituteandsolve" category="essential">
-      <statement>
+      <p>
+        Suppose that <m>a_i=3a_{i-1} + 3^i</m>.
+      </p>
+      <task>
         <p>
-          Suppose that <m>a_i=3a_{i-1} + 3^i</m>.
-          <task>
-            <p>
-              Multiply both sides by <m>x^i</m> and
-              sum both the left hand side and right hand side from <m>i=1</m> to infinity. 
-              In the left-hand side use the fact that
-              <me>
-                \sum_{i=1}^\infty a_ix^i = (\sum_{i=0}^\infty x^i) -a_0
-              </me>
-              and in the
-              right hand side, use the fact that
-              <me>
-                \sum_{i=1}^\infty a_{i-1}x^i = x\sum_{i=1}^\infty a_ix^{i-1}
-                =x\sum_{j=0}^\infty a_jx^j =x\sum_{i=0}^\infty a_ix^i
-              </me>
-              (where we substituted
-              <m>j</m> for <m>i-1</m> to see explicitly how to change the limits of summation, a
-              surprisingly useful trick) to rewrite the equation in terms of the power series
-              <m>\sum_{i=0}^\infty a_ix^i</m>.  Solve the resulting equation for the power series
-              <m>\sum_{i=0}^\infty a_ix^i</m>.
-              \solution{
-              <md>
-                <mrow>\sum_{i=1}^\infty a_ix^i \amp =\amp 3\sum_{i=1}^\infty
-                a_{i-1}x^i+\sum_{i=1}^i3^ix^i</mrow>
-                <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
-                \sum_{i=0}^\infty 3^ix^i-3^0x^0</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
-                {1\over 1-3x}-1</mrow>
-                <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+{1\over 1-3x} -1</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+{1\over (1-3x)^2}</mrow>
-              </md>
-              }
-            </p>
-          </task>
-          <task>
-            <p>
-              Use the previous part to get a formula for <m>a_i</m> in terms of <m>a_0</m>.
-              \solution{
-              <md>
-                <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp  {a_0-1\over 1-3x} +
-                {1\over(1-3x)^2}</mrow>
-                <mrow>\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty {i+1\choose i}3^ix^i,</mrow>
-              </md>
-              which gives us <m>a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i</m>.}
-            </p>
-          </task>
-          <task>
-            <p>
-              Now suppose that <m>a_i=3a_{i-1} + 2^i</m>.  Repeat the previous two
-              steps for this recurrence relation.  (There is a way to do this part
-              using what you already know.  Later on we shall introduce yet another way
-              to deal with the kind of generating function that arises here.)
-              \solution{
-              <md>
-                <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3\sum_{i=1}^\infty
-                a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
-                +\sum_{i=0}^\infty (2x)^i -1</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +{1\over 1-2x} -1</mrow>
-                <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +{1\over 1-2x}-1</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+{1\over(1-2x)(1-3x)}</mrow>
-                <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
-                2^ix^i\sum_{j=0}^\infty 3^jx^j</mrow>
-              </md>
-              But<nbsp />  <m>\displaystyle\sum_{i=0}^\infty
-              2^ix^i\sum_{j=0}^\infty 3^jx^j=
-              \sum_{k=0}^\infty
-              \sum_{i=0}^k 2^i3^{k-i}x^k=
-              \sum_{k=0}^\infty3^kx^k
-              \sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left({2\over
-              3}\right)^{k+1}\over 1-{2\over 3}}3^kx^k=\sum_{k=0}^\infty
-              (3^{k+1}-2^{k+1})x^k</m>. Substituting this into the equation for
-              <m>\sum_{i=0}^\infty a_ix^i</m> gives us
-              <m>a_i =(a_0+2)3^i -2^{i+1}</m>.}
-            </p>
-          </task>
+          Multiply both sides by <m>x^i</m> and
+          sum both the left hand side and right hand side from <m>i=1</m> to infinity. 
+          In the left-hand side use the fact that
+          <me>
+            \sum_{i=1}^\infty a_ix^i = (\sum_{i=0}^\infty x^i) -a_0
+          </me>
+          and in the
+          right hand side, use the fact that
+          <me>
+            \sum_{i=1}^\infty a_{i-1}x^i = x\sum_{i=1}^\infty a_ix^{i-1}
+            =x\sum_{j=0}^\infty a_jx^j =x\sum_{i=0}^\infty a_ix^i
+          </me>
+          (where we substituted
+          <m>j</m> for <m>i-1</m> to see explicitly how to change the limits of summation, a
+          surprisingly useful trick) to rewrite the equation in terms of the power series
+          <m>\sum_{i=0}^\infty a_ix^i</m>.  Solve the resulting equation for the power series
+          <m>\sum_{i=0}^\infty a_ix^i</m>.
+          \solution{
+          <md>
+            <mrow>\sum_{i=1}^\infty a_ix^i \amp =\amp 3\sum_{i=1}^\infty
+            a_{i-1}x^i+\sum_{i=1}^i3^ix^i</mrow>
+            <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
+            \sum_{i=0}^\infty 3^ix^i-3^0x^0</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
+            {1\over 1-3x}-1</mrow>
+            <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+{1\over 1-3x} -1</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+{1\over (1-3x)^2}</mrow>
+          </md>
+          }
         </p>
-      </statement>
+      </task>
+      <task>
+        <p>
+          Use the previous part to get a formula for <m>a_i</m> in terms of <m>a_0</m>.
+          \solution{
+          <md>
+            <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp  {a_0-1\over 1-3x} +
+            {1\over(1-3x)^2}</mrow>
+            <mrow>\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty {i+1\choose i}3^ix^i,</mrow>
+          </md>
+          which gives us <m>a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i</m>.}
+        </p>
+      </task>
+      <task>
+        <p>
+          Now suppose that <m>a_i=3a_{i-1} + 2^i</m>.  Repeat the previous two
+          steps for this recurrence relation.  (There is a way to do this part
+          using what you already know.  Later on we shall introduce yet another way
+          to deal with the kind of generating function that arises here.)
+          \solution{
+          <md>
+            <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3\sum_{i=1}^\infty
+            a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
+            +\sum_{i=0}^\infty (2x)^i -1</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +{1\over 1-2x} -1</mrow>
+            <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +{1\over 1-2x}-1</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+{1\over(1-2x)(1-3x)}</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
+            2^ix^i\sum_{j=0}^\infty 3^jx^j</mrow>
+          </md>
+          But<nbsp />  <m>\displaystyle\sum_{i=0}^\infty
+          2^ix^i\sum_{j=0}^\infty 3^jx^j=
+          \sum_{k=0}^\infty
+          \sum_{i=0}^k 2^i3^{k-i}x^k=
+          \sum_{k=0}^\infty3^kx^k
+          \sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left({2\over
+          3}\right)^{k+1}\over 1-{2\over 3}}3^kx^k=\sum_{k=0}^\infty
+          (3^{k+1}-2^{k+1})x^k</m>. Substituting this into the equation for
+          <m>\sum_{i=0}^\infty a_ix^i</m> gives us
+          <m>a_i =(a_0+2)3^i -2^{i+1}</m>.}
+        </p>
+      </task>
     </activity>
 
     <activity category="motivation">
@@ -450,137 +448,135 @@
     </activity>
 
     <activity category="essential">
-      <statement>
-        <task>
-          <p>
-            Use the partial fractions decomposition you found in
-            <xref ref="factorFibonacci">Problem</xref> to write the generating function you found in
-            <xref ref="originalFibonacci">Problem</xref> in the form
-            <me>
-              \sum_{n=0}^\infty a_nx^i
-            </me>
-            and use this to give an explicit formula for <m>a_n</m>.  (Hint: once again it
-            will save a lot of tedious algebra if you use the symbols <m>r_1</m> and <m>r_2</m>
-            for the solutions as in <xref ref="fractionFibonacci">Problem</xref> and substitute
-            the actual values of the solutions once you have a formula for <m>a_n</m> in
-            terms of <m>r_1</m> and <m>r_2</m>.)
-            <md>
-              <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp {1\over 1-x-x^2}\rangle =\rangle -{1\over
-              x^2+x-1}</mrow>
-              <mrow>\amp =\amp {1\over\sqrt{5}}\cdot{1\over r_1-x} -{1\over\sqrt{5}}\cdot{1\over r_2-x}</mrow>
-              <mrow>\amp =\amp {1\over r_1\sqrt{5}}\cdot{1\over1-x/r_1} -{1\over r_2\sqrt{5}}\cdot{1\over
-              1-x/r_2}</mrow>
-              <mrow>\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left({x\over r_1}\right)^n
-              -{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left({x\over r_2}\right)^n</mrow>
-            </md>
-            This gives us that
-            <md>
-              <mrow>a_n\amp =\amp {1\over\sqrt{5}\cdot r_1^{n+1}}
-              +{1\over\sqrt{5}\cdot r_2^{n+1}}</mrow>
-              <mrow>\amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
-              +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
-              <mrow>\amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
-              \sqrt{5}\cdot
-              4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
-              <mrow>\amp =\amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
-              {1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
-            </md>
-          </p>
-        </task>
-        <task>
-          <p>
-            When we have
-            <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the
-            numbers
-            <m>a_n</m> are called <em>Fibonacci Numbers</em><index><main>Fibonacci numbers</main></index>.  Use
-            either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>. 
-            Are you amazed that your general formula produces integers, or for that
-            matter produces rational numbers?  Why does the recurrence equation tell
-            you that the Fibonacci numbers are all integers?  
-            \solution{Using the recurrence, the Fibonacci numbers from <m>a_0</m> to <m>a_8</m> are
-            1, 1, 2, 3, 5, 8, 13, 21, 34.  The recurrence says each term is the sum of the
-            two preceding terms, and since the first two terms are integers, all the sums
-            must be integers.}
-          </p>
-        </task>
-        <task>
-          <title>\ \importantarrow\ (\theenumii)</title>
-          <p>
-            Find an algebraic
-            explanation (not using the recurrence equation) of what happens to make the
-            square roots of five go away. Explain why there is a real number
-            <m>b</m> such that, for large values of <m>n</m>, the value of the
-            <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant
-            times
-            <m>b^n</m>.  (Find <m>b</m> and the constant.)
-            \solution{From the binomial theorem,
-            <md>
-              <mrow>\amp \amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over
-              2}\right)^{n+1}- {1\over \sqrt{5}}\left({1-\sqrt{5}
-              \over2}\right)^{n+1}</mrow>
-              <mrow>\amp =\amp 
-              {1\over2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}{n+1\choose
-              i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} {n+1\choose
-              i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
-              <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in
-              [n+1],\ i\mbox{\scriptsize~is odd} }{n+1\choose i}\left(\left(\sqrt{5}\right)^i
-              -(-1)^i\left(\sqrt{5}\right)^i\right)</mrow>
-              <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
-              odd} }  2{n+1\choose
-              i}\left(\sqrt{5}\right)^i</mrow>
-              <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
-              odd} }  {n+1\choose
-              i}\left(\sqrt{5}\right)^{i-1}</mrow>
-              <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
-              even} }  {n+1\choose
-              i+1}5^{i/2}</mrow>
-              <mrow>\amp =\amp {1\over 2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}{n+1\choose 2k+1}5^k,</mrow>
-            </md>
-            which makes it clear that <m>a_n</m> is at least a rational
-            number. It is not clear from this new formula why the result is always an
-            integer. Since
-            <m>\left|{1-\sqrt{5}\over 2}\right|\lt 1</m>,
-            <m>{1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}</m> approaches 0 as <m>n</m>
-            becomes large.  Therefore if we take <m>b</m> to be <m>\left({1+\sqrt{5}\over
-            2}\right)^n</m> and we take <m>c</m> to be <m>{1+\sqrt{5}\over 2\sqrt{5}}</m> then then
-            <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large.  In
-            particular, it is the nearest integer to <m>cb^n</m>.}
-          </p>
-        </task>
-        <task>
-          <title>\ \importantarrow\ <m>*</m>\ (\theenumii)</title>
-          <p>
-            As a challenge (which the author has not yet done), see if you can
-            find a way to show algebraically (not using the recurrence relation, but rather
-            the formula you get by removing the square roots of five) that the formula for
-            the Fibonacci numbers yields integers.
-            \solution{None is yet available.}
-          </p>
-        </task>
+      <task>
         <p>
-          \item Solve the recurrence <m>a_n= 4a_{n-1} - 4a_{n-2}</m>.
-          \solution{
+          Use the partial fractions decomposition you found in
+          <xref ref="factorFibonacci">Problem</xref> to write the generating function you found in
+          <xref ref="originalFibonacci">Problem</xref> in the form
+          <me>
+            \sum_{n=0}^\infty a_nx^i
+          </me>
+          and use this to give an explicit formula for <m>a_n</m>.  (Hint: once again it
+          will save a lot of tedious algebra if you use the symbols <m>r_1</m> and <m>r_2</m>
+          for the solutions as in <xref ref="fractionFibonacci">Problem</xref> and substitute
+          the actual values of the solutions once you have a formula for <m>a_n</m> in
+          terms of <m>r_1</m> and <m>r_2</m>.)
           <md>
-            <mrow>\sum_{n=2}^\infty a_nx^n \amp =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
-            4\sum_{n=2}^\infty a_{n-2}x^n</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
-            -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-            <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
-            a_0+a_1x-4a_0x</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-4x+4x^2)}</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-2x)^2}</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty {n+2-1\choose n}
-            2^nx^n</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
-            2^nx^n</mrow>
+            <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp {1\over 1-x-x^2}\rangle =\rangle -{1\over
+            x^2+x-1}</mrow>
+            <mrow>\amp =\amp {1\over\sqrt{5}}\cdot{1\over r_1-x} -{1\over\sqrt{5}}\cdot{1\over r_2-x}</mrow>
+            <mrow>\amp =\amp {1\over r_1\sqrt{5}}\cdot{1\over1-x/r_1} -{1\over r_2\sqrt{5}}\cdot{1\over
+            1-x/r_2}</mrow>
+            <mrow>\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left({x\over r_1}\right)^n
+            -{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left({x\over r_2}\right)^n</mrow>
+          </md>
+          This gives us that
+          <md>
+            <mrow>a_n\amp =\amp {1\over\sqrt{5}\cdot r_1^{n+1}}
+            +{1\over\sqrt{5}\cdot r_2^{n+1}}</mrow>
+            <mrow>\amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
+            +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
+            <mrow>\amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
+            \sqrt{5}\cdot
+            4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
+            <mrow>\amp =\amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+            {1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
           </md>
         </p>
-
+      </task>
+      <task>
         <p>
-          Thus <m>a_n=a_0(n+1)2^n
-          +(a_1-4a_0)n2^{n-1}=a_02^n+(a_1-2a_0)n2^{n-1}</m>.}
+          When we have
+          <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the
+          numbers
+          <m>a_n</m> are called <em>Fibonacci Numbers</em><index><main>Fibonacci numbers</main></index>.  Use
+          either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>. 
+          Are you amazed that your general formula produces integers, or for that
+          matter produces rational numbers?  Why does the recurrence equation tell
+          you that the Fibonacci numbers are all integers?  
+          \solution{Using the recurrence, the Fibonacci numbers from <m>a_0</m> to <m>a_8</m> are
+          1, 1, 2, 3, 5, 8, 13, 21, 34.  The recurrence says each term is the sum of the
+          two preceding terms, and since the first two terms are integers, all the sums
+          must be integers.}
         </p>
-      </statement>
+      </task>
+      <task>
+        <title>\ \importantarrow\ (\theenumii)</title>
+        <p>
+          Find an algebraic
+          explanation (not using the recurrence equation) of what happens to make the
+          square roots of five go away. Explain why there is a real number
+          <m>b</m> such that, for large values of <m>n</m>, the value of the
+          <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant
+          times
+          <m>b^n</m>.  (Find <m>b</m> and the constant.)
+          \solution{From the binomial theorem,
+          <md>
+            <mrow>\amp \amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over
+            2}\right)^{n+1}- {1\over \sqrt{5}}\left({1-\sqrt{5}
+            \over2}\right)^{n+1}</mrow>
+            <mrow>\amp =\amp 
+            {1\over2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}{n+1\choose
+            i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} {n+1\choose
+            i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
+            <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in
+            [n+1],\ i\mbox{\scriptsize~is odd} }{n+1\choose i}\left(\left(\sqrt{5}\right)^i
+            -(-1)^i\left(\sqrt{5}\right)^i\right)</mrow>
+            <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+            odd} }  2{n+1\choose
+            i}\left(\sqrt{5}\right)^i</mrow>
+            <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+            odd} }  {n+1\choose
+            i}\left(\sqrt{5}\right)^{i-1}</mrow>
+            <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+            even} }  {n+1\choose
+            i+1}5^{i/2}</mrow>
+            <mrow>\amp =\amp {1\over 2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}{n+1\choose 2k+1}5^k,</mrow>
+          </md>
+          which makes it clear that <m>a_n</m> is at least a rational
+          number. It is not clear from this new formula why the result is always an
+          integer. Since
+          <m>\left|{1-\sqrt{5}\over 2}\right|\lt 1</m>,
+          <m>{1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}</m> approaches 0 as <m>n</m>
+          becomes large.  Therefore if we take <m>b</m> to be <m>\left({1+\sqrt{5}\over
+          2}\right)^n</m> and we take <m>c</m> to be <m>{1+\sqrt{5}\over 2\sqrt{5}}</m> then then
+          <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large.  In
+          particular, it is the nearest integer to <m>cb^n</m>.}
+        </p>
+      </task>
+      <task>
+        <title>\ \importantarrow\ <m>*</m>\ (\theenumii)</title>
+        <p>
+          As a challenge (which the author has not yet done), see if you can
+          find a way to show algebraically (not using the recurrence relation, but rather
+          the formula you get by removing the square roots of five) that the formula for
+          the Fibonacci numbers yields integers.
+          \solution{None is yet available.}
+        </p>
+      </task>
+      <p>
+        \item Solve the recurrence <m>a_n= 4a_{n-1} - 4a_{n-2}</m>.
+        \solution{
+        <md>
+          <mrow>\sum_{n=2}^\infty a_nx^n \amp =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
+          4\sum_{n=2}^\infty a_{n-2}x^n</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
+          -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
+          <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
+          a_0+a_1x-4a_0x</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-4x+4x^2)}</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-2x)^2}</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty {n+2-1\choose n}
+          2^nx^n</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
+          2^nx^n</mrow>
+        </md>
+      </p>
+
+      <p>
+        Thus <m>a_n=a_0(n+1)2^n
+        +(a_1-4a_0)n2^{n-1}=a_02^n+(a_1-2a_0)n2^{n-1}</m>.}
+      </p>
     </activity>
   </subsection>
 

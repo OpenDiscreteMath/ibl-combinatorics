@@ -273,7 +273,6 @@
     </activity>
 
     <activity xml:id="BellNumberIntro" category="essential for this or the next section">
-      <statement>
       <p>
         (Relevant in <xref ref="expogenfun">Appendex</xref>.) The total number of
         partitions of a
@@ -282,66 +281,65 @@
         Number</main></index><index><main>partitions of a set</main><sub>number of</sub></index>. Thus
         <m>B(1)=1</m> and
         <m>B(2) =2</m>.
-        <task>
-          <statement>
-            <p>
-              Show, by explicitly exhibiting the partitions, that
-              <m>B(3)=5</m>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The five partitions of <m>[3]</m> are the sets <m>\{\{1\},
-              \{2\},\{3\}\}</m>,
-              <m>\{\{1,2\},\{3\}\}</m>, <m>\{\{1,3\},\{2\}\}</m>, <m>\{\{1\},\{2,3\}\}</m>, and
-              <m>\{\{1,2,3\}\}</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Find a recurrence that expresses <m>B(k)</m> in terms of <m>B(n)</m> for
-              <m>n\lt  k</m> and prove your formula correct in as many ways as you can.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              If we delete the block containing <m>k</m>, we get a partition of
-              a subset of <m>[k-1]</m>. Thus <m>B(k)</m> is the sum over all subsets of
-              <m>[k-1]</m> of the number of partitions of that subset. This gives us
-              <m>B(k)= \sum_{n=0}^{k-1}{k-1\choose n}B(n)</m>.
-            </p>
-
-            <p>
-              Alternatively, we can show by the same sort of argument that
-              <m>S(k,n)=\sum_{i=0}^{k-1} {k-1\choose i}S(i,n-1)</m> and then use the fact
-              that <m>B(k)=\sum_{n=0}^k S(k,n)</m> to get the recurrence for <m>B(k)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Find <m>B(k)</m> for <m>k=4,5,6</m>.
-            </p>
-          </statement>
-          <solution>
-            <me>
-              B(4) ={3\choose 0}B_0 +{3\choose1}B_1 +{3\choose2}B_2 +
-              {3\choose3}B_3=1 +3+3\cdot2 +5=15
-            </me>
-            <me>
-              B(5) = \sum_{n=0}^4 {4\choose n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
-            </me>
-            <me>
-              B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
-              +5\cdot 15 +52=203
-            </me>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            Show, by explicitly exhibiting the partitions, that
+            <m>B(3)=5</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The five partitions of <m>[3]</m> are the sets <m>\{\{1\},
+            \{2\},\{3\}\}</m>,
+            <m>\{\{1,2\},\{3\}\}</m>, <m>\{\{1,3\},\{2\}\}</m>, <m>\{\{1\},\{2,3\}\}</m>, and
+            <m>\{\{1,2,3\}\}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence that expresses <m>B(k)</m> in terms of <m>B(n)</m> for
+            <m>n\lt  k</m> and prove your formula correct in as many ways as you can.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we delete the block containing <m>k</m>, we get a partition of
+            a subset of <m>[k-1]</m>. Thus <m>B(k)</m> is the sum over all subsets of
+            <m>[k-1]</m> of the number of partitions of that subset. This gives us
+            <m>B(k)= \sum_{n=0}^{k-1}{k-1\choose n}B(n)</m>.
+          </p>
+
+          <p>
+            Alternatively, we can show by the same sort of argument that
+            <m>S(k,n)=\sum_{i=0}^{k-1} {k-1\choose i}S(i,n-1)</m> and then use the fact
+            that <m>B(k)=\sum_{n=0}^k S(k,n)</m> to get the recurrence for <m>B(k)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find <m>B(k)</m> for <m>k=4,5,6</m>.
+          </p>
+        </statement>
+        <solution>
+          <me>
+            B(4) ={3\choose 0}B_0 +{3\choose1}B_1 +{3\choose2}B_2 +
+            {3\choose3}B_3=1 +3+3\cdot2 +5=15
+          </me>
+          <me>
+            B(5) = \sum_{n=0}^4 {4\choose n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
+          </me>
+          <me>
+            B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
+            +5\cdot 15 +52=203
+          </me>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
@@ -823,7 +821,6 @@
     </p>
 
     <activity category="interesting">
-      <statement>
       <p>
         Explain why every rising factorial polynomial <m>x^{\overline{k}}</m>
         can be expressed in terms of the falling factorial polynomials
@@ -834,128 +831,127 @@
         <me>
           x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
         </me>
-        <task>
-          <statement>
-            <p>
-              Find a recurrence
-              for <m>b(k,n)</m>.
-            </p>
-          </statement>
-          <solution>
-            <md>
-              <mrow>\amp \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
-              x^{\overline{k-1}}(x+k-1)</mrow>
-              <mrow>\amp =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)</mrow>
-              <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)</mrow>
-              <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)</mrow>
-              <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
-              x^{\underline{n}}</mrow>
-              <mrow>\amp =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
-              (n+k-1)b(k-1,n)x^{\underline{n}}</mrow>
-            </md>
-            <p>
-              Thus if <m>n</m> is not 0 or <m>k</m>, we equate the coefficient of
-              <m>x^{\underline{n}}</m> in the first line and last line to get
-              <me>
-                b(k,n) =
-                b(k-1,n-1) + (n+k-1)b(k-1,n).
-              </me>
-            </p>
-
-            <p>
-              The trick of subtracting <m>n</m> and
-              adding <m>n</m> in the middle of the computation was the result of wanting
-              to mimic the way in which we increased the power on <m>x</m> in the
-              solution to <xref ref="Stirlingfirst">Problem</xref>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Find a formula for <m>b(k,n)</m> and prove the correctness of what you
-              say in as many ways as you can.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              We will answer the next part of the problem here! The
-              recurrence for <m>b(k,n)</m> is exactly the same as the recurrence for
-              <m>L(k,n)</m>. Further, <m>b(0,0)=1=L(0,0)</m>, <m>b(0,n) = 0=L(0,n)</m> for <m>n>0</m>,
-              and
-              <m>b(k,k)=L(k,k) =1</m>. Thus <m>b(k,n)</m> and <m>L(k,n)</m> are identical. This and
-              the formula from <xref ref="brokenpermutation">Problem</xref> gives one proof that
-              <m>b(k,n)=k!{k-1\choose n-1}/n!</m>.
-            </p>
-
-            <p>
-              A second proof that the change of basis coefficients are Lah numbers
-              goes as follows. <m>n^{\overline{k}}</m> counts the number of ordered
-              functions from a <m>k</m>-element set to an <m>n</m>-element set. One way to
-              determine such an ordered function is to take a broken permutation of
-              the <m>k</m>-element set into <m>n</m> or fewer parts, and then take a
-              one-to-one function from the parts to the <m>n</m>-element set. More
-              informally we assign the parts of the broken permutation to distinct
-              elements of the <m>n</m>-element set. If the broken permutation has <m>i</m>
-              parts, the number of ways to do this assignment is the number of
-              <m>i</m>-element permutations of an
-              <m>n</m>-element set, <m>n^{\underline{i}}</m>. Thus
-              <m>n^{\overline{k}}=\sum_{i=0}^n L(k,i)n^{\underline{i}}</m>. However we
-              can change the upper limit of the sum to <m>k</m> because
-              <m>L(k,i)</m> is zero when <m>i>k</m> and <m>n^{\underline{i}}</m> is zero when <m>i>n</m>.
-              Now we change
-              <m>n</m> to
-              <m>x</m> because we have a polynomial equality which is valid for infinitely
-              many of the values of the variable. This gives us
-              <m>x^{\overline{k}}=\sum_{i=0}^k L(k,i)x^{\underline{i}}</m>. Thus <m>b(k,i) =
-              L(k,i)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Is <m>b(k,n)</m> the same as any of the other families of numbers
-              (binomial coefficients, Bell numbers, Stirling numbers, Lah numbers,
-              etc.) we have studied?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              As we said in our solution to the previous part, <m>b(k,n)</m> is
-              the Lah number <m>L(k,n)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Say as much as you can (but say it precisely) about the change of
-              basis coefficients for expressing <m>x^{\underline{k}}</m> in terms of
-              <m>x^{\overline{n}}</m>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              There are several ways of finding this relationship, but the
-              most concise way is to observe that
-              <m>(-x)^{\underline{k}}=(-1)^kx^{\overline{k}}</m> and
-              <m>(-x)^{\overline{k}}= (-1)^k x^{\underline{k}}</m>. This lets us write
-              <md>
-                <mrow>(-x)^{\overline{k}}\amp =\amp \sum_{n=0}^k
-                b(k,n)(-x)^{\underline{n}}</mrow>
-                <mrow>(-1)^kx^{\underline{k}}\amp =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}</mrow>
-                <mrow>x^{\underline{k}}\amp =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.</mrow>
-              </md>
-            </p>
-
-            <p>
-              Therefore the change of basis coefficients are <m>(-1)^{n-k}b(k,n)</m>.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence
+            for <m>b(k,n)</m>.
+          </p>
+        </statement>
+        <solution>
+          <md>
+            <mrow>\amp \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
+            x^{\overline{k-1}}(x+k-1)</mrow>
+            <mrow>\amp =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
+            x^{\underline{n}}</mrow>
+            <mrow>\amp =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
+            (n+k-1)b(k-1,n)x^{\underline{n}}</mrow>
+          </md>
+          <p>
+            Thus if <m>n</m> is not 0 or <m>k</m>, we equate the coefficient of
+            <m>x^{\underline{n}}</m> in the first line and last line to get
+            <me>
+              b(k,n) =
+              b(k-1,n-1) + (n+k-1)b(k-1,n).
+            </me>
+          </p>
+
+          <p>
+            The trick of subtracting <m>n</m> and
+            adding <m>n</m> in the middle of the computation was the result of wanting
+            to mimic the way in which we increased the power on <m>x</m> in the
+            solution to <xref ref="Stirlingfirst">Problem</xref>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a formula for <m>b(k,n)</m> and prove the correctness of what you
+            say in as many ways as you can.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We will answer the next part of the problem here! The
+            recurrence for <m>b(k,n)</m> is exactly the same as the recurrence for
+            <m>L(k,n)</m>. Further, <m>b(0,0)=1=L(0,0)</m>, <m>b(0,n) = 0=L(0,n)</m> for <m>n>0</m>,
+            and
+            <m>b(k,k)=L(k,k) =1</m>. Thus <m>b(k,n)</m> and <m>L(k,n)</m> are identical. This and
+            the formula from <xref ref="brokenpermutation">Problem</xref> gives one proof that
+            <m>b(k,n)=k!{k-1\choose n-1}/n!</m>.
+          </p>
+
+          <p>
+            A second proof that the change of basis coefficients are Lah numbers
+            goes as follows. <m>n^{\overline{k}}</m> counts the number of ordered
+            functions from a <m>k</m>-element set to an <m>n</m>-element set. One way to
+            determine such an ordered function is to take a broken permutation of
+            the <m>k</m>-element set into <m>n</m> or fewer parts, and then take a
+            one-to-one function from the parts to the <m>n</m>-element set. More
+            informally we assign the parts of the broken permutation to distinct
+            elements of the <m>n</m>-element set. If the broken permutation has <m>i</m>
+            parts, the number of ways to do this assignment is the number of
+            <m>i</m>-element permutations of an
+            <m>n</m>-element set, <m>n^{\underline{i}}</m>. Thus
+            <m>n^{\overline{k}}=\sum_{i=0}^n L(k,i)n^{\underline{i}}</m>. However we
+            can change the upper limit of the sum to <m>k</m> because
+            <m>L(k,i)</m> is zero when <m>i>k</m> and <m>n^{\underline{i}}</m> is zero when <m>i>n</m>.
+            Now we change
+            <m>n</m> to
+            <m>x</m> because we have a polynomial equality which is valid for infinitely
+            many of the values of the variable. This gives us
+            <m>x^{\overline{k}}=\sum_{i=0}^k L(k,i)x^{\underline{i}}</m>. Thus <m>b(k,i) =
+            L(k,i)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Is <m>b(k,n)</m> the same as any of the other families of numbers
+            (binomial coefficients, Bell numbers, Stirling numbers, Lah numbers,
+            etc.) we have studied?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            As we said in our solution to the previous part, <m>b(k,n)</m> is
+            the Lah number <m>L(k,n)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Say as much as you can (but say it precisely) about the change of
+            basis coefficients for expressing <m>x^{\underline{k}}</m> in terms of
+            <m>x^{\overline{n}}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There are several ways of finding this relationship, but the
+            most concise way is to observe that
+            <m>(-x)^{\underline{k}}=(-1)^kx^{\overline{k}}</m> and
+            <m>(-x)^{\overline{k}}= (-1)^k x^{\underline{k}}</m>. This lets us write
+            <md>
+              <mrow>(-x)^{\overline{k}}\amp =\amp \sum_{n=0}^k
+              b(k,n)(-x)^{\underline{n}}</mrow>
+              <mrow>(-1)^kx^{\underline{k}}\amp =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}</mrow>
+              <mrow>x^{\underline{k}}\amp =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Therefore the change of basis coefficients are <m>(-1)^{n-k}b(k,n)</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
   </subsection>
 </section>

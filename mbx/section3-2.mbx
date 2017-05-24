@@ -92,26 +92,25 @@
     </p>
 
     <activity>
-      <statement>
       <p>
         Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
       </p>
       <solution>
-      <p>
-        We prove by induction on <m>n</m> that there is one and only one
-        value
-        <m>s_n</m> that satisfies both <m>s_n=2s_{n-1}</m> for <m>n>0</m> and <m>s_0=1</m>. First,
-        there is clearly one and only one value <m>s_0</m> that satisfies <m>s_0=1</m>. Now
-        assume that <m>k>0</m> and there is one and only one value <m>s_{k-1}</m> that satisfies
-        the two equations. Then <m>s_k=2s_{k-1}</m> is the one and only one value
-        that satisfies the two equations. Therefore by the principle of
-        mathematical induction, for all nonnegative integers <m>n</m> there is one and
-        only one value
-        <m>s_n</m> that satisfies the equations <m>s_0=1</m> and <m>s_k=2s_{k-1}</m> for all
-        <m>k>0</m>. (Note that since we were making a statement about <m>s_n</m> for all
-        nonnegative integers <m>n</m> it was not appropriate to use <m>n</m> as the dummy
-        variable in the recursive equation <m>s_k=2s_{k-1}</m>.)
-      </p>
+        <p>
+          We prove by induction on <m>n</m> that there is one and only one
+          value
+          <m>s_n</m> that satisfies both <m>s_n=2s_{n-1}</m> for <m>n>0</m> and <m>s_0=1</m>. First,
+          there is clearly one and only one value <m>s_0</m> that satisfies <m>s_0=1</m>. Now
+          assume that <m>k>0</m> and there is one and only one value <m>s_{k-1}</m> that satisfies
+          the two equations. Then <m>s_k=2s_{k-1}</m> is the one and only one value
+          that satisfies the two equations. Therefore by the principle of
+          mathematical induction, for all nonnegative integers <m>n</m> there is one and
+          only one value
+          <m>s_n</m> that satisfies the equations <m>s_0=1</m> and <m>s_k=2s_{k-1}</m> for all
+          <m>k>0</m>. (Note that since we were making a statement about <m>s_n</m> for all
+          nonnegative integers <m>n</m> it was not appropriate to use <m>n</m> as the dummy
+          variable in the recursive equation <m>s_k=2s_{k-1}</m>.)
+        </p>
       </solution>
       <p>
         \item A first-order recurrence relation is one which expresses <m>a_n</m> in
@@ -168,7 +167,7 @@
         <image width="73%" source="images/" />
         }
       </figure>
-      </statement>
+
     </activity>
 
     <activity xml:id="HanoiProblem" category="interesting">
@@ -476,57 +475,55 @@
     </p>
 
     <activity xml:id="sumgeometricseries">
-      <statement>
       <p>
         Do this problem only if your final answer (so far) to <xref ref="firstordlinconst">Problem</xref> contained the sum <m>\sum_{i=0}^{n-1}db^i</m>.
-        <task>
-          <statement>
-            <p>
-              Expand <m>(1-x)(1+x)</m>.  Expand <m>(1-x)(1+x+x^2)</m>. 
-              Expand <m>(1-x)(1+x+x^2+x^3)</m>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>(1-x)(1+x)=1-x^2</m>. <m>(1-x)(1+x+x^2)=1-x^3</m>.
-              <m>(1-x)(1+x+x^2+x^3)=1-x^4</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What do you expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be?  What
-              formula for <m>\sum_{i=0}^{n-1}db^i</m> does this give you?  Prove that you
-              are correct.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
-              <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
-              prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
-              also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
-              the formula holds when <m>n=k-1</m>, we may write
-              <md>
-                <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
-                <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
-                <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
-                <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
-              </md>
-            </p>
-
-            <p>
-              Since the truth of the formula for <m>n=k-1</m> implies its truth for <m>n=k</m>, by the
-              principle of mathematical induction the formula is true for all nonnegative
-              integers <m>n</m>. If
-              <m>b=1</m> we get the formula
-              <m>\sum_{i=0}^{n-1}db^i=dn</m>.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            Expand <m>(1-x)(1+x)</m>.  Expand <m>(1-x)(1+x+x^2)</m>. 
+            Expand <m>(1-x)(1+x+x^2+x^3)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(1-x)(1+x)=1-x^2</m>. <m>(1-x)(1+x+x^2)=1-x^3</m>.
+            <m>(1-x)(1+x+x^2+x^3)=1-x^4</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What do you expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be?  What
+            formula for <m>\sum_{i=0}^{n-1}db^i</m> does this give you?  Prove that you
+            are correct.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
+            <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
+            prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
+            also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
+            the formula holds when <m>n=k-1</m>, we may write
+            <md>
+              <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
+              <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
+              <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Since the truth of the formula for <m>n=k-1</m> implies its truth for <m>n=k</m>, by the
+            principle of mathematical induction the formula is true for all nonnegative
+            integers <m>n</m>. If
+            <m>b=1</m> we get the formula
+            <m>\sum_{i=0}^{n-1}db^i=dn</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <p>

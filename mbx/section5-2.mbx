@@ -612,45 +612,43 @@
   <subsection>
     <title>The extended binomial theorem and multisets</title>
     <activity category="essential">
-      <statement>
       <p>
         Suppose once again that <m>i</m> is an integer between 1 and <m>n</m>.
-        <task>
-          <statement>
-            <p>
-              What is the generating function in which the coefficient
-              of
-              <m>x^k</m> is the number of multisets of size <m>k</m> chosen from <m>\{i\}</m>?  This
-              series is an example of what is called an <em>infinite geometric
-              series</em>.<index><main>geometric series</main></index><index><main>series</main><sub>geometric</sub></index>
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>1+x+x^2+\cdots+x^i+\cdots=\sum_{i=0}^\infty x^i</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Express the generating function in which the coefficient of <m>x^k</m>
-              is the number of multisets chosen from <m>[n]</m> as a power of a power
-              series.  What does <xref ref="multiset">Problem</xref> (in which your answer could
-              be expressed as a binomial coefficient) tell you about what this
-              generating function equals?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.
-              <xref ref="multiset">Problem</xref> tells us that this equals
-              <m>\sum_{i=0}^\infty{n+i-1\choose i}x^i</m>.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            What is the generating function in which the coefficient
+            of
+            <m>x^k</m> is the number of multisets of size <m>k</m> chosen from <m>\{i\}</m>?  This
+            series is an example of what is called an <em>infinite geometric
+            series</em>.<index><main>geometric series</main></index><index><main>series</main><sub>geometric</sub></index>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>1+x+x^2+\cdots+x^i+\cdots=\sum_{i=0}^\infty x^i</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Express the generating function in which the coefficient of <m>x^k</m>
+            is the number of multisets chosen from <m>[n]</m> as a power of a power
+            series.  What does <xref ref="multiset">Problem</xref> (in which your answer could
+            be expressed as a binomial coefficient) tell you about what this
+            generating function equals?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.
+            <xref ref="multiset">Problem</xref> tells us that this equals
+            <m>\sum_{i=0}^\infty{n+i-1\choose i}x^i</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity category="motivation">
@@ -1138,7 +1136,6 @@
     </activity>
 
     <activity category="interesting">
-      <statement>
       <p>
         In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref>
         you gave the generating functions for, respectively, the number of
@@ -1305,43 +1302,42 @@
         </solution>
       </task>
       </task>
-      <li xml:id="qtorialformula" >
-
-      <p>
-      Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>. 
-      We read this simply as
-      <m>n</m>-sub-<m>q</m>.  Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots
-      [3]_q[2]_q[1]_q</m>.  We read this as <m>n</m> cue-torial, and refer to it as a
-      <m>q</m>-ary factorial.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index>  Show
-      that
-      <me>
-        \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
-      </me>
-      <solution>
+      <task xml:id="qtorialformula" >
         <p>
-          Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only
-          the partition with no parts sits in a rectangle of width or depth 0. But
-          <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q}
-          =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
-          <md>
-            <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
-            <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
-            +{1\over[n]!_q[m-1]!_q}\right)</mrow>
-            <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
-            [n]!_q[m]!_q}\right)</mrow>
-            <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
-            1+q+\cdots+q^{m-1}\right)</mrow>
-            <mrow>\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}</mrow>
-            <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
-          </md>
-        </p>
+        Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>. 
+        We read this simply as
+        <m>n</m>-sub-<m>q</m>.  Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots
+        [3]_q[2]_q[1]_q</m>.  We read this as <m>n</m> cue-torial, and refer to it as a
+        <m>q</m>-ary factorial.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index>  Show
+        that
+        <me>
+          \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
+        </me>
+        <solution>
+          <p>
+            Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only
+            the partition with no parts sits in a rectangle of width or depth 0. But
+            <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q}
+            =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
+            <md>
+              <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
+              <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
+              +{1\over[n]!_q[m-1]!_q}\right)</mrow>
+              <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
+              [n]!_q[m]!_q}\right)</mrow>
+              <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+              1+q+\cdots+q^{m-1}\right)</mrow>
+              <mrow>\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}</mrow>
+              <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
+            </md>
+          </p>
 
-        <p>
-          Thus <m>[m+n]!_q \over [m]!_q[n]!_q</m> satisfies our recurrence and so by the
-          principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
-          [m]!_q[n]!_q}.</m>
-        </p>
-      </solution>
+          <p>
+            Thus <m>[m+n]!_q \over [m]!_q[n]!_q</m> satisfies our recurrence and so by the
+            principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
+            [m]!_q[n]!_q}.</m>
+          </p>
+        </solution>
       </task>
       <task>
       <statement>
@@ -1371,16 +1367,15 @@
           </p>
         </solution>
       </task>
-      <li xml:id="partiii" >
-
-      <p>
-        <m>\displaystyle\lim_{q\rightarrow 1}
-        \qchoose{m+n}{n}</m>.
-        <solution>
-          <p>
-            <m>m+n\choose n</m>
-          </p>
-        </solution>
+      <task xml:id="partiii" >
+        <p>
+          <m>\displaystyle\lim_{q\rightarrow 1}
+          \qchoose{m+n}{n}</m>.
+          <solution>
+            <p>
+              <m>m+n\choose n</m>
+            </p>
+          </solution>
         </task>
       </p>
 
@@ -1650,7 +1645,6 @@
           </p>
         </solution>
       </task>
-      </statement>
     </activity>
   </subsection>
 </section>

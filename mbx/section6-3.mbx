@@ -485,32 +485,30 @@
           We effectively answered this question in our solution to <xref ref="polya2">Problem</xref>.
           In particular, there are three rotations of 180 degrees through the centers of opposite
           faces. The other kinds of group elements are as follows.
-          <ul>
-            <task>
-              <p>
-                the 90 and 270 degree rotations around an axis
-                through two faces, of which we have six.  Their cycle structure consists of a four-cycle
-                and two one-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                the 120 and 240 degree rotations around an axis connecting two diagonally opposite
-                vertices.  Their cycle structure consists of two three-cycles.  We have eight of these.
-              </p>
-            </task>
-            <task>
-              <p>
-                the 180 degree rotations around an axis connecting two opposite edges; their cycle
-                structure consists of three two-cycles.  We have six of these.
-              </p>
-            </task>
-            <task>
-              <p>
-                the identity, whose cycle structure is six one-cycles.
-              </p>
-            </task>
-          </ul>
+          <task>
+            <p>
+              the 90 and 270 degree rotations around an axis
+              through two faces, of which we have six.  Their cycle structure consists of a four-cycle
+              and two one-cycles.
+            </p>
+          </task>
+          <task>
+            <p>
+              the 120 and 240 degree rotations around an axis connecting two diagonally opposite
+              vertices.  Their cycle structure consists of two three-cycles.  We have eight of these.
+            </p>
+          </task>
+          <task>
+            <p>
+              the 180 degree rotations around an axis connecting two opposite edges; their cycle
+              structure consists of three two-cycles.  We have six of these.
+            </p>
+          </task>
+          <task>
+            <p>
+              the identity, whose cycle structure is six one-cycles.
+            </p>
+          </task>
         </p>
 
         <p>
@@ -704,107 +702,102 @@
     </activity>
 
     <activity xml:id="coloredsticks" category="interesting">
-      <statement>
+      <p>
+        We have red, green, and blue sticks all of the same length, with a dozen
+        sticks of each color. We are going to make the skeleton of a cube by taking eight
+        identical lumps of modeling clay and pushing three sticks into each lump so that the
+        lumps become the vertices of the cube. (Clearly we won't need all the sticks!) In
+        how many different ways could we make our cube? How many cubes have four edges of
+        each color? How many have two red, four green, and six blue
+        edges? For this problem we are interested in the action of the rotation group of the
+        cube on the edges. Now we think of the group elements as permutations of the edges and
+        analyze their cycle structure.
+      </p>
+      <task>
         <p>
-          We have red, green, and blue sticks all of the same length, with a dozen
-          sticks of each color. We are going to make the skeleton of a cube by taking eight
-          identical lumps of modeling clay and pushing three sticks into each lump so that the
-          lumps become the vertices of the cube. (Clearly we won't need all the sticks!) In
-          how many different ways could we make our cube? How many cubes have four edges of
-          each color? How many have two red, four green, and six blue
-          edges? For this problem we are interested in the action of the rotation group of the
-          cube on the edges. Now we think of the group elements as permutations of the edges and
-          analyze their cycle structure.
-          <ul>
-            <task>
-              <p>
-                The identity is a product of 12 one-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
-                product of three four-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 180 degree rotation around an axis perpendicular to two opposite faces is a
-                product of six two-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 180 degree rotation around an axis perpendicular to two opposite edges is a
-                product of five two-cycles and two one-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 120 degree rotation around an axis connecting two diagonally opposite vertices is
-                a product of four three-cycles.
-              </p>
-            </task>
-          </ul>
+          The identity is a product of 12 one-cycles.
         </p>
+      </task>
+      <task>
+        <p>
+          A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+          product of three four-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 180 degree rotation around an axis perpendicular to two opposite faces is a
+          product of six two-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 180 degree rotation around an axis perpendicular to two opposite edges is a
+          product of five two-cycles and two one-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 120 degree rotation around an axis connecting two diagonally opposite vertices is
+          a product of four three-cycles.
+        </p>
+      </task>
+      </p>
 
-        <p>
-          Thus the cycle index is
-          <me>
-            {1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
-          </me>
-        </p>
+      <p>
+        Thus the cycle index is
+        <me>
+          {1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
+        </me>
+      </p>
 
-        <p>
-          We substitute
-          the number three for each of the variables to get
-          <me>
-            {1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
-          </me>
-          ways to
-          make the cube. To compute the number of ways with four sticks of each color, we
-          need to apply the P&#xf3;lya-Redfield theorem. Substituting <m>R^i+B^i+G^i</m> for <m>z_i</m> in
-          the cycle index gives us
-        </p>
+      <p>
+        We substitute
+        the number three for each of the variables to get
+        <me>
+          {1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
+        </me>
+        ways to
+        make the cube. To compute the number of ways with four sticks of each color, we
+        need to apply the P&#xf3;lya-Redfield theorem. Substituting <m>R^i+B^i+G^i</m> for <m>z_i</m> in
+        the cycle index gives us
+      </p>
 
-        <p>
-          <m>{1\over
-          24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
-          +8(R^3+B^3+G^3)^4\Big)</m>.
-        </p>
+      <p>
+        <m>{1\over
+        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
+        +8(R^3+B^3+G^3)^4\Big)</m>.
+      </p>
 
-        <p>
-          The coefficient of <m>R^4B^4G^4</m> is
-          <md>
-            <mrow>{1\over
-            24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
-            6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
-            \right)\amp =\amp</mrow>
-            <mrow>{1\over
-            24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp</mrow>
-          </md>
-        </p>
+      <p>
+        The coefficient of <m>R^4B^4G^4</m> is
+        <md>
+          <mrow>{1\over
+          24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
+          6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
+          \right)\amp =\amp</mrow>
+          <mrow>{1\over
+          24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp</mrow>
+        </md>
+      </p>
 
-        <p>
-          The coefficient of <m>R^2B^4G^6</m> is
-          <md>
-            <mrow>{1\over 24}\left({12\choose2,4,6}
-            +3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
-            1,1,3}+{5\choose1,2,2}\right)\right)\amp =\amp</mrow>
-            <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
-            +{5!\over1!2!2!}\right)\right)=600.</mrow>
-          </md>
-        </p>
-      </statement>
+      <p>
+      The coefficient of <m>R^2B^4G^6</m> is
+      <md>
+        <mrow>{1\over 24}\left({12\choose2,4,6}
+        +3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
+        1,1,3}+{5\choose1,2,2}\right)\right)\amp =\amp</mrow>
+        <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
+        +{5!\over1!2!2!}\right)\right)=600.</mrow>
+      </md>
     </activity>
 
     <activity category="interesting">
-      <statement>
-        <p>
-          How many cubes can we make in <xref ref="coloredsticks">Problem</xref> if
-          the lumps of modelling clay can be any of four colors?
-        </p>
-        <solution>
+      <p>
+        How many cubes can we make in <xref ref="coloredsticks">Problem</xref> if
+        the lumps of modelling clay can be any of four colors?
+      </p>
+      <solution>
         <p>
           We can first consider all ways of coloring the vertices of the cube with the
           four colors; once those vertices are in place, the number of ways to put the sticks in is
@@ -812,37 +805,35 @@
           ways to choose the colors of the vertices and edges is the product of the number of
           ways to choose each. Thus we just need to consider the action of the rotation group
           of the cube on the vertices:
-          <ul>
-            <task>
-              <p>
-                The identity is the product of eight one-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
-                product of two four-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 180 degree rotation around an axis perpendicular to two opposite faces is a
-                product of four two-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 180 degree rotation around an axis joining two opposite edges is a product of four
-                two-cycles.
-              </p>
-            </task>
-            <task>
-              <p>
-                A 120 or 240 degree rotation around an axis through two diagonally opposite vertices
-                is a product of two three-cycles and two one-cycles.
-              </p>
-            </task>
-          </ul>
+          <task>
+            <p>
+              The identity is the product of eight one-cycles.
+            </p>
+          </task>
+          <task>
+            <p>
+              A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+              product of two four-cycles.
+            </p>
+          </task>
+          <task>
+            <p>
+              A 180 degree rotation around an axis perpendicular to two opposite faces is a
+              product of four two-cycles.
+            </p>
+          </task>
+          <task>
+            <p>
+              A 180 degree rotation around an axis joining two opposite edges is a product of four
+              two-cycles.
+            </p>
+          </task>
+          <task>
+            <p>
+              A 120 or 240 degree rotation around an axis through two diagonally opposite vertices
+              is a product of two three-cycles and two one-cycles.
+            </p>
+          </task>
         </p>
 
         <p>
@@ -863,15 +854,15 @@
           Thus we
           have <m>22815\cdot2916=66,528,540</m> possible colored cubes.
         </p>
-        </solution>
-        <figure xml:id="HexNet" >
-          <caption>A possible
-          computer network.</caption>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
-        </figure>
-      </statement>
+      </solution>
+      <figure xml:id="HexNet" >
+        <caption>A possible
+        computer network.</caption>
+        \mbox{
+        <image width="73%" source="images/" />
+        }
+      </figure>
+
     </activity>
 
     <activity category="interesting">
@@ -993,67 +984,65 @@
           on <m>[5]</m>. The cycle structure of a permutation <m>\sigma</m> on the two-element subsets of
           <m>[5]</m> will be determined by its cycle structure on <m>[5]</m>. The partitions of five and
           the cycle structures they give on two-element subsets are:
-          <ul>
-            <task>
-              <p>
-                <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
-                subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
-                one identity permutation.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>2^1 1^3</m> will fix the two element set in
-                the two cycle and each pair of the three elements outside for a total of four
-                one-cycles; each pair of an element in the two cycle and an element not will be in a
-                two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
-                has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
-                for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
-                such two-sets and thus four two-cycles, so such a permutation has four two cycles
-                and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
-                two-sets from the two one-element cycles of the original action; each other two-element
-                subset will be in a three cycle.  There are <m>{3\choose 2}+3\cdot2=9</m> such pairs, and so
-                there are three three-cycles of two-element subsets.  Thus such a permutation has one
-                one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
-                such permutations.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
-                the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
-                cycles,  and will have six two-sets in
-                six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
-                permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
-                two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>4^1 1^1</m> has a four-cycle of two-subsets
-                and one two-cycle of two-subsets from its own four-cycle and another four cycle of
-                pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
-                two one-cycles There are
-                <m>6{5\choose4}=30</m> such permutations.
-              </p>
-            </task>
-            <task>
-              <p>
-                A permutation with cycle structure <m>5^1</m> will have two five-cycles in its action on
-                two-sets.  There are <m>4!=24</m> such permutations.
-              </p>
-            </task>
-          </ul>
+          <task>
+            <p>
+              <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
+              subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
+              one identity permutation.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>2^1 1^3</m> will fix the two element set in
+              the two cycle and each pair of the three elements outside for a total of four
+              one-cycles; each pair of an element in the two cycle and an element not will be in a
+              two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
+              has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
+              for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
+              such two-sets and thus four two-cycles, so such a permutation has four two cycles
+              and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
+              two-sets from the two one-element cycles of the original action; each other two-element
+              subset will be in a three cycle.  There are <m>{3\choose 2}+3\cdot2=9</m> such pairs, and so
+              there are three three-cycles of two-element subsets.  Thus such a permutation has one
+              one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
+              such permutations.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
+              the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
+              cycles,  and will have six two-sets in
+              six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
+              permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
+              two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>4^1 1^1</m> has a four-cycle of two-subsets
+              and one two-cycle of two-subsets from its own four-cycle and another four cycle of
+              pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
+              two one-cycles There are
+              <m>6{5\choose4}=30</m> such permutations.
+            </p>
+          </task>
+          <task>
+            <p>
+              A permutation with cycle structure <m>5^1</m> will have two five-cycles in its action on
+              two-sets.  There are <m>4!=24</m> such permutations.
+            </p>
+          </task>
         </p>
 
         <p>

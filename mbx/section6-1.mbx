@@ -298,7 +298,6 @@
     </activity>
 
     <activity category="essential">
-      <statement>
       <task>
         <statement>
           <p>
@@ -397,7 +396,6 @@
           </p>
         </solution>
       </task>
-      </statement>
     </activity>
 
     <activity xml:id="dihedral1" category="essential">
@@ -1528,16 +1526,15 @@
     <activity category="essential">
       <task>
         <statement>
-          <p>
-            How many permutations in <m>S_n</m> may be written as a product of not
-            necessarily disjoint two cycles?
-          </p>
-        </statement>
+        <p>
+          How many permutations in <m>S_n</m> may be written as a product of not
+          necessarily disjoint two cycles?
+        </p>
         <solution>
-          <p>
-            All of them, because each cycle can be written as a product on
-            non-disjoint cycles.
-          </p>
+        <p>
+          All of them, because each cycle can be written as a product on
+          non-disjoint cycles.
+        </p>
         </solution>
       </task>
       <task>
@@ -1546,8 +1543,8 @@
             (May be time-consuming.) Consider the permutations of <m>\{1,2,3,4\}</m> which
             are
             <m>\iota</m> or have one of the forms <m>(i\ j\ k)</m> or <m>(i\ j)(h\ k)</m>, where <m>i</m>,
-            <m>j</m>, <m>k</m>, and <m>h</m> are distinct. Do these permutations form a subgroup of
-            the group <m>S_4</m>? How many of these permutations are there?
+            <m>j</m>, <m>k</m>, and <m>h</m> are distinct.  Do these permutations form a subgroup of
+            the group <m>S_4</m>?  How many of these permutations are there?
           </p>
         </statement>
         <solution>
@@ -1569,118 +1566,117 @@
           </p>
         </solution>
       </task>
+      </statement>
     </activity>
 
     <activity category="essential for this or the next section">
-      <statement>
       <p>
         The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
         defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
         <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
         cycles is the product of the signs of its cycles.<index><main>permutation</main><sub>sign
         of</sub></index><index><main>sign of a permutation</main></index>
-        <task>
-          <statement>
-            <p>
-              What happens to the sign of an <m>n</m>-cycle if you multiply it by a
-              2-cycle (which might or might not be disjoint from it)?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              If the <m>m</m>-cycle and 2-cycle are disjoint, then by definition, the sign
-              changes to the opposite value. If they are not disjoint, and the two cycle is <m>(i\
-              j)</m>, either
-              <m>i</m> or <m>j</m> or both are in the original cycle. Suppose that only <m>i</m> is in the cycle
-              (and the same argument works if only <m>j</m> is in the cycle), and the original cycle is
-              <m>(i\ i_2\ \ldots\ i_n)</m>. Then the product
-              <m>(i\ i_2\
-              \ldots\ i_n)(i\ j)</m> is
-              <m>(i\ j\ i_2\ \ldots\ i_n)</m>, and the product <m>(i\ j)(i\ i_2\ \ldots\ i_n)</m> is <m>(j\ i\
-              i_2\
-              \ldots\ i_n)</m>. Thus the sign changes to the opposite sign. Suppose that <m>i</m> and <m>j</m>
-              are both in the original cycle. Then <m>j= i_k</m> for some <m>k</m>. Then <m>(i\ i_2\ \ldots\
-              i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})</m>. If the
-              original sign was 1, then we started with an cycle on an odd number of entries and
-              so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed. It the
-              original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
-              of two cycles on an odd number of entries, which gives sign 1, or a product of two
-              cycles on an even number of entries, which gives us sign 1. Thus in every case, the
-              sign changes to the opposite sign.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What happens to the sign of a product of an <m>n</m>-cycle and a
-              disjoint <m>m</m>-cycle if you multiply it by a two cycle which is disjoint
-              from neither of the other two?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The product becomes an <m>m+n</m> cycle, and so if both cycles were on an even
-              number of entries or both were on an odd number, we now have an cycle on an even
-              number of entries, so its sign is -1, but previously the product had sign 1. Thus
-              the sign changes. If one of the original cycles was on an even number of entries
-              and one was on an odd number, we now have a cycle on an odd number of entries, so it
-              has sign 1, while the original product has sign -1. Thus the sign changes.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What happens to the sign of a permutation if you multiply it by a
-              2-cycle?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The cases we just analyzed cover all the possibilities, so the sign
-              changes.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
-              <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
-              correct.)
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>(-1)^k</m>. The proof is probably easiest by induction, for the sign of one
-              transposition is -1, and if we take a product of <m>i</m> transpositions and multiply by
-              one more transposition, the sign changes. Thus if the product of <m>i</m> transpositions
-              has sign <m>(-1)^i</m>, the product of <m>i+1</m> transpositions has sign <m>(-1)^{i+1}</m>, and so
-              by the principle of mathematical induction, the sign of a product of <m>k</m>
-              transpositions if
-              <m>(-1)^k</m> for all positive integers <m>k</m>. In fact, had we taken <m>\iota</m> for our base
-              case, we could have concluded the same result for all nonnegative integers.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Can you compute the sign of a product of two permutations from the
-              signs of the permutations?  Why or why not?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              You can compute it; it is the product of the signs. Just write them as
-              products of transpositions, multiply all those transpositions together and use the fact
-              that, for transpositions, the sign of the product is the product of the signs.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of an <m>n</m>-cycle if you multiply it by a
+            2-cycle (which might or might not be disjoint from it)?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If the <m>m</m>-cycle and 2-cycle are disjoint, then by definition, the sign
+            changes to the opposite value. If they are not disjoint, and the two cycle is <m>(i\
+            j)</m>, either
+            <m>i</m> or <m>j</m> or both are in the original cycle. Suppose that only <m>i</m> is in the cycle
+            (and the same argument works if only <m>j</m> is in the cycle), and the original cycle is
+            <m>(i\ i_2\ \ldots\ i_n)</m>. Then the product
+            <m>(i\ i_2\
+            \ldots\ i_n)(i\ j)</m> is
+            <m>(i\ j\ i_2\ \ldots\ i_n)</m>, and the product <m>(i\ j)(i\ i_2\ \ldots\ i_n)</m> is <m>(j\ i\
+            i_2\
+            \ldots\ i_n)</m>. Thus the sign changes to the opposite sign. Suppose that <m>i</m> and <m>j</m>
+            are both in the original cycle. Then <m>j= i_k</m> for some <m>k</m>. Then <m>(i\ i_2\ \ldots\
+            i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})</m>. If the
+            original sign was 1, then we started with an cycle on an odd number of entries and
+            so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed. It the
+            original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
+            of two cycles on an odd number of entries, which gives sign 1, or a product of two
+            cycles on an even number of entries, which gives us sign 1. Thus in every case, the
+            sign changes to the opposite sign.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of a product of an <m>n</m>-cycle and a
+            disjoint <m>m</m>-cycle if you multiply it by a two cycle which is disjoint
+            from neither of the other two?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The product becomes an <m>m+n</m> cycle, and so if both cycles were on an even
+            number of entries or both were on an odd number, we now have an cycle on an even
+            number of entries, so its sign is -1, but previously the product had sign 1. Thus
+            the sign changes. If one of the original cycles was on an even number of entries
+            and one was on an odd number, we now have a cycle on an odd number of entries, so it
+            has sign 1, while the original product has sign -1. Thus the sign changes.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of a permutation if you multiply it by a
+            2-cycle?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The cases we just analyzed cover all the possibilities, so the sign
+            changes.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
+            <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
+            correct.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(-1)^k</m>. The proof is probably easiest by induction, for the sign of one
+            transposition is -1, and if we take a product of <m>i</m> transpositions and multiply by
+            one more transposition, the sign changes. Thus if the product of <m>i</m> transpositions
+            has sign <m>(-1)^i</m>, the product of <m>i+1</m> transpositions has sign <m>(-1)^{i+1}</m>, and so
+            by the principle of mathematical induction, the sign of a product of <m>k</m>
+            transpositions if
+            <m>(-1)^k</m> for all positive integers <m>k</m>. In fact, had we taken <m>\iota</m> for our base
+            case, we could have concluded the same result for all nonnegative integers.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Can you compute the sign of a product of two permutations from the
+            signs of the permutations?  Why or why not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            You can compute it; it is the product of the signs. Just write them as
+            products of transpositions, multiply all those transpositions together and use the fact
+            that, for transpositions, the sign of the product is the product of the signs.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity category="essential for this or the next section">

@@ -93,7 +93,6 @@
     </activity>
 
     <activity category="motivation">
-      <statement>
       <p>
         A school play requires a ten dollar donation per person; the donation
         goes into the student activity fund. Assume that each person who comes to
@@ -103,66 +102,64 @@
         they arrive the teacher won't have to give anyone an IOU for change. Suppose
         <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
         bills.
-        <task>
-          <statement>
-            <p>
-              Describe a bijection between the set of sequences of tens and
-              twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
-              <m>(n,n)</m>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              For each ten dollar bill take a rightstep and for each twenty dollar
-              bill take an upstep (where rightstep and upstep have the hopefully natural
-              meaning). The assumption that there are an equal number of ten and twenty
-              dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
-              tens and twenties gives a lattice path and each lattice path corresponds to
-              such a sequence, so we have a bijection.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Describe a bijection between the set of sequences of tens and
-              twenties that people give the teacher and the set of diagonal lattice paths
-              from <m>(0,0)</m> and <m>(0,2n)</m>.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              For each ten dollar bill take an upstep and for each twenty dollar
-              bill take a downstep. Each sequence of tens and twenties will give us a
-              diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
-              from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
-              an equal number of tens and twenties, so we have a bijection.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              In each case, what is the geometric
-              interpretation of a sequence that does not require the teacher to give any
-              IOUs?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              In the first case a sequence that does not require the teacher to
-              give any IOUs will correspond to a lattice path that stays on or below the
-              line <m>y=x</m>, and in the second case such a sequence will correspond to a
-              diagonal lattice path that stays on or above the <m>x</m>-axis.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            Describe a bijection between the set of sequences of tens and
+            twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
+            <m>(n,n)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For each ten dollar bill take a rightstep and for each twenty dollar
+            bill take an upstep (where rightstep and upstep have the hopefully natural
+            meaning). The assumption that there are an equal number of ten and twenty
+            dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
+            tens and twenties gives a lattice path and each lattice path corresponds to
+            such a sequence, so we have a bijection.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Describe a bijection between the set of sequences of tens and
+            twenties that people give the teacher and the set of diagonal lattice paths
+            from <m>(0,0)</m> and <m>(0,2n)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For each ten dollar bill take an upstep and for each twenty dollar
+            bill take a downstep. Each sequence of tens and twenties will give us a
+            diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
+            from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
+            an equal number of tens and twenties, so we have a bijection.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In each case, what is the geometric
+            interpretation of a sequence that does not require the teacher to give any
+            IOUs?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In the first case a sequence that does not require the teacher to
+            give any IOUs will correspond to a lattice path that stays on or below the
+            line <m>y=x</m>, and in the second case such a sequence will correspond to a
+            diagonal lattice path that stays on or above the <m>x</m>-axis.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity category="essential for this or the next section, and interesting">
-      <statement>
       <p>
         Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
         inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
@@ -245,7 +242,6 @@
           </p>
         </solution>
       </task>
-      </statement>
     </activity>
 
     <p>
@@ -433,95 +429,95 @@
     </activity>
 
     <activity category="essential">
-      <statement>
       <p>
         When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
         sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
-        <task>
-          <statement>
-            <p>
-              If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
-              get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
-              the remaining
-              <m>n-i</m> of the factors and multiplying these choices together, then answer this
-              part of the problem and skip the next part.  Otherwise, do the next part
-              instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
-              and a <m>y</m> from
-              <m>n-i</m> terms?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The number of ways to choose an <m>x</m> from <m>i</m> of the
-              factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
-              factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
-              when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
-              expanding
-              <me>
-                (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
-              </me>
-              Once you apply the
-              commutative law to the individual terms you get, you will have a sum of terms
-              of the form
-              <me>
-                x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
-                y_{j_{n-i}}.
-              </me>
-              What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
-              how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
-              have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
-              j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
-              many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
-              <me>
-                (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
-              </me>
-              How many terms of the form
-              <m>x^{n-i}y^i</m> will you have?
-            </p>
-          </statement>
-          <solution>
-            <md>
-              <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
-              <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
-            </md>
-            <p>
-              When you substitute <m>x</m> for each <m>x_i</m> and
-              <m>y</m> for each
-              <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
-            </p>
+      </p>
+      <task>
+        <statement>
+          <p>
+            If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
+            get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
+            the remaining
+            <m>n-i</m> of the factors and multiplying these choices together, then answer this
+            part of the problem and skip the next part.  Otherwise, do the next part
+            instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
+            and a <m>y</m> from
+            <m>n-i</m> terms?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of ways to choose an <m>x</m> from <m>i</m> of the
+            factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
+            factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
+            when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
+            expanding
+            <me>
+              (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
+            </me>
+            Once you apply the
+            commutative law to the individual terms you get, you will have a sum of terms
+            of the form
+            <me>
+              x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
+              y_{j_{n-i}}.
+            </me>
+            What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
+            how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
+            have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
+            j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
+            many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
+            <me>
+              (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
+            </me>
+            How many terms of the form
+            <m>x^{n-i}y^i</m> will you have?
+          </p>
+        </statement>
+        <solution>
+          <md>
+            <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
+            <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
+          </md>
+          <p>
+            When you substitute <m>x</m> for each <m>x_i</m> and
+            <m>y</m> for each
+            <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
+          </p>
 
-            <p>
-              <m>\{k_1,k_2,\ldots, k_i\}\cup
-              \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
-              <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
-              choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
-              for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
-              will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
-              <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
-            </p>
-          </statement>
-          <solution>
-            <p>
-              We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
-              <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
-              <m>(x+y)^n</m> is <m>n\choose i</m>.
-            </p>
-          </solution>
-        </task>
+          <p>
+            <m>\{k_1,k_2,\ldots, k_i\}\cup
+            \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
+            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
+            choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
+            for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
+            will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
+            <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
+            <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
+            <m>(x+y)^n</m> is <m>n\choose i</m>.
+          </p>
+        </solution>
+      </task>
       </p>
 
       <p>
@@ -534,10 +530,8 @@
         </p>
       </solution>
       <p>
-        \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
-        {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
-      </p>
-      </statement>
+      \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+      {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
     </activity>
 
     <activity category="essential and interesting">

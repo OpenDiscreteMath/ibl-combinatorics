@@ -125,170 +125,168 @@
   </activity>
 
   <activity xml:id="Hora" category="interesting and difficult">
-    <statement>
+    <p>
+      Suppose that <m>n</m> people link arms in a folk-dance and dance in a
+      circle. Later on they let go and dance some more, after which they
+      link arms in a circle again. In how many ways can they link arms the
+      second time so that no-one is next to a person with whom he or she
+      linked arms before. \solution{We use the Principle of Inclusion and Exclusion. Property <m>P_i</m> will
+      be the property that person <m>i</m> links arms with someone previously to his or
+      her right. (Saying it is the person to the right gives us more control over
+      our formulas.) Given a subset <m>S</m> of the set <m>P</m> of all properties, the number
+      of ways for the people in that set to link arms with the people previously on
+      their right is the number of ways to arrange <m>n-|S|</m> strings of people around a
+      circle with strings of length more than 1 having two ways to arrange themselves.
+      (Once we have two or more people linked, another person can be added to this
+      string only at one end or not at all, because this person must have been to the
+      right of one of the people on an end of the string. However a string of length
+      two or more can unlink and then link in the opposite order, and each person will
+      still be linked to exactly the same people.) Thus <m>N_{\mbox{a} }(S)=
+      (n-|S|-1)!2^{m(S)}</m>, where <m>m(S)</m> is the number of strings of length more than
+      one determined by <m>S</m>. The number <m>m(S)</m> can be any number from 1 to <m>S</m>, so
+      long as
+      <m>S</m> is not too big; namely so long as <m>|S|\le \lfloor n/1\rfloor</m>. (This is
+      because if <m>m(S)=|S|</m>, then each person determined by a property in <m>S</m> must be
+      adjacent to a person not determined by a property in <m>S</m>.) In particular,
+      <m>N_{\mbox{a} }(S)</m> is not completely determined by the size of <m>S</m>, as in all our
+      other inclusion-exclusion problems. How do we compute <m>m(S)</m>? Let us call a
+      subset <m>R</m> of <m>S</m> a run if
+    </p>
+    <task>
       <p>
-        Suppose that <m>n</m> people link arms in a folk-dance and dance in a
-        circle. Later on they let go and dance some more, after which they
-        link arms in a circle again. In how many ways can they link arms the
-        second time so that no-one is next to a person with whom he or she
-        linked arms before. \solution{We use the Principle of Inclusion and Exclusion. Property <m>P_i</m> will
-        be the property that person <m>i</m> links arms with someone previously to his or
-        her right. (Saying it is the person to the right gives us more control over
-        our formulas.) Given a subset <m>S</m> of the set <m>P</m> of all properties, the number
-        of ways for the people in that set to link arms with the people previously on
-        their right is the number of ways to arrange <m>n-|S|</m> strings of people around a
-        circle with strings of length more than 1 having two ways to arrange themselves.
-        (Once we have two or more people linked, another person can be added to this
-        string only at one end or not at all, because this person must have been to the
-        right of one of the people on an end of the string. However a string of length
-        two or more can unlink and then link in the opposite order, and each person will
-        still be linked to exactly the same people.) Thus <m>N_{\mbox{a} }(S)=
-        (n-|S|-1)!2^{m(S)}</m>, where <m>m(S)</m> is the number of strings of length more than
-        one determined by <m>S</m>. The number <m>m(S)</m> can be any number from 1 to <m>S</m>, so
-        long as
-        <m>S</m> is not too big; namely so long as <m>|S|\le \lfloor n/1\rfloor</m>. (This is
-        because if <m>m(S)=|S|</m>, then each person determined by a property in <m>S</m> must be
-        adjacent to a person not determined by a property in <m>S</m>.) In particular,
-        <m>N_{\mbox{a} }(S)</m> is not completely determined by the size of <m>S</m>, as in all our
-        other inclusion-exclusion problems. How do we compute <m>m(S)</m>? Let us call a
-        subset <m>R</m> of <m>S</m> a run if
-        <task>
-          <p>
-            the people determined by <m>R</m> sit together in a
-            row in both seatings, and
-          </p>
-        </task>
-        <task>
-          <p>
-            no other person in <m>S</m> is in a row with these
-            people in both seatings.
-          </p>
-        </task>
+        the people determined by <m>R</m> sit together in a
+        row in both seatings, and
       </p>
+    </task>
+    <task>
+      <p>
+        no other person in <m>S</m> is in a row with these
+        people in both seatings.
+      </p>
+    </task>
+    </p>
 
-      <p>
-        Some runs might determine just one person, but a run could
-        also equal all of <m>S</m>. Each run will have one more person not in <m>S</m> who was
-        originally to the right of the person in the run who was rightmost in the first
-        seating, and so this person will have to sit in a row with the people in <m>R</m> in
-        the second seating as well. Thus the number <m>r</m> of runs in <m>S</m> is the number of
-        strings
-        <m>m(S)</m> that may be seated in two ways, and there are <m>n-|S|-r</m> people who do not
-        have to be seated with runs. Thus <m>N_{\mbox{a} }(S) = (n-|S|-1)!2^r</m>, because
-        the total number of strings of people (including strings of just one person) we
-        need to seat is <m>n-|S| -r</m>, and there are <m>(k-1)!</m> ways to arrange <m>k</m> objects
-        in a circle.. If we try to use the information we have so far to compute
-        <m>N_{\mbox{e} }(\emptyset)</m>, we get
-        <me>
-          N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}(-1)^{|S|}(n-|S|_1)!2^r
-          =\sum_{s=0}^n\sum_{r=1}^{|S|}N(s,r)(n-s-1)!2^r,
-        </me>
-        in which <m>N(s,r)</m> stands for
-        the number of property sets with size <m>s</m> and <m>r</m> runs.
-      </p>
+    <p>
+      Some runs might determine just one person, but a run could
+      also equal all of <m>S</m>. Each run will have one more person not in <m>S</m> who was
+      originally to the right of the person in the run who was rightmost in the first
+      seating, and so this person will have to sit in a row with the people in <m>R</m> in
+      the second seating as well. Thus the number <m>r</m> of runs in <m>S</m> is the number of
+      strings
+      <m>m(S)</m> that may be seated in two ways, and there are <m>n-|S|-r</m> people who do not
+      have to be seated with runs. Thus <m>N_{\mbox{a} }(S) = (n-|S|-1)!2^r</m>, because
+      the total number of strings of people (including strings of just one person) we
+      need to seat is <m>n-|S| -r</m>, and there are <m>(k-1)!</m> ways to arrange <m>k</m> objects
+      in a circle.. If we try to use the information we have so far to compute
+      <m>N_{\mbox{e} }(\emptyset)</m>, we get
+      <me>
+        N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}(-1)^{|S|}(n-|S|_1)!2^r
+        =\sum_{s=0}^n\sum_{r=1}^{|S|}N(s,r)(n-s-1)!2^r,
+      </me>
+      in which <m>N(s,r)</m> stands for
+      the number of property sets with size <m>s</m> and <m>r</m> runs.
+    </p>
 
-      <p>
-        Picking out runs in a circular arrangement adds a layer of difficulty, so to
-        compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m>
-        runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.
-        Imagine writing 1 through
-        <m>n</m> in a straight line, each integer occupying one unit of distance along the
-        line. We now place
-        <m>r</m> sticks whose lengths add to
-        <m>s</m> (each stick has positive integer length) along that line. Each stick
-        picks out a set of consecutive integers, as many as its length, so the
-        sticks together pick out <m>s</m> integers. In order to be sure the sticks
-        correspond to runs, we need to make sure they do not touch each other, so we
-        place <m>n-s</m> identical stones along the line too, making sure there is at
-        least one stone between any two sticks. The stones thus pick out the integers
-        not in <m>S</m>. The sticks are not quite identical, though the sticks of a given
-        length are. In other words, which lengths of sticks are in which places is
-        what matters. So the sticks give us a composition of <m>s</m>, a list of distinct
-        positive integers that add to <m>s</m>. We know there are <m>s-1\choose r-1</m> such
-        compositions. Once we have chosen an ordering for the sticks, we need to
-        distribute the stones among the sticks so that no two sticks are adjacent.
-        Since the stones are identical, we can do this by putting one stone between
-        each pair of sticks in our composition, and then distribute the remaining
-        <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks
-        and the two places to the left and right of all the sticks.. We can do this in
-        <me>
-          {r+1 + (n-s-r+1)-1\choose n-s-r+1}={n-s+1\choose n-s-r+1}={n-s+1\choose r}
-        </me>
-        ways. Thus there are
-        <m>{s-1\choose r-1}{n-s+1\choose r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
-        has
-        <m>r</m> runs.
-      </p>
+    <p>
+      Picking out runs in a circular arrangement adds a layer of difficulty, so to
+      compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m>
+      runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.
+      Imagine writing 1 through
+      <m>n</m> in a straight line, each integer occupying one unit of distance along the
+      line. We now place
+      <m>r</m> sticks whose lengths add to
+      <m>s</m> (each stick has positive integer length) along that line. Each stick
+      picks out a set of consecutive integers, as many as its length, so the
+      sticks together pick out <m>s</m> integers. In order to be sure the sticks
+      correspond to runs, we need to make sure they do not touch each other, so we
+      place <m>n-s</m> identical stones along the line too, making sure there is at
+      least one stone between any two sticks. The stones thus pick out the integers
+      not in <m>S</m>. The sticks are not quite identical, though the sticks of a given
+      length are. In other words, which lengths of sticks are in which places is
+      what matters. So the sticks give us a composition of <m>s</m>, a list of distinct
+      positive integers that add to <m>s</m>. We know there are <m>s-1\choose r-1</m> such
+      compositions. Once we have chosen an ordering for the sticks, we need to
+      distribute the stones among the sticks so that no two sticks are adjacent.
+      Since the stones are identical, we can do this by putting one stone between
+      each pair of sticks in our composition, and then distribute the remaining
+      <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks
+      and the two places to the left and right of all the sticks.. We can do this in
+      <me>
+        {r+1 + (n-s-r+1)-1\choose n-s-r+1}={n-s+1\choose n-s-r+1}={n-s+1\choose r}
+      </me>
+      ways. Thus there are
+      <m>{s-1\choose r-1}{n-s+1\choose r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
+      has
+      <m>r</m> runs.
+    </p>
 
-      <p>
-        Now we have to deal with the fact that our <m>n</m> people (who we have replaced
-        with the integers 1 through <m>n</m> in order) were arranged around a circle. That
-        means that a run is now a set of consecutive integers on the circle, where <m>n</m>
-        and 1 are considered consecutive. Recall that the set <m>S</m> is picked out by the
-        sticks. If we arrange 1 through
-        <m>n</m> around a circle in order, the set
-        <m>S</m> that originally had
-        <m>r</m> runs will have <m>r-1</m> runs if sticks covered both the first and last integer
-        (1 and <m>n</m>), but otherwise it will still have <m>n</m> runs. Thus the number of
-        subsets of <m>[n]</m> that have <m>n</m> runs when <m>1</m> through <m>n</m> are arranged in a
-        circle is the number of subsets of <m>[n]</m> with <m>r+1</m> runs that have both 1 and
-        <m>n</m> in <m>S</m> plus the number of subsets of <m>[n]</m> with <m>r</m> runs that do not have
-        both <m>1</m> and
-        <m>n</m> in <m>S</m>. To compute the number of subsets <m>S</m> that <em>do</em> contain both 1
-        and <m>n</m>, we compute the number of arrangements of <m>r</m> sticks and <m>n-s</m> stones
-        that do start and end with a stick; that means that after we choose our
-        composition into <m>r</m> parts to get our arrangement of sticks and place one stone
-        between each pair of previously adjacent sticks, we now place the remaining
-        <m>n-s-r+1</m> stones in the <m>r-1</m> places between previously adjacent sticks in
-        <me>
-          {r-1 + (n-s-r+1)-1\choose n-s-r+1}={n-s-1\choose n-s-r+1}={n-s-1\choose r-2}
-        </me>
-        ways. For the sticks and stones to determine a subset we must assign lengths to
-        the sticks; the number of ways to do this is, as above, <m>s-1\choose r-1</m>, the
-        number of compositions of <m>s</m> with <m>r</m> parts. Thus there are
-        <m>{s-1\choose r-1}{n-s-1\choose r-2}</m> subsets of
-        <m>[n]</m> that have
-        <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the
-        number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m>
-        this is
-        <m>{s-1\choose r}{n-s-1\choose r-1}</m>.
-      </p>
+    <p>
+      Now we have to deal with the fact that our <m>n</m> people (who we have replaced
+      with the integers 1 through <m>n</m> in order) were arranged around a circle. That
+      means that a run is now a set of consecutive integers on the circle, where <m>n</m>
+      and 1 are considered consecutive. Recall that the set <m>S</m> is picked out by the
+      sticks. If we arrange 1 through
+      <m>n</m> around a circle in order, the set
+      <m>S</m> that originally had
+      <m>r</m> runs will have <m>r-1</m> runs if sticks covered both the first and last integer
+      (1 and <m>n</m>), but otherwise it will still have <m>n</m> runs. Thus the number of
+      subsets of <m>[n]</m> that have <m>n</m> runs when <m>1</m> through <m>n</m> are arranged in a
+      circle is the number of subsets of <m>[n]</m> with <m>r+1</m> runs that have both 1 and
+      <m>n</m> in <m>S</m> plus the number of subsets of <m>[n]</m> with <m>r</m> runs that do not have
+      both <m>1</m> and
+      <m>n</m> in <m>S</m>. To compute the number of subsets <m>S</m> that <em>do</em> contain both 1
+      and <m>n</m>, we compute the number of arrangements of <m>r</m> sticks and <m>n-s</m> stones
+      that do start and end with a stick; that means that after we choose our
+      composition into <m>r</m> parts to get our arrangement of sticks and place one stone
+      between each pair of previously adjacent sticks, we now place the remaining
+      <m>n-s-r+1</m> stones in the <m>r-1</m> places between previously adjacent sticks in
+      <me>
+        {r-1 + (n-s-r+1)-1\choose n-s-r+1}={n-s-1\choose n-s-r+1}={n-s-1\choose r-2}
+      </me>
+      ways. For the sticks and stones to determine a subset we must assign lengths to
+      the sticks; the number of ways to do this is, as above, <m>s-1\choose r-1</m>, the
+      number of compositions of <m>s</m> with <m>r</m> parts. Thus there are
+      <m>{s-1\choose r-1}{n-s-1\choose r-2}</m> subsets of
+      <m>[n]</m> that have
+      <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the
+      number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m>
+      this is
+      <m>{s-1\choose r}{n-s-1\choose r-1}</m>.
+    </p>
 
-      <p>
-        On the other hand, the number of subsets of <m>[n]</m> that have <m>r</m> runs and do not
-        contain both <m>1</m> and <m>n</m> is the total number of subsets with <m>r</m> runs minus the
-        number that do contain both <m>1</m> and <m>n</m>; this is
-        <me>
-          {s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right).
-        </me>
-      </p>
+    <p>
+      On the other hand, the number of subsets of <m>[n]</m> that have <m>r</m> runs and do not
+      contain both <m>1</m> and <m>n</m> is the total number of subsets with <m>r</m> runs minus the
+      number that do contain both <m>1</m> and <m>n</m>; this is
+      <me>
+        {s-1\choose
+        r-1}\left({n-s+1\choose r}- {n-s-1\choose
+        r-2}\right).
+      </me>
+    </p>
 
-      <p>
-        This gives us
-        <me>
-          N(s,r) ={s-1\choose r}{n-s-1\choose r-1}+{s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right)
-        </me>
-        ways to choose an <m>s</m>-element subset of <m>[n]</m> that has <m>r</m> runs when <m>[n]</m> is
-        arranged around a circle. Thus there are
-      </p>
+    <p>
+      This gives us
+      <me>
+        N(s,r) ={s-1\choose r}{n-s-1\choose r-1}+{s-1\choose
+        r-1}\left({n-s+1\choose r}- {n-s-1\choose
+        r-2}\right)
+      </me>
+      ways to choose an <m>s</m>-element subset of <m>[n]</m> that has <m>r</m> runs when <m>[n]</m> is
+      arranged around a circle. Thus there are
+    </p>
 
-      <p>
-        <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[{s-1\choose
-        r}{n-s-1\choose r-1}+{s-1\choose r-1}\left({n-s+1\choose r}- {n-s-1\choose
-        r-2}\right)\right](n-s-1)!2^r</m>
-      </p>
+    <p>
+      <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[{s-1\choose
+      r}{n-s-1\choose r-1}+{s-1\choose r-1}\left({n-s+1\choose r}- {n-s-1\choose
+      r-2}\right)\right](n-s-1)!2^r</m>
+    </p>
 
-      <p>
-        ways for people to arrange themselves in the
-        second circle so that no-one is adjacent to anyone he or she was previously
-        adjacent to.
-        }
-      </p>
-    </statement>
+    <p>
+    ways for people to arrange themselves in the
+    second circle so that no-one is adjacent to anyone he or she was previously
+    adjacent to.
+    }
   </activity>
 
   <activity category="interesting and difficult">
@@ -347,76 +345,74 @@
   </activity>
 
   <activity category="motivation">
-    <statement>
-      <task>
-        <p>
-          In paying off a mortgage loan with initial amount A,
-          annual interest rate
-          <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence
-          describes the amount owed after <m>n</m> months of payments in terms of the
-          amount owed after <m>n-1</m> months?  Some technical details:  You make the
-          first payment after one month.  The amount of interest included in your
-          monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount
-          you owed immediately after making your last monthly payment.  
-          \solution{<m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.}
-        </p>
-      </task>
-      <task>
-        <p>
-          Find a
-          formula for the amount owed after <m>n</m> months.  
-          \solution{From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
-          <md>
-            <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
-            12})^n\over 1-(1+{.01p\over 12})}</mrow>
-            <mrow>\amp =\amp  \left(A-{1200m\over
-            p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
-          </md>
-          }
-        </p>
-      </task>
-      <task>
-        <p>
-          Find a formula for the
-          number of months needed to bring the amount owed to zero.  Another
-          technical point:  If you were to make the standard monthly payment <m>m</m> in
-          the last month, you might actually end up owing a negative amount of
-          money.  Therefore it is ok if the result of your formula for the number
-          of months needed gives a non-integer number of months.  The bank would
-          just round up to the next integer and adjust your payment so your balance
-          comes out to zero.
-          \solution{<m>\left(A-{1200m\over
-          p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the
-          equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking
-          logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log
-          1200m-\log (1200m-Ap)</m> and so <m>n={\log
-          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.}
-        </p>
-      </task>
-      <task>
-        <p>
-          What should the monthly payment be to pay off the loan over a period of 30
-          years?
-          \solution{<m>360={\log
-          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
-          solve for <m>m</m>, the monthly payment.  We need to chose some base for the
-          logarithm so we can write its inverse function; suppose we use logs to the base
-          10.  Then
-          <md>
-            <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
-            1200m-\log (1200m-Ap)</mrow>
-            <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
-            1200m/(1200m-Ap)}</mrow>
-            <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
-            <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
-            <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
-            <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
-            12})^{360}-1\right)}</mrow>
-          </md>
-          is our monthly payment.}
-        </p>
-      </task>
-    </statement>
+    <task>
+      <p>
+        In paying off a mortgage loan with initial amount A,
+        annual interest rate
+        <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence
+        describes the amount owed after <m>n</m> months of payments in terms of the
+        amount owed after <m>n-1</m> months?  Some technical details:  You make the
+        first payment after one month.  The amount of interest included in your
+        monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount
+        you owed immediately after making your last monthly payment.  
+        \solution{<m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.}
+      </p>
+    </task>
+    <task>
+      <p>
+        Find a
+        formula for the amount owed after <m>n</m> months.  
+        \solution{From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
+        <md>
+          <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
+          12})^n\over 1-(1+{.01p\over 12})}</mrow>
+          <mrow>\amp =\amp  \left(A-{1200m\over
+          p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
+        </md>
+        }
+      </p>
+    </task>
+    <task>
+      <p>
+        Find a formula for the
+        number of months needed to bring the amount owed to zero.  Another
+        technical point:  If you were to make the standard monthly payment <m>m</m> in
+        the last month, you might actually end up owing a negative amount of
+        money.  Therefore it is ok if the result of your formula for the number
+        of months needed gives a non-integer number of months.  The bank would
+        just round up to the next integer and adjust your payment so your balance
+        comes out to zero.
+        \solution{<m>\left(A-{1200m\over
+        p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the
+        equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking
+        logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log
+        1200m-\log (1200m-Ap)</m> and so <m>n={\log
+        1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.}
+      </p>
+    </task>
+    <task>
+      <p>
+        What should the monthly payment be to pay off the loan over a period of 30
+        years?
+        \solution{<m>360={\log
+        1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
+        solve for <m>m</m>, the monthly payment.  We need to chose some base for the
+        logarithm so we can write its inverse function; suppose we use logs to the base
+        10.  Then
+        <md>
+          <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
+          1200m-\log (1200m-Ap)</mrow>
+          <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
+          1200m/(1200m-Ap)}</mrow>
+          <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
+          <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
+          <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
+          <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
+          12})^{360}-1\right)}</mrow>
+        </md>
+        is our monthly payment.}
+      </p>
+    </task>
   </activity>
 
   <activity category="interesting">

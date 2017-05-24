@@ -53,33 +53,31 @@
     </figure>
 
     <activity category="essential">
-      <statement>
       <p>
-      In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
-      vertices and faces labelled. As with motions of the square, we let we let
-      <m>\varphi(x)</m> be the label of the place where vertex previously in
-      position
-      <m>x</m> is now.
-
-      <li xml:id="actsonparta" >
-
-      <p>
-      Write in two row-notation the permutation <m>\rho</m> of the vertices
-      that corresponds to rotating the cube 90 degrees around a vertical axis
-      through the faces <m>t</m> (for top) and <m>u</m> (for underneath).  (Rotate in a
-      right-handed fashion around this axis, meaning that vertex 6 goes to the
-      back and vertex 8 comes to the front.)  Write in two-row notation the
-      bijection
-      <m>\beta_{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of
-      <m>R</m>.
-      <solution>
-      <p>
-        <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
-        2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
-        \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp /><m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
-        \end{pmatrix}</m>
+        In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
+        vertices and faces labelled. As with motions of the square, we let we let
+        <m>\varphi(x)</m> be the label of the place where vertex previously in
+        position
+        <m>x</m> is now.
       </p>
-      </solution>
+      <task xml:id="actsonparta" >
+        <p>
+        Write in two row-notation the permutation <m>\rho</m> of the vertices
+        that corresponds to rotating the cube 90 degrees around a vertical axis
+        through the faces <m>t</m> (for top) and <m>u</m> (for underneath).  (Rotate in a
+        right-handed fashion around this axis, meaning that vertex 6 goes to the
+        back and vertex 8 comes to the front.)  Write in two-row notation the
+        bijection
+        <m>\beta_{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of
+        <m>R</m>.
+        <solution>
+          <p>
+            <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
+            2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
+            \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp /><m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
+            \end{pmatrix}</m>
+          </p>
+        </solution>
       </task>
       <task>
         <statement>
@@ -99,9 +97,8 @@
           </p>
         </solution>
       </task>
-      <li xml:id="cube2" >
-
-      <p>
+      <task xml:id="cube2" >
+        <p>
         Compute the two-row notation for <m>\rho\circ\varphi</m>, for
         <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection 
         <m>\beta_{\rho\circ\varphi}</m> of the faces that corresponds to the action of
@@ -132,9 +129,7 @@
             \end{pmatrix} =\beta_{\rho}\circ\beta_{\varphi}
           </me>
         </solution>
-        </task>
-      </p>
-      </statement>
+      </task>
     </activity>
 
     <activity category="essential and interesting">
@@ -179,77 +174,75 @@
     </p>
 
     <activity category="essential">
-      <statement>
       <p>
         Suppose that <m>\sigma</m> and <m>\varphi</m> are permutations in the group
         <m>R</m> of rigid motions of the cube. We have argued already that each rigid
         motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
         vertices on one face to the vertices on another face. Let
         <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
-        <task>
-          <statement>
-            <p>
-              What
-              are the vertices of the face
-              <m>F'</m> that
-              <m>F</m> is sent to by <m>\varphi</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>\varphi(h)</m>, <m>\varphi(i)</m>, <m>\varphi(j)</m>, <m>\varphi(k)</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What are the vertices of the face <m>F''</m>
-              that
-              <m>F'</m> is sent to by <m>\sigma</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>, <m>\sigma(\varphi(j))</m>,
-              <m>\sigma(\varphi(k))</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What are the vertices of the face <m>F'''</m>
-              that <m>F</m> is sent to by <m>\sigma\circ\varphi</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>(\sigma\circ\varphi)(h)=\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>,
-              <m>\sigma(\varphi(j))</m>,
-              <m>\sigma(\varphi(k))</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              How have you just shown
-              that the group
-              <m>R</m> acts on the faces?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              We have just shown that for each face <m>F</m>,
-              <m>\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)</m>,
-              so that <m>\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
-              \beta_{\varphi}</m>.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            What
+            are the vertices of the face
+            <m>F'</m> that
+            <m>F</m> is sent to by <m>\varphi</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\varphi(h)</m>, <m>\varphi(i)</m>, <m>\varphi(j)</m>, <m>\varphi(k)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What are the vertices of the face <m>F''</m>
+            that
+            <m>F'</m> is sent to by <m>\sigma</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>, <m>\sigma(\varphi(j))</m>,
+            <m>\sigma(\varphi(k))</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What are the vertices of the face <m>F'''</m>
+            that <m>F</m> is sent to by <m>\sigma\circ\varphi</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(\sigma\circ\varphi)(h)=\sigma(\varphi(h))</m>, <m>\sigma(\varphi(i))</m>,
+            <m>\sigma(\varphi(j))</m>,
+            <m>\sigma(\varphi(k))</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How have you just shown
+            that the group
+            <m>R</m> acts on the faces?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have just shown that for each face <m>F</m>,
+            <m>\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)</m>,
+            so that <m>\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
+            \beta_{\varphi}</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity xml:id="D_4on2-sets" category="essential">
@@ -1251,52 +1244,50 @@
   <subsection>
     <title>The Cauchy-Frobenius-Burnside Theorem</title>
     <activity xml:id="numbermultiorbits4" category="essential">
-      <statement>
       <p>
         In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
         that expresses the number of orbits in terms of the number of group
         elements fixing each element of <m>S</m>. It is often easier to find the
         number of elements fixed by a given group element than to find the number
         of group elements fixing an element of <m>S</m>. For this purpose,
-        <task>
-          <statement>
-            <p>
-              Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
-              <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
-              in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
-              and elements <m>\sigma</m> of <m>G</m>.
-            </p>
-          </statement>
-          <solution>
-            <me>
-              m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
-              \chi(\sigma,x).
-            </me>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Reverse the order of the previous summation in order to convert it
-              into a single sum involving the function <m>\chi</m> given by<fn>The reason
-              for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
-              what is called a group character.  Character theory is a major ingredient of
-              the representation theory of groups, an advanced subject that combines
-              abstract beauty with amazing utility.</fn>
-              <me>
-                \chi(\sigma) =
-                \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
-              </me>
-            </p>
-          </statement>
-          <solution>
-            <me>
-              m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
-            </me>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
+            <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
+            in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
+            and elements <m>\sigma</m> of <m>G</m>.
+          </p>
+        </statement>
+        <solution>
+          <me>
+            m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
+            \chi(\sigma,x).
+          </me>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Reverse the order of the previous summation in order to convert it
+            into a single sum involving the function <m>\chi</m> given by<fn>The reason
+            for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
+            what is called a group character.  Character theory is a major ingredient of
+            the representation theory of groups, an advanced subject that combines
+            abstract beauty with amazing utility.</fn>
+            <me>
+              \chi(\sigma) =
+              \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
+            </me>
+          </p>
+        </statement>
+        <solution>
+          <me>
+            m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
+          </me>
+        </solution>
+      </task>
     </activity>
 
     <p>
@@ -1665,30 +1656,25 @@
           just one place, because those three vertices are mutually adjacent. Each of the other two
           vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
           only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
-
-          <li xml:id="coloring1" >
-
-          <p>
-            <m>RBGRBG</m>
-          </p>
+          <task xml:id="coloring1" >
+            <p>
+              <m>RBGRBG</m>
+            </p>
           </task>
-          <li xml:id="coloring2" >
-
-          <p>
-            <m>RBGYBG</m>
-          </p>
+          <task xml:id="coloring2" >
+            <p>
+              <m>RBGYBG</m>
+            </p>
           </task>
-          <li xml:id="coloring3" >
-
-          <p>
-            <m>RBGRYG</m>
-          </p>
+          <task xml:id="coloring3" >
+            <p>
+              <m>RBGRYG</m>
+            </p>
           </task>
-          <li xml:id="coloring4" >
-
-          <p>
-            <m>RBGRBY</m>.
-          </p>
+          <task xml:id="coloring4" >
+            <p>
+              <m>RBGRBY</m>.
+            </p>
           </task>
         </p>
 
