@@ -3,7 +3,7 @@
   <title>Some Applications of the Basic Principles</title>
   <subsection>
     <title>Lattice paths and Catalan Numbers</title>
-    <problem xml:id="blockwalking" category="motivation">
+    <activity xml:id="blockwalking" category="motivation">
       <statement>
         <p>
           In a part of a city, all streets run either north-south or east-west,
@@ -20,9 +20,9 @@
           selection.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="latticepaths" category="essential for this or the next section">
+    <activity xml:id="latticepaths" category="essential for this or the next section">
       <statement>
         <p>
           <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
@@ -52,9 +52,9 @@
           the same as <m>m+n-i-j\choose m-i</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="diagonallattice" category="essential for this or the next section">
+    <activity xml:id="diagonallattice" category="essential for this or the next section">
       <statement>
         <p>
           Another kind of geometric path in the plane is a <em>diagonal lattice
@@ -90,161 +90,163 @@
           <m>m\choose{m+n\over2}</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="motivation">
+    <activity category="motivation">
       <statement>
-        <p>
-          A school play requires a ten dollar donation per person; the donation
-          goes into the student activity fund. Assume that each person who comes to
-          the play pays with a ten dollar bill or a twenty dollar bill. The teacher
-          who is collecting the money forgot to get change before the event. If there
-          are always at least as many people who have paid with a ten as a twenty as
-          they arrive the teacher won't have to give anyone an IOU for change. Suppose
-          <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
-          bills.
-          <ol>
-            <li>
-              <p>
-                Describe a bijection between the set of sequences of tens and
-                twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
-                <m>(n,n)</m>.
-                <solution>
-                <p>
-                  For each ten dollar bill take a rightstep and for each twenty dollar
-                  bill take an upstep (where rightstep and upstep have the hopefully natural
-                  meaning). The assumption that there are an equal number of ten and twenty
-                  dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
-                  tens and twenties gives a lattice path and each lattice path corresponds to
-                  such a sequence, so we have a bijection.
-                </p>
-                </solution>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Describe a bijection between the set of sequences of tens and
-                twenties that people give the teacher and the set of diagonal lattice paths
-                from <m>(0,0)</m> and <m>(0,2n)</m>.
-                <solution>
-                <p>
-                  For each ten dollar bill take an upstep and for each twenty dollar
-                  bill take a downstep. Each sequence of tens and twenties will give us a
-                  diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
-                  from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
-                  an equal number of tens and twenties, so we have a bijection.
-                </p>
-                </solution>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                In each case, what is the geometric
-                interpretation of a sequence that does not require the teacher to give any
-                IOUs?
-                <solution>
-                <p>
-                  In the first case a sequence that does not require the teacher to
-                  give any IOUs will correspond to a lattice path that stays on or below the
-                  line <m>y=x</m>, and in the second case such a sequence will correspond to a
-                  diagonal lattice path that stays on or above the <m>x</m>-axis.
-                </p>
-                </solution>
-              </p>
-            </li>
-          </ol>
-        </p>
+      <p>
+        A school play requires a ten dollar donation per person; the donation
+        goes into the student activity fund. Assume that each person who comes to
+        the play pays with a ten dollar bill or a twenty dollar bill. The teacher
+        who is collecting the money forgot to get change before the event. If there
+        are always at least as many people who have paid with a ten as a twenty as
+        they arrive the teacher won't have to give anyone an IOU for change. Suppose
+        <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
+        bills.
+        <task>
+          <statement>
+            <p>
+              Describe a bijection between the set of sequences of tens and
+              twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
+              <m>(n,n)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              For each ten dollar bill take a rightstep and for each twenty dollar
+              bill take an upstep (where rightstep and upstep have the hopefully natural
+              meaning). The assumption that there are an equal number of ten and twenty
+              dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
+              tens and twenties gives a lattice path and each lattice path corresponds to
+              such a sequence, so we have a bijection.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Describe a bijection between the set of sequences of tens and
+              twenties that people give the teacher and the set of diagonal lattice paths
+              from <m>(0,0)</m> and <m>(0,2n)</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              For each ten dollar bill take an upstep and for each twenty dollar
+              bill take a downstep. Each sequence of tens and twenties will give us a
+              diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
+              from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
+              an equal number of tens and twenties, so we have a bijection.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              In each case, what is the geometric
+              interpretation of a sequence that does not require the teacher to give any
+              IOUs?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              In the first case a sequence that does not require the teacher to
+              give any IOUs will correspond to a lattice path that stays on or below the
+              line <m>y=x</m>, and in the second case such a sequence will correspond to a
+              diagonal lattice path that stays on or above the <m>x</m>-axis.
+            </p>
+          </solution>
+        </task>
+      </p>
       </statement>
-    </problem>
+    </activity>
 
-    <problem category="essential for this or the next section, and interesting">
+    <activity category="essential for this or the next section, and interesting">
       <statement>
-        <p>
-          Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
-          inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
-          <m>y</m>-axis, the line
-          <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of
-          lattice paths from (0,0) to
-          <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the
-          <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for
-          the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
-        </p>
+      <p>
+        Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
+        inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
+        <m>y</m>-axis, the line
+        <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of
+        lattice paths from (0,0) to
+        <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the
+        <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for
+        the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
+      </p>
 
-        <figure xml:id="CatalanPaths" >
-          <caption>The lattice paths
-          from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>. 
-          The number of paths to the point <m>(i,i)</m> is
-          shown just above that point.</caption>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
-        </figure>
-
-        <ol>
-          <li>
-            <p>
-              Explain why the number of lattice paths from <m>(0,0)</m> to
-              <m>(n,n)</m> that go outside the triangle is the number of lattice paths from
-              <m>(0,0)</m> to
-              <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
-              <solution>
-              <p>
-                If a lattice path between <m>(0,0)</m> and <m>(n,n)</m> goes outside the
-                triangle, it can only do so on an upstep. (A step from <m>(i,j)</m> to
-                <m>(i,j+1)</m>.) And an upstep must originate at a point with integer
-                coordinates. If <m>j\lt i</m> an upstep from <m>(i,j))</m> cannot leave the triangle.
-                Thus to leave the triangle, the upstep must leave from a point of the form
-                <m>(i,i)</m>, and go to <m>(i,i+1)</m>, which is on the line <m>y=x+1</m>.
-                \item Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
-                that touch (or cross) the line <m>y=x+1</m> and lattice paths from
-                <m>(-1,1)</m> to <m>(n,n)</m>.
-              </p>
-              </solution>
-              <solution>
-              <p>
-                Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which
-                touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the
-                line <m>y=x+1</m> that the lattice path touches. From that point, work backwards,
-                replacing every upstep with a step one unit to the left and every rightstep
-                with a step one unit down. The segment of the path you just changed will
-                have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and
-                it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.
-                Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a
-                lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least
-                once, because it starts above the line and ends below it. At the first point
-                where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards
-                replacing every upstep with a step to the left and every rightstep with a
-                step downwards. The leftmost point on this path will have <m>x</m> coordinate 0,
-                and the lowest point will have <m>y</m> coordinate 0, so the new path will be a
-                lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly
-                these two processes reverse each other, and so they give us a bijection
-                between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice
-                lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we
-                are doing to get the bijection is to take the portion of a lattice path that
-                goes from the initial point till the first touch of the line <m>y=x+1</m> and
-                reflecting it around that line. This idea of reflection was introduced by
-                Feller, and is called Feller's reflection principle.
-              </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
-              that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
-              <solution>
-              <p>
-                <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
-              </p>
-              </solution>
-            </p>
-          </li>
-        </ol>
+      <figure xml:id="CatalanPaths" >
+        <caption>The lattice paths
+        from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>. 
+        The number of paths to the point <m>(i,i)</m> is
+        shown just above that point.</caption>
+        \mbox{
+        <image width="73%" source="images/" />
+        }
+      </figure>
+      <task>
+        <statement>
+          <p>
+            Explain why the number of lattice paths from <m>(0,0)</m> to
+            <m>(n,n)</m> that go outside the triangle is the number of lattice paths from
+            <m>(0,0)</m> to
+            <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If a lattice path between <m>(0,0)</m> and <m>(n,n)</m> goes outside the
+            triangle, it can only do so on an upstep. (A step from <m>(i,j)</m> to
+            <m>(i,j+1)</m>.) And an upstep must originate at a point with integer
+            coordinates. If <m>j\lt i</m> an upstep from <m>(i,j))</m> cannot leave the triangle.
+            Thus to leave the triangle, the upstep must leave from a point of the form
+            <m>(i,i)</m>, and go to <m>(i,i+1)</m>, which is on the line <m>y=x+1</m>.
+            \item Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
+            that touch (or cross) the line <m>y=x+1</m> and lattice paths from
+            <m>(-1,1)</m> to <m>(n,n)</m>.
+          </p>
+        </solution>
+        <solution>
+          <p>
+            Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which
+            touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the
+            line <m>y=x+1</m> that the lattice path touches. From that point, work backwards,
+            replacing every upstep with a step one unit to the left and every rightstep
+            with a step one unit down. The segment of the path you just changed will
+            have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and
+            it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.
+            Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a
+            lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least
+            once, because it starts above the line and ends below it. At the first point
+            where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards
+            replacing every upstep with a step to the left and every rightstep with a
+            step downwards. The leftmost point on this path will have <m>x</m> coordinate 0,
+            and the lowest point will have <m>y</m> coordinate 0, so the new path will be a
+            lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly
+            these two processes reverse each other, and so they give us a bijection
+            between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice
+            lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we
+            are doing to get the bijection is to take the portion of a lattice path that
+            goes from the initial point till the first touch of the line <m>y=x+1</m> and
+            reflecting it around that line. This idea of reflection was introduced by
+            Feller, and is called Feller's reflection principle.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
+            that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
+          </p>
+        </solution>
+      </task>
       </statement>
-    </problem>
+    </activity>
 
     <p>
       \begin{problem}(interesting)
@@ -393,7 +395,7 @@
       \end{problem}
     </p>
 
-    <problem xml:id="Conjecturebinomthm" category="motivation">
+    <activity xml:id="Conjecturebinomthm" category="motivation">
       <statement>
         <p>
           We know that <m>(x+y)^2 = x^2+2xy+y^2</m>. Multiply both sides by <m>(x+y)</m>
@@ -428,115 +430,117 @@
           0 to <m>n</m>, the powers of <m>x</m> decrease from <m>n</m> to 0.)
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential">
+    <activity category="essential">
       <statement>
-        <p>
-          When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
-          sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
-          <ol>
-            <li>
-              <p>
-                If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
-                get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
-                the remaining
-                <m>n-i</m> of the factors and multiplying these choices together, then answer this
-                part of the problem and skip the next part.  Otherwise, do the next part
-                instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
-                and a <m>y</m> from
-                <m>n-i</m> terms?
-                <solution>
-                <p>
-                  The number of ways to choose an <m>x</m> from <m>i</m> of the
-                  factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
-                  factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
-                </p>
-                </solution>
-              </p>
-            </li>
+      <p>
+        When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
+        sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
+        <task>
+          <statement>
+            <p>
+              If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
+              get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
+              the remaining
+              <m>n-i</m> of the factors and multiplying these choices together, then answer this
+              part of the problem and skip the next part.  Otherwise, do the next part
+              instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
+              and a <m>y</m> from
+              <m>n-i</m> terms?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The number of ways to choose an <m>x</m> from <m>i</m> of the
+              factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
+              factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
+              when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
+              expanding
+              <me>
+                (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
+              </me>
+              Once you apply the
+              commutative law to the individual terms you get, you will have a sum of terms
+              of the form
+              <me>
+                x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
+                y_{j_{n-i}}.
+              </me>
+              What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
+              how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
+              have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
+              j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
+              many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
+              <me>
+                (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
+              </me>
+              How many terms of the form
+              <m>x^{n-i}y^i</m> will you have?
+            </p>
+          </statement>
+          <solution>
+            <md>
+              <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
+              <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
+            </md>
+            <p>
+              When you substitute <m>x</m> for each <m>x_i</m> and
+              <m>y</m> for each
+              <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
+            </p>
 
-            <li>
-              <p>
-                Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
-                when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
-                expanding
-                <me>
-                  (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
-                </me>
-                Once you apply the
-                commutative law to the individual terms you get, you will have a sum of terms
-                of the form
-                <me>
-                  x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
-                  y_{j_{n-i}}.
-                </me>
-                What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
-                how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
-                have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
-                j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
-                many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
-                <me>
-                  (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
-                </me>
-                How many terms of the form
-                <m>x^{n-i}y^i</m> will you have?
-                <solution>
-                <md>
-                  <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
-                  <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
-                </md>
-                <p>
-                  When you substitute <m>x</m> for each <m>x_i</m> and
-                  <m>y</m> for each
-                  <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
-                </p>
+            <p>
+              <m>\{k_1,k_2,\ldots, k_i\}\cup
+              \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
+              <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
+              choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
+              for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
+              will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+            </p>
+          </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
+              <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
+            </p>
+          </statement>
+          <solution>
+            <p>
+              We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
+              <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
+              <m>(x+y)^n</m> is <m>n\choose i</m>.
+            </p>
+          </solution>
+        </task>
+      </p>
 
-                <p>
-                  <m>\{k_1,k_2,\ldots, k_i\}\cup
-                  \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
-                  <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
-                  choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
-                  for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
-                  will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
-                </p>
-                </solution>
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
-                <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
-                <solution>
-                <p>
-                  We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
-                  <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
-                  <m>(x+y)^n</m> is <m>n\choose i</m>.
-                </p>
-                </solution>
-              </p>
-            </li>
-          </ol>
-        </p>
-
-        <p>
-          \item What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
-        </p>
-        <solution>
+      <p>
+        \item What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
+      </p>
+      <solution>
         <p>
           <m>\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
           {10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
-        </solution>
-        <p>
-          \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
-          {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
-        </p>
+      </solution>
+      <p>
+        \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+        {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
+      </p>
       </statement>
-    </problem>
+    </activity>
 
-    <problem category="essential and interesting">
+    <activity category="essential and interesting">
       <statement>
         <p>
           Explain why
@@ -565,9 +569,9 @@
           choosing <m>k</m> elements from among our <m>m+n</m> elements.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="interesting">
+    <activity category="interesting">
       <statement>
         <p>
           From the symmetry of the binomial coefficients, it is not too hard to
@@ -586,9 +590,9 @@
           must equal the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> odd.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="interesting">
+    <activity category="interesting">
       <statement>
         <p>
           What is <m>\sum_{i=0}^n i{n\choose i}</m>? (Hint: think about how you
@@ -602,12 +606,12 @@
           substitute 1 for <m>x</m> and you get <m>\sum_{i=0}^n i{n\choose i} = n2^{n-1}</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
   </subsection>
 
   <subsection>
     <title>The pigeonhole principle</title>
-    <problem xml:id="elevencoins" category="motivation">
+    <activity xml:id="elevencoins" category="motivation">
       <statement>
         <p>
           American coins are all marked with the year in which they were made.
@@ -621,7 +625,7 @@
           coins, and with 11 coins, at least two last digits must be the same.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       There are many ways in which you might explain your answer to <xref ref="elevencoins">Problem</xref>. For example, you can partition the coins according to the
@@ -657,7 +661,7 @@
       <m>n</m> pigeonholes, then some pigeonhole has more than one pigeon.</q>
     </p>
 
-    <problem>
+    <activity>
       <statement>
         <p>
           Show that if we have a function from a set of size <m>n</m> to a set of
@@ -674,9 +678,9 @@
           <m>i_1</m> and <m>i_2</m> such that <m>f(i_1)=f(i_2)</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential">
+    <activity category="essential">
       <statement>
         <p>
           Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a
@@ -707,44 +711,50 @@
           therefore <m>f</m> is one-to-one.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential for this or the next section">
-      <statement>
-        <p>
-          There is a <em>generalized pigeonhole principle</em><index><main>pigeonhole
-          principle</main><sub> generalized</sub></index> which says that if we partition a set with more than
-          <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m>
-          elements. Prove the generalized pigeonhole principle.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m>
-          blocks. If each block has at most <m>k</m> elements, the by the sum principle
-          the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block
-          has at least <m>k+1</m> elements.
-        </p>
-      </solution>
-      <p>
-        \item All the powers of five end in a five, and all the powers of two are
-        even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of
-        a prime other than two or five, one must have <q>01</q> as the last two digits.
-      </p>
-      <solution>
-        <p>
-          If we take 40 powers of such a
-          prime, either one will end in <q>01</q> or some two, say
-          <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon
-          hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j}
-          -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j}
-          -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two
-          digits of <m>p^{i-j}</m> must be <q>01.</q>
-        </p>
-      </solution>
-    </problem>
+    <activity category="essential for this or the next section">
+      <task>
+        <statement>
+          <p>
+            There is a <em>generalized pigeonhole principle</em><index><main>pigeonhole
+            principle</main><sub> generalized</sub></index> which says that if we partition a set with more than
+            <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m>
+            elements. Prove the generalized pigeonhole principle.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m>
+            blocks. If each block has at most <m>k</m> elements, the by the sum principle
+            the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block
+            has at least <m>k+1</m> elements.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            All the powers of five end in a five, and all the powers of two are
+            even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of
+            a prime other than two or five, one must have <q>01</q> as the last two digits.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we take 40 powers of such a
+            prime, either one will end in <q>01</q> or some two, say
+            <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon
+            hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j}
+            -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j}
+            -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two
+            digits of <m>p^{i-j}</m> must be <q>01.</q>
+          </p>
+        </solution>
+      </task>
+    </activity>
 
-    <problem xml:id="R_3_3_" category="essential for this or the next section, and interesting">
+    <activity xml:id="R_3_3_" category="essential for this or the next section, and interesting">
       <statement>
         <p>
           Show that in a set of six people, there is a set of at least three
@@ -765,9 +775,9 @@
           three of these people know each other, giving us three mutual acquaintances.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="notR_3_3_" category="essential for this or the next section">
+    <activity xml:id="notR_3_3_" category="essential for this or the next section">
       <statement>
         <p>
           Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to
@@ -786,7 +796,7 @@
           six people's names. This problem says that the conclusion of <xref ref="R_3_3_">Problem</xref> does not hold when you have five people.
         </p>
       </solution>
-    </problem>
+    </activity>
   </subsection>
 
   <subsection xml:id="Ramseysection">
@@ -840,7 +850,7 @@
       have the same color.
     </p>
 
-    <problem category="motivation">
+    <activity category="motivation">
       <statement>
         <p>
           Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show
@@ -860,9 +870,9 @@
           there is no solid line <m>K_4</m> and there is no dashed line <m>K_4</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential for this or the next section">
+    <activity category="essential for this or the next section">
       <statement>
         <p>
           Show that among ten people, there are either four mutual acquaintances
@@ -884,9 +894,9 @@
           \le 10</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="OddNoPeople" category="essential for this or the next section">
+    <activity xml:id="OddNoPeople" category="essential for this or the next section">
       <statement>
         <p>
           Show that among an odd number of people there is at least one person
@@ -907,9 +917,9 @@
           this person is not acquainted is also even.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="R_4_3_not8" category="essential for this or the next section">
+    <activity xml:id="R_4_3_not8" category="essential for this or the next section">
       <statement>
         <p>
           Find a way to color the edges of a <m>K_8</m> with red and green so that
@@ -927,9 +937,9 @@
           vertices connected to it by either dashed lines or by solid lines.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem category="essential for this or the next section, and interesting">
+    <activity category="essential for this or the next section, and interesting">
       <statement>
         <p>
           Find <m>R(4,3)</m>.
@@ -954,7 +964,7 @@
           three mutual strangers.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       As of this writing, relatively few Ramsey Numbers are known. <m>R(3,n)</m> is

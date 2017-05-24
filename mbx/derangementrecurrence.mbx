@@ -11,7 +11,7 @@
       the numerator.
     </p>
 
-    <problem category="motivation">
+    <activity category="motivation">
       <statement>
         <p>
           Consider the recurrence
@@ -56,9 +56,9 @@
           {1\over i!}</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
-    <problem xml:id="telephonenetwork" category="essential for this or the next section, and interesting">
+    <activity xml:id="telephonenetwork" category="essential for this or the next section, and interesting">
       <statement>
         <p>
           The telephone company in a city has <m>n</m> subscribers. Assume a
@@ -91,7 +91,7 @@
           <m>c_6 = 5\cdot 10+26=76</m>.
         </p>
       </solution>
-    </problem>
+    </activity>
 
     <p>
       \begin{problem}(essential for this or the next section, and interesting)
@@ -129,126 +129,124 @@
       \end{problem}
     </p>
 
-    <problem category="essential for this or the next section, and interesting">
+    <activity category="essential for this or the next section, and interesting">
       <statement>
+      <p>
+      Your recurrence in <xref ref="telephonenetwork">Problem</xref> should be a
+      second order recurrence.
+
+      <li xml:id="telephonenetworkEGF" >
+
+      <p>
+        Assuming that the left hand side is <m>c_n</m> and
+        the right hand side involves <m>c_{n-1}</m> and <m>c_{n-2}</m>, decide on an
+        appropriate power of <m>x</m> divided by an appropriate factorial by which to
+        multiply both sides of the recurrence.  Using the fact that the
+        derivative of <m>x^n\over n!</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
+        differential equation for the EGF <m>T(x) =
+        \sum_{i=0}^\infty c_i{x^i\over i!}</m>.  Note that it makes sense to
+        substitute 0 for
+        <m>x</m> in <m>T(x)</m>.  What is <m>T(0)</m>?  Solve your differential equation to find
+        an equation for
+        <m>T(x)</m>.
+        <solution>
+        <md>
+          <mrow>\sum_{n=2}^\infty c_n{x^{n-1}\over (n-1)!}
+          \!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}{x^{n-1}\over (n-1)!} +
+          \sum_{n=2}^\infty c_{n-1}{x^{n-1}\over (n-1)!}</mrow>
+          <mrow>\sum_{n=1}^\infty c_n{x^{n-1}\over (n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
+          c_{n-2}{x^{n-2}\over (n-2)!} + \sum_{n=0}^\infty c_n{x^n\over n!} -c_0</mrow>
+          <mrow>T'(x)\!\amp =\amp \!xT(x) +T(x)</mrow>
+        </md>
         <p>
-          Your recurrence in <xref ref="telephonenetwork">Problem</xref> should be a
-          second order recurrence.
-          <ol>
-            <li xml:id="telephonenetworkEGF" >
+          <m>T(0) = c_0 =1</m>. Then <m>{T'(x)\over T(x)} = x+1</m>, giving <m>\ln T(x)
+          =x^2/2+x+k</m>, and <m>T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }</m>, since <m>T(0)=1</m>.
+        </p>
+        </solution>
+        </task>
+        <task>
+          <statement>
+            <p>
+              Use your generating function to compute a formula for <m>c_n</m>.
+            </p>
+          </statement>
+          <solution>
+            <p>
+              <m>T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!</m>. By the binomial
+              theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i {i\choose
+              j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
+              i!}=\sum_{i=0}^\infty{\sum_{j=0}^i{i\choose j}x^{2i-j}2^{j-i}\over i!}</m>.
+              Then the coefficient <m>c_n</m> of <m>x^n</m> is the sum over all <m>i</m> and <m>j</m> with
+              <m>2i-j=n</m> and <m>j\le i</m> of <m>{i\choose j}{n!\over i!}2^{j-i}</m>. But if
+              <m>2i-j=n</m>, then <m>j= 2i-n</m>, and if <m>2i-n\le i</m>, then <m>i\le n</m>, so that <m>c_n
+              = {n!\over 2^n}\sum_{i=0}^n{i\choose 2i-n}{2^i\over i!}</m>. Note that
+              <m>i\choose 2i-n</m> is the same as <m>i\choose n-i</m>, which is 0 unless <m>i\ge
+              n/2</m>, which reduces our sum to <m>c_n = {n!\over
+              2^n}\sum_{i=\lceil n/2\rceil}^n{i\choose n-i}{2^i\over i!}</m>.
+            </p>
+          </solution>
+        </task>
+      </p>
+      </statement>
+    </activity>
+
+    <activity xml:id="exponentialderangements" category="essential for this or the next section, and interesting">
+      <statement>
+      <p>
+        Your recurrence in <xref ref="derangementrecurrence">Problem</xref>
+        should be a second order recurrence.
+        <task>
+          <statement>
+            <p>
+              Assuming that the left-hand side is <m>d_n</m> and the right hand side
+              involves <m>d_{n-1}</m> and <m>d_{n-2}</m>, decide on an appropriate power of <m>x</m>
+              divided by an appropriate factorial by which to multiply both sides of
+              the recurrence.  Using the fact that the
+              derivative of <m>x^n\over n!</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
+              differential equation for the EGF <m>D(x) =
+              \sum_{i=0}^\infty d_i{x^i\over i!}</m>. What is <m>D(0)</m>?  Solve your
+              differential equation to find an equation for <m>D(x)</m>.
+            </p>
+          </task>
+          <task>
+            <p>
+              Use the equation you found for <m>D(x)</m> to find an equation for
+              <m>d_n</m>.  Compare this result with the one you computed by inclusion and
+              exclusion.
+            </p>
+          </statement>
+          <solution>
+            <md>
+              <mrow>\sum_{n=2}^\infty d_n{x^{n-1}\over (n-1)!}
+              \amp =\amp \sum_{n=2}^\infty d_{n-1}{x^{n-1} \over (n-2)!} +\sum_{n=2}^\infty
+              d_{n-2}{x^{n-1}
+              \over (n-2)!}</mrow>
+              <mrow>\sum_{n=1}^\infty d_n{x^{n-1}\over (n-1)!} -d_1 \amp =\amp 
+              x\sum_{n=2}^\infty d_{n-1}{x^{n-2}\over (n-2)!} +xD(x)</mrow>
+              <mrow>D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)</mrow>
+              <mrow>D'(x)(1-x) \amp =\amp  xD(x)</mrow>
+              <mrow>D'(x)\over D(x) \amp =\amp  x\over 1-x</mrow>
+            </md>
+            <p>
+              This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = {1\over
+              1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
+              <md>
+                <mrow>D(x) \amp =\amp  {e^{-x}\over 1-x}</mrow>
+                <mrow>\amp =\amp 
+                \sum_{i=0}^\infty(-1)^i{x^i\over i!}\cdot\sum_{j=0}^\infty
+                x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i {(-1)^j\over j!}\right)
+                x^i.</mrow>
+              </md>
+            </p>
 
             <p>
-              Assuming that the left hand side is <m>c_n</m> and
-              the right hand side involves <m>c_{n-1}</m> and <m>c_{n-2}</m>, decide on an
-              appropriate power of <m>x</m> divided by an appropriate factorial by which to
-              multiply both sides of the recurrence.  Using the fact that the
-              derivative of <m>x^n\over n!</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
-              differential equation for the EGF <m>T(x) =
-              \sum_{i=0}^\infty c_i{x^i\over i!}</m>.  Note that it makes sense to
-              substitute 0 for
-              <m>x</m> in <m>T(x)</m>.  What is <m>T(0)</m>?  Solve your differential equation to find
-              an equation for
-              <m>T(x)</m>.
-              <solution>
-              <md>
-                <mrow>\sum_{n=2}^\infty c_n{x^{n-1}\over (n-1)!}
-                \!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}{x^{n-1}\over (n-1)!} +
-                \sum_{n=2}^\infty c_{n-1}{x^{n-1}\over (n-1)!}</mrow>
-                <mrow>\sum_{n=1}^\infty c_n{x^{n-1}\over (n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
-                c_{n-2}{x^{n-2}\over (n-2)!} + \sum_{n=0}^\infty c_n{x^n\over n!} -c_0</mrow>
-                <mrow>T'(x)\!\amp =\amp \!xT(x) +T(x)</mrow>
-              </md>
-              <p>
-                <m>T(0) = c_0 =1</m>. Then <m>{T'(x)\over T(x)} = x+1</m>, giving <m>\ln T(x)
-                =x^2/2+x+k</m>, and <m>T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }</m>, since <m>T(0)=1</m>.
-              </p>
-              </solution>
+              Thus <m>d_n = n!\sum_{j=0}^n{(-1)^j\over j!}</m>, as we
+              computed by inclusion and exclusion.
             </p>
-            </li>
-
-            <li>
-              <p>
-                Use your generating function to compute a formula for <m>c_n</m>.
-                <solution>
-                <p>
-                  <m>T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!</m>. By the binomial
-                  theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i {i\choose
-                  j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
-                  i!}=\sum_{i=0}^\infty{\sum_{j=0}^i{i\choose j}x^{2i-j}2^{j-i}\over i!}</m>.
-                  Then the coefficient <m>c_n</m> of <m>x^n</m> is the sum over all <m>i</m> and <m>j</m> with
-                  <m>2i-j=n</m> and <m>j\le i</m> of <m>{i\choose j}{n!\over i!}2^{j-i}</m>. But if
-                  <m>2i-j=n</m>, then <m>j= 2i-n</m>, and if <m>2i-n\le i</m>, then <m>i\le n</m>, so that <m>c_n
-                  = {n!\over 2^n}\sum_{i=0}^n{i\choose 2i-n}{2^i\over i!}</m>. Note that
-                  <m>i\choose 2i-n</m> is the same as <m>i\choose n-i</m>, which is 0 unless <m>i\ge
-                  n/2</m>, which reduces our sum to <m>c_n = {n!\over
-                  2^n}\sum_{i=\lceil n/2\rceil}^n{i\choose n-i}{2^i\over i!}</m>.
-                </p>
-                </solution>
-              </p>
-            </li>
-          </ol>
-        </p>
+          </solution>
+        </task>
+      </p>
       </statement>
-    </problem>
-
-    <problem xml:id="exponentialderangements" category="essential for this or the next section, and interesting">
-      <statement>
-        <p>
-          Your recurrence in <xref ref="derangementrecurrence">Problem</xref>
-          should be a second order recurrence.
-          <ol>
-            <li>
-              <p>
-                Assuming that the left-hand side is <m>d_n</m> and the right hand side
-                involves <m>d_{n-1}</m> and <m>d_{n-2}</m>, decide on an appropriate power of <m>x</m>
-                divided by an appropriate factorial by which to multiply both sides of
-                the recurrence.  Using the fact that the
-                derivative of <m>x^n\over n!</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
-                differential equation for the EGF <m>D(x) =
-                \sum_{i=0}^\infty d_i{x^i\over i!}</m>. What is <m>D(0)</m>?  Solve your
-                differential equation to find an equation for <m>D(x)</m>.
-              </p>
-            </li>
-
-            <li>
-              <p>
-                Use the equation you found for <m>D(x)</m> to find an equation for
-                <m>d_n</m>.  Compare this result with the one you computed by inclusion and
-                exclusion.
-                <solution>
-                <md>
-                  <mrow>\sum_{n=2}^\infty d_n{x^{n-1}\over (n-1)!}
-                  \amp =\amp \sum_{n=2}^\infty d_{n-1}{x^{n-1} \over (n-2)!} +\sum_{n=2}^\infty
-                  d_{n-2}{x^{n-1}
-                  \over (n-2)!}</mrow>
-                  <mrow>\sum_{n=1}^\infty d_n{x^{n-1}\over (n-1)!} -d_1 \amp =\amp 
-                  x\sum_{n=2}^\infty d_{n-1}{x^{n-2}\over (n-2)!} +xD(x)</mrow>
-                  <mrow>D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)</mrow>
-                  <mrow>D'(x)(1-x) \amp =\amp  xD(x)</mrow>
-                  <mrow>D'(x)\over D(x) \amp =\amp  x\over 1-x</mrow>
-                </md>
-                <p>
-                  This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = {1\over
-                  1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
-                  <md>
-                    <mrow>D(x) \amp =\amp  {e^{-x}\over 1-x}</mrow>
-                    <mrow>\amp =\amp 
-                    \sum_{i=0}^\infty(-1)^i{x^i\over i!}\cdot\sum_{j=0}^\infty
-                    x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i {(-1)^j\over j!}\right)
-                    x^i.</mrow>
-                  </md>
-                </p>
-
-                <p>
-                  Thus <m>d_n = n!\sum_{j=0}^n{(-1)^j\over j!}</m>, as we
-                  computed by inclusion and exclusion.
-                </p>
-                </solution>
-              </p>
-            </li>
-          </ol>
-        </p>
-      </statement>
-    </problem>
+    </activity>
   </subsection>
 </section>
