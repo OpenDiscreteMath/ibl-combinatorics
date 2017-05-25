@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-05-25T16:37:15-07:00    *%
+%*    on 2017-05-25T16:44:29-07:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -77,6 +77,8 @@
 %% Semantic Macros
 %% To preserve meaning in a LaTeX file
 %% Only defined here if required in this document
+%% Used for inline definitions of terms
+\newcommand{\terminology}[1]{\textbf{#1}}
 %% Subdivision Numbering, Chapters, Sections, Subsections, etc
 %% Subdivision numbers may be turned off at some level ("depth")
 %% A section *always* has depth 1, contrary to us counting from the document root
@@ -309,7 +311,7 @@ This book is an introduction to combinatorial mathematics, also known as combina
 \par
 The point of learning from this book is that you are learning how to discover ideas and methods for yourself, not that you are learning to apply methods that someone else has told you about. The problems in this book are designed to lead you to discover for yourself and prove for yourself the main ideas of combinatorial mathematics.  There is considerable evidence that this leads to deeper learning and more understanding.%
 \par
-You will see that some of the problems are marked with bullets. Those are the problems that I feel are essential to having an understanding of what comes later, whether or not it is marked by a bullet. The problems with bullets are the problems in which the main ideas of the book are developed. Your instructor may leave out some of these problems because he or she plans not to cover future problems that rely on them. Many problems, in fact entire sections, are not marked in this way, because they use an important idea rather than developing one. Some other special symbols are described in what follows; a summary appears in {$\langle\langle$xref without ref or provisional attribute, check spelling$\rangle\rangle$}.%
+You will see that some of the problems are marked with bullets. Those are the problems that I feel are essential to having an understanding of what comes later, whether or not it is marked by a bullet. The problems with bullets are the problems in which the main ideas of the book are developed. Your instructor may leave out some of these problems because he or she plans not to cover future problems that rely on them. Many problems, in fact entire sections, are not marked in this way, because they use an important idea rather than developing one. Some other special symbols are described in what follows; a summary appears in \hyperref[tab_prob-symbs-pref]{Table~\ref{tab_prob-symbs-pref}}.%
 \begin{table}
 \centering
 \begin{tabular}{ll}
@@ -377,9 +379,334 @@ These notes are based on the philosophy that you learn the most about a subject 
 \caption{The meaning of the symbols to the left of problem numbers.\label{tab_prob-symbs}}
 \end{table}
 \typeout{************************************************}
-\typeout{Section 0.2 Supplementary Chapter Problems}
+\typeout{Section 0.2 Some Applications of the Basic Principles}
 \typeout{************************************************}
-\section[{Supplementary Chapter Problems}]{Supplementary Chapter Problems}\label{section-2}
+\section[{Some Applications of the Basic Principles}]{Some Applications of the Basic Principles}\label{section-2}
+\typeout{************************************************}
+\typeout{Subsection  Lattice paths and Catalan Numbers}
+\typeout{************************************************}
+\subsection[{Lattice paths and Catalan Numbers}]{Lattice paths and Catalan Numbers}\label{subsection-1}
+\begin{activity}[]\label{blockwalking}
+In a part of a city, all streets run either north-south or east-west, and there are no dead ends. Suppose we are standing on a street corner. In how many ways may we walk to a corner that is four blocks north and six blocks east, using as few blocks as possible?%
+\par\medskip\noindent%
+\textbf{Hint.}\quad This is a sample hint.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are \(10\choose 4\) ways to make this selection.%
+\end{activity}
+\begin{activity}[]\label{latticepaths}
+\hyperref[blockwalking]{Problem~\ref{blockwalking}} has a geometric interpretation in a coordinate plane. A \emph{lattice path}\index{lattice path}\index{path!lattice} in the plane is a ``curve'' made up of line segments that either go from a point \((i,j)\) to the point \((i+1,j)\) or from a point \((i,j)\) to the point \((i,j+1)\), where \(i\) and \(j\) are integers. (Thus lattice paths always move either up or to the right.) The length of the path is the number of such line segments. What is the length of a lattice path from \((0,0)\) to \((m,n)\)? How many such lattice paths of that length are there? How many lattice paths are there from \((i,j)\) to \((m,n)\), assuming \(i\), \(j\), \(m\), and \(n\) are integers?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The length of a lattice path from \((0,0)\) to \((m,n)\) is \(m+n\). The number of such paths is \(m+n\choose n\). Since lattice paths move up and to the right, there are no paths from \((i,j)\) to \((m,n)\) unless \(i\le m\) and \(j\le n\). In that case, the number of paths is \(m+n-i-j\choose n-j\) which is the same as \(m+n-i-j\choose m-i\).%
+\end{activity}
+\begin{activity}[]\label{diagonallattice}
+Another kind of geometric path in the plane is a \emph{diagonal lattice path}\index{lattice path!diagonal}\index{path!lattice!diagonal}. Such a path is a path made up of line segments that go from a point \((i,j)\) to \((i+1,j+1)\) (this is often called an \emph{upstep}) or \((i+1,j-1)\) (this is often called a \emph{downstep}), again where \(i\) and \(j\) are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.) Describe which points are connected to \((0,0)\) by diagonal lattice paths. What is the length of a diagonal lattice path from \((0,0)\) to \((m,n)\)? Assuming that \((m,n)\) is such a point, how many diagonal lattice paths are there from \((0,0)\) to \((m,n)\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The points \((m,n)\) connected to \((0,0)\) by diagonal lattice paths will have \(m+n\) is even, because each upstep adds two to the sum of \(i\) and \(j\) while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line \(y=x\) or below the line \(y=-x\). However for any point \((m,n)\) with \(m\) and \(n\) nonnegative integers such that \(m+n\) even and \(-m\le n\le m\), we can get to \(m,n\) by making \(m-n\over 2\) downsteps and \(m+n\over2\) upsteps. In this way we will make a total of \(m\) steps, and our total motion parallel to the \(y\) axis will be \({m+n\over2}-{m-n\over2} = n\).  The length of such a path is \(m\sqrt{2}\); we might informally just call it \(m\) steps. The number of possible paths is the number of ways we can choose which of the \(m\)steps are upsteps (or equivalently downsteps) this number is \(m\choose{m+n\over2}\).%
+\end{activity}
+\begin{activity}[]\label{activity-4}
+A school play requires a ten dollar donation per person; the donation goes into the student activity fund. Assume that each person who comes to the play pays with a ten dollar bill or a twenty dollar bill. The teacher who is collecting the money forgot to get change before the event. If there are always at least as many people who have paid with a ten as a twenty as they arrive the teacher won't have to give anyone an IOU for change. Suppose \(2n\) people come to the play, and exactly half of them pay with ten dollar bills.%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item Describe a bijection between the set of sequences of tens and twenties people give the teacher and the set of lattice paths from \((0,0)\) to \((n,n)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad For each ten dollar bill take a rightstep and for each twenty dollar bill take an upstep (where rightstep and upstep have the hopefully natural meaning). The assumption that there are an equal number of ten and twenty dollar bills means that the path will end up at \((n,n)\). Each sequence of tens and twenties gives a lattice path and each lattice path corresponds to such a sequence, so we have a bijection.%
+
+~\par
+\item Describe a bijection between the set of sequences of tens and twenties that people give the teacher and the set of diagonal lattice paths from \((0,0)\) and \((0,2n)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad For each ten dollar bill take an upstep and for each twenty dollar bill take a downstep. Each sequence of tens and twenties will give us a diagonal lattice path from \((0,0)\), and each diagonal lattice path from\((0,0)\) to \((0,2n)\) will give us a sequence of tens and twenties with an equal number of tens and twenties, so we have a bijection.%
+
+~\par
+\item In each case, what is the geometric interpretation of a sequence that does not require the teacher to give any IOUs?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad In the first case a sequence that does not require the teacher to give any IOUs will correspond to a lattice path that stays on or below the line \(y=x\), and in the second case such a sequence will correspond to a diagonal lattice path that stays on or above the \(x\)-axis.%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{activity-5}
+Notice that a lattice path from \((0,0)\) to \((n,n)\) stays inside (or on the edges of) the square whose sides are the \(x\)-axis, the \(y\)-axis, the line \(x=n\) and the line \(y=n\). In this problem we will compute the number of lattice paths from (0,0) to \((n,n)\) that stay inside (or on the edges of) the triangle whose sides are the \(x\)-axis, the line \(x=n\) and the line \(y=x\). For example, in \hyperref[CatalanPaths]{Figure~\ref{CatalanPaths}} we show the grid of points with integer coordinates for the triangle whose sides are the \(x\)-axis, the line \(x=4\) and the line \(y=x\).%
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/CatalanPaths}
+\caption{The lattice paths from \((0,0)\) to \((i,i)\) for \(i=0,1,2,3,4\).  The number of paths to the point \((i,i)\) is shown just above that point.\label{CatalanPaths}}
+\end{figure}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item Explain why the number of lattice paths from \((0,0)\) to \((n,n)\) that go outside the triangle is the number of lattice paths from \((0,0)\) to \((n,n)\) that either touch or cross the line \(y=x+1\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad If a lattice path between \((0,0)\) and \((n,n)\) goes outside the triangle, it can only do so on an upstep. (A step from \((i,j)\) to \((i,j+1)\).) And an upstep must originate at a point with integer coordinates. If \(j\lt i\) an upstep from \((i,j))\) cannot leave the triangle. Thus to leave the triangle, the upstep must leave from a point of the form \((i,i)\), and go to \((i,i+1)\), which is on the line \(y=x+1\).%
+
+~\par
+\item Find a bijection between lattice paths from \((0,0)\) to \((n,n)\) that touch (or cross) the line \(y=x+1\) and lattice paths from \((-1,1)\) to \((n,n)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Suppose we have a lattice path form \((0,0)\) to \((n,n)\) which touches or crosses the line \(y=x+1\). Let \((k,k+1)\) be the first point on the line \(y=x+1\) that the lattice path touches. From that point, work backwards, replacing every upstep with a step one unit to the left and every rightstep with a step one unit down. The segment of the path you just changed will have moved left \(k+1\) times, so its leftmost \(x\) coordinate will be \(-1\), and it will have moved down \(k\) times, so its lowest \(y\) coordinate will be 1.  Thus we now have a lattice path from \((-1,1)\) to \((n,n)\). Further, given a lattice path from \((-1,1)\) to \((n,n)\), it must cross the line \(y=x+1\) at least once, because it starts above the line and ends below it. At the first point where such a path touches the line \(y=x+1\), say \((k',k'+1)\), work backwards replacing every upstep with a step to the left and every rightstep with a step downwards. The leftmost point on this path will have \(x\) coordinate 0, and the lowest point will have \(y\) coordinate 0, so the new path will be a lattice path from \((0,0)\) to \((n,n)\) that touches the line \(y=x+1\). Clearly these two processes reverse each other, and so they give us a bijection between paths form \((0,0)\) to \((n,n)\) that touch the line \(y=x+1\) and lattice lattice paths from \((-1,1)\) to \((n,n)\). Notice that geometrically what we are doing to get the bijection is to take the portion of a lattice path that goes from the initial point till the first touch of the line \(y=x+1\) and reflecting it around that line. This idea of reflection was introduced by Feller, and is called Feller's reflection principle.%
+
+~\par
+\item Find a formula for the number of lattice paths from \((0,0)\) to \((n,n)\) that do not cross the line \(y=x\).  The number of such paths is called a \emph{Catalan Number}\index{Catalan Number} and is usually denoted by \(C_n\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.\)%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{activity-6}
+Your formula for the Catalan Number can be expressed as a binomial coefficient divided by an integer. Whenever we have a formula that calls for division by an integer, an ideal combinatorial explanation of the formula is one that uses the quotient principle. The purpose of this problem is to find such an explanation using diagonal lattice paths.\footnote{The result we will derive is called the Chung-Feller Theorem\index{Chung-Feller Theorem}; this approach is based of a paper of Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller Generalizations," \textsl{American Mathematics Monthly 58} June/July 2001, p556.\label{fn-1}} A diagonal lattice path that never goes below the \(y\)-coordinate of its first point is called a \terminology{Dyck Path}\index{Dyck path}. We will call a Dyck Path from \((0,0)\) to \((2n,0)\) a \terminology{Catalan Path}\index{Catalan Path} of length \(2n\). Thus the number of Catalan Paths of length \(2n\) is the Catalan Number \(C_n\).%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item If a Dyck Path has \(n\) steps (each an upstep or downstep), why do the first \(k\) steps form a Dyck Path for each nonnegative \(k\le n\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad If no points on the path are lower than the first point, then no points among the first \(k\) steps are lower than the first point.%
+
+~\par
+\item Thought of as a curve in the plane, a diagonal lattice path can have many local maxima and minima, and can have several absolute maxima and minima, that is, several highest points and several lowest points. What is the \(y\)-coordinate of an absolute minimum point of a Dyck Path starting at \((0,0)\)?  Explain why a Dyck Path whose rightmost absolute minimum point is its last point is a Catalan Path.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since the path starts at \((0,0)\) and can't go below it, the \(y\) coordinate of an absolute minimum must be zero. If the last point is an absolute minimum, then (because it ends with the same \(y\) coordinate with which it starts) the path has an even number \(2k\) of steps and ends at \((2k,0)\).%
+
+~\par
+\item Let \(D\) be the set of all diagonal lattice paths from \((0,0)\) to \((2n,0)\).  (Thus these paths can go below the \(x\)-axis.) Suppose we partition \(D\) by letting \(B_i\) be the set of lattice paths in \(D\) that have \(i\) upsteps (perhaps mixed with some downsteps) following the last absolute minimum.  How many blocks does this partition have?  Give a succinct description of the block \(B_0\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The path must have \(n\) upsteps total, and so can have any number between 0 and \(n\) upsteps after the rightmost absolute minimum. Thus the partition has \(n+1\) blocks. Block \(B_0\) consists of the Catalan Paths.%
+
+~\par
+\item How many upsteps are in a Catalan Path?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(n\).%
+
+~\par
+\item We are going to give a bijection between the set of Catalan Paths and the block \(B_i\) for each \(i\) between \(1\) and \(n\).  For now, suppose the value of \(i\), while unknown, is fixed.  We take a Catalan path and break it into three pieces.  The piece \(F\) (for ``front'') consists of all steps before the \(i\)th upstep in the Catalan path.  The piece \(U\) (for ``up'') consists of the \(i\)th upstep.  The piece \(B\) (for ``back'') is the portion of the path that follows the \(i\)th upstep.  Thus we can think of the path as \(FUB\).  Show that the function that takes \(FUB\) to \(BUF\) is a bijection from the set of Catalan Paths onto the block \(B_i\) of the partition.  (Notice that \(BUF\) can go below the \(x\) axis.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since we are starting with a Catalan path, the point on the path at the beginning of the \(i\)th upstep must have \(y\) coordinate greater or equal to than zero. Thus wherever we start the sequence \(F\) of upsteps and downsteps, a path constructed by this sequence never goes lower than its starting point. Thus in \(BUF\) the last absolute minimum is either right before the \(U\) or earlier. But \(B\) is the final segment of a Catalan Path, so its final point is at least as low as its starting point. Thus the point at the beginning of the \(U\) in \(BUF\) is an absolute minimum, and there are \(i\) upsteps after that local minimum. If we take two different sequences and rearrange them in the same way, we get two different sequences, so the function we just described is a one-to-one function. If we take an arbitrary diagonal lattice path from \((0,0)\) to \((2n,0)\), let \(U'\) be the first upstep after the last absolute minimum, \(F'\) be the portion of the path that follows \(U'\), and \(B'\) be the portion that precedes \(U'\), then \(F'U'B'\) is a Catalan Path, and \(U'\) is its \(i\)th upstep if and only if in \(B'U'F'\) there are \(i\) upsteps after the last absolute minimum. Thus the mapping from \(FUB\) to \(BUF\) is a bijection.%
+
+~\par
+\item Explain how you have just given another proof of the formula for the Catalan Numbers.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We have taken the set of all \(2n\choose n\) diagonal lattice paths of length \(2n\) from \((0,0)\) to \((2n,0)\) and partitioned it into \(n+1\) blocks all of size \(C_n\). Thus by the quotient principle, \(C_n={1\over
+n+1}{2n
+\choose n}\).%
+
+\end{enumerate}
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  The Binomial Theorem}
+\typeout{************************************************}
+\subsection[{The Binomial Theorem}]{The Binomial Theorem}\label{subsection-2}
+\begin{activity}[]\label{Conjecturebinomthm}
+We know that \((x+y)^2 = x^2+2xy+y^2\). Multiply both sides by \((x+y)\) to get a formula for \((x+y)^3\) and repeat to get a formula for \((x+y)^4\). Do you see a pattern? If so, what is it? If not, repeat the process to get a formula for \((x+y)^5\) and look back at {$\langle\langle$Unresolved xref, reference "Pascaltriangle"; check spelling or use "provisional" attribute$\rangle\rangle$} to see the pattern. Conjecture a formula for \((x+y)^n\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \((x+y)^3=x^3+2x^2y +xy^2+x^2y+ +2xy^2 +y^3=x^3+3x^2y++3xy^2+y^3\).%
+\par
+Similarly, \((x+4)^4=x^4+4x^3y+6x^2y^2+4xy^3+y^4\),%
+\par
+and \((x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5.\) The pattern is that the coefficient of \(x^iy^j\) is \(i+j\choose i\) which is the same as \(i+j\choose j\). Said differently, the coefficient of \(x^{n-i}y^i\) is \(n\choose i\) or the coefficient of \(x^iy^{n-i}\) is \(n\choose
+i\). We conjecture that%
+\begin{equation*}
+(x+y)^n=\sum_{i=0}^n {n\choose i}x^{n-i}y^i.
+\end{equation*}
+%
+\par
+(The reason for putting \(x^{n-i}y^i\) into the sum is so that as \(i\) goes from 0 to \(n\), the powers of \(x\) decrease from \(n\) to 0.)%
+\end{activity}
+\begin{activity}[]\label{activity-8}
+When we apply the distributive law \(n\) times to \((x+y)^n\), we get a sum of terms of the form \(x^iy^{n-i}\) for various values of the integer \(i\).%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item If it is clear to you that each term of the form \(x^iy^{n-i}\) that we get comes from choosing an \(x\) from \(i\) of the \((x+y)\) factors and a \(y\) from the remaining \(n-i\) of the factors and multiplying these choices together, then answer this part of the problem and skip the next part.  Otherwise, do the next part instead of this one.  In how many ways can we choose an \(x\) from \(i\) terms and a \(y\) from \(n-i\) terms?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The number of ways to choose an \(x\) from \(i\) of the factors and a \(y\) from the remaining ones is the way to choose the \(i\) factors from the \(n\) factors; that is, \(n\choose i\).%
+
+~\par
+\item Expand the product \((x_1 +y_1)(x_2 +y_2)(x_3+y_3)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad %
+\begin{align*}
+(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+\\
+y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.
+\end{align*}
+%
+
+~\par
+\item What do you get when you substitute \(x\) for each \(x_i\) and \(y\) for each \(y_i\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad When you substitute \(x\) for each \(x_i\) and \(y\) for each \(y_i\), you get \((x+y)^3=x^3+3x^2y+3xy^2+y^3\).%
+
+~\par
+\item Now imagine expanding%
+\begin{equation*}
+(x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
+\end{equation*}
+Once you apply the commutative law to the individual terms you get, you will have a sum of terms of the form%
+\begin{equation*}
+x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
+y_{j_{n-i}}.
+\end{equation*}
+What is the set \(\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(\{k_1,k_2,\ldots, k_i\}\cup
+\{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}\).%
+
+~\par
+\item In how many ways can you choose the set \(\{k_1,k_2,\ldots, k_i\}\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad You can choose the set \(\{k_1,k_2,\ldots k_i\}\) in \(n\choose i\) ways.%
+
+~\par
+\item Once you have chosen this set, how many choices do you have for \(\{j_1,j_2,\ldots, j_{n-i}\}\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Once you have chosen the set of \(k\)s, there is just one way to choose the set of \(j\)s.%
+
+~\par
+\item If you substitute \(x\) for each \(x_i\) and \(y\) for each \(y_i\), how many terms of the form \(x^iy^{n-i}\) will you have in the expanded product%
+\begin{equation*}
+(x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
+\end{equation*}
+%
+\par\medskip\noindent%
+\textbf{Solution.}\quad If you substitute \(x\) for \(x_i\) and substitute \(y\) for \(y_i\), you will get \(n\choose i\) terms of the form \(x^iy^{n-i}\).%
+
+~\par
+\item How many terms of the form \(x^{n-i}y^i\) will you have?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad You will also get \(n\choose i\) terms of the form \(x^{n-i}y^i\).%
+
+~\par
+\item Explain how you have just proved your conjecture from \hyperref[Conjecturebinomthm]{Problem~\ref{Conjecturebinomthm}}.  The theorem you have proved is called the \emph{Binomial Theorem}.\index{Binomial Theorem}%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We have proved that the coefficient of \(x^iy^{n-i}\) in \((x+y)^n\) is \(n\choose i\), or equivalently that the coefficient of \(x^{n-i}y^i\) in \((x+y)^n\) is \(n\choose i\).%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{activity-9}
+What is \(\sum_{i=1}^n {10\choose i}3^i\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
+{10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1\)%
+\end{activity}
+\begin{activity}[]\label{activity-10}
+What is \({n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+{n\choose n}\) if \(n\) is an integer bigger than 0?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The sum is \(0\) because it is \((-1+1)^n\).%
+\end{activity}
+\begin{activity}[]\label{activity-11}
+Explain why%
+\begin{equation*}
+\sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
+k}.
+\end{equation*}
+Find two different explanations.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad When we expand both sides of \((x+y)^m(x+y)^n=(x+y)^{m+n}\) by the binomial theorem we get \(\sum_{i=0}^m{m\choose i}{n\choose  k-i}\) as the coefficient of \(x^{m+n-k}y^k\) on the left hand side and \(m+n\choose k\) on the right hand side.%
+\par
+For a second explanation, to choose \(k\) elements out of the union of an \(m\)-element set and a disjoint \(n\)-element set, chose some number \(i\le m\) of them from the \(m\)-element set and the remaining \(k-i\) of them from the \(n\)-element set. The sum on the left hand side of the equation simply sums the number of such choices over all possible \(i\), and the binomial coefficient on the right hand side of the equation says we will end up choosing \(k\) elements from among our \(m+n\) elements.%
+\end{activity}
+\begin{activity}[]\label{activity-12}
+From the symmetry of the binomial coefficients, it is not too hard to see that when \(n\) is an odd number, the number of subsets of \(\{1,2,\ldots,n\}\) of odd size equals the number of subsets of \(\{1,2,\ldots,n\}\) of even size. Is it true that when \(n\) is even the number of subsets of \(\{1,2,\ldots,n\}\) of even size equals the number of subsets of odd size? Why or why not?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad It is true, because if \(n>0\), when you expand \((1-1)^n\) by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients \(n\choose i\) with \(i\) even must equal the sum of the binomial coefficients \(n\choose i\) with \(i\) odd.%
+\end{activity}
+\begin{activity}[]\label{activity-13}
+What is \(\sum_{i=0}^n i{n\choose i}\)? (Hint: think about how you might use calculus.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(\sum_{i=0}^n({n\choose i}x^i = (1+x)^n\). Taking derivatives of both sides gives us \(\sum_{i=0}^ni{n\choose i}x^{i-1} = n(1+x)^{n-1}.\). Now substitute 1 for \(x\) and you get \(\sum_{i=0}^n i{n\choose i} = n2^{n-1}\).%
+\end{activity}
+Notice how the proof you gave of the binomial theorem was a counting argument. It is interesting that an apparently algebraic theorem that tells us how to expand a power of a binomial is proved by an argument that amounts to counting the individual terms of the expansion. Part of the reason that combinatorial mathematics turns out to be so useful is that counting arguments often underlie important results of algebra. As the algebra becomes more sophisticated, so do the families of objects we have to count, but nonetheless we can develop a great deal of algebra on the basis of counting.%
+\typeout{************************************************}
+\typeout{Subsection  The pigeonhole principle}
+\typeout{************************************************}
+\subsection[{The pigeonhole principle}]{The pigeonhole principle}\label{subsection-3}
+\begin{activity}[]\label{elevencoins}
+American coins are all marked with the year in which they were made. How many coins do you need to have in your hand to guarantee that on two (at least) of them, the date has the same last digit? (When we say ``to guarantee that on two (at least) of them,\dots{}'' we mean that you can find two with the same last digit. You might be able to find three with that last digit, or you might be able to find one pair with the last digit 1 and one pair with the last digit 9, or any combination of equal last digits, as long as there is at least one pair with the same last digit.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since there are ten possible last digits, you need at least 11 coins, and with 11 coins, at least two last digits must be the same.%
+\end{activity}
+There are many ways in which you might explain your answer to \hyperref[elevencoins]{Activity~\ref{elevencoins}}. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in \hyperref[elevencoins]{Activity~\ref{elevencoins}}. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The \terminology{pigeonhole principle}\index{pigeonhole principle} states that%
+\begin{quote}If we partition a set with more than \(n\) elements into \(n\) parts, then at least one part has more than one element.%
+\end{quote}
+The pigeonhole principle gets its name from the idea of a grid of little boxes that might be used, for example, to sort mail, or as mailboxes for a group of people in an office. The boxes in such grids are sometimes called pigeonholes in analogy with stacks of boxes used to house homing pigeons when homing pigeons were used to carry messages. People will sometimes state the principle in a more colorful way as ``if we put more than \(n\) pigeons into \(n\) pigeonholes, then some pigeonhole has more than one pigeon.''%
+\begin{activity}[]\label{activity-15}
+Show that if we have a function from a set of size \(n\) to a set of size less than \(n\), then \(f\) is not one-to-one.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Let \(T\) be the set of size less than \(n\), and \(S\) be the set of size \(n\). Let \(B_j=\{i|f(i)=j\}\) for each \(j\) in \(T\). Then the nonempty sets among the \(B_j\)s form a partition of \(S\) and the number of blocks is less than the size of \(S\). Therefore by the pigeonhole principle, there is at least one block with at least two elements, so there are two elements \(i_1\) and \(i_2\) such that \(f(i_1)=f(i_2)\).%
+\end{activity}
+\begin{activity}[]\label{activity-16}
+Show that if \(S\) and \(T\) are finite sets of the same size, then a function \(f\) from \(S\) to \(T\) is one-to-one if and only if it is onto.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad First suppose that \(f\) is a one-to-one function from \(S\) to \(T\), sets which have the same size. Let \(B_j=\{i|f(i)=j\}\) for each \(j\) in \(T\)..  If \(f\) is not onto, then the number of nonempty sets \(B_j\) is smaller than the number of elements of \(T\) and thus is smaller than the size of \(S\). The nonempty sets \(B_j\) are a partition of \(S\). But then by the pigeonhole principle, some nonempty \(B_j\) has two or more elements, contradicting the assumption that \(f\) is one-to-one. Therefore if \(f\) is one-to-one, then it is onto. Now suppose that \(f\) is an onto function from \(S\) to \(T\), sets of the same size. Again let \(B_j =\{i|f(i)=j\}\) for each \(j\) in \(T\). The size of the union of the sets \(B_j\) is, by the sum principle, the sum of their sizes. Since \(f\) is onto, each \(B_j\) has at least one element. Since the number of sets \(B_j\) is the number of elements of \(S\), if one of those sets has more than one element, the the size of their union is more than the size of \(S\), which is a contradiction since they are subsets of \(S\). Therefore each set \(B_j\) has exactly one element and therefore \(f\) is one-to-one.%
+\end{activity}
+\begin{activity}[]\label{activity-17}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item There is a \terminology{generalized pigeonhole principle}\index{pigeonhole principle!generalized} which says that if we partition a set with more than \(kn\) elements into \(n\) blocks, then at least one block has at least \(k+1\) elements. Prove the generalized pigeonhole principle.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Suppose we partition a set \(S\) of more than \(kn\) elements into \(n\) blocks. If each block has at most \(k\) elements, the by the sum principle the size of \(S\) is at most \(kn\). But this is a contradiction, so some block has at least \(k+1\) elements.%
+
+~\par
+\item All the powers of five end in a five, and all the powers of two are even. Show that for for some integer \(n\), if you take the first \(n\) powers of a prime other than two or five, one must have ``01'' as the last two digits.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad If we take 40 powers of such a prime, either one will end in ``01'' or some two, say \(p^i\) and \(p^j\) with \(i>j\) must have the same last two digits by the pigeon hole principle. Then \(p^i-p^j=100k\) for some integer \(k\). Thus \(p^j(p^{i-j} -1)\) must be a multiple of 100, and since neither 2 nor 5 divide \(p\), \(p^{i-j} -1 = 100k'\) for some integer \(k'\) then \(p^{i-j} = 100k'+1\), so the last two digits of \(p^{i-j}\) must be ``01.''%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{R_3_3_}
+Show that in a set of six people, there is a set of at least three people who all know each other, or a set of at least three people none of whom know each other. (We assume that if person 1 knows person 2, then person 2 knows person 1.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad By the generalized pigeonhole principle, person 1 either knows at least three people or doesn't know at least three people. Suppose person 1 knows three people. Then either two of these people know each other, giving us, with person 1, three mutual acquaintances, or no two of these people know each other, giving us three mutual strangers. On the other hand if there are three people person 1 does not know, then either two of these people don't know each other, giving us, with person 1, three mutual strangers, or all three of these people know each other, giving us three mutual acquaintances.%
+\end{activity}
+\begin{activity}[]\label{notR_3_3_}
+Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to draw red and green lines between people so that every pair of people is joined by a line and there is neither a triangle consisting entirely of red lines or a triangle consisting of green lines. What does \hyperref[R_3_3_]{Problem~\ref{R_3_3_}} tell you about the possibility of doing this with six people's names? What does this problem say about the conclusion of \hyperref[R_3_3_]{Problem~\ref{R_3_3_}} holding when there are five people in our set rather than six?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad In the figure that follows, we use solid lines for red and dashed lines for green. Clearly there is no solid triangle and no dashed triangle.%
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/NonRamsey5}
+\end{figure}
+\hyperref[R_3_3_]{Activity~\ref{R_3_3_}} says you can't do this with six people's names. This problem says that the conclusion of \hyperref[R_3_3_]{Activity~\ref{R_3_3_}} does not hold when you have five people.%
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  Ramsey Numbers}
+\typeout{************************************************}
+\subsection[{Ramsey Numbers}]{Ramsey Numbers}\label{Ramseysection}
+Activity~\hyperref[R_3_3_]{\ref{R_3_3_}}--\hyperref[notR_3_3_]{\ref{notR_3_3_}} together show that six is the smallest number \(R\) with the property that if we have \(R\) people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The \terminology{Ramsey Number} \(R(m,n)\) is the smallest number \(R\) so that if we have \(R\) people in a room, then there is a set of at least \(m\) mutual acquaintances or at least \(n\) mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a \emph{complete graph} on \(R\) vertices. A \emph{complete graph}\index{graph!complete} on \(R\) vertices consists of \(R\) points in the plane together with line segments (or curves) connecting each two of the \(R\) vertices.\footnote{As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in {$\langle\langle$Unresolved xref, reference "graphsection"; check spelling or use "provisional" attribute$\rangle\rangle$}.\label{fn-2}} The points are called \terminology{vertices}\index{vertex!of a complete graph}\index{vertex} and the line segments are called \terminology{edges}\index{edge!of a complete graph}\index{edge}. In \hyperref[completegraph]{Figure~\ref{completegraph}} we show three different ways to draw a complete graph on four vertices. We use \(K_n\) to stand for a complete graph on \(n\) vertices.%
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/threeK4s}
+\caption{Three ways to draw a complete graph on four vertices\label{completegraph}}
+\end{figure}
+Our geometric description of \(R(3,3)\) may be translated into the language of graph theory (which is the subject that includes complete graphs) by saying \(R(3,3)\) is the smallest number \(R\) so that if we color the edges of a \(K_R\) with two colors, then we can find in our picture a \(K_3\) all of whose edges have the same color.  The graph theory description of \(R(m,n)\) is that \(R(m,n)\) is the smallest number \(R\) so that if we color the edges of a \(K_R\) with red and green, then we can find in our picture either a \(K_m\) all of whose edges are red or a \(K_n\) all of whose edges are green. Because we could have said our colors in the opposite order, we may conclude that \(R(m,n) = R(n,m)\). In particular \(R(n,n)\) is the smallest number \(R\) such that if we color the edges of a \(K_R\) with two colors, then our picture contains a \(K_n\) all of whose edges have the same color.%
+\begin{activity}[]\label{activity-20}
+Since \(R(3,3)=6\), an uneducated guess might be that \(R(4,4)=8\). Show that this is not the case.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad In the graph of \hyperref[NonRamsey8]{Figure~\ref{NonRamsey8}}, each vertex has three dashed lines emanating from it, and there are no dashed lines connecting any of the three vertices adjacent to it by dashed lines. Each vertex has four solid lines emanating from it, and no three of the four vertices adjacent to it by solid lines are all adjacent by solid lines. Thus there is no solid line \(K_4\) and there is no dashed line \(K_4\).%
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/NonRamsey8}
+\caption{A graph showing \(R(4,4) \gt 8\)\label{NonRamsey8}}
+\end{figure}
+\end{activity}
+\begin{activity}[]\label{activity-21}
+Show that among ten people, there are either four mutual acquaintances or three mutual strangers. What does this say about \(R(4,3)\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Take a person, say person 1. If person has six acquaintances, then by \hyperref[R_3_3_]{Activity~\ref{R_3_3_}} among them there are either three mutual strangers, in which case we are done, or three mutual acquaintances. These three acquaintances together with person 1 form a set of 4 mutual acquaintances in which case we are again done. Thus we may assume Person 1 has at most 5 acquaintances, and so has four non-acquaintances. Now either all four of these people are acquainted, in which case we are done, or else two of them are not acquainted. Then these two people, together with person 1 make three mutual nonacquaintances. Therefore in every possible case, we have either four mutual acquaintances or three mutual strangers. This means that \(R(4,3) \le 10\).%
+\end{activity}
+\begin{activity}[]\label{OddNoPeople}
+Show that among an odd number of people there is at least one person who is an acquaintance of an even number of people and therefore also a stranger to an even number of people.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Suppose we add, for each person, the number of people with whom he or she is acquainted. Then we get twice the number of acquaintance edges in the graph of acquaintance and non-acquaintance relationships. Thus the sum must be even. But if each person among an odd number of people were acquainted with an odd number of people, then the sum would be odd. Since this is a contradiction, among an odd number of people, there must be at least one who is acquainted with an even number of people. Since the number of people different from this person is even, the number of people with whom this person is not acquainted is also even.%
+\end{activity}
+\begin{activity}[]\label{R_4_3_not8}
+Find a way to color the edges of a \(K_8\) with red and green so that there is no red \(K_4\) and no green \(K_3\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad In the graph shown in \hyperref[NonRamsey8]{Figure~\ref{NonRamsey8}}, there is no \(K_3\) whose edges are dashed, and no \(K_4\) whose edges are solid. By symmetry, to verify this you need only look at vertex 1 and vertices connected to it by either dashed lines or by solid lines.%
+\end{activity}
+\begin{activity}[]\label{activity-24}
+Find \(R(4,3)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(R(4,3)=9\). In \hyperref[R_4_3_not8]{Activity~\ref{R_4_3_not8}} we showed that \(R(4,3)\) is more than 8. So we must show that if we have nine people, we either have 4 mutual acquaintances or three mutual strangers. By \hyperref[OddNoPeople]{Activity~\ref{OddNoPeople}} there is at least one person (say person A) who is acquainted with an even number of people. If person A is acquainted with six or more people, then among these six people, there are either three mutual acquaintances or three mutual strangers. If there are three mutual strangers, we are done; if there are three mutual acquaintances, they, together with Person A are four mutual acquaintances. Thus we may assume Person A is acquainted with at most four people. Thus person A is a stranger to at least four people. If two of these people are strangers, then they, together with person A form three mutual strangers and we are done. Otherwise all of these people know each other and we have at least four mutual acquaintances, and so in every possible situation, we have either four mutual acquaintances or three mutual strangers.%
+\end{activity}
+As of this writing, relatively few Ramsey Numbers are known. \(R(3,n)\) is known for \(n\lt 10\), \(R(4,4) = 18\), and \(R(5,4)=R(4,5)=25\).%
+\typeout{************************************************}
+\typeout{Section 0.3 Supplementary Chapter Problems}
+\typeout{************************************************}
+\section[{Supplementary Chapter Problems}]{Supplementary Chapter Problems}\label{section-3}
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{compositiondefinition}{}(interesting) Remember that we can write \(n\) as a sum of \(n\) ones.  How many plus signs do we use?  In how many ways may we write \(n\) as a sum of a list of \(k\) positive numbers?  Such a list is called a \emph{composition}\index{composition} of \(n\) into \(k\) parts.\index{composition!\(k\) parts}\index{composition!\(k\) parts!number of} We use \(n-1\) plus signs. Write down such a sum and choose \(k-1\) of the plus signs. Then each string of ones and plusses between two chosen plus signs, before the first chosen plus sign or after the last chosen one corresponds to a part of a composition of \(n\). Thus the number of compositions of \(n\) with \(k\) parts is the number of ways to choose the \(k-1\) places, which is \(n-1\choose k-1\).%
@@ -426,7 +753,7 @@ ways to paint the balls.%
 \typeout{************************************************}
 \typeout{Section 1.1 The idea of a distribution}
 \typeout{************************************************}
-\section[{The idea of a distribution}]{The idea of a distribution}\label{section-3}
+\section[{The idea of a distribution}]{The idea of a distribution}\label{section-4}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
@@ -434,7 +761,7 @@ Many of the problems we solved in Chapter 1 may be thought of as problems of dis
 \typeout{************************************************}
 \typeout{Subsection  The twenty-fold way}
 \typeout{************************************************}
-\subsection[{The twenty-fold way}]{The twenty-fold way}\label{subsection-1}
+\subsection[{The twenty-fold way}]{The twenty-fold way}\label{subsection-5}
 When we are passing out objects to recipients, we may think of the objects as being either identical or distinct. We may also think of the recipients as being either identical (as in the case of putting fruit into plastic bags in the grocery store) or distinct (as in the case of passing fruit out to children). We may restrict the distributions to those that give at least one object to each recipient, or those that give exactly one object to each recipient, or those that give at most one object to each recipient, or we may have no such restrictions. If the objects are distinct, it may be that the order in which the objects are received is relevant (think about putting books onto the shelves in a bookcase) or that the order in which the objects are received is irrelevant (think about dropping a handful of candy into a child's trick or treat bag). If we ignore the possibility that the order in which objects are received matters, we have created \(2\cdot2\cdot4=16\) distribution problems. In the cases where a recipient can receive more than one distinct object, we also have four more problems when the order objects are received matters. Thus we have 20 possible distribution problems.%
 \begin{table}
 \centering
@@ -546,7 +873,7 @@ ways to place the books. Of course the right hand side of that equation cries ou
 
 \end{enumerate}
 \end{activity}
-The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters. Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function. More precisely, an \emph{ordered function}\index{ordered function}\index{function!ordered} from a set \(S\) to a set \(T\) is a function that assigns an (ordered) list of elements of \(S\) to some, but not necessarily all, elements of \(T\) in such a way that each element of \(S\) appears on one and only one of the lists.\footnote{The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.\label{fn-1}} (Notice that although it is not the usual definition of a function from \(S\) to \(T\), a function\index{function!alternate definition} can be described as an assignment of subsets of \(S\) to some, but not necessarily all, elements of \(T\) so that each element of \(S\) is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table. An \emph{ordered onto function}\index{function!ordered!onto}\index{ordered onto function}\index{onto function!ordered} is one which assigns a list to each element of \(T\). In \hyperref[bookcase]{Problem~\ref{bookcase}} you showed that the number of ordered functions from a \(k\)-element set to an \(n\)-element set is \(\displaystyle
+The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters. Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function. More precisely, an \emph{ordered function}\index{ordered function}\index{function!ordered} from a set \(S\) to a set \(T\) is a function that assigns an (ordered) list of elements of \(S\) to some, but not necessarily all, elements of \(T\) in such a way that each element of \(S\) appears on one and only one of the lists.\footnote{The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.\label{fn-3}} (Notice that although it is not the usual definition of a function from \(S\) to \(T\), a function\index{function!alternate definition} can be described as an assignment of subsets of \(S\) to some, but not necessarily all, elements of \(T\) so that each element of \(S\) is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table. An \emph{ordered onto function}\index{function!ordered!onto}\index{ordered onto function}\index{onto function!ordered} is one which assigns a list to each element of \(T\). In \hyperref[bookcase]{Problem~\ref{bookcase}} you showed that the number of ordered functions from a \(k\)-element set to an \(n\)-element set is \(\displaystyle
 \prod_{i=1}^n (n+i-1)\). This product occurs frequently enough that it has a name; it is called the \(k\)\/th \emph{rising factorial power}\index{factorial power!rising}\index{rising factorial power} of \(n\) and is denoted by \(n^{\overline{k}}\).\index{\(n^{\overline{k}}\)} It is read as ``\(n\) to the \(k\) rising." (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)\index{factorial} We can summarize with a theorem that adds two more formulas for the number of ordered functions.\index{factorial!falling}\index{falling factorial power}%
 \begin{theorem}[{}]\label{theorem-4}
 The number of ordered functions from a \(k\)-element set to an \(n\)-element set is%
@@ -559,7 +886,7 @@ n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
 \typeout{************************************************}
 \typeout{Subsection  Broken permutations and Lah numbers}
 \typeout{************************************************}
-\subsection[{Broken permutations and Lah numbers}]{Broken permutations and Lah numbers}\label{subsection-3}
+\subsection[{Broken permutations and Lah numbers}]{Broken permutations and Lah numbers}\label{subsection-7}
 \begin{activity}[]\label{brokenpermutation}
 In how many ways may we stack \(k\) distinct books into \(n\) identical boxes so that there is a stack in every box? (Hint: Imagine taking a stack of \(k\) books, and breaking it up into stacks to put into the boxes in the same order they were originally stacked. If you are going to use \(n\) boxes, in how many places will you have to break the stack up into smaller stacks, and how many ways can you do this?) (Alternate hint: How many different bookcase arrangements correspond to the same way of stacking \(k\) books into \(n\) boxes so that each box has at least one book?). The hints may suggest that you can do this problem in more than one way!%
 \par\medskip\noindent%
@@ -567,7 +894,7 @@ In how many ways may we stack \(k\) distinct books into \(n\) identical boxes so
 \par
 Alternately, we can take the number of ways to put \(k\) books onto \(n\) bookshelves so that each shelf gets at least one, and then divide by the number of shelves factorial. That gives us \(k!{k-1\choose n-1}/n!\) ways to arrange the books.%
 \end{activity}
-We can think of stacking books into identical boxes as partitioning the books and then ordering the blocks of the partition. This turns out not to be a useful computational way of visualizing the problem because the number of ways to order the books in the various stacks depends on the sizes of the stacks and not just the number of stacks. However this way of thinking actually led to the first hint in \hyperref[brokenpermutation]{Problem~\ref{brokenpermutation}}. Instead of dividing a set up into nonoverlapping parts, we may think of dividing a \emph{permutation} (thought of as a list) of our \(k\) objects up into \(n\) ordered blocks. We will say that a set of ordered lists of elements of a set \(S\) is a \emph{broken permutation}\index{broken permutation}\index{permutation!broken} of \(S\) if each element of \(S\) is in one and only one of these lists.\footnote{The phrase broken permutation is not standard, because there is no standard name for the solution to this kind  of distribution problem.\label{fn-2}} The number of broken permutations of a \(k\)-element set with \(n\) blocks is denoted by \(L(k,n)\). The number \(L(k,n)\) is called a \emph{Lah Number} and, from our solution to \hyperref[brokenpermutation]{Problem~\ref{brokenpermutation}}, is equal to \(k!{k-1\choose n-1}/n!\).\index{Lah number}%
+We can think of stacking books into identical boxes as partitioning the books and then ordering the blocks of the partition. This turns out not to be a useful computational way of visualizing the problem because the number of ways to order the books in the various stacks depends on the sizes of the stacks and not just the number of stacks. However this way of thinking actually led to the first hint in \hyperref[brokenpermutation]{Problem~\ref{brokenpermutation}}. Instead of dividing a set up into nonoverlapping parts, we may think of dividing a \emph{permutation} (thought of as a list) of our \(k\) objects up into \(n\) ordered blocks. We will say that a set of ordered lists of elements of a set \(S\) is a \emph{broken permutation}\index{broken permutation}\index{permutation!broken} of \(S\) if each element of \(S\) is in one and only one of these lists.\footnote{The phrase broken permutation is not standard, because there is no standard name for the solution to this kind  of distribution problem.\label{fn-4}} The number of broken permutations of a \(k\)-element set with \(n\) blocks is denoted by \(L(k,n)\). The number \(L(k,n)\) is called a \emph{Lah Number} and, from our solution to \hyperref[brokenpermutation]{Problem~\ref{brokenpermutation}}, is equal to \(k!{k-1\choose n-1}/n!\).\index{Lah number}%
 \par
 The Lah numbers are the solution to the question ``In how many ways may we distribute \(k\) distinct objects to \(n\) identical recipients if order matters and each recipient must get at least one?" Thus they give the entry in row 6 and column 6 of our table. The entry in row 5 and column 6 of our table will be the number of broken permutations with less than or equal to \(n\) parts. Thus it is a sum of Lah numbers.%
 \par
@@ -575,8 +902,8 @@ We have seen that ordered functions and broken permutations explain the entries 
 \typeout{************************************************}
 \typeout{Subsection  Compositions of integers}
 \typeout{************************************************}
-\subsection[{Compositions of integers}]{Compositions of integers}\label{subsection-4}
-\begin{activity}[]\label{activity-3}
+\subsection[{Compositions of integers}]{Compositions of integers}\label{subsection-8}
+\begin{activity}[]\label{activity-27}
 In how many ways may we put \(k\) identical books onto \(n\) shelves if each shelf must get at least one book?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad In {$\langle\langle$Unresolved xref, reference "bookcaseeveryshelf"; check spelling or use "provisional" attribute$\rangle\rangle$} we showed that with \(k\) distinct books we could place the books in \(k!{k-1\choose n-1}\) ways. We can partition these arangements of distinct books into blocks, where each block consists of all arrangements that we get just by permuting the books among themselves. Thus each block has \(k!\) arrangements in it, and each arrangement corresponds to an arrangement of identical books. Thus there are \(k-1\choose n-1\) ways to arrange identical books.%
@@ -586,12 +913,12 @@ A \emph{composition} of the integer \(k\) into \(n\) parts is a list of \(n\) po
 \par\medskip\noindent%
 \textbf{Solution.}\quad There is a bijection between compositions of \(k\) into \(n\) parts and arrangements of \(k\) identical books on \(n\) shelves so that each shelf gets a book. Namely, the number of books on shelf \(i\) is the \(i\)th element of the list. Thus the number of compositions of \(k\) into \(n\) parts is \(k-1 \choose n-1\).%
 \end{activity}
-\begin{activity}[]\label{activity-5}
+\begin{activity}[]\label{activity-29}
 Your answer in \hyperref[compositionagian]{Problem~\ref{compositionagian}} can be expressed as a binomial coefficient. This means it should be possible to interpret a composition as a subset of some set. Find a bijection between compositions of \(k\) into \(n\) parts and certain subsets of some set. Explain explicitly how to get the composition from the subset and the subset from the composition.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If we line up \(k\) identical books, there are \(k-1\) places in between two books. If we choose \(n-1\) of these places and slip dividers into those places, then we have a first clump of books, a second clump of books, and so on. The \(i\)th element of our list is the number of books in the \(i\)th clump. Clearly using books is irrelevant; we could line up any \(k\) identical objects and make the same argument. Our bijection is between compositions and \(n-1\)-element subsets of the set of \(k-1\) spaces between our objects.%
 \end{activity}
-\begin{activity}[]\label{activity-6}
+\begin{activity}[]\label{activity-30}
 Explain the connection between compositions of \(k\) into \(n\) parts and the problem of distributing \(k\) identical objects to \(n\) recipients so that each recipient gets at least one.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Since the recipients are distinct, we can think of them as a first recipient, a second, and so on. Given a composition of \(k\) into \(n\) parts, let the \(i\)th element of the list be the number of objects given to recipient number \(i\).%
@@ -600,7 +927,7 @@ The sequence of problems you just completed should explain the entry in the midd
 \typeout{************************************************}
 \typeout{Subsection  Multisets}
 \typeout{************************************************}
-\subsection[{Multisets}]{Multisets}\label{subsection-5}
+\subsection[{Multisets}]{Multisets}\label{subsection-9}
 In the middle column of row 7 of our table, we are asking for the number of ways to distribute \(k\) identical objects (say ping-pong balls) to \(n\) distinct recipients (say children).%
 \begin{activity}[]\label{identicalbooks}
 In how many ways may we distribute \(k\) identical books on the shelves of a bookcase with \(n\) shelves, assuming that any shelf can hold all the books?%
@@ -617,7 +944,7 @@ A \emph{multiset}\index{multiset} chosen from a set \(S\) may be thought of as a
 \par\medskip\noindent%
 \textbf{Solution.}\quad There is a bijection between arrangements of identical books on \(n\) shelves and multisets chosen from an \(n\)-element set: the multiplicity of element \(i\) is the number of books on shelf \(i\). Thus we have \(n+k-1\choose k\) ways to choose a \(k\)-element multiset from an \(n\)-element set by \hyperref[identicalbooks]{Problem~\ref{identicalbooks}}.%
 \end{activity}
-\begin{activity}[]\label{activity-9}
+\begin{activity}[]\label{activity-33}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Your answer in the previous problem should be expressible as a binomial coefficient. Since a binomial coefficient counts subsets, find a bijection between subsets of something and multisets chosen from a set \(S\).%
@@ -648,7 +975,7 @@ The sequence of problems you just completed should explain the entry in the midd
 \typeout{************************************************}
 \typeout{Section 1.2 Partitions and Stirling Numbers}
 \typeout{************************************************}
-\section[{Partitions and Stirling Numbers}]{Partitions and Stirling Numbers}\label{section-4}
+\section[{Partitions and Stirling Numbers}]{Partitions and Stirling Numbers}\label{section-5}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
@@ -656,7 +983,7 @@ We have seen how the number of partitions of a set of \(k\) objects into \(n\) b
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers of the second kind}
 \typeout{************************************************}
-\subsection[{Stirling Numbers of the second kind}]{Stirling Numbers of the second kind}\label{subsection-6}
+\subsection[{Stirling Numbers of the second kind}]{Stirling Numbers of the second kind}\label{subsection-10}
 We use the notation \(S(k,n)\) to stand for the number of partitions of a \(k\) element set with \(n\) blocks. For historical reasons, \(S(k,n)\) is called a \emph{Stirling number of the second kind}. \index{partition!of a set}\index{partition!of a set!!Stirling Numbers}\index{Stirling Number!second kind}\index{\(S(k,n)\)}%
 \begin{activity}[]\label{secondstirlingrecurrence}
 ~\par
@@ -708,7 +1035,7 @@ As you see in the table, we define \(S(0,0)=1\), and \(S(0,n)\) or \(S(k,0)\) to
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-12}
+\begin{activity}[]\label{activity-36}
 Find a recurrence similar to the one in \hyperref[secondstirlingrecurrence]{Problem~\ref{secondstirlingrecurrence}} for the Lah numbers \(L(k,n)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(L(k,n)\) is the number of broken permutations of a \(k\)-element set into \(n\) parts. Either \(k\) is in an ordered block by itself or it is not. If it is, it can go after any of the \(k-1\) other elements, or it can go at the beginning of any of the \(n\) blocks. If it is not, deleting it gives a broken permutation of a \(k-1\)-element set into \(n-1\) blocks. Thus \(L(k,n)=L(k-1,n-1) + (n+k-1)L(k,n)\).%
@@ -752,8 +1079,8 @@ B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers and onto functions}
 \typeout{************************************************}
-\subsection[{Stirling Numbers and onto functions}]{Stirling Numbers and onto functions}\label{subsection-7}
-\begin{activity}[]\label{activity-14}
+\subsection[{Stirling Numbers and onto functions}]{Stirling Numbers and onto functions}\label{subsection-11}
+\begin{activity}[]\label{activity-38}
 Given a function \(f\) from a \(k\)-element set \(K\) to an \(n\)-element set, we can define a partition of \(K\) by putting \(x\) and \(y\) in the same block of the partition if and only if \(f(x)=f(y)\). How many blocks does the partition have if \(f\) is onto? How is the number of functions from a \(k\)-element set onto an \(n\)-element set related to a Stirling number? Be as precise in your answer as you can.\index{function!onto!and Stirling Numbers}\index{onto function!counting}%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If \(f\) is onto, the number of blocks of the partition is \(n\). The number of onto functions from a \(k\)-element set onto an \(n\)-element set is \(S(k,n)n!\), because we have a one-to-one function from the blocks to the \(n\)-element set.%
@@ -763,19 +1090,19 @@ Each function from a \(k\)-element set \(K\) to an \(n\)-element set \(N\) is a 
 \par\medskip\noindent%
 \textbf{Solution.}\quad The sum should equal the number of functions, \(n^k\). Thus we get \(\sum_{j=0}^n {n\choose j}S(k,j)j! = n^k\). By using the fact that \({n\choose j}= n^{\underline{j}}/j!\), this may be rewritten as \(\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k.\)%
 \end{activity}
-\begin{activity}[]\label{activity-16}
+\begin{activity}[]\label{activity-40}
 In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, reference "sandwiches"; check spelling or use "provisional" attribute$\rangle\rangle$} be placed into three distinct bags so that each bag gets at least one?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(S(9,3)\cdot3!= 55,980\).%
 \end{activity}
-\begin{activity}[]\label{activity-17}
+\begin{activity}[]\label{activity-41}
 In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, reference "caterer2"; check spelling or use "provisional" attribute$\rangle\rangle$} be placed into distinct bags so that each bag gets exactly three?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Choose three sandwiches for bag one in \(9\choose3\) ways, three for bag two in \(6\choose3\) ways and put the remainder in bag 3. This gives us \({9\choose3}{6\choose3}={9!\over3!3!3!}=1680\) ways.%
 \par
 The \(9!\over3!3!3!\) suggests another solution. We can line up the sandwiches in 9! ways. We take the first three for bag one, the second three for bag two and the last three for bag 3. The order of the sandwiches in the bag does not matter though, so each there are \(3!3!3!\) listings corresponding to each way of putting sandwiches in bags, giving us \(9!\over3!3!3!\) ways to put the sandwiches in bags.%
 \end{activity}
-\begin{activity}[]\label{activity-18}
+\begin{activity}[]\label{activity-42}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item How many functions are there from a \(k\)-element set \(K\) to a set \(N=\{y_1,y_2,\ldots y_n\}\) so that \(y_i\) is the image of \(j_i\) elements of \(K\) for each \(i\) from 1 to \(n\)? This number is called a \emph{multinomial coefficient}\index{multinomial coefficient}\index{coefficient!multinomial} and denoted by%
@@ -801,7 +1128,7 @@ j_1,j_2,\ldots,j_n\) in which each \(j_i\) is different from zero. To see why, l
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-19}
+\begin{activity}[]\label{activity-43}
 What do multinomial coefficients have to do with expanding the \(k\)th power of a multinomial \(x_1+x_2+\cdots+x_n\)? This result is called the \emph{multinomial theorem}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad When we use the distributive law to multiply out \((x_1+x_2+\cdots +x_n)^k\), we will get a sum of a bunch of terms of the form \(x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\) where \(i_1+i_2+\cdots+ i_n=k\). The terms with a given sequence \(i_1,i_2,\ldots, i_n\) of exponents will arise from choosing, as we apply the distributive law over and over again, \(x_1\) from \(i_1\) of the factors, \(x_2\) from \(i_2\) of the factors, and so on. Thus the number of terms \(x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\) will be the number of ways to label \(i_1\) of the factors with a 1, \(i_2\) of the factors with a 2, \dots{}, and \(i_n\) of the factors with an \(n\). The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from \([k]\) to \([n]\) as follows. If factor \(i\) is labelled \(j\) we let \(f(i)
@@ -810,7 +1137,7 @@ What do multinomial coefficients have to do with expanding the \(k\)th power of 
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers and bases for polynomials}
 \typeout{************************************************}
-\subsection[{Stirling Numbers and bases for polynomials}]{Stirling Numbers and bases for polynomials}\label{subsection-8}
+\subsection[{Stirling Numbers and bases for polynomials}]{Stirling Numbers and bases for polynomials}\label{subsection-12}
 \begin{activity}[]\label{powersfromfalling}
 Find a way to express \(n^k\) in terms of \(k^{\underline{j}}\) for appropriate values \(j\). You may use Stirling numbers if they help you. Notice that \(x^{\underline{j}}\) makes sense for a numerical variable \(x\) (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming \(n\) does), just as \(x^j\) does. Find a way to express the power \(x^k\) in terms of the polynomials \(x^{\underline{j}}\) for appropriate values of \(j\) and explain why your formula is correct.%
 \par\medskip\noindent%
@@ -834,8 +1161,8 @@ n^{\underline{j}}S(k,j)-n^k=0\), which is just a restatement of \hyperref[change
 x^{\underline{j}}S(k,j)-x^k\) must be zero for every real (and even every complex) number \(x\). Thus \(\sum_{j=0}^k
 x^{\underline{j}}S(k,j)=x^k\), and we have expressed \(x^k\) in terms of \(x^{\underline{j}}\) for \(j\le k\).%
 \end{activity}
-You showed in \hyperref[powersfromfalling]{Problem~\ref{powersfromfalling}} how to get each power of \(x\) in terms of the falling factorial powers \(x^{\underline{j}}\). Therefore every polynomial in \(x\) is expressible in terms of a sum of numerical multiples of falling factorial powers. Using the language of linear algebra, we say that the ordinary powers of \(x\) and the falling factorial powers of \(x\) each form a basis for the ``space'' of polynomials, and that the numbers \(S(k,n)\) are ``change of basis coefficients.'' If you are not familiar with linear algebra, a \emph{basis}\index{basis (for polynomials)} for the \emph{space of polynomials}\footnote{The space of polynomials is just another name for the set of all polynomials.\index{space of polynomials}\label{fn-3}} is a set of polynomials such that each polynomial, whether in that set or not, can be expressed in one and only one way as a sum of numerical multiples of polynomials in the set.%
-\begin{activity}[]\label{activity-21}
+You showed in \hyperref[powersfromfalling]{Problem~\ref{powersfromfalling}} how to get each power of \(x\) in terms of the falling factorial powers \(x^{\underline{j}}\). Therefore every polynomial in \(x\) is expressible in terms of a sum of numerical multiples of falling factorial powers. Using the language of linear algebra, we say that the ordinary powers of \(x\) and the falling factorial powers of \(x\) each form a basis for the ``space'' of polynomials, and that the numbers \(S(k,n)\) are ``change of basis coefficients.'' If you are not familiar with linear algebra, a \emph{basis}\index{basis (for polynomials)} for the \emph{space of polynomials}\footnote{The space of polynomials is just another name for the set of all polynomials.\index{space of polynomials}\label{fn-5}} is a set of polynomials such that each polynomial, whether in that set or not, can be expressed in one and only one way as a sum of numerical multiples of polynomials in the set.%
+\begin{activity}[]\label{activity-45}
 Show that every power of \(x+1\) is expressible as a sum of numerical multiples of powers of \(x\). Now show that every power of \(x\) (and thus every polynomial in \(x\)) is a sum of numerical multiples (some of which could be negative) of powers of \(x+1\). This means that the powers of \(x+1\) are a basis for the space of polynomials as well. Describe the change of basis coefficients that we use to express the binomial powers \((x+1)^n\) in terms of the ordinary \(x^j\) explicitly. Find the change of basis coefficients we use to express the ordinary powers \(x^n\) in terms of the binomial powers \((x+1)^k\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We know that%
@@ -898,7 +1225,7 @@ Equating the coefficients of \(x^n\) in the first and last line of this equation
 \end{enumerate}
 \end{activity}
 By definition, the Stirling numbers of the first kind are also change of basis coefficients. The Stirling numbers of the first and second kind are change of basis coefficients from the falling factorial powers of \(x\) to the ordinary factorial powers, and vice versa.%
-\begin{activity}[]\label{activity-23}
+\begin{activity}[]\label{activity-47}
 Explain why every rising factorial polynomial \(x^{\overline{k}}\) can be expressed in terms of the falling factorial polynomials \(x^{\underline{n}}\). Let \(b(k,n)\) stand for the change of basis coefficients that allow us to express \(x^{\overline{k}}\) in terms of the falling factorial polynomials \(x^{\underline{n}}\); that is, define \(b(k,n)\) by the equations%
 \begin{equation*}
 x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
@@ -961,12 +1288,12 @@ Therefore the change of basis coefficients are \((-1)^{n-k}b(k,n)\).%
 \typeout{************************************************}
 \typeout{Section 1.3 Partitions of Integers}
 \typeout{************************************************}
-\section[{Partitions of Integers}]{Partitions of Integers}\label{section-5}
+\section[{Partitions of Integers}]{Partitions of Integers}\label{section-6}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
 We have now completed all our distribution problems except for those in which both the objects and the recipients are identical. For example, we might be putting identical apples into identical paper bags. In this case all that matters is how many bags get one apple (how many recipients get one object), how many get two, how many get three, and so on. Thus for each bag we have a number, and the multiset of numbers of apples in the various bags is what determines our distribution of apples into identical bags. A multiset of positive integers that add to \(n\) is called a \emph{partition}\index{partition of an integer} of \(n\). Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1) and 3. The number of partitions of \(k\) is denoted by \(P(k)\); in computing the partitions of 3 we showed that \(P(3) = 3\). It is traditional to use Greek letters like \(\lambda\) (the Greek letter \(\lambda\) is pronounced LAMB duh) to stand for partitons; we might write \(\lambda= 1,1,1\), \(\gamma= 2,1\) and \(\tau = 3\) to stand for the three partitions we just described. We also write \(\lambda = 1^3\) as a shorthand for \(\lambda = 1,1,1\), and we write \(\lambda \dashv 3\) as a shorthand for ``\(\lambda\) is a partition of three."%
-\begin{activity}[]\label{activity-24}
+\begin{activity}[]\label{activity-48}
 Find all partitions of 4 and find all partitions of 5, thereby computing \(P(4)\) and \(P(5)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(4=1+1+1+1\), \(4=2+1+1\), \(4=2+1\), \(4=3+1\), \(4=4\), so that \(P(4)=5\). \(5=1+1+1+1+1\), \(5=2+1+1+1\), \(5=2+2+1\), \(5=3+1+1\), \(5=3+2\), \(5=4+1\), \(5=5\), so that \(P(5)=7\).%
@@ -974,9 +1301,9 @@ Find all partitions of 4 and find all partitions of 5, thereby computing \(P(4)\
 \typeout{************************************************}
 \typeout{Subsection  The number of partitions of \(k\) into \(n\) parts}
 \typeout{************************************************}
-\subsection[{The number of partitions of \(k\) into \(n\) parts}]{The number of partitions of \(k\) into \(n\) parts}\label{subsection-9}
+\subsection[{The number of partitions of \(k\) into \(n\) parts}]{The number of partitions of \(k\) into \(n\) parts}\label{subsection-13}
 A \emph{partition of the integer \(k\) into \(n\) parts}\index{partition of an integer!into \(n\) parts} is a multiset of \(n\) positive integers that add to \(k\). We use \(P(k,n)\) to denote the number of partitions of \(k\) into \(n\) parts. Thus \(P(k,n)\) is the number of ways to distribute \(k\) identical objects to \(n\) identical recipients so that each gets at least one.%
-\begin{activity}[]\label{activity-25}
+\begin{activity}[]\label{activity-49}
 Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say about the number of ways to put six identical apples into three identical bags so that each bag has at least one apple?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(6=4+1+1\), \(6=3+2+1\), \(6=2+2+2\), so \(P(6,3)=3\). This says there are three ways to put six identical apples into three identical bags so that each bag gets at least one apple.%
@@ -984,8 +1311,8 @@ Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say 
 \typeout{************************************************}
 \typeout{Subsection  Representations of partitions}
 \typeout{************************************************}
-\subsection[{Representations of partitions}]{Representations of partitions}\label{subsection-10}
-\begin{activity}[]\label{activity-26}
+\subsection[{Representations of partitions}]{Representations of partitions}\label{subsection-14}
+\begin{activity}[]\label{activity-50}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item How many solutions are there in the positive integers to the equation \(x_1+x_2+x_3 =7\) with \(x_1\ge x_2\ge x_3\)?%
@@ -1000,7 +1327,7 @@ Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say 
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-27}
+\begin{activity}[]\label{activity-51}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Describe the relationship between partitions of \(k\) and lists or vectors \((x_1,x_2,\ldots,x_n)\) such that \(x_1+2x_2+\ldots kx_k = k\). Such a representation of a partition is called a \emph{type vector} representation of a partition, and it is typical to leave the trailing zeros out of such a representation; for example \((2,1)\) stands for the same partition as \((2,1,0,0)\). What is the decreasing list representation for this partition, and what number does it partition?\index{partition of an integer!type vector}\index{type vector for a partition of an integer}%
@@ -1021,20 +1348,20 @@ When we write a partition as \(\lambda =
 \typeout{************************************************}
 \typeout{Subsection  Ferrers and Young Diagrams and the conjugate of a partition}
 \typeout{************************************************}
-\subsection[{Ferrers and Young Diagrams and the conjugate of a partition}]{Ferrers and Young Diagrams and the conjugate of a partition}\label{subsection-11}
+\subsection[{Ferrers and Young Diagrams and the conjugate of a partition}]{Ferrers and Young Diagrams and the conjugate of a partition}\label{subsection-15}
 The decreasing list representation of partitions leads us to a handy way to visualize partitions. Given a decreasing list \((\lambda_1,\lambda_2,\ldots \lambda_n)\), we draw a figure made up of rows of dots that has \(\lambda_1\) equally spaced dots in the first row, \(\lambda_2\) equally spaced dots in the second row, starting out right below the beginning of the first row and so on. Equivalently, instead of dots, we may use identical squares, drawn so that a square touches each one to its immediate right or immediately below it along an edge. See \hyperref[FerrersYoung]{Figure~\ref{FerrersYoung}} for examples.\index{Ferrers diagram}\index{Young diagram}\index{partition of an integer!Ferrers diagram}\index{partition of an integer!Young diagram}\index{diagram!of a partition!Ferrers}\index{diagram!of a partition!Young} The figure we draw with dots is called the Ferrers diagram of the partition; sometimes the figure with squares is also called a Ferrers diagram; sometimes it is called a Young diagram. At this stage it is irrelevant which name we choose and which kind of figure we draw; in more advanced work the squares are handy because we can put things like numbers or variables into them. From now on we will use squares and call the diagrams Young diagrams.%
 \begin{figure}
 \centering
 \includegraphics[width=0.73\linewidth]{images/}
 \caption{The Ferrers and Young diagrams of the partition (5,3,3,2)\label{FerrersYoung}}
 \end{figure}
-\begin{activity}[]\label{activity-28}
+\begin{activity}[]\label{activity-52}
 Draw the Young diagram of the partition (4,4,3,1,1). Describe the geometric relationship between the Young diagram of (5,3,3,2) and the Young diagram of (4,4,3,1,1).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \includegraphics[width=0.73\linewidth]{images/}
  We get the Young diagram of \((5,3,3,2)\) by flipping the Young diagram of \((4,4,3,1,1)\) around a line that includes the diagonal of the upper left box; if we think of the top left corner of the diagram as being at the origin, we flip around the line \(y=-x\).%
 \end{activity}
-\begin{activity}[]\label{activity-29}
+\begin{activity}[]\label{activity-53}
 The partition \((\lambda_1,\lambda_2,\ldots, \lambda_n)\) is called the \emph{conjugate}\index{conjugate of an integer partition}\index{partition of an integer!conjugate of} of the partition \((\gamma_1,\gamma_2,\ldots, \gamma_m)\) if we obtain the Young diagram of one from the Young diagram of the other by flipping one around the line with slope -1 that extends the diagonal of the top left square. See \hyperref[conjugateYoung]{Figure~\ref{conjugateYoung}} for an example.%
 \begin{figure}
 \centering
@@ -1045,7 +1372,7 @@ What is the conjugate of (4,4,3,1,1)? How is the largest part of a partition rel
 \par\medskip\noindent%
 \textbf{Solution.}\quad \((5,3,3,2)\). The largest part of a partition equals the number of parts of its conjugate. The number of partitions of \(k\) with largest part \(m\) equals the number of partitions of \(k\) with \(m\) parts.%
 \end{activity}
-\begin{activity}[]\label{activity-30}
+\begin{activity}[]\label{activity-54}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item A partition is called \emph{self-conjugate}\index{self-conjugate partition}\index{partition of an integer!self conjugate} if it is equal to its conjugate. Find a relationship between the number of self-conjugate partitions of \(k\) and the number of partitions of \(k\) into distinct odd parts.%
@@ -1080,7 +1407,7 @@ Why can we interpret the part of the rectangle not occupied by our Young diagram
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-32}
+\begin{activity}[]\label{activity-56}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Suppose we take a partition of \(k\) into \(n\) parts with largest part \(m\), complement it in the smallest rectangle it will fit into, complement the result in the smallest rectangle it will fit into, and continue the process until we get the partition 1 of one into one part. What can you say about the partition with which we started?%
@@ -1235,9 +1562,9 @@ Each gets exactly one&&\tabularnewline[0pt]
 \typeout{************************************************}
 \typeout{Subsection  Partitions into distinct parts}
 \typeout{************************************************}
-\subsection[{Partitions into distinct parts}]{Partitions into distinct parts}\label{subsection-12}
+\subsection[{Partitions into distinct parts}]{Partitions into distinct parts}\label{subsection-16}
 Often \(Q(k,n)\) is used to denote the number of partitions of \(k\) into distinct parts, that is, parts that are different from each other.%
-\begin{activity}[]\label{activity-34}
+\begin{activity}[]\label{activity-58}
 Show that%
 \begin{equation*}
 Q(k,n) \le {1\over n!}{k-1\choose n-1}.
@@ -1247,22 +1574,22 @@ Q(k,n) \le {1\over n!}{k-1\choose n-1}.
 \textbf{Solution.}\quad The number of compositions of \(k\) into \(n\) parts is \(k-1\choose n-1\). Thus the number of compositions of \(k\) into \(n\) distinct parts is less than \(k-1\choose n-1\). Divide the compositions of \(k\) into \(n\) distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has \(n!\) members. Further, there is a bijection between the blocks of this partition and the partitions of \(k\) into \(n\) distinct parts. Since the number of compositions of \(k\) into \(n\) distinct parts is less than \(k-1 \choose n-1\), the number of partitions of \(k\) into \(n\) distinct parts is less than \({1\over n!}
 {k-1\choose n-1}\).%
 \end{activity}
-\begin{activity}[]\label{activity-35}
+\begin{activity}[]\label{activity-59}
 Show that the number of partitions of 7 into 3 parts equals the number of partitions of 10 into three distinct parts.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Given a partition \(\lambda\) of 7 in decreasing list form \(\lambda_1,\lambda_2,\lambda_3\), if we add 0 to \(\lambda_3\), \(1\) to \(\lambda_2\) and 2 to \(\lambda_1\) the resulting partition of 10 has distinct parts. If we take a partition \(\lambda'\) of 10 with distinct parts, then \(\lambda'_1\ge\lambda'_2+1\), \(\lambda'_1\ge\lambda'_2+2\), and \(\lambda'_2\ge \lambda'_3+1\). Therefore if we subtract 2 from \(\lambda'_1\) to get \(\lambda_1\), subtract 1 from \(\lambda'_2\) to get \(\lambda_2\) and let \(\lambda_3= \lambda'_3\), then \(\lambda_1,\lambda_2,\lambda_3\) is the decreasing list representation of a partition of \(10-3=7\). Thus there is a bijection between partitions of \(7\) into three parts and partitions of \(10\) into three distinct parts.%
 \end{activity}
-\begin{activity}[]\label{activity-36}
+\begin{activity}[]\label{activity-60}
 There is a relationship between \(P(k,n)\) and \(Q(m,n)\) for some other number \(m\). Find the number \(m\) that gives you the nicest possible relationship.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of partitions of \(k\) into \(n\) parts is equal to the number of partitions of \(k+{n\choose2}\) into n distinct parts. The bijection from partitions of \(k\) with \(n\) parts to partitions of \(k+{n\choose2}\) with \(n\) distinct parts that proves this is the one that takes a partition \(\lambda_n\lambda_{n-1}\cdots\lambda_1\) of \(k\) with \(\lambda_i>\lambda_{i+1}\) and adds \(i-1\) to \(\lambda_i\) to get \(\lambda'_i\). Then \(\lambda'\) is a partition into distinct parts, and the number it partitions is \(k+1+2+\cdots+n-1=k+{n\choose 2}\). The proof that it is a bijection is the fact that subtracting \(n-i\) from the \(i\)\/th part of a partition of \(k\) into distinct parts yields a partition of \(k\), because part \(i+j\) is at least \(j\) smaller than part \(i\).%
 \end{activity}
-\begin{activity}[]\label{activity-37}
+\begin{activity}[]\label{activity-61}
 Find a recurrence that expresses \(Q(k,n)\) as a sum of \(Q(k-n,m)\) for appropriate values of \(m\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Suppose \(\lambda\) is a partition of \(k\) into \(n\) distinct parts. Either 1 is one of those parts or not. Thus if we subtract 1 from each part, we either get a partition of \(k-n\) into \(n-1\) parts or a partition of \(k-n\) into \(n\) parts. If \(\lambda\) and \(\lambda'\) are different partitions of \(k\) into \(n\) distinct parts, they go to different partitions. Each partition of \(k-n\) into \(n-1\) parts or \(n\) parts can be gotten in this way from a corresponding partition of \(k\) into \(n\) parts. Thus we have a bijective correspondence and \(Q(k,n)=Q(k-n,n-1) +Q(k-n,n)\).%
 \end{activity}
-\begin{activity}[]\label{activity-38}
+\begin{activity}[]\label{activity-62}
 Show that the number of partitions of \(k\) into distinct parts equals the number of partitions of \(k\) into odd parts.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We start by giving a function from the set of partitions of \(k\) to the set of partitions of \(k\) with (only) odd parts. Clearly such a function cannot be one to one. Then we show that when restricted to the partitions with distinct parts it is one-to-one and onto by constructing an inverse. Given a partition \(\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}\), write \(\lambda_i=\gamma_i2^{k_i}\), where \(\gamma_i\) is odd. (Thus \(2^{k_i}\) is the highest power of 2 that is a factor of \(\lambda_i\), so it is 1 if \(\lambda_i\) is odd.). It is possible that \(\gamma_i=\gamma_j\), for example if \(\lambda_i=36\) and \(\lambda_j=18\), then \(\gamma_i=\gamma_j=9\). We construct a new partition \(\pi\) whose parts are the numbers \(\gamma_j\) as follows: Given an odd number \(p\), let the multiplicity \(m(p)\) of \(p\) in \(\pi\) be \(\sum_{j: \gamma_j=m}
@@ -1272,7 +1599,7 @@ Now consider a partition \(\pi\) of \(k\) whose parts are all odd. Let \(\pi=\pi
 0}^{\lfloor
 \log_2 r_i\rfloor} 2^{ja_{ij}}\), where \(a_{ij}\) is 1 if \(2^j\) appears in the binary expansion of \(r_i\), and 0 otherwise. All of the numbers \(\pi_i2^{ja_{ij}}\) are distinct, because a power of two times one odd number cannot equal a power of two times another odd number. The numbers \(\pi_i2^{ja_{ij}}\) add to \(k\), so they are the parts of a partition \(\pi'\) of \(k\) into distinct parts. When we apply the function constructed in the first part of the solution to \(\pi'\), we get \(\pi\), so the correspondence between \(\pi\) and \(\pi'\) is a bijection.%
 \end{activity}
-\begin{activity}[]\label{activity-39}
+\begin{activity}[]\label{activity-63}
 Euler showed that if \(k\not= {3j^2+j\over 2}\), then the number of partitions of \(k\) into an even number of distinct parts is the same as the number of partitions of \(k\) into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad This solution is taken largely from the book Introduction to Combinatorics by Ioan Tomescu (published in London by Collet's in 1975). Tomescu calls a collection of rows in a Young diagram a ``trapezoid'' if each row contains one less cell than the row above and the number of cells in the rows above and below the trapezoid differ by two or more from the number of cells in rows of the trapezoid. Thus in (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows, and the last two. Since we are dealing with partitions with distinct parts, we don't have to worry about how two equal rows affect the definition of a trapezoid. We will describe a way to transform a partition with an even number of distinct parts into a partition with an odd number of distinct parts and vice versa.%
@@ -1289,7 +1616,7 @@ If \(k= {3j^2\pm j\over 2}\) and \(j\) is even, then there is one diagram of a p
 \typeout{************************************************}
 \typeout{Subsection  Supplementary Problems}
 \typeout{************************************************}
-\subsection[{Supplementary Problems}]{Supplementary Problems}\label{subsection-13}
+\subsection[{Supplementary Problems}]{Supplementary Problems}\label{subsection-17}
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-13}{}Answer each of the following questions with \(n^k\), \(k^n\), \(n!\), \(k!\), \(n \choose k\), \(k \choose n\), \(n^{\underline{k}}\), \(k^{\underline{n}}\), \(n^{\overline{k}}\), \(k^{\overline{n}}\), \(n+k-1\choose k\), \(n+k-1\choose n\), \(n-1\choose k-1\), \(k-1\choose n-1\), or ``none of the above". %
