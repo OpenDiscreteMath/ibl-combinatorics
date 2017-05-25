@@ -390,34 +390,28 @@
   </p>
 
   <activity category="essential for this or the next section">
-    <statement>
-      <p>
-        Show that every vertex of a graph lies in one and only one
-        connected component of a graph. (Notice that this shows that the
-        connected components of a graph form a partition of the vertex set of the
-        graph.)
-      </p>
-    </statement>
+    Show that every vertex of a graph lies in one and only one
+    connected component of a graph. (Notice that this shows that the
+    connected components of a graph form a partition of the vertex set of the
+    graph.)
     <solution>
       <p>
-        Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
-        Then
-        <task>
-          <p>
-            Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
-            that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
-          </p>
-        </task>
-        <task>
-          <p>
-            If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
-            it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
-            from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
-            <m>C</m> is connected by a walk to any vertex in <m>C</m>.
-          </p>
-        </task>
-      </p>
-
+      Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
+      Then
+      <task>
+        <p>
+          Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
+          that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
+          it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
+          from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
+          <m>C</m> is connected by a walk to any vertex in <m>C</m>.
+        </p>
+      </task>
       <p>
         Therefore <m>C</m> is a connected component containing <m>x</m>. If
         connected component <m>D</m> contained <m>x</m>, then every vertex in <m>D</m> would be

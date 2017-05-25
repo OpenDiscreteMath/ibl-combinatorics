@@ -563,48 +563,45 @@
     </activity>
 
     <activity category="essential">
-      <statement>
       <p>
         Let <m>i</m> denote an integer between 1 and <m>n</m>.
-        <task>
-          <statement>
-            <p>
-              What is the generating function for the number of subsets of <m>\{i\}</m> of
-              each possible size? (Notice that the only subsets of <m>\{i\}</m> are
-              <m>\emptyset</m> and <m>\{i\}</m>.)
-            </statement>
-          </p>
+      </p>
+      <task>
+        <statement>
+          <p>
+            What is the generating function for the number of subsets of <m>\{i\}</m> of
+            each possible size? (Notice that the only subsets of <m>\{i\}</m> are
+            <m>\emptyset</m> and <m>\{i\}</m>.)
           </statement>
-          <solution>
-            <p>
-              <m>1+x</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Use the product principle for generating functions to prove the
-              binomial theorem.
-            </p>
-          </task>
         </p>
-        </p>
-      </statement>
-      <solution>
+        </statement>
+        <solution>
+          <p>
+            <m>1+x</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
         <p>
-          The generating function for number of <m>n</m>-tuples of 0s and 1s with
-          <m>k</m> ones is, by the product principle for generating functions (extended to
-          <m>n</m> factors) <m>(1+x)^n</m>. However the number of <m>n</m>-tuples of 0s and 1s with
-          <m>k</m> ones is the number of <m>k</m>-element subsets of an <m>n</m>-element set.
-          Therefore <m>(1+x)^n =\sum_{i=0}^n {n\choose i}x^i</m>. To get the <m>(x+y)^n</m> form
-          of the binomial theorem, note that <m>x+y = y(1+{x\over y})</m>, so that
-          <md>
-            <mrow>(x+y)^n \amp =\amp  y^n\left({x\over y}+1\right)^n</mrow>
-            <mrow>\amp =\amp y^n\sum_{i=0}^n {n\choose i}{x^i\over y^i}</mrow>
-            <mrow>\amp =\amp  \sum_{i=0}^n{n\choose i}x^iy^{n-i}.</mrow>
-          </md>
+          Use the product principle for generating functions to prove the
+          binomial theorem.
         </p>
+      </task>
+      <solution>
+      <p>
+        The generating function for number of <m>n</m>-tuples of 0s and 1s with
+        <m>k</m> ones is, by the product principle for generating functions (extended to
+        <m>n</m> factors) <m>(1+x)^n</m>. However the number of <m>n</m>-tuples of 0s and 1s with
+        <m>k</m> ones is the number of <m>k</m>-element subsets of an <m>n</m>-element set.
+        Therefore <m>(1+x)^n =\sum_{i=0}^n {n\choose i}x^i</m>. To get the <m>(x+y)^n</m> form
+        of the binomial theorem, note that <m>x+y = y(1+{x\over y})</m>, so that
+        <md>
+          <mrow>(x+y)^n \amp =\amp  y^n\left({x\over y}+1\right)^n</mrow>
+          <mrow>\amp =\amp y^n\sum_{i=0}^n {n\choose i}{x^i\over y^i}</mrow>
+          <mrow>\amp =\amp  \sum_{i=0}^n{n\choose i}x^iy^{n-i}.</mrow>
+        </md>
+      </p>
       </solution>
     </activity>
   </subsection>
@@ -814,7 +811,7 @@
     </activity>
   </subsection>
 
-  <subsection xml:id="qtorialformula">
+  <subsection>
     <title>Generating functions for integer partitions</title>
     <activity xml:id="change-making" category="essential">
       <statement>
@@ -1135,74 +1132,92 @@
       </task>
     </activity>
 
-    <p>
-      \begin{problem}(interesting)
-      In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref>
-      you gave the generating functions for, respectively, the number of
-      partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for
-      the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem
-      we will give the generating function for the number of partitions of <m>k</m>
-      into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we
-      will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of
-      partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most
-      <m>m</m>. Geometrically, it is the generating function for partitions whose
-      Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant
-      analogs to the binomial coefficient
-      <m>m+n\choose n</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called
-      a <em><m>q</m>-binomial coefficient</em>.<index><main><m>q</m>-binomial
-      coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
-      \begin{enumerate}
-      \item Compute <m>\qchoose{4}{2}=\qchoose{2+2}{2}</m>.
-    </p>
-    <solution>
+    <activity xml:id="qtorialformula" category="interesting">
+      <task>
+        <statement>
+          <p>
+            In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref>
+            you gave the generating functions for, respectively, the number of
+            partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for
+            the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem
+            we will give the generating function for the number of partitions of <m>k</m>
+            into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we
+            will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of
+            partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most
+            <m>m</m>. Geometrically, it is the generating function for partitions whose
+            Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant
+            analogs to the binomial coefficient
+            <m>m+n\choose n</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called
+            a <em><m>q</m>-binomial coefficient</em>.<index><main><m>q</m>-binomial
+            coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
+            \begin{enumerate}
+            \item Compute <m>\qchoose{4}{2}=\qchoose{2+2}{2}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            A partition with up to two parts of size up to two can have no
+            parts, one part of size 1, which makes it a partition of 1, one part of
+            size 2 which makes it a partition of 2, two parts of size 1, which makes
+            it a partition of 2, a part of size 2 and a part of size 1, which makes
+            it a partition of 3, or two parts of size 2, which makes it a partition
+            of 4. Thus <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find explicit formulas for <m>\qchoose{n}{1}</m> and
+            <m>\qchoose{n}{n-1}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Both are <m>1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}</m>,
+            because they are the generating function for the number of partitions
+            whose Young diagram fits into a rectangle <m>n-1</m> units wide and 1 unit
+            deep or into a rectangle 1 unit wide and <m>n-1</m> units deep respectively.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How are <m>\qchoose{m+n}{n}</m> and <m>\qchoose{m+n}{n}</m> related? Prove
+            it. (Note this is the same as asking how <m>\qchoose{r}{s}</m> and
+            <m>\qchoose{r}{r-s}</m> are related.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            By conjugation, <m>\qchoose{m+n}{n}=\qchoose{m+n}{m}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            So far the analogy to <m>m+n\choose n</m> is rather thin! If we had a
+            recurrence like the Pascal recurrence, that would demonstrate a real
+            analogy. Is <m>\qchoose{m+n}{n}=
+            \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            No. <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, but
+            <m>\qchoose{3}{1}=1+q+q^2</m> and
+            <m>\qchoose{3}{2}=1+q+q^2</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+      <statement>
       <p>
-        A partition with up to two parts of size up to two can have no
-        parts, one part of size 1, which makes it a partition of 1, one part of
-        size 2 which makes it a partition of 2, two parts of size 1, which makes
-        it a partition of 2, a part of size 2 and a part of size 1, which makes
-        it a partition of 3, or two parts of size 2, which makes it a partition
-        of 4. Thus <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>.
-      </p>
-    </solution>
-    <p>
-      \item Find explicit formulas for <m>\qchoose{n}{1}</m> and
-      <m>\qchoose{n}{n-1}</m>.
-    </p>
-    <solution>
-      <p>
-        Both are <m>1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}</m>,
-        because they are the generating function for the number of partitions
-        whose Young diagram fits into a rectangle <m>n-1</m> units wide and 1 unit
-        deep or into a rectangle 1 unit wide and <m>n-1</m> units deep respectively.
-      </p>
-    </solution>
-    <p>
-      \item How are <m>\qchoose{m+n}{n}</m> and <m>\qchoose{m+n}{n}</m> related? Prove
-      it. (Note this is the same as asking how <m>\qchoose{r}{s}</m> and
-      <m>\qchoose{r}{r-s}</m> are related.)
-    </p>
-    <solution>
-      <p>
-        By conjugation, <m>\qchoose{m+n}{n}=\qchoose{m+n}{m}</m>.
-      </p>
-    </solution>
-    <p>
-      \item So far the analogy to <m>m+n\choose n</m> is rather thin! If we had a
-      recurrence like the Pascal recurrence, that would demonstrate a real
-      analogy. Is <m>\qchoose{m+n}{n}=
-      \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
-    </p>
-    <solution>
-      <p>
-        No. <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, but
-        <m>\qchoose{3}{1}=1+q+q^2</m> and
-        <m>\qchoose{3}{2}=1+q+q^2</m>.
-      </p>
-    </solution>
-    <p>
-      \item Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.
-      <ol>
-        <li>
+      Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.
+      <task>
+        <statement>
           <p>
             The largest part of a partition counted
             by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>. 
@@ -1214,411 +1229,414 @@
             rectangle?  What is the generating function for partitions that sit in
             this kind of rectangle after we remove a largest part of size <m>m</m>?  What
             recurrence relation does this give you?
-            <solution>
-              <p>
-                The generating function for partitions that arise in the second
-                case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case,
-                after we delete the largest part, the Young diagram sits in a rectangle
-                of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that
-                arise in the first case <em>after</em> we have deleted a part of size
-                <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for
-                partitions that arise in the first case (<em>before</em> we delete the part
-                of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the
-                generating function for all partitions that fit into a rectangle of width
-                <m>m</m> and depth <m>n</m> is given by
-                <me>
-                  \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.
-                </me>
-              </p>
-
-              <p>
-                If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>,
-                you get
-                <me>
-                  \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.
-                </me>
-              </p>
-
-              <p>
-                While this doesn't {quite} look like the Pascal recurrence, it is still a
-                correct answer.
-              </p>
-            </solution>
           </p>
-        </li>
+        </statement>
+        <solution>
+          <p>
+            The generating function for partitions that arise in the second
+            case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case,
+            after we delete the largest part, the Young diagram sits in a rectangle
+            of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that
+            arise in the first case <em>after</em> we have deleted a part of size
+            <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for
+            partitions that arise in the first case (<em>before</em> we delete the part
+            of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the
+            generating function for all partitions that fit into a rectangle of width
+            <m>m</m> and depth <m>n</m> is given by
+            <me>
+              \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.
+            </me>
+          </p>
 
-        <li>
+          <p>
+            If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>,
+            you get
+            <me>
+              \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.
+            </me>
+          </p>
+
+          <p>
+            While this doesn't {quite} look like the Pascal recurrence, it is still a
+            correct answer.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             What recurrence do you get from the other operation we studied in
             <xref ref="numberpartitionrecurrence">Problem</xref>?
-            <solution>
-              <p>
-                We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In
-                the first case, removing one from each part gives us a partition whose
-                Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case
-                doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In
-                the first case the partition we get partitions <m>k-n</m>, and in the second
-                case it still partitions <m>k</m>. Thus we get
-                <me>
-                  \qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.
-                </me>
-              </p>
-            </solution>
           </p>
-        </li>
-
-        <li>
+        </statement>
+        <solution>
+          <p>
+            We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In
+            the first case, removing one from each part gives us a partition whose
+            Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case
+            doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In
+            the first case the partition we get partitions <m>k-n</m>, and in the second
+            case it still partitions <m>k</m>. Thus we get
+            <me>
+              \qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.
+            </me>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
           <p>
             It is quite likely that the two recurrences you got are different. 
             One would expect that they might give different values for
             <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
-            <solution>
-              <p>
-                Yes, by conjugation.
-              </p>
-            </solution>
           </p>
-        </li>
-      </ol>
-    </p>
-
-    <p>
-      \item Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.
-      We read this simply as
-      <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots
-      [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a
-      <m>q</m>-ary factorial.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show
-      that
-      <me>
-        \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
-      </me>
-    </p>
-    <solution>
-      <p>
-        Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only
-        the partition with no parts sits in a rectangle of width or depth 0. But
-        <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q}
-        =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
-        <md>
-          <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
-          <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
-          +{1\over[n]!_q[m-1]!_q}\right)</mrow>
-          <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
-          [n]!_q[m]!_q}\right)</mrow>
-          <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
-          1+q+\cdots+q^{m-1}\right)</mrow>
-          <mrow>\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}</mrow>
-          <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
-        </md>
-      </p>
-
-      <p>
-        Thus <m>[m+n]!_q \over [m]!_q[n]!_q</m> satisfies our recurrence and so by the
-        principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
-        [m]!_q[n]!_q}.</m>
-      </p>
-    </solution>
-    <p>
-      \item Now think of <m>q</m> as a variable that we will let approach <m>1</m>. Find
-      an explicit formula for
-      <ol>
-        <li>
+        </statement>
+        <solution>
           <p>
-            <m>\displaystyle\lim_{q\rightarrow 1} [n]_q</m>.
-            <solution>
-              <p>
-                <m>n</m>
-              </p>
-            </solution>
+            Yes, by conjugation.
           </p>
-        </li>
-
-        <li>
-          <p>
-            <m>\displaystyle\lim_{q\rightarrow 1} [n]!_q</m>.
-            <solution>
-              <p>
-                <m>n!</m>
-              </p>
-            </solution>
-          </p>
-        </li>
-
-        <li xml:id="partiii" >
+        </solution>
+      </task>
+      <p>
+        \item Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.
+        We read this simply as
+        <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots
+        [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a
+        <m>q</m>-ary factorial.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show
+        that
+        <me>
+          \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
+        </me>
+      </p>
+      </statement>
+      <solution>
+        <p>
+          Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only
+          the partition with no parts sits in a rectangle of width or depth 0. But
+          <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q}
+          =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
+          <md>
+            <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
+            <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
+            +{1\over[n]!_q[m-1]!_q}\right)</mrow>
+            <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
+            [n]!_q[m]!_q}\right)</mrow>
+            <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+            1+q+\cdots+q^{m-1}\right)</mrow>
+            <mrow>\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}</mrow>
+            <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
+          </md>
+        </p>
 
         <p>
-          <m>\displaystyle\lim_{q\rightarrow 1}
-          \qchoose{m+n}{n}</m>.
-          <solution>
-            <p>
-              <m>m+n\choose n</m>
-            </p>
-          </solution>
+          Thus <m>[m+n]!_q \over [m]!_q[n]!_q</m> satisfies our recurrence and so by the
+          principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
+          [m]!_q[n]!_q}.</m>
         </p>
-        </li>
-      </ol>
-    </p>
+      </solution>
+      </task>
+      <task>
+      <statement>
+      <p>
+      Now think of <m>q</m> as a variable that we will let approach <m>1</m>. Find
+      an explicit formula for
+      <task>
+        <statement>
+          <p>
+            <m>\displaystyle\lim_{q\rightarrow 1} [n]_q</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\displaystyle\lim_{q\rightarrow 1} [n]!_q</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n!</m>
+          </p>
+        </solution>
+      </task>
+      <task xml:id="partiii" >
+        <p>
+        <m>\displaystyle\lim_{q\rightarrow 1}
+        \qchoose{m+n}{n}</m>.
+        <solution>
+          <p>
+            <m>m+n\choose n</m>
+          </p>
+        </solution>
+      </task>
+      <p>
+        Why is the limit in Part iii
+        equal to the
+        number of partitions (of any number) with at most <m>n</m> parts all of size
+        most
+        <m>m</m>? Can you explain bijectively why this quantity equals the formula
+        you got?
+      </p>
+      </statement>
+      <solution>
+        <p>
+          Since the generating function is a finite sum (we are talking
+          about partitions whose Young diagram into a finite rectangle), the limit
+          is obtained by setting <m>q=1</m>, and this sums the number of partitions of
+          each possible number <m>k</m> that have at most <m>n</m> parts all of size at most
+          <m>m</m>. We want a bijection between such partitions and the <m>n</m>
+          element subsets of an <m>m+n</m> element set. Recall that there is a
+          bijection between subsets of an <m>n</m> element set and lattice paths from
+          <m>(0,0)</m> to <m>m,n</m> in a coordinate plane. If we draw our rectangle of
+          width <m>m</m> and depth <m>n</m> with its lower left corner at <m>(0,0)</m>, then each
+          Young diagram gives us such a lattice path and each such lattice path
+          gives us a Young diagram.
+        </p>
+      </solution>
+      </task>
+      <p>
+        \item[<nbsp /><m>*</m><nbsp />(\theenumii)] What happens to <m>\qchoose{m+n}{n}</m> if we let <m>q</m>
+        approach -1?
+      </p>
+      <solution>
+        <p>
+          <m>\qchoose{m+n}{n}</m> is the generating function for the
+          number of partitions whose Young diagram fits into an <m>m</m> by <m>n</m>
+          rectangle. That is,
+          <me>
+            \qchoose{m+n}{n}=\sum_{k=0}^\infty a_kq^k,
+          </me>
+          where <m>a_k</m> is the number of partitions of <m>k</m> whose Young diagram fits into an
+          <m>m</m> by <m>n</m> rectangle. In particular <m>a_k=0</m> if <m>k>mn</m>, because the Young
+          diagram of a partition of a number larger than <m>mn</m> certainly cannot fit into
+          an <m>m</m> by <m>n</m> rectangle. Thus
+          <me>
+            \qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.
+          </me>
+        </p>
 
-    <p>
-      Why is the limit in Part iii
-      equal to the
-      number of partitions (of any number) with at most <m>n</m> parts all of size
-      most
-      <m>m</m>? Can you explain bijectively why this quantity equals the formula
-      you got?
-    </p>
-    <solution>
-      <p>
-        Since the generating function is a finite sum (we are talking
-        about partitions whose Young diagram into a finite rectangle), the limit
-        is obtained by setting <m>q=1</m>, and this sums the number of partitions of
-        each possible number <m>k</m> that have at most <m>n</m> parts all of size at most
-        <m>m</m>. We want a bijection between such partitions and the <m>n</m>
-        element subsets of an <m>m+n</m> element set. Recall that there is a
-        bijection between subsets of an <m>n</m> element set and lattice paths from
-        <m>(0,0)</m> to <m>m,n</m> in a coordinate plane. If we draw our rectangle of
-        width <m>m</m> and depth <m>n</m> with its lower left corner at <m>(0,0)</m>, then each
-        Young diagram gives us such a lattice path and each such lattice path
-        gives us a Young diagram.
-      </p>
-    </solution>
-    <p>
-      \item[<nbsp /><m>*</m><nbsp />(\theenumii)] What happens to <m>\qchoose{m+n}{n}</m> if we let <m>q</m>
-      approach -1?
-    </p>
-    <solution>
-      <p>
-        <m>\qchoose{m+n}{n}</m> is the generating function for the
-        number of partitions whose Young diagram fits into an <m>m</m> by <m>n</m>
-        rectangle. That is,
-        <me>
-          \qchoose{m+n}{n}=\sum_{k=0}^\infty a_kq^k,
-        </me>
-        where <m>a_k</m> is the number of partitions of <m>k</m> whose Young diagram fits into an
-        <m>m</m> by <m>n</m> rectangle. In particular <m>a_k=0</m> if <m>k>mn</m>, because the Young
-        diagram of a partition of a number larger than <m>mn</m> certainly cannot fit into
-        an <m>m</m> by <m>n</m> rectangle. Thus
-        <me>
-          \qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.
-        </me>
-      </p>
+        <p>
+          Furthermore, <m>a_k=a_{mn-k}</m>, because the complement in an <m>m</m> by <m>n</m> rectangle
+          of a partition of <m>k</m> is a partition of <m>mn-k</m>, and complementation in an <m>m</m>
+          by <m>n</m> rectangle is a bijection between partitions of <m>k</m> that fit into the
+          rectangle and partitions of <m>mn-k</m> that fit into the rectangle. Thus
+          <m>\qchoose{m+n}{n}</m> is a polynomial of degree <m>mn</m> in which the coefficient of
+          <m>q_k</m> equals the coefficient of <m>q^{mn-k}</m>. For this reason we can compute the
+          limit as <m>q</m> approaches <m>-1</m> simply by substituting <m>-1</m> for <m>q</m> in the
+          polynomial; the only trouble being that the formula we know for
+          <m>\qchoose{m+n}{n}</m> is quotient of polynomials that has zero in both the
+          numerator and denominator when we substitute in <m>q=-1</m>. Nonetheless, when we
+          substitute <m>-1</m> for <m>q</m> we get the alternating sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>.
+          Thus if <m>a_i</m> and <m>a_{mn-i}</m> have opposite sign, they will cancel out. If <m>mn</m>
+          is even, <m>i</m> is even exactly when <m>mn-i</m> is even, and so <m>a_i</m> and <m>a_{mn-i}</m>
+          have the same sign. However when <m>mn</m> is odd, <m>a_i</m> and <m>a_{mn-i}</m> have
+          opposite signs in the sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>, and so the sum is zero.
+          Thus the polynomial
+          <m>\qchoose{m+n}{n}</m> is zero at <m>q=-1</m> whenever <m>mn</m> is odd.
+        </p>
 
-      <p>
-        Furthermore, <m>a_k=a_{mn-k}</m>, because the complement in an <m>m</m> by <m>n</m> rectangle
-        of a partition of <m>k</m> is a partition of <m>mn-k</m>, and complementation in an <m>m</m>
-        by <m>n</m> rectangle is a bijection between partitions of <m>k</m> that fit into the
-        rectangle and partitions of <m>mn-k</m> that fit into the rectangle. Thus
-        <m>\qchoose{m+n}{n}</m> is a polynomial of degree <m>mn</m> in which the coefficient of
-        <m>q_k</m> equals the coefficient of <m>q^{mn-k}</m>. For this reason we can compute the
-        limit as <m>q</m> approaches <m>-1</m> simply by substituting <m>-1</m> for <m>q</m> in the
-        polynomial; the only trouble being that the formula we know for
-        <m>\qchoose{m+n}{n}</m> is quotient of polynomials that has zero in both the
-        numerator and denominator when we substitute in <m>q=-1</m>. Nonetheless, when we
-        substitute <m>-1</m> for <m>q</m> we get the alternating sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>.
-        Thus if <m>a_i</m> and <m>a_{mn-i}</m> have opposite sign, they will cancel out. If <m>mn</m>
-        is even, <m>i</m> is even exactly when <m>mn-i</m> is even, and so <m>a_i</m> and <m>a_{mn-i}</m>
-        have the same sign. However when <m>mn</m> is odd, <m>a_i</m> and <m>a_{mn-i}</m> have
-        opposite signs in the sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>, and so the sum is zero.
-        Thus the polynomial
-        <m>\qchoose{m+n}{n}</m> is zero at <m>q=-1</m> whenever <m>mn</m> is odd.
-      </p>
+        <p>
+          Our experience with binomial coefficients might lead us to hope that the
+          alternating sum of the coefficients <m>a_k</m> will always be zero. However, we
+          computed that
+          <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, so
+          <me>
+            \lim_{q\rightarrow -1}\qchoose{4}{2}=1-1+2-1+1=1.
+          </me>
+        </p>
 
-      <p>
-        Our experience with binomial coefficients might lead us to hope that the
-        alternating sum of the coefficients <m>a_k</m> will always be zero. However, we
-        computed that
-        <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, so
-        <me>
-          \lim_{q\rightarrow -1}\qchoose{4}{2}=1-1+2-1+1=1.
-        </me>
-      </p>
+        <p>
+          We could compute some more values of the limit by going back to the
+          definition in this way, but it seems unlikely that we could get enough data to
+          make a good conjecture. However we have the recurrence, and setting
+          <m>q=-1</m> in the recurrence gives us the table
+        </p>
+        <tabular>
+          <row>
+            <cell><m>m+n\backslash n</m></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>7</cell>
+            <cell>8</cell>
+            <cell>9</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>2</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>3</cell>
+            <cell>0</cell>
+            <cell>3</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>3</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>8</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>4</cell>
+            <cell>0</cell>
+            <cell>6</cell>
+            <cell>0</cell>
+            <cell>4</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>9</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>4</cell>
+            <cell>4</cell>
+            <cell>6</cell>
+            <cell>6</cell>
+            <cell>4</cell>
+            <cell>4</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+        <p>
+          From the table, it is clear that we get binomial coefficients interspersed with
+          0s in the even numbered rows of our table and repeated binomial coefficients in
+          the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both
+          even, <m>\neg1choose{m+n}{n}={(m+n)/2\choose n/2}</m>, and if <m>m+n</m> is even and <m>n</m>
+          is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it
+          appears that we get <m>\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose
+          \lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to
+          construct the table, we can prove by induction that
+          <me>
+            \neg1choose{m+n}{n}=\left\{ 
+            \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
+            {\lfloor(m+n)/2\rfloor\choose
+            \lfloor n/2\rfloor}\amp \mbox{otherwise.} 
+            \end{array} \right.
+          </me>
+        </p>
 
-      <p>
-        We could compute some more values of the limit by going back to the
-        definition in this way, but it seems unlikely that we could get enough data to
-        make a good conjecture. However we have the recurrence, and setting
-        <m>q=-1</m> in the recurrence gives us the table
-      </p>
-      <tabular>
-        <row>
-          <cell><m>m+n\backslash n</m></cell>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>2</cell>
-          <cell>3</cell>
-          <cell>4</cell>
-          <cell>5</cell>
-          <cell>6</cell>
-          <cell>7</cell>
-          <cell>8</cell>
-          <cell>9</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
-        <row>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>2</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>3</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>4</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>2</cell>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>5</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>2</cell>
-          <cell>2</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>6</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>3</cell>
-          <cell>0</cell>
-          <cell>3</cell>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>7</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>3</cell>
-          <cell>3</cell>
-          <cell>3</cell>
-          <cell>3</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>8</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-          <cell>4</cell>
-          <cell>0</cell>
-          <cell>6</cell>
-          <cell>0</cell>
-          <cell>4</cell>
-          <cell>0</cell>
-          <cell>1</cell>
-          <cell>0</cell>
-        </row>
-        <row>
-          <cell>9</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-          <cell>4</cell>
-          <cell>4</cell>
-          <cell>6</cell>
-          <cell>6</cell>
-          <cell>4</cell>
-          <cell>4</cell>
-          <cell>1</cell>
-          <cell>1</cell>
-        </row>
-      </tabular>
-      <p>
-        From the table, it is clear that we get binomial coefficients interspersed with
-        0s in the even numbered rows of our table and repeated binomial coefficients in
-        the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both
-        even, <m>\neg1choose{m+n}{n}={(m+n)/2\choose n/2}</m>, and if <m>m+n</m> is even and <m>n</m>
-        is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it
-        appears that we get <m>\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose
-        \lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to
-        construct the table, we can prove by induction that
-        <me>
-          \neg1choose{m+n}{n}=\left\{ 
-          \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
-          {\lfloor(m+n)/2\rfloor\choose
-          \lfloor n/2\rfloor}\amp \mbox{otherwise.} 
-          \end{array} \right.
-        </me>
-      </p>
-
-      <p>
-        (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) It would
-        be fascinating to know what we are counting here!
-      </p>
-    </solution>
+        <p>
+          (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) It would
+          be fascinating to know what we are counting here!
+        </p>
+      </solution>
+    </activity>
   </subsection>
 </section>

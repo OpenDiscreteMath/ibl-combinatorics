@@ -1617,67 +1617,65 @@
       </statement>
       <solution>
         <p>
-          We want the number of orbits of the set of proper colorings under the action of the group
-          of automorphisms of the graph. An automorphism <m>\sigma</m>
-          maps vertex 1 to any of six vertices. Vertex 2 can be mapped to any of the four
-          vertices adjacent to the image of vertex 1. Vertex 3 is adjacent to vertices 1 and
-          2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and
-          vertex 2; by checking cases you can see that there are always exactly two vertices
-          adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of
-          these vertices preserves all the edges among vertices 1, 2, and 3. However each of
-          the other three vertices is adjacent to exactly two vertices of the set
-          <m>\{1,2,3\}</m>, and thus it must be mapped to the unique vertex adjacent to the
-          corresponding two of
-          <m>\sigma(1)</m>,
-          <m>\sigma(2)</m> and <m>\sigma(3)</m>. (It is always the case that each vertex is adjacent to
-          exactly two of these, as you can see by considering the cases with <m>\sigma(1)=1</m>.) Thus
-          there are <m>6\cdot4\cdot2=48</m> elements in the group. Now to apply the CFB theorem we would
-          need to know how many proper colorings are fixed by each group element, so we would need
-          to know what the group elements are. We have observed that a permutation that preserves
-          the edges is determined by where the triangle <m>\{1,2,3\}</m> goes. We can see eight
-          triangles in the graph, triangles of the form <m>\{i,i+1,i+2\}</m>, where we identify 7 with 1
-          and 8 with 2, and the triangles <m>\{1,3,5\}</m> and <m>\{2,4,6\}</m>. We can map the set
-          <m>\{1,2,3\}</m> to any of these eight sets by six one-to-one maps, so each group element is
-          determined uniquely by one of these mappings. However focusing on these triangles
-          makes our job here simpler in another way. In a proper coloring, vertices 1, 2, and
-          3 must be colored differently. We have four choices for the color of vertex 1,
-          three different ones for vertex 2 and two still different ones for vertex 3, so
-          there are 24 ways to color this triangle. Clearly the only difference among these
-          ways is the actual names of the colors. That is, we can assume that vertex 1 is
-          colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine
-          the proper colorings starting with these three colors, and up to changing the names
-          of the colors, we will have determined all the proper colorings. Then we can ask
-          which group elements fix a coloring rather than which colorings are fixed by a group
-          element. This turns out to be easier. Let us write
-          <m>RBGRBG</m> for the coloring that colors vertices 1 and 4 red, two and five blue, and three
-          and six green. An examination of the figure shows that this is a proper coloring. In
-          fact, it is the only proper coloring that starts <m>RBG</m> and uses only three colors. Suppose
-          we were to use a fourth color, <m>Y</m>. Then among vertices 4, 5, and 6, it could be used in
-          just one place, because those three vertices are mutually adjacent. Each of the other two
-          vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
-          only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
-          <task xml:id="coloring1" >
-            <p>
-              <m>RBGRBG</m>
-            </p>
-          </task>
-          <task xml:id="coloring2" >
-            <p>
-              <m>RBGYBG</m>
-            </p>
-          </task>
-          <task xml:id="coloring3" >
-            <p>
-              <m>RBGRYG</m>
-            </p>
-          </task>
-          <task xml:id="coloring4" >
-            <p>
-              <m>RBGRBY</m>.
-            </p>
-          </task>
-        </p>
-
+        We want the number of orbits of the set of proper colorings under the action of the group
+        of automorphisms of the graph. An automorphism <m>\sigma</m>
+        maps vertex 1 to any of six vertices. Vertex 2 can be mapped to any of the four
+        vertices adjacent to the image of vertex 1. Vertex 3 is adjacent to vertices 1 and
+        2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and
+        vertex 2; by checking cases you can see that there are always exactly two vertices
+        adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of
+        these vertices preserves all the edges among vertices 1, 2, and 3. However each of
+        the other three vertices is adjacent to exactly two vertices of the set
+        <m>\{1,2,3\}</m>, and thus it must be mapped to the unique vertex adjacent to the
+        corresponding two of
+        <m>\sigma(1)</m>,
+        <m>\sigma(2)</m> and <m>\sigma(3)</m>. (It is always the case that each vertex is adjacent to
+        exactly two of these, as you can see by considering the cases with <m>\sigma(1)=1</m>.) Thus
+        there are <m>6\cdot4\cdot2=48</m> elements in the group. Now to apply the CFB theorem we would
+        need to know how many proper colorings are fixed by each group element, so we would need
+        to know what the group elements are. We have observed that a permutation that preserves
+        the edges is determined by where the triangle <m>\{1,2,3\}</m> goes. We can see eight
+        triangles in the graph, triangles of the form <m>\{i,i+1,i+2\}</m>, where we identify 7 with 1
+        and 8 with 2, and the triangles <m>\{1,3,5\}</m> and <m>\{2,4,6\}</m>. We can map the set
+        <m>\{1,2,3\}</m> to any of these eight sets by six one-to-one maps, so each group element is
+        determined uniquely by one of these mappings. However focusing on these triangles
+        makes our job here simpler in another way. In a proper coloring, vertices 1, 2, and
+        3 must be colored differently. We have four choices for the color of vertex 1,
+        three different ones for vertex 2 and two still different ones for vertex 3, so
+        there are 24 ways to color this triangle. Clearly the only difference among these
+        ways is the actual names of the colors. That is, we can assume that vertex 1 is
+        colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine
+        the proper colorings starting with these three colors, and up to changing the names
+        of the colors, we will have determined all the proper colorings. Then we can ask
+        which group elements fix a coloring rather than which colorings are fixed by a group
+        element. This turns out to be easier. Let us write
+        <m>RBGRBG</m> for the coloring that colors vertices 1 and 4 red, two and five blue, and three
+        and six green. An examination of the figure shows that this is a proper coloring. In
+        fact, it is the only proper coloring that starts <m>RBG</m> and uses only three colors. Suppose
+        we were to use a fourth color, <m>Y</m>. Then among vertices 4, 5, and 6, it could be used in
+        just one place, because those three vertices are mutually adjacent. Each of the other two
+        vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
+        only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
+        <task xml:id="coloring1" >
+          <p>
+            <m>RBGRBG</m>
+          </p>
+        </task>
+        <task xml:id="coloring2" >
+          <p>
+            <m>RBGYBG</m>
+          </p>
+        </task>
+        <task xml:id="coloring3" >
+          <p>
+            <m>RBGRYG</m>
+          </p>
+        </task>
+        <task xml:id="coloring4" >
+          <p>
+            <m>RBGRBY</m>.
+          </p>
+        </task>
         <p>
           Thus for any of the 24 choices of colorings of the first three vertices, there are four
           ways to complete it to a proper coloring of the whole graph, so there are 96 proper

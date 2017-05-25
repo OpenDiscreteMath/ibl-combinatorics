@@ -14,7 +14,6 @@
     </p>
 
     <activity xml:id="subsetsbysmallestcounterexample">
-      <statement>
       <task>
         <statement>
           <p>
@@ -89,47 +88,46 @@
       </task>
       <task>
         <statement>
-          <p>
-            Parts (a) and (b) suggest
-            strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
-            particular, the empty set has <m>2^0</m> subsets, a one-element set has <m>2^1</m>
-            subsets, itself and the empty set, and in Parts a and b we saw that
-            two-element and three-element sets have <m>2^2</m> and <m>2^3</m> subsets
-            respectively. So there are certainly some values of <m>n</m> for which an
-            <m>n</m>-element set has <m>2^n</m> subsets. One way to prove that an <m>n</m>-element
-            set has <m>2^n</m> subsets for all values of <m>n</m> is to argue by contradiction.
-            For this purpose, suppose there is a nonnegative integer <m>n</m> such that an
-            <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets. In that case there may
-            be more than one such <m>n</m>. Choose <m>k</m> to be the smallest such <m>n</m>. Notice
-            that <m>k -1</m> is still a positive integer, because <m>k</m> can't be 0, 1, 2,
-            or 3. Since <m>k</m> was the smallest value of <m>n</m> we could choose to make the
-            statement
-            <q>An <m>n</m>-element set has <m>2^n</m> subsets</q> false, what do you know about the
-            number of subsets of a <m>(k - 1)</m>-element set? What do you know about the
-            number of subsets of the <m>k</m>-element set <m>\{ 1, 2, \ldots, k \}</m> that
-            don't contain <m>k</m>? What do you know about the number of subsets of <m>\{ 1,
-            2, \ldots,  k \}</m> that do contain <m>k</m>? What does the sum principle tell
-            you about the number of subsets of <m>\{ 1, 2, \ldots, k \}</m>? Notice that
-            this contradicts the way in which we chose <m>k</m>, and the only assumption
-            that went into our choice of <m>k</m> was that ``there is a nonnegative integer
-            <m>n</m> such that an <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets."
-            Since this assumption has led us to a contradiction, it must be false.
-            What can you now conclude about the statement ``for every nonnegative
-            integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
-          </p>
-        </statement>
+        <p>
+          Parts (a) and (b) suggest
+          strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
+          particular, the empty set has <m>2^0</m> subsets, a one-element set has <m>2^1</m>
+          subsets, itself and the empty set, and in Parts a and b we saw that
+          two-element and three-element sets have <m>2^2</m> and <m>2^3</m> subsets
+          respectively. So there are certainly some values of <m>n</m> for which an
+          <m>n</m>-element set has <m>2^n</m> subsets. One way to prove that an <m>n</m>-element
+          set has <m>2^n</m> subsets for all values of <m>n</m> is to argue by contradiction.
+          For this purpose, suppose there is a nonnegative integer <m>n</m> such that an
+          <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets. In that case there may
+          be more than one such <m>n</m>. Choose <m>k</m> to be the smallest such <m>n</m>. Notice
+          that <m>k -1</m> is still a positive integer, because <m>k</m> can't be 0, 1, 2,
+          or 3. Since <m>k</m> was the smallest value of <m>n</m> we could choose to make the
+          statement
+          <q>An <m>n</m>-element set has <m>2^n</m> subsets</q> false, what do you know about the
+          number of subsets of a <m>(k - 1)</m>-element set? What do you know about the
+          number of subsets of the <m>k</m>-element set <m>\{ 1, 2, \ldots, k \}</m> that
+          don't contain <m>k</m>? What do you know about the number of subsets of <m>\{ 1,
+          2, \ldots,  k \}</m> that do contain <m>k</m>? What does the sum principle tell
+          you about the number of subsets of <m>\{ 1, 2, \ldots, k \}</m>? Notice that
+          this contradicts the way in which we chose <m>k</m>, and the only assumption
+          that went into our choice of <m>k</m> was that ``there is a nonnegative integer
+          <m>n</m> such that an <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets."
+          Since this assumption has led us to a contradiction, it must be false.
+          What can you now conclude about the statement ``for every nonnegative
+          integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
+        </p>
         <solution>
-          <p>
-            We know that the number of subsets of a <m>(k-1)</m>-element set is
-            <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
-            <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
-            k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
-            subsets that do contain <m>k</m> equals the number that don't, so the number
-            that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
-            number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
-            conclude that the statement ``for every nonnegative integer <m>n</m>, an
-            <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
-          </p>
+        <p>
+          We know that the number of subsets of a <m>(k-1)</m>-element set is
+          <m>2^{k-1}</m>. The number of subsets of <m>\{1,2,\ldots,k\}</m> that do not contain
+          <m>k</m> is the number of subsets of the <m>k-1</m>-element set <m>\{1,2,\ldots,
+          k-1\}</m>, so we know this number is <m>2^{k-1}</m>. We know that the number of
+          subsets that do contain <m>k</m> equals the number that don't, so the number
+          that do contain <m>k</m> is also <m>2^{k-1}</m>. The sum principle tells us that the
+          number os subsets of <m>\{1,2,\ldots, k\}</m> is <m>2^{k-1}+2^{k-1}=2^k</m>. We can
+          conclude that the statement ``for every nonnegative integer <m>n</m>, an
+          <m>n</m>-element set has exactly <m>2^n</m> subsets" is true.
+        </p>
         </solution>
       </task>
       <p>
@@ -142,26 +140,26 @@
         Now apply the technique of <xref ref="subsetsbysmallestcounterexample">Problem</xref> to prove that you are right.
       </p>
       <solution>
-        <p>
-          We guess that <m>1+3+5+\cdots+2n-1=n^2</m>. Clearly this is true when
-          <m>n</m> is 1, 2, or 3. Suppose there is an <m>n</m> for which this formula is not
-          true, and let <m>k</m> be the smallest such <m>n</m>. Then <m>1+3+5+\cdots+2(k-1)-1 =
-          (k-1)^2</m>. Simplifying, <m>1+3+5+\cdots+2k-3 =
-          (k-1)^2</m>. Now suppose we add <m>2k-1</m> to both sides of this equation. Then
-          we get
-          <me>
-            1+3+5+\cdots+2k-3 +2k-1 =
-            (k-1)^2+2k-1 = k^2-2k+1+2k-1=k^2.
-          </me>
-        </p>
+      <p>
+        We guess that <m>1+3+5+\cdots+2n-1=n^2</m>. Clearly this is true when
+        <m>n</m> is 1, 2, or 3. Suppose there is an <m>n</m> for which this formula is not
+        true, and let <m>k</m> be the smallest such <m>n</m>. Then <m>1+3+5+\cdots+2(k-1)-1 =
+        (k-1)^2</m>. Simplifying, <m>1+3+5+\cdots+2k-3 =
+        (k-1)^2</m>. Now suppose we add <m>2k-1</m> to both sides of this equation. Then
+        we get
+        <me>
+          1+3+5+\cdots+2k-3 +2k-1 =
+          (k-1)^2+2k-1 = k^2-2k+1+2k-1=k^2.
+        </me>
+      </p>
 
-        <p>
-          But this is a contradiction, because we assumed that <m>k</m> was the
-          smallest value of <m>n</m> for which the sum on the left is not <m>n^2</m>.
-          Therefore the assumption that there is an <m>n</m> for which <m>1+3+5+\cdots+2n-1
-          \not=n^2</m> must be false, so the equation <m>1+3+5+\cdots+2n-1=n^2</m> must be
-          true for all positive integers <m>n</m>.
-        </p>
+      <p>
+        But this is a contradiction, because we assumed that <m>k</m> was the
+        smallest value of <m>n</m> for which the sum on the left is not <m>n^2</m>.
+        Therefore the assumption that there is an <m>n</m> for which <m>1+3+5+\cdots+2n-1
+        \not=n^2</m> must be false, so the equation <m>1+3+5+\cdots+2n-1=n^2</m> must be
+        true for all positive integers <m>n</m>.
+      </p>
       </solution>
     </activity>
 
