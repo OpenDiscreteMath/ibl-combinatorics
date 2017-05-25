@@ -1,5 +1,5 @@
 
-<section xml:id="derangementrecurrence">
+<section>
   <title>Applications to recurrences.</title>
   <introduction>
     <p>
@@ -93,42 +93,41 @@
       </solution>
     </activity>
 
-    <p>
-      \begin{problem}(essential for this or the next section, and interesting)
-      Recall that a <em>derangement</em> of <m>[n]</m> is a permutation of
-      <m>[n]</m> that has no fixed points, or equivalently is a way to pass out
-      <m>n</m> hats to their <m>n</m> different owners so that nobody gets the correct
-      hat. Use
-      <m>d_n</m> to stand for the number of derangements of <m>[n]</m>. We can think of
-      derangement of <m>[n]</m> as a list of <m>1</m> through <m>n</m> so that
-      <m>i</m> is not in the <m>i</m>th place for any <m>n</m>. Thus in a derangement, some
-      number
-      <m>k</m> different from <m>n</m> is in position <m>n</m>. Consider two cases: either
-      <m>n</m> is in position <m>k</m> or it is not. Notice that in the second case, if
-      we erase position <m>n</m> and replace <m>n</m> by <m>k</m>, we get a derangement of
-      <m>[n-1]</m>. Based on these two cases, find a recurrence for <m>d_n</m>. What is
-      <m>d_1</m>? What is <m>d_2</m>? What is <m>d_0</m>? What are <m>d_3</m> through
-      <m>d_6</m>?
-    </p>
-    <solution>
-      <p>
-        <m>d_n = (n-1)d_{n-1} + (n-1)d_{n-2}</m>. <m>d_1 = 0</m> and <m>d_2 = 1</m>. Thus
-        <m>d_0</m> must be 1 for our recurrence to be valid. (For those familiar with
-        functions as sets of ordered pairs, the empty function is not only a
-        permutation, but it does not map <m>i</m> to <m>i</m> for any integer <m>i</m>, so it is
-        a derangement as well! Thus the definition of a derangement also gives
-        us that <m>d_0=1</m>.) <m>d_3= 2</m>, <m>d_4=3\cdot1+3\cdot 2=9</m>,
-        <m>d_5=4\cdot2+4\cdot 9 = 44</m>, and <m>d_6 = 5\cdot9+5\cdot44 = 256</m>.
-      </p>
-    </solution>
+    <activity xml:id="derangementrecurrence" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Recall that a <em>derangement</em> of <m>[n]</m> is a permutation of
+          <m>[n]</m> that has no fixed points, or equivalently is a way to pass out
+          <m>n</m> hats to their <m>n</m> different owners so that nobody gets the correct
+          hat. Use
+          <m>d_n</m> to stand for the number of derangements of <m>[n]</m>. We can think of
+          derangement of <m>[n]</m> as a list of <m>1</m> through <m>n</m> so that
+          <m>i</m> is not in the <m>i</m>th place for any <m>n</m>. Thus in a derangement, some
+          number
+          <m>k</m> different from <m>n</m> is in position <m>n</m>. Consider two cases: either
+          <m>n</m> is in position <m>k</m> or it is not. Notice that in the second case, if
+          we erase position <m>n</m> and replace <m>n</m> by <m>k</m>, we get a derangement of
+          <m>[n-1]</m>. Based on these two cases, find a recurrence for <m>d_n</m>. What is
+          <m>d_1</m>? What is <m>d_2</m>? What is <m>d_0</m>? What are <m>d_3</m> through
+          <m>d_6</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>d_n = (n-1)d_{n-1} + (n-1)d_{n-2}</m>. <m>d_1 = 0</m> and <m>d_2 = 1</m>. Thus
+          <m>d_0</m> must be 1 for our recurrence to be valid. (For those familiar with
+          functions as sets of ordered pairs, the empty function is not only a
+          permutation, but it does not map <m>i</m> to <m>i</m> for any integer <m>i</m>, so it is
+          a derangement as well! Thus the definition of a derangement also gives
+          us that <m>d_0=1</m>.) <m>d_3= 2</m>, <m>d_4=3\cdot1+3\cdot 2=9</m>,
+          <m>d_5=4\cdot2+4\cdot 9 = 44</m>, and <m>d_6 = 5\cdot9+5\cdot44 = 256</m>.
+        </p>
+      </solution>
+    </activity>
   </introduction>
 
   <subsection>
     <title>Using calculus  with exponential generating functions</title>
-    <p>
-      \end{problem}
-    </p>
-
     <activity category="essential for this or the next section, and interesting">
       <p>
         Your recurrence in <xref ref="telephonenetwork">Problem</xref> should be a

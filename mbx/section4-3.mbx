@@ -559,259 +559,257 @@
     </p>
 
     <activity xml:id="numberpartitionrecurrence" category="essential for this or the next section, and interesting">
-      <statement>
       <p>
         In this problem we will study the two operations and see
         which one seems more useful for getting a recurrence for
         <m>P(k,n)</m>.
-        <task>
-          <statement>
-            <p>
-              How many parts does the remaining partition
-              have when we remove the largest part (more precisely, we reduce its
-              multiplicity by one) from a partition of
-              <m>k</m> into
-              <m>n</m> parts?  What can you say about the number of parts of the remaining
-              partition if we remove one from each part?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              Reducing the multiplicity of the largest part by one reduces
-              the number of parts by one. Removing 1 from each part reduces the
-              number of parts by the multiplicity of the smallest part, so it
-              strictly reduces the number of parts, perhaps even to one.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              If the largest part of a partition is <m>j</m> and we remove it,
-              what integer is being partitioned by the remaining parts of the
-              partition? If we remove one from each part of a partition of <m>k</m> into
-              <m>n</m> parts, what integer is being partitioned by the remaining parts?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              If we remove the largest part, the integer being partitioned
-              is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and
-              at least <m>n-1</m>. If we remove one from each part of the partition, the
-              integer being partitioned is <m>k-n</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              The last two questions are designed to get you thinking about how
-              we can get a bijection between the set of  partitions of <m>k</m> into
-              <m>n</m> parts and some other set of partitions that are partitions of a
-              smaller number.  These questions describe two different strategies for
-              getting that set of partitions of a smaller number or of smaller numbers. 
-              Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m>
-              parts and a set of partitions of a smaller number or numbers.  For each
-              strategy, use the answers to the last two questions to find and describe 
-              this set of partitions into a smaller number and a bijection between
-              partitions of
-              <m>k</m> into
-              <m>n</m> parts and partitions of the smaller integer or integers into
-              appropriate numbers of parts.
-            </p>
-          </statement>
-          <solution>
-            <p>
-              Removing the largest part of a partition of <m>k</m> into <m>n</m>
-              parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and
-              and partitions of numbers <m>k'</m> between
-              <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing
-              the largest part gives us such a partition, and adjoining a part of
-              size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m>
-              parts.)
-            </p>
-
-            <p>
-              Removing one from each part of a partition of <m>k</m> into <m>n</m>
-              parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts
-              and and partitions <m>k-n</m> into <m>n</m> or fewer parts. (Removing one from
-              each part of a partition of <m>k</m> into <m>n</m> parts gives us such a
-              partition, and, given such a partition, we get a partition of <m>k</m> into
-              <m>n</m> parts by adding one to each part and then creating enough parts of
-              size 1 to have <m>n</m> parts.)
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Find a recurrence (which need not have just two terms on the
-              right hand side) that describes how to compute <m>P(k,n)</m> in terms of the
-              number of partitions of smaller integers into a smaller number of
-              parts. (Hint: One of the two sets of partitions of smaller numbers
-              from the previous part is more amenable to finding a recurrence than the
-              other.)
-            </p>
-          </statement>
-          <solution>
-            <p>
-              The second bijection is to the set of partitions of <m>k-1</m>
-              into <m>n</m> or fewer parts, and this makes the second bijection sound
-              easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The
-              proof is the bijection we already described; in particular a partition
-              of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by
-              adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of
-              size one.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What is <m>P(k,1)</m> for a positive integer <m>k</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>P(k,1)=1</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What is <m>P(k,k)</m> for a positive integer <m>k</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              <m>P(k,k)=1</m>.
-            </p>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              Use your recurrence to compute a table with the values of
-              <m>P(k,n)</m> for values of <m>k</m> between 1 and 7.
-            </p>
-          </statement>
-          <solution>
-            <tabular>
-              <row>
-                <cell><m>k\backslash n</m></cell>
-                <cell>1</cell>
-                <cell>2</cell>
-                <cell>3</cell>
-                <cell>4</cell>
-                <cell>5</cell>
-                <cell>6</cell>
-                <cell>7</cell>
-              </row>
-              <row bottom="minor">
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-                <cell></cell>
-              </row>
-              <row>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>3</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>4</cell>
-                <cell>1</cell>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>5</cell>
-                <cell>1</cell>
-                <cell>2</cell>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>6</cell>
-                <cell>1</cell>
-                <cell>3</cell>
-                <cell>3</cell>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-                <cell>0</cell>
-              </row>
-              <row>
-                <cell>7</cell>
-                <cell>1</cell>
-                <cell>3</cell>
-                <cell>4</cell>
-                <cell>3</cell>
-                <cell>2</cell>
-                <cell>1</cell>
-                <cell>1</cell>
-              </row>
-            </tabular>
-          </solution>
-        </task>
-        <task>
-          <statement>
-            <p>
-              What would you want to fill
-              into row 0 and column 0 of your table in order to make it consistent with
-              your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually
-              define a sum with no terms in it to be zero. Is that consistent with the
-              way the recurrence says we should define <m>P(0,0)</m>?
-            </p>
-          </statement>
-          <solution>
-            <p>
-              We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for
-              positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of
-              positive integers is zero, this gives us one partition of the number
-              zero, namely the empty multiset of positive integers.
-            </p>
-          </solution>
-        </task>
       </p>
-      </statement>
+      <task>
+        <statement>
+          <p>
+            How many parts does the remaining partition
+            have when we remove the largest part (more precisely, we reduce its
+            multiplicity by one) from a partition of
+            <m>k</m> into
+            <m>n</m> parts?  What can you say about the number of parts of the remaining
+            partition if we remove one from each part?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Reducing the multiplicity of the largest part by one reduces
+            the number of parts by one. Removing 1 from each part reduces the
+            number of parts by the multiplicity of the smallest part, so it
+            strictly reduces the number of parts, perhaps even to one.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            If the largest part of a partition is <m>j</m> and we remove it,
+            what integer is being partitioned by the remaining parts of the
+            partition? If we remove one from each part of a partition of <m>k</m> into
+            <m>n</m> parts, what integer is being partitioned by the remaining parts?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we remove the largest part, the integer being partitioned
+            is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and
+            at least <m>n-1</m>. If we remove one from each part of the partition, the
+            integer being partitioned is <m>k-n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The last two questions are designed to get you thinking about how
+            we can get a bijection between the set of  partitions of <m>k</m> into
+            <m>n</m> parts and some other set of partitions that are partitions of a
+            smaller number.  These questions describe two different strategies for
+            getting that set of partitions of a smaller number or of smaller numbers. 
+            Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m>
+            parts and a set of partitions of a smaller number or numbers.  For each
+            strategy, use the answers to the last two questions to find and describe 
+            this set of partitions into a smaller number and a bijection between
+            partitions of
+            <m>k</m> into
+            <m>n</m> parts and partitions of the smaller integer or integers into
+            appropriate numbers of parts.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Removing the largest part of a partition of <m>k</m> into <m>n</m>
+            parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and
+            and partitions of numbers <m>k'</m> between
+            <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing
+            the largest part gives us such a partition, and adjoining a part of
+            size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m>
+            parts.)
+          </p>
+
+          <p>
+            Removing one from each part of a partition of <m>k</m> into <m>n</m>
+            parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts
+            and and partitions <m>k-n</m> into <m>n</m> or fewer parts. (Removing one from
+            each part of a partition of <m>k</m> into <m>n</m> parts gives us such a
+            partition, and, given such a partition, we get a partition of <m>k</m> into
+            <m>n</m> parts by adding one to each part and then creating enough parts of
+            size 1 to have <m>n</m> parts.)
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence (which need not have just two terms on the
+            right hand side) that describes how to compute <m>P(k,n)</m> in terms of the
+            number of partitions of smaller integers into a smaller number of
+            parts. (Hint: One of the two sets of partitions of smaller numbers
+            from the previous part is more amenable to finding a recurrence than the
+            other.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The second bijection is to the set of partitions of <m>k-1</m>
+            into <m>n</m> or fewer parts, and this makes the second bijection sound
+            easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The
+            proof is the bijection we already described; in particular a partition
+            of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by
+            adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of
+            size one.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>P(k,1)</m> for a positive integer <m>k</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>P(k,1)=1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>P(k,k)</m> for a positive integer <m>k</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>P(k,k)=1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use your recurrence to compute a table with the values of
+            <m>P(k,n)</m> for values of <m>k</m> between 1 and 7.
+          </p>
+        </statement>
+        <solution>
+          <tabular>
+            <row>
+              <cell><m>k\backslash n</m></cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>7</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>1</cell>
+              <cell>3</cell>
+              <cell>3</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>7</cell>
+              <cell>1</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>3</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+            </row>
+          </tabular>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What would you want to fill
+            into row 0 and column 0 of your table in order to make it consistent with
+            your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually
+            define a sum with no terms in it to be zero. Is that consistent with the
+            way the recurrence says we should define <m>P(0,0)</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for
+            positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of
+            positive integers is zero, this gives us one partition of the number
+            zero, namely the empty multiset of positive integers.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <p>

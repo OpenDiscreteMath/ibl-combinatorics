@@ -136,74 +136,72 @@
   </p>
 
   <activity xml:id="exponentialformula" category="essential for this or the next section">
-    <statement>
     <p>
       Suppose that <m>S</m> is a set with a set-value function <m>V</m> from <m>S</m>
       to a set
       <m>Y</m> such that no element of <m>S</m> has the empty set as a value. Let <m>f(x)</m>
       be the generating function for <m>S</m> according to the value function
       <m>V</m>.
-      <task>
-        <statement>
-          <p>
-            In the power series
-            <me>
-              e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
-              \cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
-            </me>
-            the product principle tells us that the coefficient of <m>x^n\over n!</m> in
-            <m>f(x)^k</m> is the number of <m>k</m>-tuples of elements of <m>S</m> whose
-            values are disjoint sets whose union is any one particular subset <m>N</m> of
-            <m>Y</m> of size <m>n</m>.  How do you know that all of the elements of the
-            <m>k</m>-tuple are different?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            Because the coefficient of <m>x^0</m> is 0, there are no elements in <m>S</m> whose
-            value is the empty set.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            When you divide the coefficient of <m>x^n\over n!</m> in <m>f(x)^k</m> by
-            <m>k!</m>, it no longer counts <m>k</m>-tuples whose values are disjoint sets whose
-            union is that set <m>N</m>.  What does it count instead?  (Hint: how many
-            <m>k</m>-tuples can you form with a set of <m>k</m> distinct elements?)
-          </p>
-        </statement>
-        <solution>
-          <p>
-            It counts <m>k</m>-element subsets since the entries of the
-            <m>k</m>-tuples are distinct.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Why does this prove that the coefficient of <m>x^n\over n!</m> in
-            <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of th
-            elements of the subset partition any one particular set <m>N\subseteq T</m> of
-            size
-            <m>n</m>?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            We know that the coefficient of <m>x^n\over n!</m> in <m>e^{f(x)}</m> is
-            the sum over all <m>k</m> of the number of <m>k</m>-element subsets of <m>S</m> whose
-            values partition a particular set <m>N</m>. (The values must partition <m>N</m>
-            because none of them are empty, they are disjoint, and their union is
-            <m>N</m>.) This sum is the number of subsets of <m>S</m> such that the values of
-            the elements of the subset partition a particular set <m>N</m> of size <m>n</m>.
-          </p>
-        </solution>
-      </task>
     </p>
-    </statement>
+    <task>
+      <statement>
+        <p>
+          In the power series
+          <me>
+            e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
+            \cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
+          </me>
+          the product principle tells us that the coefficient of <m>x^n\over n!</m> in
+          <m>f(x)^k</m> is the number of <m>k</m>-tuples of elements of <m>S</m> whose
+          values are disjoint sets whose union is any one particular subset <m>N</m> of
+          <m>Y</m> of size <m>n</m>.  How do you know that all of the elements of the
+          <m>k</m>-tuple are different?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Because the coefficient of <m>x^0</m> is 0, there are no elements in <m>S</m> whose
+          value is the empty set.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          When you divide the coefficient of <m>x^n\over n!</m> in <m>f(x)^k</m> by
+          <m>k!</m>, it no longer counts <m>k</m>-tuples whose values are disjoint sets whose
+          union is that set <m>N</m>.  What does it count instead?  (Hint: how many
+          <m>k</m>-tuples can you form with a set of <m>k</m> distinct elements?)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It counts <m>k</m>-element subsets since the entries of the
+          <m>k</m>-tuples are distinct.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Why does this prove that the coefficient of <m>x^n\over n!</m> in
+          <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of th
+          elements of the subset partition any one particular set <m>N\subseteq T</m> of
+          size
+          <m>n</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We know that the coefficient of <m>x^n\over n!</m> in <m>e^{f(x)}</m> is
+          the sum over all <m>k</m> of the number of <m>k</m>-element subsets of <m>S</m> whose
+          values partition a particular set <m>N</m>. (The values must partition <m>N</m>
+          because none of them are empty, they are disjoint, and their union is
+          <m>N</m>.) This sum is the number of subsets of <m>S</m> such that the values of
+          the elements of the subset partition a particular set <m>N</m> of size <m>n</m>.
+        </p>
+      </solution>
+    </task>
   </activity>
 
   <p>
@@ -392,36 +390,28 @@
   </p>
 
   <activity category="essential for this or the next section">
-    <statement>
-      <p>
-        Show that every vertex of a graph lies in one and only one
-        connected component of a graph. (Notice that this shows that the
-        connected components of a graph form a partition of the vertex set of the
-        graph.)
-      </p>
-    </statement>
+    Show that every vertex of a graph lies in one and only one
+    connected component of a graph. (Notice that this shows that the
+    connected components of a graph form a partition of the vertex set of the
+    graph.)
     <solution>
       <p>
-        Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
-        Then
-        <ul>
-          <task>
-            <p>
-              Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
-              that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
-            </p>
-          </task>
-          <task>
-            <p>
-              If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
-              it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
-              from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
-              <m>C</m> is connected by a walk to any vertex in <m>C</m>.
-            </p>
-          </task>
-        </ul>
-      </p>
-
+      Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
+      Then
+      <task>
+        <p>
+          Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
+          that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
+        </p>
+      </task>
+      <task>
+        <p>
+          If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
+          it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
+          from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
+          <m>C</m> is connected by a walk to any vertex in <m>C</m>.
+        </p>
+      </task>
       <p>
         Therefore <m>C</m> is a connected component containing <m>x</m>. If
         connected component <m>D</m> contained <m>x</m>, then every vertex in <m>D</m> would be
@@ -495,7 +485,6 @@
   </p>
 
   <activity category="essential for this or the next section, and interesting">
-    <statement>
     <p>
       Suppose that <m>f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}</m> is
       the exponential generating function for the number of simple
@@ -503,171 +492,170 @@
       <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}</m> is the
       exponential generating function for the number of simple graphs on <m>i</m>
       vertices.
-      <task>
-        <statement>
-          <p>
-            Is <m>f(x) = e^{g(x)}</m>, is <m>f(x) = e^{g(x)-1}</m>, is <m>g(x) = e^{f(x)-1}</m>
-            or is
-            <m>g(x) = e^{f(x)}</m>?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            To apply the exponential formula, we must take the exponential
-            function of an EGF whose constant term is zero, or in other words for a
-            set of elements whose values are nonempty sets. We can let <m>S</m> be the
-            set of nonempty connected graphs. (Technically, the graph with the empty
-            set of vertices and the empty set of edges is connected.) Therefore
-            <m>f(x) -1</m> is the EGF for <m>S</m>. By the exponential formula,
-            <m>g(x)=e^{f(x)-1}</m> because a simple graph may be thought of as a set of
-            simple connected graphs, namely its connected component graphs. (Note that
-            <m>g(x)</m> has 1 for its constant term, which corresponds to thinking of the
-            empty graph as having an empty set of nonempty connected components.)
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            One of <m>a_i</m> and <m>c_n</m> can be computed by recognizing that a
-            simple graph on a vertex set <m>V</m> is completely determined by its edge set
-            and its edge set is a subset of the set of two element subsets of <m>V</m>. 
-            Figure out which it is and compute it.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            To specify a simple graph on a vertex set <m>V</m>, we have to
-            specify its set of edges. The possible sets of edges thus correspond
-            bijectively to sets of two-element subsets of <m>V</m>. But if <m>V</m> has size
-            <m>i</m> the set of all two element subsets of <m>V</m> has <m>i\choose 2</m> elements.
-            Thus the number of sets of two element subsets of <m>V</m> is <m>2^{i\choose
-            2}</m>. Therefore <m>a_i = 2^{i\choose 2}</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Write <m>g(x)</m> in terms of the natural logarithm of <m>f(x)</m>
-            or <m>f(x)</m> in terms of the natural logarithm of  <m>g(x)</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            Since <m>g(x) = e^{f(x)-1}</m>, <m>f(x) = 1+ \ln g(x)</m>.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Write <m>\log(1+y)</m> as a power series in <m>y</m>.
-          </p>
-        </statement>
-        <solution>
-          <me>
-            \log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
-            (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
-          </me>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            Why is the coefficient
-            of
-            <m>x^0\over 0!</m> in <m>g(x)</m> equal to one?  Write <m>f(x)</m> as a power series in
-            <m>g(x) -1</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            The coefficient of <m>x^0\over 0!</m> is 1 because there is one
-            graph on the empty set; the one with no edges.
-            <me>
-              f(x) = 1 +\ln(1 +
-              (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
-            </me>
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            You can now use the previous parts of the Problem to find a formula
-            for <m>c_n</m> that involves summing over all partitions of the integer <m>n</m>. 
-            (It isn't the simplest formula in the world, and it isn't the easiest
-            formula in the world to figure out, but it is nonetheless a formula
-            with which one could actually make computations!)  Find such a  formula.
-          </p>
-        </statement>
-        <solution>
-          <me>
-            f(x) = 1+\sum_{j=1}^\infty
-            (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
-            (-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.
-          </me>
-          <p>
-            From the right-hand expression, we get a term involving <m>x^n</m> whenever we
-            have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{i\choose
-            2}{x^i\over i!}</m>. So the coefficient of
-            <m>x^n\over n!</m> is the sum over all <m>j</m> and all sequences
-            <m>i_1,i_2,\ldots,i_j</m> with
-            <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
-            <me>
-              {n!\over
-              j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
-              \over i_k!},
-            </me>
-            where each <m>i_k>0</m>. Notice that reordering the numbers
-            <m>i_1</m>, <m>i_2</m>, <ellipsis /> <m>i_k</m> does not change the value of the expression.
-            The sequence of <m>i_k</m>s is a composition of <m>n</m> into positive parts. If
-            we knew how many compositions of <m>n</m> into <m>j</m> parts correspond to one
-            partition of <m>n</m> into <m>j</m> parts, we could sum over a much smaller set of
-            terms. If we use the type vector notation for a partition, namely that
-            it has <m>p_1</m> parts of size 1, <m>p_2</m> parts of size 2, <ellipsis />, <m>p_n</m> parts
-            of size <m>n</m>, then the number of compositions corresponding to that
-            partition, i.e. the number of compositions with the type vector
-            <m>(p_1,p_2, \ldots, p_n)</m> is the number of ways to take <m>j</m> places in a
-            vector and label <m>p_1</m> of them with 1, <m>p_2</m> of them with 2, and so on
-            until we label <m>p_n</m> of them with <m>n</m>. This number is the multinomial
-            coefficient <m>j\choose p_1,p_2,\ldots, p_n</m>. Thus our sum over all j and
-            all compositions of <m>n</m> into <m>j</m> parts becomes
-            <me>
-              \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
-              rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
-              p_n}
-              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-              \over (r!)^{p_r}}.
-            </me>
-          </p>
-
-          <p>
-            We can remove one of the summation signs and the
-            condition that <m>\sum_{r=1}^n p_r=j</m> by substituting <m>\sum_{r=1}^n p_r</m>
-            for <m>j</m>, and we get
-            <me>
-              \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
-              rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
-              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-              \over (r!)^{p_r}p_r!}
-            </me>
-            for the number of connected graphs on <m>n</m> vertices. If we want to
-            shorten the appearance of the formula we can keep <m>j</m> in our sum and
-            explain its value afterwards, as in
-            <me>
-              \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
-              rp_r =n }}{n!}(-1)^j(j-1)!
-              \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-              \over (r!)^{p_r}p_r!},
-            </me>
-            where <m>j=\sum_{r=1}^n p_r</m>.
-          </p>
-        </solution>
-      </task>
     </p>
-    </statement>
+    <task>
+      <statement>
+        <p>
+          Is <m>f(x) = e^{g(x)}</m>, is <m>f(x) = e^{g(x)-1}</m>, is <m>g(x) = e^{f(x)-1}</m>
+          or is
+          <m>g(x) = e^{f(x)}</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To apply the exponential formula, we must take the exponential
+          function of an EGF whose constant term is zero, or in other words for a
+          set of elements whose values are nonempty sets. We can let <m>S</m> be the
+          set of nonempty connected graphs. (Technically, the graph with the empty
+          set of vertices and the empty set of edges is connected.) Therefore
+          <m>f(x) -1</m> is the EGF for <m>S</m>. By the exponential formula,
+          <m>g(x)=e^{f(x)-1}</m> because a simple graph may be thought of as a set of
+          simple connected graphs, namely its connected component graphs. (Note that
+          <m>g(x)</m> has 1 for its constant term, which corresponds to thinking of the
+          empty graph as having an empty set of nonempty connected components.)
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          One of <m>a_i</m> and <m>c_n</m> can be computed by recognizing that a
+          simple graph on a vertex set <m>V</m> is completely determined by its edge set
+          and its edge set is a subset of the set of two element subsets of <m>V</m>. 
+          Figure out which it is and compute it.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To specify a simple graph on a vertex set <m>V</m>, we have to
+          specify its set of edges. The possible sets of edges thus correspond
+          bijectively to sets of two-element subsets of <m>V</m>. But if <m>V</m> has size
+          <m>i</m> the set of all two element subsets of <m>V</m> has <m>i\choose 2</m> elements.
+          Thus the number of sets of two element subsets of <m>V</m> is <m>2^{i\choose
+          2}</m>. Therefore <m>a_i = 2^{i\choose 2}</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Write <m>g(x)</m> in terms of the natural logarithm of <m>f(x)</m>
+          or <m>f(x)</m> in terms of the natural logarithm of  <m>g(x)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>g(x) = e^{f(x)-1}</m>, <m>f(x) = 1+ \ln g(x)</m>.
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Write <m>\log(1+y)</m> as a power series in <m>y</m>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
+          (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
+        </me>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          Why is the coefficient
+          of
+          <m>x^0\over 0!</m> in <m>g(x)</m> equal to one?  Write <m>f(x)</m> as a power series in
+          <m>g(x) -1</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The coefficient of <m>x^0\over 0!</m> is 1 because there is one
+          graph on the empty set; the one with no edges.
+          <me>
+            f(x) = 1 +\ln(1 +
+            (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
+          </me>
+        </p>
+      </solution>
+    </task>
+    <task>
+      <statement>
+        <p>
+          You can now use the previous parts of the Problem to find a formula
+          for <m>c_n</m> that involves summing over all partitions of the integer <m>n</m>. 
+          (It isn't the simplest formula in the world, and it isn't the easiest
+          formula in the world to figure out, but it is nonetheless a formula
+          with which one could actually make computations!)  Find such a  formula.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          f(x) = 1+\sum_{j=1}^\infty
+          (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
+          (-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.
+        </me>
+        <p>
+          From the right-hand expression, we get a term involving <m>x^n</m> whenever we
+          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{i\choose
+          2}{x^i\over i!}</m>. So the coefficient of
+          <m>x^n\over n!</m> is the sum over all <m>j</m> and all sequences
+          <m>i_1,i_2,\ldots,i_j</m> with
+          <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
+          <me>
+            {n!\over
+            j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
+            \over i_k!},
+          </me>
+          where each <m>i_k>0</m>. Notice that reordering the numbers
+          <m>i_1</m>, <m>i_2</m>, <ellipsis /> <m>i_k</m> does not change the value of the expression.
+          The sequence of <m>i_k</m>s is a composition of <m>n</m> into positive parts. If
+          we knew how many compositions of <m>n</m> into <m>j</m> parts correspond to one
+          partition of <m>n</m> into <m>j</m> parts, we could sum over a much smaller set of
+          terms. If we use the type vector notation for a partition, namely that
+          it has <m>p_1</m> parts of size 1, <m>p_2</m> parts of size 2, <ellipsis />, <m>p_n</m> parts
+          of size <m>n</m>, then the number of compositions corresponding to that
+          partition, i.e. the number of compositions with the type vector
+          <m>(p_1,p_2, \ldots, p_n)</m> is the number of ways to take <m>j</m> places in a
+          vector and label <m>p_1</m> of them with 1, <m>p_2</m> of them with 2, and so on
+          until we label <m>p_n</m> of them with <m>n</m>. This number is the multinomial
+          coefficient <m>j\choose p_1,p_2,\ldots, p_n</m>. Thus our sum over all j and
+          all compositions of <m>n</m> into <m>j</m> parts becomes
+          <me>
+            \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+            rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
+            p_n}
+            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \over (r!)^{p_r}}.
+          </me>
+        </p>
+
+        <p>
+          We can remove one of the summation signs and the
+          condition that <m>\sum_{r=1}^n p_r=j</m> by substituting <m>\sum_{r=1}^n p_r</m>
+          for <m>j</m>, and we get
+          <me>
+            \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+            rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
+            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \over (r!)^{p_r}p_r!}
+          </me>
+          for the number of connected graphs on <m>n</m> vertices. If we want to
+          shorten the appearance of the formula we can keep <m>j</m> in our sum and
+          explain its value afterwards, as in
+          <me>
+            \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+            rp_r =n }}{n!}(-1)^j(j-1)!
+            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \over (r!)^{p_r}p_r!},
+          </me>
+          where <m>j=\sum_{r=1}^n p_r</m>.
+        </p>
+      </solution>
+    </task>
   </activity>
 
   <p>
