@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<docinfo>
+<macros>
+\newcommand{\cycle}[1]{\arraycolsep 5 pt
+\left(\begin{array}#1\end{array}\right)}
+\newcommand{\iteme}{
+\item[\ $\bullet$\ \theenumi.]}
+\newcommand{\items}{
+\item[\ \tiny$+$\ \theenumi.]}
+\newcommand{\itemh}{
+\item[\ {$*$}\ \theenumi.]}
+\newcommand{\itemes}{
+\item[\ \Large$\cdot$\ \theenumi.]}
+\newcommand{\itemesi}{
+ \item[\ \importantarrow\ \Large
+$\cdot$\ \theenumi.]}
+\newcommand{\itemm}{
+\item[\ $\circ$\ \theenumi.]}
+\newcommand{\importantarrow}{\psfig{figure=arrow.eps}}
+\newcommand{\itemi}{
+\item[\ \importantarrow\ \theenumi.]}
+\newcommand{\itemitemi}{
+\item[\ \importantarrow\ (\theenumii)]}
+\newcommand{\itemei}{
+\item[\ \importantarrow\ $\bullet$\ \theenumi.]}
+\newcommand{\itemih}{
+\item[\ \importantarrow\ $*$\ \theenumi.]}
+\newcommand{\itemitemih}{
+\item[\ \importantarrow\ $*$\ (\theenumii)]}
+\newcommand{\itemitemh}{
+\item[\ $*$\ (\theenumii)]}
+\newcommand{\qchoose}[2]{\left[{#1\atop#2}\right]_q}
+\def\neg1choose#1#2{\left[{#1\atop#2}\right]_{-1}}
+\newcommand{\bp}{
+\begin{enumerate}{\setcounter{enumi}{\value{problemnumber}}}}
+\newcommand{\ep}{\setcounter{problemnumber}{\value{enumi}}
+\end{enumerate}}
+\newcommand{\ignore}[1]{}
+\renewcommand{\bottomfraction}{.8}
+\renewcommand{\topfraction}{.8}
+\newcommand{\apple}{\mbox{\psfig{figure=apple.eps,height=10 pt}}}
+\newcommand{\ap}{\apple}
+\newcommand{\banana}{\mbox{\psfig{figure=Banana.eps,height=10 pt}}}
+\newcommand{\ba}{\banana}
+\newcommand{\pear}{\mbox{\psfig{figure=Pear.eps,height=10 pt}}}
+\newcommand{\pe}{\pear}
+</macros>
+
+<latex-image-preamble>
+\usepackage{tikz}
+\usepackage{tkz-graph}
+\usepackage{tkz-euclide}
+\usetikzlibrary{patterns}
+\usetikzlibrary{positioning}
+\usetikzlibrary{matrix,arrows}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{through,intersections,decorations,shadows,fadings}
+
+\usepackage{pgfplots}
+
+</latex-image-preamble>
+
+</docinfo>
+
+
+<book>
+<title>Combinatorics Through Guided Discovery</title>
+<frontmatter>
+<titlepage>
+<author>
+<personname>Kenneth P. Bogart</personname>
+</author>
+</titlepage>
+</frontmatter>
+
+
+<xi:include href="./chapter1.mbx" />
+
+<xi:include href="./chapter2.mbx" />
+
+<xi:include href="./InductionRecursion.mbx" />
+
+<xi:include href="./chapter4.mbx" />
+
+<xi:include href="./chapter5.mbx" />
+
+<xi:include href="./groupsonsets.mbx" />
+
+<xi:include href="./Relations.mbx" />
+
+<xi:include href="./Induction.mbx" />
+
+<xi:include href="./expogenfun.mbx" />
+
+<backmatter>
+
+<xi:include href="./bibliography.mbx" />
+<index-part>
+<title>Index</title>
+<index-list />
+</index-part>
+
+</backmatter>
+</book>
+</mathbook>

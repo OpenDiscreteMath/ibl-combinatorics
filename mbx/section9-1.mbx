@@ -1,0 +1,97 @@
+
+<section>
+  <title>Indicator Functions</title>
+  <p>
+    When we introduced the idea of a generating function, we said that the
+    formal sum
+    <me>
+      \sum_{i=0}^n a_ix^i
+    </me>
+    may be thought of as a convenient way to keep track of the sequence
+    <m>a_i</m>. We then did quite a few examples that showed how combinatorial
+    properties of arrangements counted by the coefficients in a generating
+    function could be mirrored by algebraic properties of the generating
+    functions themselves. The monomials <m>x^i</m> are called <em>indicator
+    polynomials</em><index><main>indicator polynomials</main></index>. (They indicate the position of
+    the coefficient
+    <m>a_i</m>.) One example of a generating function is given by
+    <me>
+      (1+x)^n = \sum_{i=0}^\infty {n\choose i}x^i.
+    </me>
+  </p>
+
+  <p>
+    Thus we say that <m>(1+x)^n</m> is the generating function for the
+    binomial coefficients <m>n \choose i</m>. The notation tells us that we are
+    assuming that only <m>i</m> varies in the sum on the right, but that the
+    equation holds for each fixed integer <m>n</m>. This is implicit when we say
+    that <m>(1+x)^n</m> is the generating function for <m>n\choose i</m>, because we
+    haven't written <m>i</m> anywhere in <m>(1+x)^n</m>, so it is free to vary.
+  </p>
+
+  <p>
+    Another example of a generating function is given by
+    <me>
+      x^{\underline{n}} = \sum_{i=0}^\infty s(n,i)x^i.
+    </me>
+  </p>
+
+  <p>
+    Thus we say that <m>x^{\underline{n}}</m> is the generating function for the
+    Stirling numbers of the first kind, <m>s(n,i)</m>. There is a similar
+    equation for Stirling numbers of the second kind, namely
+    <me>
+      x^n = \sum_{i=0}^\infty S(n,i)x^{\underline{i}}.
+    </me>
+  </p>
+
+  <p>
+    However with our previous definition of generating functions, this
+    equation would not give a generating function for the Stirling numbers
+    of the second kind, because <m>S(n,i)</m> is not the coefficient of <m>x^i</m>. If
+    we were willing to consider the falling factorial powers
+    <m>x^{\underline{i}}</m> as indicator polynomials, then we could say that
+    <m>x^n</m> is the generating function for the numbers <m>S(n,i)</m> relative to
+    these indicator polynomials. This suggests that perhaps different sorts
+    of indicator polynomials go naturally with different sequences of
+    numbers.
+  </p>
+
+  <p>
+    The binomial theorem gives us yet another example.
+  </p>
+
+  <activity category="motivation">
+    <statement>
+      <p>
+        Write <m>(1+x)^n</m> as a sum of multiples of
+        <m>x^i\over i!</m> rather than as a sum of multiples of
+        <m>x^i</m>.
+      </p>
+    </statement>
+    <solution>
+      <me>
+        (1+x)^n =
+        \sum_{i=0}^\infty {n\choose i}x^i=\sum_{i=0}^\infty {n!\over i!(n-i)!}x^i
+        =
+        \sum_{i=0}^\infty {n!\over (n-i)!}{x^i\over i!} = \sum_{i=0}^\infty
+        n^{\underline{i}} {x^i\over i!}.
+      </me>
+    </solution>
+  </activity>
+
+  <p>
+    This example suggests that we could say that <m>(1+x)^n</m>
+    is the generating function for the falling factorial powers
+    <m>n^{\underline{i}}</m> relative to the indicator polynomials <m>x^i\over i!</m>.
+    In general, a sequence of polynomials is called a family of <em>indicator polynomials</em> if there is one polynomial of each nonnegative
+    integer degree in the sequence. Those familiar with linear algebra will
+    recognize that this says that a family of indicator polynomials form a
+    basis for the vector space of polynomials. This means that each
+    polynomial way can be expressed as a sum of numerical multiples of
+    indicator polynomials in one and only one way. One could use the
+    language of linear algebra to define indicator polynomials in an even
+    more general way, but a definition in such generality would not be useful
+    to us at this point.
+  </p>
+</section>

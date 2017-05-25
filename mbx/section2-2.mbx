@@ -1,0 +1,2283 @@
+
+<section>
+  <title>Basic Counting Principles</title>
+  <introduction>
+    <activity xml:id="fiveteamtournament" category="motivation">
+      <statement>
+        <p>
+          Five schools are going to send their baseball teams to a
+          tournament, in which each team must play each other team
+          exactly once. How many games are
+          required?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Think of numbering the five teams. The first team must play all
+          four others, the second team will be in one of these games but must play in
+          three more games, with the third, fourth and fifth team. The third team is
+          in two of the games we've already mentioned, and must still play the fourth
+          and fifth team for two more games, and the fourth team must play the fifth
+          team in addition to playing in three of the games already mentioned. Thus
+          there are <m>4+3+2+1 = 10</m> games. Alternatively, there are five teams, each of
+          which must play in four games, giving us 20 pairings of two teams each.
+          However each game involves two of these pairings, so there are <m>20/2 =10</m>
+          games.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="baseball2" category="essential">
+      <p>
+        Now some number <m>n</m> of schools are going to send their
+        baseball teams to a tournament, and each team must play each
+        other team exactly once. Let us think of the teams as
+        numbered 1 through <m>n</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            How many games does  team 1 have to play in?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n-1</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many games, other than the one with team 1, does
+            team two have to play in?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n-2</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many games, other than those with the first <m>i-1</m>
+            teams, does team <m>i</m> have to play in?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n-i</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In terms of your answers to the previous parts of this
+            problem, what is the total number of games that must be played?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>1+2 +\cdots+ n-1</m>. Although this need not be part of the answer, a
+            formula that we usually use in both algebra and calculus courses tells us
+            this sum is <m>n(n-1)/2</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="basicsandwiches" category="essential">
+      <statement>
+        <p>
+          One of the schools sending its team to the tournament
+          has to send its players from some distance, and so it is
+          making sandwiches for team members to eat along the way.
+          There are three choices for the kind of bread and five choices
+          for the kind of filling. How many different kinds of
+          sandwiches are available?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>3\cdot5=15</m>, or <m>5+5+5=15</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="orderedpair" category="summary">
+      <statement>
+        <p>
+          An <index><main>ordered pair</main></index><index><main>pair,ordered</main></index><em>ordered pair</em>
+          <m>(a,b)</m> consists of two things we call <m>a</m> and
+          <m>b</m>. We say <m>a</m> is the first member of the pair and <m>b</m> is
+          the second member of the pair. If <m>M</m> is an <m>m</m> element set
+          and <m>N</m> is an
+          <m>n</m>-element set, how many ordered pairs are there whose first
+          member is in <m>M</m> and whose second member is in <m>N</m>? Does this problem have
+          anything to do with any of the previous problems?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>m\cdot n</m>. This is because if <m>M = \{x_1,x_2,\ldots, x_m\}</m>, then
+          we have <m>n</m> ordered pairs starting with <m>x_1</m>, <m>n</m> ordered pairs starting
+          with <m>x_2</m>, and so on, so the total number of ordered pairs is a sum of <m>m</m>
+          terms, all equal to <m>n</m>. In <xref ref="basicsandwiches">problem</xref> we were looking at ordered pairs of bread and filling.
+          Less directly, and so not required for the answer, In <xref ref="fiveteamtournament">Problem</xref> we have 20 ordered pairs, and each baseball game
+          involved two of the ordered pairs so we had 10 baseball games. The same
+          argument applies to <xref ref="baseball2">Problem</xref>; namely we have <m>n</m> teams each of
+          which is in an ordered pair with <m>n-1</m> other teams, so we have <m>n(n-1)</m>
+          ordered pairs, and each game corresponds to two ordered pairs so we have
+          <m>n(n-1)/2</m> games. This gives us one proof of the formula we mentioned in the
+          solution to that problem.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="completelunch" category="motivation">
+      <statement>
+        <p>
+          Since a sandwich by itself is pretty boring, students
+          from the school in <xref ref="basicsandwiches">Problem</xref> are offered a
+          choice of a drink (from among five different kinds), a
+          sandwich, and a fruit (from among four different kinds). In
+          how many ways may a student make a choice of the three items
+          now?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>5\cdot15\cdot4 = 300</m>. Why do we multiply? Multiplying five by 15
+          is equivalent to adding 15, the number of sandwiches, once for each drink,
+          giving us 75 combinations of drink and sandwich. For each such pair we have
+          4 choices of fruit, and we can either think of adding 75 fours or adding four
+          75s to get three hundred. Thus we multiply because multiplication is
+          repeated addition.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="tripledeckercone" category="essential">
+      <statement>
+        <p>
+          The coach of the team in <xref ref="basicsandwiches">Problem</xref>
+          knows of an ice cream parlor along the way where she plans to
+          stop to buy each team member a triple decker cone. There are
+          12 different flavors of ice cream, and triple decker cones are made in
+          homemade waffle cones. Having chocolate ice cream as the bottom scoop is
+          different from having chocolate ice cream as the top scoop. How many possible
+          ice cream cones are going to be available to the team
+          members? How many cones with three different kinds
+          of ice cream will be available?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>12\cdot12\cdot12 =1728</m> possible cones. If the flavors must be
+          different, we have <m>12\cdot11\cdot 10 = 1320</m> possible cones. In both cases,
+          the reason we are multiplying is as a shortcut for repeated addition.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="countingfunctions" category="essential">
+      <p>
+        The idea of a function is ubiquitous in mathematics. A
+        function<index><main>function</main></index> <m>f</m> from a set <m>S</m> to a set <m>T</m> is a relationship
+        between the two sets that associates exactly one member <m>f(x)</m>
+        of <m>T</m> with each element <m>x</m> in <m>S</m>. We
+        will come back to the ideas of functions and relationships in more detail and
+        from different points of view from time to time. However, the quick review
+        above should probably let you answer these questions. If you have difficulty
+        with them, it would be a good idea to go now to <xref ref="Relations">Appendix</xref> and
+        work through <xref ref="relationsandfunctions">Section</xref> which covers this definition
+        in more detail. You might also want to study <xref ref="digraphsoffunctions">Section</xref> to learn
+        to visualize the properties of functions. We will take up the topic of
+        this section later in this chapter as well, but in less detail than is
+        in the appendix.
+      </p>
+      <task xml:id="countingfunctionsparta" >
+        <p>
+        Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
+        functions, write down all the different functions you can
+        from the set
+        <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
+        with
+        <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
+        set <m>\{1,2\}</m> to the set
+        <m>\{a,b\}</m>?
+        <solution>
+          <p>
+            <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
+            <m>h(2) =a</m>. Or, <m>g(1)=b</m>, <m>g(2) = a</m>. Or <m>j(1) =b</m>, <m>j(2) =b</m>. We have
+            exhausted all the possibilities for functions that associate a with 1 and
+            all possibilities for functions that associate <m>b</m> with 1, so we have
+            exhausted all possibilities. There are four such functions.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many functions are there from the three element set
+            <m>\{1,2,3\}</m>
+             to the two element set <m>\{a,b\}</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>2\cdot2\cdot2 = 8</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many functions are there from the two element set <m>\{a,b\}</m> to the
+            three element set <m>\{1,2,3\}</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>3\cdot3=9</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How many functions are there from a three element set
+            to a 12 element set?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>12\cdot12\cdot12 = 1728</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The function <m>f</m> is called
+            <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><em>one-to-one</em> or an
+            <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><em>injection</em> if whenever
+            <m>x</m> is different from
+            <m>y</m>,
+            <m>f(x)</m> is different from <m>f(y)</m>.  How many one-to-one
+            functions are there from a three element set to a  12 element
+            set?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>12\cdot11\cdot10= 1320</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain the relationship between this problem and <xref ref="tripledeckercone">Problem</xref>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            When we counted the number of possible ice cream cones we were
+            counting functions from the three places in the cone where ice cream would
+            sit to the 12 flavors. When we counted the number of possible ice cream
+            cones with different flavors, we were counting the number of one-to-one
+            functions from the three places in the cone where ice cream would sit to the
+            12 flavors.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="icecreaminpints" category="essential">
+      <p>
+        A group of hungry team members in <xref ref="tripledeckercone">Problem</xref> notices it would be cheaper to buy three
+        pints of ice cream for them to split than to buy a triple decker cone for
+        each of them, and that way they would get more ice cream. They ask their
+        coach if they can buy three pints of ice cream.
+      </p>
+      <task>
+        <statement>
+          <p>
+            In how many ways can they choose three pints of different
+              flavors out of the 12 flavors?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
+            flavors. But a choice of three flavors accounts for <m>3\cdot2\cdot1 = 6</m> of
+            those lists. Therefore there are <m>1320/6=220</m> ways to choose the pints if
+            the flavors are different.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In how many ways may they choose three pints if the flavors
+              don't have to be different?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If the flavors need not be different, we must add in the number of ways
+            to choose two pints of one flavor and one of a second and also the number fo
+            ways to choose three pints of one flavor. the first of these is <m>12\cdot11
+            =132</m> and the third is 12, so we have <m>220+132+12=364</m> ways to choose three
+            pints. We can do a more elegant solution after we learn about multisets in
+            <xref ref="multiset">Problem</xref>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="sum" category="essential">
+      <statement>
+        <p>
+          Two sets are said to be
+          <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><em>disjoint</em> if they have no
+          elements in common. For example,
+          <m>\{1,3,12\}</m> and <m>\{6, 4, 8, 2\}</m> are disjoint, but <m>\{1,3,12\}</m> and
+          <m>\{3,5,7\}</m> are not. Three or more sets are said to be
+          <index><main>sets</main><sub>mutually disjoint</sub></index><em>mutually disjoint</em> if no two of them
+          have any elements in common. What can you say about the size of the
+          union of a finite number of finite (mutually) disjoint sets? Does
+          this have anything to do with any of the previous problems?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The size of a union of disjoint sets is the sum of their sizes. We
+          used this principle in problems 1 and two directly, and indirectly in every
+          other problem when we multiplied the number of ways of doing one thing times
+          the number of ways of doing another. Note that we used this principle
+          informally in the explanation in the solution of <xref ref="orderedpair">Problem</xref>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="product" category="essential">
+      <statement>
+        <p>
+          Disjoint subsets are defined in <xref ref="sum">Problem</xref>. What can you
+          say about the size of the union of <m>m</m> (mutually) disjoint sets, each
+          of size
+          <m>n</m>? Does this have anything to do with any of the previous problems?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The size of the union is <m>m\cdot n</m>. This is because the size of a
+          union of disjoint sets is the sum of their sizes, and a sum of <m>m</m> terms each
+          equal to <m>n</m> is <m>m\cdot n</m>.
+        </p>
+      </solution>
+    </activity>
+  </introduction>
+
+  <subsection>
+    <title>The sum and product principles</title>
+    <p>
+      These problems
+      contain among them the kernels of many of the fundamental
+      ideas of combinatorics. For example, with luck, you just <index><main>sum
+      principle</main></index><index><main>principle</main><sub>sum</sub></index><index><main>principle</main><sub>product</sub></index> <index><main>product
+      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These are two of the most basic
+      principles of combinatorics.
+    </p>
+
+    <figure xml:id="sumprinc" >
+      <caption>The union of these
+      two disjoint sets has size 17.</caption>
+      \mbox{
+      <image width="73%" source="images/" />
+      }
+    </figure>
+
+    <figure xml:id="prodprinc" >
+      <caption>The
+      union of four disjoint sets of size
+      five.</caption>
+      \mbox{
+      <image width="73%" source="images/" />
+      }
+    </figure>
+
+    <p>
+      You may have noticed some standard mathematical words and
+      phrases such as <em>set</em>, <em>ordered pair</em>, <em>function</em>
+      and so on creeping into the problems. One of our goals in
+      these notes is to show how most counting problems can
+      be recognized as counting all or some of the elements of a set
+      of standard mathematical objects. For example <xref ref="orderedpair">Problem</xref> is meant to suggest that the question we
+      asked in <xref ref="basicsandwiches">Problem</xref> was really a problem of
+      counting all the ordered pairs consisting of a bread choice
+      and a filling choice. We use <m>A\times B</m> to stand for the set
+      of all ordered pairs whose first element is in <m>A</m> and whose
+      second element is in <m>B</m> and we call <m>A\times B</m> the
+      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><em>Cartesian
+      product</em> of
+      <m>A</m> and
+      <m>B</m>, so you can think of <xref ref="orderedpair">Problem</xref> as asking you for the size of the Cartesian
+      product of
+      <m>M</m> and <m>N</m>, that is, asking you to count the number of elements of
+      this Cartesian product.
+    </p>
+
+    <p>
+      When a set <m>S</m> is a union of disjoint sets <m>B_1, B_2, \ldots, B_m</m> we say
+      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <em>partition</em><index><main>partition</main><sub>of a set</sub></index> of the set
+      <m>S</m>. Thus a partition of <m>S</m> is a (special kind of) set of sets. So that
+      we don't find ourselves getting confused between the set <m>S</m> and the sets
+      <m>B_i</m> into which we have divided it, we often call the sets <m>B_1, B_2,
+      \ldots, B_m</m> the <em>blocks</em><index><main>partition</main><sub>blocks of</sub></index><index><main>block of a
+      partition</main></index> of the partition. In this language, the
+      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><em>sum principle</em> says that
+    </p>
+
+    <blockquote>
+    if we have a partition of a set <m>S</m>, then the size of <m>S</m> is the
+    sum of the sizes of the blocks of the partition.
+    </blockquote>
+
+    <p>
+      The
+      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><em>product principle</em> says
+      that
+    </p>
+
+    <blockquote>
+    if we have a partition of a set <m>S</m> into <m>m</m> blocks, each
+      of size <m>n</m>, then <m>S</m> has size <m>mn</m>.
+    </blockquote>
+
+    <p>
+      You'll notice that
+      in our formal statement of the sum and product pinciple we talked
+      about a partition of a finite set. We could modify our language a bit
+      to cover infinite sizes, but whenever we talk about sizes of sets in
+      what follows, we will be working with finite sets. So as to avoid
+      possible complications in the future, let us agree that when we refer
+      to the size of a set, we are implicitly assuming the set is
+      finite. There is another version of the product principle that applies
+      directly in problems like <xref ref="completelunch">Problem</xref> and <xref ref="tripledeckercone">Problem</xref>, where we were not just taking a union of <m>m</m>
+      disjoint sets of size <m>n</m>, but rather <m>m</m> disjoint sets of size <m>n</m>,
+      each of which was a union of <m>m'</m> disjoint sets of size <m>n'</m>. This is
+      an inconvenient way to have to think about a counting problem, so we
+      may rephrase the product principle in terms of a sequence of
+      decisions:
+    </p>
+
+    <activity xml:id="generalproductprincipleintro" category="essential">
+      <statement>
+        <p>
+          If we make a sequence of <m>m</m> choices for
+          which -+ There are <m>k_1</m> possible first choices, and
+        </p>
+
+        <p>
+          -+ for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to
+          make the <m>i</m>th choice,
+        </p>
+
+        <p>
+          then in how many ways may we
+          make our sequence of choices? (You need not prove your answer correct at
+          this time.)
+        </p>
+      </statement>
+    </activity>
+
+    <p>
+      The counting principle you gave in <xref ref="generalproductprincipleintro">Problem</xref> is called the <em>general product
+      principle</em>.<index><main>general product principle</main></index><index><main>product
+      principle</main><sub>general</sub></index><index><main>principle</main><sub>product!general</sub></index> We will outline
+      a proof of the general product pinciple from the original product
+      principle in <xref ref="generalproductprincipleproof">Problem</xref>. Until then,
+      let us simply accept it as another counting principle. For now, notice
+      how much easier it makes it to explain why we multiplied the things we
+      did in <xref ref="completelunch">Problem</xref> and <xref ref="tripledeckercone">Problem</xref>.
+    </p>
+
+    <activity xml:id="tennispairings1" category="interesting">
+      <p>
+        A tennis club has <m>2n</m> members. We want to pair up the
+        members by twos for singles matches.
+      </p>
+      <task xml:id="tennispairings1a" >
+        <p>
+        In how many ways may we pair up all the members of the club? (Hint: consider the cases
+          of 2, 4, and 6 members.)
+        <solution>
+          <p>
+            Suppose we list the people in the club in some way, and keep that
+            list for the remainder of the problem. Take the first person from the list
+            and pair that person with any of the <m>2n-1</m> remaining people. Now take the
+            next <em>unpaired</em> person from the list and pair that person with any of the
+            remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
+            been selected, take the next unpaired person from the list and pair that
+            person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
+            can arise in this way, and no pairing can arise twice in this process. Thus
+            the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <p>
+          Suppose that in addition to specifying who plays whom, for each
+            pairing we say who serves first.  Now in how many ways may we
+            specify our pairs?
+        </p>
+      </task>
+    </activity>
+
+    <activity xml:id="countingfunctions2" category="summary">
+      <p>
+        Let us now return to <xref ref="countingfunctions">Problem</xref> and
+        justify<mdash />or perhaps finish<mdash />our answer to the question about the
+        number of functions from a three-element set to a 12-element
+        set.
+      </p>
+      <task>
+        <statement>
+          <p>
+            How can you justify your answer in
+              <xref ref="countingfunctions">Problem</xref> to the question <q>How many functions
+              are there from a three element set (say <m>[3]=\{1,2,3\}</m>) to a twelve
+              element set (say [12])?</q>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of functions from <m>[3]</m> to <m>[12]</m> with <m>f(3) =1</m> is the
+            number of functions from <m>[2]</m> to <m>[12]</m>, namely 144. The same is true for
+            the number of functions with <m>f(3)=2</m> and <m>f(3)=3</m>, and the size of the set
+            <m>S_i</m>. The union of the sets <m>S_i</m> is the set of all functions from <m>[3]</m> to
+            <m>[12]</m>, and since there are twelve sets <m>S_i</m>, this union has size
+            <m>12\cdot144= 1728</m>.
+          </p>
+        </solution>
+      </task>
+      <task xml:id="numberoffunctionsconjecture" >
+        <p>
+        Based on the examples you've seen so far, make a conjecture
+          about how many functions there are from the set
+        <me>
+          [m] = \{1,2,3,\dots,m\}
+        </me>
+        to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.
+        <solution>
+          <p>
+            <m>n^m</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A common notation for the set of all functions from a set <m>M</m> to a
+            set <m>N</m> is <m>N^M</m>.  Why is this a good notation?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Because there are <m>n^m</m> such functions, at least according to our
+            conjecture.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="generalproductprinciple" category="summary">
+      <statement>
+        <p>
+          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m>
+          from <m>[m]</m> to some set <m>X</m>. (For example, in
+          <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
+          functions from the three possible places for scoops in an ice-cream
+          cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices
+          for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>,
+          because there were <m>12</m> ways to choose the first scoop.) Suppose that
+          for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For
+          example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the
+          second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if
+          the flavors had to be different.) In general, suppose that for each
+          choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for
+          <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the
+          flavors have to be different, then for each coice of <m>f(1)</m> and
+          <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
+        </p>
+
+        <p>
+          What we have assumed so far about the functions in <m>S</m> may be
+          summarized as
+        </p>
+
+        <p>
+          -+ There are <m>k_1</m> choices for <m>f(1)</m>.
+        </p>
+
+        <p>
+          -+ For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m>
+          choices for<nbsp /><m>f(i)</m>.
+        </p>
+
+        <p>
+          How many functions are in the set
+          <m>S</m>? Is there any practical difference between the result of this
+          problem and the general product principle?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\prod_{i=1}^m k_i</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      The point of <xref ref="generalproductprinciple">Problem</xref> is that the general
+      product principle can be stated informally, as we did originally, or
+      as a statement about counting sets of standard concrete mathematical
+      objects, namely functions.
+    </p>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          A roller coaster car has <m>n</m> rows of seats, each of which
+          has room for two people. If <m>n</m> men and <m>n</m> women get into the car with a
+          man and a woman in each row, in how many ways may they choose their seats?
+        </p>
+        <solution>
+        <p>
+          <m>(n!)^22^n</m>
+        </p>
+        </solution>
+        <p>
+          Prove
+        </p>
+      </statement>
+    </activity>
+
+    <activity category="summary">
+      <statement>
+        <p>
+          How does the general product principle apply to <xref ref="tripledeckercone">Problem</xref>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By the general product principle, there are <m>12\cdot 11\cdot 10</m>
+          triple decker cones.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          In how many ways can we pass out <m>k</m> distinct pieces of
+          fruit to
+          <m>n</m> children (with no restriction on how many pieces of fruit a child may
+          get)?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Either by the formula for the number of functions from an
+          <m>m</m>-element set to an <m>n</m>-element set or the general product principle, there
+          are <m>k^n</m> ways. (Each distribution is a function from the set of fruit to
+          the set of children, because each piece of fruit goes to one and only one
+          child.)
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="SubsetsFirstTime" category="essential">
+      <statement>
+        <p>
+          How many subsets does a set <m>S</m> with <m>n</m> elements have?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For each of the <m>n</m> elements of <m>S</m>, we have two options:
+          either we put the element into the subset or we do not. Thus, the
+          general product principle tells us that there are <m>2^n</m> subsets of <m>S</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Assuming <m>k\le n</m>, in how many ways can we pass out <m>k</m>
+          distinct pieces of fruit to
+          <m>n</m> children if each child may get at most one? What is the number if
+          <m>k>n</m>? Assume for both questions that we pass out all the fruit.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are asking for the number of <m>k</m>-element permutations of <m>n</m>
+          children, which is <m>\prod_{i=1}^k n-i+1</m>, and is zero if <m>k>n</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="kelementpermutation" category="essential">
+      <statement>
+        <p>
+          Another name for a list, in a specific order, of <m>k</m> distinct things
+          chosen from a set <m>S</m> is a <m>\mathbf k</m>-<em>element permutation of</em>
+          <m>\mathbf S</m>.<index><main>permutation</main><sub>
+          <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
+          one-to-one function (or, in other words, injection) from
+          <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
+          <m>n</m>-element set have? (For this problem it is
+          natural to assume <m>k\le n</m>. However the question makes sense even if <m>k>n</m>.
+          What is the number of <m>k</m>-element permutations of an <m>n</m>-element set if <m>k>n</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          By the general product principle, the number is
+          <me>
+            \prod_{i=1}^k
+            n-i+1
+          </me>
+        </p>
+
+        <p>
+          . In the case that <m>k>n</m>, there are no such lists
+          with distinct entries, and that is what the formula gives us, because
+          <m>n-(n+1)+1=0</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      There are a number of different notations for the number of <m>k</m>-element
+      permutations of an <m>n</m>-element set. The one we shall use was introduced by
+      Don Knuth; namely <m>n^{\underline{k}}</m>, read <q><m>n</m> to the <m>k</m> falling</q> or
+      <q><m>n</m> to the <m>k</m> down</q>. In <xref ref="kelementpermutation">Problem</xref> you may have
+      shown that
+      <men xml:id="productnotation" >
+        n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
+        n-i+1).
+      </men>
+    </p>
+
+    <p>
+      It is standard to call <m>n^{\underline{k}}</m><index><main><m>n^{\underline{k}}</m></main></index> the
+      <em><m>k</m>-th falling factorial power of <m>n</m></em><index><main>falling factorial
+      power</main></index><index><main>factorial power</main><sub>falling</sub></index>, which explains why we use exponential
+      notation. Of course we call it a <em>factorial</em> power since
+      <m>n^{\underline{n}} = n(n-1)\cdots 1</m> which we call <em><m>n</m>-factorial</em> and
+      denote by
+      <m>n!</m>.<index><main>factorial</main></index><index><main><m>n"!</m></main></index> If you are unfamiliar with the Pi
+      notation, or <em>product notation</em><index><main>product notation</main></index><index><main>Pi
+      notation</main></index> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the Sigma notation works for
+      summations.
+    </p>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Express <m>n^{\underline{k}}</m> as a quotient of factorials.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>n^{\underline{k}}=n!/(n-k)!</m>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          How should we define <m>n^{\underline{0}}</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We define
+          <m>n^{\underline{0}}</m> to be <m>1</m>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Functions and directed graphs</title>
+    <p>
+      As another example how standard mathematical language relates to
+      counting problems, <xref ref="countingfunctions">Problem</xref> explicitly asked
+      you to relate the idea of counting functions to the question of
+      <xref ref="tripledeckercone">Problem</xref>. You have probably learned in algebra
+      or calculus how to draw graphs in the Cartesian plane of functions
+      from a set of numbers to a set of numbers. You may recall how we can
+      determine whether a graph is a graph of a function by examining
+      whether each vertical straight line crosses the graph at most one
+      time. You might also recall how we can determine whether such a
+      function is one-to-one by examining whether each horizontal straight
+      line crosses the graph at most one time. The functions we deal with
+      will often involve objects which are not numbers, and will often be
+      functions from one finite set to another. Thus graphs in the
+      cartesian plane will often not be available to us for visualizing
+      functions.
+    </p>
+
+    <p>
+      However, there is another kind of graph called a <em>directed
+      graph</em><index><main>graph</main><sub> directed</sub></index><index><main>directed graph</main></index> or <em>digraph</em><index><main>digraph</main></index><index><main>function</main><sub>digraph of</sub></index> that is
+      especially useful when dealing with functions between finite sets. We
+      take up this topic in more detail in <xref ref="Relations">Appendix</xref>,
+      particularly <xref ref="relationdigraph">Section</xref> and <xref ref="digraphsoffunctions">Section</xref>. In
+      <xref ref="functiondigraphs">Figure</xref> we show several examples of digraphs of functions.
+    </p>
+
+    <figure xml:id="functiondigraphs" >
+      <caption>What is a digraph of a
+      function?</caption>
+      <image width="73%" source="images/" />
+    </figure>
+
+    <p>
+      If we have a function <m>f</m> from a set <m>S</m> to a set <m>T</m>, we draw a line
+      of dots or circles, called <em>vertices</em> to represent the elements of <m>S</m> and another
+      (usually parallel) line of circles or dots to represent the elements
+      of <m>T</m>. We then draw an arrow from the circle for <m>x</m> to the circle
+      for <m>y</m> if <m>f(x) = y</m>. Sometimes, as in part (e) of the figure, if we
+      have a function from a set <m>S</m> to itself, we draw only one set of
+      vertices representing the elements of <m>S</m>, in which case we can have
+      arrows both entering and leaving a given vertex. As you see, the
+      digraph can be more enlightening in this case if we experiment with
+      the function to find a nice placement of the vertices rather than
+      putting them in a row.
+    </p>
+
+    <p>
+      <em>The figure needs to have part (e) added to it.</em>
+    </p>
+
+    <p>
+      Notice that there is a simple test for whether a digraph whose vertices
+      represent the elements of the sets <m>S</m> and <m>T</m> is the digraph of a function
+      from <m>S</m> to <m>T</m>. There must be one and only one arrow leaving each vertex of
+      the digraph representing an element of <m>S</m>. The fact that there is one arrow
+      means that <m>f(x)</m> is defined for each <m>x</m> in <m>S</m>. The fact that there is
+      only one arrow means that each <m>x</m> in <m>S</m> is related to exactly one element of
+      <m>T</m>. (Note that these remarks hold as well if we have a function from
+      <m>S</m> to <m>S</m> and draw only one set of vertices representing the elements
+      of <m>S</m>.) For further discussion of functions and digraphs see <xref ref="functionrelation">Sections</xref> and <xref ref="relationdigraph"></xref> of {<xref ref="Relations">Appendix</xref>}.
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Draw the digraph of the function from the set <m>\{</m>Alice, Bob, Dawn,
+          Bill<m>\}</m> to the set <m>\{</m>A, B, C, D, E<m>\}</m> given by
+          <me>
+            f(X) = \mbox{the first
+            letter of the name \(X\)} .
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          A function
+          <m>f:S\rightarrow T</m> is called an
+          <index><main>onto function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
+          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+          element of
+          <m>T</m> is <m>f(x)</m> for some <m>x\in S</m>. Choose a set <m>S</m> and a set <m>T</m> so that you
+          can draw the digraph of a function from <m>S</m> to <m>T</m> that is one-to-one but not
+          onto, and draw the digraph of such a function.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The digraph of one such function follows
+        </p>
+
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Choose a set <m>S</m> and a set <m>T</m> so that you can draw the digraph of a
+          function from <m>S</m> to <m>T</m> that is onto but not one-to-one, and draw the
+          digraph of such a function.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The digraph of one such function follows
+        </p>
+
+        <p>
+          \mbox{
+          <image width="73%" source="images/" />
+          }
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <p>
+        Digraphs of functions help us visualize the ideas of one-to-one
+        functions and onto functions.
+      </p>
+      <task>
+        <statement>
+          <p>
+            What does the digraph of a one-to-one function (injection) from
+              a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
+              somewhat similar to the one we described for when a digraph is the
+              digraph of a function.)
+          </p>
+        </task>
+        <task>
+          <p>
+            What does the digraph of an onto function
+              look like?
+          </p>
+        </task>
+        <task xml:id="bijectiondigraph" >
+          <p>
+            What does the digraph of a one-to-one and onto function
+              from a finite set <m>S</m> to a set <m>T</m> look
+              like?
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          One-to-one: One arrow comes out of each vertex representing a member
+          of
+          <m>X</m> and at most one arrow goes into each vertex representing a member of <m>Y</m>.
+          Onto: : One arrow comes out of each vertex representing a
+          member of <m>X</m> and at least one arrow goes into each vertex representing a
+          member of
+          <m>Y</m>. One-to-one and onto: One arrow comes out of each vertex representing a
+          member of
+          <m>X</m> and at exactly one arrow goes into each vertex representing a member of <m>Y</m>.
+          (The first half of each sentence is optional.)
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="permutationasbijection" category="essential">
+      <statement>
+        <p>
+          The word <em>permutation</em> is actually used in two different ways in
+          mathematics. A <em>permutation</em><index><main>permutation</main><sub>as a bijection</sub></index> of a set
+          <m>S</m> is a bijection from <m>S</m> to
+          <m>S</m>. How many permutations does an <m>n</m>-element set have?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>n!</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      Notice that there is a great deal of consistency between the use of
+      the word permutation in <xref ref="permutationasbijection">Problem</xref> and the
+      use in <xref ref="kelementpermutation">Problem</xref>. If we have
+      some way <m>a_1,a_2,\ldots,a_n</m> of listing our set, then any other list
+      <m>b_1,b_2,\ldots,b_n</m> gives us the bijection whose rule is
+      <m>f(a_i) =b_i</m>, and any bijection, say the one given by <m>g(a_i)=c_i</m>
+      gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really
+      very little difference between the idea of a permutation of <m>S</m> and an
+      <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>The bijection principle</title>
+    <p>
+      Another name for a one-to-one
+      and onto function is <index><main>bijection</main></index><index><main>function</main><sub>bijection</sub></index><em>bijection</em>. The first two digraphs in <xref ref="functiondigraphs">Figure</xref> are
+      digraphs of bijections. The description in <xref ref="bijectiondigraph">Problem</xref> of the digraph of a bijection from
+      <m>X</m> to
+      <m>Y</m> illustrates one of the fundamental principles of combinatorial
+      mathematics, the
+      <index><main>principle</main><sub>bijection</sub></index><index><main>bijection principle</main></index><em>bijection
+      principle</em>;
+    </p>
+
+    <blockquote>
+    Two sets have the same size if and only if
+    there is a bijection between them.
+    </blockquote>
+
+    <p>
+      It is surprising how this innocent sounding
+      principle guides us into finding insight into some otherwise
+      very complicated proofs.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Counting subsets of a set</title>
+    <activity xml:id="SubsetsBinaryRepresentation">
+      <statement>
+        <p>
+          The <em>binary</em> representation of a number <m>m</m> is a list, or string,
+          <m>a_1a_2\ldots a_k</m> of zeros and ones such that <m>m=a_12^{k-1} + a_2 2^{k-2}
+          +\cdots+ a_k 2^0.</m> Describe a bijection between the binary representations of
+          the integers between 0 and <m>2^n-1</m> and the subsets of an <m>n</m>-element set.
+          What does this tell you about the number of subsets of an <m>n</m>-element
+          set?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The sequence <m>a_1a_2\ldots
+          a_k</m> corresponds to the set of <m>i</m> such that <m>a_i = 1</m>. This is a bijection
+          because each sequence gives a set, and each set can be the set of places
+          where a sequence is 1. Since there are <m>2^n</m> integers which are between 0
+          and <m>2^n-1</m>, and they correspond to sequences of length <m>n</m> (notice, we have
+          another bijection, the one between a number and its binary representation),
+          there are <m>2^n</m> subsets of the <m>n</m>-element set <m>[n]</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      Notice that the first question in <xref ref="icecreaminpints">Problem</xref> asked
+      you for the number of ways to choose a three element subset from a 12
+      element subset. You may have seen a notation like
+      <m>n\choose k</m>, <m>C(n,k)</m>, or <m>_nC_k</m> which stands for the number of ways to
+      choose a
+      <m>k</m>-element subset from an
+      <m>n</m>-element set. The number <m>n\choose k</m> is read as <q><m>n</m> choose <m>k</m></q> and is
+      called a
+      <index><main>binomial coefficient</main></index><em>binomial coefficient</em> for
+      reasons we will see later on. Another frequently used way to read the
+      binomial coefficient notation is ``the number of combinations
+      <index><main>combinations</main></index> of
+      <m>n</m> things taken <m>k</m> at a time." You are going to be asked to construct
+      two bijections that relate to these numbers and figure out what famous
+      formula they prove. We are going to think about subsets of the
+      <m>n</m>-element set <m>[n] =
+      \{1,2,3,\ldots, n\}</m>. As an example, the set of two-element subsets of
+      <m>[4]</m> is
+      <me>
+        \{\{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}.
+      </me>
+    </p>
+
+    <p>
+      This
+      example tells us that <m>{4\choose 2} = 6</m>.
+    </p>
+
+    <activity xml:id="Pascal" category="essential">
+      <p>
+        Let
+        <m>C</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that contain
+        the number
+        <m>n</m>, and let
+        <m>D</m> be the set of <m>k</m>-element subsets of <m>[n]</m> that don't
+        contain <m>n</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Let <m>C'</m> be the set of <m>(k-1)</m>-element subsets of
+            <m>[n-1]</m>.  Describe a bijection from <m>C</m> to <m>C'</m>.  (A verbal
+            description is fine.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let <m>f(X) = X-\{n\}</m>, the set <m>X</m> with <m>n</m> removed. This is a
+            bijection because two different sets containing <m>n</m> must yield different sets
+            when <m>n</m> is removed (one-to-one), and each <m>(k-1)</m>-element subset <m>X</m> of
+            <m>[n-1]</m> may be obtained from the <m>k</m>-element subset <m>X\cup \{n\}</m> of <m>[n]</m> by
+            removing
+            <m>n</m> (onto).
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Let <m>D'</m> be the set of <m>k</m>-element subsets of
+            <m>[n-1]=\{1,2,\ldots n-1\}</m>.  Describe a bijection from <m>D</m> to
+            <m>D'</m>. (A verbal description is fine.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Simply let <m>f(X) =X</m>. This is one-to-one by definition, and onto
+            because the subsets of <m>[n-1]</m> are identical with the subsets of <m>[n]</m> not
+            containing <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Based on the two previous parts, express the sizes of
+            <m>C</m> and <m>D</m> in terms of binomial coefficients involving <m>n-1</m>
+            instead of <m>n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>|C|= {n-1\choose k-1}</m>; <m>|D| = {n-1\choose k}</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Apply the sum principle to <m>C</m> and <m>D</m> and obtain a
+            formula that expresses <m>n\choose k</m> in terms of two binomial
+            coefficients involving
+            <m>n-1</m>.  You have just derived the Pascal Equation that is the
+            basis for the famous Pascal's Triangle.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Pascal's Triangle</title>
+    <p>
+      The Pascal Equation that you derived in <xref ref="Pascal">Problem</xref>
+      gives us the triangle in <xref ref="Pascaltriangle">Figure</xref>. This
+      figure has the number of <m>k</m>-element subsets of an <m>n</m>-element
+      set as the <m>k</m>th number over in the
+      <m>n</m>th row (we call the top row the zeroth row and the
+      beginning entry of a row the zeroth number over). You'll see
+      that your formula doesn't say anything about
+      <m>n\choose k</m> if
+      <m>k=0</m> or
+      <m>k=n</m>, but otherwise it says that each entry is the sum of
+      the two that are above it and just to the left or right.
+    </p>
+
+    <figure xml:id="Pascaltriangle" >
+      <caption>Pascal's
+      Triangle</caption>
+      <me>
+        \begin{matrix}\amp \amp \amp \amp \amp \amp \amp 1\amp \amp \amp \amp \amp \amp \amp \\
+        \amp \amp \amp \amp \amp \amp 1\amp \amp 1\amp \amp \amp \amp \amp \amp \\
+        \amp \amp \amp \amp \amp 1\amp \amp 2\amp \amp 1\amp \amp \amp \amp \amp \\
+        \amp \amp \amp \amp 1\amp \amp 3\amp \amp 3\amp \amp 1\amp \amp \amp \amp \\
+        \amp \amp \amp 1\amp \amp 4\amp \amp 6\amp \amp 4\amp \amp 1\amp \amp \\
+        \amp \amp 1\amp \amp 5\amp \amp 10\amp \amp 10\amp \amp 5\amp \amp 1\amp \\
+        \amp 1\amp \amp 6\amp \amp 15\amp \amp 20\amp \amp 15\amp \amp 6\amp \amp 1\\
+        1\amp \amp 7\amp \amp 21\amp \amp 35\amp \amp 35\amp \amp 21\amp \amp 7\amp \amp 1
+        \end{matrix}
+      </me>
+    </figure>
+
+    <p>
+      <index><main>Pascal's Triangle</main></index>
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Just for practice, what is the next row of Pascal's triangle?
+        </p>
+      </statement>
+      <solution>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Without writing out the rows completely, write out enough of Pascal's
+          triangle to get a numerical answer for the first question in <xref ref="icecreaminpints">Problem</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Starting with row 9, we get
+          <me>
+            \begin{matrix}\amp \amp \amp 1\amp \amp 9\amp \amp 36\amp \amp 84 \cr\amp \amp 1\amp \amp 10\amp \amp 45\amp \amp 120\cr\amp 1\amp \amp 11\amp \amp 55\amp \amp 165\cr
+            1\amp \amp 12\amp \amp 66\amp \amp 220
+            \end{matrix}
+          </me>
+          so the answer is 220.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      It is less common to see Pascal's triangle as a right
+      triangle, but it actually makes your formula easier to
+      interpret. In Pascal's Right Triangle, the element in row <m>n</m>
+      and column <m>k</m> (with the convention that the first row is row
+      zero and the first column is column zero) is <m>n\choose k</m>. In
+      this case your formula says each entry in a row is the sum of
+      the one above and the one above and to the left, except for
+      the leftmost and right most entries of a row, for which that
+      doesn't make sense. Since the leftmost entry is <m>n\choose 0</m>
+      and the rightmost entry is
+      <m>n\choose n</m>, these entries are both one (to see why, ask yourself how
+      many <m>0</m>-element subsets and how many <m>n</m>-element subsets an
+      <m>n</m>-element set has), and
+      your formula then tells how to fill in the rest of the table.
+    </p>
+
+    <table xml:id="Pascalrighttriangle" >
+      <caption>Pascal's Right
+      Triangle</caption>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell><m>k=0</m></cell>
+          <cell>1</cell>
+          <cell>2</cell>
+          <cell>3</cell>
+          <cell>4</cell>
+          <cell>5</cell>
+          <cell>6</cell>
+          <cell>7</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>n=0</m></cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>1</cell>
+          <cell>2</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell>3</cell>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>1</cell>
+          <cell>4</cell>
+          <cell>6</cell>
+          <cell>4</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>1</cell>
+          <cell>5</cell>
+          <cell>10</cell>
+          <cell>10</cell>
+          <cell>5</cell>
+          <cell>1</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>6</cell>
+          <cell>1</cell>
+          <cell>6</cell>
+          <cell>15</cell>
+          <cell>20</cell>
+          <cell>15</cell>
+          <cell>6</cell>
+          <cell>1</cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>7</cell>
+          <cell>1</cell>
+          <cell>7</cell>
+          <cell>21</cell>
+          <cell>35</cell>
+          <cell>35</cell>
+          <cell>21</cell>
+          <cell>7</cell>
+          <cell>1</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      Seeing this right triangle leads us to ask whether there is
+      some natural way to extend the right triangle to a rectangle.
+      If we did have a rectangular table of binomial coefficients, counting
+      the first row as row zero (i.e., <m>n=0</m>) and the first column as column
+      zero (i.e., <m>k=0</m>), the entries we don't yet have are values of
+      <m>n\choose k</m> for <m>k>n</m>. But how many <m>k</m>-element subsets does
+      an
+      <m>n</m>-element set have if <m>k>n</m>? The answer, of course, is
+      zero, so all the other entries we would fill in would be zero,
+      giving us the rectangular array in <xref ref="Pascal_sRectangle">Figure</xref>.
+      It is straightforward to check that Pascal's equation now works for all
+      the entries in the rectangle that have an entry above them and an
+      entry above and to the left.
+    </p>
+
+    <table xml:id="Pascal_sRectangle" >
+      <caption>Pascal's
+      Rectangle</caption>
+      <tabular>
+        <row>
+          <cell></cell>
+          <cell><m>k=0</m></cell>
+          <cell>1</cell>
+          <cell>2</cell>
+          <cell>3</cell>
+          <cell>4</cell>
+          <cell>5</cell>
+          <cell>6</cell>
+          <cell>7</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>n=0</m></cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>1</cell>
+          <cell>2</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell>3</cell>
+          <cell>3</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>1</cell>
+          <cell>4</cell>
+          <cell>6</cell>
+          <cell>4</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>1</cell>
+          <cell>5</cell>
+          <cell>10</cell>
+          <cell>10</cell>
+          <cell>5</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>6</cell>
+          <cell>1</cell>
+          <cell>6</cell>
+          <cell>15</cell>
+          <cell>20</cell>
+          <cell>15</cell>
+          <cell>6</cell>
+          <cell>1</cell>
+          <cell>0</cell>
+        </row>
+        <row>
+          <cell>7</cell>
+          <cell>1</cell>
+          <cell>7</cell>
+          <cell>21</cell>
+          <cell>35</cell>
+          <cell>35</cell>
+          <cell>21</cell>
+          <cell>7</cell>
+          <cell>1</cell>
+        </row>
+      </tabular>
+    </table>
+
+    <activity category="interesting">
+      <p>
+        Because our definition told us that <m>\binom{n}{k}</m> is 0 when
+        <m>k>n</m>, we got a rectangular table of numbers that satisfies the Pascal
+        Equation.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Is there any other way to define <m>n \choose k</m> when <m>k>n</m>
+            in order to get a rectangular table that agrees with Pascal's Right
+            Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            No, because there must be a zero above each one not in column zero.
+            Then above each zero not in column zero or one, there must be yet another zero
+            and so on.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Suppose we
+            want to extend Pascal's Rectangle to the left and define <m>n\choose -k</m>
+            for <m>n\ge 0</m> and <m>k>0</m> so that <m>-k\lt 0</m>. What should we put into row
+            <m>n</m> and column
+            <m>-k</m> of Pascal's Rectangle in order for the Pascal Equation to
+            hold true?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To the left of all the ones in column zero, we must have zeros
+            for the Pascal Equation to hold. To the left of those zeros, we must again
+            have zeros, and so on.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+          <title>\ <m>*</m>\ (\theenumii)</title>
+          <p>
+            What should we put into row <m>-n</m> and column <m>k</m> or
+            column <m>-k</m> in order for the Pascal Equation to continue to
+            hold?  Do we have any freedom of choice?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Above row zero, we have some freedom. The
+            -1,-1 and the -1,0 entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
+            any number <m>x</m>. To the right of the -1,0 entry they must alternate between
+            <m>(-x-1)</m> and <m>x+1</m> while to the left of the -1,1 entry they must alternate
+            between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position -1,1. Now if we know
+            the entry in row -2 and column zero, we can use the Pascal equation (in the
+            form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the
+            entries to the left of it, and (in a different form) to compute all the
+            entries to the right of it. Thus we may be arbitrary about the entries in
+            column 0 (or, in fact, one entry in each row) and then the Pascal Equation
+            tells us how to fill in the rest of each row. We shall see later on that
+            there is one very natural choice for how to fill in all the rows above row
+            zero.
+          </p>
+        </solution>
+      </task>
+      <p>
+      There are variants of the bijections we used to prove the
+    </activity>
+
+    <activity xml:id="charfunction">
+      <p>
+        There is yet another bijection that lets us prove that a set of
+        size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of
+        <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally
+        denoted by <m>\chi_S</m>) as follows.<fn>The symbol
+        <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
+        <m>i</m> sounding like <q>eye.</q></fn>
+        <me>
+          \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
+          S
+          \end{cases}
+        </me>
+      </p>
+
+      <p>
+        The function <m>\chi_S</m> is called the <index><main>characteristic
+        function</main></index><index><main>function</main><sub>characteristic</sub></index><em>characteristic function</em> of
+        <m>S</m>. Notice that the characteristic function is a function
+        from <m>[n]</m> to
+        <m>\{0,1\}</m>.
+      </p>
+      <task>
+      <statement>
+        <p>
+          For practice, consider the function <m>\chi_{\{1,3\}}</m> for
+          the subset
+          <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
+        </p>
+        <task>
+          <p>
+            <m>\chi_{\{1,3\}}(1)</m>?
+          </p>
+        </statement>
+        <solution>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\chi_{\{1,3\}}(2)</m>?
+          </p>
+        </statement>
+        <solution>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\chi_{\{1,3\}}(3)</m>?
+          </p>
+        </statement>
+        <solution>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            <m>\chi_{\{1,3\}}(4)</m>?
+          </p>
+        </statement>
+        <solution>
+        </solution>
+      </task>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We define a function <m>f</m> from the set of subsets of
+            <m>[n]=\{1,2,\ldots, n\}</m> to the set of functions from <m>[n]</m> to
+            <m>\{0,1\}</m> by <m>f(S)=\chi_S</m>.  Explain why <m>f</m> is a bijection.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If <m>i\in S</m> but <m>i\not\in T</m>, then <m>\chi_S(i)=1</m> but <m>\chi_T(i)=0</m>.
+            Thus if <m>S\not= T</m>, the <m>\chi_S\not=\chi_T</m>. Therefore <m>f</m> is one-to-one.
+            Given a function <m>g</m> from <m>[n]</m> to <m>\{0,1\}</m>, let <m>S=\{i|g(i)=1\}</m>. Then by
+            definition, <m>g=\chi_S=f(S)</m>. Therefore <m>f</m> is onto, so it is a bijection.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Why does the fact that <m>f</m> is a bijection prove that
+            <m>[n]</m> has <m>2^n</m> subsets?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have seen that there are <m>2^n</m> functions from <m>[n]</m> to a
+            two-element set, and we have a bijection between the set of all such
+            functions and the subsets of <m>[n]</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      In <xref ref="SubsetsFirstTime">Problems</xref>, <xref ref="SubsetsBinaryRepresentation"></xref>, and <xref ref="charfunction"></xref> you gave three proofs of the following
+      theorem.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          The number of subsets of an <m>n</m>-element set is
+          <m>2^n</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      The proofs in <xref ref="SubsetsBinaryRepresentation">Problem</xref> and <xref ref="charfunction"></xref> use essentially the same bijection, but they
+      interpret sequences of zeros and ones differently, and so end up being
+      different proofs. We will give yet another proof, using bijections
+      similar to those we used in proving the Pascal Equation, at the
+      beginning of <xref ref="InductionRecursion">Chapter</xref>.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>The quotient principle</title>
+    <activity xml:id="twelvechoosethree" category="essential">
+      <p>
+        As we noted in <xref ref="Pascal">Problem</xref>, the first question in
+        <xref ref="icecreaminpints">Problem</xref> asked us for the number of three-element
+        subsets of a twelve-element set. We were able to use the Pascal Equation to
+        get a numerical answer to that question. Had we had twenty or thirty flavors
+        of ice cream to choose from, using the Pascal Equation to get our answer
+        would have entailed a good bit more work. We have seen how the general
+        product principle gives us an answer to <xref ref="tripledeckercone">Problem</xref>. Thus
+        we might think that the number of ways to choose a three element set from 12
+        elements is the number of ways to choose the first element times the number
+        of ways to choose the second element times the number of ways to choose the
+        third element, which is <m>12\cdot11\cdot10=1320</m>. However, our result in
+        <xref ref="Pascal">Problem</xref> shows that this is wrong.
+      </p>
+      <task>
+        <statement>
+          <p>
+            What is it that is different between the number of ways to stack
+              ice cream in a triple decker cone with three different flavors of
+              ice cream and the number of ways to simply choose three different
+              flavors of ice cream?
+          </p>
+        </task>
+        <task xml:id="twelvechoosethreethree" >
+          <p>
+            In particular, how many different triple
+              decker cones use the same three flavors?  (Of course any three
+              distinct flavors could substitute for vanilla, chocolate and
+              strawberry without changing the answer.)
+          </p>
+        </task>
+        <task xml:id="twelvechoosethreefinal" >
+          <p>
+            Using your answer from <xref ref="twelvechoosethreethree">part</xref>,
+              compute the number of ways to choose three different flavors of ice
+              cream (out of twelve flavors) from the number of ways to choose a
+              triple decker cone with three different flavors (out of twelve
+              flavors).
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          What is different is that the order in which we put the scoops into
+          the cone matters, but for simply choosing three flavors, the order of the
+          choices doesn't matter. Six different triple decker cones have the same
+          three flavors. Thus we have <m>1320/6=220</m> different ways to choose three
+          flavors of ice cream from 12 flavors.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="nchoosek" category="essential">
+      <statement>
+        <p>
+          Based on what you observed in <xref ref="twelvechoosethreefinal">Problem</xref>, how many <m>k</m>-element subsets does an
+          <m>n</m>-element set have?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Following the reasoning of <xref ref="twelvechoosethree">Problem</xref>, there
+          are <m>n^{\underline{k}}</m> <m>k</m>-element permutations of an <m>n</m>-element set, and
+          <m>k!</m> of these permutations list the same set of <m>k</m> elements, so the number of
+          <m>k</m>-element sets is <m>{n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          The formula you proved in <xref ref="nchoosek">Problem</xref> is symmetric in <m>k</m>
+          and <m>n-k</m>; that is, it gives the same number for <m>n\choose k</m> as it gives
+          for <m>n\choose n-k</m>. Whenever two quantities are counted by the same formula
+          it is good for our insight to find a bijection that demonstrates the two sets
+          being counted have the same size. In fact this is a guiding principle of
+          research in combinatorial mathematics. Find a bijection that proves that
+          <m>n\choose k</m> equals <m>n\choose n-k</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For each <m>k</m>-element subset <m>K</m> of the <m>n</m>-element set <m>N</m>, define
+          <m>f(K)</m> to be the set of all elements of <m>N</m> <em>not</em> in <m>K</m>. Then <m>f</m> is
+          the desired bijection.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="ping-pong" category="essential">
+      <statement>
+        <p>
+          In how many ways can we pass out <m>k</m> (identical) ping-pong balls to <m>n</m>
+          children if each child may get at most one?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
+          ping-pong balls.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="roundtable" category="essential">
+      <statement>
+        <p>
+          In how many ways may <m>n</m> people sit around a round
+          table? (Assume
+          that when people are sitting around a round table, all that
+          really matters is who is to each person's right. For example, if we can get
+          one arrangement of people around the table from another by having everyone
+          get up and move to the right one place and sit back down, we get an
+          equivalent arrangement of people. Notice that you can get a
+          list from a seating arrangement by marking a place at the
+          table, and then listing the people at the table, starting at
+          that place and moving around to the right.) There are at least two
+          different ways of doing this problem. Try to find them both.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The total number of ways to list how the <m>n</m> people sit around the
+          table is <m>n!</m>. However, two lists are the same if we get one from the other
+          by shifting everyone right the same number of places. This divides the set
+          of lists up into sets of <m>n</m> mutually equivalent lists. The number <m>m</m> of
+          such sets is the number of seating arrangements. However by the product
+          principle, <m>mn=n!</m>, because we have partitioned up the set of <m>n!</m> lists into
+          <m>m</m> sets of size <m>n</m>. Therefore <m>m=(n-1)!</m> A second solution may be
+          obtained by choosing one of the <m>n</m> people and letting this person sit
+          anywhere. Since all that matters is who is to the right of each person, it
+          doesn't matter where this person sits. Once this person is seated, let
+          everybody else sit down. If they sit down first in one order clockwise around
+          the table and then in some other order, the person to the right of somebody
+          has changed. Thus there are
+          <m>(n-1)!</m> ways (the number of ways to seat everybody else) to seat the people
+          around the table.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      We are now going to analyze the result of <xref ref="nchoosek">Problem</xref> in
+      more detail in order to tease out another counting principle that we
+      can sue in a wide variety of situations.
+    </p>
+
+    <table xml:id="tab_permsof3" >
+      <caption>The <m>3</m>-element permutations of <m>\{a,b,c,d,e\}</m> organized
+          by which <m>3</m>-element set they permute.</caption>
+      <tabular>
+        <row>
+          <cell><m>abc</m></cell>
+          <cell><m>acb</m></cell>
+          <cell><m>bac</m></cell>
+          <cell><m>bca</m></cell>
+          <cell><m>cab</m></cell>
+          <cell><m>cab</m></cell>
+        </row>
+        <row>
+          <cell><m>abd</m></cell>
+          <cell><m>adb</m></cell>
+          <cell><m>bad</m></cell>
+          <cell><m>bda</m></cell>
+          <cell><m>dab</m></cell>
+          <cell><m>dba</m></cell>
+        </row>
+        <row>
+          <cell><m>abe</m></cell>
+          <cell><m>aeb</m></cell>
+          <cell><m>bae</m></cell>
+          <cell><m>bea</m></cell>
+          <cell><m>eab</m></cell>
+          <cell><m>eba</m></cell>
+        </row>
+        <row>
+          <cell><m>acd</m></cell>
+          <cell><m>adc</m></cell>
+          <cell><m>cad</m></cell>
+          <cell><m>cda</m></cell>
+          <cell><m>dac</m></cell>
+          <cell><m>dca</m></cell>
+        </row>
+        <row>
+          <cell><m>ace</m></cell>
+          <cell><m>aec</m></cell>
+          <cell><m>cae</m></cell>
+          <cell><m>cea</m></cell>
+          <cell><m>eac</m></cell>
+          <cell><m>eca</m></cell>
+        </row>
+        <row>
+          <cell><m>ade</m></cell>
+          <cell><m>aed</m></cell>
+          <cell><m>dae</m></cell>
+          <cell><m>dea</m></cell>
+          <cell><m>ead</m></cell>
+          <cell><m>eda</m></cell>
+        </row>
+        <row>
+          <cell><m>bcd</m></cell>
+          <cell><m>bdc</m></cell>
+          <cell><m>cbd</m></cell>
+          <cell><m>cdb</m></cell>
+          <cell><m>dbc</m></cell>
+          <cell><m>dcb</m></cell>
+        </row>
+        <row>
+          <cell><m>bce</m></cell>
+          <cell><m>bec</m></cell>
+          <cell><m>cbe</m></cell>
+          <cell><m>ceb</m></cell>
+          <cell><m>ebc</m></cell>
+          <cell><m>ecb</m></cell>
+        </row>
+        <row>
+          <cell><m>bde</m></cell>
+          <cell><m>bed</m></cell>
+          <cell><m>dbe</m></cell>
+          <cell><m>deb</m></cell>
+          <cell><m>ebd</m></cell>
+          <cell><m>edb</m></cell>
+        </row>
+        <row>
+          <cell><m>cde</m></cell>
+          <cell><m>ced</m></cell>
+          <cell><m>dce</m></cell>
+          <cell><m>dec</m></cell>
+          <cell><m>ecd</m></cell>
+          <cell><m>edc</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <p>
+      In Table<nbsp />ref{tab:permsof3} we list all three-element permutations of
+      the <m>5</m>-element set <m>\{a,b,c,d,e\}</m>. Each row consists of all
+      <m>3</m>-element permutations of some subset of <m>\{a,b,c,d,e\}</m>. Because a
+      given <m>k</m>-element subset can be listed as a <m>k</m>-element permutation in
+      <m>k!</m> ways, there are <m>3!=6</m> permutations in each row. Because each
+      <m>3</m>-element permutation appears exactly once in the table, each row is
+      a block of a partition of the set of <m>3</m>-element permutations of
+      <m>\{a,b,c,d,e\}</m>. Each block has size six. Each block consists of all
+      <m>3</m>-element permutations of some three-element subset of
+      <m>\{a,b,c,d,e\}</m>. Since there are ten rows, we see that there are ten
+      <m>3</m>-element subsets of <m>\{a,b,c,d,e\}</m>. An alternate way to see this
+      is to observe that we partitioned the set of all <m>60</m> three-element
+      permutations of <m>\{a,b,c,d,e\}</m> into some number <m>q</m> of blocks, each
+      of size six. Thus by the product principle, <m>q\cdot 6=60</m>, so <m>q=10</m>.
+    </p>
+
+    <activity xml:id="formulanchoosek" category="essential">
+      <p>
+        Rather than restricting ourselves to <m>n=5</m> and <m>k=3</m>, we can
+        partition the set of all <m>k</m>-element permutations of <m>S</m> up into
+        blocks. We do so by letting <m>B_K</m> be the set (block) of all <m>k</m>-element
+        permutations of <m>K</m> for each <m>k</m>-element subset <m>K</m> of <m>S</m>. Thus as in
+        our preceding example, each block consists of all permutations of some
+        subset <m>K</m> of our <m>n</m>-element set. For example, the permutations of
+        <m>\{a,b,c\}</m> are listed in the first row of
+        <xref ref="tab_permsof3">Table</xref>. In fact each row of that table is a
+        block. The questions that follow are about the corresponding partition
+        of the set of <m>k</m>-element permutations of <m>S</m>, where <m>S</m> and <m>k</m> are
+        arbitrary.
+      </p>
+      <task>
+        <statement>
+          <p>
+            How many permutations are there in a block?
+          </p>
+        </task>
+        <task>
+          <p>
+            Since <m>S</m> has <m>n</m>
+              elements, what does <xref ref="kelementpermutation">problem</xref> tell you about
+              the total number of <m>k</m>-element permutations of <m>S</m>?
+          </p>
+        </task>
+        <task>
+          <p>
+            Describe a
+              bijection between the set of blocks of the partition and the set of
+              <m>k</m>-element subsets of <m>S</m>.
+          </p>
+        </task>
+        <task xml:id="formulanchoosekfinal" >
+          <p>
+            What formula does this give you for the
+              number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
+          <m>k</m>-element permutations is <m>n^{\underline{k}}={n!\over (n-k)!}</m>.
+          Each <m>k</m>-element set corresponds to the block of all permutations of
+          that set. It is immediate that this is a bijection. Assuming there
+          are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so
+          <m>k!s={n!\over (n-k)!}</m> or <m>s= {n!\over k!(n-k)!}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <p>
+        A basketball team has 12 players. However, only five players play at
+        any given time during a game.
+      </p>
+      <task>
+        <statement>
+          <p>
+            In how may ways may the coach choose the five players?
+          </p>
+        </task>
+        <task>
+          <p>
+            To be
+              more realistic, the five players playing a game normally consist of
+              two guards, two forwards, and one center.  If there are five guards,
+              four forwards, and three centers on the team, in how many ways can
+              the coach choose two guards, two forwards, and one center?
+          </p>
+        </task>
+        <task>
+          <p>
+            What if
+              one of the centers is equally skilled at playing forward?
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          <m>12\choose 5</m>. In the more realistic version,
+          <m>{5\choose2}{4\choose2}{3\choose1}=180</m>. Finally, either the versatile
+          player is playing center or not, and in the second case is available to play
+          forward. This gives us
+          <m>{5\choose2}{4\choose2}{1\choose1}+{5\choose2}{5\choose2}{2\choose1}=260</m> ways
+          to choose the players.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="roundtablepartition" category="essential">
+      <statement>
+        <p>
+          In <xref ref="roundtable">Problem</xref>, describe a way to partition the
+          <m>n</m>-element permutations of the <m>n</m> people into blocks so that there is a
+          bijection between the set of blocks of the partition and the set of
+          arrangements of the
+          <m>n</m> people around a round table. What method of solution for <xref ref="roundtable">Problem</xref> does this correspond to?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Put two permutations in the same block if we can get one from the
+          other by moving everyone (circularly) some number <m>r</m> places to the right.
+          This corresponds to the method that gives <m>n!/n</m> as the answer. Many
+          students should be able to answer this question by saying ``See the answer to
+          <xref ref="roundtable">Problem</xref>."
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="quotientprinciple" category="essential">
+      <statement>
+        <p>
+          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
+          have been using the product principle in a new way. One of the ways in which
+          we previously stated the product principle was <q>If we partition a set into
+          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">problems</xref> and <xref ref="roundtablepartition"></xref> we knew the size <m>p</m> of a
+          set
+          <m>P</m> of permutations of a set, and we knew we had partitioned <m>P</m> into some
+          unknown number of blocks, each of a certain known size <m>r</m>. If we let
+          <m>q</m> stand for the number of blocks, what does the product principle tell us
+          about <m>p</m>, <m>q</m>, and
+          <m>r</m>? What do we get when we solve for <m>q</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>p=qr</m>, so that <m>q=p/r</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      The formula you found in the <xref ref="quotientprinciple">Problem</xref> is so useful that
+      we are going to single it out as another principle. The <em>quotient
+      principle</em><index><main>quotient principle</main></index> says:
+    </p>
+
+    <blockquote>
+    If we partition a set <m>P</m> 
+    into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m>
+    </blockquote>
+
+    <p>
+      The quotient principle is really just a restatement of the product principle,
+      but thinking about it as a principle in its own right often leads us to find
+      solutions to problems. Notice that it does not always give us a formula for
+      the number of blocks of a partition; it only works when all the blocks have
+      the same size. In <xref ref="groupsonsets">Chapter</xref>, we develop a way to solve problems
+      with different block sizes in cases where there is a good deal of
+      symmetry in the problem. (The roundness of the table was a symmetry in
+      the problem of people at a table; the fact that we can order the sets
+      in any order is the symmetry in the problem of counting <m>k</m>-element subsets.)
+    </p>
+
+    <p>
+      In <xref ref="equivalencerelations">Section</xref> of <xref ref="Relations">Appendix</xref> we
+      introduce the idea of an equivalence relation, see what equivalence relations
+      have to do with partitions, and discuss the quotient principle from that
+      point of view. While that appendix is not required for what we are doing
+      here, if you want a more thorough discussion of the quotient principle, this
+      would be a good time to work through that appendix.
+    </p>
+
+    <activity xml:id="necklace" category="essential and interesting">
+      <statement>
+        <p>
+          In how many ways may we string <m>n</m> distinct beads on a necklace
+          without a clasp? (Perhaps we make the necklace by stringing the beads
+          on a strong, and then carefully gluing the two ends of the string
+          together so that the joint can't be seen. Assume someone can pick up the necklace,
+          move it around in space and put it back down, giving an
+          apparently different way of stringing the beads that is
+          equivalent to the first.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We can obtain a permutation of the beads by cutting the necklace and
+          stretching it out in a straight line. We can partition the permutations
+          according to which necklace they come from in this process. Two permutations
+          are in the same block if we get one either by circularly permuting the other
+          or by reversing the other (this corresponds to flipping the necklace over in
+          space). Thus each necklace corresponds to <m>2n</m> permutations so by the
+          quotient principle we have <m>n!/2n=(n-1)!/2</m> ways to string <m>n</m> distinct beads
+          on a necklace.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="tennispairings2" category="interesting">
+      <p>
+        We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
+        tennis club has
+        <m>2n</m> members. We want to pair up the members by twos for singles matches.
+      </p>
+      <task>
+        <statement>
+          <p>
+            In how many ways may we pair up all the members of the club?
+              Give at least two solutions different from the one you gave in
+              <xref ref="tennispairings1a">Problem</xref>. (You may not have done
+              <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
+              three solutions.)
+          </p>
+        </task>
+        <task>
+          <p>
+            Suppose that in addition to specifying who plays whom, for each
+              pairing we say who serves first.  Now in how many ways may we
+              specify our pairs? Try to find as many solutions as you can
+          </p>
+        </task>
+      </statement>
+      <solution>
+        <p>
+          Suppose we list the people in the club in some way, and keep that
+          list for the remainder of the problem. Take the first person from the list
+          and pair that person with any of the <m>2n-1</m> remaining people. Now take the
+          next <em>unpaired</em> person from the list and pair that person with any of the
+          remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
+          been selected, take the next unpaired person from the list and pair that
+          person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
+          can arise in this way, and no pairing can arise twice in this process. Thus
+          the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
+        </p>
+
+        <p>
+          For another solution,
+          choose people in pairs. There are <m>2n\choose 2</m> ways to choose one pair,
+          <m>2n-2\choose 2</m> ways to choose a second pair, and once <m>k</m> pairs have been
+          chosen, there are <m>2n-2k\choose 2</m> ways to choose the next pair. The number
+          of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
+          {2n-2i\choose 2}= {(2n)!\over 2^i}</m>. However each way of pairing people gets
+          listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
+          Therefore the number of actual pairings is <m>{(2n)!\over 2^n n!}= ={2n!\over
+          2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
+        </p>
+
+        <p>
+          For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
+          we can take the first two as a tennis pair, the next two, and so on. There
+          are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
+          each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings
+          partition the set of all permutations of the <m>2n</m> members into blocks of size
+          <m>n!2^n</m>. Thus we have <m>(2n)!\over n!2^n</m> tennis pairings once again.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="twocolorsofbeads" category="essential">
+      <statement>
+        <p>
+          (This becomes especially relevant in
+          <xref ref="groupsonsets">Chapter</xref>, though it makes an important point here.) In how many ways may we attach two identical red beads
+          and two identical blue beads to the corners of a square (with one bead
+          per corner) free
+          to move around in (three-dimensional) space?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Two ways; either the red beads are side-by-side or diagonally
+          opposite. If we think about partitioning lists of 2 <m>R</m>s and 2 <m>B</m>s so that
+          two are in the same block if we get one from the other by moving the square,
+          we get two blocks, <m>\{RRBB, BRRB, BBRR, RBBR\}</m> and <m>\{RBRB, BRBR\}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Stirling_sapproximation" category="interesting">
+      <statement>
+        <p>
+          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
+          it doesn't give us a sense of how big the binomial coefficients are. We can
+          get a very rough idea, for example, of the size of <m>2n\choose n</m> by
+          recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>{2n\over n}\cdot
+          {2n-1\over n-1}\cdots {n+1\over 1}</m>, and each quotient is at least <m>2</m>, so the
+          product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
+          the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
+          about
+          <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
+          However it is pretty clear the approximation will not be a very good one,
+          because some of the terms in that product are much larger than 2. In fact,
+          if <m>2n\choose k</m> were the same for every <m>k</m>, then each would be the fraction
+          <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
+          <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
+          much larger than <m>\binom{2n}{1}</m> and is likely larger than
+          <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
+          this, James Stirling developed a formula to approximate
+          <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
+          n}\right){n^n/ e^n}</m>.<index><main>Stirling's formula for
+          <m>n"!</m></main></index><index><main><m>n"!</m></main><sub>Stirling's formula for</sub></index> In fact the ratio of
+          <m>n!</m> to this expression approaches 1 as
+          <m>n</m> becomes infinite.<fn>Proving this takes more of a detour than is
+          advisable here; however there is an elementary proof which you can work
+          through in the problems of the end of Section 1 of Chapter 1 of <em>Introductory Combinatorics</em> by Kenneth P. Bogart, Harcourt Academic Press,
+          (2000).</fn> We write this as
+          <me>
+            n!\sim \sqrt{2\pi
+            n}{n^n\over e^n}.
+          </me>
+        </p>
+
+        <p>
+          We read this notation as <m>n!</m> is asymptotic to
+          <m>\sqrt{2\pi n}\frac{n^n}{e^n}</m>. Use Stirling's formula to show that the fraction of
+          subsets of size
+          <m>n</m> in an
+          <m>2n</m>-element set is approximately <m>1/\sqrt{\pi n}</m>. This is a much bigger
+          fraction than <m>1\over 2^n</m>!
+        </p>
+      </statement>
+    </activity>
+  </subsection>
+</section>

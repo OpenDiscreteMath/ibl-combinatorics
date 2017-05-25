@@ -1,0 +1,957 @@
+
+<section>
+  <title>Partitions and Stirling Numbers</title>
+  <introduction>
+    <p>
+      We have seen how the number of
+      partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the
+      distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While
+      there is a formula that we shall eventually learn for this number, it
+      requires more machinery than we now have available. However there is a
+      good method for computing this number that is similar to Pascal's
+      equation. Now that we have studied recurrences in one variable, we will
+      point out that Pascal's equation is in fact a <em>recurrence in two
+      variables</em><index><main>recurrence</main><sub>two
+      variable</sub></index>; that is it lets us compute <m>n\choose k</m> in terms of values of
+      <m>m\choose i</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact
+      that we had such a recurrence and knew <m>n\choose 0</m> and <m>n\choose n</m> that
+      let us create Pascal's triangle.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Stirling Numbers of the second kind</title>
+    <p>
+      We use the notation <m>S(k,n)</m> to stand for the number of partitions of a
+      <m>k</m> element set with <m>n</m> blocks. For historical reasons, <m>S(k,n)</m> is
+      called a <em>Stirling number of the second kind</em>. <index><main>partition</main><sub>of a
+      set</sub></index><index><main>partition</main><sub>of a set!!Stirling Numbers</sub></index><index><main>Stirling
+      Number</main><sub>second kind</sub></index><index><main><m>S(k,n)</m></main></index>
+    </p>
+
+    <activity xml:id="secondstirlingrecurrence" category="essential and interesting">
+      <task>
+        <statement>
+          <p>
+            In a partition of the set <m>[k]</m>, the number <m>k</m> is either in a
+            block by itself, or it is not. How does the number of partitions of
+            <m>[k]</m> with <m>n</m> parts in which <m>k</m> is in a block with other elements of
+            <m>[k]</m> compare to the number of partitions of <m>[k-1]</m> into <m>n</m> blocks?
+            Find a two variable recurrence for <m>S(n,k)</m>, valid for <m>n</m> and
+            <m>k</m> larger than one.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of partitions of <m>[k]</m> into <m>n</m> parts in which <m>k</m> is
+            in a block with other elements of <m>[k]</m> is equal <m>n</m> times the number
+            of partitions of <m>[k-1]</m> into <m>n</m> blocks, because <m>k</m> could be in any
+            of the
+            <m>n</m> parts, and since it is in a block with other elements of <m>[k-1]</m>,
+            removing it leaves a partition of <m>[k-1]</m> into <m>n</m> blocks. The number of
+            partitions of <m>[k]</m> into <m>n</m> blocks in which <m>k</m> is in a block by itself
+            is the number of partitions of <m>[k]</m> into <m>n-1</m> blocks, because you can
+            get any such partition in by deleting the block containing <m>k</m> from a
+            partition of <m>[k]</m> in which <m>k</m> is in a block by itself. Thus
+            <m>S(k,n))=S(k-1,n-1) +nS(k-1,n)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of
+            <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table
+            is sometimes called <em>Stirling's Triangle (of the
+            second kind)</em><index><main>Stirling's triangle</main><sub>second kind</sub></index> How would you define
+            <m>S(k,n)</m> for the nonnegative values of
+            <m>k</m> and
+            <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is
+            your two variable recurrence valid?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>S(k,1)=1</m> and <m>S(k,k)=1</m>.
+          </p>
+          <tabular>
+            <row>
+              <cell><m>k\backslash n</m></cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>3</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>7</cell>
+              <cell>6</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>15</cell>
+              <cell>25</cell>
+              <cell>10</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+            </row>
+          </tabular>
+          <p>
+            As you see in the table, we
+            define <m>S(0,0)=1</m>, and <m>S(0,n)</m> or <m>S(k,0)</m> to be 0 otherwise. This
+            makes sense because for <m>n>0</m> there is no partition of an empty set
+            into <m>n</m> parts, and for <m>k>0</m> there is no partition of a <m>k</m>-element
+            set into no parts, but saying there is one partition of the empty set
+            into no parts allows us to use our recurrence to compute <m>S(1,1)</m>.
+            This makes our recurrence valid for all nonnegative values of <m>k</m> and
+            <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Extend Stirling's triangle enough to allow you to answer the
+            following question and answer it. (Don't fill in the rows all the way;
+            the work becomes quite tedious if you do. Only fill in what you need to
+            answer this question.) A caterer is preparing three bag lunches for
+            hikers. The caterer has nine different sandwiches. In how many ways can
+            these nine sandwiches be distributed into three identical lunch bags so
+            that each bag gets at least one?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We need <m>S(9,3)</m>. Thus we need to extend our table for four
+            more rows, but only out to the column labelled 3. These rows are
+            6,0,1,31,90, 7,0,1,63,301, 7,0,1,127,966, 8,0,1,255,3025,
+            9,0,1,511,9330. Thus there are 9330 ways to distribute the sandwiches
+            into the lunch bags.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more
+            realistic question; in how many ways may the caterer distribute the nine
+            sandwich's into three identical bags so that each bag gets exactly
+            three? Answer this question. (Hint, what if the question asked about
+            six sandwiches and two distinct bags? How does having identical bags
+            change the answer?)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>{9\choose 3}{6\choose 3}{3\choose 3}/3!</m>. First we choose
+            three sandwiches for bag 1, then three for bag 2, and put the remainder in
+            bag 3. However, it doesn't matter which bags the sandwiches
+            are in so we have counted each partition <m>3!</m> times.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="partitionsgivenpartsize" category="essential">
+      <task>
+        <statement>
+          <p>
+            In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that
+            we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that
+            <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence
+            <m>k_1,k_2,\ldots,k_n</m> is called the <em>type vector</em> of the
+            partition.<index><main>partition of a set</main><sub> type vector</sub></index><index><main>type vector of a
+            partition of a set</main></index>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m>. We can make a
+            list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1,
+            then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks
+            of size <m>n</m>. But then we realize that we get the same partition if we
+            permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same
+            partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the
+            quotient principle.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Describe how to compute <m>S(n,k)</m> in terms of quantities given by
+            the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We can find <m>S(n,k)</m> by summing <m>n!\over \prod_{i=1}^n
+            (i!)^{k_i}{k_i!}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such
+            that
+            <m>k_1+k_2+\cdots+k_n=k</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Find a recurrence similar to the one in <xref ref="secondstirlingrecurrence">Problem</xref> for the Lah numbers <m>L(k,n)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>L(k,n)</m> is the number of broken permutations of a
+          <m>k</m>-element set into <m>n</m> parts. Either <m>k</m> is in an ordered block by
+          itself or it is not. If it is, it can go after any of the <m>k-1</m> other
+          elements, or it can go at the beginning of any of the <m>n</m> blocks. If
+          it is not, deleting it gives a broken permutation of a <m>k-1</m>-element
+          set into <m>n-1</m> blocks. Thus <m>L(k,n)=L(k-1,n-1) + (n+k-1)L(k,n)</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="BellNumberIntro" category="essential for this or the next section">
+      <p>
+        (Relevant in <xref ref="expogenfun">Appendex</xref>.) The total number of
+        partitions of a
+        <m>k</m>-element set is denoted by
+        <m>B(k)</m> and is called the <m>k</m>-th <em>Bell number</em><index><main>Bell
+        Number</main></index><index><main>partitions of a set</main><sub>number of</sub></index>. Thus
+        <m>B(1)=1</m> and
+        <m>B(2) =2</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Show, by explicitly exhibiting the partitions, that
+            <m>B(3)=5</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The five partitions of <m>[3]</m> are the sets <m>\{\{1\},
+            \{2\},\{3\}\}</m>,
+            <m>\{\{1,2\},\{3\}\}</m>, <m>\{\{1,3\},\{2\}\}</m>, <m>\{\{1\},\{2,3\}\}</m>, and
+            <m>\{\{1,2,3\}\}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence that expresses <m>B(k)</m> in terms of <m>B(n)</m> for
+            <m>n\lt  k</m> and prove your formula correct in as many ways as you can.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we delete the block containing <m>k</m>, we get a partition of
+            a subset of <m>[k-1]</m>. Thus <m>B(k)</m> is the sum over all subsets of
+            <m>[k-1]</m> of the number of partitions of that subset. This gives us
+            <m>B(k)= \sum_{n=0}^{k-1}{k-1\choose n}B(n)</m>.
+          </p>
+
+          <p>
+            Alternatively, we can show by the same sort of argument that
+            <m>S(k,n)=\sum_{i=0}^{k-1} {k-1\choose i}S(i,n-1)</m> and then use the fact
+            that <m>B(k)=\sum_{n=0}^k S(k,n)</m> to get the recurrence for <m>B(k)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find <m>B(k)</m> for <m>k=4,5,6</m>.
+          </p>
+        </statement>
+        <solution>
+          <me>
+            B(4) ={3\choose 0}B_0 +{3\choose1}B_1 +{3\choose2}B_2 +
+            {3\choose3}B_3=1 +3+3\cdot2 +5=15
+          </me>
+          <me>
+            B(5) = \sum_{n=0}^4 {4\choose n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
+          </me>
+          <me>
+            B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
+            +5\cdot 15 +52=203
+          </me>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Stirling Numbers and onto functions</title>
+    <activity category="motivation">
+      <statement>
+        <p>
+          Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element
+          set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same
+          block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does
+          the partition have if <m>f</m> is onto? How is the number of functions from a
+          <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be
+          as precise in your answer as you can.<index><main>function</main><sub>onto!and Stirling
+          Numbers</sub></index><index><main>onto function</main><sub>counting</sub></index>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>f</m> is onto, the number of blocks of the partition is
+          <m>n</m>. The number of onto functions from a <m>k</m>-element set onto an
+          <m>n</m>-element set is <m>S(k,n)n!</m>, because we have a one-to-one function
+          from the blocks to the <m>n</m>-element set.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Stirlingfalling" category="essential">
+      <statement>
+        <p>
+          Each function from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m>
+          is a function from <m>K</m> onto <em>some</em> subset of <m>N</m>. If <m>J</m> is a subset
+          of <m>N</m> of size <m>j</m>, you know how to compute the number of functions that
+          map onto <m>J</m> in terms of Stirling numbers. Suppose you add the number of
+          functions mapping onto <m>J</m> over all possible subsets <m>J</m> of <m>N</m>. What
+          simple value should this sum equal? Write the equation this gives
+          you.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The sum should equal the number of functions, <m>n^k</m>. Thus
+          we get <m>\sum_{j=0}^n {n\choose j}S(k,j)j! = n^k</m>. By using the fact
+          that <m>{n\choose j}= n^{\underline{j}}/j!</m>, this may be rewritten as
+          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k.</m>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          In how many ways can the sandwiches of <xref ref="sandwiches">Problem</xref> be
+          placed into three distinct bags so that each bag gets at least one?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>S(9,3)\cdot3!= 55,980</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          In how many ways can the sandwiches of <xref ref="caterer2">Problem</xref> be
+          placed into distinct bags so that each bag gets exactly three?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Choose three sandwiches for bag one in <m>9\choose3</m> ways,
+          three for bag two in <m>6\choose3</m> ways and put the remainder in bag 3.
+          This gives us <m>{9\choose3}{6\choose3}={9!\over3!3!3!}=1680</m> ways.
+        </p>
+
+        <p>
+          The <m>9!\over3!3!3!</m> suggests another solution. We can line up the
+          sandwiches in 9! ways. We take the first three for bag one, the
+          second three for bag two and the last three for bag 3. The order of
+          the sandwiches in the bag does not matter though, so each there are
+          <m>3!3!3!</m> listings corresponding to each way of putting sandwiches in
+          bags, giving us <m>9!\over3!3!3!</m> ways to put the sandwiches in bags.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <task>
+        <statement>
+          <p>
+            How many functions are there from a <m>k</m>-element set <m>K</m> to a set
+            <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of
+            <m>K</m> for each <m>i</m> from 1 to <m>n</m>? This number is called a <em>multinomial
+            coefficient</em><index><main>multinomial
+            coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
+            <me>
+              {k\choose
+              j_1,j_2,\ldots, j_n}.
+            </me>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>{k\choose j_1,j_2,\ldots, j_n} =
+            {k!\over j_1!j_2!\cdots j_n!}</m>. We get this either as the
+            product of binomial coefficients
+            <me>
+              {k\choose j_1}{k-j_1\choose
+              j_2}{k-j_1-j_2\choose j_3}\cdots{j_n\choose j_n},
+            </me>
+            or more elegantly,
+            by lining up the elements of the domain in <m>k!</m> ways, taking the first
+            <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.
+            However the order of the <m>j_i</m> elements that go to <m>y_i</m> is
+            irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same
+            function, giving us <m>k!\over j_1!j_2!,\cdots j_n!</m> functions.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain how to compute the number of functions from a <m>k</m>-element
+            set <m>K</m> onto an <m>n</m>-element set <m>N</m> by using multinomial coefficients.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Add the multinomial coefficients <m>k\choose
+            j_1,j_2,\ldots,j_n</m> in which each <m>j_i</m> is different from zero. To
+            see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting
+            functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          What do multinomial coefficients have to do with expanding the
+          <m>k</m>th power of a multinomial <m>x_1+x_2+\cdots+x_n</m>? This result is called
+          the <em>multinomial theorem</em>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          When we use the distributive law to multiply out
+          <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the
+          form
+          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.
+          The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of
+          exponents will arise from choosing, as we apply the distributive law
+          over and over again,
+          <m>x_1</m> from
+          <m>i_1</m> of the factors,
+          <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms
+          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to
+          label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2,
+          <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do
+          this is a multinomial coefficient, as we now explain. This labeling
+          gives us a function from
+          <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i)
+          =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps
+          <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the
+          coefficient of
+          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial
+          coefficient <m>k\choose i_1,i_2,\ldots, i_n</m>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Stirling Numbers and bases for polynomials</title>
+    <activity xml:id="powersfromfalling" category="essential for this or the next section">
+      <statement>
+        <p>
+          Find a way to express <m>n^k</m> in terms of
+          <m>k^{\underline{j}}</m> for appropriate values <m>j</m>. You may use Stirling
+          numbers if they help you. Notice that
+          <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could
+          range over the rational numbers, the real numbers, or even the complex
+          numbers instead of only the nonnegative integers, as we are implicitly
+          assuming <m>n</m> does), just as
+          <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the
+          polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain
+          why your formula is correct.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In <xref ref="Stirlingfalling">Problem</xref>, we saw that <m>\sum_{j=0}^n
+          {n\choose j}S(k,j)j! = n^k</m>. Using the relationship between binomial
+          coefficients and falling factorials, we may rewrite this as
+          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>. This expresses <m>n^k</m>
+          in terms of <m>k^{\underline{j}}</m>. To be precise, we define
+          <m>x^{\underline{j}}</m> to be <m>x(x-1)\cdots (x-j+1)</m>. At first glance it
+          looks like we could express <m>x^{\underline{j}}</m> in terms of powers of
+          <m>x</m> by simply substituting <m>x</m> for <m>n</m> in the equation <m>\sum_{j=0}^n
+          n^{\underline{j}}S(k,j) = n^k</m>. However this gives us <m>\sum_{j=0}^x
+          x^{\underline{j}}S(k,j) = x^k</m>, and we have never defined what we mean
+          by a sum whose upper limit is a variable <m>x</m>. Thus we need to examine
+          the equation <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m> to see if we
+          can replace the <m>n</m> that is the upper limit of the sum with something
+          else. Notice that
+          <m>S(k,j)=0</m> when <m>j>k</m>. This means that if <m>k\le j</m>, then <m>\sum_{j=0}^n
+          n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)</m>.
+          Notice also that <m>n^{\underline{j}}= n(n-1)\cdots(n-j+1)</m> is zero when
+          <m>j>n</m> because one of its factors is zero then. This implies that if
+          <m>k>j</m>, then <m>\sum_{j=0}^n
+          n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)</m>.
+          Therefore, regardless of the relative size of <m>k</m> and <m>n</m>, we have
+          that
+          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j)=\sum_{j=0}^k
+          n^{\underline{j}}S(k,j)</m>. Therefore
+          <men xml:id="changeupperlimit" >
+            \sum_{j=0}^k
+            n^{\underline{j}}S(k,j)=n^k.
+          </men>
+        </p>
+
+        <p>
+          It
+          makes sense to write the polynomial
+          <m>\sum_{j=0}^k
+          x^{\underline{j}}S(k,j)</m>; this is simply a polynomial of degree <m>k</m> in
+          the variable <m>x</m>. The expression <m>\sum_{j=0}^k
+          x^{\underline{j}}S(k,j)-x^k</m> is also a polynomial in <m>x</m>, but it
+          might not be of degree <m>k</m> since we are subtracting a degree <m>k</m> term
+          from a degree <m>k</m> polynomial. In fact for every positive integer
+          value <m>n</m> of <m>x</m>, this polynomial is zero. That is, <m>\sum_{j=0}^k
+          n^{\underline{j}}S(k,j)-n^k=0</m>, which is just a restatement of
+          <xref ref="changeupperlimit">Equation</xref>. But it is a fact of algebra that the
+          number of solutions of a nontrivial polynomial equation is no more
+          than the degree of the polynomial. Since the polynomial equation
+          <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k</m> has infinitely many
+          different solutions, it must be a trivial equation; that is
+          <m>\sum_{j=0}^k
+          x^{\underline{j}}S(k,j)-x^k</m> must be zero for every real (and even
+          every complex) number <m>x</m>. Thus <m>\sum_{j=0}^k
+          x^{\underline{j}}S(k,j)=x^k</m>, and we have expressed <m>x^k</m> in terms of
+          <m>x^{\underline{j}}</m> for <m>j\le k</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      You showed in <xref ref="powersfromfalling">Problem</xref> how to
+      get each power of <m>x</m> in terms of the falling factorial powers
+      <m>x^{\underline{j}}</m>. Therefore every polynomial in <m>x</m> is expressible in
+      terms of a sum of numerical multiples of falling factorial powers. Using
+      the language of linear algebra, we say that the ordinary powers of <m>x</m> and
+      the falling factorial powers of
+      <m>x</m> each form a basis for the
+      <q>space</q> of polynomials, and that the numbers
+      <m>S(k,n)</m> are <q>change of basis coefficients.</q> If you are not familiar
+      with linear algebra, a <em>basis</em><index><main>basis (for polynomials)</main></index> for the
+      <em>space of polynomials</em><fn>The space of polynomials is just
+      another name for the set of all polynomials.<index><main>space of polynomials</main></index></fn>
+      is a set of polynomials such that each polynomial, whether in that set or
+      not, can be expressed in one and only one way as a sum of numerical
+      multiples of polynomials in the set.
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Show that every power of <m>x+1</m> is expressible as a sum of
+          numerical multiples of powers of <m>x</m>. Now show that every power of <m>x</m>
+          (and thus every polynomial in
+          <m>x</m>) is a sum of numerical multiples (some of which could be negative) of
+          powers of
+          <m>x+1</m>. This means that the powers of
+          <m>x+1</m> are a basis for the space of polynomials as well. Describe the
+          change of basis coefficients that we use to express the binomial powers
+          <m>(x+1)^n</m> in terms of the ordinary <m>x^j</m> explicitly. Find the change of
+          basis coefficients we use to express the ordinary powers <m>x^n</m> in terms
+          of the binomial powers <m>(x+1)^k</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We know that
+          <men xml:id="usingbinomialtheorem" >
+            (x+1)^n=\sum_{i=0}^n {n\choose
+            i}x^{i}
+          </men>
+          from the binomial
+          theorem. (In the way we stated the binomial theorem, instead of
+          <m>{n\choose i}x^i</m> we would have gotten
+          <m>{n\choose i}x^{n-i}</m>. There are two ways to fix this. One is to
+          observe that the coefficient of
+          <m>x^i</m> in that expansion is <m>n\choose n-i</m>, which equals <m>n\choose
+          i</m>. The other is to observe that when we expand <m>(1+x)^n</m> according
+          to the binomial theorem we get exactly what we wrote on the right hand
+          side in <xref ref="usingbinomialtheorem">Equation</xref>.) Therefore every power of <m>x+1</m> is
+          expressible in terms of powers of <m>x</m>.
+        </p>
+
+        <p>
+          How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some
+          experimentation would help us guess how to do so; however there is a
+          really nice trick that also isn't hard to see. Namely, we can write
+          <md>
+            <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n {n\choose
+            i}(x+1)^{n-i}(-1)^i</mrow>
+            <mrow>\amp =\amp 
+            \sum_{i=0}^n {n\choose i}(x+1)^i(-1)^{n-i}</mrow>
+          </md>
+        </p>
+
+        <p>
+          This means that every power of <m>x</m> is expressible in terms of powers
+          of <m>x+1</m> and the change of basis coefficients to express powers of <m>x</m>
+          in terms of powers of <m>x+1</m> are <m>(-1)^{n-i}{n\choose i}</m> while the
+          change of basis coefficients used to express powers of <m>x+1</m> in terms
+          of powers of <m>x</m> are <m>n\choose i</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Stirlingfirst" category="essential for this or the next section, and interesting">
+      <task>
+        <statement>
+          <p>
+            By multiplication, we can see that every falling factorial
+            polynomial can be expressed as a sum of numerical multiples of powers of
+            <m>x</m>. In symbols, this means that there are numbers <m>s(k,n)</m> (notice that
+            this <m>s</m> is lower case, not upper case) such that we may write
+            <m>x^{\underline{k}} =
+            \sum_{n=0}^k s(k,n)x^n</m>. These numbers <m>s(k,n)</m><index><main><m>s(k,n)</m></main></index> are
+            called Stirling Numbers of the first kind.<index><main>Stirling Number</main><sub>first
+            kind</sub></index> By thinking algebraically about what the formula
+            <men xml:id="stirling1" >
+              x^{\underline{k}} =
+              x^{\underline{k-1}}(x-k+1)
+            </men>
+            means, we can
+            find a recurrence for Stirling numbers of the first kind that gives us
+            another triangular array of numbers called Stirling's triangle of the
+            first kind.<index><main>Stirling's triangle</main><sub>first kind</sub></index> Explain why <xref ref="stirling1">Equation</xref> is true and use it to derive a recurrence for <m>s(k,n)</m> in
+            terms of <m>s(k-1,n-1)</m> and <m>s(k-1,n)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <xref ref="stirling1">Equation</xref> is effectively the inductive step
+            of an inductive definition of <m>x^{\underline{k}}</m>. With this
+            equation we can write
+            <md>
+              <mrow>\sum_{n=0}^k s(k,n)x^n\amp =\amp x^{\underline{k}} =
+              x^{\underline{k-1}}(x-k+1)</mrow>
+              <mrow>\amp =\amp \left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)</mrow>
+              <mrow>\amp =\amp \sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n</mrow>
+              <mrow>\amp =\amp \sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Equating the coefficients of <m>x^n</m> in the first and last line of this
+            equation, we get
+            <m>s(k,n) = s(k-1,n-1) -(k-1)s(k-1,n)</m>, for <m>n</m> between 1 and <m>k-1</m>..
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write down the rows of Stirling's triangle of the first kind
+            for <m>k=0</m> to<nbsp />6.
+          </p>
+        </statement>
+        <solution>
+          <tabular>
+            <row>
+              <cell><m>k\backslash n</m></cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>0</cell>
+              <cell>-1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>0</cell>
+              <cell>2</cell>
+              <cell>-3</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>0</cell>
+              <cell>-6</cell>
+              <cell>11</cell>
+              <cell>-6</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>0</cell>
+              <cell>24</cell>
+              <cell>-50</cell>
+              <cell>35</cell>
+              <cell>-10</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>0</cell>
+              <cell>-120</cell>
+              <cell>274</cell>
+              <cell>-225</cell>
+              <cell>85</cell>
+              <cell>-15</cell>
+              <cell>1</cell>
+            </row>
+          </tabular>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      By definition, the Stirling numbers of the first kind are also change of
+      basis coefficients.
+      The Stirling numbers of the first and second kind are change of basis
+      coefficients from the falling factorial powers of <m>x</m> to the ordinary
+      factorial powers, and vice versa.
+    </p>
+
+    <activity category="interesting">
+      <p>
+        Explain why every rising factorial polynomial <m>x^{\overline{k}}</m>
+        can be expressed in terms of the falling factorial polynomials
+        <m>x^{\underline{n}}</m>. Let <m>b(k,n)</m> stand for the change of basis
+        coefficients that allow us to express
+        <m>x^{\overline{k}}</m> in terms of the falling factorial polynomials
+        <m>x^{\underline{n}}</m>; that is, define <m>b(k,n)</m> by the equations
+        <me>
+          x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
+        </me>
+      </p>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence
+            for <m>b(k,n)</m>.
+          </p>
+        </statement>
+        <solution>
+          <md>
+            <mrow>\amp \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
+            x^{\overline{k-1}}(x+k-1)</mrow>
+            <mrow>\amp =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)</mrow>
+            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
+            x^{\underline{n}}</mrow>
+            <mrow>\amp =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
+            (n+k-1)b(k-1,n)x^{\underline{n}}</mrow>
+          </md>
+          <p>
+            Thus if <m>n</m> is not 0 or <m>k</m>, we equate the coefficient of
+            <m>x^{\underline{n}}</m> in the first line and last line to get
+            <me>
+              b(k,n) =
+              b(k-1,n-1) + (n+k-1)b(k-1,n).
+            </me>
+          </p>
+
+          <p>
+            The trick of subtracting <m>n</m> and
+            adding <m>n</m> in the middle of the computation was the result of wanting
+            to mimic the way in which we increased the power on <m>x</m> in the
+            solution to <xref ref="Stirlingfirst">Problem</xref>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a formula for <m>b(k,n)</m> and prove the correctness of what you
+            say in as many ways as you can.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We will answer the next part of the problem here! The
+            recurrence for <m>b(k,n)</m> is exactly the same as the recurrence for
+            <m>L(k,n)</m>. Further, <m>b(0,0)=1=L(0,0)</m>, <m>b(0,n) = 0=L(0,n)</m> for <m>n>0</m>,
+            and
+            <m>b(k,k)=L(k,k) =1</m>. Thus <m>b(k,n)</m> and <m>L(k,n)</m> are identical. This and
+            the formula from <xref ref="brokenpermutation">Problem</xref> gives one proof that
+            <m>b(k,n)=k!{k-1\choose n-1}/n!</m>.
+          </p>
+
+          <p>
+            A second proof that the change of basis coefficients are Lah numbers
+            goes as follows. <m>n^{\overline{k}}</m> counts the number of ordered
+            functions from a <m>k</m>-element set to an <m>n</m>-element set. One way to
+            determine such an ordered function is to take a broken permutation of
+            the <m>k</m>-element set into <m>n</m> or fewer parts, and then take a
+            one-to-one function from the parts to the <m>n</m>-element set. More
+            informally we assign the parts of the broken permutation to distinct
+            elements of the <m>n</m>-element set. If the broken permutation has <m>i</m>
+            parts, the number of ways to do this assignment is the number of
+            <m>i</m>-element permutations of an
+            <m>n</m>-element set, <m>n^{\underline{i}}</m>. Thus
+            <m>n^{\overline{k}}=\sum_{i=0}^n L(k,i)n^{\underline{i}}</m>. However we
+            can change the upper limit of the sum to <m>k</m> because
+            <m>L(k,i)</m> is zero when <m>i>k</m> and <m>n^{\underline{i}}</m> is zero when <m>i>n</m>.
+            Now we change
+            <m>n</m> to
+            <m>x</m> because we have a polynomial equality which is valid for infinitely
+            many of the values of the variable. This gives us
+            <m>x^{\overline{k}}=\sum_{i=0}^k L(k,i)x^{\underline{i}}</m>. Thus <m>b(k,i) =
+            L(k,i)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Is <m>b(k,n)</m> the same as any of the other families of numbers
+            (binomial coefficients, Bell numbers, Stirling numbers, Lah numbers,
+            etc.) we have studied?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            As we said in our solution to the previous part, <m>b(k,n)</m> is
+            the Lah number <m>L(k,n)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Say as much as you can (but say it precisely) about the change of
+            basis coefficients for expressing <m>x^{\underline{k}}</m> in terms of
+            <m>x^{\overline{n}}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There are several ways of finding this relationship, but the
+            most concise way is to observe that
+            <m>(-x)^{\underline{k}}=(-1)^kx^{\overline{k}}</m> and
+            <m>(-x)^{\overline{k}}= (-1)^k x^{\underline{k}}</m>. This lets us write
+            <md>
+              <mrow>(-x)^{\overline{k}}\amp =\amp \sum_{n=0}^k
+              b(k,n)(-x)^{\underline{n}}</mrow>
+              <mrow>(-1)^kx^{\underline{k}}\amp =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}</mrow>
+              <mrow>x^{\underline{k}}\amp =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Therefore the change of basis coefficients are <m>(-1)^{n-k}b(k,n)</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+</section>

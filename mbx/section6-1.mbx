@@ -1,0 +1,1719 @@
+
+<section>
+  <title>Permutation Groups</title>
+  <introduction>
+    <p>
+      Until now we have thought of permutations mostly as ways of listing the
+      elements of a set. In this chapter we will find it very useful to think
+      of permutations as functions. This will help us in using permutations to
+      solve enumeration problems that cannot be solved by the quotient
+      principle because they involve counting the blocks of a partition in
+      which the blocks don't have the same size. We begin by studying the
+      kinds of permutations that arise in situations where we have used the quotient
+      principle in the past.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>The rotations of a square</title>
+    <figure xml:id="RotationsOfSquare" >
+      <caption>The four
+      possible results of rotating a square
+      and maintaining its position.</caption>
+      \mbox{
+      <image width="73%" source="images/" />
+      }
+    </figure>
+
+    <p>
+      In <xref ref="RotationsOfSquare">Figure</xref> we show a square with its four vertices
+      labelled 1, 2, 3, and 4. We have also labeled the spot in the plane
+      where each of these vertices falls with the same label. Then we have
+      shown the effect of rotating the square clockwise through 90, 180, 270, and 360
+      degrees (which is the same as rotating through 0 degrees). Underneath
+      each of the rotated squares we have named the function that carries
+      out the rotation. We use <m>\rho</m>, the Greek letter pronounced <q>row,</q> to
+      stand for a 90 degree clockwise rotation. We use <m>\rho^2</m> to stand for two 90
+      degree rotations, and so on. We can think of the function <m>\rho</m> as a
+      function on the four element set<fn>What we are doing is
+      restricting the rotation <m>\rho</m> to the set <m>\{1,2,3,4\}</m>.</fn>
+      <m>\{1,2,3,4\}</m>. In particular, for any function <m>\varphi</m> (the Greek letter
+      phi, usually pronounced <q>fee,</q> but sometimes <q>fie</q>) from the plane back
+      to itself that may move the square around but otherwise leaves it in the
+      same place, we let <m>\varphi(i)</m> be the label of the place where vertex
+      previously in
+      position
+      <m>i</m> is now. Thus
+      <m>\rho(1) =2</m>, <m>\rho(2)=3</m>, <m>\rho(3)=4</m> and <m>\rho(4) =1</m>. Notice that
+      <m>\rho</m> is a permutation on the set <m>\{1,2,3,4\}</m>.
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Find <m>\rho^2</m> of 1, 2, 3, and 4. Find <m>\rho^3</m> of 1, 2, 3, and 4.
+          Are <m>\rho^2</m> and <m>\rho^3</m> permutations of <m>\{1,2,3,4\}</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\rho^2(1)=3</m>, <m>\rho^2(2)=4</m>, <m>\rho^2(3)=1</m>, <m>\rho^2(4) =2</m>. <m>\rho^3(1)=4</m>,
+          <m>\rho^3(2)=1</m>, <m>\rho^3(3)=2</m>, <m>\rho^3(4)=3</m>. Yes, <m>\rho^2</m> and <m>\rho^3</m> are
+          permutations of <m>\{1,2,3,4\}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="composition1" category="essential">
+      <statement>
+        <p>
+          The composition<index><main>composition of
+          functions</main></index><index><main>functions</main><sub>composition of</sub></index>
+          <m>f\circ g</m> of two functions
+          <m>f</m> and
+          <m>g</m> is defined by <m>f\circ g(x) = f(g(x))</m>. Is <m>\rho^3</m> the composition of
+          <m>\rho</m> and
+          <m>\rho^2</m>? Does the answer depend on the order in which we write <m>\rho</m>
+          and
+          <m>\rho^2</m>? How is
+          <m>\rho^2</m> related to
+          <m>\rho</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Yes, <m>\rho^3</m> is the composition of <m>\rho</m> and <m>\rho^2</m>, and also of <m>\rho^2</m>
+          and <m>\rho</m>, so it doesn't matter in which order we write them. <m>\rho^2=\rho\circ\rho</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Is the composition of two permutations always a permutation?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Yes, because the composition of one-to-one functions is one-to-one and the
+          composition of onto functions is onto.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      In <xref ref="composition1">Problem</xref> you see that we can think of
+      <m>\rho^2\circ\rho</m> as the result of first rotating by 90 degrees and then
+      by another 180 degrees. In other words, the composition of two rotations
+      is the same thing as first doing one and then doing the other. If we
+      first rotate by 90 degrees and then by 270 degrees then we have rotated
+      by 360 degrees, which does nothing visible to the square. Thus we say
+      that <m>\rho^4</m> is the <q>identity function.</q> In general the <em>identity
+      function</em><index><main>function</main><sub>identity</sub></index><index><main>identity function</main></index> on a set <m>S</m>,
+      denoted by
+      <m>\iota</m> (the Greek letter iota, pronounced eye-oh-ta) is the function
+      that takes each element of the set to itself. In symbols, <m>\iota(x) =x</m>
+      for every
+      <m>x</m> in
+      <m>S</m>. Of course the identity function on a set is a permutation of that
+      set.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Groups of Permutations</title>
+    <activity category="essential">
+      <statement>
+        <p>
+          For any function <m>\varphi</m> from a set <m>S</m> to itself, we define
+          <m>\varphi^n</m> (for nonnegative integers <m>n</m>) inductively by <m>\varphi^0 =
+          \iota</m> and <m>\varphi^n = \varphi^{n-1}\circ\varphi</m> for every positive
+          integer <m>n</m>. If <m>\varphi</m> is a permutation, is <m>\varphi^n</m> a permutation?
+          Based on your experience with previous inductive proofs, what do you
+          expect <m>\varphi^n\circ \varphi^m</m> to be? What do you expect
+          <m>(\varphi^m)^n</m> to be? There is no need to prove these last two answers
+          are correct, for you have, in effect, already done so in Chapter 2.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It is a permutation because the computation of permutations is a
+          permutation. (You could be more precise and use the inductive definition
+          of <m>\varphi^n</m> to prove inductively that <m>\varphi^n</m> is a permutation.) We
+          expect
+          <m>\varphi^m\circ\varphi^n=\varphi^{m+n}</m>, and we expect
+          <m>(\varphi^m)n=\varphi^{mn}</m>, and we would prove this by induction.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="identityproperty" category="essential">
+      <statement>
+        <p>
+          If we perform the composition <m>\iota\circ \varphi</m> for any function
+          <m>\varphi</m> from <m>S</m> to <m>S</m>, what function do we get? What if we perform the
+          composition <m>\varphi\circ\iota</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\iota\circ\varphi=\varphi\circ\iota=\varphi</m>
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      What you have observed about iota in <xref ref="identityproperty">Problem</xref> is
+      called the <em>identity property</em><index><main>identity property (for
+      permutations)</main></index> of iota. In the context of permutations, people usually
+      call the function
+      <m>\iota</m> <q>the identity</q> rather than calling it <q>iota.</q>
+    </p>
+
+    <p>
+      Since rotating first by 90 degrees and then by 270 degrees has the same
+      effect as doing nothing, we can think of the 270 degree rotation as
+      undoing what the 90 degree rotation does. For this reason we say that in
+      the rotations of the square, <m>\rho^3</m> is the <q>inverse</q> of <m>\rho</m>. In
+      general, a function <m>\varphi:T\rightarrow S</m> is called an <em>inverse</em><index><main>inverse function</main></index><index><main>function</main><sub>inverse</sub></index> of a function <m>\sigma:S
+      \rightarrow T</m> (the lower case Greek letter sigma) if <m>\varphi\circ \sigma= \sigma
+      \circ\varphi =
+      \iota</m>.
+    </p>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Does every permutation have an inverse? If so, why, and is it
+          unique, i.e. could a permutation have two distinct inverse functions? If
+          not, give an example of a permutation without an inverse or a permutation with two
+          distinct inverses.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>\varphi</m> be a permutation of <m>S</m>. Then for each <m>S</m> in
+          <m>S</m> there is one and only one <m>x</m> in <m>S</m> such that <m>\varphi(x) = s</m>
+          because
+          <m>\varphi</m> is one-to-one and onto. Thus if we define <m>\sigma(s)</m> to be
+          the unique <m>x</m> such that <m>\varphi(x) = s</m>, we have defined a function,
+          and
+          <me>
+            \varphi\circ\sigma (s) = \varphi(\sigma(s)) = \varphi(x) = s.
+          </me>
+        </p>
+
+        <p>
+          Thus we have that <m>\varphi\circ\sigma = \iota</m>. To show that <m>\sigma</m> is
+          an inverse to <m>\varphi</m>, we must show that <m>\sigma\circ\varphi = \iota</m>
+          as well. However <m>\sigma(\varphi(y))</m> is the unique <m>x</m> such that
+          <m>\varphi(x) = \varphi(y)</m>, that is <m>\sigma(\varphi(y)) = y</m>. Thus
+          <m>\sigma\circ\varphi = \iota</m>, and <m>\sigma</m> is an inverse to <m>\varphi</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Show that if <m>\sigma</m> is an inverse of the permutation
+          <m>\varphi</m> of
+          <m>S</m>, then <m>\sigma</m> is a permutation of <m>S</m> also.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The function <m>\sigma</m> must be one-to-one because if <m>\sigma(x)=\sigma(y)</m>,
+          then
+          <m>x=\varphi\circ\sigma(x)=\varphi\circ\sigma(y)=y</m>. The function <m>\sigma</m> must be onto
+          because for each <m>y</m> in its range, <m>\sigma(\varphi(y)) = y</m>
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      We use <m>\varphi^{-1}</m> to denote the inverse of the permutation <m>\varphi</m>.
+      We've seen that the rotations of the square are functions that return the
+      square to its original position but may move the vertices to different
+      places. In this way we create permutations of the vertices of the
+      square. We've observed three important properties of these permutations.
+      <ul>
+        <li>
+          <p>
+            (Identity Property)<index><main>identity property</main></index> These
+            permutations include the identity permutation.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            (Inverse Property)<index><main>inverse property</main></index> Whenever these
+            permutations include
+            <m>\varphi</m>, they also include <m>\varphi^{-1}</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            (Closure Property)<index><main>closure property</main></index>  Whenever these
+            permutations include
+            <m>\varphi</m> and <m>\sigma</m>, they also include <m>\varphi\circ\sigma</m>.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      A set of permutations with these three properties is called a <em>permutation group</em><fn>The concept of a permutation group is a
+      special case of the concept of a <em>group</em> that one studies in abstract
+      algebra.  When we refer to a group in what follows, if you  know what
+      groups are in the more abstract sense, you may use the word in this way. 
+      If you do not know about groups in this more abstract sense, then you may
+      assume we mean permutation group when we say group.</fn> or a group of
+      permutations.<index><main>group of permutations</main></index><index><main>permutation group</main></index> We
+      will denote the group of permutations corresponding to rotations of the
+      square by <m>R_4</m> and call it the <em>rotation group</em><index><main>rotation
+      group</main></index> of the square. There is a similar rotation group with <m>n</m>
+      elements for any regular <m>n</m>-gon.
+    </p>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          If a finite set of permutations satisfies the closure
+          property is it a permutation group?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Yes, because the permutations <m>\sigma</m>, <m>\sigma^2</m>, <ellipsis />, <m>\sigma^n</m>,
+          <ellipsis /> must eventually start repeating. But if <m>\sigma^i=\sigma^j</m>, and <m>i\lt j</m>, then
+          <m>\sigma^{j-i} =1</m>, so <m>\sigma^{j-i-1}</m> is the inverse of <m>\sigma</m>. This means that
+          every member of the set of permutations has an inverse in that set. But then since
+          <m>\sigma\circ\sigma^{-1} = \iota</m>, we have that the identity is in the set as well.
+          Thus it is a permutation group.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <task>
+        <statement>
+          <p>
+            How should we define <m>\varphi^{-n}</m> for an element
+            <m>\varphi</m> of a permutation group?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We define <m>\varphi^{-n}=\left(\varphi^{-1}\right)^n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Will the two standard rules for exponents
+            <me>
+              a^ma^n=a^{m+n} \mbox{\ and\ }  (a^m)^n = a^{mn}
+            </me>
+            still hold if one or more of the
+            exponents may be negative?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Yes.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What would
+            we have to prove to show that the rules still hold?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To prove this we need to show that for nonnegative <m>m</m> and <m>n</m>
+            we have that
+            <m>\varphi^m\circ\varphi^{-n} =
+            \varphi^{m-n}</m>, that <m>\varphi^{-m}\varphi^{-n} = \varphi^{-m-n}</m>, that
+            <m>(\varphi^m)^{-n} = \varphi^{-mn}</m>, that <m>(\varphi^{-m})^n = \varphi^{-mn}</m> and that
+            <m>(\varphi^{-m})^{-n}= \varphi^{mn}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            If the rules hold, give
+            enough of the proof to show that you know how to do it; otherwise give a
+            counterexample.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We give the first and last proof. We will induct
+            on <m>n</m> in the first proof. If <m>n=0</m> the formula automatically holds. Assume inductively
+            that
+            <m>\varphi^m\circ\varphi^{-(n-1)} = \varphi^{m-(n-1)}</m>. Compose both sides of this
+            equation on the right by <m>\sigma^{-1}</m> and use the associative law for composition of
+            functions to get, in the case that <m>m-n</m> is nonnegative
+            <md>
+              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+              \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
+              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+              (\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}</mrow>
+              <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  \varphi^{m-n}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            We do the same in the case that <m>m-n</m> is negative, getting
+            <md>
+              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+              \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
+              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+              (\varphi^{-1})^{n-m-1}\circ\varphi^{-1}</mrow>
+              <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  (\varphi^{-1})^{n-m}</mrow>
+              <mrow>\varphi^m\circ\varphi^{-n}\amp =\amp \varphi^{m-n}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            To prove the last statement we need to prove, we write the following, in which the line
+            <xref ref="crucialline">marked</xref> follows from the first equation we proved and the line <xref ref="modestlyimportant">marked</xref> follows from the fact that <m>(\varphi^{-1})^{-1} = \varphi</m>.
+            <md>
+              <mrow>(\varphi^{-m})^{-n} \amp =\amp  ([\varphi^{-1})^m]^{-1})^n\nonumber</mrow>
+              <mrow>\amp =\amp [(\varphi^{-1})^{-m}]^n</mrow>
+              <mrow>\amp =\amp ([(\varphi^{-1})^{-1}]^m)^n\nonumber</mrow>
+              <mrow>\amp =\amp (\varphi^m)^n</mrow>
+              <mrow>\amp =\amp \varphi^{mn}\nonumber</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="dihedral1" category="essential">
+      <statement>
+        <p>
+          There are three dimensional geometric motions of the square that
+          return it to its original position but move some of the vertices to other
+          positions. For example, if we flip the square around a diagonal, most of it moves out of
+          the plane during the flip, but the square ends up in the same place. Draw a figure
+          like <xref ref="RotationsOfSquare">Figure</xref> that shows all the possible results of such motions, including
+          the ones shown in <xref ref="RotationsOfSquare">Figure</xref>. Do the corresponding permutations
+          form a group?
+        </p>
+      </statement>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
+          <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
+          What does this say about the status of the <em>associative
+          law</em><index><main>associative law</main></index>
+          <me>
+            \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
+          </me>
+          in a
+          group of permutations?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>(h\circ(g\circ f)) (x) = h((g\circ f)(x)) = h(g(f(x)))</m> and <m>((h\circ
+          g)\circ f) (x) = (h\circ g)(f(x)) = h(g(f(x)))</m>, we have that
+          <me>
+            h\circ (g\circ f) =
+            (h\circ g)\circ f.
+          </me>
+        </p>
+
+        <p>
+          This says that the associative law holds for the composition
+          operation in a group of permutations.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>
+          If <m>\sigma</m> and <m>\varphi</m> are permutations, why must
+          <m>\sigma\circ\varphi</m> have an inverse? Is <m>(\sigma\circ\varphi)^{-1}=
+          \sigma^{-1}\varphi^{-1}</m>? (Prove or give a counter-example.) Is
+          <m>(\sigma\circ\varphi)^{-1}=
+          \varphi^{-1}\sigma^{-1}</m>? (Prove or give a counter-example.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          One could either say that the composition of one-to-one and onto functions
+          is one-to-one and onto, or note that <m>(\sigma\circ\varphi)\circ (\varphi^{-1}\circ
+          \sigma^{-1}) =\iota</m> by the associative law. Note that this says that <m>(\sigma \circ
+          \varphi)^{-1}= \varphi^{-1}\circ \sigma^{-1}</m>. In the dihedral group <m>D_4</m>,
+          <m>\rho^{-1}= \rho^3</m> and <m>\varphi_{1/3}^{-1} = \varphi{1/3}</m>. Thus
+          <md>
+            <mrow>(\rho\circ \varphi_{1/3})\circ (\rho^{-1}\circ
+            \varphi_{1/3}^{-1})\amp =\amp \rho\circ
+            \varphi_{1/3})\circ(\rho^3\varphi_{1/3})</mrow>
+            <mrow>\amp =\amp \varphi_{12/34}\circ \varphi_{14/23}</mrow>
+            <mrow>\amp =\amp \rho^2.</mrow>
+          </md>
+        </p>
+
+        <p>
+          This shows that <m>(\sigma\circ\varphi)^{-1}\not=
+          \sigma^{-1}\varphi^{-1}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Explain why the set of all permutations of four elements is a
+          permutation group. How many elements does this group have? This group
+          is called the <em>symmetric group on four letters</em><index><main>symmetric
+          group</main></index> and is denoted by <m>S_4</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          It is a finite set of permutations that satisfies the closure property. It
+          has <m>4!= 24</m> elements.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>The symmetric group</title>
+    <p>
+      In general, the set of all permutations of an <m>n</m>-element set is a
+      group. It is called the <em>symmetric group on <m>\mathbf n</m>
+      letters</em><index><main>symmetric group</main></index>. We don't have nice geometric
+      descriptions (like rotations) for all its elements, and it would be
+      inconvenient to have to write down something like <q>Let <m>\sigma(1) =3</m>,
+      <m>\sigma(2) =1</m>, <m>\sigma(3)=4</m>, and <m>\sigma(4)=1</m></q> each time we need to
+      introduce a new permutation. We introduce a new notation for
+      permutations that allows us to denote them <em>reasonably</em> compactly and
+      compose them reasonably quickly. If
+      <m>\sigma</m> is the permutation of
+      <m>\{1,2,3,4\}</m> given by
+      <m>\sigma(1)=3</m>, <m>\sigma(2)=1</m>,
+      <m>\sigma(3) =4</m> and <m>\sigma(4) =2</m>,
+      we write
+      <me>
+        \sigma =\left( \begin{matrix}1\amp 2\amp 3\amp 4\cr3\amp 1\amp 4\amp 2
+        \end{matrix} \right).
+      </me>
+    </p>
+
+    <p>
+      We call this notation the <em>two row notation</em><index><main>permutation</main><sub>two
+      row notation</sub></index><index><main>two row notation</main></index> for permutations. In the two row
+      notation for a permutation of <m>\{a_1,a_2,\ldots, a_n\}</m>, we write the
+      numbers <m>a_1</m> through
+      <m>a_n</m> in a one row and we write <m>\sigma(a_1)</m> through <m>\sigma(a_n)</m> in a
+      row right below, enclosing both rows in parentheses. Notice that
+      <me>
+        \left( \begin{matrix}1\amp 2\amp 3\amp 4\cr3\amp 1\amp 4\amp 2
+        \end{matrix} \right) = \left(
+        \begin{matrix}2\amp 1\amp 4\amp 3\cr1\amp 3\amp 2\amp 4
+        \end{matrix} \right),
+      </me>
+      although the second ordering of the columns is rarely used.
+    </p>
+
+    <p>
+      If <m>\varphi</m> is given by
+      <me>
+        \varphi = \begin{pmatrix}1\amp 2\amp 3\amp 4\cr4\amp 1\amp 2\amp 3
+        \end{pmatrix} ,
+      </me>
+      then, by applying the definition of composition of functions, we may compute
+      <m>\sigma\circ
+      \varphi</m> as shown in <xref ref="permutationproduct">Figure</xref>.
+    </p>
+
+    <figure xml:id="permutationproduct" >
+      <caption>How to
+      multiply permutations in two-row
+      notation.</caption>
+      \vspace{-1in}
+      \mbox{
+      <image width="73%" source="images/" />
+      }
+    </figure>
+
+    <p>
+      We don't normally put the circle between two
+      permutations in two row notation when we are composing them, and refer to
+      the operation as multiplying the permutations, or as the product of the
+      permutations. To see how <xref ref="permutationproduct">Figure</xref> illustrates composition, notice that the arrow
+      starting at 1 in
+      <m>\varphi</m> goes to 4. Then from the 4 in <m>\varphi</m> it goes to the 4 in
+      <m>\sigma</m> and then to 2. This illustrates that <m>\varphi(1)=4</m> and
+      <m>\sigma(4) =2</m>, so that
+      <m>\sigma(\varphi(1))=2</m>.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          For practice, compute <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr3\amp 4\amp 1\amp 5\amp 2
+          \end{pmatrix} 
+          \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr 4\amp 3\amp 5\amp 1\amp 2
+          \end{pmatrix}</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr5\amp 1\amp 2\amp 3\amp 4
+          \end{pmatrix}</m>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>The dihedral group</title>
+    <p>
+      We found four permutations that correspond to rotations of the square.
+      In <xref ref="dihedral1">Problem</xref> you found four permutations that correspond to
+      flips of the square in space. One flip fixes the vertices in positions 1
+      and 3 and interchanges those in positions 2 and 4. (Notice we did not say
+      it fixes the vertices labelled 1 and 3.)<fn>There is room for tremendous confusion
+      here, and professional mathematicians sometimes suffer from it.  Just try to remember
+      that when we describe the axis of a flip, we describe it relative to points given in
+      space, not points on the square or other object we are flipping.</fn> Let us denote it by
+      <m>\varphi_{1/3}</m>. One flip fixes the vertices in positions 2 and 4 and
+      interchanges those in positions 1 and 3. Let us denote it by
+      <m>\varphi_{2/4}</m>. One flip interchanges the vertices in positions
+      1 and 2 and also interchanges those in positions 3 and 4. Let us denote
+      it by
+      <m>\varphi_{12/34}</m>. The fourth flip interchanges the vertices in positions
+      1 and 4 and interchanges those in positions 2 and 3. Let us denote it by
+      <m>\varphi_{14/23}</m>. Notice that <m>\varphi_{1/3}</m> is a permutation that takes vertex
+      1 to vertex 1 and vertex 3 to vertex 3, while <m>\varphi_{12/34}</m> is a permutation
+      that takes the edge from 1 to 2 to the edge from 1 to 2 and takes the edge from 3
+      to 4 to the edge from 3 to 4.
+    </p>
+
+    <activity xml:id="dihedral2" category="essential">
+      <task>
+        <statement>
+          <p>
+            Write down the two-row notation for <m>\rho^3</m>, <m>\varphi_{2/4}</m>,
+            <m>\varphi_{12/34}</m> and <m>\varphi_{2/4}\circ \varphi_{12/34}</m>. Remember that <m>\sigma(i)</m>
+            stands for the position where the vertex that originated in position <m>i</m> is after we
+            apply <m>\sigma</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr4\amp 1\amp 2\amp 3
+            \end{pmatrix}</m>,
+            <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr3\amp 2\amp 1\amp 4
+            \end{pmatrix}</m>,
+            <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 1\amp 4\amp 3
+            \end{pmatrix}</m>, <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 3\amp 4\amp 1
+            \end{pmatrix}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            (You may have already done this problem in <xref ref="dihedral1">Problem</xref>, in which case you need not do it again!) In <xref ref="dihedral1">Problem</xref>, if a rigid motion of three-dimensional space returns the
+            square to its original position, in how many places can vertex number one
+            land? Once the location of vertex number one is decided, how many
+            possible locations are there for vertex two? Once the locations of
+            vertex one and vertex two are decided, how many locations are there for
+            vertex three? Answer the same question for vertex four. What does this
+            say about the relationship between the four rotations and four flips
+            described above and the permutations you described in <xref ref="dihedral1">Problem</xref>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Vertex number one can go in four places. After the place for vertex 1 is
+            chosen, there are two choices for vertex 2. After vertices 1 and 2 are placed, one
+            side of the square has been placed, and there is only one way the rest of the square
+            can fill in the same place the square used to be, so there is only one choice for
+            where vertex 3 goes and one choice for where vertex 4 goes. Thus the permutations
+            described in <xref ref="dihedral1">Problem</xref> are exactly the rotations and flips.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      The four rotations and four flips of the square described before <xref ref="dihedral2">Problem</xref> form a group called the dihedral group of the square.
+      Sometimes the group is denoted <m>D_8</m> because it has eight elements, and
+      sometimes the group is denoted by <m>D_4</m> because it deals with four
+      vertices! Let us agree to use the notation <m>D_4</m> for the dihedral group
+      of the square. There is a similar dihedral group, denoted by <m>D_{n}</m>, of
+      all the rigid motions of three-dimensional space that return a regular
+      <m>n</m>-gon to its original position (but might put the vertices in different
+      places.)
+    </p>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>
+          How many elements does the group <m>D_n</m> have? Prove that you are
+          correct.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>D_n</m> has <m>2n</m> elements, because once you have chosen one of the
+          <m>n</m> places for vertex one, there are two choices for vertex two, and the
+          remaining vertices can go in only one place each.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Group tables</title>
+    <p>
+      We can always figure out the composition of two permutations of the same
+      set by using the definition of composition, but if we are going to work
+      with a given permutation group again and again, it is worth making the
+      computations once and recording them in a table. For example the group
+      of rotations of the square may be represented as in <xref ref="rotationgrouptable">Table</xref>. We list the elements of our group, with the
+      identity first, across the top of the table and down the left side of the
+      table, using the same order both times. Then in the row labeled by the
+      group element <m>\sigma</m> and the column labelled by the group element
+      <m>\varphi</m>, we write the composition <m>\sigma\circ \varphi</m>, expressed in
+      terms of the elements we have listed on the top and on the left side.
+      Since a group of permutations is closed under composition, the result
+      <m>\sigma\circ \varphi</m> will always be expressible as one of these elements.
+    </p>
+
+    <table xml:id="rotationgrouptable" >
+      <caption>The group
+      table for the rotations of a square.</caption>
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>\circ</m></cell>
+          <cell><m>\iota</m></cell>
+          <cell><m>\rho</m></cell>
+          <cell><m>\rho^2</m></cell>
+          <cell><m>\rho^3</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell><m>\iota</m></cell>
+          <cell><m>\iota</m></cell>
+          <cell><m>\rho</m></cell>
+          <cell><m>\rho^2</m></cell>
+          <cell><m>\rho^3</m></cell>
+        </row>
+        <row>
+          <cell><m>\rho</m></cell>
+          <cell><m>\rho</m></cell>
+          <cell><m>\rho^2</m></cell>
+          <cell><m>\rho^3</m></cell>
+          <cell><m>\iota</m></cell>
+        </row>
+        <row>
+          <cell><m>\rho^2</m></cell>
+          <cell><m>\rho^2</m></cell>
+          <cell><m>\rho^3</m></cell>
+          <cell><m>\iota</m></cell>
+          <cell><m>\rho</m></cell>
+        </row>
+        <row>
+          <cell><m>\rho^3</m></cell>
+          <cell><m>\rho^3</m></cell>
+          <cell><m>\iota</m></cell>
+          <cell><m>\rho</m></cell>
+          <cell><m>\rho^2</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <activity>
+      <task>
+        <statement>
+          <p>
+            In <xref ref="rotationgrouptable">Table</xref>, all the entries in a row (not
+            including the first entry, the one to the left of the line) are
+            different. Will this be true in any group table for a permutation
+            group? Why or why not? Also in <xref ref="rotationgrouptable">Table</xref> all the entries in a column (not including the
+            first entry, the one above the line) are different. Will this be true in
+            any group table for a permutation group? Why or why not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            It will always be the case that all the entries of a row or column below and
+            to the left of the lines in a group table are different. If two entries of the row
+            labelled by <m>\sigma</m> were equal, that would mean <m>\sigma\circ\varphi_1 =
+            \sigma\circ\varphi_2</m> for two different elements <m>\varphi_1</m> and <m>\varphi_2</m>. But if
+            we multiply both sides of the equation by <m>\sigma^{-1}</m> we get
+            <m>\sigma^{-1}(\sigma\circ\varphi_1) =
+            \sigma^{-1}(\sigma\circ\varphi_2)</m>, and by using the associative law and the identity
+            property, we get <m>\varphi_1=\varphi_2</m>, a contradiction. The same sort of argument
+            (with <m>\sigma</m> on the right) works for columns.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In <xref ref="rotationgrouptable">Table</xref>, every element of the group
+            appears in every row (even if you don't include the first element, the
+            one before the line). Will this be true in any group table for a
+            permutation group? Why or why not? Also in <xref ref="rotationgrouptable">Table</xref> every element of the group appears in every
+            column (even if you don't include the first entry, the one before the
+            line). Will this be true in any group table for a permutation group? Why
+            or why not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Every element appears in each row and every element appears in
+            each column (after and below the lines). This is because the number of
+            entries in a row or column is the number of elements of the group. By the
+            pigeonhole principle, if not all the elements appear in a row, then two are
+            the same, so <m>\tau\circ \sigma_1 =\tau\circ\sigma_2</m> for some
+            <m>\sigma_1</m>,
+            <m>\sigma_2</m>, and <m>\tau</m> (<m>\tau</m> is the greek letter tau that rhymes with cow)
+            in the group with
+            <m>\sigma_1\not=
+            \sigma_2</m>. Multiplying on the right gives us <m>\sigma_1 = \sigma_2</m>, a
+            contradiction. The same kind of argument works on columns, though you now
+            have
+            <m>\sigma_1\circ \tau =\sigma_2\circ \tau</m> for some <m>\sigma_1</m>,
+            <m>\sigma_2</m>, and <m>\tau</m> in the group with <m>\sigma_1\not= \sigma_2</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="dihedral3" category="essential">
+      <statement>
+        <p>
+          Write down the group table for the dihedral group <m>D_4</m>. Use the
+          <m>\varphi</m> notation described above to denote the flips. (Hints: Part of the
+          table has already been written down. Will you need to think hard to write
+          down the last row? Will you need to think hard to write down the last
+          column? When you multiply a product like <m>\varphi_{1/3}
+          \circ \rho</m> remember that we defined <m>\varphi_{1/3}</m> to be the flip that
+          fixes the vertex in position 1 and the vertex in position 3, <em>not</em> the
+          one that fixes the vertex on the square labelled 1 and the vertex on the
+          square labelled 3.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          \hglue-.25in
+        </p>
+        <tabular>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\circ</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell><m>\iota</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+          </row>
+          <row>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{23/14}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+          </row>
+          <row>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+          </row>
+          <row>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\varphi_{23/14}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+          </row>
+          <row>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^3</m></cell>
+          </row>
+          <row>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\rho</m></cell>
+          </row>
+          <row>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{13/24}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\iota</m></cell>
+            <cell><m>\rho^2</m></cell>
+          </row>
+          <row>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\rho^3</m></cell>
+            <cell><m>\rho</m></cell>
+            <cell><m>\rho^2</m></cell>
+            <cell><m>\iota</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+        </tabular>
+      </solution>
+    </activity>
+
+    <p>
+      You may notice that the associative law, the identity property, and the
+      inverse property are three of the most important rules that we use in
+      regrouping parentheses in algebraic expressions when solving equations.
+      There is one property we have not yet mentioned, the <em>commutative
+      law</em><index><main>commutative law</main></index> which would say that <m>\sigma\circ \varphi =
+      \varphi\circ\sigma</m>. It is easy to see from the group table of <m>R_4</m> that it
+      satisfies the commutative law.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Does the commutative law hold in all permutation groups?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          No. In the group <m>D_3</m> a nontrivial rotation does not commute
+          with a flip.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      In your group table for the dihedral group <m>D_4</m>, you have a copy of the
+      group of rotations of the square. When one group <m>G</m> of permutations of a
+      set <m>S</m> is a subset of another group <m>G'</m> of permutations of <m>S</m>, we say
+      that <m>G</m> is a <em>subgroup</em><index><main>subgroup</main></index> of <m>G'</m>. The reason why we
+      introduce the new word subgroup is to emphasize that the composition
+      operation gives the same result whether it is performed in the larger
+      group or the smaller group.
+    </p>
+
+    <activity xml:id="S4" category="essential">
+      <task>
+        <statement>
+          <p>
+            Find all subgroups of the group <m>D_4</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\{\rho^2,\!\iota\}</m>, <m>\{\varphi_{1/3},\!\iota\}</m>, <m>\{\varphi_{2/4},\!\iota\}</m>,
+            <m>\{\varphi_{12/34},\!\iota\}</m>, <m>\{\varphi_{14/23},\!\iota\}</m>,
+            <m>\{\iota,\rho,\rho^2,\rho^3\}</m>,
+            <m>\{\iota,\varphi_{1/3},\rho^2,\varphi_{2/4}\}</m>,
+            <m>\{\iota,\varphi_{12/34},\rho^2,\varphi_{12/34}\}</m>, <m>\{\iota\}</m>, and all of <m>D_4</m>.
+            Notice that once a subgroup has <m>\rho</m> or <m>\rho^3</m> in it, it has all powers of <m>\rho</m>,
+            and if it has all powers of <m>\rho</m> and just one flip, it has all the flips in it. But
+            the product of two <q>different kinds</q> of flips is <m>\rho</m> or <m>\rho^3</m>, and this shows
+            that our list of subgroups is complete.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Can you find subgroups of the symmetric group <m>S_4</m>
+            with two elements? Three elements? Four elements? Six
+            elements? (For each positive answer, describe a subgroup. For each
+            negative answer, explain why not.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Yes to all of the above. For two elements,
+            <m>\{\iota,\begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 1\amp 3\amp 4
+            \end{pmatrix} \}</m>, for three elements,
+            <m>\{\iota,\begin{pmatrix}1\amp 2\amp 3\amp 4\cr3\amp 1\amp 2\amp 4
+            \end{pmatrix} , \begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 3\amp 1\amp 4
+            \end{pmatrix} \}</m> (which is the
+            rotations of a triangle on <m>\{1,2,3\}</m>), for four elements, the rotations of a
+            square as above, and for six elements, the rotations and flips of a triangle on
+            <m>\{1,2,3\}</m>. (There is no subgroup with five elements, but at this point, that is
+            too hard to verify.)
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>The cycle structure of a permutation</title>
+    <p>
+      There is an even more efficient way to write down permutations. Notice
+      that the product in <xref ref="permutationproduct">Figure</xref> is
+      <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 3\amp 1\amp 4
+      \end{pmatrix}</m>.
+      We have drawn the directed graph of this
+      permutation in <xref ref="permutationcycledigraph">Figure</xref>.
+    </p>
+
+    <figure xml:id="permutationcycledigraph" >
+      <caption>The
+      directed graph of the permutation
+      <m>\begin{pmatrix}1\amp 2\amp 3\amp 4
+
+      2\amp 3\amp 1\amp 4
+      \end{pmatrix}</m>.</caption>
+      \mbox{
+      <image width="73%" source="images/" />
+      }
+    </figure>
+
+    <p>
+      You see that the
+      graph has two directed cycles, the rather trivial one with vertex 4
+      pointing to itself, and the nontrivial one with vertex 1 pointing to
+      vertex 2 pointing to vertex 3 which points back to vertex 1. A
+      permutation is called a <em>cycle</em><index><main>cycle (of a
+      permutation)</main></index><index><main>permutation</main><sub>cycle of</sub></index> if its digraph consists of
+      exactly one
+      cycle. Thus <m>\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
+      \end{pmatrix}</m> is a cycle but
+      <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr2\amp 3\amp 1\amp 4
+      \end{pmatrix}</m> is not a cycle by our definition. We write
+      <m>(1\ 2\ 3)</m> or <m>(2\ 3\ 1)</m> or <m>(3\ 1\ 2)</m> to stand for the cycle
+      <m>\sigma =\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
+      \end{pmatrix}</m>. We can describe cycles in another way
+      as well. A <em>cycle</em><index><main>cycle of a
+      permutation</main></index><index><main>permutation</main><sub>cycle of</sub></index> of the permutation
+      <m>\sigma</m> is a list
+      <m>(i\ 
+      \sigma(i)\ 
+      \sigma^2(i)
+      \ \ldots\ 
+      \sigma^n(i))</m> that does not have repeated elements
+      while the list <m>(i\ \sigma(i)\ 
+      \sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))</m> does have repeated
+      elements. We say that the cycles <m>(i\ 
+      \sigma(i)\ 
+      \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\ 
+      \sigma(j)\ 
+      \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <em>equivalent</em> if there is an
+      integer <m>k</m> such that
+      <m>j=
+      \sigma^k(i)</m>.
+    </p>
+
+    <activity xml:id="firstrepeat" category="essential">
+      <task>
+        <statement>
+          <p>
+            Find the cycles of the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and
+            <m>\varphi_{12/34}</m> in the group <m>D_4</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\rho</m> has one cycle, <m>(1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3}</m> has one cycle
+            <m>(2\ 4)</m>, <m>\varphi_{12/34}</m> has two cycles, namely <m>(1\ 2)</m> and
+            <m>(3\ 4)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the cycles of the permutation <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\amp 9\cr
+            3\amp 4\amp 6\amp 2\amp 9\amp 7\amp 1\amp 5\amp 8
+            \end{pmatrix}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{pmatrix}1\amp 3\amp 6\amp 7
+            \end{pmatrix}</m>, <m>\begin{pmatrix}2\amp 4
+            \end{pmatrix}</m>, and <m>\begin{pmatrix}5\amp 9\amp 8
+            \end{pmatrix}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that if <m>(i\ 
+            \sigma(i)\ 
+            \sigma^2(i)
+            \ \ldots\ 
+            \sigma^n(i))</m> does not have repeated elements while the list <m>(i\ \sigma(i)\ 
+            \sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))</m> does have repeated
+            elements, then <m>\sigma^{n+1}(i)=i</m>, and so all other <m>\sigma^s(i)</m> are in the cycle.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If <m>\sigma^{n+1}(i) = \sigma^p(i)</m> and <m>0\le p\le n</m>, then <m>\sigma^{n+1-p}(i)
+            =i</m>, and so the first repeat was not <m>\sigma^{n+1}(i)</m> after all. Therefore
+            <m>\sigma^{n+1}(i)=i</m>, and acting on <m>i</m> with succeeding powers of <m>\sigma</m> just carries
+            us through the list again and again.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="cyclepartition" category="essential">
+      <statement>
+        <p>
+          The support set of the cycle <m>(a_1\ a_2\ \ldots\ a_n)</m> is the set
+          <m>\{a_1,a_2,\ldots,a_n\}</m>. Show that the support sets of the cycles of a permutation of
+          the set <m>S</m> form a partition of <m>S</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Every element is in a cycle by the definition of cycles, so suppose two
+          support sets have an element in common. If the cycles are
+          <m>(i\ 
+          \sigma(i)\ 
+          \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\ 
+          \sigma(j)\ 
+          \sigma^2(j)\ \ldots\ \sigma^m(j))</m> and <m>\sigma^p(i) =\sigma^q(j)</m> is a common
+          element, then,
+          <m>j=\sigma^{p-q}(i)</m>. Thus if <m>p\ge q</m>, <m>j</m> is in the first cycle. Otherwise <m>i</m> is in
+          the second cycle. If <m>j</m> is in the first cycle, it is <m>\sigma^k(i)</m> for some <m>i</m>, and
+          as we take successive powers, we get, by <xref ref="firstrepeat">Problem</xref> that <m>i</m> is
+          <m>\sigma^h(j)</m>, and then successive powers of <m>\sigma</m> just give us the rest of the
+          cycle beginning with <m>i</m>. Therefore the two support sets are identical. A similar
+          argument works if <m>i</m> is in the second cycle. Thus the support sets partition <m>S</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      We regard a cycle <m>(i\ 
+      \sigma(i)\ 
+      \sigma^2(i)\ \ldots\ \sigma^n(i))</m> as standing for the permutation
+      <me>
+        \begin{pmatrix}i\amp 
+        \sigma(i)\amp 
+        \cdots\amp \sigma^{n-1}(i)\amp \sigma^n(i)\cr
+        \sigma(i)\amp 
+        \sigma^2(i)\amp \cdots\amp \sigma^n(i)\amp i
+        \end{pmatrix} .
+      </me>
+    </p>
+
+    <p>
+      Since interchanging the columns in
+      the two row notation for a permutation does not change the permutation<fn>Note
+      that not all ways of interchanging the columns list the bottom row in the order of a
+      cycle of <m>\sigma</m>, though.</fn>, this means that equivalent cycles represent the same
+      permutation. Thus we consider equivalent cycles to be equal in the same way we
+      consider
+      <m>{1\over 2}</m> and <m>2\over 4</m> to be equal. In particular, this means that <m>(i_1\ i_2\
+      \ldots i_n) = (i_j\ \ i_{j+1}\ \ldots\ i_n\ \ i_1\ \ i_2\ \ldots\ i_{j-1})</m>.
+    </p>
+
+    <p>
+      If
+      <m>\gamma_1</m>,
+      <m>\gamma_2</m>,
+      <ellipsis />, <m>\gamma_n</m> are the (inequivalent) cycles of a
+      permutation
+      <m>\sigma</m> of the set <m>S</m>, then we write
+      <me>
+        \sigma = \gamma_1\gamma_2\cdots\gamma_n= \gamma_{i_1}\gamma_{i_2}
+        \cdots \gamma_{i_n},
+      </me>
+      that is, we say that <m>\sigma</m> is the product of its cycles in any order.
+      There are two ways to think of this notation. You can think of it as a
+      brand new kind of multiplication where we multiply a permutation of one
+      set by a permutation of a disjoint set to get a new permutation of the
+      union of the two sets. In this notation <m>\sigma(x)</m> is determined by which
+      cycle <m>\gamma_k</m> contains <m>x</m> in its support set and <m>\sigma(x) =
+      \gamma_k(x)</m>. You can also think of identifying
+      <m>\gamma</m> with the product of <m>\gamma</m> with a collection of one-cycles, one
+      one-cycle for each element of <m>S</m> not in the support set of <m>\gamma</m>. For example we
+      identify the cycle <m>(2\  4\ 5)</m> in <m>S_6</m> with <m>(1)(2\  4\ 5)(3)(6)</m>. Similarly we
+      identify <m>(3)</m> with <m>(1)(2)(3)(4)(5)(6)</m>. But when we use <m>(3)</m> as a notation for
+      <m>(1)(2)(3)(4)(5)(6)</m>, we still say its support set is <m>\{3\}</m>. Then the product above
+      is simply composition of functions. We can summarize this discussion with the
+      following theorem<index><main>disjoint cycles</main></index><index><main>cycles</main><sub>disjoint</sub></index><fn>In the
+      statement of the theorem we use the word disjoint; two cycles are said to be <em>disjoint</em> if their support sets are disjoint.</fn>. The proof of the theorem is
+      essentially your solution to <xref ref="cyclepartition">Problem</xref>.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          Every permutation can be written, up to order, in one and
+          only one way as a product of disjoint cycles.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      We usually don't bother writing down one-cycles when we write a permutation as a
+      product of cycles; it is a convention to make less work for us. We just have to
+      remember that they are implicitly there. You should recognize that the first
+      interpretation we gave for the multiplication of disjoint cycles applies only when the
+      cycles are disjoint. From now on we will use the phrase <q>product of permutations</q>
+      to mean the same thing as <q>composition of permutations,</q> and will use either the
+      notation
+      <m>\sigma\circ\varphi</m> or
+      <m>\sigma\varphi</m> for the composition of
+      <m>\sigma</m> and <m>\varphi</m>, whichever is convenient.
+    </p>
+
+    <activity xml:id="disjoint-commutative" category="essential">
+      <task>
+        <statement>
+          <p>
+            Write the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and <m>\varphi_{12/34}</m>
+            in <m>D_4</m> as products of disjoint cycles.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\rho = (1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3} = (2\ 4) = (1)(2\ 4)(3)</m> (either side
+            of the equation is a right answer), <m>\varphi_{12/34} = (1\ 2)(3\        4)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write the permutation <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\amp 9\cr
+            3\amp 4\amp 6\amp 2\amp 9\amp 7\amp 1\amp 5\amp 8
+            \end{pmatrix}</m> as a product of disjoint cycles.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(1\ 3\ 6\ 7)(1\ 4)(5\ 9\ 8)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain why, if <m>\gamma</m> and <m>\gamma'</m> are
+            two disjoint cycles, then <m>\gamma\gamma' =
+            \gamma'\gamma</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            When we compute <m>\gamma\gamma'(i)</m>, the element <m>i</m> is fixed (i.e. mapped to
+            itself) by either <m>\gamma</m> or <m>\gamma'</m>. But if <m>\gamma'</m> fixes <m>i</m> and
+            <m>\gamma(i)=j</m>, with <m>j\not=i</m> then <m>j</m> is in the support set of <m>\gamma</m>, so it is not
+            in the support set of <m>\gamma'</m>. Thus <m>(\gamma\circ\gamma')(i) =j</m>. However since
+            <m>\gamma'</m> fixes <m>j</m> as well, then <m>(\gamma'\circ\gamma)(i) =\gamma'(j) =j</m> also. If
+            <m>\gamma(i)=i</m> also, then <m>\gamma\gamma'(i) =\gamma'\gamma(i) = i</m>. A similar argument
+            works if <m>\gamma</m> fixes <m>i</m>, so in all cases, <m>\gamma\gamma'(i) = \gamma'\gamma(i)</m>,
+            which is what it means to say that <m>\gamma\gamma'=\gamma'\gamma</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Write a recurrence for the number <m>c(k,n)</m> for the number of
+          permutations of <m>[k]</m> that have exactly <m>n</m> cycles, including 1-cycles.
+          Use it to write a table of <m>c(k,n)</m> for <m>k</m> between 1 and 7 inclusive.
+          Can you find a relationship between <m>c(k,n)</m> and any of the other
+          families of special numbers such as binomial coefficients, Stirling
+          numbers, Lah numbers, etc. we have studied? If you find such a
+          relationship, prove you are right.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The element <m>k</m> is either in a cycle by itself or it isn't. The number of
+          permutations in which it is in a cycle by itself is <m>c(k-1,n-1)</m>. If it is in a cycle
+          with something else, it can come after any of the <m>k-1</m> elements, and each choice of
+          which one it comes after gives a different permutation. (You can always shift a cycle
+          around so that <m>k</m> doesn't come first.) Thus <m>c(k,n) = c(k-1,n-1) + (k-1)c(k-1,n)</m>.
+          The table is:
+        </p>
+        <tabular>
+          <row>
+            <cell><m>k/n</m></cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>4</cell>
+            <cell>5</cell>
+            <cell>6</cell>
+            <cell>7</cell>
+          </row>
+          <row bottom="minor">
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+            <cell></cell>
+          </row>
+          <row>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>2</cell>
+            <cell>0</cell>
+            <cell>1</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>3</cell>
+            <cell>0</cell>
+            <cell>2</cell>
+            <cell>3</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>4</cell>
+            <cell>0</cell>
+            <cell>6</cell>
+            <cell>11</cell>
+            <cell>6</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>5</cell>
+            <cell>0</cell>
+            <cell>24</cell>
+            <cell>50</cell>
+            <cell>35</cell>
+            <cell>10</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>6</cell>
+            <cell>0</cell>
+            <cell>120</cell>
+            <cell>274</cell>
+            <cell>225</cell>
+            <cell>85</cell>
+            <cell>15</cell>
+            <cell>1</cell>
+            <cell>0</cell>
+          </row>
+          <row>
+            <cell>7</cell>
+            <cell>0</cell>
+            <cell>720</cell>
+            <cell>1764</cell>
+            <cell>1624</cell>
+            <cell>735</cell>
+            <cell>175</cell>
+            <cell>21</cell>
+            <cell>1</cell>
+          </row>
+        </tabular>
+        <p>
+          We see that the table is identical with our earlier table of the Stirling numbers of
+          the first kind, except that in that table there was an alternating pattern of minus
+          signs, offset by one place in successive rows. Thus it must be the case that <m>c(k,n)=
+          |s(k,n)|</m>. To prove this, note that it is the case when <m>k=0</m>, and also when <m>n=1</m>.
+          Now assume inductively it is true when <m>k= m-1</m> and notice that if <m>n>0</m>,
+          <m>s(m,n)=s(m-1,n-1)-(m-1)s(m-1,n)</m>, that
+          <m>s(m-1,n-1)</m> and <m>s(m-1,n)</m> have opposite signs, so
+          <md>
+            <mrow>\hspace{-.5in}|s(m-1)-(m-1)s(m-1,n)|\amp =\amp  |s(m-1| + 
+            (m-1)|s(m-1,n)|</mrow>
+            <mrow>\amp =\amp c(m-1,n-1)+(m-1)c(m-1,n)</mrow>
+            <mrow>\amp =\amp  c(m,n).</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus by the
+          principle of mathematical induction <m>c(k,n) = |s(k,n)|</m> for all nonnegative numbers
+          <m>k</m> (and all
+          <m>n</m> between 0 and <m>k</m>.)
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential for this or the next section, and interesting">
+      <task>
+        <statement>
+          <p>
+            (Relevant to <xref ref="expogenfun">Appendix</xref>.) A permutation <m>\sigma</m> is called an
+            <em>involution</em><index><main>involution</main></index> if <m>\sigma^2=\iota</m>. When you write an
+            involution as a product of disjoint cycles, what is special about the
+            cycles?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            They are all 2-cycles or 1-cycles.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write the product <m>(1\ 2)(1\ 3)(1\ 4)</m> in two row notation and
+            then write it in terms of of <em>disjoint</em> cycles.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\cr4\amp 1\amp 2\amp 3
+            \end{pmatrix}</m>, <m>(1\ 4\ 3\ 2)</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Signs of permutations and the alternating group</title>
+    <activity category="essential">
+      <task>
+        <statement>
+        <p>
+          How many permutations in <m>S_n</m> may be written as a product of not
+          necessarily disjoint two cycles?
+        </p>
+        <solution>
+        <p>
+          All of them, because each cycle can be written as a product on
+          non-disjoint cycles.
+        </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            (May be time-consuming.) Consider the permutations of <m>\{1,2,3,4\}</m> which
+            are
+            <m>\iota</m> or have one of the forms <m>(i\ j\ k)</m> or <m>(i\ j)(h\ k)</m>, where <m>i</m>,
+            <m>j</m>, <m>k</m>, and <m>h</m> are distinct.  Do these permutations form a subgroup of
+            the group <m>S_4</m>?  How many of these permutations are there?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Note that two cycles in <m>S_4</m> of the form <m>(i\ j\ k)</m> have two or three
+            elements in common, so they have the same kind of overlap as <m>(1\ 2\ 3)</m> and <m>(2\ 3\
+            4)</m>,
+            <m>(1\ 2\ 3)</m> and <m>(3\ 2\ 4)</m>, <m>(1\ 2\ 3)</m> and <m>(1\ 3\ 2)</m>, or <m>(1\ 2\ 3)</m> and <m>(1\
+            2\ 3)</m>. The products of these four pairs are, respectively, <m>(2\ 1)(3\ 4)</m>, <m>(2\ 4\
+            1)</m>,
+            <m>(1)(2)(3)= (1)(2)(3)(4)=\iota</m>, and <m>(1\ 3\ 2)</m>. If we take a three-cycle times a
+            product of two two-cycles it will have the same form as <m>(1\ 2\ 3)(1\ 2)(3\ 4)</m> or
+            <m>(1\ 2\ 3)(1\ 3)(2\ 4)</m>. The first of these products is <m>(1\ 3\ 4)</m> and the second
+            is <m>(2\ 4\ 3)</m>. If we have a product of two elements each of which is a product of
+            two two-cycles, it will have the same form as either <m>(1\ 2)(3\ 4)(1\ 2)(3\ 4)</m> or
+            <m>(1\ 2)(3\ 4)(1\ 3)(2\ 4)</m>. The first of these is <m>\iota</m> and the second is <m>(1\
+            4)(2\ 3)</m>. Thus our set is closed under composition, and so it is a subgroup of
+            <m>S_4</m>. The subgroup has size 12.
+          </p>
+        </solution>
+      </task>
+      </statement>
+    </activity>
+
+    <activity category="essential for this or the next section">
+      <p>
+        The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
+        defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
+        <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
+        cycles is the product of the signs of its cycles.<index><main>permutation</main><sub>sign
+        of</sub></index><index><main>sign of a permutation</main></index>
+      </p>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of an <m>n</m>-cycle if you multiply it by a
+            2-cycle (which might or might not be disjoint from it)?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If the <m>m</m>-cycle and 2-cycle are disjoint, then by definition, the sign
+            changes to the opposite value. If they are not disjoint, and the two cycle is <m>(i\
+            j)</m>, either
+            <m>i</m> or <m>j</m> or both are in the original cycle. Suppose that only <m>i</m> is in the cycle
+            (and the same argument works if only <m>j</m> is in the cycle), and the original cycle is
+            <m>(i\ i_2\ \ldots\ i_n)</m>. Then the product
+            <m>(i\ i_2\
+            \ldots\ i_n)(i\ j)</m> is
+            <m>(i\ j\ i_2\ \ldots\ i_n)</m>, and the product <m>(i\ j)(i\ i_2\ \ldots\ i_n)</m> is <m>(j\ i\
+            i_2\
+            \ldots\ i_n)</m>. Thus the sign changes to the opposite sign. Suppose that <m>i</m> and <m>j</m>
+            are both in the original cycle. Then <m>j= i_k</m> for some <m>k</m>. Then <m>(i\ i_2\ \ldots\
+            i_n)(i\ i_k)=(i i_{k+1}\ i_{k+2}\ \ldots\ i_n)(i_k\ i_2\ \ldots\ i_{k-1})</m>. If the
+            original sign was 1, then we started with an cycle on an odd number of entries and
+            so now have an cycle on an even number of entries times an cycle on an odd number of entries, so the sign has changed. It the
+            original sign was -1, then we started with an cycle on an even number of entries, so we now have a product
+            of two cycles on an odd number of entries, which gives sign 1, or a product of two
+            cycles on an even number of entries, which gives us sign 1. Thus in every case, the
+            sign changes to the opposite sign.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of a product of an <m>n</m>-cycle and a
+            disjoint <m>m</m>-cycle if you multiply it by a two cycle which is disjoint
+            from neither of the other two?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The product becomes an <m>m+n</m> cycle, and so if both cycles were on an even
+            number of entries or both were on an odd number, we now have an cycle on an even
+            number of entries, so its sign is -1, but previously the product had sign 1. Thus
+            the sign changes. If one of the original cycles was on an even number of entries
+            and one was on an odd number, we now have a cycle on an odd number of entries, so it
+            has sign 1, while the original product has sign -1. Thus the sign changes.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What happens to the sign of a permutation if you multiply it by a
+            2-cycle?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The cases we just analyzed cover all the possibilities, so the sign
+            changes.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
+            <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
+            correct.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(-1)^k</m>. The proof is probably easiest by induction, for the sign of one
+            transposition is -1, and if we take a product of <m>i</m> transpositions and multiply by
+            one more transposition, the sign changes. Thus if the product of <m>i</m> transpositions
+            has sign <m>(-1)^i</m>, the product of <m>i+1</m> transpositions has sign <m>(-1)^{i+1}</m>, and so
+            by the principle of mathematical induction, the sign of a product of <m>k</m>
+            transpositions if
+            <m>(-1)^k</m> for all positive integers <m>k</m>. In fact, had we taken <m>\iota</m> for our base
+            case, we could have concluded the same result for all nonnegative integers.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Can you compute the sign of a product of two permutations from the
+            signs of the permutations?  Why or why not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            You can compute it; it is the product of the signs. Just write them as
+            products of transpositions, multiply all those transpositions together and use the fact
+            that, for transpositions, the sign of the product is the product of the signs.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="essential for this or the next section">
+      <statement>
+        <p>
+          Do the elements of <m>S_n</m> with sign -1 form a subgroup of <m>S_n</m>?
+          Do the elements of <m>S_n</m> with sign 1 form a subgroup of <m>S_n</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The elements of sign <m>-1</m> are not closed under composition so they do not
+          form a subgroup. The elements of sign <m>1</m> are closed under composition so they do
+          form a subgroup.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="alternatinggroup" category="essential for this or the next section">
+      <statement>
+        <p>
+          Describe a subgroup of <m>S_n</m> of size <m>n!/2</m>. This subgroup is
+          called the <em>alternating group</em><index><main>alternating group</main></index> <m>A_n</m>.
+          Describe explicitly a partition of <m>S_n</m> that you can use with the
+          quotient principle to prove bijectively that the subgroup you described has size
+          <m>n!/2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Partition <m>S_n</m> into the permutations of sign 1 and sign -1. Choose a
+          transposition. Multiplying the elements in one block gives you elements in the other
+          block. Multiplying by the transposition twice gives you the same permutation back, so
+          the function that multiplies by this transposition has an inverse and so is a
+          bijection.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>

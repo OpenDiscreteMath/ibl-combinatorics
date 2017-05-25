@@ -1,0 +1,970 @@
+
+<section>
+  <title>Some Examples of Mathematical Induction</title>
+  <introduction>
+    <p>
+      In Chapter 1 (<xref ref="SubsetsByInduction">Problem</xref>), we used the principle of mathematical
+      induction to prove that a set of size <m>n</m> has
+      <m>2^n</m> subsets. If you were unable to do that problem and you haven't yet
+      read <xref ref="Induction">Appendix</xref> (a portion of which is repeated here), you
+      should do so now.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Mathematical induction</title>
+    <introduction>
+      <p>
+        The <em>principle of mathematical
+        induction</em><index><main>mathematical induction</main><sub>principle of</sub></index><index><main>principle of
+        mathematical induction</main></index><index><main>induction</main><sub>mathematical, the principle of</sub></index>
+        states that
+      </p>
+
+      <blockquote>
+      In order to prove a statement about an integer <m>n</m>, if we
+      can
+      <ol>
+        <li>
+          <p>
+            Prove the statement when <m>n=b</m>, for some fixed integer <m>b</m>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Show that the truth of the statement for <m>n=k-1</m> implies the truth
+            of the statement for <m>n=k</m> whenever <m>k>b</m>,
+          </p>
+        </li>
+      </ol>
+      then we can conclude the statement is true for all integers <m>n\ge
+      b</m>.
+      </blockquote>
+
+      <p>
+        As an example, let us return to <xref ref="SubsetsByInduction">Problem</xref>. The statement we wish to prove is the
+        statement that <q>A set of size <m>n</m> has <m>2^n</m> subsets.</q>
+      </p>
+
+      <blockquote>
+      Our statement
+      is true when <m>n=0</m>, because a set of size 0 is the empty set and the
+      empty set has <m>1=2^0</m> subsets. (This step of our proof is called a <em>base step</em>.)
+
+      Now suppose that <m>k>0</m> and every set with <m>k-1</m> elements has <m>2^{k-1}</m>
+      subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements. 
+      We partition the subsets of <m>S</m> into two blocks.  Block <m>B_1</m> consists of
+      the subsets that do not contain <m>a_n</m> and block <m>B_2</m> consists of the
+      subsets that do contain <m>a_n</m>.  Each set in <m>B_1</m> is a subset of
+      <m>\{a_1,a_2,\ldots a_{k-1}\}</m>, and each subset of <m>\{a_1,a_2, \ldots
+      a_{k-1}\}</m> is in <m>B_1</m>.  Thus <m>B_1</m> is the set of all subsets of
+      <m>\{a_1,a_2,\ldots a_{k-1}\}</m>.  Therefore by our assumption in the first
+      sentence of this paragraph, the size of <m>B_1</m> is <m>2^{k-1}</m>.  Consider the
+      function from <m>B_2</m> to <m>B_1</m> which takes a subset of <m>S</m> including <m>a_k</m>
+      and removes <m>a_k</m> from it.  This function is defined on <m>B_2</m>, because
+      every set in <m>B_2</m> contains <m>a_k</m>.  This function is onto, because if
+      <m>T</m> is a set in <m>B_1</m>, then <m>T\cup \{a_k\}</m> is a set in <m>B_2</m> which the
+      function sends to <m>T</m>.  This function is one-to-one because if <m>V</m> and
+      <m>W</m> are two different sets in <m>B_2</m>, then removing <m>a_k</m> from them gives
+      two different sets in <m>B_1</m>.  Thus we have a bijection between <m>B_1</m> and
+      <m>B_2</m>, so <m>B_1</m> and <m>B_2</m> have the same size.  Therefore by the sum
+      principle the size of
+      <m>B_1\cup B_2</m> is <m>2^{k-1} +2^{k-1}=2^k</m>.  Therefore <m>S</m> has <m>2^k</m>
+      subsets.  This shows that if a set of size <m>k-1</m> has <m>2^{k-1}</m> subsets,
+      then a set of size <m>k</m> has <m>2^k</m> subsets.  Therefore by the principle of
+      mathematical induction, a set of size <m>n</m> has <m>2^n</m> subsets for every
+      nonnegative integer <m>n</m>.
+      </blockquote>
+
+      <p>
+        The first sentence of the last paragraph is called the <em>inductive
+        hypothesis</em>. In an inductive proof we always make an inductive
+        hypothesis as part of proving that the truth of our statement when
+        <m>n=k-1</m> implies the truth of our statement when <m>n=k</m>. The last
+        paragraph itself is called the <em>inductive step</em> of our proof. In an
+        inductive step we derive the statement for <m>n=k</m> from the statement for
+        <m>n=k-1</m>, thus proving that the truth of our statement when <m>n=k-1</m>
+        implies the truth of our statement when <m>n=k</m>. The last sentence in the
+        last paragraph is called the <em>inductive conclusion</em>. All inductive
+        proofs should have a base step, an inductive hypothesis, an inductive
+        step, and an inductive conclusion.
+      </p>
+
+      <p>
+        There are a couple details worth noticing. First, in this problem, our
+        base step was the case <m>n=0</m>, or in other words, we had <m>b=0</m>. However,
+        in other proofs,
+        <m>b</m> could be any integer, positive, negative, or 0. Second, our proof
+        that the truth of our statement for <m>n=k-1</m> implies the truth of our
+        statement for
+        <m>n=k</m> required that <m>k</m> be at least 1, so that there would be an element
+        <m>a_k</m> we could take away in order to describe our bijection. However,
+        condition (2) of the principle of mathematical induction only requires
+        that we be able to prove the implication for <m>k>0</m>, so we were allowed to
+        assume <m>k>0</m>.
+      </p>
+    </introduction>
+    <subsubsection>
+    <title>Strong Mathematical Induction</title>
+    <p>
+      One way of looking at the principle of mathematical induction is that it
+      tells us that if we know the <q>first</q> case of a theorem and we can derive
+      each other case of the theorem from a smaller case, then the theorem is
+      true in all cases. However the particular way in which we stated the
+      theorem is rather restrictive in that it requires us to derive each
+      case from the immediately preceding case. This restriction is
+      not necessary, and removing it leads us to a more general statement of
+      the principal of mathematical induction which people often call the <em>strong principle of mathematical induction</em>. It states:
+    </p>
+
+    <blockquote>
+    In order to prove a
+    statement about an integer <m>n</m> if we can
+    <ol>
+      <li>
+        <p>
+          prove our statement when <m>n=b</m> and
+        </p>
+      </li>
+
+      <li>
+        <p>
+          prove that the statements we get with <m>n=b</m>, <m>n=b+1</m>, <ellipsis />
+          <m>n=k-1</m> imply the statement with <m>n=k</m>,
+        </p>
+      </li>
+    </ol>
+    then our statement is true for all integers <m>n\ge b</m>.
+    </blockquote>
+
+    <p>
+      You will find some explicit examples of the use of the strong principle of
+      mathematical induction in <xref ref="Induction">Appendix</xref> and will find some uses for
+      it in this chapter.
+    </p>
+
+    </subsubsection>
+  </subsection>
+
+  <subsection>
+    <title>Binomial Coefficients and the Binomial Theorem</title>
+    <activity category="essential">
+      <statement>
+        <p>
+          When we studied the Pascal Equation and subsets in Chapter 1, it
+          may have appeared that there is no connection between the Pascal relation
+          <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m> and the formula
+          <m>{n\choose k}={n!\over k!(n-k)!}</m>. Of course you probably realize you
+          can prove the Pascal relation by substituting the values the formula
+          gives you into the right-hand side of the equation and simplifying to
+          give you the left hand side. In fact, from the Pascal Relation and the
+          facts that <m>{n\choose 0}=1</m> and <m>{n\choose n}=1</m>, you can actually prove
+          the formula for <m>n\choose k</m> by induction on <m>n</m>. Do so.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We wish to prove that <m>{n\choose i} ={n!\over i!(n-i)!}</m>. We
+          note that since <m>{n\choose 0}=1</m> and <m>{n\choose n} =1</m> are in agreement
+          with this formula, we only have to consider the cases in which <m>0\lt i\lt n</m>,
+          which by the way, requires that <m>n\ge 2</m>. We will prove that our formula
+          holds by induction on <m>n</m> for <m>n\ge 2</m>. If <m>n=2</m>, the only <m>i</m> we need
+          to consider is <m>i=1</m>, and we know that <m>{2\choose1}=2</m>, the number of
+          one-element subsets of a two-element set. But <m>2!\over1!(2-1)!</m> is 2
+          also, so our formula holds when <m>n=2</m>. Now suppose our formula holds
+          when <m>n=k-1</m>, so that for every <m>i</m> with <m>0\lt i\lt n-1</m>, <m>{k-1\choose i} =
+          {(k-1)!\over i!(k-1-i)!}</m>. Then by the Pascal Equation
+          <md>
+            <mrow>{k\choose i}\amp =\amp {k-1\choose i-1}+{k-1\choose i}</mrow>
+            <mrow>\amp =\amp 
+            {(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
+            i!(k-1-i)!}</mrow>
+            <mrow>\amp =\amp {(k-1)!i+(k-1)!(k-i)\over i!(k-i)!} \ =\  {k!\over
+            i!(k-i)!}.</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus the truth of our formula for <m>n=k-1</m>
+          implies its truth for <m>n=k</m>. Therefore by the principle of mathematical
+          induction, our formula is true for all integers <m>n\ge 2</m>. We have
+          already seen is is true when <m>i=0</m> or
+          <m>i=1</m>, so it is true for all nonnegative
+          <m>n</m> and all numbers <m>i</m> with <m>0\le i\le n</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            Use the fact that <m>(x+y)^n = (x+y)(x+y)^{n-1}</m> to give an inductive
+            proof of the binomial theorem.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We prove the binomial theorem by induction on <m>n</m>. When <m>n=0</m>,
+            <m>(x+y)^n=(x+y)^0=1=\sum_{i=0}^0 {n\choose i}x^{0-i}y^i</m> since that last
+            summation consists of the one term <m>{0\choose 0}x^0y^0</m>.
+          </p>
+
+          <p>
+            Now suppose that when <m>n=k-1</m>, <m>(x+y)^n=\sum_{i=0}^n {n\choose
+            i}x^{n-i}y^i.</m> This gives us
+            <md>
+              <mrow>(x+y)^k\amp =\amp (x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}{k-1\choose
+              i}x^{k-1-i}y^i</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=0}^{k-1} {k-1\choose
+              i}x^{k-1-i}y^{i+1}</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=1}^{k} {k-1\choose
+              i-1}x^{k-i}y^{i}</mrow>
+              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1}{k-1\choose i}x^{k-i}y^i+{k-1\choose
+              i-1}x^{k-i}y^i\right) +y^k</mrow>
+              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1} {k\choose i}x^{k-i}y^i\right) +y^k\ =\
+              \sum_{i=0}^k {k\choose i}x^{k-i}y^i.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Thus the truth of the binomial theorem for <m>n=k-1</m> implies
+            its truth for <m>n=k</m>. Then by the principle of mathematical induction, the
+            binomial theorem must be true for all integers <m>n\ge 0</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Suppose that <m>f</m> is a function defined on the nonnegative integers
+            such that <m>f(0)=3</m> and <m>f(n)=2f(n-1)</m>. Find a formula for <m>f(n)</m> and
+            prove your formula is correct.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>f(n)=3\cdot2^n</m>. We prove our formula is correct by
+            induction. When <m>n=0</m> our formula gives <m>f(0)=3</m>, which is what we were
+            given. Now suppose that when <m>n=k-1</m>, <m>f(n) =3\cdot2^n</m>. Then
+            <m>f(k)=2\cdot  f(k-1) =2\cdot 3\cdot2^{k-1}=3\cdot2^k</m>. Therefore the
+            truth of our formula when <m>n=k-1</m> implies its truth when <m>n=k</m> and so by
+            the principle of mathematical induction, <m>f(n)=3\cdot 2^n</m> for all
+            nonnegative integers <m>n</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Inductive definition</title>
+    <p>
+      You may have seen <m>n!</m><index><main>factorial</main></index> described by the two equations
+      <m>0!=1</m> and
+      <m>n!=n(n-1)!</m> for <m>n>0</m>. By the principle of mathematical induction we
+      know that this pair of equations defines <m>n!</m> for all nonnegative numbers
+      <m>n</m>. For this reason we call such a definition an <em>inductive
+      definition</em><index><main>inductive definition</main></index><index><main>definition</main><sub>inductive</sub></index>. An
+      inductive definition is sometimes called a <em>recursive
+      definition</em><index><main>recursive definition</main></index><index><main>definition</main><sub>recursive</sub></index>.
+      Often we can get very easy proofs of useful facts by using inductive
+      definitions.
+    </p>
+
+    <activity category="interesting">
+      <p>
+        An inductive definition of <m>a^n</m> for nonnegative <m>n</m> is given by
+        <m>a^0=1</m> and <m>a^n=aa^{n-1}</m>. (Notice the similarity to the inductive
+        definition of <m>n!</m>.) We remarked above that inductive definitions often
+        give us easy proofs of useful facts. Here we apply this inductive
+        definition to prove two useful facts about exponents that you have been
+        using almost since you learned the meaning of exponents.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Use this definition to prove the rule of
+            exponents <m>a^{m+n}=a^ma^n</m> for nonnegative <m>m</m> and <m>n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We use induction on <m>n</m> to prove this. When <m>n=0</m>, the formula
+            gives us
+            <m>a^{m+0} =a^ma^0=a^m\cdot 1=a^m</m>, so the rule of exponents holds when
+            <m>n=0</m>. Now assume it holds when <m>n=k-1</m> so that <m>a^{m+k-1}=a^ma^{k-1}</m>.
+            Then, starting and ending with our inductive definition, we may write
+            <me>
+              a^{m+n}=aa^{m+n-1}=aa^ma^{k-1}=a^m\cdot a\cdot a^{k-1}=a^ma^k.
+            </me>
+          </p>
+
+          <p>
+            Thus
+            the truth of our law for <m>n=k-1</m> implies its truth for <m>n=k</m>.
+            Therefore, by the principle of mathematical induction, <m>a^{m+n}=a^ma^n</m>
+            for all nonnegative integers <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use this definition to prove the rule of exponents <m>a^{mn} =
+            (a^m)^n</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We will use induction on <m>n</m> and part (a) of this problem to
+            prove that <m>a^{mn}=(a^m)^n</m>. First, when <m>n=0</m> the left and right hand
+            sides of the equation are both 1, so <m>a^{mn}=(a^m)^n</m> holds when <m>n=0</m>.
+            Now assume that <m>a^{m(k-1)} =(a^m)^{k-1}</m>. This may be rewritten as
+            <m>a^{mk-m}=(a^m)^{k-1}</m> Multiply both sides by <m>a^m</m> and apply part (a)
+            of the problem and then the inductive definition (with <m>a^m</m> replacing <m>a</m>)
+            to get
+            <md>
+              <mrow>a^{mk-m}a^m\amp =\amp (a^m)^{k-1}a^m</mrow>
+              <mrow>a^{mk}\amp =\amp (a^m)^{k-1}a^m</mrow>
+              <mrow>a^{mk}\amp =\amp (a^m)^k.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Thus the truth of our formula when <m>n=k-1</m> implies its truth when <m>n=k</m>.
+            Therefore by the principle of mathematical induction, the formula is true
+            for all nonnegative integers <m>n</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="summary">
+      <statement>
+        <p>
+          Suppose that <m>f</m> is a function on the nonnegative integers such
+          that <m>f(0)=0</m> and <m>f(n) = n+f(n-1)</m>. Prove that <m>f(n) = n(n+1)/2</m>. Notice
+          that this gives a third proof that <m>1+2+\cdots+n=n(n+1)/2</m>, because this sum
+          satisfies the two conditions for <m>f</m>. (The sum has no terms and is thus 0
+          when <m>n=0</m>.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove the formula for <m>f</m> by induction on <m>n</m>. If <m>n=0</m>,
+          then <m>n(n+1)/2=0</m> which is what we were given. Now assume that <m>f(k-1)=
+          (k-1)k/2</m>. Then <m>f(k)= k+f(k-1)= k+(k-1)k/2=(k^2+2k-k)/2=k(k+1)/2</m>.
+          Therefore the truth of the formula for <m>n=k-1</m> implies its truth for
+          <m>n=k</m>, and thus by the principle of mathematical induction, the formula
+          for <m>f</m> holds for all nonnegative integers <m>n</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Give an inductive definition of the summation notation
+          <m>\sum_{i=1}^n a_i</m>. Use it and the distributive law <m>b(a+c) = ba+bc</m> to
+          prove the distributive law
+          <me>
+            b\sum_{i=1}^n a_i = \sum_{i=1}^n ba_i.
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We define <m>\sum_{i=1}^1a_i = a_1</m> and for <m>n>1</m>, <m>\sum_{i=1}^n
+          a_i =  \left(\sum_{i=1}^{n-1}a_i\right) +a_n</m>. When <m>n=1</m>,
+          <m>b\sum_{i=1}^1a_i =ba_1</m> by the base step of our inductive definition.
+          Assume that <m>k>1</m> and <m>b\sum_{i=1}^{k-1}a_i=\sum_{i=1}^{k-1}ba_i</m>. Now we
+          can write
+          <me>
+            b\sum_{i=1}^k a_i\!=\! b\left[\left(\sum_{i=1}^{k-1}a_i\right)+a_k\right]
+            \!=\!
+            \left(b\sum_{i=1}^{k-1}a_i\right) +ba_k \!=\! \left(\sum_{i=1}^{k-1}ba_i\right)
+            + ba_k \!=\! \sum_{i=1}^k ba_i,
+          </me>
+          where the last step is justified by the inductive step of our inductive
+          definition with <m>a_i</m> replaced by <m>ba_i</m>. Thus the truth of our
+          statement for <m>k-1</m> implies its truth for <m>i=k</m>, and therefore by the
+          principle of mathematical induction, for all positive integers <m>n</m>,
+          <m>b\sum_{i=1}^na_i= \sum_{i=1}^nba_i</m>.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Proving the general product principle (Optional)</title>
+    <p>
+      We stated the sum principle as
+    </p>
+
+    <blockquote>
+    If we have a partition of a set <m>S</m>, then the size of <m>S</m> is
+    the sum of the sizes of the blocks of the partition.
+    </blockquote>
+
+    <p>
+      In fact, the simplest form of the sum principle says that the size of the
+      sum of two disjoint (finite) sets is the sum of their sizes.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Prove the sum principle we stated for partitions of a set from the
+          simplest form of the sum principle.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove by induction on <m>n</m> that the size of the union of <m>n</m>
+          disjoint sets is the sum of their sizes. We assume that the size of the
+          union of two disjoint sets is the sum of their sizes. Now assume <m>k>2</m>
+          and the size of the union of <m>k-1</m> disjoint sets is the sum of their
+          sizes. Then we may write
+          <me>
+            |\cup_{i=1}^k S_i|=|\left(\cup_{i=1}^{k-1}S_i\right)\cup
+            S_k|=\left(\sum_{i=1}^{k-1}|S_i|\right) +|S_k|=\sum_{i=1}^k|S_i|.
+          </me>
+        </p>
+
+        <p>
+          Thus whenever the size of the union of <m>k-1</m> disjoint sets is the sum of
+          their sizes, then the size of a union of <m>k</m> disjoint sets is the sum of
+          their sizes. Thus by the principle of mathematical induction, the size
+          of the union of <m>n</m> disjoint sets is the sum of their sizes for all
+          <m>n>1</m>. The statement holds trivially when <m>n=1</m> as well.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      We stated the simplest form of the product principle as
+    </p>
+
+    <blockquote>
+    If we have a partition of a set <m>S</m> into <m>m</m> blocks, each of
+    size
+    <m>n</m>, then
+    <m>S</m> has size <m>mn</m>.
+    </blockquote>
+
+    <p>
+      In <xref ref="generalproductprinciple">Problem</xref> we gave a more
+      general form of the product principle which can be stated as
+      <index><main>product principle</main><sub>general</sub></index><index><main>general product
+      principle</main></index>
+    </p>
+
+    <blockquote>
+    Let <m>S</m> be a set of functions <m>f</m> 
+    from
+    <m>[n]</m> to some set <m>X</m>.  Suppose that
+    <ul>
+      <li>
+        <p>
+          there are <m>k_1</m> choices for <m>f(1)</m>, and
+        </p>
+      </li>
+
+      <li>
+        <p>
+          suppose that  
+          for each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m>
+          choices for
+          <m>f(i)</m>.
+        </p>
+      </li>
+    </ul>
+    Then the number of functions in the set
+    <m>S</m> is <m>k_1k_2\cdots k_n</m>.
+    </blockquote>
+
+    <activity xml:id="generalproductprincipleproof" category="summary">
+      <statement>
+        <p>
+          Prove the general form of the product
+          principle from the simplest form of the product
+          principle.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We prove by induction that if <m>S</m> is a set of functions defined on
+          <m>[m]</m> such that
+        </p>
+
+        <p>
+          -+ There are <m>k_1</m> choices for <m>f(1)</m> and
+        </p>
+
+        <p>
+          -+ when <m>2\le i\le m</m>, for each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>,
+          there are
+          <m>k_i</m> choices for
+          <m>f(i)</m>,
+        </p>
+
+        <p>
+          then there are <m>\prod_{i=1}^m k_i</m> functions in <m>S</m>. When <m>m=1</m>, the product
+          is <m>k_1</m> and there are <m>k_1</m> functions in <m>S</m>. Now assume inductively that
+          when
+          <m>S'</m> is a set of functions defined on <m>[m-1]</m> such that
+        </p>
+
+        <p>
+          -+ There are <m>k_1</m> choices for <m>f(1)</m> and
+        </p>
+
+        <p>
+          -+ when <m>2\le i\le m-1</m>, for each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />
+          <m>f(i-1)</m>, there are
+          <m>k_i</m> choices for
+          <m>f(i)</m>,
+        </p>
+
+        <p>
+          then there are <m>\prod_{i=1}^{m-1} k_i</m> functions in <m>S'</m>. Now partition <m>S</m>
+          into <m>k_1</m> sets <m>S_j</m>, where <m>S_j</m> is the set of functions <m>f</m> in <m>S</m> with
+          <m>f(n) = y_j</m> for each of the <m>k_n</m> values <m>y_j</m> that are possible for
+          <m>f(1)</m>. Thus <m>S</m> is a union of <m>k_n</m> sets <m>S_j</m> each of
+          size <m>\prod_{i=1}^{m-1} k_i</m> (by the inductive hypothesis), and so by the
+          product principle for unions of sets, <m>S</m> has size <m>\prod_{i=1}^{m} k_i</m>.
+          Therefore, by the principle of mathematical induction, we have proved the
+          general product principle.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Double Induction and Ramsey Numbers</title>
+    <p>
+      In <xref ref="Ramseysection">Section</xref> we gave two different descriptions of the
+      Ramsey number <m>R(m,n)</m>. However if you look carefully, you will see that
+      we never showed that Ramsey numbers actually exist; we merely described
+      what they were and showed that <m>R(3,3)</m> and <m>R(3,4)</m> exist by computing
+      them directly. As long as we can show that there is some number <m>R</m> such
+      that when there are <m>R</m> people together, there are either <m>m</m> mutual
+      acquaintances or <m>n</m> mutual strangers, this shows that the Ramsey Number
+      <m>R(m,n)</m> exists, because it is the smallest such <m>R</m>. Mathematical
+      induction allows us to show that one such <m>R</m> is <m>m+n-2\choose m-1</m>. The
+      question is, what should we induct on, <m>m</m> or <m>n</m>? In other words, do we
+      use the fact that with <m>m+n-3\choose m-2</m> people in a room there are at
+      least <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers, or do we use
+      the fact that with at least <m>m+n-3\choose n-2</m> people in a room there are
+      at least <m>m</m> mutual acquaintances or at least <m>n-1</m> mutual strangers? It
+      turns out that we use both. Thus we want to be able to simultaneously
+      induct on <m>m</m> and <m>n</m>. One way to do that is to use yet another
+      variation on the principle of mathematical induction, the <em>Principle
+      of Double Mathematical Induction</em><index><main>double
+      induction</main></index><index><main>induction</main><sub>double</sub></index><index><main>mathematical induction</main><sub>double</sub></index>.
+      This principle (which can be derived from one of our earlier ones) states
+      that
+    </p>
+
+    <blockquote>
+    In order to prove a statement about  integers <m>m</m> and <m>n</m>, if
+    we can
+    <ol>
+      <li>
+        <p>
+          Prove the statement when <m>m=a</m> and <m>n=b</m>, for  fixed integers <m>a</m>
+          and
+          <m>b</m>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Prove the statement when <m>m=a</m> and <m>n>b</m> and when <m>m>a</m>  and <m>n=b</m>
+          (for the same fixed integers <m>a</m> and <m>b</m>),
+        </p>
+      </li>
+
+      <li>
+        <p>
+          Show that the truth of the statement for <m>m=j</m> and <m>n=k-1</m> (with
+          <m>j\ge a</m> and <m>k>j</m>) and the truth of the statement for <m>m=j-1</m> and <m>n=k</m>
+          (with <m>j>a</m> and <m>k\ge b</m>) imply the truth of the statement for <m>m=j</m> and
+          <m>n=k</m>,
+        </p>
+      </li>
+    </ol>
+    then we can conclude the statement is true for all pairs of integers <m>m\ge
+    a</m> and
+    <m>n\ge b</m>.
+    </blockquote>
+
+    <activity xml:id="Ramseybound" category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          Prove that <m>R(m,n)</m> exists by proving that if there are
+          <m>m+n-2\choose m-1</m> people in a room, then there are either at least <m>m</m>
+          mutual acquaintances or at least <m>n</m> mutual strangers.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use double induction on <m>m</m> and <m>n</m> to prove this for
+          <m>m,n\ge 2</m>. Note first that <m>R(m,2)=m={m+2-2\choose m-1}</m> and <m>R(2,n)
+          =n={2+n-2\choose 1}</m>. (In words, if there are
+          <m>m</m> people in a room, then either all <m>m</m> people know each other or there
+          are two mutual nonacquaintances, and if there are <m>n</m> people in a room,
+          then either there are two people who know each other or they are all
+          mutual strangers.)<fn>Note that we have covered both steps 1 and 2
+          of a double induction proof now.</fn> Now assume that whenever there are
+          <m>m+n-3\choose m-1</m> people in a room there are either at least <m>m</m> mutual
+          acquaintances or <m>n-1</m> mutual strangers, and that whenever there are at
+          least <m>m+n-3\choose m-2</m> people in a room there are either at least
+          <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers. Suppose that we have
+          <m>m+n-2\choose m-1</m> people in a room. Choose a person, say <m>P</m>. Then
+          since <m>{m+n-2\choose m-1} = {m-n-3\choose m-1} +{m+n-3\choose m-2}</m>,
+          person <m>P</m> is, by the generalized pigeonhole principle, either acquainted
+          with <m>m+n-3\choose m-2</m> people or unacquainted with <m>m+n-3\choose m-1</m>
+          people. In the first case, among the people with whom <m>P</m> is
+          acquainted, either <m>m-1</m> are mutual acquaintances or <m>n</m> are mutual
+          strangers. If <m>m</m> are mutual strangers, we are done, while if <m>m-1</m> are
+          mutual acquaintances, these <m>m-1</m> people, together with person <m>P</m>, are
+          <m>m</m> mutual acquaintances, in which case we are done as well. In the
+          second case, among the <m>m+n-3\choose m-1</m> people with whom person <m>P</m> is
+          unacquainted, there are either <m>m</m> mutual acquaintances, in which case we
+          are done, or there are <m>n-1</m> mutual strangers. In this event, these <m>n-1</m>
+          mutual strangers, along with person <m>P</m> make up <m>n</m> mutual strangers.
+          Thus in every case, if we know that with <m>m+n-3\choose m-2</m> people in a
+          room there are either <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers,
+          and we know that with <m>m+n-3\choose m-1</m> people in a room there are
+          either <m>m</m> mutual acquaintances or <m>n-1</m> mutual strangers, we can
+          conclude that with <m>m+n-2\choose m-1</m> people in a room there are either
+          <m>m</m> mutual acquaintances or <m>n</m> mutual strangers. Therefore by the
+          principle of double mathematical induction we know that for all <m>m</m> and
+          <m>n</m> greater than or equal to 2, if there are <m>m+n-2\choose m-1</m> people
+          in a room, then there are either <m>m</m> mutual acquaintances of <m>n</m> mutual
+          strangers. This shows that <m>R(m,n)</m> exists and is no more than
+          <m>m+n-2\choose m-1</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Ramseyrecurrence" category="essential for this or the next section">
+      <statement>
+        <p>
+          Prove that <m>R(m,n)\le R(m-1,n) + R(m,n-1)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If there are <m>R(m-1,n) +R(m,n-1)</m> people in a room, choose one
+          person, say person <m>P</m>. By the generalized pigeonhole principle, there
+          are either <m>R(m-1,n)</m> people with whom <m>P</m> is acquainted or <m>R(m,n-1)</m>
+          people with whom person <m>P</m> is unacquainted. In the first case, among
+          the people with whom person <m>P</m> is acquainted, there are either <m>n</m>
+          mutual strangers, in which case we are done, or there are <m>m-1</m>
+          people with whom person <m>P</m> is acquainted. These <m>m-1</m> people and person
+          <m>P</m> form <m>m</m> people who are mutually acquainted, and so we have <m>m</m>
+          mutual acquaintances. On the other hand, if <m>P</m> is unacquainted with
+          <m>R(m,n-1)</m> people, then among these people, there are either <m>m</m> mutually
+          acquainted people, in which case we are done, or among these people there
+          are <m>m-1</m> mutually unacquainted people, and these <m>m-1</m> people together
+          with <m>P</m> make <m>m</m> mutual strangers. Thus in every case, if there are
+          <m>R(m-1,n)+R(m,n-1)</m> people in a room, there are either at least <m>m</m> mutual
+          acquaintances or at least <m>n</m> mutual strangers. Therefore <m>R(m,n)\le
+          R(m-1,n)+R(m,n-1)</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Ramseybound2" category="essential for this or the next section, and interesting">
+      <task>
+      <statement>
+      <task>
+        <statement>
+          <p>
+            What does the equation in <xref ref="Ramseyrecurrence">Problem</xref> tell us about <m>R(4,4)</m>?
+          </statement>
+        </p>
+        </statement>
+        <solution>
+          <p>
+            <m>R(4,4)\le R(3,4) + R(4,3) =9+9 = 18</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+          <title>\ <m>*</m>\ (\theenumii)</title>
+          <p>
+            Consider 17 people arranged in a circle such that each person is
+            acquainted with the first, second, fourth, and eighth person to the right
+            and the first, second, fourth, and eighth person to the left.  can you
+            find a set of four mutual acquaintances?  Can you find a set of four
+            mutual strangers?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            You cannot find either. If there were a set of four mutual
+            acquaintances, you could assume by symmetry that it includes person 1,
+            and two people from among those one, two, four, and eight places to the
+            right. Thus you can assume your set of four acquaintances contains
+            person 1 and two from among persons 2, 3, 5, and 9. However persons 2
+            and 5, 2 and 9 and 3 and 9 are not acquainted. Thus three of the
+            mutually acquainted people are either persons 1, 2, and 3, persons 1, 5
+            and 9 or persons 1, 3, and 5. However person 5 is not acquainted with the
+            person one, two, or eight places to the left of person 1, so if person 5 is in
+            the set of mutual acquaintances, then person 14 must be as well. However
+            person 3 and person 9 are not acquainted with person 14. Thus our set
+            must contain persons 1, 2, and 3. However person 3 is not acquainted
+            with the person one, two, four, or eight persons to the left of person 1, so
+            there is no set of four mutual acquaintances. A similar argument holds for
+            nonacquaintances.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>R(4,4)</m>?
+          </p>
+        </statement>
+        <solution>
+        </solution>
+      </task>
+      <p>
+        \item (Optional) Prove the inequality of <xref ref="Ramseybound">Problem</xref> by induction on <m>m+n</m>.
+      </p>
+      <solution>
+        <p>
+          We want to prove that if <m>m\ge 2</m> and <m>n\ge 2</m>, then when there are
+          <m>m+n-2\choose m-1</m> people in a room, there are either <m>m</m> mutual
+          acquaintances or <m>n</m> mutual strangers. If <m>m+n=4</m>, then <m>m=2</m> and
+          <m>n=2</m>, and if there are <m>{2+2-2\choose1}=2</m> people in a room, there are
+          either two who know each other or two who don't.
+        </p>
+
+        <p>
+          Now assume that when <m>m+n=k-1</m>, it is the case that if there are <m>m+n-2\choose
+          m-1</m> people in a room, then there are either <m>m</m> mutual acquaintances or <m>n</m>
+          mutual strangers. Suppose that <m>m'+n'=k</m> and there are <m>m'+n'-2\choose m'-1</m>
+          people in a room. If <m>n'=2</m>, then we know that with
+          <m>{m'+2-2\choose m'-1}=m'</m> people in a room, there are either <m>m'</m> mutual
+          acquaintances or two mutual strangers, and similarly if <m>m'=2</m> there are
+          either two mutual acquaintances or <m>n</m> mutual strangers among
+          <m>m'+n'-2\choose m-1</m> people. Thus we may assume that both
+          <m>m'</m> and <m>n'</m> are greater than two. Since <m>{m'+n'-2\choose m-1}=
+          {(m'-1)+n-2\choose m'-2} +{m+(n-1) -2\choose m-1}</m>, if there are
+          <m>m'+n'-2\choose m'-1</m> people in a room, then a given person, say person
+          <m>P</m>, is either acquainted with <m>(m'-1)+n'-2\choose m'-1</m> of them (call
+          this case 1) or is a stranger with <m>m'+(n-1)-2\choose m-1</m> of them (call
+          this case 2). Notice that
+          <m>m'-1+n'=k-1</m> and <m>m'+n'-1=k-1</m>. Thus in case 1, our inductive hypothesis
+          tells us that either <m>m'-1</m> of person <m>P</m>'s acquaintances are mutually
+          acquainted, in which case they and person <m>P</m> form <m>m'</m> mutual
+          acquaintances, or <m>n'</m> of <m>P</m>'s acquaintances are mutual strangers, in
+          which case we have <m>n'</m> mutual strangers. Similarly in case 2 we have
+          either <m>m'</m> mutual acquaintances or <m>n'</m> mutual strangers. Thus by the
+          principle of mathematical induction, for all values of <m>m+n</m> greater than
+          or equal to 4, if we have <m>m+n-2\choose m-1</m> people in a room, then we
+          have either <m>m</m> mutual acquaintances or <m>n</m> mutual strangers, so that
+          <m>R(m,n)</m> exists and is no more than <m>m+n-2\choose m-1</m>.
+        </p>
+      </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use Stirling's approximation (<xref ref="Stirling_sapproximation">Problem</xref>)
+            to convert the upper bound for <m>R(n,n)</m> that you get from <xref ref="Ramseybound">Problem</xref> to a multiple of a power of an
+            integer.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>R(n,n)\le {n+n-2\choose m-1}={(2n-2)!\over (n-1)!^2}</m>. For
+            <m>n</m> sufficiently large, this is approximately
+            <md>
+              <mrow>\amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
+              \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
+              (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}</mrow>
+              <mrow>\amp =\amp {2^{2n-2}(n-1)^{2n-2}\over\sqrt{\pi
+              (n-1)}(n-1)^{2n-2}}</mrow>
+              <mrow>\amp =\amp {1\over \sqrt{\pi
+              (n-1)}}2^{2n-2}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>A bit of asymptotic combinatorics</title>
+    <p>
+      <xref ref="Ramseybound2">Problem</xref> gives us an upper bound on <m>R(n,n)</m>. A very
+      clever technique due to Paul Erd&#xf6;s, called the <q>probabilistic method,</q>
+      will give a lower bound. Since both bounds are exponential in <m>n</m>, they
+      show that <m>R(n,n)</m> grows exponentially as <m>n</m> gets large. An analysis of
+      what happens to a function of <m>n</m> as <m>n</m> gets large is usually called an
+      <em>asymptotic analysis</em>.<index><main>asymptotic combinatorics</main></index> The <em>probabilistic method</em><index><main>probabilistic method</main></index><index><main>method</main><sub>probabilistic</sub></index>,
+      at least in its simpler forms, can be expressed in terms of averages, so one
+      does not need to know the language of probability in order to understand it.
+      We will apply it to Ramsey numbers in the next problem. Combined with the
+      result of <xref ref="Ramseybound2">Problem</xref>, this problem will give us that
+      <m>\sqrt{2}^{\rangle n}\lt R(n,n)\lt 2^{2n-2}</m>, so that we know that the Ramsey number
+      <m>R(n,n)</m> grows exponentially with<nbsp /><m>n</m>.
+    </p>
+
+    <activity category="interesting">
+      <p>
+        Suppose we have two numbers <m>n</m> and <m>m</m>. We consider
+        all possible ways to color the edges of the complete graph <m>K_m</m>
+        with two colors, say red and blue. For each coloring, we look at each
+        <m>n</m>-element subset
+        <m>N</m> of the vertex set <m>M</m> of <m>K_m</m>. Then <m>N</m> together with the edges of
+        of <m>K_m</m> connecting vertices in <m>N</m> forms a complete graph on <m>n</m>
+        vertices. This graph, which we denote by <m>K_N</m>, has its edges colored by
+        the original coloring of the edges of <m>K_m</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Why is it that if there is no subset <m>N\subseteq M</m>
+            so that all the edges of <m>K_N</m> are colored the same color, then
+            <m>R(n,n)>m</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Another way to say there is no such subset is to say that it
+            is not possible to find a <m>K_n</m> all of whose edges are red or a <m>K_n</m>
+            all of whose edges are blue. This means that <m>R(n,n)>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            To apply the probabilistic method, we are going to compute
+            the average, over all colorings of <m>K_m</m>, of the number of sets
+            <m>N\subseteq M</m> with
+            <m>|N|=n</m> such that <m>K_N</m> <em>does</em> have all its edges the same color.
+            Explain why it is that if the average is less than 1, then for some
+            coloring there is no set <m>N</m> such that <m>K_N</m> has all its edges colored
+            the same color.  Why does this mean that <m>R(n,n)>m</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If the average of <m>n</m> nonnegative integers is less than one,
+            they cannot all be one or more, so one has to be zero. Thus in this
+            context there must be some coloring that has no set <m>N</m> so that <m>K_N</m> has
+            all its edges colored the same color.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            We call a <m>K_N</m> <em>monochromatic</em><index><main>monochromatic subgraph</main></index>
+            for a coloring <m>c</m> of <m>K_m</m> if the color <m>c(e)</m> assigned to edge <m>e</m> is
+            the same for every edge <m>e</m> of <m>K_N</m>.  Let us define <m>{ mono}(c,N)</m> to
+            be 1 if <m>N</m> is monochromatic for <m>c</m> and to be 0 otherwise.  Find a
+            formula for the average number of monochromatic <m>K_N</m>s over all colorings
+            of <m>K_m</m> that involves a double sum first over all edge colorings <m>c</m> of
+            <m>K_m</m> and then over all <m>n</m>-element subsets <m>N\subseteq M</m> of <m>{
+            mono}(c,N)</m>.
+          </p>
+        </statement>
+        <solution>
+          <me>
+            {1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+            of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
+          </me>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that your formula for the average reduces to <m>2{m\choose
+            n}\cdot2^{-{n\choose 2}}</m>
+          </p>
+        </statement>
+        <solution>
+          <md>
+            <mrow>\amp \amp {1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+            of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)</mrow>
+            <mrow>\amp =\amp {1\over 2^{^{m\choose 2}}} \sum_{N:N\subseteq
+            M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)</mrow>
+            <mrow>\amp =\amp 
+            2^{-{m\choose2}}\sum_{N:N\subseteq
+            M,~|N|=n}2\cdot2^{{m\choose2}-{n\choose2}}</mrow>
+            <mrow>\amp =\amp  2{m\choose n}2^{-{n\choose 2}}</mrow>
+          </md>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain why <m>R(n,n)>m</m> if <m>{m\choose n}\le 2^{{n\choose 2} -1}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>R(n,n)>m</m> if the average above is less than 1. Thus <m>R(n,n)>m</m>
+            if
+            <m>2{m\choose 2}2^{-{n\choose 2}}\lt 1</m>, which is equivalent to
+            <m>{m\choose n}\lt 2^{{n\choose 2}-1}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+          <title>\ <m>*</m>\ (\theenumii)</title>
+          <p>
+            Explain why <m>R(n,n)>\root n \of {n!2^{{n\choose 2}-1}}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>{m\choose n} \lt 2^{{n\choose 2}-1}</m> is the same as
+            <m>{m^{\underline{n}}\over n!}\lt 2^{{n\choose 2}-1}</m>. And since
+            <m>m^{\underline{n}}\lt m^n</m>, the inequality <m>{m^{\underline{n}}\over
+            n!}\lt  2^{{n\choose 2}-1}</m> holds if the inequality <m>{m^n\over
+            n!}\le2^{{n\choose2}-1}</m> holds. And this last inequality holds if
+            <m>m\le\root n
+            \of {n!2^{{n\choose2}-1}}</m> holds. Thus <m>R(n,n)>m</m> for any <m>m</m> such that
+            <m>m\le\root n
+            \of {n!2^{{n\choose2}-1}}</m>, which implies that <m>R(n,n)> \root n
+            \of {n!2^{{n\choose2}-1}}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            By using Stirling's formula, show that if <m>n</m> is large enough, then
+            <m>R(n,n) > \sqrt{2^n} = \sqrt{2}^{\rangle n}</m>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using Stirling's approximation to <m>n!</m> we get
+            <me>
+              R(n,n)>\root n \of
+              {{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}={n\over
+              e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
+              n}>2^n/2=\sqrt{2}^{\rangle n}.
+            </me>
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+</section>

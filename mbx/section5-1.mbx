@@ -1,0 +1,1084 @@
+
+<section>
+  <title>The Principle of Inclusion and Exclusion</title>
+  <subsection>
+    <title>The size of a union of sets</title>
+    <p>
+      One of our very first counting
+      principles was the {sum principle}<index><main>sum principle</main></index> which says that
+      the size of a union of disjoint sets is the sum of their sizes.
+      Computing the size of overlapping sets requires, quite naturally,
+      information about how they overlap. Taking such information into account
+      will allow us to develop a powerful extension of the sum principle known
+      as the <q>principle of inclusion and exclusion.</q><index><main>principle of
+      inclusion and exclusion</main></index><index><main>inclusion and exclusion principle</main></index>
+    </p>
+
+    <activity xml:id="fertilizer2" category="motivation">
+      <statement>
+        <p>
+          In a biology lab study of the effects of basic fertilizer
+          ingredients on plants, 16 plants are treated with potash, 16 plants are
+          treated with phosphate, and among these plants, eight are treated with
+          both phosphate and potash. No other treatments are used. How many plants
+          receive at least one treatment? If 32 plants are studied, how many
+          receive no treatment?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number of plants receiving treatment was <m>16+16-8 = 24</m>.
+          The number of plants receiving no treatment was eight.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="summary">
+      <statement>
+        <p>
+          Give a formula for the size of the union <m>A\cup B</m> of two
+          sets
+          <m>A</m> in terms of the sizes <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>. If <m>A</m> and <m>B</m> are subsets of some <q>universal</q> set <m>U</m>,
+          express the size of the complement <m>U-(A\cup B)</m> in terms of the sizes
+          <m>|U|</m> of <m>U</m>, <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>|A\cup B|=|A| + |B| - |A\cap B|</m>.
+        </p>
+
+        <p>
+          <m>|U-(A\cup B)| = |U|-|A|-|B| + |A
+          \cap B|</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          In <xref ref="fertilizer2">Problem</xref>, there were just two fertilizers used
+          to treat the sample plants. Now suppose there are three fertilizer
+          treatments, and 15 plants are treated with nitrates, 16 with potash, 16
+          with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate,
+          8 with potash and phosphate and 4 with all three. Now how many plants
+          have been treated? If 32 plants were studied, how many received no
+          treatment at all?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>15+16+16-7-9-8+4=27</m> plants were treated and five received
+          no treatment.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="threesetintersection" category="essential">
+      <statement>
+        <p>
+          Give a formula for the size of <m>A_1\cup A_2\cup A_3</m> in terms of
+          the sizes of <m>A_1</m>, <m>A_2</m>, <m>A_3</m> and the intersections of these
+          sets.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
+          C| +|A\cap B\cap C|</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="nsetintersection" category="essential">
+      <statement>
+        <p>
+          Conjecture a formula for the size of a union of sets
+          <me>
+            A_1\cup
+            A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i
+          </me>
+          in terms of the sizes of
+          the sets <m>A_i</m> and their intersections.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
+          \sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
+          A_2\cap\cdots \cap A_n|.
+        </me>
+      </solution>
+    </activity>
+
+    <p>
+      The difficulty of generalizing <xref ref="threesetintersection">Problem</xref> to
+      <xref ref="nsetintersection">Problem</xref> is not likely to be one of being able to
+      see what the right conjecture is, but of finding a good notation to
+      express your conjecture. In fact, it would be easier for some people to
+      express the conjecture in words than to express it in a notation. Here
+      is some notation that will make your task easier. Let us define
+      <me>
+        \bigcap_{i:i\in I}A_i
+      </me>
+      to mean the intersection over all elements <m>i</m>
+      in the set <m>I</m> of
+      <m>A_i</m>. Thus
+      <men xml:id="intersectionnotation" >
+        \bigcap_{i:i\in
+        \{1,3,4,6\}} = A_1\cap A_3\cap A_4 \cap A_6.
+      </men>
+    </p>
+
+    <p>
+      This kind of notation, consisting of an operator with a description
+      underneath of the values of a dummy variable of interest to us, can be
+      extended in many ways. For example
+      <md>
+        <mrow>\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
+        A_i| \amp =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
+         +|A_1\cap A_4|\nonumber</mrow>
+        <mrow>\amp +\amp  |A_2\cap A_3|+
+        |A_2\cap A_4| +|A_3\cap A_4|.</mrow>
+      </md>
+    </p>
+
+    <activity xml:id="inclusion-exclusionunion" category="essential">
+      <statement>
+        <p>
+          Use notation something like that of <xref ref="intersectionnotation">Equation</xref> and <xref ref="notationsolution">Equation</xref> to express
+          the answer to <xref ref="nsetintersection">Problem</xref>. Note there are many
+          different correct ways to do this problem. Try to write down more
+          than one and choose the nicest one you can. Say why you chose it
+          (because your view of what makes a formula nice may be different from
+          somebody else's). The nicest formula won't necessarily involve all the
+          elements of <xref ref="intersectionnotation">Equations</xref> and <xref ref="notationsolution"></xref>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
+          S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|
+        </me>
+        <p>
+          I chose this
+          way of writing the formula partly because it is efficient with symbols;
+          for example, it uses only one sum sign. But more importantly I chose it
+          because it captures what I would want to say in words: ``You sum, over
+          all ways of choosing an intersection of the sets <m>A_i</m>, the size of the
+          intersection times a sign factor that is -1 if you are intersecting
+          an even number of sets and 1 if you are intersecting an odd number."
+          If I were writing my solution out in words, I would probably assume
+          that nobody would think about the possibility of an intersection of the
+          empty set of the
+          <m>A_i</m>s, but I had to put the <m>S\not=\emptyset</m> in my formula because
+          otherwise the formula would have had us consider the possibility that
+          <m>S</m> was empty.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="hatcheck" category="essential">
+      <statement>
+        <p>
+          A group of <m>n</m> students goes to a restaurant carrying backpacks.
+          The manager invites everyone to check their backpack at the check desk and
+          everyone does. While they are eating, a child playing in the check room
+          randomly moves around the claim check stubs on the backpacks. What is
+          the probability that, at the end of the meal, at least one student
+          receives his or her own backpack? In other words, in what fraction of
+          the total number of ways to pass the backpacks back does at least one
+          student get his or her own backpack back? (Hint: For each student, how
+          big is the set of backpack distributions in which that student gets the
+          correct backpack? It might be a good idea to
+          first consider cases with <m>n=3</m>, 4, and 5.) What is the probability that no student gets his or her
+          own backpack?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First we compute the number of ways to pass out the
+          backpacks so that at least one student gets the correct one, then we
+          divide by <m>n!</m> the total number of ways to pass out the backpacks to
+          get the probability that at least one student gets the correct one.
+          If we let <m>A_i</m> be the set of backpack distributions in which student
+          <m>i</m> gets the correct backpack, then the number we want to compute is
+          the size of the union of the sets <m>A_i</m>. For this purpose we need to
+          know, for every subset <m>S\subseteq [n]</m> the size of <m>\cap_{i\in S}A_i</m>.
+          That is, we need to know the number of ways to pass out the backpacks
+          so that student <m>i</m> gets the correct one for each <m>i</m> in <m>S</m>. It
+          won't matter whether or not other students get the correct backpacks,
+          so we can just assume that for each <m>i\in S</m>, student <m>i</m> gets the
+          correct backpack and then hand out the remaining <m>n-|S|</m> backpacks to
+          the remaining <m>n-|S|</m> students in <m>(n-|S|)!</m> ways. Thus <m>(n-|S|)!</m> is
+          <m>|\cap_{i:i\in S}A_i|</m>. Using our formula from <xref ref="inclusion-exclusionunion">Problem</xref> we get
+          <md>
+            <mrow>\left|\bigcup_{i=1}^n A_i \right| \amp =\amp  \sum_{S:
+            S\subseteq [n], S\not=\emptyset}
+            (-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|</mrow>
+            <mrow>\amp =\amp \sum_{S:
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!</mrow>
+            <mrow>\amp =\amp 
+            \sum_{s=1}^n {n\choose
+            s}(-1)^{s-1}(n-s)!</mrow>
+            <mrow>\amp =\amp \sum_{s=1}^n
+            (-1)^{s-1}{n!\over s!}</mrow>
+          </md>
+        </p>
+
+        <p>
+          Dividing this by
+          <m>n!</m>, the total number of ways to pass back the backpacks, we get
+          <m>\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}</m> for the probability
+          that at least one student gets the correct backpack. Subtracting from
+          1 to get the probability that no student gets the correct backpack
+          gives us
+          <me>
+            1- \sum_{s=1}^n {(-1)^{s-1}\over
+            s!}=\sum_{s=0}^n{(-1)^s\over s!}.
+          </me>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          As the number of students becomes large, what does the probability
+          that no student gets the correct backpack approach?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From calculus, we know that <m>e^x=\sum_{j=0}^\infty {x^j\over
+          j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
+          {(-1)^j\over j!}</m> which is the limit as <m>n</m> becomes infinite of the
+          probability in the solution to <xref ref="hatcheck">Problem</xref>. Thus the
+          probability approaches <m>1/e</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      The formula you have given in <xref ref="inclusion-exclusionunion">Problem</xref> is
+      often called <em>the principle of inclusion and
+      exclusion</em><index><main>inclusion and exclusion principle
+      </main><sub>for unions of sets</sub></index><index><main>principle of inclusion and exclusion</main><sub>for
+      unions of sets</sub></index> for unions of sets. The reason is the pattern in which
+      the formula first adds (includes) all the sizes of the sets, then
+      subtracts (excludes) all the sizes of the intersections of two sets, then
+      adds (includes) all the sizes of the intersections of three sets, and so
+      on. Notice that we haven't yet proved the principle. We will first
+      describe the principle in an apparently more general situation that
+      doesn't require us to translate each application into the language of
+      sets. While this new version of the principle might seem more general
+      than the principle for unions of sets; it is equivalent. However once one
+      understands the notation used to express it, it is more convenient to
+      apply.
+    </p>
+
+    <p>
+      <xref ref="hatcheck">Problem</xref> is <q>classically</q> called the <em>hatcheck
+      problem</em><index><main>hatcheck problem</main></index>; the name comes from substituting hats
+      for backpacks. If is also sometimes called the <em>derangement
+      problem</em><index><main>derangement problem</main></index>. A <em>derangement</em><index><main>derangement</main></index> of an
+      <m>n</m>-element set is a permutation of that set (thought of as a bijection)
+      that maps no element of the set to itself. One can think of a way of
+      handing back the backpacks as a permutation <m>f</m> of the students: <m>f(i)</m> is
+      the owner of the backpack that student <m>i</m> receives. Then a derangement
+      is a way to pass back the backpacks so that no student gets his or her
+      own.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>The hatcheck problem restated</title>
+    <p>
+      The last question in <xref ref="hatcheck">Problem</xref> requires that we compute the number of ways to hand back
+      the backpacks so that nobody gets his or her own backpack. We can think
+      of the set of ways to hand back the backpacks so that student <m>i</m> gets
+      the correct one as the set of permutations of the backpacks with the
+      property that student <m>i</m> gets his or her own backpack. Since there are
+      <m>n-1</m> other students and they can receive any of the remaining <m>n-1</m>
+      backpacks in <m>(n-1)</m> ways, the number of permutations with the property
+      that student <m>i</m> gets the correct backpack is <m>(n-1)!</m>. How many
+      permutations are there with the properties that student <m>i</m> gets the
+      correct backpack <em>and</em> student <m>j</m> gets the correct backpack? (Let's
+      call these properties <m>i</m> and <m>j</m> for short.) Since there are <m>n-2</m>
+      remaining students and <m>n-2</m> remaining backpacks, the number of
+      permutations with properties <m>i</m> and <m>j</m> is <m>(n-2)!</m>. Similarly, the
+      number of permutations with properties <m>i_1,i_2,\ldots,i_k</m> is <m>(n-k)!</m>.
+      Thus when we compute the size of the union of the sets
+      <me>
+        S_i=\{f: f\mbox{ is a permutation with property } i\},
+      </me>
+      we are
+      computing the number of ways to pass back the backpacks so that at least
+      one student gets the correct backpack. This answers the first question
+      in <xref ref="hatcheck">Problem</xref>. The last question in <xref ref="hatcheck">Problem</xref>
+      is asking us for the number of ways to pass back the backpacks that have
+      <em>none</em> of the properties. To say this in a different way, the
+      question is asking us to compute the number of ways of passing back the
+      backpacks that have exactly the <em>empty set</em>, <m>\emptyset</m>, of
+      properties.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Basic counting functions: <m>N_{ at least }</m> and
+    <m>N_{ exactly }</m></title>
+    <p>
+      Notice that the quantities that we were able to count easily were the
+      number of ways to pass back the backpacks so that we satisfy a certain
+      subset
+      <m>K= \{i_1,i_2,\ldots,i_k\}</m> of our properties. In fact, among the <m>(n-k)</m>
+      ways to pass back the backpacks with this particular set <m>K</m> of
+      properties is the permutation that gives each student the correct
+      backpack, and has not just the properties in <m>K</m>, but the whole set of
+      properties. Similarly, for any set <m>M</m> of properties with <m>K\subseteq
+      M</m>, the permutations that have all the properties in <m>M</m> are among the
+      <m>(n-k)!</m> permutations that have the properties in the set <m>K</m>. Thus we
+      can think of <m>(n-k)!</m> as counting the number of permutations that have
+      <em>at least</em> the properties in <m>K</m>. In particular, <m>n!</m> is the number
+      of ways to pass back the backpacks that have at least the empty set of
+      properties. We thus write <m>N_{\mbox{at least} }(\emptyset)=n!</m>, or
+      <m>N_{\mbox{a} }(\emptyset)=n!</m> for short. For a <m>k</m>-element subset <m>K</m> of
+      the properties, we write <m>N_{\mbox{at least} }(K) =(n-k)!</m> or
+      <m>N_{\mbox{a} }(K) =(n-k)!</m> for short.
+    </p>
+
+    <p>
+      The question we are trying to answer is ``How many of the
+      distributions of backpacks have exactly the empty set of properties?"
+      For this purpose we introduce one more piece of notation. We use
+      <m>N_{\mbox{exactly} }(\emptyset)</m> or <m>N_{\mbox{e} }(\emptyset)</m> to stand for
+      the number of backpack distributions with exactly the empty set of
+      properties, and for any set <m>K</m> of properties we use
+      <m>N_{\mbox{exactly} }(K)</m> or <m>N_{\mbox{e} }(K)</m> to stand for the number of
+      backpack distributions with exactly the set <m>K</m> of properties. Thus
+      <m>N_{\mbox{e} }(K)</m> is the number of distributions in which the students
+      represented by the set <m>K</m> of properties get the correct backpacks back
+      and no other students do.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>The principle of inclusion and exclusion for properties</title>
+    <p>
+      For the principle of inclusion and exclusion for properties, suppose we
+      have a set of arrangements (like backpack distributions) and a set <m>P</m> of
+      properties (like student <m>i</m> gets the correct backpack) that the
+      arrangements might or might not have. We suppose that we know (or can
+      easily compute) the numbers <m>N_{\mbox{a} }(K)</m> for every subset <m>K</m> of
+      <m>P</m>. We are most interested in computing <m>N_{\mbox{e} }(\emptyset)</m>, the
+      number of arrangements with none of the properties, but it will turn out
+      that with no more work we can compute <m>N_{\mbox{e} }(K)</m> for every subset
+      <m>K</m> of <m>P</m>. Based on our answer to <xref ref="hatcheck">Problem</xref> we expect that
+      <men xml:id="incexempty" >
+        N_{\mbox{e} }(\emptyset) = \sum_{S: S\subseteq P} (-1)^{|S|}N_{\mbox{a} }(S)
+      </men>
+      and it is a natural guess that, for every subset <m>K</m> of <m>S</m>,
+      <men xml:id="incexnonempty" >
+        N_{\mbox{e} }(K) = \sum_{S: K\subseteq S\subseteq P}
+        (-1)^{|S|-|K|}N_{\mbox{a} }(S).
+      </men>
+    </p>
+
+    <p>
+      <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> are called <em>the
+      principle of inclusion and exclusion for properties</em>.<index><main>inclusion and
+      exclusion principle</main><sub>for properties</sub></index><index><main>principle of inclusion and
+      exclusion</main><sub>for properties</sub></index>
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Verify that the formula for the number of ways to pass back the
+          backpacks in <xref ref="hatcheck">Problem</xref> so that nobody gets the correct backpack has the form of
+          <xref ref="incexempty">Equation</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose we take property <m>i</m> to be the property that student <m>i</m>
+          gets the correct backpack. In our solution to <xref ref="hatcheck">Problem</xref> we
+          thought of <m>S</m> as a subset of <m>[n]</m>. Since we are numbering our
+          properties from <m>1</m> to <m>n</m>, each set <m>S</m> determines a corresponding set
+          <m>S'</m> of properties: those properties numbered by the elements of <m>S</m>. We
+          will use <m>P</m> to stand for the set of all properties, that is property 1
+          through property <m>n</m>. The number of ways to pass back the hats so that
+          nobody gets the correct hat is <m>n!</m> minus the number of ways to pass back
+          the hats so that somebody does get the correct hat back. From our
+          solution to <xref ref="hatcheck">Problem</xref>, we see that one way to express this is as
+          <md>
+            <mrow>n!-\sum_{S:
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp 
+            n!+\sum_{S:
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!</mrow>
+            <mrow>\amp =\amp 
+            \sum_{S:
+            S\subseteq [n]}(-1)^{|S|} (n-|S|)!</mrow>
+            <mrow>\amp =\amp \sum_{S:
+            S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
+            <mrow>\amp =\amp 
+            \sum_{S':
+            S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
+          </md>
+          because <m>N_{\mbox{a} }(S')</m> is the number of ways to pass back the backpacks
+          so that at least the students in <m>S</m> get the correct backpacks, which is
+          the same as the size of <m>\bigcap_{i:i\in S} A_i</m>, and which we computed to
+          be <m>(n-|S|)!</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="incexsystemeq" category="essential">
+      <statement>
+        <p>
+          Find a way to express <m>N_{\mbox{a} }(S)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m> containing <m>S</m>. In particular,
+          what is the equation that expresses <m>N_{\mbox{a} }(\emptyset)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>N_{\mbox{a} }(S) = \sum_{J: S\subseteq
+          J\subseteq P}N_{\mbox{e} }(J)</m>. In particular, we get by substitution that
+          <m>N_{\mbox{a} }(\emptyset)=\sum_{J:J\subseteq P} N_{\mbox{e} }(J)</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <task>
+        <statement>
+          <p>
+            Substitute the formula for <m>N_{\mbox{a} }</m> from <xref ref="incexsystemeq">Problem</xref> into the right hand sides of the formulas of <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> and simplify what you get to show that for <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> the right-hand sides are indeed
+            equal to the left-hand sides. This will prove that those equations are
+            true. (Hint: You will get a double sum. If you can figure out how to
+            reverse the order of the two summations, the binomial theorem may help you
+            simplify the formulas you get.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <xref ref="incexempty">Equation</xref> is a special case of <xref ref="incexnonempty">Equation</xref>, we will just substitute the formula from <xref ref="incexsystemeq">Problem</xref> into the right-hand side of <xref ref="incexnonempty">Equation</xref>. This gives us
+            <md>
+              <mrow>\hspace{-.25 in}\sum_{S: K\subseteq S\subseteq P}
+              (-1)^{|S|-|K|}N_{\mbox{a} }(S)\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+              (-1)^{|S|-|K|}\sum_{J: S\subseteq
+              J\subseteq P}N_{\mbox{e} }(J)</mrow>
+              <mrow>\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+              \sum_{J: S\subseteq
+              J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
+              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+              (-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
+              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
+              S\subseteq J} (-1)^{|S|-|K|}</mrow>
+              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
+              {|J|-|K|
+              \choose s-|K|}(-1)^{s-|K|}</mrow>
+              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
+              {|J|-|K|
+              \choose i}(-1)^{i}</mrow>
+              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq
+              P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}</mrow>
+              <mrow>\amp =\amp N_{\mbox{e} }(K).</mrow>
+            </md>
+          </p>
+
+          <p>
+            In the fourth-to-last line of our equations, we used the fact that the
+            number of subsets <m>S</m> of <m>J</m> that contain <m>K</m> is the number of ways to
+            choose the elements of the set <m>S-K</m> of elements in <m>S</m> but not <m>K</m> from
+            the elements of <m>J-K</m>, the set of elements of <m>J</m> that are not in <m>K</m>. In
+            the second-to-last line of the equations, we recognized that the second
+            sum in the third-to-last line is the kind of sum we would get by applying
+            the binomial theorem to something of the form <m>(x+y)^{|J|-|K|}</m> for a
+            suitable <m>x</m> and <m>y</m>, and then saw that <m>x=1</m> and <m>y=-1</m> would give us
+            exactly the second sum in the third-to-last line. In going from the
+            second-to-last line to the last line we used the facts that <m>0^n=o</m> if <m>n>0</m>
+            and <m>0^0=1</m>. This proves that <xref ref="incexnonempty">Equation</xref> is true for all
+            <m>K</m>, and in particular when
+            <m>K=\emptyset</m>, which also proves <xref ref="incexempty">Equation</xref>. We have just
+            proved the Principle of inclusion and exclusion.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In how many ways may we distribute <m>k</m> identical apples to <m>n</m>
+            children so that no child gets more than three apples?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let property <m>i</m> be <q>Child <m>i</m> gets four or more apples.</q> Then
+            we are asking for the number of ways to pass out the apples that have none
+            of the properties, so we are asking for <m>N_{\mbox{e} }(\emptyset)</m>. From
+            <xref ref="incexempty">Equation</xref> we see that to find this number we need to know
+            <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of our set of properties. But if
+            <m>S</m> has size <m>s</m>, then having the properties in <m>S</m> means that all the
+            children in a particular set of size <m>s</m> will get four or more apples. We
+            already know how to pass out the apples so that the children in a
+            particular set
+            <m>\hat S</m> of children get at least four apples: we give everyone in <m>\hat
+            S</m> four apples, and then pass out the remaining <m>k-4s</m> apples to the
+            children in <m>{k-4s+n-1\choose k-4s}= {k-4s+n-1\choose n-1}</m> ways. This
+            counts the number of ways to give at least four apples to every child in
+            <m>\hat S</m>, and maybe give four apples to some other children as well. Thus
+            <m>N_{\mbox{a} }(S) = {k-4|S|+n-1\choose n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
+            <md>
+              <mrow>N_{\mbox{e} }(\emptyset)\amp =\amp \sum_{S:S\subseteq
+              P}(-1)^{|S|}N_{\mbox{a} }(S)</mrow>
+              <mrow>\amp =\amp \sum_{s=0}^k {k\choose s}(-1)^s {k-4s+n-1\choose n-1}</mrow>
+              <mrow>\amp =\amp \sum_{s=0}^k (-1)^s{k\choose s}{k-4s+n-1\choose n-1}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="relaxedmenage" category="interesting">
+      <statement>
+        <p>
+          A group of <m>n</m> married couples comes to a group discussion session
+          where they all sit around a round table. In how many ways can they sit
+          so that no person is next to his or her spouse?
+          (Note that two people of the same sex can sit next to
+          each other.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let Property <m>i</m> be that couple <m>i</m> sits together. We are
+          interested in the number of seating arrangements that have none of the
+          properties. Thus for a set <m>S</m> of properties, we need to compute
+          <m>N_{\mbox{a} }(S)</m>. If we let each couple described by <m>S</m> sit together,
+          we will seat <m>|S|</m> couples and <m>2n-2|S|</m> individuals around the table. We
+          can do this in <m>2^{|S|}(|S| + 2n-2 |S|-1)!</m> ways, because once we chose a
+          place for a couple (i.e. two adjacent seats) there are two ways the couple
+          can sit down. Thus <m>N_{\mbox{a} }(S) =2^{|S|}(2n-|S|-1)!</m>.
+          Substituting this into <xref ref="incexempty">Equation</xref> with <m>P</m> as the set of
+          all properties gives us
+          <md>
+            <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:S\subseteq P}
+            (-1)^{|S|} N_{\mbox{a} }(S)</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}2^{s}(2n- s-1)!</mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting and difficult">
+      <statement>
+        <p>
+          A group of <m>n</m> married couples comes to a group
+          discussion session where they all sit around a round table. In how many
+          ways can they sit so that no person is next to his or her spouse or a
+          person of the same sex? This problem is called the <em>menage
+          problem</em>.<index><main>menage problem</main></index> (Hint: Reason somewhat as you did in <xref ref="relaxedmenage">Problem</xref>, noting that if the set of couples who do sit
+          side-by-side is nonempty, then the sex of the person at each place at the
+          table is determined once we seat one couple in that set.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are going to consider arrangements of the couples alternating
+          sex around the table. Property <m>i</m> of an arrangement is that couple <m>i</m>
+          sits together. We are interested in the number of arrangements that have
+          exactly none of the properties. Thus for each subset <m>S</m> of the
+          properties, we consider the number of arrangements that has at least the
+          set <m>S</m> of properties. We distinguish the case that <m>S</m> is empty from the
+          others. <m>N_{\mbox{a} }(\emptyset)</m> is just the number of ways to seat <m>2n</m>
+          couples around the table, alternating sex, but with no other
+          restrictions. We can arrange one of the sexes in a circle in <m>n-1!</m> ways
+          and then assign the members of the opposite sex to the places between them
+          in <m>n!</m> ways, so <m>N_{\mbox{a} }(\emptyset) = (n-1)!n!</m>. (Another way to
+          get this result is to let one person sit down. This determines the sex
+          of the person at each place of the table, so there are <m>(n-1)!</m> ways to
+          assign the people of the same sex of the first person, and <m>n!</m> ways to
+          assign the people of the opposite. It appears that there are <m>2n</m>
+          choices for where the first person sits, but we can break the seating
+          charts up into blocks of <m>2n</m> seating charts, each of which gives the
+          same circular arrangement. Thus there are <m>(n-1)!n!</m> inequivalent ways
+          to seat the people with at least the empty set of properties.)
+        </p>
+
+        <p>
+          Now if
+          <m>S</m> is nonempty, and has <m>s</m> members, we seat one of the couples that must
+          sit together (say the first in alphabetical order), and this determines the
+          sex of the person that must sit at each other place. There are <m>2n</m> pairs
+          of adjacent seats where we can seat that couple and two ways they can sit
+          in the pair of adjacent seats that we choose. Then we have <m>s-1</m> couples,
+          <m>n-s</m> men and <m>n-s</m> women to seat in the remaining places. First we
+          arrange the <m>s-1</m> couples and <m>2n-2s</m> identical empty chairs in places at
+          the table in <m>(2n-2s+s-1)!/(2n-2s)!=(2n-s-1)!/(2n-2s)!</m> ways. Each couple
+          can sit in only one way in the places they have chosen, because the sex of
+          the person in a given place has been determined by how the first couple
+          sits. The sex of the person in each of the remaining chairs has been
+          determined, so we assign the men to their seats in <m>(n-s)!</m> ways and we
+          assign the women to their seats in <m>(n-s)!</m> ways. Thus we have
+          <m>2\cdot2n(2n-s-1)!(n-s)!^2/(2n-2s)!</m> ways to place the people. But we can
+          partition the placements into blocks of <m>2n</m> equivalent placements,
+          because shifting everyone the same number of places to the right or left
+          gives an equivalent placement. Thus the number of inequivalent seating
+          arrangements is
+          <md>
+            <mrow>{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}\amp =\amp {2(2n-s-1)!(n-s)!^2\over
+            2(n-s)(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp {(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.</mrow>
+          </md>
+        </p>
+
+        <p>
+          Notice that
+          if we take
+          <m>s=0</m>, this formula reduces to <m>(n-1)!n!</m>. Thus for all sets <m>S</m>
+          <me>
+            N_{\mbox{a} }(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+          </me>
+        </p>
+
+        <p>
+          Then from <xref ref="incexempty">Equation</xref>
+          <md>
+            <mrow>N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+            \over(2n-2|S|-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
+            s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{2n-s-1\choose s}n!(n-s-1)!</mrow>
+          </md>
+          is the number of ways to seat the people, alternating sex, so
+          that no couple sits together.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Counting onto functions</title>
+    <activity xml:id="numontofun" category="essential">
+      <statement>
+        <p>
+          Given a function <m>f</m> from the <m>k</m>-element set <m>K</m> to the
+          <m>n</m>-element set <m>[n]</m>, we say <m>f</m> has property <m>i</m> if <m>f(x)\not= i</m> for
+          every <m>x</m> in
+          <m>K</m>. How many of these properties does an onto function have? What is
+          the number of functions from a <m>k</m>-element set onto an <m>n</m>-element
+          set?<index><main>onto functions</main><sub>number of</sub></index><index><main>surjections</main><sub>number
+          of</sub></index><index><main>functions</main><sub>onto!number of</sub></index>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          An onto function has none of these properties. Thus, using this set
+          <m>P</m> of properties, the number of onto functions is
+          <m>N_{\mbox{e} }(\emptyset)</m>. For a set <m>S</m> of these properties,
+          <m>N_{\mbox{a} }(S)</m> is the number of functions from <m>K</m> to <m>[n]-S'</m>, where <m>S'</m>
+          is the set of all <m>i</m> such that property <m>i</m> is in <m>S</m>. This number of
+          functions is <m>(n-|S|)^k</m>. Thus by <xref ref="incexempty">Equation</xref>
+          <md>
+            <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
+            (n-|S|)^k</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k</mrow>
+          </md>
+          is the number of functions from <m>K</m> onto <m>[n]</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Find a formula for the Stirling number (of the second kind)
+          <m>S(k,n)</m>.<index><main>Stirling Number</main><sub>second kind</sub></index>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since the number of functions from <m>[k]</m> onto <m>[n]</m> is <m>S(k,n)n!</m>,
+          we get from the solution to <xref ref="numontofun">Problem</xref>
+          <me>
+            S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k.
+          </me>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>The chromatic polynomial of a graph</title>
+    <p>
+      We defined a graph to consist of set <m>V</m> of elements called
+      vertices and a set <m>E</m> of elements called edges such that each edge joins
+      two vertices. A <em>coloring</em><index><main>coloring of a
+      graph</main></index><index><main>graph</main><sub>coloring of</sub></index> of a graph by the elements of a set
+      <m>C</m> (of colors) is an assignment of an element of <m>C</m> to each vertex of
+      the graph; that is, a function from the vertex set <m>V</m> of the graph to
+      <m>C</m>. A coloring is called <em>proper</em><index><main>coloring of a
+      graph</main><sub>proper</sub></index><index><main>graph</main><sub>coloring of!proper</sub></index><index><main>proper coloring of
+      a graph</main></index> if for each edge joining two distinct vertices<fn>If a
+      graph had a loop connecting a vertex to itself, that loop would connect a
+      vertex to a vertex of the same color.  It is because of this that we only
+      consider edges with two distinct vertices in our definition.</fn>, the two
+      vertices it joins have different colors. You may have heard of the famous
+      four color theorem of graph theory that says if a graph may be drawn in
+      the plane so that no two edges cross (though they may touch at a vertex),
+      then the graph has a proper coloring with four colors. Here we are
+      interested in a different, though related, problem: namely, in how many
+      ways may we properly color a graph (regardless of whether it can be drawn
+      in the plane or not) using
+      <m>k</m> or fewer colors? When we studied trees, we restricted ourselves to
+      connected graphs. (Recall that a graph is connected if, for each pair of
+      vertices, there is a walk between them.) Here, disconnected graphs will
+      also be important to us. Given a graph which might or might not be
+      connected, we partition its vertices into blocks called <em>connected
+      components</em><index><main>connected component of a graph</main></index><index><main>graph</main><sub>connected
+      component of</sub></index> as follows. For each vertex
+      <m>v</m> we put all vertices connected to it by a walk into a block together.
+      Clearly each vertex is in at least one block, because vertex
+      <m>v</m> is connected to vertex <m>v</m> by the trivial walk consisting of the
+      single vertex <m>v</m> and no edges. To have a partition, each vertex must be
+      in one and only one block. To prove that we have defined a
+      partition, suppose that vertex
+      <m>v</m> is in the blocks
+      <m>B_1</m> and <m>B_2</m>. Then <m>B_1</m> is the set of all
+      vertices connected by walks to some vertex <m>v_1</m> and <m>B_2</m> is the set of
+      all vertices connected by walks to some vertex <m>v_2</m>.
+    </p>
+
+    <activity xml:id="conncomp" category="essential for this or the next section">
+      <statement>
+        <p>
+          (Relevant in <xref ref="expogenfun">Appendix</xref> as well as this section.) Show
+          that
+          <m>B_1=B_2</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since <m>v</m> is in <m>B_1</m>, there is a walk from <m>v_1</m> to <m>v</m>. Since
+          there is a walk from every vertex in <m>B_1</m> to <m>v_1</m>, there is a walk from
+          every vertex in in <m>B_1</m> to <m>v</m>. But there is a walk from <m>v</m> to <m>v_2</m> since
+          <m>v\in B_2</m>. Thus there is a walk from every vertex in <m>B_1</m> to <m>v_2</m>. Then
+          by our description of <m>B_2</m> just before the problem, every vertex in <m>B_1</m> is
+          also in <m>B_2</m>. A similar argument shows that every vertex in <m>B_2</m> is also in
+          <m>B_1</m>. Thus <m>B_1=B_2</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      Since <m>B_1=B_2</m>, these two sets are the same block, and thus all blocks
+      containing <m>v</m> are identical, so <m>v</m> is in only one block. Thus we have
+      a partition of the vertex set, and the blocks of the partition are the
+      connected components of the graph. Notice that the connected components
+      depend on the edge set of the graph. If we have a graph on the vertex
+      set <m>V</m> with edge set
+      <m>E</m> and another graph on the vertex set
+      <m>V</m> with edge set <m>E'</m>, then these two graphs could have different
+      connected components. It is traditional to use the Greek letter
+      <m>\gamma</m> (gamma)<fn>The greek  letter gamma is pronounced gam-uh,
+      where gam rhymes with ham.</fn> to stand for the number of connected
+      components of a graph; in particular, <m>\gamma(V,E)</m> stands for the
+      number of connected components of the graph with vertex set <m>V</m> and edge
+      set <m>E</m>. We are going to show how the principle of inclusion and
+      exclusion may be used to compute the number of ways to properly color a
+      graph using colors from a set <m>C</m> of <m>c</m> colors.
+    </p>
+
+    <activity category="essential for this or the next section">
+      <p>
+        Suppose we have a graph G with vertex set V and edge set <m>E</m>.
+        Suppose <m>F</m> is a subset of <m>E</m>. Suppose we have a set <m>C</m> of <m>c</m> colors
+        with which to color the vertices.
+      </p>
+      <task>
+        <statement>
+          <p>
+            In terms of <m>\gamma(V,F)</m>, in how many
+            ways may we color the vertices of <m>G</m> so that each edge in <m>F</m> connects
+            two vertices of the same color?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            For each edge in <m>F</m> to connect two vertices of the same color, we
+            must have all the vertices in a connected component of the graph with vertex
+            set <m>V</m> and edge set <m>F</m> colored the same color. Thus the number of such
+            colorings is
+            <m>c^{\gamma(V,F)}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Given a coloring of <m>G</m>, for each edge <m>e</m> in <m>E</m>, let us consider
+            the property that the endpoints of <m>e</m> are colored the same color.  Let us
+            call this property <q>property <m>e</m>.</q>  In this way each set of properties
+            can be thought of as a subset of <m>E</m>.  What set of properties does a
+            proper coloring have?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            A proper coloring has none of the properties.
+          </p>
+        </solution>
+      </task>
+      <task xml:id="chromaticpoly" >
+        <p>
+        Find a formula (which may involve summing over all subsets <m>F</m> of
+        the edge set of the graph and using the number <m>\gamma(V,F)</m> of connected
+        components of the graph with vertex set <m>V</m> and edge set <m>F</m>) for the
+        number of proper colorings of
+        <m>G</m> using colors in the set <m>C</m>.
+        <solution>
+          <p>
+            <m>N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
+             (-1)^{|F|}c^{\gamma(V,F)}.</m>
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      The formula you found in <xref ref="chromaticpoly">Problem</xref> is a formula that
+      involves powers of <m>c</m>, and so it is a polynomial function of <m>c</m>. Thus
+      it is called the ``chromatic polynomial<index><main>graph</main><sub>chromatic
+      polynomial of</sub></index><index><main>chromatic polynomial of a graph</main></index> of the graph
+      <m>G</m>. Since we like to think about polynomials as having a
+      variable <m>x</m> and we like to think of <m>c</m> as standing for some constant,
+      people often use <m>x</m> as the notation for the number of colors we are
+      using to color <m>G</m>. Frequently people will use
+      <m>\chi_G(x)</m> to stand for the number of way to color
+      <m>G</m> with <m>x</m> colors, and call <m>\chi_G(x)</m> the <em>chromatic polynomial</em> of
+      <m>G</m>.
+    </p>
+
+    <activity xml:id="chrompolydel_cont" category="interesting">
+      <task>
+        <statement>
+        <p>
+          In Chapter 2 we introduced the deletion-contraction
+          recurrence<index><main>deletion-contraction recurrence</main></index> for counting spanning
+          trees of a graph. Figure out how the chromatic polynomial of a graph is
+          related to those resulting from deletion of an edge <m>e</m> and from
+          contraction of that same edge <m>e</m>. Try to find a recurrence like the one
+          for counting spanning trees that expresses the chromatic polynomial of a
+          graph in terms of the chromatic polynomials of <m>G-e</m> and <m>G/e</m> for an
+          arbitrary edge <m>e</m>. Use this recurrence to give another proof that the
+          number of ways to color a graph with <m>x</m> colors is a polynomial function
+          of <m>x</m>.
+        </p>
+        <solution>
+        <p>
+          The number of colorings of <m>G-e</m> is equal to the number of proper
+          colorings of <m>G</m> plus the number of colorings of <m>G</m> that are proper except
+          for giving both ends of <m>e</m> the same color. But the number of colorings of
+          <m>G</m> that are proper except for giving both ends of <m>e</m> the same color is the
+          number of proper colorings of <m>G/e</m>. Therefore <m>\chi_{G-e}(x) =\chi_G(x)
+          -\chi_{G/e}(x)</m>. This gives us <m>\chi_G(x) = \chi_{G-e}(x)
+          -\chi_{G/e}(x)</m>. We can use this to prove inductively that <m>\chi_G(x)</m> is a
+          polynomial in <m>x</m>. If <m>G</m> has one vertex, then the number of ways to color
+          <m>G</m> properly with <m>x</m> colors is <m>x</m>. This is a polynomial in <m>x</m>. Now
+          suppose inductively that <m>G</m> has more than one vertex and whenever a graph <m>H</m>
+          has fewer vertices than
+          <m>G</m>, the function <m>\chi_H(x)</m> is a polynomial function in <m>x</m>. Then
+          <m>\chi_G(x)= \chi_{G-e}(x)-\chi_{G/e}(x)</m>, is a difference of of two polynomial
+          functions in <m>x</m>, so it is a polynomial function in <m>x</m>. Therefore by the
+          principle of mathematical induction, for all graphs <m>G</m> on a finite vertex
+          set, the number of ways to properly color <m>G</m> in <m>x</m> colors is a polynomial in
+          <m>x</m>.
+        </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the deletion-contraction recurrence to compute the
+            chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>. (You can
+            simplify your computations by thinking about the effect on the chromatic
+            polynomial of deleting an edge that is a loop, or deleting one of several
+            edges between the same two vertices.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If a graph has a loop it has no proper colorings. The graph in
+            <xref ref="del-cont">Figure</xref> has no loops and no multiple edges between two
+            vertices. The only way we could get a loop is by contracting one of several
+            multiple edges between two vertices, and the resulting graph would have no
+            contribution to the chromatic polynomial of the original graph. Thus whenever
+            a contraction gives us a graph with multiple edges between two vertices, we
+            can replace the multiple edges by one edge and go on with our computation from
+            there. The graphs we get when we delete and contract the edges <m>\{1,2\}</m> and
+            <m>\{2,3\}</m> are <m>(G-\{1,2\})-\{2,3\}</m>, <m>(G-\{1,2\})/\{2,3\}</m>,
+            <m>(G-\{2,3\})/\{1,2\}</m>, and <m>(G/\{2,3\})/\{1,2\}</m>. These are shown in the
+            following picture.
+            \mbox{
+            <image width="73%" source="images/" />
+            } The chromatic polynomial of a triangle is <m>x(x-1)(x-2)</m> because
+            for one vertex we have <m>x</m> colors, for a second we have <m>x-1</m>, and for the
+            third vertex, because it is adjacent to both of the other vertices, we have
+            <m>x-2</m> choices of colors. For a vertex of degree 1 there are <m>x-1</m> choices of
+            colors, those colors not used on the one vertex it is adjacent to. As we
+            mentioned, the extra edges do not change the chromatic polynomial, so we have
+            that the chromatic polynomial of <m>(G-\{1,2\})-\{2,3\}</m> is <m>x(x-1)^3(x-2)</m>, the
+            chromatic polynomial of <m>(G-\{1,2\})/\{2,3\}</m> is <m>x(x-1)^2(x-2)</m>, as is that of
+            <m>(G-\{2,3\})/\{1,2\}</m>, and the chromatic polynomial of <m>(G/\{2,3\})/\{1,2\}</m> is
+            <m>(x-1)(x-2)(x-3)</m>. Using the deletion-contraction recurrence, we get that
+            <md>
+              <mrow>\chi_G(x) \amp =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)</mrow>
+              <mrow>\amp =\amp 
+              \chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
+              \chi_{(G/\{1,2\})-\{2,3\}}(x)</mrow>
+              <mrow>\amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)</mrow>
+              <mrow>\amp =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)</mrow>
+              <mrow>\amp =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)</mrow>
+              <mrow>\amp =\amp  x^3(x-1)(x-2)</mrow>
+            </md>
+            for the chromatic polynomial of <m>G</m>.
+          </p>
+        </solution>
+      </task>
+      <figure xml:id="del-cont" >
+        <caption>A
+        graph.</caption>
+        \vglue-1in
+        \mbox{
+        <image width="73%" source="images/" />
+        }
+      </figure>
+      </statement>
+    </activity>
+
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            In how many ways may you properly color the vertices of a path on
+            <m>n</m> vertices with
+            <m>x</m> colors? Describe any dependence of the chromatic polynomial of a path
+            on the number of vertices. In how many ways may you properly color the
+            vertices of a cycle on <m>n</m> vertices with
+            <m>x</m> colors? Describe any dependence of the chromatic polynomial of a
+            cycle on the number of vertices.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To color the vertices of a path, start at one end. There are <m>x</m>
+            colors for that vertex, and <m>x-1</m> colors for each of the next <m>n-1</m>, since
+            each of them must be different from the preceding one. Thus the chromatic
+            polynomial of a path on <m>n</m> vertices is <m>x(x-1)^{n-1}</m>. The dependence on the
+            number of vertices appears in the exponent on <m>x-1</m>. If we use <m>C_n</m> to stand
+            for a path on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then
+            by the deletion-contraction recurrence, we may write
+            <md>
+              <mrow>\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp 
+              \chi_{P_n}(x)-\chi_{C_{n-1}}(x)</mrow>
+              <mrow>\amp =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)</mrow>
+              <mrow>\amp =\amp 
+              \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
+              \cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))</mrow>
+              <mrow>\amp =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots</mrow>
+              <mrow>\amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]</mrow>
+              <mrow>\amp =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}</mrow>
+              <mrow>\amp =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i</mrow>
+              <mrow>\amp =\amp x(x-1)(-1)^{n-2}{1-(1-x)^{n-1}\over 1-(1-x)}</mrow>
+              <mrow>\amp =\amp (x-1)[(x-1)^{n-1}+(-1)^n].</mrow>
+            </md>
+          </p>
+
+          <p>
+            Here the dependence on <m>n</m> is
+            interesting; effectively, we are taking <m>(x-1)</m> times the result of dropping
+            the constant term from <m>(x-1)^{n-1}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            In how many ways may you properly color the vertices of a tree on
+            <m>n</m> vertices with
+            <m>x</m> colors?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Color an arbitrary vertex; you have <m>x</m> choices for the color of
+            that vertex. No two vertices adjacent to it are adjacent (otherwise we'd have
+            a cycle), so for for each of them you have <m>x-1</m> choices of colors. No two
+            vertices adjacent to colored vertices are adjacent to each other, nor is
+            one of them adjacent to two colored vertices (in either case you'd have a
+            cycle), so for each of them you'd have <m>x-1</m> colors. You can continue this
+            argument until all vertices are colored, so you have <m>x(x-1)^{n-1}</m> ways to
+            color the vertices.
+          </p>
+
+          <p>
+            You can also prove by induction that the chromatic polynomial of a tree is
+            <m>x(x-1)^{n-1}</m>. This is clearly true if there is one vertex. Otherwise,
+            choose a vertex of degree 1 in an <m>n</m>-vertex tree and remove it. You may
+            inductively assume that the chromatic polynomial of the remaining tree is
+            <m>x(x-1)^{n-2}</m>. Now there are <m>x-1</m> choices for the color of the vertex you
+            removed since it has degree 1, and so the chromatic polynomial of the tree is
+            <m>x(x-1)^{n-1}</m>. There is also an inductive argument in which you delete and
+            contract an arbitrary edge.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          What do you observe about the signs of the coefficients of the
+          chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>? What about
+          the signs of the coefficients of the chromatic polynomial of a path? Of
+          a cycle? Of a tree? Make a conjecture about the signs of the
+          coefficients of a chromatic polynomial and prove it.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          not all powers of <m>x</m> appear, but the signs alternate as the power
+          of
+          <m>x</m> increases; that is, the sign of
+          <m>x^i</m> is opposite that of <m>x^{i+1}</m>. More precisely, if <m>c_i</m> is the
+          coefficient of <m>x^i</m>, then <m>(-1)^{n-i}c_i\ge 0</m>. To prove this, note it is
+          trivially true for a graph with no edges. Choose an edge <m>e</m> of
+          <m>G</m>. Then
+          <m>\chi_G(x) =
+          \chi_{G-e}(x)-\chi_{G/e}(x)</m>. In <m>G-e</m>, we may assume inductively that
+          <m>(-1)^{n-i}c'_i\ge0</m> and in <m>G-/e</m> we can assume inductively that
+          <m>c''_i(-1)^{n-1-i}\ge0</m>, where we use <m>c'_i</m> and <m>c''_i</m> as the coefficient of
+          <m>x^i</m> in <m>\chi_{G-e}(x)</m> and <m>\chi_{G/e}(x)</m>, respectively. Then <m>c_i=c'_i
+          -c''_i</m>, and
+          <me>
+            c_i(-1)^{n-i}=c'_i(-1)^{n-i}-c''_i(-1)^{n-i}=c'_i(-1)^{n-i}+c''_i(-1)^{n-1-i}
+            \ge0.
+          </me>
+        </p>
+
+        <p>
+          Therefore by the principle of mathematical induction, <m>c_i(-1)^i\ge0</m>
+          for all finite graphs.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>

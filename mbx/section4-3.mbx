@@ -1,0 +1,1655 @@
+
+<section>
+  <title>Partitions of Integers</title>
+  <introduction>
+    <p>
+      We have now completed all our
+      distribution problems except for those in which both the objects and the
+      recipients are identical. For example, we might be putting identical
+      apples into identical paper bags. In this case all that matters is how
+      many bags get one apple (how many recipients get one object), how many
+      get two, how many get three, and so on. Thus for each bag we have a
+      number, and the multiset of numbers of apples in the various bags is
+      what determines our distribution of apples into identical bags. A
+      multiset of positive integers that add to <m>n</m> is called a <em>partition</em><index><main>partition of an integer</main></index> of
+      <m>n</m>. Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1)
+      and 3. The number of partitions of <m>k</m> is denoted by <m>P(k)</m>; in
+      computing the partitions of 3 we showed that <m>P(3) = 3</m>. It is
+      traditional to use Greek letters like <m>\lambda</m> (the Greek letter
+      <m>\lambda</m> is pronounced LAMB duh) to stand for partitons;
+      we might write <m>\lambda= 1,1,1</m>, <m>\gamma= 2,1</m> and <m>\tau = 3</m>
+      to stand for the three partitions we just described. We also write
+      <m>\lambda = 1^3</m> as a shorthand for <m>\lambda = 1,1,1</m>, and we write
+      <m>\lambda \dashv 3</m> as a shorthand for ``<m>\lambda</m> is a partition of
+      three."
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Find all partitions of 4 and find all partitions of 5, thereby
+          computing <m>P(4)</m> and <m>P(5)</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>4=1+1+1+1</m>, <m>4=2+1+1</m>, <m>4=2+1</m>, <m>4=3+1</m>, <m>4=4</m>, so that
+          <m>P(4)=5</m>. <m>5=1+1+1+1+1</m>, <m>5=2+1+1+1</m>, <m>5=2+2+1</m>, <m>5=3+1+1</m>, <m>5=3+2</m>,
+          <m>5=4+1</m>, <m>5=5</m>, so that <m>P(5)=7</m>.
+        </p>
+      </solution>
+    </activity>
+  </introduction>
+
+  <subsection>
+    <title>The number of partitions of <m>k</m> into <m>n</m> parts</title>
+    <p>
+      A <em>partition of the integer <m>k</m> into <m>n</m> parts</em><index><main>partition
+      of an integer</main><sub>into <m>n</m> parts</sub></index> is a multiset of
+      <m>n</m> positive integers that add to <m>k</m>. We use <m>P(k,n)</m> to denote the
+      number of partitions of <m>k</m> into <m>n</m> parts. Thus <m>P(k,n)</m> is the number
+      of ways to distribute <m>k</m> identical objects to <m>n</m> identical recipients
+      so that each gets at least one.
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Find
+          <m>P(6,3)</m> by finding all partitions of 6 into 3 parts. What does this say
+          about the number of ways to put six identical apples into three identical
+          bags so that each bag has at least one apple?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>6=4+1+1</m>, <m>6=3+2+1</m>, <m>6=2+2+2</m>, so <m>P(6,3)=3</m>. This says
+          there are three ways to put six identical apples into three identical
+          bags so that each bag gets at least one apple.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Representations of partitions</title>
+    <activity category="motivation">
+      <task>
+        <statement>
+          <p>
+            How many solutions are there in the positive integers to the
+            equation <m>x_1+x_2+x_3 =7</m> with <m>x_1\ge x_2\ge x_3</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            This problem is asking for <m>P(7,3)</m> and suggests an
+            organized way to go about finding it: list the partitions starting
+            with the largest part and work down. <m>7=5+1+1</m>, <m>7=4+2+1</m>,
+            <m>7=3+3+1</m>, <m>7=3+2+2</m>, and if we have three numbers that add to seven,
+            one must be larger than two, so there are four such solutions.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain the relationship between partitions of <m>k</m> into <m>n</m> parts
+            and lists <m>x_1,x_2</m>,<ellipsis />, <m>x_n</m> of positive integers with
+            <m>x_1\ge x_2\ge\ldots
+            \ge x_n</m>. Such a representation of a partition is called a <em>decreasing list</em><index><main>partition of an integer</main><sub>decreasing list</sub></index>
+            representation of the partition.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There is a bijection between partitions of <m>k</m> into <m>n</m>
+            parts and lists, in nonincreasing order, of <m>n</m> positive integers that
+            add to <m>k</m>, because each multiset of numbers that adds to <m>k</m> can be
+            listed in nonincreasing order in exactly one way.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="motivation">
+      <task>
+        <statement>
+          <p>
+            Describe the relationship between partitions of <m>k</m> and lists or
+            vectors <m>(x_1,x_2,\ldots,x_n)</m> such that <m>x_1+2x_2+\ldots kx_k = k</m>.
+            Such a representation of a partition is called a <em>type vector</em>
+            representation of a partition, and it is typical to leave the trailing
+            zeros out of such a representation; for example <m>(2,1)</m> stands for the
+            same partition as <m>(2,1,0,0)</m>. What is the decreasing list
+            representation for this partition, and what number does it
+            partition?<index><main>partition of an integer</main><sub>type vector</sub></index><index><main>type vector
+            for a partition of an integer</main></index>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The type vector of a partition of <m>k</m> is a way of
+            representing the multiplicity function of the multiset of integers
+            that adds to <m>k</m>. Thus there is a bijection between type vectors and
+            partitions.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            How does the number of partitions of <m>k</m> relate to the number of
+            partitions of <m>k+1</m> whose smallest part is one?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            They are equal, because if we take two different partitions
+            of <m>k-1</m> and increase the multiplicity of 1 in each (by one), they are
+            still different; also if we take two different partitions of <m>k</m> that
+            have parts of size one, and decrease the multiplicity of 1 in each (by
+            one), they are still different.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      When we write a partition as
+      <m>\lambda =
+      \lambda_1,\lambda_2,\ldots,\lambda_n</m>, it is customary to write the list of
+      <m>\lambda_i</m>s as a decreasing list. When we have a type vector
+      <m>(t_1,t_2,\ldots,t_m)</m> for a partition, we write either <m>\lambda =
+      1^{t_1}2^{t_2}\cdots m^{t_m}</m> or <m>\lambda =  m^{t_m}(m-1)^{t_{m-1}}\cdots
+      2^{t_2}1^{t_1}</m>. Henceforth we will use the second of these. When we
+      write <m>\lambda=\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}</m>, we
+      will assume that <m>\lambda_i>\lambda_i+1</m>.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Ferrers and Young Diagrams and the conjugate of a partition</title>
+    <p>
+      The decreasing list representation of partitions leads us to a handy way
+      to visualize partitions. Given a decreasing list
+      <m>(\lambda_1,\lambda_2,\ldots \lambda_n)</m>, we draw a figure made up of
+      rows of dots that has <m>\lambda_1</m> equally spaced dots in the first row,
+      <m>\lambda_2</m> equally spaced dots in the second row, starting out right
+      below the beginning of the first row and so on. Equivalently, instead of
+      dots, we may use identical squares, drawn so that a square touches each
+      one to its immediate right or immediately below it along an edge. See
+      <xref ref="FerrersYoung">Figure</xref> for examples.<index><main>Ferrers diagram</main></index><index><main>Young
+      diagram</main></index><index><main>partition of an integer</main><sub>Ferrers diagram</sub></index><index><main>partition
+      of an integer</main><sub>Young diagram</sub></index><index><main>diagram</main><sub>of a
+      partition!Ferrers</sub></index><index><main>diagram</main><sub>of a partition!Young</sub></index> The figure we draw
+      with dots is called the Ferrers diagram of the partition; sometimes the
+      figure with squares is also called a Ferrers diagram; sometimes it is
+      called a Young diagram. At this stage it is irrelevant which name we
+      choose and which kind of figure we draw; in more advanced work the squares
+      are handy because we can put things like numbers or variables into them.
+      From now on we will use squares and call the diagrams Young diagrams.
+    </p>
+
+    <figure xml:id="FerrersYoung" >
+      <caption>The Ferrers
+      and Young diagrams of the partition
+      (5,3,3,2)</caption>
+      <image width="73%" source="images/" />
+    </figure>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          Draw the Young diagram of the partition (4,4,3,1,1). Describe the
+          geometric relationship between the Young diagram of (5,3,3,2) and the
+          Young diagram of (4,4,3,1,1).
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <image width="73%" source="images/" />
+          We get the Young diagram of <m>(5,3,3,2)</m> by flipping the
+          Young diagram of <m>(4,4,3,1,1)</m> around a line that includes the diagonal
+          of the upper left box; if we think of the top left corner of the
+          diagram as being at the origin, we flip around the line <m>y=-x</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          The partition <m>(\lambda_1,\lambda_2,\ldots, \lambda_n)</m> is called
+          the <em>conjugate</em><index><main>conjugate of an integer
+          partition</main></index><index><main>partition of an integer</main><sub>conjugate of</sub></index> of the partition
+          <m>(\gamma_1,\gamma_2,\ldots, \gamma_m)</m> if we obtain the Young diagram of
+          one from the Young diagram of the other by flipping one around the line
+          with slope -1 that extends the diagonal of the top left square. See <xref ref="conjugateYoung">Figure</xref> for an example.
+        </p>
+
+        <figure xml:id="conjugateYoung" >
+          <caption>The Ferrers
+          diagram the partition
+          (5,3,3,2) and its conjugate.</caption>
+          <image width="73%" source="images/" />
+        </figure>
+
+        <p>
+          What is the conjugate of
+          (4,4,3,1,1)? How is the largest part of a partition related to the
+          number of parts of its conjugate? What does this tell you about the
+          number of partitions of a positive integer <m>k</m> with largest part <m>m</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>(5,3,3,2)</m>. The largest part of a partition equals the
+          number of parts of its conjugate. The number of partitions of <m>k</m>
+          with largest part <m>m</m> equals the number of partitions of <m>k</m> with <m>m</m>
+          parts.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            A partition is called <em>self-conjugate</em><index><main>self-conjugate
+            partition</main></index><index><main>partition of an integer</main><sub>self conjugate</sub></index> if it is equal
+            to its conjugate. Find a relationship between the number of
+            self-conjugate partitions of <m>k</m> and the number of partitions of <m>k</m> into
+            distinct odd parts.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of self-conjugate partitons of <m>k</m> equals the
+            number of partitions of <m>k</m> with distinct odd parts. Here is a
+            geometric description of a bijection from self conjugate partitions of
+            <m>k</m> to partitions into distinct odd parts.
+            <image width="73%" source="images/" />
+            Take the top row and left
+            column of squares of the Young diagram, and make them into one row in a
+            new diagram. (Only include the square that is in both the row and column
+            once.) Now take the remaining squares in the next row and column and make
+            a new row of the Young diagram of the second partition with them.
+            Continue this process with succeeding rows and columns, not using any
+            squares you have already used. Because the first partition is self
+            conjugate, the diagram has the same number of rows as columns and row
+            <m>i</m> and column
+            <m>i</m> have the same length. Because row <m>i</m> and column <m>i</m> share one
+            square, and we only use that square once when we create a new row, each row
+            we create has odd length. Thus we get a partition with the same number of
+            squares, so it is a partition of <m>k</m> and each part is odd. The parts are
+            distinct because when we take off the squares of a row and column, we
+            reduce the number of squares in each row and column that remains. Given
+            a partition of <m>k</m> into distinct odd parts, we use the fact that each
+            row has a unique middle element, and each is shorter than the one
+            above (by at least two squares) to reverse the process. Thus we have a
+            bijection.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Explain the relationship between the number of partitions of <m>k</m>
+            into even parts and the number of partitions of <m>k</m> into parts of even
+            multiplicity, i.e. parts which are each used an even number of times as
+            in (3,3,3,3,2,2,1,1).
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of partitions of <m>k</m> into even parts equals the
+            number of partitions of parts of even multiplicity, because if we take
+            the Young diagram of a partition of <m>k</m> into even parts and conjugate
+            it, the resulting diagram has columns of even length. Thus the
+            difference in heights of two successive columns is an even number,
+            but this difference is the multiplicity of one of the parts of the
+            conjugate. Further the height of the last column of a partition is
+            the multiplicity of the first part. Since the multiplicity of any part
+            of a partition is either the difference in height of two successive
+            columns of the Young diagram or the height of the last column, then
+            each part of the conjugate has even multiplicity. This bijection can
+            be reversed, because if all the differences in height of the columns are
+            even and the height of the last column is even, then when we
+            conjugate this partition, the last row will be an even length, and
+            all differences in length of the rows will be even, so all the parts
+            of the resulting partition will be even.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="rectanglecomplement" category="interesting">
+      <task>
+        <statement>
+          <p>
+            Show that the number of partitions of <m>k</m> into <m>4</m> parts equals
+            the number of partitions of <m>3k</m> (or <m>3k+4</m> or <m>3k-4</m>) into <m>4</m> parts.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Think about putting the Young diagram of the partition into
+            the upper left corner of a rectangle that is <m>k</m> units wide and four
+            units high. Subdivide the rectangle into <m>4k</m> squares of unit area.
+            The Young diagram covers <m>k</m> of these squares. The uncovered squares
+            are in rows of length <m>r_1\le r_2\le r_3\le r_4</m>. Thus if we list
+            these lengths in the opposite order, we have a decreasing list
+            representation of a partition of <m>3k</m>. Even <m>r_1</m> will have to be
+            positive, because the first part of the original partition will be at
+            most <m>k-3</m>. To get partitions of <m>3k+4</m>, use a rectangle of width
+            <m>k+1</m>, and to get partitions of <m>3k-4</m>, use a rectangle of width
+            <m>k-1</m>. Since the first row of the Young diagram has at most <m>k-3</m>
+            squares, we will still have four nonzero parts in the partition that
+            results.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The idea of conjugation of a partition could be defined without the
+            geometric interpretation of a Young diagram, but it would seem far less
+            natural without the geometric interpretation. Another idea that seems
+            much more natural in a geometric context is this. Suppose we have a
+            partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>. Then the Young
+            diagram of the partition can fit into a rectangle that is <m>m</m> or more
+            units wide (horizontally) and <m>n</m> or more units deep. Suppose we place
+            the Young diagram of our partition in the top left-hand corner of an <m>m'</m>
+            unit wide and
+            <m>n'</m> unit deep rectangle with <m>m'\ge m</m> and <m>n' \ge n</m>, as in <xref ref="complementpartition">Figure</xref>.
+          </p>
+
+          <figure xml:id="complementpartition" >
+            <caption>To complement the partition
+            (5,3,3,2) in a 6 by 5 rectangle: enclose it in
+            the rectangle, rotate, and cut out the
+            original Young diagram.</caption>
+            <image width="73%" source="images/" />
+          </figure>
+
+          <p>
+            Why can we interpret the part of the rectangle
+            not occupied by our Young diagram, rotated in the
+            plane, as the Young diagram of another partition? This is called the
+            <em>complement</em><index><main>complement of a partition</main></index> of our partition in the
+            rectangle. What integer is being partitioned by the complement? What
+            conditions on
+            <m>m'</m> and <m>n'</m> guarantee that the complement has the same number of parts
+            as the original one? What conditions on <m>m'</m> and <m>n'</m> guarantee that the
+            complement has the same largest part as the original one? Is it possible
+            for the complement to have both the same number of parts and the same
+            largest part as the original one? If we complement a partition in an
+            <m>m'</m> by <m>n'</m> box and then complement that partition in an <m>m'</m> by <m>n'</m>
+            box again, do we get the same partition that we started
+            with?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we fill the rectangle with unit squares, those not in the
+            Young diagram of the original partition <m>\lambda</m> will fall into rows.
+            The lengths of the rows are nonnegative, and are nondecreasing as we
+            move down. Therefore, after we rotate through 180 degrees, these same
+            rows will be listed in the opposite order, lined up along the left sides,
+            and will have nonincreasing length. Thus they will be the Young
+            diagram of a partition. The integer being partitioned will be
+            <m>m'n'-k</m>. If
+            <m>m'>m</m> and <m>n'=n</m>. the two partitions will have the same number of
+            parts, because we will have a nonzero number of empty squares at the end
+            of each row of the Young diagram of <m>\lambda</m>. If <m>m'=m</m> and <m>n'-n</m>
+            is the multiplicity of the largest part of <m>\lambda</m>, they
+            will have the same number of parts. Otherwise, their numbers of
+            parts will differ. If
+            <m>n'>n</m> and
+            <m>m=m'</m>, then the two partitions will have the same largest part. If
+            <m>n'=n</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>,
+            then they will have the same largest part. Otherwise, their largest
+            parts will differ. Thus for the two partitions to have the same
+            number of parts, either <m>m'=m</m> or <m>n'=n</m>. If <m>m'=m</m> and they have the
+            same largest part, then <m>n'>n</m>. But this is consistent with <m>n'-n</m>
+            being the multiplicity of the largest part of <m>\lambda</m>. Thus they can
+            have the same number of parts and the same largest part if <m>m'=m</m> and
+            <m>n'-n</m> is the multiplicity of the largest part of <m>\lambda</m>, or
+            similarly if
+            <m>n=n'</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            Suppose we take a partition of <m>k</m> into <m>n</m> parts with largest
+            part <m>m</m>, complement it in the smallest rectangle it will fit into,
+            complement the result in the smallest rectangle it will fit into, and
+            continue the process until we get the partition 1 of one into one part.
+            What can you say about the partition with which we started?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let us call the process of enclosing <m>\lambda</m> in the smallest
+            rectangle possible and then forming the complement in that rectangle
+            <em>encomplementation</em> (This is short for <em>en</em>\/closure
+            and <em>complementation</em> and is not a standard term<mdash />there is no
+            standard term for this operation.) and call the result of it the <em>encomplement</em><index><main>encomplement of a partition</main></index> of
+            <m>\lambda</m>.
+            The result of two encomplementations on the Young diagram
+            of a partition is to remove all rows of maximum length and all columns
+            of maximum length from the Young diagram. Thus the description of the
+            result of an even number <m>2j</m> of encomplementations is straightforward;
+            we remove all the rows of the <m>j</m> largest distinct lengths and all
+            columns of the <m>j</m> largest distinct lengths. So if an even number of
+            encomplementations brings us to a partition with one block of size
+            one, we should be able to describe the original partition fairly
+            easily. To deal with the result of an odd number of
+            encomplementations, we ask what happens if we encomplement just once.
+            If the complement of
+            <m>\lambda</m> in the smallest rectangle in which if fits has one square, then
+            <m>\lambda =\lambda_1^{n_1}\lambda_1-1</m>. Thus we are asking for the
+            partitions which, after an even number of encomplementations, give us
+            either the partition with one block or a partition of the form
+            <m>\lambda_1^{n_1}(\lambda_1-1)</m>. First we ask what
+            kind of partition results in the second one after two
+            encomplementations. If we get
+            <m>\lambda_1^{n_1}(\lambda_1-1)</m> from two
+            encomplementations, the partition we started with had the form
+            <me>
+              \lambda_0^{n_0}(\lambda_1+\lambda_{2})^{n_1}(\lambda_1+
+              \lambda_2-1)\lambda_2^{n_2}.
+            </me>
+          </p>
+
+          <p>
+            If
+            we get <m>\lambda_1^{n_1}(\lambda_1-1)</m> from four
+            encomplementations, then we started with a partition of the form
+            <me>
+              \lambda_{-1}^{n_{-1}}(\lambda_0+\lambda_{3})^{n_0}(\lambda_1+
+              \lambda_2 +
+              \lambda_{3})^{n_1}(\lambda_1+\lambda_2 +\lambda_3-1)(\lambda_2+
+              \lambda_{3})^{n_3}
+              \lambda_3^{n_3}.
+            </me>
+          </p>
+
+          <p>
+            From this pattern we see that a partition that results in
+            <m>\lambda_1^{n_1}(\lambda_1-1)</m> after <m>2j</m> encomplementations has the
+            form
+            <men xml:id="form1" >
+              \lambda_{1-j}^{n_{1-j}}\lambda_{2-j}^{n_{2-j}}\cdots
+              \lambda_0^{n_0}
+              {\lambda'_1}^{n_1}
+              (\lambda'_1-1)\lambda_2^{n_2}\cdots
+              \lambda_{j+1}^{n_{j+1}},
+            </men>
+            where <m>\lambda_i>\lambda_{i+1}</m> and <m>\lambda_0>\lambda'_1>\lambda_2+1</m>.
+          </p>
+
+          <p>
+            On the other hand, a partition <m>\lambda</m> that results in <m>1</m> after
+            two encomplementations has the form
+            <m>\lambda_0^{n_0}(\lambda_1+1)\lambda_1^{n_1}</m>, and so a partition that
+            results in 1 after <m>j</m> encomplementations is of the form
+            <men xml:id="form2" >
+              \lambda_{1-j}^{n_{1-j}}\lambda_{2-j}^{n_{2-j}}\cdots
+              \lambda_0^{n_0}(\lambda_1+1)\lambda_1^{n_1}\lambda_2^{n_2}\cdots
+              \lambda_j^{n_j},
+            </men>
+            where <m>\lambda_i>\lambda_{i+1}</m> and <m>\lambda_0>\lambda_1+1</m>. Thus a
+            partition results in a single part of size 1 after some number of
+            encomplementations if and only if it has the form of <xref ref="form1">Equation</xref> or <xref ref="form2">Equation</xref>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that <m>P(k,n)</m> is at least <m>{1\over n!}{k-1\choose n-1}</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of compositions of <m>k</m> into <m>n</m> parts is
+            <m>k-1\choose n-1</m>. We can divide the compositions into blocks,
+            where two compositions are in the same block if and only if one is a
+            rearrangement of the other. Then the blocks correspond bijectively to
+            partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the
+            number of blocks by dividing by the number of compositions per block
+            since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.
+            But then if we divide the number of compositions by <m>n!</m> we will get a
+            number less than the number of blocks because <m>n!</m> times the number of
+            blocks would be, by the sum principle, greater than the number of
+            partitions.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      With the binomial coefficients, with Stirling numbers of the
+      second kind, and with the Lah numbers, we were able to find a
+      recurrence by asking what happens to our subset, partition, or broken
+      permutation of a set <m>S</m> of numbers if we remove the largest element of
+      <m>S</m>. Thus it is natural to look for a recurrence to count the number of
+      partitions of <m>k</m> into <m>n</m> parts by doing something similar.
+      Unfortunately, since we are counting distributions in which all the
+      objects are identical, there is no way for us to identify a largest
+      element. However if we think geometrically, we can ask what we could
+      remove from a Young diagram to get a Young diagram. Two natural ways to
+      get a partition of a smaller integer from a partition of
+      <m>n</m> would be to remove the top row of the Young diagram of the partition
+      and to remove the left column of the Young diagram of the partition.
+      These two operations correspond to removing the largest part from the
+      partition and to subtracting 1 from each part of the partition
+      respectively. Even though they are symmetric with respect to
+      conjugation, they aren't symmetric with respect to the number of parts.
+      Thus one might be much more useful than the other for finding a recurrence
+      for the number of partitions of
+      <m>k</m> into <m>n</m> parts.
+    </p>
+
+    <activity xml:id="numberpartitionrecurrence" category="essential for this or the next section, and interesting">
+      <p>
+        In this problem we will study the two operations and see
+        which one seems more useful for getting a recurrence for
+        <m>P(k,n)</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            How many parts does the remaining partition
+            have when we remove the largest part (more precisely, we reduce its
+            multiplicity by one) from a partition of
+            <m>k</m> into
+            <m>n</m> parts?  What can you say about the number of parts of the remaining
+            partition if we remove one from each part?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Reducing the multiplicity of the largest part by one reduces
+            the number of parts by one. Removing 1 from each part reduces the
+            number of parts by the multiplicity of the smallest part, so it
+            strictly reduces the number of parts, perhaps even to one.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            If the largest part of a partition is <m>j</m> and we remove it,
+            what integer is being partitioned by the remaining parts of the
+            partition? If we remove one from each part of a partition of <m>k</m> into
+            <m>n</m> parts, what integer is being partitioned by the remaining parts?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If we remove the largest part, the integer being partitioned
+            is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and
+            at least <m>n-1</m>. If we remove one from each part of the partition, the
+            integer being partitioned is <m>k-n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            The last two questions are designed to get you thinking about how
+            we can get a bijection between the set of  partitions of <m>k</m> into
+            <m>n</m> parts and some other set of partitions that are partitions of a
+            smaller number.  These questions describe two different strategies for
+            getting that set of partitions of a smaller number or of smaller numbers. 
+            Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m>
+            parts and a set of partitions of a smaller number or numbers.  For each
+            strategy, use the answers to the last two questions to find and describe 
+            this set of partitions into a smaller number and a bijection between
+            partitions of
+            <m>k</m> into
+            <m>n</m> parts and partitions of the smaller integer or integers into
+            appropriate numbers of parts.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Removing the largest part of a partition of <m>k</m> into <m>n</m>
+            parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and
+            and partitions of numbers <m>k'</m> between
+            <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing
+            the largest part gives us such a partition, and adjoining a part of
+            size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m>
+            parts.)
+          </p>
+
+          <p>
+            Removing one from each part of a partition of <m>k</m> into <m>n</m>
+            parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts
+            and and partitions <m>k-n</m> into <m>n</m> or fewer parts. (Removing one from
+            each part of a partition of <m>k</m> into <m>n</m> parts gives us such a
+            partition, and, given such a partition, we get a partition of <m>k</m> into
+            <m>n</m> parts by adding one to each part and then creating enough parts of
+            size 1 to have <m>n</m> parts.)
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a recurrence (which need not have just two terms on the
+            right hand side) that describes how to compute <m>P(k,n)</m> in terms of the
+            number of partitions of smaller integers into a smaller number of
+            parts. (Hint: One of the two sets of partitions of smaller numbers
+            from the previous part is more amenable to finding a recurrence than the
+            other.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The second bijection is to the set of partitions of <m>k-1</m>
+            into <m>n</m> or fewer parts, and this makes the second bijection sound
+            easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The
+            proof is the bijection we already described; in particular a partition
+            of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by
+            adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of
+            size one.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>P(k,1)</m> for a positive integer <m>k</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>P(k,1)=1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What is <m>P(k,k)</m> for a positive integer <m>k</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>P(k,k)=1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use your recurrence to compute a table with the values of
+            <m>P(k,n)</m> for values of <m>k</m> between 1 and 7.
+          </p>
+        </statement>
+        <solution>
+          <tabular>
+            <row>
+              <cell><m>k\backslash n</m></cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>5</cell>
+              <cell>6</cell>
+              <cell>7</cell>
+            </row>
+            <row bottom="minor">
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+              <cell></cell>
+            </row>
+            <row>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>3</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>4</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>5</cell>
+              <cell>1</cell>
+              <cell>2</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>6</cell>
+              <cell>1</cell>
+              <cell>3</cell>
+              <cell>3</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+              <cell>0</cell>
+            </row>
+            <row>
+              <cell>7</cell>
+              <cell>1</cell>
+              <cell>3</cell>
+              <cell>4</cell>
+              <cell>3</cell>
+              <cell>2</cell>
+              <cell>1</cell>
+              <cell>1</cell>
+            </row>
+          </tabular>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What would you want to fill
+            into row 0 and column 0 of your table in order to make it consistent with
+            your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually
+            define a sum with no terms in it to be zero. Is that consistent with the
+            way the recurrence says we should define <m>P(0,0)</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for
+            positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of
+            positive integers is zero, this gives us one partition of the number
+            zero, namely the empty multiset of positive integers.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      It is remarkable that
+      there is no known formula for <m>P(k,n)</m>, nor is there one for <m>P(k)</m>. This
+      section was are devoted to developing
+      methods for computing values of <m>P(n,k)</m> and finding properties of
+      <m>P(n,k)</m> that we can prove even without knowing a formula. Some future
+      sections will attempt to develop other methods.
+    </p>
+
+    <p>
+      We have seen that the number of partitions of <m>k</m> into <m>n</m> parts is equal
+      to the number of ways to distribute <m>k</m> identical objects to <m>n</m>
+      recipients so that each receives at least one. If we relax the condition
+      that each recipient receives at least one, then we see that the number of
+      distributions of <m>k</m> identical objects to <m>n</m> recipients is <m>\sum_{i=1}^n
+      P(k,i)</m> because if some recipients receive nothing, it does not matter
+      which recipients these are. This completes rows 7 and 8 of our table of
+      distribution problems. The completed table is shown in <xref ref="lastdistributiontable">Figure</xref>. There are quite a few theorems that you
+      have proved which are summarized by <xref ref="lastdistributiontable">Table</xref>.
+      It would be worthwhile to try to write them all down!
+    </p>
+
+    <table xml:id="lastdistributiontable" >
+      <caption>The number of ways to
+      distribute <m>k</m> objects to <m>n</m> recipients, with
+      restrictions on how the objects are
+      received</caption>
+      \fbox{\hglue-3.5pt
+      {
+      <tabular>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>The Twentyfold Way: A Table of Distribution
+          Problems</cell>
+        </row>
+        <row bottom="medium">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell  ><m>k</m> objects and conditions</cell>
+          <cell><m>n</m> recipients and
+          mathematical model for distribution</cell>
+        </row>
+        <row>
+          <cell>on how they are received</cell>
+          <cell>Distinct</cell>
+          <cell>Identical</cell>
+        </row>
+        <row bottom="medium">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell  >1.  Distinct</cell>
+          <cell><m>n^k</m></cell>
+          <cell><m>\sum_{i=1}^kS(n,i)</m></cell>
+        </row>
+        <row>
+          <cell>no conditions</cell>
+          <cell>functions</cell>
+          <cell>set partitions (<m>\le n</m> parts)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>2.  Distinct</cell>
+          <cell><m>n^{\underline{k}}</m></cell>
+          <cell>1 if
+          <m>k\le n</m>; 0 otherwise</cell>
+        </row>
+        <row>
+          <cell>Each gets at most one</cell>
+          <cell>\kern -2pt <m>k</m>-element
+          permutations\kern -2 pt</cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>3.  Distinct</cell>
+          <cell><m>S(k,n)n!</m></cell>
+          <cell><m>S(k,n)</m></cell>
+        </row>
+        <row>
+          <cell>Each gets at least one</cell>
+          <cell>onto functions</cell>
+          <cell>set partitions
+          (<m>n</m> parts)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>4. Distinct</cell>
+          <cell><m>k!=n!</m></cell>
+          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
+        </row>
+        <row>
+          <cell>Each
+          gets exactly one</cell>
+          <cell>permutations</cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>5.  Distinct, order matters</cell>
+          <cell><m>(k+n-1)^{\underline{k}}</m></cell>
+          <cell><m>\sum_{i=1}^n L(k,i)</m></cell>
+        </row>
+        <row>
+          <cell></cell>
+          <cell>ordered functions</cell>
+          <cell>\hglue -3 pt broken permutations (<m>\le n</m>
+          parts)\kern -3 pt</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>6.  Distinct, order
+          matters</cell>
+          <cell><m>(k)^{\underline{n}}(k-1)^{\underline{k-n}}</m></cell>
+          <cell><m>L(k,n)=
+          { k\choose n}(k-1)^{\underline{k-n}}</m></cell>
+        </row>
+        <row>
+          <cell>Each
+          gets at least one</cell>
+          <cell>ordered onto functions</cell>
+          <cell>broken permutations (<m>n</m> parts)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>7.  Identical</cell>
+          <cell><m>n+k-1\choose k</m></cell>
+          <cell><m>\sum_{i=1}^nP(k,i)</m></cell>
+        </row>
+        <row>
+          <cell>no conditions</cell>
+          <cell>multisets</cell>
+          <cell>number partitions (<m>\le n</m> parts)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>8.  Identical</cell>
+          <cell><m>n\choose k</m></cell>
+          <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
+        </row>
+        <row>
+          <cell>Each gets at most one</cell>
+          <cell>subsets</cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>9.  Identical</cell>
+          <cell><m>k-1\choose n-1</m></cell>
+          <cell><m>P(k,n)</m></cell>
+        </row>
+        <row>
+          <cell>Each gets at least one</cell>
+          <cell>compositions (<m>n</m> parts)</cell>
+          <cell>number partitions (<m>n</m>
+          parts)</cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row>
+          <cell>10.  Identical</cell>
+          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
+          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
+        </row>
+        <row>
+          <cell>Each gets exactly one</cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+        <row bottom="minor">
+          <cell></cell>
+          <cell></cell>
+          <cell></cell>
+        </row>
+      </tabular>
+      \hglue-3pt}}
+    </table>
+  </subsection>
+
+  <subsection>
+    <title>Partitions into distinct parts</title>
+    <p>
+      Often <m>Q(k,n)</m> is used to denote the number of partitions of <m>k</m> into
+      distinct parts, that is, parts that are different from each other.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Show that
+          <me>
+            Q(k,n) \le {1\over n!}{k-1\choose n-1}.
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number of compositions of <m>k</m> into <m>n</m> parts is
+          <m>k-1\choose n-1</m>. Thus the number of compositions of <m>k</m> into <m>n</m>
+          distinct parts is less than <m>k-1\choose n-1</m>. Divide the compositions
+          of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in
+          the same block if one is a rearrangement of the other. Because the
+          parts are distinct, each block has <m>n!</m> members. Further, there is a
+          bijection between the blocks of this partition and the partitions of
+          <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m>
+          into <m>n</m> distinct parts is less than <m>k-1 \choose n-1</m>, the number of
+          partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>{1\over n!}
+          {k-1\choose n-1}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Show that the number of partitions of 7 into 3 parts equals the
+          number of partitions of 10 into three distinct parts.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Given a
+          partition <m>\lambda</m> of 7 in decreasing list form
+          <m>\lambda_1,\lambda_2,\lambda_3</m>, if we add 0 to <m>\lambda_3</m>, <m>1</m> to
+          <m>\lambda_2</m> and 2 to <m>\lambda_1</m> the resulting partition of 10 has
+          distinct parts. If we take a partition <m>\lambda'</m> of 10 with distinct
+          parts, then <m>\lambda'_1\ge\lambda'_2+1</m>, <m>\lambda'_1\ge\lambda'_2+2</m>,
+          and
+          <m>\lambda'_2\ge \lambda'_3+1</m>. Therefore if we subtract 2 from
+          <m>\lambda'_1</m> to get <m>\lambda_1</m>, subtract 1 from <m>\lambda'_2</m> to get
+          <m>\lambda_2</m> and let <m>\lambda_3= \lambda'_3</m>, then
+          <m>\lambda_1,\lambda_2,\lambda_3</m> is the decreasing list representation
+          of a partition of <m>10-3=7</m>. Thus there is a bijection between
+          partitions of <m>7</m> into three parts and partitions of <m>10</m> into three
+          distinct parts.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential for this or the next section, and interesting">
+      <statement>
+        <p>
+          There is a relationship between <m>P(k,n)</m> and <m>Q(m,n)</m> for some
+          other number <m>m</m>. Find the number <m>m</m> that gives you the nicest possible
+          relationship.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number of partitions of <m>k</m> into <m>n</m> parts is equal to
+          the number of partitions of <m>k+{n\choose2}</m> into n distinct parts.
+          The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of
+          <m>k+{n\choose2}</m> with <m>n</m> distinct parts that proves this is the one
+          that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with
+          <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get
+          <m>\lambda'_i</m>. Then
+          <m>\lambda'</m> is a partition into distinct parts, and the number it
+          partitions is
+          <m>k+1+2+\cdots+n-1=k+{n\choose 2}</m>. The proof that it is a bijection is
+          the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of
+          <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m>
+          is at least <m>j</m> smaller than part <m>i</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential for this or the next section">
+      <statement>
+        <p>
+          Find a recurrence that expresses <m>Q(k,n)</m> as a sum of <m>Q(k-n,m)</m>
+          for appropriate values of <m>m</m>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose <m>\lambda</m> is a partition of <m>k</m> into <m>n</m> distinct
+          parts. Either 1 is one of those parts or not. Thus if we subtract
+          1 from each part, we either get a partition of <m>k-n</m> into <m>n-1</m> parts
+          or a partition of <m>k-n</m> into <m>n</m> parts. If <m>\lambda</m> and <m>\lambda'</m>
+          are different partitions of <m>k</m> into <m>n</m> distinct parts, they go to
+          different partitions. Each partition of
+          <m>k-n</m> into
+          <m>n-1</m> parts or <m>n</m> parts can be gotten in this way from a
+          corresponding partition of <m>k</m> into <m>n</m> parts. Thus we have a
+          bijective correspondence and <m>Q(k,n)=Q(k-n,n-1) +Q(k-n,n)</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting and difficult">
+      <statement>
+        <p>
+          Show that the number of partitions of <m>k</m> into distinct
+          parts equals the number of partitions of <m>k</m> into odd parts.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We start by giving a function from the set of partitions of
+          <m>k</m> to the set of partitions of <m>k</m> with (only) odd parts. Clearly
+          such a function cannot be one to one. Then we show that when
+          restricted to the partitions with distinct parts it is one-to-one and
+          onto by constructing an inverse. Given a partition
+          <m>\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}</m>, write
+          <m>\lambda_i=\gamma_i2^{k_i}</m>, where <m>\gamma_i</m> is odd. (Thus <m>2^{k_i}</m>
+          is the highest power of 2 that is a factor of <m>\lambda_i</m>, so it is 1 if
+          <m>\lambda_i</m> is odd.). It is possible that <m>\gamma_i=\gamma_j</m>, for
+          example if <m>\lambda_i=36</m> and <m>\lambda_j=18</m>, then
+          <m>\gamma_i=\gamma_j=9</m>. We construct a new partition <m>\pi</m> whose parts
+          are the numbers <m>\gamma_j</m> as follows: Given an odd number <m>p</m>, let
+          the multiplicity <m>m(p)</m> of <m>p</m> in <m>\pi</m> be <m>\sum_{j: \gamma_j=m}
+          2^{k_j}</m>. Thus <m>\sum_{p: m(p)\not=0}m(p)p = k</m>. Therefore, <m>\pi</m> is a
+          partition of <m>k</m> whose parts are all odd.
+        </p>
+
+        <p>
+          Now consider a partition <m>\pi</m> of <m>k</m> whose parts are all odd. Let
+          <m>\pi=\pi_1^{r_1}\pi_2^{r_2}\cdots \pi_t^{r_t}</m>, with
+          <m>\pi_i>\pi_{i+1}</m>. (In terms of the multiplicity function <m>m</m>,
+          <m>m(\pi_i) =r_i</m>, and <m>\sum_{i=1}^t r_i\pi_i = k</m>.) We are going to
+          write the binary expansion of each <m>r_i</m> as <m>r_i = \sum_{j=
+          0}^{\lfloor
+          \log_2 r_i\rfloor} 2^{ja_{ij}}</m>, where <m>a_{ij}</m> is 1 if <m>2^j</m> appears in
+          the binary expansion of <m>r_i</m>, and 0 otherwise. All of the numbers
+          <m>\pi_i2^{ja_{ij}}</m> are distinct, because a power of two times one odd
+          number cannot equal a power of two times another odd
+          number. The numbers <m>\pi_i2^{ja_{ij}}</m> add to <m>k</m>, so they are the
+          parts of a partition <m>\pi'</m> of <m>k</m> into distinct parts. When we apply
+          the function constructed in the first part of the solution to <m>\pi'</m>,
+          we get <m>\pi</m>, so the correspondence between <m>\pi</m> and <m>\pi'</m> is a
+          bijection.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting and difficult">
+      <statement>
+        <p>
+          Euler showed that if <m>k\not= {3j^2+j\over 2}</m>, then the
+          number of partitions of <m>k</m> into an even number of distinct parts is the
+          same as the number of partitions of <m>k</m> into an odd number of distinct
+          parts. Prove this, and in the exceptional case find out how the two
+          numbers relate to each other.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          This solution is taken largely from the book Introduction to
+          Combinatorics by Ioan Tomescu (published in London by Collet's in
+          1975). Tomescu calls a collection of rows in a Young diagram a
+          <q>trapezoid</q> if each row contains one less cell than the row above and
+          the number of cells in the rows above and below the trapezoid differ by
+          two or more from the number of cells in rows of the trapezoid. Thus in
+          (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows,
+          and the last two. Since we are dealing with partitions with distinct
+          parts, we don't have to worry about how two equal rows affect the
+          definition of a trapezoid. We will describe a way to transform a
+          partition with an even number of distinct parts into a partition with
+          an odd number of distinct parts and vice versa.
+        </p>
+
+        <p>
+          First we describe a transformation on Young
+          diagrams. Here is the first part of the description. Suppose the smallest
+          part
+          <m>m</m> of <m>\lambda</m> is less than or equal to the number <m>j</m> of rows in the
+          top trapezoid. Suppose further that if we have only one trapezoid,
+          then <m>j>m</m>. Then we construct a partition with one less part by
+          adding 1 to each of the
+          <m>m</m> largest parts and discarding the part
+          <m>m</m>. We still have a diagram for a partition of the same integer,
+          but now the parity of the number of parts has changed, and we <em>may</em>
+          have increased the number of trapezoids by 1. The smallest part
+          will now be larger than the number (now <m>m</m>) of rows in the top
+          trapezoid. (Notice that the construction would not work if we had
+          only one trapezoid and <m>j=m</m> because we would first remove one
+          row of the trapezoid and thus have no row to which to attach one of
+          our squares.)
+        </p>
+
+        <p>
+          Here is the second part of the description of the
+          transformation. Suppose now that
+          <m>m</m> is larger than the number <m>j</m> of rows of the top trapezoid in
+          the Young diagram. Suppose also that
+          the Young diagram has at least two trapezoids or it
+          has one trapezoid and <m>j\ge m-2</m>. Take one square from each of the
+          <m>j</m> rows of the top trapezoid (which is the whole diagram if there
+          is only one trapezoid) and also add a row of
+          <m>j</m> squares at the bottom of the diagram. (Since <m>m>j</m>, this gives us
+          a Young diagram of a partition of the same integer into distinct
+          parts.) The parity of the number of rows has changed, and now the
+          number of rows of the top trapezoid is at least as large as the
+          smallest part of the partition. (Note, two previously distinct
+          trapezoids may have joined together to form one on top.)
+          (Notice that if we have one trapezoid and <m>j= m+1</m>, then the
+          construction yields a partition with two equal parts, which is why
+          we made the special assumption above.) Now let <m>T</m> be the
+          transformation described by the two constructions above. Its
+          domain is all Young diagrams except those with one trapezoid and
+          <m>m\le j\le m+1</m>. <m>T^2</m> is the identity, and so <m>T</m> is a bijection.
+          When restricted to partitions with an odd number of parts, <m>T</m>
+          gives partitions with an even number of parts, so on its domain it
+          gives a bijection between partitions with an even number of parts
+          and partitions with an odd number of parts.
+        </p>
+
+        <p>
+          If <m>m=j</m> and the diagram has just one trapezoid, then the diagram has
+          <m>3j^2-j\over 2</m> squares, and if
+          <m>m=j+1</m> and the diagram has just one trapezoid, then the diagram has
+          <m>3j^2+j\over 2</m> squares. Thus if
+          <m>k\ne {3j^2\pm j\over 2}</m>, the number of partitions of <m>k</m> into distinct
+          even parts equals the number of partitions of <m>k</m> into distinct odd
+          parts.
+        </p>
+
+        <p>
+          If
+          <m>k= {3j^2\pm j\over 2}</m> and <m>j</m> is even, then there is one diagram of
+          a partition of <m>k</m> that is not in the domain of the bijection and has
+          an even number of rows, so in this case there will be one more
+          partition with an even number of parts than with an odd number. If
+          <m>k=
+          {3j^2\pm j\over 2}</m> and <m>j</m> is odd, there is one diagram with an
+          odd number of rows not in the domain and so in this case there is
+          one more partition with an odd number of parts than with an even
+          number. This completes the exceptional cases of the problem.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Supplementary Problems</title>
+    <ol>
+    <li>
+      <p>
+        Answer each of the following questions with <m>n^k</m>,
+        <m>k^n</m>, <m>n!</m>,
+        <m>k!</m>,
+        <m>n \choose k</m>, <m>k \choose n</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>,
+        <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, 
+        <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the
+        above".
+        <ol>
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children?
+              <solution>
+                <p>
+                  <m>n+k-1\choose k</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of candy to
+              <m>n</m> children?
+              <solution>
+                <p>
+                  <m>n^k</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+              <solution>
+                <p>
+                  <m>n\choose k</m>.
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of candy to
+              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+              <solution>
+                <p>
+                  <m>n^{\underline{k}}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> distinct pieces of
+              candy to <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+              <solution>
+                <p>
+                  None of the above.
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways may we pass out <m>k</m> identical pieces of candy to
+              <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+              <solution>
+                <p>
+                  <m>k-1\choose n-1</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+        </ol>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        The neighborhood betterment committee has been given <m>r</m> trees to
+        distribute to <m>s</m> families living along one side of a street.
+        <ol>
+          <li>
+            <p>
+              In how many ways can they distribute all of
+              them if the trees are distinct, there are more families than trees, and
+              each family can get at most one?
+              <solution>
+                <p>
+                  <m>s^{\underline{r}}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways can they
+              distribute all of them if the trees are distinct, any family can get any
+              number, and a family may plant its trees where it chooses?
+              <solution>
+                <p>
+                  <m>s^r</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways can they distribute all the trees if the trees are
+              identical, there are no more trees than families,   and any family
+              receives at most one?
+              <solution>
+                <p>
+                  <m>s\choose r</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li>
+            <p>
+              In how many ways can they distribute them if the trees are
+              distinct, there are more trees than families, and each family
+              receives at most one (so there could be some leftover trees)?
+              <solution>
+                <p>
+                  <m>\sum_{k=0}^s {s\choose k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}{r\choose k}</m>
+                </p>
+              </solution>
+            </p>
+          </li>
+
+          <li xml:id="multisetproblem" >
+
+          <p>
+            In how many ways can they distribute all the trees if they are
+            identical and anyone may receive any number of trees?
+            <solution>
+              <p>
+                <m>r+s-1\choose r</m>
+              </p>
+            </solution>
+          </p>
+        </li>
+
+        <li xml:id="orderedfunctionproblem" >
+
+        <p>
+          In how many ways can all the trees be distributed and planted if
+          the trees are distinct, any family can get any number, and a family must
+          plant its trees in an evenly spaced row along the road?
+          <solution>
+            <p>
+              <m>s^{\overline{r}}=(r+s-1)^{\underline{r}}</m>
+            </p>
+          </solution>
+        </p>
+        </li>
+
+        <li>
+          <p>
+            Answer the question in <xref ref="orderedfunctionproblem">Part</xref>
+            assuming that every family must get a tree.
+            <solution>
+              <p>
+                <m>r!{r-1\choose s-1}</m>
+              </p>
+            </solution>
+          </p>
+        </li>
+
+        <li>
+          <p>
+            Answer the question in <xref ref="multisetproblem">Part</xref> assuming that
+            each family must get at least one tree.
+            <solution>
+              <p>
+                <m>r-1\choose s-1</m>
+              </p>
+            </solution>
+          </p>
+        </li>
+      </ol>
+    </p>
+    </li>
+
+    <li>
+      <p>
+        In how many ways can <m>n</m> identical chemistry books, <m>r</m> identical
+        mathematics books, <m>s</m> identical physics books, and <m>t</m> identical astronomy books
+        be arranged on three bookshelves?
+        (Assume there is no limit on the number of books per shelf.)
+        <solution>
+          <p>
+            <m>{(n+r+s+t+2)! \over n!r!s!t!2!}</m>
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        (interesting)
+        One formula for the Lah numbers is
+        <me>
+          L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}
+        </me>
+        Find a proof that explains this product.
+        <solution>
+          <p>
+            First choose the <m>n</m> elements which will be the first
+            member of the part they lie in. (This, in effect, labels the <m>n</m>
+            parts.) Then assign the remaining <m>k-n</m> elements to their parts
+            by making an ordered function of <m>n-k</m> objects to <m>n</m>
+            recipients in <m>(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}</m> ways.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        What is the number of partitions of <m>n</m> into two parts?
+        <solution>
+          <p>
+            <m>n/2</m> if <m>n</m> is even and <m>(n-1)/2</m> if <m>n</m> is odd, equivalently,
+            <m>\lfloor n/2\rfloor</m>
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Show that the number of partitions of <m>k</m> into <m>n</m> parts of size at
+        most <m>m</m> equals the number of partitions of <m>mn-k</m> into no more than <m>n</m>
+        parts of size at most <m>m-1</m>.
+        <solution>
+          <p>
+            If we take the complement of the Young diagram of a partition
+            of <m>k</m> into <m>n</m> parts of size at most <m>m</m> in an rectangle with <m>n</m> rows
+            and <m>m</m> columns, the number we partition will be <m>mn-k</m>, and we will have
+            no more than <m>n</m> parts, each of size at most <m>m-1</m>. And if we take the
+            complement of a partition of this second kind in the same rectangle, we
+            will get a partition of the first kind.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Show that the number of partitions of <m>k</m> into parts of size at
+        most <m>m</m> is equal to the number of partitions of of <m>k+m</m> into <m>m</m> parts.
+        <solution>
+          <p>
+            Given the first kind of partition, take the conjugate (giving a
+            partition of <m>k</m> into at most <m>m</m> parts), add one to each part, and then
+            add enough parts of size 1 to get a total of <m>m</m> parts. It is
+            straightforward that this process can be reversed.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        You can say something pretty specific about 
+        self-conjugate partitions of <m>k</m> into distinct parts.  Figure out what
+        it is and prove it.  With that, you should be able to find a relationship
+        between these partitions and partitions whose parts are consecutive
+        integers, starting with 1.  What is that relationship?
+        <solution>
+          <p>
+            In a self-conjugate partition, the number of parts is the size
+            of the largest part. If these parts are distinct, this means that each
+            number between 1 and the largest part appears once as a part. That is,
+            the parts are a list of consecutive integers, starting with 1.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        What is <m>s(k,1)</m>?
+        <solution>
+          <p>
+            Since s<m>(k,1)</m> is the coefficient of <m>x^1</m> in
+            <me>
+              x^{\underline{k}} = x(x-1)
+              (x-2)\cdot (x-(k-1)),
+            </me>
+            it is <m>(-1)^{k-1}(k-1)!</m>.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        Show that the Stirling numbers of the second kind satisfy the
+        recurrence
+        <me>
+          S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.
+        </me>
+        <solution>
+          <p>
+            A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
+            <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
+            of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
+            size <m>i</m> containing <m>k</m> is <m>k-1\choose i-1</m>, and <m>i</m> can be any number
+            between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
+            constructed exactly once by first choosing the block containing <m>k</m> and
+            then partitioning the remaining elements into <m>n-1</m> blocks. This proves
+            the formula.
+          </p>
+        </solution>
+      </p>
+    </li>
+
+    <li>
+      <p>
+        (interesting)
+        Let <m>c(k,n)</m> be the number of ways for <m>k</m> children to hold hands
+        to form <m>n</m> circles, where one child clasping his or her hands together
+        and holding them out to form a circle is considered a circle.  Find a
+        recurrence for <m>c(k,n)</m>.  Is the family of numbers <m>c(k,n)</m> related to any
+        of the other families of numbers we have studied? If so, how?
+        <solution>
+          <p>
+            The <m>k</m>th child is either in a circle by him/her self, and
+            there are <m>c(k-1,n-1)</m> ways for this to happen, or is in a circle with
+            some other children. In the second case child <m>i</m> can be to the
+            immediate right of any of the other <m>k-1</m> children, so there are
+            <m>(k-1)c(k-1,n)</m> ways for this to happen. Thus <m>c(k,n)=c(k-1,n-1)
+            +(k-1)c(k-1,n)</m>. This recurrence is almost the same as the recurrence for
+            <m>s(k,n)</m>, except it has a plus sign where the recurrence for the Stirling
+            numbers of the first kind has a minus sign. Further <m>c(k,1)=(k-1)!</m> and
+            <m>c(k,k)=1</m>, which agrees, except for sign, with the Stirling numbers of
+            the first kind. If we experiment with applying the recurrence, we see
+            that whenever we use it to compute <m>c(k,n)</m>, we get that
+            <m>c(k,n)=|s(k,n)|</m>. It is now straightforward to prove by induction that
+            <m>c(k,n)=|s(k,n)|</m>.
+          </p>
+        </solution>
+      </p>
+    </li>
+    </ol>
+  </subsection>
+</section>

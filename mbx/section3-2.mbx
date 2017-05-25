@@ -1,0 +1,551 @@
+
+<section>
+  <title>Recurrence Relations</title>
+  <introduction>
+    <p>
+      We have seen in
+      <xref ref="SubsetsByInduction">Problem</xref> (or <xref ref="subsetsbysmallestcounterexample">Problem</xref> in the Appendix on Induction) that
+      the number of subsets of an <m>n</m>-element set is twice the number of
+      subsets of an <m>(n-1)</m>-element set.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Explain why it is that the number of
+          bijections from an <m>n</m>-element set to an <m>n</m>-element set is equal to <m>n</m>
+          times the number of bijections from an <m>(n-1)</m>-element subset to an
+          <m>(n-1)</m>-element set. What does this have to do with <xref ref="permutationasbijection">Problem</xref>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To specify a bijection <m>f</m> from an <m>n</m>-element set <m>\{a_1,a_2, 
+          \ldots a_n\}</m> to an <m>n</m>-element set, we have <m>n</m> choices for <m>f(a_1)</m>,
+          and then <m>b_{n-1}</m> choices for how to define <m>f</m> from the elements
+          <m>\{a_2,a_3, \ldots,a_n\}</m> to the remaining <m>n-1</m> elements of our range.
+          By the product principle this gives us <m>b_n=nb_{n-1}</m> for the number
+          <m>b_n</m> of bijections from an <m>n</m>-element set to an <m>n</m>-element set.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      We can summarize these observations as follows. If <m>s_n</m> stands for the
+      number of subsets of an <m>n</m>-element set, then
+      <men xml:id="subsetequation" >
+        s_n =2s_{n-1},
+      </men>
+      and if
+      <m>b_n</m> stands for the number of bijections from an <m>n</m>-element set to an
+      <m>n</m>-element set, then
+      <men xml:id="bijectionequation" >
+        b_n =
+        nb_{n-1}.
+      </men>
+    </p>
+
+    <p>
+      <xref ref="subsetequation">Equations</xref> and <xref ref="bijectionequation"></xref> are examples
+      of <em>recurrence equations</em> or <em>recurrence relations</em>. A <em>recurrence relation</em><index><main>relation</main><sub>recurrence</sub></index><index><main>recurrence
+      relation</main></index> or simply a <em>recurrence</em><index><main>recurrence</main></index> is an equation
+      that expresses the <m>n</m>th term of a sequence <m>a_n</m> in terms of values of
+      <m>a_i</m> for <m>i\lt n</m>. Thus <xref ref="subsetequation">Equations</xref> and <xref ref="bijectionequation"></xref> are examples of recurrences.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>Examples of recurrence relations</title>
+    <p>
+      Other examples of
+      recurrences are
+      <men xml:id="arithmeticexample" >
+        a_n = a_{n-1} +
+        7,
+      </men>
+      <men xml:id="geometricdriven" >
+        a_n =3a_{n-1} + 2^n,
+      </men>
+      <men xml:id="secondorderlinear" >
+        a_n = a_{n-1} + 3a_{n-2},\mbox{
+        and}
+      </men>
+      <men xml:id="Catalanrecurrence" >
+        a_n= a_1a_{n-1} + a_2a_{n-2}+\cdots +
+        a_{n-1}a_1.
+      </men>
+    </p>
+
+    <p>
+      A <em>solution</em><index><main>recurrence</main><sub>solution to</sub></index> to a recurrence relation is a
+      sequence that satisfies the recurrence relation. Thus a solution to
+      <xref ref="subsetequation">Recurrence</xref> is <m>s_n =2^n</m>. Note that
+      <m>s_n=17\cdot2^n</m> and
+      <m>s_n=-13\cdot2^n</m> are also solutions to <xref ref="subsetequation">Recurrence</xref>.
+      What this shows is that a recurrence can have infinitely many solutions.
+      In a given problem, there is generally one solution that is of interest
+      to us. For example, if we are interested in the number of subsets of a
+      set, then the solution to <xref ref="subsetequation">Recurrence</xref> that we care
+      about is <m>s_n=2^n</m>. Notice this is the only solution we have mentioned
+      that satisfies
+      <m>s_0=1</m>.
+    </p>
+
+    <activity>
+      <p>
+        Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
+      </p>
+      <solution>
+        <p>
+          We prove by induction on <m>n</m> that there is one and only one
+          value
+          <m>s_n</m> that satisfies both <m>s_n=2s_{n-1}</m> for <m>n>0</m> and <m>s_0=1</m>. First,
+          there is clearly one and only one value <m>s_0</m> that satisfies <m>s_0=1</m>. Now
+          assume that <m>k>0</m> and there is one and only one value <m>s_{k-1}</m> that satisfies
+          the two equations. Then <m>s_k=2s_{k-1}</m> is the one and only one value
+          that satisfies the two equations. Therefore by the principle of
+          mathematical induction, for all nonnegative integers <m>n</m> there is one and
+          only one value
+          <m>s_n</m> that satisfies the equations <m>s_0=1</m> and <m>s_k=2s_{k-1}</m> for all
+          <m>k>0</m>. (Note that since we were making a statement about <m>s_n</m> for all
+          nonnegative integers <m>n</m> it was not appropriate to use <m>n</m> as the dummy
+          variable in the recursive equation <m>s_k=2s_{k-1}</m>.)
+        </p>
+      </solution>
+      <p>
+      \item A first-order recurrence relation is one which expresses <m>a_n</m> in
+      terms of <m>a_{n-1}</m> and other functions of <m>n</m>, but which does not
+      include any of the terms <m>a_i</m> for <m>i\lt n-1</m> in the equation.
+      <task>
+        <statement>
+          <p>
+            Which of
+            the <xref ref="subsetequation">recurrences</xref> through <xref ref="Catalanrecurrence"></xref> are
+            first order recurrences?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The <xref ref="subsetequation">recurrences</xref>, <xref ref="bijectionequation"></xref>, <xref ref="arithmeticexample"></xref>, and <xref ref="geometricdriven"></xref> are all examples
+            of first order recurrences. The <xref ref="secondorderlinear">recurrences</xref> and <xref ref="Catalanrecurrence"></xref> are not.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Show that there is one and only one sequence <m>a_n</m> that is defined
+            for every nonnegative integer
+            <m>n</m>, satisfies a given first order recurrence, and satisfies <m>a_0=a</m> for some
+            fixed constant <m>a</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            A first order recurrence will give <m>a_n</m> in terms of <m>a_{n-1}</m>, that
+            is, there will be a function <m>f</m> such that <m>a_n=f(a_{n-1})</m> for all <m>n>0</m>. We
+            prove by induction that there is one and only one solution to a first order
+            recurrence that satisfies <m>a_0=a</m> for some fixed constant <m>a</m>. First, there
+            is one and only one value for <m>a_0</m>. Now suppose that when <m>n=k-1</m>, there is
+            one and only one value possible for <m>a_{n-1}</m>. Then <m>a_k</m> is uniquely
+            determined by <m>a_k=f(a_{k-1}</m>. Thus the truth of the statement that <m>a_{k-1}</m>
+            is uniquely determined by the equations <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m> implies
+            the truth of the statement that <m>a_k</m> is determined uniquely by the equations
+            <m>a_0=a</m> and <m>a_n=f(a_{n-1})</m>. Therefore by the principle of mathematical
+            induction, <m>a_k</m> is uniquely determined by the equations <m>a_0=a</m> and
+            <m>a_n=f(a_{n-1})</m> for all nonnegative integers <m>k</m>.
+          </p>
+        </solution>
+      </task>
+      <figure xml:id="Hanoi" >
+        <caption>The
+        Towers of Hanoi Puzzle</caption>
+        \vglue-1in
+        \mbox{
+        <image width="73%" source="images/" />
+        }
+      </figure>
+
+    </activity>
+
+    <activity xml:id="HanoiProblem" category="interesting">
+      <statement>
+        <p>
+          The <q>Towers of Hanoi</q> puzzle has three rods rising from a
+          rectangular base with <m>n</m> rings of different sizes stacked in decreasing
+          order of size on one rod. A legal move consists of moving a ring from
+          one rod to another so that it does not land on top of a smaller ring. If
+          <m>m_n</m> is the number of moves required to move all the rings from the
+          initial rod to another rod that you choose, give a recurrence for <m>m_n</m>.
+          (Hint: suppose you already knew the number of moves needed to solve the
+          puzzle with <m>n-1</m> rings.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We can solve the puzzle in one step if there is one ring, so
+          <m>m_1=1</m>. If <m>n>0</m> and we want to move all the rings from the initial rod to
+          rod 3, then first we solve the problem of moving all but the bottom ring to
+          rod 2; this takes <m>m_{n-1}</m> steps, then we move the bottom ring to rod 3, then
+          we solve the problem of moving all the remaining rings from rod 2 to rod 3.
+          Thus we have <m>m_n=2m_{n-1}+1</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="circlesinplane" category="interesting">
+      <statement>
+        <p>
+          We draw <m>n</m> mutually intersecting circles in the plane so that
+          each one crosses each other one exactly twice and no three intersect in
+          the same point. (As examples, think of Venn diagrams with two or three
+          mutually intersecting sets.) Find a recurrence for the number
+          <m>r_n</m> of regions into which the plane is divided by <m>n</m> circles. (One
+          circle divides the plane into two regions, the inside and the outside.)
+          Find the number of regions with <m>n</m> circles. For what values of <m>n</m> can
+          you draw a Venn diagram showing all the possible intersections of <m>n</m>
+          sets using circles to represent each of the sets?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          One circle defines two regions, the inside and outside. When we
+          draw a second circle that intersects the first, we can start at one of the
+          intersection points and go inside the first circle, cutting its region into
+          two pieces, and then when we leave it we cut the outside region into two
+          pieces. This suggests the general pattern. If we have drawn <m>n-1</m> circles and
+          start a new one, each time we enter a circle, we start dividing a region into
+          two pieces. Each time we leave a circle, we also start dividing a region into
+          two pieces. Thus if we have <m>r_n</m> regions with <m>n</m> circles, to get the number
+          of regions, we note that in going from <m>n-1</m> circles to <m>n</m> circles, we start
+          with <m>r_{n-1}</m> regions, and divide <m>2(n-1)</m> of them in half, so we get <m>2n-2</m>
+          new regions. This gives us <m>r_n=r_{n-1}+2(n-1)</m>. Notice that by substitution
+          of the formula <m>r_{n-1}=r_{n-2} +2(n-2)</m>, we get <m>r_n=r_{n-2}+ 2(n-2)
+          +2(n-1)</m>, and would guess that <m>r_n=r_{n-3}+2(n-3)+2(n-2) +2(n-1)</m>. This
+          leads to the conjecture
+          <me>
+            r_n=r_1  +2\cdot1+2\cdot2+\cdots+2\cdot(n-1)=r_1+2\sum_{i=1}^{n-1}
+            i=2+n(n-1).
+          </me>
+        </p>
+
+        <p>
+          We can prove this formula by induction. When <m>n=1</m> we have <m>2+1\cdot0</m>
+          regions. Assuming that <m>n-1</m> circles give us <m>2+(n-1)(n-2)</m> regions, for <m>n</m>
+          circles we have <m>2+(n-1)(n-2) +2(n-1)=2+n(n-1)</m> regions. Thus the
+          correctness of our formula for <m>n-1</m> circles implies its correctness when we
+          have <m>n</m> circles, so for all positive integers <m>n</m>, we get <m>2+n(n-1)</m> regions
+          determined by <m>n</m> mutually intersecting circles.
+          Two circles cannot touch more than twice, and if we let some of our <m>n</m> circles
+          touch just once, or not at all, that would reduce the number of regions we
+          would get. Similarly, allowing a circle to go through the intersection point
+          of two other circles could only reduce the number of regions. So with <m>n</m>
+          circles we could never have more than <m>2+n(n-1)</m> regions. In particular
+          with 4 circles we get just 14 regions, rather than the 16 that would be
+          required in a Venn diagram for four sets. We could prove, again by
+          induction, that <m>2+n(n-1)\lt 2^n</m> for all <m>n>3</m>, so it is not possible to draw a
+          Venn diagram using circles to illustrate the intersections of four or more
+          sets.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Arithmetic Series (optional)</title>
+    <activity xml:id="childsaving">
+      <task>
+        <statement>
+          <p>
+            A child puts away two dollars from her allowance each week. If she
+            starts with twenty dollars, give a recurrence for the amount <m>a_n</m> of
+            money she has after <m>n</m> weeks and find out how much money she has at the
+            end of
+            <m>n</m> weeks.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>a_n=a_{n-1} +2</m>. Then by substitution <m>a_n=a_{n-2}+2+2</m>, and so we
+            conjecture that <m>a_n = 20 +2n</m>. Since she adds two dollars to her savings
+            each week for <m>n</m> weeks, she has adds 2n dollars to her original 20, which
+            proves the formula. We could have used induction to prove it as well.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A sequence that satisfies a recurrence of the form <m>a_n=a_{n-1} +c</m>
+            is called an <em>arithmetic progression</em><index><main>arithmetic
+            progression</main></index><index><main>progression</main><sub>arithmetic</sub></index>. Find a formula in terms of
+            the initial value
+            <m>a_0</m> and the common difference <m>c</m> for the term
+            <m>a_n</m> in an arithmetic progression and prove you are
+            right.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>a_n =a_o+cn</m>. The formula is valid with <m>n=0</m>, and if <m>a_{n-1}=a_0
+            +c(n-1)</m>, then <m>a_n = a_0 +c(n-1) +c =a_0+cn</m>. Therefore the fact that
+            <m>a_{n-1}=a_0+ca_{n-1}</m> implies the fact that <m>a_n=a_0+cn</m>. Therefore by the
+            principle of mathematical induction, <m>a_n=a_0+cn</m> for all nonnegative integers
+            <m>n</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            A person who is earning <dollar />50,000 per year gets a raise of <dollar />3000 a
+            year for <m>n</m> years in a row. Find a recurrence for the amount <m>a_n</m> of
+            money the person earns over <m>n+1</m> years. What is the total amount of money
+            that the person earns over a period of <m>n+1</m> years? (In
+            <m>n+1</m> years, there are
+            <m>n</m> raises.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            By <xref ref="arithmeticprogression">Problem</xref> we saw that if <m>b_n</m> is the
+            salary in year <m>n</m>, then <m>b_n=50,000 + 3000n</m>. If <m>a_n</m> is the total amount
+            earned over the period of from year 0 through the end of year <m>n</m>, a period of
+            <m>n+1</m> years, then <m>a_n=a_{n-1}+b_n=a_{n-1}+ 50,000+3000n</m>. Further,
+            <m>a_n=\sum_{i=0}^n b_i=\sum_{i=0}^n50,000 +3000i = 50,000(n+1)+3000\sum_{i=0}^n
+            i= 50,000(n+1) + 1500(n(n+1)</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            An <em>arithmetic
+            series</em><index><main>series</main><sub>arithmetic</sub></index><index><main>arithmetic series</main></index> is a sequence
+            <m>s_n</m> equal to the sum of the terms
+            <m>a_0</m> through
+            <m>a_n</m> of of an arithmetic progression. Find a recurrence for the sum
+            <m>s_n</m> of an arithmetic progression with initial value <m>a_0</m> and common
+            difference
+            <m>c</m> (using the language of <xref ref="arithmeticprogression">Problem</xref>). Find a
+            formula for general term <m>s_n</m> of an arithmetic series.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>s_n=\sum_{i=0}^n a_0 +ci =(n+1)a_0+c\sum_{i=0}^n i = (n+1)a_0
+            +cn(n+1)/2</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>First order linear recurrences</title>
+    <p>
+      Recurrences such as those in
+      <xref ref="subsetequation">Equations</xref> through <xref ref="secondorderlinear"></xref> are called
+      <em>linear recurrences</em>, as are the recurrences of <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref>. A <em>linear recurrence</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear
+      recurrence</main></index> is one in which <m>a_n</m> is expressed as a sum of functions of
+      <m>n</m> times values of (some of the terms) <m>a_i</m> for <m>i\lt n</m> plus (perhaps)
+      another function (called the <em>driving function</em><index><main>driving
+      function</main></index><index><main>function</main><sub>driving</sub></index>) of
+      <m>n</m>. A linear equation is called <em>homogeneous</em><index><main>homogeneous
+      linear recurrence</main></index><index><main>linear
+      recurrence</main><sub>homogeneous</sub></index><index><main>recurrence</main><sub>linear homogeneous</sub></index> if the
+      driving function is zero (or, in other words, there is no driving
+      function). It is called a <em>constant coefficient linear
+      recurrence</em><index><main>linear recurrence</main><sub>constant coefficient</sub></index><index><main>constant
+      coefficient linear recurrence</main></index> if the functions that are multiplied by the
+      <m>a_i</m> terms are all constants (but the driving function need not
+      be constant).
+    </p>
+
+    <activity xml:id="classifyrecurrences">
+      <statement>
+        <p>
+          Classify the recurrences in <xref ref="subsetequation">Equations</xref> through <xref ref="secondorderlinear"></xref> and <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref> according to whether or not they are constant
+          coefficient, and whether or not they are
+          homogeneous.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <xref ref="subsetequation">Recurrence</xref> is first order, linear, constant
+          coefficient, and homogeneous. <xref ref="bijectionequation">Recurrence</xref> is first
+          order, linear, and homogeneous, but not constant coefficient.
+          <xref ref="arithmeticexample">Recurrence</xref> is first order, linear, constant
+          coefficient but not homogeneous.
+          <xref ref="geometricdriven">Recurrence</xref> is first order, linear, constant coefficient
+          but not homogeneous. <xref ref="secondorderlinear">Recurrence</xref> is not first order
+          (it is second order), is linear, constant coefficient and homogeneous.
+          The recurrence of <xref ref="HanoiProblem">Problem</xref> is first order, linear, and
+          constant coefficient, and that of <xref ref="circlesinplane">Problem</xref> is first
+          order, linear, and constant coefficient.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="firstordlinconst" category="essential">
+      <statement>
+        <p>
+          As you can see from <xref ref="classifyrecurrences">Problem</xref> some
+          interesting sequences satisfy first order linear recurrences, including
+          many that have constant coefficients, have constant driving term, or are
+          homogeneous. Find a formula in terms of <m>b</m>, <m>d</m>, <m>a_0</m> and <m>n</m> for the
+          general term <m>a_n</m> of a sequence that satisfies a constant coefficient first
+          order linear recurrence <m>a_n = ba_{n-1} + d</m> and prove you are
+          correct. If your formula involves a summation, try to replace the
+          summation by a more compact expression.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Note that by the formula, <m>a_{n-1}=ba_{n-2} +d</m>. Substituting this
+          into the original equation for <m>a_n</m> gives <m>a_n=b^2a_{n-2}+bd +d</m>. Repeating
+          this kind of substitution gives us <m>a_n=b^3a_{n-3} +b^2d +bd +d</m>. This
+          suggests that <m>a_n = a_0b^n +\sum_{i=0}^{n-1}db^i</m>. We would guess the same
+          formula by writing out the first few values of <m>a_i</m>, namely, <m>a_0</m>, <m>a_0b+d</m>,
+          <m>a_0b^2+db+d</m>, <m>a_0b^3+b^2d+bd+d</m>, and so on. We prove our general formula by
+          induction on <m>n</m>. It is clearly true when <m>n=0</m> as there are no terms in the
+          sum and <m>b^0=1</m>. If we assume the formula is true when <m>n=k-1</m>, we may write
+          <md>
+            <mrow>a_k \amp =\amp  ba_{k-1}+d</mrow>
+            <mrow>\amp =\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d</mrow>
+            <mrow>\amp =\amp a_0b^n +\sum_{i=0}^{n-1}db^i</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus the truth of our formula for <m>n=k-1</m> implies its truth for <m>n=k</m> and
+          therefore by the principle of mathematical induction, it is true for all
+          nonnegative integers <m>n</m>.
+        </p>
+
+        <p>
+          We can give a more compact expression for the sum
+          <m>\sum_{i=0}^{n-1}db^i=d\sum_{i=0}^{n-1}b^i</m>. Recall from algebra that
+          <m>(1+x)(1-x)= 1-x^2</m>, <m>(1+x+x^2)(1-x) = 1-x^3</m>, and in general <m>(1+x+x^2+\cdots
+          x^{n-1}))(1-x) = 1-x^n</m>. If you do not recall this formula, you can prove it
+          by induction, or observe that
+          <md>
+            <mrow>\amp \amp (1+x+x^2+\cdots
+            x^{n-1}))(1-x)</mrow>
+            <mrow>\amp =\amp  (1+x+x^2+\cdots
+            x^{n-1})\cdot 1-(1+x+x^2+\cdots
+            x^{n-1})\cdot x</mrow>
+            <mrow>\amp =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.</mrow>
+          </md>
+        </p>
+
+        <p>
+          Dividing the first and last terms by <m>1-x</m> gives us
+          <me>
+            \sum_{i=1}^{n-1}x^i={1-x^n\over 1-x}.
+          </me>
+        </p>
+
+        <p>
+          Using this in our formula for <m>a_n</m>
+          gives us
+          <m>a_n =a_ob^n+d{1-b^n\over 1-b}.</m> This is valid except in the case <m>b=1</m> (in
+          our computation with <m>x</m> above, we would be dividing by 0.) If <m>b=1</m> we get
+          <m>a_n =a_0 +nd</m> for the sum.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>Geometric Series</title>
+    <p>
+      A sequence that satisfies a recurrence of the form <m>a_n=ba_{n-1}</m> is
+      called a <em>geometric progression</em><index><main>geometric
+      progression</main></index><index><main>progression</main><sub>geometric</sub></index>. Thus the sequence satisfying
+      <xref ref="subsetequation">Equation</xref>, the recurrence for the number of subsets of an
+      <m>n</m>-element set, is an example of a geometric progression. From your
+      solution to <xref ref="firstordlinconst">Problem</xref>, a geometric progression has
+      the form <m>a_n=a_0b^n</m>. In your solution to <xref ref="firstordlinconst">Problem</xref> you may have had to deal with the sum of a
+      geometric progression in just slightly different notation, namely
+      <m>\sum_{i=0}^{n-1}db^i</m>. A sum of this form is called a <em>(finite)
+      geometric series</em>.<index><main>geometric series</main></index><index><main>series</main><sub>geometric</sub></index>
+    </p>
+
+    <activity xml:id="sumgeometricseries">
+      <p>
+        Do this problem only if your final answer (so far) to <xref ref="firstordlinconst">Problem</xref> contained the sum <m>\sum_{i=0}^{n-1}db^i</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            Expand <m>(1-x)(1+x)</m>.  Expand <m>(1-x)(1+x+x^2)</m>. 
+            Expand <m>(1-x)(1+x+x^2+x^3)</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>(1-x)(1+x)=1-x^2</m>. <m>(1-x)(1+x+x^2)=1-x^3</m>.
+            <m>(1-x)(1+x+x^2+x^3)=1-x^4</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What do you expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be?  What
+            formula for <m>\sum_{i=0}^{n-1}db^i</m> does this give you?  Prove that you
+            are correct.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
+            <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
+            prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
+            also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
+            the formula holds when <m>n=k-1</m>, we may write
+            <md>
+              <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
+              <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
+              <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
+            </md>
+          </p>
+
+          <p>
+            Since the truth of the formula for <m>n=k-1</m> implies its truth for <m>n=k</m>, by the
+            principle of mathematical induction the formula is true for all nonnegative
+            integers <m>n</m>. If
+            <m>b=1</m> we get the formula
+            <m>\sum_{i=0}^{n-1}db^i=dn</m>.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      In <xref ref="firstordlinconst">Problem</xref> and <xref ref="sumgeometricseries">perhaps</xref>
+      you proved an important theorem.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          If <m>b\not=1</m> and <m>a_n=ba_{n-1} +d</m>, then <m>\displaystyle a_n =
+          a_0b^n + d{1-b^n\over 1-b}</m>. If <m>b=1</m>, then, <m>\displaystyle a_n =
+          a_0 +nd</m>
+        </p>
+      </statement>
+    </theorem>
+
+    <corollary>
+      <statement>
+        <p>
+          If <m>b\not=1</m>, then <m>\displaystyle \sum_{i=0}^{n-1}b^i =
+          {1-b^n\over 1-b}</m>. If <m>b=1</m>, <m>\displaystyle \sum_{i=0}^{n-1}b^i =n</m>.
+        </p>
+      </statement>
+    </corollary>
+  </subsection>
+</section>

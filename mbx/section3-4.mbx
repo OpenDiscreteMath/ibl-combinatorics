@@ -1,0 +1,280 @@
+
+<section>
+  <title>Supplementary Problems</title>
+  <ol>
+  <li>
+    <p>
+      Use the inductive definition of <m>a^n</m> to prove that <m>(ab)^n=a^nb^n</m> for
+      all nonnegative integers <m>n</m>.
+      <solution>
+        <p>
+          If <m>n=0</m> we get <m>(ab)^0=1</m> and <m>a^0b^0=1</m>. Assume inductively that
+          <m>(ab)^{n-1}=a^{n-1}b^{n-1}</m>. Then by the inductive definition, inductive
+          hypothesis, and commutative law,
+          <me>
+            (ab)^n= (ab)^{n-1}ab=a^{n-1}b^{n-1}ab=a^{n-1}ab^{n-1}b=a^nb^n.
+          </me>
+        </p>
+
+        <p>
+          Thus the fact that <m>(ab)^{n-1}=a^{n-1}b^{n-1}</m> implies the fact that <m>(ab)^n=
+          a^nb^n</m>. Therefore by the principle of mathematical induction,
+          <m>(ab)^n=a^nb^n</m> for all nonnegative integers <m>n</m>.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      Give an inductive definition of <m>\displaystyle \bigcup_{i=1}^nS_i</m> and
+      use it and the two set distributive law to prove the distributive law
+      <m>\displaystyle{A\cap \bigcup_{i=1}^n S_i=\bigcup_{i=1}^n A\cap S_i}</m>.
+      <solution>
+        <p>
+          We define <m>\displaystyle\bigcup_{i=1}^1S_i= S_i</m> and <m>\displaystyle
+          \bigcup_{i=1}^n S_i =
+          \bigcup_{i=1}^{n-1}S_i
+          \cup S_n</m>. Then
+          <me>
+            \displaystyle A\cap\bigcup_{i=1}^1S_i=
+            A\cap S_1=\bigcup_{i=1}^1 A\cap S_i.
+          </me>
+        </p>
+
+        <p>
+          Assume that <m>n>1</m> and
+          <m>\displaystyle A\cap\bigcup_{i=1}^{n-1}=\bigcup_{i=1}^{n-1}A\cap S_i</m>. Now
+          <md>
+            <mrow>A\cap\bigcup_{i=1}^nS_i \amp =\amp  A\cap\left(\bigcup_{i=1}^{n-1}S_i
+            \cup S_n\right)=\left(A\cap\bigcup_{i=1}^{n-1}S_i\right) \cup\left( A\cap
+            S_n\right)</mrow>
+            <mrow>\amp =\amp \left(\bigcup_{i=1}^{n-1}A\cap
+            S_i\right)\cup\left(A\cap S_n\right)=\bigcup_{i=1}^n A\cap S_i.</mrow>
+          </md>
+        </p>
+
+        <p>
+          Thus the
+          truth of the distributive law for distributing an intersection over a union of
+          <m>n-1</m> sets implies its truth for distributing an intersection over a union of
+          <m>n</m> sets. Therefore by the principle of mathematical induction, the
+          distributive law
+          <m>\displaystyle A\cap\bigcup_{i=1}^nS_i=
+          \bigcup_{i=1}^nA\cap S_i</m> holds for all positive integers <m>n</m>.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      (interesting)
+      A hydrocarbon molecule is a molecule whose only atoms are
+      either carbon atoms or hydrogen atoms.  In a simple molecular model of a
+      hydrocarbon, a carbon atom will bond to exactly four other atoms and
+      hydrogen atom will bond to exactly one other atom.  We represent a
+      hydrocarbon compound with a graph whose vertices are labelled with C's
+      and H's so that each C vertex has degree four and each H vertex has
+      degree one.  A hydrocarbon is called an <q>alkane</q> (common examples are
+      methane (natural gas), propane, hexane (ordinary gasoline), octane (to
+      make gasoline burn more slowly), etc.) if the graph is a tree.  How many
+      vertices are labelled
+      <m>H</m> in the graph of an alkane with exactly
+      <m>n</m> vertices labelled
+      <m>C</m>?
+      <solution>
+        <p>
+          We have <m>n</m> vertices of degree four, and so if we have <m>m</m> vertices
+          of degree 1, we get <m>4n+m=2(m+n-1)</m> from the fact that the sum of the degrees
+          of the vertices must be twice the number of edges. Thus we have <m>m=2n+2</m>
+          hydrogen atoms.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li>
+    <ol>
+      <li>
+        <p>
+          Give a recurrence for the number of ways to divide
+          <m>2n</m> people into sets of two for tennis games.  (Don't worry about who
+          serves first.)
+          <solution>
+            <p>
+              <m>t_{2n}=(2n-1)t_{2n-2}</m>
+            </p>
+          </solution>
+        </p>
+      </li>
+
+      <li>
+        <p>
+          (interesting)
+          Give a recurrence for the number of ways to divide <m>4n</m>
+          people into sets of four for games of bridge.  (Don't worry about how
+          they sit around the bridge table or who is the first dealer.)
+          <solution>
+            <p>
+              <m>b_{4n}={4n-1\choose 3}b_{4n-4}</m>.
+            </p>
+          </solution>
+        </p>
+      </li>
+    </ol>
+  </li>
+
+  <li>
+    <p>
+      Use induction to prove your result in Supplementary <xref ref="composition_numberof">Problem</xref> at the end of Chapter 1.
+      <solution>
+        <p>
+          A composition of <m>n</m> is an ordered list of positive numbers that
+          adds to <m>n</m>. We wish to show that there are <m>2^{n-1}</m> compositions of <m>n</m>.
+          There is one composition of the number 1, and
+          <m>2^{1-1}=1</m>. Now assume inductively that there are <m>2^{n-2}</m> compositions of
+          the number
+          <m>{n-1}</m>. From a composition of <m>n-1</m>, we can get a composition of <m>n</m> either
+          by making a new last part of size 1, or by adding one to the last part.
+          Clearly these two operations give different partitions of <m>n</m>; what is not so
+          clear is that they give all partitions of <m>n</m>, but they do: Either the last
+          part of a partition of <m>n</m> is 1, in which case it comes from the first kind of
+          operation, or it is larger than one, in which case it comes from the second
+          operation. Thus the number of compositions of <m>n</m> is twice the number of
+          compositions of <m>n-1</m>, and so is <m>2\cdot2^{n-2}=2^{n-1}</m>. Therefore the
+          statement that there are <m>2^{n-2}</m> compositions of <m>n-1</m> implies the statement
+          that there are <m>2^{n-1}</m> compositions of <m>n</m>. Thus by the principle of
+          mathematical induction, there are <m>2^{n-1}</m> compositions of <m>n</m> for every
+          positive integer <m>n</m>.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li xml:id="inductiveprodnotation" >
+
+  <p>
+    Give an inductive definition of the product notation <m>\displaystyle
+    \prod_{i=1}^n a_i</m>.
+    <solution>
+      <p>
+        <m>\displaystyle\prod_{i=1}^1a_i=a_1</m>, and <m>\displaystyle\prod_{i=1}^n
+        a_i= \left(\prod_{i=1}^{n-1}a_i\right)\cdot a_n</m>.
+      </p>
+    </solution>
+  </p>
+  </li>
+
+  <li>
+    <p>
+      Using the fact that <m>(ab)^k =a^kb^k</m>, use your inductive definition
+      of product notation in <xref ref="inductiveprodnotation">Problem</xref> to prove that
+      <m>\displaystyle \left(\prod_{i=1}^n a_i\right)^k=\prod_{i=1}^n a_i^k</m>.
+      <solution>
+        <p>
+          When <m>n=1</m> we get <m>\displaystyle\left(\prod_{i=1}^1 a_i\right)^k=
+          a_i^k =\prod_{i=1}^1a_i^k</m>. Now assume inductively that
+          <m>\displaystyle\left(\prod_{i=1}^{m-1}a_i\right)^k=\prod_{i=1}^{m-1}a_i^k</m>.
+          Then we may write
+          <me>
+            \left(\prod_{i=1}^ma_i\right)^k=\left(\left(\prod_{i=1}^{m-1}
+            a_i\right)\cdot a_m\right)^k=\left(\prod_{i=1}^{m-1}
+            a_i^k\right)\cdot a_m^k=\prod_{i=1}^m a_i^k.
+          </me>
+        </p>
+
+        <p>
+          Thus the correctness of the
+          formula for <m>n=m-1</m> implies its correctness for <m>n=m</m>. Therefore by the
+          principle of mathematical induction, the formula holds for all positive
+          integers <m>n</m>.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      (interesting)
+      How many labelled trees on <m>n</m> vertices have exactly four vertices of
+      degree 1?
+      <solution>
+        <p>
+          The vertices of degree 1 are the vertices that do not appear in the
+          Grey code for the tree. So we first choose four vertices out of <m>n</m> in
+          <m>n\choose 4</m> ways to be our vertices of degree 1, and then we use the
+          remaining <m>n-4</m> vertices to fill in our list of <m>n-2</m> vertices, using each of
+          the <m>n-4</m> at least once. Thus we either use one of them 3 times and the rest
+          once, or two of them twice and the rest once. There are <m>n-4</m> ways to choose
+          the one we use three times and <m>{n-2\choose 3}{n-5\choose
+          1}{n-6\choose1}\cdots{1\choose1}={(n-2)!\over3!}</m> ways to label the
+          <m>n-2</m> places with the chosen vertices. There are <m>n-4\choose 2</m> ways to choose
+          the vertices we would use twice, and <m>{n-2\choose
+          2}{n-4\choose2}{n-6\choose1}{n-7\choose1}\cdots {1\choose1}={(n-2)!\over 2!2!}</m>
+          ways to assign the chosen vertices to the
+          <m>n-2</m> places in the Pr&#xfc;fer Code. Thus we have
+          <md>
+            <mrow>\amp \amp {n\choose 4}\left((n-4){(n-2)!\over 3!} +{(n-4)(n-3)\over
+            2}{(n-2)!\over 4}\right)</mrow>
+            <mrow>\amp =\amp {n!\over 48}(n-2)^{\underline{3}}\left({1\over3} +{n-3\over 4}\right)</mrow>
+          </md>
+          possible Pr&#xfc;fer codes and therefore the same number of
+          labelled trees.
+        </p>
+      </solution>
+    </p>
+  </li>
+
+  <li>
+    <p>
+      (interesting and difficult)
+      The degree sequence of a tree is a list of the degrees of the
+      vertices in nonincreasing order.  For example the degree sequence of the
+      first graph in <xref ref="spanningtrees">Figure</xref> is 43221.  How many labelled
+      trees are there on <m>n</m> vertices with degree sequence <m>d_1,d_2,\ldots d_n</m>, or,
+      equivalently, with the degree sequence in which the degree <m>d</m> appears <m>i_d</m>
+      times?
+      <solution>
+        <p>
+          We first solve the simpler problem in which we assume <m>d_i</m> is the
+          degree of vertex <m>i</m>. The number of times
+          <m>i</m> appears in the Pr&#xfc;fer code of a tree is one less than the degree of <m>i</m>,
+          so vertex
+          <m>i</m> appears
+          <m>d_i-1</m> times. Thus the sum of the <m>d_i-1</m> should be <m>2n-2-n=n-2</m>. Of the
+          <m>n-2</m> places in the Pr&#xfc;fer code, we want to label <m>d_1-1</m> of them with 1,
+          <m>d_2-1</m> of them with 2 and in general <m>d_i-1</m> of them with <m>i</m>. There are
+          <me>
+            {n-2\choose
+            d_1-1}{n-2-(d_1-1)\choose d_2-1}{n-2-(d_1-1+d_2-1)\choose
+            d_3-1}\cdots{d_n-1\choose d_n-1}
+          </me>
+          ways to do this, so the number of trees
+          in which vertex <m>i</m> has degree <m>d_i</m> is <m>{(n-2)!\over
+          (d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
+        </p>
+
+        <p>
+          Now we modify the solution by observing that to count all graphs with a given
+          degree sequence, the actual vertices which have the given degrees is
+          irrelevant, so we must multiply the result of the easier problem by the number
+          of ways to assign the degrees to the vertices. To assign the degrees, we can
+          list the vertices in <m>n!</m> ways, choose the first <m>i_1</m> of these vertices to
+          have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order
+          in which we list the vertices of a given degree is irrelevant. Thus the number
+          of ways to assign the degrees is
+          <m>n!\over i_1!i_2!\cdots i_n!</m>. Once the degrees are assigned, there are
+          <m>(n-2)!\over
+          \prod_{d=1}^n (d-1)!^{i_d}</m>, by translating our easier result. Thus the total
+          number of trees with the degree sequence in which there are <m>i_d</m> vertices of
+          degree <m>d</m> is
+          <me>
+            n!(n-2)!\over\prod_{j=1}^n i_j!(j-1)!^{i_j}.
+          </me>
+        </p>
+      </solution>
+    </p>
+  </li>
+  </ol>
+</section>

@@ -6,11 +6,12 @@ on cars for testing,  students into classes to compare
 approaches to teaching a subject, or members of a tennis club into pairs to
 play tennis.  There are many questions one can ask about such arrangements of
 objects.  Here we will focus on questions about {\em how many ways} we may
-combine the objects into arrangements of the desired type.  Sometimes,
-though, we ask if an arrangement is possible (if we have ten baseball teams,
+combine the objects into arrangements of the desired type.  These are
+called \emph{counting problems}. Sometimes,
+though, combinatorial mathematicians ask if an arrangement is possible (if we have ten baseball teams,
 and each team has to play each other team once, can we schedule all the games
 if we only have the fields available at enough times for forty games?). 
-Sometimes we will ask if all the arrangements we might be able to make have a
+Sometimes they ask if all the arrangements we might be able to make have a
 certain desirable property (Do all ways of testing 5 brands of tires on 5
 different cars [with certain additional properties] compare each brand with
 each other brand on at least one common car?).    Problems of these sorts
@@ -40,9 +41,28 @@ and some are quite challenging.  When you find a problem challenging,
 don't give up on it, but don't let it stop you from going on with other
 problems.  Frequently you will find an idea in a later problem that you
 can take back to the one you skipped over or only partly finished in order
-to finish it off.  With that in mind, let's get started.  
+to finish it off.  With that in mind, let's get started.  In the
+problems that follow, you will see some problems marked on the left
+with various symbols. The preface gives a full explanation of these
+symbols and discusses in greater detail why the book is organized as
+it is! Table~\ref{tab:prob-symbs}, which is repeated from the preface, summarizes
+the meaning of the symbols.
 
-
+\begin{table}[h]
+  \centering
+  \caption{The meaning of the symbols to the left of problem numbers.}
+  \label{tab:prob-symbs}
+\ \\
+  \begin{tabular}{|c|l|}
+    \hline
+    $\bullet$& essential\\
+    $\circ$ & motivational material\\
+    $+$ & summary\\
+    \importantarrow & especially interesting\\
+    $*$ & difficult\\
+    $\cdot$ & essential for this section or the next\\\hline
+  \end{tabular}
+\end{table}
 \section{Basic Counting Principles}
 
 \bp
@@ -146,7 +166,10 @@ from different points of view from time to time.  However, the quick review
 above should probably let you answer these questions.  If you have difficulty
 with them, it would be a good idea to go now to Appendix~\ref{Relations} and
 work through Section \ref{relationsandfunctions} which covers this definition
-in more detail.
+in more detail. You might also want to study Section~\ref{digraphsoffunctions} to learn
+to visualize the properties of functions. We will take up the topic of
+this section later in this chapter as well, but in less detail than is
+in the appendix.
 \begin{enumerate} 
 \item Using $f$, $g$, \ldots, to stand for the various
 functions, write down all the different functions you can
@@ -196,25 +219,23 @@ functions from the three places in the cone where ice cream would sit to the
 \ref{tripledeckercone} notices it would be cheaper to buy three
 pints of ice cream for them to split than to buy a triple decker cone for
 each of them, and that way they would get more ice cream. They ask their
-coach if they can buy three pints of ice cream.  In how many ways can they
-choose three pints of different flavors out of the 12 flavors?  In how many
-ways may they choose three pints if the flavors don't have to be
-different?\label{icecreaminpints}
-\solution{
+coach if they can buy three pints of ice cream. \label{icecreaminpints}
+\begin{enumerate}
+\item In how many ways can they choose three pints of different
+  flavors out of the 12 flavors? \solution{
 There are $12\cdot11\cdot 10 = 1320$ ways to make a list of three
 flavors.  But a choice of three flavors accounts for $3\cdot2\cdot1 = 6$ of
 those lists.  Therefore there are $1320/6=220$ ways to choose the pints if
-the flavors are different.
-
-If the flavors need not be different, we must  add in the number of ways
+the flavors are different.}
+\item In how many ways may they choose three pints if the flavors
+  don't have to be different?\solution{If the flavors need not be different, we must  add in the number of ways
 to choose two pints of one flavor and one of a second and also the number fo
 ways to choose three pints of one flavor. the first of these is $12\cdot11
 =132$ and the third is 12, so we have $220+132+12=364$ ways to choose three 
 pints.  We can do a more elegant solution after we learn about multisets in
 Problem \ref{multiset}.
 }
-
-
+\end{enumerate}
 
 \iteme Two  sets are said to be
 \index{disjoint}\index{sets!disjoint}{\em disjoint} if they have no
@@ -287,7 +308,8 @@ $A$ and
 $B$, so you can think of Problem
 \ref{orderedpair} as asking you for the size of the Cartesian
 product of
-$M$ and $N$. 
+$M$ and $N$, that is, asking you to count the number of elements of
+this Cartesian product.
 
 When a set $S$ is a union of disjoint sets $B_1, B_2, \ldots, B_m$ we say
 that the sets $B_1, B_2, \ldots, B_m$ are a {\bf
@@ -302,18 +324,22 @@ partition} of the partition.  In this language, the
 sum of the sizes of the blocks of the partition.\end{quote}  The
 \index{principle!product}\index{product principle}{\bf product principle} says
 that
-\begin{quote}if we have a partition of a set $S$ into $m$ blocks, each of size
-$n$, then
-$S$ has size $mn$.\end{quote}
-There is another version of the product principle that applies directly in
-problems like Problem \ref{completelunch} and Problem \ref{tripledeckercone},
-where we were not just taking a union of $m$ disjoint sets of size $n$, but
-rather $m$ disjoint sets of size $n$, each of which was a union of $m'$
-disjoint sets of size $n'$.  This is an inconvenient way to have to think
-about a counting problem, so we may rephrase the product principle in terms
-of a sequence of decisions:
-\bp 
-\itemm If we make a sequence of $n$   choices for
+\begin{quote}if we have a partition of a set $S$ into $m$ blocks, each
+  of size $n$, then $S$ has size $mn$.\end{quote} You'll notice that
+in our formal statement of the sum and product pinciple we talked
+about a partition of a finite set. We could modify our language a bit
+to cover infinite sizes, but whenever we talk about sizes of sets in
+what follows, we will be working with finite sets. So as to avoid
+possible complications in the future, let us agree that when we refer
+to the size of a set, we are implicitly assuming the set is
+finite. There is another version of the product principle that applies
+directly in problems like Problem \ref{completelunch} and Problem
+\ref{tripledeckercone}, where we were not just taking a union of $m$
+disjoint sets of size $n$, but rather $m$ disjoint sets of size $n$,
+each of which was a union of $m'$ disjoint sets of size $n'$.  This is
+an inconvenient way to have to think about a counting problem, so we
+may rephrase the product principle in terms of a sequence of
+decisions: \bp \iteme If we make a sequence of $m$ choices for
 which\label{generalproductprincipleintro}
 \begin{itemize} 
 \item There are $k_1$ possible first choices, and
@@ -325,24 +351,22 @@ make our sequence of choices?  (You need not prove your answer correct at
 this time.)
 \ep
  
-  The principle you gave in Problem \ref{generalproductprincipleintro} is
-called the {\em general product principle}.\index{general product
-principle}\index{product principle!general}\index{principle!product!general}
- We will study the general  product principle in more detail in
-Problems
-\ref{generalproductprinciple} and \ref{generalproductprincipleproof}.  For
-now, notice how much easier it makes it to explain why we multiplied the
-things we did in Problem
-\ref{completelunch} and Problem \ref{tripledeckercone}.
+The counting principle you gave in Problem
+\ref{generalproductprincipleintro} is called the {\em general product
+  principle}.\index{general product principle}\index{product
+  principle!general}\index{principle!product!general} We will outline
+a proof of the general product pinciple from the original product
+principle in Problem~\ref{generalproductprincipleproof}.  Until then,
+let us simply accept it as another counting principle. For now, notice
+how much easier it makes it to explain why we multiplied the things we
+did in Problem \ref{completelunch} and Problem \ref{tripledeckercone}.
 \bp
 
 \itemi A tennis club has $2n$ members.  We want to pair up the
-members by twos for singles matches.  In how many ways may we pair up all the
-members of the club?  Suppose that in addition to specifying who plays whom,
-for each pairing we say who serves first.  Now in how many ways may we
-specify our pairs?\label{tennispairings1}  (Hint: consider the cases of 2, 4,
-and 6 members.)
-\solution{Suppose we list the people in the club in some way, and keep that
+members by twos for singles matches. \label{tennispairings1} 
+\begin{enumerate}
+\item In how many ways may we pair up all the members of the club? (Hint: consider the cases
+  of 2, 4, and 6 members.)\label{tennispairings1a} \solution{Suppose we list the people in the club in some way, and keep that
 list for the remainder of the problem.  Take the first person from the list
 and pair that person with any of the $2n-1$ remaining people.  Now take the
 next {\em unpaired} person from the list and pair that person with any of the
@@ -351,40 +375,244 @@ been selected, take the next unpaired person from the list and pair that
 person with any of the remaining $2n-2k-1$ unpaired people.  Every pairing
 can arise in this way, and no pairing can arise twice in this process.  Thus
 the number of outcomes is $\prod_{i=0}^{n-1} 2n-2i-1$.}
+
+\item Suppose that in addition to specifying who plays whom, for each
+  pairing we say who serves first.  Now in how many ways may we
+  specify our pairs?
+\end{enumerate}
+
+
+\items  Let us now return to Problem \ref{countingfunctions} and
+justify---or perhaps finish---our answer to the question about the
+number of functions from a three-element set to a 12-element
+set.\label{countingfunctions2}
+\begin{enumerate}
+\item How can you justify your answer in
+  Problem~\ref{countingfunctions} to the question ``How many functions
+  are there from a three element set (say $[3]=\{1,2,3\}$) to a twelve
+  element set (say [12])?''  \solution{The number of functions from $[3]$ to $[12]$ with $f(3) =1$ is the
+number of functions from $[2]$ to $[12]$, namely 144.  The same is true for
+the number of functions with $f(3)=2$ and $f(3)=3$, and the size of the set
+$S_i$.  The union of the sets $S_i$ is the set of all functions from $[3]$ to
+$[12]$, and since there are twelve sets $S_i$, this union has size
+ $12\cdot144= 1728$.}
+\item Based on the examples you've seen so far, make a conjecture
+  about how many functions there are from the set
+  \[[m] = \{1,2,3,\dots,m\}\]
+  to $[n]=\{1,2,3,\dots,n\}$ and prove it.
+\label{numberoffunctionsconjecture}
+ \solution{$n^m$.}
+\item A common notation for the set of all functions from a set $M$ to a
+set $N$ is $N^M$.  Why is this a good notation? 
+\solution{Because there are $n^m$ such functions, at least according to our
+conjecture.}
+\end{enumerate}
+
+\items Now suppose we are thinking about a set $S$ of functions $f$
+from $[m]$ to some set $X$.  (For example, in
+Problem~\ref{tripledeckercone} we were thinking of the set of
+functions from the three possible places for scoops in an ice-cream
+cone to $12$ flavors of ice cream.) Suppose there are $k_1$ choices
+for $f(1)$.  (In Problem~\ref{tripledeckercone}, $k_1$ was $12$,
+because there were $12$ ways to choose the first scoop.) Suppose that
+for each choice of $f(1)$ there are $k_2$ choices for $f(2)$.  (For
+example, in Problem~\ref{tripledeckercone} $k_2$ was $12$ if the
+second flavor could be the same as the first, but $k_2$ was $11$ if
+the flavors had to be different.) In general, suppose that for each
+choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$ choices for
+$f(i)$. (For example, in Problem~\ref{tripledeckercone}, if the
+flavors have to be different, then for each coice of $f(1)$ and
+$f(2)$, there are $10$ choices for $f(3)$.)
+
+What we have assumed so far about the functions in $S$ may be
+summarized as
+\begin{itemize}
+\item There are $k_1$ choices for $f(1)$.
+\item For each choice of $f(1)$, $f(2)$, \ldots, $f(i-1)$, there are $k_i$
+choices for~$f(i)$.
+\end{itemize}  How many functions are in the set
+$S$? Is there any practical difference between the result of this
+problem and the general product principle?\label{generalproductprinciple}      
+%  This is called the 
+% {\em product principle for functions}\index{product
+% principle!for functions} or the 
+% {\bf general product principle}\index{product principle!general}. 
+ \solution{$\prod_{i=1}^m k_i$. }
 \ep
 
-\subsection{Functions} As another example how standard mathematical language
-relates to counting problems, Problem \ref{countingfunctions} explicitly asked
+The point of Problem~\ref{generalproductprinciple} is that the general
+product principle can be stated informally, as we did originally, or
+as a statement about counting sets of standard concrete mathematical
+objects, namely functions.
+
+\bp
+\itemi  A roller coaster car has $n$ rows of seats, each of which
+has room for two people.  If $n$ men and $n$ women get into the car with a
+man and a woman in each row,  in how many ways may they choose their seats?
+\solution{$(n!)^22^n$}
+
+% \iteme
+%  How does the general product principle relate to counting  functions
+% from
+% $[m]$ to
+% $[n]$?  How does it relate to counting    one-to-one functions from
+% $[m]$ to
+% $[n]$?  \index{functions!one-to-one!number of}\index{functions!number of}
+%  \solution{It tells us there are $\prod_{i=1}^m n =n^m$ functions from $[m]$
+% to
+% $[n]$ and that there are $\prod_{i=1}^m n-i+1 $ one-to-one
+% functions.}
+% \items  Prove 
+% the conjecture (about the number of functions in $S$) in Problem
+% \ref{numberoffunctionsconjecture} when
+% $m=2$ and  when $m=3$.  Prove the conjecture for an
+% arbitrary positive integer
+% $m$. \label{provenumberoffunctionsconjecture}\index{functions!number of}
+%  \solution{When $m=2$, we have $n$ functions $f$ for each value of $f(1)$,
+% and thus the set of all functions is a union of $n$ sets of size $n$, which
+% by the product principle has size $n^2$. (Alternatively, we could apply the
+% general product principle with $k_i=n$ for $i=1,2$.)  When
+% $m=3$,  there is a bijection between the functions from $[m]$ to $[2]$ and
+% functions
+% $f$ from
+% $[m]$ to
+% $[3]$ with $f(3) =i$ for any particular $i$ between 1 and $n$.  Thus the
+% set of all functions is a union of $n$ sets of size $n^2$ and so by the
+% product principle has size $n^3$.  (Alternatively, we could apply the
+% general product principle with $k_i=n$ for $i=1,2,3$.)  To prove the
+% conjecture in general we apply the general product principle to get
+% $\prod_{i=1}^n m =n^m$ functions from
+% $[m]$ to
+% $[n]$. 
+
+%   As another option, we also prove by induction on
+% $m$ that there are $n^m$ functions from $[m]$ to $[n]$.  When $m=0$ there is
+% one function (the so-called "empty function" from $[m]$ to $[n]$).  Now assume
+% inductively that when $m=k-1$ there are $n^{k-1}$ functions from $[m]$ to
+% $[n]$.  For each value $i$ between 1 and $n$ there is a bijection between the
+% functions from $[k-1]$ to $[n]$ and the functions $f$ from $k$ to $n$ with
+% $f(k)=i$.  Thus the set of all functions from $[k]$ to $[n]$ is a union of
+% $n$ sets of size $n^{k-1}$ and so by the ordinary product principle this set
+% has size $n^k$.  Thus by the principle of mathematical induction, then number
+% of functions from $m$ to $n$ is $m^n$ for all nonnegative integers $m$.}
+
+
+\items How does the general product principle apply to Problem
+\ref{tripledeckercone}?
+\solution{By the general product principle, there are $12\cdot 11\cdot 10$
+triple decker cones.}
+
+\iteme In how many ways can we pass out $k$ distinct pieces of
+fruit to
+$n$ children (with no restriction on how many pieces of fruit a child may
+get)?  
+ \solution{Either by the formula for the number of functions from an
+$m$-element set to an $n$-element set or the general product principle, there
+are $k^n$ ways.  (Each distribution is a function from the set of fruit to
+the set of children, because each piece of fruit goes to one and only one
+child.)}
+
+\iteme \label{SubsetsFirstTime}How many subsets does a set $S$ with $n$ elements have?
+\solution{For each of the $n$ elements of $S$, we have two options:
+  either we put the element into the subset or we do not. Thus, the
+  general product principle tells us that there are $2^n$ subsets of $S$.}
+
+\itemm  Assuming $k\le n$, in how many ways can we pass out  $k$
+distinct pieces of fruit to
+$n$ children if each child may get at most one?  What is the number if
+$k>n$?  Assume for both questions that we pass out all the fruit.
+\solution{We are asking for the number of $k$-element permutations of $n$
+children, which is $\prod_{i=1}^k n-i+1$, and is zero if $k>n$.}
+
+
+\iteme Another name for a list, in a specific order, of $k$ distinct things
+chosen from a set $S$ is a  $\mathbf k$-{\bf element permutation of}
+$\mathbf S$.\index{permutation!
+$k$-element}  We can also think of a $k$-element permutation of $S$ as a
+one-to-one function (or, in other words, injection) from
+$[k]=\{1,2,\ldots, k\}$ to $S$.  How many $k$-element permutations does an
+$n$-element set have?\label{kelementpermutation}  (For this problem it is
+natural to assume $k\le n$.  However the question makes sense even if $k>n$. 
+What is the number of $k$-element permutations of an $n$-element set if $k>n$?
+ \solution{By the general product principle, the number is $$\prod_{i=1}^k
+n-i+1 $$.  In the case that $k>n$, there are no such lists
+with distinct entries, and that is what the formula gives us, because
+$n-(n+1)+1=0$.}
+\ep
+
+
+There are a number of different notations for the number of $k$-element
+permutations of an $n$-element set.  The one we shall use was introduced by
+Don Knuth; namely $n^{\underline{k}}$, read ``$n$ to the $k$ falling'' or
+``$n$ to the $k$ down". In Problem \ref{kelementpermutation} you may have
+shown that 
+\begin{equation}n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
+n-i+1).\label{productnotation}
+\end{equation}
+  It is standard to call $n^{\underline{k}}$\index{$n^{\underline{k}}$}  the
+{\bf
+$k$-th falling factorial power of $n$}\index{falling factorial
+power}\index{factorial power!falling}, which explains why we use exponential
+notation.  Of course we call it a {\em factorial} power since
+$n^{\underline{n}} = n(n-1)\cdots 1$ which we call {\em $n$-factorial} and
+denote by
+$n!$.\index{factorial}\index{$n"!$}  If you are unfamiliar with the Pi
+notation, or {\em product notation}\index{product notation}\index{Pi
+notation} we introduced for products in Equation
+\ref{productnotation}, it works just like the Sigma notation works for
+summations.
+
+\bp
+\iteme Express $n^{\underline{k}}$ as a quotient of factorials.
+\solution{$n^{\underline{k}}=n!/(n-k)!$}
+\itemi How should we define $n^{\underline{0}}$?\solution{We define
+  $n^{\underline{0}}$ to be $1$.}
+\ep
+
+
+\subsection{Functions and directed graphs} 
+
+As another example how standard mathematical language relates to
+counting problems, Problem \ref{countingfunctions} explicitly asked
 you to relate the idea of counting functions to the question of
-Problem \ref{tripledeckercone}.
-  You have probably learned in algebra or calculus how to draw graphs in the
-Cartesian plane of functions from a set of numbers to a set of numbers.  You
-may recall how we can determine whether a graph is a graph of a function by
-examining whether each vertical straight line crosses the graph at most one
-time.  You might also recall how we can determine whether such a function is
-one-to-one by examining whether each horizontal straight line crosses the
-graph at most one time.  The functions we deal with will often involve
-objects which are not numbers, and will often be functions from one finite
-set to another.  Thus graphs in the cartesian plane will often not be
-available to us for visualizing functions.  However, there is another kind of
-graph called a
-{\em directed graph}\index{graph! directed}\index{directed graph} or
-{\em digraph}\index{digraph}\index{function!digraph of} that is especially useful
-when dealing with functions between finite sets.  In Figure
-\ref{functiondigraphs} we show several examples.
+Problem \ref{tripledeckercone}.  You have probably learned in algebra
+or calculus how to draw graphs in the Cartesian plane of functions
+from a set of numbers to a set of numbers.  You may recall how we can
+determine whether a graph is a graph of a function by examining
+whether each vertical straight line crosses the graph at most one
+time.  You might also recall how we can determine whether such a
+function is one-to-one by examining whether each horizontal straight
+line crosses the graph at most one time.  The functions we deal with
+will often involve objects which are not numbers, and will often be
+functions from one finite set to another.  Thus graphs in the
+cartesian plane will often not be available to us for visualizing
+functions.  
+
+However, there is another kind of graph called a {\em directed
+  graph}\index{graph! directed}\index{directed graph} or {\em
+  digraph}\index{digraph}\index{function!digraph of} that is
+especially useful when dealing with functions between finite sets. We
+take up this topic in more detail in Appendix~\ref{Relations},
+particularly Section~\ref{relationdigraph} and Section~\ref{digraphsoffunctions}. In
+Figure \ref{functiondigraphs} we show several examples of digraphs of functions.
 \begin{figure}[hbt]\caption{What is a digraph of a
 function?}\label{functiondigraphs}\smallskip
 \begin{center}\psfig{figure=functiondigraph.eps,height=4.5in
 }\end{center}
 \end{figure}
- If we have a function
-$f$ from a set
-$S$ to a set $T$, we draw a line of dots or circles to represent the elements
-of
-$S$ and another (usually parallel) line of circles or dots to represent the
-elements of
-$T$.  We then draw an arrow from the circle for $x$ to the circle for $y$ if
-$f(x) = y$.
+If we have a function $f$ from a set $S$ to a set $T$, we draw a line
+of dots or circles, called \emph{vertices} to represent the elements of $S$ and another
+(usually parallel) line of circles or dots to represent the elements
+of $T$.  We then draw an arrow from the circle for $x$ to the circle
+for $y$ if $f(x) = y$. Sometimes, as in part (e) of the figure, if we
+have a function from a set $S$ to itself, we draw only one set of
+vertices representing the elements of $S$, in which case we can have
+arrows both entering and leaving a given vertex. As you see, the
+digraph can be more enlightening in this case if we experiment with
+the function to find a nice placement of the vertices rather than
+putting them in a row.
+
+\textbf{The figure needs to have part (e) added to it.}
 
 
 
@@ -394,7 +622,9 @@ from $S$ to $T$.  There must be one and only one arrow leaving each vertex of
 the digraph representing an element of $S$.  The fact that there is one arrow
 means that $f(x)$ is defined for each $x$ in $S$.  The fact that there is
 only one arrow means that each $x$ in $S$ is related to exactly one element of
-$T$.  For further discussion of functions and digraphs see Sections
+$T$. (Note that these remarks hold as well if we have a function from
+$S$ to $S$ and draw only one set of vertices representing the elements
+of $S$.) For further discussion of functions and digraphs see Sections
 \ref{functionrelation} and \ref{relationdigraph} of {Appendix~\ref{Relations}}.
 
 \bp
@@ -421,14 +651,20 @@ digraph of such a function.
 \solution{The digraph of one such function follows\\
 \mbox{\psfig{figure=OntoNotOnetoOne.eps}}
 }
-\iteme What does the digraph of a one-to-one function
-(injection) from a finite set $X$ to a finite set $Y$ look
-like? (Look for a test somewhat similar to the one we  described for
-when a digraph is the digraph of a function.)  What does the digraph of an
-onto function look like?  What does the digraph of a one-to-one and onto 
-function  from a finite set
-$S$ to a set
-$T$ look like? \label{bijectiondigraph}
+\iteme Digraphs of functions help us visualize the ideas of one-to-one
+functions and onto functions.
+\begin{enumerate}
+\item What does the digraph of a one-to-one function (injection) from
+  a finite set $X$ to a finite set $Y$ look like? (Look for a test
+  somewhat similar to the one we described for when a digraph is the
+  digraph of a function.)
+\item   What does the digraph of an onto function
+  look like?
+\item   What does the digraph of a one-to-one and onto function
+  from a finite set $S$ to a set $T$ look
+  like? \label{bijectiondigraph}
+\end{enumerate}
+
 \solution{One-to-one: One arrow comes out of each vertex representing a member
 of
 $X$ and at most one arrow goes into each vertex representing a member of $Y$. 
@@ -440,8 +676,24 @@ member of
 $X$ and at exactly one arrow goes into each vertex representing a member of $Y$.
 (The first half of each sentence is optional.)}
 
+\iteme The word {\em permutation} is actually used in two different ways in
+mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
+$S$ is a bijection from $S$ to
+$S$.  How many permutations does an $n$-element set have?
+\label{permutationasbijection}
+\solution{$n!$.}
+\ep 
 
-\ep
+Notice that there is a great deal of consistency between the use of
+the word permutation in Problem~\ref{permutationasbijection} and the
+use in Problem~\ref{kelementpermutation}.  If we have
+some way $a_1,a_2,\ldots,a_n$ of listing our set, then any other list
+$b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is
+$f(a_i) =b_i$, and any bijection, say the one given by $g(a_i)=c_i$
+gives us a list $c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really
+very little difference between the idea of a permutation of $S$ and an
+$n$-element permutation of $S$ when $n$ is the size of $S$.
+
 
 \subsection{The bijection principle} Another name for a one-to-one
 and onto function is \index{bijection}\index{function!bijection}{\bf
@@ -472,9 +724,10 @@ because each sequence gives a set, and each set can be the set of places
 where a sequence is 1.  Since there are $2^n$ integers which are between 0
 and $2^n-1$, and they correspond to sequences of length $n$ (notice, we have
 another bijection, the one between a number and its binary representation),
-there are $2^n$ subsets of an $n$-element set.}
+there are $2^n$ subsets of the $n$-element set $[n]$.}
+\ep
 
-\iteme Notice that the first question in Problem \ref{icecreaminpints} asked
+Notice that the first question in Problem \ref{icecreaminpints} asked
 you for the number of ways to choose a three element subset from a 12
 element subset.  You may have seen a notation like
 $n\choose k$, $C(n,k)$, or $_nC_k$ which stands for the number of ways to
@@ -493,7 +746,10 @@ $n$-element set $[n] =
 \{1,2,3,\ldots, n\}$. As an example, the set of two-element subsets of
 $[4]$ is
 $$\{\{1,2\}, \{1,3\}, \{1,4\}, \{2,3\}, \{2,4\}, \{3,4\}\}.$$  This
-example tells us that ${4\choose 2} = 6$. Let
+example tells us that ${4\choose 2} = 6$. 
+
+\bp
+\iteme Let
 $C$ be the set of $k$-element subsets of $[n]$ that contain
 the number
 $n$, and let
@@ -544,10 +800,16 @@ the two that are above it and just to the left or right.
 
 \begin{figure}[h]\caption{Pascal's
 Triangle}\label{Pascaltriangle}
-$$\matrix{&&&&&&&1&&&&&&\cr &&&&&&1&&1&&&&&&\cr
-&&&&&1&&2&&1&&&&&\cr &&&&1&&3&&3&&1&&&&\cr
-&&&1&&4&&6&&4&&1&&\cr &&1&&5&&10&&10&&5&&1&\cr
-&1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+$$\begin{matrix}
+&&&&&&&1&&&&&&&\\
+&&&&&&1&&1&&&&&&\\
+&&&&&1&&2&&1&&&&&\\
+&&&&1&&3&&3&&1&&&&\\
+&&&1&&4&&6&&4&&1&&\\
+&&1&&5&&10&&10&&5&&1&\\
+&1&&6&&15&&20&&15&&6&&1\\
+1&&7&&21&&35&&35&&21&&7&&1
+\end{matrix}$$
 \end{figure}\index{Pascal's Triangle}
 
 
@@ -559,8 +821,8 @@ $$\matrix{&&&&&&&1&&&&&&\cr &&&&&&1&&1&&&&&&\cr
 triangle to get a numerical answer for the first question  in Problem
 \ref{icecreaminpints}.
 \solution{Starting with row 9, we get
-$$\matrix{&&&1&&9&&36&&84 \cr&&1&&10&&45&&120\cr&1&&11&&55&&165\cr
-1&&12&&66&&220}$$ so the answer is 220.}
+$$\begin{matrix}&&&1&&9&&36&&84 \cr&&1&&10&&45&&120\cr&1&&11&&55&&165\cr
+1&&12&&66&&220\end{matrix}$$ so the answer is 220.}
 \ep
 
 It is less common to see Pascal's triangle as a right
@@ -573,14 +835,26 @@ the one above and the one above and to the left, except for
 the leftmost and right most entries of a row, for which that
 doesn't make sense.  Since the leftmost entry is $n\choose 0$
 and the rightmost entry is
-$n\choose n$, these entries are both one (why is that?), and
+$n\choose n$, these entries are both one (to see why, ask yourself how
+many $0$-element subsets and how many $n$-element subsets an
+$n$-element set has), and
 your formula then tells how to fill in the rest of the table.
 
 \begin{figure}[ht]\caption{Pascal's Right
 Triangle}\label{Pascalrighttriangle}
-$$\matrix{1&&&&&&\cr 1&&1&&&&&&\cr 1&&2&&1&&&&&\cr
-1&&3&&3&&1&&&&\cr 1&&4&&6&&4&&1&&\cr 1&&5&&10&&10&&5&&1&\cr
-1&&6&&15&&20&&15&&6&&1\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\begin{center}
+  \begin{tabular}{c|cccccccc}
+    &$k=0$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
+    $n=0$  &1&&&&&&\\
+    1& 1&1&&&&&\\
+    2& 1&2&1&&&&&\\
+    3&1&3&3&1&&&&\\
+    4& 1&4&6&4&1&&&\\
+    5& 1&5&10&10&5&1&&\\
+    6&1&6&15&20&15&6&1&\\
+    7& 1&7&21&35&35&21&7&1
+  \end{tabular}
+\end{center}
 \end{figure}
 
 Seeing this right triangle leads us to ask whether there is
@@ -599,15 +873,24 @@ entry above and to the left.
 
 \begin{figure}[ht]\caption{Pascal's
 Rectangle}\label{Pascal'sRectangle}
-$$\matrix{1&&0&&0&&0&&0&&0&&0&&0\cr 1&&1&&0&&0&&0&&0&&0&&0\cr
-1&&2&&1&&0&&0&&0&&0&&0\cr 1&&3&&3&&1&&0&&0&&0&&0\cr
-1&&4&&6&&4&&1&&0&&0&&0\cr 1&&5&&10&&10&&5&&1&&0&&0\cr
-1&&6&&15&&20&&15&&6&&1&&0\cr 1&&7&&21&&35&&35&&21&&7&&1}$$
+\begin{center}
+  \begin{tabular}{c|cccccccc}
+    &$k=0$ & 1 & 2 & 3 & 4 & 5 & 6 & 7\\\hline
+    $n=0$  &1&0&0&0&0&0&0&0\\
+    1& 1&1&0&0&0&0&0&0\\
+    2& 1&2&1&0&0&0&0&0\\
+    3&1&3&3&1&0&0&0&0\\
+    4& 1&4&6&4&1&0&0&0\\
+    5& 1&5&10&10&5&1&0&0\\
+    6&1&6&15&20&15&6&1&0\\
+    7& 1&7&21&35&35&21&7&1
+  \end{tabular}
+\end{center}
 \end{figure}
 
 \bp
-\itemi We defined $n \choose k$ to be 0 when $k>n$ in order
-to get a rectangular table of numbers that satisfies the Pascal
+\itemi Because our definition told us that $\binom{n}{k}$ is 0 when
+$k>n$, we got a rectangular table of numbers that satisfies the Pascal
 Equation.  
 \begin{enumerate}
 \item Is there any other way to define $n \choose k$ when $k>n$
@@ -646,240 +929,31 @@ zero.}
 
 
 
-\iteme There are  variants of  the bijections we used to prove the
-\label{SubsetsByInduction} Pascal Equation that can be used to give another
-proof of a formula (as in Problem \ref{SubsetsBinaryRepresentation}) for the
-number of subsets of an
-$n$-element set using the Principle of Mathematical Induction.  If you are
-familiar with Mathematical Induction, try to find the proof.  If not, now is
-the time to visit the Appendix on Mathematical Induction (and work through
-the problems there).  From this point forward, we shall assume that you are
-familiar with the principle of mathematical induction.
-\solution{We prove inductively that the number of subsets of an the
-$n$-element set $[n]$ is $2^n$.  The bijection between $[n]$ and an arbitrary
-$n$-element set extends to a bijection between their sets of subsets, so it
-suffices to consider the $n$-element set $[n]$.  In particular, when
-$n=0$, we have the empty set, and it has just $1=2^0$ subset, the empty set
-itself.  Now assume that $[n-1]$  has
-$2^{n-1}$ subsets.  The subsets of $[n]$ may be divided into those that
-contain
-$n$ and those that do not.  There is a bijection between the subsets that do
-contain $n$ and the subsets of the set $[n-1]$.  Thus there are $2^{n-1}$
-subsets that do contain $n$.  There is also a bijection between the subsets
-that do not contain $n$ and the subsets of the set $[n-1]$.  Thus there are
-$2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
-total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
-Therefore by the principle of mathematical induction, for all $n$ the number
-of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
-
-\subsection{The  General Product Principle}
-\iteme  Let us now return to Problem \ref{countingfunctionsparta} and
-justify---or perhaps finish---our answer to the question about the
-number of functions from a three-element set to a 12-element
-set.\label{countingfunctions2}
-\begin{enumerate}
-\item We begin with a question to which we can apply the product
-principle directly.  Namely, how many functions $f$ are there from the
-set $[2]=\{1,2\}$ to the set $[12]$?  How many functions are there
-with $f(2)=1$?  With $f(2) =2$?  With $f(2)=3$?  With $f(2) =i$ for
-any fixed $i$ between 1 and 12?  The set of functions from $[2]$ to
-$[12]$ is the union of 12 sets: the set of $f$ with $f(2)=1$, the set
-of $f$ with $f(2) = 2$, \ldots, the set of $f$ with $f(2) = 12$.  How
-many functions does each of these sets have?  From the product
-principle, what may you conclude about the number of functions in the
-union of these 12 sets?  
- \solution{The number of functions $f$ from $[2]$ to $[12]$ with $f(2) = 1$ is
-12, one for each possible value of $f(1)$.  The same is true with $f(2)=2$, 3,
-or any particular value.  Thus the set of functions from $[21]$ to $[12]$ is
-a union of twelve sets of size 12, and thus by the product principle has size
-144.}
-\item Now consider the set of functions from $[3]$ to $[12]$.  How
-many of these functions have $f(3) =1$?  What bijection (just describe
-it in words) are you using (implicitly, if not explicitly) to answer this
-question?  How many of these functions have $f(3) =2$?  How many have $f(3) =
-i$ for any
-$i$ between 1 and 12?  For each $i$, let $S_i$ be the set of functions
-$f$ from $[3]$ to $[12]$ with $f(3) = i$.  What is the size $S_i$? 
-What is the size of the union of the sets $S_i$?  How many functions
-are there from $[3]$ to $[12]$?
- \solution{The number of functions from $[3]$ to $[12]$ with $f(3) =1$ is the
-number of functions from $[2]$ to $[12]$, namely 144.  The same is true for
-the number of functions with $f(3)=2$ and $f(3)=3$, and the size of the set
-$S_i$.  The union of the sets $S_i$ is the set of all functions from $[3]$ to
-$[12]$, and since there are twelve sets $S_i$, this union has size
- $12\cdot144= 1728$.}
-\item Based on the examples you've seen so far, make a conjecture
-about how many functions there are from $[m]$ to
-$[n]$.\label{numberoffunctionsconjecture}
- \solution{$n^m$.}
-\item A common notation for the set of all functions from a set $M$ to a
-set $N$ is $N^M$.  Why is this a good notation? 
-\solution{Because there are $n^m$ such functions, at least according to our
-conjecture.}
-\end{enumerate}
-
-\iteme Now suppose we are thinking about a set $S$ of functions $f$ 
-from
-$[m]$ to some set $X$.  (For example, we might be thinking of the set of
-functions from the three possible places for scoops in an ice-cream cone to 12
-flavors of ice cream.)  Suppose there are
-$k_1$ choices for
-$f(1)$.  Suppose that for each choice of $f(1)$ there are $k_2$ choices for
-$f(2)$.  (For example, in counting one-to-one functions from $[3]$    
-to
-$[12]$, there are 12 choices for $f(1)$, and for each choice of  
-$f(1)$ there are $11$ choices for $f(2)$.)  In general suppose that  
-for each choice of $f(1)$, $f(2)$, \ldots $f(i-1)$, there are $k_i$
-choices for
-$f(i)$. (For example, in counting one-to-one functions from $[3]$ to $[12]$,
-for each choice of $f(1)$ and $f(2)$, there are 10 choices for $f(3)$.)  What
-we have assumed so far about the functions in $S$ may be summarized as
-\begin{itemize}
-\item There are $k_1$ choices for $f(1)$.
-\item For each choice of $f(1)$, $f(2)$, \ldots, $f(i-1)$, there are $k_i$
-choices for~$f(i)$.
-\end{itemize}  How many functions do you think are in the set
-$S$?\label{generalproductprinciple}      
- This is called the 
-{\em product principle for functions}\index{product
-principle!for functions} or the 
-{\bf general product principle}\index{product principle!general}. 
- \solution{$\prod_{i=1}^m k_i$. }
-\ep
-
-We will take up the proof of the general product principle in Chapter 2.
-
-
-\bp
-\itemi  A roller coaster car has $n$ rows of seats, each of which
-has room for two people.  If $n$ men and $n$ women get into the car with a
-man and a woman in each row,  in how many ways may they choose their seats?
-\solution{$(n!)^22^n$}
-
-\iteme
- How does the general product principle relate to counting  functions
-from
-$[m]$ to
-$[n]$?  How does it relate to counting    one-to-one functions from
-$[m]$ to
-$[n]$?  \index{functions!one-to-one!number of}\index{functions!number of}
- \solution{It tells us there are $\prod_{i=1}^m n =n^m$ functions from $[m]$
-to
-$[n]$ and that there are $\prod_{i=1}^m n-i+1 $ one-to-one
-functions.}
-\items  Prove 
-the conjecture (about the number of functions in $S$) in Problem
-\ref{numberoffunctionsconjecture} when
-$m=2$ and  when $m=3$.  Prove the conjecture for an
-arbitrary positive integer
-$m$. \label{provenumberoffunctionsconjecture}\index{functions!number of}
- \solution{When $m=2$, we have $n$ functions $f$ for each value of $f(1)$,
-and thus the set of all functions is a union of $n$ sets of size $n$, which
-by the product principle has size $n^2$. (Alternatively, we could apply the
-general product principle with $k_i=n$ for $i=1,2$.)  When
-$m=3$,  there is a bijection between the functions from $[m]$ to $[2]$ and
-functions
-$f$ from
-$[m]$ to
-$[3]$ with $f(3) =i$ for any particular $i$ between 1 and $n$.  Thus the
-set of all functions is a union of $n$ sets of size $n^2$ and so by the
-product principle has size $n^3$.  (Alternatively, we could apply the
-general product principle with $k_i=n$ for $i=1,2,3$.)  To prove the
-conjecture in general we apply the general product principle to get
-$\prod_{i=1}^n m =n^m$ functions from
-$[m]$ to
-$[n]$. 
-
-  As another option, we also prove by induction on
-$m$ that there are $n^m$ functions from $[m]$ to $[n]$.  When $m=0$ there is
-one function (the so-called "empty function" from $[m]$ to $[n]$).  Now assume
-inductively that when $m=k-1$ there are $n^{k-1}$ functions from $[m]$ to
-$[n]$.  For each value $i$ between 1 and $n$ there is a bijection between the
-functions from $[k-1]$ to $[n]$ and the functions $f$ from $k$ to $n$ with
-$f(k)=i$.  Thus the set of all functions from $[k]$ to $[n]$ is a union of
-$n$ sets of size $n^{k-1}$ and so by the ordinary product principle this set
-has size $n^k$.  Thus by the principle of mathematical induction, then number
-of functions from $m$ to $n$ is $m^n$ for all nonnegative integers $m$.}
-
-
-\items How does the general product principle apply to Problem
-\ref{tripledeckercone}?
-\solution{By the general product principle, there are $12\cdot 11\cdot 10$
-triple decker cones.}
-
-\iteme In how many ways can we pass out $k$ distinct pieces of
-fruit to
-$n$ children (with no restriction on how many pieces of fruit a child may
-get)?  
- \solution{Either by the formula for the number of functions from an
-$m$-element set to an $n$-element set or the general product principle, there
-are $k^n$ ways.  (Each distribution is a function from the set of fruit to
-the set of children, because each piece of fruit goes to one and only one
-child.)}
-
-\iteme Another name for a list, in a specific order, of $k$ distinct things
-chosen from a set $S$ is a  $\mathbf k$-{\bf element permutation of}
-$\mathbf S$\index{permutation!
-$k$-element}  We can also think of a $k$-element permutation of $S$ as a
-one-to-one function (or, in other words, injection) from
-$[k]=\{1,2,\ldots, k\}$ to $S$.  How many $k$-element permutations does an
-$n$-element set have?\label{kelementpermutation}  (For this problem it is
-natural to assume $k\le n$.  However the question makes sense even if $k>n$. 
-What is the number of $k$-element permutations of an $n$-element set if $k>n$?
- \solution{By the general product principle, the number is $$\prod_{i=1}^k
-n-i+1 $$.  In the case that $k>n$, there are no such lists
-with distinct entries, and that is what the formula gives us, because
-$n-(n+1)+1=0$.}
-
-\iteme  Assuming $k\le n$, in how many ways can we pass out  $k$
-distinct pieces of fruit to
-$n$ children if each child may get at most one?  What is the number if
-$k>n$?  Assume for both questions that we pass out all the fruit.
-\solution{We are asking for the number of $k$-element permutations of $n$
-children, which is $\prod_{i=1}^k n-i+1$, and is zero if $k>n$.}
-
-\iteme The word {\em permutation} is actually used in two different ways in
-mathematics.  A {\bf permutation}\index{permutation!as a bijection} of a set
-$S$ is a bijection from $S$ to
-$S$.  How many permutations does an $n$-element set have?
-\label{permutationasbijection}
-\solution{$n!$.}
-\ep 
-
-Notice that
-there is a great deal of consistency between this use of the word permutation
-and the use in the previous problem.  If we have some way
-$a_1,a_2,\ldots,a_n$ of listing our set, then any other list
-$b_1,b_2,\ldots,b_n$ gives us the bijection whose rule is $f(a_i) =b_i$, and
-any bijection, say the one given by $g(a_i)=c_i$ gives us a list
-$c_1,c_2,\ldots,c_n$ of $S$.  Thus there is really very little difference
-between the idea of a permutation of $S$ and an
-$n$-element permutation of $S$ when $n$ is the size of $S$.
-
-There are a number of different notations for the number of $k$-element
-permutations of an $n$-element set.  The one we shall use was introduced by
-Don Knuth; namely $n^{\underline{k}}$, read ``$n$ to the $k$ falling'' or
-``$n$ to the $k$ down". In Problem \ref{kelementpermutation} you may have
-shown that 
-\begin{equation}n^{\underline{k}} =n(n-1)\cdots (n-k+1)= \prod_{i=1}^k(
-n-i+1).\label{productnotation}
-\end{equation}
-  It is standard to call $n^{\underline{k}}$\index{$n^{\underline{k}}$}  the
-{\bf
-$k$-th falling factorial power of $n$}\index{falling factorial
-power}\index{factorial power!falling}, which explains why we use exponential
-notation.  Of course we call it a {\em factorial} power since
-$n^{\underline{n}} = n(n-1)\cdots 1$ which we call {\em $n$-factorial} and
-denote by
-$n!$.\index{factorial}\index{$n"!$}  If you are unfamiliar with the Pi
-notation, or {\em product notation}\index{product notation}\index{Pi
-notation} we introduced for products in Equation
-\ref{productnotation}, it works just like the Sigma notation works for
-summations.
-
-\bp
-\iteme Express $n^{\underline{k}}$ as a quotient of factorials.
-\solution{$n^{\underline{k}}=n!/(n-k)!$}
+% \iteme There are  variants of  the bijections we used to prove the
+% \label{SubsetsByInduction} Pascal Equation that can be used to give another
+% proof of a formula (as in Problem \ref{SubsetsBinaryRepresentation}) for the
+% number of subsets of an
+% $n$-element set using the Principle of Mathematical Induction.  If you are
+% familiar with Mathematical Induction, try to find the proof.  If not, now is
+% the time to visit the Appendix on Mathematical Induction (and work through
+% the problems there).  From this point forward, we shall assume that you are
+% familiar with the principle of mathematical induction.
+% \solution{We prove inductively that the number of subsets of an the
+% $n$-element set $[n]$ is $2^n$.  The bijection between $[n]$ and an arbitrary
+% $n$-element set extends to a bijection between their sets of subsets, so it
+% suffices to consider the $n$-element set $[n]$.  In particular, when
+% $n=0$, we have the empty set, and it has just $1=2^0$ subset, the empty set
+% itself.  Now assume that $[n-1]$  has
+% $2^{n-1}$ subsets.  The subsets of $[n]$ may be divided into those that
+% contain
+% $n$ and those that do not.  There is a bijection between the subsets that do
+% contain $n$ and the subsets of the set $[n-1]$.  Thus there are $2^{n-1}$
+% subsets that do contain $n$.  There is also a bijection between the subsets
+% that do not contain $n$ and the subsets of the set $[n-1]$.  Thus there are
+% $2^{n-1}$ subsets of $[n]$ that do not contain $n$.  By the sum principle the
+% total number of subsets of $[n]$ is $2^{n-1}+2^{n-1} = 2\cdot2^{n-1} = 2^n$. 
+% Therefore by the principle of mathematical induction, for all $n$ the number
+% of subsets of $[n]$, and thus of any $n$-element set, is $2^n$.}
 
  
 
@@ -891,8 +965,8 @@ $[n]=\{1,2,\ldots, n\}$, define a function (traditionally
 denoted by $\Chi_S$) as follows.\footnote{The symbol
 $\Chi$ is the Greek letter chi that is pronounced Ki, with the
 $i$ sounding like ``eye."} 
-$$\Chi_S(i) = \cases{1 \mbox{ if } i\in S \cr 0 \mbox{ if } i\not\in
-S}$$ The function $\Chi_S$ is called the \index{characteristic
+$$\Chi_S(i) = \begin{cases}1 &\mbox{ if } i\in S \\ 0 &\mbox{ if } i\not\in
+S\end{cases}$$ The function $\Chi_S$ is called the \index{characteristic
 function}\index{function!characteristic}{\em
 characteristic function} of
 $S$.  Notice that the characteristic function is a function
@@ -930,7 +1004,7 @@ functions and the subsets of $[n]$.}
 
 \ep
 
-In Problems \ref{SubsetsBinaryRepresentation}, \ref{SubsetsByInduction}, and
+In Problems \ref{SubsetsFirstTime}, \ref{SubsetsBinaryRepresentation}, and
 \ref{charfunction} you gave three proofs of the following
 theorem.
 
@@ -940,8 +1014,11 @@ $2^n$.
 
 
 The proofs in Problem \ref{SubsetsBinaryRepresentation} and
-\ref{charfunction} use essentially the same bijection, but they interpret
-sequences of zeros and ones differently, and so end up being different proofs.
+\ref{charfunction} use essentially the same bijection, but they
+interpret sequences of zeros and ones differently, and so end up being
+different proofs. We will give yet another proof, using bijections
+similar to those we used in proving the Pascal Equation, at the
+beginning of Chapter~\ref{InductionRecursion}.
 
 
 \subsection{The quotient principle}
@@ -958,14 +1035,23 @@ we might think that the number of ways to choose a three element set from 12
 elements is the number of ways to choose the first element times the number
 of ways to choose the second element times the number of ways to choose the
 third element, which is $12\cdot11\cdot10=1320$.  However, our result in
-Problem \ref{Pascal} shows that this is wrong.  What is it that is different
-between the number of ways to stack ice cream in  a triple decker cone with
-three different flavors of ice cream and the number of ways to simply choose
-three different flavors of ice cream?  In particular, how many different
-triple decker cones use the same three flavors?  Using this, compute the
-number of ways to choose three different flavors of ice cream (from 12
-flavors) from the number of ways to choose a triple decker cone with three
-different flavors (from 12 flavors).\label{twelvechoosethree}
+Problem \ref{Pascal} shows that this is wrong. \label{twelvechoosethree}
+\begin{enumerate}
+\item What is it that is different between the number of ways to stack
+  ice cream in a triple decker cone with three different flavors of
+  ice cream and the number of ways to simply choose three different
+  flavors of ice cream? 
+\item  In particular, how many different triple
+  decker cones use the same three flavors?  (Of course any three
+  distinct flavors could substitute for vanilla, chocolate and
+  strawberry without changing the answer.)\label{twelvechoosethreethree}
+\item Using your answer from part \ref{twelvechoosethreethree},
+  compute the number of ways to choose three different flavors of ice
+  cream (out of twelve flavors) from the number of ways to choose a
+  triple decker cone with three different flavors (out of twelve
+  flavors).\label{twelvechoosethreefinal}
+\end{enumerate}
+
 \solution{What is different is that the order in which we put the scoops into
 the cone matters, but for simply choosing three flavors, the order of the
 choices doesn't matter.  Six different triple decker cones have the same
@@ -973,14 +1059,14 @@ three flavors.  Thus we have $1320/6=220$ different ways to choose three
 flavors of ice cream from 12 flavors.}
 
 \iteme  Based on what you observed in Problem
-\ref{twelvechoosethree}, how many $k$-element subsets does an
+\ref{twelvechoosethreefinal}, how many $k$-element subsets does an
 $n$-element set have?\label{nchoosek}
 \solution{Following the reasoning of Problem \ref{twelvechoosethree}, there
 are $n^{\underline{k}}$ $k$-element permutations of an $n$-element set, and
 $k!$ of these permutations list the same set of $k$ elements, so the number of
 $k$-element sets is ${n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}$.}
 
-\iteme The formula you proved in Problem \ref{nchoosek} is symmetric in $k$
+\itemi The formula you proved in Problem \ref{nchoosek} is symmetric in $k$
 and $n-k$; that is, it gives the same number for $n\choose k$ as it gives
 for $n\choose n-k$.  Whenever two quantities are counted by the same formula
 it is good for our insight to find a bijection that demonstrates the two sets
@@ -995,37 +1081,6 @@ the desired bijection.}
 children if each child may get at most one?\label{ping-pong}
 \solution{$n\choose k$, because we choose the $k$ children to whom we give
 ping-pong balls.}
-
-\itemi While the formula you proved in Problem \ref{nchoosek} is very useful,
-it doesn't give us a sense of how big the binomial coefficients are.  We can
-get a very rough idea, for example, of the size of $2n\choose n$ by
-recognizing that we can write $(2n)^{\underline{n}}/n!$ as ${2n\over n}\cdot
-{2n-1\over n-1}\cdots {n+1\over 1}$, and each quotient is at least $2$, so the
-product is at least $2^n$.  If this were an accurate estimate, it would mean
-the fraction of $n$-element subsets of a $2n$-element set would be
-about
-$2^n/2^{2n}=1/2^n$, which is becomes very small as $n$ becomes large. 
-However it is pretty clear the approximation will not be a very good one,
-because some of the terms in that product are much larger than 2.  In fact,
-if $2n\choose k$ were the same for every $k$, then each would be the fraction
-$1\over 2n+1$, so we know this is a bad approximation.  For estimates like
-this, James Stirling developed a formula to approximate
-$n!$  when $n$ is large, namely $n!$ is about $ \left(\sqrt{2\pi
-n}\right){n^n/ e^n}$.\index{Stirling's formula for
-$n"!$}\index{$n"!$!Stirling's formula for}  In fact the ratio of
-$n!$ to this expression approaches 1 as
-$n$ becomes infinite.\footnote{Proving this takes more of a detour than is
-advisable here; however there is an elementary proof which you can work
-through in the problems of the end of Section 1 of Chapter 1 of {\em
-Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press,
-(2000).}  We write this as $$n!\sim \sqrt{2\pi
-n}{n^n\over e^n}.$$  Use Stirling's formula to show that the fraction of 
-subsets of size
-$n$ in an
-$2n$-element set is approximately $1/\sqrt{\pi n}$.  This is a much bigger
-fraction than $1\over 2^n$!\label{Stirling'sapproximation}
-
-
 
 \iteme In how many ways may $n$ people sit around a round
 table?  (Assume
@@ -1055,34 +1110,92 @@ has changed.    Thus there are
 $(n-1)!$ ways (the number of ways to seat everybody else) to seat the people
 around the table.}
 
+\ep
 
-\iteme A given $k$-element subset
-can be listed as a $k$-element permutation in $k!$ ways.  We can partition the
-set of all $k$-element permutations of $S$ up into blocks by letting $B_K$ be
-the set of all $k$-element permutations of $K$ for each $k$-element subset $K$
-of
-$S$.  How many permutations are there in a block?  If $S$ has $n$ elements,
-what does problem \ref{kelementpermutation} tell you about the total number
-of $k$-element permutations of $S$?  Describe a bijection between the
-set of blocks of the partition and the set of $k$-element subsets of $S$. 
-What formula does this give you for the number $n\choose k$ of $k$-element
-subsets of an
-$n$-element set? \label{formulanchoosek}
+We are now going to analyze the result of Problem~\ref{nchoosek} in
+more detail in order to tease out another counting principle that we
+can sue in a wide variety of situations.
+
+\begin{table}[h]
+  \centering
+  \caption{The $3$-element permutations of $\{a,b,c,d,e\}$ organized
+    by which $3$-element set they permute.}
+  \label{tab:permsof3}
+  \begin{tabular}{cccccc}
+    $abc$&$acb$&$bac$&$bca$&$cab$&$cab$\\
+    $abd$ & $adb$ & $bad$ & $bda$& $dab$ & $dba$\\
+    $abe$ & $aeb$ & $bae$ & $bea$& $eab$ & $eba$\\
+    $acd$ & $adc$ & $cad$ & $cda$& $dac$ & $dca$\\
+    $ace$ & $aec$ & $cae$ & $cea$& $eac$ & $eca$\\
+    $ade$ & $aed$ & $dae$ & $dea$& $ead$ & $eda$\\
+    $bcd$ & $bdc$ & $cbd$ & $cdb$& $dbc$ & $dcb$\\
+    $bce$ & $bec$ & $cbe$ & $ceb$& $ebc$ & $ecb$\\
+    $bde$ & $bed$ & $dbe$ & $deb$& $ebd$ & $edb$\\
+    $cde$ & $ced$ & $dce$ & $dec$& $ecd$ & $edc$
+  \end{tabular}
+\end{table}
+
+In Table~ref{tab:permsof3} we list all three-element permutations of
+the $5$-element set $\{a,b,c,d,e\}$. Each row consists of all
+$3$-element permutations of some subset of $\{a,b,c,d,e\}$. Because a
+given $k$-element subset can be listed as a $k$-element permutation in
+$k!$ ways, there are $3!=6$ permutations in each row. Because each
+$3$-element permutation appears exactly once in the table, each row is
+a block of a partition of the set of $3$-element permutations of
+$\{a,b,c,d,e\}$. Each block has size six. Each block consists of all
+$3$-element permutations of some three-element subset of
+$\{a,b,c,d,e\}$. Since there are ten rows, we see that there are ten
+$3$-element subsets of $\{a,b,c,d,e\}$. An alternate way to see this
+is to observe that we partitioned the set of all $60$ three-element
+permutations of $\{a,b,c,d,e\}$ into some number $q$ of blocks, each
+of size six. Thus by the product principle, $q\cdot 6=60$, so $q=10$.
+
+\bp
+
+\iteme Rather than restricting ourselves to $n=5$ and $k=3$, we can
+partition the set of all $k$-element permutations of $S$ up into
+blocks. We do so by letting $B_K$ be the set (block) of all $k$-element
+permutations of $K$ for each $k$-element subset $K$ of $S$. Thus as in
+our preceding example, each block consists of all permutations of some
+subset $K$ of our $n$-element set. For example, the permutations of
+$\{a,b,c\}$ are listed in the first row of
+Table~\ref{tab:permsof3}. In fact each row of that table is a
+block. The questions that follow are about the corresponding partition
+of the set of $k$-element permutations of $S$, where $S$ and $k$ are
+arbitrary. \label{formulanchoosek}
+\begin{enumerate}
+\item How many permutations are there in a block?
+\item Since $S$ has $n$
+  elements, what does problem \ref{kelementpermutation} tell you about
+  the total number of $k$-element permutations of $S$?  
+\item Describe a
+  bijection between the set of blocks of the partition and the set of
+  $k$-element subsets of $S$.  
+\item What formula does this give you for the
+  number $n\choose k$ of $k$-element subsets of an $n$-element set?\label{formulanchoosekfinal}
+\end{enumerate}
+
 \solution{The number of permutations in a block is $k!$.  Problem
-\ref{kelementpermutation} tells us that the total number of $k$-element
-permutations is $n^{\underline{k}}={n!\over (n-k)!}$.  Each $k$-element set
-corresponds to the block of all permutations of that set.  It is immediate
-that this is a bijection.  Assuming there are $s$ subsets, we have
-$k!s$ permutations in total, so $k!s={n!\over (n-k)!}$ or $s= {n!\over
-k!(n-k)!}$.}
+  \ref{kelementpermutation} tells us that the total number of
+  $k$-element permutations is $n^{\underline{k}}={n!\over (n-k)!}$.
+  Each $k$-element set corresponds to the block of all permutations of
+  that set.  It is immediate that this is a bijection.  Assuming there
+  are $s$ subsets, we have $k!s$ permutations in total, so
+  $k!s={n!\over (n-k)!}$ or $s= {n!\over k!(n-k)!}$.}
 
 \itemi A basketball team has 12 players.  However, only five players play at
-any given time during a game.  In how may ways may the coach choose the five
-players?  To be more realistic, the five players playing a game normally
-consist of two guards, two forwards, and one center.  If there are five
-guards, four forwards, and three centers on the team, in how many ways can the
-coach choose two guards, two forwards, and one center?  What if one of the
-centers is equally skilled at playing forward?
+any given time during a game.
+\begin{enumerate}
+\item In how may ways may the coach choose the five players?  
+\item To be
+  more realistic, the five players playing a game normally consist of
+  two guards, two forwards, and one center.  If there are five guards,
+  four forwards, and three centers on the team, in how many ways can
+  the coach choose two guards, two forwards, and one center?  
+\item What if
+  one of the centers is equally skilled at playing forward?
+\end{enumerate}
+
 \solution{$12\choose 5$. In the more realistic version,
 ${5\choose2}{4\choose2}{3\choose1}=180$. Finally,  either the versatile
 player is playing center or not, and in the second case is available to play
@@ -1104,11 +1217,11 @@ This corresponds to the method that gives $n!/n$ as the answer.  Many
 students should be able to answer this question by saying ``See the answer to
 Problem \ref{roundtable}."}
 
-\iteme In Problems \ref{formulanchoosek} and \ref{roundtablepartition}, you
+\iteme In Problems \ref{formulanchoosekfinal} and \ref{roundtablepartition}, you
 have been using the product principle in a new way.  One of the ways in which
 we previously stated the product principle was ``If we partition a set into
 $m$ blocks each of size $n$, then the set has size $m\cdot n$.''  In problems
-\ref{formulanchoosek} and \ref{roundtablepartition} we knew the size $p$ of a
+\ref{formulanchoosekfinal} and \ref{roundtablepartition} we knew the size $p$ of a
 set
 $P$ of permutations of a set, and we knew we had partitioned $P$ into some
 unknown number of blocks, each of a certain known size $r$.  If we let
@@ -1128,9 +1241,13 @@ The quotient principle is really just a restatement of the product principle,
 but thinking about it as a principle in its own right often leads us to find
 solutions to problems.  Notice that it does not always give us a formula for
 the number of blocks of a partition; it only works when all the blocks have
-the same size.
+the same size. In Chapter~\ref{groupsonsets}, we develop a way to solve problems
+with different block sizes in cases where there is a good deal of
+symmetry in the problem. (The roundness of the table was a symmetry in
+the problem of people at a table; the fact that we can order the sets
+in any order is the symmetry in the problem of counting $k$-element subsets.)
 
-In Section \ref{equivalencerelations} of Appendix \ref{Relations} we
+In Section~\ref{equivalencerelations} of Appendix~\ref{Relations} we
 introduce the idea of an equivalence relation, see what equivalence relations
 have to do with partitions, and discuss the quotient principle from that
 point of view.  While that appendix is not required for what we are doing
@@ -1139,11 +1256,12 @@ would be a good time to work through that appendix.
 
 \bp
 \itemei In how many ways may we string $n$ distinct beads on a necklace
-without a clasp? (Assume someone can pick up the necklace,
+without a clasp? (Perhaps we make the necklace by stringing the beads
+on a strong, and then carefully gluing the two ends of the string
+together so that the joint can't be seen. Assume someone can pick up the necklace,
 move it around in space and put it back down, giving an
 apparently different way of stringing the beads that is
-equivalent to the first.  How could we get a list of beads
-from a necklace?)\label{necklace}
+equivalent to the first.)\label{necklace}
 \solution{We can obtain a permutation of the beads by cutting the necklace and
 stretching it out in a straight line.  We can partition the permutations
 according to which necklace they come from in this process. Two permutations
@@ -1154,12 +1272,20 @@ quotient principle we have $n!/2n=(n-1)!/2$ ways to string $n$ distinct beads
 on a necklace.}
 
 \itemi We first gave this problem as Problem
-\ref{tennispairings1} Now we have several ways to approach the problem.  A
+\ref{tennispairings1a}. Now we have several ways to approach the problem.  A
 tennis club has
-$2n$ members.  We want to pair up the members by twos for singles matches. 
-In how many ways may we pair up all the members of the club?  Suppose that in
-addition to specifying who plays whom, for each pairing we say who serves
-first.  Now in how many ways may we specify our pairs?\label{tennispairings2}
+$2n$ members.  We want to pair up the members by twos for singles matches. \label{tennispairings2}
+\begin{enumerate}
+\item In how many ways may we pair up all the members of the club?
+  Give at least two solutions different from the one you gave in
+  Problem~\ref{tennispairings1a}. (You may not have done
+  Problem~\ref{tennispairings1a}. In that case, see if you can find
+  three solutions.)
+\item   Suppose that in addition to specifying who plays whom, for each
+  pairing we say who serves first.  Now in how many ways may we
+  specify our pairs? Try to find as many solutions as you can
+\end{enumerate}
+
 \solution{Suppose we list the people in the club in some way, and keep that
 list for the remainder of the problem.  Take the first person from the list
 and pair that person with any of the $2n-1$ remaining people.  Now take the
@@ -1187,14 +1313,52 @@ each of the $n$ pairs could appear in 2 ways, so the tennis pairings
 partition the set of all permutations of the $2n$ members into blocks of size
 $n!2^n$.  Thus we have $(2n)!\over n!2^n$ tennis pairings once again. }
 
-\iteme In how many ways may we attach two identical red beads
-and two identical blue beads to the corners of a square free
+\iteme (This becomes especially relevant in
+Chapter~\ref{groupsonsets}, though it makes an important point here.) In how many ways may we attach two identical red beads
+and two identical blue beads to the corners of a square (with one bead
+per corner) free
 to move around in (three-dimensional) space? \label{twocolorsofbeads}
 \solution{Two ways; either the red beads are side-by-side or diagonally
 opposite.  If we think about partitioning lists of 2 $R$s and 2 $B$s so that
 two are in the same block if we get one from the other by moving the square,
 we get two blocks, $\{RRBB, BRRB, BBRR, RBBR\}$ and $\{RBRB, BRBR\}$.}
-\ep
+
+\itemi While the formula you proved in Problems \ref{nchoosek} and
+\ref{formulanchoosekfinal} is very useful,
+it doesn't give us a sense of how big the binomial coefficients are.  We can
+get a very rough idea, for example, of the size of $2n\choose n$ by
+recognizing that we can write $(2n)^{\underline{n}}/n!$ as ${2n\over n}\cdot
+{2n-1\over n-1}\cdots {n+1\over 1}$, and each quotient is at least $2$, so the
+product is at least $2^n$.  If this were an accurate estimate, it would mean
+the fraction of $n$-element subsets of a $2n$-element set would be
+about
+$2^n/2^{2n}=1/2^n$, which becomes very small as $n$ becomes large. 
+However it is pretty clear the approximation will not be a very good one,
+because some of the terms in that product are much larger than 2.  In fact,
+if $2n\choose k$ were the same for every $k$, then each would be the fraction
+$1\over 2n+1$ of $2^{2n}$. This is much larger than the fraction
+$\frac{1}{2^n}$. But our intuition suggets that $\binom{2n}{n}$ is
+much larger than $\binom{2n}{1}$ and is likely larger than
+$\binom{2n}{n-1}$ so we can be sure our approximation is a bad one. For estimates like
+this, James Stirling developed a formula to approximate
+$n!$  when $n$ is large, namely $n!$ is about $ \left(\sqrt{2\pi
+n}\right){n^n/ e^n}$.\index{Stirling's formula for
+$n"!$}\index{$n"!$!Stirling's formula for}  In fact the ratio of
+$n!$ to this expression approaches 1 as
+$n$ becomes infinite.\footnote{Proving this takes more of a detour than is
+advisable here; however there is an elementary proof which you can work
+through in the problems of the end of Section 1 of Chapter 1 of {\em
+Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press,
+(2000).}  We write this as $$n!\sim \sqrt{2\pi
+n}{n^n\over e^n}.$$  We read this notation as $n!$ is asymptotic to
+$\sqrt{2\pi n}\frac{n^n}{e^n}$. Use Stirling's formula to show that the fraction of 
+subsets of size
+$n$ in an
+$2n$-element set is approximately $1/\sqrt{\pi n}$.  This is a much bigger
+fraction than $1\over 2^n$!\label{Stirling'sapproximation}
+\ep 
+
+
 
 \section{Some Applications of the Basic Principles}
 
@@ -1952,3 +2116,7 @@ remainder with the other three colors as in Problem \ref{pingpongpaint} This
 gives us
 $$\sum_{k=0}^{\lfloor n/2\rfloor}{n-2k+2\choose 2}$$ ways to paint the balls.}
 \end{enumerate}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "MainProbsNotesCombinatorics"
+%%% End:

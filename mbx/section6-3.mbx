@@ -1,0 +1,1050 @@
+
+<section>
+  <title>P&#xf3;lya-Redfield Enumeration Theory</title>
+  <introduction>
+    <p>
+      George P&#xf3;lya and Robert Redfield independently developed a theory of
+      generating functions that describe the action of a group <m>G</m> on functions
+      from a set <m>S</m> to a set <m>T</m> when we know the action of <m>G</m> on <m>S</m>. P&#xf3;lya's
+      work on the subject is very accessible in its exposition, and so the
+      subject has become popularly known as P&#xf3;lya theory, though
+      P&#xf3;lya-Redfield theory would be a better name. In this section we
+      develop the elements of this theory.
+    </p>
+
+    <p>
+      Our language will be more intuitive if we think of <m>T</m> as a set of <q>colors.</q>
+      To illustrate that using this language is not restrictive, the set <m>S</m> might be
+      the positions in a hydrocarbon molecule which are occupied by hydrogen, and the
+      group could be the group of spatial symmetries of the molecule (that is, the group of
+      permutations of the atoms of the molecule that move the molecule around so that in its
+      final position the molecule cannot be distinguished from the original molecule).
+      The colors could then be radicals (including hydrogen itself) that we could
+      substitute for each hydrogen position in the molecule. Then the number of orbits
+      of colorings is the number of chemically different compounds we could create by
+      using these substitutions.<fn>There is a fascinating subtle issue of what
+      makes two molecules different.  For example, suppose we have a molecule in the
+      form of a cube, with one atom at each vertex.  If we interchange the top and
+      bottom faces of the cube, each atom is still connected to exactly the same atoms
+      as before.   However we cannot achieve this permutation of the vertices by a
+      member of the rotation group of the cube.  It could well be that the two versions
+      of the molecule interact with other molecules in different ways, in which case we
+      would consider them chemically different.  On the other hand if the two versions
+      interact with other molecules in the same way, we would have no reason to
+      consider them chemically different.  This kind of symmetry is an example of what is
+      called <em>chirality</em> in chemistry.</fn>
+    </p>
+
+    <p>
+      So think intuitively about some <q>figure</q> that has places to be colored.
+      (Think of the faces of a cube, the beads on a necklace, circles at the
+      vertices
+      of an <m>n</m>-gon, etc.) How can we picture the coloring? If we number the places
+      to be colored, say 1 to <m>n</m>, then a function from <m>[n]</m> to the colors is
+      exactly
+      our coloring; if our colors are blue, green and red, then <m>BBGRRGBG</m> describes
+      a
+      typical coloring of 8 such places. Unless the places are somehow <q>naturally</q>
+      numbered, this idea of a coloring imposes structure that is not really there.
+      Even if the structure is there, visualizing our colorings in this way doesn't
+      <q>pull together</q> any common features of different colorings; we are simply
+      visualizing all possible functions. We have a group (think of it as symmetries
+      of
+      the figure you are imagining) that acts on the places. That group then acts in
+      a
+      natural way on the colorings of the places and we are interested in orbits of
+      the
+      colorings. Thus we want a picture that pulls together the common features of
+      the
+      colorings in an orbit. One way to pull together similarities of colorings
+      would
+      be to let the letters we are using as pictures of colors commute as we did with
+      our pictures in Chapter 4; then our picture
+      <m>BBGRRGBG</m> becomes <m>B^3G^3R^2</m>, so our picture now records simply how many
+      times
+      we use each color. If you think about how we defined the action of a group on a
+      set of functions, you will see that a group element won't change how many times
+      each color is used;
+      it simply moves colors to different places. Thus the picture we now have of a
+      given coloring is an equally appropriate picture for each coloring in an orbit.
+      One natural question for us to ask is <q>How many orbits have a given picture?</q>
+      We can think of a multivariable generating function in which the letters we use
+      to picture individual colors are the variables, and the coefficient of a
+      picture
+      is the number of orbits with that picture. Such a generating function is an
+      answer to our natural question, and so it is this sort of generating function
+      we
+      will seek. Since the CFB theorem was our primary tool for saying how many
+      orbits
+      we have, it makes sense to think about whether the CFB theorem has an analog in
+      terms of pictures of orbits.
+    </p>
+  </introduction>
+
+  <subsection>
+    <title>The Orbit-Fixed Point Theorem</title>
+    <activity xml:id="ProdPrincPictureEnumerators" category="essential">
+      <statement>
+        <p>
+          Suppose that <m>P_1</m> and <m>P_2</m> are picture functions on sets <m>S_1</m> and
+          <m>S_2</m> in the sense of <xref ref="picturefunction">Section</xref>. Define <m>P</m> on <m>S_1 \times
+          S_2</m> by
+          <m>P(x_1,x_2) = P_1(x_1)P_2(x_2)</m>. How are
+          <m>E_{P_1}</m>, <m>E_{P_1}</m>, and <m>E_{P}</m> related? (Hint: you may have already done this
+          problem in another context!)
+        </p>
+      </statement>
+      <solution>
+        <md>
+          <mrow>E_P(S_1\times S_2)\amp =\amp \sum_{x_1\in S_1,\ x_2\in
+          S_2}P(x_1)P(x_2)=\sum_{x_1\in S_1}\sum_{x_2 \in S_2}P(x_1)P(x_2)</mrow>
+          <mrow>\amp =\amp  \sum_{x_1\in
+          S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2).</mrow>
+        </md>
+      </solution>
+    </activity>
+
+    <activity xml:id="PictureEnumeratorforFunctions" category="essential">
+      <statement>
+        <p>
+          Suppose <m>P</m> is a picture function on a set <m>T</m>. Suppose that we define
+          the picture of a function from some other set <m>S</m> to the set <m>T</m> to be the
+          product
+          of the pictures of the values of <m>f</m>, i.e.
+          <me>
+            \hat P(f) = \prod_{x:x\in S}P(f(x)).
+          </me>
+        </p>
+
+        <p>
+          How does the picture enumerator <m>E_{\hat P}</m> of the set <m>T^S</m> of all functions
+          from
+          <m>S</m> to <m>T</m> relate to the picture enumerator of <m>P</m> on the set <m>T</m>? (You may assume
+          that both
+          <m>S</m> and
+          <m>T</m> are finite.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>E_{\hat P}(T^S)=E_P(T)^{|S|}</m>. To prove this, note that we can think of a
+          function <m>f</m> from <m>S</m> to <m>T</m> as an <m>|S|</m>-tuple of values,
+          <me>
+            (f(x_1),f(x_2),\ldots,
+            f(x_{|S|}),
+          </me>
+          then think of an <m>|S|</m>-tuple an the ordered pair
+          <me>
+            (f(x_1),(f(x_2),
+            f(x_3),\ldots f(x_{|S|})),
+          </me>
+          and apply induction and <xref ref="ProdPrincPictureEnumerators">Problem</xref>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="Orbit-FixedPoint" category="essential">
+      <statement>
+        <p>
+          Suppose now we have a group <m>G</m> acting on a set and we have a picture
+          function on that set with the additional feature that for each orbit of the
+          group, all its elements have the same picture. In this circumstance we define
+          the
+          picture of an orbit or multiorbit to be the picture of any one of its members. The
+          <em>orbit
+          enumerator</em><index><main>orbit enumerator</main></index> <m>{ Orb}(G,S)</m> is the sum of all the pictures
+          of all the orbits. The
+          <em>fixed point enumerator</em><index><main>fixed point enumerator</main></index> <m>{ Fix}(G,S)</m> is
+          the sum of all the pictures of all
+          the fixed points of all the elements of <m>G</m>. We are going to construct a
+          generating function analog of the CFB theorem. The main idea of the proof of
+          the
+          CFB theorem was to try to compute in two different ways the number of elements
+          (i.e. the sum of all the multiplicities of the elements) in the union of all
+          the
+          multiorbits of a group acting on a set. Suppose instead we try to compute the
+          sum of all the pictures of all the elements in the union of the multiorbits of
+          a
+          group acting on a set. By thinking about how this sum relates to <m>{ Orb}(G,S)</m>
+          and
+          <m>{ Fix}(G,S)</m>, find an analog of the CFB theorem that relates these two
+          enumerators.
+          State and prove this theorem.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Let <m>E</m>, for enumerator, be the sum of all the pictures of all the elements in the
+          union of the multiorbits of <m>G</m> acting on a set <m>S</m>. Recall that for any multiorbit
+          <m>M</m> the picture
+          <m>P(M)</m> is the picture <m>P(x)</m> of any element <m>x</m> of <m>M</m>, and the number of elements
+          of a multiorbit <m>M</m> is always the size of <m>G</m>. This lets us write
+          <md>
+            <mrow>E\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)</mrow>
+            <mrow>\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)</mrow>
+            <mrow>\amp =\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)</mrow>
+            <mrow>\amp =\amp |G|{ Orb}(G,S)</mrow>
+          </md>
+        </p>
+
+        <p>
+          Recall also that the multiplicity of an element <m>x</m> in its multiorbit, and thus in
+          the union of the multiorbits is <m>|Fix(x)|</m>. This lets us write
+          <md>
+            <mrow>E\amp =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)</mrow>
+            <mrow>\amp =\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)</mrow>
+            <mrow>\amp =\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)</mrow>
+            <mrow>\amp =\amp  { Fix}(G,S).</mrow>
+          </md>
+        </p>
+
+        <p>
+          Setting these two values of <m>E</m> equal and solving for <m>{ Orb}(G,S)</m> gives us
+          <me>
+            { Orb}(G,S) ={1\over |G|}{ Fix}(G,S).
+          </me>
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="polya1" category="essential">
+      <task>
+        <statement>
+          <p>
+            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><index><main>Orbit-Fixed Point Theorem</main></index> the <em>Orbit-Fixed Point
+            Theorem</em>. Use it to determine the Orbit Enumerator for the colorings, with two
+            colors (red and blue), of six circles placed at the vertices of a hexagon which is
+            free to move in the plane. Compare the coefficients of the resulting polynomial
+            with the various orbits you found in <xref ref="coloredhex">Problem</xref>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Let us take the pictures of red and blue to be <m>R</m> and
+            <m>B</m>. Since the hexagon is free to move in the plane, our group
+            <m>G</m> is the group
+            <m>R_6</m> of rotations of a regular hexagon. There are four kinds of elements of <m>G</m>: the
+            identity, the rotation <m>\rho</m> through 60 degrees and the rotation <m>\rho^5</m> through
+            300 degrees (when written as a product of disjoint cycles, the corresponding
+            permutations are six-cycles), the rotations <m>\rho^2</m> and <m>\rho^4</m> through 120 and
+            240 degrees respectively (when written as a product of disjoint cycles, the
+            corresponding permutations are products of two three cycles), and the rotation
+            <m>\rho^3</m> through 180 degrees (when written as a product of disjoint cycles this is a
+            product of three two-cycles). All <m>2^6</m> functions are fixed by the identity. By
+            <xref ref="PictureEnumeratorforFunctions">Problem</xref> the enumerator for these functions is
+            <m>(R+B)^6</m>. Only the two constant functions (that color every circle the same color)
+            are fixed by
+            <m>\rho</m> or <m>\rho^5</m>. The picture enumerator of the two constant functions is
+            <m>R^6+B^6</m>. If the vertices are numbered one through six clockwise, then
+            <m>\rho^2</m> is <m>(1\ 3\ 5)(2\ 4\ 6)</m>. Thus for a function <m>f</m> to be fixed by <m>\rho^2</m>,
+            <m>f(1)=f(3)=f(5)</m> and <m>f(2)=f(4)=f(6)</m>. Thus the
+            color of vertex 1 is repeated on vertex 3 and 5, and the color of vertex 2 is
+            repeated on vertices 4 and 6. Therefore the picture enumerator for functions fixed
+            by
+            <m>\rho^2</m> and <m>\rho^4</m> is <m>R^3R^3 +R^3B^3+B^3R^3 +B^3B^3=(R^3+B^3)^2</m>. We can also
+            think of this as the picture enumerator for functions defined on the cycles of the
+            permutation. There are two possible pictures of a colored cycle, <m>R^3</m> and <m>B^3</m>,
+            so the picture enumerator for one cycle is <m>R^3+B^3</m>. That is, the picture of
+            assigning red to a cycle is <m>R^3</m> and the picture of assigning blue to a cycle is
+            <m>B^3</m>. By <xref ref="PictureEnumeratorforFunctions">Problem</xref>, the picture enumerator for functions defined on
+            the two cycles is then <m>(R^3+B^3)^2</m>. If a function
+            <m>f</m> is fixed by
+            <m>\rho^3=(1\ 4)(2\ 5)(3\ 6)</m>, then <m>f(1)=f(4)</m>, <m>f(2)=f(5)</m>, and <m>f(3)=f(6)</m>, so <m>f</m>
+            is determined by the three values <m>f(1)</m>, <m>f(2)</m>, and <m>f(3)</m>. The picture
+            enumerator for these functions is, by <xref ref="PictureEnumeratorforFunctions">Problem</xref> applied to colorings of the cycles,
+            <m>(R^2+B^2)^3</m>. Therefore the fixed point enumerator for the action of <m>G</m> on the
+            colorings is
+            <me>
+              { Fix}(G,S)= (R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3) + 2(R^6+B^6).
+            </me>
+          </p>
+
+          <p>
+            Then the orbit
+            enumerator for the action of <m>G</m> on the colorings is
+            <me>
+              { Orb}(G,S)={1\over 6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
+              2(R^6+B^6)\right).
+            </me>
+          </p>
+
+          <p>
+            Expanding this gives us
+            <me>
+              R^6+R^5B+3R^4B^2+4R^3B^3+3R^2B^4+RB5+B^6.
+            </me>
+          </p>
+
+          <p>
+            Thus we have one all-red orbit, one
+            all-blue orbit, one orbit with five reds and a blue, one with five blues and a red,
+            three orbits with four reds and two blues as well as three with two reds and four
+            blues, and four orbits with three reds and three blues.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find the generating function (in variables <m>R</m>, <m>B</m>) for colorings of
+            the
+            faces of a cube with two colors (red and blue). What does the
+            generating function tell you about the number of ways to color the cube (up to
+            spatial movement) with various combinations of the two colors.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We want to think of the rotation group of the cube acting on the faces of
+            the cube, in order to see what kinds of colorings are left fixed. For this purpose
+            we note that each element of the rotation group gives us a permutation of the faces
+            of the cube, and if two faces are in the same cycle of this permutation, they must
+            have the same color, but if they are in different cycles, they may get different
+            colors. The 90 and 270 degree rotations around an axis through two faces have a
+            four-cycle and two one-cycles. The 180 degree rotation around an axis through two
+            faces has two two-cycles and two one-cycles. The 120 and 240 degree rotations
+            around an axis connecting diagonally opposite vertices have two three-cycles. The
+            180 degree rotations around an axis connecting two opposite edges have three
+            two-cycles, and the identity has six one-cycles. A coloring is
+            fixed by a permutation if and only if it is constant on (i.e. assigns the same color
+            to all elements of) each cycle of the permutation. The picture enumerator for
+            (constant) colorings of an
+            <m>i</m>-cycle is
+            <m>R^i+B^i</m>. Thus, using <xref ref="PictureEnumeratorforFunctions">Problem</xref>, if <m>\sigma</m> is a
+            90 or 270 degree rotation, its fixed point enumerator is <m>(R^4+B^4)(R+B)^2</m>, if it
+            is a 180 degree rotation around an axis connecting two opposite faces, its fixed
+            point enumerator is
+            <m>(R^2+B^2)^2(R+B)^2</m>, if it is a 180 degree rotation around an axis connecting two
+            opposite edges, its fixed point enumerator is <m>(R^2+B^2)^3</m>, if it is a 120 or 240
+            degree rotation its fixed point enumerator is
+            <m>(R^3+B^3)^2</m>, and if it is the identity, then its fixed point enumerator is
+            <m>(R+B)^6</m>. Therefore the generating function is
+            <md>
+              <mrow>\amp \amp {1\over 24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +</mrow>
+              <mrow>\amp \amp 6
+              (R^2+B^2)^3 + 6 (R^4+B^4)(R+B)^2\big),</mrow>
+            </md>
+            which expands to
+            <me>
+              RB^5+2R^4B^2+R^5B+2R^3B^3+2R^2B^4+R^6+B^6.
+            </me>
+          </p>
+
+          <p>
+            There is one way to color the
+            cube all red or all blue, one way to color it with exactly five red or exactly five
+            blue faces, there are two ways to color it with exactly four red or four blue faces
+            and two ways to color it with exactly three red (and three blue) faces.
+          </p>
+        </solution>
+      </task>
+    </activity>
+  </subsection>
+
+  <subsection>
+    <title>The P&#xf3;lya-Redfield Theorem</title>
+    <p>
+      P&#xf3;lya's (and Redfield's) famed enumeration theorem deals with situations such as
+      those in <xref ref="polya1">Problems</xref> and <xref ref="polya2"></xref> in which we want a generating function for the
+      set
+      of all functions from a set <m>S</m> to a set <m>T</m> on which a picture function is
+      defined, and the picture of a function is the product of the pictures of its
+      multiset of values. The point of the next series of problems is to analyze the
+      solution to <xref ref="polya1">Problems</xref> and <xref ref="polya2"></xref> in order to see what P&#xf3;lya and
+      Redfield saw (though they didn't see it in this notation or using this
+      terminology).
+    </p>
+
+    <activity xml:id="polya3" category="essential">
+      <statement>
+        <p>
+          In <xref ref="polya1">Problem</xref> we have four kinds of group elements: the
+          identity
+          (which fixes every coloring), the rotations through 60 or 300 degrees, the
+          rotations through 120 and 240 degrees, and the rotation through 180 degrees.
+          The fixed point enumerator for the rotation group acting on the functions is by
+          definition the sum of the fixed point enumerators of colorings fixed by the
+          identity, of colorings fixed by 60 or 300 degree rotations, of colorings fixed by
+          120 or 240 degree rotations, and of
+          colorings fixed by the 180 degree rotation. Write down each of these
+          enumerators (one for each kind of permutation) individually and factor each one
+          (over the integers) as completely as you can.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the solution to <xref ref="polya1">Problem</xref> we wrote: ``The picture enumerator
+          of the two constant functions is
+          <m>R^6+B^6</m>. If the vertices are numbered one through six clockwise, then
+          <m>\rho^2</m> is <m>(1\ 3\ 5)(2\ 4\ 6)</m>. Thus for a function <m>f</m> to be fixed by <m>\rho^2</m>,
+          <m>f(1)=f(3)=f(5)</m> and <m>f(2)=f(4)=f(6)</m>. Thus the
+          color of vertex 1 is repeated on vertex 3 and 5, and the color of vertex 2 is
+          repeated on vertices 4 and 6. Therefore the picture enumerator for functions fixed
+          by
+          <m>\rho^2</m> and <m>\rho^4</m> is <m>R^3R^3 +R^3B^3+B^3R^3 +B^3B^3=(R^3+B^3)^2</m>. We can also
+          think of this as the picture enumerator for functions defined on the cycles of the
+          permutation. There are two possible pictures of a colored cycle, <m>R^3</m> and <m>B^3</m>,
+          so the picture enumerator for one cycle is <m>R^3+B^3</m>. Thus the picture of assigning
+          red to a cycle is <m>R^3</m> and the picture of assigning blue to a cycle is <m>B^3</m>. By
+          <xref ref="PictureEnumeratorforFunctions">Problem</xref>, the picture enumerator for functions defined on
+          the two cycles is then <m>(R^3+B^3)^2</m>. If a function
+          <m>f</m> is fixed by
+          <m>\rho^3=(1\ 4)(2\ 5)(3\ 6)</m>, then <m>f(1)=f(4)</m>, <m>f(2)=f(5)</m>, and <m>f(3)=f(6)</m>, so <m>f</m>
+          is determined by the three values <m>f(1)</m>, <m>f(2)</m>, and <m>f(3)</m>. The picture
+          enumerator for these functions is, by <xref ref="PictureEnumeratorforFunctions">Problem</xref> applied to colorings of the cycles,
+          <m>(R^2+B^2)^3</m>.'' In factored form, these enumerators are <m>R^6+B^6</m>, <m>(R+B)^6</m>,
+          <m>(R^3+B^3)^2</m>, and
+          <m>R^2+B^2)^3</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="polya4" category="essential">
+      <statement>
+        <p>
+          In <xref ref="polya2">Problem</xref> we have five different kinds of group elements,
+          and
+          the fixed point enumerator is the sum of the fixed point enumerators of each of
+          these kinds of group elements. For each kind of element, write down the fixed
+          point enumerator for the elements of that kind. Factor the enumerators as
+          completely as you can.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          In the solution to <xref ref="polya2">Problem</xref>, we wrote ``Thus, using <xref ref="PictureEnumeratorforFunctions">Problem</xref>, if <m>\sigma</m> is a 90 or 270 degree rotation, its
+          fixed point enumerator is <m>(R^4+B^4)(R+B)^2</m>, if it is a 180 degree rotation around
+          an axis connecting two opposite faces, its fixed point enumerator is
+          <m>(R^2+B^2)^2(R+B)^2</m>, if it is a 180 degree rotation around an axis connecting two
+          opposite edges, its fixed point enumerator is <m>(R^2+B^2)^3</m>, if it is a 120 or 240
+          degree rotation its fixed point enumerator is
+          <m>(R^3+B^3)^2</m>, and if it is the identity, then its fixed point enumerator is
+          <m>(R+B)^6</m>.'' We just wrote the enumerators out in factored form.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="polya3_5" category="essential">
+      <statement>
+        <p>
+          In <xref ref="polya3">Problem</xref>, each
+          <q>kind</q> of group element
+          has a <q>kind</q> of cycle structure. For example, a rotation through 180 degrees has three
+          cycles of size two. What kind of cycle structure does a rotation through 60 or 300
+          degrees have? What kind of cycle structure does a rotation through 120 or 240 degrees
+          have? Discuss the relationship between the cycle structures and the factored
+          enumerators of fixed points of the permutations in
+          <xref ref="polya3">Problem</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          A rotation through 60 or 300 degrees is a five-cycle; a rotation through
+          120 or 240 degrees is a product of two three-cycles. The cycle structure determines
+          the factored enumerator; a cycle of size <m>i</m> gives a factor of <m>(R^i+B^i)</m>. That is
+          because a coloring fixed by a group element has to be constant on the cycles of that
+          group element. If a cycle has size <m>i</m>, it contributes a summand of <m>P^i</m> to the
+          picture enumerator for colorings of that cycle for each picture <m>P</m> of a possible
+          value of the function. <xref ref="PictureEnumeratorforFunctions">Problem</xref> tells us to multiply these individual picture
+          enumerators together.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      Recall that we said that a group of permutations acts on a set if, for each
+      member
+      <m>\sigma</m> of <m>G</m> there is a bijection <m>\beta_{\sigma}</m> of <m>S</m> such
+      that
+      <me>
+        \beta_{\sigma\circ\varphi} = \beta_{\sigma}\circ\beta_{\varphi}
+      </me>
+      for
+      every member <m>\sigma</m> and <m>\varphi</m> of <m>G</m>. Since <m>\beta_{\sigma}</m> is a bijection of <m>S</m>
+      to itself, it is in fact a permutation of <m>S</m>. Thus <m>\beta_{\sigma}</m> has a cycle
+      structure (that is, it is a product of disjoint cycles) as a permutation of <m>S</m> (in
+      addition to whatever its cycle structure is in the original permutation group <m>G</m>).
+    </p>
+
+    <activity category="essential">
+      In <xref ref="polya4">Problem</xref>, each
+      <q>kind</q> of group element
+      has a <q>kind</q> of cycle structure in the action of the rotation group of the cube on the
+      faces of the cube. For example, a rotation of the cube through 180 degrees around a
+      vertical axis through the centers of the top and bottom faces has two cycles of size two
+      and two cycles of size one. How many such rotations does the group have? What are the
+      other <q>kinds</q> of group elements, and what are their cycle structures? Discuss the
+      relationship between the cycle structure and the factored enumerator in
+      <xref ref="polya4">Problem</xref>.
+      <solution>
+        <p>
+        We effectively answered this question in our solution to <xref ref="polya2">Problem</xref>.
+        In particular, there are three rotations of 180 degrees through the centers of opposite
+        faces. The other kinds of group elements are as follows.
+        <task>
+          <p>
+            the 90 and 270 degree rotations around an axis
+            through two faces, of which we have six.  Their cycle structure consists of a four-cycle
+            and two one-cycles.
+          </p>
+        </task>
+        <task>
+          <p>
+            the 120 and 240 degree rotations around an axis connecting two diagonally opposite
+            vertices.  Their cycle structure consists of two three-cycles.  We have eight of these.
+          </p>
+        </task>
+        <task>
+          <p>
+            the 180 degree rotations around an axis connecting two opposite edges; their cycle
+            structure consists of three two-cycles.  We have six of these.
+          </p>
+        </task>
+        <task>
+          <p>
+            the identity, whose cycle structure is six one-cycles.
+          </p>
+        </task>
+        <p>
+          As we said in the solution to <xref ref="polya3_5">Problem</xref> ``The cycle structure
+          determines the factored enumerator; a cycle of size <m>i</m> gives a factor of <m>(R^i+B^i)</m>.
+          That is because a coloring fixed by a group element has to be constant on the cycles
+          of that group element. If a cycle has size <m>i</m>, it contributes a summand of <m>P^i</m>
+          to the picture enumerator for colorings of that cycle for each picture <m>P</m> of a
+          possible value of the function. <xref ref="PictureEnumeratorforFunctions">Problem</xref> tells us to multiply these individual picture
+          enumerators together.''
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+      <statement>
+        <p>
+          The usual way of describing the P&#xf3;lya-Redfield enumeration theorem
+          involves the <q>cycle indicator</q> or <q>cycle index</q> of a group acting on a set.
+          Suppose we have a group <m>G</m> acting on a finite set <m>S</m>. Since each group element
+          <m>\sigma</m> gives us a permutation <m>\beta_{\sigma}</m> of <m>S</m>, as such it has a
+          decomposition into disjoint cycles as a permutation of <m>S</m>. Suppose <m>\sigma</m> has
+          <m>c_1</m> cycles of size 1, <m>c_2</m> cycles of size 2, ...,
+          <m>c_n</m> cycles of size <m>n</m>. Then the <em>cycle monomial</em> of <m>\sigma</m> is
+          <me>
+            z(\sigma) = z_1^{c_1}z_2^{c_2}\cdots z_n^{c_n}.
+          </me>
+        </p>
+
+        <p>
+          The <em>cycle indicator</em> or
+          <em>cycle index</em><index><main>cycle index</main></index> of <m>G</m> acting on <m>S</m> is
+          <me>
+            Z(G,S) = {1\over |G|}\sum_{\sigma: \sigma \in G} z(\sigma).
+          </me>
+        </p>
+
+        <p>
+          What is the cycle index for the group <m>D_6</m> acting on the vertices of a hexagon? What is
+          the cycle index for the group of rotations of the cube acting on the faces of the cube?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          For <m>D_6</m>, we get
+          <md>
+            <mrow>{1\over 12}\left(z_1^6
+            +2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right) \amp =\amp</mrow>
+            <mrow>{1\over 12}\left(z_1^6
+            +2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)\amp \amp</mrow>
+          </md>
+        </p>
+
+        <p>
+          For the rotation group of the cube, we get
+          <md>
+            <mrow>{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)\amp =\amp</mrow>
+            <mrow>{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)\amp \amp</mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>
+          How can you compute the Orbit Enumerator of
+          <m>G</m> acting on functions from
+          <m>S</m> to a
+          finite set <m>T</m> from the cycle index of <m>G</m> acting on <m>S</m>? (Use <m>P(t)</m> as the notation
+          for the picture of an element <m>t</m> of <m>T</m>.) State and prove the relevant theorem! This is
+          P&#xf3;lya's and Redfield's famous enumeration theorem.<index><main>P&#xf3;lya-Redfield Theorem</main></index>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          To compute the orbit enumerator of <m>G</m> acting on functions from <m>S</m> to a finite
+          set <m>T</m>, we substitute <m>\sum_{t:t\in T}P(t)^i</m> for <m>z_i</m> in the cycle index for <m>G</m>
+          acting on <m>S</m>. (This is the P&#xf3;lya-Redfield Theorem.) By the Orbit-Fixed Point
+          Theorem, we need to sum the fixed point enumerators of the permutations in <m>G</m>.
+          However if <m>\sigma</m> fixes <m>f</m>, then
+          <m>f</m> is constant on the cycles of
+          <m>\sigma</m>. Thus we may think of our function <m>f</m> as a function defined on the cycles of
+          <m>\sigma</m>. If an
+          <m>i</m>-cycle is sent to the member
+          <m>t</m> of
+          <m>T</m>, then the picture of the restriction of our function to that cycle is <m>P(t)^i</m>. The
+          picture enumerator for all functions defined and constant on that cycle is then
+          <m>\sum_{t:t\in T} P(t)^i</m>. By <xref ref="PictureEnumeratorforFunctions">Problem</xref> the picture enumerator for all functions constant on
+          the cycles of <m>\sigma</m>, then is the result of substituting <m>\sum_{t:t\in T}P(t)^i</m> for
+          <m>z_i</m> in <m>z(\sigma)</m>. This proves the P&#xf3;lya-Redfield Theorem.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          Suppose we make a necklace by stringing 12 pieces of brightly colored
+          plastic tubing onto a string and fastening the ends of the string together. We
+          have ample supplies blue, green, red, and yellow tubing available. Give a
+          generating function in which the coefficient of <m>B^iG^jR^kY^h</m> is the number of
+          necklaces we can make with <m>i</m> blues, <m>j</m> greens, <m>k</m> reds, and <m>h</m> yellows. How many
+          terms would this generating function have if you expanded it in terms of powers of <m>B</m>,
+          <m>G</m>, <m>R</m>, and <m>Y</m>? Does it make sense to do this expansion? How many of these
+          necklaces have 3 blues, 3 greens, 2 reds, and 4 yellows?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We are asking for a generating function for the orbits of a colored 12-gon under
+          the action of <m>D_{12}</m>. To apply the P&#xf3;lya-Redfield theorem we need the cycle
+          index for
+          <m>D_{12}</m>. If <m>\rho</m> is a 30 degree rotation, then <m>\rho</m>, <m>\rho^5</m>, <m>\rho^7</m> and
+          <m>\rho^{11}</m> are 12-cycles. The elements <m>\rho^2</m> and <m>\rho^{10}</m> are products of two
+          six-cycles. The elements <m>\rho^3</m> and <m>\rho^9</m> are products of three four-cycles. The
+          elements <m>\rho^4</m> and <m>\rho^8</m> are products of four three-cycles. The element <m>\rho^6</m> is
+          a product of six two-cycles. The element <m>\iota=\rho^0</m> is a product of 12 one-cycles.
+          There are six flips around axes through opposite vertices; each is a product of five
+          two-cycles and two one-cycles. There are six flips around axes perpendicular to two
+          opposite sides; each is a product of six two-cycles. Summarizing this in the cycle index,
+          we write
+          <md>
+            <mrow>Z(G,S) \amp =\amp {1\over 24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
+            6z_2^5z_1^2 + 6z_2^6\right)</mrow>
+            <mrow>\amp =\amp {1\over24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
+            2z_6^2 +4z_{12} + 6z_2^5z_1^2\right).</mrow>
+          </md>
+        </p>
+
+        <p>
+          When we substitute <m>B^i+G^i+R^i+Y^i</m> for <m>z_i</m> and expand, we would get get <m>12^4</m>
+          terms, one for each possible term <m>B^iG^jR^kY^h</m>. Thus it does not make sense to
+          expand the polynomial. The unexpanded form is
+        </p>
+
+        <p>
+          <m>{1\over 24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
+          2(B^3+G^3+R^3+Y^3)^4+\\
+          2(B^4+G^4+R^4+Y^4)^3 +  2(B^6+G^6+R^6+Y^6)^2
+          +\\4(B^{12}+G^{12}+R^{12}+Y^{12}) +  6((B^2+G^2+R^2+Y^2)^5)(B+G+R+Y)^2\Big)</m>
+        </p>
+
+        <p>
+          We can compute the
+          coefficient of
+          <m>B^3G^3R^2Y^4</m> by computing the contribution of each term of the sum to the coefficient.
+          We get
+          <md>
+            <mrow>{1\over24}\left({12\choose 3,3,2,4}+ 6{5\choose
+            1,1,1,2}{2\choose1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
+            24\cdot2!}</mrow>
+            <mrow>\amp =\amp {11!\over2\cdot3!3!2!4!}+5
+            \cdot3\cdot2</mrow>
+            <mrow>\amp =\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30</mrow>
+            <mrow>\amp =\amp 11,550+30=11,580</mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>
+          What should we substitute for the pictures of each of the elements of <m>T</m> in
+          the orbit enumerator of <m>G</m> acting on the set of functions from <m>S</m> to <m>T</m> in order to
+          compute the total number of orbits of <m>G</m> acting on the set of functions? What should we
+          substitute into the variables in the cycle index of a group <m>G</m> acting on a set <m>S</m> in
+          order to compute the total number of orbits of <m>G</m> acting on the functions from <m>S</m> to a
+          set <m>T</m>?
+          Find the
+          number of ways to color the faces of a cube with four colors.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Substitute the number one for each picture in the picture enumerator.
+          Substitute
+          <m>|T|</m> for each variable in the cycle index. The cycle index for the rotation group of
+          the cube acting on the faces is
+          <me>
+            {1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)
+          </me>
+        </p>
+
+        <p>
+          Substituting 4 for
+          each variable gives us <m>{1\over 24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="coloredsticks" category="interesting">
+      <p>
+        We have red, green, and blue sticks all of the same length, with a dozen
+        sticks of each color. We are going to make the skeleton of a cube by taking eight
+        identical lumps of modeling clay and pushing three sticks into each lump so that the
+        lumps become the vertices of the cube. (Clearly we won't need all the sticks!) In
+        how many different ways could we make our cube? How many cubes have four edges of
+        each color? How many have two red, four green, and six blue
+        edges? For this problem we are interested in the action of the rotation group of the
+        cube on the edges. Now we think of the group elements as permutations of the edges and
+        analyze their cycle structure.
+      </p>
+      <task>
+        <p>
+          The identity is a product of 12 one-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+          product of three four-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 180 degree rotation around an axis perpendicular to two opposite faces is a
+          product of six two-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 180 degree rotation around an axis perpendicular to two opposite edges is a
+          product of five two-cycles and two one-cycles.
+        </p>
+      </task>
+      <task>
+        <p>
+          A 120 degree rotation around an axis connecting two diagonally opposite vertices is
+          a product of four three-cycles.
+        </p>
+      </task>
+      <p>
+        Thus the cycle index is
+        <me>
+          {1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
+        </me>
+      </p>
+
+      <p>
+        We substitute
+        the number three for each of the variables to get
+        <me>
+          {1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
+        </me>
+        ways to
+        make the cube. To compute the number of ways with four sticks of each color, we
+        need to apply the P&#xf3;lya-Redfield theorem. Substituting <m>R^i+B^i+G^i</m> for <m>z_i</m> in
+        the cycle index gives us
+      </p>
+
+      <p>
+        <m>{1\over
+        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
+        +8(R^3+B^3+G^3)^4\Big)</m>.
+      </p>
+
+      <p>
+        The coefficient of <m>R^4B^4G^4</m> is
+        <md>
+          <mrow>{1\over
+          24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
+          6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
+          \right)\amp =\amp</mrow>
+          <mrow>{1\over
+          24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp</mrow>
+        </md>
+      </p>
+
+      <p>
+        The coefficient of <m>R^2B^4G^6</m> is
+        <md>
+          <mrow>{1\over 24}\left({12\choose2,4,6}
+          +3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
+          1,1,3}+{5\choose1,2,2}\right)\right)\amp =\amp</mrow>
+          <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
+          +{5!\over1!2!2!}\right)\right)=600.</mrow>
+        </md>
+      </activity>
+
+      <activity category="interesting">
+        <statement>
+          <p>
+            How many cubes can we make in <xref ref="coloredsticks">Problem</xref> if
+            the lumps of modelling clay can be any of four colors?
+          </p>
+          <solution>
+          <p>
+            We can first consider all ways of coloring the vertices of the cube with the
+            four colors; once those vertices are in place, the number of ways to put the sticks in is
+            the result of <xref ref="coloredsticks">Problem</xref>, so by the product principle then number of
+            ways to choose the colors of the vertices and edges is the product of the number of
+            ways to choose each. Thus we just need to consider the action of the rotation group
+            of the cube on the vertices:
+          </p>
+
+          <p>
+            -+ identity is the product of eight one-cycles.
+          </p>
+
+          <p>
+            -+ 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+            product of two four-cycles.
+          </p>
+
+          <p>
+            -+ 180 degree rotation around an axis perpendicular to two opposite faces is a
+            product of four two-cycles.
+          </p>
+
+          <p>
+            -+ 180 degree rotation around an axis joining two opposite edges is a product of four
+            two-cycles.
+          </p>
+
+          <p>
+            -+ 120 or 240 degree rotation around an axis through two diagonally opposite vertices
+            is a product of two three-cycles and two one-cycles.
+          </p>
+
+          <p>
+            Thus the cycle index for this action is
+            <me>
+              {1\over 24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
+            </me>
+          </p>
+
+          <p>
+            Substituting 4 for each variable gives us
+            <me>
+              {1\over 24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.
+            </me>
+          </p>
+
+          <p>
+            Thus we
+            have <m>22815\cdot2916=66,528,540</m> possible colored cubes.
+          </p>
+          </solution>
+          <figure xml:id="HexNet" >
+            <caption>A possible
+            computer network.</caption>
+            \mbox{
+            <image width="73%" source="images/" />
+            }
+          </figure>
+        </statement>
+      </activity>
+
+      <activity category="interesting">
+        <statement>
+          <p>
+            In <xref ref="HexNet">Figure</xref> we see a graph with six vertices. Suppose we
+            have three different kinds of computers that can be placed at the six vertices
+            of the graph to form a network. In how many different ways may the computers
+            be placed? (Two graphs are not different if we
+            can redraw one of the graphs so that it is identical to
+            the other one.) This is equivalent to permuting the vertices in some way so that when we
+            apply the permutation to the endpoints of the edges to get a new edge set, the new edge
+            set is equal to the old one. Such a permutation is called an <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Then two computer
+            placements are the same if there is an automorphism of the graph that carries one to the
+            other.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The computer placements are functions from the vertices of the graph to the set
+            of three kinds of computers, say <m>\{A,B,C\}</m>. Thus we are asking for the number of
+            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B, 
+            C\}</m>. To find this number we need to compute the cycle index of the automorphism group.
+            An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually
+            connected; i.e. a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly
+            two of vertices of 1, 2, and 3. In fact, for any of the eight triangles in the graph,
+            each vertex not in the triangle is adjacent to exactly two vertices of the triangle (and a
+            different two for each vertex). Therefore we can send the vertices 1, 2, and 3, to
+            any of the eight triangles in any of six orders, and this completely determines an
+            automorphism. Thus there are <m>6\cdot8=48</m> elements in the group of automorphisms.
+            The dihedral group
+            <m>D_6</m> is a subgroup of the group of automorphisms. The two-cycles <m>(1\ 4)</m>, <m>(2\ 5)</m>, and
+            <m>(3\ 6)</m> are also in the group of automorphisms. (For example, 1 is adjacent to
+            everything but 4, and 4 is adjacent to everything but 1, so interchanging them leaves us
+            with exactly the same edges.) We will write out <m>D_6</m> in disjoint cycle notation, and
+            then the coset <m>(1\ 4)D_6</m>, and from those we will be able to get the cycle index of the
+            automorphism group acting on the vertices. In cycle notation, <m>D_6</m> is
+            <me>
+              \begin{array}{cccc}
+              (1\ 2\ 3\ 4\ 5\ 6)\amp (1\ 3\ 5)(2\ 4\ 6)\amp (1\ 4)(2\ 5)(3 \ 6)\amp  (1\ 5\ 3)(2\ 6\ 4)\\(1\ 6\ 5\ 4\
+              3\ 2)\amp (1)(2)(3)(4)(5)(6)\amp (1)(4)(2\ 6)(3\ 5)\amp (2)(5)(1\ 3)(4\ 6)\\
+              (3)(6)(1\ 5)(2\ 4)\amp (1\ 2)(3\ 6)(4\ 5)\amp (1\ 6)(2\ 5)(3\ 4)\amp (1\ 4)(2\ 3)(5\ 6)
+              \end{array}
+            </me>
+            and <m>(1\ 4)D_6</m> is
+            <me>
+              \begin{array}{cccc}
+              (1\ 2\ 3) (4\ 5\ 6)\amp (1\ 3\ 5\ 4\ 6\ 2)\amp (1) (4)(2\ 5)(3 \ 6)\amp  (1\ 5\ 3\ 4\ 2\ 6)\\(1\ 6\
+              5)(2\ 4\ 3)\amp (1\ 4)(2)(3)(5)(6)\amp (1\ 4)(2\ 6)(3\ 5)\amp (2)(5)(1\ 3\ 4\ 6)\\
+              (3)(6)(1\ 5\ 4\ 2)\amp (1\ 2\ 4\ 5)(3\ 6)\amp (1\ 6\ 4\ 3)(2\ 5)\amp (1)(4)(2\ 3)(5\ 6).
+              \end{array}
+            </me>
+          </p>
+
+          <p>
+            Notice that neither <m>(2\ 5)</m> nor <m>(3\ 6)</m> is in the coset, so our group is the union
+            <me>
+              D_6\cup (1\ 4)D_6 \cup(2\ 5)D_6 \cup (3\ 6)D_6.
+            </me>
+          </p>
+
+          <p>
+            But by symmetry, the cycle structure of
+            <m>(1\ 4)D_6</m>,
+            <m>(2\ 5)D_6</m> and
+            <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is.
+            <me>
+              {1 \over 48} \left(Z^6_1 + 8Z^2_3 
+              +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
+              6z_2z_4+6z_1^2z_4\right).
+            </me>
+          </p>
+
+          <p>
+            Since we have three kinds of computers, we substitute 3 for each variable to get
+            <me>
+              {1 \over 48} \left(3^6 + 8\cdot3^2 
+              +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
+              6\cdot3^2+6\cdot3^3\right)=56.
+            </me>
+          </p>
+        </solution>
+      </activity>
+
+      <activity category="interesting">
+        Two simple graphs on the set <m>[n]= \{1,2,\ldots, n\}</m> with edge sets <m>E</m> and
+        <m>E'</m> (which we think of a sets of two-element sets for this problem) are said to be
+        <em>isomorphic</em> if there is a permutation <m>\sigma</m> of
+        <m>[n]</m> which, in its action of two-element sets, carries <m>E</m> to <m>E'</m>. We say two graphs
+        are different if they are not isomorphic. Thus the number of different graphs is the
+        number of orbits of the set of all two-element subsets of <m>[n]</m> under the action of the
+        group <m>S_n</m>. We can represent an edge set by its characteristic function (as in
+        <xref ref="charfunction">problem</xref>). That is we define
+        <me>
+          \chi_E(\{u,v\}) = \left\{
+          \begin{array}{ll}
+          1 \amp  \mbox{if \(\{u,v\}\in E\)} \\
+          0 \amp  \mbox{otherwise.} 
+          \end{array} \right.
+        </me>
+      </p>
+
+      <p>
+      Thus we can think of the set of graphs as a
+      set of functions defined on the set of all two-element subsets of <m>[n]</m>. The number of
+      different graphs with vertex set <m>[n]</m> is thus the number of orbits of this set of
+      characteristic functions under the action of the symmetric group <m>S_n</m> on the set of
+      two-element subsets of <m>[n]</m>. Use this to find the number of different graphs on five
+      vertices.
+      <solution>
+        <p>
+        For this problem we need the cycle index for the action of the symmetric group
+        on five letters acting on two-element subsets of those five letters. Each way of
+        partitioning the number five describes the cycle structure of an element of <m>S_5</m> acting
+        on <m>[5]</m>. The cycle structure of a permutation <m>\sigma</m> on the two-element subsets of
+        <m>[5]</m> will be determined by its cycle structure on <m>[5]</m>. The partitions of five and
+        the cycle structures they give on two-element subsets are:
+        <task>
+          <p>
+            <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
+            subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
+            one identity permutation.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>2^1 1^3</m> will fix the two element set in
+            the two cycle and each pair of the three elements outside for a total of four
+            one-cycles; each pair of an element in the two cycle and an element not will be in a
+            two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
+            has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
+            for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
+            such two-sets and thus four two-cycles, so such a permutation has four two cycles
+            and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
+            two-sets from the two one-element cycles of the original action; each other two-element
+            subset will be in a three cycle.  There are <m>{3\choose 2}+3\cdot2=9</m> such pairs, and so
+            there are three three-cycles of two-element subsets.  Thus such a permutation has one
+            one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
+            such permutations.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
+            the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
+            cycles,  and will have six two-sets in
+            six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
+            permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
+            two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>4^1 1^1</m> has a four-cycle of two-subsets
+            and one two-cycle of two-subsets from its own four-cycle and another four cycle of
+            pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
+            two one-cycles There are
+            <m>6{5\choose4}=30</m> such permutations.
+          </p>
+        </task>
+        <task>
+          <p>
+            A permutation with cycle structure <m>5^1</m> will have two five-cycles in its action on
+            two-sets.  There are <m>4!=24</m> such permutations.
+          </p>
+        </task>
+        <p>
+          Thus for the group <m>S_5</m> acting on pairs from <m>[5]</m>, the cycle index is
+          <me>
+            {1\over120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
+            30z_4^2z_2+ 24z_5^2\right).
+          </me>
+        </p>
+
+        <p>
+          Substituting 2 for each variable gives us that there
+          are
+          <me>
+            {1\over120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
+            24\cdot2^2\right)=30
+          </me>
+          graphs on five vertices.
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>
