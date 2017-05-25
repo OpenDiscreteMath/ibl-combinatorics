@@ -1,0 +1,19 @@
+Hint for Problem 52-e
+Using d for down and u for up, we could have uudduuddudud as our Catalan
+path. Suppose that i = 5. The fifth upstep is the u in position 9. Thus
+F = uudduudd, U = u, and B = dud. Now BU F is duduuudduudd. This is
+a Dyck path that begins by going below the x-axis. The d0 s in positions 1 and
+3 take the path to the y-coordinate -1. Then the y coordinate climbs to 2,
+goes back to 0, up to 2 again, and finally down to 0. So the absolute minimum
+is -1, and it occurs in the first and third position. There are five u’s after the
+third positon. So this Dyck path is in the block B5 of our partition. Now
+comes the crucial question. Why were there five u’s after that last absolute
+minimum in position 3? Try with the same path and i = 3. Figure out why
+there are three u’s after the last absolute minimum in the resulting path. All
+this discussion should explain why when i = 5, the set of all Catalan paths
+is mapped into the set B5 . Keeping i = 5 for a while, try to see why this
+correspondence between Catalan paths and B5 is a bijection. Then, if you
+need to, do the same thing with i = 3. This should give you enough insight
+to do the general case.
+
+
