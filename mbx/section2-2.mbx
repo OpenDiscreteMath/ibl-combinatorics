@@ -11,6 +11,9 @@
           required?
         </p>
       </statement>
+      <<hint>
+        Answer the questions in Problem 2 for the case of five schools.
+      </hint>
       <solution>
         <p>
           Think of numbering the five teams. The first team must play all
@@ -100,6 +103,9 @@
           sandwiches are available?
         </p>
       </statement>
+      <hint>
+        For each kind of bread, how many sandwiches are possible?
+      </hint>
       <solution>
         <p>
           <m>3\cdot5=15</m>, or <m>5+5+5=15</m>.
@@ -174,6 +180,9 @@
           of ice cream will be available?
         </p>
       </statement>
+      <hint>
+        Try to solve the problem first with a two-scoop cone. (Look for an earlier problem that is analogous.) Then, for each two scoop cone, in how many ways can you put on a top scoop?
+      </hint>
       <solution>
         <p>
           <m>12\cdot12\cdot12 =1728</m> possible cones. If the flavors must be
@@ -201,14 +210,18 @@
       </p>
       <task xml:id="countingfunctionsparta" >
         <p>
-        Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
-        functions, write down all the different functions you can
-        from the set
-        <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
-        with
-        <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
-        set <m>\{1,2\}</m> to the set
-        <m>\{a,b\}</m>?
+          Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
+          functions, write down all the different functions you can
+          from the set
+          <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
+          with
+          <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
+          set <m>\{1,2\}</m> to the set
+          <m>\{a,b\}</m>?
+        </p>
+        <hint>
+          Ask yourself “how many choices do we have for f(1)?” Then ask how many choices we have for f(2).
+        </hint>
         <solution>
           <p>
             <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
@@ -227,6 +240,9 @@
              to the two element set <m>\{a,b\}</m>?
           </p>
         </statement>
+        <hint>
+          It may not be practical to write down rules for all the functions for this problem. But you could ask yourself how many choices we have for <m>f(1)</m>, how many we have for <m>f(2)</m> and how many we have for <m>f(3)</m>.
+        </hint>
         <solution>
           <p>
             <m>2\cdot2\cdot2 = 8</m>
@@ -240,6 +256,9 @@
             three element set <m>\{1,2,3\}</m>?
           </p>
         </statement>
+        <hint>
+          If you are choosing a function <m>f</m>, how many choices do you have for <m>f(a)</m>? Then how many choices do you have for <m>f(b)</m>?
+        </hint>
         <solution>
           <p>
             <m>3\cdot3=9</m>
@@ -255,7 +274,7 @@
         </statement>
         <solution>
           <p>
-            <m>12\cdot12\cdot12 = 1728</m>
+            <m>12\cdot 12\cdot 12 = 1728</m>
           </p>
         </solution>
       </task>
@@ -274,7 +293,7 @@
         </statement>
         <solution>
           <p>
-            <m>12\cdot11\cdot10= 1320</m>
+            <m>12\cdot 11 \cdot 10= 1320</m>
           </p>
         </solution>
       </task>
@@ -311,6 +330,9 @@
               flavors out of the 12 flavors?
           </p>
         </statement>
+        <hint>
+          You know how to figure out in how many ways they could make a list of three flavors out of the twelve. But each set of three flavors can be listed in a number of different ways. Try to figure out in how many ways a set of three flavors can be listed, and then try to see how this helps you.
+        </hint>
         <solution>
           <p>
             There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
@@ -327,6 +349,9 @@
               don't have to be different?
           </p>
         </statement>
+        <hint>
+          Try to break the problem up into cases you can solve by previous methods; then figure out how to get the answer to the problem by using these answers for the cases.
+        </hint>
         <solution>
           <p>
             If the flavors need not be different, we must add in the number of ways
