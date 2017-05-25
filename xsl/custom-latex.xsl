@@ -162,14 +162,41 @@
 </xsl:template> -->
 
 <!-- Dedication style -->
-<xsl:template match="dedication/p|dedication/p[1]" priority="1">
+<!-- <xsl:template match="dedication/p|dedication/p[1]" priority="1">
     <xsl:text>\begin{flushright}\large%&#xa;</xsl:text>
         <xsl:apply-templates />
     <xsl:text>%&#xa;</xsl:text>
     <xsl:text>\end{flushright}&#xa;</xsl:text>
+</xsl:template> -->
+
+<!-- Create tasks formatting: -->
+
+<xsl:template match="task">
+  <xsl:if test="not(preceding-simpling)">
+    <xsl:text>~\par&#xa;</xsl:text>
+  </xsl:if>
+  <xsl:choose>
+    <xsl:when test="not(preceding-sibling::task)">
+      <xsl:text>\begin{enumerate}[label=(\alph*)]&#xa; \item </xsl:text>
+      <xsl:apply-templates />
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:when>
+    <xsl:when test="not(following-sibling::task)">
+      <xsl:text>\item </xsl:text>
+      <xsl:apply-templates />
+      <xsl:text>&#xa;\end{enumerate}&#xa;</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>\item </xsl:text>
+      <xsl:apply-templates />
+      <xsl:text>&#xa;</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
+  <!-- <xsl:apply-templates select="." mode="raw-serial-number"/>
+  <xsl:text> </xsl:text>
+  <xsl:apply-templates />
+  <xsl:text>\par </xsl:text> -->
 </xsl:template>
-
-
 
 
 <!-- Create a heading for each non-empty collection of solutions -->
