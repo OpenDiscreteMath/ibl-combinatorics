@@ -1,4 +1,3 @@
-
 <section>
   <title>Some Applications of the Basic Principles</title>
   <subsection>
@@ -6,18 +5,13 @@
     <activity xml:id="blockwalking" category="motivation">
       <statement>
         <p>
-          In a part of a city, all streets run either north-south or east-west,
-          and there are no dead ends. Suppose we are standing on a street corner. In
-          how many ways may we walk to a corner that is four blocks north and six blocks
-          east, using as few blocks as possible?
+          In a part of a city, all streets run either north-south or east-west, and there are no dead ends. Suppose we are standing on a street corner. In how many ways may we walk to a corner that is four blocks north and six blocks east, using as few blocks as possible?
         </p>
       </statement>
+
       <solution>
         <p>
-          The shortest possible walk is going to be ten blocks. To plan a
-          walk, we must choose which four of those ten blocks go north; the other six
-          blocks we will have to go east. There are <m>10\choose 4</m> ways to make this
-          selection.
+          The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>10\choose 4</m> ways to make this selection.
         </p>
       </solution>
     </activity>
@@ -56,137 +50,61 @@
 
     <activity xml:id="diagonallattice" category="essential for this or the next section">
       <statement>
-        <p>
-          Another kind of geometric path in the plane is a <em>diagonal lattice
-          path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path
-          is a path made up of line segments that go from a point <m>(i,j)</m> to
-          <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or
-          <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where
-          <m>i</m> and
-          <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right
-          but may move up or down.) Describe which points are connected to
-          <m>(0,0)</m> by diagonal lattice paths. What is the length of a diagonal
-          lattice path from <m>(0,0)</m> to <m>(m,n)</m>? Assuming that
-          <m>(m,n)</m> is such a point, how many diagonal lattice paths are there
-          from
-          <m>(0,0)</m> to
-          <m>(m,n)</m>?
+        <p>Another kind of geometric path in the plane is a <em>diagonal lattice path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.) Describe which points are connected to <m>(0,0)</m> by diagonal lattice paths. What is the length of a diagonal lattice path from <m>(0,0)</m> to <m>(m,n)</m>? Assuming that <m>(m,n)</m> is such a point, how many diagonal lattice paths are there from <m>(0,0)</m> to <m>(m,n)</m>?
         </p>
       </statement>
       <solution>
-        <p>
-          The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths
-          will have <m>m+n</m> is even, because each upstep adds two
-          to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.
-          Further, since we go one step to the right each time we go up or down, we
-          cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any
-          point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and
-          <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>m-n\over 2</m> downsteps and
-          <m>m+n\over2</m> upsteps. In this way we will make a total of <m>m</m> steps, and our
-          total motion parallel to the <m>y</m> axis will be <m>{m+n\over2}-{m-n\over2} = n</m>.
-          The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it
-          <m>m</m> steps. The number of possible paths is the number of ways we can choose
-          which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is
-          <m>m\choose{m+n\over2}</m>.
+        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>m-n\over 2</m> downsteps and <m>m+n\over2</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>{m+n\over2}-{m-n\over2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>m\choose{m+n\over2}</m>.
         </p>
       </solution>
     </activity>
 
     <activity category="motivation">
-      <p>
-        A school play requires a ten dollar donation per person; the donation
-        goes into the student activity fund. Assume that each person who comes to
-        the play pays with a ten dollar bill or a twenty dollar bill. The teacher
-        who is collecting the money forgot to get change before the event. If there
-        are always at least as many people who have paid with a ten as a twenty as
-        they arrive the teacher won't have to give anyone an IOU for change. Suppose
-        <m>2n</m> people come to the play, and exactly half of them pay with ten dollar
-        bills.
+      <p>A school play requires a ten dollar donation per person; the donation goes into the student activity fund. Assume that each person who comes to the play pays with a ten dollar bill or a twenty dollar bill. The teacher who is collecting the money forgot to get change before the event. If there are always at least as many people who have paid with a ten as a twenty as they arrive the teacher won't have to give anyone an IOU for change. Suppose <m>2n</m> people come to the play, and exactly half of them pay with ten dollar bills.
       </p>
       <task>
         <statement>
-          <p>
-            Describe a bijection between the set of sequences of tens and
-            twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to
-            <m>(n,n)</m>.
+          <p>Describe a bijection between the set of sequences of tens and twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>.
           </p>
         </statement>
         <solution>
-          <p>
-            For each ten dollar bill take a rightstep and for each twenty dollar
-            bill take an upstep (where rightstep and upstep have the hopefully natural
-            meaning). The assumption that there are an equal number of ten and twenty
-            dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of
-            tens and twenties gives a lattice path and each lattice path corresponds to
-            such a sequence, so we have a bijection.
+          <p>For each ten dollar bill take a rightstep and for each twenty dollar bill take an upstep (where rightstep and upstep have the hopefully natural meaning). The assumption that there are an equal number of ten and twenty dollar bills means that the path will end up at <m>(n,n)</m>. Each sequence of tens and twenties gives a lattice path and each lattice path corresponds to such a sequence, so we have a bijection.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            Describe a bijection between the set of sequences of tens and
-            twenties that people give the teacher and the set of diagonal lattice paths
-            from <m>(0,0)</m> and <m>(0,2n)</m>.
+          <p>Describe a bijection between the set of sequences of tens and twenties that people give the teacher and the set of diagonal lattice paths from <m>(0,0)</m> and <m>(0,2n)</m>.
           </p>
         </statement>
         <solution>
-          <p>
-            For each ten dollar bill take an upstep and for each twenty dollar
-            bill take a downstep. Each sequence of tens and twenties will give us a
-            diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path
-            from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with
-            an equal number of tens and twenties, so we have a bijection.
+          <p>For each ten dollar bill take an upstep and for each twenty dollar bill take a downstep. Each sequence of tens and twenties will give us a diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with an equal number of tens and twenties, so we have a bijection.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            In each case, what is the geometric
-            interpretation of a sequence that does not require the teacher to give any
-            IOUs?
+          <p>In each case, what is the geometric interpretation of a sequence that does not require the teacher to give any IOUs?
           </p>
         </statement>
         <solution>
-          <p>
-            In the first case a sequence that does not require the teacher to
-            give any IOUs will correspond to a lattice path that stays on or below the
-            line <m>y=x</m>, and in the second case such a sequence will correspond to a
-            diagonal lattice path that stays on or above the <m>x</m>-axis.
+          <p>In the first case a sequence that does not require the teacher to give any IOUs will correspond to a lattice path that stays on or below the line <m>y=x</m>, and in the second case such a sequence will correspond to a diagonal lattice path that stays on or above the <m>x</m>-axis.
           </p>
         </solution>
       </task>
     </activity>
 
     <activity category="essential for this or the next section, and interesting">
-      <p>
-        Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays
-        inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the
-        <m>y</m>-axis, the line
-        <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of
-        lattice paths from (0,0) to
-        <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the
-        <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for
-        the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
+      <p>Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the <m>y</m>-axis, the line <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of lattice paths from (0,0) to <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
       </p>
 
       <figure xml:id="CatalanPaths" >
-        <caption>The lattice paths
-        from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>. 
-        The number of paths to the point <m>(i,i)</m> is
-        shown just above that point.</caption>
-        \mbox{
-        <image width="73%" source="images/" />
-        }
+          <caption>The lattice paths from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>.  The number of paths to the point <m>(i,i)</m> is shown just above that point.</caption>
+          <image width="73%" source="images/CatalanPaths" />
       </figure>
       <task>
         <statement>
-          <p>
-            Explain why the number of lattice paths from <m>(0,0)</m> to
-            <m>(n,n)</m> that go outside the triangle is the number of lattice paths from
-            <m>(0,0)</m> to
-            <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
+          <p>Explain why the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that go outside the triangle is the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
           </p>
         </statement>
         <solution>
@@ -197,43 +115,24 @@
             coordinates. If <m>j\lt i</m> an upstep from <m>(i,j))</m> cannot leave the triangle.
             Thus to leave the triangle, the upstep must leave from a point of the form
             <m>(i,i)</m>, and go to <m>(i,i+1)</m>, which is on the line <m>y=x+1</m>.
-            \item Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+          <statement>
+            <p>Find a bijection between lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
             that touch (or cross) the line <m>y=x+1</m> and lattice paths from
             <m>(-1,1)</m> to <m>(n,n)</m>.
           </p>
-        </solution>
-        <solution>
-          <p>
-            Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which
-            touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the
-            line <m>y=x+1</m> that the lattice path touches. From that point, work backwards,
-            replacing every upstep with a step one unit to the left and every rightstep
-            with a step one unit down. The segment of the path you just changed will
-            have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and
-            it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.
-            Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a
-            lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least
-            once, because it starts above the line and ends below it. At the first point
-            where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards
-            replacing every upstep with a step to the left and every rightstep with a
-            step downwards. The leftmost point on this path will have <m>x</m> coordinate 0,
-            and the lowest point will have <m>y</m> coordinate 0, so the new path will be a
-            lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly
-            these two processes reverse each other, and so they give us a bijection
-            between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice
-            lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we
-            are doing to get the bijection is to take the portion of a lattice path that
-            goes from the initial point till the first touch of the line <m>y=x+1</m> and
-            reflecting it around that line. This idea of reflection was introduced by
-            Feller, and is called Feller's reflection principle.
+          </statement>
+          <solution>
+              <p>Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the line <m>y=x+1</m> that the lattice path touches. From that point, work backwards, replacing every upstep with a step one unit to the left and every rightstep with a step one unit down. The segment of the path you just changed will have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.  Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least once, because it starts above the line and ends below it. At the first point where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards replacing every upstep with a step to the left and every rightstep with a step downwards. The leftmost point on this path will have <m>x</m> coordinate 0, and the lowest point will have <m>y</m> coordinate 0, so the new path will be a lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly these two processes reverse each other, and so they give us a bijection between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we are doing to get the bijection is to take the portion of a lattice path that goes from the initial point till the first touch of the line <m>y=x+1</m> and reflecting it around that line. This idea of reflection was introduced by Feller, and is called Feller's reflection principle.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>
-            that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
+          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
           </p>
         </statement>
         <solution>
@@ -245,22 +144,7 @@
     </activity>
 
     <activity category="interesting">
-      <p>
-        Your formula for the Catalan Number can be expressed as a binomial
-        coefficient divided by an integer. Whenever we have a formula that calls
-        for division by an integer, an ideal combinatorial explanation of the
-        formula is one that uses the quotient principle. The purpose of this
-        problem is to find such an explanation using diagonal lattice
-        paths.<fn>The result we will derive is called the Chung-Feller
-        Theorem<index><main>Chung-Feller Theorem</main></index>; this approach is based of a paper of
-        Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller
-        Generalizations," <em>American Mathematics Monthly 58</em> June/July 2001,
-        p556.</fn> A diagonal lattice path that never goes below the
-        <m>y</m>-coordinate of its first point is called a <em>Dyck Path</em><index><main>Dyck
-        path</main></index>. We will call a Dyck Path from
-        <m>(0,0)</m> to
-        <m>(2n,0)</m> a <em>Catalan Path</em><index><main>Catalan Path</main></index> of length <m>2n</m>. Thus the
-        number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
+      <p>Your formula for the Catalan Number can be expressed as a binomial coefficient divided by an integer. Whenever we have a formula that calls for division by an integer, an ideal combinatorial explanation of the formula is one that uses the quotient principle. The purpose of this problem is to find such an explanation using diagonal lattice paths.<fn>The result we will derive is called the Chung-Feller Theorem<index><main>Chung-Feller Theorem</main></index>; this approach is based of a paper of Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller Generalizations," <booktitle>American Mathematics Monthly 58</booktitle> June/July 2001, p556.</fn> A diagonal lattice path that never goes below the <m>y</m>-coordinate of its first point is called a <term>Dyck Path</term><index><main>Dyck path</main></index>. We will call a Dyck Path from <m>(0,0)</m> to <m>(2n,0)</m> a <term>Catalan Path</term><index><main>Catalan Path</main></index> of length <m>2n</m>. Thus the number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
       </p>
       <task>
         <statement>
@@ -279,42 +163,21 @@
       </task>
       <task>
         <statement>
-          <p>
-            Thought of as a curve in the plane, a diagonal lattice path can have many
-            local maxima and minima, and can have several absolute maxima and minima, that is,
-            several highest points and several lowest points. What is the <m>y</m>-coordinate
-            of an absolute minimum point of a Dyck Path starting at <m>(0,0)</m>?  Explain why
-            a Dyck Path whose rightmost absolute minimum point is its last point is a
-            Catalan Path.
+          <p>Thought of as a curve in the plane, a diagonal lattice path can have many local maxima and minima, and can have several absolute maxima and minima, that is, several highest points and several lowest points. What is the <m>y</m>-coordinate of an absolute minimum point of a Dyck Path starting at <m>(0,0)</m>?  Explain why a Dyck Path whose rightmost absolute minimum point is its last point is a Catalan Path.
           </p>
         </statement>
         <solution>
-          <p>
-            Since the path starts at <m>(0,0)</m> and can't go below it, the <m>y</m>
-            coordinate of an absolute minimum must be zero. If the last point is an
-            absolute minimum, then (because it ends with the same <m>y</m> coordinate with
-            which it starts) the path has an even number
-            <m>2k</m> of steps and ends at
-            <m>(2k,0)</m>.
+          <p>Since the path starts at <m>(0,0)</m> and can't go below it, the <m>y</m> coordinate of an absolute minimum must be zero. If the last point is an absolute minimum, then (because it ends with the same <m>y</m> coordinate with which it starts) the path has an even number <m>2k</m> of steps and ends at <m>(2k,0)</m>.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            Let <m>D</m> be the set of all diagonal lattice paths from <m>(0,0)</m> to
-            <m>(2n,0)</m>.  (Thus these paths can go below the <m>x</m>-axis.) Suppose we partition
-            <m>D</m> by letting
-            <m>B_i</m> be the set of lattice paths in <m>D</m> that have <m>i</m> upsteps (perhaps mixed
-            with some downsteps) following the last absolute minimum.  How many blocks
-            does this partition have?  Give a succinct description of the block <m>B_0</m>.
+          <p>Let <m>D</m> be the set of all diagonal lattice paths from <m>(0,0)</m> to <m>(2n,0)</m>.  (Thus these paths can go below the <m>x</m>-axis.) Suppose we partition <m>D</m> by letting <m>B_i</m> be the set of lattice paths in <m>D</m> that have <m>i</m> upsteps (perhaps mixed with some downsteps) following the last absolute minimum.  How many blocks does this partition have?  Give a succinct description of the block <m>B_0</m>.
           </p>
         </statement>
         <solution>
-          <p>
-            The path must have <m>n</m> upsteps total, and so can have any number
-            between 0 and <m>n</m> upsteps after the rightmost absolute minimum. Thus the
-            partition has <m>n+1</m> blocks. Block <m>B_0</m> consists of the Catalan Paths.
+          <p>The path must have <m>n</m> upsteps total, and so can have any number between 0 and <m>n</m> upsteps after the rightmost absolute minimum. Thus the partition has <m>n+1</m> blocks. Block <m>B_0</m> consists of the Catalan Paths.
           </p>
         </solution>
       </task>
@@ -330,45 +193,13 @@
           </p>
         </solution>
       </task>
-      <task>
+      <task category="difficult">
         <statement>
-          <p>
-          <title>\ <m>*</m>\ (\theenumii)</title>
-          <p>
-            We are going to give a bijection between the set of Catalan Paths and
-            the block <m>B_i</m> for each <m>i</m> between <m>1</m> and <m>n</m>.  For now, suppose the
-            value of <m>i</m>, while unknown, is fixed.  We take a Catalan path and break it
-            into three pieces.  The piece <m>F</m> (for <q>front</q>) consists of all steps before
-            the
-            <m>i</m>th upstep in the Catalan path.  The piece <m>U</m> (for <q>up</q>) consists of the
-            <m>i</m>th upstep.  The piece
-            <m>B</m> (for <q>back</q>) is the portion of the path that follows the <m>i</m>th upstep. 
-            Thus we can think of the path as <m>FUB</m>.  Show that the function that takes
-            <m>FUB</m> to
-            <m>BUF</m> is a bijection from the set of Catalan Paths onto the block <m>B_i</m> of the
-            partition.  (Notice that <m>BUF</m> can go below the <m>x</m> axis.)
+          <p>We are going to give a bijection between the set of Catalan Paths and the block <m>B_i</m> for each <m>i</m> between <m>1</m> and <m>n</m>.  For now, suppose the value of <m>i</m>, while unknown, is fixed.  We take a Catalan path and break it into three pieces.  The piece <m>F</m> (for <q>front</q>) consists of all steps before the <m>i</m>th upstep in the Catalan path.  The piece <m>U</m> (for <q>up</q>) consists of the <m>i</m>th upstep.  The piece <m>B</m> (for <q>back</q>) is the portion of the path that follows the <m>i</m>th upstep.  Thus we can think of the path as <m>FUB</m>.  Show that the function that takes <m>FUB</m> to <m>BUF</m> is a bijection from the set of Catalan Paths onto the block <m>B_i</m> of the partition.  (Notice that <m>BUF</m> can go below the <m>x</m> axis.)
           </p>
         </statement>
         <solution>
-          <p>
-            Since we are starting with a Catalan path, the point on the path at
-            the beginning of the <m>i</m>th upstep must have <m>y</m> coordinate greater or equal
-            to than zero. Thus wherever we start the sequence <m>F</m> of upsteps and
-            downsteps, a path constructed by this sequence never goes lower than its
-            starting point. Thus in <m>BUF</m> the last absolute minimum is either right
-            before the
-            <m>U</m> or earlier. But <m>B</m> is the final segment of a Catalan Path, so its final
-            point is at least as low as its starting point. Thus the point at the
-            beginning of the <m>U</m> in <m>BUF</m> is an absolute minimum, and there are <m>i</m>
-            upsteps after that local minimum. If we take two different sequences and
-            rearrange them in the same way, we get two different sequences, so the
-            function we just described is a one-to-one function. If we take an arbitrary
-            diagonal lattice path from <m>(0,0)</m> to <m>(2n,0)</m>, let <m>U'</m> be the first upstep
-            after the last absolute minimum, <m>F'</m> be the portion of the path that follows
-            <m>U'</m>, and <m>B'</m> be the portion that precedes <m>U'</m>, then <m>F'U'B'</m> is a Catalan
-            Path, and <m>U'</m> is its <m>i</m>th upstep if and only if in <m>B'U'F'</m> there are <m>i</m>
-            upsteps after the last absolute minimum. Thus the mapping from <m>FUB</m> to
-            <m>BUF</m> is a bijection.
+          <p>Since we are starting with a Catalan path, the point on the path at the beginning of the <m>i</m>th upstep must have <m>y</m> coordinate greater or equal to than zero. Thus wherever we start the sequence <m>F</m> of upsteps and downsteps, a path constructed by this sequence never goes lower than its starting point. Thus in <m>BUF</m> the last absolute minimum is either right before the <m>U</m> or earlier. But <m>B</m> is the final segment of a Catalan Path, so its final point is at least as low as its starting point. Thus the point at the beginning of the <m>U</m> in <m>BUF</m> is an absolute minimum, and there are <m>i</m> upsteps after that local minimum. If we take two different sequences and rearrange them in the same way, we get two different sequences, so the function we just described is a one-to-one function. If we take an arbitrary diagonal lattice path from <m>(0,0)</m> to <m>(2n,0)</m>, let <m>U'</m> be the first upstep after the last absolute minimum, <m>F'</m> be the portion of the path that follows <m>U'</m>, and <m>B'</m> be the portion that precedes <m>U'</m>, then <m>F'U'B'</m> is a Catalan Path, and <m>U'</m> is its <m>i</m>th upstep if and only if in <m>B'U'F'</m> there are <m>i</m> upsteps after the last absolute minimum. Thus the mapping from <m>FUB</m> to <m>BUF</m> is a bijection.
           </p>
         </solution>
       </task>
@@ -432,37 +263,45 @@
     </activity>
 
     <activity category="essential">
-      <p>
-        When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a
-        sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
+      <p>When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
       </p>
       <task>
         <statement>
-          <p>
-            If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we
-            get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from
-            the remaining
-            <m>n-i</m> of the factors and multiplying these choices together, then answer this
-            part of the problem and skip the next part.  Otherwise, do the next part
-            instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms
-            and a <m>y</m> from
-            <m>n-i</m> terms?
+          <p>If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from the remaining <m>n-i</m> of the factors and multiplying these choices together, then answer this part of the problem and skip the next part.  Otherwise, do the next part instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms and a <m>y</m> from <m>n-i</m> terms?
           </p>
         </statement>
         <solution>
-          <p>
-            The number of ways to choose an <m>x</m> from <m>i</m> of the
-            factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m>
-            factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+          <p>The number of ways to choose an <m>x</m> from <m>i</m> of the factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m> factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
           </p>
         </solution>
       </task>
       <task>
         <statement>
+            <p>Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.</p>
+        </statement>
+        <solution>
+            <p>
+                <md>
+                    <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
+                    <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
+                </md>
+            </p>
+        </solution>
+      </task>
+      <task>
+          <statement>
+              <p>What do you get when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?
+              </p>
+          </statement>
+          <solution>
           <p>
-            Expand the product <m>(x_1 +y_1)(x_2 +y_2)(x_3+y_3)</m>.  What do you get
-            when you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>?  Now imagine
-            expanding
+            When you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+          <statement>
+              <p>Now imagine expanding
             <me>
               (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n).
             </me>
@@ -473,38 +312,68 @@
               x_{k_1}x_{k_2}\cdots x_{k_i}\cdot y_{j_1}y_{j_2}\cdots
               y_{j_{n-i}}.
             </me>
-            What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?  In
-            how many ways can you choose the set  <m>\{k_1,k_2,\ldots, k_i\}</m>?  Once you
-            have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots,
-            j_{n-i}\}</m>?  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how
-            many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
-            <me>
-              (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
-            </me>
-            How many terms of the form
-            <m>x^{n-i}y^i</m> will you have?
-          </p>
-        </statement>
-        <solution>
-          <md>
-            <mrow>(x_1+y_1)(x_2+y_2)(x_3+y_3)=x_1x_2x_3 \!\!\amp +\amp \!\!x_1x_2y_3+x_1y_2x_3+</mrow>
-            <mrow>y_1x_2x_3+x_1y_2y_3+y_1x_2y_3 \!\!\amp +\amp \!\! y_1y_2x_3+y_1y_2y_3.</mrow>
-          </md>
-          <p>
-            When you substitute <m>x</m> for each <m>x_i</m> and
-            <m>y</m> for each
-            <m>y_i</m>, you get <m>(x+y)^3=x^3+3x^2y+3xy^2+y^3</m>.
-          </p>
+            What is the set <m>\{k_1,k_2,\ldots, k_i\}\cup \{j_1,j_2,\ldots, j_{n-i}\}</m>?
+              </p>
+          </statement>
+          <solution>
 
           <p>
             <m>\{k_1,k_2,\ldots, k_i\}\cup
-            \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. You can choose the set
-            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. Then there is just one way to
-            choose the set of <m>j</m>s. If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m>
-            for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. You
-            will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+            \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>.
           </p>
-        </solution>
+
+          </solution>
+      </task>
+      <task>
+          <statement>
+              <p>In how many ways can you choose the set <m>\{k_1,k_2,\ldots, k_i\}</m>?
+              </p>
+          </statement>
+          <solution>
+              <p>
+                  You can choose the set
+            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways.
+              </p>
+          </solution>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  Once you have chosen this set, how many choices do you have for <m>\{j_1,j_2,\ldots, j_{n-i}\}</m>?
+              </p>
+          </statement>
+          <solution>
+              <p>
+                  Once you have chosen the set of <m>k</m>s, there is just one way to
+            choose the set of <m>j</m>s.
+              </p>
+          </solution>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  If you substitute <m>x</m> for each <m>x_i</m> and <m>y</m> for each <m>y_i</m>, how many terms of the form <m>x^iy^{n-i}</m> will you have in the expanded product
+            <me>
+              (x_1+y_1)(x_2+y_2)\cdots (x_n+y_n)=(x+y)^n?
+            </me>
+              </p>
+          </statement>
+          <solution>
+              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>.
+              </p>
+          </solution>
+      </task>
+      <task>
+          <statement>
+              <p>
+            How many terms of the form <m>x^{n-i}y^i</m> will you have?
+              </p>
+          </statement>
+          <solution>
+              <p>
+                  You will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+              </p>
+          </solution>
       </task>
       <task>
         <statement>
@@ -521,18 +390,29 @@
           </p>
         </solution>
       </task>
-      <p>
-        \item What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
-      </p>
+  </activity>
+  <activity>
+      <statement>
+          <p>What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
+          </p>
+      </statement>
       <solution>
         <p>
           <m>\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
           {10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
       </solution>
+  </activity>
+  <activity>
+      <statement>
       <p>
-      \item What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
+      What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
       {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
+      </p>
+      </statement>
+      <solution>
+          <p>The sum is <m>0</m> because it is <m>(-1+1)^n</m>.</p>
+      </solution>
     </activity>
 
     <activity category="essential and interesting">
@@ -543,9 +423,6 @@
             \sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
             k}.
           </me>
-        </p>
-
-        <p>
           Find two different explanations.
         </p>
       </statement>
@@ -554,14 +431,9 @@
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
           binomial theorem we get <m>\sum_{i=0}^m{m\choose i}{n\choose  k-i}</m> as the
           coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>m+n\choose k</m> on the
-          right hand side. For a second explanation, to choose <m>k</m> elements out of the
-          union of an <m>m</m>-element set and a disjoint <m>n</m>-element set, chose some number
-          <m>i\le m</m> of them from the <m>m</m>-element set and the remaining <m>k-i</m> of them
-          from the
-          <m>n</m>-element set. The sum on the left hand side of the equation simply sums
-          the number of such choices over all possible <m>i</m>, and the binomial
-          coefficient on the right hand side of the equation says we will end up
-          choosing <m>k</m> elements from among our <m>m+n</m> elements.
+          right hand side.
+        </p>
+        <p>For a second explanation, to choose <m>k</m> elements out of the union of an <m>m</m>-element set and a disjoint <m>n</m>-element set, chose some number <m>i\le m</m> of them from the <m>m</m>-element set and the remaining <m>k-i</m> of them from the <m>n</m>-element set. The sum on the left hand side of the equation simply sums the number of such choices over all possible <m>i</m>, and the binomial coefficient on the right hand side of the equation says we will end up choosing <m>k</m> elements from among our <m>m+n</m> elements.
         </p>
       </solution>
     </activity>
@@ -569,20 +441,11 @@
     <activity category="interesting">
       <statement>
         <p>
-          From the symmetry of the binomial coefficients, it is not too hard to
-          see that when
-          <m>n</m> is an odd number, the number of subsets of <m>\{1,2,\ldots,n\}</m> of odd size
-          equals the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size. Is it true
-          that when <m>n</m> is even the number of subsets of <m>\{1,2,\ldots,n\}</m> of even
-          size equals the number of subsets of odd size? Why or why not?
+          From the symmetry of the binomial coefficients, it is not too hard to see that when <m>n</m> is an odd number, the number of subsets of <m>\{1,2,\ldots,n\}</m> of odd size equals the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size. Is it true that when <m>n</m> is even the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size equals the number of subsets of odd size? Why or why not?
         </p>
       </statement>
       <solution>
-        <p>
-          It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the
-          binomial theorem, you get an alternating sum of binomial coefficients equal
-          to 0, and so the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> even
-          must equal the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> odd.
+        <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> odd.
         </p>
       </solution>
     </activity>
@@ -602,108 +465,53 @@
         </p>
       </solution>
     </activity>
-  </subsection>
 
+    <p>Notice how the proof you gave of the binomial theorem was a counting argument. It is interesting that an apparently algebraic theorem that tells us how to expand a power of a binomial is proved by an argument that amounts to counting the individual terms of the expansion. Part of the reason that combinatorial mathematics turns out to be so useful is that counting arguments often underlie important results of algebra. As the algebra becomes more sophisticated, so do the families of objects we have to count, but nonetheless we can develop a great deal of algebra on the basis of counting.</p>
+  </subsection>
   <subsection>
     <title>The pigeonhole principle</title>
     <activity xml:id="elevencoins" category="motivation">
       <statement>
-        <p>
-          American coins are all marked with the year in which they were made.
-          How many coins do you need to have in your hand to guarantee that on two (at
-          least) of them, the date has the same last digit?
+        <p>American coins are all marked with the year in which they were made. How many coins do you need to have in your hand to guarantee that on two (at least) of them, the date has the same last digit? (When we say <q>to guarantee that on two (at least) of them,<ellipsis /></q> we mean that you can find two with the same last digit. You might be able to find three with that last digit, or you might be able to find one pair with the last digit 1 and one pair with the last digit 9, or any combination of equal last digits, as long as there is at least one pair with the same last digit.)
         </p>
       </statement>
       <solution>
         <p>
-          Since there are ten possible last digits, you need at least 11
-          coins, and with 11 coins, at least two last digits must be the same.
+          Since there are ten possible last digits, you need at least 11 coins, and with 11 coins, at least two last digits must be the same.
         </p>
       </solution>
     </activity>
 
-    <p>
-      There are many ways in which you might explain your answer to <xref ref="elevencoins">Problem</xref>. For example, you can partition the coins according to the
-      last digit of their date; that is, you put all the coins with a given last
-      digit in a block together, and put no other coins in that block; repeating
-      until all coins are in some block. Then you have a partition of your set of
-      coins. If no two coins have the same last digit, then each block has exactly
-      one coin. Since there are only ten digits, there are at most ten blocks and
-      so by the sum principle there are at most ten coins. In fact with ten coins
-      it is possible to have no two with the same last digit, but with 11 coins
-      some block must have at least two coins in order for the sum of the sizes of
-      at most ten blocks to be 11. This is one explanation of why we need 11
-      coins in <xref ref="elevencoins">Problem</xref>. This kind of situation arises often in
-      combinatorial situations, and so rather than always using the sum principle
-      to explain our reasoning , we enunciate another principle which we can think
-      of as yet another variant of the sum principle. The <em>pigeonhole
-      principle</em><index><main>pigeonhole principle</main></index> states that
+    <p>There are many ways in which you might explain your answer to <xref ref="elevencoins" autoname="yes" />. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in <xref ref="elevencoins" autoname="yes" />. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The <term>pigeonhole principle</term><index><main>pigeonhole principle</main></index> states that
     </p>
 
     <blockquote>
-    If we partition a set with more than <m>n</m> elements into 
-    <m>n</m> parts, then at least one part has more than one element.
+        <p>If we partition a set with more than <m>n</m> elements into <m>n</m> parts, then at least one part has more than one element.
+        </p>
     </blockquote>
 
-    <p>
-      The
-      pigeonhole principle gets its name from the idea of a grid of little boxes
-      that might be used, for example, to sort mail, or as mailboxes for a group of
-      people in an office. The boxes in such grids are sometimes called
-      pigeonholes in analogy with stacks of boxes used to house homing pigeons when
-      homing pigeons were used to carry messages. People will sometimes state the
-      principle in a more colorful way as <q>if we put more than <m>n</m> pigeons into
-      <m>n</m> pigeonholes, then some pigeonhole has more than one pigeon.</q>
+    <p>The pigeonhole principle gets its name from the idea of a grid of little boxes that might be used, for example, to sort mail, or as mailboxes for a group of people in an office. The boxes in such grids are sometimes called pigeonholes in analogy with stacks of boxes used to house homing pigeons when homing pigeons were used to carry messages. People will sometimes state the principle in a more colorful way as <q>if we put more than <m>n</m> pigeons into <m>n</m> pigeonholes, then some pigeonhole has more than one pigeon.</q>
     </p>
 
     <activity>
       <statement>
-        <p>
-          Show that if we have a function from a set of size <m>n</m> to a set of
-          size less than <m>n</m>, then <m>f</m> is not one-to-one.
+        <p>Show that if we have a function from a set of size <m>n</m> to a set of size less than <m>n</m>, then <m>f</m> is not one-to-one.
         </p>
       </statement>
       <solution>
         <p>
-          Let <m>T</m> be the set of size less than <m>n</m>, and <m>S</m> be the set of
-          size <m>n</m>. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. Then the nonempty
-          sets among the <m>B_j</m>s form a partition of <m>S</m> and the number of blocks is
-          less than the size of <m>S</m>. Therefore by the pigeonhole principle, there is
-          at least one block with at least two elements, so there are two elements
-          <m>i_1</m> and <m>i_2</m> such that <m>f(i_1)=f(i_2)</m>.
+          Let <m>T</m> be the set of size less than <m>n</m>, and <m>S</m> be the set of size <m>n</m>. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. Then the nonempty sets among the <m>B_j</m>s form a partition of <m>S</m> and the number of blocks is less than the size of <m>S</m>. Therefore by the pigeonhole principle, there is at least one block with at least two elements, so there are two elements <m>i_1</m> and <m>i_2</m> such that <m>f(i_1)=f(i_2)</m>.
         </p>
       </solution>
     </activity>
 
     <activity category="essential">
       <statement>
-        <p>
-          Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a
-          function
-          <m>f</m> from <m>S</m> to <m>T</m> is one-to-one if and only if it is onto.
+        <p>Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a function <m>f</m> from <m>S</m> to <m>T</m> is one-to-one if and only if it is onto.
         </p>
       </statement>
       <solution>
-        <p>
-          First suppose that <m>f</m> is a one-to-one function from <m>S</m> to <m>T</m>,
-          sets which have the same size. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>..
-          If
-          <m>f</m> is not onto, then the number of nonempty sets <m>B_j</m> is smaller than the
-          number of elements of
-          <m>T</m> and thus is smaller than the size of <m>S</m>. The nonempty sets <m>B_j</m> are a
-          partition of
-          <m>S</m>. But then by the pigeonhole principle, some nonempty
-          <m>B_j</m> has two or more elements, contradicting the assumption that <m>f</m> is
-          one-to-one. Therefore if <m>f</m> is one-to-one, then it is onto. Now suppose
-          that <m>f</m> is an onto function from <m>S</m> to <m>T</m>, sets of the same size. Again
-          let <m>B_j =\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. The size of the union of the
-          sets <m>B_j</m> is, by the sum principle, the sum of their sizes. Since <m>f</m> is
-          onto, each <m>B_j</m> has at least one element. Since the number of sets <m>B_j</m> is
-          the number of elements of
-          <m>S</m>, if one of those sets has more than one element, the the size of their
-          union is more than the size of <m>S</m>, which is a contradiction since they are
-          subsets of <m>S</m>. Therefore each set <m>B_j</m> has exactly one element and
-          therefore <m>f</m> is one-to-one.
+        <p>First suppose that <m>f</m> is a one-to-one function from <m>S</m> to <m>T</m>, sets which have the same size. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>..  If <m>f</m> is not onto, then the number of nonempty sets <m>B_j</m> is smaller than the number of elements of <m>T</m> and thus is smaller than the size of <m>S</m>. The nonempty sets <m>B_j</m> are a partition of <m>S</m>. But then by the pigeonhole principle, some nonempty <m>B_j</m> has two or more elements, contradicting the assumption that <m>f</m> is one-to-one. Therefore if <m>f</m> is one-to-one, then it is onto. Now suppose that <m>f</m> is an onto function from <m>S</m> to <m>T</m>, sets of the same size. Again let <m>B_j =\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. The size of the union of the sets <m>B_j</m> is, by the sum principle, the sum of their sizes. Since <m>f</m> is onto, each <m>B_j</m> has at least one element. Since the number of sets <m>B_j</m> is the number of elements of <m>S</m>, if one of those sets has more than one element, the the size of their union is more than the size of <m>S</m>, which is a contradiction since they are subsets of <m>S</m>. Therefore each set <m>B_j</m> has exactly one element and therefore <m>f</m> is one-to-one.
         </p>
       </solution>
     </activity>
@@ -711,39 +519,21 @@
     <activity category="essential for this or the next section">
       <task>
         <statement>
-          <p>
-            There is a <em>generalized pigeonhole principle</em><index><main>pigeonhole
-            principle</main><sub> generalized</sub></index> which says that if we partition a set with more than
-            <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m>
-            elements. Prove the generalized pigeonhole principle.
+          <p>There is a <term>generalized pigeonhole principle</term><index><main>pigeonhole principle</main><sub> generalized</sub></index> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
           </p>
         </statement>
         <solution>
-          <p>
-            Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m>
-            blocks. If each block has at most <m>k</m> elements, the by the sum principle
-            the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block
-            has at least <m>k+1</m> elements.
+          <p>Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m> blocks. If each block has at most <m>k</m> elements, the by the sum principle the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block has at least <m>k+1</m> elements.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            All the powers of five end in a five, and all the powers of two are
-            even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of
-            a prime other than two or five, one must have <q>01</q> as the last two digits.
+          <p>All the powers of five end in a five, and all the powers of two are even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of a prime other than two or five, one must have <q>01</q> as the last two digits.
           </p>
         </statement>
         <solution>
-          <p>
-            If we take 40 powers of such a
-            prime, either one will end in <q>01</q> or some two, say
-            <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon
-            hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j}
-            -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j}
-            -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two
-            digits of <m>p^{i-j}</m> must be <q>01.</q>
+          <p>If we take 40 powers of such a prime, either one will end in <q>01</q> or some two, say <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j} -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j} -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two digits of <m>p^{i-j}</m> must be <q>01.</q>
           </p>
         </solution>
       </task>
@@ -751,142 +541,78 @@
 
     <activity xml:id="R_3_3_" category="essential for this or the next section, and interesting">
       <statement>
-        <p>
-          Show that in a set of six people, there is a set of at least three
-          people who all know each other, or a set of at least three people none of
-          whom know each other. (We assume that if person A knows person B, then person
-          B knows person A.)
+        <p>Show that in a set of six people, there is a set of at least three people who all know each other, or a set of at least three people none of whom know each other. (We assume that if person 1 knows person 2, then person 2 knows person 1.)
         </p>
       </statement>
       <solution>
-        <p>
-          By the generalized pigeonhole principle, person 1 either knows at
-          least three people or doesn't know at least three people. Suppose person 1
-          knows three people. Then either two of these people know each other, giving
-          us, with person 1, three mutual acquaintances, or no two of these people know
-          each other, giving us three mutual strangers. On the other hand if there are
-          three people person 1 does not know, then either two of these people don't
-          know each other, giving us, with person 1, three mutual strangers, or all
-          three of these people know each other, giving us three mutual acquaintances.
+        <p>By the generalized pigeonhole principle, person 1 either knows at least three people or doesn't know at least three people. Suppose person 1 knows three people. Then either two of these people know each other, giving us, with person 1, three mutual acquaintances, or no two of these people know each other, giving us three mutual strangers. On the other hand if there are three people person 1 does not know, then either two of these people don't know each other, giving us, with person 1, three mutual strangers, or all three of these people know each other, giving us three mutual acquaintances.
         </p>
       </solution>
     </activity>
 
     <activity xml:id="notR_3_3_" category="essential for this or the next section">
       <statement>
-        <p>
-          Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to
-          draw red and green lines between people so that every pair of people is
-          joined by a line and there is neither a triangle consisting entirely of red
-          lines or a triangle consisting of green lines. What does <xref ref="R_3_3_">Problem</xref> tell you about the possibility of doing this with six people's
-          names? What does this problem say about the conclusion of <xref ref="R_3_3_">Problem</xref> holding when there are five people in our set rather than
-          six?
+        <p>Draw five circles labeled Al, Sue, Don, Pam, and Jo. Find a way to draw red and green lines between people so that every pair of people is joined by a line and there is neither a triangle consisting entirely of red lines or a triangle consisting of green lines. What does <xref ref="R_3_3_">Problem</xref> tell you about the possibility of doing this with six people's names? What does this problem say about the conclusion of <xref ref="R_3_3_">Problem</xref> holding when there are five people in our set rather than six?
         </p>
       </statement>
       <solution>
-        <p>
-          \mbox{
-          <image width="73%" source="images/" />
-          } <xref ref="R_3_3_">Problem</xref> says you can't do this with
-          six people's names. This problem says that the conclusion of <xref ref="R_3_3_">Problem</xref> does not hold when you have five people.
+          <p>In the figure that follows, we use solid lines for red and dashed lines for green. Clearly there is no solid triangle and no dashed triangle.
+          </p>
+          <figure>
+              <image width="73%" source="images/NonRamsey5" />
+          </figure>
+          <p><xref ref="R_3_3_" autoname="yes" /> says you can't do this with
+          six people's names. This problem says that the conclusion of <xref ref="R_3_3_" autoname="yes" /> does not hold when you have five people.
         </p>
       </solution>
     </activity>
   </subsection>
-
+<!-- MTK -->
   <subsection xml:id="Ramseysection">
     <title>Ramsey Numbers</title>
     <p>
-      <xref ref="R_3_3_">Problems</xref> and <xref ref="notR_3_3_"></xref> together show that six is the
-      smallest number <m>R</m> with the property that if we have <m>R</m> people in a room,
-      then there is either a set of (at least) three mutual acquaintances or a
-      set of (at least) three mutual strangers. Another way to say the same
-      thing is to say that six is the smallest number so that no matter how we
-      connect 6 points in the plane (no three on a line) with red and green lines,
-      we can find either a red triangle or a green triangle. There is a name for
-      this property. The <em>Ramsey Number</em> <m>R(m,n)</m> is the smallest number <m>R</m>
-      so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m>
-      mutual acquaintances or at least <m>n</m> mutual strangers. There is also a
-      geometric description of Ramsey Numbers; it uses the idea of a <em>complete
-      graph</em> on <m>R</m> vertices. A <em>complete graph</em><index><main>graph</main><sub>complete</sub></index> on <m>R</m>
-      vertices consists of <m>R</m> points in the plane together with line segments (or
-      curves) connecting each two of the <m>R</m> vertices.<fn>As you may have
-      guessed, a complete graph is a special case of something called a graph. 
-      THe word graph will be defined in <xref ref="graphsection">Section</xref>.</fn> The points are
-      called <em>vertices</em><index><main>vertex</main><sub>of a complete graph</sub></index><index><main>vertex</main></index> and the line
-      segments are called <em>edges</em><index><main>edge</main><sub>of a complete graph</sub></index><index><main>edge</main></index>. In
-      <xref ref="completegraph">Figure</xref> we show three different ways to draw a complete graph on
-      four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
+      <xref first="R_3_3_" last="notR_3_3_" autoname="yes" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><index><main>graph</main><sub>complete</sub></index> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" autoname="yes" />.</fn> The points are called <term>vertices</term><index><main>vertex</main><sub>of a complete graph</sub></index><index><main>vertex</main></index> and the line segments are called <term>edges</term><index><main>edge</main><sub>of a complete graph</sub></index><index><main>edge</main></index>. In <xref ref="completegraph" autoname="yes" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
     </p>
 
     <figure xml:id="completegraph" >
       <caption>Three ways to draw a
       complete graph on four vertices</caption>
-      \vglue-1in
-      \vglue-.5in\mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="73%" source="images/threeK4s" />
     </figure>
 
-    <p>
-      Our geometric description of <m>R(3,3)</m> may be translated into the language
-      of graph theory (which is the subject that includes complete graphs) by
-      saying <m>R(3,3)</m> is the smallest number <m>R</m> so that if we color the edges of a
-      <m>K_R</m> with two colors, then we can find in our picture a
-      <m>K_3</m> all of whose edges have the same color.
-      The graph theory description of <m>R(m,n)</m> is that <m>R(m,n)</m> is the smallest
-      number <m>R</m> so that if we color the edges of a <m>K_R</m> with red and
-      green, then we can find in our picture either a <m>K_m</m> all of whose edges are
-      red or a
-      <m>K_n</m> all of whose edges are green. Because we could have said our colors in
-      the opposite order, we may conclude that <m>R(m,n) = R(n,m)</m>. In particular
-      <m>R(n,n)</m> is the smallest number <m>R</m> such that if we color the edges of a
-      <m>K_R</m> with two colors, then our picture contains a <m>K_n</m> all of whose edges
-      have the same color.
+    <p>Our geometric description of <m>R(3,3)</m> may be translated into the language of graph theory (which is the subject that includes complete graphs) by saying <m>R(3,3)</m> is the smallest number <m>R</m> so that if we color the edges of a <m>K_R</m> with two colors, then we can find in our picture a <m>K_3</m> all of whose edges have the same color.  The graph theory description of <m>R(m,n)</m> is that <m>R(m,n)</m> is the smallest number <m>R</m> so that if we color the edges of a <m>K_R</m> with red and green, then we can find in our picture either a <m>K_m</m> all of whose edges are red or a <m>K_n</m> all of whose edges are green. Because we could have said our colors in the opposite order, we may conclude that <m>R(m,n) = R(n,m)</m>. In particular <m>R(n,n)</m> is the smallest number <m>R</m> such that if we color the edges of a <m>K_R</m> with two colors, then our picture contains a <m>K_n</m> all of whose edges have the same color.
     </p>
 
     <activity category="motivation">
       <statement>
-        <p>
-          Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show
-          that this is not the case.
+        <p>Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show that this is not the case.
         </p>
       </statement>
       <solution>
         <p>
-          In the graph
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+          In the graph of <xref ref="NonRamsey8" autoname="yes" />,
           each vertex has three dashed lines emanating from it, and there are no dashed
           lines connecting any of the three vertices adjacent to it by dashed lines.
           Each vertex has four solid lines emanating from it, and no three of the four
           vertices adjacent to it by solid lines are all adjacent by solid lines. Thus
           there is no solid line <m>K_4</m> and there is no dashed line <m>K_4</m>.
         </p>
+        <figure xml:id="NonRamsey8">
+            <caption>A graph showing <m>R(4,4) \gt 8</m></caption>
+            <image width="73%" source="images/NonRamsey8" />
+        </figure>
       </solution>
     </activity>
 
     <activity category="essential for this or the next section">
       <statement>
         <p>
-          Show that among ten people, there are either four mutual acquaintances
-          or three mutual strangers. What does this say about <m>R(4,3)</m>?
+          Show that among ten people, there are either four mutual acquaintances or three mutual strangers. What does this say about <m>R(4,3)</m>?
         </p>
       </statement>
       <solution>
         <p>
-          Take a person, say person 1. If person has six acquaintances, then
-          by <xref ref="R_3_3_">Problem</xref> among them there are either three mutual strangers,
-          in which case we are done, or three mutual acquaintances. These three
-          acquaintances together with person 1 form a set of 4 mutual acquaintances in
-          which case we are again done. Thus we may assume Person 1 has at most 5
-          acquaintances, and so has four non-acquaintances. Now either all four of
-          these people are acquainted, in which case we are done, or else two of them
-          are not acquainted. Then these two people, together with person 1 make three
-          mutual nonacquaintances. Therefore in every possible case, we have either
-          four mutual acquaintances or three mutual strangers. This means that <m>R(4,3)
-          \le 10</m>.
+          Take a person, say person 1. If person has six acquaintances, then by <xref ref="R_3_3_" autoname="yes" /> among them there are either three mutual strangers, in which case we are done, or three mutual acquaintances. These three acquaintances together with person 1 form a set of 4 mutual acquaintances in which case we are again done. Thus we may assume Person 1 has at most 5 acquaintances, and so has four non-acquaintances. Now either all four of these people are acquainted, in which case we are done, or else two of them are not acquainted. Then these two people, together with person 1 make three mutual nonacquaintances. Therefore in every possible case, we have either four mutual acquaintances or three mutual strangers. This means that <m>R(4,3) \le 10</m>.
         </p>
       </solution>
     </activity>
@@ -900,36 +626,19 @@
         </p>
       </statement>
       <solution>
-        <p>
-          Suppose we add, for each person, the number of people with whom he
-          or she is acquainted. Then we get twice the number of acquaintance edges in
-          the graph of acquaintance and non-acquaintance relationships. Thus the sum
-          must be even. But if each person among an odd number of people were
-          acquainted with an odd number of people, then the sum would be odd. Since
-          this is a contradiction, among an odd number of people, there must be at
-          least one who is acquainted with an even number of people. Since the number
-          of people different from this person is even, the number of people with whom
-          this person is not acquainted is also even.
+        <p>Suppose we add, for each person, the number of people with whom he or she is acquainted. Then we get twice the number of acquaintance edges in the graph of acquaintance and non-acquaintance relationships. Thus the sum must be even. But if each person among an odd number of people were acquainted with an odd number of people, then the sum would be odd. Since this is a contradiction, among an odd number of people, there must be at least one who is acquainted with an even number of people. Since the number of people different from this person is even, the number of people with whom this person is not acquainted is also even.
         </p>
       </solution>
     </activity>
 
     <activity xml:id="R_4_3_not8" category="essential for this or the next section">
       <statement>
-        <p>
-          Find a way to color the edges of a <m>K_8</m> with red and green so that
-          there is no red <m>K_4</m> and no green <m>K_3</m>.
+        <p>Find a way to color the edges of a <m>K_8</m> with red and green so that there is no red <m>K_4</m> and no green <m>K_3</m>.
         </p>
       </statement>
       <solution>
         <p>
-          In the graph
-          \mbox{
-          <image width="73%" source="images/" />
-          }
-          there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are
-          solid. By symmetry, to verify this you need only look at vertex 1 and
-          vertices connected to it by either dashed lines or by solid lines.
+          In the graph shown in <xref ref="NonRamsey8" autoname="yes" />, there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are solid. By symmetry, to verify this you need only look at vertex 1 and vertices connected to it by either dashed lines or by solid lines.
         </p>
       </solution>
     </activity>
@@ -942,28 +651,13 @@
       </statement>
       <solution>
         <p>
-          <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8">Problem</xref> we showed that <m>R(4,3)</m> is
-          more than 8. So we must show that if we have nine people, we either have 4
-          mutual acquaintances or three mutual strangers. By <xref ref="OddNoPeople">Problem</xref>
-          there is at least one person (say person A) who is acquainted with an even
-          number of people. If person A is acquainted with six or more people, then
-          among these six people, there are either three mutual acquaintances or three
-          mutual strangers. If there are three mutual strangers, we are done; if there
-          are three mutual acquaintances, they, together with Person A
-          are four mutual acquaintances. Thus we may assume Person A is acquainted
-          with at most four people. Thus person A is a stranger to at least four
-          people. If two of these people are strangers, then they, together with
-          person A form three mutual strangers and we are done. Otherwise all of these
-          people know each other and we have at least four mutual acquaintances, and so
-          in every possible situation, we have either four mutual acquaintances or
-          three mutual strangers.
+          <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8" autoname="yes" /> we showed that <m>R(4,3)</m> is more than 8. So we must show that if we have nine people, we either have 4 mutual acquaintances or three mutual strangers. By <xref ref="OddNoPeople" autoname="yes" /> there is at least one person (say person A) who is acquainted with an even number of people. If person A is acquainted with six or more people, then among these six people, there are either three mutual acquaintances or three mutual strangers. If there are three mutual strangers, we are done; if there are three mutual acquaintances, they, together with Person A are four mutual acquaintances. Thus we may assume Person A is acquainted with at most four people. Thus person A is a stranger to at least four people. If two of these people are strangers, then they, together with person A form three mutual strangers and we are done. Otherwise all of these people know each other and we have at least four mutual acquaintances, and so in every possible situation, we have either four mutual acquaintances or three mutual strangers.
         </p>
       </solution>
     </activity>
 
     <p>
-      As of this writing, relatively few Ramsey Numbers are known. <m>R(3,n)</m> is
-      known for <m>n\lt 10</m>, <m>R(4,4) = 18</m>, and <m>R(5,4)=R(4,5)=25</m>.
+      As of this writing, relatively few Ramsey Numbers are known. <m>R(3,n)</m> is known for <m>n\lt 10</m>, <m>R(4,4) = 18</m>, and <m>R(5,4)=R(4,5)=25</m>.
     </p>
   </subsection>
 </section>
