@@ -172,7 +172,7 @@
 <!-- Create tasks formatting: -->
 
 <xsl:template match="task">
-  <xsl:if test="not(preceding-simpling)">
+  <xsl:if test="not(preceding-sibling)">
     <xsl:text>~\par&#xa;</xsl:text>
   </xsl:if>
   <xsl:choose>
