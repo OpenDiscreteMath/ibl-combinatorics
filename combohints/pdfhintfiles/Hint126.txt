@@ -1,0 +1,36 @@
+<hint>
+  <p>
+
+
+
+
+
+
+
+
+Note that n+k−1
+= n+k−1
+. So we have to figure out how choosing either
+k
+n−1
+k elements or n − 1 elements out of n + k − 1 elements constitutes the choice
+of a multiset. We really have no idea what set of n + k − 1 objects to use,
+so why not use [n + k − 1]? If we choose n − 1 of these objects, there are
+k left over, the same number as the number of elements of our multiset.
+Since our multiset is supposed to be chosen from an n-element set, perhaps
+we should let the n-element set be [n]. From our choice of n − 1 numbers,
+we have to decide on the multiplicity of 1 through n. For example with
+n = 4 and k = 6, we have n + k − 1 = 9. Here, shown with underlines, is a
+selection
+of 3 = n − 1 elements from [9]: 1, 2, 3, 4 underline5, 6, 7, 8, 9. Note
+
+n+k−1
+that
+= n+k−1
+. How do the underlined elements give us a multiset
+k
+n−1
+of size 6 chosen from an [4]-element set? In this case, 1 has multiplicity 2, 2
+has multiplicity 1, 3 has multiplicity 2, and 4 has multiplicity 1.
+  </p>
+</hint>

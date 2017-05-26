@@ -1,0 +1,21 @@
+<hint>
+  <p>
+Suppose we have a partition of k into distinct parts. If the smallest part,
+say m, is smaller than the number of parts, we may add one to each of
+the m largest parts and delete the smallest part, and we have changed the
+parity of the number of parts, but we still have distinct parts. On the other
+hand, suppose the smallest part, again say m, is larger than or equal to the
+number of parts. Then we can subtract 1 from each part larger than m, and
+add a part equal to the number of parts larger than m. This changes the
+parity of the number of parts, but if the second smallest part is m + 1, the
+resulting partition does not have distinct parts. Thus this method does not
+2
+work. Further, if it did always work, the case k 6= 3j 2+j would be covered
+also. However you can modify this method by comparing m not to the total
+number of parts, but to the number of rows at the top of the Young diagram
+that differ by exactly one from the row above. Even in this situation, there
+are certain slight additional assumptions you need to make, so this hint leaves
+you a lot of work to do. (It is reasonable to expect problems because of that
+exceptional case.) However, it should lead you in a useful direction.
+  </p>
+</hint>
