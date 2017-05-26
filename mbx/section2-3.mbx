@@ -8,6 +8,7 @@
           In a part of a city, all streets run either north-south or east-west, and there are no dead ends. Suppose we are standing on a street corner. In how many ways may we walk to a corner that is four blocks north and six blocks east, using as few blocks as possible?
         </p>
       </statement>
+
       <solution>
         <p>
           The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>10\choose 4</m> ways to make this selection.
@@ -318,9 +319,9 @@
 
           <p>
             <m>\{k_1,k_2,\ldots, k_i\}\cup
-            \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>. 
+            \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>.
           </p>
-              
+
           </solution>
       </task>
       <task>
@@ -331,7 +332,7 @@
           <solution>
               <p>
                   You can choose the set
-            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways. 
+            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways.
               </p>
           </solution>
       </task>
@@ -358,7 +359,7 @@
               </p>
           </statement>
           <solution>
-              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>. 
+              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>.
               </p>
           </solution>
       </task>
@@ -430,7 +431,7 @@
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
           binomial theorem we get <m>\sum_{i=0}^m{m\choose i}{n\choose  k-i}</m> as the
           coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>m+n\choose k</m> on the
-          right hand side. 
+          right hand side.
         </p>
         <p>For a second explanation, to choose <m>k</m> elements out of the union of an <m>m</m>-element set and a disjoint <m>n</m>-element set, chose some number <m>i\le m</m> of them from the <m>m</m>-element set and the remaining <m>k-i</m> of them from the <m>n</m>-element set. The sum on the left hand side of the equation simply sums the number of such choices over all possible <m>i</m>, and the binomial coefficient on the right hand side of the equation says we will end up choosing <m>k</m> elements from among our <m>m+n</m> elements.
         </p>

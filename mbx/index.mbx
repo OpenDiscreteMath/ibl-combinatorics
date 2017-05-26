@@ -17,7 +17,7 @@
 $\cdot$\ \theenumi.]}
 \newcommand{\itemm}{
 \item[\ $\circ$\ \theenumi.]}
-\newcommand{\importantarrow}{\psfig{figure=arrow.eps}}
+\newcommand{\importantarrow}{$\Rightarrow$}
 \newcommand{\itemi}{
 \item[\ \importantarrow\ \theenumi.]}
 \newcommand{\itemitemi}{
@@ -39,11 +39,11 @@ $\cdot$\ \theenumi.]}
 \newcommand{\ignore}[1]{}
 \renewcommand{\bottomfraction}{.8}
 \renewcommand{\topfraction}{.8}
-\newcommand{\apple}{\mbox{\psfig{figure=apple.eps,height=10 pt}}}
+\newcommand{\apple}{\mbox{A}}
 \newcommand{\ap}{\apple}
-\newcommand{\banana}{\mbox{\psfig{figure=Banana.eps,height=10 pt}}}
+\newcommand{\banana}{\mbox{B}}
 \newcommand{\ba}{\banana}
-\newcommand{\pear}{\mbox{\psfig{figure=Pear.eps,height=10 pt}}}
+\newcommand{\pear}{\mbox{P}}
 \newcommand{\pe}{\pear}
 </macros>
 
@@ -80,9 +80,12 @@ $\cdot$\ \theenumi.]}
 </frontmatter>
 <xi:include href="./chapter2.mbx" />
 
+<!--
 <xi:include href="./InductionRecursion.mbx" />
+-->
 
 <xi:include href="./chapter4.mbx" />
+<!--
 
 <xi:include href="./chapter5.mbx" />
 
@@ -93,6 +96,7 @@ $\cdot$\ \theenumi.]}
 <xi:include href="./Induction.mbx" />
 
 <xi:include href="./expogenfun.mbx" />
+-->
 
 <backmatter>
 
