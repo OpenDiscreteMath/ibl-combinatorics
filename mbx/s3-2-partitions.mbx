@@ -1,21 +1,7 @@
-
 <section>
   <title>Partitions and Stirling Numbers</title>
   <introduction>
-    <p>
-      We have seen how the number of
-      partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the
-      distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While
-      there is a formula that we shall eventually learn for this number, it
-      requires more machinery than we now have available. However there is a
-      good method for computing this number that is similar to Pascal's
-      equation. Now that we have studied recurrences in one variable, we will
-      point out that Pascal's equation is in fact a <em>recurrence in two
-      variables</em><index><main>recurrence</main><sub>two
-      variable</sub></index>; that is it lets us compute <m>n\choose k</m> in terms of values of
-      <m>m\choose i</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact
-      that we had such a recurrence and knew <m>n\choose 0</m> and <m>n\choose n</m> that
-      let us create Pascal's triangle.
+    <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><index><main>recurrence</main><sub>two variable</sub></index>; that is it lets us compute <m>n\choose k</m> in terms of values of <m>m\choose i</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>n\choose 0</m> and <m>n\choose n</m> that let us create Pascal's triangle.
     </p>
   </introduction>
 
@@ -60,20 +46,15 @@
       <task>
         <statement>
           <p>
-            What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of
-            <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table
-            is sometimes called <em>Stirling's Triangle (of the
-            second kind)</em><index><main>Stirling's triangle</main><sub>second kind</sub></index> How would you define
-            <m>S(k,n)</m> for the nonnegative values of
-            <m>k</m> and
-            <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is
-            your two variable recurrence valid?
+            What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table is sometimes called <term>Stirling's Triangle (of the second kind)</term><index><main>Stirling's triangle</main><sub>second kind</sub></index> How would you define <m>S(k,n)</m> for the nonnegative values of <m>k</m> and <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is your two variable recurrence valid?
           </p>
         </statement>
         <solution>
           <p>
             <m>S(k,1)=1</m> and <m>S(k,k)=1</m>.
           </p>
+          <table xml:id="stirling-triangle-second">
+              <caption>Stirling's Triangle of the second kind</caption>
           <tabular>
             <row>
               <cell><m>k\backslash n</m></cell>
@@ -156,15 +137,9 @@
               <cell>0</cell>
             </row>
           </tabular>
+          </table>
           <p>
-            As you see in the table, we
-            define <m>S(0,0)=1</m>, and <m>S(0,n)</m> or <m>S(k,0)</m> to be 0 otherwise. This
-            makes sense because for <m>n>0</m> there is no partition of an empty set
-            into <m>n</m> parts, and for <m>k>0</m> there is no partition of a <m>k</m>-element
-            set into no parts, but saying there is one partition of the empty set
-            into no parts allows us to use our recurrence to compute <m>S(1,1)</m>.
-            This makes our recurrence valid for all nonnegative values of <m>k</m> and
-            <m>n</m>.
+            As you see in the table, we define <m>S(0,0)=1</m>, and <m>S(0,n)</m> or <m>S(k,0)</m> to be 0 otherwise. This makes sense because for <m>n>0</m> there is no partition of an empty set into <m>n</m> parts, and for <m>k>0</m> there is no partition of a <m>k</m>-element set into no parts, but saying there is one partition of the empty set into no parts allows us to use our recurrence to compute <m>S(1,1)</m>.  This makes our recurrence valid for all nonnegative values of <m>k</m> and <m>n</m>.
           </p>
         </solution>
       </task>
@@ -193,12 +168,7 @@
       <task>
         <statement>
           <p>
-            The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more
-            realistic question; in how many ways may the caterer distribute the nine
-            sandwich's into three identical bags so that each bag gets exactly
-            three? Answer this question. (Hint, what if the question asked about
-            six sandwiches and two distinct bags? How does having identical bags
-            change the answer?)
+            The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more realistic question; in how many ways may the caterer distribute the nine sandwich's into three identical bags so that each bag gets exactly three? Answer this question. (Hint, what if the question asked about six sandwiches and two distinct bags? How does having identical bags change the answer?)
           </p>
         </statement>
         <solution>
@@ -216,39 +186,24 @@
       <task>
         <statement>
           <p>
-            In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that
-            we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that
-            <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence
-            <m>k_1,k_2,\ldots,k_n</m> is called the <em>type vector</em> of the
-            partition.<index><main>partition of a set</main><sub> type vector</sub></index><index><main>type vector of a
-            partition of a set</main></index>
+            In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence <m>k_1,k_2,\ldots,k_n</m> is called the <term>type vector</term> of the partition.<index><main>partition of a set</main><sub>type vector</sub></index><index><main>type vector of a partition of a set</main></index>
           </p>
         </statement>
         <solution>
           <p>
-            <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m>. We can make a
-            list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1,
-            then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks
-            of size <m>n</m>. But then we realize that we get the same partition if we
-            permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same
-            partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the
-            quotient principle.
+            <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m>. We can make a list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1, then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks of size <m>n</m>. But then we realize that we get the same partition if we permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the quotient principle.
           </p>
         </solution>
       </task>
       <task>
         <statement>
           <p>
-            Describe how to compute <m>S(n,k)</m> in terms of quantities given by
-            the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
+            Describe how to compute <m>S(n,k)</m> in terms of quantities given by the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
           </p>
         </statement>
         <solution>
           <p>
-            We can find <m>S(n,k)</m> by summing <m>n!\over \prod_{i=1}^n
-            (i!)^{k_i}{k_i!}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such
-            that
-            <m>k_1+k_2+\cdots+k_n=k</m>.
+            We can find <m>S(n,k)</m> by summing <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
           </p>
         </solution>
       </task>
@@ -274,7 +229,7 @@
 
     <activity xml:id="BellNumberIntro" category="essential for this or the next section">
       <p>
-        (Relevant in <xref ref="expogenfun">Appendex</xref>.) The total number of
+        (Relevant in <xref ref="expogenfun" autoname="yes" />.) The total number of
         partitions of a
         <m>k</m>-element set is denoted by
         <m>B(k)</m> and is called the <m>k</m>-th <em>Bell number</em><index><main>Bell
@@ -348,21 +303,12 @@
     <activity category="motivation">
       <statement>
         <p>
-          Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element
-          set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same
-          block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does
-          the partition have if <m>f</m> is onto? How is the number of functions from a
-          <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be
-          as precise in your answer as you can.<index><main>function</main><sub>onto!and Stirling
-          Numbers</sub></index><index><main>onto function</main><sub>counting</sub></index>
+          Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does the partition have if <m>f</m> is onto? How is the number of functions from a <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be as precise in your answer as you can.<index><main>function</main><sub>onto!and Stirling Numbers</sub></index><index><main>onto function</main><sub>counting</sub></index>
         </p>
       </statement>
       <solution>
         <p>
-          If <m>f</m> is onto, the number of blocks of the partition is
-          <m>n</m>. The number of onto functions from a <m>k</m>-element set onto an
-          <m>n</m>-element set is <m>S(k,n)n!</m>, because we have a one-to-one function
-          from the blocks to the <m>n</m>-element set.
+          If <m>f</m> is onto, the number of blocks of the partition is <m>n</m>. The number of onto functions from a <m>k</m>-element set onto an <m>n</m>-element set is <m>S(k,n)n!</m>, because we have a one-to-one function from the blocks to the <m>n</m>-element set.
         </p>
       </solution>
     </activity>
@@ -370,13 +316,7 @@
     <activity xml:id="Stirlingfalling" category="essential">
       <statement>
         <p>
-          Each function from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m>
-          is a function from <m>K</m> onto <em>some</em> subset of <m>N</m>. If <m>J</m> is a subset
-          of <m>N</m> of size <m>j</m>, you know how to compute the number of functions that
-          map onto <m>J</m> in terms of Stirling numbers. Suppose you add the number of
-          functions mapping onto <m>J</m> over all possible subsets <m>J</m> of <m>N</m>. What
-          simple value should this sum equal? Write the equation this gives
-          you.
+          Each function from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m> is a function from <m>K</m> onto <em>some</em> subset of <m>N</m>. If <m>J</m> is a subset of <m>N</m> of size <m>j</m>, you know how to compute the number of functions that map onto <m>J</m> in terms of Stirling numbers. Suppose you add the number of functions mapping onto <m>J</m> over all possible subsets <m>J</m> of <m>N</m>. What simple value should this sum equal? Write the equation this gives you.
         </p>
       </statement>
       <solution>
@@ -392,8 +332,7 @@
     <activity category="motivation">
       <statement>
         <p>
-          In how many ways can the sandwiches of <xref ref="sandwiches">Problem</xref> be
-          placed into three distinct bags so that each bag gets at least one?
+          In how many ways can the sandwiches of <xref ref="sandwiches">Problem</xref> be placed into three distinct bags so that each bag gets at least one?
         </p>
       </statement>
       <solution>
@@ -406,15 +345,12 @@
     <activity category="motivation">
       <statement>
         <p>
-          In how many ways can the sandwiches of <xref ref="caterer2">Problem</xref> be
-          placed into distinct bags so that each bag gets exactly three?
+          In how many ways can the sandwiches of <xref ref="caterer2">Problem</xref> be placed into distinct bags so that each bag gets exactly three?
         </p>
       </statement>
       <solution>
         <p>
-          Choose three sandwiches for bag one in <m>9\choose3</m> ways,
-          three for bag two in <m>6\choose3</m> ways and put the remainder in bag 3.
-          This gives us <m>{9\choose3}{6\choose3}={9!\over3!3!3!}=1680</m> ways.
+          Choose three sandwiches for bag one in <m>9\choose3</m> ways, three for bag two in <m>6\choose3</m> ways and put the remainder in bag 3.  This gives us <m>{9\choose3}{6\choose3}={9!\over3!3!3!}=1680</m> ways.
         </p>
 
         <p>
@@ -432,11 +368,7 @@
       <task>
         <statement>
           <p>
-            How many functions are there from a <m>k</m>-element set <m>K</m> to a set
-            <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of
-            <m>K</m> for each <m>i</m> from 1 to <m>n</m>? This number is called a <em>multinomial
-            coefficient</em><index><main>multinomial
-            coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
+            How many functions are there from a <m>k</m>-element set <m>K</m> to a set <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of <m>K</m> for each <m>i</m> from 1 to <m>n</m>? This number is called a <em>multinomial coefficient</em><index><main>multinomial coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
             <me>
               {k\choose
               j_1,j_2,\ldots, j_n}.
@@ -452,28 +384,19 @@
               {k\choose j_1}{k-j_1\choose
               j_2}{k-j_1-j_2\choose j_3}\cdots{j_n\choose j_n},
             </me>
-            or more elegantly,
-            by lining up the elements of the domain in <m>k!</m> ways, taking the first
-            <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.
-            However the order of the <m>j_i</m> elements that go to <m>y_i</m> is
-            irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same
-            function, giving us <m>k!\over j_1!j_2!,\cdots j_n!</m> functions.
+            or more elegantly, by lining up the elements of the domain in <m>k!</m> ways, taking the first <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.  However the order of the <m>j_i</m> elements that go to <m>y_i</m> is irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same function, giving us <m>k!\over j_1!j_2!,\cdots j_n!</m> functions.
           </p>
         </solution>
       </task>
       <task>
         <statement>
           <p>
-            Explain how to compute the number of functions from a <m>k</m>-element
-            set <m>K</m> onto an <m>n</m>-element set <m>N</m> by using multinomial coefficients.
+            Explain how to compute the number of functions from a <m>k</m>-element set <m>K</m> onto an <m>n</m>-element set <m>N</m> by using multinomial coefficients.
           </p>
         </statement>
         <solution>
           <p>
-            Add the multinomial coefficients <m>k\choose
-            j_1,j_2,\ldots,j_n</m> in which each <m>j_i</m> is different from zero. To
-            see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting
-            functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
+            Add the multinomial coefficients <m>k\choose j_1,j_2,\ldots,j_n</m> in which each <m>j_i</m> is different from zero. To see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
           </p>
         </solution>
       </task>
@@ -489,27 +412,7 @@
       </statement>
       <solution>
         <p>
-          When we use the distributive law to multiply out
-          <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the
-          form
-          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.
-          The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of
-          exponents will arise from choosing, as we apply the distributive law
-          over and over again,
-          <m>x_1</m> from
-          <m>i_1</m> of the factors,
-          <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms
-          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to
-          label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2,
-          <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do
-          this is a multinomial coefficient, as we now explain. This labeling
-          gives us a function from
-          <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i)
-          =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps
-          <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the
-          coefficient of
-          <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial
-          coefficient <m>k\choose i_1,i_2,\ldots, i_n</m>.
+          When we use the distributive law to multiply out <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the form <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.  The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of exponents will arise from choosing, as we apply the distributive law over and over again, <m>x_1</m> from <m>i_1</m> of the factors, <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2, <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i) =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the coefficient of <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial coefficient <m>k\choose i_1,i_2,\ldots, i_n</m>.
         </p>
       </solution>
     </activity>
@@ -520,16 +423,7 @@
     <activity xml:id="powersfromfalling" category="essential for this or the next section">
       <statement>
         <p>
-          Find a way to express <m>n^k</m> in terms of
-          <m>k^{\underline{j}}</m> for appropriate values <m>j</m>. You may use Stirling
-          numbers if they help you. Notice that
-          <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could
-          range over the rational numbers, the real numbers, or even the complex
-          numbers instead of only the nonnegative integers, as we are implicitly
-          assuming <m>n</m> does), just as
-          <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the
-          polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain
-          why your formula is correct.
+          Find a way to express <m>n^k</m> in terms of <m>k^{\underline{j}}</m> for appropriate values <m>j</m>. You may use Stirling numbers if they help you. Notice that <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming <m>n</m> does), just as <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain why your formula is correct.
         </p>
       </statement>
       <solution>
@@ -599,8 +493,8 @@
       <m>x</m> each form a basis for the
       <q>space</q> of polynomials, and that the numbers
       <m>S(k,n)</m> are <q>change of basis coefficients.</q> If you are not familiar
-      with linear algebra, a <em>basis</em><index><main>basis (for polynomials)</main></index> for the
-      <em>space of polynomials</em><fn>The space of polynomials is just
+      with linear algebra, a <term>basis</term><index><main>basis (for polynomials)</main></index> for the
+      <term>space of polynomials</term><fn>The space of polynomials is just
       another name for the set of all polynomials.<index><main>space of polynomials</main></index></fn>
       is a set of polynomials such that each polynomial, whether in that set or
       not, can be expressed in one and only one way as a sum of numerical
@@ -610,17 +504,7 @@
     <activity category="motivation">
       <statement>
         <p>
-          Show that every power of <m>x+1</m> is expressible as a sum of
-          numerical multiples of powers of <m>x</m>. Now show that every power of <m>x</m>
-          (and thus every polynomial in
-          <m>x</m>) is a sum of numerical multiples (some of which could be negative) of
-          powers of
-          <m>x+1</m>. This means that the powers of
-          <m>x+1</m> are a basis for the space of polynomials as well. Describe the
-          change of basis coefficients that we use to express the binomial powers
-          <m>(x+1)^n</m> in terms of the ordinary <m>x^j</m> explicitly. Find the change of
-          basis coefficients we use to express the ordinary powers <m>x^n</m> in terms
-          of the binomial powers <m>(x+1)^k</m>.
+          Show that every power of <m>x+1</m> is expressible as a sum of numerical multiples of powers of <m>x</m>. Now show that every power of <m>x</m> (and thus every polynomial in <m>x</m>) is a sum of numerical multiples (some of which could be negative) of powers of <m>x+1</m>. This means that the powers of <m>x+1</m> are a basis for the space of polynomials as well. Describe the change of basis coefficients that we use to express the binomial powers <m>(x+1)^n</m> in terms of the ordinary <m>x^j</m> explicitly. Find the change of basis coefficients we use to express the ordinary powers <m>x^n</m> in terms of the binomial powers <m>(x+1)^k</m>.
         </p>
       </statement>
       <solution>
@@ -630,22 +514,11 @@
             (x+1)^n=\sum_{i=0}^n {n\choose
             i}x^{i}
           </men>
-          from the binomial
-          theorem. (In the way we stated the binomial theorem, instead of
-          <m>{n\choose i}x^i</m> we would have gotten
-          <m>{n\choose i}x^{n-i}</m>. There are two ways to fix this. One is to
-          observe that the coefficient of
-          <m>x^i</m> in that expansion is <m>n\choose n-i</m>, which equals <m>n\choose
-          i</m>. The other is to observe that when we expand <m>(1+x)^n</m> according
-          to the binomial theorem we get exactly what we wrote on the right hand
-          side in <xref ref="usingbinomialtheorem">Equation</xref>.) Therefore every power of <m>x+1</m> is
-          expressible in terms of powers of <m>x</m>.
+          from the binomial theorem. (In the way we stated the binomial theorem, instead of <m>{n\choose i}x^i</m> we would have gotten <m>{n\choose i}x^{n-i}</m>. There are two ways to fix this. One is to observe that the coefficient of <m>x^i</m> in that expansion is <m>n\choose n-i</m>, which equals <m>n\choose i</m>. The other is to observe that when we expand <m>(1+x)^n</m> according to the binomial theorem we get exactly what we wrote on the right hand side in <xref ref="usingbinomialtheorem">Equation</xref>.) Therefore every power of <m>x+1</m> is expressible in terms of powers of <m>x</m>.
         </p>
 
         <p>
-          How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some
-          experimentation would help us guess how to do so; however there is a
-          really nice trick that also isn't hard to see. Namely, we can write
+          How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some experimentation would help us guess how to do so; however there is a really nice trick that also isn't hard to see. Namely, we can write
           <md>
             <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n {n\choose
             i}(x+1)^{n-i}(-1)^i</mrow>
