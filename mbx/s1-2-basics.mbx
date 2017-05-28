@@ -505,15 +505,15 @@
       <statement>
         <p>
           If we make a sequence of <m>m</m> choices for
-          which -+ There are <m>k_1</m> possible first choices, and
-        </p>
-
-        <p>
-          -+ for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to
-          make the <m>i</m>th choice,
-        </p>
-
-        <p>
+          which 
+          <ul>
+            <li>
+              there are <m>k_1</m> possible first choices, and
+            </li>
+            <li>
+              for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to make the <m>i</m>th choice,
+            </li>
+          </ul>
           then in how many ways may we
           make our sequence of choices? (You need not prove your answer correct at
           this time.)
@@ -628,7 +628,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </solution>
       </task>
     </activity>
-</subsection></section>
+</subsection>
 
     <activity xml:id="generalproductprinciple" category="summary">
       <statement>
@@ -653,23 +653,19 @@ many ways can you pair up the next person who isn’t already paired up?
         <p>
           What we have assumed so far about the functions in <m>S</m> may be
           summarized as
-        </p>
-
-        <p>
-          -+ There are <m>k_1</m> choices for <m>f(1)</m>.
-        </p>
-
-        <p>
-          -+ For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m>
-          choices for<nbsp /><m>f(i)</m>.
-        </p>
-
-        <p>
-          How many functions are in the set
-          <m>S</m>? Is there any practical difference between the result of this
-          problem and the general product principle?
+        <ul>
+         <li>
+           There are <m>k_1</m> choices for <m>f(1)</m>.
+         </li>
+         <li>
+           For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m> choices for<nbsp /><m>f(i)</m>.
+         </li>
+        </ul>
         </p>
       </statement>
+      <p>
+        How many functions are in the set <m>S</m>? Is there any practical difference between the result of this problem and the general product principle?
+      </p>
       <solution>
         <p>
           <m>\prod_{i=1}^m k_i</m>.
@@ -691,15 +687,18 @@ many ways can you pair up the next person who isn’t already paired up?
           has room for two people. If <m>n</m> men and <m>n</m> women get into the car with a
           man and a woman in each row, in how many ways may they choose their seats?
         </p>
-        <solution>
+      </statement>
+      <hint>
+        <p>
+          In how many ways may you assign the men to their rows? The women? Once a woman and a man have a row to share, in how many ways may they choose their seats?
+        </p>
+      </hint>
+
+      <solution>
         <p>
           <m>(n!)^22^n</m>
         </p>
-        </solution>
-        <p>
-          Prove
-        </p>
-      </statement>
+      </solution>
     </activity>
 
     <activity category="summary">
@@ -742,6 +741,11 @@ many ways can you pair up the next person who isn’t already paired up?
           How many subsets does a set <m>S</m> with <m>n</m> elements have?
         </p>
       </statement>
+      <hint>
+        <p>
+          Try applying the product principle in the case n = 2 and n = 3. How might you apply it in general?
+        </p>
+      </hint>
       <solution>
         <p>
           For each of the <m>n</m> elements of <m>S</m>, we have two options:
@@ -760,6 +764,16 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>k>n</m>? Assume for both questions that we pass out all the fruit.
         </p>
       </statement>
+      <hint>
+        <p>
+          Ask yourself if either the sum principle or product principle applies.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Remember that zero is a number.
+        </p>
+      </hint>
       <solution>
         <p>
           We are asking for the number of <m>k</m>-element permutations of <m>n</m>
@@ -772,8 +786,8 @@ many ways can you pair up the next person who isn’t already paired up?
       <statement>
         <p>
           Another name for a list, in a specific order, of <m>k</m> distinct things
-          chosen from a set <m>S</m> is a <m>\mathbf k</m>-<em>element permutation of</em>
-          <m>\mathbf S</m>.<index><main>permutation</main><sub>
+          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of 
+          <m>S</m>.<index><main>permutation</main><sub>
           <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
           one-to-one function (or, in other words, injection) from
           <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
@@ -786,20 +800,18 @@ many ways can you pair up the next person who isn’t already paired up?
         <p>
           By the general product principle, the number is
           <me>
-            \prod_{i=1}^k
-            n-i+1
+            \prod_{i=1}^k(n-i+1).
           </me>
-        </p>
 
-        <p>
-          . In the case that <m>k>n</m>, there are no such lists
+          In the case that <m>k>n</m>, there are no such lists
           with distinct entries, and that is what the formula gives us, because
           <m>n-(n+1)+1=0</m>.
         </p>
       </solution>
     </activity>
-
-    <p>
+</section>
+<!-- 
+     <p>
       There are a number of different notations for the number of <m>k</m>-element
       permutations of an <m>n</m>-element set. The one we shall use was introduced by
       Don Knuth; namely <m>n^{\underline{k}}</m>, read <q><m>n</m> to the <m>k</m> falling</q> or
@@ -1043,6 +1055,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </solution>
     </activity>
+
 
     <p>
       Notice that there is a great deal of consistency between the use of
