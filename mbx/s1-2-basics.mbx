@@ -103,9 +103,9 @@
           sandwiches are available?
         </p>
       </statement>
-      <hint>
+      <hint><p>
         For each kind of bread, how many sandwiches are possible?
-      </hint>
+      </p></hint>
       <solution>
         <p>
           <m>3\cdot5=15</m>, or <m>5+5+5=15</m>.
@@ -180,9 +180,9 @@
           of ice cream will be available?
         </p>
       </statement>
-      <hint>
+      <hint><p>
         Try to solve the problem first with a two-scoop cone. (Look for an earlier problem that is analogous.) Then, for each two scoop cone, in how many ways can you put on a top scoop?
-      </hint>
+      </p></hint>
       <solution>
         <p>
           <m>12\cdot12\cdot12 =1728</m> possible cones. If the flavors must be
@@ -219,9 +219,9 @@
           set <m>\{1,2\}</m> to the set
           <m>\{a,b\}</m>?
         </p>
-        <hint>
+        <hint><p>
           Ask yourself “how many choices do we have for <m>f(1)</m>?” Then ask how many choices we have for <m>f(2)</m>.
-        </hint>
+        </p></hint>
         <solution>
           <p>
             <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
@@ -240,9 +240,9 @@
              to the two element set <m>\{a,b\}</m>?
           </p>
         </statement>
-        <hint>
+        <hint><p>
           It may not be practical to write down rules for all the functions for this problem. But you could ask yourself how many choices we have for <m>f(1)</m>, how many we have for <m>f(2)</m> and how many we have for <m>f(3)</m>.
-        </hint>
+        </p></hint>
         <solution>
           <p>
             <m>2\cdot2\cdot2 = 8</m>
@@ -256,9 +256,9 @@
             three element set <m>\{1,2,3\}</m>?
           </p>
         </statement>
-        <hint>
+        <hint><p>
           If you are choosing a function <m>f</m>, how many choices do you have for <m>f(a)</m>? Then how many choices do you have for <m>f(b)</m>?
-        </hint>
+        </p></hint>
         <solution>
           <p>
             <m>3\cdot3=9</m>
@@ -330,9 +330,9 @@
               flavors out of the 12 flavors?
           </p>
         </statement>
-        <hint>
+        <hint><p>
           You know how to figure out in how many ways they could make a list of three flavors out of the twelve. But each set of three flavors can be listed in a number of different ways. Try to figure out in how many ways a set of three flavors can be listed, and then try to see how this helps you.
-        </hint>
+        </p></hint>
         <solution>
           <p>
             There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
@@ -349,9 +349,9 @@
               don't have to be different?
           </p>
         </statement>
-        <hint>
+        <hint><p>
           Try to break the problem up into cases you can solve by previous methods; then figure out how to get the answer to the problem by using these answers for the cases.
-        </hint>
+        </p></hint>
         <solution>
           <p>
             If the flavors need not be different, we must add in the number of ways
@@ -407,8 +407,8 @@
         </p>
       </solution>
     </activity>
-  </introduction></section>
-<!-- 
+  </introduction>
+
   <subsection>
     <title>The sum and product principles</title>
     <p>
@@ -416,8 +416,7 @@
       contain among them the kernels of many of the fundamental
       ideas of combinatorics. For example, with luck, you just <index><main>sum
       principle</main></index><index><main>principle</main><sub>sum</sub></index><index><main>principle</main><sub>product</sub></index> <index><main>product
-      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These are two of the most basic
-      principles of combinatorics.
+      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These two counting principles are the basis on which we will develop many other counting principles.
     </p>
 
     <figure xml:id="sumprinc" >
@@ -449,8 +448,8 @@
       and a filling choice. We use <m>A\times B</m> to stand for the set
       of all ordered pairs whose first element is in <m>A</m> and whose
       second element is in <m>B</m> and we call <m>A\times B</m> the
-      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><em>Cartesian
-      product</em> of
+      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><term>Cartesian
+      product</term> of
       <m>A</m> and
       <m>B</m>, so you can think of <xref ref="orderedpair">Problem</xref> as asking you for the size of the Cartesian
       product of
@@ -460,13 +459,13 @@
 
     <p>
       When a set <m>S</m> is a union of disjoint sets <m>B_1, B_2, \ldots, B_m</m> we say
-      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <em>partition</em><index><main>partition</main><sub>of a set</sub></index> of the set
+      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <term>partition</term><index><main>partition</main><sub>of a set</sub></index> of the set
       <m>S</m>. Thus a partition of <m>S</m> is a (special kind of) set of sets. So that
       we don't find ourselves getting confused between the set <m>S</m> and the sets
       <m>B_i</m> into which we have divided it, we often call the sets <m>B_1, B_2,
       \ldots, B_m</m> the <em>blocks</em><index><main>partition</main><sub>blocks of</sub></index><index><main>block of a
       partition</main></index> of the partition. In this language, the
-      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><em>sum principle</em> says that
+      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><term>sum principle</term>says that
     </p>
 
     <blockquote>
@@ -476,7 +475,7 @@
 
     <p>
       The
-      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><em>product principle</em> says
+      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><term>product principle</term> says
       that
     </p>
 
@@ -543,6 +542,13 @@
         In how many ways may we pair up all the members of the club? (Hint: consider the cases
           of 2, 4, and 6 members.)
         </p>
+        <hint>
+  <p>
+Suppose you have a list in alphabetical order of names of the members of the
+club. In how many ways can you pair up the first person on the list? In how
+many ways can you pair up the next person who isn’t already paired up?
+  </p>
+</hint>
         <solution>
           <p>
             Suppose we list the people in the club in some way, and keep that
