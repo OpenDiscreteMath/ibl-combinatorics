@@ -1,11 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_inclexcl-inclexcl">
   <title>The Principle of Inclusion and Exclusion</title>
   <subsection>
     <title>The size of a union of sets</title>
     <p>
       One of our very first counting
-      principles was the {sum principle}<index><main>sum principle</main></index> which says that
+      principles was the <em>sum principle</em><index><main>sum principle</main></index> which says that
       the size of a union of disjoint sets is the sum of their sizes.
       Computing the size of overlapping sets requires, quite naturally,
       information about how they overlap. Taking such information into account
@@ -221,7 +222,7 @@
             (-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|</mrow>
             <mrow>\amp =\amp \sum_{S:
             S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             \sum_{s=1}^n {n\choose
             s}(-1)^{s-1}(n-s)!</mrow>
             <mrow>\amp =\amp \sum_{s=1}^n
@@ -416,15 +417,15 @@
           solution to <xref ref="hatcheck">Problem</xref>, we see that one way to express this is as
           <md>
             <mrow>n!-\sum_{S:
-            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp 
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp
             n!+\sum_{S:
             S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             \sum_{S:
             S\subseteq [n]}(-1)^{|S|} (n-|S|)!</mrow>
             <mrow>\amp =\amp \sum_{S:
             S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             \sum_{S':
             S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
           </md>
@@ -838,12 +839,15 @@
         </solution>
       </task>
       <task xml:id="chromaticpoly" >
-        <p>
-        Find a formula (which may involve summing over all subsets <m>F</m> of
-        the edge set of the graph and using the number <m>\gamma(V,F)</m> of connected
-        components of the graph with vertex set <m>V</m> and edge set <m>F</m>) for the
-        number of proper colorings of
-        <m>G</m> using colors in the set <m>C</m>.
+        <statement>
+          <p>
+          Find a formula (which may involve summing over all subsets <m>F</m> of
+          the edge set of the graph and using the number <m>\gamma(V,F)</m> of connected
+          components of the graph with vertex set <m>V</m> and edge set <m>F</m>) for the
+          number of proper colorings of
+          <m>G</m> using colors in the set <m>C</m>.
+        </p>
+      </statement>
         <solution>
           <p>
             <m>N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
@@ -856,14 +860,14 @@
     <p>
       The formula you found in <xref ref="chromaticpoly">Problem</xref> is a formula that
       involves powers of <m>c</m>, and so it is a polynomial function of <m>c</m>. Thus
-      it is called the ``chromatic polynomial<index><main>graph</main><sub>chromatic
+      it is called the <term>chromatic polynomial</term><index><main>graph</main><sub>chromatic
       polynomial of</sub></index><index><main>chromatic polynomial of a graph</main></index> of the graph
       <m>G</m>. Since we like to think about polynomials as having a
       variable <m>x</m> and we like to think of <m>c</m> as standing for some constant,
       people often use <m>x</m> as the notation for the number of colors we are
       using to color <m>G</m>. Frequently people will use
       <m>\chi_G(x)</m> to stand for the number of way to color
-      <m>G</m> with <m>x</m> colors, and call <m>\chi_G(x)</m> the <em>chromatic polynomial</em> of
+      <m>G</m> with <m>x</m> colors, and call <m>\chi_G(x)</m> the <term>chromatic polynomial</term> of
       <m>G</m>.
     </p>
 
@@ -882,6 +886,7 @@
           number of ways to color a graph with <m>x</m> colors is a polynomial function
           of <m>x</m>.
         </p>
+      </statement>
         <solution>
         <p>
           The number of colorings of <m>G-e</m> is equal to the number of proper
@@ -904,6 +909,7 @@
         </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -941,7 +947,7 @@
             <m>(x-1)(x-2)(x-3)</m>. Using the deletion-contraction recurrence, we get that
             <md>
               <mrow>\chi_G(x) \amp =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)</mrow>
-              <mrow>\amp =\amp 
+              <mrow>\amp =\amp
               \chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
               \chi_{(G/\{1,2\})-\{2,3\}}(x)</mrow>
               <mrow>\amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)</mrow>
@@ -961,7 +967,6 @@
         <image width="73%" source="images/" />
         }
       </figure>
-      </statement>
     </activity>
 
     <activity category="interesting">
@@ -987,10 +992,10 @@
             for a path on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then
             by the deletion-contraction recurrence, we may write
             <md>
-              <mrow>\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp 
+              <mrow>\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp
               \chi_{P_n}(x)-\chi_{C_{n-1}}(x)</mrow>
               <mrow>\amp =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)</mrow>
-              <mrow>\amp =\amp 
+              <mrow>\amp =\amp
               \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
               \cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))</mrow>
               <mrow>\amp =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots</mrow>

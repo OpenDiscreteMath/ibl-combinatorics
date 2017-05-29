@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-05-29T09:49:23-06:00    *%
+%*    on 2017-05-29T10:09:10-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -99,6 +99,7 @@
 %% Style is like a theorem, and for statements without proofs
 %% Numbering: all theorem-like numbered consecutively
 %% i.e. Corollary 4.3 follows Theorem 4.2
+\newtheorem{corollary}[theorem]{Corollary}
 %% Numbering for Projects (independent of others)
 %% Controlled by  numbering.projects.level  processing parameter
 %% Always need a project environment to set base numbering scheme
@@ -1088,7 +1089,215 @@ n}>2^n/2=\sqrt{2}^{\rangle n}.
 \end{enumerate}
 \end{activity}
 \typeout{************************************************}
-\typeout{Section 1.2 Graphs and Trees}
+\typeout{Section 1.2 Recurrence Relations}
+\typeout{************************************************}
+\section[{Recurrence Relations}]{Recurrence Relations}\label{sec_induction-recurrence}
+\typeout{************************************************}
+\typeout{Introduction  }
+\typeout{************************************************}
+We have seen in {$\langle\langle$Unresolved xref, reference "SubsetsByInduction"; check spelling or use "provisional" attribute$\rangle\rangle$} (or {$\langle\langle$Unresolved xref, reference "subsetsbysmallestcounterexample"; check spelling or use "provisional" attribute$\rangle\rangle$} in the Appendix on Induction) that the number of subsets of an \(n\)-element set is twice the number of subsets of an \((n-1)\)-element set.%
+\begin{activity}[]\label{activity-36}
+Explain why it is that the number of bijections from an \(n\)-element set to an \(n\)-element set is equal to \(n\) times the number of bijections from an \((n-1)\)-element subset to an \((n-1)\)-element set. What does this have to do with {$\langle\langle$Unresolved xref, reference "permutationasbijection"; check spelling or use "provisional" attribute$\rangle\rangle$}?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad To specify a bijection \(f\) from an \(n\)-element set \(\{a_1,a_2,
+\ldots a_n\}\) to an \(n\)-element set, we have \(n\) choices for \(f(a_1)\), and then \(b_{n-1}\) choices for how to define \(f\) from the elements \(\{a_2,a_3, \ldots,a_n\}\) to the remaining \(n-1\) elements of our range. By the product principle this gives us \(b_n=nb_{n-1}\) for the number \(b_n\) of bijections from an \(n\)-element set to an \(n\)-element set.%
+\end{activity}
+We can summarize these observations as follows. If \(s_n\) stands for the number of subsets of an \(n\)-element set, then%
+\begin{equation}
+s_n =2s_{n-1},\label{subsetequation}
+\end{equation}
+and if \(b_n\) stands for the number of bijections from an \(n\)-element set to an \(n\)-element set, then%
+\begin{equation}
+b_n =
+nb_{n-1}.\label{bijectionequation}
+\end{equation}
+%
+\par
+\hyperref[subsetequation]{Equations~(\ref{subsetequation})} and \hyperref[bijectionequation]{Equation~(\ref{bijectionequation})} are examples of \emph{recurrence equations} or \emph{recurrence relations}. A \emph{recurrence relation}\index{relation!recurrence}\index{recurrence relation} or simply a \emph{recurrence}\index{recurrence} is an equation that expresses the \(n\)th term of a sequence \(a_n\) in terms of values of \(a_i\) for \(i\lt n\). Thus \hyperref[subsetequation]{Equations~(\ref{subsetequation})} and \hyperref[bijectionequation]{Equation~(\ref{bijectionequation})} are examples of recurrences.%
+\typeout{************************************************}
+\typeout{Subsection  Examples of recurrence relations}
+\typeout{************************************************}
+\subsection[{Examples of recurrence relations}]{Examples of recurrence relations}\label{subsection-11}
+Other examples of recurrences are%
+\begin{equation}
+a_n = a_{n-1} +
+7,\label{arithmeticexample}
+\end{equation}
+%
+\begin{equation}
+a_n =3a_{n-1} + 2^n,\label{geometricdriven}
+\end{equation}
+%
+\begin{equation}
+a_n = a_{n-1} + 3a_{n-2},\mbox{
+and}\label{secondorderlinear}
+\end{equation}
+%
+\begin{equation}
+a_n= a_1a_{n-1} + a_2a_{n-2}+\cdots +
+a_{n-1}a_1.\label{Catalanrecurrence}
+\end{equation}
+%
+\par
+A \emph{solution}\index{recurrence!solution to} to a recurrence relation is a sequence that satisfies the recurrence relation. Thus a solution to \hyperref[subsetequation]{Recurrence~(\ref{subsetequation})} is \(s_n =2^n\). Note that \(s_n=17\cdot2^n\) and \(s_n=-13\cdot2^n\) are also solutions to \hyperref[subsetequation]{Recurrence~(\ref{subsetequation})}. What this shows is that a recurrence can have infinitely many solutions. In a given problem, there is generally one solution that is of interest to us. For example, if we are interested in the number of subsets of a set, then the solution to \hyperref[subsetequation]{Recurrence~(\ref{subsetequation})} that we care about is \(s_n=2^n\). Notice this is the only solution we have mentioned that satisfies \(s_0=1\).%
+\begin{activity}[]\label{activity-37}
+Show that there is only one solution to \hyperref[subsetequation]{Recurrence~(\ref{subsetequation})} that satisfies \(s_0=1\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We prove by induction on \(n\) that there is one and only one value \(s_n\) that satisfies both \(s_n=2s_{n-1}\) for \(n>0\) and \(s_0=1\). First, there is clearly one and only one value \(s_0\) that satisfies \(s_0=1\). Now assume that \(k>0\) and there is one and only one value \(s_{k-1}\) that satisfies the two equations. Then \(s_k=2s_{k-1}\) is the one and only one value that satisfies the two equations. Therefore by the principle of mathematical induction, for all nonnegative integers \(n\) there is one and only one value \(s_n\) that satisfies the equations \(s_0=1\) and \(s_k=2s_{k-1}\) for all \(k>0\). (Note that since we were making a statement about \(s_n\) for all nonnegative integers \(n\) it was not appropriate to use \(n\) as the dummy variable in the recursive equation \(s_k=2s_{k-1}\).)%
+\end{activity}
+\begin{activity}[]\label{activity-38}
+A first-order recurrence relation is one which expresses \(a_n\) in terms of \(a_{n-1}\) and other functions of \(n\), but which does not include any of the terms \(a_i\) for \(i\lt n-1\) in the equation.%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item Which of the \hyperref[subsetequation]{recurrences~(\ref{subsetequation})} through \hyperref[Catalanrecurrence]{Equation~(\ref{Catalanrecurrence})} are first order recurrences?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The \hyperref[subsetequation]{recurrences~(\ref{subsetequation})}, \hyperref[bijectionequation]{Equation~(\ref{bijectionequation})}, \hyperref[arithmeticexample]{Equation~(\ref{arithmeticexample})}, and \hyperref[geometricdriven]{Equation~(\ref{geometricdriven})} are all examples of first order recurrences. The \hyperref[secondorderlinear]{recurrences~(\ref{secondorderlinear})} and \hyperref[Catalanrecurrence]{Equation~(\ref{Catalanrecurrence})} are not.%
+
+~\par
+\item Show that there is one and only one sequence \(a_n\) that is defined for every nonnegative integer \(n\), satisfies a given first order recurrence, and satisfies \(a_0=a\) for some fixed constant \(a\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad A first order recurrence will give \(a_n\) in terms of \(a_{n-1}\), that is, there will be a function \(f\) such that \(a_n=f(a_{n-1})\) for all \(n>0\). We prove by induction that there is one and only one solution to a first order recurrence that satisfies \(a_0=a\) for some fixed constant \(a\). First, there is one and only one value for \(a_0\). Now suppose that when \(n=k-1\), there is one and only one value possible for \(a_{n-1}\). Then \(a_k\) is uniquely determined by \(a_k=f(a_{k-1}\). Thus the truth of the statement that \(a_{k-1}\) is uniquely determined by the equations \(a_0=a\) and \(a_n=f(a_{n-1})\) implies the truth of the statement that \(a_k\) is determined uniquely by the equations \(a_0=a\) and \(a_n=f(a_{n-1})\). Therefore by the principle of mathematical induction, \(a_k\) is uniquely determined by the equations \(a_0=a\) and \(a_n=f(a_{n-1})\) for all nonnegative integers \(k\).%
+
+\end{enumerate}
+\end{activity}
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/}
+\caption{The Towers of Hanoi Puzzle\label{Hanoi}}
+\end{figure}
+\begin{activity}[]\label{HanoiProblem}
+The ``Towers of Hanoi'' puzzle has three rods rising from a rectangular base with \(n\) rings of different sizes stacked in decreasing order of size on one rod. A legal move consists of moving a ring from one rod to another so that it does not land on top of a smaller ring. If \(m_n\) is the number of moves required to move all the rings from the initial rod to another rod that you choose, give a recurrence for \(m_n\). (Hint: suppose you already knew the number of moves needed to solve the puzzle with \(n-1\) rings.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We can solve the puzzle in one step if there is one ring, so \(m_1=1\). If \(n>0\) and we want to move all the rings from the initial rod to rod 3, then first we solve the problem of moving all but the bottom ring to rod 2; this takes \(m_{n-1}\) steps, then we move the bottom ring to rod 3, then we solve the problem of moving all the remaining rings from rod 2 to rod 3. Thus we have \(m_n=2m_{n-1}+1\).%
+\end{activity}
+\begin{activity}[]\label{circlesinplane}
+We draw \(n\) mutually intersecting circles in the plane so that each one crosses each other one exactly twice and no three intersect in the same point. (As examples, think of Venn diagrams with two or three mutually intersecting sets.) Find a recurrence for the number \(r_n\) of regions into which the plane is divided by \(n\) circles. (One circle divides the plane into two regions, the inside and the outside.) Find the number of regions with \(n\) circles. For what values of \(n\) can you draw a Venn diagram showing all the possible intersections of \(n\) sets using circles to represent each of the sets?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad One circle defines two regions, the inside and outside. When we draw a second circle that intersects the first, we can start at one of the intersection points and go inside the first circle, cutting its region into two pieces, and then when we leave it we cut the outside region into two pieces. This suggests the general pattern. If we have drawn \(n-1\) circles and start a new one, each time we enter a circle, we start dividing a region into two pieces. Each time we leave a circle, we also start dividing a region into two pieces. Thus if we have \(r_n\) regions with \(n\) circles, to get the number of regions, we note that in going from \(n-1\) circles to \(n\) circles, we start with \(r_{n-1}\) regions, and divide \(2(n-1)\) of them in half, so we get \(2n-2\) new regions. This gives us \(r_n=r_{n-1}+2(n-1)\). Notice that by substitution of the formula \(r_{n-1}=r_{n-2} +2(n-2)\), we get \(r_n=r_{n-2}+ 2(n-2)
++2(n-1)\), and would guess that \(r_n=r_{n-3}+2(n-3)+2(n-2) +2(n-1)\). This leads to the conjecture%
+\begin{equation*}
+r_n=r_1  +2\cdot1+2\cdot2+\cdots+2\cdot(n-1)=r_1+2\sum_{i=1}^{n-1}
+i=2+n(n-1).
+\end{equation*}
+%
+\par
+We can prove this formula by induction. When \(n=1\) we have \(2+1\cdot0\) regions. Assuming that \(n-1\) circles give us \(2+(n-1)(n-2)\) regions, for \(n\) circles we have \(2+(n-1)(n-2) +2(n-1)=2+n(n-1)\) regions. Thus the correctness of our formula for \(n-1\) circles implies its correctness when we have \(n\) circles, so for all positive integers \(n\), we get \(2+n(n-1)\) regions determined by \(n\) mutually intersecting circles. Two circles cannot touch more than twice, and if we let some of our \(n\) circles touch just once, or not at all, that would reduce the number of regions we would get. Similarly, allowing a circle to go through the intersection point of two other circles could only reduce the number of regions. So with \(n\) circles we could never have more than \(2+n(n-1)\) regions. In particular with 4 circles we get just 14 regions, rather than the 16 that would be required in a Venn diagram for four sets. We could prove, again by induction, that \(2+n(n-1)\lt 2^n\) for all \(n>3\), so it is not possible to draw a Venn diagram using circles to illustrate the intersections of four or more sets.%
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  Arithmetic Series (optional)}
+\typeout{************************************************}
+\subsection[{Arithmetic Series (optional)}]{Arithmetic Series (optional)}\label{subsection-12}
+\begin{activity}[]\label{childsaving}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item A child puts away two dollars from her allowance each week. If she starts with twenty dollars, give a recurrence for the amount \(a_n\) of money she has after \(n\) weeks and find out how much money she has at the end of \(n\) weeks.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(a_n=a_{n-1} +2\). Then by substitution \(a_n=a_{n-2}+2+2\), and so we conjecture that \(a_n = 20 +2n\). Since she adds two dollars to her savings each week for \(n\) weeks, she has adds 2n dollars to her original 20, which proves the formula. We could have used induction to prove it as well.%
+
+~\par
+\item A sequence that satisfies a recurrence of the form \(a_n=a_{n-1} +c\) is called an \emph{arithmetic progression}\index{arithmetic progression}\index{progression!arithmetic}. Find a formula in terms of the initial value \(a_0\) and the common difference \(c\) for the term \(a_n\) in an arithmetic progression and prove you are right.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(a_n =a_o+cn\). The formula is valid with \(n=0\), and if \(a_{n-1}=a_0
++c(n-1)\), then \(a_n = a_0 +c(n-1) +c =a_0+cn\). Therefore the fact that \(a_{n-1}=a_0+ca_{n-1}\) implies the fact that \(a_n=a_0+cn\). Therefore by the principle of mathematical induction, \(a_n=a_0+cn\) for all nonnegative integers \(n\).%
+
+~\par
+\item A person who is earning \textdollar{}50,000 per year gets a raise of \textdollar{}3000 a year for \(n\) years in a row. Find a recurrence for the amount \(a_n\) of money the person earns over \(n+1\) years. What is the total amount of money that the person earns over a period of \(n+1\) years? (In \(n+1\) years, there are \(n\) raises.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad By {$\langle\langle$Unresolved xref, reference "arithmeticprogression"; check spelling or use "provisional" attribute$\rangle\rangle$} we saw that if \(b_n\) is the salary in year \(n\), then \(b_n=50,000 + 3000n\). If \(a_n\) is the total amount earned over the period of from year 0 through the end of year \(n\), a period of \(n+1\) years, then \(a_n=a_{n-1}+b_n=a_{n-1}+ 50,000+3000n\). Further, \(a_n=\sum_{i=0}^n b_i=\sum_{i=0}^n50,000 +3000i = 50,000(n+1)+3000\sum_{i=0}^n
+i= 50,000(n+1) + 1500(n(n+1)\).%
+
+~\par
+\item An \emph{arithmetic series}\index{series!arithmetic}\index{arithmetic series} is a sequence \(s_n\) equal to the sum of the terms \(a_0\) through \(a_n\) of of an arithmetic progression. Find a recurrence for the sum \(s_n\) of an arithmetic progression with initial value \(a_0\) and common difference \(c\) (using the language of {$\langle\langle$Unresolved xref, reference "arithmeticprogression"; check spelling or use "provisional" attribute$\rangle\rangle$}). Find a formula for general term \(s_n\) of an arithmetic series.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(s_n=\sum_{i=0}^n a_0 +ci =(n+1)a_0+c\sum_{i=0}^n i = (n+1)a_0
++cn(n+1)/2\).%
+
+\end{enumerate}
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  First order linear recurrences}
+\typeout{************************************************}
+\subsection[{First order linear recurrences}]{First order linear recurrences}\label{subsection-13}
+Recurrences such as those in \hyperref[subsetequation]{Equations~(\ref{subsetequation})} through \hyperref[secondorderlinear]{Equation~(\ref{secondorderlinear})} are called \emph{linear recurrences}, as are the recurrences of \hyperref[HanoiProblem]{Problems~\ref{HanoiProblem}} and \hyperref[circlesinplane]{Activity~\ref{circlesinplane}}. A \emph{linear recurrence}\index{recurrence!linear}\index{linear recurrence} is one in which \(a_n\) is expressed as a sum of functions of \(n\) times values of (some of the terms) \(a_i\) for \(i\lt n\) plus (perhaps) another function (called the \emph{driving function}\index{driving function}\index{function!driving}) of \(n\). A linear equation is called \emph{homogeneous}\index{homogeneous linear recurrence}\index{linear recurrence!homogeneous}\index{recurrence!linear homogeneous} if the driving function is zero (or, in other words, there is no driving function). It is called a \emph{constant coefficient linear recurrence}\index{linear recurrence!constant coefficient}\index{constant coefficient linear recurrence} if the functions that are multiplied by the \(a_i\) terms are all constants (but the driving function need not be constant).%
+\begin{activity}[]\label{classifyrecurrences}
+Classify the recurrences in \hyperref[subsetequation]{Equations~(\ref{subsetequation})} through \hyperref[secondorderlinear]{Equation~(\ref{secondorderlinear})} and \hyperref[HanoiProblem]{Problems~\ref{HanoiProblem}} and \hyperref[circlesinplane]{Activity~\ref{circlesinplane}} according to whether or not they are constant coefficient, and whether or not they are homogeneous.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \hyperref[subsetequation]{Recurrence~(\ref{subsetequation})} is first order, linear, constant coefficient, and homogeneous. \hyperref[bijectionequation]{Recurrence~(\ref{bijectionequation})} is first order, linear, and homogeneous, but not constant coefficient. \hyperref[arithmeticexample]{Recurrence~(\ref{arithmeticexample})} is first order, linear, constant coefficient but not homogeneous. \hyperref[geometricdriven]{Recurrence~(\ref{geometricdriven})} is first order, linear, constant coefficient but not homogeneous. \hyperref[secondorderlinear]{Recurrence~(\ref{secondorderlinear})} is not first order (it is second order), is linear, constant coefficient and homogeneous. The recurrence of \hyperref[HanoiProblem]{Problem~\ref{HanoiProblem}} is first order, linear, and constant coefficient, and that of \hyperref[circlesinplane]{Problem~\ref{circlesinplane}} is first order, linear, and constant coefficient.%
+\end{activity}
+\begin{activity}[]\label{firstordlinconst}
+As you can see from \hyperref[classifyrecurrences]{Problem~\ref{classifyrecurrences}} some interesting sequences satisfy first order linear recurrences, including many that have constant coefficients, have constant driving term, or are homogeneous. Find a formula in terms of \(b\), \(d\), \(a_0\) and \(n\) for the general term \(a_n\) of a sequence that satisfies a constant coefficient first order linear recurrence \(a_n = ba_{n-1} + d\) and prove you are correct. If your formula involves a summation, try to replace the summation by a more compact expression.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Note that by the formula, \(a_{n-1}=ba_{n-2} +d\). Substituting this into the original equation for \(a_n\) gives \(a_n=b^2a_{n-2}+bd +d\). Repeating this kind of substitution gives us \(a_n=b^3a_{n-3} +b^2d +bd +d\). This suggests that \(a_n = a_0b^n +\sum_{i=0}^{n-1}db^i\). We would guess the same formula by writing out the first few values of \(a_i\), namely, \(a_0\), \(a_0b+d\), \(a_0b^2+db+d\), \(a_0b^3+b^2d+bd+d\), and so on. We prove our general formula by induction on \(n\). It is clearly true when \(n=0\) as there are no terms in the sum and \(b^0=1\). If we assume the formula is true when \(n=k-1\), we may write%
+\begin{align*}
+a_k \amp =\amp  ba_{k-1}+d\\
+\amp =\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d\\
+\amp =\amp a_0b^n +\sum_{i=0}^{n-1}db^i
+\end{align*}
+%
+\par
+Thus the truth of our formula for \(n=k-1\) implies its truth for \(n=k\) and therefore by the principle of mathematical induction, it is true for all nonnegative integers \(n\).%
+\par
+We can give a more compact expression for the sum \(\sum_{i=0}^{n-1}db^i=d\sum_{i=0}^{n-1}b^i\). Recall from algebra that \((1+x)(1-x)= 1-x^2\), \((1+x+x^2)(1-x) = 1-x^3\), and in general \((1+x+x^2+\cdots
+x^{n-1}))(1-x) = 1-x^n\). If you do not recall this formula, you can prove it by induction, or observe that%
+\begin{align*}
+\amp \amp (1+x+x^2+\cdots
+x^{n-1}))(1-x)\\
+\amp =\amp  (1+x+x^2+\cdots
+x^{n-1})\cdot 1-(1+x+x^2+\cdots
+x^{n-1})\cdot x\\
+\amp =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.
+\end{align*}
+%
+\par
+Dividing the first and last terms by \(1-x\) gives us%
+\begin{equation*}
+\sum_{i=1}^{n-1}x^i={1-x^n\over 1-x}.
+\end{equation*}
+%
+\par
+Using this in our formula for \(a_n\) gives us \(a_n =a_ob^n+d{1-b^n\over 1-b}.\) This is valid except in the case \(b=1\) (in our computation with \(x\) above, we would be dividing by 0.) If \(b=1\) we get \(a_n =a_0 +nd\) for the sum.%
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  Geometric Series}
+\typeout{************************************************}
+\subsection[{Geometric Series}]{Geometric Series}\label{subsection-14}
+A sequence that satisfies a recurrence of the form \(a_n=ba_{n-1}\) is called a \emph{geometric progression}\index{geometric progression}\index{progression!geometric}. Thus the sequence satisfying \hyperref[subsetequation]{Equation~(\ref{subsetequation})}, the recurrence for the number of subsets of an \(n\)-element set, is an example of a geometric progression. From your solution to \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}}, a geometric progression has the form \(a_n=a_0b^n\). In your solution to \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} you may have had to deal with the sum of a geometric progression in just slightly different notation, namely \(\sum_{i=0}^{n-1}db^i\). A sum of this form is called a \emph{(finite) geometric series}.\index{geometric series}\index{series!geometric}%
+\begin{activity}[]\label{sumgeometricseries}
+Do this problem only if your final answer (so far) to \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} contained the sum \(\sum_{i=0}^{n-1}db^i\).%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item Expand \((1-x)(1+x)\).  Expand \((1-x)(1+x+x^2)\). Expand \((1-x)(1+x+x^2+x^3)\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \((1-x)(1+x)=1-x^2\). \((1-x)(1+x+x^2)=1-x^3\). \((1-x)(1+x+x^2+x^3)=1-x^4\).%
+
+~\par
+\item What do you expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be?  What formula for \(\sum_{i=0}^{n-1}db^i\) does this give you?  Prove that you are correct.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be \(d(1-b^n)\). If \(b\not=1\), this gives us \(\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.\) We can prove this by induction on \(n\). If \(n=0\) we get 0 for \(1-b^n\over 1-b\), and also for the sum \(\sum_{i=0}^{-1}db^i\), since that sum has no terms. Assuming the formula holds when \(n=k-1\), we may write%
+\begin{align*}
+\amp \amp \sum_{i=0}^{k-1} db^i\\
+\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
+\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}\\
+\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.
+\end{align*}
+%
+\par
+Since the truth of the formula for \(n=k-1\) implies its truth for \(n=k\), by the principle of mathematical induction the formula is true for all nonnegative integers \(n\). If \(b=1\) we get the formula \(\sum_{i=0}^{n-1}db^i=dn\).%
+
+\end{enumerate}
+\end{activity}
+In \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} and \hyperref[sumgeometricseries]{perhaps~\ref{sumgeometricseries}} you proved an important theorem.%
+\begin{theorem}[{}]\label{theorem-1}
+If \(b\not=1\) and \(a_n=ba_{n-1} +d\), then \(\displaystyle a_n =
+a_0b^n + d{1-b^n\over 1-b}\). If \(b=1\), then, \(\displaystyle a_n =
+a_0 +nd\)%
+\end{theorem}
+\begin{corollary}[{}]\label{corollary-1}
+If \(b\not=1\), then \(\displaystyle \sum_{i=0}^{n-1}b^i =
+{1-b^n\over 1-b}\). If \(b=1\), \(\displaystyle \sum_{i=0}^{n-1}b^i =n\).%
+\end{corollary}
+\typeout{************************************************}
+\typeout{Section 1.3 Graphs and Trees}
 \typeout{************************************************}
 \section[{Graphs and Trees}]{Graphs and Trees}\label{sec_induction-graphstrees}
 \typeout{************************************************}
@@ -1102,17 +1311,17 @@ In \hyperref[Ramseysection]{Section~} we introduced the idea of a directed graph
 \caption{Three different graphs\label{Threegraphs}}
 \end{figure}
 Each grey circle in the figure represents a vertex; each line segment represents an edge. You will note that we labelled the vertices; these labels are names we chose to give the vertices. We can choose names or not as we please. The third graph also shows that it is possible to have an edge that connects a vertex (like the one labelled \(y\)) to itself or it is possible to have two or more edges (like those between vertices \(v\) and \(y\)) between two vertices. The \emph{degree}\index{vertex!degree of}\index{degree of a vertex} of a vertex is the number of times it appears as the endpoint of edges; thus the degree of \(y\) in the third graph in the figure is four.%
-\begin{activity}[]\label{activity-36}
+\begin{activity}[]\label{activity-45}
 In the graph on the left in \hyperref[Threegraphs]{Figure~\ref{Threegraphs}}, what is the degree of each vertex?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The degree of vertex 1 is one, of vertex 2 is two, of vertex 3 is three, of vertex 4 is three, of vertex 5 is one, of vertex 6 is one, of vertex 7 is two, of vertex 8 is one.%
 \end{activity}
-\begin{activity}[]\label{activity-37}
+\begin{activity}[]\label{activity-46}
 For each graph in \hyperref[Threegraphs]{Figure~\ref{Threegraphs}} is the number of vertices of odd degree even or odd?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad In all three cases it is even.%
 \end{activity}
-\begin{activity}[]\label{activity-38}
+\begin{activity}[]\label{activity-47}
 The sum of the degrees of the vertices of a (finite) graph is related in a natural way to the number of edges.%
 ~\par
 \begin{enumerate}[label=(\alph*)]
@@ -1137,7 +1346,7 @@ The sum of the degrees of the vertices of a (finite) graph is related in a natur
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-39}
+\begin{activity}[]\label{activity-48}
 What can you say about the number of vertices of odd degree in a graph?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of vertices of odd degree must be even, because otherwise the sum of the degrees of the vertices would be odd.%
@@ -1145,7 +1354,7 @@ What can you say about the number of vertices of odd degree in a graph?%
 \typeout{************************************************}
 \typeout{Subsection  Walks and paths in graphs}
 \typeout{************************************************}
-\subsection[{Walks and paths in graphs}]{Walks and paths in graphs}\label{subsection-12}
+\subsection[{Walks and paths in graphs}]{Walks and paths in graphs}\label{subsection-16}
 A \emph{walk} in a graph is an alternating sequence \(v_0e_1v_1\ldots
 e_iv_i\) of vertices and edges such that edge \(e_i\) connects vertices \(v_{i-1}\) and \(v_i\). A graph is called connected if, for any pair of vertices, there is a walk starting at one and ending at the other. \leavevmode%
 \begin{enumerate}
@@ -1162,18 +1371,18 @@ e_iv_i\) of vertices and edges such that edge \(e_i\) connects vertices \(v_{i-1
 \typeout{************************************************}
 \typeout{Subsection  Counting vertices, edges, and paths in trees}
 \typeout{************************************************}
-\subsection[{Counting vertices, edges, and paths in trees}]{Counting vertices, edges, and paths in trees}\label{subsection-13}
+\subsection[{Counting vertices, edges, and paths in trees}]{Counting vertices, edges, and paths in trees}\label{subsection-17}
 \begin{activity}[]\label{Noverticesandedgesoftree}
 Draw some trees and on the basis of your examples, make a conjecture about the relationship between the number of vertices and edges in a tree. Prove your conjecture. (Hint: what happens if you choose an edge and delete it, but not its endpoints?)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of edges of a tree is one less than the number of vertices. We prove this by strong induction on the number of edges. First, if a tree has no edges, it can have only one vertex (otherwise it is not connected). Thus the number of edges is one less than the number of vertices. Now suppose that if a tree has fewer than \(n\) edges, it the number of edges is one less than the number of vertices. Choose an edge \(e\) with endpoints \(x\) and \(y\) in the tree and remove it. The resulting graph is not connected, for if it were, the path remaining between the endpoints of \(e\), together with \(e\), would form a cycle. Every vertex in the tree is connected to \(x\) by a path; those connected by a path not using \(e\) still remain connected to \(x\). Similarly those connected to \(y\) by a path in the tree that does not use the edge \(e\) remain connected to \(y\) after \(e\) is deleted. Every vertex is connected to \(x\) by a path in the tree and every vertex is connected to \(y\) by a path in the tree. If a vertex \(v\) were connected to \(x\) by a path using the edge \(e\) and to \(y\) by a path using the edge \(e\), that would mean that we have a path from \(v\) to \(x\) and then through \(e\) to \(y\) and also a path from \(v\) to \(y\) and then through \(e\) to \(x\). Thus taking \(e\) out of these two paths would give us a path from \(v\) to \(x\) and a path from \(v\) to \(y\), neither of which used \(e\). Thus when we removed the edge \(e\), there would still be a path from \(x\) to \(y\), and adding \(e\) to this path would give a cycle. Therefore each vertex is connected to either \(x\) or \(y\), but not both, by a path that does not use \(e\). Therefore when we remove \(e\), the graph that remains consists of two trees, the tree of all vertices connected to \(x\) and the tree of all vertices connected to \(y\). Each of these trees has fewer edges than the original tree, so if they have \(m_1\) and \(m_2\) vertices respectively, they have, by the inductive hypothesis, \(m_1-1\) and \(m_2-1\) edges respectively. But together they have all the vertices of the original tree, so the original tree has \(m_1+m_2\) vertices, and has \(m_1-1+m_2-1 +1=m)_1+m_2-1\) edges, the edges of each of the two smaller trees as well as the edge \(e\). Therefore the number of edges of the original tree is one less than the number of vertices. Therefore by the strong principle of mathematical induction, the number of edges of a tree is one less than the number of vertices.%
 \end{activity}
-\begin{activity}[]\label{activity-41}
+\begin{activity}[]\label{activity-50}
 What is the minimum number of vertices of degree one in a finite tree? What is it if the number of vertices is bigger than one? Prove that you are correct.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The minimum is zero, which happens with a tree with one vertex. If the tree has more than one vertex, the minimum number of vertices of degree one is two. To prove this, we prove that every tree with two or more vertices has at least two vertices of degree two. Note that a tree with two vertices has exactly two vertices of degree 2. Now take a tree with more than two vertices. Remove an edge \(e\) without removing its endpoints. As in the solution to \hyperref[Noverticesandedgesoftree]{Problem~\ref{Noverticesandedgesoftree}} this gives two trees. We may assume inductively that each has at least two vertices of degree 1, or else is a single vertex. When we put \(e\) back in, it connects one vertex in one tree to one in the other. If both these vertices have degree 1 in their trees, there will be at least one vertex of degree 1 remaining in each tree, so there will be at least two vertices of degree 1 in the tree we get. If exactly one of these vertices is a tree with one vertex after the removal of \(e\), when we connect it to the other tree, we will remove at most one increase the degree of at most one vertex of degree 1 and will create a new vertex of degree 1, so the tree that results still has at least two vertices of degree 1. Therefore by the strong principle of mathematical induction, every tree with more than two vertices has at least two vertices of degree 1. Since a two-vertex tree has two vertices of degree 1, the minimum number of vertices of degree 1 in a tree with two or more vertices is two. (In fact a path with \(n\) vertices is a tree and it has exactly two vertices of degree one also.)%
 \end{activity}
-\begin{activity}[]\label{activity-42}
+\begin{activity}[]\label{activity-51}
 In a tree, given two vertices, how many paths can you find between them? Prove that you are correct.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Exactly one. Suppose there were two distinct paths \(P_1\) and \(P_2\) from \(x\) to \(y\). As they leave \(x\), they might leave on the same edge or on different edges. However, since they are different, there must be some first vertex \(x'\) on both paths so that when leave \(x'\) (as we go from \(x\) to \(y\)), they leave on different edges. Then since they must both enter \(y\), there must be some first vertex \(y'\), following \(x'\) on both paths as we go from \(x\) to \(y\), such that the two paths enter \(y'\) on two different edges. Then the portion of path 1 from \(x'\) to \(y'\) followed by the portion of path 2 from \(y'\) to \(x'\) will be a cycle. This is impossible in a tree, so the supposition that there were two distinct paths is impossible.%
@@ -1193,17 +1402,17 @@ On a tree with \(n\) vertices, the sequence \(b\) will have length \(n-1\). The 
 a_2, \ldots a_{i-1}\), there is always a smallest number not in the sequence \(c_i\) through \(c_{n-1}\) and different from the \(a_i\)s already chosen, so we can construct the edges from \(a_i\) to \(c_i\). Further, if we start with the edge from \(a_{n-1}\) to \(c_{n-1}\) and work backwards, we will always have a connected graph and will always be adding a vertex of degree 1 to it, so we will have no cycles. Therefore we will get a tree. Thus we have a bijection between labelled trees on \(n\) vertices and sequences of length \(n-2\) consisting of members of \([n]\). There are \(n^{n-2}\) such sequences, and thus \(n^{n-2}\) labelled trees on \(n\) vertices.%
 \end{activity}
 The sequence \(b_1,b_2,\ldots, b_{n-2}\) in \hyperref[Prufer]{Problem~\ref{Prufer}} is called a \emph{Prüfer coding} or \emph{Prüfer code} for the tree. There is a good bit of interesting information encoded into the Prüfer code for a tree.%
-\begin{activity}[]\label{activity-44}
+\begin{activity}[]\label{activity-53}
 What can you say about the Prüfer code for a tree with exactly two vertices of degree 1? Does this characterize such trees?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad It consists of \(n-2\) distinct numbers between 1 and \(n\). Any such Prüfer code is the code of a tree with exactly two vertices of degree one.%
 \end{activity}
-\begin{activity}[]\label{activity-45}
+\begin{activity}[]\label{activity-54}
 What can you determine about the degree of the vertex labelled \(i\) from the Prufer code of the tree?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The degree of a vertex in a tree is one more than the number of times the vertex appears in the Prüfer code of the tree.%
 \end{activity}
-\begin{activity}[]\label{activity-46}
+\begin{activity}[]\label{activity-55}
 What is the number of (labelled) trees on \(n\) vertices with three vertices of degree 1? (Assume they are labelled with the integers 1 through \(n\).)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad There are \(n\choose 3\) ways to choose the three vertices of degree one. Each of the other \(n-3\) vertices must appear in the Prüfer Code, so one must appear twice. We have \(n-3\) ways to choose that one vertex and \({n-2\choose 2}{n-4\choose1}{n-5\choose1}\cdots{1\choose1} ={(n-2)!\over 2!}\) ways to choose which of the \(n-2\) places to use for which vertices in the Prüfer code. Thus there are \({n\choose3}(n-3){(n-2)!\over 2}= {n!(n-2)(n-3)\over 12}\) labelled trees with three vertices of degree one.%
@@ -1211,14 +1420,14 @@ What is the number of (labelled) trees on \(n\) vertices with three vertices of 
 \typeout{************************************************}
 \typeout{Subsection  Spanning trees}
 \typeout{************************************************}
-\subsection[{Spanning trees}]{Spanning trees}\label{subsection-14}
+\subsection[{Spanning trees}]{Spanning trees}\label{subsection-18}
 Many of the applications of trees arise from trying to find an efficient way to connect all the vertices of a graph. For example, in a telephone network, at any given time we have a certain number of wires (or microwave channels, or cellular channels) available for use. These wires or channels go from a specific place to a specific place. Thus the wires or channels may be thought of as edges of a graph and the places the wires connect may be thought of as vertices of that graph. A tree whose edges are some of the edges of a graph \(G\) and whose vertices are all of the vertices of the graph \(G\) is called a \emph{spanning tree}\index{spanning tree}\index{tree!spanning} of \(G\). A spanning tree for a telephone network will give us a way to route calls between any two vertices in the network. In \hyperref[spanningtrees]{Figure~\ref{spanningtrees}} we show a graph and all its spanning trees.%
 \begin{figure}
 \centering
 \includegraphics[width=0.73\linewidth]{images/}
 \caption{A graph and all its spanning trees.\label{spanningtrees}}
 \end{figure}
-\begin{activity}[]\label{activity-47}
+\begin{activity}[]\label{activity-56}
 Show that every connected graph has a spanning tree. It is possible to find a proof that starts with the graph and works ``down'' towards the spanning tree and to find a proof that starts with just the vertices and works ``up'' towards the spanning tree. Can you find both kinds of proof?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Here are three proofs:%
@@ -1232,7 +1441,7 @@ Start with vertex 1 and no edges as a graph \(H\). Take an edge from it to anoth
 \typeout{************************************************}
 \typeout{Subsection  Minimum cost spanning trees}
 \typeout{************************************************}
-\subsection[{Minimum cost spanning trees}]{Minimum cost spanning trees}\label{subsection-15}
+\subsection[{Minimum cost spanning trees}]{Minimum cost spanning trees}\label{subsection-19}
 Our motivation for talking about spanning trees was the idea of finding a minimum number of edges we need to connect all the edges of a communication network together. In many cases edges of a communication network come with costs associated with them. For example, one cell-phone operator charges another one when a customer of the first uses an antenna of the other. Suppose a company has offices in a number of cities and wants to put together a communication network connecting its various locations with high-speed computer communications, but to do so at minimum cost. Then it wants to take a graph whose vertices are the cities in which it has offices and whose edges represent possible communications lines between the cities. Of course there will not necessarily be lines between each pair of cities, and the company will not want to pay for a line connecting city \(i\) and city \(j\) if it can already connect them indirectly by using other lines it has chosen. Thus it will want to choose a spanning tree of minimum cost among all spanning trees of the communications graph. For reasons of this application, if we have a graph with numbers assigned to its edges, the sum of the numbers on the edges of a spanning tree of \(G\) will be called the \emph{cost}\index{spanning tree!cost of}\index{tree!spanning!cost of}\index{cost of a spanning tree} of the spanning tree.%
 \begin{activity}[]\label{mincostspantree}
 Describe a method (or better, two methods different in at least one aspect) for finding a spanning tree of minimum cost in a graph whose edges are labelled with costs, the cost on an edge being the cost for including that edge in a spanning tree. Prove that your method(s) work.\index{minimum cost spanning tree}\index{spanning tree!minimum cost}\index{tree!spanning!minimum cost}%
@@ -1245,7 +1454,7 @@ The method you used in \hyperref[mincostspantree]{Problem~\ref{mincostspantree}}
 \typeout{************************************************}
 \typeout{Subsection  The deletion/contraction recurrence for spanning trees}
 \typeout{************************************************}
-\subsection[{The deletion/contraction recurrence for spanning trees}]{The deletion/contraction recurrence for spanning trees}\label{subsection-16}
+\subsection[{The deletion/contraction recurrence for spanning trees}]{The deletion/contraction recurrence for spanning trees}\label{subsection-20}
 There are two operations on graphs that we can apply to get a recurrence (though a more general kind than those we have studied for sequences) which will let us compute the number of spanning trees of a graph. The operations each apply to an edge \(e\) of a graph \(G\). The first is called \emph{deletion};\index{deletion} we \emph{delete} the edge \(e\) from the graph by removing it from the edge set. \hyperref[twodeletions]{Figure~\ref{twodeletions}} shows how we can delete edges from a graph to get a spanning tree.%
 \begin{figure}
 \centering
@@ -1268,7 +1477,7 @@ Contractions of three different edges in the same graph are shown in \hyperref[t
 %
 \par
 We use \(G-e\) (read as \(G\) minus \(e\)) to stand for the result of deleting \(e\) from \(G\), and we use \(G/e\) (read as \(G\) contract \(e\)) to stand for the result of contracting \(e\) from \(G\).%
-\begin{activity}[]\label{activity-49}
+\begin{activity}[]\label{activity-58}
 How do the number of spanning trees of \(G\) not containing the edge \(e\) and the number of spanning trees of \(G\) containing \(e\) relate to the number of spanning trees of \(G-e\) and \(G/e\)? Use \(\#(G)\) to stand for the number of spanning trees of \(G\) (so that, for example, \(\#(G/e)\) stands for the number of spanning trees of \(G/e\)). Find an expression for \(\#(G)\) in terms of \(\#(G/e)\) and \(\#(G-e)\). This expression is called the \emph{deletion-contraction recurrence}\index{deletion-contraction recurrence}\index{recurrence!deletion-contraction}. Use it to compute the number of spanning trees of the graph in \hyperref[spantreeexercise]{Figure~\ref{spantreeexercise}}.%
 \begin{figure}
 \centering
@@ -1293,7 +1502,7 @@ We now show the four graphs on the right hand side of the equation. \mbox{ \incl
 \typeout{************************************************}
 \typeout{Subsection  Shortest paths in graphs}
 \typeout{************************************************}
-\subsection[{Shortest paths in graphs}]{Shortest paths in graphs}\label{subsection-17}
+\subsection[{Shortest paths in graphs}]{Shortest paths in graphs}\label{subsection-21}
 Suppose that a company has a main office in one city and regional offices in other cities. Most of the communication in the company is between the main office and the regional offices, so the company wants to find a spanning tree that minimizes not the total cost of all the edges, but rather the cost of communication between the main office and each of the regional offices. It is not clear that such a spanning tree even exists. This problem is a special case of the following. We have a connected graph with nonnegative numbers assigned to its edges. (In this situation these numbers are often called weights.) The \emph{(weighted) length}\index{path!length of}\index{length (of a path)} of a path in the graph is the sum of the weights of its edges. The \emph{distance}\index{distance in a weighted graph}\index{graph!distance in} between two vertices is the least (weighted) length of any path between the two vertices. Given a vertex \(v\), we would like to know the distance between \(v\) and each other vertex, and we would like to know if there is a spanning tree in \(G\) such that the length of the path in the spanning tree from \(v\) to each vertex \(x\) is the distance from \(v\) to \(x\) in \(G\).%
 \leavevmode%
 \begin{enumerate}
@@ -1311,7 +1520,7 @@ We prove that the distance from vertex 1 of a vertex \(i\) with \(v(i)=1\) is \(
 \end{enumerate}
 \vfilneg%
 \typeout{************************************************}
-\typeout{Section 1.3 Supplementary Problems}
+\typeout{Section 1.4 Supplementary Problems}
 \typeout{************************************************}
 \section[{Supplementary Problems}]{Supplementary Problems}\label{sec_induction-suppprobs}
 \leavevmode%
@@ -1409,7 +1618,7 @@ n!(n-2)!\over\prod_{j=1}^n i_j!(j-1)!^{i_j}.
 \typeout{************************************************}
 \typeout{Section 2.1 The idea of a distribution}
 \typeout{************************************************}
-\section[{The idea of a distribution}]{The idea of a distribution}\label{section-7}
+\section[{The idea of a distribution}]{The idea of a distribution}\label{section-8}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
@@ -1417,7 +1626,7 @@ Many of the problems we solved in Chapter 1 may be thought of as problems of dis
 \typeout{************************************************}
 \typeout{Subsection  The twenty-fold way}
 \typeout{************************************************}
-\subsection[{The twenty-fold way}]{The twenty-fold way}\label{subsection-18}
+\subsection[{The twenty-fold way}]{The twenty-fold way}\label{subsection-22}
 When we are passing out objects to recipients, we may think of the objects as being either identical or distinct. We may also think of the recipients as being either identical (as in the case of putting fruit into plastic bags in the grocery store) or distinct (as in the case of passing fruit out to children). We may restrict the distributions to those that give at least one object to each recipient, or those that give exactly one object to each recipient, or those that give at most one object to each recipient, or we may have no such restrictions. If the objects are distinct, it may be that the order in which the objects are received is relevant (think about putting books onto the shelves in a bookcase) or that the order in which the objects are received is irrelevant (think about dropping a handful of candy into a child's trick or treat bag). If we ignore the possibility that the order in which objects are received matters, we have created \(2\cdot2\cdot4=16\) distribution problems. In the cases where a recipient can receive more than one distinct object, we also have four more problems when the order objects are received matters. Thus we have 20 possible distribution problems.%
 \begin{table}
 \centering
@@ -1464,7 +1673,7 @@ Each gets exactly one&&\tabularnewline[0pt]
 We describe these problems in \hyperref[firstdistributiontable]{Table~\ref{firstdistributiontable}}. Since there are twenty possible distribution problems, we call the table the ``Twentyfold Way,''\index{Twentyfold Way} adapting terminology suggested by Joel Spencer for a more restricted class of distribution problems. In the first column of the table we state whether the objects are distinct (like people) or identical (like ping-pong balls) and then give any conditions on how the objects may be received. The conditions we consider are whether each recipient gets at most one object, whether each recipient gets at least one object, whether each recipient gets exactly one object, and whether the order in which the objects are received matters. In the second column we give the solution to the problem and the name of the mathematical model for this kind of distribution problem when the recipients are distinct, and in the third column we give the same information when the recipients are identical. We use question marks as the answers to problems we have not yet solved and models we have not yet studied. We give explicit answers to problems we solved in {$\langle\langle$Unresolved xref, reference "whatis"; check spelling or use "provisional" attribute$\rangle\rangle$} and problems whose answers are immediate. The goal of this chapter is to develop methods that will allow us to fill in the table with formulas or at least quantities we know how to compute, and we will give a completed table at the end of the chapter. We will now justify the answers that are not question marks and replace some question marks with answers as we cover relevant material.%
 \par
 If we pass out \(k\) distinct objects (say pieces of fruit) to \(n\) distinct recipients (say children), we are saying for each object which recipient it goes to. Thus we are defining a function from the set of objects to the recipients. We saw the following theorem in {$\langle\langle$Unresolved xref, reference "numberoffunctionsconjecture"; check spelling or use "provisional" attribute$\rangle\rangle$}.%
-\begin{theorem}[{}]\label{theorem-1}
+\begin{theorem}[{}]\label{theorem-2}
 There are \(n^k\)\index{functions!number of} functions from a \(k\)-element set to an \(n\)-element set.%
 \end{theorem}
 We proved it in {$\langle\langle$Unresolved xref, reference "provenumberoffunctionsconjecture"; check spelling or use "provisional" attribute$\rangle\rangle$}. If we pass out \(k\) distinct objects (say pieces of fruit) to \(n\) indistinguishable recipients (say identical paper bags) then we are dividing the objects up into disjoint sets; that is we are forming a partition of the objects into some number, certainly no more than the number \(k\) of objects, of parts. Later in this chapter (and again in the next chapter) we shall discuss how to compute the number of partitions of a \(k\)-element set into \(n\) parts. This explains the entries in row one of our table.%
@@ -1487,7 +1696,7 @@ If we distribute \(k\) distinct objects to \(n\) distinct recipients so that eac
 If we pass out \(k\) distinct objects to \(n\) recipients so that each gets exactly one, then \(k=n\) and the function that our distribution gives us is a bijection. The number of bijections from an \(n\)-element set to an \(n\)-element set is \(n!\) by \hyperref[numberofinjections]{Theorem~\ref{numberofinjections}}. If we pass out \(k\) distinct objects of \(n\) identical recipients so that each gets exactly 1, then in this case it doesn't matter which recipient gets which object, so the number of ways to do so is 1 if \(k=n\). If \(k\not=n\), then the number of such distributions is zero. This explains the entries in row four of our table.%
 \par
 We now jump to row eight of our table. We saw in {$\langle\langle$Unresolved xref, reference "ping-pong"; check spelling or use "provisional" attribute$\rangle\rangle$} that the number of ways to pass out \(k\) identical ping-pong balls to \(n\) children is simply the number of \(k\)-element subsets of an \(n\)-element set. In {$\langle\langle$Unresolved xref, reference "formulanchoosek"; check spelling or use "provisional" attribute$\rangle\rangle$} we proved the following theorem.%
-\begin{theorem}[{}]\label{theorem-3}
+\begin{theorem}[{}]\label{theorem-4}
 If \(0\le k \le n\), the number of \(k\)-element subsets of an \(n\)-element set is given by%
 \begin{equation*}
 {n\choose k} = {n^{\underline{k}}\over k!}
@@ -1530,7 +1739,7 @@ ways to place the books. Of course the right hand side of that equation cries ou
 \end{enumerate}
 \end{activity}
 The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters.  Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function. More precisely, an \terminology{ordered function}\index{ordered function}\index{function!ordered} from a set \(S\) to a set \(T\) is a function that assigns an (ordered) list of elements of \(S\) to some, but not necessarily all, elements of \(T\) in such a way that each element of \(S\) appears on one and only one of the lists.\footnote{The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.\label{fn-4}} (Notice that although it is not the usual definition of a function from \(S\) to \(T\), a function\index{function!alternate definition} can be described as an assignment of subsets of \(S\) to some, but not necessarily all, elements of \(T\) so that each element of \(S\) is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table. An \terminology{ordered onto function}\index{function!ordered!onto}\index{ordered onto function}\index{onto function!ordered} is one which assigns a list to each element of \(T\). In \hyperref[bookcase]{Problem~\ref{bookcase}} you showed that the number of ordered functions from a \(k\)-element set to an \(n\)-element set is \(\displaystyle \prod_{i=1}^n (n+i-1)\). This product occurs frequently enough that it has a name; it is called the \(k\)\/th \terminology{rising factorial power}\index{factorial power!rising}\index{rising factorial power} of \(n\) and is denoted by \(n^{\overline{k}}\).\index{\(n^{\overline{k}}\)} It is read as ``\(n\) to the \(k\) rising." (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)\index{factorial} We can summarize with a theorem that adds two more formulas for the number of ordered functions.\index{factorial!falling}\index{falling factorial power}%
-\begin{theorem}[{}]\label{theorem-4}
+\begin{theorem}[{}]\label{theorem-5}
 The number of ordered functions from a \(k\)-element set to an \(n\)-element set is%
 \begin{equation*}
 n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
@@ -1541,7 +1750,7 @@ n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
 \typeout{************************************************}
 \typeout{Subsection  Broken permutations and Lah numbers}
 \typeout{************************************************}
-\subsection[{Broken permutations and Lah numbers}]{Broken permutations and Lah numbers}\label{subsection-20}
+\subsection[{Broken permutations and Lah numbers}]{Broken permutations and Lah numbers}\label{subsection-24}
 \begin{activity}[]\label{brokenpermutation}
 In how many ways may we stack \(k\) distinct books into \(n\) identical boxes so that there is a stack in every box? The hints may suggest that you can do this problem in more than one way!%
 \par\medskip\noindent%
@@ -1561,8 +1770,8 @@ We have seen that ordered functions and broken permutations explain the entries 
 \typeout{************************************************}
 \typeout{Subsection  Compositions of integers}
 \typeout{************************************************}
-\subsection[{Compositions of integers}]{Compositions of integers}\label{subsection-21}
-\begin{activity}[]\label{activity-52}
+\subsection[{Compositions of integers}]{Compositions of integers}\label{subsection-25}
+\begin{activity}[]\label{activity-61}
 In how many ways may we put \(k\) identical books onto \(n\) shelves if each shelf must get at least one book?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad In {$\langle\langle$Unresolved xref, reference "bookcaseeveryshelf"; check spelling or use "provisional" attribute$\rangle\rangle$} we showed that with \(k\) distinct books we could place the books in \(k!{k-1\choose n-1}\) ways. We can partition these arangements of distinct books into blocks, where each block consists of all arrangements that we get just by permuting the books among themselves. Thus each block has \(k!\) arrangements in it, and each arrangement corresponds to an arrangement of identical books. Thus there are \(k-1\choose n-1\) ways to arrange identical books.%
@@ -1572,12 +1781,12 @@ A \terminology{composition} of the integer \(k\) into \(n\) parts is a list of \
 \par\medskip\noindent%
 \textbf{Solution.}\quad There is a bijection between compositions of \(k\) into \(n\) parts and arrangements of \(k\) identical books on \(n\) shelves so that each shelf gets a book. Namely, the number of books on shelf \(i\) is the \(i\)th element of the list. Thus the number of compositions of \(k\) into \(n\) parts is \(k-1 \choose n-1\).%
 \end{activity}
-\begin{activity}[]\label{activity-54}
+\begin{activity}[]\label{activity-63}
 Your answer in \hyperref[compositionagian]{Problem~\ref{compositionagian}} can be expressed as a binomial coefficient. This means it should be possible to interpret a composition as a subset of some set. Find a bijection between compositions of \(k\) into \(n\) parts and certain subsets of some set.  Explain explicitly how to get the composition from the subset and the subset from the composition.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If we line up \(k\) identical books, there are \(k-1\) places in between two books. If we choose \(n-1\) of these places and slip dividers into those places, then we have a first clump of books, a second clump of books, and so on. The \(i\)th element of our list is the number of books in the \(i\)th clump. Clearly using books is irrelevant; we could line up any \(k\) identical objects and make the same argument. Our bijection is between compositions and \((n-1)\)-element subsets of the set of \(k-1\) spaces between our objects.%
 \end{activity}
-\begin{activity}[]\label{activity-55}
+\begin{activity}[]\label{activity-64}
 Explain the connection between compositions of \(k\) into \(n\) parts and the problem of distributing \(k\) identical objects to \(n\) recipients so that each recipient gets at least one.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Since the recipients are distinct, we can think of them as a first recipient, a second, and so on. Given a composition of \(k\) into \(n\) parts, let the \(i\)th element of the list be the number of objects given to recipient number \(i\).%
@@ -1586,7 +1795,7 @@ The sequence of problems you just completed should explain the entry in the midd
 \typeout{************************************************}
 \typeout{Subsection  Multisets}
 \typeout{************************************************}
-\subsection[{Multisets}]{Multisets}\label{subsection-22}
+\subsection[{Multisets}]{Multisets}\label{subsection-26}
 In the middle column of row 7 of our table, we are asking for the number of ways to distribute \(k\) identical objects (say ping-pong balls) to \(n\) distinct recipients (say children).%
 \begin{activity}[]\label{identicalbooks}
 In how many ways may we distribute \(k\) identical books on the shelves of a bookcase with \(n\) shelves, assuming that any shelf can hold all the books?%
@@ -1603,7 +1812,7 @@ A \terminology{multiset}\index{multiset} chosen from a set \(S\) may be thought 
 \par\medskip\noindent%
 \textbf{Solution.}\quad There is a bijection between arrangements of identical books on \(n\) shelves and multisets chosen from an \(n\)-element set: the multiplicity of element \(i\) is the number of books on shelf \(i\). Thus we have \(n+k-1\choose k\) ways to choose a \(k\)-element multiset from an \(n\)-element set by \hyperref[identicalbooks]{Problem~\ref{identicalbooks}}.%
 \end{activity}
-\begin{activity}[]\label{activity-58}
+\begin{activity}[]\label{activity-67}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Your answer in the previous problem should be expressible as a binomial coefficient. Since a binomial coefficient counts subsets, find a bijection between subsets of something and multisets chosen from a set \(S\).%
@@ -1634,7 +1843,7 @@ The sequence of problems you just completed should explain the entry in the midd
 \typeout{************************************************}
 \typeout{Section 2.2 Partitions and Stirling Numbers}
 \typeout{************************************************}
-\section[{Partitions and Stirling Numbers}]{Partitions and Stirling Numbers}\label{section-8}
+\section[{Partitions and Stirling Numbers}]{Partitions and Stirling Numbers}\label{section-9}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
@@ -1642,7 +1851,7 @@ We have seen how the number of partitions of a set of \(k\) objects into \(n\) b
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers of the second kind}
 \typeout{************************************************}
-\subsection[{Stirling Numbers of the second kind}]{Stirling Numbers of the second kind}\label{subsection-23}
+\subsection[{Stirling Numbers of the second kind}]{Stirling Numbers of the second kind}\label{subsection-27}
 We use the notation \(S(k,n)\) to stand for the number of partitions of a \(k\) element set with \(n\) blocks. For historical reasons, \(S(k,n)\) is called a \emph{Stirling number of the second kind}. \index{partition!of a set}\index{partition!of a set!!Stirling Numbers}\index{Stirling Number!second kind}\index{\(S(k,n)\)}%
 \begin{activity}[]\label{secondstirlingrecurrence}
 ~\par
@@ -1697,7 +1906,7 @@ As you see in the table, we define \(S(0,0)=1\), and \(S(0,n)\) or \(S(k,0)\) to
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-61}
+\begin{activity}[]\label{activity-70}
 Find a recurrence similar to the one in \hyperref[secondstirlingrecurrence]{Problem~\ref{secondstirlingrecurrence}} for the Lah numbers \(L(k,n)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(L(k,n)\) is the number of broken permutations of a \(k\)-element set into \(n\) parts. Either \(k\) is in an ordered block by itself or it is not. If it is, it can go after any of the \(k-1\) other elements, or it can go at the beginning of any of the \(n\) blocks. If it is not, deleting it gives a broken permutation of a \(k-1\)-element set into \(n-1\) blocks. Thus \(L(k,n)=L(k-1,n-1) + (n+k-1)L(k,n)\).%
@@ -1741,8 +1950,8 @@ B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers and onto functions}
 \typeout{************************************************}
-\subsection[{Stirling Numbers and onto functions}]{Stirling Numbers and onto functions}\label{subsection-24}
-\begin{activity}[]\label{activity-63}
+\subsection[{Stirling Numbers and onto functions}]{Stirling Numbers and onto functions}\label{subsection-28}
+\begin{activity}[]\label{activity-72}
 Given a function \(f\) from a \(k\)-element set \(K\) to an \(n\)-element set, we can define a partition of \(K\) by putting \(x\) and \(y\) in the same block of the partition if and only if \(f(x)=f(y)\). How many blocks does the partition have if \(f\) is onto? How is the number of functions from a \(k\)-element set onto an \(n\)-element set related to a Stirling number? Be as precise in your answer as you can.\index{function!onto!and Stirling Numbers}\index{onto function!counting}%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If \(f\) is onto, the number of blocks of the partition is \(n\). The number of onto functions from a \(k\)-element set onto an \(n\)-element set is \(S(k,n)n!\), because we have a one-to-one function from the blocks to the \(n\)-element set.%
@@ -1752,19 +1961,19 @@ Each function from a \(k\)-element set \(K\) to an \(n\)-element set \(N\) is a 
 \par\medskip\noindent%
 \textbf{Solution.}\quad The sum should equal the number of functions, \(n^k\). Thus we get \(\sum_{j=0}^n {n\choose j}S(k,j)j! = n^k\). By using the fact that \({n\choose j}= n^{\underline{j}}/j!\), this may be rewritten as \(\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k.\)%
 \end{activity}
-\begin{activity}[]\label{activity-65}
+\begin{activity}[]\label{activity-74}
 In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, reference "sandwiches"; check spelling or use "provisional" attribute$\rangle\rangle$} be placed into three distinct bags so that each bag gets at least one?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(S(9,3)\cdot3!= 55,980\).%
 \end{activity}
-\begin{activity}[]\label{activity-66}
+\begin{activity}[]\label{activity-75}
 In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, reference "caterer2"; check spelling or use "provisional" attribute$\rangle\rangle$} be placed into distinct bags so that each bag gets exactly three?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Choose three sandwiches for bag one in \(9\choose3\) ways, three for bag two in \(6\choose3\) ways and put the remainder in bag 3.  This gives us \({9\choose3}{6\choose3}={9!\over3!3!3!}=1680\) ways.%
 \par
 The \(9!\over3!3!3!\) suggests another solution. We can line up the sandwiches in 9! ways. We take the first three for bag one, the second three for bag two and the last three for bag 3. The order of the sandwiches in the bag does not matter though, so each there are \(3!3!3!\) listings corresponding to each way of putting sandwiches in bags, giving us \(9!\over3!3!3!\) ways to put the sandwiches in bags.%
 \end{activity}
-\begin{activity}[]\label{activity-67}
+\begin{activity}[]\label{activity-76}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item How many functions are there from a \(k\)-element set \(K\) to a set \(N=\{y_1,y_2,\ldots y_n\}\) so that \(y_i\) is the image of \(j_i\) elements of \(K\) for each \(i\) from 1 to \(n\)? This number is called a \emph{multinomial coefficient}\index{multinomial coefficient}\index{coefficient!multinomial} and denoted by%
@@ -1789,7 +1998,7 @@ or more elegantly, by lining up the elements of the domain in \(k!\) ways, takin
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-68}
+\begin{activity}[]\label{activity-77}
 What do multinomial coefficients have to do with expanding the \(k\)th power of a multinomial \(x_1+x_2+\cdots+x_n\)? This result is called the \emph{multinomial theorem}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad When we use the distributive law to multiply out \((x_1+x_2+\cdots +x_n)^k\), we will get a sum of a bunch of terms of the form \(x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\) where \(i_1+i_2+\cdots+ i_n=k\).  The terms with a given sequence \(i_1,i_2,\ldots, i_n\) of exponents will arise from choosing, as we apply the distributive law over and over again, \(x_1\) from \(i_1\) of the factors, \(x_2\) from \(i_2\) of the factors, and so on. Thus the number of terms \(x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\) will be the number of ways to label \(i_1\) of the factors with a 1, \(i_2\) of the factors with a 2, \dots{}, and \(i_n\) of the factors with an \(n\). The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from \([k]\) to \([n]\) as follows. If factor \(i\) is labelled \(j\) we let \(f(i) =j\). Further each function \(f\) from \([k]\) to \([n]\) gives us that maps \(i_j\) elements of \([k]\) to \(j\) will give us such a labelling. Thus the coefficient of \(x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}\) will be the multinomial coefficient \(k\choose i_1,i_2,\ldots, i_n\).%
@@ -1797,7 +2006,7 @@ What do multinomial coefficients have to do with expanding the \(k\)th power of 
 \typeout{************************************************}
 \typeout{Subsection  Stirling Numbers and bases for polynomials}
 \typeout{************************************************}
-\subsection[{Stirling Numbers and bases for polynomials}]{Stirling Numbers and bases for polynomials}\label{subsection-25}
+\subsection[{Stirling Numbers and bases for polynomials}]{Stirling Numbers and bases for polynomials}\label{subsection-29}
 \begin{activity}[]\label{powersfromfalling}
 Find a way to express \(n^k\) in terms of \(k^{\underline{j}}\) for appropriate values \(j\). You may use Stirling numbers if they help you. Notice that \(x^{\underline{j}}\) makes sense for a numerical variable \(x\) (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming \(n\) does), just as \(x^j\) does. Find a way to express the power \(x^k\) in terms of the polynomials \(x^{\underline{j}}\) for appropriate values of \(j\) and explain why your formula is correct.%
 \par\medskip\noindent%
@@ -1822,7 +2031,7 @@ x^{\underline{j}}S(k,j)-x^k\) must be zero for every real (and even every comple
 x^{\underline{j}}S(k,j)=x^k\), and we have expressed \(x^k\) in terms of \(x^{\underline{j}}\) for \(j\le k\).%
 \end{activity}
 You showed in \hyperref[powersfromfalling]{Problem~\ref{powersfromfalling}} how to get each power of \(x\) in terms of the falling factorial powers \(x^{\underline{j}}\). Therefore every polynomial in \(x\) is expressible in terms of a sum of numerical multiples of falling factorial powers. Using the language of linear algebra, we say that the ordinary powers of \(x\) and the falling factorial powers of \(x\) each form a basis for the ``space'' of polynomials, and that the numbers \(S(k,n)\) are ``change of basis coefficients.'' If you are not familiar with linear algebra, a \terminology{basis}\index{basis (for polynomials)} for the \terminology{space of polynomials}\footnote{The space of polynomials is just another name for the set of all polynomials.\index{space of polynomials}\label{fn-6}} is a set of polynomials such that each polynomial, whether in that set or not, can be expressed in one and only one way as a sum of numerical multiples of polynomials in the set.%
-\begin{activity}[]\label{activity-70}
+\begin{activity}[]\label{activity-79}
 Show that every power of \(x+1\) is expressible as a sum of numerical multiples of powers of \(x\). Now show that every power of \(x\) (and thus every polynomial in \(x\)) is a sum of numerical multiples (some of which could be negative) of powers of \(x+1\). This means that the powers of \(x+1\) are a basis for the space of polynomials as well. Describe the change of basis coefficients that we use to express the binomial powers \((x+1)^n\) in terms of the ordinary \(x^j\) explicitly. Find the change of basis coefficients we use to express the ordinary powers \(x^n\) in terms of the binomial powers \((x+1)^k\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We know that%
@@ -1884,7 +2093,7 @@ Equating the coefficients of \(x^n\) in the first and last line of this equation
 \end{enumerate}
 \end{activity}
 By definition, the Stirling numbers of the first kind are also change of basis coefficients. The Stirling numbers of the first and second kind are change of basis coefficients from the falling factorial powers of \(x\) to the ordinary factorial powers, and vice versa.%
-\begin{activity}[]\label{activity-72}
+\begin{activity}[]\label{activity-81}
 Explain why every rising factorial polynomial \(x^{\overline{k}}\) can be expressed in terms of the falling factorial polynomials \(x^{\underline{n}}\). Let \(b(k,n)\) stand for the change of basis coefficients that allow us to express \(x^{\overline{k}}\) in terms of the falling factorial polynomials \(x^{\underline{n}}\); that is, define \(b(k,n)\) by the equations%
 \begin{equation*}
 x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
@@ -1947,12 +2156,12 @@ Therefore the change of basis coefficients are \((-1)^{n-k}b(k,n)\).%
 \typeout{************************************************}
 \typeout{Section 2.3 Partitions of Integers}
 \typeout{************************************************}
-\section[{Partitions of Integers}]{Partitions of Integers}\label{section-9}
+\section[{Partitions of Integers}]{Partitions of Integers}\label{section-10}
 \typeout{************************************************}
 \typeout{Introduction  }
 \typeout{************************************************}
 We have now completed all our distribution problems except for those in which both the objects and the recipients are identical. For example, we might be putting identical apples into identical paper bags. In this case all that matters is how many bags get one apple (how many recipients get one object), how many get two, how many get three, and so on. Thus for each bag we have a number, and the multiset of numbers of apples in the various bags is what determines our distribution of apples into identical bags. A multiset of positive integers that add to \(n\) is called a \terminology{partition}\index{partition of an integer} of \(n\). Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1) and 3. The number of partitions of \(k\) is denoted by \(P(k)\); in computing the partitions of 3 we showed that \(P(3) = 3\). It is traditional to use Greek letters like \(\lambda\) (the Greek letter \(\lambda\) is pronounced LAMB duh) to stand for partitons; we might write \(\lambda= 1,1,1\), \(\gamma= 2,1\) and \(\tau = 3\) to stand for the three partitions we just described. We also write \(\lambda = 1^3\) as a shorthand for \(\lambda = 1,1,1\), and we write \(\lambda \dashv 3\) as a shorthand for ``\(\lambda\) is a partition of three."%
-\begin{activity}[]\label{activity-73}
+\begin{activity}[]\label{activity-82}
 Find all partitions of 4 and find all partitions of 5, thereby computing \(P(4)\) and \(P(5)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(4=1+1+1+1\), \(4=2+1+1\), \(4=2+1\), \(4=3+1\), \(4=4\), so that \(P(4)=5\). \(5=1+1+1+1+1\), \(5=2+1+1+1\), \(5=2+2+1\), \(5=3+1+1\), \(5=3+2\), \(5=4+1\), \(5=5\), so that \(P(5)=7\).%
@@ -1960,9 +2169,9 @@ Find all partitions of 4 and find all partitions of 5, thereby computing \(P(4)\
 \typeout{************************************************}
 \typeout{Subsection  The number of partitions of \(k\) into \(n\) parts}
 \typeout{************************************************}
-\subsection[{The number of partitions of \(k\) into \(n\) parts}]{The number of partitions of \(k\) into \(n\) parts}\label{subsection-26}
+\subsection[{The number of partitions of \(k\) into \(n\) parts}]{The number of partitions of \(k\) into \(n\) parts}\label{subsection-30}
 A \terminology{partition of the integer \(k\) into \(n\) parts}\index{partition of an integer!into \(n\) parts} is a multiset of \(n\) positive integers that add to \(k\). We use \(P(k,n)\) to denote the number of partitions of \(k\) into \(n\) parts. Thus \(P(k,n)\) is the number of ways to distribute \(k\) identical objects to \(n\) identical recipients so that each gets at least one.%
-\begin{activity}[]\label{activity-74}
+\begin{activity}[]\label{activity-83}
 Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say about the number of ways to put six identical apples into three identical bags so that each bag has at least one apple?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(6=4+1+1\), \(6=3+2+1\), \(6=2+2+2\), so \(P(6,3)=3\). This says there are three ways to put six identical apples into three identical bags so that each bag gets at least one apple.%
@@ -1970,8 +2179,8 @@ Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say 
 \typeout{************************************************}
 \typeout{Subsection  Representations of partitions}
 \typeout{************************************************}
-\subsection[{Representations of partitions}]{Representations of partitions}\label{subsection-27}
-\begin{activity}[]\label{activity-75}
+\subsection[{Representations of partitions}]{Representations of partitions}\label{subsection-31}
+\begin{activity}[]\label{activity-84}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item How many solutions are there in the positive integers to the equation \(x_1+x_2+x_3 =7\) with \(x_1\ge x_2\ge x_3\)?%
@@ -1985,7 +2194,7 @@ Find \(P(6,3)\) by finding all partitions of 6 into 3 parts. What does this say 
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-76}
+\begin{activity}[]\label{activity-85}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Describe the relationship between partitions of \(k\) and lists or vectors \((x_1,x_2,\ldots,x_n)\) such that \(x_1+2x_2+\ldots kx_k = k\).  Such a representation of a partition is called a \terminology{type vector} representation of a partition, and it is typical to leave the trailing zeros out of such a representation; for example \((2,1)\) stands for the same partition as \((2,1,0,0)\). What is the decreasing list representation for this partition, and what number does it partition?\index{partition of an integer!type vector}\index{type vector for a partition of an integer}%
@@ -2003,14 +2212,14 @@ When we write a partition as \(\lambda = \lambda_1,\lambda_2,\ldots,\lambda_n\),
 \typeout{************************************************}
 \typeout{Subsection  Ferrers and Young Diagrams and the conjugate of a partition}
 \typeout{************************************************}
-\subsection[{Ferrers and Young Diagrams and the conjugate of a partition}]{Ferrers and Young Diagrams and the conjugate of a partition}\label{subsection-28}
+\subsection[{Ferrers and Young Diagrams and the conjugate of a partition}]{Ferrers and Young Diagrams and the conjugate of a partition}\label{subsection-32}
 The decreasing list representation of partitions leads us to a handy way to visualize partitions. Given a decreasing list \((\lambda_1,\lambda_2,\ldots \lambda_n)\), we draw a figure made up of rows of dots that has \(\lambda_1\) equally spaced dots in the first row, \(\lambda_2\) equally spaced dots in the second row, starting out right below the beginning of the first row and so on. Equivalently, instead of dots, we may use identical squares, drawn so that a square touches each one to its immediate right or immediately below it along an edge. See \hyperref[FerrersYoung]{Figure~\ref{FerrersYoung}} for examples.\index{Ferrers diagram}\index{Young diagram}\index{partition of an integer!Ferrers diagram}\index{partition of an integer!Young diagram}\index{diagram!of a partition!Ferrers}\index{diagram!of a partition!Young} The figure we draw with dots is called the \terminology{Ferrers diagram} of the partition; sometimes the figure with squares is also called a Ferrers diagram; sometimes it is called a \terminology{Young diagram}. At this stage it is irrelevant which name we choose and which kind of figure we draw; in more advanced work the squares are handy because we can put things like numbers or variables into them.  From now on we will use squares and call the diagrams Young diagrams.%
 \begin{figure}
 \centering
 \includegraphics[width=0.33\linewidth]{images/FerrersYoung}
 \caption{The Ferrers and Young diagrams of the partition (5,3,3,2)\label{FerrersYoung}}
 \end{figure}
-\begin{activity}[]\label{activity-77}
+\begin{activity}[]\label{activity-86}
 Draw the Young diagram of the partition (4,4,3,1,1). Describe the geometric relationship between the Young diagram of (5,3,3,2) and the Young diagram of (4,4,3,1,1).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \leavevmode%
@@ -2021,7 +2230,7 @@ Draw the Young diagram of the partition (4,4,3,1,1). Describe the geometric rela
 \end{figure}
 We get the Young diagram of \((5,3,3,2)\) by flipping the Young diagram of \((4,4,3,1,1)\) around a line that includes the diagonal of the upper left box; if we think of the top left corner of the diagram as being at the origin, we flip around the line \(y=-x\).%
 \end{activity}
-\begin{activity}[]\label{activity-78}
+\begin{activity}[]\label{activity-87}
 The partition \((\lambda_1,\lambda_2,\ldots, \lambda_n)\) is called the \terminology{conjugate}\index{conjugate of an integer partition}\index{partition of an integer!conjugate of} of the partition \((\gamma_1,\gamma_2,\ldots, \gamma_m)\) if we obtain the Young diagram of one from the Young diagram of the other by flipping one around the line with slope -1 that extends the diagonal of the top left square. See \hyperref[conjugateYoung]{Figure~\ref{conjugateYoung}} for an example.%
 \begin{figure}
 \centering
@@ -2032,7 +2241,7 @@ What is the conjugate of (4,4,3,1,1)? How is the largest part of a partition rel
 \par\medskip\noindent%
 \textbf{Solution.}\quad \((5,3,3,2)\). The largest part of a partition equals the number of parts of its conjugate. The number of partitions of \(k\) with largest part \(m\) equals the number of partitions of \(k\) with \(m\) parts.%
 \end{activity}
-\begin{activity}[]\label{activity-79}
+\begin{activity}[]\label{activity-88}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item A partition is called \emph{self-conjugate}\index{self-conjugate partition}\index{partition of an integer!self conjugate} if it is equal to its conjugate. Find a relationship between the number of self-conjugate partitions of \(k\) and the number of partitions of \(k\) into distinct odd parts.%
@@ -2072,7 +2281,7 @@ Why can we interpret the part of the rectangle not occupied by our Young diagram
 
 \end{enumerate}
 \end{activity}
-\begin{activity}[]\label{activity-81}
+\begin{activity}[]\label{activity-90}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Suppose we take a partition of \(k\) into \(n\) parts with largest part \(m\), complement it in the smallest rectangle it will fit into, complement the result in the smallest rectangle it will fit into, and continue the process until we get the partition 1 of one into one part.  What can you say about the partition with which we started?%
@@ -2228,9 +2437,9 @@ Each gets exactly one&&\tabularnewline[0pt]
 \typeout{************************************************}
 \typeout{Subsection  Partitions into distinct parts}
 \typeout{************************************************}
-\subsection[{Partitions into distinct parts}]{Partitions into distinct parts}\label{subsection-29}
+\subsection[{Partitions into distinct parts}]{Partitions into distinct parts}\label{subsection-33}
 Often \(Q(k,n)\) is used to denote the number of partitions of \(k\) into distinct parts, that is, parts that are different from each other.%
-\begin{activity}[]\label{activity-83}
+\begin{activity}[]\label{activity-92}
 Show that%
 \begin{equation*}
 Q(k,n) \le {1\over n!}{k-1\choose n-1}.
@@ -2239,29 +2448,29 @@ Q(k,n) \le {1\over n!}{k-1\choose n-1}.
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of compositions of \(k\) into \(n\) parts is \(k-1\choose n-1\). Thus the number of compositions of \(k\) into \(n\) distinct parts is less than \(k-1\choose n-1\). Divide the compositions of \(k\) into \(n\) distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has \(n!\) members. Further, there is a bijection between the blocks of this partition and the partitions of \(k\) into \(n\) distinct parts. Since the number of compositions of \(k\) into \(n\) distinct parts is less than \(k-1 \choose n-1\), the number of partitions of \(k\) into \(n\) distinct parts is less than \({1\over n!}  {k-1\choose n-1}\).%
 \end{activity}
-\begin{activity}[]\label{activity-84}
+\begin{activity}[]\label{activity-93}
 Show that the number of partitions of 7 into 3 parts equals the number of partitions of 10 into three distinct parts.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Given a partition \(\lambda\) of 7 in decreasing list form \(\lambda_1,\lambda_2,\lambda_3\), if we add 0 to \(\lambda_3\), \(1\) to \(\lambda_2\) and 2 to \(\lambda_1\) the resulting partition of 10 has distinct parts. If we take a partition \(\lambda'\) of 10 with distinct parts, then \(\lambda'_1\ge\lambda'_2+1\), \(\lambda'_1\ge\lambda'_2+2\), and \(\lambda'_2\ge \lambda'_3+1\). Therefore if we subtract 2 from \(\lambda'_1\) to get \(\lambda_1\), subtract 1 from \(\lambda'_2\) to get \(\lambda_2\) and let \(\lambda_3= \lambda'_3\), then \(\lambda_1,\lambda_2,\lambda_3\) is the decreasing list representation of a partition of \(10-3=7\). Thus there is a bijection between partitions of \(7\) into three parts and partitions of \(10\) into three distinct parts.%
 \end{activity}
-\begin{activity}[]\label{activity-85}
+\begin{activity}[]\label{activity-94}
 There is a relationship between \(P(k,n)\) and \(Q(m,n)\) for some other number \(m\). Find the number \(m\) that gives you the nicest possible relationship.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of partitions of \(k\) into \(n\) parts is equal to the number of partitions of \(k+{n\choose2}\) into n distinct parts.  The bijection from partitions of \(k\) with \(n\) parts to partitions of \(k+{n\choose2}\) with \(n\) distinct parts that proves this is the one that takes a partition \(\lambda_n\lambda_{n-1}\cdots\lambda_1\) of \(k\) with \(\lambda_i>\lambda_{i+1}\) and adds \(i-1\) to \(\lambda_i\) to get \(\lambda'_i\). Then \(\lambda'\) is a partition into distinct parts, and the number it partitions is \(k+1+2+\cdots+n-1=k+{n\choose 2}\). The proof that it is a bijection is the fact that subtracting \(n-i\) from the \(i\)\/th part of a partition of \(k\) into distinct parts yields a partition of \(k\), because part \(i+j\) is at least \(j\) smaller than part \(i\).%
 \end{activity}
-\begin{activity}[]\label{activity-86}
+\begin{activity}[]\label{activity-95}
 Find a recurrence that expresses \(Q(k,n)\) as a sum of \(Q(k-n,m)\) for appropriate values of \(m\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Suppose \(\lambda\) is a partition of \(k\) into \(n\) distinct parts. Either 1 is one of those parts or not. Thus if we subtract 1 from each part, we either get a partition of \(k-n\) into \(n-1\) parts or a partition of \(k-n\) into \(n\) parts. If \(\lambda\) and \(\lambda'\) are different partitions of \(k\) into \(n\) distinct parts, they go to different partitions. Each partition of \(k-n\) into \(n-1\) parts or \(n\) parts can be gotten in this way from a corresponding partition of \(k\) into \(n\) parts. Thus we have a bijective correspondence and \(Q(k,n)=Q(k-n,n-1) +Q(k-n,n)\).%
 \end{activity}
-\begin{activity}[]\label{activity-87}
+\begin{activity}[]\label{activity-96}
 Show that the number of partitions of \(k\) into distinct parts equals the number of partitions of \(k\) into odd parts.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We start by giving a function from the set of partitions of \(k\) to the set of partitions of \(k\) with (only) odd parts. Clearly such a function cannot be one to one. Then we show that when restricted to the partitions with distinct parts it is one-to-one and onto by constructing an inverse. Given a partition \(\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}\), write \(\lambda_i=\gamma_i2^{k_i}\), where \(\gamma_i\) is odd. (Thus \(2^{k_i}\) is the highest power of 2 that is a factor of \(\lambda_i\), so it is 1 if \(\lambda_i\) is odd.). It is possible that \(\gamma_i=\gamma_j\), for example if \(\lambda_i=36\) and \(\lambda_j=18\), then \(\gamma_i=\gamma_j=9\). We construct a new partition \(\pi\) whose parts are the numbers \(\gamma_j\) as follows: Given an odd number \(p\), let the multiplicity \(m(p)\) of \(p\) in \(\pi\) be \(\sum_{j: \gamma_j=m} 2^{k_j}\). Thus \(\sum_{p: m(p)\not=0}m(p)p = k\). Therefore, \(\pi\) is a partition of \(k\) whose parts are all odd.%
 \par
 Now consider a partition \(\pi\) of \(k\) whose parts are all odd. Let \(\pi=\pi_1^{r_1}\pi_2^{r_2}\cdots \pi_t^{r_t}\), with \(\pi_i>\pi_{i+1}\). (In terms of the multiplicity function \(m\), \(m(\pi_i) =r_i\), and \(\sum_{i=1}^t r_i\pi_i = k\).) We are going to write the binary expansion of each \(r_i\) as \(r_i = \sum_{j= 0}^{\lfloor \log_2 r_i\rfloor} 2^{ja_{ij}}\), where \(a_{ij}\) is 1 if \(2^j\) appears in the binary expansion of \(r_i\), and 0 otherwise. All of the numbers \(\pi_i2^{ja_{ij}}\) are distinct, because a power of two times one odd number cannot equal a power of two times another odd number. The numbers \(\pi_i2^{ja_{ij}}\) add to \(k\), so they are the parts of a partition \(\pi'\) of \(k\) into distinct parts. When we apply the function constructed in the first part of the solution to \(\pi'\), we get \(\pi\), so the correspondence between \(\pi\) and \(\pi'\) is a bijection.%
 \end{activity}
-\begin{activity}[]\label{activity-88}
+\begin{activity}[]\label{activity-97}
 Euler showed that if \(k\not= {3j^2+j\over 2}\), then the number of partitions of \(k\) into an even number of distinct parts is the same as the number of partitions of \(k\) into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad This solution is taken largely from the book \textsl{Introduction to Combinatorics} by Ioan Tomescu (published in London by Collet's in 1975). Tomescu calls a collection of rows in a Young diagram a ``trapezoid'' if each row contains one less cell than the row above and the number of cells in the rows above and below the trapezoid differ by two or more from the number of cells in rows of the trapezoid. Thus in (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows, and the last two. Since we are dealing with partitions with distinct parts, we don't have to worry about how two equal rows affect the definition of a trapezoid. We will describe a way to transform a partition with an even number of distinct parts into a partition with an odd number of distinct parts and vice versa.%
@@ -2277,7 +2486,7 @@ If \(k= {3j^2\pm j\over 2}\) and \(j\) is even, then there is one diagram of a p
 \typeout{************************************************}
 \typeout{Section 2.4 Supplementary Problems}
 \typeout{************************************************}
-\section[{Supplementary Problems}]{Supplementary Problems}\label{section-10}
+\section[{Supplementary Problems}]{Supplementary Problems}\label{section-11}
 \leavevmode%
 \begin{enumerate}
 \item\hypertarget{li-47}{}Answer each of the following questions with \(n^k\), \(k^n\), \(n!\), \(k!\), \(n \choose k\), \(k \choose n\), \(n^{\underline{k}}\), \(k^{\underline{n}}\), \(n^{\overline{k}}\), \(k^{\overline{n}}\), \(n+k-1\choose k\), \(n+k-1\choose n\), \(n-1\choose k-1\), \(k-1\choose n-1\), or ``none of the above". %
@@ -2349,6 +2558,408 @@ A partition of \([k]\) into \(n\) blocks has a block containing \(k\). If this b
 +(k-1)c(k-1,n)\). This recurrence is almost the same as the recurrence for \(s(k,n)\), except it has a plus sign where the recurrence for the Stirling numbers of the first kind has a minus sign. Further \(c(k,1)=(k-1)!\) and \(c(k,k)=1\), which agrees, except for sign, with the Stirling numbers of the first kind. If we experiment with applying the recurrence, we see that whenever we use it to compute \(c(k,n)\), we get that \(c(k,n)=|s(k,n)|\). It is now straightforward to prove by induction that \(c(k,n)=|s(k,n)|\).%
 %
 \end{enumerate}
+\typeout{************************************************}
+\typeout{Chapter 3 The Principle of Inclusion and Exclusion}
+\typeout{************************************************}
+\chapter[{The Principle of Inclusion and Exclusion}]{The Principle of Inclusion and Exclusion}\label{chapter-4}
+\typeout{************************************************}
+\typeout{Section 3.1 The Principle of Inclusion and Exclusion}
+\typeout{************************************************}
+\section[{The Principle of Inclusion and Exclusion}]{The Principle of Inclusion and Exclusion}\label{sec_inclexcl-inclexcl}
+\typeout{************************************************}
+\typeout{Subsection  The size of a union of sets}
+\typeout{************************************************}
+\subsection[{The size of a union of sets}]{The size of a union of sets}\label{subsection-34}
+One of our very first counting principles was the \emph{sum principle}\index{sum principle} which says that the size of a union of disjoint sets is the sum of their sizes. Computing the size of overlapping sets requires, quite naturally, information about how they overlap. Taking such information into account will allow us to develop a powerful extension of the sum principle known as the ``principle of inclusion and exclusion.''\index{principle of inclusion and exclusion}\index{inclusion and exclusion principle}%
+\begin{activity}[]\label{fertilizer2}
+In a biology lab study of the effects of basic fertilizer ingredients on plants, 16 plants are treated with potash, 16 plants are treated with phosphate, and among these plants, eight are treated with both phosphate and potash. No other treatments are used. How many plants receive at least one treatment? If 32 plants are studied, how many receive no treatment?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The number of plants receiving treatment was \(16+16-8 = 24\). The number of plants receiving no treatment was eight.%
+\end{activity}
+\begin{activity}[]\label{activity-99}
+Give a formula for the size of the union \(A\cup B\) of two sets \(A\) in terms of the sizes \(|A|\) of \(A\), \(|B|\) of \(B\), and \(|A\cap B|\) of \(A\cap B\). If \(A\) and \(B\) are subsets of some ``universal'' set \(U\), express the size of the complement \(U-(A\cup B)\) in terms of the sizes \(|U|\) of \(U\), \(|A|\) of \(A\), \(|B|\) of \(B\), and \(|A\cap B|\) of \(A\cap B\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(|A\cup B|=|A| + |B| - |A\cap B|\).%
+\par
+\(|U-(A\cup B)| = |U|-|A|-|B| + |A
+\cap B|\).%
+\end{activity}
+\begin{activity}[]\label{activity-100}
+In \hyperref[fertilizer2]{Problem~\ref{fertilizer2}}, there were just two fertilizers used to treat the sample plants. Now suppose there are three fertilizer treatments, and 15 plants are treated with nitrates, 16 with potash, 16 with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate, 8 with potash and phosphate and 4 with all three. Now how many plants have been treated? If 32 plants were studied, how many received no treatment at all?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(15+16+16-7-9-8+4=27\) plants were treated and five received no treatment.%
+\end{activity}
+\begin{activity}[]\label{threesetintersection}
+Give a formula for the size of \(A_1\cup A_2\cup A_3\) in terms of the sizes of \(A_1\), \(A_2\), \(A_3\) and the intersections of these sets.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
+C| +|A\cap B\cap C|\).%
+\end{activity}
+\begin{activity}[]\label{nsetintersection}
+Conjecture a formula for the size of a union of sets%
+\begin{equation*}
+A_1\cup
+A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i
+\end{equation*}
+in terms of the sizes of the sets \(A_i\) and their intersections.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad %
+\begin{equation*}
+\left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
+\sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
+A_2\cap\cdots \cap A_n|.
+\end{equation*}
+\end{activity}
+The difficulty of generalizing \hyperref[threesetintersection]{Problem~\ref{threesetintersection}} to \hyperref[nsetintersection]{Problem~\ref{nsetintersection}} is not likely to be one of being able to see what the right conjecture is, but of finding a good notation to express your conjecture. In fact, it would be easier for some people to express the conjecture in words than to express it in a notation. Here is some notation that will make your task easier. Let us define%
+\begin{equation*}
+\bigcap_{i:i\in I}A_i
+\end{equation*}
+to mean the intersection over all elements \(i\) in the set \(I\) of \(A_i\). Thus%
+\begin{equation}
+\bigcap_{i:i\in
+\{1,3,4,6\}} = A_1\cap A_3\cap A_4 \cap A_6.\label{intersectionnotation}
+\end{equation}
+%
+\par
+This kind of notation, consisting of an operator with a description underneath of the values of a dummy variable of interest to us, can be extended in many ways. For example%
+\begin{align*}
+\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
+A_i| \amp =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
++|A_1\cap A_4|\nonumber\\
+\amp +\amp  |A_2\cap A_3|+
+|A_2\cap A_4| +|A_3\cap A_4|.
+\end{align*}
+%
+\begin{activity}[]\label{inclusion-exclusionunion}
+Use notation something like that of \hyperref[intersectionnotation]{Equation~(\ref{intersectionnotation})} and {$\langle\langle$Unresolved xref, reference "notationsolution"; check spelling or use "provisional" attribute$\rangle\rangle$} to express the answer to \hyperref[nsetintersection]{Problem~\ref{nsetintersection}}. Note there are many different correct ways to do this problem. Try to write down more than one and choose the nicest one you can. Say why you chose it (because your view of what makes a formula nice may be different from somebody else's). The nicest formula won't necessarily involve all the elements of \hyperref[intersectionnotation]{Equations~(\ref{intersectionnotation})} and {$\langle\langle$Unresolved xref, reference "notationsolution"; check spelling or use "provisional" attribute$\rangle\rangle$}.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad %
+\begin{equation*}
+\left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
+S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|
+\end{equation*}
+I chose this way of writing the formula partly because it is efficient with symbols; for example, it uses only one sum sign. But more importantly I chose it because it captures what I would want to say in words: ``You sum, over all ways of choosing an intersection of the sets \(A_i\), the size of the intersection times a sign factor that is -1 if you are intersecting an even number of sets and 1 if you are intersecting an odd number." If I were writing my solution out in words, I would probably assume that nobody would think about the possibility of an intersection of the empty set of the \(A_i\)s, but I had to put the \(S\not=\emptyset\) in my formula because otherwise the formula would have had us consider the possibility that \(S\) was empty.%
+\end{activity}
+\begin{activity}[]\label{hatcheck}
+A group of \(n\) students goes to a restaurant carrying backpacks. The manager invites everyone to check their backpack at the check desk and everyone does. While they are eating, a child playing in the check room randomly moves around the claim check stubs on the backpacks. What is the probability that, at the end of the meal, at least one student receives his or her own backpack? In other words, in what fraction of the total number of ways to pass the backpacks back does at least one student get his or her own backpack back? (Hint: For each student, how big is the set of backpack distributions in which that student gets the correct backpack? It might be a good idea to first consider cases with \(n=3\), 4, and 5.) What is the probability that no student gets his or her own backpack?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad First we compute the number of ways to pass out the backpacks so that at least one student gets the correct one, then we divide by \(n!\) the total number of ways to pass out the backpacks to get the probability that at least one student gets the correct one. If we let \(A_i\) be the set of backpack distributions in which student \(i\) gets the correct backpack, then the number we want to compute is the size of the union of the sets \(A_i\). For this purpose we need to know, for every subset \(S\subseteq [n]\) the size of \(\cap_{i\in S}A_i\). That is, we need to know the number of ways to pass out the backpacks so that student \(i\) gets the correct one for each \(i\) in \(S\). It won't matter whether or not other students get the correct backpacks, so we can just assume that for each \(i\in S\), student \(i\) gets the correct backpack and then hand out the remaining \(n-|S|\) backpacks to the remaining \(n-|S|\) students in \((n-|S|)!\) ways. Thus \((n-|S|)!\) is \(|\cap_{i:i\in S}A_i|\). Using our formula from \hyperref[inclusion-exclusionunion]{Problem~\ref{inclusion-exclusionunion}} we get%
+\begin{align*}
+\left|\bigcup_{i=1}^n A_i \right| \amp =\amp  \sum_{S:
+S\subseteq [n], S\not=\emptyset}
+(-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|\\
+\amp =\amp \sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\\
+\amp =\amp
+\sum_{s=1}^n {n\choose
+s}(-1)^{s-1}(n-s)!\\
+\amp =\amp \sum_{s=1}^n
+(-1)^{s-1}{n!\over s!}
+\end{align*}
+%
+\par
+Dividing this by \(n!\), the total number of ways to pass back the backpacks, we get \(\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}\) for the probability that at least one student gets the correct backpack. Subtracting from 1 to get the probability that no student gets the correct backpack gives us%
+\begin{equation*}
+1- \sum_{s=1}^n {(-1)^{s-1}\over
+s!}=\sum_{s=0}^n{(-1)^s\over s!}.
+\end{equation*}
+%
+\end{activity}
+\begin{activity}[]\label{activity-105}
+As the number of students becomes large, what does the probability that no student gets the correct backpack approach?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad From calculus, we know that \(e^x=\sum_{j=0}^\infty {x^j\over
+j!}\). Substituting \(x=-1\) gives us \(e^{-1}=\sum_{j=0}^\infty
+{(-1)^j\over j!}\) which is the limit as \(n\) becomes infinite of the probability in the solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}}. Thus the probability approaches \(1/e\).%
+\end{activity}
+The formula you have given in \hyperref[inclusion-exclusionunion]{Problem~\ref{inclusion-exclusionunion}} is often called \emph{the principle of inclusion and exclusion}\index{inclusion and exclusion principle!for unions of sets}\index{principle of inclusion and exclusion!for unions of sets} for unions of sets. The reason is the pattern in which the formula first adds (includes) all the sizes of the sets, then subtracts (excludes) all the sizes of the intersections of two sets, then adds (includes) all the sizes of the intersections of three sets, and so on. Notice that we haven't yet proved the principle. We will first describe the principle in an apparently more general situation that doesn't require us to translate each application into the language of sets. While this new version of the principle might seem more general than the principle for unions of sets; it is equivalent. However once one understands the notation used to express it, it is more convenient to apply.%
+\par
+\hyperref[hatcheck]{Problem~\ref{hatcheck}} is ``classically'' called the \emph{hatcheck problem}\index{hatcheck problem}; the name comes from substituting hats for backpacks. If is also sometimes called the \emph{derangement problem}\index{derangement problem}. A \emph{derangement}\index{derangement} of an \(n\)-element set is a permutation of that set (thought of as a bijection) that maps no element of the set to itself. One can think of a way of handing back the backpacks as a permutation \(f\) of the students: \(f(i)\) is the owner of the backpack that student \(i\) receives. Then a derangement is a way to pass back the backpacks so that no student gets his or her own.%
+\typeout{************************************************}
+\typeout{Subsection  The hatcheck problem restated}
+\typeout{************************************************}
+\subsection[{The hatcheck problem restated}]{The hatcheck problem restated}\label{subsection-35}
+The last question in \hyperref[hatcheck]{Problem~\ref{hatcheck}} requires that we compute the number of ways to hand back the backpacks so that nobody gets his or her own backpack. We can think of the set of ways to hand back the backpacks so that student \(i\) gets the correct one as the set of permutations of the backpacks with the property that student \(i\) gets his or her own backpack. Since there are \(n-1\) other students and they can receive any of the remaining \(n-1\) backpacks in \((n-1)\) ways, the number of permutations with the property that student \(i\) gets the correct backpack is \((n-1)!\). How many permutations are there with the properties that student \(i\) gets the correct backpack \emph{and} student \(j\) gets the correct backpack? (Let's call these properties \(i\) and \(j\) for short.) Since there are \(n-2\) remaining students and \(n-2\) remaining backpacks, the number of permutations with properties \(i\) and \(j\) is \((n-2)!\). Similarly, the number of permutations with properties \(i_1,i_2,\ldots,i_k\) is \((n-k)!\). Thus when we compute the size of the union of the sets%
+\begin{equation*}
+S_i=\{f: f\mbox{ is a permutation with property } i\},
+\end{equation*}
+we are computing the number of ways to pass back the backpacks so that at least one student gets the correct backpack. This answers the first question in \hyperref[hatcheck]{Problem~\ref{hatcheck}}. The last question in \hyperref[hatcheck]{Problem~\ref{hatcheck}} is asking us for the number of ways to pass back the backpacks that have \emph{none} of the properties. To say this in a different way, the question is asking us to compute the number of ways of passing back the backpacks that have exactly the \emph{empty set}, \(\emptyset\), of properties.%
+\typeout{************************************************}
+\typeout{Subsection  Basic counting functions: \(N_{ at least }\) and \(N_{ exactly }\)}
+\typeout{************************************************}
+\subsection[{Basic counting functions: \(N_{ at least }\) and \(N_{ exactly }\)}]{Basic counting functions: \(N_{ at least }\) and \(N_{ exactly }\)}\label{subsection-36}
+Notice that the quantities that we were able to count easily were the number of ways to pass back the backpacks so that we satisfy a certain subset \(K= \{i_1,i_2,\ldots,i_k\}\) of our properties. In fact, among the \((n-k)\) ways to pass back the backpacks with this particular set \(K\) of properties is the permutation that gives each student the correct backpack, and has not just the properties in \(K\), but the whole set of properties. Similarly, for any set \(M\) of properties with \(K\subseteq
+M\), the permutations that have all the properties in \(M\) are among the \((n-k)!\) permutations that have the properties in the set \(K\). Thus we can think of \((n-k)!\) as counting the number of permutations that have \emph{at least} the properties in \(K\). In particular, \(n!\) is the number of ways to pass back the backpacks that have at least the empty set of properties. We thus write \(N_{\mbox{at least} }(\emptyset)=n!\), or \(N_{\mbox{a} }(\emptyset)=n!\) for short. For a \(k\)-element subset \(K\) of the properties, we write \(N_{\mbox{at least} }(K) =(n-k)!\) or \(N_{\mbox{a} }(K) =(n-k)!\) for short.%
+\par
+The question we are trying to answer is ``How many of the distributions of backpacks have exactly the empty set of properties?" For this purpose we introduce one more piece of notation. We use \(N_{\mbox{exactly} }(\emptyset)\) or \(N_{\mbox{e} }(\emptyset)\) to stand for the number of backpack distributions with exactly the empty set of properties, and for any set \(K\) of properties we use \(N_{\mbox{exactly} }(K)\) or \(N_{\mbox{e} }(K)\) to stand for the number of backpack distributions with exactly the set \(K\) of properties. Thus \(N_{\mbox{e} }(K)\) is the number of distributions in which the students represented by the set \(K\) of properties get the correct backpacks back and no other students do.%
+\typeout{************************************************}
+\typeout{Subsection  The principle of inclusion and exclusion for properties}
+\typeout{************************************************}
+\subsection[{The principle of inclusion and exclusion for properties}]{The principle of inclusion and exclusion for properties}\label{subsection-37}
+For the principle of inclusion and exclusion for properties, suppose we have a set of arrangements (like backpack distributions) and a set \(P\) of properties (like student \(i\) gets the correct backpack) that the arrangements might or might not have. We suppose that we know (or can easily compute) the numbers \(N_{\mbox{a} }(K)\) for every subset \(K\) of \(P\). We are most interested in computing \(N_{\mbox{e} }(\emptyset)\), the number of arrangements with none of the properties, but it will turn out that with no more work we can compute \(N_{\mbox{e} }(K)\) for every subset \(K\) of \(P\). Based on our answer to \hyperref[hatcheck]{Problem~\ref{hatcheck}} we expect that%
+\begin{equation}
+N_{\mbox{e} }(\emptyset) = \sum_{S: S\subseteq P} (-1)^{|S|}N_{\mbox{a} }(S)\label{incexempty}
+\end{equation}
+and it is a natural guess that, for every subset \(K\) of \(S\),%
+\begin{equation}
+N_{\mbox{e} }(K) = \sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}N_{\mbox{a} }(S).\label{incexnonempty}
+\end{equation}
+%
+\par
+\hyperref[incexempty]{Equations~(\ref{incexempty})} and \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})} are called \emph{the principle of inclusion and exclusion for properties}.\index{inclusion and exclusion principle!for properties}\index{principle of inclusion and exclusion!for properties}%
+\begin{activity}[]\label{activity-106}
+Verify that the formula for the number of ways to pass back the backpacks in \hyperref[hatcheck]{Problem~\ref{hatcheck}} so that nobody gets the correct backpack has the form of \hyperref[incexempty]{Equation~(\ref{incexempty})}.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Suppose we take property \(i\) to be the property that student \(i\) gets the correct backpack. In our solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}} we thought of \(S\) as a subset of \([n]\). Since we are numbering our properties from \(1\) to \(n\), each set \(S\) determines a corresponding set \(S'\) of properties: those properties numbered by the elements of \(S\). We will use \(P\) to stand for the set of all properties, that is property 1 through property \(n\). The number of ways to pass back the hats so that nobody gets the correct hat is \(n!\) minus the number of ways to pass back the hats so that somebody does get the correct hat back. From our solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}}, we see that one way to express this is as%
+\begin{align*}
+n!-\sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp
+n!+\sum_{S:
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!\\
+\amp =\amp
+\sum_{S:
+S\subseteq [n]}(-1)^{|S|} (n-|S|)!\\
+\amp =\amp \sum_{S:
+S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')\\
+\amp =\amp
+\sum_{S':
+S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')
+\end{align*}
+because \(N_{\mbox{a} }(S')\) is the number of ways to pass back the backpacks so that at least the students in \(S\) get the correct backpacks, which is the same as the size of \(\bigcap_{i:i\in S} A_i\), and which we computed to be \((n-|S|)!\).%
+\end{activity}
+\begin{activity}[]\label{incexsystemeq}
+Find a way to express \(N_{\mbox{a} }(S)\) in terms of \(N_{\mbox{e} }(J)\) for subsets \(J\) of \(P\) containing \(S\). In particular, what is the equation that expresses \(N_{\mbox{a} }(\emptyset)\) in terms of \(N_{\mbox{e} }(J)\) for subsets \(J\) of \(P\)?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(N_{\mbox{a} }(S) = \sum_{J: S\subseteq
+J\subseteq P}N_{\mbox{e} }(J)\). In particular, we get by substitution that \(N_{\mbox{a} }(\emptyset)=\sum_{J:J\subseteq P} N_{\mbox{e} }(J)\).%
+\end{activity}
+\begin{activity}[]\label{activity-108}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item Substitute the formula for \(N_{\mbox{a} }\) from \hyperref[incexsystemeq]{Problem~\ref{incexsystemeq}} into the right hand sides of the formulas of \hyperref[incexempty]{Equations~(\ref{incexempty})} and \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})} and simplify what you get to show that for \hyperref[incexempty]{Equations~(\ref{incexempty})} and \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})} the right-hand sides are indeed equal to the left-hand sides. This will prove that those equations are true. (Hint: You will get a double sum. If you can figure out how to reverse the order of the two summations, the binomial theorem may help you simplify the formulas you get.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since \hyperref[incexempty]{Equation~(\ref{incexempty})} is a special case of \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})}, we will just substitute the formula from \hyperref[incexsystemeq]{Problem~\ref{incexsystemeq}} into the right-hand side of \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})}. This gives us%
+\begin{align*}
+\hspace{-.25 in}\sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}N_{\mbox{a} }(S)\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}\sum_{J: S\subseteq
+J\subseteq P}N_{\mbox{e} }(J)\\
+\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+\sum_{J: S\subseteq
+J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e} }(J)\\
+\amp =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+(-1)^{|S|-|K|}N_{\mbox{e} }(J)\\
+\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
+S\subseteq J} (-1)^{|S|-|K|}\\
+\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
+{|J|-|K|
+\choose s-|K|}(-1)^{s-|K|}\\
+\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
+{|J|-|K|
+\choose i}(-1)^{i}\\
+\amp =\amp \sum_{J:K\subseteq J\subseteq
+P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}\\
+\amp =\amp N_{\mbox{e} }(K).
+\end{align*}
+%
+\par
+In the fourth-to-last line of our equations, we used the fact that the number of subsets \(S\) of \(J\) that contain \(K\) is the number of ways to choose the elements of the set \(S-K\) of elements in \(S\) but not \(K\) from the elements of \(J-K\), the set of elements of \(J\) that are not in \(K\). In the second-to-last line of the equations, we recognized that the second sum in the third-to-last line is the kind of sum we would get by applying the binomial theorem to something of the form \((x+y)^{|J|-|K|}\) for a suitable \(x\) and \(y\), and then saw that \(x=1\) and \(y=-1\) would give us exactly the second sum in the third-to-last line. In going from the second-to-last line to the last line we used the facts that \(0^n=o\) if \(n>0\) and \(0^0=1\). This proves that \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})} is true for all \(K\), and in particular when \(K=\emptyset\), which also proves \hyperref[incexempty]{Equation~(\ref{incexempty})}. We have just proved the Principle of inclusion and exclusion.%
+
+~\par
+\item In how many ways may we distribute \(k\) identical apples to \(n\) children so that no child gets more than three apples?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Let property \(i\) be ``Child \(i\) gets four or more apples.'' Then we are asking for the number of ways to pass out the apples that have none of the properties, so we are asking for \(N_{\mbox{e} }(\emptyset)\). From \hyperref[incexempty]{Equation~(\ref{incexempty})} we see that to find this number we need to know \(N_{\mbox{a} }(S)\) for every subset \(S\) of our set of properties. But if \(S\) has size \(s\), then having the properties in \(S\) means that all the children in a particular set of size \(s\) will get four or more apples. We already know how to pass out the apples so that the children in a particular set \(\hat S\) of children get at least four apples: we give everyone in \(\hat
+S\) four apples, and then pass out the remaining \(k-4s\) apples to the children in \({k-4s+n-1\choose k-4s}= {k-4s+n-1\choose n-1}\) ways. This counts the number of ways to give at least four apples to every child in \(\hat S\), and maybe give four apples to some other children as well. Thus \(N_{\mbox{a} }(S) = {k-4|S|+n-1\choose n-1}\). Applying \hyperref[incexempty]{Equation~(\ref{incexempty})} gives us%
+\begin{align*}
+N_{\mbox{e} }(\emptyset)\amp =\amp \sum_{S:S\subseteq
+P}(-1)^{|S|}N_{\mbox{a} }(S)\\
+\amp =\amp \sum_{s=0}^k {k\choose s}(-1)^s {k-4s+n-1\choose n-1}\\
+\amp =\amp \sum_{s=0}^k (-1)^s{k\choose s}{k-4s+n-1\choose n-1}
+\end{align*}
+%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{relaxedmenage}
+A group of \(n\) married couples comes to a group discussion session where they all sit around a round table. In how many ways can they sit so that no person is next to his or her spouse? (Note that two people of the same sex can sit next to each other.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Let Property \(i\) be that couple \(i\) sits together. We are interested in the number of seating arrangements that have none of the properties. Thus for a set \(S\) of properties, we need to compute \(N_{\mbox{a} }(S)\). If we let each couple described by \(S\) sit together, we will seat \(|S|\) couples and \(2n-2|S|\) individuals around the table. We can do this in \(2^{|S|}(|S| + 2n-2 |S|-1)!\) ways, because once we chose a place for a couple (i.e. two adjacent seats) there are two ways the couple can sit down. Thus \(N_{\mbox{a} }(S) =2^{|S|}(2n-|S|-1)!\). Substituting this into \hyperref[incexempty]{Equation~(\ref{incexempty})} with \(P\) as the set of all properties gives us%
+\begin{align*}
+N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:S\subseteq P}
+(-1)^{|S|} N_{\mbox{a} }(S)\\
+\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}2^{s}(2n- s-1)!
+\end{align*}
+%
+\end{activity}
+\begin{activity}[]\label{activity-110}
+A group of \(n\) married couples comes to a group discussion session where they all sit around a round table. In how many ways can they sit so that no person is next to his or her spouse or a person of the same sex? This problem is called the \emph{menage problem}.\index{menage problem} (Hint: Reason somewhat as you did in \hyperref[relaxedmenage]{Problem~\ref{relaxedmenage}}, noting that if the set of couples who do sit side-by-side is nonempty, then the sex of the person at each place at the table is determined once we seat one couple in that set.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad We are going to consider arrangements of the couples alternating sex around the table. Property \(i\) of an arrangement is that couple \(i\) sits together. We are interested in the number of arrangements that have exactly none of the properties. Thus for each subset \(S\) of the properties, we consider the number of arrangements that has at least the set \(S\) of properties. We distinguish the case that \(S\) is empty from the others. \(N_{\mbox{a} }(\emptyset)\) is just the number of ways to seat \(2n\) couples around the table, alternating sex, but with no other restrictions. We can arrange one of the sexes in a circle in \(n-1!\) ways and then assign the members of the opposite sex to the places between them in \(n!\) ways, so \(N_{\mbox{a} }(\emptyset) = (n-1)!n!\). (Another way to get this result is to let one person sit down. This determines the sex of the person at each place of the table, so there are \((n-1)!\) ways to assign the people of the same sex of the first person, and \(n!\) ways to assign the people of the opposite. It appears that there are \(2n\) choices for where the first person sits, but we can break the seating charts up into blocks of \(2n\) seating charts, each of which gives the same circular arrangement. Thus there are \((n-1)!n!\) inequivalent ways to seat the people with at least the empty set of properties.)%
+\par
+Now if \(S\) is nonempty, and has \(s\) members, we seat one of the couples that must sit together (say the first in alphabetical order), and this determines the sex of the person that must sit at each other place. There are \(2n\) pairs of adjacent seats where we can seat that couple and two ways they can sit in the pair of adjacent seats that we choose. Then we have \(s-1\) couples, \(n-s\) men and \(n-s\) women to seat in the remaining places. First we arrange the \(s-1\) couples and \(2n-2s\) identical empty chairs in places at the table in \((2n-2s+s-1)!/(2n-2s)!=(2n-s-1)!/(2n-2s)!\) ways. Each couple can sit in only one way in the places they have chosen, because the sex of the person in a given place has been determined by how the first couple sits. The sex of the person in each of the remaining chairs has been determined, so we assign the men to their seats in \((n-s)!\) ways and we assign the women to their seats in \((n-s)!\) ways. Thus we have \(2\cdot2n(2n-s-1)!(n-s)!^2/(2n-2s)!\) ways to place the people. But we can partition the placements into blocks of \(2n\) equivalent placements, because shifting everyone the same number of places to the right or left gives an equivalent placement. Thus the number of inequivalent seating arrangements is%
+\begin{align*}
+{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}\amp =\amp {2(2n-s-1)!(n-s)!^2\over
+2(n-s)(2n-2s-1)!}\\
+\amp =\amp {(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+\end{align*}
+%
+\par
+Notice that if we take \(s=0\), this formula reduces to \((n-1)!n!\). Thus for all sets \(S\)%
+\begin{equation*}
+N_{\mbox{a} }(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+\end{equation*}
+%
+\par
+Then from \hyperref[incexempty]{Equation~(\ref{incexempty})}%
+\begin{align*}
+N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+\over(2n-2|S|-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
+s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s{2n-s-1\choose s}n!(n-s-1)!
+\end{align*}
+is the number of ways to seat the people, alternating sex, so that no couple sits together.%
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  Counting onto functions}
+\typeout{************************************************}
+\subsection[{Counting onto functions}]{Counting onto functions}\label{subsection-38}
+\begin{activity}[]\label{numontofun}
+Given a function \(f\) from the \(k\)-element set \(K\) to the \(n\)-element set \([n]\), we say \(f\) has property \(i\) if \(f(x)\not= i\) for every \(x\) in \(K\). How many of these properties does an onto function have? What is the number of functions from a \(k\)-element set onto an \(n\)-element set?\index{onto functions!number of}\index{surjections!number of}\index{functions!onto!number of}%
+\par\medskip\noindent%
+\textbf{Solution.}\quad An onto function has none of these properties. Thus, using this set \(P\) of properties, the number of onto functions is \(N_{\mbox{e} }(\emptyset)\). For a set \(S\) of these properties, \(N_{\mbox{a} }(S)\) is the number of functions from \(K\) to \([n]-S'\), where \(S'\) is the set of all \(i\) such that property \(i\) is in \(S\). This number of functions is \((n-|S|)^k\). Thus by \hyperref[incexempty]{Equation~(\ref{incexempty})}%
+\begin{align*}
+N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
+(n-|S|)^k\\
+\amp =\amp \sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k
+\end{align*}
+is the number of functions from \(K\) onto \([n]\).%
+\end{activity}
+\begin{activity}[]\label{activity-112}
+Find a formula for the Stirling number (of the second kind) \(S(k,n)\).\index{Stirling Number!second kind}%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since the number of functions from \([k]\) onto \([n]\) is \(S(k,n)n!\), we get from the solution to \hyperref[numontofun]{Problem~\ref{numontofun}}%
+\begin{equation*}
+S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k.
+\end{equation*}
+%
+\end{activity}
+\typeout{************************************************}
+\typeout{Subsection  The chromatic polynomial of a graph}
+\typeout{************************************************}
+\subsection[{The chromatic polynomial of a graph}]{The chromatic polynomial of a graph}\label{subsection-39}
+We defined a graph to consist of set \(V\) of elements called vertices and a set \(E\) of elements called edges such that each edge joins two vertices. A \emph{coloring}\index{coloring of a graph}\index{graph!coloring of} of a graph by the elements of a set \(C\) (of colors) is an assignment of an element of \(C\) to each vertex of the graph; that is, a function from the vertex set \(V\) of the graph to \(C\). A coloring is called \emph{proper}\index{coloring of a graph!proper}\index{graph!coloring of!proper}\index{proper coloring of a graph} if for each edge joining two distinct vertices\footnote{If a graph had a loop connecting a vertex to itself, that loop would connect a vertex to a vertex of the same color.  It is because of this that we only consider edges with two distinct vertices in our definition.\label{fn-7}}, the two vertices it joins have different colors. You may have heard of the famous four color theorem of graph theory that says if a graph may be drawn in the plane so that no two edges cross (though they may touch at a vertex), then the graph has a proper coloring with four colors. Here we are interested in a different, though related, problem: namely, in how many ways may we properly color a graph (regardless of whether it can be drawn in the plane or not) using \(k\) or fewer colors? When we studied trees, we restricted ourselves to connected graphs. (Recall that a graph is connected if, for each pair of vertices, there is a walk between them.) Here, disconnected graphs will also be important to us. Given a graph which might or might not be connected, we partition its vertices into blocks called \emph{connected components}\index{connected component of a graph}\index{graph!connected component of} as follows. For each vertex \(v\) we put all vertices connected to it by a walk into a block together. Clearly each vertex is in at least one block, because vertex \(v\) is connected to vertex \(v\) by the trivial walk consisting of the single vertex \(v\) and no edges. To have a partition, each vertex must be in one and only one block. To prove that we have defined a partition, suppose that vertex \(v\) is in the blocks \(B_1\) and \(B_2\). Then \(B_1\) is the set of all vertices connected by walks to some vertex \(v_1\) and \(B_2\) is the set of all vertices connected by walks to some vertex \(v_2\).%
+\begin{activity}[]\label{conncomp}
+(Relevant in {$\langle\langle$Unresolved xref, reference "expogenfun"; check spelling or use "provisional" attribute$\rangle\rangle$} as well as this section.) Show that \(B_1=B_2\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since \(v\) is in \(B_1\), there is a walk from \(v_1\) to \(v\). Since there is a walk from every vertex in \(B_1\) to \(v_1\), there is a walk from every vertex in in \(B_1\) to \(v\). But there is a walk from \(v\) to \(v_2\) since \(v\in B_2\). Thus there is a walk from every vertex in \(B_1\) to \(v_2\). Then by our description of \(B_2\) just before the problem, every vertex in \(B_1\) is also in \(B_2\). A similar argument shows that every vertex in \(B_2\) is also in \(B_1\). Thus \(B_1=B_2\).%
+\end{activity}
+Since \(B_1=B_2\), these two sets are the same block, and thus all blocks containing \(v\) are identical, so \(v\) is in only one block. Thus we have a partition of the vertex set, and the blocks of the partition are the connected components of the graph. Notice that the connected components depend on the edge set of the graph. If we have a graph on the vertex set \(V\) with edge set \(E\) and another graph on the vertex set \(V\) with edge set \(E'\), then these two graphs could have different connected components. It is traditional to use the Greek letter \(\gamma\) (gamma)\footnote{The greek  letter gamma is pronounced gam-uh, where gam rhymes with ham.\label{fn-8}} to stand for the number of connected components of a graph; in particular, \(\gamma(V,E)\) stands for the number of connected components of the graph with vertex set \(V\) and edge set \(E\). We are going to show how the principle of inclusion and exclusion may be used to compute the number of ways to properly color a graph using colors from a set \(C\) of \(c\) colors.%
+\begin{activity}[]\label{activity-114}
+Suppose we have a graph G with vertex set V and edge set \(E\). Suppose \(F\) is a subset of \(E\). Suppose we have a set \(C\) of \(c\) colors with which to color the vertices.%
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item In terms of \(\gamma(V,F)\), in how many ways may we color the vertices of \(G\) so that each edge in \(F\) connects two vertices of the same color?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad For each edge in \(F\) to connect two vertices of the same color, we must have all the vertices in a connected component of the graph with vertex set \(V\) and edge set \(F\) colored the same color. Thus the number of such colorings is \(c^{\gamma(V,F)}\).%
+
+~\par
+\item Given a coloring of \(G\), for each edge \(e\) in \(E\), let us consider the property that the endpoints of \(e\) are colored the same color.  Let us call this property ``property \(e\).''  In this way each set of properties can be thought of as a subset of \(E\).  What set of properties does a proper coloring have?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad A proper coloring has none of the properties.%
+
+~\par
+\item Find a formula (which may involve summing over all subsets \(F\) of the edge set of the graph and using the number \(\gamma(V,F)\) of connected components of the graph with vertex set \(V\) and edge set \(F\)) for the number of proper colorings of \(G\) using colors in the set \(C\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad \(N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
+(-1)^{|F|}c^{\gamma(V,F)}.\)%
+
+\end{enumerate}
+\end{activity}
+The formula you found in \hyperref[chromaticpoly]{Problem~} is a formula that involves powers of \(c\), and so it is a polynomial function of \(c\). Thus it is called the \terminology{chromatic polynomial}\index{graph!chromatic polynomial of}\index{chromatic polynomial of a graph} of the graph \(G\). Since we like to think about polynomials as having a variable \(x\) and we like to think of \(c\) as standing for some constant, people often use \(x\) as the notation for the number of colors we are using to color \(G\). Frequently people will use \(\chi_G(x)\) to stand for the number of way to color \(G\) with \(x\) colors, and call \(\chi_G(x)\) the \terminology{chromatic polynomial} of \(G\).%
+\begin{activity}[]\label{chrompolydel_cont}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item In Chapter 2 we introduced the deletion-contraction recurrence\index{deletion-contraction recurrence} for counting spanning trees of a graph. Figure out how the chromatic polynomial of a graph is related to those resulting from deletion of an edge \(e\) and from contraction of that same edge \(e\). Try to find a recurrence like the one for counting spanning trees that expresses the chromatic polynomial of a graph in terms of the chromatic polynomials of \(G-e\) and \(G/e\) for an arbitrary edge \(e\). Use this recurrence to give another proof that the number of ways to color a graph with \(x\) colors is a polynomial function of \(x\).%
+\par\medskip\noindent%
+\textbf{Solution.}\quad The number of colorings of \(G-e\) is equal to the number of proper colorings of \(G\) plus the number of colorings of \(G\) that are proper except for giving both ends of \(e\) the same color. But the number of colorings of \(G\) that are proper except for giving both ends of \(e\) the same color is the number of proper colorings of \(G/e\). Therefore \(\chi_{G-e}(x) =\chi_G(x)
+-\chi_{G/e}(x)\). This gives us \(\chi_G(x) = \chi_{G-e}(x)
+-\chi_{G/e}(x)\). We can use this to prove inductively that \(\chi_G(x)\) is a polynomial in \(x\). If \(G\) has one vertex, then the number of ways to color \(G\) properly with \(x\) colors is \(x\). This is a polynomial in \(x\). Now suppose inductively that \(G\) has more than one vertex and whenever a graph \(H\) has fewer vertices than \(G\), the function \(\chi_H(x)\) is a polynomial function in \(x\). Then \(\chi_G(x)= \chi_{G-e}(x)-\chi_{G/e}(x)\), is a difference of of two polynomial functions in \(x\), so it is a polynomial function in \(x\). Therefore by the principle of mathematical induction, for all graphs \(G\) on a finite vertex set, the number of ways to properly color \(G\) in \(x\) colors is a polynomial in \(x\).%
+
+~\par
+\item Use the deletion-contraction recurrence to compute the chromatic polynomial of the graph in \hyperref[del-cont]{Figure~\ref{del-cont}}. (You can simplify your computations by thinking about the effect on the chromatic polynomial of deleting an edge that is a loop, or deleting one of several edges between the same two vertices.)%
+\par\medskip\noindent%
+\textbf{Solution.}\quad If a graph has a loop it has no proper colorings. The graph in \hyperref[del-cont]{Figure~\ref{del-cont}} has no loops and no multiple edges between two vertices. The only way we could get a loop is by contracting one of several multiple edges between two vertices, and the resulting graph would have no contribution to the chromatic polynomial of the original graph. Thus whenever a contraction gives us a graph with multiple edges between two vertices, we can replace the multiple edges by one edge and go on with our computation from there. The graphs we get when we delete and contract the edges \(\{1,2\}\) and \(\{2,3\}\) are \((G-\{1,2\})-\{2,3\}\), \((G-\{1,2\})/\{2,3\}\), \((G-\{2,3\})/\{1,2\}\), and \((G/\{2,3\})/\{1,2\}\). These are shown in the following picture. \mbox{ \includegraphics[width=0.73\linewidth]{images/}
+ } The chromatic polynomial of a triangle is \(x(x-1)(x-2)\) because for one vertex we have \(x\) colors, for a second we have \(x-1\), and for the third vertex, because it is adjacent to both of the other vertices, we have \(x-2\) choices of colors. For a vertex of degree 1 there are \(x-1\) choices of colors, those colors not used on the one vertex it is adjacent to. As we mentioned, the extra edges do not change the chromatic polynomial, so we have that the chromatic polynomial of \((G-\{1,2\})-\{2,3\}\) is \(x(x-1)^3(x-2)\), the chromatic polynomial of \((G-\{1,2\})/\{2,3\}\) is \(x(x-1)^2(x-2)\), as is that of \((G-\{2,3\})/\{1,2\}\), and the chromatic polynomial of \((G/\{2,3\})/\{1,2\}\) is \((x-1)(x-2)(x-3)\). Using the deletion-contraction recurrence, we get that%
+\begin{align*}
+\chi_G(x) \amp =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)\\
+\amp =\amp
+\chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
+\chi_{(G/\{1,2\})-\{2,3\}}(x)\\
+\amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)\\
+\amp =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)\\
+\amp =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)\\
+\amp =\amp  x^3(x-1)(x-2)
+\end{align*}
+for the chromatic polynomial of \(G\).%
+
+\end{enumerate}
+\begin{figure}
+\centering
+\includegraphics[width=0.73\linewidth]{images/}
+\caption{A graph.\label{del-cont}}
+\end{figure}
+\end{activity}
+\begin{activity}[]\label{activity-116}
+~\par
+\begin{enumerate}[label=(\alph*)]
+ \item In how many ways may you properly color the vertices of a path on \(n\) vertices with \(x\) colors? Describe any dependence of the chromatic polynomial of a path on the number of vertices. In how many ways may you properly color the vertices of a cycle on \(n\) vertices with \(x\) colors? Describe any dependence of the chromatic polynomial of a cycle on the number of vertices.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad To color the vertices of a path, start at one end. There are \(x\) colors for that vertex, and \(x-1\) colors for each of the next \(n-1\), since each of them must be different from the preceding one. Thus the chromatic polynomial of a path on \(n\) vertices is \(x(x-1)^{n-1}\). The dependence on the number of vertices appears in the exponent on \(x-1\). If we use \(C_n\) to stand for a path on \(n\) vertices and \(P_n\) to stand for a path on \(n\) vertices, then by the deletion-contraction recurrence, we may write%
+\begin{align*}
+\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp
+\chi_{P_n}(x)-\chi_{C_{n-1}}(x)\\
+\amp =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)\\
+\amp =\amp
+\chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
+\cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))\\
+\amp =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots\\
+\amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]\\
+\amp =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}\\
+\amp =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i\\
+\amp =\amp x(x-1)(-1)^{n-2}{1-(1-x)^{n-1}\over 1-(1-x)}\\
+\amp =\amp (x-1)[(x-1)^{n-1}+(-1)^n].
+\end{align*}
+%
+\par
+Here the dependence on \(n\) is interesting; effectively, we are taking \((x-1)\) times the result of dropping the constant term from \((x-1)^{n-1}\).%
+
+~\par
+\item In how many ways may you properly color the vertices of a tree on \(n\) vertices with \(x\) colors?%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Color an arbitrary vertex; you have \(x\) choices for the color of that vertex. No two vertices adjacent to it are adjacent (otherwise we'd have a cycle), so for for each of them you have \(x-1\) choices of colors. No two vertices adjacent to colored vertices are adjacent to each other, nor is one of them adjacent to two colored vertices (in either case you'd have a cycle), so for each of them you'd have \(x-1\) colors. You can continue this argument until all vertices are colored, so you have \(x(x-1)^{n-1}\) ways to color the vertices.%
+\par
+You can also prove by induction that the chromatic polynomial of a tree is \(x(x-1)^{n-1}\). This is clearly true if there is one vertex. Otherwise, choose a vertex of degree 1 in an \(n\)-vertex tree and remove it. You may inductively assume that the chromatic polynomial of the remaining tree is \(x(x-1)^{n-2}\). Now there are \(x-1\) choices for the color of the vertex you removed since it has degree 1, and so the chromatic polynomial of the tree is \(x(x-1)^{n-1}\). There is also an inductive argument in which you delete and contract an arbitrary edge.%
+
+\end{enumerate}
+\end{activity}
+\begin{activity}[]\label{activity-117}
+What do you observe about the signs of the coefficients of the chromatic polynomial of the graph in \hyperref[del-cont]{Figure~\ref{del-cont}}? What about the signs of the coefficients of the chromatic polynomial of a path? Of a cycle? Of a tree? Make a conjecture about the signs of the coefficients of a chromatic polynomial and prove it.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad not all powers of \(x\) appear, but the signs alternate as the power of \(x\) increases; that is, the sign of \(x^i\) is opposite that of \(x^{i+1}\). More precisely, if \(c_i\) is the coefficient of \(x^i\), then \((-1)^{n-i}c_i\ge 0\). To prove this, note it is trivially true for a graph with no edges. Choose an edge \(e\) of \(G\). Then \(\chi_G(x) =
+\chi_{G-e}(x)-\chi_{G/e}(x)\). In \(G-e\), we may assume inductively that \((-1)^{n-i}c'_i\ge0\) and in \(G-/e\) we can assume inductively that \(c''_i(-1)^{n-1-i}\ge0\), where we use \(c'_i\) and \(c''_i\) as the coefficient of \(x^i\) in \(\chi_{G-e}(x)\) and \(\chi_{G/e}(x)\), respectively. Then \(c_i=c'_i
+-c''_i\), and%
+\begin{equation*}
+c_i(-1)^{n-i}=c'_i(-1)^{n-i}-c''_i(-1)^{n-i}=c'_i(-1)^{n-i}+c''_i(-1)^{n-1-i}
+\ge0.
+\end{equation*}
+%
+\par
+Therefore by the principle of mathematical induction, \(c_i(-1)^i\ge0\) for all finite graphs.%
+\end{activity}
 %
 \backmatter
 %
