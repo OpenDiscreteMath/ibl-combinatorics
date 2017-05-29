@@ -93,9 +93,11 @@
     </p>
 
     <activity>
-      <p>
-        Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
-      </p>
+      <statement>
+        <p>
+          Show that there is only one solution to <xref ref="subsetequation">Recurrence</xref> that satisfies <m>s_0=1</m>.
+        </p>
+      </statement>
       <solution>
         <p>
           We prove by induction on <m>n</m> that there is one and only one
@@ -113,10 +115,12 @@
           variable in the recursive equation <m>s_k=2s_{k-1}</m>.)
         </p>
       </solution>
-      <p>
-      \item A first-order recurrence relation is one which expresses <m>a_n</m> in
-      terms of <m>a_{n-1}</m> and other functions of <m>n</m>, but which does not
+    </activity>
+
+    <activity>
+      <p> A first-order recurrence relation is one which expresses <m>a_n</m> in terms of <m>a_{n-1}</m> and other functions of <m>n</m>, but which does not
       include any of the terms <m>a_i</m> for <m>i\lt n-1</m> in the equation.
+      </p>
       <task>
         <statement>
           <p>
@@ -158,6 +162,8 @@
           </p>
         </solution>
       </task>
+    </activity>
+    
       <figure xml:id="Hanoi" >
         <caption>The
         Towers of Hanoi Puzzle</caption>
@@ -167,7 +173,6 @@
         }
       </figure>
 
-    </activity>
 
     <activity xml:id="HanoiProblem" category="interesting">
       <statement>
