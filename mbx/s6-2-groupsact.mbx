@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_groups-groupsact" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Groups Acting on Sets</title>
   <introduction>
     <p>
@@ -100,7 +101,7 @@
       <task xml:id="cube2" >
         <p>
         Compute the two-row notation for <m>\rho\circ\varphi</m>, for
-        <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection 
+        <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection
         <m>\beta_{\rho\circ\varphi}</m> of the faces that corresponds to the action of
         the permutation <m>\rho\circ\varphi</m> on the faces of the cube (for this
         question it helps to think geometrically about what motion of the cube is
@@ -112,14 +113,14 @@
             <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
             2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
             \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-            \end{pmatrix} \amp =\amp 
+            \end{pmatrix} \amp =\amp
             \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
             \end{pmatrix} \amp \amp</mrow>
           </md>
           <md>
             <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
             \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-            \end{pmatrix} \amp =\amp 
+            \end{pmatrix} \amp =\amp
             \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
             \end{pmatrix} \amp \amp</mrow>
           </md>
@@ -281,7 +282,7 @@
           To show that <m>\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}</m>, we
           note that
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) \amp =\amp 
+            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) \amp =\amp
             \beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
             \tau(j)\})=</mrow>
             <mrow>\sigma({\tau(i),\tau(j)})\amp =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
@@ -338,7 +339,7 @@
           <m>f(3)=B</m>, <m>f(4)=B</m>.</caption>
           \mbox{
           <image width="73%" source="images/" />
-          } 
+          }
           \vspace{-.3in}
         </figure>
       </statement>
@@ -404,10 +405,10 @@
           If <m>\beta_{\sigma}(f) = f\circ\sigma^{-1}</m>, then
           <md>
             <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f)\amp =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             \beta_{\sigma}(f\circ \tau^{-1})</mrow>
             <mrow>\amp =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             f\circ(\tau^{-1}\circ \sigma^{-1})</mrow>
             <mrow>\amp =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
             <mrow>\amp =\amp \beta_{\sigma\circ\tau}(f).</mrow>
@@ -766,7 +767,7 @@
           is <m>\{\iota=\rho^0, \varphi_{1/3}\}</m>. The set of orbits taking <m>f</m> to <m>g</m>
           is <m>\{\rho, \varphi_{12/34}\}</m>. In <xref ref="dihedralorbits2">Problem</xref> the set of elements fixing <m>f_1</m> is <m>\{\iota\}</m>, and
           the set of elements taking <m>f_1</m> to <m>f_1\circ\rho^{-1}</m> is <m>\{\rho\}</m>. In
-          <xref ref="dihedralorbits3">Problem</xref>, the set of elements fixing <m>f_2</m> is <m>\{\iota,\rho^2, 
+          <xref ref="dihedralorbits3">Problem</xref>, the set of elements fixing <m>f_2</m> is <m>\{\iota,\rho^2,
           \varphi_{1/3}, \varphi_{2/4}\}</m>, and the set of elements taking <m>f_2</m> to
           <m>f_2\circ\rho^{-1}</m> is
           <m>\{\rho,

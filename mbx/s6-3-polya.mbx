@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_groups-polya" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>P&#xf3;lya-Redfield Enumeration Theory</title>
   <introduction>
     <p>
@@ -757,7 +758,7 @@
 
       <p>
         <m>{1\over
-        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
+        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
         +8(R^3+B^3+G^3)^4\Big)</m>.
       </p>
 
@@ -872,7 +873,7 @@
           <p>
             The computer placements are functions from the vertices of the graph to the set
             of three kinds of computers, say <m>\{A,B,C\}</m>. Thus we are asking for the number of
-            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B, 
+            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B,
             C\}</m>. To find this number we need to compute the cycle index of the automorphism group.
             An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually
             connected; i.e. a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly
@@ -918,7 +919,7 @@
             <m>(2\ 5)D_6</m> and
             <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is.
             <me>
-              {1 \over 48} \left(Z^6_1 + 8Z^2_3 
+              {1 \over 48} \left(Z^6_1 + 8Z^2_3
               +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
               6z_2z_4+6z_1^2z_4\right).
             </me>
@@ -927,7 +928,7 @@
           <p>
             Since we have three kinds of computers, we substitute 3 for each variable to get
             <me>
-              {1 \over 48} \left(3^6 + 8\cdot3^2 
+              {1 \over 48} \left(3^6 + 8\cdot3^2
               +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
               6\cdot3^2+6\cdot3^3\right)=56.
             </me>
@@ -948,7 +949,7 @@
           \chi_E(\{u,v\}) = \left\{
           \begin{array}{ll}
           1 \amp  \mbox{if \(\{u,v\}\in E\)} \\
-          0 \amp  \mbox{otherwise.} 
+          0 \amp  \mbox{otherwise.}
           \end{array} \right.
         </me>
       </p>

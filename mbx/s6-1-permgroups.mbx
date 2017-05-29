@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_groups-permgroups" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Permutation Groups</title>
   <introduction>
     <p>
@@ -268,7 +269,7 @@
       A set of permutations with these three properties is called a <em>permutation group</em><fn>The concept of a permutation group is a
       special case of the concept of a <em>group</em> that one studies in abstract
       algebra.  When we refer to a group in what follows, if you  know what
-      groups are in the more abstract sense, you may use the word in this way. 
+      groups are in the more abstract sense, you may use the word in this way.
       If you do not know about groups in this more abstract sense, then you may
       assume we mean permutation group when we say group.</fn> or a group of
       permutations.<index><main>group of permutations</main></index><index><main>permutation group</main></index> We
@@ -363,9 +364,9 @@
             equation on the right by <m>\sigma^{-1}</m> and use the associative law for composition of
             functions to get, in the case that <m>m-n</m> is nonnegative
             <md>
-              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp
               \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
-              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp
               (\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}</mrow>
               <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  \varphi^{m-n}.</mrow>
             </md>
@@ -374,9 +375,9 @@
           <p>
             We do the same in the case that <m>m-n</m> is negative, getting
             <md>
-              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp 
+              <mrow>\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp
               \varphi^{m-(n-1)}\circ\varphi^{-1}</mrow>
-              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp 
+              <mrow>\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp
               (\varphi^{-1})^{n-m-1}\circ\varphi^{-1}</mrow>
               <mrow>\varphi^m\circ(\varphi^{-1})^n \amp =\amp  (\varphi^{-1})^{n-m}</mrow>
               <mrow>\varphi^m\circ\varphi^{-n}\amp =\amp \varphi^{m-n}.</mrow>
@@ -570,7 +571,7 @@
       <statement>
         <p>
           For practice, compute <m>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr3\amp 4\amp 1\amp 5\amp 2
-          \end{pmatrix} 
+          \end{pmatrix}
           \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\cr 4\amp 3\amp 5\amp 1\amp 2
           \end{pmatrix}</m>.
         </p>
@@ -1101,17 +1102,17 @@
       as well. A <em>cycle</em><index><main>cycle of a
       permutation</main></index><index><main>permutation</main><sub>cycle of</sub></index> of the permutation
       <m>\sigma</m> is a list
-      <m>(i\ 
-      \sigma(i)\ 
+      <m>(i\
+      \sigma(i)\
       \sigma^2(i)
-      \ \ldots\ 
+      \ \ldots\
       \sigma^n(i))</m> that does not have repeated elements
-      while the list <m>(i\ \sigma(i)\ 
+      while the list <m>(i\ \sigma(i)\
       \sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))</m> does have repeated
-      elements. We say that the cycles <m>(i\ 
-      \sigma(i)\ 
-      \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\ 
-      \sigma(j)\ 
+      elements. We say that the cycles <m>(i\
+      \sigma(i)\
+      \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\
+      \sigma(j)\
       \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <em>equivalent</em> if there is an
       integer <m>k</m> such that
       <m>j=
@@ -1154,11 +1155,11 @@
       <task>
         <statement>
           <p>
-            Show that if <m>(i\ 
-            \sigma(i)\ 
+            Show that if <m>(i\
+            \sigma(i)\
             \sigma^2(i)
-            \ \ldots\ 
-            \sigma^n(i))</m> does not have repeated elements while the list <m>(i\ \sigma(i)\ 
+            \ \ldots\
+            \sigma^n(i))</m> does not have repeated elements while the list <m>(i\ \sigma(i)\
             \sigma^2(i)\ \ldots\ \sigma^n(i))\ \sigma^{n+1}(i))</m> does have repeated
             elements, then <m>\sigma^{n+1}(i)=i</m>, and so all other <m>\sigma^s(i)</m> are in the cycle.
           </p>
@@ -1186,10 +1187,10 @@
         <p>
           Every element is in a cycle by the definition of cycles, so suppose two
           support sets have an element in common. If the cycles are
-          <m>(i\ 
-          \sigma(i)\ 
-          \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\ 
-          \sigma(j)\ 
+          <m>(i\
+          \sigma(i)\
+          \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\
+          \sigma(j)\
           \sigma^2(j)\ \ldots\ \sigma^m(j))</m> and <m>\sigma^p(i) =\sigma^q(j)</m> is a common
           element, then,
           <m>j=\sigma^{p-q}(i)</m>. Thus if <m>p\ge q</m>, <m>j</m> is in the first cycle. Otherwise <m>i</m> is in
@@ -1203,14 +1204,14 @@
     </activity>
 
     <p>
-      We regard a cycle <m>(i\ 
-      \sigma(i)\ 
+      We regard a cycle <m>(i\
+      \sigma(i)\
       \sigma^2(i)\ \ldots\ \sigma^n(i))</m> as standing for the permutation
       <me>
-        \begin{pmatrix}i\amp 
-        \sigma(i)\amp 
+        \begin{pmatrix}i\amp
+        \sigma(i)\amp
         \cdots\amp \sigma^{n-1}(i)\amp \sigma^n(i)\cr
-        \sigma(i)\amp 
+        \sigma(i)\amp
         \sigma^2(i)\amp \cdots\amp \sigma^n(i)\amp i
         \end{pmatrix} .
       </me>
@@ -1472,7 +1473,7 @@
           <m>s(m,n)=s(m-1,n-1)-(m-1)s(m-1,n)</m>, that
           <m>s(m-1,n-1)</m> and <m>s(m-1,n)</m> have opposite signs, so
           <md>
-            <mrow>\hspace{-.5in}|s(m-1)-(m-1)s(m-1,n)|\amp =\amp  |s(m-1| + 
+            <mrow>\hspace{-.5in}|s(m-1)-(m-1)s(m-1,n)|\amp =\amp  |s(m-1| +
             (m-1)|s(m-1,n)|</mrow>
             <mrow>\amp =\amp c(m-1,n-1)+(m-1)c(m-1,n)</mrow>
             <mrow>\amp =\amp  c(m,n).</mrow>
