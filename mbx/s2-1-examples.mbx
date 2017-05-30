@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_induction-examples" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Some Examples of Mathematical Induction</title>
   <introduction>
     <p>
@@ -53,7 +54,7 @@
       empty set has <m>1=2^0</m> subsets. (This step of our proof is called a <em>base step</em>.)
 
       Now suppose that <m>k>0</m> and every set with <m>k-1</m> elements has <m>2^{k-1}</m>
-      subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements. 
+      subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements.
       We partition the subsets of <m>S</m> into two blocks.  Block <m>B_1</m> consists of
       the subsets that do not contain <m>a_n</m> and block <m>B_2</m> consists of the
       subsets that do contain <m>a_n</m>.  Each set in <m>B_1</m> is a subset of
@@ -177,7 +178,7 @@
           {(k-1)!\over i!(k-1-i)!}</m>. Then by the Pascal Equation
           <md>
             <mrow>{k\choose i}\amp =\amp {k-1\choose i-1}+{k-1\choose i}</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             {(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
             i!(k-1-i)!}</mrow>
             <mrow>\amp =\amp {(k-1)!i+(k-1)!(k-i)\over i!(k-i)!} \ =\  {k!\over
@@ -462,7 +463,7 @@
     </p>
 
     <blockquote>
-    Let <m>S</m> be a set of functions <m>f</m> 
+    Let <m>S</m> be a set of functions <m>f</m>
     from
     <m>[n]</m> to some set <m>X</m>.  Suppose that
     <ul>
@@ -474,7 +475,7 @@
 
       <li>
         <p>
-          suppose that  
+          suppose that
           for each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m>
           choices for
           <m>f(i)</m>.
@@ -681,13 +682,10 @@
 
     <activity xml:id="Ramseybound2" category="essential for this or the next section, and interesting">
       <task>
-      <statement>
-      <task>
         <statement>
           <p>
             What does the equation in <xref ref="Ramseyrecurrence">Problem</xref> tell us about <m>R(4,4)</m>?
-          </statement>
-        </p>
+          </p>
         </statement>
         <solution>
           <p>
@@ -695,10 +693,10 @@
           </p>
         </solution>
       </task>
+
       <task>
+        <title>\ <m>*</m>\ (\theenumii)</title>
         <statement>
-          <p>
-          <title>\ <m>*</m>\ (\theenumii)</title>
           <p>
             Consider 17 people arranged in a circle such that each person is
             acquainted with the first, second, fourth, and eighth person to the right
@@ -727,6 +725,7 @@
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -736,9 +735,12 @@
         <solution>
         </solution>
       </task>
-      <p>
-        \item (Optional) Prove the inequality of <xref ref="Ramseybound">Problem</xref> by induction on <m>m+n</m>.
-      </p>
+      <task>
+        <statement>
+          <p>
+           (Optional) Prove the inequality of <xref ref="Ramseybound">Problem</xref> by induction on <m>m+n</m>.
+         </p>
+       </statement>
       <solution>
         <p>
           We want to prove that if <m>m\ge 2</m> and <m>n\ge 2</m>, then when there are
@@ -776,6 +778,7 @@
         </p>
       </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -801,6 +804,7 @@
         </solution>
       </task>
     </activity>
+
   </subsection>
 
   <subsection>
@@ -901,7 +905,7 @@
             of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)</mrow>
             <mrow>\amp =\amp {1\over 2^{^{m\choose 2}}} \sum_{N:N\subseteq
             M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             2^{-{m\choose2}}\sum_{N:N\subseteq
             M,~|N|=n}2\cdot2^{{m\choose2}-{n\choose2}}</mrow>
             <mrow>\amp =\amp  2{m\choose n}2^{-{n\choose 2}}</mrow>
@@ -924,9 +928,8 @@
         </solution>
       </task>
       <task>
+        <title>\ <m>*</m>\ (\theenumii)</title>
         <statement>
-          <p>
-          <title>\ <m>*</m>\ (\theenumii)</title>
           <p>
             Explain why <m>R(n,n)>\root n \of {n!2^{{n\choose 2}-1}}</m>.
           </p>
