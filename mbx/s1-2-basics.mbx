@@ -2108,8 +2108,8 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>k!s={n!\over (n-k)!}</m> or <m>s= {n!\over k!(n-k)!}</m>.
         </p>
       </solution>
-    </activity></section>
-<!-- 
+    </activity>
+
     <activity category="interesting">
       <p>
         A basketball team has 12 players. However, only five players play at
@@ -2120,8 +2120,10 @@ many ways can you pair up the next person who isn’t already paired up?
           <p>
             In how may ways may the coach choose the five players?
           </p>
+        </statement>
         </task>
         <task>
+          <statement>
           <p>
             To be
               more realistic, the five players playing a game normally consist of
@@ -2129,14 +2131,22 @@ many ways can you pair up the next person who isn’t already paired up?
               four forwards, and three centers on the team, in how many ways can
               the coach choose two guards, two forwards, and one center?
           </p>
+        </statement>
+        <hint>
+          The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
+        </hint>
         </task>
         <task>
+          <statement>
           <p>
             What if
               one of the centers is equally skilled at playing forward?
           </p>
+        </statement>
         </task>
-      </statement>
+        <hint>
+          As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.
+        </hint>
       <solution>
         <p>
           <m>12\choose 5</m>. In the more realistic version,
@@ -2170,7 +2180,8 @@ many ways can you pair up the next person who isn’t already paired up?
       </solution>
     </activity>
 
-    <activity xml:id="quotientprinciple" category="essential">
+<!-- Activity 42 -->
+    <activity xml:id="quotientprinciple" category="essential"> 
       <statement>
         <p>
           In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
@@ -2224,6 +2235,7 @@ many ways can you pair up the next person who isn’t already paired up?
       would be a good time to work through that appendix.
     </p>
 
+<!-- Activity 43 -->
     <activity xml:id="necklace" category="essential and interesting">
       <statement>
         <p>
@@ -2236,6 +2248,12 @@ many ways can you pair up the next person who isn’t already paired up?
           equivalent to the first.)
         </p>
       </statement>
+      <hint>
+        How could we get a list of beads from a necklace?
+      </hint>
+      <hint>
+        When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?
+      </hint>
       <solution>
         <p>
           We can obtain a permutation of the beads by cutting the necklace and
@@ -2250,6 +2268,7 @@ many ways can you pair up the next person who isn’t already paired up?
       </solution>
     </activity>
 
+<!-- Activity 44 -->
     <activity xml:id="tennispairings2" category="interesting">
       <p>
         We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
@@ -2265,15 +2284,23 @@ many ways can you pair up the next person who isn’t already paired up?
               <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
               three solutions.)
           </p>
+        </statement>
         </task>
+        <hint>
+          You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
+        </hint>
         <task>
+          <statement>
           <p>
             Suppose that in addition to specifying who plays whom, for each
               pairing we say who serves first.  Now in how many ways may we
-              specify our pairs? Try to find as many solutions as you can
+              specify our pairs? Try to find as many solutions as you can.
           </p>
+        </statement>
         </task>
-      </statement>
+       <hint>
+         You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.
+       </hint>
       <solution>
         <p>
           Suppose we list the people in the club in some way, and keep that
@@ -2284,7 +2311,7 @@ many ways can you pair up the next person who isn’t already paired up?
           been selected, take the next unpaired person from the list and pair that
           person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
           can arise in this way, and no pairing can arise twice in this process. Thus
-          the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
+          the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
         </p>
 
         <p>
@@ -2310,6 +2337,7 @@ many ways can you pair up the next person who isn’t already paired up?
       </solution>
     </activity>
 
+<!-- Activity 45 -->
     <activity xml:id="twocolorsofbeads" category="essential">
       <statement>
         <p>
@@ -2320,6 +2348,9 @@ many ways can you pair up the next person who isn’t already paired up?
           to move around in (three-dimensional) space?
         </p>
       </statement>
+      <hint>
+        It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.
+      </hint>
       <solution>
         <p>
           Two ways; either the red beads are side-by-side or diagonally
@@ -2374,6 +2405,5 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
     </activity>
-  </subsection>
 </section>
--->
+
