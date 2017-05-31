@@ -1846,6 +1846,11 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>n\choose k</m> equals <m>n\choose n-k</m>.
         </p>
       </statement>
+      <hint>
+        The first thing you need to decide is “What are the two sets whose elements
+        we are counting?” Then it will be easier to think of a bijection between these
+        two sets. It turns out that these two sets are sets of sets!
+      </hint>
       <solution>
         <p>
           For each <m>k</m>-element subset <m>K</m> of the <m>n</m>-element set <m>N</m>, define
@@ -1862,6 +1867,11 @@ many ways can you pair up the next person who isn’t already paired up?
           children if each child may get at most one?
         </p>
       </statement>
+      <hint>
+        Ask yourself “What is a problem like this doing in the middle of a bunch of
+        problems about counting subsets of a set? Is it related, or is it supposed to
+        gives us a break from sets?”
+      </hint>
       <solution>
         <p>
           <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
@@ -1886,6 +1896,20 @@ many ways can you pair up the next person who isn’t already paired up?
           different ways of doing this problem. Try to find them both.
         </p>
       </statement>
+      <hint>
+        The problem suggests that you think about how to get a list from a seating
+        arrangement. Could every list of n distinct people come from a seating chart?
+        How many lists of n distinct people are there? How many lists could we get
+        from a given seating chart by taking different starting places?
+      </hint>
+      <hint>
+        Second Hint for Problem 38: 
+        For a different way of doing the problem, suppose that you have chosen
+        one person, say the first one in a list of the people in alphabetical order by
+        name. Now seat that person. Does it matter where they sit? In ways can
+        you seat the remaining people? Does it matter where the second person in
+        alphabetical order sits?
+      </hint>
       <solution>
         <p>
           The total number of ways to list how the <m>n</m> people sit around the
@@ -1910,10 +1934,10 @@ many ways can you pair up the next person who isn’t already paired up?
     <p>
       We are now going to analyze the result of <xref ref="nchoosek">Problem</xref> in
       more detail in order to tease out another counting principle that we
-      can sue in a wide variety of situations.
+      can use in a wide variety of situations.
     </p>
-</subsection></section>
-<!--
+</subsection>
+
     <table xml:id="tab_permsof3" >
       <caption>The <m>3</m>-element permutations of <m>\{a,b,c,d,e\}</m> organized
           by which <m>3</m>-element set they permute.</caption>
@@ -2037,28 +2061,43 @@ many ways can you pair up the next person who isn’t already paired up?
           <p>
             How many permutations are there in a block?
           </p>
+        </statement>
+        <hint>
+          A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
+        </hint>
         </task>
         <task>
-          <p>
+          <statement>
+           <p>
             Since <m>S</m> has <m>n</m>
               elements, what does <xref ref="kelementpermutation">problem</xref> tell you about
               the total number of <m>k</m>-element permutations of <m>S</m>?
-          </p>
+           </p>
+          </statement>
         </task>
         <task>
+          <statement>
           <p>
             Describe a
               bijection between the set of blocks of the partition and the set of
               <m>k</m>-element subsets of <m>S</m>.
           </p>
+        </statement>
+        <hint>
+          What sets are listed, and how many times is each one listed if you take one list from each row of Table 1.2? How does this choice of lists give you the bijection in this special case?
+        </hint>
         </task>
         <task xml:id="formulanchoosekfinal" >
+          <statement>
           <p>
             What formula does this give you for the
               number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
           </p>
+        </statement>
+        <hint>
+          You can make good use of the product principle here.
+        </hint>
         </task>
-      </statement>
       <solution>
         <p>
           The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
@@ -2069,8 +2108,8 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>k!s={n!\over (n-k)!}</m> or <m>s= {n!\over k!(n-k)!}</m>.
         </p>
       </solution>
-    </activity>
-
+    </activity></section>
+<!-- 
     <activity category="interesting">
       <p>
         A basketball team has 12 players. However, only five players play at

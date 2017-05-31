@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_groups-polya" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>P&#xf3;lya-Redfield Enumeration Theory</title>
   <introduction>
     <p>
@@ -481,30 +482,33 @@
         We effectively answered this question in our solution to <xref ref="polya2">Problem</xref>.
         In particular, there are three rotations of 180 degrees through the centers of opposite
         faces. The other kinds of group elements are as follows.
-        <task>
+      </p>
+        <ul>
+        <li>
           <p>
             the 90 and 270 degree rotations around an axis
             through two faces, of which we have six.  Their cycle structure consists of a four-cycle
             and two one-cycles.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             the 120 and 240 degree rotations around an axis connecting two diagonally opposite
             vertices.  Their cycle structure consists of two three-cycles.  We have eight of these.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             the 180 degree rotations around an axis connecting two opposite edges; their cycle
             structure consists of three two-cycles.  We have six of these.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             the identity, whose cycle structure is six one-cycles.
           </p>
-        </task>
+        </li>
+      </ul>
         <p>
           As we said in the solution to <xref ref="polya3_5">Problem</xref> ``The cycle structure
           determines the factored enumerator; a cycle of size <m>i</m> gives a factor of <m>(R^i+B^i)</m>.
@@ -757,7 +761,7 @@
 
       <p>
         <m>{1\over
-        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2 
+        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
         +8(R^3+B^3+G^3)^4\Big)</m>.
       </p>
 
@@ -782,6 +786,7 @@
           <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
           +{5!\over1!2!2!}\right)\right)=600.</mrow>
         </md>
+      </p>
       </activity>
 
       <activity category="interesting">
@@ -872,7 +877,7 @@
           <p>
             The computer placements are functions from the vertices of the graph to the set
             of three kinds of computers, say <m>\{A,B,C\}</m>. Thus we are asking for the number of
-            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B, 
+            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B,
             C\}</m>. To find this number we need to compute the cycle index of the automorphism group.
             An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually
             connected; i.e. a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly
@@ -918,7 +923,7 @@
             <m>(2\ 5)D_6</m> and
             <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is.
             <me>
-              {1 \over 48} \left(Z^6_1 + 8Z^2_3 
+              {1 \over 48} \left(Z^6_1 + 8Z^2_3
               +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
               6z_2z_4+6z_1^2z_4\right).
             </me>
@@ -927,7 +932,7 @@
           <p>
             Since we have three kinds of computers, we substitute 3 for each variable to get
             <me>
-              {1 \over 48} \left(3^6 + 8\cdot3^2 
+              {1 \over 48} \left(3^6 + 8\cdot3^2
               +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
               6\cdot3^2+6\cdot3^3\right)=56.
             </me>
@@ -936,6 +941,8 @@
       </activity>
 
       <activity category="interesting">
+        <statement>
+        <p>
         Two simple graphs on the set <m>[n]= \{1,2,\ldots, n\}</m> with edge sets <m>E</m> and
         <m>E'</m> (which we think of a sets of two-element sets for this problem) are said to be
         <em>isomorphic</em> if there is a permutation <m>\sigma</m> of
@@ -948,7 +955,7 @@
           \chi_E(\{u,v\}) = \left\{
           \begin{array}{ll}
           1 \amp  \mbox{if \(\{u,v\}\in E\)} \\
-          0 \amp  \mbox{otherwise.} 
+          0 \amp  \mbox{otherwise.}
           \end{array} \right.
         </me>
       </p>
@@ -960,6 +967,9 @@
       characteristic functions under the action of the symmetric group <m>S_n</m> on the set of
       two-element subsets of <m>[n]</m>. Use this to find the number of different graphs on five
       vertices.
+    </p>
+  </statement>
+
       <solution>
         <p>
         For this problem we need the cycle index for the action of the symmetric group
@@ -968,14 +978,16 @@
         on <m>[5]</m>. The cycle structure of a permutation <m>\sigma</m> on the two-element subsets of
         <m>[5]</m> will be determined by its cycle structure on <m>[5]</m>. The partitions of five and
         the cycle structures they give on two-element subsets are:
-        <task>
+      </p>
+        <ul>
+        <li>
           <p>
             <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
             subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
             one identity permutation.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>2^1 1^3</m> will fix the two element set in
             the two cycle and each pair of the three elements outside for a total of four
@@ -983,16 +995,16 @@
             two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
             has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
             for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
             such two-sets and thus four two-cycles, so such a permutation has four two cycles
             and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
             two-sets from the two one-element cycles of the original action; each other two-element
@@ -1001,8 +1013,8 @@
             one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
             such permutations.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
             the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
@@ -1011,8 +1023,8 @@
             permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
             two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>4^1 1^1</m> has a four-cycle of two-subsets
             and one two-cycle of two-subsets from its own four-cycle and another four cycle of
@@ -1020,13 +1032,14 @@
             two one-cycles There are
             <m>6{5\choose4}=30</m> such permutations.
           </p>
-        </task>
-        <task>
+        </li>
+        <li>
           <p>
             A permutation with cycle structure <m>5^1</m> will have two five-cycles in its action on
             two-sets.  There are <m>4!=24</m> such permutations.
           </p>
-        </task>
+        </li>
+    </ul>
         <p>
           Thus for the group <m>S_5</m> acting on pairs from <m>[5]</m>, the cycle index is
           <me>
