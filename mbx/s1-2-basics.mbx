@@ -11,6 +11,9 @@
           required?
         </p>
       </statement>
+      <hint>
+        Answer the questions in Problem 2 for the case of five schools.
+      </hint>
       <solution>
         <p>
           Think of numbering the five teams. The first team must play all
@@ -100,6 +103,9 @@
           sandwiches are available?
         </p>
       </statement>
+      <hint><p>
+        For each kind of bread, how many sandwiches are possible?
+      </p></hint>
       <solution>
         <p>
           <m>3\cdot5=15</m>, or <m>5+5+5=15</m>.
@@ -174,6 +180,9 @@
           of ice cream will be available?
         </p>
       </statement>
+      <hint><p>
+        Try to solve the problem first with a two-scoop cone. (Look for an earlier problem that is analogous.) Then, for each two scoop cone, in how many ways can you put on a top scoop?
+      </p></hint>
       <solution>
         <p>
           <m>12\cdot12\cdot12 =1728</m> possible cones. If the flavors must be
@@ -201,14 +210,18 @@
       </p>
       <task xml:id="countingfunctionsparta" >
         <p>
-        Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
-        functions, write down all the different functions you can
-        from the set
-        <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
-        with
-        <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
-        set <m>\{1,2\}</m> to the set
-        <m>\{a,b\}</m>?
+          Using <m>f</m>, <m>g</m>, <ellipsis />, to stand for the various
+          functions, write down all the different functions you can
+          from the set
+          <m>\{1,2\}</m> to the set <m>\{a,b\}</m>.  For example, you might start
+          with
+          <m>f(1)=a</m>, <m>f(2)=b</m>.  How many functions are there from the
+          set <m>\{1,2\}</m> to the set
+          <m>\{a,b\}</m>?
+        </p>
+        <hint><p>
+          Ask yourself “how many choices do we have for <m>f(1)</m>?” Then ask how many choices we have for <m>f(2)</m>.
+        </p></hint>
         <solution>
           <p>
             <m>f(1) =a</m>, <m>f(2) = b</m>. Or, <m>h(1) =a</m>,
@@ -227,6 +240,9 @@
              to the two element set <m>\{a,b\}</m>?
           </p>
         </statement>
+        <hint><p>
+          It may not be practical to write down rules for all the functions for this problem. But you could ask yourself how many choices we have for <m>f(1)</m>, how many we have for <m>f(2)</m> and how many we have for <m>f(3)</m>.
+        </p></hint>
         <solution>
           <p>
             <m>2\cdot2\cdot2 = 8</m>
@@ -240,6 +256,9 @@
             three element set <m>\{1,2,3\}</m>?
           </p>
         </statement>
+        <hint><p>
+          If you are choosing a function <m>f</m>, how many choices do you have for <m>f(a)</m>? Then how many choices do you have for <m>f(b)</m>?
+        </p></hint>
         <solution>
           <p>
             <m>3\cdot3=9</m>
@@ -255,7 +274,7 @@
         </statement>
         <solution>
           <p>
-            <m>12\cdot12\cdot12 = 1728</m>
+            <m>12\cdot 12\cdot 12 = 1728</m>
           </p>
         </solution>
       </task>
@@ -263,8 +282,8 @@
         <statement>
           <p>
             The function <m>f</m> is called
-            <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><em>one-to-one</em> or an
-            <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><em>injection</em> if whenever
+            <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><term>one-to-one</term> or an
+            <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><term>injection</term> if whenever
             <m>x</m> is different from
             <m>y</m>,
             <m>f(x)</m> is different from <m>f(y)</m>.  How many one-to-one
@@ -274,7 +293,7 @@
         </statement>
         <solution>
           <p>
-            <m>12\cdot11\cdot10= 1320</m>
+            <m>12\cdot 11 \cdot 10= 1320</m>
           </p>
         </solution>
       </task>
@@ -311,6 +330,9 @@
               flavors out of the 12 flavors?
           </p>
         </statement>
+        <hint><p>
+          You know how to figure out in how many ways they could make a list of three flavors out of the twelve. But each set of three flavors can be listed in a number of different ways. Try to figure out in how many ways a set of three flavors can be listed, and then try to see how this helps you.
+        </p></hint>
         <solution>
           <p>
             There are <m>12\cdot11\cdot 10 = 1320</m> ways to make a list of three
@@ -327,6 +349,9 @@
               don't have to be different?
           </p>
         </statement>
+        <hint><p>
+          Try to break the problem up into cases you can solve by previous methods; then figure out how to get the answer to the problem by using these answers for the cases.
+        </p></hint>
         <solution>
           <p>
             If the flavors need not be different, we must add in the number of ways
@@ -344,11 +369,11 @@
       <statement>
         <p>
           Two sets are said to be
-          <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><em>disjoint</em> if they have no
+          <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><term>disjoint</term> if they have no
           elements in common. For example,
           <m>\{1,3,12\}</m> and <m>\{6, 4, 8, 2\}</m> are disjoint, but <m>\{1,3,12\}</m> and
           <m>\{3,5,7\}</m> are not. Three or more sets are said to be
-          <index><main>sets</main><sub>mutually disjoint</sub></index><em>mutually disjoint</em> if no two of them
+          <index><main>sets</main><sub>mutually disjoint</sub></index><term>mutually disjoint</term> if no two of them
           have any elements in common. What can you say about the size of the
           union of a finite number of finite (mutually) disjoint sets? Does
           this have anything to do with any of the previous problems?
@@ -357,7 +382,7 @@
       <solution>
         <p>
           The size of a union of disjoint sets is the sum of their sizes. We
-          used this principle in problems 1 and two directly, and indirectly in every
+          used this principle in Problems 1 and 2 directly, and indirectly in every
           other problem when we multiplied the number of ways of doing one thing times
           the number of ways of doing another. Note that we used this principle
           informally in the explanation in the solution of <xref ref="orderedpair">Problem</xref>.
@@ -391,25 +416,20 @@
       contain among them the kernels of many of the fundamental
       ideas of combinatorics. For example, with luck, you just <index><main>sum
       principle</main></index><index><main>principle</main><sub>sum</sub></index><index><main>principle</main><sub>product</sub></index> <index><main>product
-      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These are two of the most basic
-      principles of combinatorics.
+      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These two counting principles are the basis on which we will develop many other counting principles.
     </p>
 
     <figure xml:id="sumprinc" >
       <caption>The union of these
       two disjoint sets has size 17.</caption>
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="73%" source="images/SumPrinc" />
     </figure>
 
     <figure xml:id="prodprinc" >
       <caption>The
       union of four disjoint sets of size
       five.</caption>
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="73%" source="images/ProdPrinc" />
     </figure>
 
     <p>
@@ -424,8 +444,8 @@
       and a filling choice. We use <m>A\times B</m> to stand for the set
       of all ordered pairs whose first element is in <m>A</m> and whose
       second element is in <m>B</m> and we call <m>A\times B</m> the
-      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><em>Cartesian
-      product</em> of
+      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><term>Cartesian
+      product</term> of
       <m>A</m> and
       <m>B</m>, so you can think of <xref ref="orderedpair">Problem</xref> as asking you for the size of the Cartesian
       product of
@@ -435,13 +455,13 @@
 
     <p>
       When a set <m>S</m> is a union of disjoint sets <m>B_1, B_2, \ldots, B_m</m> we say
-      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <em>partition</em><index><main>partition</main><sub>of a set</sub></index> of the set
+      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <term>partition</term><index><main>partition</main><sub>of a set</sub></index> of the set
       <m>S</m>. Thus a partition of <m>S</m> is a (special kind of) set of sets. So that
       we don't find ourselves getting confused between the set <m>S</m> and the sets
       <m>B_i</m> into which we have divided it, we often call the sets <m>B_1, B_2,
       \ldots, B_m</m> the <em>blocks</em><index><main>partition</main><sub>blocks of</sub></index><index><main>block of a
       partition</main></index> of the partition. In this language, the
-      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><em>sum principle</em> says that
+      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><term>sum principle</term>says that
     </p>
 
     <blockquote>
@@ -451,7 +471,7 @@
 
     <p>
       The
-      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><em>product principle</em> says
+      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><term>product principle</term> says
       that
     </p>
 
@@ -481,15 +501,15 @@
       <statement>
         <p>
           If we make a sequence of <m>m</m> choices for
-          which -+ There are <m>k_1</m> possible first choices, and
-        </p>
-
-        <p>
-          -+ for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to
-          make the <m>i</m>th choice,
-        </p>
-
-        <p>
+          which 
+          <ul>
+            <li>
+              there are <m>k_1</m> possible first choices, and
+            </li>
+            <li>
+              for each way of making the first <m>i-1</m> choices, there are <m>k_i</m> ways to make the <m>i</m>th choice,
+            </li>
+          </ul>
           then in how many ways may we
           make our sequence of choices? (You need not prove your answer correct at
           this time.)
@@ -507,7 +527,7 @@
       how much easier it makes it to explain why we multiplied the things we
       did in <xref ref="completelunch">Problem</xref> and <xref ref="tripledeckercone">Problem</xref>.
     </p>
-
+ 
     <activity xml:id="tennispairings1" category="interesting">
       <p>
         A tennis club has <m>2n</m> members. We want to pair up the
@@ -517,6 +537,14 @@
         <p>
         In how many ways may we pair up all the members of the club? (Hint: consider the cases
           of 2, 4, and 6 members.)
+        </p>
+        <hint>
+  <p>
+Suppose you have a list in alphabetical order of names of the members of the
+club. In how many ways can you pair up the first person on the list? In how
+many ways can you pair up the next person who isn’t already paired up?
+  </p>
+</hint>
         <solution>
           <p>
             Suppose we list the people in the club in some way, and keep that
@@ -574,7 +602,7 @@
         <me>
           [m] = \{1,2,3,\dots,m\}
         </me>
-        to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.
+        to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.</p>
         <solution>
           <p>
             <m>n^m</m>.
@@ -596,6 +624,7 @@
         </solution>
       </task>
     </activity>
+</subsection>
 
     <activity xml:id="generalproductprinciple" category="summary">
       <statement>
@@ -620,23 +649,19 @@
         <p>
           What we have assumed so far about the functions in <m>S</m> may be
           summarized as
-        </p>
-
-        <p>
-          -+ There are <m>k_1</m> choices for <m>f(1)</m>.
-        </p>
-
-        <p>
-          -+ For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m>
-          choices for<nbsp /><m>f(i)</m>.
-        </p>
-
-        <p>
-          How many functions are in the set
-          <m>S</m>? Is there any practical difference between the result of this
-          problem and the general product principle?
+        <ul>
+         <li>
+           There are <m>k_1</m> choices for <m>f(1)</m>.
+         </li>
+         <li>
+           For each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis />, <m>f(i-1)</m>, there are <m>k_i</m> choices for<nbsp /><m>f(i)</m>.
+         </li>
+        </ul>
         </p>
       </statement>
+      <p>
+        How many functions are in the set <m>S</m>? Is there any practical difference between the result of this problem and the general product principle?
+      </p>
       <solution>
         <p>
           <m>\prod_{i=1}^m k_i</m>.
@@ -658,15 +683,18 @@
           has room for two people. If <m>n</m> men and <m>n</m> women get into the car with a
           man and a woman in each row, in how many ways may they choose their seats?
         </p>
-        <solution>
+      </statement>
+      <hint>
+        <p>
+          In how many ways may you assign the men to their rows? The women? Once a woman and a man have a row to share, in how many ways may they choose their seats?
+        </p>
+      </hint>
+
+      <solution>
         <p>
           <m>(n!)^22^n</m>
         </p>
-        </solution>
-        <p>
-          Prove
-        </p>
-      </statement>
+      </solution>
     </activity>
 
     <activity category="summary">
@@ -709,6 +737,11 @@
           How many subsets does a set <m>S</m> with <m>n</m> elements have?
         </p>
       </statement>
+      <hint>
+        <p>
+          Try applying the product principle in the case n = 2 and n = 3. How might you apply it in general?
+        </p>
+      </hint>
       <solution>
         <p>
           For each of the <m>n</m> elements of <m>S</m>, we have two options:
@@ -727,6 +760,16 @@
           <m>k>n</m>? Assume for both questions that we pass out all the fruit.
         </p>
       </statement>
+      <hint>
+        <p>
+          Ask yourself if either the sum principle or product principle applies.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Remember that zero is a number.
+        </p>
+      </hint>
       <solution>
         <p>
           We are asking for the number of <m>k</m>-element permutations of <m>n</m>
@@ -739,8 +782,8 @@
       <statement>
         <p>
           Another name for a list, in a specific order, of <m>k</m> distinct things
-          chosen from a set <m>S</m> is a <m>\mathbf k</m>-<em>element permutation of</em>
-          <m>\mathbf S</m>.<index><main>permutation</main><sub>
+          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of 
+          <m>S</m>.<index><main>permutation</main><sub>
           <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
           one-to-one function (or, in other words, injection) from
           <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
@@ -749,24 +792,26 @@
           What is the number of <m>k</m>-element permutations of an <m>n</m>-element set if <m>k>n</m>?
         </p>
       </statement>
+      <hint>
+        <p>
+          Do you see an analogy between this problem and any of the previous problems?
+        </p>
+      </hint>
       <solution>
         <p>
           By the general product principle, the number is
           <me>
-            \prod_{i=1}^k
-            n-i+1
+            \prod_{i=1}^k(n-i+1).
           </me>
-        </p>
 
-        <p>
-          . In the case that <m>k>n</m>, there are no such lists
+          In the case that <m>k>n</m>, there are no such lists
           with distinct entries, and that is what the formula gives us, because
           <m>n-(n+1)+1=0</m>.
         </p>
       </solution>
     </activity>
 
-    <p>
+     <p>
       There are a number of different notations for the number of <m>k</m>-element
       permutations of an <m>n</m>-element set. The one we shall use was introduced by
       Don Knuth; namely <m>n^{\underline{k}}</m>, read <q><m>n</m> to the <m>k</m> falling</q> or
@@ -780,17 +825,17 @@
 
     <p>
       It is standard to call <m>n^{\underline{k}}</m><index><main><m>n^{\underline{k}}</m></main></index> the
-      <em><m>k</m>-th falling factorial power of <m>n</m></em><index><main>falling factorial
+      <term><m>k</m>-th falling factorial power of <m>n</m></term><index><main>falling factorial
       power</main></index><index><main>factorial power</main><sub>falling</sub></index>, which explains why we use exponential
       notation. Of course we call it a <em>factorial</em> power since
       <m>n^{\underline{n}} = n(n-1)\cdots 1</m> which we call <em><m>n</m>-factorial</em> and
       denote by
-      <m>n!</m>.<index><main>factorial</main></index><index><main><m>n"!</m></main></index> If you are unfamiliar with the Pi
-      notation, or <em>product notation</em><index><main>product notation</main></index><index><main>Pi
-      notation</main></index> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the Sigma notation works for
+      <m>n!</m>.<index><main>factorial</main></index><index><main><m>n"!</m></main></index> If you are unfamiliar with the <m>\Pi</m>
+      notation, or <term>product notation</term><index><main>product notation</main></index><index><main><m>Pi</m>
+      notation</main></index> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the <m>\Sigma</m> notation works for
       summations.
     </p>
-
+ 
     <activity category="essential">
       <statement>
         <p>
@@ -817,8 +862,7 @@
         </p>
       </solution>
     </activity>
-  </subsection>
-
+  
   <subsection>
     <title>Functions and directed graphs</title>
     <p>
@@ -851,7 +895,7 @@
     <figure xml:id="functiondigraphs" >
       <caption>What is a digraph of a
       function?</caption>
-      <image width="73%" source="images/" />
+      <image width="73%" source="images/functiondigraph" />
     </figure>
 
     <p>
@@ -883,6 +927,7 @@
       <m>S</m> to <m>S</m> and draw only one set of vertices representing the elements
       of <m>S</m>.) For further discussion of functions and digraphs see <xref ref="functionrelation">Sections</xref> and <xref ref="relationdigraph"></xref> of {<xref ref="Relations">Appendix</xref>}.
     </p>
+  </subsection>
 
     <activity category="motivation">
       <statement>
@@ -895,11 +940,10 @@
           </me>
         </p>
       </statement>
+      <!-- I cannot find an image for this solution. "initialdigraph" is not the right one. -->
       <solution>
         <p>
-          \mbox{
           <image width="73%" source="images/" />
-          }
         </p>
       </solution>
     </activity>
@@ -923,13 +967,11 @@
         </p>
 
         <p>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+          <image width="73%" source="images/OnetoOneNotOnto" />
         </p>
       </solution>
     </activity>
-
+ 
     <activity category="motivation">
       <statement>
         <p>
@@ -945,7 +987,7 @@
 
         <p>
           \mbox{
-          <image width="73%" source="images/" />
+          <image width="73%" source="images/OntoNotOnetoOne" />
           }
         </p>
       </solution>
@@ -957,7 +999,6 @@
         functions and onto functions.
       </p>
       <task>
-        <statement>
           <p>
             What does the digraph of a one-to-one function (injection) from
               a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
@@ -978,7 +1019,10 @@
               like?
           </p>
         </task>
-      </statement>
+        <hint>
+          For each part of this problem, think about how many arrows are allowed to
+          enter a vertex representing a member of <m>Y</m>.
+        </hint>
       <solution>
         <p>
           One-to-one: One arrow comes out of each vertex representing a member
@@ -995,12 +1039,12 @@
       </solution>
     </activity>
 
-    <activity xml:id="permutationasbijection" category="essential">
+   <activity xml:id="permutationasbijection" category="essential">
       <statement>
         <p>
           The word <em>permutation</em> is actually used in two different ways in
-          mathematics. A <em>permutation</em><index><main>permutation</main><sub>as a bijection</sub></index> of a set
-          <m>S</m> is a bijection from <m>S</m> to
+          mathematics. A <term>permutation</term><index><main>permutation</main><sub>as a bijection</sub></index> of a set
+          <m>S</m> is one-to-one from <m>S</m> onto
           <m>S</m>. How many permutations does an <m>n</m>-element set have?
         </p>
       </statement>
@@ -1011,30 +1055,31 @@
       </solution>
     </activity>
 
+
     <p>
       Notice that there is a great deal of consistency between the use of
       the word permutation in <xref ref="permutationasbijection">Problem</xref> and the
       use in <xref ref="kelementpermutation">Problem</xref>. If we have
       some way <m>a_1,a_2,\ldots,a_n</m> of listing our set, then any other list
-      <m>b_1,b_2,\ldots,b_n</m> gives us the bijection whose rule is
-      <m>f(a_i) =b_i</m>, and any bijection, say the one given by <m>g(a_i)=c_i</m>
+      <m>b_1,b_2,\ldots,b_n</m> gives us the permutation of <m>S</m> whose rule is
+      <m>f(a_i) =b_i</m>, and any permutation of <m>S</m>, say the one given by <m>g(a_i)=c_i</m>
       gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really
       very little difference between the idea of a permutation of <m>S</m> and an
       <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
     </p>
-  </subsection>
+  
 
   <subsection>
     <title>The bijection principle</title>
     <p>
       Another name for a one-to-one
-      and onto function is <index><main>bijection</main></index><index><main>function</main><sub>bijection</sub></index><em>bijection</em>. The first two digraphs in <xref ref="functiondigraphs">Figure</xref> are
+      and onto function is <index><main>bijection</main></index><index><main>function</main><sub>bijection</sub></index><term>bijection</term>. The digraphs marked (a), (b), and (e) in <xref ref="functiondigraphs">Figure</xref> are
       digraphs of bijections. The description in <xref ref="bijectiondigraph">Problem</xref> of the digraph of a bijection from
       <m>X</m> to
       <m>Y</m> illustrates one of the fundamental principles of combinatorial
       mathematics, the
-      <index><main>principle</main><sub>bijection</sub></index><index><main>bijection principle</main></index><em>bijection
-      principle</em>;
+      <index><main>principle</main><sub>bijection</sub></index><index><main>bijection principle</main></index><term>bijection
+      principle</term>:
     </p>
 
     <blockquote>
@@ -1054,7 +1099,7 @@
     <activity xml:id="SubsetsBinaryRepresentation">
       <statement>
         <p>
-          The <em>binary</em> representation of a number <m>m</m> is a list, or string,
+          The <term>binary representation</term> of a number <m>m</m> is a list, or string,
           <m>a_1a_2\ldots a_k</m> of zeros and ones such that <m>m=a_12^{k-1} + a_2 2^{k-2}
           +\cdots+ a_k 2^0.</m> Describe a bijection between the binary representations of
           the integers between 0 and <m>2^n-1</m> and the subsets of an <m>n</m>-element set.
@@ -1062,6 +1107,16 @@
           set?
         </p>
       </statement>
+      <hint>
+        The problem is asking you to describe a one-to-one function from the set
+        of binary representations of numbers between <m>0</m> and <m>2^n-1</m> onto the set of
+        subsets of the set <m>[n]</m>. Write down these two sets for <m>n = 2</m>. They should
+        both have four elements. The set of binary representations should contain
+        the string <m>00</m>. You could think of this as the instruction ``take no ones and
+        take no twos.'' In that context, what could you think of the string <m>11</m> as
+        standing for? This should help you describe a function. Of course now you
+        have to figure out how to show it is one-to-one and onto.
+      </hint>
       <solution>
         <p>
           The sequence <m>a_1a_2\ldots
@@ -1084,7 +1139,7 @@
       <m>k</m>-element subset from an
       <m>n</m>-element set. The number <m>n\choose k</m> is read as <q><m>n</m> choose <m>k</m></q> and is
       called a
-      <index><main>binomial coefficient</main></index><em>binomial coefficient</em> for
+      <index><main>binomial coefficient</main></index><term>binomial coefficient</term> for
       reasons we will see later on. Another frequently used way to read the
       binomial coefficient notation is ``the number of combinations
       <index><main>combinations</main></index> of
@@ -1224,6 +1279,9 @@
         </p>
       </statement>
       <solution>
+        <me>
+          1 \quad 8 \quad 28 \quad 56 \quad 70 \quad 56 \quad 28 \quad 8 \quad 1
+        </me>
       </solution>
     </activity>
 
@@ -1234,6 +1292,15 @@
           triangle to get a numerical answer for the first question in <xref ref="icecreaminpints">Problem</xref>.
         </p>
       </statement>
+      <hint>
+        Starting with the row 1 8 28 56 70 56 28 8 1, put dots below it where the
+        elements of row 9 should be. Then put dots below that where the elements
+        of row 10 should be. Do the same for rows 11 and 12. Mark the dot where row 12
+        should appear. Now mark the dots you need in row 11 to compute the
+        entry in column 3 of row 12. Now mark the dots you need in row 10 to compute
+        the marked entries in row 11. Do the same for rows 9 and 8. Now you should
+        be able to see what you need to do.
+      </hint>
       <solution>
         <p>
           Starting with row 9, we get
@@ -1255,7 +1322,7 @@
       zero and the first column is column zero) is <m>n\choose k</m>. In
       this case your formula says each entry in a row is the sum of
       the one above and the one above and to the left, except for
-      the leftmost and right most entries of a row, for which that
+      the leftmost and rightmost entries of a row, for which that
       doesn't make sense. Since the leftmost entry is <m>n\choose 0</m>
       and the rightmost entry is
       <m>n\choose n</m>, these entries are both one (to see why, ask yourself how
@@ -1526,6 +1593,10 @@
             Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
           </p>
         </statement>
+        <hint>
+          Begin by trying to figure out what the entries just above the diagonal of the
+          rectangle are. After that, what other entries can you figure out?
+        </hint>
         <solution>
           <p>
             No, because there must be a zero above each one not in column zero.
@@ -1545,6 +1616,9 @@
             hold true?
           </p>
         </statement>
+        <hint>
+          See if you can figure out what the entries in column -1 have to be.
+        </hint>
         <solution>
           <p>
             To the left of all the ones in column zero, we must have zeros
@@ -1555,7 +1629,6 @@
       </task>
       <task>
         <statement>
-          <p>
           <title>\ <m>*</m>\ (\theenumii)</title>
           <p>
             What should we put into row <m>-n</m> and column <m>k</m> or
@@ -1563,14 +1636,21 @@
             hold?  Do we have any freedom of choice?
           </p>
         </statement>
+        <hint>
+          What does the sum of two consecutive values in row <m>-1</m> have to be? Could
+          this sum depend on which two consecutive values we take? Is there some
+          value of row <m>-1</m> that we could choose arbitrarily? Now what about row <m>-2</m>?
+          Can we make arbitrary choices there? If so, how many can we make, and is
+          their position arbitrary?
+        </hint>
         <solution>
           <p>
             Above row zero, we have some freedom. The
-            -1,-1 and the -1,0 entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
-            any number <m>x</m>. To the right of the -1,0 entry they must alternate between
-            <m>(-x-1)</m> and <m>x+1</m> while to the left of the -1,1 entry they must alternate
-            between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position -1,1. Now if we know
-            the entry in row -2 and column zero, we can use the Pascal equation (in the
+            <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
+            any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between
+            <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate
+            between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know
+            the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the
             form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the
             entries to the left of it, and (in a different form) to compute all the
             entries to the right of it. Thus we may be arbitrary about the entries in
@@ -1581,8 +1661,6 @@
           </p>
         </solution>
       </task>
-      <p>
-      There are variants of the bijections we used to prove the
     </activity>
 
     <activity xml:id="charfunction">
@@ -1602,55 +1680,32 @@
 
       <p>
         The function <m>\chi_S</m> is called the <index><main>characteristic
-        function</main></index><index><main>function</main><sub>characteristic</sub></index><em>characteristic function</em> of
+        function</main></index><index><main>function</main><sub>characteristic</sub></index><term>characteristic function</term> of
         <m>S</m>. Notice that the characteristic function is a function
         from <m>[n]</m> to
         <m>\{0,1\}</m>.
       </p>
+
       <task>
       <statement>
         <p>
           For practice, consider the function <m>\chi_{\{1,3\}}</m> for
           the subset
           <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
+            <ol label="(i)">
+        
+            <li><m>\chi_{\{1,3\}}(1)</m>?</li>
+
+            <li><m>\chi_{\{1,3\}}(2)</m>?</li>
+
+            <li><m>\chi_{\{1,3\}}(3)</m>?</li>
+
+            <li><m>\chi_{\{1,3\}}(4)</m>?</li>
+          </ol>
         </p>
-        <task>
-          <p>
-            <m>\chi_{\{1,3\}}(1)</m>?
-          </p>
-        </statement>
-        <solution>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\chi_{\{1,3\}}(2)</m>?
-          </p>
-        </statement>
-        <solution>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\chi_{\{1,3\}}(3)</m>?
-          </p>
-        </statement>
-        <solution>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            <m>\chi_{\{1,3\}}(4)</m>?
-          </p>
-        </statement>
-        <solution>
-        </solution>
-      </task>
-      </task>
-      <task>
+      </statement>
+    </task>
+    <task>
         <statement>
           <p>
             We define a function <m>f</m> from the set of subsets of
@@ -1732,6 +1787,7 @@
               ice cream and the number of ways to simply choose three different
               flavors of ice cream?
           </p>
+        </statement>
         </task>
         <task xml:id="twelvechoosethreethree" >
           <p>
@@ -1750,7 +1806,6 @@
               flavors).
           </p>
         </task>
-      </statement>
       <solution>
         <p>
           What is different is that the order in which we put the scoops into
@@ -1791,6 +1846,11 @@
           <m>n\choose k</m> equals <m>n\choose n-k</m>.
         </p>
       </statement>
+      <hint>
+        The first thing you need to decide is “What are the two sets whose elements
+        we are counting?” Then it will be easier to think of a bijection between these
+        two sets. It turns out that these two sets are sets of sets!
+      </hint>
       <solution>
         <p>
           For each <m>k</m>-element subset <m>K</m> of the <m>n</m>-element set <m>N</m>, define
@@ -1807,6 +1867,11 @@
           children if each child may get at most one?
         </p>
       </statement>
+      <hint>
+        Ask yourself “What is a problem like this doing in the middle of a bunch of
+        problems about counting subsets of a set? Is it related, or is it supposed to
+        gives us a break from sets?”
+      </hint>
       <solution>
         <p>
           <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
@@ -1831,6 +1896,20 @@
           different ways of doing this problem. Try to find them both.
         </p>
       </statement>
+      <hint>
+        The problem suggests that you think about how to get a list from a seating
+        arrangement. Could every list of n distinct people come from a seating chart?
+        How many lists of n distinct people are there? How many lists could we get
+        from a given seating chart by taking different starting places?
+      </hint>
+      <hint>
+        Second Hint for Problem 38: 
+        For a different way of doing the problem, suppose that you have chosen
+        one person, say the first one in a list of the people in alphabetical order by
+        name. Now seat that person. Does it matter where they sit? In ways can
+        you seat the remaining people? Does it matter where the second person in
+        alphabetical order sits?
+      </hint>
       <solution>
         <p>
           The total number of ways to list how the <m>n</m> people sit around the
@@ -1855,8 +1934,9 @@
     <p>
       We are now going to analyze the result of <xref ref="nchoosek">Problem</xref> in
       more detail in order to tease out another counting principle that we
-      can sue in a wide variety of situations.
+      can use in a wide variety of situations.
     </p>
+</subsection>
 
     <table xml:id="tab_permsof3" >
       <caption>The <m>3</m>-element permutations of <m>\{a,b,c,d,e\}</m> organized
@@ -1981,28 +2061,43 @@
           <p>
             How many permutations are there in a block?
           </p>
+        </statement>
+        <hint>
+          A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
+        </hint>
         </task>
         <task>
-          <p>
+          <statement>
+           <p>
             Since <m>S</m> has <m>n</m>
               elements, what does <xref ref="kelementpermutation">problem</xref> tell you about
               the total number of <m>k</m>-element permutations of <m>S</m>?
-          </p>
+           </p>
+          </statement>
         </task>
         <task>
+          <statement>
           <p>
             Describe a
               bijection between the set of blocks of the partition and the set of
               <m>k</m>-element subsets of <m>S</m>.
           </p>
+        </statement>
+        <hint>
+          What sets are listed, and how many times is each one listed if you take one list from each row of Table 1.2? How does this choice of lists give you the bijection in this special case?
+        </hint>
         </task>
         <task xml:id="formulanchoosekfinal" >
+          <statement>
           <p>
             What formula does this give you for the
               number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
           </p>
+        </statement>
+        <hint>
+          You can make good use of the product principle here.
+        </hint>
         </task>
-      </statement>
       <solution>
         <p>
           The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
@@ -2025,8 +2120,10 @@
           <p>
             In how may ways may the coach choose the five players?
           </p>
+        </statement>
         </task>
         <task>
+          <statement>
           <p>
             To be
               more realistic, the five players playing a game normally consist of
@@ -2034,14 +2131,22 @@
               four forwards, and three centers on the team, in how many ways can
               the coach choose two guards, two forwards, and one center?
           </p>
+        </statement>
+        <hint>
+          The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
+        </hint>
         </task>
         <task>
+          <statement>
           <p>
             What if
               one of the centers is equally skilled at playing forward?
           </p>
+        </statement>
         </task>
-      </statement>
+        <hint>
+          As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.
+        </hint>
       <solution>
         <p>
           <m>12\choose 5</m>. In the more realistic version,
@@ -2075,7 +2180,8 @@
       </solution>
     </activity>
 
-    <activity xml:id="quotientprinciple" category="essential">
+<!-- Activity 42 -->
+    <activity xml:id="quotientprinciple" category="essential"> 
       <statement>
         <p>
           In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
@@ -2129,6 +2235,7 @@
       would be a good time to work through that appendix.
     </p>
 
+<!-- Activity 43 -->
     <activity xml:id="necklace" category="essential and interesting">
       <statement>
         <p>
@@ -2141,6 +2248,12 @@
           equivalent to the first.)
         </p>
       </statement>
+      <hint>
+        How could we get a list of beads from a necklace?
+      </hint>
+      <hint>
+        When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?
+      </hint>
       <solution>
         <p>
           We can obtain a permutation of the beads by cutting the necklace and
@@ -2155,6 +2268,7 @@
       </solution>
     </activity>
 
+<!-- Activity 44 -->
     <activity xml:id="tennispairings2" category="interesting">
       <p>
         We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
@@ -2170,15 +2284,23 @@
               <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
               three solutions.)
           </p>
+        </statement>
         </task>
+        <hint>
+          You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
+        </hint>
         <task>
+          <statement>
           <p>
             Suppose that in addition to specifying who plays whom, for each
               pairing we say who serves first.  Now in how many ways may we
-              specify our pairs? Try to find as many solutions as you can
+              specify our pairs? Try to find as many solutions as you can.
           </p>
+        </statement>
         </task>
-      </statement>
+       <hint>
+         You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.
+       </hint>
       <solution>
         <p>
           Suppose we list the people in the club in some way, and keep that
@@ -2189,7 +2311,7 @@
           been selected, take the next unpaired person from the list and pair that
           person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
           can arise in this way, and no pairing can arise twice in this process. Thus
-          the number of outcomes is <m>\prod_{i=0}^{n-1} 2n-2i-1</m>.
+          the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
         </p>
 
         <p>
@@ -2215,6 +2337,7 @@
       </solution>
     </activity>
 
+<!-- Activity 45 -->
     <activity xml:id="twocolorsofbeads" category="essential">
       <statement>
         <p>
@@ -2225,6 +2348,9 @@
           to move around in (three-dimensional) space?
         </p>
       </statement>
+      <hint>
+        It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.
+      </hint>
       <solution>
         <p>
           Two ways; either the red beads are side-by-side or diagonally
@@ -2279,5 +2405,5 @@
         </p>
       </statement>
     </activity>
-  </subsection>
 </section>
+
