@@ -520,7 +520,6 @@
     </activity>
 
     <activity category="essential for this or the next section">
-      <task>
         <statement>
           <p>There is a <term>generalized pigeonhole principle</term><index><main>pigeonhole principle</main><sub> generalized</sub></index> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
           </p>
@@ -529,8 +528,8 @@
           <p>Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m> blocks. If each block has at most <m>k</m> elements, the by the sum principle the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block has at least <m>k+1</m> elements.
           </p>
         </solution>
-      </task>
-      <task>
+    </activity>
+    <activity>
         <statement>
           <p>All the powers of five end in a five, and all the powers of two are even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of a prime other than two or five, one must have <q>01</q> as the last two digits.
           </p>
@@ -539,7 +538,6 @@
           <p>If we take 40 powers of such a prime, either one will end in <q>01</q> or some two, say <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j} -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j} -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two digits of <m>p^{i-j}</m> must be <q>01.</q>
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity xml:id="R_3_3_" category="essential for this or the next section, and interesting">
