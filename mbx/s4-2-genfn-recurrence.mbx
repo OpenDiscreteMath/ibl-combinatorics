@@ -1,12 +1,7 @@
-
 <section>
   <title>Generating Functions and Recurrence Relations</title>
   <introduction>
-    <p>
-      Recall that a
-      recurrence relation for a sequence <m>a_n</m> expresses <m>a_n</m> in terms of
-      values <m>a_i</m> for <m>i\lt n</m>. For example, the equation <m>a_i=3a_{i-1} +2^i</m> is
-      a first order linear constant coefficient recurrence.
+    <p>Recall that a recurrence relation for a sequence <m>a_n</m> expresses <m>a_n</m> in terms of values <m>a_i</m> for <m>i\lt n</m>. For example, the equation <m>a_i=3a_{i-1} +2^i</m> is a first order linear constant coefficient recurrence.
     </p>
   </introduction>
 
@@ -25,9 +20,7 @@
       <task>
         <statement>
           <p>
-            Multiply both sides by <m>x^i</m> and
-            sum both the left hand side and right hand side from <m>i=1</m> to infinity. 
-            In the left-hand side use the fact that
+            Multiply both sides by <m>x^i</m> and sum both the left hand side and right hand side from <m>i=1</m> to infinity.  In the left-hand side use the fact that
             <me>
               \sum_{i=1}^\infty a_ix^i = (\sum_{i=0}^\infty x^i) -a_0
             </me>
@@ -45,7 +38,8 @@
           </p>
         </statement>
         <solution>
-          <md>
+            <p>
+                <md>
             <mrow>\sum_{i=1}^\infty a_ix^i \amp =\amp 3\sum_{i=1}^\infty
             a_{i-1}x^i+\sum_{i=1}^i3^ix^i</mrow>
             <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
@@ -54,7 +48,8 @@
             {1\over 1-3x}-1</mrow>
             <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+{1\over 1-3x} -1</mrow>
             <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+{1\over (1-3x)^2}</mrow>
-          </md>
+                </md>
+            </p>
         </solution>
       </task>
       <task>
@@ -64,12 +59,11 @@
           </p>
         </statement>
         <solution>
-          <md>
-            <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp  {a_0-1\over 1-3x} +
-            {1\over(1-3x)^2}</mrow>
+            <p>
+                <md>
+            <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp {a_0-1\over 1-3x} + {1\over(1-3x)^2}</mrow>
             <mrow>\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty {i+1\choose i}3^ix^i,</mrow>
           </md>
-          <p>
             which gives us <m>a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i</m>.
           </p>
         </solution>
@@ -84,6 +78,7 @@
           </p>
         </statement>
         <solution>
+            <p>
           <md>
             <mrow>\sum_{i=1}^\infty a_ix^i\amp =\amp 3\sum_{i=1}^\infty
             a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i</mrow>
@@ -95,15 +90,14 @@
             <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
             2^ix^i\sum_{j=0}^\infty 3^jx^j</mrow>
           </md>
-          <p>
-            But<nbsp /> <m>\displaystyle\sum_{i=0}^\infty
+            But<me>\displaystyle\sum_{i=0}^\infty
             2^ix^i\sum_{j=0}^\infty 3^jx^j=
             \sum_{k=0}^\infty
             \sum_{i=0}^k 2^i3^{k-i}x^k=
             \sum_{k=0}^\infty3^kx^k
             \sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left({2\over
             3}\right)^{k+1}\over 1-{2\over 3}}3^kx^k=\sum_{k=0}^\infty
-            (3^{k+1}-2^{k+1})x^k</m>. Substituting this into the equation for
+            (3^{k+1}-2^{k+1})x^k</me>. Substituting this into the equation for
             <m>\sum_{i=0}^\infty a_ix^i</m> gives us
             <m>a_i =(a_0+2)3^i -2^{i+1}</m>.
           </p>
@@ -113,17 +107,7 @@
 
     <activity category="motivation">
       <statement>
-        <p>
-          Suppose we deposit <dollar />5000 in a savings certificate that pays ten
-          percent interest and also participate in a program to add <dollar />1000 to the
-          certificate at the end of each year (from the end of the first year on)
-          that follows (also subject to interest.) Assuming we make the <dollar />5000
-          deposit at the end of year 0, and letting <m>a_i</m> be the amount of money in
-          the account at the end of year
-          <m>i</m>, write a recurrence for the amount of money the certificate is worth
-          at the end of year <m>n</m>. Solve this recurrence. How much money do we
-          have in the account (after our year-end deposit) at the end of ten years?
-          At the end of 20 years?
+        <p>Suppose we deposit <dollar />5000 in a savings certificate that pays ten percent interest and also participate in a program to add <dollar />1000 to the certificate at the end of each year (from the end of the first year on) that follows (also subject to interest.) Assuming we make the <dollar />5000 deposit at the end of year 0, and letting <m>a_i</m> be the amount of money in the account at the end of year <m>i</m>, write a recurrence for the amount of money the certificate is worth at the end of year <m>n</m>. Solve this recurrence. How much money do we have in the account (after our year-end deposit) at the end of ten years?  At the end of 20 years?
         </p>
       </statement>
       <solution>
@@ -156,13 +140,7 @@
 
   <subsection>
     <title>Fibonacci Numbers</title>
-    <p>
-      The sequence of problems that follows describes a number of hypotheses we
-      might make about a fictional population of rabbits. We use the example
-      of a rabbit population for historic reasons; our goal is a classical
-      sequence of numbers called Fibonacci numbers. When
-      Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci
-      posthumously</fn> introduced them, he did so with a fictional population of rabbits.
+    <p>The sequence of problems that follows describes a number of hypotheses we might make about a fictional population of rabbits. We use the example of a rabbit population for historic reasons; our goal is a classical sequence of numbers called Fibonacci numbers. When Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci posthumously</fn> introduced them, he did so with a fictional population of rabbits.
     </p>
   </subsection>
 
@@ -170,31 +148,19 @@
     <title>Second order linear recurrence relations</title>
     <activity xml:id="secondorderintroduction" category="essential">
       <statement>
-        <p>
-          Suppose we start (at the end of month 0) with 10 pairs of baby rabbits,
-          and that after baby rabbits mature for one month they begin to reproduce, with
-          each pair producing two new pairs at the end of each month afterwards. Suppose
-          further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the
-          number of rabbits we have at the end of month <m>n</m>. Show that
-          <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <em>second
-          order</em><index><main>recurrence</main><sub>second order</sub></index><index><main>second order recurrence</main></index>
-          <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main><sub>second
-          order</sub></index> recurrence with constant coefficients.<index><main>recurrence</main><sub>constant
-          coefficient</sub></index> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
+        <p>Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the number of rabbits we have at the end of month <m>n</m>. Show that <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <term>second order</term><index><main>recurrence</main><sub>second order</sub></index><index><main>second order recurrence</main></index> <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main><sub>second order</sub></index> recurrence with constant coefficients.<index><main>recurrence</main><sub>constant coefficient</sub></index> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
           <me>
             \sum_{i=0}^\infty a_ix^i = {10\over 1-x-2x^2}.
           </me>
         </p>
 
-        <p>
-          This gives us the generating function for the sequence <m>a_i</m> giving the
-          population in month <m>i</m>; shortly we shall see a method for converting
-          this to a solution to the recurrence.
+        <p>This gives us the generating function for the sequence <m>a_i</m> giving the population in month <m>i</m>; shortly we shall see a method for converting this to a solution to the recurrence.
         </p>
       </statement>
       <solution>
-        <md>
-          <mrow>\sum_{n=2}^\infty a_nx^n\amp =\amp \sum_{n=2}^\infty a_{n-1}x^n +
+          <p>
+              <md>
+            <mrow>\sum_{n=2}^\infty a_nx^n\amp =\amp \sum_{n=2}^\infty a_{n-1}x^n +
           2\sum_{n=2}^\infty a_{n-2}x^n</mrow>
           <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
           2x^2\sum_{n=2}^\infty a_{n-2}x^{n-2}</mrow>
@@ -205,24 +171,14 @@
           <mrow>(1-x-2x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x</mrow>
           <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-a_0x\over (1-x-2x^2)}</mrow>
         </md>
-        <p>
-          In this problem
-          <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to
-          mature for a month before they begin reproducing. Thus
-          <m>\displaystyle\sum_{n=0}^\infty a_nx^n = {10\over (1-x-2x^2)}</m>
+          In this problem <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus <m>\displaystyle\sum_{n=0}^\infty a_nx^n = {10\over (1-x-2x^2)}</m>
         </p>
       </solution>
     </activity>
 
     <activity xml:id="originalFibonacci" category="essential">
       <statement>
-        <p>
-          In Fibonacci's original problem, each pair of mature rabbits
-          produces one new pair at the end of each month, but otherwise the
-          situation is the same as in <xref ref="secondorderintroduction">Problem</xref>.
-          Assuming that we start with one pair of baby rabbits (at the end of month
-          0), find the generating function for the number of pairs of rabbits we
-          have at the end on <m>n</m> months.
+        <p>In Fibonacci's original problem, each pair of mature rabbits produces one new pair at the end of each month, but otherwise the situation is the same as in <xref ref="secondorderintroduction">Problem</xref>.  Assuming that we start with one pair of baby rabbits (at the end of month 0), find the generating function for the number of pairs of rabbits we have at the end on <m>n</m> months.
         </p>
       </statement>
       <solution>
@@ -256,7 +212,8 @@
         </p>
       </statement>
       <solution>
-        <md>
+          <p>
+          <md>
           <mrow>\sum_{i=2}^\infty a_ix^i \amp =\amp  \sum_{i=2}^\infty
           5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i</mrow>
           <mrow>\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp 
@@ -267,33 +224,19 @@
           \sum_{n=0}^\infty 2^ix^i</mrow>
           <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ {1\over
           1-5x+6x^2}\cdot{1\over 1-2x}</mrow>
-        </md>
+          </md>
+          </p>
       </solution>
     </activity>
 
-    <p>
-      The recurrence relations we have seen in this section are called
-      <em>second order</em><index><main>recurrence</main><sub>second order</sub></index> because they specify
-      <m>a_i</m> in terms of
-      <m>a_{i-1}</m> and
-      <m>a_{i-2}</m>, they are called <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main></index> because
-      <m>a_{i-1}</m> and
-      <m>a_{i-2}</m> each appear to the first power, and they are called <em>constant coefficient recurrences</em><index><main>recurrence</main><sub>constant coefficient</sub></index>
-      because the coefficients in front of
-      <m>a_{i-1}</m> and <m>a_{i-2}</m> are constants.
+    <p>The recurrence relations we have seen in this section are called <term>second order</term><index><main>recurrence</main><sub>second order</sub></index> because they specify <m>a_i</m> in terms of <m>a_{i-1}</m> and <m>a_{i-2}</m>, they are called <term>linear</term><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main></index> because <m>a_{i-1}</m> and <m>a_{i-2}</m> each appear to the first power, and they are called <term>constant coefficient recurrences</term><index><main>recurrence</main><sub>constant coefficient</sub></index> because the coefficients in front of <m>a_{i-1}</m> and <m>a_{i-2}</m> are constants.
     </p>
   </subsection>
 
   <subsection>
     <title>Partial fractions</title>
     <p>
-      The generating functions you found in the
-      previous section all can be expressed in terms of the reciprocal of a
-      quadratic polynomial. However without a power series representation, the
-      generating function doesn't tell us what the sequence is. It turns out
-      that whenever you can factor a polynomial into linear factors (and over
-      the complex numbers such a factorization always exists) you can use that
-      factorization to express the reciprocal in terms of power series.
+      The generating functions you found in the previous section all can be expressed in terms of the reciprocal of a quadratic polynomial. However without a power series representation, the generating function doesn't tell us what the sequence is. It turns out that whenever you can factor a polynomial into linear factors (and over the complex numbers such a factorization always exists) you can use that factorization to express the reciprocal in terms of power series.
     </p>
 
     <activity xml:id="simplifysumoffractions" category="essential">
@@ -313,15 +256,7 @@
     <activity xml:id="partialfractionsintro" category="motivation">
       <statement>
         <p>
-          In <xref ref="simplifysumoffractions">Problem</xref> you see that when we added
-          numerical multiples of the reciprocals of first degree polynomials we got
-          a fraction in which the denominator is a quadratic polynomial. This will
-          always happen unless the two denominators are multiples of each other,
-          because their least common multiple will simply be their product, a
-          quadratic polynomial. This leads us to ask whether a fraction whose
-          denominator is a quadratic polynomial can always be expressed as a sum of
-          fractions whose denominators are first degree polynomials. Find numbers
-          <m>c</m> and <m>d</m> so that
+          In <xref ref="simplifysumoffractions">Problem</xref> you see that when we added numerical multiples of the reciprocals of first degree polynomials we got a fraction in which the denominator is a quadratic polynomial. This will always happen unless the two denominators are multiples of each other, because their least common multiple will simply be their product, a quadratic polynomial. This leads us to ask whether a fraction whose denominator is a quadratic polynomial can always be expressed as a sum of fractions whose denominators are first degree polynomials. Find numbers <m>c</m> and <m>d</m> so that
           <me>
             {5x+1\over(x-3)(x+5)} = {c\over x-3} + {d\over
             x+5}.
@@ -329,12 +264,12 @@
         </p>
       </statement>
       <solution>
-        <md>
+          <p>
+              <md>
           <mrow>{5x+1\over(x-3)(x+5)} \amp =\amp  {c\over x-3} + {d\over
           x+5}</mrow>
           <mrow>{5x+1\over(x-3)(x-5)} \amp =\amp cx+5c+dx-3d</mrow>
         </md>
-        <p>
           gives us
           <md>
             <mrow>5x\amp =\amp cx+dx</mrow>
@@ -352,15 +287,7 @@
 
     <activity xml:id="partialfractions1" category="essential">
       <statement>
-        <p>
-          In <xref ref="partialfractionsintro">Problem</xref> you may have simply guessed
-          at values of
-          <m>c</m> and <m>d</m>, or you may have solved a system of equations in the two
-          unknowns
-          <m>c</m> and <m>d</m>. Given constants <m>a</m>, <m>b</m>, <m>r_1</m>, and <m>r_2</m> (with <m>r_1\not=
-          r_2</m>), write down a system of equations we can solve for
-          <m>c</m> and
-          <m>d</m> to write
+        <p>In <xref ref="partialfractionsintro">Problem</xref> you may have simply guessed at values of <m>c</m> and <m>d</m>, or you may have solved a system of equations in the two unknowns <m>c</m> and <m>d</m>. Given constants <m>a</m>, <m>b</m>, <m>r_1</m>, and <m>r_2</m> (with <m>r_1\not= r_2</m>), write down a system of equations we can solve for <m>c</m> and <m>d</m> to write
           <me>
             {ax+b\over (x-r_1)(x-r_2)} = {c\over x-r_1} + {d\over
             x-r_2}.
@@ -380,36 +307,24 @@
           </me>
         </p>
 
-        <p>
-          This gives us the equations <m>cx+dx=ax</m> and <m>-r_2c-r_1d=b</m>. Since <m>x</m> can
-          be any value, in particular it can be nonzero, so we can divide by it. This
-          gives us the equations <m>c+d=a</m> and <m>r_2c+r_1d=-b</m>.
+        <p>This gives us the equations <m>cx+dx=ax</m> and <m>-r_2c-r_1d=b</m>. Since <m>x</m> can be any value, in particular it can be nonzero, so we can divide by it. This gives us the equations <m>c+d=a</m> and <m>r_2c+r_1d=-b</m>.
         </p>
       </solution>
     </activity>
 
-    <p>
-      Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving
-      them is called the <em>method of partial fractions</em>.<index><main>partial
-      fractions</main><sub>method of</sub></index> This method will let you find power series
-      expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the
-      quadratic polynomials that are in the denominators of your generating
-      functions.
+    <p>Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving them is called the <em>method of partial fractions</em>.<index><main>partial fractions</main><sub>method of</sub></index> This method will let you find power series expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the quadratic polynomials that are in the denominators of your generating functions.
     </p>
 
     <activity category="essential">
       <statement>
-        <p>
-          Use the method of partial fractions to convert the generating
-          function of <xref ref="secondorderintroduction">Problem</xref> into the form
+        <p>Use the method of partial fractions to convert the generating function of <xref ref="secondorderintroduction">Problem</xref> into the form
           <me>
             {c\over x-r_1} + {d\over x-r_2}.
           </me>
         </p>
 
         <p>
-          Use this
-          to find a formula for <m>a_n</m>.
+          Use this to find a formula for <m>a_n</m>.
         </p>
       </statement>
       <solution>
@@ -432,9 +347,7 @@
 
     <activity xml:id="factorFibonacci" category="essential">
       <statement>
-        <p>
-          Use the quadratic formula to find the solutions to <m>x^2+x-1=0</m>, and
-          use that information to factor <m>x^2+x-1</m>.
+        <p>Use the quadratic formula to find the solutions to <m>x^2+x-1=0</m>, and use that information to factor <m>x^2+x-1</m>.
         </p>
       </statement>
       <solution>
@@ -459,18 +372,12 @@
             {c\over x-r_1} + {d\over x-r_2}.
           </me>
         </p>
-
-        <p>
-          (Hint: You can save yourself a tremendous amount of frustrating algebra
-          if you arbitrarily choose one of the solutions and call it <m>r_1</m> and
-          call the other solution <m>r_2</m> and solve the problem using
-          these algebraic symbols in place of the actual roots.<fn>We use the
-          words roots and solutions interchangeably.</fn> Not only will you save
-          yourself some work, but you will get a formula you could use in other
-          problems. When you are done, substitute in the actual values of the
-          solutions and simplify. )
-        </p>
       </statement>
+      <hint>
+          <p>
+              You can save yourself a tremendous amount of frustrating algebra if you arbitrarily choose one of the solutions and call it <m>r_1</m> and call the other solution <m>r_2</m> and solve the problem using these algebraic symbols in place of the actual roots.<fn>We use the words roots and solutions interchangeably.</fn> Not only will you save yourself some work, but you will get a formula you could use in other problems. When you are done, substitute in the actual values of the solutions and simplify.
+          </p>
+      </hint>
       <solution>
         <p>
           <m>{1\over x^2+x-1}={c\over x-r_1}+{d\over x-r_2}</m> gives us
@@ -489,18 +396,19 @@
     <activity category="essential">
       <task>
         <statement>
-          <p>
-            Use the partial fractions decomposition you found in
-            <xref ref="factorFibonacci">Problem</xref> to write the generating function you found in
-            <xref ref="originalFibonacci">Problem</xref> in the form
+          <p>Use the partial fractions decomposition you found in <xref ref="factorFibonacci">Problem</xref> to write the generating function you found in <xref ref="originalFibonacci">Problem</xref> in the form
             <me>
               \sum_{n=0}^\infty a_nx^i
             </me>
-            and use this to give an explicit formula for <m>a_n</m>.  (Hint: once again it
-            will save a lot of tedious algebra if you use the symbols <m>r_1</m> and <m>r_2</m>
-            for the solutions as in <xref ref="fractionFibonacci">Problem</xref> and substitute
-            the actual values of the solutions once you have a formula for <m>a_n</m> in
-            terms of <m>r_1</m> and <m>r_2</m>.)
+            and use this to give an explicit formula for <m>a_n</m>.
+          </p>
+        </statement>
+        <hint>
+            <p>Once again it will save a lot of tedious algebra if you use the symbols <m>r_1</m> and <m>r_2</m> for the solutions as in <xref ref="fractionFibonacci">Problem</xref> and substitute the actual values of the solutions once you have a formula for <m>a_n</m> in terms of <m>r_1</m> and <m>r_2</m>.
+            </p>
+        </hint>
+        <solution>
+            <p>
             <md>
               <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp {1\over 1-x-x^2}\rangle =\rangle -{1\over
               x^2+x-1}</mrow>
@@ -522,42 +430,22 @@
               <mrow>\amp =\amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
               {1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
             </md>
-          </p>
+            </p>
+        </solution>
         </task>
         <task>
-          <p>
-            When we have
-            <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the
-            numbers
-            <m>a_n</m> are called <em>Fibonacci Numbers</em><index><main>Fibonacci numbers</main></index>.  Use
-            either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>. 
-            Are you amazed that your general formula produces integers, or for that
-            matter produces rational numbers?  Why does the recurrence equation tell
-            you that the Fibonacci numbers are all integers?
+            <statement>
+                <p>When we have <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the numbers <m>a_n</m> are called <em>Fibonacci Numbers</em><index><main>Fibonacci numbers</main></index>.  Use either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>.  Are you amazed that your general formula produces integers, or for that matter produces rational numbers?  Why does the recurrence equation tell you that the Fibonacci numbers are all integers?
+                </p>
           </statement>
-        </p>
-        </statement>
         <solution>
-          <p>
-            Using the recurrence, the Fibonacci numbers from <m>a_0</m> to <m>a_8</m> are
-            1, 1, 2, 3, 5, 8, 13, 21, 34. The recurrence says each term is the sum of the
-            two preceding terms, and since the first two terms are integers, all the sums
-            must be integers.
+          <p>Using the recurrence, the Fibonacci numbers from <m>a_0</m> to <m>a_8</m> are 1, 1, 2, 3, 5, 8, 13, 21, 34. The recurrence says each term is the sum of the two preceding terms, and since the first two terms are integers, all the sums must be integers.
           </p>
         </solution>
       </task>
-      <task>
+      <task category="important">
         <statement>
-          <p>
-          <title>\ \importantarrow\ (\theenumii)</title>
-          <p>
-            Find an algebraic
-            explanation (not using the recurrence equation) of what happens to make the
-            square roots of five go away. Explain why there is a real number
-            <m>b</m> such that, for large values of <m>n</m>, the value of the
-            <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant
-            times
-            <m>b^n</m>.  (Find <m>b</m> and the constant.)
+          <p>Find an algebraic explanation (not using the recurrence equation) of what happens to make the square roots of five go away. Explain why there is a real number <m>b</m> such that, for large values of <m>n</m>, the value of the <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant times <m>b^n</m>.  (Find <m>b</m> and the constant.)
           </p>
         </statement>
         <solution>
@@ -597,28 +485,28 @@
           </p>
         </solution>
       </task>
-      <task>
+      <task category="important and difficult">
         <statement>
-        <p>
-        <title>\ \importantarrow\ <m>*</m>\ (\theenumii)</title>
-        <p>
-          As a challenge (which the author has not yet done), see if you can
-          find a way to show algebraically (not using the recurrence relation, but rather
-          the formula you get by removing the square roots of five) that the formula for
-          the Fibonacci numbers yields integers.
+        <p>As a challenge (which the author has not yet done), see if you can find a way to show algebraically (not using the recurrence relation, but rather the formula you get by removing the square roots of five) that the formula for the Fibonacci numbers yields integers.
         </p>
+        </statement>
         <solution>
         <p>
           None is yet available.
         </p>
         </solution>
       </task>
+  </activity>
+  <activity>
+      <statement>
       <p>
         \item Solve the recurrence <m>a_n= 4a_{n-1} - 4a_{n-2}</m>.
       </p>
+      </statement>
       <solution>
-      <md>
-        <mrow>\sum_{n=2}^\infty a_nx^n \amp =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
+          <p>
+              <md>
+                  <mrow>\sum_{n=2}^\infty a_nx^n \amp =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
         4\sum_{n=2}^\infty a_{n-2}x^n</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
         -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
@@ -631,7 +519,6 @@
         <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
         2^nx^n</mrow>
       </md>
-      <p>
         Thus <m>a_n=a_0(n+1)2^n
         +(a_1-4a_0)n2^{n-1}=a_02^n+(a_1-2a_0)n2^{n-1}</m>.
       </p>
@@ -643,20 +530,14 @@
     <title>Catalan Numbers</title>
     <activity xml:id="CatalanRecurrence" category="interesting">
       <statement>
-        <p>
-          Using either lattice paths or diagonal lattice paths, explain why
-          the Catalan Number<index><main>Catalan Number</main><sub>recurrence for</sub></index> <m>c_n</m> satisfies
-          the recurrence
+        <p>Using either lattice paths or diagonal lattice paths, explain why the Catalan Number<index><main>Catalan Number</main><sub>recurrence for</sub></index> <m>c_n</m> satisfies the recurrence
           <me>
             C_n = \sum_{i=1}^{n-1} C_{i-1}C_{n-i}.
           </me>
         </p>
 
         <p>
-          Show that if we use <m>y</m> to stand for the power series <m>\sum_{i=0}^\infty
-          c_nx^n</m>, then we can find <m>y</m> by solving a quadratic equation. Solve for
-          <m>y</m>. Taylor's theorem from calculus tells us that the extended binomial
-          theorem
+          Show that if we use <m>y</m> to stand for the power series <m>\sum_{i=0}^\infty c_nx^n</m>, then we can find <m>y</m> by solving a quadratic equation. Solve for <m>y</m>. Taylor's theorem from calculus tells us that the extended binomial theorem
           <me>
             (1+x)^r = \sum_{i=0}^\infty {r\choose i}x^i
           </me>
@@ -666,34 +547,11 @@
           </me>
         </p>
 
-        <p>
-          Use this and your solution for <m>y</m> (note that of the two possible values
-          for <m>y</m> that you get from the quadratic formula, only one gives an actual
-          power series) to get a formula for the Catalan numbers.<index><main>Catalan
-          number</main><sub>generating function for</sub></index>
+        <p>Use this and your solution for <m>y</m> (note that of the two possible values for <m>y</m> that you get from the quadratic formula, only one gives an actual power series) to get a formula for the Catalan numbers.<index><main>Catalan number</main><sub>generating function for</sub></index>
         </p>
       </statement>
       <solution>
-        <p>
-          Recall that a Dyck Path is a diagonal lattice path that never goes
-          lower than its starting point and a Catalan Path of length <m>2n</m> is a Dyck path
-          that goes from
-          <m>(0,0)</m> to <m>(2n,0)</m> The Catalan number <m>C_n</m> is the number of Catalan paths
-          of length <m>2n</m>. We take <m>C_0=1</m>. A Catalan path could touch the <m>x</m>-axis
-          several times before it reaches <m>(2n,0)</m>. Its first touch can be any point
-          <m>(2i,0)</m> between
-          <m>(2,0)</m> and
-          <m>(2n,0)</m>. For the path to touch first at <m>(0,2i)</m>, the path must start with
-          an upstep and then proceed as a Dyck path from <m>(1,1)</m> to <m>(2i-1,1)</m>. From
-          there it must take a downstep. But the number of Dyck paths from <m>(1,1)</m> to
-          <m>(2i-1,1)</m> is the same as the number of Catalan paths from <m>(0,0)</m> to
-          <m>(2i-2,0)</m>. The number of Catalan paths is the number whose first touch of the
-          <m>x</m>-axis is at <m>x=2</m> plus the number whose first touch is at <m>x=4</m>,<ellipsis />,
-          through the number whose first touch is at <m>2n</m>. After the first touch at
-          <m>x=2i</m>, the path then behaves as a Catalan path from <m>(2i,0)</m> to <m>(2n,0)</m>. The
-          number of such paths is <m>C_{n-i}</m>. By the product principle, the number of
-          Catalan paths whose first touch is at <m>x=2i</m> is <m>C_{i-1}C_{n-i}</m>. Then by the
-          sum principle, the number of Catalan paths of length 1 or more is
+        <p>Recall that a Dyck Path is a diagonal lattice path that never goes lower than its starting point and a Catalan Path of length <m>2n</m> is a Dyck path that goes from <m>(0,0)</m> to <m>(2n,0)</m> The Catalan number <m>C_n</m> is the number of Catalan paths of length <m>2n</m>. We take <m>C_0=1</m>. A Catalan path could touch the <m>x</m>-axis several times before it reaches <m>(2n,0)</m>. Its first touch can be any point <m>(2i,0)</m> between <m>(2,0)</m> and <m>(2n,0)</m>. For the path to touch first at <m>(0,2i)</m>, the path must start with an upstep and then proceed as a Dyck path from <m>(1,1)</m> to <m>(2i-1,1)</m>. From there it must take a downstep. But the number of Dyck paths from <m>(1,1)</m> to <m>(2i-1,1)</m> is the same as the number of Catalan paths from <m>(0,0)</m> to <m>(2i-2,0)</m>. The number of Catalan paths is the number whose first touch of the <m>x</m>-axis is at <m>x=2</m> plus the number whose first touch is at <m>x=4</m>,<ellipsis />, through the number whose first touch is at <m>2n</m>. After the first touch at <m>x=2i</m>, the path then behaves as a Catalan path from <m>(2i,0)</m> to <m>(2n,0)</m>. The number of such paths is <m>C_{n-i}</m>. By the product principle, the number of Catalan paths whose first touch is at <m>x=2i</m> is <m>C_{i-1}C_{n-i}</m>. Then by the sum principle, the number of Catalan paths of length 1 or more is
           <me>
             C_n=\sum_{i=1}^nC_{i-1}C_{n-i}.
           </me>
@@ -711,22 +569,14 @@
           </md>
         </p>
 
-        <p>
-          This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us
-          <m>y={1\pm \sqrt{1-4x}\over 2x}</m>. By the extended binomial theorem,
+        <p>This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y={1\pm \sqrt{1-4x}\over 2x}</m>. By the extended binomial theorem,
           <me>
             \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty {1/2\choose i}(-4x)^i=
             \sum_{i=0}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i.
           </me>
         </p>
 
-        <p>
-          The first term of this power series is 1, so to get a power series for <m>y</m>, we must
-          take the negative square root so that the <m>x</m> in the denominator will cancel
-          out. Thus <m>y=-{1\over2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over
-          i!}(-1)^i4^ix^i</m>. But
-          <m>(1/2)^{\underline{i}}=({1\over2})({-1\over2})({-3\over2})({-5\over2})\cdots
-          ({-2i+3\over 2})</m>, so
+        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-{1\over2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=({1\over2})({-1\over2})({-3\over2})({-5\over2})\cdots ({-2i+3\over 2})</m>, so
           <md>
             <mrow>y\amp =\amp -{1\over2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
             i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
