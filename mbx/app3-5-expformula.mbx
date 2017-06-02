@@ -398,20 +398,23 @@
       <p>
       Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
       Then
-      <task>
+      <ul>
+      <li>
         <p>
           Each pair of vertices <m>u</m> and <m>v</m> in <m>C</m> is connected by the walk
           that goes from <m>u</m> to <m>x</m> and then from <m>x</m> to <m>v</m>.
         </p>
-      </task>
-      <task>
+      </li>
+      <li>
         <p>
           If a vertex <m>w</m> is connected by a walk to a vertex <m>v</m> in <m>C</m>, then
           it is connected to <m>x</m> by the walk that goes from <m>w</m> to <m>v</m> and then
           from <m>v</m> to <m>x</m>.  Thus no  vertex <m>w</m> in the graph other than a member of
           <m>C</m> is connected by a walk to any vertex in <m>C</m>.
         </p>
-      </task>
+      </li>
+    </ul>
+  </p>
       <p>
         Therefore <m>C</m> is a connected component containing <m>x</m>. If
         connected component <m>D</m> contained <m>x</m>, then every vertex in <m>D</m> would be
@@ -521,7 +524,7 @@
         <p>
           One of <m>a_i</m> and <m>c_n</m> can be computed by recognizing that a
           simple graph on a vertex set <m>V</m> is completely determined by its edge set
-          and its edge set is a subset of the set of two element subsets of <m>V</m>. 
+          and its edge set is a subset of the set of two element subsets of <m>V</m>.
           Figure out which it is and compute it.
         </p>
       </statement>
@@ -586,7 +589,7 @@
       <statement>
         <p>
           You can now use the previous parts of the Problem to find a formula
-          for <m>c_n</m> that involves summing over all partitions of the integer <m>n</m>. 
+          for <m>c_n</m> that involves summing over all partitions of the integer <m>n</m>.
           (It isn't the simplest formula in the world, and it isn't the easiest
           formula in the world to figure out, but it is nonetheless a formula
           with which one could actually make computations!)  Find such a  formula.
