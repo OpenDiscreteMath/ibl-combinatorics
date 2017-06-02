@@ -77,7 +77,14 @@
 <!-- Insert packages, options into preamble -->
 <!-- early or late                          -->
 <xsl:param name="latex.preamble.early" select="''" />
-<!-- <xsl:param name="latex.preamble.late" select="''" /> -->
+<xsl:param name="latex.preamble.late">
+    <xsl:text>% Set up the emoji for the three fruit we use&#xa;</xsl:text>
+    <xsl:text>\newfontfamily{\emojifont}{Symbola}&#xa;</xsl:text>
+    <xsl:text>\usepackage{newunicodechar}&#xa;</xsl:text>
+    <xsl:text>\newunicodechar{🍎}{\emojifont{🍎}} % Red apple &#xa;</xsl:text>
+    <xsl:text>\newunicodechar{🍐}{{\emojifont{🍐}}} % Pear &#xa;</xsl:text>
+    <xsl:text>\newunicodechar{🍌}{{\emojifont{🍌}}} % Banana &#xa;</xsl:text>
+</xsl:param>
 <!--  -->
 <!-- Console characters allow customization of how    -->
 <!-- LaTeX macros are recognized in the fancyvrb      -->
