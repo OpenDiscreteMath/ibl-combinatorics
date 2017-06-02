@@ -1,50 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_genfns-idea" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>The Idea of Generating Functions</title>
   <introduction>
-    <p>
-      Suppose you are going to choose
-      three pieces of fruit from among apples, pears and bananas for a snack.
-      We can symbolically represent all your choices as
+    <p>Suppose you are going to choose three pieces of fruit from among apples, pears and bananas for a snack.  We can symbolically represent all your choices as
       <me>
         \ap\ap\ap+\pe\pe\pe+\ba\ba\ba+\ap\ap\pe+\ap\ap\ba+\ap\pe\pe +\pe\pe\ba
         +\ap\ba\ba+\pe\ba\ba+\ap\pe\ba.
       </me>
     </p>
 
-    <p>
-      Here we are using a picture of a piece of fruit to stand for taking a
-      piece of that fruit. Thus <m>\ap</m> stands for taking an apple, <m>\ap\pe</m> for
-      taking an apple and a pear, and
-      <m>\ap\ap</m> for taking two apples.
-      You can think of the plus sign as standing for the <q>exclusive or,</q> that
-      is,
-      <m>\ap+\ba</m> would stand for <q>I take an apple or a banana but not both.</q> To
-      say <q>I take both an apple and a banana,</q> we would write <m>\ap\ba</m>. We can
-      extend the analogy to mathematical notation by condensing our statement
-      that we take three pieces of fruit to
+    <p>Here we are using a picture of a piece of fruit to stand for taking a piece of that fruit. Thus <m>\ap</m> stands for taking an apple, <m>\ap\pe</m> for taking an apple and a pear, and <m>\ap\ap</m> for taking two apples.  You can think of the plus sign as standing for the <q>exclusive or,</q> that is, <m>\ap+\ba</m> would stand for <q>I take an apple or a banana but not both.</q> To say <q>I take both an apple and a banana,</q> we would write <m>\ap\ba</m>. We can extend the analogy to mathematical notation by condensing our statement that we take three pieces of fruit to
       <me>
         \ap^3+\pe^3+\ba^3+\ap^2\pe+\ap^2\ba +\ap\pe^2+\pe^2\ba+
         \ap\ba^2+\pe\ba^2 +\ap\pe\ba.
       </me>
     </p>
 
-    <p>
-      In this notation <m>\ap^3</m> stands for taking a multiset of three apples,
-      while <m>\ap^2\ba</m> stands for taking a multiset of two apples and a banana,
-      and so on. What our notation is really doing is giving us a convenient
-      way to list all three element multisets chosen from the
-      set <m>\{\ap,\pe,\ba\}</m>.<fn>This approach was inspired by George
-      P&#xf3;lya's paper <q>Picture Writing,</q> in the December, 1956 issue of the
-      <em>American Mathematical Monthly</em>, page 689. While we are taking a
-      somewhat more formal approach than P&#xf3;lya, it is still completely in the
-      spirit of his work.</fn>
+    <p>In this notation <m>\ap^3</m> stands for taking a multiset of three apples, while <m>\ap^2\ba</m> stands for taking a multiset of two apples and a banana, and so on. What our notation is really doing is giving us a convenient way to list all three element multisets chosen from the set <m>\{\ap,\pe,\ba\}</m>.<fn>This approach was inspired by George P&#xf3;lya's paper <q>Picture Writing,</q> in the December, 1956 issue of the <em>American Mathematical Monthly</em>, page 689. While we are taking a somewhat more formal approach than P&#xf3;lya, it is still completely in the spirit of his work.</fn>
     </p>
 
-    <p>
-      Suppose now that we plan to choose between one and three apples, between
-      one and two pears, and between one and two bananas. In a somewhat clumsy
-      way we could describe our fruit selections as
+    <p>Suppose now that we plan to choose between one and three apples, between one and two pears, and between one and two bananas. In a somewhat clumsy way we could describe our fruit selections as
       <men xml:id="uptothreefruits" >
         \ap\pe\ba+\ap^2\pe\ba+\cdots+\ap^2\pe^2\ba+\cdots +
         \ap^2\pe^2\ba^2+\ap^3\pe\ba+
@@ -55,14 +31,7 @@
 
     <activity xml:id="twopiecesoffruit" category="essential">
       <statement>
-        <p>
-          Using an <m>A</m> in place of the picture of an apple, a <m>P</m> in
-          place of the picture of a pear, and a <m>B</m> in place of the picture of a
-          banana, write out the formula similar to <xref ref="uptothreefruits">Formula</xref>
-          without any dots for left out terms. (You may use pictures instead of
-          letters if you prefer, but it gets tedious quite quickly!) Now expand
-          the product
-          <m>(A+A^2+A^3)(P+P^2)(B+B^2)</m> and compare the result with your formula.
+        <p>Using an <m>A</m> in place of the picture of an apple, a <m>P</m> in place of the picture of a pear, and a <m>B</m> in place of the picture of a banana, write out the formula similar to <xref ref="uptothreefruits">Formula</xref> without any dots for left out terms. (You may use pictures instead of letters if you prefer, but it gets tedious quite quickly!) Now expand the product <m>(A+A^2+A^3)(P+P^2)(B+B^2)</m> and compare the result with your formula.
         </p>
       </statement>
       <solution>
@@ -85,85 +54,37 @@
 
     <activity category="essential">
       <statement>
-        <p>
-          Substitute
-          <m>x</m> for all of <m>A</m>, <m>P</m> and <m>B</m> (or for the corresponding pictures) in
-          the formula you got in <xref ref="twopiecesoffruit">Problem</xref> and expand the
-          result in powers of <m>x</m>. Give an interpretation of the coefficient
-          of <m>x^n</m>.
+        <p>Substitute <m>x</m> for all of <m>A</m>, <m>P</m> and <m>B</m> (or for the corresponding pictures) in the formula you got in <xref ref="twopiecesoffruit">Problem</xref> and expand the result in powers of <m>x</m>. Give an interpretation of the coefficient of <m>x^n</m>.
         </p>
       </statement>
       <solution>
-        <p>
-          <m>x^3+3x^4+4x^5+3x^6+x^7</m>. There is one way to choose three pieces of
-          fruit, there are three ways to choose four pieces, four ways to chose 5
-          pieces, three ways to choose 6 pieces , and there is one way to choose 7
-          pieces of fruit. The coefficient of <m>x^n</m> is the number of ways to choose <m>n</m>
-          pieces of fruit.
+        <p><m>x^3+3x^4+4x^5+3x^6+x^7</m>. There is one way to choose three pieces of fruit, there are three ways to choose four pieces, four ways to chose 5 pieces, three ways to choose 6 pieces , and there is one way to choose 7 pieces of fruit. The coefficient of <m>x^n</m> is the number of ways to choose <m>n</m> pieces of fruit.
         </p>
       </solution>
     </activity>
 
-    <p>
-      If we were to expand the formula
+    <p>If we were to expand the formula
       <men xml:id="threefruitsagain" >
         (\ap+\ap^2+\ap^3)(\pe+\pe^2)(\ba+\ba^2).
       </men>
-      we would get <xref ref="uptothreefruits">Formula</xref>. Thus <xref ref="uptothreefruits">formula</xref> and <xref ref="threefruitsagain">formula</xref> each describe
-      the number of multisets we can choose from the set <m>{\ap,\pe,\ba}</m> in
-      which \psfig{figure=apple.eps,height=10 pt}<nbsp />appears between 1 and three times and \psfig{figure=Pear.eps,height=10 pt}, and \psfig{figure=Banana.eps,height=10 pt}<nbsp />each
-      appear once or twice. We interpret <xref ref="uptothreefruits">Formula</xref> as
-      describing each individual multiset we can choose, and we interpret
-      <xref ref="threefruitsagain">Formula</xref> as saying that we first decide how many apples to
-      take, and then decide how many pears to take, and then decide how many
-      bananas to take. At this stage it might seem a bit magical that doing
-      ordinary algebra with the second formula yields the first, but in fact we
-      could define addition and multiplication with these pictures more
-      formally so we could explain in detail why things work out. However
-      since the pictures are for motivation, and are actually difficult to
-      write out on paper, it doesn't make much sense to work out these
-      details. We will see an explanation in another context later on.
+      we would get <xref ref="uptothreefruits">Formula</xref>. Thus <xref ref="uptothreefruits">formula</xref> and <xref ref="threefruitsagain">formula</xref> each describe the number of multisets we can choose from the set <m>\{\ap,\pe,\ba\}</m> in which \psfig{figure=apple.eps,height=10 pt}<nbsp />appears between 1 and three times and \psfig{figure=Pear.eps,height=10 pt}, and \psfig{figure=Banana.eps,height=10 pt}<nbsp />each appear once or twice. We interpret <xref ref="uptothreefruits">Formula</xref> as describing each individual multiset we can choose, and we interpret <xref ref="threefruitsagain">Formula</xref> as saying that we first decide how many apples to take, and then decide how many pears to take, and then decide how many bananas to take. At this stage it might seem a bit magical that doing ordinary algebra with the second formula yields the first, but in fact we could define addition and multiplication with these pictures more formally so we could explain in detail why things work out. However since the pictures are for motivation, and are actually difficult to write out on paper, it doesn't make much sense to work out these details. We will see an explanation in another context later on.
     </p>
   </introduction>
 
   <subsection xml:id="picturefunction">
     <title>Picture functions</title>
-    <p>
-      As you've seen, in our descriptions of
-      ways of choosing fruits, we've treated the pictures of the fruit as if
-      they are variables. You've also likely noticed that it is much easier to
-      do algebraic manipulations with letters rather than pictures, simply
-      because it is time consuming to draw the same picture over and over
-      again, while we are used to writing letters quickly. In the theory of
-      generating functions, we associate variables or polynomials or even power
-      series with members of a set. There is no standard language describing
-      how we associate variables with members of a set, so we shall invent
-      some. By a <em>picture</em> of a member of a set we will mean a variable, or
-      perhaps a product of powers of variables (or even a sum of products of
-      powers of variables). A function that assigns a picture <m>P(s)</m> to each
-      member <m>s</m> of a set <m>S</m> will be called a <em>picture
-      function</em> . The <em>picture
-      enumerator</em><index><main>picture enumerator</main></index> for a picture function
-      <m>P</m> defined on a set
-      <m>S</m> will be
+    <p>As you've seen, in our descriptions of ways of choosing fruits, we've treated the pictures of the fruit as if they are variables. You've also likely noticed that it is much easier to do algebraic manipulations with letters rather than pictures, simply because it is time consuming to draw the same picture over and over again, while we are used to writing letters quickly. In the theory of generating functions, we associate variables or polynomials or even power series with members of a set. There is no standard language describing how we associate variables with members of a set, so we shall invent some. By a <term>picture</term> of a member of a set we will mean a variable, or perhaps a product of powers of variables (or even a sum of products of powers of variables). A function that assigns a picture <m>P(s)</m> to each member <m>s</m> of a set <m>S</m> will be called a <term>picture function</term> . The <term>picture enumerator</term><index><main>picture enumerator</main></index> for a picture function <m>P</m> defined on a set <m>S</m> will be
       <me>
         E_P(S) = \sum_{s: s\in S}  P(s).
       </me>
     </p>
 
-    <p>
-      We choose this language because the picture enumerator lists, or
-      enumerates, all the elements of <m>S</m> according to their pictures. Thus
-      <xref ref="uptothreefruits">Formula</xref> is the picture enumerator the set of all
-      multisets of fruit with between one and three apples, one and two pears,
-      and one and two bananas.
+    <p>We choose this language because the picture enumerator lists, or enumerates, all the elements of <m>S</m> according to their pictures. Thus <xref ref="uptothreefruits">Formula</xref> is the picture enumerator the set of all multisets of fruit with between one and three apples, one and two pears, and one and two bananas.
     </p>
 
     <activity xml:id="zerotothreeapples" category="motivation">
       <statement>
-        <p>
-          How would you write down a polynomial in the variable <m>A</m> that says
-          you should take between zero and three apples?
+        <p>How would you write down a polynomial in the variable <m>A</m> that says you should take between zero and three apples?
         </p>
       </statement>
       <solution>
@@ -175,10 +96,7 @@
 
     <activity xml:id="zerotothreefruits" category="essential">
       <statement>
-        <p>
-          How would you write down a picture enumerator that says we take
-          between zero and three apples, between zero and three pears, and between
-          zero and three bananas?
+        <p>How would you write down a picture enumerator that says we take between zero and three apples, between zero and three pears, and between zero and three bananas?
         </p>
       </statement>
       <solution>
@@ -190,25 +108,12 @@
 
     <activity category="essential for this or the next section">
       <statement>
-        <p>
-          (Used in <xref ref="groupsonsets">Chapter</xref>.) Notice that when we used <m>A^2</m> to
-          stand for taking two apples, and
-          <m>P^3</m> to stand for taking three pears, then we used the product
-          <m>A^2P^3</m> to stand for taking two apples and three pears. Thus we have
-          chosen the picture of the ordered pair (2 apples, 3 pears) to be the
-          product of the pictures of a multiset of two apples and a multiset of
-          three pears. Show that if <m>S_1</m> and <m>S_2</m> are sets with picture
-          functions <m>P_1</m> and <m>P_2</m> defined on them, and if we define the picture
-          of an ordered pair <m>(x_1,x_2)\in S_1\times S_2</m> to be
-          <m>P((x_1,x_2))= P_1(x_1)P_2(x_2)</m>, then the picture enumerator of <m>P</m> on
-          the set <m>S_1\times S_2</m> is <m>E_{P_1}(S_1)E_{P_2}(S_2)</m>. We call this the
-          <em>product principle for picture enumerators</em>.<index><main>product
-          principle</main><sub>picture enumerators</sub></index><index><main>picture enumerators</main><sub>product
-          principle for</sub></index>
+        <p>(Used in <xref ref="groupsonsets" autoname="yes" />.) Notice that when we used <m>A^2</m> to stand for taking two apples, and <m>P^3</m> to stand for taking three pears, then we used the product <m>A^2P^3</m> to stand for taking two apples and three pears. Thus we have chosen the picture of the ordered pair (2 apples, 3 pears) to be the product of the pictures of a multiset of two apples and a multiset of three pears. Show that if <m>S_1</m> and <m>S_2</m> are sets with picture functions <m>P_1</m> and <m>P_2</m> defined on them, and if we define the picture of an ordered pair <m>(x_1,x_2)\in S_1\times S_2</m> to be <m>P((x_1,x_2))= P_1(x_1)P_2(x_2)</m>, then the picture enumerator of <m>P</m> on the set <m>S_1\times S_2</m> is <m>E_{P_1}(S_1)E_{P_2}(S_2)</m>. We call this the <em>product principle for picture enumerators</em>.<index><main>product principle</main><sub>picture enumerators</sub></index><index><main>picture enumerators</main><sub>product principle for</sub></index>
         </p>
       </statement>
       <solution>
-        <md>
+          <p>
+              <md>
           <mrow>E_P(S_1\times S_2)\amp =\amp \sum_{(x_1,x_2)\in S_1\times
           S_2} P(x_1)P(x_2)</mrow>
           <mrow>\amp =\amp 
@@ -218,6 +123,7 @@
           <mrow>\amp =\amp \left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)</mrow>
           <mrow>\amp =\amp E_{P_1}(S_1)E_{P_2}(S_2)</mrow>
         </md>
+          </p>
       </solution>
     </activity>
   </subsection>
@@ -226,15 +132,13 @@
     <title>Generating functions</title>
     <activity category="essential">
       <statement>
-        <p>
-          Suppose you are going to choose a snack of between zero and three
-          apples, between zero and three pears, and between zero and three
-          bananas. Write down a polynomial in one variable <m>x</m> such that the
-          coefficient of <m>x^n</m> is the number of ways to choose a snack with <m>n</m>
-          pieces of fruit. Hint: substitute something for <m>A</m>, <m>P</m> and <m>B</m> in
-          your formula from <xref ref="zerotothreefruits">Problem</xref>.
+        <p>Suppose you are going to choose a snack of between zero and three apples, between zero and three pears, and between zero and three bananas. Write down a polynomial in one variable <m>x</m> such that the coefficient of <m>x^n</m> is the number of ways to choose a snack with <m>n</m> pieces of fruit.
         </p>
       </statement>
+      <hint>
+          <p>Substitute something for <m>A</m>, <m>P</m> and <m>B</m> in your formula from <xref ref="zerotothreefruits" autoname="yes" />.
+          </p>
+      </hint>
       <solution>
         <p>
           <m>(1+x+x^2+x^3)^3</m>
@@ -244,12 +148,7 @@
 
     <activity category="motivation">
       <statement>
-        <p>
-          Suppose an apple costs 20 cents, a banana costs 25 cents, and a
-          pear costs 30 cents. What should you substitute for <m>A</m>, <m>P</m>, and <m>B</m> in
-          <xref ref="zerotothreefruits">Problem</xref> in order to get a polynomial in which the
-          coefficient of <m>x^n</m> is the number of ways to choose a selection of fruit
-          that costs <m>n</m> cents?
+        <p>Suppose an apple costs 20 cents, a banana costs 25 cents, and a pear costs 30 cents. What should you substitute for <m>A</m>, <m>P</m>, and <m>B</m> in <xref ref="zerotothreefruits">Problem</xref> in order to get a polynomial in which the coefficient of <m>x^n</m> is the number of ways to choose a selection of fruit that costs <m>n</m> cents?
         </p>
       </statement>
       <solution>
@@ -261,12 +160,7 @@
 
     <activity category="essential">
       <statement>
-        <p>
-          Suppose an apple has 40 calories, a pear has 60 calories, and a
-          banana has 80 calories. What should you substitute for <m>A</m>, <m>P</m>, and <m>B</m>
-          in <xref ref="zerotothreefruits">Problem</xref> in order to get a polynomial in which
-          the coefficient of <m>x^n</m> is the number of ways to choose a selection of
-          fruit with a total of <m>n</m> calories?
+        <p>Suppose an apple has 40 calories, a pear has 60 calories, and a banana has 80 calories. What should you substitute for <m>A</m>, <m>P</m>, and <m>B</m> in <xref ref="zerotothreefruits">Problem</xref> in order to get a polynomial in which the coefficient of <m>x^n</m> is the number of ways to choose a selection of fruit with a total of <m>n</m> calories?
         </p>
       </statement>
       <solution>
@@ -278,30 +172,12 @@
 
     <activity xml:id="reprovingbinomialtheorem" category="essential">
       <statement>
-        <p>
-          We are going to choose a subset of the set <m>[n]=\{1,2,\ldots,
-          n\}</m>. Suppose we use <m>x_1</m> to be the picture of choosing 1 to be in our
-          subset. What is the picture enumerator for either choosing 1 or not
-          choosing 1? Suppose that for each <m>i</m> between 1 and <m>n</m>, we use <m>x_i</m> to
-          be the picture of choosing
-          <m>i</m> to be in our subset. What is the picture enumerator for either
-          choosing <m>i</m> or not choosing <m>i</m> to be in our subset? What is the
-          picture enumerator for all possible choices of subsets of <m>[n]</m>? What
-          should we substitute for <m>x_i</m> in order to get a polynomial in <m>x</m> such
-          that the coefficient of <m>x^k</m> is the number of ways to choose a
-          <m>k</m>-element subset of <m>n</m>? What theorem have we just
-          reproved (a special case of)?
+        <p>We are going to choose a subset of the set <m>[n]=\{1,2,\ldots, n\}</m>. Suppose we use <m>x_1</m> to be the picture of choosing 1 to be in our subset. What is the picture enumerator for either choosing 1 or not choosing 1? Suppose that for each <m>i</m> between 1 and <m>n</m>, we use <m>x_i</m> to be the picture of choosing <m>i</m> to be in our subset. What is the picture enumerator for either choosing <m>i</m> or not choosing <m>i</m> to be in our subset? What is the picture enumerator for all possible choices of subsets of <m>[n]</m>? What should we substitute for <m>x_i</m> in order to get a polynomial in <m>x</m> such that the coefficient of <m>x^k</m> is the number of ways to choose a <m>k</m>-element subset of <m>n</m>? What theorem have we just reproved (a special case of)?
         </p>
       </statement>
       <solution>
         <p>
-          The picture enumerator for choosing <m>1</m> or not choosing 1 is
-          <m>x_1+1</m>. The picture enumerator for choosing or not choosing <m>i</m> is <m>x_i+1</m>.
-          The picture enumerator for choosing all possible subsets of <m>[n]</m> is
-          <m>(x_1+1)(x_2+1)\cdots(x_n+1).</m>
-          We should substitute <m>x</m> for <m>x_i</m>, thus getting <m>(1+x)^n</m>. Since the number
-          of ways to choose an <m>n</m>-element subset is <m>n\choose k</m>, we have just proved
-          the version of the binomial theorem that says
+          The picture enumerator for choosing <m>1</m> or not choosing 1 is <m>x_1+1</m>. The picture enumerator for choosing or not choosing <m>i</m> is <m>x_i+1</m>.  The picture enumerator for choosing all possible subsets of <m>[n]</m> is <m>(x_1+1)(x_2+1)\cdots(x_n+1).</m> We should substitute <m>x</m> for <m>x_i</m>, thus getting <m>(1+x)^n</m>. Since the number of ways to choose an <m>n</m>-element subset is <m>n\choose k</m>, we have just proved the version of the binomial theorem that says
           <me>
             (x+1)^n=\sum_{i=0}^n {n\choose i}x^i.
           </me>
@@ -310,67 +186,21 @@
     </activity>
 
     <p>
-      In <xref ref="reprovingbinomialtheorem">Problem</xref> we see that we can think of the
-      process of expanding the polynomial <m>(1+x)^n</m> as a way of <q>generating</q>
-      the binomial coefficients <m>n\choose k</m> as the coefficients of <m>x^k</m> in the
-      expansion of <m>(1+x)^n</m>. For this reason, we say that <m>(1+x)^n</m> is the
-      <q>generating function</q> for the binomial coefficients <m>n\choose k</m>. More
-      generally, the <em>generating function</em> for a sequence <m>a_i</m>, defined for
-      <m>i</m> with <m>0\le i\le n</m> is the expression <m>\sum_{i=0}^n a_ix^i</m>, and the
-      <em>generating function</em><index><main>generating function</main></index> for the sequence
-      <m>a_i</m> with <m>i\ge 0</m> is the expression <m>\sum_{i=0}^\infty a_ix^i</m>. This
-      last expression is an example of a power series. In calculus it is
-      important to think about whether a power series converges in order to
-      determine whether or not it represents a function. In a nice twist of
-      language, even though we use the phrase generating function as the name
-      of a power series in combinatorics, we don't require the power series to
-      actually represent a function in the usual sense, and so we don't have to
-      worry about convergence.<fn>In the evolution of our current
-      mathematical terminology, the word function evolved through several
-      meanings, starting with  very imprecise meanings and ending with our
-      current rather precise meaning.  The terminology <q>generating function</q>
-      may be thought of as an example of one of the earlier usages of the term
-      function.</fn> Instead we think of a power series as a convenient way of
-      representing the terms of a sequence of numbers of interest to us. The
-      only justification for saying that such a representation is convenient is
-      because of the way algebraic properties of power series capture some of
-      the important properties of some sequences that are of combinatorial
-      importance. The remainder of this chapter
-      is devoted to giving examples of how the algebra of power series reflects
-      combinatorial ideas.
+      In <xref ref="reprovingbinomialtheorem">Problem</xref> we see that we can think of the process of expanding the polynomial <m>(1+x)^n</m> as a way of <q>generating</q> the binomial coefficients <m>n\choose k</m> as the coefficients of <m>x^k</m> in the expansion of <m>(1+x)^n</m>. For this reason, we say that <m>(1+x)^n</m> is the <q>generating function</q> for the binomial coefficients <m>n\choose k</m>. More generally, the <term>generating function</term> for a sequence <m>a_i</m>, defined for <m>i</m> with <m>0\le i\le n</m> is the expression <m>\sum_{i=0}^n a_ix^i</m>, and the <term>generating function</term><index><main>generating function</main></index> for the sequence <m>a_i</m> with <m>i\ge 0</m> is the expression <m>\sum_{i=0}^\infty a_ix^i</m>. This last expression is an example of a power series. In calculus it is important to think about whether a power series converges in order to determine whether or not it represents a function. In a nice twist of language, even though we use the phrase generating function as the name of a power series in combinatorics, we don't require the power series to actually represent a function in the usual sense, and so we don't have to worry about convergence.<fn>In the evolution of our current mathematical terminology, the word function evolved through several meanings, starting with very imprecise meanings and ending with our current rather precise meaning.  The terminology <q>generating function</q> may be thought of as an example of one of the earlier usages of the term function.</fn> Instead we think of a power series as a convenient way of representing the terms of a sequence of numbers of interest to us. The only justification for saying that such a representation is convenient is because of the way algebraic properties of power series capture some of the important properties of some sequences that are of combinatorial importance. The remainder of this chapter is devoted to giving examples of how the algebra of power series reflects combinatorial ideas.
     </p>
 
-    <p>
-      Because we choose to think of power series as strings of symbols that we
-      manipulate by using the ordinary rules of algebra and we choose to ignore
-      issues of convergence, we have to avoid manipulating power series in a way that
-      would require us to add infinitely many real numbers. For example, we
-      cannot make the substitution of <m>y+1</m> for
-      <m>x</m> in the power series <m>\sum_{i=0}^\infty x^i</m>, because in order to
-      interpret <m>\sum_{i=0}^\infty (y+1)^i</m> as a power series we would have to
-      apply the binomial theorem to each of the <m>(y+1)^i</m> terms, and then
-      collect like terms, giving us infinitely many ones added together as the
-      coefficient of
-      <m>y^0</m>, and in fact infinitely many numbers added together for the
-      coefficient of any<nbsp /><m>y^i</m>. (On the other hand, it would be fine to
-      substitute <m>y+y^2</m> for <m>x</m>. Can you see why?)
+    <p>Because we choose to think of power series as strings of symbols that we manipulate by using the ordinary rules of algebra and we choose to ignore issues of convergence, we have to avoid manipulating power series in a way that would require us to add infinitely many real numbers. For example, we cannot make the substitution of <m>y+1</m> for <m>x</m> in the power series <m>\sum_{i=0}^\infty x^i</m>, because in order to interpret <m>\sum_{i=0}^\infty (y+1)^i</m> as a power series we would have to apply the binomial theorem to each of the <m>(y+1)^i</m> terms, and then collect like terms, giving us infinitely many ones added together as the coefficient of <m>y^0</m>, and in fact infinitely many numbers added together for the coefficient of any<nbsp /><m>y^i</m>. (On the other hand, it would be fine to substitute <m>y+y^2</m> for <m>x</m>. Can you see why?)
     </p>
   </subsection>
 
   <subsection>
     <title>Power series</title>
-    <p>
-      For now, most of our uses of power series will
-      involve just simple algebra. Since we use power series in a different
-      way in combinatorics than we do in calculus, we should review a bit of
-      the algebra of power series.
+    <p>For now, most of our uses of power series will involve just simple algebra. Since we use power series in a different way in combinatorics than we do in calculus, we should review a bit of the algebra of power series.
     </p>
 
     <activity xml:id="coeffinproduct" category="essential">
       <statement>
-        <p>
-          In the polynomial <m>(a_0 +a_1x+a_2x^2)(b_0+b_1x+b_2x^2+b_3x^3)</m>,
-          what is the coefficient of <m>x^2</m>? What is the coefficient of <m>x^4</m>?
+        <p>In the polynomial <m>(a_0 +a_1x+a_2x^2)(b_0+b_1x+b_2x^2+b_3x^3)</m>, what is the coefficient of <m>x^2</m>? What is the coefficient of <m>x^4</m>?
         </p>
       </statement>
       <solution>
@@ -406,12 +236,7 @@
         </p>
       </statement>
       <solution>
-        <p>
-          There is a <m>b_0</m> because it can be paired with an <m>a_2</m> to give the
-          term <m>a_2b_0x^4</m>. Similarly there is a <m>b_1</m> because it can be paired with
-          <m>a_1</m> for the same purpose. However there is no <m>a_i</m> that we can pair with
-          <m>b_0</m> to get a coefficient of <m>x^4</m> and no <m>a_i</m> that we can pair with <m>b_3</m>
-          to get a coefficient of <m>x^4</m>.
+        <p>There is a <m>b_0</m> because it can be paired with an <m>a_2</m> to give the term <m>a_2b_0x^4</m>. Similarly there is a <m>b_1</m> because it can be paired with <m>a_1</m> for the same purpose. However there is no <m>a_i</m> that we can pair with <m>b_0</m> to get a coefficient of <m>x^4</m> and no <m>a_i</m> that we can pair with <m>b_3</m> to get a coefficient of <m>x^4</m>.
         </p>
 
         <p>
@@ -434,11 +259,7 @@
 
     <activity category="essential">
       <statement>
-        <p>
-          The point of the <xref ref="coeffinproduct">Problems</xref> and <xref ref="coeffinproduct1"></xref> is that so long as we are willing to assume <m>a_i=0</m>
-          for <m>i>n</m> and <m>b_j =0</m>
-          for <m>j>m</m>, then there is a very nice formula for the coefficient of
-          <m>x^k</m> in the product
+        <p>The point of the <xref ref="coeffinproduct">Problems</xref> and <xref ref="coeffinproduct1"></xref> is that so long as we are willing to assume <m>a_i=0</m> for <m>i>n</m> and <m>b_j =0</m> for <m>j>m</m>, then there is a very nice formula for the coefficient of <m>x^k</m> in the product
           <me>
             \left(\sum_{i=0}^n a_ix^i\right)\left(\sum_{j=0}^m b_jx^j\right).
           </me>
@@ -457,10 +278,7 @@
 
     <activity xml:id="coeffinpowerseries" category="essential">
       <statement>
-        <p>
-          Assuming that the rules you use to do arithmetic with polynomials
-          apply to power series, write down a formula for the coefficient of <m>x^k</m>
-          in the product
+        <p>Assuming that the rules you use to do arithmetic with polynomials apply to power series, write down a formula for the coefficient of <m>x^k</m> in the product
           <me>
             \left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
             b_jx^j\right).
@@ -474,9 +292,7 @@
       </solution>
     </activity>
 
-    <p>
-      We use the expression you obtained in <xref ref="coeffinpowerseries">Problem</xref> to
-      <em>define</em> the product of power series. That is, we define the product
+    <p>We use the expression you obtained in <xref ref="coeffinpowerseries">Problem</xref> to <em>define</em> the product of power series. That is, we define the product
       <me>
         \left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
         b_jx^j\right)
@@ -493,63 +309,22 @@
 
   <subsection>
     <title>Product principle for generating functions</title>
-    <p>
-      Each time that
-      we converted a picture function to a generating function by substituting
-      <m>x</m> or some power of <m>x</m> for each picture, the coefficient of <m>x</m> had a
-      meaning that was significant to us. For example, with the
-      picture enumerator for selecting between zero and three each of apples,
-      pears, and bananas, when we substituted <m>x</m> for each of our pictures, the
-      exponent <m>i</m> in the power <m>x^i</m> is the number of pieces of fruit in the
-      fruit selection that led us to <m>x^i</m>. After we simplify our product by
-      collecting together all like powers of <m>x</m>, the coefficient of <m>x^i</m> is
-      the number of fruit selections that use <m>i</m> pieces of fruit. In the same
-      way, if we substitute <m>x^c</m> for a picture, where <m>c</m> is the number of
-      calories in that particular kind of fruit, then the <m>i</m> in an <m>x^i</m> term
-      in our generating function stands for the number of calories in a fruit
-      selection that gave rise to <m>x^i</m>, and the coefficient of <m>x^i</m> in our
-      generating function is the number of fruit selections with <m>i</m> calories.
-      The product principle of picture enumerators translates directly into a
-      product principle for generating functions.
+    <p>Each time that we converted a picture function to a generating function by substituting <m>x</m> or some power of <m>x</m> for each picture, the coefficient of <m>x</m> had a meaning that was significant to us. For example, with the picture enumerator for selecting between zero and three each of apples, pears, and bananas, when we substituted <m>x</m> for each of our pictures, the exponent <m>i</m> in the power <m>x^i</m> is the number of pieces of fruit in the fruit selection that led us to <m>x^i</m>. After we simplify our product by collecting together all like powers of <m>x</m>, the coefficient of <m>x^i</m> is the number of fruit selections that use <m>i</m> pieces of fruit. In the same way, if we substitute <m>x^c</m> for a picture, where <m>c</m> is the number of calories in that particular kind of fruit, then the <m>i</m> in an <m>x^i</m> term in our generating function stands for the number of calories in a fruit selection that gave rise to <m>x^i</m>, and the coefficient of <m>x^i</m> in our generating function is the number of fruit selections with <m>i</m> calories.  The product principle of picture enumerators translates directly into a product principle for generating functions.
     </p>
 
     <activity xml:id="ProductPrincipleOGF" category="essential">
       <statement>
-        <p>
-          Suppose that we have two sets <m>S_1</m> and <m>S_2</m>. Let <m>v_1</m> (<m>v</m>
-          stands for value) be a function from <m>S_1</m> to the nonnegative integers
-          and let <m>v_2</m> be a function from <m>S_2</m> to the nonnegative integers.
-          Define a new function <m>v</m> on the set <m>S_1 \times S_2</m> by <m>v(x_1,x_2) =
-          v_1(x_1) +v_2(x_2)</m>. Suppose further that <m>\sum_{i=0}^\infty a_ix^i</m> is
-          the generating function for the number of elements <m>x_1</m> of <m>S_1</m> of value
-          <m>i</m>, that is with <m>v_1(x_1)=i</m>. Suppose also
-          that
-          <m>\sum_{j=0}^\infty b_j x^j</m> is the generating function for the number of
-          elements of <m>x_2</m> of <m>S_2</m> of value <m>j</m>, that is with <m>v_2(x_2) = j</m>.
-          Prove that the coefficient of <m>x^k</m> in
+        <p>Suppose that we have two sets <m>S_1</m> and <m>S_2</m>. Let <m>v_1</m> (<m>v</m> stands for value) be a function from <m>S_1</m> to the nonnegative integers and let <m>v_2</m> be a function from <m>S_2</m> to the nonnegative integers.  Define a new function <m>v</m> on the set <m>S_1 \times S_2</m> by <m>v(x_1,x_2) = v_1(x_1) +v_2(x_2)</m>. Suppose further that <m>\sum_{i=0}^\infty a_ix^i</m> is the generating function for the number of elements <m>x_1</m> of <m>S_1</m> of value <m>i</m>, that is with <m>v_1(x_1)=i</m>. Suppose also that <m>\sum_{j=0}^\infty b_j x^j</m> is the generating function for the number of elements of <m>x_2</m> of <m>S_2</m> of value <m>j</m>, that is with <m>v_2(x_2) = j</m>.  Prove that the coefficient of <m>x^k</m> in
           <me>
             \left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
             b_jx^j\right)
           </me>
-          is the number of ordered pairs <m>(x_1,x_2)</m> in <m>S_1\times
-          S_2</m> with total value <m>k</m>, that is with <m>v_1(x_1) +v_2(x_2) =k</m>. This is
-          called the <em>product principle for generating functions</em>.<index><main>product
-          principle for generating functions</main></index><index><main>generating function</main><sub>product
-          principle for</sub></index>
+          is the number of ordered pairs <m>(x_1,x_2)</m> in <m>S_1\times S_2</m> with total value <m>k</m>, that is with <m>v_1(x_1) +v_2(x_2) =k</m>. This is called the <term>product principle for generating functions</term>.<index><main>product principle for generating functions</main></index><index><main>generating function</main><sub>product principle for</sub></index>
         </p>
       </statement>
       <solution>
         <p>
-          The generating function for ordered pairs of total value <m>k</m> will
-          have the number of ordered pairs of total value <m>k</m> as the coefficient of
-          <m>x^k</m>. But we get a total value <m>k</m> by taking something of value <m>i</m> in <m>S_1</m>
-          and something of value <m>k-i</m> in <m>j</m>. And since values cannot be negative, the
-          only <m>i</m>s available to us are the ones between <m>0</m> and <m>k</m>. By the product
-          principle for pairs, the number of ordered pairs <m>(x,y)</m> with <m>v_1(x)=i</m> and
-          <m>v_2(y)=k-i</m> is <m>a_ib_{k-i}</m>. To get the number of pairs of total value <m>k</m>,
-          we have to sum over all possible pairs <m>(i,k-i)</m> of values, that is, we have
-          to take the sum <m>\sum_{i=0}^k a_ib_{k-i}</m>. And this is the coefficient of
-          <m>x^k</m> in the product
+          The generating function for ordered pairs of total value <m>k</m> will have the number of ordered pairs of total value <m>k</m> as the coefficient of <m>x^k</m>. But we get a total value <m>k</m> by taking something of value <m>i</m> in <m>S_1</m> and something of value <m>k-i</m> in <m>j</m>. And since values cannot be negative, the only <m>i</m>s available to us are the ones between <m>0</m> and <m>k</m>. By the product principle for pairs, the number of ordered pairs <m>(x,y)</m> with <m>v_1(x)=i</m> and <m>v_2(y)=k-i</m> is <m>a_ib_{k-i}</m>. To get the number of pairs of total value <m>k</m>, we have to sum over all possible pairs <m>(i,k-i)</m> of values, that is, we have to take the sum <m>\sum_{i=0}^k a_ib_{k-i}</m>. And this is the coefficient of <m>x^k</m> in the product
           <me>
             \left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
             b_jx^j\right).
@@ -572,8 +347,7 @@
             What is the generating function for the number of subsets of <m>\{i\}</m> of
             each possible size? (Notice that the only subsets of <m>\{i\}</m> are
             <m>\emptyset</m> and <m>\{i\}</m>.)
-          </statement>
-        </p>
+          </p>
         </statement>
         <solution>
           <p>
@@ -587,8 +361,8 @@
           Use the product principle for generating functions to prove the
           binomial theorem.
         </p>
-      </task>
-      <solution>
+        </statement>
+        <solution>
       <p>
         The generating function for number of <m>n</m>-tuples of 0s and 1s with
         <m>k</m> ones is, by the product principle for generating functions (extended to
@@ -602,7 +376,8 @@
           <mrow>\amp =\amp  \sum_{i=0}^n{n\choose i}x^iy^{n-i}.</mrow>
         </md>
       </p>
-      </solution>
+        </solution>
+      </task>
     </activity>
   </subsection>
 
@@ -614,12 +389,7 @@
       </p>
       <task>
         <statement>
-          <p>
-            What is the generating function in which the coefficient
-            of
-            <m>x^k</m> is the number of multisets of size <m>k</m> chosen from <m>\{i\}</m>?  This
-            series is an example of what is called an <em>infinite geometric
-            series</em>.<index><main>geometric series</main></index><index><main>series</main><sub>geometric</sub></index>
+          <p>What is the generating function in which the coefficient of <m>x^k</m> is the number of multisets of size <m>k</m> chosen from <m>\{i\}</m>?  This series is an example of what is called an <term>infinite geometric series</term>.<index><main>geometric series</main></index><index><main>series</main><sub>geometric</sub></index>
           </p>
         </statement>
         <solution>
@@ -630,19 +400,11 @@
       </task>
       <task>
         <statement>
-          <p>
-            Express the generating function in which the coefficient of <m>x^k</m>
-            is the number of multisets chosen from <m>[n]</m> as a power of a power
-            series.  What does <xref ref="multiset">Problem</xref> (in which your answer could
-            be expressed as a binomial coefficient) tell you about what this
-            generating function equals?
+          <p>Express the generating function in which the coefficient of <m>x^k</m> is the number of multisets chosen from <m>[n]</m> as a power of a power series.  What does <xref ref="multiset">Problem</xref> (in which your answer could be expressed as a binomial coefficient) tell you about what this generating function equals?
           </p>
         </statement>
         <solution>
-          <p>
-            The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.
-            <xref ref="multiset">Problem</xref> tells us that this equals
-            <m>\sum_{i=0}^\infty{n+i-1\choose i}x^i</m>.
+          <p>The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.  <xref ref="multiset">Problem</xref> tells us that this equals <m>\sum_{i=0}^\infty{n+i-1\choose i}x^i</m>.
           </p>
         </solution>
       </task>
@@ -659,6 +421,7 @@
         </p>
       </statement>
       <solution>
+          <p>
         <me>
           (1-x)\sum_{k=0}^n x^k=1-x+x-x^2+\cdots+x^{n-1}-x^n+x^n-x^{n+1} =
           1-x^{n+1}.
@@ -667,16 +430,14 @@
           (1-x)\sum_{k=0}^\infty x^k=\sum_{i=0}^\infty x^i-\sum_{i=0}^\infty
           x^{i+1}=\sum_{i=0}^\infty x^i-\sum_{i=1}^\infty x^i = 1.
         </me>
+          </p>
       </solution>
     </activity>
 
     <activity category="essential and interesting">
       <statement>
         <p>
-          Express the generating function for the number of multisets of
-          size
-          <m>k</m> chosen from <m>[n]</m> (where <m>n</m> is fixed but <m>k</m> can be any nonnegative
-          integer) as a 1 over something relatively simple.
+          Express the generating function for the number of multisets of size <m>k</m> chosen from <m>[n]</m> (where <m>n</m> is fixed but <m>k</m> can be any nonnegative integer) as a 1 over something relatively simple.
         </p>
       </statement>
       <solution>
@@ -698,23 +459,28 @@
     <activity xml:id="negnchoosek" category="essential">
       <statement>
         <p>
-          Find a formula for <m>(1+x)^{-n}</m> as a power series whose coefficients
-          involve binomial coefficients. What does this formula tell you about
-          how we should define
-          <m>-n\choose k</m> when <m>n</m> is positive?
+          Find a formula for <m>(1+x)^{-n}</m> as a power series whose coefficients involve binomial coefficients. What does this formula tell you about how we should define <m>-n\choose k</m> when <m>n</m> is positive?
         </p>
       </statement>
       <solution>
-        <me>
-          \hspace{-.25 in}(1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
-          {n+i-1\choose i}(-x)^i=\sum_{i=0}^\infty (-1)^i{n+i-1\choose i}x^i.
-        </me>
+          <p>
+              <me>
+                  (1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
+                  {n+i-1\choose i}(-x)^i=\sum_{i=0}^\infty (-1)^i{n+i-1\choose i}x^i.
+              </me>
+              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>-n\choose k</m>, so we want <m>{-n \choose k}= (-1)^k{n+k-1\choose k}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>If you define <m>-n \choose k</m> in the way you described in <xref ref="negnchoosek">Problem</xref>, you can write down a version of the binomial theorem for <m>(x+y)^n</m> that is valid for both nonnegative and negative values of <m>n</m>. Do so. This is called the <term>extended binomial theorem</term><index><main>binomial theorem</main><sub> extended</sub></index><index><main>extended binomial theorem</main></index>.
+        </p>
+      </statement>
+      <solution>
         <p>
-          We want
-          the coefficient of
-          <m>x^k</m> in
-          <m>(1+x)^{-n}</m> to be <m>-n\choose k</m>, so we want <m>{-n \choose k}=
-          (-1)^k{n+k-1\choose k}</m>.
+          <m>(x+y)^n=\sum_{i=0}^\infty{n\choose i}x^i</m>. The proof consists of writing <m>(x+y)=y({x\over y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>n\choose k</m> is zero when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the binomial theorem by <m>\infty</m> doesn't change the value of the sum.
         </p>
       </solution>
     </activity>
@@ -722,34 +488,7 @@
     <activity category="essential and interesting">
       <statement>
         <p>
-          If you define <m>-n \choose k</m> in the way you described in <xref ref="negnchoosek">Problem</xref>, you can write down a version of the binomial theorem
-          for <m>(x+y)^n</m> that is valid for both nonnegative and negative values of
-          <m>n</m>. Do so. This is called the <em>extended binomial
-          theorem</em><index><main>binomial theorem</main><sub> extended</sub></index><index><main>extended binomial
-          theorem</main></index>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>(x+y)^n=\sum_{i=0}^\infty{n\choose i}x^i</m>. The proof consists of
-          writing <m>(x+y)=y({x\over y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when
-          <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>n\choose k</m> is zero
-          when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the
-          binomial theorem by <m>\infty</m> doesn't change the value of the sum.
-        </p>
-      </solution>
-    </activity>
-
-    <activity category="essential and interesting">
-      <statement>
-        <p>
-          Write down the generating function for the number of ways to
-          distribute identical pieces of candy to three children so that no
-          child gets more than 4 pieces. Write this generating function as a
-          quotient of polynomials. Using both the extended binomial theorem and
-          the original binomial theorem, find out in how many ways we can pass out
-          exactly ten pieces. Use one of our earlier counting techniques to verify
-          your answer.
+          Write down the generating function for the number of ways to distribute identical pieces of candy to three children so that no child gets more than 4 pieces. Write this generating function as a quotient of polynomials. Using both the extended binomial theorem and the original binomial theorem, find out in how many ways we can pass out exactly ten pieces. Use one of our earlier counting techniques to verify your answer.
         </p>
       </statement>
       <solution>
@@ -763,50 +502,30 @@
           </md>
         </p>
 
-        <p>
-          The coefficient of <m>x^{10}</m> is the number of ways to pass out ten pieces of
-          candy, and is <m>{12\choose 10}-3{7\choose 5} +3{2\choose 0}</m>.
-          Thus the number of ways to pass out ten pieces of candy is
-          <m>66-3\cdot21+3=6</m>.)
+        <p>The coefficient of <m>x^{10}</m> is the number of ways to pass out ten pieces of candy, and is <m>{12\choose 10}-3{7\choose 5} +3{2\choose 0}</m>.  Thus the number of ways to pass out ten pieces of candy is <m>66-3\cdot21+3=6</m>.)
         </p>
 
-        <p>
-          A second solution technique that is appropriate is inclusion-exclusion
-          counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of
-          fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of
-          size
-          <m>j</m> properties is <m>{n-5j+3-1\choose n-5j}={n-5j+2\choose 2}</m>. By
-          <xref ref="incexempty">Equation</xref> we have
-          <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3
-          (-1)^j{3\choose j}{n-5j+2\choose 2}</m>. Using <m>n=10</m> gives us
-          <m>{12\choose2}-3{7\choose2} +3{2\choose2} =6.</m> (You can either note that
-          <m>{-3\choose 2}</m> is 0 or note that with 10 pieces of candy, there is no way to
-          pass out five pieces to each of three children. In this second case we would
-          revise our statement about the number of ways to pass out <m>n</m> pieces of fruit
-          to three children with the properties in <m>J</m> to note that it is zero if
-          <m>5j>n</m>, and otherwise is <m>n-5j+2\choose2</m>.)
+        <p>A second solution technique that is appropriate is inclusion-exclusion counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of size <m>j</m> properties is <m>{n-5j+3-1\choose n-5j}={n-5j+2\choose 2}</m>. By <xref ref="incexempty">Equation</xref> we have <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3 (-1)^j{3\choose j}{n-5j+2\choose 2}</m>. Using <m>n=10</m> gives us <m>{12\choose2}-3{7\choose2} +3{2\choose2} =6.</m> (You can either note that <m>{-3\choose 2}</m> is 0 or note that with 10 pieces of candy, there is no way to pass out five pieces to each of three children. In this second case we would revise our statement about the number of ways to pass out <m>n</m> pieces of fruit to three children with the properties in <m>J</m> to note that it is zero if <m>5j>n</m>, and otherwise is <m>n-5j+2\choose2</m>.)
         </p>
       </solution>
     </activity>
 
     <activity category="essential">
       <statement>
-        <p>
-          What is the generating function for the number of multisets chosen
-          from an <m>n</m>-element set so that each element appears at least <m>j</m> times
-          and less than <m>m</m> times. Write this generating function as a quotient of
-          polynomials, then as a product of a polynomial and a power series.
+        <p>What is the generating function for the number of multisets chosen from an <m>n</m>-element set so that each element appears at least <m>j</m> times and less than <m>m</m> times. Write this generating function as a quotient of polynomials, then as a product of a polynomial and a power series.
         </p>
       </statement>
       <solution>
-        <md>
+          <p>
+          <md>
           <mrow>(x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
           \left(\sum_{i=0}^{m-j-1}x^i\right)^n</mrow>
           <mrow>\amp =\amp 
           \left(x^j{1-x^{m-j}\over 1-x}\right)^n</mrow>
           <mrow>\amp =\amp \left({x^j-x^m\over1-x}\right)^n</mrow>
           <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty {n+i-1\choose i}x^i.</mrow>
-        </md>
+          </md>
+          </p>
       </solution>
     </activity>
   </subsection>
@@ -815,13 +534,7 @@
     <title>Generating functions for integer partitions</title>
     <activity xml:id="change-making" category="essential">
       <statement>
-        <p>
-          If we have five identical pennies, five identical nickels, five
-          identical dimes, and five identical quarters, give the picture enumerator
-          for the combinations of coins we can form and convert it to a generating
-          function for the number of ways to make <m>k</m> cents with the coins we
-          have. Do the same thing assuming we have an unlimited supply of pennies,
-          nickels, dimes, and quarters.
+        <p>If we have five identical pennies, five identical nickels, five identical dimes, and five identical quarters, give the picture enumerator for the combinations of coins we can form and convert it to a generating function for the number of ways to make <m>k</m> cents with the coins we have. Do the same thing assuming we have an unlimited supply of pennies, nickels, dimes, and quarters.
         </p>
       </statement>
       <solution>
@@ -836,51 +549,20 @@
           </me>
         </p>
 
-        <p>
-          Although we could write this as a
-          polynomial times a product of four power series, doing so would not
-          significantly increase our understanding, though it would let us make some
-          painful computations of the number of ways to make a certain number of
-          cents. If we actually wanted such numbers we would be better off asking a
-          computer algebra package to expand the product of the polynomials on the
-          left. With unlimited supplies the generating function becomes
+        <p>Although we could write this as a polynomial times a product of four power series, doing so would not significantly increase our understanding, though it would let us make some painful computations of the number of ways to make a certain number of cents. If we actually wanted such numbers we would be better off asking a computer algebra package to expand the product of the polynomials on the left. With unlimited supplies the generating function becomes
           <me>
             {1\over1-x}\cdot{1\over 1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
           </me>
         </p>
 
-        <p>
-          Again, we could write this as a product of power series, and that would allow us
-          to painfully compute the number of ways to create a certain number of cents. If
-          we actually wanted to know the number of ways to make up 200 cents, say, it
-          would be more sensible to ask a computer algebra package to extract the
-          coefficient of <m>x^{200}</m> in the product of the four quotients.
+        <p>Again, we could write this as a product of power series, and that would allow us to painfully compute the number of ways to create a certain number of cents. If we actually wanted to know the number of ways to make up 200 cents, say, it would be more sensible to ask a computer algebra package to extract the coefficient of <m>x^{200}</m> in the product of the four quotients.
         </p>
       </solution>
     </activity>
 
     <activity xml:id="largestpartatmostm" category="essential">
       <statement>
-        <p>
-          Recall that a partition of an integer <m>k</m> is a multiset of numbers
-          that adds to <m>k</m>. In <xref ref="change-making">Problem</xref> we found the
-          generating function for the number of partitions of an integer into parts
-          of size 1, 5, 10, and 25. Give the generating function for the number
-          partitions of an integer into parts of size one through ten. Give the
-          generating function for the number of partitions of an integer <m>k</m> into
-          parts of size at most <m>m</m>. (Where <m>m</m> is fixed but <m>k</m> may vary.) Notice this
-          is the generating function for partitions whose Young diagram fits into the space
-          between the line
-          <m>x=0</m> and the line <m>x=m</m> in a coordinate plane. (We assume the boxes in the
-          Young diagram are one unit by one unit.) When
-          working with generating functions for partitions, it is becoming standard
-          to use <m>q</m> rather than <m>x</m> as the variable in the generating function.
-          Write your answers in this notation.<fn>The reason for this change
-          in the notation relates to the subject of finite fields in abstract
-          algebra, where <m>q</m> is the standard notation for the size of a finite
-          field.  While we will make no use of this connection, it will be easier
-          for you to read more advanced work if you get used to the different
-          notation.</fn>
+        <p>Recall that a partition of an integer <m>k</m> is a multiset of numbers that adds to <m>k</m>. In <xref ref="change-making">Problem</xref> we found the generating function for the number of partitions of an integer into parts of size 1, 5, 10, and 25. Give the generating function for the number partitions of an integer into parts of size one through ten. Give the generating function for the number of partitions of an integer <m>k</m> into parts of size at most <m>m</m>. (Where <m>m</m> is fixed but <m>k</m> may vary.) Notice this is the generating function for partitions whose Young diagram fits into the space between the line <m>x=0</m> and the line <m>x=m</m> in a coordinate plane. (We assume the boxes in the Young diagram are one unit by one unit.) When working with generating functions for partitions, it is becoming standard to use <m>q</m> rather than <m>x</m> as the variable in the generating function.  Write your answers in this notation.<fn>The reason for this change in the notation relates to the subject of finite fields in abstract algebra, where <m>q</m> is the standard notation for the size of a finite field.  While we will make no use of this connection, it will be easier for you to read more advanced work if you get used to the different notation.</fn>
         </p>
       </statement>
       <solution>
@@ -893,43 +575,19 @@
     <activity xml:id="atmostmparts" category="essential">
       <statement>
         <p>
-          In <xref ref="largestpartatmostm">Problem</xref> you gave the generating
-          function for the number of partitions of an integer into parts of size at
-          most
-          <m>m</m>. Explain why this is also the generating function for partitions of
-          an integer into at most <m>m</m> parts. Notice that this is the generating
-          function for the number of partitions whose Young diagram fits into the
-          space between the line <m>y=0</m> and the line <m>y=m</m>.
+          In <xref ref="largestpartatmostm">Problem</xref> you gave the generating function for the number of partitions of an integer into parts of size at most <m>m</m>. Explain why this is also the generating function for partitions of an integer into at most <m>m</m> parts. Notice that this is the generating function for the number of partitions whose Young diagram fits into the space between the line <m>y=0</m> and the line <m>y=m</m>.
         </p>
       </statement>
       <solution>
         <p>
-          Conjugation is a bijection between partitions with largest part at
-          most
-          <m>m</m> and partitions with at most <m>m</m> parts. Thus the coefficient of <m>q^i</m> (the
-          number of partitions of <m>i</m> into parts of size at most <m>m</m>) in the generating
-          function for the number of partitions of integers into parts of size at most
-          <m>m</m> will be the coefficient of
-          <m>q^i</m> (the number of partitions of <m>i</m> with at most <m>m</m> parts) in the
-          generating function for the number of partitions of integers into parts of
-          size at most
-          <m>m</m>. Thus the two generating functions are the same.
+          Conjugation is a bijection between partitions with largest part at most <m>m</m> and partitions with at most <m>m</m> parts. Thus the coefficient of <m>q^i</m> (the number of partitions of <m>i</m> into parts of size at most <m>m</m>) in the generating function for the number of partitions of integers into parts of size at most <m>m</m> will be the coefficient of <m>q^i</m> (the number of partitions of <m>i</m> with at most <m>m</m> parts) in the generating function for the number of partitions of integers into parts of size at most <m>m</m>. Thus the two generating functions are the same.
         </p>
       </solution>
     </activity>
 
     <activity xml:id="genfunpartitions" category="essential">
       <statement>
-        <p>
-          Give the
-          generating function for the number of partitions of an integer into parts
-          of any size. Don't forget to use <m>q</m> rather than <m>x</m> as your variable.
-          This generating function involves an infinite product. Describe the kinds
-          of terms you actually multiply and add together to
-          get the last generating function. Rewrite any
-          power series that appear in your product as
-          quotients of polynomials or as integers divided
-          by polynomials.
+        <p>Give the generating function for the number of partitions of an integer into parts of any size. Don't forget to use <m>q</m> rather than <m>x</m> as your variable.  This generating function involves an infinite product. Describe the kinds of terms you actually multiply and add together to get the last generating function. Rewrite any power series that appear in your product as quotients of polynomials or as integers divided by polynomials.
         </p>
       </statement>
       <solution>
@@ -944,79 +602,42 @@
           </me>
         </p>
 
-        <p>
-          To get the coefficient of
-          <m>q^k</m> in this product, we look at all ways of choosing one summand from each
-          of the infinite series and multiplying them together to get <m>q^k</m>, and add all
-          these products up. That is, the coefficient of <m>q^k</m> is the number of ways of
-          making these choices of one summand from each series so that the product of
-          our choices is <m>q^k</m>. We can rewrite the infinite product as
-          <m>\displaystyle\prod_{i=0}^\infty{1\over 1-q^i}</m>.
+        <p>To get the coefficient of <m>q^k</m> in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get <m>q^k</m>, and add all these products up. That is, the coefficient of <m>q^k</m> is the number of ways of making these choices of one summand from each series so that the product of our choices is <m>q^k</m>. We can rewrite the infinite product as <m>\displaystyle\prod_{i=0}^\infty{1\over 1-q^i}</m>.
         </p>
       </solution>
     </activity>
 
     <activity category="interesting">
       <statement>
-        <p>
-          In <xref ref="genfunpartitions">Problem</xref>, we multiplied together
-          infinitely many power series. Here are two notations for infinite
-          products that look rather similar:
+        <p>In <xref ref="genfunpartitions">Problem</xref>, we multiplied together infinitely many power series. Here are two notations for infinite products that look rather similar:
           <me>
             \prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and} 
             \prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}.
           </me>
         </p>
 
-        <p>
-          However, one makes sense and one doesn't. Figure
-          out which one makes sense and explain why it makes sense and the other one
-          doesn't. If we want a product of the form
+        <p>However, one makes sense and one doesn't. Figure out which one makes sense and explain why it makes sense and the other one doesn't. If we want a product of the form
           <me>
             \prod_{i=1}^\infty 1 +p_i(x),
           </me>
-          where each <m>p_i(x)</m> is a nonzero polynomial in <m>x</m>
-          to make sense, describe a relatively simple assumption
-          about the polynomials <m>p_i(x)</m> that will make the product make
-          sense. If we assumed the terms <m>p_i(x)</m> were nonzero power series, is
-          there a relatively simple assumption we could make about them in order to
-          make the product make sense? (Describe such a condition or explain why
-          you think there couldn't be one.)
+          where each <m>p_i(x)</m> is a nonzero polynomial in <m>x</m> to make sense, describe a relatively simple assumption about the polynomials <m>p_i(x)</m> that will make the product make sense. If we assumed the terms <m>p_i(x)</m> were nonzero power series, is there a relatively simple assumption we could make about them in order to make the product make sense? (Describe such a condition or explain why you think there couldn't be one.)
         </p>
       </statement>
       <solution>
         <p>
-          <m>\prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}</m> makes sense
-          because when we look for ways of choosing one summand from each factor so that
-          the summands multiply together to give us <m>x^k</m>, we will find only finitely
-          many ways of making those choices, so the coefficient of <m>x^k</m> can be taken to
-          be the number of such choices. On the other hand, in the expression
-          <m>\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i</m>, there are infinitely many ways
-          to choose <m>x</m> from one term and <m>1</m> from all the rest of the terms so that the
-          product of these summands is <m>x</m>. Thus we can't even specify what the
-          coefficient of <m>x</m> is in the product. On the basis of this analysis, we see
-          that for <m>\prod_{i=1}^\infty 1 +p_i(x)</m> to make sense, we need to assume that
-          for each possible positive integer <m>n</m>, there are only a finite number of
-          polynomials <m>p_i</m> whose lowest degree term has degree less than
-          or equal to
-          <m>n</m>. In that way, for each positive integer, there will be only finitely many
-          ways to chose a summand from each factor so that the product of the summands
-          is a multiple of <m>x^k</m>. The same assumption works when the <m>p_i</m> are power
-          series, for the same reason.
+          <m>\prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}</m> makes sense because when we look for ways of choosing one summand from each factor so that the summands multiply together to give us <m>x^k</m>, we will find only finitely many ways of making those choices, so the coefficient of <m>x^k</m> can be taken to be the number of such choices. On the other hand, in the expression <m>\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i</m>, there are infinitely many ways to choose <m>x</m> from one term and <m>1</m> from all the rest of the terms so that the product of these summands is <m>x</m>. Thus we can't even specify what the coefficient of <m>x</m> is in the product. On the basis of this analysis, we see that for <m>\prod_{i=1}^\infty 1 +p_i(x)</m> to make sense, we need to assume that for each possible positive integer <m>n</m>, there are only a finite number of polynomials <m>p_i</m> whose lowest degree term has degree less than or equal to <m>n</m>. In that way, for each positive integer, there will be only finitely many ways to chose a summand from each factor so that the product of the summands is a multiple of <m>x^k</m>. The same assumption works when the <m>p_i</m> are power series, for the same reason.
         </p>
       </solution>
     </activity>
 
     <activity category="essential">
       <statement>
-        <p>
-          What is the generating function (using <m>q</m> for the variable) for
-          the number of partitions of an integer in which each part is even?
+        <p>What is the generating function (using <m>q</m> for the variable) for the number of partitions of an integer in which each part is even?
         </p>
       </statement>
       <solution>
         <p>
-          <m>(1+q^2+q^4+\cdots)(1+q^4+q^8+\cdots)(1+q^6+q^{12}+\cdots)\cdots</m>,
+            <m>(1+q^2+q^4+\cdots)(1+q^4+q^8+\cdots)(1+q^6+q^{12}+\cdots)\cdots</m>,
           which can be written more precisely as <m>\displaystyle\prod_{i=1}^\infty
           \sum_{j=0}^\infty q^{2ij}</m>.
         </p>
@@ -1025,10 +646,7 @@
 
     <activity category="essential">
       <statement>
-        <p>
-          What is the generating function (using <m>q</m> as the variable) for
-          the number of partitions of an integer into distinct parts, that is, in
-          which each part is used at most once?
+        <p>What is the generating function (using <m>q</m> as the variable) for the number of partitions of an integer into distinct parts, that is, in which each part is used at most once?
         </p>
       </statement>
       <solution>
@@ -1041,23 +659,11 @@
 
     <activity category="essential">
       <statement>
-        <p>
-          Use generating functions to explain why the number of partitions
-          of an integer in which each part is used an even number of times equals
-          the generating function for the number of partitions of an integer in
-          which each part is even.
+        <p>Use generating functions to explain why the number of partitions of an integer in which each part is used an even number of times equals the generating function for the number of partitions of an integer in which each part is even.
         </p>
       </statement>
       <solution>
-        <p>
-          In the generating function <m>\displaystyle\prod_{i=1}^\infty
-          \sum_{j=0}^\infty q^{2ij}</m>, we may interpret the <m>2ij</m> in <m>q^{2ji}</m> the value
-          of using <m>2i</m> as a part <m>j</m> times or as the value of using <m>i</m> as a part <m>2j</m>
-          times. Therefore this is the generating function both for the number of
-          partitions of integers into parts that are even and the number of partitions
-          into parts that are used an even number of times. Therefore the number of
-          partitions of <m>n</m> in which each part is even equals the number of partitions
-          of <m>n</m> in which each part is used an even number of times.
+        <p>In the generating function <m>\displaystyle\prod_{i=1}^\infty \sum_{j=0}^\infty q^{2ij}</m>, we may interpret the <m>2ij</m> in <m>q^{2ji}</m> the value of using <m>2i</m> as a part <m>j</m> times or as the value of using <m>i</m> as a part <m>2j</m> times. Therefore this is the generating function both for the number of partitions of integers into parts that are even and the number of partitions into parts that are used an even number of times. Therefore the number of partitions of <m>n</m> in which each part is even equals the number of partitions of <m>n</m> in which each part is used an even number of times.
         </p>
       </solution>
     </activity>
@@ -1065,16 +671,11 @@
     <activity category="essential and interesting">
       <task>
         <statement>
-          <p>
-            Use the fact that
+          <p>Use the fact that
             <me>
               {1-q^{2i}\over 1-q^i}= 1+q^i
             </me>
-            and the
-            generating function for the number of partitions of an integer into
-            distinct parts to show how the number of partitions of an integer <m>k</m>
-            into distinct parts is related to the number of partitions of an integer
-            <m>k</m> into odd parts.
+            and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer <m>k</m> into distinct parts is related to the number of partitions of an integer <m>k</m> into odd parts.
           </p>
         </statement>
         <solution>
@@ -1099,59 +700,34 @@
       </task>
       <task>
         <statement>
-          <p>
-            Write down the generating function for the number of ways to
-            partition an integer into parts of size no more than <m>m</m>, each used an
-            odd number of times. Write down the generating function for the number
-            of partitions of an integer into parts of size no more than <m>m</m>, each
-            used an even number of times. Use these two generating functions to get
-            a relationship between the two sequences for which you wrote down the
-            generating functions.
+          <p>Write down the generating function for the number of ways to partition an integer into parts of size no more than <m>m</m>, each used an odd number of times. Write down the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Use these two generating functions to get a relationship between the two sequences for which you wrote down the generating functions.
           </p>
         </statement>
         <solution>
-          <me>
+            <p>
+            <me>
             \displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
             m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^{n+1\choose 2}\prod_{i=1}^m{1\over
             1-q^2}
-          </me>
-          <p>
-            is the generating function for the number of ways to partition an integer into
-            parts of size at most <m>m</m>, each used an odd number of times.
+            </me>
+            is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
             <me>
               \displaystyle
               \prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m {1\over1-q^{2i}}
             </me>
-            is the generating function for the number of partitions of an integer into
-            parts of size no more than <m>m</m>, each used an even number of times. Therefore
-            the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used
-            an even number of times is the number of partitions of <m>k+{m+1\choose 2}</m>,
-            into parts of size no more than <m>m</m>, each used an odd number of times.
+            is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+{m+1\choose 2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
           </p>
         </solution>
       </task>
     </activity>
 
+    <!-- This is, in some sense, the problem from hell when it comes to structure. In the first pass, we're going to break into more tasks than Bogart had. This really should become more than one activity in the final version. -->
     <activity xml:id="qtorialformula" category="interesting">
-      <task>
-        <statement>
-          <p>
-            In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref>
-            you gave the generating functions for, respectively, the number of
-            partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for
-            the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem
-            we will give the generating function for the number of partitions of <m>k</m>
-            into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we
-            will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of
-            partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most
-            <m>m</m>. Geometrically, it is the generating function for partitions whose
-            Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant
-            analogs to the binomial coefficient
-            <m>m+n\choose n</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called
-            a <em><m>q</m>-binomial coefficient</em>.<index><main><m>q</m>-binomial
-            coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
-            \begin{enumerate}
-            \item Compute <m>\qchoose{4}{2}=\qchoose{2+2}{2}</m>.
+        <p>In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref> you gave the generating functions for, respectively, the number of partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem we will give the generating function for the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. Geometrically, it is the generating function for partitions whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant analogs to the binomial coefficient <m>m+n\choose n</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called a <term><m>q</m>-binomial coefficient</term>.<index><main><m>q</m>-binomial coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
+        </p>
+        <task>
+            <statement>
+                <p>Compute <m>\qchoose{4}{2}=\qchoose{2+2}{2}</m>.
           </p>
         </statement>
         <solution>
@@ -1164,7 +740,7 @@
             of 4. Thus <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>.
           </p>
         </solution>
-      </task>
+        </task>
       <task>
         <statement>
           <p>
@@ -1173,20 +749,13 @@
           </p>
         </statement>
         <solution>
-          <p>
-            Both are <m>1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}</m>,
-            because they are the generating function for the number of partitions
-            whose Young diagram fits into a rectangle <m>n-1</m> units wide and 1 unit
-            deep or into a rectangle 1 unit wide and <m>n-1</m> units deep respectively.
+          <p>Both are <m>1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}</m>, because they are the generating function for the number of partitions whose Young diagram fits into a rectangle <m>n-1</m> units wide and 1 unit deep or into a rectangle 1 unit wide and <m>n-1</m> units deep respectively.
           </p>
         </solution>
       </task>
       <task>
         <statement>
-          <p>
-            How are <m>\qchoose{m+n}{n}</m> and <m>\qchoose{m+n}{n}</m> related? Prove
-            it. (Note this is the same as asking how <m>\qchoose{r}{s}</m> and
-            <m>\qchoose{r}{r-s}</m> are related.)
+          <p>How are <m>\qchoose{m+n}{n}</m> and <m>\qchoose{m+n}{n}</m> related? Prove it. (Note this is the same as asking how <m>\qchoose{r}{s}</m> and <m>\qchoose{r}{r-s}</m> are related.)
           </p>
         </statement>
         <solution>
@@ -1197,11 +766,7 @@
       </task>
       <task>
         <statement>
-          <p>
-            So far the analogy to <m>m+n\choose n</m> is rather thin! If we had a
-            recurrence like the Pascal recurrence, that would demonstrate a real
-            analogy. Is <m>\qchoose{m+n}{n}=
-            \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
+          <p>So far the analogy to <m>m+n\choose n</m> is rather thin! If we had a recurrence like the Pascal recurrence, that would demonstrate a real analogy. Is <m>\qchoose{m+n}{n}= \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
           </p>
         </statement>
         <solution>
@@ -1213,44 +778,19 @@
         </solution>
       </task>
       <task>
-      <statement>
-      <p>
-      Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.
-      <task>
-        <statement>
-          <p>
-            The largest part of a partition counted
-            by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>. 
-            In the second case, the partition fits into a rectangle that is at most 
-            <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating
-            function for partitions of this type?  In the first case, what kind of
-            rectangle does the partition we get by removing the largest part sit in? 
-            What is the generating function for partitions that sit in this kind of
-            rectangle?  What is the generating function for partitions that sit in
-            this kind of rectangle after we remove a largest part of size <m>m</m>?  What
-            recurrence relation does this give you?
+          <statement>
+              <p>Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.
+            The largest part of a partition counted by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>.  In the second case, the partition fits into a rectangle that is at most <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating function for partitions of this type?  In the first case, what kind of rectangle does the partition we get by removing the largest part sit in?  What is the generating function for partitions that sit in this kind of rectangle?  What is the generating function for partitions that sit in this kind of rectangle after we remove a largest part of size <m>m</m>?  What recurrence relation does this give you?
           </p>
         </statement>
         <solution>
-          <p>
-            The generating function for partitions that arise in the second
-            case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case,
-            after we delete the largest part, the Young diagram sits in a rectangle
-            of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that
-            arise in the first case <em>after</em> we have deleted a part of size
-            <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for
-            partitions that arise in the first case (<em>before</em> we delete the part
-            of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the
-            generating function for all partitions that fit into a rectangle of width
-            <m>m</m> and depth <m>n</m> is given by
+          <p>The generating function for partitions that arise in the second case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case, after we delete the largest part, the Young diagram sits in a rectangle of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that arise in the first case <em>after</em> we have deleted a part of size <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for partitions that arise in the first case (<em>before</em> we delete the part of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the generating function for all partitions that fit into a rectangle of width <m>m</m> and depth <m>n</m> is given by
             <me>
               \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.
             </me>
           </p>
 
-          <p>
-            If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>,
-            you get
+          <p>If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>, you get
             <me>
               \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.
             </me>
@@ -1270,13 +810,7 @@
           </p>
         </statement>
         <solution>
-          <p>
-            We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In
-            the first case, removing one from each part gives us a partition whose
-            Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case
-            doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In
-            the first case the partition we get partitions <m>k-n</m>, and in the second
-            case it still partitions <m>k</m>. Thus we get
+          <p>We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In the first case, removing one from each part gives us a partition whose Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In the first case the partition we get partitions <m>k-n</m>, and in the second case it still partitions <m>k</m>. Thus we get
             <me>
               \qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.
             </me>
@@ -1285,10 +819,7 @@
       </task>
       <task>
         <statement>
-          <p>
-            It is quite likely that the two recurrences you got are different. 
-            One would expect that they might give different values for
-            <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
+          <p>It is quite likely that the two recurrences you got are different.  One would expect that they might give different values for <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
           </p>
         </statement>
         <solution>
@@ -1297,24 +828,16 @@
           </p>
         </solution>
       </task>
-      <p>
-        \item Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.
-        We read this simply as
-        <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots
-        [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a
-        <m>q</m>-ary factorial.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show
-        that
+      <task>
+          <statement>
+              <p>Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.  We read this simply as <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a <term><m>q</m>-ary factorial</term>.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show that
         <me>
           \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
         </me>
       </p>
       </statement>
       <solution>
-        <p>
-          Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only
-          the partition with no parts sits in a rectangle of width or depth 0. But
-          <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q}
-          =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
+        <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
           <md>
             <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
             <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
@@ -1336,131 +859,74 @@
       </solution>
       </task>
       <task>
-      <statement>
-      <p>
-      Now think of <m>q</m> as a variable that we will let approach <m>1</m>. Find
-      an explicit formula for
-      <task>
-        <statement>
-          <p>
-            <m>\displaystyle\lim_{q\rightarrow 1} [n]_q</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>n</m>
-          </p>
-        </solution>
+          <statement>
+              <p>Now think of <m>q</m> as a variable that we will let approach <m>1</m>. Find an explicit formula for
+              <ol>
+                  <li>
+                      <m>\displaystyle\lim_{q\rightarrow 1} [n]_q</m>.
+                  </li>
+                  <li> <m>\displaystyle\lim_{q\rightarrow 1} [n]!_q</m>.
+                  </li>
+                  <li xml:id="q-binomial-lim"> <m>\displaystyle\lim_{q\rightarrow 1} \qchoose{m+n}{n}</m>.
+                  </li>
+              </ol>
+              Why is the limit in <xref ref="q-binomial-lim">Part</xref> equal to the number of partitions (of any number) with at most <m>n</m> parts all of size most <m>m</m>? Can you explain bijectively why this quantity equals the formula you got?
+              </p>
+          </statement>
+          <solution>
+              <p>
+                  <ol>
+                      <li><m>n</m>
+                      </li>
+                      <li><m>n!</m>
+                      </li>
+                      <li><m>m+n\choose n</m>
+                      </li>
+                  </ol>
+                  Since the generating function is a finite sum (we are talking about partitions whose Young diagram into a finite rectangle), the limit is obtained by setting <m>q=1</m>, and this sums the number of partitions of each possible number <m>k</m> that have at most <m>n</m> parts all of size at most <m>m</m>. We want a bijection between such partitions and the <m>n</m> element subsets of an <m>m+n</m> element set. Recall that there is a bijection between subsets of an <m>n</m> element set and lattice paths from <m>(0,0)</m> to <m>m,n</m> in a coordinate plane. If we draw our rectangle of width <m>m</m> and depth <m>n</m> with its lower left corner at <m>(0,0)</m>, then each Young diagram gives us such a lattice path and each such lattice path gives us a Young diagram.
+              </p>
+          </solution>
       </task>
-      <task>
-        <statement>
-          <p>
-            <m>\displaystyle\lim_{q\rightarrow 1} [n]!_q</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            <m>n!</m>
-          </p>
-        </solution>
-      </task>
-      <task xml:id="partiii" >
-        <p>
-        <m>\displaystyle\lim_{q\rightarrow 1}
-        \qchoose{m+n}{n}</m>.
-        <solution>
-          <p>
-            <m>m+n\choose n</m>
-          </p>
-        </solution>
-      </task>
-      <p>
-        Why is the limit in Part iii
-        equal to the
-        number of partitions (of any number) with at most <m>n</m> parts all of size
-        most
-        <m>m</m>? Can you explain bijectively why this quantity equals the formula
-        you got?
-      </p>
-      </statement>
-      <solution>
-        <p>
-          Since the generating function is a finite sum (we are talking
-          about partitions whose Young diagram into a finite rectangle), the limit
-          is obtained by setting <m>q=1</m>, and this sums the number of partitions of
-          each possible number <m>k</m> that have at most <m>n</m> parts all of size at most
-          <m>m</m>. We want a bijection between such partitions and the <m>n</m>
-          element subsets of an <m>m+n</m> element set. Recall that there is a
-          bijection between subsets of an <m>n</m> element set and lattice paths from
-          <m>(0,0)</m> to <m>m,n</m> in a coordinate plane. If we draw our rectangle of
-          width <m>m</m> and depth <m>n</m> with its lower left corner at <m>(0,0)</m>, then each
-          Young diagram gives us such a lattice path and each such lattice path
-          gives us a Young diagram.
-        </p>
-      </solution>
-      </task>
-      <p>
-        \item[<nbsp /><m>*</m><nbsp />(\theenumii)] What happens to <m>\qchoose{m+n}{n}</m> if we let <m>q</m>
-        approach -1?
-      </p>
-      <solution>
-        <p>
-          <m>\qchoose{m+n}{n}</m> is the generating function for the
-          number of partitions whose Young diagram fits into an <m>m</m> by <m>n</m>
-          rectangle. That is,
-          <me>
-            \qchoose{m+n}{n}=\sum_{k=0}^\infty a_kq^k,
-          </me>
-          where <m>a_k</m> is the number of partitions of <m>k</m> whose Young diagram fits into an
-          <m>m</m> by <m>n</m> rectangle. In particular <m>a_k=0</m> if <m>k>mn</m>, because the Young
-          diagram of a partition of a number larger than <m>mn</m> certainly cannot fit into
-          an <m>m</m> by <m>n</m> rectangle. Thus
-          <me>
-            \qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.
-          </me>
+      <task category="difficult">
+          <statement>
+              <p>What happens to <m>\qchoose{m+n}{n}</m> if we let <m>q</m> approach <m>-1</m>?
+              </p>
+          </statement>
+          <solution>
+              <p><m>\qchoose{m+n}{n}</m> is the generating function for the number of partitions whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle. That is,
+              <me>
+                  \qchoose{m+n}{n}=\sum_{k=0}^\infty a_kq^k,
+              </me>
+              where <m>a_k</m> is the number of partitions of <m>k</m> whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle. In particular <m>a_k=0</m> if <m>k>mn</m>, because the Young diagram of a partition of a number larger than <m>mn</m> certainly cannot fit into an <m>m</m> by <m>n</m> rectangle. Thus
+              <me>
+                  \qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.
+              </me>
+              </p>
+              
+        <p>Furthermore, <m>a_k=a_{mn-k}</m>, because the complement in an <m>m</m> by <m>n</m> rectangle of a partition of <m>k</m> is a partition of <m>mn-k</m>, and complementation in an <m>m</m> by <m>n</m> rectangle is a bijection between partitions of <m>k</m> that fit into the rectangle and partitions of <m>mn-k</m> that fit into the rectangle. Thus <m>\qchoose{m+n}{n}</m> is a polynomial of degree <m>mn</m> in which the coefficient of <m>q_k</m> equals the coefficient of <m>q^{mn-k}</m>. For this reason we can compute the limit as <m>q</m> approaches <m>-1</m> simply by substituting <m>-1</m> for <m>q</m> in the polynomial; the only trouble being that the formula we know for <m>\qchoose{m+n}{n}</m> is quotient of polynomials that has zero in both the numerator and denominator when we substitute in <m>q=-1</m>. Nonetheless, when we substitute <m>-1</m> for <m>q</m> we get the alternating sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>.  Thus if <m>a_i</m> and <m>a_{mn-i}</m> have opposite sign, they will cancel out. If <m>mn</m> is even, <m>i</m> is even exactly when <m>mn-i</m> is even, and so <m>a_i</m> and <m>a_{mn-i}</m> have the same sign. However when <m>mn</m> is odd, <m>a_i</m> and <m>a_{mn-i}</m> have opposite signs in the sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>, and so the sum is zero.  Thus the polynomial <m>\qchoose{m+n}{n}</m> is zero at <m>q=-1</m> whenever <m>mn</m> is odd.
         </p>
 
-        <p>
-          Furthermore, <m>a_k=a_{mn-k}</m>, because the complement in an <m>m</m> by <m>n</m> rectangle
-          of a partition of <m>k</m> is a partition of <m>mn-k</m>, and complementation in an <m>m</m>
-          by <m>n</m> rectangle is a bijection between partitions of <m>k</m> that fit into the
-          rectangle and partitions of <m>mn-k</m> that fit into the rectangle. Thus
-          <m>\qchoose{m+n}{n}</m> is a polynomial of degree <m>mn</m> in which the coefficient of
-          <m>q_k</m> equals the coefficient of <m>q^{mn-k}</m>. For this reason we can compute the
-          limit as <m>q</m> approaches <m>-1</m> simply by substituting <m>-1</m> for <m>q</m> in the
-          polynomial; the only trouble being that the formula we know for
-          <m>\qchoose{m+n}{n}</m> is quotient of polynomials that has zero in both the
-          numerator and denominator when we substitute in <m>q=-1</m>. Nonetheless, when we
-          substitute <m>-1</m> for <m>q</m> we get the alternating sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>.
-          Thus if <m>a_i</m> and <m>a_{mn-i}</m> have opposite sign, they will cancel out. If <m>mn</m>
-          is even, <m>i</m> is even exactly when <m>mn-i</m> is even, and so <m>a_i</m> and <m>a_{mn-i}</m>
-          have the same sign. However when <m>mn</m> is odd, <m>a_i</m> and <m>a_{mn-i}</m> have
-          opposite signs in the sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>, and so the sum is zero.
-          Thus the polynomial
-          <m>\qchoose{m+n}{n}</m> is zero at <m>q=-1</m> whenever <m>mn</m> is odd.
-        </p>
-
-        <p>
-          Our experience with binomial coefficients might lead us to hope that the
-          alternating sum of the coefficients <m>a_k</m> will always be zero. However, we
-          computed that
-          <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, so
+        <p>Our experience with binomial coefficients might lead us to hope that the alternating sum of the coefficients <m>a_k</m> will always be zero. However, we computed that <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>, so
           <me>
             \lim_{q\rightarrow -1}\qchoose{4}{2}=1-1+2-1+1=1.
           </me>
         </p>
 
-        <p>
-          We could compute some more values of the limit by going back to the
-          definition in this way, but it seems unlikely that we could get enough data to
-          make a good conjecture. However we have the recurrence, and setting
-          <m>q=-1</m> in the recurrence gives us the table
+        <p>We could compute some more values of the limit by going back to the definition in this way, but it seems unlikely that we could get enough data to make a good conjecture. However we have the recurrence, and setting <m>q=-1</m> in the recurrence gives us <xref ref="q-binomial-tab" autoname="yes" />.  From the table, it is clear that we get binomial coefficients interspersed with 0s in the even numbered rows of our table and repeated binomial coefficients in the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both even, <m>\neg1choose{m+n}{n}={(m+n)/2\choose n/2}</m>, and if <m>m+n</m> is even and <m>n</m> is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it appears that we get <m>\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose \lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to construct the table, we can prove by induction that
+          <me>
+            \neg1choose{m+n}{n}=\left\{ 
+            \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
+            {\lfloor(m+n)/2\rfloor\choose
+            \lfloor n/2\rfloor}\amp \mbox{otherwise.} 
+            \end{array} \right.
+          </me>
         </p>
-        <tabular>
-          <row>
-            <cell><m>m+n\backslash n</m></cell>
-            <cell>0</cell>
-            <cell>1</cell>
+        <table xml:id="q-binomial-tab">
+            <tabular>
+                <row>
+                    <cell><m>m+n\backslash n</m></cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
             <cell>2</cell>
             <cell>3</cell>
             <cell>4</cell>
@@ -1613,30 +1079,13 @@
             <cell>1</cell>
             <cell>1</cell>
           </row>
-        </tabular>
+      </tabular>
+        </table>
         <p>
-          From the table, it is clear that we get binomial coefficients interspersed with
-          0s in the even numbered rows of our table and repeated binomial coefficients in
-          the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both
-          even, <m>\neg1choose{m+n}{n}={(m+n)/2\choose n/2}</m>, and if <m>m+n</m> is even and <m>n</m>
-          is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it
-          appears that we get <m>\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose
-          \lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to
-          construct the table, we can prove by induction that
-          <me>
-            \neg1choose{m+n}{n}=\left\{ 
-            \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
-            {\lfloor(m+n)/2\rfloor\choose
-            \lfloor n/2\rfloor}\amp \mbox{otherwise.} 
-            \end{array} \right.
-          </me>
+          (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) It would be fascinating to know what we are counting here!
         </p>
-
-        <p>
-          (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) It would
-          be fascinating to know what we are counting here!
-        </p>
-      </solution>
-    </activity>
+    </solution>
+      </task>
+  </activity>
   </subsection>
 </section>
