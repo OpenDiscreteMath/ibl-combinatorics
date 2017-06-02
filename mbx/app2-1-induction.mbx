@@ -549,41 +549,32 @@
       that we could make 20 cents and 21 cents! So long as one point of view
       or the other satisfies you, you are ready to use this kind of argument in
       proofs.
-      <ol>
-        {\setcounter{enumi}{\value{problemnumber}}}
+    </p>
 
-        <li>
+      <activity>
+          <statement>
           <p>
             A number greater than one is called prime if it has no factors other
             than itself and one. Show that each positive number is either a prime or
             a power of a prime or a product of powers of prime numbers.
+          </p>
+          </statement>
             <solution>
               <p>
-                We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose
-                that all positive numbers less than <m>n</m> are primes, powers of primes, or
-                products of powers of primes. If <m>n</m> has no proper factors, it is a prime.
-                If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m>
-                and greater than 1. Therefore each factor is a prime, a power of a prime,
-                or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together,
-                the result will still be a power of a prime or a product of powers of
-                primes. Thus the statement that all positive numbers less than
-                <m>n</m> are primes, powers of primes, or products of powers of primes implies
-                the statement that <m>n</m> is a prime, a power of a prime, or a product of
-                powers of primes. Therefore by the strong principle of mathematical
-                induction, all positive numbers are either primes, powers of primes, or
-                products of powers of primes.
+                We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose that all positive numbers less than <m>n</m> are primes, powers of primes, or products of powers of primes. If <m>n</m> has no proper factors, it is a prime.  If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m> and greater than 1. Therefore each factor is a prime, a power of a prime, or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together, the result will still be a power of a prime or a product of powers of primes. Thus the statement that all positive numbers less than <m>n</m> are primes, powers of primes, or products of powers of primes implies the statement that <m>n</m> is a prime, a power of a prime, or a product of powers of primes. Therefore by the strong principle of mathematical induction, all positive numbers are either primes, powers of primes, or products of powers of primes.
               </p>
             </solution>
-          </p>
-        </li>
-
-        <li>
+      </activity>
+      <activity>
+          <statement>
           <p>
             Show that the number of prime factors of a positive number <m>n\ge 2</m>
             is less than or equal to <m>\log_2 n</m>.  (If a prime occurs to the <m>k</m>th
             power in a factorization of <m>n</m>, you can consider that power as <m>k</m> prime
             factors.)  (There is a way to do this by induction and a way to do it
             without induction.  It would be ideal to find both ways.)
+          </p>
+          </statement>
             <solution>
               <p>
                 First, we will prove this by induction. The number of prime
@@ -604,7 +595,8 @@
                 equal to
                 <m>\log_2 n</m> for all integers <m>n\ge 2</m>.
               </p>
-
+            </solution>
+            <solution>
               <p>
                 For a noninductive proof, note that all factors of <m>n</m> are at least 2. If
                 <m>n</m> is a power of two, then the number of times <m>2</m> is a factor of <m>n</m> is
@@ -618,10 +610,6 @@
                 <m>\log_2 n</m>.
               </p>
             </solution>
-            \setcounter{problemnumber}{\value{enumi}}
-          </p>
-        </li>
-      </ol>
-    </p>
+      </activity>
   </subsection>
 </section>
