@@ -23,9 +23,7 @@
     <figure xml:id="Threegraphs" >
       <caption>Three different
       graphs</caption>
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="95%" source="images/threegraphs" />
     </figure>
 
     <p>
@@ -181,32 +179,30 @@
   <subsection>
     <title>Walks and paths in graphs</title>
     <p>
-      A <em>walk</em> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
+      A <term>walk</term><index><main>walk</main></index> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
       e_iv_i</m> of vertices and edges such that edge <m>e_i</m> connects vertices
       <m>v_{i-1}</m> and <m>v_i</m>. A graph is called connected if, for any pair of
       vertices, there is a walk starting at one and ending at the other.
-      <ol>
-        {\setcounter{enumi}{\value{problemnumber}}}
+    </p>
+        <activity xml:id="connectedanddisconnected" >
 
-        <li xml:id="connectedanddisconnected" >
-
-        <p>
-          Which of the graphs in <xref ref="Threegraphs">Figure</xref> is
-          connected?
-          <solution>
+            <statement>
+                <p>
+                    Which of the graphs in <xref ref="Threegraphs">Figure</xref> is connected?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    They first two connected; the third is not.
+                </p>
+            </solution>
+        </activity>
+        <activity category="motivation">
+            <statement>
             <p>
-              They first two connected; the third is not.
-            </p>
-          </solution>
-        </p>
-        </li>
-
-        <li>
-          <p>
-            (motivation)
-
-            A <em>path</em> in a graph is a walk with no repeated vertices.  Find the
-            longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
+              A <term>path</term><index><main>path</main><sub>in graph</sub></index> in a graph is a walk with no repeated vertices.  Find the longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
+          </p>
+            </statement>
             <solution>
               <p>
                 The path from <m>y</m> to <m>v</m> to <m>x</m> to <m>w</m> is a typical longest path.
@@ -214,16 +210,13 @@
                 to get from <m>y</m> to <m>v</m>.
               </p>
             </solution>
-          </p>
-        </li>
-
-        <li>
-          <p>
-            (motivation)
-            A <em>cycle</em> in a graph is a walk whose first and last vertex are
-            equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a
-            cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the
-            smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
+        </activity>
+        <activity category ="motivation">
+            <statement>
+                <p>
+                    A <term>cycle</term><index><main>cycle</main><sub>in graph</sub></index> in a graph is a walk whose first and last vertex are equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
+                </p>
+            </statement>
             <solution>
               <p>
                 The second and third graphs have cycles. The
@@ -231,24 +224,20 @@
                 number of edges in a cycle in the third graph is one.
               </p>
             </solution>
-          </p>
-        </li>
-
-        <li>
-          <p>
-            (motivation)
-            A connected graph with no cycles is called a <em>tree</em><index><main>tree</main></index>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
+        </activity>
+        <activity category="motivation">
+            <statement>
+            <p>
+            A connected graph with no cycles is called a <term>tree</term><index><main>tree</main></index>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
             trees?
+            </p>
+            </statement>
             <solution>
-              <p>
+                <p>
                 The first graph is a tree.
               </p>
             </solution>
-            \setcounter{problemnumber}{\value{enumi}}
-          </p>
-        </li>
-      </ol>
-    </p>
+        </activity>
   </subsection>
 
   <subsection>
@@ -372,9 +361,7 @@
         <figure xml:id="differenttrees" >
           <caption>The three labelled
           trees on three vertices</caption>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+          <image width="80%" source="images/threetrees" />
         </figure>
 
         <p>
@@ -556,9 +543,7 @@
     <figure xml:id="spanningtrees" >
       <caption>A graph
       and all its spanning trees.</caption>
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="95%" source="images/spanningtrees" />
     </figure>
 
     <activity>
@@ -715,9 +700,7 @@
       <caption>Deleting
       two appropriate edges from this graph gives a spanning
       tree.</caption>
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="60%" source="images/twodeletions" />
     </figure>
 
     <p>
@@ -728,10 +711,7 @@
       <caption>The results of
       contracting three different edges in a
       graph.</caption>
-      \vglue-1in
-      \mbox{
-      <image width="73%" source="images/" />
-      }
+      <image width="65%" source="images/threecontractions" />
     </figure>
 
     <p>
@@ -800,9 +780,7 @@
         <figure xml:id="spantreeexercise" >
           <caption>A
           graph.</caption>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+          <image width="20%" source="images/spantreeexercise" />
         </figure>
       </statement>
       <solution>
@@ -822,9 +800,12 @@
 
         <p>
           We now show the four graphs on the right hand side of the equation.
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+        </p>
+        <figure xml:id="spantreeexerciseresult">
+            <caption>Various deletions and contractions.</caption>
+            <image width="95%" source="images/spantreeexerciseresult" />
+        </figure>
+        <p>
           We could now convert each of these graphs to trees with multiple edges by
           deleting and contracting one more edge, say edge <m>\{1,5\}</m>, which would make
           the analysis easier but the picture twice as big. Since we can easily count
@@ -858,19 +839,10 @@
       that the length of the path in the spanning tree from <m>v</m> to each vertex
       <m>x</m> is the distance from <m>v</m> to <m>x</m> in <m>G</m>.
     </p>
-    <ol>
-    {\setcounter{enumi}{\value{problemnumber}}}
-
-    <li xml:id="Dijkstra" >
-
-    <p>
-      Show that the following algorithm (known as
-      Dijkstra's<index><main>Dijkstra's algorithm</main></index><index><main>distance in a graph</main></index>
-      algorithm) applied to a weighted graph whose vertices are labelled 1 to
-      <m>n</m> gives, for each
-      <m>i</m>, the distance from vertex 1 to i as
-      <m>d(i)</m>.
-    </p>
+    <activity xml:id="Dijkstra">
+        <statement>
+            <p>
+      Show that the following algorithm (known as Dijkstra's<index><main>Dijkstra's algorithm</main></index><index><main>distance in a graph</main></index> algorithm) applied to a weighted graph whose vertices are labelled 1 to <m>n</m> gives, for each <m>i</m>, the distance from vertex 1 to i as <m>d(i)</m>.
     <ol>
       <li>
         <p>
@@ -902,6 +874,8 @@
         </p>
       </li>
     </ol>
+            </p>
+        </statement>
     <solution>
       <p>
         We prove that the distance from vertex 1 of a vertex <m>i</m> with
@@ -932,14 +906,17 @@
         <m>t</m>.
       </p>
     </solution>
-    </li>
+    </activity>
 
-    <li>
-      <p>
+    <activity>
+        <statement>
+        <p>
         Is there a spanning tree such that the distance from vertex <m>1</m> to
         vertex <m>i</m> given by the algorithm in <xref ref="Dijkstra">Problem</xref> is the
         distance for vertex 1 to vertex <m>i</m> in the tree (using the same weights
         on the edges, of course)?
+        </p>
+        </statement>
         <solution>
           <p>
             Yes, when we choose the <m>i</m> with <m>d(i)</m> a minimum, before we change
@@ -952,12 +929,6 @@
             could prove it directly by induction on the number of vertices in our tree.
           </p>
         </solution>
-        \setcounter{problemnumber}{\value{enumi}}
-      </p>
-    </li>
-    </ol>
-    <p>
-      \vfilneg
-    </p>
+    </activity>
   </subsection>
 </section>
