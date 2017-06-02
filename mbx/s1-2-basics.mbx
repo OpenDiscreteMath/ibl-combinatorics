@@ -12,7 +12,7 @@
         </p>
       </statement>
       <hint>
-        Answer the questions in Problem 2 for the case of five schools.
+          <p>Answer the questions in Problem 2 for the case of five schools.</p>
       </hint>
       <solution>
         <p>
@@ -465,8 +465,8 @@
     </p>
 
     <blockquote>
-    if we have a partition of a set <m>S</m>, then the size of <m>S</m> is the
-    sum of the sizes of the blocks of the partition.
+        <p>if we have a partition of a set <m>S</m>, then the size of <m>S</m> is the
+    sum of the sizes of the blocks of the partition.</p>
     </blockquote>
 
     <p>
@@ -476,8 +476,9 @@
     </p>
 
     <blockquote>
-    if we have a partition of a set <m>S</m> into <m>m</m> blocks, each
-      of size <m>n</m>, then <m>S</m> has size <m>mn</m>.
+        <p>
+    if we have a partition of a set <m>S</m> into <m>m</m> blocks, each of size <m>n</m>, then <m>S</m> has size <m>mn</m>.
+        </p>
     </blockquote>
 
     <p>
@@ -596,13 +597,14 @@ many ways can you pair up the next person who isn’t already paired up?
         </solution>
       </task>
       <task xml:id="numberoffunctionsconjecture" >
-        <p>
+          <statement><p>
         Based on the examples you've seen so far, make a conjecture
           about how many functions there are from the set
         <me>
           [m] = \{1,2,3,\dots,m\}
         </me>
         to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.</p>
+        </statement>
         <solution>
           <p>
             <m>n^m</m>.
@@ -624,31 +626,15 @@ many ways can you pair up the next person who isn’t already paired up?
         </solution>
       </task>
     </activity>
-</subsection>
 
     <activity xml:id="generalproductprinciple" category="summary">
       <statement>
         <p>
-          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m>
-          from <m>[m]</m> to some set <m>X</m>. (For example, in
-          <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
-          functions from the three possible places for scoops in an ice-cream
-          cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices
-          for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>,
-          because there were <m>12</m> ways to choose the first scoop.) Suppose that
-          for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For
-          example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the
-          second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if
-          the flavors had to be different.) In general, suppose that for each
-          choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for
-          <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the
-          flavors have to be different, then for each coice of <m>f(1)</m> and
-          <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
+          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m> from <m>[m]</m> to some set <m>X</m>. (For example, in <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of functions from the three possible places for scoops in an ice-cream cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>, because there were <m>12</m> ways to choose the first scoop.) Suppose that for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if the flavors had to be different.) In general, suppose that for each choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the flavors have to be different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
         </p>
 
         <p>
-          What we have assumed so far about the functions in <m>S</m> may be
-          summarized as
+          What we have assumed so far about the functions in <m>S</m> may be summarized as
         <ul>
          <li>
            There are <m>k_1</m> choices for <m>f(1)</m>.
@@ -658,10 +644,10 @@ many ways can you pair up the next person who isn’t already paired up?
          </li>
         </ul>
         </p>
-      </statement>
       <p>
         How many functions are in the set <m>S</m>? Is there any practical difference between the result of this problem and the general product principle?
       </p>
+      </statement>
       <solution>
         <p>
           <m>\prod_{i=1}^m k_i</m>.
@@ -862,7 +848,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </solution>
     </activity>
-  
+  </subsection>
   <subsection>
     <title>Functions and directed graphs</title>
     <p>
@@ -927,7 +913,6 @@ many ways can you pair up the next person who isn’t already paired up?
       <m>S</m> to <m>S</m> and draw only one set of vertices representing the elements
       of <m>S</m>.) For further discussion of functions and digraphs see <xref ref="functionrelation">Sections</xref> and <xref ref="relationdigraph"></xref> of {<xref ref="Relations">Appendix</xref>}.
     </p>
-  </subsection>
 
     <activity category="motivation">
       <statement>
@@ -986,9 +971,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
 
         <p>
-          \mbox{
           <image width="73%" source="images/OntoNotOnetoOne" />
-          }
         </p>
       </solution>
     </activity>
@@ -1020,8 +1003,8 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </task>
         <hint>
-          For each part of this problem, think about how many arrows are allowed to
-          enter a vertex representing a member of <m>Y</m>.
+            <p>For each part of this problem, think about how many arrows are allowed to
+          enter a vertex representing a member of <m>Y</m>.</p>
         </hint>
       <solution>
         <p>
@@ -1057,17 +1040,9 @@ many ways can you pair up the next person who isn’t already paired up?
 
 
     <p>
-      Notice that there is a great deal of consistency between the use of
-      the word permutation in <xref ref="permutationasbijection">Problem</xref> and the
-      use in <xref ref="kelementpermutation">Problem</xref>. If we have
-      some way <m>a_1,a_2,\ldots,a_n</m> of listing our set, then any other list
-      <m>b_1,b_2,\ldots,b_n</m> gives us the permutation of <m>S</m> whose rule is
-      <m>f(a_i) =b_i</m>, and any permutation of <m>S</m>, say the one given by <m>g(a_i)=c_i</m>
-      gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really
-      very little difference between the idea of a permutation of <m>S</m> and an
-      <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
+      Notice that there is a great deal of consistency between the use of the word permutation in <xref ref="permutationasbijection">Problem</xref> and the use in <xref ref="kelementpermutation">Problem</xref>. If we have some way <m>a_1,a_2,\ldots,a_n</m> of listing our set, then any other list <m>b_1,b_2,\ldots,b_n</m> gives us the permutation of <m>S</m> whose rule is <m>f(a_i) =b_i</m>, and any permutation of <m>S</m>, say the one given by <m>g(a_i)=c_i</m> gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really very little difference between the idea of a permutation of <m>S</m> and an <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
     </p>
-  
+  </subsection>
 
   <subsection>
     <title>The bijection principle</title>
@@ -1083,8 +1058,7 @@ many ways can you pair up the next person who isn’t already paired up?
     </p>
 
     <blockquote>
-    Two sets have the same size if and only if
-    there is a bijection between them.
+        <p>Two sets have the same size if and only if there is a bijection between them.</p>
     </blockquote>
 
     <p>
@@ -1108,14 +1082,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        The problem is asking you to describe a one-to-one function from the set
-        of binary representations of numbers between <m>0</m> and <m>2^n-1</m> onto the set of
-        subsets of the set <m>[n]</m>. Write down these two sets for <m>n = 2</m>. They should
-        both have four elements. The set of binary representations should contain
-        the string <m>00</m>. You could think of this as the instruction ``take no ones and
-        take no twos.'' In that context, what could you think of the string <m>11</m> as
-        standing for? This should help you describe a function. Of course now you
-        have to figure out how to show it is one-to-one and onto.
+       <p> The problem is asking you to describe a one-to-one function from the set of binary representations of numbers between <m>0</m> and <m>2^n-1</m> onto the set of subsets of the set <m>[n]</m>. Write down these two sets for <m>n = 2</m>. They should both have four elements. The set of binary representations should contain the string <m>00</m>. You could think of this as the instruction ``take no ones and take no twos.'' In that context, what could you think of the string <m>11</m> as standing for? This should help you describe a function. Of course now you have to figure out how to show it is one-to-one and onto.</p>
       </hint>
       <solution>
         <p>
@@ -1253,8 +1220,10 @@ many ways can you pair up the next person who isn’t already paired up?
     </p>
 
     <figure xml:id="Pascaltriangle" >
+        <index><main>Pascal's Triangle</main></index>
       <caption>Pascal's
       Triangle</caption>
+      <p>
       <me>
         \begin{matrix}\amp \amp \amp \amp \amp \amp \amp 1\amp \amp \amp \amp \amp \amp \amp \\
         \amp \amp \amp \amp \amp \amp 1\amp \amp 1\amp \amp \amp \amp \amp \amp \\
@@ -1266,11 +1235,9 @@ many ways can you pair up the next person who isn’t already paired up?
         1\amp \amp 7\amp \amp 21\amp \amp 35\amp \amp 35\amp \amp 21\amp \amp 7\amp \amp 1
         \end{matrix}
       </me>
+      </p>
     </figure>
 
-    <p>
-      <index><main>Pascal's Triangle</main></index>
-    </p>
 
     <activity>
       <statement>
@@ -1279,9 +1246,9 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <solution>
-        <me>
+          <p>        <me>
           1 \quad 8 \quad 28 \quad 56 \quad 70 \quad 56 \quad 28 \quad 8 \quad 1
-        </me>
+        </me></p>
       </solution>
     </activity>
 
@@ -1293,13 +1260,13 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        Starting with the row 1 8 28 56 70 56 28 8 1, put dots below it where the
+        <p>Starting with the row 1 8 28 56 70 56 28 8 1, put dots below it where the
         elements of row 9 should be. Then put dots below that where the elements
         of row 10 should be. Do the same for rows 11 and 12. Mark the dot where row 12
         should appear. Now mark the dots you need in row 11 to compute the
         entry in column 3 of row 12. Now mark the dots you need in row 10 to compute
         the marked entries in row 11. Do the same for rows 9 and 8. Now you should
-        be able to see what you need to do.
+        be able to see what you need to do.</p>
       </hint>
       <solution>
         <p>
@@ -1594,8 +1561,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          Begin by trying to figure out what the entries just above the diagonal of the
-          rectangle are. After that, what other entries can you figure out?
+            <p>Begin by trying to figure out what the entries just above the diagonal of the rectangle are. After that, what other entries can you figure out?</p>
         </hint>
         <solution>
           <p>
@@ -1617,7 +1583,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          See if you can figure out what the entries in column -1 have to be.
+            <p>See if you can figure out what the entries in column <m>-1</m> have to be.</p>
         </hint>
         <solution>
           <p>
@@ -1627,9 +1593,8 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </solution>
       </task>
-      <task>
+      <task category="difficult">
         <statement>
-          <title>\ <m>*</m>\ (\theenumii)</title>
           <p>
             What should we put into row <m>-n</m> and column <m>k</m> or
             column <m>-k</m> in order for the Pascal Equation to continue to
@@ -1637,27 +1602,11 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          What does the sum of two consecutive values in row <m>-1</m> have to be? Could
-          this sum depend on which two consecutive values we take? Is there some
-          value of row <m>-1</m> that we could choose arbitrarily? Now what about row <m>-2</m>?
-          Can we make arbitrary choices there? If so, how many can we make, and is
-          their position arbitrary?
+            <p>What does the sum of two consecutive values in row <m>-1</m> have to be? Could this sum depend on which two consecutive values we take? Is there some value of row <m>-1</m> that we could choose arbitrarily? Now what about row <m>-2</m>?  Can we make arbitrary choices there? If so, how many can we make, and is their position arbitrary?</p>
         </hint>
         <solution>
           <p>
-            Above row zero, we have some freedom. The
-            <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for
-            any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between
-            <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate
-            between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know
-            the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the
-            form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the
-            entries to the left of it, and (in a different form) to compute all the
-            entries to the right of it. Thus we may be arbitrary about the entries in
-            column 0 (or, in fact, one entry in each row) and then the Pascal Equation
-            tells us how to fill in the rest of each row. We shall see later on that
-            there is one very natural choice for how to fill in all the rows above row
-            zero.
+            Above row zero, we have some freedom. The <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the entries to the left of it, and (in a different form) to compute all the entries to the right of it. Thus we may be arbitrary about the entries in column 0 (or, in fact, one entry in each row) and then the Pascal Equation tells us how to fill in the rest of each row. We shall see later on that there is one very natural choice for how to fill in all the rows above row zero.
           </p>
         </solution>
       </task>
@@ -1665,12 +1614,7 @@ many ways can you pair up the next person who isn’t already paired up?
 
     <activity xml:id="charfunction">
       <p>
-        There is yet another bijection that lets us prove that a set of
-        size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of
-        <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally
-        denoted by <m>\chi_S</m>) as follows.<fn>The symbol
-        <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
-        <m>i</m> sounding like <q>eye.</q></fn>
+        There is yet another bijection that lets us prove that a set of size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally denoted by <m>\chi_S</m>) as follows.<fn>The symbol <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the <m>i</m> sounding like <q>eye.</q></fn>
         <me>
           \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
           S
@@ -1808,11 +1752,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </task>
       <solution>
         <p>
-          What is different is that the order in which we put the scoops into
-          the cone matters, but for simply choosing three flavors, the order of the
-          choices doesn't matter. Six different triple decker cones have the same
-          three flavors. Thus we have <m>1320/6=220</m> different ways to choose three
-          flavors of ice cream from 12 flavors.
+          What is different is that the order in which we put the scoops into the cone matters, but for simply choosing three flavors, the order of the choices doesn't matter. Six different triple decker cones have the same three flavors. Thus we have <m>1320/6=220</m> different ways to choose three flavors of ice cream from 12 flavors.
         </p>
       </solution>
     </activity>
@@ -1847,9 +1787,9 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        The first thing you need to decide is “What are the two sets whose elements
-        we are counting?” Then it will be easier to think of a bijection between these
-        two sets. It turns out that these two sets are sets of sets!
+        <p>The first thing you need to decide is <q>What are the two sets whose elements
+        we are counting?</q> Then it will be easier to think of a bijection between these
+        two sets. It turns out that these two sets are sets of sets!</p>
       </hint>
       <solution>
         <p>
@@ -1868,9 +1808,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        Ask yourself “What is a problem like this doing in the middle of a bunch of
-        problems about counting subsets of a set? Is it related, or is it supposed to
-        gives us a break from sets?”
+          <p>Ask yourself <q>What is a problem like this doing in the middle of a bunch of problems about counting subsets of a set? Is it related, or is it supposed to gives us a break from sets?</q></p>
       </hint>
       <solution>
         <p>
@@ -1883,50 +1821,23 @@ many ways can you pair up the next person who isn’t already paired up?
     <activity xml:id="roundtable" category="essential">
       <statement>
         <p>
-          In how many ways may <m>n</m> people sit around a round
-          table? (Assume
-          that when people are sitting around a round table, all that
-          really matters is who is to each person's right. For example, if we can get
-          one arrangement of people around the table from another by having everyone
-          get up and move to the right one place and sit back down, we get an
-          equivalent arrangement of people. Notice that you can get a
-          list from a seating arrangement by marking a place at the
-          table, and then listing the people at the table, starting at
-          that place and moving around to the right.) There are at least two
-          different ways of doing this problem. Try to find them both.
+          In how many ways may <m>n</m> people sit around a round table? (Assume that when people are sitting around a round table, all that really matters is who is to each person's right. For example, if we can get one arrangement of people around the table from another by having everyone get up and move to the right one place and sit back down, we get an equivalent arrangement of people. Notice that you can get a list from a seating arrangement by marking a place at the table, and then listing the people at the table, starting at that place and moving around to the right.) There are at least two different ways of doing this problem. Try to find them both.
         </p>
       </statement>
       <hint>
-        The problem suggests that you think about how to get a list from a seating
+          <p>The problem suggests that you think about how to get a list from a seating
         arrangement. Could every list of n distinct people come from a seating chart?
         How many lists of n distinct people are there? How many lists could we get
-        from a given seating chart by taking different starting places?
+        from a given seating chart by taking different starting places?</p>
       </hint>
       <hint>
-        Second Hint for Problem 38: 
-        For a different way of doing the problem, suppose that you have chosen
-        one person, say the first one in a list of the people in alphabetical order by
-        name. Now seat that person. Does it matter where they sit? In ways can
-        you seat the remaining people? Does it matter where the second person in
-        alphabetical order sits?
+          <p>
+        For a different way of doing the problem, suppose that you have chosen one person, say the first one in a list of the people in alphabetical order by name. Now seat that person. Does it matter where they sit? In ways can you seat the remaining people? Does it matter where the second person in alphabetical order sits?
+          </p>
       </hint>
       <solution>
         <p>
-          The total number of ways to list how the <m>n</m> people sit around the
-          table is <m>n!</m>. However, two lists are the same if we get one from the other
-          by shifting everyone right the same number of places. This divides the set
-          of lists up into sets of <m>n</m> mutually equivalent lists. The number <m>m</m> of
-          such sets is the number of seating arrangements. However by the product
-          principle, <m>mn=n!</m>, because we have partitioned up the set of <m>n!</m> lists into
-          <m>m</m> sets of size <m>n</m>. Therefore <m>m=(n-1)!</m> A second solution may be
-          obtained by choosing one of the <m>n</m> people and letting this person sit
-          anywhere. Since all that matters is who is to the right of each person, it
-          doesn't matter where this person sits. Once this person is seated, let
-          everybody else sit down. If they sit down first in one order clockwise around
-          the table and then in some other order, the person to the right of somebody
-          has changed. Thus there are
-          <m>(n-1)!</m> ways (the number of ways to seat everybody else) to seat the people
-          around the table.
+          The total number of ways to list how the <m>n</m> people sit around the table is <m>n!</m>. However, two lists are the same if we get one from the other by shifting everyone right the same number of places. This divides the set of lists up into sets of <m>n</m> mutually equivalent lists. The number <m>m</m> of such sets is the number of seating arrangements. However by the product principle, <m>mn=n!</m>, because we have partitioned up the set of <m>n!</m> lists into <m>m</m> sets of size <m>n</m>. Therefore <m>m=(n-1)!</m> A second solution may be obtained by choosing one of the <m>n</m> people and letting this person sit anywhere. Since all that matters is who is to the right of each person, it doesn't matter where this person sits. Once this person is seated, let everybody else sit down. If they sit down first in one order clockwise around the table and then in some other order, the person to the right of somebody has changed. Thus there are <m>(n-1)!</m> ways (the number of ways to seat everybody else) to seat the people around the table.
         </p>
       </solution>
     </activity>
@@ -1936,7 +1847,6 @@ many ways can you pair up the next person who isn’t already paired up?
       more detail in order to tease out another counting principle that we
       can use in a wide variety of situations.
     </p>
-</subsection>
 
     <table xml:id="tab_permsof3" >
       <caption>The <m>3</m>-element permutations of <m>\{a,b,c,d,e\}</m> organized
@@ -2063,7 +1973,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
+          <p>A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?</p>
         </hint>
         </task>
         <task>
@@ -2084,7 +1994,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          What sets are listed, and how many times is each one listed if you take one list from each row of Table 1.2? How does this choice of lists give you the bijection in this special case?
+            <p>What sets are listed, and how many times is each one listed if you take one list from each row of XREF NEEDED? How does this choice of lists give you the bijection in this special case?</p>
         </hint>
         </task>
         <task xml:id="formulanchoosekfinal" >
@@ -2095,7 +2005,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          You can make good use of the product principle here.
+            <p>You can make good use of the product principle here.</p>
         </hint>
         </task>
       <solution>
@@ -2133,7 +2043,7 @@ many ways can you pair up the next person who isn’t already paired up?
           </p>
         </statement>
         <hint>
-          The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
+            <p>The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?</p>
         </hint>
         </task>
         <task>
@@ -2145,7 +2055,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </statement>
         </task>
         <hint>
-          As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.
+            <p>As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.</p>
         </hint>
       <solution>
         <p>
@@ -2210,8 +2120,8 @@ many ways can you pair up the next person who isn’t already paired up?
     </p>
 
     <blockquote>
-    If we partition a set <m>P</m> 
-    into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m>
+        <p>If we partition a set <m>P</m> 
+    into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m></p>
     </blockquote>
 
     <p>
@@ -2249,10 +2159,10 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        How could we get a list of beads from a necklace?
+          <p>How could we get a list of beads from a necklace?</p>
       </hint>
       <hint>
-        When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?
+          <p>When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?</p>
       </hint>
       <solution>
         <p>
@@ -2287,7 +2197,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </statement>
         </task>
         <hint>
-          You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
+            <p>You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.</p>
         </hint>
         <task>
           <statement>
@@ -2297,9 +2207,8 @@ many ways can you pair up the next person who isn’t already paired up?
               specify our pairs? Try to find as many solutions as you can.
           </p>
         </statement>
-        </task>
        <hint>
-         You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.
+           <p>You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.</p>
        </hint>
       <solution>
         <p>
@@ -2313,7 +2222,8 @@ many ways can you pair up the next person who isn’t already paired up?
           can arise in this way, and no pairing can arise twice in this process. Thus
           the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
         </p>
-
+      </solution>
+      <solution>
         <p>
           For another solution,
           choose people in pairs. There are <m>2n\choose 2</m> ways to choose one pair,
@@ -2325,7 +2235,8 @@ many ways can you pair up the next person who isn’t already paired up?
           Therefore the number of actual pairings is <m>{(2n)!\over 2^n n!}= ={2n!\over
           2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
         </p>
-
+      </solution>
+        <solution>
         <p>
           For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
           we can take the first two as a tennis pair, the next two, and so on. There
@@ -2335,6 +2246,7 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>n!2^n</m>. Thus we have <m>(2n)!\over n!2^n</m> tennis pairings once again.
         </p>
       </solution>
+        </task>
     </activity>
 
 <!-- Activity 45 -->
@@ -2349,7 +2261,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
       <hint>
-        It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.
+          <p>It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.</p>
       </hint>
       <solution>
         <p>
@@ -2405,5 +2317,6 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
     </activity>
+  </subsection>
 </section>
 
