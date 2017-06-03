@@ -116,7 +116,7 @@
               <md>
           <mrow>E_P(S_1\times S_2)\amp =\amp \sum_{(x_1,x_2)\in S_1\times
           S_2} P(x_1)P(x_2)</mrow>
-          <mrow>\amp =\amp 
+          <mrow>\amp =\amp
           \sum_{x_1:x_1\in S_1}\sum_{x_2:x_2\in S_2} P(x_1)P(x_2)</mrow>
           <mrow>\amp =\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)</mrow>
           <mrow>\amp =\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)</mrow>
@@ -520,7 +520,7 @@
           <md>
           <mrow>(x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
           \left(\sum_{i=0}^{m-j-1}x^i\right)^n</mrow>
-          <mrow>\amp =\amp 
+          <mrow>\amp =\amp
           \left(x^j{1-x^{m-j}\over 1-x}\right)^n</mrow>
           <mrow>\amp =\amp \left({x^j-x^m\over1-x}\right)^n</mrow>
           <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
@@ -551,7 +551,7 @@
 
         <p>Although we could write this as a polynomial times a product of four power series, doing so would not significantly increase our understanding, though it would let us make some painful computations of the number of ways to make a certain number of cents. If we actually wanted such numbers we would be better off asking a computer algebra package to expand the product of the polynomials on the left. With unlimited supplies the generating function becomes
           <me>
-            \frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
+            \frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot\frac{1}{1-x^{10}}\cdot\frac{1}{1-x^{25}}.
           </me>
         </p>
 
@@ -611,7 +611,7 @@
       <statement>
         <p>In <xref ref="genfunpartitions">Problem</xref>, we multiplied together infinitely many power series. Here are two notations for infinite products that look rather similar:
           <me>
-            \prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and} 
+            \prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and}
             \prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}.
           </me>
         </p>
@@ -682,12 +682,11 @@
           <p>
             <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n {1-q^{2i} \over
             1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
-            =\prod_{i=j}^\infty {1\over1-q^{2j-1}}</m>, because all the terms in the numerator
+            =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}</m>, because all the terms in the numerator
             cancel with alternate terms in the denominator leaving only terms with odd
             powers of <m>q</m>. But
             <md>
-              <mrow>\amp \amp \prod_{j=1}^\infty{1\over
-              1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
+              <mrow>\amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
               \sum_{i=0}^\infty
               (q^{2j-1})^i</mrow>
               <mrow>\amp =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
@@ -712,7 +711,7 @@
             is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
             <me>
               \displaystyle
-              \prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m {1\over1-q^{2i}}
+              \prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m \frac{1}{1-q^{2i}}
             </me>
             is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+\binom{m+1}{2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
           </p>
@@ -851,7 +850,7 @@
         </p>
 
         <p>
-          Thus <m>[m+n]!_q \over [m]!_q[n]!_q</m> satisfies our recurrence and so by the
+          Thus <m>\frac{[m+n]!_q }{[m]!_q[n]!_q}</m> satisfies our recurrence and so by the
           principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
           [m]!_q[n]!_q}.</m>
         </p>
@@ -901,7 +900,7 @@
                   \qchoose{m+n}{n}=\sum_{k=0}^{mn} a_kq^k.
               </me>
               </p>
-              
+
         <p>Furthermore, <m>a_k=a_{mn-k}</m>, because the complement in an <m>m</m> by <m>n</m> rectangle of a partition of <m>k</m> is a partition of <m>mn-k</m>, and complementation in an <m>m</m> by <m>n</m> rectangle is a bijection between partitions of <m>k</m> that fit into the rectangle and partitions of <m>mn-k</m> that fit into the rectangle. Thus <m>\qchoose{m+n}{n}</m> is a polynomial of degree <m>mn</m> in which the coefficient of <m>q_k</m> equals the coefficient of <m>q^{mn-k}</m>. For this reason we can compute the limit as <m>q</m> approaches <m>-1</m> simply by substituting <m>-1</m> for <m>q</m> in the polynomial; the only trouble being that the formula we know for <m>\qchoose{m+n}{n}</m> is quotient of polynomials that has zero in both the numerator and denominator when we substitute in <m>q=-1</m>. Nonetheless, when we substitute <m>-1</m> for <m>q</m> we get the alternating sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>.  Thus if <m>a_i</m> and <m>a_{mn-i}</m> have opposite sign, they will cancel out. If <m>mn</m> is even, <m>i</m> is even exactly when <m>mn-i</m> is even, and so <m>a_i</m> and <m>a_{mn-i}</m> have the same sign. However when <m>mn</m> is odd, <m>a_i</m> and <m>a_{mn-i}</m> have opposite signs in the sum <m>\sum_{i=0}^{mn} (-1)^ia_i</m>, and so the sum is zero.  Thus the polynomial <m>\qchoose{m+n}{n}</m> is zero at <m>q=-1</m> whenever <m>mn</m> is odd.
         </p>
 
@@ -913,9 +912,9 @@
 
         <p>We could compute some more values of the limit by going back to the definition in this way, but it seems unlikely that we could get enough data to make a good conjecture. However we have the recurrence, and setting <m>q=-1</m> in the recurrence gives us <xref ref="q-binomial-tab" autoname="yes" />.  From the table, it is clear that we get binomial coefficients interspersed with 0s in the even numbered rows of our table and repeated binomial coefficients in the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both even, <m>\neg1choose{m+n}{n}=\binom{(m+n)/2}{n/2}</m>, and if <m>m+n</m> is even and <m>n</m> is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it appears that we get <m>\neg1choose{m+n}{n}=\binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to construct the table, we can prove by induction that
           <me>
-            \neg1choose{m+n}{n}=\left\{ 
+            \neg1choose{m+n}{n}=\left\{
             \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
-            \binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\amp \mbox{otherwise.} 
+            \binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\amp \mbox{otherwise.}
             \end{array} \right.
           </me>
         </p>

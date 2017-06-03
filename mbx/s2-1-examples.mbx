@@ -172,7 +172,7 @@
           which by the way, requires that <m>n\ge 2</m>. We will prove that our formula
           holds by induction on <m>n</m> for <m>n\ge 2</m>. If <m>n=2</m>, the only <m>i</m> we need
           to consider is <m>i=1</m>, and we know that <m>\binom{2}{1}=2</m>, the number of
-          one-element subsets of a two-element set. But <m>2!\over1!(2-1)!</m> is 2
+          one-element subsets of a two-element set. But <m>\frac{2!}{1!(2-1)!}</m> is 2
           also, so our formula holds when <m>n=2</m>. Now suppose our formula holds
           when <m>n=k-1</m>, so that for every <m>i</m> with <m>0\lt i\lt n-1</m>, <m>\binom{k-1}{i} =
           {(k-1)!\over i!(k-1-i)!}</m>. Then by the Pascal Equation
@@ -791,7 +791,7 @@
               (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}</mrow>
               <mrow>\amp =\amp {2^{2n-2}(n-1)^{2n-2}\over\sqrt{\pi
               (n-1)}(n-1)^{2n-2}}</mrow>
-              <mrow>\amp =\amp {1\over \sqrt{\pi
+              <mrow>\amp =\amp \frac{1}{\sqrt{\pi
               (n-1)}}2^{2n-2}</mrow>
             </md>
           </p>
@@ -881,7 +881,7 @@
         </statement>
         <solution>
           <me>
-            {1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
+            \frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
             of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
           </me>
         </solution>
@@ -894,9 +894,9 @@
         </statement>
         <solution>
           <md>
-            <mrow>\amp \amp {1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
+            <mrow>\amp \amp \frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
             of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)</mrow>
-            <mrow>\amp =\amp {1\over 2^{^\binom{m}{2}}} \sum_{N:N\subseteq
+            <mrow>\amp =\amp \frac{1}{2^{^\binom{m}{2}}} \sum_{N:N\subseteq
             M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)</mrow>
             <mrow>\amp =\amp
             2^{-\binom{m}{2}}\sum_{N:N\subseteq
@@ -954,8 +954,7 @@
             Using Stirling's approximation to <m>n!</m> we get
             <me>
               R(n,n)>\root n \of
-              {{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}={n\over
-              e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
+              {{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}=\frac{n}{e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
               n}>2^n/2=\sqrt{2}^{\rangle n}.
             </me>
           </p>

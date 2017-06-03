@@ -8,7 +8,7 @@
     In <xref ref="exponentialbookshelf">Problem</xref> you likely found that the
     EGF for the number of ways of arranging <m>n</m>
     books on one shelf was exactly the same as the EGF for the number of
-    permutations of <m>[n]</m>, namely <m>1\over 1-x</m> or
+    permutations of <m>[n]</m>, namely <m>\frac{1}{ 1-x}</m> or
     <m>(1-x)^{-1}</m>. Then using our formula from <xref ref="bookcase">Problem</xref> and the
     generating function for multisets, you probably found that the EGF for
     number of ways of arranging <m>n</m> books on some fixed number
@@ -103,7 +103,7 @@
     </statement>
     <solution>
       <p>
-        We get the EGF <m>1\over 1-x</m>
+        We get the EGF <m>\frac{1}{ 1-x}</m>
         for all permutations of <m>[n]</m>. Notice that any permutation is a product
         of a derangement of the elements not fixed by the permutation times the
         one cycles of elements that are fixed by the permutation.
@@ -120,7 +120,7 @@
   <activity xml:id="exponentialpp1" category="essential for this or the next section">
     <statement>
       <p>
-        What is the coefficient of <m>x^n\over n!</m> in the product of two
+        What is the coefficient of <m>\frac{x^n}{n!}</m> in the product of two
         EGFs <m>\sum_{i=0}^\infty a_i{x^i\over i!}</m> and <m>\sum_{j=0}^\infty
         b_j{x^j\over j!}</m>? (A summation sign is appropriate in your
         answer.)
@@ -208,9 +208,9 @@
     </statement>
     <solution>
       <p>
-        <m>\binom{n}{i}a_ib_j</m>. This shows that the coefficient of <m>x^n\over n!</m>
+        <m>\binom{n}{i}a_ib_j</m>. This shows that the coefficient of <m>\frac{x^n}{n!}</m>
         in the EGF for painting poles with four colors is the coefficient of
-        <m>x^n\over n!</m> in the product of the EGF for painting poles with two
+        <m>\frac{x^n}{n!}</m> in the product of the EGF for painting poles with two
         colors and the EGF for painting poles with two colors.
       </p>
     </solution>
@@ -218,12 +218,11 @@
 
   <p>
     <xref ref="exponentialpp2">Problem</xref> shows that the formula you got for the
-    coefficient of <m>x^n\over n!</m> in the product of two EGFs is the formula we
+    coefficient of <m>\frac{x^n}{n!}</m> in the product of two EGFs is the formula we
     get by splitting a set <m>N</m> of poles into two parts and painting the poles
     in the first part with red and white and the poles in the second part with
     blue and yellow. More generally, you could interpret your result in
-    <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>x^n\over
-    n!</m> in the product <m>\sum_{i=0}^\infty a_i {x^i\over i!}
+    <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>\frac{x^n}{n!}</m> in the product <m>\sum_{i=0}^\infty a_i {x^i\over i!}
     \sum_{j=0}^\infty b_j{x^j\over j!}</m> of two EGFs is the sum, over all
     ways of splitting a set
     <m>N</m> of size
@@ -346,7 +345,7 @@
           <m>S\times T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets
           whose union is any one particular set of size <m>n</m> is <m>f(x)g(x)</m>. That
           is, the number of ordered pairs of the type described is the coefficient
-          of <m>x^n\over n!</m> in <m>f(x)g(x)</m>.
+          of <m>\frac{x^n}{n!}</m> in <m>f(x)g(x)</m>.
         </p>
       </paragraphs>
       <p>
@@ -524,7 +523,7 @@
           is
           <me>
             e^{2x}\left(1+{(2x)^2\over 2!}+ {(2x)^4\over 4!} + \cdots \right) =
-            e^{2x}{e^{2x}-e^{-2x}\over2}=e^{2x}\cosh(2x).
+            e^{2x}\frac{e^{2x}-e^{-2x}}{2}=e^{2x}\cosh(2x).
           </me>
         </p>
       </solution>
@@ -580,7 +579,7 @@
         <m>B_n</m> satisfy the equation
         <m>B_{n+1} =
         \sum_{k=0}^{n} \binom{n}{k}B_{n-k}</m> (or a similar equation for <m>B_n</m>.)
-        Multiply both sides of this equation by <m>x^n\over n!</m> and sum from <m>n=0</m>
+        Multiply both sides of this equation by <m>\frac{x^n}{n!}</m> and sum from <m>n=0</m>
         to infinity. On the left hand side you have a derivative of a certain
         EGF we might call <m>B(x)</m>. On the right hand side, you
         have a product of two EGFs, one of which is <m>B(x)</m>. What is the other
@@ -591,8 +590,7 @@
     </statement>
     <solution>
       <me>
-        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
-        (i)!}\sum_{j=0}^\infty {x^j\over j!}.
+        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty {x^j\over j!}.
       </me>
       <p>
         Thus <m>B'(x) = B(x)e^x</m>, which gives us <m>\ln B(x) = e^x+c</m>, or <m>B(x) =
@@ -621,7 +619,7 @@
       </p>
 
       <p>
-        Thus the coefficient of <m>x^n\over n!</m> is
+        Thus the coefficient of <m>\frac{x^n}{n!}</m> is
         <m>n2^{n-1}</m>, as well as <m>\sum_{k=1}^n \binom{n}{k}k</m>.
       </p>
     </solution>

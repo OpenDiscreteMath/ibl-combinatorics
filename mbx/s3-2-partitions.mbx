@@ -191,7 +191,7 @@
         </statement>
         <solution>
           <p>
-            <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m>. We can make a list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1, then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks of size <m>n</m>. But then we realize that we get the same partition if we permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the quotient principle.
+            <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m>. We can make a list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1, then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks of size <m>n</m>. But then we realize that we get the same partition if we permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the quotient principle.
           </p>
         </solution>
       </task>
@@ -203,7 +203,7 @@
         </statement>
         <solution>
           <p>
-            We can find <m>S(n,k)</m> by summing <m>n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
+            We can find <m>S(n,k)</m> by summing <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
           </p>
         </solution>
       </task>
@@ -354,12 +354,12 @@
         </p>
 
         <p>
-          The <m>9!\over3!3!3!</m> suggests another solution. We can line up the
+          The <m>\frac{9!}{3!3!3!}</m> suggests another solution. We can line up the
           sandwiches in 9! ways. We take the first three for bag one, the
           second three for bag two and the last three for bag 3. The order of
           the sandwiches in the bag does not matter though, so each there are
           <m>3!3!3!</m> listings corresponding to each way of putting sandwiches in
-          bags, giving us <m>9!\over3!3!3!</m> ways to put the sandwiches in bags.
+          bags, giving us <m>\frac{9!}{3!3!3!}</m> ways to put the sandwiches in bags.
         </p>
       </solution>
     </activity>
@@ -382,7 +382,7 @@
             <me>
               \binom{k}{j_1}\binom{k-j_1}{j_2}\binom{k-j_1-j_2}{j_3}\cdots\binom{j_n}{j_n},
             </me>
-            or more elegantly, by lining up the elements of the domain in <m>k!</m> ways, taking the first <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.  However the order of the <m>j_i</m> elements that go to <m>y_i</m> is irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same function, giving us <m>k!\over j_1!j_2!,\cdots j_n!</m> functions.
+            or more elegantly, by lining up the elements of the domain in <m>k!</m> ways, taking the first <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.  However the order of the <m>j_i</m> elements that go to <m>y_i</m> is irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same function, giving us <m>\frac{k!}{j_1!j_2!,\cdots j_n!}</m> functions.
           </p>
         </solution>
       </task>

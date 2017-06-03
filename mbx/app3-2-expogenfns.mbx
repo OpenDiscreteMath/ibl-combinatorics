@@ -66,7 +66,7 @@
       </statement>
       <solution>
         <p>
-          For the sequence <m>1-(-1)^n\over 2</m> which, starting with <m>n=0</m> is
+          For the sequence <m>\frac{1-(-1)^n}{2}</m> which, starting with <m>n=0</m> is
           the alternating sequence 0,1,0,1<ellipsis /> of zeros and ones.
         </p>
       </solution>
@@ -102,7 +102,7 @@
     </statement>
     <solution>
       <md>
-        <mrow>\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp 
+        <mrow>\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp
         \int_0^x \frac{1}{1-t}dt</mrow>
         <mrow>\amp =\amp \int_0^x (1+t+t^2+\cdots)dt</mrow>
         <mrow>\amp =\amp \sum_{i=1}^\infty {x^i\over i}</mrow>
@@ -125,7 +125,7 @@
     </statement>
     <solution>
       <p>
-        <m>1\over 1-x</m>.
+        <m>\frac{1}{ 1-x}</m>.
       </p>
     </solution>
   </activity>
@@ -150,7 +150,7 @@
     <statement>
       <p>
         What is the EGF <m>\sum_{n=0}^\infty
-        p_{2n}{x^{2n}\over (2n)!}</m> for the number of ways <m>p_{2n}</m> to pair up <m>2n</m>
+        p_{2n}\frac{x^{2n}}{(2n)!}</m> for the number of ways <m>p_{2n}</m> to pair up <m>2n</m>
         people to play a total of
         <m>n</m> tennis matches (as in <xref ref="tennispairings1">Problems</xref> and <xref ref="tennispairings2"></xref>)?
       </p>
@@ -161,7 +161,7 @@
         n!}</m>. Thus
         <me>
           \sum_{n=0}^\infty
-          p_{2n}{x^{2n}\over (2n)!}= \sum_{n=0}^\infty {x^{2n}\over 2^n n!} =
+          p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
           \sum_{n=0 }^\infty {({x^2/2})^n\over n!} = e^{x^2/2} .
         </me>
       </p>
@@ -256,7 +256,7 @@
     </statement>
     <solution>
       <p>
-        <m>1\over 1-x</m>, <m>\sum_{k=0}^\infty \binom{n+k-1 }{k}k!{x^k\over
+        <m>\frac{1}{ 1-x}</m>, <m>\sum_{k=0}^\infty \binom{n+k-1 }{k}k!{x^k\over
         k!} = (1-x)^{-n}</m>.
       </p>
     </solution>

@@ -405,22 +405,22 @@
             <p>
             <md>
               <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}</mrow>
-              <mrow>\amp =\amp {1\over\sqrt{5}}\cdot\frac{1}{r_1-x} -{1\over\sqrt{5}}\cdot\frac{1}{r_2-x}</mrow>
-              <mrow>\amp =\amp {1\over r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -{1\over r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}</mrow>
-              <mrow>\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
-              -{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n</mrow>
+              <mrow>\amp =\amp \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}</mrow>
+              <mrow>\amp =\amp \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}</mrow>
+              <mrow>\amp =\amp \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
+              -\frac{1}{r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n</mrow>
             </md>
             This gives us that
             <md>
-              <mrow>a_n\amp =\amp {1\over\sqrt{5}\cdot r_1^{n+1}}
-              +{1\over\sqrt{5}\cdot r_2^{n+1}}</mrow>
+              <mrow>a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
+              +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}</mrow>
               <mrow>\amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
               +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
               <mrow>\amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
               \sqrt{5}\cdot
               4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
-              <mrow>\amp =\amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
-              {1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
+              <mrow>\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+              \frac{1}{\sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
             </md>
             </p>
         </solution>
@@ -444,19 +444,19 @@
           <p>
             From the binomial theorem,
             <md>
-              <mrow>\amp \amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over
-              2}\right)^{n+1}- {1\over \sqrt{5}}\left({1-\sqrt{5}
+              <mrow>\amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
+              2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left({1-\sqrt{5}
               \over2}\right)^{n+1}</mrow>
               <mrow>\amp =\amp 
-              {1\over2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
-              <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in
+              \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
+              <mrow>\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
               [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
               -(-1)^i\left(\sqrt{5}\right)^i\right)</mrow>
-              <mrow>\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+              <mrow>\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
               odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i</mrow>
-              <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+              <mrow>\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
               odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}</mrow>
-              <mrow>\amp =\amp {1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+              <mrow>\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
               even} }  \binom{n+1}{i+1}5^{i/2}</mrow>
               <mrow>\amp =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,</mrow>
             </md>
@@ -464,7 +464,7 @@
             number. It is not clear from this new formula why the result is always an
             integer. Since
             <m>\left|{1-\sqrt{5}\over 2}\right|\lt 1</m>,
-            <m>{1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}</m> approaches 0 as <m>n</m>
+            <m>\frac{1}{\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}</m> approaches 0 as <m>n</m>
             becomes large. Therefore if we take <m>b</m> to be <m>\left({1+\sqrt{5}\over
             2}\right)^n</m> and we take <m>c</m> to be <m>{1+\sqrt{5}\over 2\sqrt{5}}</m> then then
             <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large. In

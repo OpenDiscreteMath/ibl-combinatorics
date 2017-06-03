@@ -2246,7 +2246,7 @@ many ways can you pair up the next person who isn’t already paired up?
           are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
           each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings
           partition the set of all permutations of the <m>2n</m> members into blocks of size
-          <m>n!2^n</m>. Thus we have <m>(2n)!\over n!2^n</m> tennis pairings once again.
+          <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
         </p>
       </solution>
         </task>
@@ -2291,7 +2291,7 @@ many ways can you pair up the next person who isn’t already paired up?
           However it is pretty clear the approximation will not be a very good one,
           because some of the terms in that product are much larger than 2. In fact,
           if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction
-          <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
+          <m>\frac{1}{ 2n+1}</m> of <m>2^{2n}</m>. This is much larger than the fraction
           <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
           much larger than <m>\binom{2n}{1}</m> and is likely larger than
           <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
@@ -2316,7 +2316,7 @@ many ways can you pair up the next person who isn’t already paired up?
           subsets of size
           <m>n</m> in an
           <m>2n</m>-element set is approximately <m>1/\sqrt{\pi n}</m>. This is a much bigger
-          fraction than <m>1\over 2^n</m>!
+          fraction than <m>\frac{1}{ 2^n}</m>!
         </p>
       </statement>
     </activity>

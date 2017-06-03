@@ -261,9 +261,8 @@
           have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order
           in which we list the vertices of a given degree is irrelevant. Thus the number
           of ways to assign the degrees is
-          <m>n!\over i_1!i_2!\cdots i_n!</m>. Once the degrees are assigned, there are
-          <m>(n-2)!\over
-          \prod_{d=1}^n (d-1)!^{i_d}</m>, by translating our easier result. Thus the total
+          <m>\frac{n!}{i_1!i_2!\cdots i_n!}</m>. Once the degrees are assigned, there are
+          <m>\frac{(n-2)!}{\prod_{d=1}^n (d-1)!^{i_d}}</m>, by translating our easier result. Thus the total
           number of trees with the degree sequence in which there are <m>i_d</m> vertices of
           degree <m>d</m> is
           <me>

@@ -1331,8 +1331,8 @@
           seven green beads. Thus the number of lists that are fixed by a flip is the
           number of ways to place three green beads, two red beads, and three blue
           beads in 8 slots, which is
-          <m>\binom{8}{3,2,3}</m>, or <m>8!\over3!2!3!</m>. There are 17 flips, so there are
-          <m>17\cdot8!\over3!2!3!</m> elements fixed by flips. Therefore we have
+          <m>\binom{8}{3,2,3}</m>, or <m>\frac{8!}{3!2!3!}</m>. There are 17 flips, so there are
+          <m>\frac{17\cdot8!}{3!2!3!}</m> elements fixed by flips. Therefore we have
           <me>
             \frac{1}{2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
             {8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400
@@ -1362,8 +1362,7 @@
           to the positions on the left, so a flip fixes <m>2^9</m> functions. Therefore by
           the CFB theorem, we have
           <me>
-            \frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
-            17}+2^8 +{2^4\over 17}=16{4097\over17}+256=4112
+            \frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)=\frac{2^{16}{17}+2^8 +\frac{2^4}{17}=16\frac{4097}{17}+256=4112
           </me>
           necklaces.
         </p>
