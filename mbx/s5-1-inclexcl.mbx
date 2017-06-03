@@ -232,13 +232,12 @@
         <p>
           Dividing this by
           <m>n!</m>, the total number of ways to pass back the backpacks, we get
-          <m>\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}</m> for the probability
+          <m>\displaystyle \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}</m> for the probability
           that at least one student gets the correct backpack. Subtracting from
           1 to get the probability that no student gets the correct backpack
           gives us
           <me>
-            1- \sum_{s=1}^n {(-1)^{s-1}\over
-            s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
+            1- \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
           </me>
         </p>
       </solution>

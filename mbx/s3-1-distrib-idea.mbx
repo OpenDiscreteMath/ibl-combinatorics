@@ -350,7 +350,7 @@
           an
           <m>n</m>-element set is given by
           <me>
-            \binom{n}{k} = {n^{\underline{k}}\over k!}
+            \binom{n}{k} = \frac{n^{\underline{k}}}{k!}
             = \frac{n!}{k!(n-k)!}.
           </me>
         </p>
@@ -642,7 +642,7 @@
           of blocks is the number of ways to place identical books on the shelves.
           However, there are <m>k!</m> arrangements per block, so there are
           <me>
-            {\prod_{i=1}^k (n+i-1)\over k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
+            \frac{\prod_{i=1}^k (n+i-1)}{k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
           </me>
           ways to arrange identical books.
         </p>

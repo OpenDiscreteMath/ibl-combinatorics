@@ -414,10 +414,9 @@
             <md>
               <mrow>a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
               +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}</mrow>
-              <mrow>\amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
+              <mrow>\amp =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
               +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
-              <mrow>\amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
-              \sqrt{5}\cdot
+              <mrow>\amp =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
               4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
               <mrow>\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
               \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.</mrow>
@@ -529,7 +528,7 @@
           </me>
           holds for any number real number <m>r</m>, where <m>\binom{r}{i}</m> is defined to be
           <me>
-            {r^{\underline{i}}\over i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
+            \frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
           </me>
         </p>
 
@@ -558,11 +557,11 @@
         <p>This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y={1\pm \sqrt{1-4x}\over 2x}</m>. By the extended binomial theorem,
           <me>
             \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty \binom{1/2}{i}(-4x)^i=
-            \sum_{i=0}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i.
+            \sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i.
           </me>
         </p>
 
-        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})</m>, so
+        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})</m>, so
           <md>
             <mrow>y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
             <mrow>\amp =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}</mrow>

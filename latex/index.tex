@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T15:14:33-06:00    *%
+%*    on 2017-06-03T16:10:13-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -1720,7 +1720,7 @@ Now assume that when \(m+n=k-1\), it is the case that if there are \(\binom{m+n-
 \amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
 \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
 (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}\\
-\amp =\amp {2^{2n-2}(n-1)^{2n-2}\over\sqrt{\pi
+\amp =\amp \frac{2^{2n-2}(n-1)^{2n-2}}{\sqrt{\pi
 (n-1)}(n-1)^{2n-2}}\\
 \amp =\amp \frac{1}{\sqrt{\pi
 (n-1)}}2^{2n-2}
@@ -1989,7 +1989,7 @@ Do this problem only if your final answer (so far) to \hyperref[firstordlinconst
 \amp \amp \sum_{i=0}^{k-1} db^i\\
 \amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
 \amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}\\
-\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
+\amp =\amp \frac{ d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
 \end{align*}
 %
 \par
@@ -2419,7 +2419,7 @@ We now jump to row eight of our table. We saw in \hyperref[ping-pong]{Problem~\r
 \begin{theorem}[{}]\label{theorem-5}
 If \(0\le k \le n\), the number of \(k\)-element subsets of an \(n\)-element set is given by%
 \begin{equation*}
-\binom{n}{k} = {n^{\underline{k}}\over k!}
+\binom{n}{k} = \frac{n^{\underline{k}}}{k!}
 = \frac{n!}{k!(n-k)!}.
 \end{equation*}
 %
@@ -2522,7 +2522,7 @@ In how many ways may we distribute \(k\) identical books on the shelves of a boo
 \par\medskip\noindent%
 \textbf{Solution.}\quad We saw that we could arrange \(k\) distinct books on \(n\) shelves in \(\prod_{i=1}^k (n+i-1)\) ways. We partition these arrangements into blocks by putting two arrangements in the same block if we can get one from the other by permuting the books among themselves. Then the number of blocks is the number of ways to place identical books on the shelves. However, there are \(k!\) arrangements per block, so there are%
 \begin{equation*}
-{\prod_{i=1}^k (n+i-1)\over k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
+\frac{\prod_{i=1}^k (n+i-1)}{k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
 \end{equation*}
 ways to arrange identical books.%
 \end{activity}
@@ -3689,12 +3689,11 @@ Use generating functions to explain why the number of partitions of an integer i
 \begin{enumerate}[label=(\alph*)]
  \item Use the fact that%
 \begin{equation*}
-{1-q^{2i}\over 1-q^i}= 1+q^i
+\frac{1-q^{2i}}{1-q^i}= 1+q^i
 \end{equation*}
 and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer \(k\) into distinct parts is related to the number of partitions of an integer \(k\) into odd parts.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n {1-q^{2i} \over
-1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
+\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
 =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
 \begin{align*}
 \amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
@@ -3733,7 +3732,7 @@ In \hyperref[largestpartatmostm]{Problem~\ref{largestpartatmostm}} and \hyperref
 ~\par
 \item Find explicit formulas for \(\qchoose{n}{1}\) and \(\qchoose{n}{n-1}\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Both are \(1+q+q^2+\cdots+q^{n-1} = {1-q^{n-1}\over 1-q}\), because they are the generating function for the number of partitions whose Young diagram fits into a rectangle \(n-1\) units wide and 1 unit deep or into a rectangle 1 unit wide and \(n-1\) units deep respectively.%
+\textbf{Solution.}\quad Both are \(1+q+q^2+\cdots+q^{n-1} = \frac{1-q^{n-1}}{1-q}\), because they are the generating function for the number of partitions whose Young diagram fits into a rectangle \(n-1\) units wide and 1 unit deep or into a rectangle 1 unit wide and \(n-1\) units deep respectively.%
 
 ~\par
 \item How are \(\qchoose{m+n}{n}\) and \(\qchoose{m+n}{n}\) related? Prove it. (Note this is the same as asking how \(\qchoose{r}{s}\) and \(\qchoose{r}{r-s}\) are related.)%
@@ -4160,10 +4159,9 @@ This gives us that%
 \begin{align*}
 a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}\\
-\amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
+\amp =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
 +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}\\
-\amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
-\sqrt{5}\cdot
+\amp =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
 4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}\\
 \amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
 \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.
@@ -4243,7 +4241,7 @@ Show that if we use \(y\) to stand for the power series \(\sum_{i=0}^\infty c_nx
 \end{equation*}
 holds for any number real number \(r\), where \(\binom{r}{i}\) is defined to be%
 \begin{equation*}
-{r^{\underline{i}}\over i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
+\frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
 \end{equation*}
 %
 \par
@@ -4269,11 +4267,11 @@ y\amp =\amp 1 + xy^2
 This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula gives us \(y={1\pm \sqrt{1-4x}\over 2x}\). By the extended binomial theorem,%
 \begin{equation*}
 \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty \binom{1/2}{i}(-4x)^i=
-\sum_{i=0}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i.
+\sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i.
 \end{equation*}
 %
 \par
-The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})\), so%
+The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})\), so%
 \begin{align*}
 y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}\\
 \amp =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}\\
@@ -4343,7 +4341,7 @@ a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m{1-(1+\frac{.01p}{12})^n\over 1-(1+\frac
 (1+\frac{.01p}{12})^{360} \amp =\amp 1200m/(1200m-Ap)\\
 \left(1200m-Ap\right)(1+\frac{.01p}{12})^{360}\amp =\amp 1200m\\
 1200m\left((1+\frac{.01p}{12})^{360}-1\right)\amp =\amp  Ap(1+\frac{.01p}{12})^{360}\\
-m \amp =\amp  {Ap(1+\frac{.01p}{12})^{360}\over 1200\left((1+\frac{.01p}{12})^{360}-1\right)}
+m \amp =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}
 \end{align*}
 is our monthly payment.%
 
@@ -4447,7 +4445,7 @@ What is the generating function for the number of partitions of an integer in wh
 \begin{equation*}
 (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
 =\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
-=\prod_{i=1}^\infty {1-q^{i(m+1)}\over 1-q^i}
+=\prod_{i=1}^\infty \frac{1-q^{i(m+1)}}{1-q^i}
 \end{equation*}
 This is also the generating function for the number of partitions of an integer in which consecutive parts differ by at most \(m\), because when we conjugate a partition in which each part is used at most \(m\) times, we get a partition in which each distinct column of the Young diagram occurs at most \(m\) times, which means that the difference between two consecutive parts (in the decreasing list representation) is at most \(m\).%
 \end{activity}
@@ -4550,10 +4548,9 @@ S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\\
 \end{align*}
 %
 \par
-Dividing this by \(n!\), the total number of ways to pass back the backpacks, we get \(\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}\) for the probability that at least one student gets the correct backpack. Subtracting from 1 to get the probability that no student gets the correct backpack gives us%
+Dividing this by \(n!\), the total number of ways to pass back the backpacks, we get \(\displaystyle \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}\) for the probability that at least one student gets the correct backpack. Subtracting from 1 to get the probability that no student gets the correct backpack gives us%
 \begin{equation*}
-1- \sum_{s=1}^n {(-1)^{s-1}\over
-s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
+1- \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
 \end{equation*}
 %
 \end{activity}
@@ -7096,7 +7093,7 @@ n!}\). Thus%
 \begin{equation*}
 \sum_{n=0}^\infty
 p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
-\sum_{n=0 }^\infty {({x^2/2})^n\over n!} = e^{x^2/2} .
+\sum_{n=0 }^\infty \frac{({x^2/2})^n}{n!} = e^{x^2/2} .
 \end{equation*}
 %
 \end{activity}
@@ -7104,7 +7101,7 @@ p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
 What is the EGF for the sequence \(0,1,2,3,\ldots\)? You may think of this as the EFG for the number of ways to select one element from an \(n\) element set. What is the EGF for the number of ways to select two elements from an \(n\)-element set?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\sum_{n=0}^\infty\frac{ nx^n}{n!}=\sum_{n=1}^\infty\frac{
-x^n}{(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x\).%
+x^n}{(n-1)!}=x\sum_{n=1}^\infty\frac{ x^{n-1}}{(n-1)!}=xe^x\).%
 \par
 \(\sum_{n=0}^\infty\frac{ n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2\).%
 \end{activity}
@@ -7560,7 +7557,7 @@ f(x) = 1 +\ln(1 +
 \begin{equation*}
 f(x) = 1+\sum_{j=1}^\infty
 (-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
-(-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j\over j}.
+(-1)^{j-1}\frac{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j}{j}.
 \end{equation*}
 From the right-hand expression, we get a term involving \(x^n\) whenever we have an \(x^n\) term in the \(j\)th power of \(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}\). So the coefficient of \(\frac{x^n}{n!}\) is the sum over all \(j\) and all sequences \(i_1,i_2,\ldots,i_j\) with \(i_1+i_2+\cdots+i_j = n\) of terms of the form%
 \begin{equation*}

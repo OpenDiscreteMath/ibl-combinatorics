@@ -96,7 +96,7 @@
             <mrow>(1+\frac{.01p}{12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
             <mrow>\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360}\amp =\amp 1200m</mrow>
             <mrow>1200m\left((1+\frac{.01p}{12})^{360}-1\right)\amp =\amp  Ap(1+\frac{.01p}{12})^{360}</mrow>
-            <mrow>m \amp =\amp  {Ap(1+\frac{.01p}{12})^{360}\over 1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
+            <mrow>m \amp =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
           </md>
           is our monthly payment.
         </p>
@@ -266,7 +266,7 @@
         <p><me>
           (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
           =\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
-          =\prod_{i=1}^\infty {1-q^{i(m+1)}\over 1-q^i}
+          =\prod_{i=1}^\infty \frac{1-q^{i(m+1)}}{1-q^i}
         </me>
           This is also the generating function for the number of partitions of an integer in which consecutive parts differ by at most <m>m</m>, because when we conjugate a partition in which each part is used at most <m>m</m> times, we get a partition in which each distinct column of the Young diagram occurs at most <m>m</m> times, which means that the difference between two consecutive parts (in the decreasing list representation) is at most <m>m</m>.
         </p>
