@@ -7,8 +7,8 @@
     give a combinatorial interpretation to the composition of two exponential
     generating functions. In particular, if
     <m>f(x) =
-    \sum_{i=0}^n a_i{x^i\over i!}</m> and
-    <m>g(x) = \sum_{j=1}^\infty b_j {x^j\over j!}</m>, it makes sense to form the
+    \sum_{i=0}^n a_i\frac{x^i}{i!}</m> and
+    <m>g(x) = \sum_{j=1}^\infty b_j \frac{x^j}{j!}</m>, it makes sense to form the
     composition <m>f(g(x))</m> because in so doing we need add together only
     finitely many terms in order to find the coefficient of <m>\frac{x^n}{n!}</m> in
     <m>f(g(x))</m> since in the EGF <m>g(x)</m> the dummy variable <m>j</m> starts at 1.
@@ -59,7 +59,7 @@
       <p>
         There is one permutation with one cycle of size 1, and one
         permutation with one cycle of size 2. Therefore the EGF for such
-        permutations is <m>x+{x^2\over 2!}= x+x^2/2</m>. The EGF for involutions
+        permutations is <m>x+\frac{x^2}{2!}= x+x^2/2</m>. The EGF for involutions
         is <m>e^{x+x^2/2}</m>. Thus <m>g(x) = \exp(f(x))</m>.
       </p>
     </solution>
@@ -129,7 +129,7 @@
     generating functions for connected structures</main></index> structures. Notice that
     our connected structures were all based on nonempty sets, so we had no
     connected structures whose value was the empty set. Thus in each case,
-    if <m>f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}</m>, we would have <m>a_0=0</m>.
+    if <m>f(x) = \sum_{i=0}^\infty a_i\frac{x^i}{i!}</m>, we would have <m>a_0=0</m>.
     The relationship between the EGFs was always
     <m>g(x) = e^{f(x)}</m>. We now give a combinatorial explanation for
     this relationship.
@@ -148,8 +148,8 @@
         <p>
           In the power series
           <me>
-            e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
-            \cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
+            e^{f(x)} = 1 + f(x) + \frac{f(x)^2}{2!} +
+            \cdots + \frac{f(x)^k}{k!} + \cdots= \sum_{k=0}^\infty \frac{f(x)^k}{k!},
           </me>
           the product principle tells us that the coefficient of <m>\frac{x^n}{n!}</m> in
           <m>f(x)^k</m> is the number of <m>k</m>-tuples of elements of <m>S</m> whose
@@ -489,10 +489,10 @@
 
   <activity category="essential for this or the next section, and interesting">
     <p>
-      Suppose that <m>f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}</m> is
+      Suppose that <m>f(x) = \sum_{n=0}^\infty c_n \frac{x^n}{n!}</m> is
       the exponential generating function for the number of simple
       connected graphs on
-      <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}</m> is the
+      <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> is the
       exponential generating function for the number of simple graphs on <m>i</m>
       vertices.
     </p>
@@ -560,7 +560,7 @@
       <solution>
         <me>
           \log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
-          (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
+          (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}\frac{y^j}{j}.
         </me>
       </solution>
     </task>
@@ -579,7 +579,7 @@
           graph on the empty set; the one with no edges.
           <me>
             f(x) = 1 +\ln(1 +
-            (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
+            (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}\frac{(g(x)-1)^j}{j}.
           </me>
         </p>
       </solution>
@@ -597,18 +597,17 @@
       <solution>
         <me>
           f(x) = 1+\sum_{j=1}^\infty
-          (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
-          (-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!})^j\over j}.
+          (-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
+          (-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j\over j}.
         </me>
         <p>
           From the right-hand expression, we get a term involving <m>x^n</m> whenever we
-          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!}</m>. So the coefficient of
+          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}</m>. So the coefficient of
           <m>\frac{x^n}{n!}</m> is the sum over all <m>j</m> and all sequences
           <m>i_1,i_2,\ldots,i_j</m> with
           <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
           <me>
-            {n!\over
-            j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
+            \frac{n!}{j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
             \over i_k!},
           </me>
           where each <m>i_k>0</m>. Notice that reordering the numbers
@@ -626,7 +625,7 @@
           coefficient <m>\binom{j}{p_1,p_2,\ldots, p_n}</m>. Thus our sum over all j and
           all compositions of <m>n</m> into <m>j</m> parts becomes
           <me>
-            \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+            \sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
             p_n}
             \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}

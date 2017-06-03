@@ -49,7 +49,7 @@
             <mrow>\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
             \frac{1}{1-3x}-1</mrow>
             <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+\frac{1}{1-3x} -1</mrow>
-            <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+\frac{1}{(1-3x)^2}</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp \frac{a_0-1}{1-3x}+\frac{1}{(1-3x)^2}</mrow>
                 </md>
             </p>
         </solution>
@@ -63,7 +63,7 @@
         <solution>
             <p>
                 <md>
-            <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp {a_0-1\over 1-3x} + \frac{1}{(1-3x)^2}</mrow>
+            <mrow>\sum_{i=0}^\infty a_i x^i \amp =\amp \frac{a_0-1}{1-3x} + \frac{1}{(1-3x)^2}</mrow>
             <mrow>\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty \binom{i+1}{i}3^ix^i,</mrow>
           </md>
             which gives us <m>a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i</m>.
@@ -88,7 +88,7 @@
             +\sum_{i=0}^\infty (2x)^i -1</mrow>
             <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +\frac{1}{1-2x} -1</mrow>
             <mrow>(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +\frac{1}{1-2x}-1</mrow>
-            <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+\frac{1}{(1-2x)(1-3x)}</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1}{1-3x}+\frac{1}{(1-2x)(1-3x)}</mrow>
             <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
             2^ix^i\sum_{j=0}^\infty 3^jx^j</mrow>
           </md>
@@ -97,7 +97,7 @@
             \sum_{k=0}^\infty
             \sum_{i=0}^k 2^i3^{k-i}x^k=
             \sum_{k=0}^\infty3^kx^k
-            \sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
+            \sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
             (3^{k+1}-2^{k+1})x^k</me>. Substituting this into the equation for
             <m>\sum_{i=0}^\infty a_ix^i</m> gives us
             <m>a_i =(a_0+2)3^i -2^{i+1}</m>.
@@ -151,7 +151,7 @@
       <statement>
         <p>Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the number of rabbits we have at the end of month <m>n</m>. Show that <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <term>second order</term><index><main>recurrence</main><sub>second order</sub></index><index><main>second order recurrence</main></index> <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main><sub>second order</sub></index> recurrence with constant coefficients.<index><main>recurrence</main><sub>constant coefficient</sub></index> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
           <me>
-            \sum_{i=0}^\infty a_ix^i = {10\over 1-x-2x^2}.
+            \sum_{i=0}^\infty a_ix^i = \frac{10}{1-x-2x^2}.
           </me>
         </p>
 
@@ -170,9 +170,9 @@
           <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x\amp =\amp x\left(\sum_{n=0}^\infty
           a_{n}x^{n}-a_0\right) + 2x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
           <mrow>(1-x-2x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x</mrow>
-          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-a_0x\over (1-x-2x^2)}</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}</mrow>
         </md>
-          In this problem <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus <m>\displaystyle\sum_{n=0}^\infty a_nx^n = {10\over (1-x-2x^2)}</m>
+          In this problem <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus <m>\displaystyle\sum_{n=0}^\infty a_nx^n = \frac{10}{(1-x-2x^2)}</m>
         </p>
       </solution>
     </activity>
@@ -192,7 +192,7 @@
             <mrow>\sum_{n=0}^\infty a_nx^n-a_0-a_1x \amp =\amp x\left(\sum_{n=0}^\infty
             a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
             <mrow>(1-x-x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-a_0x\over (1-x-x^2)}</mrow>
+            <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-x^2)}</mrow>
           </md>
         </p>
 
@@ -223,7 +223,7 @@
           2^ix^i-1-2x</mrow>
           <mrow>\hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0-1+(a_1-5a_0-2)x +
           \sum_{n=0}^\infty 2^ix^i</mrow>
-          <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}</mrow>
+          <mrow>\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}</mrow>
           </md>
           </p>
       </solution>
@@ -248,7 +248,7 @@
       </statement>
       <solution>
         <p>
-          <m>{x-2 +2(x-3)\over(x-3)(x-2)}={3x-8\over x^2-5x+6}</m>
+          <m>\frac{x-2 +2(x-3)}{(x-3)(x-2)}=\frac{3x-8}{x^2-5x+6}</m>
         </p>
       </solution>
     </activity>
@@ -258,15 +258,15 @@
         <p>
           In <xref ref="simplifysumoffractions">Problem</xref> you see that when we added numerical multiples of the reciprocals of first degree polynomials we got a fraction in which the denominator is a quadratic polynomial. This will always happen unless the two denominators are multiples of each other, because their least common multiple will simply be their product, a quadratic polynomial. This leads us to ask whether a fraction whose denominator is a quadratic polynomial can always be expressed as a sum of fractions whose denominators are first degree polynomials. Find numbers <m>c</m> and <m>d</m> so that
           <me>
-            {5x+1\over(x-3)(x+5)} = \frac{c}{x-3} + \frac{d}{x+5}.
+            \frac{5x+1}{(x-3)(x+5)} = \frac{c}{x-3} + \frac{d}{x+5}.
           </me>
         </p>
       </statement>
       <solution>
           <p>
               <md>
-          <mrow>{5x+1\over(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}</mrow>
-          <mrow>{5x+1\over(x-3)(x-5)} \amp =\amp cx+5c+dx-3d</mrow>
+          <mrow>\frac{5x+1}{(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}</mrow>
+          <mrow>\frac{5x+1}{(x-3)(x-5)} \amp =\amp cx+5c+dx-3d</mrow>
         </md>
           gives us
           <md>
@@ -287,7 +287,7 @@
       <statement>
         <p>In <xref ref="partialfractionsintro">Problem</xref> you may have simply guessed at values of <m>c</m> and <m>d</m>, or you may have solved a system of equations in the two unknowns <m>c</m> and <m>d</m>. Given constants <m>a</m>, <m>b</m>, <m>r_1</m>, and <m>r_2</m> (with <m>r_1\not= r_2</m>), write down a system of equations we can solve for <m>c</m> and <m>d</m> to write
           <me>
-            {ax+b\over (x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
+            \frac{ax+b}{(x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
           </me>
         </p>
       </statement>
@@ -295,7 +295,7 @@
         <p>
           To have
           <me>
-            {ax+b\over (x-r_1)(x-r_2)} =  \frac{c}{x-r_1} + \frac{d}{x-r_2}
+            \frac{ax+b}{(x-r_1)(x-r_2)} =  \frac{c}{x-r_1} + \frac{d}{x-r_2}
           </me>
           we must have
           <me>
@@ -325,17 +325,17 @@
       </statement>
       <solution>
         <p>
-          <m>{10\over (1-x-2x^2)}={10\over (1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}</m>. This gives us the equations <m>c+d=10</m> and <m>c-2d=0</m>. Thus <m>3d=10</m>, so
-          <m>d={10\over3}</m>, and <m>c=2d</m> so <m>c={20\over3}</m>. Thus
+          <m>\frac{10}{(1-x-2x^2)}=\frac{10}{(1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}</m>. This gives us the equations <m>c+d=10</m> and <m>c-2d=0</m>. Thus <m>3d=10</m>, so
+          <m>d=\frac{10}{3}</m>, and <m>c=2d</m> so <m>c=\frac{20}{3}</m>. Thus
           <md>
-            <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp  {10\over 1-x-2x^2}</mrow>
-            <mrow>\amp =\amp {20/3\over 1-2x} + {10/3\over 1+x}</mrow>
-            <mrow>\amp =\amp {20\over 3}\sum_{i=0}^\infty (2x)^i + {10\over 3}\sum_{i=0}^\infty (-1)^ix^i</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i \amp =\amp  \frac{10}{1-x-2x^2}</mrow>
+            <mrow>\amp =\amp \frac{20/3}{1-2x} + \frac{10/3}{1+x}</mrow>
+            <mrow>\amp =\amp \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i</mrow>
           </md>
         </p>
 
         <p>
-          Thus <m>a_i={20\over3}2^i +{10\over3}(-1)^i</m>.
+          Thus <m>a_i=\frac{20}{3}2^i +\frac{10}{3}(-1)^i</m>.
         </p>
       </solution>
     </activity>
@@ -499,8 +499,8 @@
         -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
         <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
         a_0+a_1x-4a_0x</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-4x+4x^2)}</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-2x)^2}</mrow>
+        <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}</mrow>
+        <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
         2^nx^n</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
@@ -530,7 +530,7 @@
           </me>
           holds for any number real number <m>r</m>, where <m>\binom{r}{i}</m> is defined to be
           <me>
-            {r^{\underline{i}}\over i!} = {r(r-1)\cdots(r-i+1)\over i!}.
+            {r^{\underline{i}}\over i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
           </me>
         </p>
 
@@ -563,14 +563,12 @@
           </me>
         </p>
 
-        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})({-1\over2})({-3\over2})({-5\over2})\cdots ({-2i+3\over 2})</m>, so
+        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})</m>, so
           <md>
-            <mrow>y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
-            i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
-            <mrow>\amp =\amp  \sum_{i=1}^\infty {(2i-2)!\over
-            (i-1)!2^{i}i!}2^ix^{i-1}</mrow>
-            <mrow>\amp =\amp  \sum_{i=1}^\infty{2i-2!\over i!(i-1)!}x^{i-1}</mrow>
-            <mrow>\amp =\amp \sum_{j=0}^\infty{2j!\over (j+1)!j!}x^j</mrow>
+            <mrow>y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
+            <mrow>\amp =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}</mrow>
+            <mrow>\amp =\amp  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}</mrow>
+            <mrow>\amp =\amp \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j</mrow>
           </md>
           giving us <m>C_j=\frac{1}{j+1}\binom{2j}{j}</m>, which is our earlier formula for the
           Catalan Number <m>C_j</m>.

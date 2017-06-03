@@ -351,7 +351,7 @@
           <m>n</m>-element set is given by
           <me>
             \binom{n}{k} = {n^{\underline{k}}\over k!}
-            = {n!\over k!(n-k)!}.
+            = \frac{n!}{k!(n-k)!}.
           </me>
         </p>
       </statement>
@@ -436,12 +436,12 @@
             left of each shelf, place the remaining books in
             <me>
               \prod_{i=1}^{k-n}
-              (n+i-1)={(n+(k-n)-1)!\over (n-1)!}={(k-1)!\over (n-1)!}
+              (n+i-1)=\frac{(n+(k-n)-1)!}{(n-1)!}=\frac{(k-1)!}{(n-1)!}
             </me>
             ways. Thus we
             have
             <me>
-              {k!(k-1)!\over(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
+              \frac{k!(k-1)!}{(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
             </me>
             ways to place the books. Of course the right hand side of that equation
             cries out for a combinatorial explanation. Here it is. Imagine lining
@@ -465,7 +465,7 @@
           The number of ordered functions from a <m>k</m>-element set to
           an <m>n</m>-element set is
           <me>
-            n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
+            n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = \frac{(n+i-1)!}{(n-1)!} =
             (n+k-1)^{\underline{k}}.
           </me>
         </p>

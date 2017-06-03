@@ -35,7 +35,7 @@
     <solution>
       <p>
         With one color of paint, there would have been one way to paint
-        each pole so our EGF would be <m>\sum_{n=0}^\infty {x^n\over n!}</m>, or
+        each pole so our EGF would be <m>\sum_{n=0}^\infty \frac{x^n}{n!}</m>, or
         <m>e^x</m>. With two colors of paint, it would be <m>e^{2x}</m> by analogy with
         the solution to <xref ref="paintinglightpoles">Problem</xref>. Thus the EGF for two
         colors of paint would be the square of the EGF for one color of paint.
@@ -83,7 +83,7 @@
   <p>
     In <xref ref="exponentialderangements">Problem</xref> you likely found that the
     EGF for the number of permutations of <m>[n]</m>
-    that are derangements is <m>e^{-x}\over 1-x</m>. But every permutation is a
+    that are derangements is <m>\frac{e^{-x}}{1-x}</m>. But every permutation is a
     product of derangements and one cycles, because the permutation that
     sends <m>i</m> to <m>i</m> is a one-cycle, so that when you factor a permutation as
     a product of disjoint cycles, the cycles of size greater than one
@@ -121,21 +121,21 @@
     <statement>
       <p>
         What is the coefficient of <m>\frac{x^n}{n!}</m> in the product of two
-        EGFs <m>\sum_{i=0}^\infty a_i{x^i\over i!}</m> and <m>\sum_{j=0}^\infty
-        b_j{x^j\over j!}</m>? (A summation sign is appropriate in your
+        EGFs <m>\sum_{i=0}^\infty a_i\frac{x^i}{i!}</m> and <m>\sum_{j=0}^\infty
+        b_j\frac{x^j}{j!}</m>? (A summation sign is appropriate in your
         answer.)
       </p>
     </statement>
     <solution>
       <me>
-        \sum_{i,j\mbox{:\ } 
-        i+j=n} n!{a_i\over i!}{b_j \over j!},
+        \sum_{i,j\mbox{:\ }
+        i+j=n} n!\frac{a_i}{i!}\frac{b_j }{j!},
       </me>
       <p>
         which can be better
         written as
         <me>
-          \sum_{i=0}^n{n!\over i!(n-i)!} a_i
+          \sum_{i=0}^n\frac{n!}{i!(n-i)!} a_i
           b_{n-i}=\sum_{i=0}^n\binom{n}{i} a_i b_{n-i}.
         </me>
       </p>
@@ -222,8 +222,8 @@
     get by splitting a set <m>N</m> of poles into two parts and painting the poles
     in the first part with red and white and the poles in the second part with
     blue and yellow. More generally, you could interpret your result in
-    <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>\frac{x^n}{n!}</m> in the product <m>\sum_{i=0}^\infty a_i {x^i\over i!}
-    \sum_{j=0}^\infty b_j{x^j\over j!}</m> of two EGFs is the sum, over all
+    <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>\frac{x^n}{n!}</m> in the product <m>\sum_{i=0}^\infty a_i \frac{x^i}{i!}
+    \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m> of two EGFs is the sum, over all
     ways of splitting a set
     <m>N</m> of size
     <m>n</m> into an ordered pair of disjoint sets <m>I</m> and <m>J</m>, of the product
@@ -335,11 +335,11 @@
           If <m>S</m> is a set of objects with <m>V</m> a set-value function from <m>S</m>
           to some set <m>Y</m> and the EGF for the number <m>a_i</m> of elements of <m>S</m> whose
           <m>V</m>-value is any particular set <m>N</m> of size <m>n</m> is <m>f(x)=\sum_{n=0}^\infty
-          a_n{x^n\over n!}</m> and
+          a_n\frac{x^n}{n!}</m> and
           <m>T</m> is a set of objects with
           <m>U</m> a set-value function from <m>T</m> to the same set <m>Y</m> and the EGF for the
           number of elements <m>b_n</m> of <m>T</m> whose <m>U</m>-value is any particular set <m>N</m>
-          of size <m>n</m> is <m>g(x) = \sum_{i=0}^\infty b_n{x^n\over n!}</m>, then the EGF
+          of size <m>n</m> is <m>g(x) = \sum_{i=0}^\infty b_n\frac{x^n}{n!}</m>, then the EGF
           for
           the number <m>c_n</m> of ordered pairs <m>(s,t)</m> in
           <m>S\times T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets
@@ -522,7 +522,7 @@
           By the product principle for exponential generating functions it
           is
           <me>
-            e^{2x}\left(1+{(2x)^2\over 2!}+ {(2x)^4\over 4!} + \cdots \right) =
+            e^{2x}\left(1+\frac{(2x)^2}{2!}+ \frac{(2x)^4}{4!} + \cdots \right) =
             e^{2x}\frac{e^{2x}-e^{-2x}}{2}=e^{2x}\cosh(2x).
           </me>
         </p>
@@ -557,11 +557,10 @@
         <m>n</m>-element set onto a <m>k</m>-element set is <m>(e^x-1)^k</m>. By the binomial
         theorem, this is
         <me>
-          \kern-.25 in\sum_{i=0}^k\binom{k}{i}(-1)^{k-i}e^{ix} 
+          \kern-.25 in\sum_{i=0}^k\binom{k}{i}(-1)^{k-i}e^{ix}
           =
-          \sum_{i=0}^k \binom{k}{i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
-          \sum_{i=0}^k (-1)^{k-i}\binom{k}{i} \sum_{j=0}^\infty i^j{(x)^j\over
-          j!}.
+          \sum_{i=0}^k \binom{k}{i} (-1)^{k-i} \sum_{j=0}^\infty \frac{(ix)^j}{j!} =
+          \sum_{i=0}^k (-1)^{k-i}\binom{k}{i} \sum_{j=0}^\infty i^j\frac{(x)^j}{j!}.
         </me>
       </p>
 
@@ -590,7 +589,7 @@
     </statement>
     <solution>
       <me>
-        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty {x^j\over j!}.
+        \sum_{n=0}^\infty B_{n+1}\frac{x^n}{n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}\frac{x^n}{n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty \frac{x^j}{j!}.
       </me>
       <p>
         Thus <m>B'(x) = B(x)e^x</m>, which gives us <m>\ln B(x) = e^x+c</m>, or <m>B(x) =
@@ -612,9 +611,9 @@
         By the product principle for EGFs, the EGF for the right hand
         side is
         <me>
-          e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty {(2x)^i\over i!} =
-          \sum_{j=1}^\infty 2^{j-1}{x^j\over (j-1)!}=\sum_{j=1}^\infty
-          j2^{j-1}{x^j\over j!}.
+          e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty \frac{(2x)^i}{i!} =
+          \sum_{j=1}^\infty 2^{j-1}\frac{x^j}{(j-1)!}=\sum_{j=1}^\infty
+          j2^{j-1}\frac{x^j}{j!}.
         </me>
       </p>
 

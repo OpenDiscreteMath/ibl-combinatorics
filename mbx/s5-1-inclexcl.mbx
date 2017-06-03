@@ -225,7 +225,7 @@
             <mrow>\amp =\amp
             \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!</mrow>
             <mrow>\amp =\amp \sum_{s=1}^n
-            (-1)^{s-1}{n!\over s!}</mrow>
+            (-1)^{s-1}\frac{n!}{s!}</mrow>
           </md>
         </p>
 
@@ -238,7 +238,7 @@
           gives us
           <me>
             1- \sum_{s=1}^n {(-1)^{s-1}\over
-            s!}=\sum_{s=0}^n{(-1)^s\over s!}.
+            s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
           </me>
         </p>
       </solution>
@@ -253,9 +253,8 @@
       </statement>
       <solution>
         <p>
-          From calculus, we know that <m>e^x=\sum_{j=0}^\infty {x^j\over
-          j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
-          {(-1)^j\over j!}</m> which is the limit as <m>n</m> becomes infinite of the
+          From calculus, we know that <m>e^x=\sum_{j=0}^\infty \frac{x^j}{j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
+          \frac{(-1)^j}{j!}</m> which is the limit as <m>n</m> becomes infinite of the
           probability in the solution to <xref ref="hatcheck">Problem</xref>. Thus the
           probability approaches <m>1/e</m>.
         </p>
@@ -632,9 +631,8 @@
           gives an equivalent placement. Thus the number of inequivalent seating
           arrangements is
           <md>
-            <mrow>{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}\amp =\amp {2(2n-s-1)!(n-s)!^2\over
-            2(n-s)(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp {(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.</mrow>
+            <mrow>\frac{2(2n-s-1)!(n-s)!^2}{(2n-2s)!}\amp =\amp \frac{2(2n-s-1)!(n-s)!^2}{2(n-s)(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.</mrow>
           </md>
         </p>
 
@@ -643,19 +641,18 @@
           if we take
           <m>s=0</m>, this formula reduces to <m>(n-1)!n!</m>. Thus for all sets <m>S</m>
           <me>
-            N_{\mbox{a} }(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+            N_{\mbox{a} }(S)=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
           </me>
         </p>
 
         <p>
           Then from <xref ref="incexempty">Equation</xref>
           <md>
-            <mrow>N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
-            \over(2n-2|S|-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
-            s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}</mrow>
+            <mrow>N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+            }{(2n-2|S|-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s \frac{n!(2n-s-1)!(n-s-1)!}{s!(2n-2s-1)!}</mrow>
             <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!</mrow>
           </md>
           is the number of ways to seat the people, alternating sex, so

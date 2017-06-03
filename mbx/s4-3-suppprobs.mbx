@@ -18,7 +18,7 @@
         <m>(x^3+x^4+x^5+x^6)^n</m>;
         <md>
           <mrow>(x^3+x^4+x^5+x^6)^n\amp =\amp x^{3n}(1+x+x^2+x^3)^n</mrow>
-          <mrow>\amp =\amp x^{3n}\left({1-x^4\over 1-x}\right)^n</mrow>
+          <mrow>\amp =\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n</mrow>
           <mrow>\amp =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
           \binom{n+i-1}{i}x^i</mrow>
         </md>
@@ -43,7 +43,7 @@
       </statement>
       <solution>
         <p>
-          <m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.
+          <m>a_n=(1+\frac{.01p}{12})a_{n-1}-m</m>.
         </p>
       </solution>
     </task>
@@ -57,10 +57,8 @@
         <p>
           From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
           <md>
-            <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
-            12})^n\over 1-(1+{.01p\over 12})}</mrow>
-            <mrow>\amp =\amp  \left(A-{1200m\over
-            p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
+            <mrow>a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m{1-(1+\frac{.01p}{12})^n\over 1-(1+\frac{.01p}{12})}</mrow>
+            <mrow>\amp =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}</mrow>
           </md>
         </p>
       </solution>
@@ -73,7 +71,7 @@
       </statement>
       <solution>
         <p>
-          <m>\left(A-{1200m\over p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log 1200m-\log (1200m-Ap)</m> and so <m>n={\log 1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.
+          <m>\left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}=0</m> gives us the equation <m>\left(1+\frac{.01p}{12}\right)^n=\frac{1200m}{1200m-Ap}</m>. Taking logarithms to any base we choose gives us <m>n\log (1+\frac{.01p}{12})=\log 1200m-\log (1200m-Ap)</m> and so <m>n=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m>.
         </p>
       </solution>
     </task>
@@ -85,21 +83,20 @@
       </statement>
       <solution>
         <p>
-          <m>360={\log
-          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
+          <m>360=\frac{\log
+          1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m> is the equation we need to
           solve for <m>m</m>, the monthly payment. We need to chose some base for the
           logarithm so we can write its inverse function; suppose we use logs to the base
           10. Then
           <md>
-            <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
+            <mrow>360\log (1+\frac{.01p}{12}) \amp =\amp  \log
             1200m-\log (1200m-Ap)</mrow>
-            <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
+            <mrow>10^{360\log (1+\frac{.01p}{12})}\amp =\amp 10^{\log
             1200m/(1200m-Ap)}</mrow>
-            <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
-            <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
-            <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
-            <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
-            12})^{360}-1\right)}</mrow>
+            <mrow>(1+\frac{.01p}{12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
+            <mrow>\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360}\amp =\amp 1200m</mrow>
+            <mrow>1200m\left((1+\frac{.01p}{12})^{360}-1\right)\amp =\amp  Ap(1+\frac{.01p}{12})^{360}</mrow>
+            <mrow>m \amp =\amp  {Ap(1+\frac{.01p}{12})^{360}\over 1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
           </md>
           is our monthly payment.
         </p>
@@ -202,19 +199,19 @@
             <mrow>\sum_{n=2}^\infty
             a_nx^n\amp =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n</mrow>
             <mrow>(1-(1+c)x +cx^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0(1+c)x</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp  {a_0+(a_1-a_0(1+c))x\over 1-(1+c)x +cx^2}</mrow>
-            <mrow>\amp =\amp  {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}</mrow>
+            <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{1-(1+c)x +cx^2}</mrow>
+            <mrow>\amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}</mrow>
           </md>
         </p>
 
         <p>
           Assuming <m>c\not=1</m> and using the method of partial fractions gives us
           <md>
-            <mrow>\amp \amp {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}</mrow>
+            <mrow>\amp \amp \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}</mrow>
             <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)
-            \left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]</mrow>
+            \left[\frac{1/(1-c)}{(1-x)} -\frac{c/(1-c)}{1-cx}\right]</mrow>
             <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]</mrow>
-            <mrow>\amp =\amp  {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
+            <mrow>\amp =\amp  \frac{(a_0+(a_1-a_0(1+c))x)}{1-c}\sum_{i=0}^\infty
             (1-c^{i+1})x^i.</mrow>
           </md>
         </p>
@@ -222,7 +219,7 @@
         <p>
           From this we get that
           <me>
-            a_i={a_0\over 1-c}(1-c^{i+1}) +{a_1-a_0(1+c)\over 1-c}(1-c^i).
+            a_i=\frac{a_0}{1-c}(1-c^{i+1}) +\frac{a_1-a_0(1+c)}{1-c}(1-c^i).
           </me>
         </p>
 
@@ -250,7 +247,7 @@
             <mrow>\amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
             (1+x^4+x^8+\cdots)</mrow>
             <mrow>\amp =\amp 
-            {(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}</mrow>
+            \frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}</mrow>
           </md>
         </p>
 

@@ -156,7 +156,7 @@
           When we studied the Pascal Equation and subsets in Chapter 1, it
           may have appeared that there is no connection between the Pascal relation
           <m>\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}</m> and the formula
-          <m>\binom{n}{k}={n!\over k!(n-k)!}</m>. Of course you probably realize you
+          <m>\binom{n}{k}=\frac{n!}{k!(n-k)!}</m>. Of course you probably realize you
           can prove the Pascal relation by substituting the values the formula
           gives you into the right-hand side of the equation and simplifying to
           give you the left hand side. In fact, from the Pascal Relation and the
@@ -166,7 +166,7 @@
       </statement>
       <solution>
         <p>
-          We wish to prove that <m>\binom{n}{i} ={n!\over i!(n-i)!}</m>. We
+          We wish to prove that <m>\binom{n}{i} =\frac{n!}{i!(n-i)!}</m>. We
           note that since <m>\binom{n}{0}=1</m> and <m>\binom{n}{n} =1</m> are in agreement
           with this formula, we only have to consider the cases in which <m>0\lt i\lt n</m>,
           which by the way, requires that <m>n\ge 2</m>. We will prove that our formula
@@ -175,14 +175,12 @@
           one-element subsets of a two-element set. But <m>\frac{2!}{1!(2-1)!}</m> is 2
           also, so our formula holds when <m>n=2</m>. Now suppose our formula holds
           when <m>n=k-1</m>, so that for every <m>i</m> with <m>0\lt i\lt n-1</m>, <m>\binom{k-1}{i} =
-          {(k-1)!\over i!(k-1-i)!}</m>. Then by the Pascal Equation
+          \frac{(k-1)!}{i!(k-1-i)!}</m>. Then by the Pascal Equation
           <md>
             <mrow>\binom{k}{i}\amp =\amp \binom{k-1}{i-1}+\binom{k-1}{i}</mrow>
             <mrow>\amp =\amp
-            {(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
-            i!(k-1-i)!}</mrow>
-            <mrow>\amp =\amp {(k-1)!i+(k-1)!(k-i)\over i!(k-i)!} \ =\  {k!\over
-            i!(k-i)!}.</mrow>
+            \frac{(k-1)!}{(i-1)!(k-1-i+1)!} + \frac{(k-1)!}{i!(k-1-i)!}</mrow>
+            <mrow>\amp =\amp \frac{(k-1)!i+(k-1)!(k-i)}{i!(k-i)!} \ =\  \frac{k!}{i!(k-i)!}.</mrow>
           </md>
         </p>
 
@@ -783,7 +781,7 @@
         </statement>
         <solution>
           <p>
-            <m>R(n,n)\le \binom{n+n-2}{m-1}={(2n-2)!\over (n-1)!^2}</m>. For
+            <m>R(n,n)\le \binom{n+n-2}{m-1}=\frac{(2n-2)!}{(n-1)!^2}</m>. For
             <m>n</m> sufficiently large, this is approximately
             <md>
               <mrow>\amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
@@ -932,8 +930,7 @@
             <m>\binom{m}{n} \lt 2^{\binom{n}{2}-1}</m> is the same as
             <m>{m^{\underline{n}}\over n!}\lt 2^{\binom{n}{2}-1}</m>. And since
             <m>m^{\underline{n}}\lt m^n</m>, the inequality <m>{m^{\underline{n}}\over
-            n!}\lt  2^{\binom{n}{2}-1}</m> holds if the inequality <m>{m^n\over
-            n!}\le2^{\binom{n}{2}-1}</m> holds. And this last inequality holds if
+            n!}\lt  2^{\binom{n}{2}-1}</m> holds if the inequality <m>\frac{m^n}{n!}\le2^{\binom{n}{2}-1}</m> holds. And this last inequality holds if
             <m>m\le\root n
             \of {n!2^{\binom{n}{2}-1}}</m> holds. Thus <m>R(n,n)>m</m> for any <m>m</m> such that
             <m>m\le\root n
@@ -954,7 +951,7 @@
             Using Stirling's approximation to <m>n!</m> we get
             <me>
               R(n,n)>\root n \of
-              {{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}=\frac{n}{e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
+              {\frac{n^n}{e^n}\sqrt{2\pi n}2^{^\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{^\frac{n^2-n-2}{2n}}\root 2n \of{2\pi
               n}>2^n/2=\sqrt{2}^{\rangle n}.
             </me>
           </p>

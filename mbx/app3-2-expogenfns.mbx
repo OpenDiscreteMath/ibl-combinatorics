@@ -2,7 +2,7 @@
 <section>
   <title>Exponential Generating Functions</title>
   <p>
-    We say that the expression <m>\sum_{i=0}^\infty a_i{x^i\over i!}</m> is the
+    We say that the expression <m>\sum_{i=0}^\infty a_i\frac{x^i}{i!}</m> is the
     <em>exponential generating function</em><index><main>exponential generating
     function</main></index><index><main>generating function</main><sub>exponential</sub></index> for the sequence
     <m>a_i</m>. It is standard to use <em>EGF</em><index><main>EGF</main></index> as a shorthand for
@@ -15,14 +15,14 @@
     by thinking about the exponential generating function (EGF) for the all
     ones sequence,
     <me>
-      \sum_{i=0}^\infty 1{x^i\over i!} = \sum_{i=0}^\infty {x^i\over i!}
+      \sum_{i=0}^\infty 1\frac{x^i}{i!} = \sum_{i=0}^\infty \frac{x^i}{i!}
       =e^x,
     </me>
     which we also denote by <m>\exp (x)</m>. Recall from calculus that the usual
     definition of
     <m>e^x</m> or <m>\exp(x)</m> involves limits at least implicitly. We work our way
     around that by defining <m>e^x</m> to be the power series <m>\sum_{i=0}^\infty
-    {x^i\over i!}</m>.
+    \frac{x^i}{i!}</m>.
   </p>
 
   <activity category="motivation">
@@ -35,7 +35,7 @@
     </statement>
     <solution>
       <p>
-        <m>\sum_{i=0}^\infty {2^i}{x^i\over i!}=e^{2x}</m>. It says
+        <m>\sum_{i=0}^\infty {2^i}\frac{x^i}{i!}=e^{2x}</m>. It says
         that the EGF for subsets of an <m>n</m>-element set is <m>e^{2x}</m>.
       </p>
     </solution>
@@ -53,7 +53,7 @@
       <solution>
         <p>
           The number of ways to paint the streetlights is <m>4^n</m>,
-          so the EGF is <m>\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}</m>.
+          so the EGF is <m>\sum_{n=0}^\infty 4^n\frac{x^n}{n!}=e^{4x}</m>.
         </p>
       </solution>
     </task>
@@ -91,7 +91,7 @@
         and
         <me>
           \int_0^x
-          \sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty {b_i\over i+1}x^{i+1}
+          \sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty \frac{b_i}{i+1}x^{i+1}
         </me>
         rather than by using the limit definitions from calculus.  It is then
         possible to prove that the sum rule, product rule, etc. apply.  (There is
@@ -105,9 +105,8 @@
         <mrow>\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp
         \int_0^x \frac{1}{1-t}dt</mrow>
         <mrow>\amp =\amp \int_0^x (1+t+t^2+\cdots)dt</mrow>
-        <mrow>\amp =\amp \sum_{i=1}^\infty {x^i\over i}</mrow>
-        <mrow>\amp =\amp  \sum_{i=1}^\infty (i-1)!{x^i\over
-        i!}</mrow>
+        <mrow>\amp =\amp \sum_{i=1}^\infty \frac{x^i}{i}</mrow>
+        <mrow>\amp =\amp  \sum_{i=1}^\infty (i-1)!\frac{x^i}{i!}</mrow>
       </md>
       <p>
         so the sequence is
@@ -157,7 +156,7 @@
     </statement>
     <solution>
       <p>
-        Recall that <m>p_{2n} = (2n-1)(2n-3)\cdots 1= {(2n)!\over 2^n
+        Recall that <m>p_{2n} = (2n-1)(2n-3)\cdots 1= \frac{(2n)!}{2^n
         n!}</m>. Thus
         <me>
           \sum_{n=0}^\infty
@@ -180,13 +179,12 @@
     </statement>
     <solution>
       <p>
-        <m>\sum_{n=0}^\infty{ nx^n\over n!}=\sum_{n=1}^\infty{
-        x^n\over(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x</m>.
+        <m>\sum_{n=0}^\infty\frac{ nx^n}{n!}=\sum_{n=1}^\infty\frac{
+        x^n}{(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x</m>.
       </p>
 
       <p>
-        <m>\sum_{n=0}^\infty{ n(n-1)x^n\over 2 n!}=\sum_{i=2}^\infty {x^n\over
-        2(n-2)!}=x^2e^x/2</m>.
+        <m>\sum_{n=0}^\infty\frac{ n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2</m>.
       </p>
     </solution>
   </activity>
@@ -256,8 +254,7 @@
     </statement>
     <solution>
       <p>
-        <m>\frac{1}{ 1-x}</m>, <m>\sum_{k=0}^\infty \binom{n+k-1 }{k}k!{x^k\over
-        k!} = (1-x)^{-n}</m>.
+        <m>\frac{1}{ 1-x}</m>, <m>\sum_{k=0}^\infty \binom{n+k-1 }{k}k!\frac{x^k}{k!} = (1-x)^{-n}</m>.
       </p>
     </solution>
   </activity>

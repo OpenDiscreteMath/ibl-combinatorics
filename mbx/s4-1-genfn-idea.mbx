@@ -372,7 +372,7 @@
         of the binomial theorem, note that <m>x+y = y(1+\frac{x}{y})</m>, so that
         <md>
           <mrow>(x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n</mrow>
-          <mrow>\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}{x^i\over y^i}</mrow>
+          <mrow>\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}</mrow>
           <mrow>\amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.</mrow>
         </md>
       </p>
@@ -495,7 +495,7 @@
         <p>
           <m>(1+x+x^2+x^3+x^4)^3</m>. We can write
           <md>
-            <mrow>\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left({1-x^5\over 1-x}\right)^3</mrow>
+            <mrow>\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3</mrow>
             <mrow>\amp =\amp (1-x^5)^3(1-x)^{-3}</mrow>
             <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i</mrow>
             <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i</mrow>
@@ -522,7 +522,7 @@
           \left(\sum_{i=0}^{m-j-1}x^i\right)^n</mrow>
           <mrow>\amp =\amp
           \left(x^j{1-x^{m-j}\over 1-x}\right)^n</mrow>
-          <mrow>\amp =\amp \left({x^j-x^m\over1-x}\right)^n</mrow>
+          <mrow>\amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n</mrow>
           <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
           </md>
           </p>
@@ -544,7 +544,7 @@
           <m>D</m> and <m>x^{25}</m> for <m>Q</m> gives us
           <me>
             \sum_{i=0}^5x^i\sum_{i=0}^5x^{5i}\sum_{i=0}^5 x^{10i} \sum_{i=0}^5
-            x^{25i}={1-x^6\over1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
+            x^{25i}=\frac{1-x^6}{1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
             1-x^{10}}\cdot{1-x^{150}\over 1-x^{25}}.
           </me>
         </p>
@@ -830,29 +830,27 @@
           <statement>
               <p>Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.  We read this simply as <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a <term><m>q</m>-ary factorial</term>.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show that
         <me>
-          \qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
+          \qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.
         </me>
       </p>
       </statement>
       <solution>
-        <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>{[m+0]!_q \over [m]!_q[0]!_q} =1</m> and <m>{[0+n]!_q \over [0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
+        <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>\frac{[m+0]!_q }{[m]!_q[0]!_q} =1</m> and <m>\frac{[0+n]!_q }{[0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
           <md>
-            <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
-            <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
+            <mrow>\amp \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}</mrow>
+            <mrow>\amp =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
             +\frac{1}{[n]!_q[m-1]!_q}\right)</mrow>
-            <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
-            [n]!_q[m]!_q}\right)</mrow>
-            <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+            <mrow>\amp \amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)</mrow>
+            <mrow>\amp =\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
             1+q+\cdots+q^{m-1}\right)</mrow>
-            <mrow>\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}</mrow>
+            <mrow>\amp =\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}</mrow>
             <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
           </md>
         </p>
 
         <p>
           Thus <m>\frac{[m+n]!_q }{[m]!_q[n]!_q}</m> satisfies our recurrence and so by the
-          principle of mathematical induction, <m>\qchoose{m+n}{n} = {[m+n]!_q \over
-          [m]!_q[n]!_q}.</m>
+          principle of mathematical induction, <m>\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.</m>
         </p>
       </solution>
       </task>

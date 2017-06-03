@@ -350,7 +350,7 @@
       </statement>
       <solution>
         <p>
-          Choose three sandwiches for bag one in <m>\binom{9}{3}</m> ways, three for bag two in <m>\binom{6}{3}</m> ways and put the remainder in bag 3.  This gives us <m>\binom{9}{3}\binom{6}{3}={9!\over3!3!3!}=1680</m> ways.
+          Choose three sandwiches for bag one in <m>\binom{9}{3}</m> ways, three for bag two in <m>\binom{6}{3}</m> ways and put the remainder in bag 3.  This gives us <m>\binom{9}{3}\binom{6}{3}=\frac{9!}{3!3!3!}=1680</m> ways.
         </p>
 
         <p>
@@ -377,7 +377,7 @@
         <solution>
           <p>
             <m>\binom{k}{j_1,j_2,\ldots, j_n} =
-            {k!\over j_1!j_2!\cdots j_n!}</m>. We get this either as the
+            \frac{k!}{j_1!j_2!\cdots j_n!}</m>. We get this either as the
             product of binomial coefficients
             <me>
               \binom{k}{j_1}\binom{k-j_1}{j_2}\binom{k-j_1-j_2}{j_3}\cdots\binom{j_n}{j_n},

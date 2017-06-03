@@ -28,28 +28,27 @@
       </statement>
       <solution>
         <md>
-          <mrow>\sum_{n=2}^\infty a_n{x^n\over n!}
-          \amp =\amp \sum_{n=2}^\infty a_{n-1}{x^n\over (n-1)!} + \sum_{n=2}^\infty
-          {x^n\over (n-2)!}</mrow>
-          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n{x^n\over n!} - a_0\right) +
-          x^2\sum_{n=0}^\infty {x^n\over n!}</mrow>
-          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
+          <mrow>\sum_{n=2}^\infty a_n\frac{x^n}{n!}
+          \amp =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
+          \frac{x^n}{(n-2)!}</mrow>
+          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
+          x^2\sum_{n=0}^\infty \frac{x^n}{n!}</mrow>
+          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
           +x^2e^x</mrow>
         </md>
         <p>
           We sum from <m>n=2</m> because otherwise we would have a factorial of a
-          negative number in the denominator. Thus <m>\sum_{n=0}^\infty a_n{x^n\over
-          n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
+          negative number in the denominator. Thus <m>\sum_{n=0}^\infty a_n\frac{x^n}{n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
           +x^2e^x</m>, or
           <me>
-            (1-x)\sum_{n=0}^\infty a_n{x^n\over n!}=a_0+a_1x-a_0x +x^2e^x.
+            (1-x)\sum_{n=0}^\infty a_n\frac{x^n}{n!}=a_0+a_1x-a_0x +x^2e^x.
           </me>
         </p>
 
         <p>
           This gives us
           <me>
-            \sum_{n=0}^\infty a_n{x^n\over n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
+            \sum_{n=0}^\infty a_n\frac{x^n}{n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
             +x^2e^x).
           </me>
           computing the coefficient of <m>a_n</m> gives us <m>a_n = a_1 +\sum_{i=0}^{n-2}
@@ -139,9 +138,9 @@
         the right hand side involves <m>c_{n-1}</m> and <m>c_{n-2}</m>, decide on an
         appropriate power of <m>x</m> divided by an appropriate factorial by which to
         multiply both sides of the recurrence.  Using the fact that the
-        derivative of <m>\frac{x^n}{n!}</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
+        derivative of <m>\frac{x^n}{n!}</m> is <m>\frac{x^{n-1}}{(n-1)!}</m>, write down a
         differential equation for the EGF <m>T(x) =
-        \sum_{i=0}^\infty c_i{x^i\over i!}</m>.  Note that it makes sense to
+        \sum_{i=0}^\infty c_i\frac{x^i}{i!}</m>.  Note that it makes sense to
         substitute 0 for
         <m>x</m> in <m>T(x)</m>.  What is <m>T(0)</m>?  Solve your differential equation to find
         an equation for
@@ -152,14 +151,14 @@
         <solution>
           <p>
           <md>
-            <mrow>\sum_{n=2}^\infty c_n{x^{n-1}\over (n-1)!}
-            \!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}{x^{n-1}\over (n-1)!} +
-            \sum_{n=2}^\infty c_{n-1}{x^{n-1}\over (n-1)!}</mrow>
-            <mrow>\sum_{n=1}^\infty c_n{x^{n-1}\over (n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
-            c_{n-2}{x^{n-2}\over (n-2)!} + \sum_{n=0}^\infty c_n{x^n\over n!} -c_0</mrow>
+            <mrow>\sum_{n=2}^\infty c_n\frac{x^{n-1}}{(n-1)!}
+            \!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
+            \sum_{n=2}^\infty c_{n-1}\frac{x^{n-1}}{(n-1)!}</mrow>
+            <mrow>\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
+            c_{n-2}\frac{x^{n-2}}{(n-2)!} + \sum_{n=0}^\infty c_n\frac{x^n}{n!} -c_0</mrow>
             <mrow>T'(x)\!\amp =\amp \!xT(x) +T(x)</mrow>
           </md>
-            <m>T(0) = c_0 =1</m>. Then <m>{T'(x)\over T(x)} = x+1</m>, giving <m>\ln T(x)
+            <m>T(0) = c_0 =1</m>. Then <m>\frac{T'(x)}{T(x)} = x+1</m>, giving <m>\ln T(x)
             =x^2/2+x+k</m>, and <m>T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }</m>, since <m>T(0)=1</m>.
           </p>
         </solution>
@@ -173,15 +172,14 @@
         <solution>
           <p>
             <m>T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!</m>. By the binomial
-            theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
+            theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl(\frac{x^2}{2}\bigr)^{i-j}\over
             i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}</m>.
             Then the coefficient <m>c_n</m> of <m>x^n</m> is the sum over all <m>i</m> and <m>j</m> with
-            <m>2i-j=n</m> and <m>j\le i</m> of <m>\binom{i}{j}{n!\over i!}2^{j-i}</m>. But if
+            <m>2i-j=n</m> and <m>j\le i</m> of <m>\binom{i}{j}\frac{n!}{i!}2^{j-i}</m>. But if
             <m>2i-j=n</m>, then <m>j= 2i-n</m>, and if <m>2i-n\le i</m>, then <m>i\le n</m>, so that <m>c_n
-            = {n!\over 2^n}\sum_{i=0}^n\binom{i}{2i-n}{2^i\over i!}</m>. Note that
+            = \frac{n!}{2^n}\sum_{i=0}^n\binom{i}{2i-n}\frac{2^i}{i!}</m>. Note that
             <m>\binom{i}{2i-n}</m> is the same as <m>\binom{i}{n-i}</m>, which is 0 unless <m>i\ge
-            n/2</m>, which reduces our sum to <m>c_n = {n!\over
-            2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}{2^i\over i!}</m>.
+            n/2</m>, which reduces our sum to <m>c_n = \frac{n!}{2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}\frac{2^i}{i!}</m>.
           </p>
         </solution>
       </task>
@@ -199,9 +197,9 @@
             involves <m>d_{n-1}</m> and <m>d_{n-2}</m>, decide on an appropriate power of <m>x</m>
             divided by an appropriate factorial by which to multiply both sides of
             the recurrence.  Using the fact that the
-            derivative of <m>\frac{x^n}{n!}</m> is <m>x^{n-1}\over (n-1)!</m>, write down a
+            derivative of <m>\frac{x^n}{n!}</m> is <m>\frac{x^{n-1}}{(n-1)!}</m>, write down a
             differential equation for the EGF <m>D(x) =
-            \sum_{i=0}^\infty d_i{x^i\over i!}</m>. What is <m>D(0)</m>?  Solve your
+            \sum_{i=0}^\infty d_i\frac{x^i}{i!}</m>. What is <m>D(0)</m>?  Solve your
             differential equation to find an equation for <m>D(x)</m>.
           </p>
           </statement>
@@ -217,28 +215,27 @@
         <solution>
           <p>
           <md>
-            <mrow>\sum_{n=2}^\infty d_n{x^{n-1}\over (n-1)!}
-            \amp =\amp \sum_{n=2}^\infty d_{n-1}{x^{n-1} \over (n-2)!} +\sum_{n=2}^\infty
-            d_{n-2}{x^{n-1}
-            \over (n-2)!}</mrow>
-            <mrow>\sum_{n=1}^\infty d_n{x^{n-1}\over (n-1)!} -d_1 \amp =\amp
-            x\sum_{n=2}^\infty d_{n-1}{x^{n-2}\over (n-2)!} +xD(x)</mrow>
+            <mrow>\sum_{n=2}^\infty d_n\frac{x^{n-1}}{(n-1)!}
+            \amp =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
+            d_{n-2}\frac{x^{n-1}}{(n-2)!}</mrow>
+            <mrow>\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp
+            x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)</mrow>
             <mrow>D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)</mrow>
             <mrow>D'(x)(1-x) \amp =\amp  xD(x)</mrow>
             <mrow>D'(x)\over D(x) \amp =\amp  x\over 1-x</mrow>
           </md>
             This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = \frac{1}{1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
             <md>
-              <mrow>D(x) \amp =\amp  {e^{-x}\over 1-x}</mrow>
+              <mrow>D(x) \amp =\amp  \frac{e^{-x}}{1-x}</mrow>
               <mrow>\amp =\amp
-              \sum_{i=0}^\infty(-1)^i{x^i\over i!}\cdot\sum_{j=0}^\infty
-              x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i {(-1)^j\over j!}\right)
+              \sum_{i=0}^\infty(-1)^i\frac{x^i}{i!}\cdot\sum_{j=0}^\infty
+              x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i \frac{(-1)^j}{j!}\right)
               x^i.</mrow>
             </md>
           </p>
 
           <p>
-            Thus <m>d_n = n!\sum_{j=0}^n{(-1)^j\over j!}</m>, as we
+            Thus <m>d_n = n!\sum_{j=0}^n\frac{(-1)^j}{j!}</m>, as we
             computed by inclusion and exclusion.
           </p>
         </solution>

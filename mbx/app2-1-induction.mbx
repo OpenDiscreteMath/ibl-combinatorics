@@ -322,7 +322,7 @@
             Use mathematical induction to prove the well-known formula that for
             all positive integers <m>n</m>,
             <me>
-              1+2 + \cdots +n = {n(n+1)\over 2}.
+              1+2 + \cdots +n = \frac{n(n+1)}{2}.
             </me>
           </p>
         </statement>
@@ -374,16 +374,16 @@
             2}</m>, so our formula holds when <m>n=1</m>. Now assume that <m>k>1</m> and that our
             formula holds when <m>n=k-1</m>. Then
             <me>
-              \sum_{i=1}^{k-1} \frac{1}{i(i+1)}= {k-1\over k}.
+              \sum_{i=1}^{k-1} \frac{1}{i(i+1)}= \frac{k-1}{k}.
             </me>
           </p>
 
           <p>
             Adding <m>\frac{1}{ k(k+1)}</m> to both sides of this equation gives us
             <md>
-              <mrow>\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  {k-1\over k}+\frac{1}{k(k+1)}</mrow>
-              <mrow>\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+\frac{1}{k(k+1)}</mrow>
-              <mrow>\amp =\amp {k^2 -1 +1\over k(k+1)}</mrow>
+              <mrow>\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}</mrow>
+              <mrow>\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}</mrow>
+              <mrow>\amp =\amp \frac{k^2 -1 +1}{k(k+1)}</mrow>
               <mrow>\amp =\amp  \frac{k}{k+1}.</mrow>
             </md>
           </p>

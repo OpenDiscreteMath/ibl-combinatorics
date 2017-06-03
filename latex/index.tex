@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-02T21:03:41-06:00    *%
+%*    on 2017-06-03T14:51:40-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -955,7 +955,7 @@ As we noted in \hyperref[Pascal]{Problem~\ref{Pascal}}, the first question in \h
 \begin{activity}[]\label{nchoosek}
 Based on what you observed in \hyperref[twelvechoosethreefinal]{Problem~}, how many \(k\)-element subsets does an \(n\)-element set have?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Following the reasoning of \hyperref[twelvechoosethree]{Problem~\ref{twelvechoosethree}}, there are \(n^{\underline{k}}\) \(k\)-element permutations of an \(n\)-element set, and \(k!\) of these permutations list the same set of \(k\) elements, so the number of \(k\)-element sets is \({n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}\).%
+\textbf{Solution.}\quad Following the reasoning of \hyperref[twelvechoosethree]{Problem~\ref{twelvechoosethree}}, there are \(n^{\underline{k}}\) \(k\)-element permutations of an \(n\)-element set, and \(k!\) of these permutations list the same set of \(k\) elements, so the number of \(k\)-element sets is \({n^{\underline{k}}\over k!}= \frac{n!}{k!(n-k)!}\).%
 \end{activity}
 \begin{activity}[]\label{activity-36}
 The formula you proved in \hyperref[nchoosek]{Problem~\ref{nchoosek}} is symmetric in \(k\) and \(n-k\); that is, it gives the same number for \(\binom{n}{k}\) as it gives for \(\binom{n}{n-k}\). Whenever two quantities are counted by the same formula it is good for our insight to find a bijection that demonstrates the two sets being counted have the same size. In fact this is a guiding principle of research in combinatorial mathematics. Find a bijection that proves that \(\binom{n}{k}\) equals \(\binom{n}{n-k}\).%
@@ -1021,7 +1021,7 @@ Rather than restricting ourselves to \(n=5\) and \(k=3\), we can partition the s
 
 \end{enumerate}
 \par\medskip\noindent%
-\textbf{Solution.}\quad The number of permutations in a block is \(k!\). \hyperref[kelementpermutation]{Problem~\ref{kelementpermutation}} tells us that the total number of \(k\)-element permutations is \(n^{\underline{k}}={n!\over (n-k)!}\). Each \(k\)-element set corresponds to the block of all permutations of that set. It is immediate that this is a bijection. Assuming there are \(s\) subsets, we have \(k!s\) permutations in total, so \(k!s={n!\over (n-k)!}\) or \(s= {n!\over k!(n-k)!}\).%
+\textbf{Solution.}\quad The number of permutations in a block is \(k!\). \hyperref[kelementpermutation]{Problem~\ref{kelementpermutation}} tells us that the total number of \(k\)-element permutations is \(n^{\underline{k}}=\frac{n!}{(n-k)!}\). Each \(k\)-element set corresponds to the block of all permutations of that set. It is immediate that this is a bijection. Assuming there are \(s\) subsets, we have \(k!s\) permutations in total, so \(k!s=\frac{n!}{(n-k)!}\) or \(s= \frac{n!}{k!(n-k)!}\).%
 \end{activity}
 \begin{activity}[]\label{activity-40}
 A basketball team has 12 players. However, only five players play at any given time during a game.%
@@ -1084,10 +1084,9 @@ We first gave this problem as \hyperref[tennispairings1a]{Problem~}. Now we have
 \textbf{Solution.}\quad Suppose we list the people in the club in some way, and keep that list for the remainder of the problem. Take the first person from the list and pair that person with any of the \(2n-1\) remaining people. Now take the next \emph{unpaired} person from the list and pair that person with any of the remaining \(2n-3\) unpaired people. Continuing in this way, once \(k\) pairs have been selected, take the next unpaired person from the list and pair that person with any of the remaining \(2n-2k-1\) unpaired people. Every pairing can arise in this way, and no pairing can arise twice in this process. Thus the number of outcomes is \(\prod_{i=0}^{n-1} (2n-2i-1)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad For another solution, choose people in pairs. There are \(\binom{2n}{2}\) ways to choose one pair, \(\binom{2n-2}{2}\) ways to choose a second pair, and once \(k\) pairs have been chosen, there are \(\binom{2n-2k}{2}\) ways to choose the next pair. The number of \emph{lists} of pairs we get in this way is \(\prod_{i=0}^{n-1}
-\binom{2n-2i}{2}= {(2n)!\over 2^i}\). However each way of pairing people gets listed \(n!\) times since we see all possible length \(n\) lists of pairs. Therefore the number of actual pairings is \({(2n)!\over 2^n n!}= ={2n!\over
-2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1\).%
+\binom{2n-2i}{2}= \frac{(2n)!}{2^i}\). However each way of pairing people gets listed \(n!\) times since we see all possible length \(n\) lists of pairs. Therefore the number of actual pairings is \(\frac{(2n)!}{2^n n!}= =\frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad For yet another solution, we can list the \(2n\) members in \((2n)!\) ways. Then we can take the first two as a tennis pair, the next two, and so on. There are \(n!\) ways that a given set of tennis pairings could be arranged, and each of the \(n\) pairs could appear in 2 ways, so the tennis pairings partition the set of all permutations of the \(2n\) members into blocks of size \(n!2^n\). Thus we have \((2n)!\over n!2^n\) tennis pairings once again.%
+\textbf{Solution.}\quad For yet another solution, we can list the \(2n\) members in \((2n)!\) ways. Then we can take the first two as a tennis pair, the next two, and so on. There are \(n!\) ways that a given set of tennis pairings could be arranged, and each of the \(n\) pairs could appear in 2 ways, so the tennis pairings partition the set of all permutations of the \(2n\) members into blocks of size \(n!2^n\). Thus we have \(\frac{(2n)!}{n!2^n}\) tennis pairings once again.%
 
 \end{enumerate}
 \end{activity}
@@ -1099,16 +1098,16 @@ We first gave this problem as \hyperref[tennispairings1a]{Problem~}. Now we have
 \textbf{Solution.}\quad Two ways; either the red beads are side-by-side or diagonally opposite. If we think about partitioning lists of 2 \(R\)s and 2 \(B\)s so that two are in the same block if we get one from the other by moving the square, we get two blocks, \(\{RRBB, BRRB, BBRR, RBBR\}\) and \(\{RBRB, BRBR\}\).%
 \end{activity}
 \begin{activity}[]\label{Stirling_sapproximation}
-While the formula you proved in \hyperref[nchoosek]{Problems~\ref{nchoosek}} and \hyperref[formulanchoosekfinal]{Task~} is very useful, it doesn't give us a sense of how big the binomial coefficients are. We can get a very rough idea, for example, of the size of \(\binom{2n}{n}\) by recognizing that we can write \((2n)^{\underline{n}}/n!\) as \({2n\over n}\cdot
-{2n-1\over n-1}\cdots {n+1\over 1}\), and each quotient is at least \(2\), so the product is at least \(2^n\). If this were an accurate estimate, it would mean the fraction of \(n\)-element subsets of a \(2n\)-element set would be about \(2^n/2^{2n}=1/2^n\), which becomes very small as \(n\) becomes large. However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if \(\binom{2n}{k}\) were the same for every \(k\), then each would be the fraction \(1\over 2n+1\) of \(2^{2n}\). This is much larger than the fraction \(\frac{1}{2^n}\). But our intuition suggets that \(\binom{2n}{n}\) is much larger than \(\binom{2n}{1}\) and is likely larger than \(\binom{2n}{n-1}\) so we can be sure our approximation is a bad one. For estimates like this, James Stirling developed a formula to approximate \(n!\) when \(n\) is large, namely \(n!\) is about \(\left(\sqrt{2\pi
+While the formula you proved in \hyperref[nchoosek]{Problems~\ref{nchoosek}} and \hyperref[formulanchoosekfinal]{Task~} is very useful, it doesn't give us a sense of how big the binomial coefficients are. We can get a very rough idea, for example, of the size of \(\binom{2n}{n}\) by recognizing that we can write \((2n)^{\underline{n}}/n!\) as \(\frac{2n}{n}\cdot
+\frac{2n-1}{n-1}\cdots \frac{n+1}{1}\), and each quotient is at least \(2\), so the product is at least \(2^n\). If this were an accurate estimate, it would mean the fraction of \(n\)-element subsets of a \(2n\)-element set would be about \(2^n/2^{2n}=1/2^n\), which becomes very small as \(n\) becomes large. However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if \(\binom{2n}{k}\) were the same for every \(k\), then each would be the fraction \(\frac{1}{ 2n+1}\) of \(2^{2n}\). This is much larger than the fraction \(\frac{1}{2^n}\). But our intuition suggets that \(\binom{2n}{n}\) is much larger than \(\binom{2n}{1}\) and is likely larger than \(\binom{2n}{n-1}\) so we can be sure our approximation is a bad one. For estimates like this, James Stirling developed a formula to approximate \(n!\) when \(n\) is large, namely \(n!\) is about \(\left(\sqrt{2\pi
 n}\right){n^n/ e^n}\).\index{Stirling's formula for \(n"!\)}\index{\(n"!\)!Stirling's formula for} In fact the ratio of \(n!\) to this expression approaches 1 as \(n\) becomes infinite.\footnote{Proving this takes more of a detour than is advisable here; however there is an elementary proof which you can work through in the problems of the end of Section 1 of Chapter 1 of \emph{Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press, (2000).\label{fn-2}} We write this as%
 \begin{equation*}
 n!\sim \sqrt{2\pi
-n}{n^n\over e^n}.
+n}\frac{n^n}{e^n}.
 \end{equation*}
 %
 \par
-We read this notation as \(n!\) is asymptotic to \(\sqrt{2\pi n}\frac{n^n}{e^n}\). Use Stirling's formula to show that the fraction of subsets of size \(n\) in an \(2n\)-element set is approximately \(1/\sqrt{\pi n}\). This is a much bigger fraction than \(1\over 2^n\)!%
+We read this notation as \(n!\) is asymptotic to \(\sqrt{2\pi n}\frac{n^n}{e^n}\). Use Stirling's formula to show that the fraction of subsets of size \(n\) in an \(2n\)-element set is approximately \(1/\sqrt{\pi n}\). This is a much bigger fraction than \(\frac{1}{ 2^n}\)!%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section 0.3 Some Applications of the Basic Principles}
@@ -1133,7 +1132,7 @@ In a part of a city, all streets run either north-south or east-west, and there 
 \begin{activity}[]\label{diagonallattice}
 Another kind of geometric path in the plane is a \emph{diagonal lattice path}\index{lattice path!diagonal}\index{path!lattice!diagonal}. Such a path is a path made up of line segments that go from a point \((i,j)\) to \((i+1,j+1)\) (this is often called an \emph{upstep}) or \((i+1,j-1)\) (this is often called a \emph{downstep}), again where \(i\) and \(j\) are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.) Describe which points are connected to \((0,0)\) by diagonal lattice paths. What is the length of a diagonal lattice path from \((0,0)\) to \((m,n)\)? Assuming that \((m,n)\) is such a point, how many diagonal lattice paths are there from \((0,0)\) to \((m,n)\)?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The points \((m,n)\) connected to \((0,0)\) by diagonal lattice paths will have \(m+n\) is even, because each upstep adds two to the sum of \(i\) and \(j\) while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line \(y=x\) or below the line \(y=-x\). However for any point \((m,n)\) with \(m\) and \(n\) nonnegative integers such that \(m+n\) even and \(-m\le n\le m\), we can get to \(m,n\) by making \(m-n\over 2\) downsteps and \(m+n\over2\) upsteps. In this way we will make a total of \(m\) steps, and our total motion parallel to the \(y\) axis will be \({m+n\over2}-{m-n\over2} = n\).  The length of such a path is \(m\sqrt{2}\); we might informally just call it \(m\) steps. The number of possible paths is the number of ways we can choose which of the \(m\)steps are upsteps (or equivalently downsteps) this number is \(\binom{m}{{m+n\over2}}\).%
+\textbf{Solution.}\quad The points \((m,n)\) connected to \((0,0)\) by diagonal lattice paths will have \(m+n\) is even, because each upstep adds two to the sum of \(i\) and \(j\) while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line \(y=x\) or below the line \(y=-x\). However for any point \((m,n)\) with \(m\) and \(n\) nonnegative integers such that \(m+n\) even and \(-m\le n\le m\), we can get to \(m,n\) by making \(\frac{m-n}{2}\) downsteps and \(\frac{m+n}{2}\) upsteps. In this way we will make a total of \(m\) steps, and our total motion parallel to the \(y\) axis will be \(\frac{m+n}{2}-\frac{m-n}{2} = n\).  The length of such a path is \(m\sqrt{2}\); we might informally just call it \(m\) steps. The number of possible paths is the number of ways we can choose which of the \(m\)steps are upsteps (or equivalently downsteps) this number is \(\binom{m}{\frac{m+n}{2}}\).%
 \end{activity}
 \begin{activity}[]\label{activity-50}
 A school play requires a ten dollar donation per person; the donation goes into the student activity fund. Assume that each person who comes to the play pays with a ten dollar bill or a twenty dollar bill. The teacher who is collecting the money forgot to get change before the event. If there are always at least as many people who have paid with a ten as a twenty as they arrive the teacher won't have to give anyone an IOU for change. Suppose \(2n\) people come to the play, and exactly half of them pay with ten dollar bills.%
@@ -1461,7 +1460,7 @@ As of this writing, relatively few Ramsey Numbers are known. \(R(3,n)\) is known
 %
 \item\hypertarget{li-18}{}A town has \(n\) streetlights running along the north side of main street.  The poles on which they are mounted need to be painted so that they do not rust.  In how many ways may they be painted with red, white, blue, and green if an even number of them are to be painted green? We can think of first choosing the set of even size of poles to be painted green, and the painting the remaining poles red, white, and blue. We may do this in \(\sum_{k=0}^{\lfloor n/2\rfloor}\binom{n}{2k}3^{n-2k}\) ways.%
 %
-\item\hypertarget{pingpongpaint}{}We have \(n\) identical ping-pong balls.  In how many ways may we paint them red, white, blue, and green? We can line up the identical ping-pong balls and break them into four groups, those of each color, by inserting dividers. If we want to paint at least one in each color, we can choose three of the spaces between the balls in which to insert dividers, so we can paint them in \(\binom{n-1}{k}\). But the problem didn't require us to use each color, so we can put two dividers adjacent to each other. Thus there are \(n+1\) places where we can put the first divider (putting it before all the balls means we use no red, and putting it after all of them means we use no green. Now there are \(n+2\) places where we can put the second divider, including before or after the first, and \(n+3\) places where we can put the third divider. However if we interchange two dividers we still paint the balls before the first divider red, those between then next two white, and so on. Thus \(3!=6\) of these arrangements of balls and dividers correspond to the same paint job, so the number of ways to paint the balls is \({(n+1)(n+2)(n+3)\over6} =\binom{n+3}{3}\). This suggests that another way to think of the problem is to consider \(n+3\) slots in a row, and fill \(n\) of them with balls and \(3\) of them with dividers; since the balls are identical and the dividers might as well be identical, the number of ways to do this is the number of ways to choose the slots that get dividers.%
+\item\hypertarget{pingpongpaint}{}We have \(n\) identical ping-pong balls.  In how many ways may we paint them red, white, blue, and green? We can line up the identical ping-pong balls and break them into four groups, those of each color, by inserting dividers. If we want to paint at least one in each color, we can choose three of the spaces between the balls in which to insert dividers, so we can paint them in \(\binom{n-1}{k}\). But the problem didn't require us to use each color, so we can put two dividers adjacent to each other. Thus there are \(n+1\) places where we can put the first divider (putting it before all the balls means we use no red, and putting it after all of them means we use no green. Now there are \(n+2\) places where we can put the second divider, including before or after the first, and \(n+3\) places where we can put the third divider. However if we interchange two dividers we still paint the balls before the first divider red, those between then next two white, and so on. Thus \(3!=6\) of these arrangements of balls and dividers correspond to the same paint job, so the number of ways to paint the balls is \(\frac{(n+1)(n+2)(n+3)}{6} =\binom{n+3}{3}\). This suggests that another way to think of the problem is to consider \(n+3\) slots in a row, and fill \(n\) of them with balls and \(3\) of them with dividers; since the balls are identical and the dividers might as well be identical, the number of ways to do this is the number of ways to choose the slots that get dividers.%
 %
 \item\hypertarget{li-20}{}We have \(n\) identical ping-pong balls.  In how many ways may we paint them red, white, blue, and green if we use green paint on an even number of them? We first decide how many balls to paint green, then paint the remainder with the other three colors as in \hyperlink{pingpongpaint}{Problem~11} This gives us%
 \begin{equation*}
@@ -1520,17 +1519,15 @@ You will find some explicit examples of the use of the strong principle of mathe
 \typeout{************************************************}
 \subsection[{Binomial Coefficients and the Binomial Theorem}]{Binomial Coefficients and the Binomial Theorem}\label{subsection-12}
 \begin{activity}[]\label{activity-72}
-When we studied the Pascal Equation and subsets in Chapter 1, it may have appeared that there is no connection between the Pascal relation \(\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}\) and the formula \(\binom{n}{k}={n!\over k!(n-k)!}\). Of course you probably realize you can prove the Pascal relation by substituting the values the formula gives you into the right-hand side of the equation and simplifying to give you the left hand side. In fact, from the Pascal Relation and the facts that \(\binom{n}{0}=1\) and \(\binom{n}{n}=1\), you can actually prove the formula for \(\binom{n}{k}\) by induction on \(n\). Do so.%
+When we studied the Pascal Equation and subsets in Chapter 1, it may have appeared that there is no connection between the Pascal relation \(\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}\) and the formula \(\binom{n}{k}=\frac{n!}{k!(n-k)!}\). Of course you probably realize you can prove the Pascal relation by substituting the values the formula gives you into the right-hand side of the equation and simplifying to give you the left hand side. In fact, from the Pascal Relation and the facts that \(\binom{n}{0}=1\) and \(\binom{n}{n}=1\), you can actually prove the formula for \(\binom{n}{k}\) by induction on \(n\). Do so.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We wish to prove that \(\binom{n}{i} ={n!\over i!(n-i)!}\). We note that since \(\binom{n}{0}=1\) and \(\binom{n}{n} =1\) are in agreement with this formula, we only have to consider the cases in which \(0\lt i\lt n\), which by the way, requires that \(n\ge 2\). We will prove that our formula holds by induction on \(n\) for \(n\ge 2\). If \(n=2\), the only \(i\) we need to consider is \(i=1\), and we know that \(\binom{2}{1}=2\), the number of one-element subsets of a two-element set. But \(2!\over1!(2-1)!\) is 2 also, so our formula holds when \(n=2\). Now suppose our formula holds when \(n=k-1\), so that for every \(i\) with \(0\lt i\lt n-1\), \(\binom{k-1}{i} =
-{(k-1)!\over i!(k-1-i)!}\). Then by the Pascal Equation%
+\textbf{Solution.}\quad We wish to prove that \(\binom{n}{i} =\frac{n!}{i!(n-i)!}\). We note that since \(\binom{n}{0}=1\) and \(\binom{n}{n} =1\) are in agreement with this formula, we only have to consider the cases in which \(0\lt i\lt n\), which by the way, requires that \(n\ge 2\). We will prove that our formula holds by induction on \(n\) for \(n\ge 2\). If \(n=2\), the only \(i\) we need to consider is \(i=1\), and we know that \(\binom{2}{1}=2\), the number of one-element subsets of a two-element set. But \(\frac{2!}{1!(2-1)!}\) is 2 also, so our formula holds when \(n=2\). Now suppose our formula holds when \(n=k-1\), so that for every \(i\) with \(0\lt i\lt n-1\), \(\binom{k-1}{i} =
+\frac{(k-1)!}{i!(k-1-i)!}\). Then by the Pascal Equation%
 \begin{align*}
 \binom{k}{i}\amp =\amp \binom{k-1}{i-1}+\binom{k-1}{i}\\
 \amp =\amp
-{(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
-i!(k-1-i)!}\\
-\amp =\amp {(k-1)!i+(k-1)!(k-i)\over i!(k-i)!} \ =\  {k!\over
-i!(k-i)!}.
+\frac{(k-1)!}{(i-1)!(k-1-i+1)!} + \frac{(k-1)!}{i!(k-1-i)!}\\
+\amp =\amp \frac{(k-1)!i+(k-1)!(k-i)}{i!(k-i)!} \ =\  \frac{k!}{i!(k-i)!}.
 \end{align*}
 %
 \par
@@ -1718,14 +1715,14 @@ Now assume that when \(m+n=k-1\), it is the case that if there are \(\binom{m+n-
 ~\par
 \item Use Stirling's approximation (\hyperref[Stirling_sapproximation]{Problem~\ref{Stirling_sapproximation}}) to convert the upper bound for \(R(n,n)\) that you get from \hyperref[Ramseybound]{Problem~\ref{Ramseybound}} to a multiple of a power of an integer.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(R(n,n)\le \binom{n+n-2}{m-1}={(2n-2)!\over (n-1)!^2}\). For \(n\) sufficiently large, this is approximately%
+\textbf{Solution.}\quad \(R(n,n)\le \binom{n+n-2}{m-1}=\frac{(2n-2)!}{(n-1)!^2}\). For \(n\) sufficiently large, this is approximately%
 \begin{align*}
 \amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
 \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
 (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}\\
 \amp =\amp {2^{2n-2}(n-1)^{2n-2}\over\sqrt{\pi
 (n-1)}(n-1)^{2n-2}}\\
-\amp =\amp {1\over \sqrt{\pi
+\amp =\amp \frac{1}{\sqrt{\pi
 (n-1)}}2^{2n-2}
 \end{align*}
 %
@@ -1756,7 +1753,7 @@ mono}(c,N)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-{1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
+\frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
 of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
 \end{equation*}
 
@@ -1765,9 +1762,9 @@ of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\amp \amp {1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
+\amp \amp \frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
 of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)\\
-\amp =\amp {1\over 2^{^\binom{m}{2}}} \sum_{N:N\subseteq
+\amp =\amp \frac{1}{2^{^\binom{m}{2}}} \sum_{N:N\subseteq
 M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)\\
 \amp =\amp
 2^{-\binom{m}{2}}\sum_{N:N\subseteq
@@ -1784,8 +1781,7 @@ M,~|N|=n}2\cdot2^{\binom{m}{2}-\binom{n}{2}}\\
 \item Explain why \(R(n,n)>\root n \of {n!2^{\binom{n}{2}-1}}\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\binom{m}{n} \lt 2^{\binom{n}{2}-1}\) is the same as \({m^{\underline{n}}\over n!}\lt 2^{\binom{n}{2}-1}\). And since \(m^{\underline{n}}\lt m^n\), the inequality \({m^{\underline{n}}\over
-n!}\lt  2^{\binom{n}{2}-1}\) holds if the inequality \({m^n\over
-n!}\le2^{\binom{n}{2}-1}\) holds. And this last inequality holds if \(m\le\root n
+n!}\lt  2^{\binom{n}{2}-1}\) holds if the inequality \(\frac{m^n}{n!}\le2^{\binom{n}{2}-1}\) holds. And this last inequality holds if \(m\le\root n
 \of {n!2^{\binom{n}{2}-1}}\) holds. Thus \(R(n,n)>m\) for any \(m\) such that \(m\le\root n
 \of {n!2^{\binom{n}{2}-1}}\), which implies that \(R(n,n)> \root n
 \of {n!2^{\binom{n}{2}-1}}\).%
@@ -1796,8 +1792,7 @@ n!}\le2^{\binom{n}{2}-1}\) holds. And this last inequality holds if \(m\le\root 
 \textbf{Solution.}\quad Using Stirling's approximation to \(n!\) we get%
 \begin{equation*}
 R(n,n)>\root n \of
-{{n^n\over e^n}\sqrt{2\pi n}2^{^{n^2-n-2\over 2}}}={n\over
-e}2^{^{n^2-n-2\over 2n}}\root 2n \of{2\pi
+{\frac{n^n}{e^n}\sqrt{2\pi n}2^{^\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{^\frac{n^2-n-2}{2n}}\root 2n \of{2\pi
 n}>2^n/2=\sqrt{2}^{\rangle n}.
 \end{equation*}
 %
@@ -1967,11 +1962,11 @@ x^{n-1})\cdot x\\
 \par
 Dividing the first and last terms by \(1-x\) gives us%
 \begin{equation*}
-\sum_{i=1}^{n-1}x^i={1-x^n\over 1-x}.
+\sum_{i=1}^{n-1}x^i=\frac{1-x^n}{1-x}.
 \end{equation*}
 %
 \par
-Using this in our formula for \(a_n\) gives us \(a_n =a_ob^n+d{1-b^n\over 1-b}.\) This is valid except in the case \(b=1\) (in our computation with \(x\) above, we would be dividing by 0.) If \(b=1\) we get \(a_n =a_0 +nd\) for the sum.%
+Using this in our formula for \(a_n\) gives us \(a_n =a_ob^n+d\frac{1-b^n}{1-b}.\) This is valid except in the case \(b=1\) (in our computation with \(x\) above, we would be dividing by 0.) If \(b=1\) we get \(a_n =a_0 +nd\) for the sum.%
 \end{activity}
 \typeout{************************************************}
 \typeout{Subsection  Geometric Series}
@@ -1989,12 +1984,12 @@ Do this problem only if your final answer (so far) to \hyperref[firstordlinconst
 ~\par
 \item What do you expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be?  What formula for \(\sum_{i=0}^{n-1}db^i\) does this give you?  Prove that you are correct.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be \(d(1-b^n)\). If \(b\not=1\), this gives us \(\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.\) We can prove this by induction on \(n\). If \(n=0\) we get 0 for \(1-b^n\over 1-b\), and also for the sum \(\sum_{i=0}^{-1}db^i\), since that sum has no terms. Assuming the formula holds when \(n=k-1\), we may write%
+\textbf{Solution.}\quad We expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be \(d(1-b^n)\). If \(b\not=1\), this gives us \(\sum_{i=0}^{n-1}db^i=d\frac{1-b^n}{1-b}.\) We can prove this by induction on \(n\). If \(n=0\) we get 0 for \(\frac{1-b^n}{1-b}\), and also for the sum \(\sum_{i=0}^{-1}db^i\), since that sum has no terms. Assuming the formula holds when \(n=k-1\), we may write%
 \begin{align*}
 \amp \amp \sum_{i=0}^{k-1} db^i\\
 \amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
 \amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}\\
-\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.
+\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
 \end{align*}
 %
 \par
@@ -2005,12 +2000,12 @@ Since the truth of the formula for \(n=k-1\) implies its truth for \(n=k\), by t
 In \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} and \hyperref[sumgeometricseries]{perhaps~\ref{sumgeometricseries}} you proved an important theorem.%
 \begin{theorem}[{}]\label{theorem-2}
 If \(b\not=1\) and \(a_n=ba_{n-1} +d\), then \(\displaystyle a_n =
-a_0b^n + d{1-b^n\over 1-b}\). If \(b=1\), then, \(\displaystyle a_n =
+a_0b^n + d\frac{1-b^n}{1-b}\). If \(b=1\), then, \(\displaystyle a_n =
 a_0 +nd\)%
 \end{theorem}
 \begin{corollary}[{}]\label{corollary-1}
 If \(b\not=1\), then \(\displaystyle \sum_{i=0}^{n-1}b^i =
-{1-b^n\over 1-b}\). If \(b=1\), \(\displaystyle \sum_{i=0}^{n-1}b^i =n\).%
+\frac{1-b^n}{1-b}\). If \(b=1\), \(\displaystyle \sum_{i=0}^{n-1}b^i =n\).%
 \end{corollary}
 \typeout{************************************************}
 \typeout{Section 1.3 Graphs and Trees}
@@ -2140,7 +2135,7 @@ What can you determine about the degree of the vertex labelled \(i\) from the Pr
 \begin{activity}[]\label{activity-106}
 What is the number of (labelled) trees on \(n\) vertices with three vertices of degree 1? (Assume they are labelled with the integers 1 through \(n\).)%
 \par\medskip\noindent%
-\textbf{Solution.}\quad There are \(\binom{n}{3}\) ways to choose the three vertices of degree one. Each of the other \(n-3\) vertices must appear in the Prüfer Code, so one must appear twice. We have \(n-3\) ways to choose that one vertex and \(\binom{n-2}{2}\binom{n-4}{1}\binom{n-5}{1}\cdots\binom{1}{1} ={(n-2)!\over 2!}\) ways to choose which of the \(n-2\) places to use for which vertices in the Prüfer code. Thus there are \(\binom{n}{3}(n-3){(n-2)!\over 2}= {n!(n-2)(n-3)\over 12}\) labelled trees with three vertices of degree one.%
+\textbf{Solution.}\quad There are \(\binom{n}{3}\) ways to choose the three vertices of degree one. Each of the other \(n-3\) vertices must appear in the Prüfer Code, so one must appear twice. We have \(n-3\) ways to choose that one vertex and \(\binom{n-2}{2}\binom{n-4}{1}\binom{n-5}{1}\cdots\binom{1}{1} =\frac{(n-2)!}{2!}\) ways to choose which of the \(n-2\) places to use for which vertices in the Prüfer code. Thus there are \(\binom{n}{3}(n-3)\frac{(n-2)!}{2}= \frac{n!(n-2)(n-3)}{12}\) labelled trees with three vertices of degree one.%
 \end{activity}
 \typeout{************************************************}
 \typeout{Subsection  Spanning trees}
@@ -2316,11 +2311,10 @@ a_i^k\right)\cdot a_m^k=\prod_{i=1}^m a_i^k.
 \par
 Thus the correctness of the formula for \(n=m-1\) implies its correctness for \(n=m\). Therefore by the principle of mathematical induction, the formula holds for all positive integers \(n\).%
 %
-\item\hypertarget{li-47}{}(interesting) How many labelled trees on \(n\) vertices have exactly four vertices of degree 1? The vertices of degree 1 are the vertices that do not appear in the Grey code for the tree. So we first choose four vertices out of \(n\) in \(\binom{n}{4}\) ways to be our vertices of degree 1, and then we use the remaining \(n-4\) vertices to fill in our list of \(n-2\) vertices, using each of the \(n-4\) at least once. Thus we either use one of them 3 times and the rest once, or two of them twice and the rest once. There are \(n-4\) ways to choose the one we use three times and \(\binom{n-2}{3}\binom{n-5}{1}\binom{n-6}{1}\cdots\binom{1}{1}={(n-2)!\over3!}\) ways to label the \(n-2\) places with the chosen vertices. There are \(\binom{n-4}{2}\) ways to choose the vertices we would use twice, and \(\binom{n-2}{2}\binom{n-4}{2}\binom{n-6}{1}\binom{n-7}{1}\cdots \binom{1}{1}={(n-2)!\over 2!2!}\) ways to assign the chosen vertices to the \(n-2\) places in the Prüfer Code. Thus we have%
+\item\hypertarget{li-47}{}(interesting) How many labelled trees on \(n\) vertices have exactly four vertices of degree 1? The vertices of degree 1 are the vertices that do not appear in the Grey code for the tree. So we first choose four vertices out of \(n\) in \(\binom{n}{4}\) ways to be our vertices of degree 1, and then we use the remaining \(n-4\) vertices to fill in our list of \(n-2\) vertices, using each of the \(n-4\) at least once. Thus we either use one of them 3 times and the rest once, or two of them twice and the rest once. There are \(n-4\) ways to choose the one we use three times and \(\binom{n-2}{3}\binom{n-5}{1}\binom{n-6}{1}\cdots\binom{1}{1}=\frac{(n-2)!}{3!}\) ways to label the \(n-2\) places with the chosen vertices. There are \(\binom{n-4}{2}\) ways to choose the vertices we would use twice, and \(\binom{n-2}{2}\binom{n-4}{2}\binom{n-6}{1}\binom{n-7}{1}\cdots \binom{1}{1}=\frac{(n-2)!}{2!2!}\) ways to assign the chosen vertices to the \(n-2\) places in the Prüfer Code. Thus we have%
 \begin{align*}
-\amp \amp \binom{n}{4}\left((n-4){(n-2)!\over 3!} +{(n-4)(n-3)\over
-2}{(n-2)!\over 4}\right)\\
-\amp =\amp {n!\over 48}(n-2)^{\underline{3}}\left(\frac{1}{3} +{n-3\over 4}\right)
+\amp \amp \binom{n}{4}\left((n-4)\frac{(n-2)!}{3!} +\frac{(n-4)(n-3)}{2}\frac{(n-2)!}{4}\right)\\
+\amp =\amp \frac{n!}{48}(n-2)^{\underline{3}}\left(\frac{1}{3} +\frac{n-3}{4}\right)
 \end{align*}
 possible Prüfer codes and therefore the same number of labelled trees.%
 %
@@ -2328,11 +2322,9 @@ possible Prüfer codes and therefore the same number of labelled trees.%
 \begin{equation*}
 \binom{n-2}{d_1-1}\binom{n-2-(d_1-1)}{d_2-1}\binom{n-2-(d_1-1+d_2-1)}{d_3-1}\cdots\binom{d_n-1}{d_n-1}
 \end{equation*}
-ways to do this, so the number of trees in which vertex \(i\) has degree \(d_i\) is \({(n-2)!\over
-(d_1-1)!(d_2-1)!\cdots(d_n-1)!}\).%
+ways to do this, so the number of trees in which vertex \(i\) has degree \(d_i\) is \(\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots(d_n-1)!}\).%
 \par
-Now we modify the solution by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in \(n!\) ways, choose the first \(i_1\) of these vertices to have degree 1, then next \(i_2\) to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus the number of ways to assign the degrees is \(n!\over i_1!i_2!\cdots i_n!\). Once the degrees are assigned, there are \((n-2)!\over
-\prod_{d=1}^n (d-1)!^{i_d}\), by translating our easier result. Thus the total number of trees with the degree sequence in which there are \(i_d\) vertices of degree \(d\) is%
+Now we modify the solution by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in \(n!\) ways, choose the first \(i_1\) of these vertices to have degree 1, then next \(i_2\) to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus the number of ways to assign the degrees is \(\frac{n!}{i_1!i_2!\cdots i_n!}\). Once the degrees are assigned, there are \(\frac{(n-2)!}{\prod_{d=1}^n (d-1)!^{i_d}}\), by translating our easier result. Thus the total number of trees with the degree sequence in which there are \(i_d\) vertices of degree \(d\) is%
 \begin{equation*}
 n!(n-2)!\over\prod_{j=1}^n i_j!(j-1)!^{i_j}.
 \end{equation*}
@@ -2428,7 +2420,7 @@ We now jump to row eight of our table. We saw in \hyperref[ping-pong]{Problem~\r
 If \(0\le k \le n\), the number of \(k\)-element subsets of an \(n\)-element set is given by%
 \begin{equation*}
 \binom{n}{k} = {n^{\underline{k}}\over k!}
-= {n!\over k!(n-k)!}.
+= \frac{n!}{k!(n-k)!}.
 \end{equation*}
 %
 \end{theorem}
@@ -2456,11 +2448,11 @@ In row 10 of our table, if we are passing out \(k\) identical objects to \(n\) r
 \textbf{Solution.}\quad Choose \(n\) books from the \(k\) books in \(\binom{k}{n}\) ways, and assign them to the \(n\) places shelves in \(n!\) ways, giving us \(k!/(k-n)!\) ways to put a book on each shelf. Now leaving these books at the far left of each shelf, place the remaining books in%
 \begin{equation*}
 \prod_{i=1}^{k-n}
-(n+i-1)={(n+(k-n)-1)!\over (n-1)!}={(k-1)!\over (n-1)!}
+(n+i-1)=\frac{(n+(k-n)-1)!}{(n-1)!}=\frac{(k-1)!}{(n-1)!}
 \end{equation*}
 ways. Thus we have%
 \begin{equation*}
-{k!(k-1)!\over(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
+\frac{k!(k-1)!}{(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
 \end{equation*}
 ways to place the books. Of course the right hand side of that equation cries out for a combinatorial explanation. Here it is. Imagine lining up the \(k\) books in a row. Then there are \(k-1\) places in between them. Choose \(n-1\) of these places, and slide a piece of paper in there as a divider. Now put the books before the first divider on shelf one, and the books after divider \(i\) on shelf \(i+1\). This gives an arrangement of the books on the shelves so that every shelf has a book!%
 
@@ -2470,7 +2462,7 @@ The assignment of which books go to which shelves of a bookcase is simply a func
 \begin{theorem}[{}]\label{theorem-6}
 The number of ordered functions from a \(k\)-element set to an \(n\)-element set is%
 \begin{equation*}
-n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = {(n+i-1)!\over (n-1)!} =
+n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = \frac{(n+i-1)!}{(n-1)!} =
 (n+k-1)^{\underline{k}}.
 \end{equation*}
 %
@@ -2624,12 +2616,12 @@ As you see in the table, we define \(S(0,0)=1\), and \(S(0,n)\) or \(S(k,0)\) to
 \begin{enumerate}[label=(\alph*)]
  \item In how many ways can we partition \(k\) items into \(n\) blocks so that we have \(k_i\) blocks of size \(i\) for each \(i\)? (Notice that \(\sum_{i=1}^k k_i = n\) and \(\sum_{i=1}^k ik_i = k\).) The sequence \(k_1,k_2,\ldots,k_n\) is called the \terminology{type vector} of the partition.\index{partition of a set!type vector}\index{type vector of a partition of a set}%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}\). We can make a list in \(n!\) ways, and then break it into first \(k_1\) blocks of size 1, then \(k_2\) blocks of size 2, \(k_3\) blocks of size 3 up to \(k_n\) blocks of size \(n\). But then we realize that we get the same partition if we permute the \(i!\) elements of a block of size \(i\) and we get the same partition if we permute the \(k_i\) blocks of size \(i\) so we apply the quotient principle.%
+\textbf{Solution.}\quad \(\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}\). We can make a list in \(n!\) ways, and then break it into first \(k_1\) blocks of size 1, then \(k_2\) blocks of size 2, \(k_3\) blocks of size 3 up to \(k_n\) blocks of size \(n\). But then we realize that we get the same partition if we permute the \(i!\) elements of a block of size \(i\) and we get the same partition if we permute the \(k_i\) blocks of size \(i\) so we apply the quotient principle.%
 
 ~\par
 \item Describe how to compute \(S(n,k)\) in terms of quantities given by the formula you found in \hyperref[partitionsgivenpartsize]{Problem~\ref{partitionsgivenpartsize}}.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We can find \(S(n,k)\) by summing \(n!\over \prod_{i=1}^n (i!)^{k_i}{k_i!}\) over all type vectors \((k_1,k_2,\ldots,k_n)\) such that \(k_1+k_2+\cdots+k_n=k\).%
+\textbf{Solution.}\quad We can find \(S(n,k)\) by summing \(\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}\) over all type vectors \((k_1,k_2,\ldots,k_n)\) such that \(k_1+k_2+\cdots+k_n=k\).%
 
 \end{enumerate}
 \end{activity}
@@ -2696,9 +2688,9 @@ In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, referen
 \begin{activity}[]\label{activity-128}
 In how many ways can the sandwiches of {$\langle\langle$Unresolved xref, reference "caterer2"; check spelling or use "provisional" attribute$\rangle\rangle$} be placed into distinct bags so that each bag gets exactly three?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Choose three sandwiches for bag one in \(\binom{9}{3}\) ways, three for bag two in \(\binom{6}{3}\) ways and put the remainder in bag 3.  This gives us \(\binom{9}{3}\binom{6}{3}={9!\over3!3!3!}=1680\) ways.%
+\textbf{Solution.}\quad Choose three sandwiches for bag one in \(\binom{9}{3}\) ways, three for bag two in \(\binom{6}{3}\) ways and put the remainder in bag 3.  This gives us \(\binom{9}{3}\binom{6}{3}=\frac{9!}{3!3!3!}=1680\) ways.%
 \par
-The \(9!\over3!3!3!\) suggests another solution. We can line up the sandwiches in 9! ways. We take the first three for bag one, the second three for bag two and the last three for bag 3. The order of the sandwiches in the bag does not matter though, so each there are \(3!3!3!\) listings corresponding to each way of putting sandwiches in bags, giving us \(9!\over3!3!3!\) ways to put the sandwiches in bags.%
+The \(\frac{9!}{3!3!3!}\) suggests another solution. We can line up the sandwiches in 9! ways. We take the first three for bag one, the second three for bag two and the last three for bag 3. The order of the sandwiches in the bag does not matter though, so each there are \(3!3!3!\) listings corresponding to each way of putting sandwiches in bags, giving us \(\frac{9!}{3!3!3!}\) ways to put the sandwiches in bags.%
 \end{activity}
 \begin{activity}[]\label{activity-129}
 ~\par
@@ -2710,11 +2702,11 @@ The \(9!\over3!3!3!\) suggests another solution. We can line up the sandwiches i
 %
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\binom{k}{j_1,j_2,\ldots, j_n} =
-{k!\over j_1!j_2!\cdots j_n!}\). We get this either as the product of binomial coefficients%
+\frac{k!}{j_1!j_2!\cdots j_n!}\). We get this either as the product of binomial coefficients%
 \begin{equation*}
 \binom{k}{j_1}\binom{k-j_1}{j_2}\binom{k-j_1-j_2}{j_3}\cdots\binom{j_n}{j_n},
 \end{equation*}
-or more elegantly, by lining up the elements of the domain in \(k!\) ways, taking the first \(j_1\) elements to \(y_1\), the next \(j_2\) elements to \(y_2\) and so on.  However the order of the \(j_i\) elements that go to \(y_i\) is irrelevant, so \(j_1!j_2!\cdots j_n!\) lists all correspond to the same function, giving us \(k!\over j_1!j_2!,\cdots j_n!\) functions.%
+or more elegantly, by lining up the elements of the domain in \(k!\) ways, taking the first \(j_1\) elements to \(y_1\), the next \(j_2\) elements to \(y_2\) and so on.  However the order of the \(j_i\) elements that go to \(y_i\) is irrelevant, so \(j_1!j_2!\cdots j_n!\) lists all correspond to the same function, giving us \(\frac{k!}{j_1!j_2!,\cdots j_n!}\) functions.%
 
 ~\par
 \item Explain how to compute the number of functions from a \(k\)-element set \(K\) onto an \(n\)-element set \(N\) by using multinomial coefficients.%
@@ -3194,7 +3186,7 @@ Show that the number of partitions of \(k\) into distinct parts equals the numbe
 Now consider a partition \(\pi\) of \(k\) whose parts are all odd. Let \(\pi=\pi_1^{r_1}\pi_2^{r_2}\cdots \pi_t^{r_t}\), with \(\pi_i>\pi_{i+1}\). (In terms of the multiplicity function \(m\), \(m(\pi_i) =r_i\), and \(\sum_{i=1}^t r_i\pi_i = k\).) We are going to write the binary expansion of each \(r_i\) as \(r_i = \sum_{j= 0}^{\lfloor \log_2 r_i\rfloor} 2^{ja_{ij}}\), where \(a_{ij}\) is 1 if \(2^j\) appears in the binary expansion of \(r_i\), and 0 otherwise. All of the numbers \(\pi_i2^{ja_{ij}}\) are distinct, because a power of two times one odd number cannot equal a power of two times another odd number. The numbers \(\pi_i2^{ja_{ij}}\) add to \(k\), so they are the parts of a partition \(\pi'\) of \(k\) into distinct parts. When we apply the function constructed in the first part of the solution to \(\pi'\), we get \(\pi\), so the correspondence between \(\pi\) and \(\pi'\) is a bijection.%
 \end{activity}
 \begin{activity}[]\label{activity-150}
-Euler showed that if \(k\not= {3j^2+j\over 2}\), then the number of partitions of \(k\) into an even number of distinct parts is the same as the number of partitions of \(k\) into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.%
+Euler showed that if \(k\not= \frac{3j^2+j}{2}\), then the number of partitions of \(k\) into an even number of distinct parts is the same as the number of partitions of \(k\) into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad This solution is taken largely from the book \textsl{Introduction to Combinatorics} by Ioan Tomescu (published in London by Collet's in 1975). Tomescu calls a collection of rows in a Young diagram a ``trapezoid'' if each row contains one less cell than the row above and the number of cells in the rows above and below the trapezoid differ by two or more from the number of cells in rows of the trapezoid. Thus in (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows, and the last two. Since we are dealing with partitions with distinct parts, we don't have to worry about how two equal rows affect the definition of a trapezoid. We will describe a way to transform a partition with an even number of distinct parts into a partition with an odd number of distinct parts and vice versa.%
 \par
@@ -3202,9 +3194,9 @@ First we describe a transformation on Young diagrams. Here is the first part of 
 \par
 Here is the second part of the description of the transformation. Suppose now that \(m\) is larger than the number \(j\) of rows of the top trapezoid in the Young diagram. Suppose also that the Young diagram has at least two trapezoids or it has one trapezoid and \(j\ge m-2\). Take one square from each of the \(j\) rows of the top trapezoid (which is the whole diagram if there is only one trapezoid) and also add a row of \(j\) squares at the bottom of the diagram. (Since \(m>j\), this gives us a Young diagram of a partition of the same integer into distinct parts.) The parity of the number of rows has changed, and now the number of rows of the top trapezoid is at least as large as the smallest part of the partition. (Note, two previously distinct trapezoids may have joined together to form one on top.)  (Notice that if we have one trapezoid and \(j= m+1\), then the construction yields a partition with two equal parts, which is why we made the special assumption above.) Now let \(T\) be the transformation described by the two constructions above. Its domain is all Young diagrams except those with one trapezoid and \(m\le j\le m+1\). \(T^2\) is the identity, and so \(T\) is a bijection.  When restricted to partitions with an odd number of parts, \(T\) gives partitions with an even number of parts, so on its domain it gives a bijection between partitions with an even number of parts and partitions with an odd number of parts.%
 \par
-If \(m=j\) and the diagram has just one trapezoid, then the diagram has \(3j^2-j\over 2\) squares, and if \(m=j+1\) and the diagram has just one trapezoid, then the diagram has \(3j^2+j\over 2\) squares. Thus if \(k\ne {3j^2\pm j\over 2}\), the number of partitions of \(k\) into distinct even parts equals the number of partitions of \(k\) into distinct odd parts.%
+If \(m=j\) and the diagram has just one trapezoid, then the diagram has \(\frac{3j^2-j}{2}\) squares, and if \(m=j+1\) and the diagram has just one trapezoid, then the diagram has \(\frac{3j^2+j}{2}\) squares. Thus if \(k\ne \frac{3j^2\pm j}{2}\), the number of partitions of \(k\) into distinct even parts equals the number of partitions of \(k\) into distinct odd parts.%
 \par
-If \(k= {3j^2\pm j\over 2}\) and \(j\) is even, then there is one diagram of a partition of \(k\) that is not in the domain of the bijection and has an even number of rows, so in this case there will be one more partition with an even number of parts than with an odd number. If \(k= {3j^2\pm j\over 2}\) and \(j\) is odd, there is one diagram with an odd number of rows not in the domain and so in this case there is one more partition with an odd number of parts than with an even number. This completes the exceptional cases of the problem.%
+If \(k= \frac{3j^2\pm j}{2}\) and \(j\) is even, then there is one diagram of a partition of \(k\) that is not in the domain of the bijection and has an even number of rows, so in this case there will be one more partition with an even number of parts than with an odd number. If \(k= \frac{3j^2\pm j}{2}\) and \(j\) is odd, there is one diagram with an odd number of rows not in the domain and so in this case there is one more partition with an odd number of parts than with an even number. This completes the exceptional cases of the problem.%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section 2.4 Supplementary Problems}
@@ -3248,7 +3240,7 @@ If \(k= {3j^2\pm j\over 2}\) and \(j\) is even, then there is one diagram of a p
 %
 \end{enumerate}
 %
-\item\hypertarget{li-65}{}In how many ways can \(n\) identical chemistry books, \(r\) identical mathematics books, \(s\) identical physics books, and \(t\) identical astronomy books be arranged on three bookshelves? (Assume there is no limit on the number of books per shelf.) \({(n+r+s+t+2)! \over n!r!s!t!2!}\)%
+\item\hypertarget{li-65}{}In how many ways can \(n\) identical chemistry books, \(r\) identical mathematics books, \(s\) identical physics books, and \(t\) identical astronomy books be arranged on three bookshelves? (Assume there is no limit on the number of books per shelf.) \(\frac{(n+r+s+t+2)! }{n!r!s!t!2!}\)%
 %
 \item\hypertarget{li-66}{}(interesting) One formula for the Lah numbers is%
 \begin{equation*}
@@ -3369,7 +3361,7 @@ How would you write down a picture enumerator that says we take between zero and
 \begin{align*}
 E_P(S_1\times S_2)\amp =\amp \sum_{(x_1,x_2)\in S_1\times
 S_2} P(x_1)P(x_2)\\
-\amp =\amp 
+\amp =\amp
 \sum_{x_1:x_1\in S_1}\sum_{x_2:x_2\in S_2} P(x_1)P(x_2)\\
 \amp =\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)\\
 \amp =\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)\\
@@ -3508,7 +3500,7 @@ Let \(i\) denote an integer between 1 and \(n\).%
 \textbf{Solution.}\quad The generating function for number of \(n\)-tuples of 0s and 1s with \(k\) ones is, by the product principle for generating functions (extended to \(n\) factors) \((1+x)^n\). However the number of \(n\)-tuples of 0s and 1s with \(k\) ones is the number of \(k\)-element subsets of an \(n\)-element set. Therefore \((1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i\). To get the \((x+y)^n\) form of the binomial theorem, note that \(x+y = y(1+\frac{x}{y})\), so that%
 \begin{align*}
 (x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n\\
-\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}{x^i\over y^i}\\
+\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}\\
 \amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.
 \end{align*}
 %
@@ -3585,7 +3577,7 @@ Write down the generating function for the number of ways to distribute identica
 \par\medskip\noindent%
 \textbf{Solution.}\quad \((1+x+x^2+x^3+x^4)^3\). We can write%
 \begin{align*}
-\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left({1-x^5\over 1-x}\right)^3\\
+\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3\\
 \amp =\amp (1-x^5)^3(1-x)^{-3}\\
 \amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i\\
 \amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i
@@ -3603,9 +3595,9 @@ What is the generating function for the number of multisets chosen from an \(n\)
 \begin{align*}
 (x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
 \left(\sum_{i=0}^{m-j-1}x^i\right)^n\\
-\amp =\amp 
+\amp =\amp
 \left(x^j{1-x^{m-j}\over 1-x}\right)^n\\
-\amp =\amp \left({x^j-x^m\over1-x}\right)^n\\
+\amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n\\
 \amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.
 \end{align*}
 %
@@ -3621,14 +3613,14 @@ If we have five identical pennies, five identical nickels, five identical dimes,
 (1+Q+Q^2+Q^3+Q^4+Q^5)\). Substituting \(x\) for \(P\), \(x^5\) for \(N\), \(x^{10}\) for \(D\) and \(x^{25}\) for \(Q\) gives us%
 \begin{equation*}
 \sum_{i=0}^5x^i\sum_{i=0}^5x^{5i}\sum_{i=0}^5 x^{10i} \sum_{i=0}^5
-x^{25i}={1-x^6\over1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
+x^{25i}=\frac{1-x^6}{1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
 1-x^{10}}\cdot{1-x^{150}\over 1-x^{25}}.
 \end{equation*}
 %
 \par
 Although we could write this as a polynomial times a product of four power series, doing so would not significantly increase our understanding, though it would let us make some painful computations of the number of ways to make a certain number of cents. If we actually wanted such numbers we would be better off asking a computer algebra package to expand the product of the polynomials on the left. With unlimited supplies the generating function becomes%
 \begin{equation*}
-\frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
+\frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot\frac{1}{1-x^{10}}\cdot\frac{1}{1-x^{25}}.
 \end{equation*}
 %
 \par
@@ -3662,7 +3654,7 @@ To get the coefficient of \(q^k\) in this product, we look at all ways of choosi
 \begin{activity}[]\label{activity-177}
 In \hyperref[genfunpartitions]{Problem~\ref{genfunpartitions}}, we multiplied together infinitely many power series. Here are two notations for infinite products that look rather similar:%
 \begin{equation*}
-\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and} 
+\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and}
 \prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}.
 \end{equation*}
 %
@@ -3703,10 +3695,9 @@ and the generating function for the number of partitions of an integer into dist
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n {1-q^{2i} \over
 1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
-=\prod_{i=j}^\infty {1\over1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
+=\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
 \begin{align*}
-\amp \amp \prod_{j=1}^\infty{1\over
-1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
+\amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
 \sum_{i=0}^\infty
 (q^{2j-1})^i\\
 \amp =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
@@ -3725,7 +3716,7 @@ m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m\frac{1}{1-q
 is the generating function for the number of ways to partition an integer into parts of size at most \(m\), each used an odd number of times.%
 \begin{equation*}
 \displaystyle
-\prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m {1\over1-q^{2i}}
+\prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m \frac{1}{1-q^{2i}}
 \end{equation*}
 is the generating function for the number of partitions of an integer into parts of size no more than \(m\), each used an even number of times. Therefore the number of partitions of \(k\) into parts of size no more than \(m\), each used an even number of times is the number of partitions of \(k+\binom{m+1}{2}\), into parts of size no more than \(m\), each used an odd number of times.%
 
@@ -3788,26 +3779,24 @@ While this doesn't {quite} look like the Pascal recurrence, it is still a correc
 ~\par
 \item Define \([n]_q\) to be \(1+q+\cdots+q^{n-1}\) for \(n>0\) and \([0]_q =1\).  We read this simply as \(n\)-sub-\(q\). Define \([n]!_q\) to be \([n]_q[n-1]_q\cdots [3]_q[2]_q[1]_q\). We read this as \(n\) cue-torial, and refer to it as a \terminology{\(q\)-ary factorial}.\index{factorial!\(q\)-ary}\index{\(q\)-ary factorial} Show that%
 \begin{equation*}
-\qchoose{m+n}{n} = {[m+n]!_q \over [m]!_q[n]!_q}.
+\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.
 \end{equation*}
 %
 \par\medskip\noindent%
-\textbf{Solution.}\quad Note that \(\qchoose{n}{0}= \qchoose{n}{n} = 1\), because only the partition with no parts sits in a rectangle of width or depth 0. But \({[m+0]!_q \over [m]!_q[0]!_q} =1\) and \({[0+n]!_q \over [0]!_q[n]!_q} =1\). Thus the formula holds when \(m=0\) or \(n=0\). But%
+\textbf{Solution.}\quad Note that \(\qchoose{n}{0}= \qchoose{n}{n} = 1\), because only the partition with no parts sits in a rectangle of width or depth 0. But \(\frac{[m+0]!_q }{[m]!_q[0]!_q} =1\) and \(\frac{[0+n]!_q }{[0]!_q[n]!_q} =1\). Thus the formula holds when \(m=0\) or \(n=0\). But%
 \begin{align*}
-\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}\\
-\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
+\amp \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}\\
+\amp =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
 +\frac{1}{[n]!_q[m-1]!_q}\right)\\
-\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
-[n]!_q[m]!_q}\right)\\
-\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+\amp \amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)\\
+\amp =\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
 1+q+\cdots+q^{m-1}\right)\\
-\amp =\amp \relax{[m+n-1]!_q[m+n]_q\over [n]!_q[m]!_q}\\
+\amp =\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}\\
 \amp =\amp \qchoose{m+n}{n}.
 \end{align*}
 %
 \par
-Thus \([m+n]!_q \over [m]!_q[n]!_q\) satisfies our recurrence and so by the principle of mathematical induction, \(\qchoose{m+n}{n} = {[m+n]!_q \over
-[m]!_q[n]!_q}.\)%
+Thus \(\frac{[m+n]!_q }{[m]!_q[n]!_q}\) satisfies our recurrence and so by the principle of mathematical induction, \(\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.\)%
 
 ~\par
 \item Now think of \(q\) as a variable that we will let approach \(1\). Find an explicit formula for \leavevmode%
@@ -3849,9 +3838,9 @@ Our experience with binomial coefficients might lead us to hope that the alterna
 \par
 We could compute some more values of the limit by going back to the definition in this way, but it seems unlikely that we could get enough data to make a good conjecture. However we have the recurrence, and setting \(q=-1\) in the recurrence gives us \hyperref[q-binomial-tab]{Table~}.  From the table, it is clear that we get binomial coefficients interspersed with 0s in the even numbered rows of our table and repeated binomial coefficients in the odd numbered rows of our table. In particular when \(m+n\) and \(n\) are both even, \(\neg1choose{m+n}{n}=\binom{(m+n)/2}{n/2}\), and if \(m+n\) is even and \(n\) is odd, \(\neg1choose{m+n}{n}=0\). In our table, at least, if \(m+n\) is odd, it appears that we get \(\neg1choose{m+n}{n}=\binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\). In fact, using the recurrence just as we used it to construct the table, we can prove by induction that%
 \begin{equation*}
-\neg1choose{m+n}{n}=\left\{ 
+\neg1choose{m+n}{n}=\left\{
 \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
-\binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\amp \mbox{otherwise.} 
+\binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\amp \mbox{otherwise.}
 \end{array} \right.
 \end{equation*}
 %
@@ -3913,7 +3902,7 @@ a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
 \sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
 \frac{1}{1-3x}-1\\
 (1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+\frac{1}{1-3x} -1\\
-\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+\frac{1}{(1-3x)^2}
+\sum_{i=0}^\infty a_ix^i \amp =\amp \frac{a_0-1}{1-3x}+\frac{1}{(1-3x)^2}
 \end{align*}
 %
 
@@ -3922,7 +3911,7 @@ a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=0}^\infty a_i x^i \amp =\amp {a_0-1\over 1-3x} + \frac{1}{(1-3x)^2}\\
+\sum_{i=0}^\infty a_i x^i \amp =\amp \frac{a_0-1}{1-3x} + \frac{1}{(1-3x)^2}\\
 \amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty \binom{i+1}{i}3^ix^i,
 \end{align*}
 which gives us \(a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i\).%
@@ -3938,7 +3927,7 @@ a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i\\
 +\sum_{i=0}^\infty (2x)^i -1\\
 \sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +\frac{1}{1-2x} -1\\
 (1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +\frac{1}{1-2x}-1\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+\frac{1}{(1-2x)(1-3x)}\\
+\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1}{1-3x}+\frac{1}{(1-2x)(1-3x)}\\
 \sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
 2^ix^i\sum_{j=0}^\infty 3^jx^j
 \end{align*}
@@ -3949,7 +3938,7 @@ But%
 \sum_{k=0}^\infty
 \sum_{i=0}^k 2^i3^{k-i}x^k=
 \sum_{k=0}^\infty3^kx^k
-\sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
+\sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
 (3^{k+1}-2^{k+1})x^k\text{.}
 \end{equation*}
 Substituting this into the equation for \(\sum_{i=0}^\infty a_ix^i\) gives us \(a_i =(a_0+2)3^i -2^{i+1}\).%
@@ -3991,7 +3980,7 @@ The sequence of problems that follows describes a number of hypotheses we might 
 \begin{activity}[]\label{secondorderintroduction}
 Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let \(a_n\) be the number of rabbits we have at the end of month \(n\). Show that \(a_n=a_{n-1} + 2a_{n-2}\). This is an example of a \terminology{second order}\index{recurrence!second order}\index{second order recurrence} \emph{linear}\index{recurrence!linear}\index{linear recurrence!second order} recurrence with constant coefficients.\index{recurrence!constant coefficient} Using a method similar to that of \hyperref[substituteandsolve]{Problem~\ref{substituteandsolve}}, show that%
 \begin{equation*}
-\sum_{i=0}^\infty a_ix^i = {10\over 1-x-2x^2}.
+\sum_{i=0}^\infty a_ix^i = \frac{10}{1-x-2x^2}.
 \end{equation*}
 %
 \par
@@ -4008,9 +3997,9 @@ This gives us the generating function for the sequence \(a_i\) giving the popula
 \sum_{n=0}^\infty a_nx^n -a_0-a_1x\amp =\amp x\left(\sum_{n=0}^\infty
 a_{n}x^{n}-a_0\right) + 2x^2\sum_{n=0}^\infty a_{n}x^n\\
 (1-x-2x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-a_0x\over (1-x-2x^2)}
+\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}
 \end{align*}
-In this problem \(a_0=a_1=10\) because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus \(\displaystyle\sum_{n=0}^\infty a_nx^n = {10\over (1-x-2x^2)}\)%
+In this problem \(a_0=a_1=10\) because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus \(\displaystyle\sum_{n=0}^\infty a_nx^n = \frac{10}{(1-x-2x^2)}\)%
 \end{activity}
 \begin{activity}[]\label{originalFibonacci}
 In Fibonacci's original problem, each pair of mature rabbits produces one new pair at the end of each month, but otherwise the situation is the same as in \hyperref[secondorderintroduction]{Problem~\ref{secondorderintroduction}}.  Assuming that we start with one pair of baby rabbits (at the end of month 0), find the generating function for the number of pairs of rabbits we have at the end on \(n\) months.%
@@ -4022,7 +4011,7 @@ In Fibonacci's original problem, each pair of mature rabbits produces one new pa
 \sum_{n=0}^\infty a_nx^n-a_0-a_1x \amp =\amp x\left(\sum_{n=0}^\infty
 a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n\\
 (1-x-x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-a_0x\over (1-x-x^2)}
+\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-x^2)}
 \end{align*}
 %
 \par
@@ -4046,7 +4035,7 @@ a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
 2^ix^i-1-2x\\
 \hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0-1+(a_1-5a_0-2)x +
 \sum_{n=0}^\infty 2^ix^i\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}
+\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}
 \end{align*}
 %
 \end{activity}
@@ -4059,19 +4048,19 @@ The generating functions you found in the previous section all can be expressed 
 \begin{activity}[]\label{simplifysumoffractions}
 Express \(\frac{1}{x-3 } + \frac{2}{x-2}\) as a single fraction.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \({x-2 +2(x-3)\over(x-3)(x-2)}={3x-8\over x^2-5x+6}\)%
+\textbf{Solution.}\quad \(\frac{x-2 +2(x-3)}{(x-3)(x-2)}=\frac{3x-8}{x^2-5x+6}\)%
 \end{activity}
 \begin{activity}[]\label{partialfractionsintro}
 In \hyperref[simplifysumoffractions]{Problem~\ref{simplifysumoffractions}} you see that when we added numerical multiples of the reciprocals of first degree polynomials we got a fraction in which the denominator is a quadratic polynomial. This will always happen unless the two denominators are multiples of each other, because their least common multiple will simply be their product, a quadratic polynomial. This leads us to ask whether a fraction whose denominator is a quadratic polynomial can always be expressed as a sum of fractions whose denominators are first degree polynomials. Find numbers \(c\) and \(d\) so that%
 \begin{equation*}
-{5x+1\over(x-3)(x+5)} = \frac{c}{x-3} + \frac{d}{x+5}.
+\frac{5x+1}{(x-3)(x+5)} = \frac{c}{x-3} + \frac{d}{x+5}.
 \end{equation*}
 %
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-{5x+1\over(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}\\
-{5x+1\over(x-3)(x-5)} \amp =\amp cx+5c+dx-3d
+\frac{5x+1}{(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}\\
+\frac{5x+1}{(x-3)(x-5)} \amp =\amp cx+5c+dx-3d
 \end{align*}
 gives us%
 \begin{align*}
@@ -4087,13 +4076,13 @@ Which gives us \(16=8c\) so that \(c=2\) and then \(d=3\).%
 \begin{activity}[]\label{partialfractions1}
 In \hyperref[partialfractionsintro]{Problem~\ref{partialfractionsintro}} you may have simply guessed at values of \(c\) and \(d\), or you may have solved a system of equations in the two unknowns \(c\) and \(d\). Given constants \(a\), \(b\), \(r_1\), and \(r_2\) (with \(r_1\not= r_2\)), write down a system of equations we can solve for \(c\) and \(d\) to write%
 \begin{equation*}
-{ax+b\over (x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
+\frac{ax+b}{(x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
 \end{equation*}
 %
 \par\medskip\noindent%
 \textbf{Solution.}\quad To have%
 \begin{equation*}
-{ax+b\over (x-r_1)(x-r_2)} =  \frac{c}{x-r_1} + \frac{d}{x-r_2}
+\frac{ax+b}{(x-r_1)(x-r_2)} =  \frac{c}{x-r_1} + \frac{d}{x-r_2}
 \end{equation*}
 we must have%
 \begin{equation*}
@@ -4113,15 +4102,15 @@ Use the method of partial fractions to convert the generating function of \hyper
 \par
 Use this to find a formula for \(a_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \({10\over (1-x-2x^2)}={10\over (1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}\). This gives us the equations \(c+d=10\) and \(c-2d=0\). Thus \(3d=10\), so \(d={10\over3}\), and \(c=2d\) so \(c={20\over3}\). Thus%
+\textbf{Solution.}\quad \(\frac{10}{(1-x-2x^2)}=\frac{10}{(1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}\). This gives us the equations \(c+d=10\) and \(c-2d=0\). Thus \(3d=10\), so \(d=\frac{10}{3}\), and \(c=2d\) so \(c=\frac{20}{3}\). Thus%
 \begin{align*}
-\sum_{i=0}^\infty a_ix^i \amp =\amp  {10\over 1-x-2x^2}\\
-\amp =\amp {20/3\over 1-2x} + {10/3\over 1+x}\\
-\amp =\amp {20\over 3}\sum_{i=0}^\infty (2x)^i + {10\over 3}\sum_{i=0}^\infty (-1)^ix^i
+\sum_{i=0}^\infty a_ix^i \amp =\amp  \frac{10}{1-x-2x^2}\\
+\amp =\amp \frac{20/3}{1-2x} + \frac{10/3}{1+x}\\
+\amp =\amp \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i
 \end{align*}
 %
 \par
-Thus \(a_i={20\over3}2^i +{10\over3}(-1)^i\).%
+Thus \(a_i=\frac{20}{3}2^i +\frac{10}{3}(-1)^i\).%
 \end{activity}
 \begin{activity}[]\label{factorFibonacci}
 Use the quadratic formula to find the solutions to \(x^2+x-1=0\), and use that information to factor \(x^2+x-1\).%
@@ -4162,22 +4151,22 @@ and use this to give an explicit formula for \(a_n\).%
 \textbf{Solution.}\quad %
 \begin{align*}
 \sum_{n=0}^\infty a_nx^n \amp =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}\\
-\amp =\amp {1\over\sqrt{5}}\cdot\frac{1}{r_1-x} -{1\over\sqrt{5}}\cdot\frac{1}{r_2-x}\\
-\amp =\amp {1\over r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -{1\over r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}\\
-\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
--{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n
+\amp =\amp \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}\\
+\amp =\amp \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}\\
+\amp =\amp \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
+-\frac{1}{r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n
 \end{align*}
 This gives us that%
 \begin{align*}
-a_n\amp =\amp {1\over\sqrt{5}\cdot r_1^{n+1}}
-+{1\over\sqrt{5}\cdot r_2^{n+1}}\\
+a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
++\frac{1}{\sqrt{5}\cdot r_2^{n+1}}\\
 \amp =\amp {2^{n+1}\over\sqrt{5}(-1+\sqrt{5})^{n+1}}
 +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}\\
 \amp =\amp {2^{n+1}(1+\sqrt{5})^{n+1}\over
 \sqrt{5}\cdot
 4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}\\
-\amp =\amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
-{1\over \sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.
+\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+\frac{1}{\sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.
 \end{align*}
 %
 
@@ -4191,23 +4180,23 @@ a_n\amp =\amp {1\over\sqrt{5}\cdot r_1^{n+1}}
 \par\medskip\noindent%
 \textbf{Solution.}\quad From the binomial theorem,%
 \begin{align*}
-\amp \amp {1\over \sqrt{5}}\left({1+\sqrt{5}\over
-2}\right)^{n+1}- {1\over \sqrt{5}}\left({1-\sqrt{5}
+\amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
+2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left({1-\sqrt{5}
 \over2}\right)^{n+1}\\
 \amp =\amp 
-{1\over2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]\\
-\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in
+\frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]\\
+\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
 [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
 -(-1)^i\left(\sqrt{5}\right)^i\right)\\
-\amp =\amp {1\over2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
 odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i\\
-\amp =\amp {1\over2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
 odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}\\
-\amp =\amp {1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
 even} }  \binom{n+1}{i+1}5^{i/2}\\
 \amp =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
 \end{align*}
-which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|{1-\sqrt{5}\over 2}\right|\lt 1\), \({1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left({1+\sqrt{5}\over
+which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|{1-\sqrt{5}\over 2}\right|\lt 1\), \(\frac{1}{\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left({1+\sqrt{5}\over
 2}\right)^n\) and we take \(c\) to be \({1+\sqrt{5}\over 2\sqrt{5}}\) then then \(n\)th Fibonacci number is almost exactly \(cb^n\) when \(n\) is large. In particular, it is the nearest integer to \(cb^n\).%
 
 ~\par
@@ -4228,8 +4217,8 @@ which makes it clear that \(a_n\) is at least a rational number. It is not clear
 -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n\\
 (1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
 a_0+a_1x-4a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-4x+4x^2)}\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp {a_0+a_1x-4a_0x\over (1-2x)^2}\\
+\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}\\
+\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}\\
 \sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
 2^nx^n\\
 \sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
@@ -4255,7 +4244,7 @@ Show that if we use \(y\) to stand for the power series \(\sum_{i=0}^\infty c_nx
 \end{equation*}
 holds for any number real number \(r\), where \(\binom{r}{i}\) is defined to be%
 \begin{equation*}
-{r^{\underline{i}}\over i!} = {r(r-1)\cdots(r-i+1)\over i!}.
+{r^{\underline{i}}\over i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
 \end{equation*}
 %
 \par
@@ -4285,14 +4274,12 @@ This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula giv
 \end{equation*}
 %
 \par
-The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})({-1\over2})({-3\over2})({-5\over2})\cdots ({-2i+3\over 2})\), so%
+The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})\), so%
 \begin{align*}
-y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
-i!}(-1)^{2i-1}2^ix^{i-1}\\
-\amp =\amp  \sum_{i=1}^\infty {(2i-2)!\over
-(i-1)!2^{i}i!}2^ix^{i-1}\\
-\amp =\amp  \sum_{i=1}^\infty{2i-2!\over i!(i-1)!}x^{i-1}\\
-\amp =\amp \sum_{j=0}^\infty{2j!\over (j+1)!j!}x^j
+y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}\\
+\amp =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}\\
+\amp =\amp  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}\\
+\amp =\amp \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j
 \end{align*}
 giving us \(C_j=\frac{1}{j+1}\binom{2j}{j}\), which is our earlier formula for the Catalan Number \(C_j\).%
 \end{activity}
@@ -4310,7 +4297,7 @@ to find a formula for the number of ways to pass out the candy.%
 \textbf{Solution.}\quad \((x^3+x^4+x^5+x^6)^n\);%
 \begin{align*}
 (x^3+x^4+x^5+x^6)^n\amp =\amp x^{3n}(1+x+x^2+x^3)^n\\
-\amp =\amp x^{3n}\left({1-x^4\over 1-x}\right)^n\\
+\amp =\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n\\
 \amp =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
 \binom{n+i-1}{i}x^i
 \end{align*}
@@ -4327,40 +4314,37 @@ The number of ways to pass out \(k\) pieces of candy is the coefficient of \(x^k
 \begin{enumerate}[label=(\alph*)]
  \item In paying off a mortgage loan with initial amount \(A\), annual interest rate \(p\)\% on a monthly basis with a monthly payment of \(m\), what recurrence describes the amount owed after \(n\) months of payments in terms of the amount owed after \(n-1\) months?  Some technical details: You make the first payment after one month.  The amount of interest included in your monthly payment is \(.01p/12\).  This interest rate is applied to the amount you owed immediately after making your last monthly payment.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(a_n=(1+{.01p\over 12})a_{n-1}-m\).%
+\textbf{Solution.}\quad \(a_n=(1+\frac{.01p}{12})a_{n-1}-m\).%
 
 ~\par
 \item Find a formula for the amount owed after \(n\) months.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad From \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} or by applying generating functions we have%
 \begin{align*}
-a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
-12})^n\over 1-(1+{.01p\over 12})}\\
-\amp =\amp  \left(A-{1200m\over
-p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}
+a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m{1-(1+\frac{.01p}{12})^n\over 1-(1+\frac{.01p}{12})}\\
+\amp =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}
 \end{align*}
 %
 
 ~\par
 \item Find a formula for the number of months needed to bring the amount owed to zero.  Another technical point: If you were to make the standard monthly payment \(m\) in the last month, you might actually end up owing a negative amount of money.  Therefore it is ok if the result of your formula for the number of months needed gives a non-integer number of months.  The bank would just round up to the next integer and adjust your payment so your balance comes out to zero.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\left(A-{1200m\over p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0\) gives us the equation \(\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}\). Taking logarithms to any base we choose gives us \(n\log (1+{.01p\over 12})=\log 1200m-\log (1200m-Ap)\) and so \(n={\log 1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}\).%
+\textbf{Solution.}\quad \(\left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}=0\) gives us the equation \(\left(1+\frac{.01p}{12}\right)^n=\frac{1200m}{1200m-Ap}\). Taking logarithms to any base we choose gives us \(n\log (1+\frac{.01p}{12})=\log 1200m-\log (1200m-Ap)\) and so \(n=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}\).%
 
 ~\par
 \item What should the monthly payment be to pay off the loan over a period of 30 years?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(360={\log
-1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}\) is the equation we need to solve for \(m\), the monthly payment. We need to chose some base for the logarithm so we can write its inverse function; suppose we use logs to the base 10. Then%
+\textbf{Solution.}\quad \(360=\frac{\log
+1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}\) is the equation we need to solve for \(m\), the monthly payment. We need to chose some base for the logarithm so we can write its inverse function; suppose we use logs to the base 10. Then%
 \begin{align*}
-360\log (1+{.01p\over 12}) \amp =\amp  \log
+360\log (1+\frac{.01p}{12}) \amp =\amp  \log
 1200m-\log (1200m-Ap)\\
-10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
+10^{360\log (1+\frac{.01p}{12})}\amp =\amp 10^{\log
 1200m/(1200m-Ap)}\\
-(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)\\
-\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m\\
-1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}\\
-m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
-12})^{360}-1\right)}
+(1+\frac{.01p}{12})^{360} \amp =\amp 1200m/(1200m-Ap)\\
+\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360}\amp =\amp 1200m\\
+1200m\left((1+\frac{.01p}{12})^{360}-1\right)\amp =\amp  Ap(1+\frac{.01p}{12})^{360}\\
+m \amp =\amp  {Ap(1+\frac{.01p}{12})^{360}\over 1200\left((1+\frac{.01p}{12})^{360}-1\right)}
 \end{align*}
 is our monthly payment.%
 
@@ -4419,25 +4403,25 @@ One natural but oversimplified model for the growth of a tree is that all new wo
 \sum_{n=2}^\infty
 a_nx^n\amp =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n\\
 (1-(1+c)x +cx^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0(1+c)x\\
-\sum_{n=0}^\infty a_nx^n \amp =\amp  {a_0+(a_1-a_0(1+c))x\over 1-(1+c)x +cx^2}\\
-\amp =\amp  {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}
+\sum_{n=0}^\infty a_nx^n \amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{1-(1+c)x +cx^2}\\
+\amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}
 \end{align*}
 %
 \par
 Assuming \(c\not=1\) and using the method of partial fractions gives us%
 \begin{align*}
-\amp \amp {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}\\
+\amp \amp \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}\\
 \amp =\amp  (a_0+(a_1-a_0(1+c))x)
-\left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]\\
+\left[\frac{1/(1-c)}{(1-x)} -\frac{c/(1-c)}{1-cx}\right]\\
 \amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]\\
-\amp =\amp  {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
+\amp =\amp  \frac{(a_0+(a_1-a_0(1+c))x)}{1-c}\sum_{i=0}^\infty
 (1-c^{i+1})x^i.
 \end{align*}
 %
 \par
 From this we get that%
 \begin{equation*}
-a_i={a_0\over 1-c}(1-c^{i+1}) +{a_1-a_0(1+c)\over 1-c}(1-c^i).
+a_i=\frac{a_0}{1-c}(1-c^{i+1}) +\frac{a_1-a_0(1+c)}{1-c}(1-c^i).
 \end{equation*}
 %
 \par
@@ -4451,7 +4435,7 @@ Assuming that we begin with one meter of new wood means \(a_0=1\), and assuming 
 \amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
 (1+x^4+x^8+\cdots)\\
 \amp =\amp 
-{(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}
+\frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}
 \end{align*}
 %
 \par
@@ -4563,23 +4547,22 @@ S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\\
 \amp =\amp
 \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!\\
 \amp =\amp \sum_{s=1}^n
-(-1)^{s-1}{n!\over s!}
+(-1)^{s-1}\frac{n!}{s!}
 \end{align*}
 %
 \par
 Dividing this by \(n!\), the total number of ways to pass back the backpacks, we get \(\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}\) for the probability that at least one student gets the correct backpack. Subtracting from 1 to get the probability that no student gets the correct backpack gives us%
 \begin{equation*}
 1- \sum_{s=1}^n {(-1)^{s-1}\over
-s!}=\sum_{s=0}^n{(-1)^s\over s!}.
+s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
 \end{equation*}
 %
 \end{activity}
 \begin{activity}[]\label{activity-213}
 As the number of students becomes large, what does the probability that no student gets the correct backpack approach?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad From calculus, we know that \(e^x=\sum_{j=0}^\infty {x^j\over
-j!}\). Substituting \(x=-1\) gives us \(e^{-1}=\sum_{j=0}^\infty
-{(-1)^j\over j!}\) which is the limit as \(n\) becomes infinite of the probability in the solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}}. Thus the probability approaches \(1/e\).%
+\textbf{Solution.}\quad From calculus, we know that \(e^x=\sum_{j=0}^\infty \frac{x^j}{j!}\). Substituting \(x=-1\) gives us \(e^{-1}=\sum_{j=0}^\infty
+\frac{(-1)^j}{j!}\) which is the limit as \(n\) becomes infinite of the probability in the solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}}. Thus the probability approaches \(1/e\).%
 \end{activity}
 The formula you have given in \hyperref[inclusion-exclusionunion]{Problem~\ref{inclusion-exclusionunion}} is often called \emph{the principle of inclusion and exclusion}\index{inclusion and exclusion principle!for unions of sets}\index{principle of inclusion and exclusion!for unions of sets} for unions of sets. The reason is the pattern in which the formula first adds (includes) all the sizes of the sets, then subtracts (excludes) all the sizes of the intersections of two sets, then adds (includes) all the sizes of the intersections of three sets, and so on. Notice that we haven't yet proved the principle. We will first describe the principle in an apparently more general situation that doesn't require us to translate each application into the language of sets. While this new version of the principle might seem more general than the principle for unions of sets; it is equivalent. However once one understands the notation used to express it, it is more convenient to apply.%
 \par
@@ -4708,26 +4691,24 @@ A group of \(n\) married couples comes to a group discussion session where they 
 \par
 Now if \(S\) is nonempty, and has \(s\) members, we seat one of the couples that must sit together (say the first in alphabetical order), and this determines the sex of the person that must sit at each other place. There are \(2n\) pairs of adjacent seats where we can seat that couple and two ways they can sit in the pair of adjacent seats that we choose. Then we have \(s-1\) couples, \(n-s\) men and \(n-s\) women to seat in the remaining places. First we arrange the \(s-1\) couples and \(2n-2s\) identical empty chairs in places at the table in \((2n-2s+s-1)!/(2n-2s)!=(2n-s-1)!/(2n-2s)!\) ways. Each couple can sit in only one way in the places they have chosen, because the sex of the person in a given place has been determined by how the first couple sits. The sex of the person in each of the remaining chairs has been determined, so we assign the men to their seats in \((n-s)!\) ways and we assign the women to their seats in \((n-s)!\) ways. Thus we have \(2\cdot2n(2n-s-1)!(n-s)!^2/(2n-2s)!\) ways to place the people. But we can partition the placements into blocks of \(2n\) equivalent placements, because shifting everyone the same number of places to the right or left gives an equivalent placement. Thus the number of inequivalent seating arrangements is%
 \begin{align*}
-{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}\amp =\amp {2(2n-s-1)!(n-s)!^2\over
-2(n-s)(2n-2s-1)!}\\
-\amp =\amp {(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+\frac{2(2n-s-1)!(n-s)!^2}{(2n-2s)!}\amp =\amp \frac{2(2n-s-1)!(n-s)!^2}{2(n-s)(2n-2s-1)!}\\
+\amp =\amp \frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
 \end{align*}
 %
 \par
 Notice that if we take \(s=0\), this formula reduces to \((n-1)!n!\). Thus for all sets \(S\)%
 \begin{equation*}
-N_{\mbox{a} }(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+N_{\mbox{a} }(S)=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
 \end{equation*}
 %
 \par
 Then from \hyperref[incexempty]{Equation~(\ref{incexempty})}%
 \begin{align*}
-N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
-\over(2n-2|S|-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
-s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}\\
+N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+}{(2n-2|S|-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
+\amp =\amp \sum_{s=0}^n(-1)^s \frac{n!(2n-s-1)!(n-s-1)!}{s!(2n-2s-1)!}\\
 \amp =\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!
 \end{align*}
 is the number of ways to seat the people, alternating sex, so that no couple sits together.%
@@ -4922,8 +4903,7 @@ Suppose that \(n\) children join hands in a circle for a game at nursery school.
 N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
 (-1)^{|S|}(n-|S|-1)!\amp =\amp 
 \sum_{s=0}^n (-1)^s \binom{n}{s} (n-s-1)!\\
-\amp =\amp \sum_{s=0}^n (-1)^s {n!\over
-s!(n-s)}
+\amp =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}
 \end{align*}
 ways for the children to join hands the second time so that none of them has the same child to the right.%
 \end{activity}
@@ -5403,7 +5383,7 @@ We regard a cycle \((i\
 \end{equation*}
 %
 \par
-Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \(\frac{1}{2}\) and \(2\over 4\) to be equal. In particular, this means that \((i_1\ i_2\
+Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \(\frac{1}{2}\) and \(\frac{2}{ 4}\) to be equal. In particular, this means that \((i_1\ i_2\
 \ldots i_n) = (i_j\ \ i_{j+1}\ \ldots\ i_n\ \ i_1\ \ i_2\ \ldots\ i_{j-1})\).%
 \par
 If \(\gamma_1\), \(\gamma_2\), \dots{}, \(\gamma_n\) are the (inequivalent) cycles of a permutation \(\sigma\) of the set \(S\), then we write%
@@ -6033,10 +6013,10 @@ In \hyperref[numbermultiorbits4]{Problem~\ref{numbermultiorbits4}} you gave a fo
 \begin{activity}[]\label{activity-296}
 In how many ways may we string four (identical) red, six (identical) blue, and seven (identical) green beads on a necklace?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We are stringing 17 beads on our necklace, so we are asking for the number of orbits of the group \(D_{17}\) on lists of four \(R\)s, six \(B\)s, and seven \(G\)s. For a rotation \(\rho^i\) to fix a list, it must take an \(R\) to a \(R\). The powers of \(\rho^i\) form a group. Thus the set of places that contain an \(R\) in a list that is fixed by \(\rho^i\) must be an orbit of that group. But the size of the orbit must be a divisor of the size of the subgroup, which must be a divisor of seventeen, so the size of the orbit is one or 17. If it is 1, then \(i=0\). Thus no elements are fixed by any nontrivial rotation, and all \(\binom{17}{4,6,7}\) lists of \(R\)s, \(B\)s and \(G\)s are fixed by the identity. Each flip will be a flip \strut around a line from a bead to the spot between the two ``opposite'' beads. This line divides the list into the eight beads on its left, the eight beads on its right and the one bead it goes through. If a flip fixes a list, the eight beads on the left must be identical to the eight beads on the right, meaning that the bead the line goes through must be one of the seven green beads. Thus the number of lists that are fixed by a flip is the number of ways to place three green beads, two red beads, and three blue beads in 8 slots, which is \(\binom{8}{3,2,3}\), or \(8!\over3!2!3!\). There are 17 flips, so there are \(17\cdot8!\over3!2!3!\) elements fixed by flips. Therefore we have%
+\textbf{Solution.}\quad We are stringing 17 beads on our necklace, so we are asking for the number of orbits of the group \(D_{17}\) on lists of four \(R\)s, six \(B\)s, and seven \(G\)s. For a rotation \(\rho^i\) to fix a list, it must take an \(R\) to a \(R\). The powers of \(\rho^i\) form a group. Thus the set of places that contain an \(R\) in a list that is fixed by \(\rho^i\) must be an orbit of that group. But the size of the orbit must be a divisor of the size of the subgroup, which must be a divisor of seventeen, so the size of the orbit is one or 17. If it is 1, then \(i=0\). Thus no elements are fixed by any nontrivial rotation, and all \(\binom{17}{4,6,7}\) lists of \(R\)s, \(B\)s and \(G\)s are fixed by the identity. Each flip will be a flip \strut around a line from a bead to the spot between the two ``opposite'' beads. This line divides the list into the eight beads on its left, the eight beads on its right and the one bead it goes through. If a flip fixes a list, the eight beads on the left must be identical to the eight beads on the right, meaning that the bead the line goes through must be one of the seven green beads. Thus the number of lists that are fixed by a flip is the number of ways to place three green beads, two red beads, and three blue beads in 8 slots, which is \(\binom{8}{3,2,3}\), or \(\frac{8!}{3!2!3!}\). There are 17 flips, so there are \(\frac{17\cdot8!}{3!2!3!}\) elements fixed by flips. Therefore we have%
 \begin{equation*}
-\frac{1}{2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
-{8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400
+\frac{1}{2\cdot 17}\left(\frac{17!}{4!6!7!} + \frac{17\cdot8!}{3!2!2!}\right) =
+\frac{8\cdot15!}{4!6!7!} + \frac{4\cdot7!}{3!2!3!}= 120,400
 \end{equation*}
 necklaces. The numerical answer, which is unimportant here, was obtained from Maple.%
 \end{activity}
@@ -6045,8 +6025,7 @@ If we have an unlimited supply of identical red beads and identical blue beads, 
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are asking for the number of orbits of \(D_{17}\) on the set of functions from \([17]\) to \(\{R,B\}\). Every function is fixed by the identity. The only functions fixed by a nontrivial rotation are the constant functions. Each flip is around a line from a bead to the space between the two ``opposite'' beads. The bead the line goes through can be either color, and then the eight beads to the left of this one must be identical to the eight beads to the right of this one. There are \(2^8\) ways to assign beads to the positions on the left, so a flip fixes \(2^9\) functions. Therefore by the CFB theorem, we have%
 \begin{equation*}
-\frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
-17}+2^8 +{2^4\over 17}=16{4097\over17}+256=4112
+\frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)=\frac{2^{16}}{17}+2^8 +\frac{2^4}{17}=16\frac{4097}{17}+256=4112
 \end{equation*}
 necklaces.%
 \end{activity}
@@ -6055,7 +6034,7 @@ If we have five (identical) red, five (identical) blue, and five (identical) gre
 \par\medskip\noindent%
 \textbf{Solution.}\quad Here we need to consider the action of \(D_{15}\) on lists (functions from \([15]\) to \(\{R,B,G\}\)) with five \(R\)s, five \(B\)s, and five \(G\)s. The identity will fix \(\binom{15}{5,5,5}\) lists. A rotation through 3,6,9,or 12 places will fix any function that has the same value in places 1, 4, 7, 10, and 13, the same value in places 2, 5, 8, 11, and 14, and the same value in places 3, 6, 9, 12, and 15. There are \(3!\) such lists. There is no other rotation that fixes any lists. Each flip is around an axis that goes from bead to the space between two opposite beads. If it fixed a list, the seven colors to the left of the axis would have to equal the seven colors to the right of the axis. Thus the number of beads of each color on the left and right sides would have to be equal. So except for the color of the bead the axis goes through, we would have to have an even number of beads of each color for a flip to fix a list of beads. Thus no flip fixes any functions. Therefore by the CFB theorem we have%
 \begin{equation*}
-\frac{1}{2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226
+\frac{1}{2\cdot15}\left(\frac{15!}{5!5!5!} +4\cdot 3!\right)=25,226
 \end{equation*}
 necklaces. (The numerical answer, which was obtained from Maple, is not important here.)%
 \end{activity}
@@ -6110,7 +6089,7 @@ orbits.%
 (Not unusually hard for someone who has worked on chromatic polynomials.) How many different proper colorings with four colors are there of the vertices of a graph which is cycle on five vertices? (If we get one coloring by rotating or flipping another one, they aren't really different.)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are asking for the number of orbits of \(D_5\) on lists of five colors chosen from the given four with no two adjacent colors equal; we consider the first and last position adjacent as well. The identity fixes all such colorings. For those who are familiar with the chromatic polynomial, as in \hyperref[chrompolydel_cont]{Problem~\ref{chrompolydel_cont}}, the number of such colorings is the chromatic polynomial of the cycle on five vertices evaluated at 4. The number of ways to properly color a cycle on five vertices is the number of ways to color a path on five vertices minus the number of ways to color a path on five vertices so that its first and last vertices are identical, which is the number of ways to color a cycle on four vertices. The number of ways to color a cycle on four vertices is the number of ways to color a path on four vertices minus the number of ways to color a path on four vertices so that the first and last vertices are the same color, which is the same as the number of ways to color a cycle on three vertices. The number of ways to properly color a path on five vertices with four colors is \(4\cdot3^4\). The number of ways to properly color a path on four vertices with four colors is \(4\cdot3^3\). The number ways to properly color a cycle on three vertices with four colors is \(4\cdot3\cdot2\). Thus the number of proper colorings of a five vertex cycle with four colors is \(4\cdot3^4-4\cdot3^3
-+4\cdot3\cdot2=240\). This is the number of colorings fixed by the identity. No proper coloring is fixed by a nontrivial rotation, because if a rotation of the five cycle fixes a coloring, all the vertices must have the same color. No proper coloring is fixed by a flip, because for a flip to fix a coloring, the coloring must give the same color to two adjacent vertices. Thus the number of really different proper four-colorings of a cycle on 5 vertices is \({240\over 10}=24\).%
++4\cdot3\cdot2=240\). This is the number of colorings fixed by the identity. No proper coloring is fixed by a nontrivial rotation, because if a rotation of the five cycle fixes a coloring, all the vertices must have the same color. No proper coloring is fixed by a flip, because for a flip to fix a coloring, the coloring must give the same color to two adjacent vertices. Thus the number of really different proper four-colorings of a cycle on 5 vertices is \(\frac{240}{10}=24\).%
 \end{activity}
 \begin{activity}[]\label{activity-303}
 How many different proper colorings with four colors are there of the graph in \hyperref[starhexagon]{Figure~\ref{starhexagon}}? Two graphs are the same if we can redraw one of the graphs, not changing the vertex set or edge set, so that it is identical to the other one. This is equivalent to permuting the vertices in some way so that when we apply the permutation to the endpoints of the edges to get a new edge set, the new edge set is equal to the old one. Such a permutation is called an \emph{automorphism}\index{automorphism (of a graph)} of the graph. Thus two colorings are different if there is no automorphism of the graph that carries one to the other one.%
@@ -6345,9 +6324,8 @@ When we substitute \(B^i+G^i+R^i+Y^i\) for \(z_i\) and expand, we would get get 
 \par
 We can compute the coefficient of \(B^3G^3R^2Y^4\) by computing the contribution of each term of the sum to the coefficient. We get%
 \begin{align*}
-\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
-24\cdot2!}\\
-\amp =\amp {11!\over2\cdot3!3!2!4!}+5
+\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp \frac{12!}{24\cdot3!3!2!4!}+\frac{6\cdot5!2!}{24\cdot2!}\\
+\amp =\amp \frac{11!}{2\cdot3!3!2!4!}+5
 \cdot3\cdot2\\
 \amp =\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30\\
 \amp =\amp 11,550+30=11,580
@@ -6404,7 +6382,7 @@ The coefficient of \(R^4B^4G^4\) is%
 \frac{1}{24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
 6\binom{3}{1}\binom{5}{2,2,1}\binom{2}{2,0,0}
 \right)\amp =\amp\\
-\frac{1}{24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp
+\frac{1}{24}\left(\frac{12!}{4!4!4!}+6\cdot3!+3\frac{6!}{2!2!2!}+6\cdot3\frac{5!}{2!2!1!}\right)=1479\amp \amp
 \end{align*}
 %
 \par
@@ -6412,8 +6390,8 @@ The coefficient of \(R^2B^4G^6\) is%
 \begin{align*}
 \frac{1}{24}\left(\binom{12}{2,4,6}
 +3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right)\amp =\amp\\
-\frac{1}{24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
-+{5!\over1!2!2!}\right)\right)=600.
+\frac{1}{24}\left(\frac{12!}{2!4!6!}+3\frac{6!}{1!2!3!}+6\left(\frac{5!}{2!3!}+\frac{5!}{1!1!3!}
++\frac{5!}{1!2!2!}\right)\right)=600.
 \end{align*}
 %
 \end{activity}
@@ -6715,7 +6693,7 @@ R b\) to mean that \(a\) is related to \(b\). For example, if our relation is th
 ~\par
 \item A relation \(R\) on the set of ordered pairs of positive integers that you learned about in grade school in another notation is the relation that says \((m,n)\) is related to \((h,k)\) if \(mk =hn\). Show that this relation is an equivalence relation. In what context did you learn about this relation in grade school?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(mn=mn\) so the relation is reflexive. If \(mk=hn\), then \(hn=mk\), so if \((m,n)\) is related to \((h,k)\), then \((h,k)\) is related to \((m,n)\). If \((m,n)\) is related to \((h,k)\) and \((h,k)\) is related to \((p,q)\), then \(mk=hn\) and \(hq=pk\), which gives us \(mkhq=hnpk\), and cancelling \(h\) and \(k\) gives us \(mq=np=pn\), so \((m,n)\) is related to \((p,q)\). Therefore, the relation is transitive. This is the relation of equality of the fractions \(m\over n\) and \(h\over k\).%
+\textbf{Solution.}\quad \(mn=mn\) so the relation is reflexive. If \(mk=hn\), then \(hn=mk\), so if \((m,n)\) is related to \((h,k)\), then \((h,k)\) is related to \((m,n)\). If \((m,n)\) is related to \((h,k)\) and \((h,k)\) is related to \((p,q)\), then \(mk=hn\) and \(hq=pk\), which gives us \(mkhq=hnpk\), and cancelling \(h\) and \(k\) gives us \(mq=np=pn\), so \((m,n)\) is related to \((p,q)\). Therefore, the relation is transitive. This is the relation of equality of the fractions \(\frac{m}{ n}\) and \(\frac{h}{ k}\).%
 
 ~\par
 \item Another relation that you may have learned about in school, perhaps in the guise of ``clock arithmetic,'' is the relation of equivalence modulo \(n\). For integers (positive, negative, or zero) \(a\) and \(b\), we write \(a
@@ -6779,7 +6757,7 @@ In \hyperref[icecreaminadish]{Problem~\ref{icecreaminadish}} there is a subtle c
 ~\par
 \item In \hyperref[nchoosekanotherway]{Problem~\ref{nchoosekanotherway}}, what is the number of equivalence classes? Explain in words the relationship between this problem and the \hyperref[formulanchoosek]{Problem~\ref{formulanchoosek}}.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad There are \(n!\) lists, and each is in an equivalence class of size \(k!(n-k)!\), so the number of equivalence classes is \(n!\over k!(n-k)!\) by \hyperref[EquivPrincipleProblem]{Problem~\ref{EquivPrincipleProblem}}. This is a way of computing the number of \(k\)-element subsets that shows why the final answer we got in \hyperref[formulanchoosek]{Problem~\ref{formulanchoosek}} is symmetric in \(k\) and \(n-k\).%
+\textbf{Solution.}\quad There are \(n!\) lists, and each is in an equivalence class of size \(k!(n-k)!\), so the number of equivalence classes is \(\frac{n!}{k!(n-k)!}\) by \hyperref[EquivPrincipleProblem]{Problem~\ref{EquivPrincipleProblem}}. This is a way of computing the number of \(k\)-element subsets that shows why the final answer we got in \hyperref[formulanchoosek]{Problem~\ref{formulanchoosek}} is symmetric in \(k\) and \(n-k\).%
 
 ~\par
 \item Describe explicitly what makes two lists of beads equivalent in \hyperref[necklace]{Problem~\ref{necklace}} and how \hyperref[EquivPrincipleProblem]{Problem~\ref{EquivPrincipleProblem}} can be used to compute the number of different necklaces.%
@@ -6901,7 +6879,7 @@ Use mathematical induction to prove your formula from {$\langle\langle$Unresolve
 \begin{enumerate}[label=(\alph*)]
  \item Use mathematical induction to prove the well-known formula that for all positive integers \(n\),%
 \begin{equation*}
-1+2 + \cdots +n = {n(n+1)\over 2}.
+1+2 + \cdots +n = \frac{n(n+1)}{2}.
 \end{equation*}
 %
 \par\medskip\noindent%
@@ -6936,15 +6914,15 @@ Guess a formula for this sum and prove your guess is correct by induction.%
 When \(n=1\) this formula says that \(\frac{1}{1\cdot2}=\frac{1}{1\cdot
 2}\), so our formula holds when \(n=1\). Now assume that \(k>1\) and that our formula holds when \(n=k-1\). Then%
 \begin{equation*}
-\sum_{i=1}^{k-1} \frac{1}{i(i+1)}= {k-1\over k}.
+\sum_{i=1}^{k-1} \frac{1}{i(i+1)}= \frac{k-1}{k}.
 \end{equation*}
 %
 \par
-Adding \(1\over k(k+1)\) to both sides of this equation gives us%
+Adding \(\frac{1}{ k(k+1)}\) to both sides of this equation gives us%
 \begin{align*}
-\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  {k-1\over k}+\frac{1}{k(k+1)}\\
-\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+\frac{1}{k(k+1)}\\
-\amp =\amp {k^2 -1 +1\over k(k+1)}\\
+\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}\\
+\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}\\
+\amp =\amp \frac{k^2 -1 +1}{k(k+1)}\\
 \amp =\amp  \frac{k}{k+1}.
 \end{align*}
 %
@@ -7035,45 +7013,45 @@ However with our previous definition of generating functions, this equation woul
 \par
 The binomial theorem gives us yet another example.%
 \begin{activity}[]\label{activity-336}
-Write \((1+x)^n\) as a sum of multiples of \(x^i\over i!\) rather than as a sum of multiples of \(x^i\).%
+Write \((1+x)^n\) as a sum of multiples of \(\frac{x^i}{i!}\) rather than as a sum of multiples of \(x^i\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
 (1+x)^n =
-\sum_{i=0}^\infty \binom{n}{i}x^i=\sum_{i=0}^\infty {n!\over i!(n-i)!}x^i
+\sum_{i=0}^\infty \binom{n}{i}x^i=\sum_{i=0}^\infty \frac{n!}{i!(n-i)!}x^i
 =
-\sum_{i=0}^\infty {n!\over (n-i)!}{x^i\over i!} = \sum_{i=0}^\infty
-n^{\underline{i}} {x^i\over i!}.
+\sum_{i=0}^\infty \frac{n!}{(n-i)!}\frac{x^i}{i!} = \sum_{i=0}^\infty
+n^{\underline{i}} \frac{x^i}{i!}.
 \end{equation*}
 \end{activity}
-This example suggests that we could say that \((1+x)^n\) is the generating function for the falling factorial powers \(n^{\underline{i}}\) relative to the indicator polynomials \(x^i\over i!\). In general, a sequence of polynomials is called a family of \emph{indicator polynomials} if there is one polynomial of each nonnegative integer degree in the sequence. Those familiar with linear algebra will recognize that this says that a family of indicator polynomials form a basis for the vector space of polynomials. This means that each polynomial way can be expressed as a sum of numerical multiples of indicator polynomials in one and only one way. One could use the language of linear algebra to define indicator polynomials in an even more general way, but a definition in such generality would not be useful to us at this point.%
+This example suggests that we could say that \((1+x)^n\) is the generating function for the falling factorial powers \(n^{\underline{i}}\) relative to the indicator polynomials \(\frac{x^i}{i!}\). In general, a sequence of polynomials is called a family of \emph{indicator polynomials} if there is one polynomial of each nonnegative integer degree in the sequence. Those familiar with linear algebra will recognize that this says that a family of indicator polynomials form a basis for the vector space of polynomials. This means that each polynomial way can be expressed as a sum of numerical multiples of indicator polynomials in one and only one way. One could use the language of linear algebra to define indicator polynomials in an even more general way, but a definition in such generality would not be useful to us at this point.%
 \typeout{************************************************}
 \typeout{Section  Exponential Generating Functions}
 \typeout{************************************************}
 \section[{Exponential Generating Functions}]{Exponential Generating Functions}\label{section-25}
-We say that the expression \(\sum_{i=0}^\infty a_i{x^i\over i!}\) is the \emph{exponential generating function}\index{exponential generating function}\index{generating function!exponential} for the sequence \(a_i\). It is standard to use \emph{EGF}\index{EGF} as a shorthand for exponential generating function. In this context we call the generating function \(\sum_{i=0}^n a_ix^i\) that we originally studied the \emph{ordinary generating function}\index{generating function!ordinary}\index{ordinary generating function} for the sequence \(a_i\). You can see why we use the term exponential generating function by thinking about the exponential generating function (EGF) for the all ones sequence,%
+We say that the expression \(\sum_{i=0}^\infty a_i\frac{x^i}{i!}\) is the \emph{exponential generating function}\index{exponential generating function}\index{generating function!exponential} for the sequence \(a_i\). It is standard to use \emph{EGF}\index{EGF} as a shorthand for exponential generating function. In this context we call the generating function \(\sum_{i=0}^n a_ix^i\) that we originally studied the \emph{ordinary generating function}\index{generating function!ordinary}\index{ordinary generating function} for the sequence \(a_i\). You can see why we use the term exponential generating function by thinking about the exponential generating function (EGF) for the all ones sequence,%
 \begin{equation*}
-\sum_{i=0}^\infty 1{x^i\over i!} = \sum_{i=0}^\infty {x^i\over i!}
+\sum_{i=0}^\infty 1\frac{x^i}{i!} = \sum_{i=0}^\infty \frac{x^i}{i!}
 =e^x,
 \end{equation*}
 which we also denote by \(\exp (x)\). Recall from calculus that the usual definition of \(e^x\) or \(\exp(x)\) involves limits at least implicitly. We work our way around that by defining \(e^x\) to be the power series \(\sum_{i=0}^\infty
-{x^i\over i!}\).%
+\frac{x^i}{i!}\).%
 \begin{activity}[]\label{activity-337}
 Find the EGF (exponential generating function) for the sequence \(a_n=2^n\). What does this say about the EGF for the number of subsets of an \(n\)-element set?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\sum_{i=0}^\infty {2^i}{x^i\over i!}=e^{2x}\). It says that the EGF for subsets of an \(n\)-element set is \(e^{2x}\).%
+\textbf{Solution.}\quad \(\sum_{i=0}^\infty {2^i}\frac{x^i}{i!}=e^{2x}\). It says that the EGF for subsets of an \(n\)-element set is \(e^{2x}\).%
 \end{activity}
 \begin{activity}[]\label{paintinglightpoles}
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Find the EGF (exponential generating function) for the number of ways to paint the \(n\) streetlight poles that run along the north side of Main Street in Anytown, USA using four colors.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The number of ways to paint the streetlights is \(4^n\), so the EGF is \(\sum_{n=0}^\infty 4^n{x^n\over n!}=e^{4x}\).%
+\textbf{Solution.}\quad The number of ways to paint the streetlights is \(4^n\), so the EGF is \(\sum_{n=0}^\infty 4^n\frac{x^n}{n!}=e^{4x}\).%
 
 ~\par
 \item For what sequence is \({e^x-e^{-x}\over 2} =\cosh x\) the EGF (exponential generating function)?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad For the sequence \(1-(-1)^n\over 2\) which, starting with \(n=0\) is the alternating sequence 0,1,0,1\dots{} of zeros and ones.%
+\textbf{Solution.}\quad For the sequence \(\frac{1-(-1)^n}{2}\) which, starting with \(n=0\) is the alternating sequence 0,1,0,1\dots{} of zeros and ones.%
 
 \end{enumerate}
 \end{activity}
@@ -7086,25 +7064,24 @@ For what sequence is \(\ln(\frac{1}{1-x})\) the EGF? (\(\ln (y)\) stands for the
 and%
 \begin{equation*}
 \int_0^x
-\sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty {b_i\over i+1}x^{i+1}
+\sum_{i=0}^\infty b_ix^i = \sum_{i=0}^\infty \frac{b_i}{i+1}x^{i+1}
 \end{equation*}
 rather than by using the limit definitions from calculus.  It is then possible to prove that the sum rule, product rule, etc. apply.  (There is a little technicality involving the meaning of composition for power series that turns into a technicality involving the chain rule, but it needn't concern us at this time.)\label{fn-25}}%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp 
+\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp
 \int_0^x \frac{1}{1-t}dt\\
 \amp =\amp \int_0^x (1+t+t^2+\cdots)dt\\
-\amp =\amp \sum_{i=1}^\infty {x^i\over i}\\
-\amp =\amp  \sum_{i=1}^\infty (i-1)!{x^i\over
-i!}
+\amp =\amp \sum_{i=1}^\infty \frac{x^i}{i}\\
+\amp =\amp  \sum_{i=1}^\infty (i-1)!\frac{x^i}{i!}
 \end{align*}
 so the sequence is \(a_n = (n-1)!\).%
 \end{activity}
 \begin{activity}[]\label{exponentialpermutations}
 What is the EGF for the number of permutations of an \(n\)-element set?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(1\over 1-x\).%
+\textbf{Solution.}\quad \(\frac{1}{ 1-x}\).%
 \end{activity}
 \begin{activity}[]\label{exponentialroundtable}
 What is the EGF for the number of ways to arrange \(n\) people around a round table? Notice that we may think of this as the EGF for the number of permutations on \(n\) elements that are cycles.%
@@ -7113,13 +7090,13 @@ What is the EGF for the number of ways to arrange \(n\) people around a round ta
 \end{activity}
 \begin{activity}[]\label{exponentialtennisparings}
 What is the EGF \(\sum_{n=0}^\infty
-p_{2n}{x^{2n}\over (2n)!}\) for the number of ways \(p_{2n}\) to pair up \(2n\) people to play a total of \(n\) tennis matches (as in \hyperref[tennispairings1]{Problems~\ref{tennispairings1}} and \hyperref[tennispairings2]{Activity~\ref{tennispairings2}})?%
+p_{2n}\frac{x^{2n}}{(2n)!}\) for the number of ways \(p_{2n}\) to pair up \(2n\) people to play a total of \(n\) tennis matches (as in \hyperref[tennispairings1]{Problems~\ref{tennispairings1}} and \hyperref[tennispairings2]{Activity~\ref{tennispairings2}})?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Recall that \(p_{2n} = (2n-1)(2n-3)\cdots 1= {(2n)!\over 2^n
+\textbf{Solution.}\quad Recall that \(p_{2n} = (2n-1)(2n-3)\cdots 1= \frac{(2n)!}{2^n
 n!}\). Thus%
 \begin{equation*}
 \sum_{n=0}^\infty
-p_{2n}{x^{2n}\over (2n)!}= \sum_{n=0}^\infty {x^{2n}\over 2^n n!} =
+p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
 \sum_{n=0 }^\infty {({x^2/2})^n\over n!} = e^{x^2/2} .
 \end{equation*}
 %
@@ -7127,11 +7104,10 @@ p_{2n}{x^{2n}\over (2n)!}= \sum_{n=0}^\infty {x^{2n}\over 2^n n!} =
 \begin{activity}[]\label{activity-343}
 What is the EGF for the sequence \(0,1,2,3,\ldots\)? You may think of this as the EFG for the number of ways to select one element from an \(n\) element set. What is the EGF for the number of ways to select two elements from an \(n\)-element set?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\sum_{n=0}^\infty{ nx^n\over n!}=\sum_{n=1}^\infty{
-x^n\over(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x\).%
+\textbf{Solution.}\quad \(\sum_{n=0}^\infty\frac{ nx^n}{n!}=\sum_{n=1}^\infty\frac{
+x^n}{(n-1)!}=x\sum_{n=1}^\infty{ x^{n-1}\over(n-1)!}=xe^x\).%
 \par
-\(\sum_{n=0}^\infty{ n(n-1)x^n\over 2 n!}=\sum_{i=2}^\infty {x^n\over
-2(n-2)!}=x^2e^x/2\).%
+\(\sum_{n=0}^\infty\frac{ n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2\).%
 \end{activity}
 \begin{activity}[]\label{allonessequence}
 What is the EGF for the sequence \(1,1,\cdots,1,\cdots\)? Notice that we may think of this as the EGF for the number of identity permutations on an \(n\)-element set, which is the same as the number of permutations of \(n\) elements that are products of 1-cycles, or as the EGF for the number of ways to select an \(n\)-element set (or, if you prefer, an empty set) from an \(n\)-element set.%
@@ -7151,8 +7127,7 @@ What is the EGF for the number of partitions of a \(k\)-element set into exactly
 \begin{activity}[]\label{exponentialbookshelf}
 What is the EGF for the number of ways to arrange \(k\) books on one shelf (assuming they all fit)? What is the EGF for the number of ways to arrange \(k\) books on a fixed number \(n\) of shelves, assuming that all the books can fit on any one shelf?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(1\over 1-x\), \(\sum_{k=0}^\infty \binom{n+k-1 }{k}k!{x^k\over
-k!} = (1-x)^{-n}\).%
+\textbf{Solution.}\quad \(\frac{1}{ 1-x}\), \(\sum_{k=0}^\infty \binom{n+k-1 }{k}k!\frac{x^k}{k!} = (1-x)^{-n}\).%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section  Applications to recurrences.}
@@ -7163,30 +7138,29 @@ k!} = (1-x)^{-n}\).%
 \typeout{************************************************}
 We saw that ordinary generating functions often play a role in solving recurrence relations. We found them most useful in the constant coefficient case. Exponential generating functions are useful in solving recurrence relations where the coefficients involve simple functions of \(n\), because the \(n!\) in the denominator can cancel out factors of \(n\) in the numerator.%
 \begin{activity}[]\label{activity-348}
-Consider the recurrence \(a_n=na_{n-1} +n(n-1)\). Multiply both sides by \(x^n\over n!\), and sum from \(n=2\) to \(\infty\). (Why do we sum from \(n=2\) to infinity instead of \(n=1\) or \(n=0\)?) Letting \(y =
+Consider the recurrence \(a_n=na_{n-1} +n(n-1)\). Multiply both sides by \(\frac{x^n}{n!}\), and sum from \(n=2\) to \(\infty\). (Why do we sum from \(n=2\) to infinity instead of \(n=1\) or \(n=0\)?) Letting \(y =
 \sum_{i=0}^\infty a_ix^i\), show that the left-hand side of the equation is \(y-a_0 -a_1x\). Express the right hand side in terms of \(y\), \(x\), and \(e^x\). Solve the resulting equation for \(y\) and use the result to get an equation for \(a_n\). (A finite summation is acceptable in your answer for \(a_n\).)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=2}^\infty a_n{x^n\over n!}
-\amp =\amp \sum_{n=2}^\infty a_{n-1}{x^n\over (n-1)!} + \sum_{n=2}^\infty
-{x^n\over (n-2)!}\\
-\amp =\amp  x\left(\sum_{n=0}^\infty a_n{x^n\over n!} - a_0\right) +
-x^2\sum_{n=0}^\infty {x^n\over n!}\\
-\amp =\amp  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
+\sum_{n=2}^\infty a_n\frac{x^n}{n!}
+\amp =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
+\frac{x^n}{(n-2)!}\\
+\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
+x^2\sum_{n=0}^\infty \frac{x^n}{n!}\\
+\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
 +x^2e^x
 \end{align*}
-We sum from \(n=2\) because otherwise we would have a factorial of a negative number in the denominator. Thus \(\sum_{n=0}^\infty a_n{x^n\over
-n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
+We sum from \(n=2\) because otherwise we would have a factorial of a negative number in the denominator. Thus \(\sum_{n=0}^\infty a_n\frac{x^n}{n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
 +x^2e^x\), or%
 \begin{equation*}
-(1-x)\sum_{n=0}^\infty a_n{x^n\over n!}=a_0+a_1x-a_0x +x^2e^x.
+(1-x)\sum_{n=0}^\infty a_n\frac{x^n}{n!}=a_0+a_1x-a_0x +x^2e^x.
 \end{equation*}
 %
 \par
 This gives us%
 \begin{equation*}
-\sum_{n=0}^\infty a_n{x^n\over n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
+\sum_{n=0}^\infty a_n\frac{x^n}{n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
 +x^2e^x).
 \end{equation*}
 computing the coefficient of \(a_n\) gives us \(a_n = a_1 +\sum_{i=0}^{n-2}
@@ -7210,29 +7184,28 @@ Recall that a \emph{derangement} of \([n]\) is a permutation of \([n]\) that has
 Your recurrence in \hyperref[telephonenetwork]{Problem~\ref{telephonenetwork}} should be a second order recurrence.%
 ~\par
 \begin{enumerate}[label=(\alph*)]
- \item Assuming that the left hand side is \(c_n\) and the right hand side involves \(c_{n-1}\) and \(c_{n-2}\), decide on an appropriate power of \(x\) divided by an appropriate factorial by which to multiply both sides of the recurrence.  Using the fact that the derivative of \(x^n\over n!\) is \(x^{n-1}\over (n-1)!\), write down a differential equation for the EGF \(T(x) =
-\sum_{i=0}^\infty c_i{x^i\over i!}\).  Note that it makes sense to substitute 0 for \(x\) in \(T(x)\).  What is \(T(0)\)?  Solve your differential equation to find an equation for \(T(x)\).%
+ \item Assuming that the left hand side is \(c_n\) and the right hand side involves \(c_{n-1}\) and \(c_{n-2}\), decide on an appropriate power of \(x\) divided by an appropriate factorial by which to multiply both sides of the recurrence.  Using the fact that the derivative of \(\frac{x^n}{n!}\) is \(\frac{x^{n-1}}{(n-1)!}\), write down a differential equation for the EGF \(T(x) =
+\sum_{i=0}^\infty c_i\frac{x^i}{i!}\).  Note that it makes sense to substitute 0 for \(x\) in \(T(x)\).  What is \(T(0)\)?  Solve your differential equation to find an equation for \(T(x)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=2}^\infty c_n{x^{n-1}\over (n-1)!}
-\!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}{x^{n-1}\over (n-1)!} +
-\sum_{n=2}^\infty c_{n-1}{x^{n-1}\over (n-1)!}\\
-\sum_{n=1}^\infty c_n{x^{n-1}\over (n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
-c_{n-2}{x^{n-2}\over (n-2)!} + \sum_{n=0}^\infty c_n{x^n\over n!} -c_0\\
+\sum_{n=2}^\infty c_n\frac{x^{n-1}}{(n-1)!}
+\!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
+\sum_{n=2}^\infty c_{n-1}\frac{x^{n-1}}{(n-1)!}\\
+\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
+c_{n-2}\frac{x^{n-2}}{(n-2)!} + \sum_{n=0}^\infty c_n\frac{x^n}{n!} -c_0\\
 T'(x)\!\amp =\amp \!xT(x) +T(x)
 \end{align*}
-\(T(0) = c_0 =1\). Then \({T'(x)\over T(x)} = x+1\), giving \(\ln T(x)
+\(T(0) = c_0 =1\). Then \(\frac{T'(x)}{T(x)} = x+1\), giving \(\ln T(x)
 =x^2/2+x+k\), and \(T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }\), since \(T(0)=1\).%
 
 ~\par
 \item Use your generating function to compute a formula for \(c_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!\). By the binomial theorem, this gives \(T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
-i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}\). Then the coefficient \(c_n\) of \(x^n\) is the sum over all \(i\) and \(j\) with \(2i-j=n\) and \(j\le i\) of \(\binom{i}{j}{n!\over i!}2^{j-i}\). But if \(2i-j=n\), then \(j= 2i-n\), and if \(2i-n\le i\), then \(i\le n\), so that \(c_n
-= {n!\over 2^n}\sum_{i=0}^n\binom{i}{2i-n}{2^i\over i!}\). Note that \(\binom{i}{2i-n}\) is the same as \(\binom{i}{n-i}\), which is 0 unless \(i\ge
-n/2\), which reduces our sum to \(c_n = {n!\over
-2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}{2^i\over i!}\).%
+\textbf{Solution.}\quad \(T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!\). By the binomial theorem, this gives \(T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl(\frac{x^2}{2}\bigr)^{i-j}\over
+i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}\). Then the coefficient \(c_n\) of \(x^n\) is the sum over all \(i\) and \(j\) with \(2i-j=n\) and \(j\le i\) of \(\binom{i}{j}\frac{n!}{i!}2^{j-i}\). But if \(2i-j=n\), then \(j= 2i-n\), and if \(2i-n\le i\), then \(i\le n\), so that \(c_n
+= \frac{n!}{2^n}\sum_{i=0}^n\binom{i}{2i-n}\frac{2^i}{i!}\). Note that \(\binom{i}{2i-n}\) is the same as \(\binom{i}{n-i}\), which is 0 unless \(i\ge
+n/2\), which reduces our sum to \(c_n = \frac{n!}{2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}\frac{2^i}{i!}\).%
 
 \end{enumerate}
 \end{activity}
@@ -7240,35 +7213,34 @@ n/2\), which reduces our sum to \(c_n = {n!\over
 Your recurrence in \hyperref[derangementrecurrence]{Problem~\ref{derangementrecurrence}} should be a second order recurrence.%
 ~\par
 \begin{enumerate}[label=(\alph*)]
- \item Assuming that the left-hand side is \(d_n\) and the right hand side involves \(d_{n-1}\) and \(d_{n-2}\), decide on an appropriate power of \(x\) divided by an appropriate factorial by which to multiply both sides of the recurrence.  Using the fact that the derivative of \(x^n\over n!\) is \(x^{n-1}\over (n-1)!\), write down a differential equation for the EGF \(D(x) =
-\sum_{i=0}^\infty d_i{x^i\over i!}\). What is \(D(0)\)?  Solve your differential equation to find an equation for \(D(x)\).%
+ \item Assuming that the left-hand side is \(d_n\) and the right hand side involves \(d_{n-1}\) and \(d_{n-2}\), decide on an appropriate power of \(x\) divided by an appropriate factorial by which to multiply both sides of the recurrence.  Using the fact that the derivative of \(\frac{x^n}{n!}\) is \(\frac{x^{n-1}}{(n-1)!}\), write down a differential equation for the EGF \(D(x) =
+\sum_{i=0}^\infty d_i\frac{x^i}{i!}\). What is \(D(0)\)?  Solve your differential equation to find an equation for \(D(x)\).%
 
 ~\par
 \item Use the equation you found for \(D(x)\) to find an equation for \(d_n\).  Compare this result with the one you computed by inclusion and exclusion.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=2}^\infty d_n{x^{n-1}\over (n-1)!}
-\amp =\amp \sum_{n=2}^\infty d_{n-1}{x^{n-1} \over (n-2)!} +\sum_{n=2}^\infty
-d_{n-2}{x^{n-1}
-\over (n-2)!}\\
-\sum_{n=1}^\infty d_n{x^{n-1}\over (n-1)!} -d_1 \amp =\amp
-x\sum_{n=2}^\infty d_{n-1}{x^{n-2}\over (n-2)!} +xD(x)\\
+\sum_{n=2}^\infty d_n\frac{x^{n-1}}{(n-1)!}
+\amp =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
+d_{n-2}\frac{x^{n-1}}{(n-2)!}\\
+\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp
+x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)\\
 D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)\\
 D'(x)(1-x) \amp =\amp  xD(x)\\
 D'(x)\over D(x) \amp =\amp  x\over 1-x
 \end{align*}
 This gives us \(\ln D(x) = -\ln(1-x) -x +c\), so that \(D(x) = \frac{1}{1-x}e^{-x}e^c\). Since \(d_0=1\), we have \(d(0)=1\), so \(c=0\) and%
 \begin{align*}
-D(x) \amp =\amp  {e^{-x}\over 1-x}\\
+D(x) \amp =\amp  \frac{e^{-x}}{1-x}\\
 \amp =\amp
-\sum_{i=0}^\infty(-1)^i{x^i\over i!}\cdot\sum_{j=0}^\infty
-x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i {(-1)^j\over j!}\right)
+\sum_{i=0}^\infty(-1)^i\frac{x^i}{i!}\cdot\sum_{j=0}^\infty
+x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i \frac{(-1)^j}{j!}\right)
 x^i.
 \end{align*}
 %
 \par
-Thus \(d_n = n!\sum_{j=0}^n{(-1)^j\over j!}\), as we computed by inclusion and exclusion.%
+Thus \(d_n = n!\sum_{j=0}^n\frac{(-1)^j}{j!}\), as we computed by inclusion and exclusion.%
 
 \end{enumerate}
 \end{activity}
@@ -7276,11 +7248,11 @@ Thus \(d_n = n!\sum_{j=0}^n{(-1)^j\over j!}\), as we computed by inclusion and e
 \typeout{Section  The product principle}
 \typeout{************************************************}
 \section[{The product principle}]{The product principle}\label{section-27}
-One of our major tools for ordinary generating functions was the product principle. It is thus natural to ask if there is a product principle for exponential generating functions. In \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}} you likely found that the EGF for the number of ways of arranging \(n\) books on one shelf was exactly the same as the EGF for the number of permutations of \([n]\), namely \(1\over 1-x\) or \((1-x)^{-1}\). Then using our formula from \hyperref[bookcase]{Problem~\ref{bookcase}} and the generating function for multisets, you probably found that the EGF for number of ways of arranging \(n\) books on some fixed number \(m\) of bookshelves was \((1-x)^{-m}\). Thus the EGF for \(m\) shelves is a product of \(m\) copies of the EGF for one shelf.%
+One of our major tools for ordinary generating functions was the product principle. It is thus natural to ask if there is a product principle for exponential generating functions. In \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}} you likely found that the EGF for the number of ways of arranging \(n\) books on one shelf was exactly the same as the EGF for the number of permutations of \([n]\), namely \(\frac{1}{ 1-x}\) or \((1-x)^{-1}\). Then using our formula from \hyperref[bookcase]{Problem~\ref{bookcase}} and the generating function for multisets, you probably found that the EGF for number of ways of arranging \(n\) books on some fixed number \(m\) of bookshelves was \((1-x)^{-m}\). Thus the EGF for \(m\) shelves is a product of \(m\) copies of the EGF for one shelf.%
 \begin{activity}[]\label{paintinglightpoles2}
 In \hyperref[paintinglightpoles]{Problem~\ref{paintinglightpoles}} what would the exponential generating function have been if we had asked for the number of ways to paint the poles with just one color of paint? With two colors of paint? What is the relationship between the EGF for painting the \(n\) poles with one color of paint and the EGF for painting the \(n\) poles with four colors of paint? What is the relationship between the EGF for painting the \(n\) poles with two colors of paint and the EGF for painting the poles with four colors of paint?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad With one color of paint, there would have been one way to paint each pole so our EGF would be \(\sum_{n=0}^\infty {x^n\over n!}\), or \(e^x\). With two colors of paint, it would be \(e^{2x}\) by analogy with the solution to \hyperref[paintinglightpoles]{Problem~\ref{paintinglightpoles}}. Thus the EGF for two colors of paint would be the square of the EGF for one color of paint. The EGF for four colors of paint is the fourth power of the EGF for one color of paint and the square of the EGF for two colors of paint.%
+\textbf{Solution.}\quad With one color of paint, there would have been one way to paint each pole so our EGF would be \(\sum_{n=0}^\infty \frac{x^n}{n!}\), or \(e^x\). With two colors of paint, it would be \(e^{2x}\) by analogy with the solution to \hyperref[paintinglightpoles]{Problem~\ref{paintinglightpoles}}. Thus the EGF for two colors of paint would be the square of the EGF for one color of paint. The EGF for four colors of paint is the fourth power of the EGF for one color of paint and the square of the EGF for two colors of paint.%
 \end{activity}
 In \hyperref[telephonenetwork]{Problem~\ref{telephonenetwork}} you likely found that the EGF for the number of network configurations with \(n\) customers was \(e^{x+x^2/2}= e^x \cdot
 e^{x^2/2}\). In \hyperref[allonessequence]{Problem~\ref{allonessequence}} you saw that the generating function for the number of permutations on \(n\) elements that are products of one cycles was \(e^x\), and in \hyperref[exponentialtennisparings]{Problem~\ref{exponentialtennisparings}} you likely found that the EGF for the number of tennis pairings of \(2n\) people, or equivalently, the number of permutations of \(2n\) objects that are products of \(n\) two-cycles is \(e^{x^2/2}\).%
@@ -7289,25 +7261,25 @@ What can you say about the relationship among the EGF for the number of permutat
 \par\medskip\noindent%
 \textbf{Solution.}\quad The EGF for involutions in \(S_n\) is the product of the EGF for the permutations in \(S_n\) that are products of \(n/2\) two-cycles, and the EGF for permutations in \(S_n\) that are products of \(n\) one-cycles.%
 \end{activity}
-In \hyperref[exponentialderangements]{Problem~\ref{exponentialderangements}} you likely found that the EGF for the number of permutations of \([n]\) that are derangements is \(e^{-x}\over 1-x\). But every permutation is a product of derangements and one cycles, because the permutation that sends \(i\) to \(i\) is a one-cycle, so that when you factor a permutation as a product of disjoint cycles, the cycles of size greater than one multiply together to give a derangement, and the elements not moved by the permutation are one-cycles.%
+In \hyperref[exponentialderangements]{Problem~\ref{exponentialderangements}} you likely found that the EGF for the number of permutations of \([n]\) that are derangements is \(\frac{e^{-x}}{1-x}\). But every permutation is a product of derangements and one cycles, because the permutation that sends \(i\) to \(i\) is a one-cycle, so that when you factor a permutation as a product of disjoint cycles, the cycles of size greater than one multiply together to give a derangement, and the elements not moved by the permutation are one-cycles.%
 \begin{activity}[]\label{derangementsand1cycles}
 If we multiply the generating function for derangements times the generating function for the number of permutations that are products of one-cycles only, what EGF for what set of permutations do we get? (Notice that there are two questions here.)%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We get the EGF \(1\over 1-x\) for all permutations of \([n]\). Notice that any permutation is a product of a derangement of the elements not fixed by the permutation times the one cycles of elements that are fixed by the permutation.%
+\textbf{Solution.}\quad We get the EGF \(\frac{1}{ 1-x}\) for all permutations of \([n]\). Notice that any permutation is a product of a derangement of the elements not fixed by the permutation times the one cycles of elements that are fixed by the permutation.%
 \end{activity}
 We now have four examples in which the EGF for a sequence or a pair of objects is the product of the EGFs for the individual objects making up the sequence or pair.%
 \begin{activity}[]\label{exponentialpp1}
-What is the coefficient of \(x^n\over n!\) in the product of two EGFs \(\sum_{i=0}^\infty a_i{x^i\over i!}\) and \(\sum_{j=0}^\infty
-b_j{x^j\over j!}\)? (A summation sign is appropriate in your answer.)%
+What is the coefficient of \(\frac{x^n}{n!}\) in the product of two EGFs \(\sum_{i=0}^\infty a_i\frac{x^i}{i!}\) and \(\sum_{j=0}^\infty
+b_j\frac{x^j}{j!}\)? (A summation sign is appropriate in your answer.)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-\sum_{i,j\mbox{:\ } 
-i+j=n} n!{a_i\over i!}{b_j \over j!},
+\sum_{i,j\mbox{:\ }
+i+j=n} n!\frac{a_i}{i!}\frac{b_j }{j!},
 \end{equation*}
 which can be better written as%
 \begin{equation*}
-\sum_{i=0}^n{n!\over i!(n-i)!} a_i
+\sum_{i=0}^n\frac{n!}{i!(n-i)!} a_i
 b_{n-i}=\sum_{i=0}^n\binom{n}{i} a_i b_{n-i}.
 \end{equation*}
 %
@@ -7320,11 +7292,10 @@ We ask if there is a similar interpretation for the products of exponential gene
 \begin{activity}[]\label{exponentialpp2}
 Suppose that \(a_i\) is the number of ways to paint a set of \(i\) poles with red and white, and \(b_j\) is the number of ways to paint a set of \(j\) poles with blue and yellow. In how many ways may we take a set \(N\) of \(n\) poles, divide it up into two sets \(I\) and \(J\) (using \(i\) to stand for the size of \(I\) and \(j\) to stand for the size of the set \(J\), and allowing \(i\) and \(j\) to vary) and paint the poles in \(I\) red and white and the poles in \(J\) blue and yellow? (Don't figure out formulas for \(a_i\) and \(b_j\) to use in your answer; that will make it harder to get the point of the problem!) How does this relate to \hyperref[exponentialpp1]{Problem~\ref{exponentialpp1}}?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\binom{n}{i}a_ib_j\). This shows that the coefficient of \(x^n\over n!\) in the EGF for painting poles with four colors is the coefficient of \(x^n\over n!\) in the product of the EGF for painting poles with two colors and the EGF for painting poles with two colors.%
+\textbf{Solution.}\quad \(\binom{n}{i}a_ib_j\). This shows that the coefficient of \(\frac{x^n}{n!}\) in the EGF for painting poles with four colors is the coefficient of \(\frac{x^n}{n!}\) in the product of the EGF for painting poles with two colors and the EGF for painting poles with two colors.%
 \end{activity}
-\hyperref[exponentialpp2]{Problem~\ref{exponentialpp2}} shows that the formula you got for the coefficient of \(x^n\over n!\) in the product of two EGFs is the formula we get by splitting a set \(N\) of poles into two parts and painting the poles in the first part with red and white and the poles in the second part with blue and yellow. More generally, you could interpret your result in \hyperref[exponentialpp1]{Problem~\ref{exponentialpp1}} to say that the coefficient of \(x^n\over
-n!\) in the product \(\sum_{i=0}^\infty a_i {x^i\over i!}
-\sum_{j=0}^\infty b_j{x^j\over j!}\) of two EGFs is the sum, over all ways of splitting a set \(N\) of size \(n\) into an ordered pair of disjoint sets \(I\) and \(J\), of the product \(a_{|I|}b_{|J|}\). In contrast, when we multiplied ordinary generating functions, the coefficient of \(x^n\) in \(\sum_{i=0}^\infty a_i x^i
+\hyperref[exponentialpp2]{Problem~\ref{exponentialpp2}} shows that the formula you got for the coefficient of \(\frac{x^n}{n!}\) in the product of two EGFs is the formula we get by splitting a set \(N\) of poles into two parts and painting the poles in the first part with red and white and the poles in the second part with blue and yellow. More generally, you could interpret your result in \hyperref[exponentialpp1]{Problem~\ref{exponentialpp1}} to say that the coefficient of \(\frac{x^n}{n!}\) in the product \(\sum_{i=0}^\infty a_i \frac{x^i}{i!}
+\sum_{j=0}^\infty b_j\frac{x^j}{j!}\) of two EGFs is the sum, over all ways of splitting a set \(N\) of size \(n\) into an ordered pair of disjoint sets \(I\) and \(J\), of the product \(a_{|I|}b_{|J|}\). In contrast, when we multiplied ordinary generating functions, the coefficient of \(x^n\) in \(\sum_{i=0}^\infty a_i x^i
 \sum_{j=0}^\infty b_j x^j\) is the sum of all \(a_ib_j\) over ordered pairs of integers \(i\) and \(j\) with \(i + j=n\). In our combinatorial interpretation of the product of two ordinary generating functions, we had two sets \(S\) and \(T\) of objects, \(a_i\) was the number of objects in \(S\) of value \(i\), \(b_j\) was the number of objects in \(T\) of value \(j\), and \(i+j\) was the total value of an ordered pair of objects, one from \(S\) and one from \(T\). In painting poles for streetlights, what was important was not only the number of poles we selected to paint red and white, but the actual \emph{set} of poles we selected to paint red and white. This suggests that the value of a selection in this context ought to be a set instead of simply an integer, even though the size of the set will still play a role. For example, the number of ways of paint the poles in a set red and white depends only on the size of the set, and not which set we choose, but in forming the product of the exponential generating functions, we have to analyze all ways of choosing a set of that size. This suggests that to get a combinatorial interpretation of the product of EGFs we should consider a different kind of value function, one whose values are sets and not integers. Thus what we want to consider is a ``set-valued value function.'' Since this is a mouthful to say, we will shorten it in the definition that follows. We define a \emph{set-value function} from a set \(S\) to a set \(Y\) to be a function \(V\) from \(S\) to the set of subsets of \(Y\) such that for all subsets \(I\) of \(Y\) of the same size, the number of elements \(s\) of \(S\) whose value \(V(s)\) is \(I\) is the same. For example if \(S\) is all ways of painting some of the street light poles on the north side on Main Street using red and white, and if \(V(s)\) is the set of poles actually painted red or white, then the number of ways to paint some of the poles red and white depends on the size of the set of poles being painted, so for each set of poles of a given size, the number of ways to paint that set of poles using red and white is the same.%
 \begin{activity}[]\label{activity-358}
 In \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}}, why is the set of books that we actually put onto a shelf a set-value function on the set of all ways to put some of the books on that shelf?%
@@ -7346,7 +7317,7 @@ T\) such that the set values of \(s\) and \(t\) are disjoint sets whose union is
 \typeout{************************************************}
 \paragraph[{Solution-Theorem}]{Solution-Theorem}\hypertarget{paragraphs-1}{}
 If \(S\) is a set of objects with \(V\) a set-value function from \(S\) to some set \(Y\) and the EGF for the number \(a_i\) of elements of \(S\) whose \(V\)-value is any particular set \(N\) of size \(n\) is \(f(x)=\sum_{n=0}^\infty
-a_n{x^n\over n!}\) and \(T\) is a set of objects with \(U\) a set-value function from \(T\) to the same set \(Y\) and the EGF for the number of elements \(b_n\) of \(T\) whose \(U\)-value is any particular set \(N\) of size \(n\) is \(g(x) = \sum_{i=0}^\infty b_n{x^n\over n!}\), then the EGF for the number \(c_n\) of ordered pairs \((s,t)\) in \(S\times T\) such that the set values of \(s\) and \(t\) are disjoint sets whose union is any one particular set of size \(n\) is \(f(x)g(x)\). That is, the number of ordered pairs of the type described is the coefficient of \(x^n\over n!\) in \(f(x)g(x)\).%
+a_n\frac{x^n}{n!}\) and \(T\) is a set of objects with \(U\) a set-value function from \(T\) to the same set \(Y\) and the EGF for the number of elements \(b_n\) of \(T\) whose \(U\)-value is any particular set \(N\) of size \(n\) is \(g(x) = \sum_{i=0}^\infty b_n\frac{x^n}{n!}\), then the EGF for the number \(c_n\) of ordered pairs \((s,t)\) in \(S\times T\) such that the set values of \(s\) and \(t\) are disjoint sets whose union is any one particular set of size \(n\) is \(f(x)g(x)\). That is, the number of ordered pairs of the type described is the coefficient of \(\frac{x^n}{n!}\) in \(f(x)g(x)\).%
 \par
 The proof consists of interpreting \hyperref[exponentialpp1]{Problem~\ref{exponentialpp1}} in this context.%
 \end{activity}
@@ -7387,8 +7358,8 @@ Use the general product principle for EGFs or its corollary to explain the relat
 \par\medskip\noindent%
 \textbf{Solution.}\quad By the product principle for exponential generating functions it is%
 \begin{equation*}
-e^{2x}\left(1+{(2x)^2\over 2!}+ {(2x)^4\over 4!} + \cdots \right) =
-e^{2x}{e^{2x}-e^{-2x}\over2}=e^{2x}\cosh(2x).
+e^{2x}\left(1+\frac{(2x)^2}{2!}+ \frac{(2x)^4}{4!} + \cdots \right) =
+e^{2x}\frac{e^{2x}-e^{-2x}}{2}=e^{2x}\cosh(2x).
 \end{equation*}
 %
 
@@ -7399,11 +7370,10 @@ What is the EGF for the number of functions from an \(n\)-element set onto a one
 \par\medskip\noindent%
 \textbf{Solution.}\quad There are no onto functions from a \(0\)-element set to a \(1\)-element set; otherwise there is exactly one function from an \(n\)-element set onto a one element set so the EGF for functions from an \(n\)-element set onto a one element set is \(e^x-1\). A function from an \(n\)-element set onto a \(k\)-element set may be thought of as a \(k-tuple\) of functions from disjoint subsets whose union is the \(n\)-element set onto the one element subsets of the \(k\)-element set. Therefore by the corollary to the product principle for EGFs the EGF for functions from an \(n\)-element set onto a \(k\)-element set is \((e^x-1)^k\). By the binomial theorem, this is%
 \begin{equation*}
-\kern-.25 in\sum_{i=0}^k\binom{k}{i}(-1)^{k-i}e^{ix} 
+\kern-.25 in\sum_{i=0}^k\binom{k}{i}(-1)^{k-i}e^{ix}
 =
-\sum_{i=0}^k \binom{k}{i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
-\sum_{i=0}^k (-1)^{k-i}\binom{k}{i} \sum_{j=0}^\infty i^j{(x)^j\over
-j!}.
+\sum_{i=0}^k \binom{k}{i} (-1)^{k-i} \sum_{j=0}^\infty \frac{(ix)^j}{j!} =
+\sum_{i=0}^k (-1)^{k-i}\binom{k}{i} \sum_{j=0}^\infty i^j\frac{(x)^j}{j!}.
 \end{equation*}
 %
 \par
@@ -7411,12 +7381,11 @@ Thus \(c_n= \sum_{i=0}^k(-1)^{k-i}\binom{k}{i}n^i\), which is consistent with th
 \end{activity}
 \begin{activity}[]\label{BellNumbersEGF}
 In \hyperref[BellNumberIntro]{Problem~\ref{BellNumberIntro}} You showed that the Bell Numbers \(B_n\) satisfy the equation \(B_{n+1} =
-\sum_{k=0}^{n} \binom{n}{k}B_{n-k}\) (or a similar equation for \(B_n\).) Multiply both sides of this equation by \(x^n\over n!\) and sum from \(n=0\) to infinity. On the left hand side you have a derivative of a certain EGF we might call \(B(x)\). On the right hand side, you have a product of two EGFs, one of which is \(B(x)\). What is the other one? What differential equation involving \(B(x)\) does this give you. Solve the differential equation for \(B(x)\). This is the EGF for the Bell numbers!.%
+\sum_{k=0}^{n} \binom{n}{k}B_{n-k}\) (or a similar equation for \(B_n\).) Multiply both sides of this equation by \(\frac{x^n}{n!}\) and sum from \(n=0\) to infinity. On the left hand side you have a derivative of a certain EGF we might call \(B(x)\). On the right hand side, you have a product of two EGFs, one of which is \(B(x)\). What is the other one? What differential equation involving \(B(x)\) does this give you. Solve the differential equation for \(B(x)\). This is the EGF for the Bell numbers!.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-\sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
-(i)!}\sum_{j=0}^\infty {x^j\over j!}.
+\sum_{n=0}^\infty B_{n+1}\frac{x^n}{n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}\frac{x^n}{n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty \frac{x^j}{j!}.
 \end{equation*}
 Thus \(B'(x) = B(x)e^x\), which gives us \(\ln B(x) = e^x+c\), or \(B(x) =
 e^{ex+c} =e^ce^{(e^x)}\). Since \(B_0=B(0)\) and \(B_0=1\), we have \(c=-1\) and \(B(x) = \exp(e^x-1)\).%
@@ -7426,13 +7395,13 @@ Prove that \(n2^{n-1} = \sum_{k=1}^n \binom{n}{k}k\) by using EGFs.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad By the product principle for EGFs, the EGF for the right hand side is%
 \begin{equation*}
-e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty {(2x)^i\over i!} =
-\sum_{j=1}^\infty 2^{j-1}{x^j\over (j-1)!}=\sum_{j=1}^\infty
-j2^{j-1}{x^j\over j!}.
+e^x\cdot xe^x =xe^{2x}=x\sum_{i=o}^\infty \frac{(2x)^i}{i!} =
+\sum_{j=1}^\infty 2^{j-1}\frac{x^j}{(j-1)!}=\sum_{j=1}^\infty
+j2^{j-1}\frac{x^j}{j!}.
 \end{equation*}
 %
 \par
-Thus the coefficient of \(x^n\over n!\) is \(n2^{n-1}\), as well as \(\sum_{k=1}^n \binom{n}{k}k\).%
+Thus the coefficient of \(\frac{x^n}{n!}\) is \(n2^{n-1}\), as well as \(\sum_{k=1}^n \binom{n}{k}k\).%
 \end{activity}
 \begin{activity}[]\label{activity-368}
 In light of \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}}, why is the EGF for the Stirling numbers \(S(n,k)\) of the second kind not \((e^x -1)^n\)? What is it equal to instead?%
@@ -7445,7 +7414,7 @@ The idea of the set-value function in the product principle for exponential gene
 \typeout{************************************************}
 \section[{The Exponential Formula}]{The Exponential Formula}\label{section-28}
 Exponential generating functions turn out to be quite useful in advanced work in combinatorics. One reason why is that it is often possible to give a combinatorial interpretation to the composition of two exponential generating functions. In particular, if \(f(x) =
-\sum_{i=0}^n a_i{x^i\over i!}\) and \(g(x) = \sum_{j=1}^\infty b_j {x^j\over j!}\), it makes sense to form the composition \(f(g(x))\) because in so doing we need add together only finitely many terms in order to find the coefficient of \(x^n\over n!\) in \(f(g(x))\) since in the EGF \(g(x)\) the dummy variable \(j\) starts at 1. Since our study of combinatorial structures has not been advanced enough to give us applications of a general formula for the composition of the EGF, we will not give here the combinatorial interpretation of this composition. However we have seen some examples where one particular composition can be applied. Namely, if \(f(x) = e^x = \exp(x)\), then \(f(g(x)) =\ exp(g(x))\) is well defined when \(b_0=0\). We have seen three examples in which an EGF is \(e^{f(x)}\) where \(f(x)\) is another EGF. There is a fourth example in which the exponential function is slightly hidden.%
+\sum_{i=0}^n a_i\frac{x^i}{i!}\) and \(g(x) = \sum_{j=1}^\infty b_j \frac{x^j}{j!}\), it makes sense to form the composition \(f(g(x))\) because in so doing we need add together only finitely many terms in order to find the coefficient of \(\frac{x^n}{n!}\) in \(f(g(x))\) since in the EGF \(g(x)\) the dummy variable \(j\) starts at 1. Since our study of combinatorial structures has not been advanced enough to give us applications of a general formula for the composition of the EGF, we will not give here the combinatorial interpretation of this composition. However we have seen some examples where one particular composition can be applied. Namely, if \(f(x) = e^x = \exp(x)\), then \(f(g(x)) =\ exp(g(x))\) is well defined when \(b_0=0\). We have seen three examples in which an EGF is \(e^{f(x)}\) where \(f(x)\) is another EGF. There is a fourth example in which the exponential function is slightly hidden.%
 \begin{activity}[]\label{exp_oneblock_}
 If \(f(x)\) is the EGF for the number of partitions of an \(n\)-set into one block, and \(g(x)\) is the EGF for the total number of partitions of an \(n\)-element set, that is, for the Bell numbers \(B_n\), how are the two generating functions related?%
 \par\medskip\noindent%
@@ -7454,12 +7423,12 @@ If \(f(x)\) is the EGF for the number of partitions of an \(n\)-set into one blo
 \begin{activity}[]\label{exp_oneortwo-cycle_}
 Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set with one cycle of size one or two. What is \(f(x)\)? What is the EGF \(g(x)\) for the number of permutations of an \(n\)-element set all of whose cycles have size one or two, that is, the number of involutions in \(S_n\)? How are these two exponential generating functions related?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad There is one permutation with one cycle of size 1, and one permutation with one cycle of size 2. Therefore the EGF for such permutations is \(x+{x^2\over 2!}= x+x^2/2\). The EGF for involutions is \(e^{x+x^2/2}\). Thus \(g(x) = \exp(f(x))\).%
+\textbf{Solution.}\quad There is one permutation with one cycle of size 1, and one permutation with one cycle of size 2. Therefore the EGF for such permutations is \(x+\frac{x^2}{2!}= x+x^2/2\). The EGF for involutions is \(e^{x+x^2/2}\). Thus \(g(x) = \exp(f(x))\).%
 \end{activity}
 \begin{activity}[]\label{exp_two-cycle_}
 Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set that have exactly one two-cycle and no other cycles. Let \(g(x)\) be the EGF for the number of permutations which are products of two-cycles only, that is, for tennis pairings. (That is, they are not a product of two-cycles and a nonzero number of one-cycles). What is \(f(x)\)? What is \(g(x)\)? How are these to exponential generating functions related?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The EGF \(f(x)\) for permutations of an \(n\) element set that have exactly one two-cycle (and no other cycles) is \(x^2\over 2!\) or \(x^2/2\). By \hyperref[exponentialtennisparings]{Problem~\ref{exponentialtennisparings}}, the EGF to permutations that are products of two-cycles only is \(\exp(x^2/2)\). Thus \(g(x)=\exp(f(x))=e^{x^2/2}\).%
+\textbf{Solution.}\quad The EGF \(f(x)\) for permutations of an \(n\) element set that have exactly one two-cycle (and no other cycles) is \(\frac{x^2}{2!}\) or \(x^2/2\). By \hyperref[exponentialtennisparings]{Problem~\ref{exponentialtennisparings}}, the EGF to permutations that are products of two-cycles only is \(\exp(x^2/2)\). Thus \(g(x)=\exp(f(x))=e^{x^2/2}\).%
 \end{activity}
 \begin{activity}[]\label{exp_onecycle_}
 Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set that have exactly one cycle. (This is the same as the EGF for the number of ways to arrange \(n\) people around a round table.) Let \(g(x)\) be the EGF for the total number of permutations of an \(n\)-element set. What is \(f(x)\)? What is \(g(x)\)? How are \(f(x)\) and \(g(x)\) related?%
@@ -7467,41 +7436,41 @@ Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set t
 \textbf{Solution.}\quad In \hyperref[exponentialroundtable]{Problem~\ref{exponentialroundtable}} we showed that \(f(x) =
 \ln\left(\frac{1}{1-x}\right)\). In \hyperref[exponentialpermutations]{Problem~\ref{exponentialpermutations}} we showed that \(g(x)=\frac{1}{1-x}\). Therefore \(g(x)= \exp(f(x))\).%
 \end{activity}
-There was one element that our last four problems had in common. In each case our EGF \(f(x)\) involved the number of structures of a certain type (partitions, telephone networks, tennis pairings, permutations) that used only one set of an appropriate kind. (That is, we had a partition with one part, a telephone network consisting either of one person or two people connected to each other, a tennis pairing of one set of two people, or a permutation with one cycle.) Our EGF \(g(x)\) was the number of structures of the same ``type'' (we put type in quotation marks here because we don't plan to define it formally) that could consist of any number of sets of the appropriate kind. Notice that the order of these sets was irrelevant. For example we don't order the blocks of a partition and a product of disjoint cycles is the same no matter what order we use to write down the product. Thus we were relating the EGF for structures which were somehow ``building blocks'' to the EGF for structures which were sets of building blocks. For a reason that you will see later, it is common to call the building blocks \emph{connected}\index{connected structures and EGFs}\index{exponential generating functions for connected structures} structures. Notice that our connected structures were all based on nonempty sets, so we had no connected structures whose value was the empty set. Thus in each case, if \(f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}\), we would have \(a_0=0\). The relationship between the EGFs was always \(g(x) = e^{f(x)}\). We now give a combinatorial explanation for this relationship.%
+There was one element that our last four problems had in common. In each case our EGF \(f(x)\) involved the number of structures of a certain type (partitions, telephone networks, tennis pairings, permutations) that used only one set of an appropriate kind. (That is, we had a partition with one part, a telephone network consisting either of one person or two people connected to each other, a tennis pairing of one set of two people, or a permutation with one cycle.) Our EGF \(g(x)\) was the number of structures of the same ``type'' (we put type in quotation marks here because we don't plan to define it formally) that could consist of any number of sets of the appropriate kind. Notice that the order of these sets was irrelevant. For example we don't order the blocks of a partition and a product of disjoint cycles is the same no matter what order we use to write down the product. Thus we were relating the EGF for structures which were somehow ``building blocks'' to the EGF for structures which were sets of building blocks. For a reason that you will see later, it is common to call the building blocks \emph{connected}\index{connected structures and EGFs}\index{exponential generating functions for connected structures} structures. Notice that our connected structures were all based on nonempty sets, so we had no connected structures whose value was the empty set. Thus in each case, if \(f(x) = \sum_{i=0}^\infty a_i\frac{x^i}{i!}\), we would have \(a_0=0\). The relationship between the EGFs was always \(g(x) = e^{f(x)}\). We now give a combinatorial explanation for this relationship.%
 \begin{activity}[]\label{exponentialformula}
 Suppose that \(S\) is a set with a set-value function \(V\) from \(S\) to a set \(Y\) such that no element of \(S\) has the empty set as a value. Let \(f(x)\) be the generating function for \(S\) according to the value function \(V\).%
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item In the power series%
 \begin{equation*}
-e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
-\cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
+e^{f(x)} = 1 + f(x) + \frac{f(x)^2}{2!} +
+\cdots + \frac{f(x)^k}{k!} + \cdots= \sum_{k=0}^\infty \frac{f(x)^k}{k!},
 \end{equation*}
-the product principle tells us that the coefficient of \(x^n\over n!\) in \(f(x)^k\) is the number of \(k\)-tuples of elements of \(S\) whose values are disjoint sets whose union is any one particular subset \(N\) of \(Y\) of size \(n\).  How do you know that all of the elements of the \(k\)-tuple are different?%
+the product principle tells us that the coefficient of \(\frac{x^n}{n!}\) in \(f(x)^k\) is the number of \(k\)-tuples of elements of \(S\) whose values are disjoint sets whose union is any one particular subset \(N\) of \(Y\) of size \(n\).  How do you know that all of the elements of the \(k\)-tuple are different?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Because the coefficient of \(x^0\) is 0, there are no elements in \(S\) whose value is the empty set.%
 
 ~\par
-\item When you divide the coefficient of \(x^n\over n!\) in \(f(x)^k\) by \(k!\), it no longer counts \(k\)-tuples whose values are disjoint sets whose union is that set \(N\).  What does it count instead?  (Hint: how many \(k\)-tuples can you form with a set of \(k\) distinct elements?)%
+\item When you divide the coefficient of \(\frac{x^n}{n!}\) in \(f(x)^k\) by \(k!\), it no longer counts \(k\)-tuples whose values are disjoint sets whose union is that set \(N\).  What does it count instead?  (Hint: how many \(k\)-tuples can you form with a set of \(k\) distinct elements?)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad It counts \(k\)-element subsets since the entries of the \(k\)-tuples are distinct.%
 
 ~\par
-\item Why does this prove that the coefficient of \(x^n\over n!\) in \(e^{f(x)}\) is the number of subsets of \(S\) such that the values of th elements of the subset partition any one particular set \(N\subseteq T\) of size \(n\)?%
+\item Why does this prove that the coefficient of \(\frac{x^n}{n!}\) in \(e^{f(x)}\) is the number of subsets of \(S\) such that the values of th elements of the subset partition any one particular set \(N\subseteq T\) of size \(n\)?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We know that the coefficient of \(x^n\over n!\) in \(e^{f(x)}\) is the sum over all \(k\) of the number of \(k\)-element subsets of \(S\) whose values partition a particular set \(N\). (The values must partition \(N\) because none of them are empty, they are disjoint, and their union is \(N\).) This sum is the number of subsets of \(S\) such that the values of the elements of the subset partition a particular set \(N\) of size \(n\).%
+\textbf{Solution.}\quad We know that the coefficient of \(\frac{x^n}{n!}\) in \(e^{f(x)}\) is the sum over all \(k\) of the number of \(k\)-element subsets of \(S\) whose values partition a particular set \(N\). (The values must partition \(N\) because none of them are empty, they are disjoint, and their union is \(N\).) This sum is the number of subsets of \(S\) such that the values of the elements of the subset partition a particular set \(N\) of size \(n\).%
 
 \end{enumerate}
 \end{activity}
 In \hyperref[exponentialformula]{Problem~\ref{exponentialformula}} we proved the following theorem, which is called the \emph{exponential formula}.\index{exponential formula}%
 \begin{theorem}[{}]\label{theorem-14}
-Suppose that \(S\) is a set with a set-value function \(V\) from it to a set \(Y\) such that no element of \(S\) has the empty set as a value. Let \(f(x)\) be the generating function for \(S\) according to the value function \(V\). Then the coefficient of \(x^n\over n!\) in \(e^{f(x)}\) is the number of subsets of \(S\) such that the values of the elements of the subset partition any one particular set \(N\subseteq T\) of size \(n\).%
+Suppose that \(S\) is a set with a set-value function \(V\) from it to a set \(Y\) such that no element of \(S\) has the empty set as a value. Let \(f(x)\) be the generating function for \(S\) according to the value function \(V\). Then the coefficient of \(\frac{x^n}{n!}\) in \(e^{f(x)}\) is the number of subsets of \(S\) such that the values of the elements of the subset partition any one particular set \(N\subseteq T\) of size \(n\).%
 \end{theorem}
 Since the statement of the theorem is rather abstract, let us see how it applies to the examples in \hyperref[exp_oneblock_]{Problems~\ref{exp_oneblock_}}, \hyperref[exp_oneortwo-cycle_]{Activity~\ref{exp_oneortwo-cycle_}}, \hyperref[exp_two-cycle_]{Activity~\ref{exp_two-cycle_}} and \hyperref[exp_onecycle_]{Activity~\ref{exp_onecycle_}}. In \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}} our set \(S\) should consist of one-block partitions of sets; that is, it should be a set of nonempty sets. The value of a one-block partition will be the set it partitions, and we want every subset (of a given size) of our set \(Y\) to be the value of the same number of partitions. Thus we can take \(S\) to be the set of all nonempty finite subsets of the positive integers and take \(Y\) to be the set of positive integers. Since a partition of a set is a set of blocks whose union is \(S\), a one block partition whose block is \(B\) is the set \(\{B\}\). We take \(V(\{B\}) =B\). Then any nonempty finite subset of of the positive integers is the value of exactly one member of \(S\), and the empty set and all infinite subsets of the positive integers are the value of exactly zero members of \(S\). Thus we have a value function. As you showed in \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}} the generating function for partitions with just one block is \(e^x-1\). Thus by the exponential formula, \(\exp(e^x-1)\) is the generating function for sets of subsets of the positive integers whose values are disjoint sets whose union is any particular set \(N\) of size \(n\). Since the values are nonempty sets, this means they partition the set \(N\). Thus \(\exp(e^x-1)\) is the generating function for partitions of sets of size \(n\). (Technically, it is the generating function for partitions of subsets of the integers of size \(n\), but any two \(n\)-element sets have the same number of partitions.)%
 \begin{activity}[]\label{activity-374}
 Explain how the exponential formula proves the relationship we saw in \hyperref[exp_onecycle_]{Problem~\ref{exp_onecycle_}}.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We take \(S\) to be the set of permutations of sets of positive integers that have just one-cycle. We take the value of a one-cycle permutation to be the support set of the cycle. The number of one-cycle permutations whose value is any given \(n\)-element set of positive integers is \((n-1)!\), so we have defined a value function. We take the set \(Y\) to be the set of positive integers. Then by the Exponential Formula, if \(f(x)\) is the EGF for permutations with one cycle, \(\exp(f(x))=g(x)\) is the EGF in which the coefficient of \(x^n\over n!\) is the number of sets of permutations with one cycle whose support sets partition any given set \(N\) of size \(n\). That is, the coefficient of \(x^n\over n!\) in \(g(x)\) is the the number of products of disjoint cycles which partition any given set \(N\); that is, it is the EGF for permutations of \(N\).%
+\textbf{Solution.}\quad We take \(S\) to be the set of permutations of sets of positive integers that have just one-cycle. We take the value of a one-cycle permutation to be the support set of the cycle. The number of one-cycle permutations whose value is any given \(n\)-element set of positive integers is \((n-1)!\), so we have defined a value function. We take the set \(Y\) to be the set of positive integers. Then by the Exponential Formula, if \(f(x)\) is the EGF for permutations with one cycle, \(\exp(f(x))=g(x)\) is the EGF in which the coefficient of \(\frac{x^n}{n!}\) is the number of sets of permutations with one cycle whose support sets partition any given set \(N\) of size \(n\). That is, the coefficient of \(\frac{x^n}{n!}\) in \(g(x)\) is the the number of products of disjoint cycles which partition any given set \(N\); that is, it is the EGF for permutations of \(N\).%
 \end{activity}
 \begin{activity}[]\label{activity-375}
 Explain how the exponential formula proves the relationship we saw in \hyperref[exp_two-cycle_]{Problem~\ref{exp_two-cycle_}}.%
@@ -7549,7 +7518,7 @@ Explain why it is that if \(C\) is a connected component of a graph and \(E'\) i
 \end{activity}
 The last sequence of problems shows that we may think of any graph as the set of its connected component graphs. (Once we know them, we know all the vertices and all the edges of the graph). Notice that a graph is connected if and only if it has exactly one connected component. Since the connected components form a partition of the vertex set of a graph, the exponential formula will relate the generating function for the number of connected graphs on \(n\) vertices with the generating function for the number of graphs (connected or not) on \(n\) vertices. However because we can draw as many edges as we want between two vertices of a graph, there are infinitely many graphs on \(n\) vertices, and so the problem of counting them is uninteresting. We can make it interesting by considering \emph{simple graphs},\index{graph!simple}\index{simple graph} namely graphs in which each edge has two distinct endpoints and no two edges connect the same two vertices. It is because connected graphs form the building blocks for viewing all graphs as sets of connected components that we refer to the building blocks for structures counted by the generating functions in the exponential formula as connected structures.\index{exponential formula!connected structures for}%
 \begin{activity}[]\label{activity-381}
-Suppose that \(f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}\) is the exponential generating function for the number of simple connected graphs on \(n\) vertices and \(g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}\) is the exponential generating function for the number of simple graphs on \(i\) vertices.%
+Suppose that \(f(x) = \sum_{n=0}^\infty c_n \frac{x^n}{n!}\) is the exponential generating function for the number of simple connected graphs on \(n\) vertices and \(g(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}\) is the exponential generating function for the number of simple graphs on \(i\) vertices.%
 ~\par
 \begin{enumerate}[label=(\alph*)]
  \item Is \(f(x) = e^{g(x)}\), is \(f(x) = e^{g(x)-1}\), is \(g(x) = e^{f(x)-1}\) or is \(g(x) = e^{f(x)}\)?%
@@ -7572,16 +7541,16 @@ Suppose that \(f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}\) is the exponential g
 \textbf{Solution.}\quad %
 \begin{equation*}
 \log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
-(-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
+(-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}\frac{y^j}{j}.
 \end{equation*}
 
 ~\par
-\item Why is the coefficient of \(x^0\over 0!\) in \(g(x)\) equal to one?  Write \(f(x)\) as a power series in \(g(x) -1\).%
+\item Why is the coefficient of \(\frac{x^0}{0!}\) in \(g(x)\) equal to one?  Write \(f(x)\) as a power series in \(g(x) -1\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The coefficient of \(x^0\over 0!\) is 1 because there is one graph on the empty set; the one with no edges.%
+\textbf{Solution.}\quad The coefficient of \(\frac{x^0}{0!}\) is 1 because there is one graph on the empty set; the one with no edges.%
 \begin{equation*}
 f(x) = 1 +\ln(1 +
-(g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
+(g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}\frac{(g(x)-1)^j}{j}.
 \end{equation*}
 %
 
@@ -7591,18 +7560,17 @@ f(x) = 1 +\ln(1 +
 \textbf{Solution.}\quad %
 \begin{equation*}
 f(x) = 1+\sum_{j=1}^\infty
-(-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
-(-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!})^j\over j}.
+(-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
+(-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j\over j}.
 \end{equation*}
-From the right-hand expression, we get a term involving \(x^n\) whenever we have an \(x^n\) term in the \(j\)th power of \(\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!}\). So the coefficient of \(x^n\over n!\) is the sum over all \(j\) and all sequences \(i_1,i_2,\ldots,i_j\) with \(i_1+i_2+\cdots+i_j = n\) of terms of the form%
+From the right-hand expression, we get a term involving \(x^n\) whenever we have an \(x^n\) term in the \(j\)th power of \(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}\). So the coefficient of \(\frac{x^n}{n!}\) is the sum over all \(j\) and all sequences \(i_1,i_2,\ldots,i_j\) with \(i_1+i_2+\cdots+i_j = n\) of terms of the form%
 \begin{equation*}
-{n!\over
-j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
+\frac{n!}{j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
 \over i_k!},
 \end{equation*}
 where each \(i_k>0\). Notice that reordering the numbers \(i_1\), \(i_2\), \dots{} \(i_k\) does not change the value of the expression. The sequence of \(i_k\)s is a composition of \(n\) into positive parts. If we knew how many compositions of \(n\) into \(j\) parts correspond to one partition of \(n\) into \(j\) parts, we could sum over a much smaller set of terms. If we use the type vector notation for a partition, namely that it has \(p_1\) parts of size 1, \(p_2\) parts of size 2, \dots{}, \(p_n\) parts of size \(n\), then the number of compositions corresponding to that partition, i.e. the number of compositions with the type vector \((p_1,p_2, \ldots, p_n)\) is the number of ways to take \(j\) places in a vector and label \(p_1\) of them with 1, \(p_2\) of them with 2, and so on until we label \(p_n\) of them with \(n\). This number is the multinomial coefficient \(\binom{j}{p_1,p_2,\ldots, p_n}\). Thus our sum over all j and all compositions of \(n\) into \(j\) parts becomes%
 \begin{equation*}
-\sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+\sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
 rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
 p_n}
 \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
@@ -7645,7 +7613,7 @@ e^{g(x)}\), but \(g(x) = \ln(f(x))\) as well. Further, if we happen to have a fo
 \item\hypertarget{li-130}{}Recall that a cycle of a permutation cannot be empty. %
 \begin{enumerate}
 \item\hypertarget{li-131}{}What is the generating function for the number of cycles on an even number of elements (i.e. permutations of an even number \(n\) of elements that form an \(n\)-cycle)?  Your answer should not have a summation sign in it.  Hint: If \(y=
-\sum_{i=0}^\infty {x^{2i}\over 2i}\), what is the derivative of \(y\)?%
+\sum_{i=0}^\infty \frac{x^{2i}}{2i}\), what is the derivative of \(y\)?%
 \item\hypertarget{li-132}{}What is the generating function for the number of permutations on \(n\) elements that are a product of even cycles?%
 \item\hypertarget{li-133}{}What is the generating function for the number of cycles on an odd number of elements?%
 \item\hypertarget{li-134}{}What is the generating function for the number of permutations on \(n\) elements that are a product of odd cycles?%

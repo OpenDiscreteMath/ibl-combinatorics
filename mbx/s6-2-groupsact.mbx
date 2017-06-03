@@ -1334,8 +1334,8 @@
           <m>\binom{8}{3,2,3}</m>, or <m>\frac{8!}{3!2!3!}</m>. There are 17 flips, so there are
           <m>\frac{17\cdot8!}{3!2!3!}</m> elements fixed by flips. Therefore we have
           <me>
-            \frac{1}{2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
-            {8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400
+            \frac{1}{2\cdot 17}\left(\frac{17!}{4!6!7!} + \frac{17\cdot8!}{3!2!2!}\right) =
+            \frac{8\cdot15!}{4!6!7!} + \frac{4\cdot7!}{3!2!3!}= 120,400
           </me>
           necklaces. The
           numerical answer, which is unimportant here, was obtained from Maple.
@@ -1362,7 +1362,7 @@
           to the positions on the left, so a flip fixes <m>2^9</m> functions. Therefore by
           the CFB theorem, we have
           <me>
-            \frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)=\frac{2^{16}{17}+2^8 +\frac{2^4}{17}=16\frac{4097}{17}+256=4112
+            \frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)=\frac{2^{16}}{17}+2^8 +\frac{2^4}{17}=16\frac{4097}{17}+256=4112
           </me>
           necklaces.
         </p>
@@ -1394,7 +1394,7 @@
           beads of each color for a flip to fix a list of beads. Thus no flip fixes
           any functions. Therefore by the CFB theorem we have
           <me>
-            \frac{1}{2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226
+            \frac{1}{2\cdot15}\left(\frac{15!}{5!5!5!} +4\cdot 3!\right)=25,226
           </me>
           necklaces. (The numerical answer, which was obtained from Maple, is not
           important here.)
@@ -1584,7 +1584,7 @@
           have the same color. No proper coloring is fixed by a flip, because for a
           flip to fix a coloring, the coloring must give the same color to two
           adjacent vertices. Thus the number of really different proper four-colorings
-          of a cycle on 5 vertices is <m>{240\over 10}=24</m>.
+          of a cycle on 5 vertices is <m>\frac{240}{10}=24</m>.
         </p>
       </solution>
     </activity>

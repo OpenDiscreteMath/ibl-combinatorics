@@ -208,15 +208,14 @@
           remaining <m>n-4</m> vertices to fill in our list of <m>n-2</m> vertices, using each of
           the <m>n-4</m> at least once. Thus we either use one of them 3 times and the rest
           once, or two of them twice and the rest once. There are <m>n-4</m> ways to choose
-          the one we use three times and <m>\binom{n-2}{3}\binom{n-5}{1}\binom{n-6}{1}\cdots\binom{1}{1}={(n-2)!\over3!}</m> ways to label the
+          the one we use three times and <m>\binom{n-2}{3}\binom{n-5}{1}\binom{n-6}{1}\cdots\binom{1}{1}=\frac{(n-2)!}{3!}</m> ways to label the
           <m>n-2</m> places with the chosen vertices. There are <m>\binom{n-4}{2}</m> ways to choose
-          the vertices we would use twice, and <m>\binom{n-2}{2}\binom{n-4}{2}\binom{n-6}{1}\binom{n-7}{1}\cdots \binom{1}{1}={(n-2)!\over 2!2!}</m>
+          the vertices we would use twice, and <m>\binom{n-2}{2}\binom{n-4}{2}\binom{n-6}{1}\binom{n-7}{1}\cdots \binom{1}{1}=\frac{(n-2)!}{2!2!}</m>
           ways to assign the chosen vertices to the
           <m>n-2</m> places in the Pr&#xfc;fer Code. Thus we have
           <md>
-            <mrow>\amp \amp \binom{n}{4}\left((n-4){(n-2)!\over 3!} +{(n-4)(n-3)\over
-            2}{(n-2)!\over 4}\right)</mrow>
-            <mrow>\amp =\amp {n!\over 48}(n-2)^{\underline{3}}\left(\frac{1}{3} +{n-3\over 4}\right)</mrow>
+            <mrow>\amp \amp \binom{n}{4}\left((n-4)\frac{(n-2)!}{3!} +\frac{(n-4)(n-3)}{2}\frac{(n-2)!}{4}\right)</mrow>
+            <mrow>\amp =\amp \frac{n!}{48}(n-2)^{\underline{3}}\left(\frac{1}{3} +\frac{n-3}{4}\right)</mrow>
           </md>
           possible Pr&#xfc;fer codes and therefore the same number of
           labelled trees.
@@ -248,8 +247,7 @@
             \binom{n-2}{d_1-1}\binom{n-2-(d_1-1)}{d_2-1}\binom{n-2-(d_1-1+d_2-1)}{d_3-1}\cdots\binom{d_n-1}{d_n-1}
           </me>
           ways to do this, so the number of trees
-          in which vertex <m>i</m> has degree <m>d_i</m> is <m>{(n-2)!\over
-          (d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
+          in which vertex <m>i</m> has degree <m>d_i</m> is <m>\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
         </p>
 
         <p>
