@@ -607,8 +607,8 @@
           <m>i_1,i_2,\ldots,i_j</m> with
           <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
           <me>
-            \frac{n!}{j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
-            \over i_k!},
+            \frac{n!}{j}(-1)^j\prod_{k=1}^j \frac{2^\binom{i_k}{2}
+            }{i_k!},
           </me>
           where each <m>i_k>0</m>. Notice that reordering the numbers
           <m>i_1</m>, <m>i_2</m>, <ellipsis /> <m>i_k</m> does not change the value of the expression.
@@ -628,8 +628,8 @@
             \sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
             p_n}
-            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-            \over (r!)^{p_r}}.
+            \prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}}.
           </me>
         </p>
 
@@ -640,8 +640,8 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
-            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-            \over (r!)^{p_r}p_r!}
+            \prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}p_r!}
           </me>
           for the number of connected graphs on <m>n</m> vertices. If we want to
           shorten the appearance of the formula we can keep <m>j</m> in our sum and
@@ -649,8 +649,8 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^j(j-1)!
-            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-            \over (r!)^{p_r}p_r!},
+            \prod_{r=1}^n \frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}p_r!},
           </me>
           where <m>j=\sum_{r=1}^n p_r</m>.
         </p>

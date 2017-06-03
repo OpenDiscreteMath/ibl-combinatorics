@@ -521,7 +521,7 @@
           <mrow>(x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
           \left(\sum_{i=0}^{m-j-1}x^i\right)^n</mrow>
           <mrow>\amp =\amp
-          \left(x^j{1-x^{m-j}\over 1-x}\right)^n</mrow>
+          \left(x^j\frac{1-x^{m-j}}{1-x}\right)^n</mrow>
           <mrow>\amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n</mrow>
           <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
           </md>
@@ -680,7 +680,7 @@
         </statement>
         <solution>
           <p>
-            <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
+            <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
             =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}</m>, because all the terms in the numerator
             cancel with alternate terms in the denominator leaving only terms with odd
             powers of <m>q</m>. But

@@ -784,9 +784,8 @@
             <m>R(n,n)\le \binom{n+n-2}{m-1}=\frac{(2n-2)!}{(n-1)!^2}</m>. For
             <m>n</m> sufficiently large, this is approximately
             <md>
-              <mrow>\amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
-              \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
-              (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}</mrow>
+              <mrow>\amp \amp \frac{\sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}}{ \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
+              (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}}</mrow>
               <mrow>\amp =\amp \frac{2^{2n-2}(n-1)^{2n-2}}{\sqrt{\pi
               (n-1)}(n-1)^{2n-2}}</mrow>
               <mrow>\amp =\amp \frac{1}{\sqrt{\pi
@@ -928,9 +927,8 @@
         <solution>
           <p>
             <m>\binom{m}{n} \lt 2^{\binom{n}{2}-1}</m> is the same as
-            <m>{m^{\underline{n}}\over n!}\lt 2^{\binom{n}{2}-1}</m>. And since
-            <m>m^{\underline{n}}\lt m^n</m>, the inequality <m>{m^{\underline{n}}\over
-            n!}\lt  2^{\binom{n}{2}-1}</m> holds if the inequality <m>\frac{m^n}{n!}\le2^{\binom{n}{2}-1}</m> holds. And this last inequality holds if
+            <m>\frac{m^{\underline{n}}}{n!}\lt 2^{\binom{n}{2}-1}</m>. And since
+            <m>m^{\underline{n}}\lt m^n</m>, the inequality <m>\frac{m^{\underline{n}}}{n!}\lt  2^{\binom{n}{2}-1}</m> holds if the inequality <m>\frac{m^n}{n!}\le2^{\binom{n}{2}-1}</m> holds. And this last inequality holds if
             <m>m\le\root n
             \of {n!2^{\binom{n}{2}-1}}</m> holds. Thus <m>R(n,n)>m</m> for any <m>m</m> such that
             <m>m\le\root n

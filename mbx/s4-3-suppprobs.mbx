@@ -57,7 +57,7 @@
         <p>
           From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
           <md>
-            <mrow>a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m{1-(1+\frac{.01p}{12})^n\over 1-(1+\frac{.01p}{12})}</mrow>
+            <mrow>a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}</mrow>
             <mrow>\amp =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}</mrow>
           </md>
         </p>
@@ -104,7 +104,7 @@
     </task>
   </activity>
 
-  
+
   <activity category="interesting">
     <statement>
       <p>
@@ -182,7 +182,7 @@
       </statement>
       <solution>
         <p>
-          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.  Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
+          <m>(1+x+x^2+\cdots+x^m)^n=\frac{(1-x^{m+1})^n}{(1-x)^n}</m>.  Expanding this gives us <m>\frac{(1-x^{m+1})^n}{(1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
         </p>
       </solution>
   </activity>
@@ -246,7 +246,7 @@
           <md>
             <mrow>\amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
             (1+x^4+x^8+\cdots)</mrow>
-            <mrow>\amp =\amp 
+            <mrow>\amp =\amp
             \frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}</mrow>
           </md>
         </p>
@@ -264,7 +264,7 @@
       </statement>
       <solution>
         <p><me>
-          (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
+          (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots
           =\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
           =\prod_{i=1}^\infty \frac{1-q^{i(m+1)}}{1-q^i}
         </me>

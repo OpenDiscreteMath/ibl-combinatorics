@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T16:10:13-06:00    *%
+%*    on 2017-06-03T16:39:56-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -955,7 +955,7 @@ As we noted in \hyperref[Pascal]{Problem~\ref{Pascal}}, the first question in \h
 \begin{activity}[]\label{nchoosek}
 Based on what you observed in \hyperref[twelvechoosethreefinal]{Problem~}, how many \(k\)-element subsets does an \(n\)-element set have?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Following the reasoning of \hyperref[twelvechoosethree]{Problem~\ref{twelvechoosethree}}, there are \(n^{\underline{k}}\) \(k\)-element permutations of an \(n\)-element set, and \(k!\) of these permutations list the same set of \(k\) elements, so the number of \(k\)-element sets is \({n^{\underline{k}}\over k!}= \frac{n!}{k!(n-k)!}\).%
+\textbf{Solution.}\quad Following the reasoning of \hyperref[twelvechoosethree]{Problem~\ref{twelvechoosethree}}, there are \(n^{\underline{k}}\) \(k\)-element permutations of an \(n\)-element set, and \(k!\) of these permutations list the same set of \(k\) elements, so the number of \(k\)-element sets is \(\frac{n^{\underline{k}}}{k!}= \frac{n!}{k!(n-k)!}\).%
 \end{activity}
 \begin{activity}[]\label{activity-36}
 The formula you proved in \hyperref[nchoosek]{Problem~\ref{nchoosek}} is symmetric in \(k\) and \(n-k\); that is, it gives the same number for \(\binom{n}{k}\) as it gives for \(\binom{n}{n-k}\). Whenever two quantities are counted by the same formula it is good for our insight to find a bijection that demonstrates the two sets being counted have the same size. In fact this is a guiding principle of research in combinatorial mathematics. Find a bijection that proves that \(\binom{n}{k}\) equals \(\binom{n}{n-k}\).%
@@ -1717,9 +1717,8 @@ Now assume that when \(m+n=k-1\), it is the case that if there are \(\binom{m+n-
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(R(n,n)\le \binom{n+n-2}{m-1}=\frac{(2n-2)!}{(n-1)!^2}\). For \(n\) sufficiently large, this is approximately%
 \begin{align*}
-\amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
-\sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
-(n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}\\
+\amp \amp \frac{\sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}}{ \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
+(n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}}\\
 \amp =\amp \frac{2^{2n-2}(n-1)^{2n-2}}{\sqrt{\pi
 (n-1)}(n-1)^{2n-2}}\\
 \amp =\amp \frac{1}{\sqrt{\pi
@@ -1780,8 +1779,7 @@ M,~|N|=n}2\cdot2^{\binom{m}{2}-\binom{n}{2}}\\
 ~\par
 \item Explain why \(R(n,n)>\root n \of {n!2^{\binom{n}{2}-1}}\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\binom{m}{n} \lt 2^{\binom{n}{2}-1}\) is the same as \({m^{\underline{n}}\over n!}\lt 2^{\binom{n}{2}-1}\). And since \(m^{\underline{n}}\lt m^n\), the inequality \({m^{\underline{n}}\over
-n!}\lt  2^{\binom{n}{2}-1}\) holds if the inequality \(\frac{m^n}{n!}\le2^{\binom{n}{2}-1}\) holds. And this last inequality holds if \(m\le\root n
+\textbf{Solution.}\quad \(\binom{m}{n} \lt 2^{\binom{n}{2}-1}\) is the same as \(\frac{m^{\underline{n}}}{n!}\lt 2^{\binom{n}{2}-1}\). And since \(m^{\underline{n}}\lt m^n\), the inequality \(\frac{m^{\underline{n}}}{n!}\lt  2^{\binom{n}{2}-1}\) holds if the inequality \(\frac{m^n}{n!}\le2^{\binom{n}{2}-1}\) holds. And this last inequality holds if \(m\le\root n
 \of {n!2^{\binom{n}{2}-1}}\) holds. Thus \(R(n,n)>m\) for any \(m\) such that \(m\le\root n
 \of {n!2^{\binom{n}{2}-1}}\), which implies that \(R(n,n)> \root n
 \of {n!2^{\binom{n}{2}-1}}\).%
@@ -1988,7 +1986,7 @@ Do this problem only if your final answer (so far) to \hyperref[firstordlinconst
 \begin{align*}
 \amp \amp \sum_{i=0}^{k-1} db^i\\
 \amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
-\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}\\
+\amp =\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}\\
 \amp =\amp \frac{ d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
 \end{align*}
 %
@@ -2326,7 +2324,7 @@ ways to do this, so the number of trees in which vertex \(i\) has degree \(d_i\)
 \par
 Now we modify the solution by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in \(n!\) ways, choose the first \(i_1\) of these vertices to have degree 1, then next \(i_2\) to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus the number of ways to assign the degrees is \(\frac{n!}{i_1!i_2!\cdots i_n!}\). Once the degrees are assigned, there are \(\frac{(n-2)!}{\prod_{d=1}^n (d-1)!^{i_d}}\), by translating our easier result. Thus the total number of trees with the degree sequence in which there are \(i_d\) vertices of degree \(d\) is%
 \begin{equation*}
-n!(n-2)!\over\prod_{j=1}^n i_j!(j-1)!^{i_j}.
+\frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^{i_j}}.
 \end{equation*}
 %
 %
@@ -3596,7 +3594,7 @@ What is the generating function for the number of multisets chosen from an \(n\)
 (x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
 \left(\sum_{i=0}^{m-j-1}x^i\right)^n\\
 \amp =\amp
-\left(x^j{1-x^{m-j}\over 1-x}\right)^n\\
+\left(x^j\frac{1-x^{m-j}}{1-x}\right)^n\\
 \amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n\\
 \amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.
 \end{align*}
@@ -3693,7 +3691,7 @@ Use generating functions to explain why the number of partitions of an integer i
 \end{equation*}
 and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer \(k\) into distinct parts is related to the number of partitions of an integer \(k\) into odd parts.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}={\prod_{i=1}^\infty1-q^{2i}\over\prod_{j=1}^\infty 1-q^j}
+\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
 =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
 \begin{align*}
 \amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
@@ -3963,8 +3961,7 @@ in}(1-1.1x)\sum_{i=0}^\infty a_ix^i \amp =\amp  a_0 +1000\sum_{i=10}^\infty x^i-
 \end{align*}
 %
 \par
-This gives us that \(a_n= 4000(1.1)^n +1000{1-(1.1)^{n+1}\over
--.1}\). This simplifies to \(a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
+This gives us that \(a_n= 4000(1.1)^n +1000 \frac{1-(1.1)^{n+1}}{-.1}\). This simplifies to \(a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
 15,000(1.1)^n-10000\). Courtesy of Maple, after ten years we have \textdollar{}28,906.14 and after 20 years we have \textdollar{}90,912.50.%
 \end{activity}
 \typeout{************************************************}
@@ -4119,7 +4116,7 @@ Use the quadratic formula to find the solutions to \(x^2+x-1=0\), and use that i
 \begin{activity}[]\label{fractionFibonacci}
 Use the factors you found in \hyperref[factorFibonacci]{Problem~\ref{factorFibonacci}} to write%
 \begin{equation*}
-1\over x^2+x-1
+\frac{1}{x^2+x-1}
 \end{equation*}
 in the form%
 \begin{equation*}
@@ -4132,7 +4129,7 @@ in the form%
 \textbf{Solution.}\quad \(\frac{1}{x^2+x-1}=\frac{c}{x-r_1}+\frac{d}{x-r_2}\) gives us \(cx-cr_2+dx-dr_1=1\). Thus \(c+d=0\), and \(cr_2+dr_1 =-1\). This gives us \(d=-c\) and so \(cr_2-cr_1=-1\), which yields \(c=\frac{1}{r_1-r_2}\), and \(d=\frac{1}{r_2-r_1}\). By substitution, \(c=1/\sqrt{5}\) and \(d=-1/\sqrt{5}\). This gives us%
 \begin{equation*}
 \frac{1}{x^2+x-1} = \frac{1/\sqrt{5}}{x-\frac{-1+\sqrt{5}}{2}}
-+{-1/\sqrt{5}\over x- \frac{-1-\sqrt{5}}{2}}.
++ \frac{-1/\sqrt{5}}{x- \frac{-1-\sqrt{5}}{2}}.
 \end{equation*}
 %
 \end{activity}
@@ -4160,10 +4157,12 @@ This gives us that%
 a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}\\
 \amp =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
-+{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}\\
++
+\frac{2^{n+1}}{\sqrt{5}(-1-\sqrt{5})^{n+1}}\\
 \amp =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
-4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}\\
-\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+4^{n+1}}-
+\frac{2^{n+1}(1-\sqrt{5})^{n+1}}{\sqrt{5}\cdot4^{n+1}}\\
+\amp =\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
 \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.
 \end{align*}
 %
@@ -4178,8 +4177,7 @@ a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 \par\medskip\noindent%
 \textbf{Solution.}\quad From the binomial theorem,%
 \begin{align*}
-\amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
-2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\\
+\amp \amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\\
 \amp =\amp
 \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]\\
 \amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
@@ -4193,8 +4191,7 @@ odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}\\
 even} }  \binom{n+1}{i+1}5^{i/2}\\
 \amp =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
 \end{align*}
-which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|{1-\sqrt{5}\over 2}\right|\lt 1\), \(\frac{1}{\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left({1+\sqrt{5}\over
-2}\right)^n\) and we take \(c\) to be \({1+\sqrt{5}\over 2\sqrt{5}}\) then then \(n\)th Fibonacci number is almost exactly \(cb^n\) when \(n\) is large. In particular, it is the nearest integer to \(cb^n\).%
+which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|\frac{1-\sqrt{5}}{2}\right|\lt 1\), \(\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left(\frac{1+\sqrt{5}}{2}\right)^n\) and we take \(c\) to be \(\frac{1+\sqrt{5}}{2\sqrt{5}}\) then then \(n\)th Fibonacci number is almost exactly \(cb^n\) when \(n\) is large. In particular, it is the nearest integer to \(cb^n\).%
 
 ~\par
 \item As a challenge (which the author has not yet done), see if you can find a way to show algebraically (not using the recurrence relation, but rather the formula you get by removing the square roots of five) that the formula for the Fibonacci numbers yields integers.%
@@ -4264,7 +4261,7 @@ y\amp =\amp 1 + xy^2
 \end{align*}
 %
 \par
-This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula gives us \(y={1\pm \sqrt{1-4x}\over 2x}\). By the extended binomial theorem,%
+This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula gives us \(y=\frac{1\pm \sqrt{1-4x}}{2x}\). By the extended binomial theorem,%
 \begin{equation*}
 \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty \binom{1/2}{i}(-4x)^i=
 \sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i.
@@ -4318,7 +4315,7 @@ The number of ways to pass out \(k\) pieces of candy is the coefficient of \(x^k
 \par\medskip\noindent%
 \textbf{Solution.}\quad From \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} or by applying generating functions we have%
 \begin{align*}
-a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m{1-(1+\frac{.01p}{12})^n\over 1-(1+\frac{.01p}{12})}\\
+a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}\\
 \amp =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}
 \end{align*}
 %
@@ -4390,7 +4387,7 @@ Thus the sequence satisfies the same recurrence as the Fibonacci numbers and its
 \begin{activity}[]\label{activity-202}
 Let \(m\) and \(n\) be fixed. Express the generating function for the number of \(k\)-element multisets of an \(n\)-element set such that no element appears more than \(m\) times as a quotient of two polynomials. Use this expression to get a formula for the number of \(k\)-element multisets of an \(n\)-element set such that no element appears more than \(m\) times.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \((1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}\).  Expanding this gives us \({(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}\). The coefficient of \(x^k\) in this product is the number of \(k\)-element multisets chosen from an \(n\)-element set in which no element appears more than \(m\) times. This coefficient is \(\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}\).%
+\textbf{Solution.}\quad \((1+x+x^2+\cdots+x^m)^n=\frac{(1-x^{m+1})^n}{(1-x)^n}\).  Expanding this gives us \(\frac{(1-x^{m+1})^n}{(1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}\). The coefficient of \(x^k\) in this product is the number of \(k\)-element multisets chosen from an \(n\)-element set in which no element appears more than \(m\) times. This coefficient is \(\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}\).%
 \end{activity}
 \begin{activity}[]\label{activity-203}
 One natural but oversimplified model for the growth of a tree is that all new wood grows from the previous year's growth and is proportional to it in amount. To be more precise, assume that the (total) length of the new growth in a given year is the constant \(c\) times the (total) length of new growth in the previous year. Write down a recurrence for the total length \(a_n\) of all the branches of the tree at the end of growing season \(n\). Find the general solution to your recurrence relation. Assume that we begin with a one meter cutting of new wood (from the previous year) which branches out and grows a total of two meters of new wood in the first year.  What will the total length of all the branches of the tree be at the end of \(n\) years?%
@@ -4431,7 +4428,7 @@ Assuming that we begin with one meter of new wood means \(a_0=1\), and assuming 
 \begin{align*}
 \amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
 (1+x^4+x^8+\cdots)\\
-\amp =\amp 
+\amp =\amp
 \frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}
 \end{align*}
 %
@@ -4443,7 +4440,7 @@ What is the generating function for the number of partitions of an integer in wh
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-(1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
+(1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots
 =\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
 =\prod_{i=1}^\infty \frac{1-q^{i(m+1)}}{1-q^i}
 \end{equation*}
@@ -7045,7 +7042,7 @@ Find the EGF (exponential generating function) for the sequence \(a_n=2^n\). Wha
 \textbf{Solution.}\quad The number of ways to paint the streetlights is \(4^n\), so the EGF is \(\sum_{n=0}^\infty 4^n\frac{x^n}{n!}=e^{4x}\).%
 
 ~\par
-\item For what sequence is \({e^x-e^{-x}\over 2} =\cosh x\) the EGF (exponential generating function)?%
+\item For what sequence is \(\frac{e^x-e^{-x}}{2} =\cosh x\) the EGF (exponential generating function)?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad For the sequence \(\frac{1-(-1)^n}{2}\) which, starting with \(n=0\) is the alternating sequence 0,1,0,1\dots{} of zeros and ones.%
 
@@ -7224,7 +7221,7 @@ d_{n-2}\frac{x^{n-1}}{(n-2)!}\\
 x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)\\
 D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)\\
 D'(x)(1-x) \amp =\amp  xD(x)\\
-D'(x)\over D(x) \amp =\amp  x\over 1-x
+\frac{D'(x)}{D(x)} \amp =\amp  \frac{x}{1-x}
 \end{align*}
 This gives us \(\ln D(x) = -\ln(1-x) -x +c\), so that \(D(x) = \frac{1}{1-x}e^{-x}e^c\). Since \(d_0=1\), we have \(d(0)=1\), so \(c=0\) and%
 \begin{align*}
@@ -7561,16 +7558,16 @@ f(x) = 1+\sum_{j=1}^\infty
 \end{equation*}
 From the right-hand expression, we get a term involving \(x^n\) whenever we have an \(x^n\) term in the \(j\)th power of \(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}\). So the coefficient of \(\frac{x^n}{n!}\) is the sum over all \(j\) and all sequences \(i_1,i_2,\ldots,i_j\) with \(i_1+i_2+\cdots+i_j = n\) of terms of the form%
 \begin{equation*}
-\frac{n!}{j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
-\over i_k!},
+\frac{n!}{j}(-1)^j\prod_{k=1}^j \frac{2^\binom{i_k}{2}
+}{i_k!},
 \end{equation*}
 where each \(i_k>0\). Notice that reordering the numbers \(i_1\), \(i_2\), \dots{} \(i_k\) does not change the value of the expression. The sequence of \(i_k\)s is a composition of \(n\) into positive parts. If we knew how many compositions of \(n\) into \(j\) parts correspond to one partition of \(n\) into \(j\) parts, we could sum over a much smaller set of terms. If we use the type vector notation for a partition, namely that it has \(p_1\) parts of size 1, \(p_2\) parts of size 2, \dots{}, \(p_n\) parts of size \(n\), then the number of compositions corresponding to that partition, i.e. the number of compositions with the type vector \((p_1,p_2, \ldots, p_n)\) is the number of ways to take \(j\) places in a vector and label \(p_1\) of them with 1, \(p_2\) of them with 2, and so on until we label \(p_n\) of them with \(n\). This number is the multinomial coefficient \(\binom{j}{p_1,p_2,\ldots, p_n}\). Thus our sum over all j and all compositions of \(n\) into \(j\) parts becomes%
 \begin{equation*}
 \sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
 rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
 p_n}
-\prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-\over (r!)^{p_r}}.
+\prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+}{(r!)^{p_r}}.
 \end{equation*}
 %
 \par
@@ -7578,15 +7575,15 @@ We can remove one of the summation signs and the condition that \(\sum_{r=1}^n p
 \begin{equation*}
 \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
 rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
-\prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-\over (r!)^{p_r}p_r!}
+\prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+}{(r!)^{p_r}p_r!}
 \end{equation*}
 for the number of connected graphs on \(n\) vertices. If we want to shorten the appearance of the formula we can keep \(j\) in our sum and explain its value afterwards, as in%
 \begin{equation*}
 \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
 rp_r =n }}{n!}(-1)^j(j-1)!
-\prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
-\over (r!)^{p_r}p_r!},
+\prod_{r=1}^n \frac{2^{^{\binom{r}{2}p_r}}
+}{(r!)^{p_r}p_r!},
 \end{equation*}
 where \(j=\sum_{r=1}^n p_r\).%
 

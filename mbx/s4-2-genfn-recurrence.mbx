@@ -130,8 +130,7 @@
         </p>
 
         <p>
-          This gives us that <m>a_n= 4000(1.1)^n +1000{1-(1.1)^{n+1}\over
-          -.1}</m>. This simplifies to <m>a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
+          This gives us that <m>a_n= 4000(1.1)^n +1000 \frac{1-(1.1)^{n+1}}{-.1}</m>. This simplifies to <m>a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
           15,000(1.1)^n-10000</m>. Courtesy of Maple, after ten years we have <dollar />28,906.14
           and after 20 years we have <dollar />90,912.50.
         </p>
@@ -360,7 +359,7 @@
           Use the factors you found in <xref ref="factorFibonacci">Problem</xref> to
           write
           <me>
-            1\over x^2+x-1
+            \frac{1}{x^2+x-1}
           </me>
           in the form
           <me>
@@ -381,7 +380,7 @@
           us
           <me>
             \frac{1}{x^2+x-1} = \frac{1/\sqrt{5}}{x-\frac{-1+\sqrt{5}}{2}}
-            +{-1/\sqrt{5}\over x- \frac{-1-\sqrt{5}}{2}}.
+            + \frac{-1/\sqrt{5}}{x- \frac{-1-\sqrt{5}}{2}}.
           </me>
         </p>
       </solution>
@@ -415,10 +414,12 @@
               <mrow>a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
               +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}</mrow>
               <mrow>\amp =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
-              +{2^{n+1}\over\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
+              +
+              \frac{2^{n+1}}{\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
               <mrow>\amp =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
-              4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
-              <mrow>\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
+              4^{n+1}}-
+              \frac{2^{n+1}(1-\sqrt{5})^{n+1}}{\sqrt{5}\cdot4^{n+1}}</mrow>
+              <mrow>\amp =\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
               \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.</mrow>
             </md>
             </p>
@@ -443,8 +444,7 @@
           <p>
             From the binomial theorem,
             <md>
-              <mrow>\amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
-              2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}</mrow>
+              <mrow>\amp \amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}</mrow>
               <mrow>\amp =\amp
               \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
               <mrow>\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
@@ -461,10 +461,9 @@
             which makes it clear that <m>a_n</m> is at least a rational
             number. It is not clear from this new formula why the result is always an
             integer. Since
-            <m>\left|{1-\sqrt{5}\over 2}\right|\lt 1</m>,
-            <m>\frac{1}{\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}</m> approaches 0 as <m>n</m>
-            becomes large. Therefore if we take <m>b</m> to be <m>\left({1+\sqrt{5}\over
-            2}\right)^n</m> and we take <m>c</m> to be <m>{1+\sqrt{5}\over 2\sqrt{5}}</m> then then
+            <m>\left|\frac{1-\sqrt{5}}{2}\right|\lt 1</m>,
+            <m>\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}</m> approaches 0 as <m>n</m>
+            becomes large. Therefore if we take <m>b</m> to be <m>\left(\frac{1+\sqrt{5}}{2}\right)^n</m> and we take <m>c</m> to be <m>\frac{1+\sqrt{5}}{2\sqrt{5}}</m> then then
             <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large. In
             particular, it is the nearest integer to <m>cb^n</m>.
           </p>
@@ -554,7 +553,7 @@
           </md>
         </p>
 
-        <p>This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y={1\pm \sqrt{1-4x}\over 2x}</m>. By the extended binomial theorem,
+        <p>This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y=\frac{1\pm \sqrt{1-4x}}{2x}</m>. By the extended binomial theorem,
           <me>
             \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty \binom{1/2}{i}(-4x)^i=
             \sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i.
