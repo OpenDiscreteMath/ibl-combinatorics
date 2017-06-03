@@ -77,9 +77,9 @@
         We use inclusion and exclusion, with property <m>i</m> being the property that child <m>i</m> has the same child to the right the second time they join hands.  Given a set <m>S</m> of properties, we can think of arranging units consisting of individual children and strings of children holding hands in a circle. If we have <m>s</m> properties, then we have <m>n-s</m> of these units. Each string of children can be arranged in only one way, because our set specifies who has to have the same child on the right. Thus <m>N_{\mbox{a} }(S) = (n-s-1)!</m>. This gives us
         <md>
           <mrow>N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-          (-1)^{|S|}(n-|S|-1)!\amp =\amp 
+          (-1)^{|S|}(n-|S|-1)! =\amp 
           \sum_{s=0}^n (-1)^s \binom{n}{s} (n-s-1)!</mrow>
-          <mrow>\amp =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}</mrow>
+          <mrow> =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}</mrow>
         </md>
         ways for the children to join hands the second time so that none
         of them has the same child to the right.

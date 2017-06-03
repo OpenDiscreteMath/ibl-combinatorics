@@ -39,8 +39,8 @@
           <m>APB+APB^2 +AP^2B+ AP^2B^2+ A^2PB+A^2PB^2+ A^2P^2B+ A^2P^2B^2+
           A^3PB+A^3PB^2 +A^3P^2B+ A^3P^2B^2</m>
           <md>
-            <mrow>\amp \amp (A+A^2+A^3)(P+P^2)(B+B^2)</mrow>
-            <mrow>\amp =\amp APB+APB^2+AP^2B+AP^2B^2+A^2PB+A^2PB^2+A^2P^2B</mrow>
+            <mrow> \amp (A+A^2+A^3)(P+P^2)(B+B^2)</mrow>
+            <mrow> =\amp APB+APB^2+AP^2B+AP^2B^2+A^2PB+A^2PB^2+A^2P^2B</mrow>
             <mrow>\amp +\amp A^2P^2B^2+
             A^3PB+A^3PB^2+A^3P^2B+A^3P^2B^2.</mrow>
           </md>
@@ -114,14 +114,14 @@
       <solution>
           <p>
               <md>
-          <mrow>E_P(S_1\times S_2)\amp =\amp \sum_{(x_1,x_2)\in S_1\times
+          <mrow>E_P(S_1\times S_2) =\amp \sum_{(x_1,x_2)\in S_1\times
           S_2} P(x_1)P(x_2)</mrow>
-          <mrow>\amp =\amp
+          <mrow> =\amp
           \sum_{x_1:x_1\in S_1}\sum_{x_2:x_2\in S_2} P(x_1)P(x_2)</mrow>
-          <mrow>\amp =\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)</mrow>
-          <mrow>\amp =\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)</mrow>
-          <mrow>\amp =\amp \left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)</mrow>
-          <mrow>\amp =\amp E_{P_1}(S_1)E_{P_2}(S_2)</mrow>
+          <mrow> =\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)</mrow>
+          <mrow> =\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)</mrow>
+          <mrow> =\amp \left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)</mrow>
+          <mrow> =\amp E_{P_1}(S_1)E_{P_2}(S_2)</mrow>
         </md>
           </p>
       </solution>
@@ -371,9 +371,9 @@
         Therefore <m>(1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i</m>. To get the <m>(x+y)^n</m> form
         of the binomial theorem, note that <m>x+y = y(1+\frac{x}{y})</m>, so that
         <md>
-          <mrow>(x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n</mrow>
-          <mrow>\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}</mrow>
-          <mrow>\amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.</mrow>
+          <mrow>(x+y)^n  =\amp  y^n\left(\frac{x}{y}+1\right)^n</mrow>
+          <mrow> =\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}</mrow>
+          <mrow> =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.</mrow>
         </md>
       </p>
         </solution>
@@ -495,10 +495,10 @@
         <p>
           <m>(1+x+x^2+x^3+x^4)^3</m>. We can write
           <md>
-            <mrow>\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3</mrow>
-            <mrow>\amp =\amp (1-x^5)^3(1-x)^{-3}</mrow>
-            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i</mrow>
-            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i</mrow>
+            <mrow> \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3</mrow>
+            <mrow> =\amp (1-x^5)^3(1-x)^{-3}</mrow>
+            <mrow> =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i</mrow>
+            <mrow> =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i</mrow>
           </md>
         </p>
 
@@ -518,12 +518,12 @@
       <solution>
           <p>
           <md>
-          <mrow>(x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
+          <mrow>(x^j+x^{j+1}+\cdots+x^{m-1}) =\amp x^j
           \left(\sum_{i=0}^{m-j-1}x^i\right)^n</mrow>
-          <mrow>\amp =\amp
+          <mrow> =\amp
           \left(x^j\frac{1-x^{m-j}}{1-x}\right)^n</mrow>
-          <mrow>\amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n</mrow>
-          <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
+          <mrow> =\amp \left(\frac{x^j-x^m}{1-x}\right)^n</mrow>
+          <mrow> =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
           </md>
           </p>
       </solution>
@@ -685,10 +685,10 @@
             cancel with alternate terms in the denominator leaving only terms with odd
             powers of <m>q</m>. But
             <md>
-              <mrow>\amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
+              <mrow> \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
               \sum_{i=0}^\infty
               (q^{2j-1})^i</mrow>
-              <mrow>\amp =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
+              <mrow> =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
               +q^5+q^{2\cdot5}+\cdots)\cdots,</mrow>
             </md>
             which is the generating function for partitions of integers into parts that
@@ -836,14 +836,14 @@
       <solution>
         <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>\frac{[m+0]!_q }{[m]!_q[0]!_q} =1</m> and <m>\frac{[0+n]!_q }{[0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
           <md>
-            <mrow>\amp \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}</mrow>
-            <mrow>\amp =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
+            <mrow> \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}</mrow>
+            <mrow> =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
             +\frac{1}{[n]!_q[m-1]!_q}\right)</mrow>
-            <mrow>\amp \amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)</mrow>
-            <mrow>\amp =\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+            <mrow> \amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)</mrow>
+            <mrow> =\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
             1+q+\cdots+q^{m-1}\right)</mrow>
-            <mrow>\amp =\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}</mrow>
-            <mrow>\amp =\amp \qchoose{m+n}{n}.</mrow>
+            <mrow> =\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}</mrow>
+            <mrow> =\amp \qchoose{m+n}{n}.</mrow>
           </md>
         </p>
 

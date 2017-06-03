@@ -29,11 +29,11 @@
       <solution>
         <md>
           <mrow>\sum_{n=2}^\infty a_n\frac{x^n}{n!}
-          \amp =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
+           =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
           \frac{x^n}{(n-2)!}</mrow>
-          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
+          <mrow> =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
           x^2\sum_{n=0}^\infty \frac{x^n}{n!}</mrow>
-          <mrow>\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
+          <mrow> =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
           +x^2e^x</mrow>
         </md>
         <p>
@@ -149,11 +149,11 @@
         <solution>
           <md>
             <mrow>\sum_{n=2}^\infty c_n\frac{x^{n-1}}{(n-1)!}
-            \!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
+            \! =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
             \sum_{n=2}^\infty c_{n-1}\frac{x^{n-1}}{(n-1)!}</mrow>
-            <mrow>\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
+            <mrow>\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \! =\amp \! x\sum_{n=2}^\infty
             c_{n-2}\frac{x^{n-2}}{(n-2)!} + \sum_{n=0}^\infty c_n\frac{x^n}{n!} -c_0</mrow>
-            <mrow>T'(x)\!\amp =\amp \!xT(x) +T(x)</mrow>
+            <mrow>T'(x)\! =\amp \!xT(x) +T(x)</mrow>
           </md>
           <p>
             <m>T(0) = c_0 =1</m>. Then <m>\frac{T'(x)}{T(x)} = x+1</m>, giving <m>\ln T(x)
@@ -210,19 +210,19 @@
         <solution>
           <md>
             <mrow>\sum_{n=2}^\infty d_n\frac{x^{n-1}}{(n-1)!}
-            \amp =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
+             =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
             d_{n-2}\frac{x^{n-1}}{(n-2)!}</mrow>
-            <mrow>\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp
+            <mrow>\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1  =\amp
             x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)</mrow>
-            <mrow>D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)</mrow>
-            <mrow>D'(x)(1-x) \amp =\amp  xD(x)</mrow>
-            <mrow>\frac{D'(x)}{D(x)} \amp =\amp  \frac{x}{1-x}</mrow>
+            <mrow>D'(x) -d_1  =\amp  xD'(x) +xD(x)</mrow>
+            <mrow>D'(x)(1-x)  =\amp  xD(x)</mrow>
+            <mrow>\frac{D'(x)}{D(x)}  =\amp  \frac{x}{1-x}</mrow>
           </md>
           <p>
             This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = \frac{1}{1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
             <md>
-              <mrow>D(x) \amp =\amp  \frac{e^{-x}}{1-x}</mrow>
-              <mrow>\amp =\amp
+              <mrow>D(x)  =\amp  \frac{e^{-x}}{1-x}</mrow>
+              <mrow> =\amp
               \sum_{i=0}^\infty(-1)^i\frac{x^i}{i!}\cdot\sum_{j=0}^\infty
               x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i \frac{(-1)^j}{j!}\right)
               x^i.</mrow>

@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T16:39:56-06:00    *%
+%*    on 2017-06-03T16:49:11-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -1524,10 +1524,10 @@ When we studied the Pascal Equation and subsets in Chapter 1, it may have appear
 \textbf{Solution.}\quad We wish to prove that \(\binom{n}{i} =\frac{n!}{i!(n-i)!}\). We note that since \(\binom{n}{0}=1\) and \(\binom{n}{n} =1\) are in agreement with this formula, we only have to consider the cases in which \(0\lt i\lt n\), which by the way, requires that \(n\ge 2\). We will prove that our formula holds by induction on \(n\) for \(n\ge 2\). If \(n=2\), the only \(i\) we need to consider is \(i=1\), and we know that \(\binom{2}{1}=2\), the number of one-element subsets of a two-element set. But \(\frac{2!}{1!(2-1)!}\) is 2 also, so our formula holds when \(n=2\). Now suppose our formula holds when \(n=k-1\), so that for every \(i\) with \(0\lt i\lt n-1\), \(\binom{k-1}{i} =
 \frac{(k-1)!}{i!(k-1-i)!}\). Then by the Pascal Equation%
 \begin{align*}
-\binom{k}{i}\amp =\amp \binom{k-1}{i-1}+\binom{k-1}{i}\\
-\amp =\amp
+\binom{k}{i} =\amp \binom{k-1}{i-1}+\binom{k-1}{i}\\
+=\amp
 \frac{(k-1)!}{(i-1)!(k-1-i+1)!} + \frac{(k-1)!}{i!(k-1-i)!}\\
-\amp =\amp \frac{(k-1)!i+(k-1)!(k-i)}{i!(k-i)!} \ =\  \frac{k!}{i!(k-i)!}.
+=\amp \frac{(k-1)!i+(k-1)!(k-i)}{i!(k-i)!} \ =\  \frac{k!}{i!(k-i)!}.
 \end{align*}
 %
 \par
@@ -1542,11 +1542,11 @@ Thus the truth of our formula for \(n=k-1\) implies its truth for \(n=k\). There
 \par
 Now suppose that when \(n=k-1\), \((x+y)^n=\sum_{i=0}^n \binom{n}{i}x^{n-i}y^i.\) This gives us%
 \begin{align*}
-(x+y)^k\amp =\amp (x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-1-i}y^i\\
-\amp =\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=0}^{k-1} \binom{k-1}{i}x^{k-1-i}y^{i+1}\\
-\amp =\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=1}^{k} \binom{k-1}{i-1}x^{k-i}y^{i}\\
-\amp =\amp  x^k+\left(\sum_{i=1}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\binom{k-1}{i-1}x^{k-i}y^i\right) +y^k\\
-\amp =\amp  x^k+\left(\sum_{i=1}^{k-1} \binom{k}{i}x^{k-i}y^i\right) +y^k\ =\
+(x+y)^k =\amp (x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-1-i}y^i\\
+=\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=0}^{k-1} \binom{k-1}{i}x^{k-1-i}y^{i+1}\\
+=\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=1}^{k} \binom{k-1}{i-1}x^{k-i}y^{i}\\
+=\amp  x^k+\left(\sum_{i=1}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\binom{k-1}{i-1}x^{k-i}y^i\right) +y^k\\
+=\amp  x^k+\left(\sum_{i=1}^{k-1} \binom{k}{i}x^{k-i}y^i\right) +y^k\ =\
 \sum_{i=0}^k \binom{k}{i}x^{k-i}y^i.
 \end{align*}
 %
@@ -1585,9 +1585,9 @@ Thus the truth of our law for \(n=k-1\) implies its truth for \(n=k\). Therefore
 \par\medskip\noindent%
 \textbf{Solution.}\quad We will use induction on \(n\) and part (a) of this problem to prove that \(a^{mn}=(a^m)^n\). First, when \(n=0\) the left and right hand sides of the equation are both 1, so \(a^{mn}=(a^m)^n\) holds when \(n=0\). Now assume that \(a^{m(k-1)} =(a^m)^{k-1}\). This may be rewritten as \(a^{mk-m}=(a^m)^{k-1}\) Multiply both sides by \(a^m\) and apply part (a) of the problem and then the inductive definition (with \(a^m\) replacing \(a\)) to get%
 \begin{align*}
-a^{mk-m}a^m\amp =\amp (a^m)^{k-1}a^m\\
-a^{mk}\amp =\amp (a^m)^{k-1}a^m\\
-a^{mk}\amp =\amp (a^m)^k.
+a^{mk-m}a^m =\amp (a^m)^{k-1}a^m\\
+a^{mk} =\amp (a^m)^{k-1}a^m\\
+a^{mk} =\amp (a^m)^k.
 \end{align*}
 %
 \par
@@ -1717,11 +1717,11 @@ Now assume that when \(m+n=k-1\), it is the case that if there are \(\binom{m+n-
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(R(n,n)\le \binom{n+n-2}{m-1}=\frac{(2n-2)!}{(n-1)!^2}\). For \(n\) sufficiently large, this is approximately%
 \begin{align*}
-\amp \amp \frac{\sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}}{ \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
+\amp \frac{\sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}}{ \sqrt{2 \pi (n-1)}(n-1)^{n-1}\sqrt{2 \pi
 (n-1)}(n-1)^{n-1}/e^{n-1}e^{n-1}}\\
-\amp =\amp \frac{2^{2n-2}(n-1)^{2n-2}}{\sqrt{\pi
+=\amp \frac{2^{2n-2}(n-1)^{2n-2}}{\sqrt{\pi
 (n-1)}(n-1)^{2n-2}}\\
-\amp =\amp \frac{1}{\sqrt{\pi
+=\amp \frac{1}{\sqrt{\pi
 (n-1)}}2^{2n-2}
 \end{align*}
 %
@@ -1761,14 +1761,14 @@ of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\amp \amp \frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
+\amp \frac{1}{2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
 of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)\\
-\amp =\amp \frac{1}{2^{^\binom{m}{2}}} \sum_{N:N\subseteq
+=\amp \frac{1}{2^{^\binom{m}{2}}} \sum_{N:N\subseteq
 M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)\\
-\amp =\amp
+=\amp
 2^{-\binom{m}{2}}\sum_{N:N\subseteq
 M,~|N|=n}2\cdot2^{\binom{m}{2}-\binom{n}{2}}\\
-\amp =\amp  2\binom{m}{n}2^{-\binom{n}{2}}
+=\amp  2\binom{m}{n}2^{-\binom{n}{2}}
 \end{align*}
 
 ~\par
@@ -1938,9 +1938,9 @@ As you can see from \hyperref[classifyrecurrences]{Problem~\ref{classifyrecurren
 \par\medskip\noindent%
 \textbf{Solution.}\quad Note that by the formula, \(a_{n-1}=ba_{n-2} +d\). Substituting this into the original equation for \(a_n\) gives \(a_n=b^2a_{n-2}+bd +d\). Repeating this kind of substitution gives us \(a_n=b^3a_{n-3} +b^2d +bd +d\). This suggests that \(a_n = a_0b^n +\sum_{i=0}^{n-1}db^i\). We would guess the same formula by writing out the first few values of \(a_i\), namely, \(a_0\), \(a_0b+d\), \(a_0b^2+db+d\), \(a_0b^3+b^2d+bd+d\), and so on. We prove our general formula by induction on \(n\). It is clearly true when \(n=0\) as there are no terms in the sum and \(b^0=1\). If we assume the formula is true when \(n=k-1\), we may write%
 \begin{align*}
-a_k \amp =\amp  ba_{k-1}+d\\
-\amp =\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d\\
-\amp =\amp a_0b^n +\sum_{i=0}^{n-1}db^i
+a_k  =\amp  ba_{k-1}+d\\
+=\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d\\
+=\amp a_0b^n +\sum_{i=0}^{n-1}db^i
 \end{align*}
 %
 \par
@@ -1949,12 +1949,12 @@ Thus the truth of our formula for \(n=k-1\) implies its truth for \(n=k\) and th
 We can give a more compact expression for the sum \(\sum_{i=0}^{n-1}db^i=d\sum_{i=0}^{n-1}b^i\). Recall from algebra that \((1+x)(1-x)= 1-x^2\), \((1+x+x^2)(1-x) = 1-x^3\), and in general \((1+x+x^2+\cdots
 x^{n-1}))(1-x) = 1-x^n\). If you do not recall this formula, you can prove it by induction, or observe that%
 \begin{align*}
-\amp \amp (1+x+x^2+\cdots
+\amp (1+x+x^2+\cdots
 x^{n-1}))(1-x)\\
-\amp =\amp  (1+x+x^2+\cdots
+=\amp  (1+x+x^2+\cdots
 x^{n-1})\cdot 1-(1+x+x^2+\cdots
 x^{n-1})\cdot x\\
-\amp =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.
+=\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.
 \end{align*}
 %
 \par
@@ -1984,10 +1984,10 @@ Do this problem only if your final answer (so far) to \hyperref[firstordlinconst
 \par\medskip\noindent%
 \textbf{Solution.}\quad We expect \((1-b)\sum_{i=0}^{n-1} db^i\) to be \(d(1-b^n)\). If \(b\not=1\), this gives us \(\sum_{i=0}^{n-1}db^i=d\frac{1-b^n}{1-b}.\) We can prove this by induction on \(n\). If \(n=0\) we get 0 for \(\frac{1-b^n}{1-b}\), and also for the sum \(\sum_{i=0}^{-1}db^i\), since that sum has no terms. Assuming the formula holds when \(n=k-1\), we may write%
 \begin{align*}
-\amp \amp \sum_{i=0}^{k-1} db^i\\
-\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
-\amp =\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}\\
-\amp =\amp \frac{ d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
+\amp \sum_{i=0}^{k-1} db^i\\
+=\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
+=\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}\\
+=\amp \frac{ d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
 \end{align*}
 %
 \par
@@ -2207,7 +2207,7 @@ How do the number of spanning trees of \(G\) not containing the edge \(e\) and t
 +\#(G/e)\). Applying the formula twice to \(G\) gives%
 \begin{align*}
 \#(G)
-\amp =\amp \#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})\\
+=\amp \#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})\\
 \amp +\amp
 \#((G/\{1,2\})-\{2,3\}) +
 \#(G/\{1,2\}/\{2,3\}).
@@ -2271,10 +2271,10 @@ A\cap S_1=\bigcup_{i=1}^1 A\cap S_i.
 \par
 Assume that \(n>1\) and \(\displaystyle A\cap\bigcup_{i=1}^{n-1}=\bigcup_{i=1}^{n-1}A\cap S_i\). Now%
 \begin{align*}
-A\cap\bigcup_{i=1}^nS_i \amp =\amp  A\cap\left(\bigcup_{i=1}^{n-1}S_i
+A\cap\bigcup_{i=1}^nS_i  =\amp  A\cap\left(\bigcup_{i=1}^{n-1}S_i
 \cup S_n\right)=\left(A\cap\bigcup_{i=1}^{n-1}S_i\right) \cup\left( A\cap
 S_n\right)\\
-\amp =\amp \left(\bigcup_{i=1}^{n-1}A\cap
+=\amp \left(\bigcup_{i=1}^{n-1}A\cap
 S_i\right)\cup\left(A\cap S_n\right)=\bigcup_{i=1}^n A\cap S_i.
 \end{align*}
 %
@@ -2311,8 +2311,8 @@ Thus the correctness of the formula for \(n=m-1\) implies its correctness for \(
 %
 \item\hypertarget{li-47}{}(interesting) How many labelled trees on \(n\) vertices have exactly four vertices of degree 1? The vertices of degree 1 are the vertices that do not appear in the Grey code for the tree. So we first choose four vertices out of \(n\) in \(\binom{n}{4}\) ways to be our vertices of degree 1, and then we use the remaining \(n-4\) vertices to fill in our list of \(n-2\) vertices, using each of the \(n-4\) at least once. Thus we either use one of them 3 times and the rest once, or two of them twice and the rest once. There are \(n-4\) ways to choose the one we use three times and \(\binom{n-2}{3}\binom{n-5}{1}\binom{n-6}{1}\cdots\binom{1}{1}=\frac{(n-2)!}{3!}\) ways to label the \(n-2\) places with the chosen vertices. There are \(\binom{n-4}{2}\) ways to choose the vertices we would use twice, and \(\binom{n-2}{2}\binom{n-4}{2}\binom{n-6}{1}\binom{n-7}{1}\cdots \binom{1}{1}=\frac{(n-2)!}{2!2!}\) ways to assign the chosen vertices to the \(n-2\) places in the Prüfer Code. Thus we have%
 \begin{align*}
-\amp \amp \binom{n}{4}\left((n-4)\frac{(n-2)!}{3!} +\frac{(n-4)(n-3)}{2}\frac{(n-2)!}{4}\right)\\
-\amp =\amp \frac{n!}{48}(n-2)^{\underline{3}}\left(\frac{1}{3} +\frac{n-3}{4}\right)
+\amp \binom{n}{4}\left((n-4)\frac{(n-2)!}{3!} +\frac{(n-4)(n-3)}{2}\frac{(n-2)!}{4}\right)\\
+=\amp \frac{n!}{48}(n-2)^{\underline{3}}\left(\frac{1}{3} +\frac{n-3}{4}\right)
 \end{align*}
 possible Prüfer codes and therefore the same number of labelled trees.%
 %
@@ -2757,8 +2757,8 @@ from the binomial theorem. (In the way we stated the binomial theorem, instead o
 \par
 How do we express powers of \(x\) in terms of powers of \(x+1\)? Some experimentation would help us guess how to do so; however there is a really nice trick that also isn't hard to see. Namely, we can write%
 \begin{align*}
-x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i\\
-\amp =\amp 
+x^n =(x+1-1)^n= [(x+1) -1]^n =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i\\
+=\amp 
 \sum_{i=0}^n \binom{n}{i}(x+1)^i(-1)^{n-i}
 \end{align*}
 %
@@ -2778,11 +2778,11 @@ means, we can find a recurrence for Stirling numbers of the first kind that give
 \par\medskip\noindent%
 \textbf{Solution.}\quad \hyperref[stirling1]{Equation~(\ref{stirling1})} is effectively the inductive step of an inductive definition of \(x^{\underline{k}}\). With this equation we can write%
 \begin{align*}
-\sum_{n=0}^k s(k,n)x^n\amp =\amp x^{\underline{k}} =
+\sum_{n=0}^k s(k,n)x^n =\amp x^{\underline{k}} =
 x^{\underline{k-1}}(x-k+1)\\
-\amp =\amp \left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)\\
-\amp =\amp \sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n\\
-\amp =\amp \sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.
+=\amp \left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)\\
+=\amp \sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n\\
+=\amp \sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.
 \end{align*}
 %
 \par
@@ -2818,14 +2818,14 @@ x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\amp \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
+\amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
 x^{\overline{k-1}}(x+k-1)\\
-\amp =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)\\
-\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)\\
-\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)\\
-\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
+=\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)\\
+=\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)\\
+=\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)\\
+=\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
 x^{\underline{n}}\\
-\amp =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
+=\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
 (n+k-1)b(k-1,n)x^{\underline{n}}
 \end{align*}
 Thus if \(n\) is not 0 or \(k\), we equate the coefficient of \(x^{\underline{n}}\) in the first line and last line to get%
@@ -2855,10 +2855,10 @@ L(k,i)\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad There are several ways of finding this relationship, but the most concise way is to observe that \((-x)^{\underline{k}}=(-1)^kx^{\overline{k}}\) and \((-x)^{\overline{k}}= (-1)^k x^{\underline{k}}\). This lets us write%
 \begin{align*}
-(-x)^{\overline{k}}\amp =\amp \sum_{n=0}^k
+(-x)^{\overline{k}} =\amp \sum_{n=0}^k
 b(k,n)(-x)^{\underline{n}}\\
-(-1)^kx^{\underline{k}}\amp =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}\\
-x^{\underline{k}}\amp =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.
+(-1)^kx^{\underline{k}} =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}\\
+x^{\underline{k}} =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.
 \end{align*}
 %
 \par
@@ -3312,8 +3312,8 @@ Using an \(A\) in place of the picture of an apple, a \(P\) in place of the pict
 \textbf{Solution.}\quad \(APB+APB^2 +AP^2B+ AP^2B^2+ A^2PB+A^2PB^2+ A^2P^2B+ A^2P^2B^2+
 A^3PB+A^3PB^2 +A^3P^2B+ A^3P^2B^2\)%
 \begin{align*}
-\amp \amp (A+A^2+A^3)(P+P^2)(B+B^2)\\
-\amp =\amp APB+APB^2+AP^2B+AP^2B^2+A^2PB+A^2PB^2+A^2P^2B\\
+\amp (A+A^2+A^3)(P+P^2)(B+B^2)\\
+=\amp APB+APB^2+AP^2B+AP^2B^2+A^2PB+A^2PB^2+A^2P^2B\\
 \amp +\amp A^2P^2B^2+
 A^3PB+A^3PB^2+A^3P^2B+A^3P^2B^2.
 \end{align*}
@@ -3357,14 +3357,14 @@ How would you write down a picture enumerator that says we take between zero and
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-E_P(S_1\times S_2)\amp =\amp \sum_{(x_1,x_2)\in S_1\times
+E_P(S_1\times S_2) =\amp \sum_{(x_1,x_2)\in S_1\times
 S_2} P(x_1)P(x_2)\\
-\amp =\amp
+=\amp
 \sum_{x_1:x_1\in S_1}\sum_{x_2:x_2\in S_2} P(x_1)P(x_2)\\
-\amp =\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)\\
-\amp =\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)\\
-\amp =\amp \left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)\\
-\amp =\amp E_{P_1}(S_1)E_{P_2}(S_2)
+=\amp \sum_{x_1\in S_1}P(x_1)\sum_{x_2\in S_2}P(x_2)\\
+=\amp \sum_{x_1\in S_1} P(x_1) E_{P_2}(S_2)\\
+=\amp \left(\sum_{x_1\in S_1} P(x_1)\right)E_{P_2}(S_2)\\
+=\amp E_{P_1}(S_1)E_{P_2}(S_2)
 \end{align*}
 %
 \end{activity}
@@ -3497,9 +3497,9 @@ Let \(i\) denote an integer between 1 and \(n\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The generating function for number of \(n\)-tuples of 0s and 1s with \(k\) ones is, by the product principle for generating functions (extended to \(n\) factors) \((1+x)^n\). However the number of \(n\)-tuples of 0s and 1s with \(k\) ones is the number of \(k\)-element subsets of an \(n\)-element set. Therefore \((1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i\). To get the \((x+y)^n\) form of the binomial theorem, note that \(x+y = y(1+\frac{x}{y})\), so that%
 \begin{align*}
-(x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n\\
-\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}\\
-\amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.
+(x+y)^n  =\amp  y^n\left(\frac{x}{y}+1\right)^n\\
+=\amp y^n\sum_{i=0}^n \binom{n}{i}\frac{x^i}{y^i}\\
+=\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.
 \end{align*}
 %
 
@@ -3575,10 +3575,10 @@ Write down the generating function for the number of ways to distribute identica
 \par\medskip\noindent%
 \textbf{Solution.}\quad \((1+x+x^2+x^3+x^4)^3\). We can write%
 \begin{align*}
-\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3\\
-\amp =\amp (1-x^5)^3(1-x)^{-3}\\
-\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i\\
-\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i
+\amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3\\
+=\amp (1-x^5)^3(1-x)^{-3}\\
+=\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i\\
+=\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i
 \end{align*}
 %
 \par
@@ -3591,12 +3591,12 @@ What is the generating function for the number of multisets chosen from an \(n\)
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-(x^j+x^{j+1}+\cdots+x^{m-1})\amp =\amp x^j
+(x^j+x^{j+1}+\cdots+x^{m-1}) =\amp x^j
 \left(\sum_{i=0}^{m-j-1}x^i\right)^n\\
-\amp =\amp
+=\amp
 \left(x^j\frac{1-x^{m-j}}{1-x}\right)^n\\
-\amp =\amp \left(\frac{x^j-x^m}{1-x}\right)^n\\
-\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.
+=\amp \left(\frac{x^j-x^m}{1-x}\right)^n\\
+=\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.
 \end{align*}
 %
 \end{activity}
@@ -3694,10 +3694,10 @@ and the generating function for the number of partitions of an integer into dist
 \textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
 =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
 \begin{align*}
-\amp \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
+\amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
 \sum_{i=0}^\infty
 (q^{2j-1})^i\\
-\amp =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
+=\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
 +q^5+q^{2\cdot5}+\cdots)\cdots,
 \end{align*}
 which is the generating function for partitions of integers into parts that are odd numbers.%
@@ -3782,14 +3782,14 @@ While this doesn't {quite} look like the Pascal recurrence, it is still a correc
 \par\medskip\noindent%
 \textbf{Solution.}\quad Note that \(\qchoose{n}{0}= \qchoose{n}{n} = 1\), because only the partition with no parts sits in a rectangle of width or depth 0. But \(\frac{[m+0]!_q }{[m]!_q[0]!_q} =1\) and \(\frac{[0+n]!_q }{[0]!_q[n]!_q} =1\). Thus the formula holds when \(m=0\) or \(n=0\). But%
 \begin{align*}
-\amp \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}\\
-\amp =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
+\amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}\\
+=\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
 +\frac{1}{[n]!_q[m-1]!_q}\right)\\
-\amp \amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)\\
-\amp =\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
+\amp \relax[m+n-1]!_q\left(\frac{[n]_qq^m}{[n]!_q[m]_q}+\frac{[m]_q}{[n]!_q[m]!_q}\right)\\
+=\amp \relax\frac{[m+n-1]!_q}{[n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
 1+q+\cdots+q^{m-1}\right)\\
-\amp =\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}\\
-\amp =\amp \qchoose{m+n}{n}.
+=\amp \relax\frac{[m+n-1]!_q[m+n]_q}{[n]!_q[m]!_q}\\
+=\amp \qchoose{m+n}{n}.
 \end{align*}
 %
 \par
@@ -3892,14 +3892,14 @@ and in the right hand side, use the fact that%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=1}^\infty a_ix^i \amp =\amp 3\sum_{i=1}^\infty
+\sum_{i=1}^\infty a_ix^i  =\amp 3\sum_{i=1}^\infty
 a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
-\sum_{i=1}^\infty a_ix^i\amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
+\sum_{i=1}^\infty a_ix^i =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
 \sum_{i=0}^\infty 3^ix^i-3^0x^0\\
-\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
+\sum_{i=0}^\infty a_ix^i -a_0 =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
 \frac{1}{1-3x}-1\\
-(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+\frac{1}{1-3x} -1\\
-\sum_{i=0}^\infty a_ix^i \amp =\amp \frac{a_0-1}{1-3x}+\frac{1}{(1-3x)^2}
+(1-3x)\sum_{i=0}^\infty a_ix^i  =\amp a_0+\frac{1}{1-3x} -1\\
+\sum_{i=0}^\infty a_ix^i  =\amp \frac{a_0-1}{1-3x}+\frac{1}{(1-3x)^2}
 \end{align*}
 %
 
@@ -3908,8 +3908,8 @@ a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=0}^\infty a_i x^i \amp =\amp \frac{a_0-1}{1-3x} + \frac{1}{(1-3x)^2}\\
-\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty \binom{i+1}{i}3^ix^i,
+\sum_{i=0}^\infty a_i x^i  =\amp \frac{a_0-1}{1-3x} + \frac{1}{(1-3x)^2}\\
+=\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty \binom{i+1}{i}3^ix^i,
 \end{align*}
 which gives us \(a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i\).%
 
@@ -3918,14 +3918,14 @@ which gives us \(a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=1}^\infty a_ix^i\amp =\amp 3\sum_{i=1}^\infty
+\sum_{i=1}^\infty a_ix^i =\amp 3\sum_{i=1}^\infty
 a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i\\
-\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
+\sum_{i=0}^\infty a_ix^i -a_0  =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
 +\sum_{i=0}^\infty (2x)^i -1\\
-\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +\frac{1}{1-2x} -1\\
-(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +\frac{1}{1-2x}-1\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1}{1-3x}+\frac{1}{(1-2x)(1-3x)}\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
+\sum_{i=0}^\infty a_ix^i -a_0  =\amp 3x\sum_{i=0}^\infty a_ix^i +\frac{1}{1-2x} -1\\
+(1-3x)\sum_{i=0}^\infty a_ix^i =\amp a_0 +\frac{1}{1-2x}-1\\
+\sum_{i=0}^\infty a_ix^i =\amp  \frac{a_0-1}{1-3x}+\frac{1}{(1-2x)(1-3x)}\\
+\sum_{i=0}^\infty a_ix^i =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
 2^ix^i\sum_{j=0}^\infty 3^jx^j
 \end{align*}
 But%
@@ -3948,14 +3948,14 @@ Suppose we deposit \textdollar{}5000 in a savings certificate that pays ten perc
 \textbf{Solution.}\quad \(a_n=1.1a_{n-1}+1000\), and \(a_0=5000\).%
 \begin{align*}
 \sum_{i=1}^\infty
-a_ix^i\amp =\amp 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i\\
-\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp
+a_ix^i =\amp 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i\\
+\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0 =\amp
 1.1x\sum_{i=0}^\infty a_ix^i +1000(\sum_{i=0}^\infty x^i-1)\\
 \hspace{-.5
-in}(1-1.1x)\sum_{i=0}^\infty a_ix^i \amp =\amp  a_0 +1000\sum_{i=10}^\infty x^i-1000\\
-\sum_{i=0}^\infty a_i x^i\amp =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
+in}(1-1.1x)\sum_{i=0}^\infty a_ix^i  =\amp  a_0 +1000\sum_{i=10}^\infty x^i-1000\\
+\sum_{i=0}^\infty a_i x^i =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
 +1000\sum_{i=0}^\infty (1.1)^ix^i\sum_{i=0}^\infty x^i -1000\\
-\sum_{i=0}^\infty a_i x^i\amp =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
+\sum_{i=0}^\infty a_i x^i =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
 +1000\sum_{k=0}^\infty \left(\sum_{i=0}^k(1.1)^i\right)x^k
 - 1000\sum_{i=0}^\infty (1.1)^ix^i
 \end{align*}
@@ -3984,16 +3984,16 @@ This gives us the generating function for the sequence \(a_i\) giving the popula
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=2}^\infty a_nx^n\amp =\amp \sum_{n=2}^\infty a_{n-1}x^n +
+\sum_{n=2}^\infty a_nx^n =\amp \sum_{n=2}^\infty a_{n-1}x^n +
 2\sum_{n=2}^\infty a_{n-2}x^n\\
-\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x  =\amp x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
 2x^2\sum_{n=2}^\infty a_{n-2}x^{n-2}\\
-\sum_{n=0}^\infty a_nx^n -a_0-a_1x\amp =\amp x\sum_{n=1}^\infty a_{n}x^{n} +
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x =\amp x\sum_{n=1}^\infty a_{n}x^{n} +
 2x^2\sum_{n=0}^\infty a_{n}x^n\\
-\sum_{n=0}^\infty a_nx^n -a_0-a_1x\amp =\amp x\left(\sum_{n=0}^\infty
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x =\amp x\left(\sum_{n=0}^\infty
 a_{n}x^{n}-a_0\right) + 2x^2\sum_{n=0}^\infty a_{n}x^n\\
-(1-x-2x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}
+(1-x-2x^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0x\\
+\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}
 \end{align*}
 In this problem \(a_0=a_1=10\) because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus \(\displaystyle\sum_{n=0}^\infty a_nx^n = \frac{10}{(1-x-2x^2)}\)%
 \end{activity}
@@ -4002,12 +4002,12 @@ In Fibonacci's original problem, each pair of mature rabbits produces one new pa
 \par\medskip\noindent%
 \textbf{Solution.}\quad Our recurrence becomes \(a_n=a_{n-1}+a_{n-2}\), and following the pattern of \hyperref[secondorderintroduction]{Problem~\ref{secondorderintroduction}} we get%
 \begin{align*}
-\sum_{n=2}^\infty a_nx^n\amp =\amp \sum_{n=2}^\infty a_{n-1}x^n +
+\sum_{n=2}^\infty a_nx^n =\amp \sum_{n=2}^\infty a_{n-1}x^n +
 \sum_{n=2}^\infty a_{n-2}x^n\\
-\sum_{n=0}^\infty a_nx^n-a_0-a_1x \amp =\amp x\left(\sum_{n=0}^\infty
+\sum_{n=0}^\infty a_nx^n-a_0-a_1x  =\amp x\left(\sum_{n=0}^\infty
 a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n\\
-(1-x-x^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-a_0x}{(1-x-x^2)}
+(1-x-x^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0x\\
+\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-a_0x}{(1-x-x^2)}
 \end{align*}
 %
 \par
@@ -4023,15 +4023,15 @@ a_i=5a_{i-1}-6a_{i-2} + 2^i.
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=2}^\infty a_ix^i \amp =\amp  \sum_{i=2}^\infty
+\sum_{i=2}^\infty a_ix^i  =\amp  \sum_{i=2}^\infty
 5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i\\
-\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp
+\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x  =\amp
 5x\left(\sum_{i=0}^\infty
 a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
 2^ix^i-1-2x\\
-\hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0-1+(a_1-5a_0-2)x +
+\hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i =\amp a_0-1+(a_1-5a_0-2)x +
 \sum_{n=0}^\infty 2^ix^i\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}
+\sum_{i=0}^\infty a_ix^i =\amp  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}
 \end{align*}
 %
 \end{activity}
@@ -4055,15 +4055,15 @@ In \hyperref[simplifysumoffractions]{Problem~\ref{simplifysumoffractions}} you s
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\frac{5x+1}{(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}\\
-\frac{5x+1}{(x-3)(x-5)} \amp =\amp cx+5c+dx-3d
+\frac{5x+1}{(x-3)(x+5)}  =\amp  \frac{c}{x-3} + \frac{d}{x+5}\\
+\frac{5x+1}{(x-3)(x-5)}  =\amp cx+5c+dx-3d
 \end{align*}
 gives us%
 \begin{align*}
-5x\amp =\amp cx+dx\\
-1\amp =\amp 5c-3d\\
-5\amp =\amp c+d\\
-1\amp =\amp 5c-3d
+5x =\amp cx+dx\\
+1 =\amp 5c-3d\\
+5 =\amp c+d\\
+1 =\amp 5c-3d
 \end{align*}
 %
 \par
@@ -4100,9 +4100,9 @@ Use this to find a formula for \(a_n\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\frac{10}{(1-x-2x^2)}=\frac{10}{(1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}\). This gives us the equations \(c+d=10\) and \(c-2d=0\). Thus \(3d=10\), so \(d=\frac{10}{3}\), and \(c=2d\) so \(c=\frac{20}{3}\). Thus%
 \begin{align*}
-\sum_{i=0}^\infty a_ix^i \amp =\amp  \frac{10}{1-x-2x^2}\\
-\amp =\amp \frac{20/3}{1-2x} + \frac{10/3}{1+x}\\
-\amp =\amp \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i
+\sum_{i=0}^\infty a_ix^i  =\amp  \frac{10}{1-x-2x^2}\\
+=\amp \frac{20/3}{1-2x} + \frac{10/3}{1+x}\\
+=\amp \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i
 \end{align*}
 %
 \par
@@ -4146,23 +4146,23 @@ and use this to give an explicit formula for \(a_n\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=0}^\infty a_nx^n \amp =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}\\
-\amp =\amp \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}\\
-\amp =\amp \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}\\
-\amp =\amp \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
+\sum_{n=0}^\infty a_nx^n  =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}\\
+=\amp \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}\\
+=\amp \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}\\
+=\amp \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
 -\frac{1}{r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n
 \end{align*}
 This gives us that%
 \begin{align*}
-a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
+a_n =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}\\
-\amp =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
+=\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
 +
 \frac{2^{n+1}}{\sqrt{5}(-1-\sqrt{5})^{n+1}}\\
-\amp =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
+=\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
 4^{n+1}}-
 \frac{2^{n+1}(1-\sqrt{5})^{n+1}}{\sqrt{5}\cdot4^{n+1}}\\
-\amp =\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
+=\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
 \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.
 \end{align*}
 %
@@ -4177,19 +4177,19 @@ a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 \par\medskip\noindent%
 \textbf{Solution.}\quad From the binomial theorem,%
 \begin{align*}
-\amp \amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\\
-\amp =\amp
+\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\\
+=\amp
 \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]\\
-\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
+=\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
 [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
 -(-1)^i\left(\sqrt{5}\right)^i\right)\\
-\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+=\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
 odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i\\
-\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+=\amp \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
 odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}\\
-\amp =\amp \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+=\amp \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
 even} }  \binom{n+1}{i+1}5^{i/2}\\
-\amp =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
+=\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
 \end{align*}
 which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|\frac{1-\sqrt{5}}{2}\right|\lt 1\), \(\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left(\frac{1+\sqrt{5}}{2}\right)^n\) and we take \(c\) to be \(\frac{1+\sqrt{5}}{2\sqrt{5}}\) then then \(n\)th Fibonacci number is almost exactly \(cb^n\) when \(n\) is large. In particular, it is the nearest integer to \(cb^n\).%
 
@@ -4205,17 +4205,17 @@ which makes it clear that \(a_n\) is at least a rational number. It is not clear
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=2}^\infty a_nx^n \amp =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
+\sum_{n=2}^\infty a_nx^n  =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
 4\sum_{n=2}^\infty a_{n-2}x^n\\
-\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
+\sum_{n=0}^\infty a_nx^n -a_0-a_1x  =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
 -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n\\
-(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp
+(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n   =\amp
 a_0+a_1x-4a_0x\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
+\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}\\
+\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}\\
+\sum_{n=0}^\infty a_nx^n =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
 2^nx^n\\
-\sum_{n=0}^\infty a_nx^n\amp =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
+\sum_{n=0}^\infty a_nx^n =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
 2^nx^n
 \end{align*}
 Thus \(a_n=a_0(n+1)2^n
@@ -4252,12 +4252,12 @@ C_n=\sum_{i=1}^nC_{i-1}C_{n-i}.
 \par
 To solve for \(C_n\), write%
 \begin{align*}
-\sum_{n=0}^\infty C_nx^n \amp =\amp 1+\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}C_{n-i}x^n\\
+\sum_{n=0}^\infty C_nx^n  =\amp 1+\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}C_{n-i}x^n\\
 \sum_{n=0}^\infty C_nx^n
-\amp =\amp 1+x\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}x^{i-1}C_{n-i}x^{n-i}\\
+=\amp 1+x\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}x^{i-1}C_{n-i}x^{n-i}\\
 \sum_{n=0}^\infty C_nx^n
-\amp =\amp 1+x\sum_{i=1}^\infty C_{i-1}x^{i-1}\sum_{j=0}^\infty C_{j}x^{j}\\
-y\amp =\amp 1 + xy^2
+=\amp 1+x\sum_{i=1}^\infty C_{i-1}x^{i-1}\sum_{j=0}^\infty C_{j}x^{j}\\
+y =\amp 1 + xy^2
 \end{align*}
 %
 \par
@@ -4270,10 +4270,10 @@ This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula giv
 \par
 The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})\), so%
 \begin{align*}
-y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}\\
-\amp =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}\\
-\amp =\amp  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}\\
-\amp =\amp \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j
+y =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}\\
+=\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}\\
+=\amp  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}\\
+=\amp \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j
 \end{align*}
 giving us \(C_j=\frac{1}{j+1}\binom{2j}{j}\), which is our earlier formula for the Catalan Number \(C_j\).%
 \end{activity}
@@ -4290,9 +4290,9 @@ to find a formula for the number of ways to pass out the candy.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \((x^3+x^4+x^5+x^6)^n\);%
 \begin{align*}
-(x^3+x^4+x^5+x^6)^n\amp =\amp x^{3n}(1+x+x^2+x^3)^n\\
-\amp =\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n\\
-\amp =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
+(x^3+x^4+x^5+x^6)^n =\amp x^{3n}(1+x+x^2+x^3)^n\\
+=\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n\\
+=\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
 \binom{n+i-1}{i}x^i
 \end{align*}
 %
@@ -4315,8 +4315,8 @@ The number of ways to pass out \(k\) pieces of candy is the coefficient of \(x^k
 \par\medskip\noindent%
 \textbf{Solution.}\quad From \hyperref[firstordlinconst]{Problem~\ref{firstordlinconst}} or by applying generating functions we have%
 \begin{align*}
-a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}\\
-\amp =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}
+a_n  =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}\\
+=\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}
 \end{align*}
 %
 
@@ -4331,14 +4331,14 @@ a_n \amp =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\fra
 \textbf{Solution.}\quad \(360=\frac{\log
 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}\) is the equation we need to solve for \(m\), the monthly payment. We need to chose some base for the logarithm so we can write its inverse function; suppose we use logs to the base 10. Then%
 \begin{align*}
-360\log (1+\frac{.01p}{12}) \amp =\amp  \log
+360\log (1+\frac{.01p}{12})  =\amp  \log
 1200m-\log (1200m-Ap)\\
-10^{360\log (1+\frac{.01p}{12})}\amp =\amp 10^{\log
+10^{360\log (1+\frac{.01p}{12})} =\amp 10^{\log
 1200m/(1200m-Ap)}\\
-(1+\frac{.01p}{12})^{360} \amp =\amp 1200m/(1200m-Ap)\\
-\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360}\amp =\amp 1200m\\
-1200m\left((1+\frac{.01p}{12})^{360}-1\right)\amp =\amp  Ap(1+\frac{.01p}{12})^{360}\\
-m \amp =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}
+(1+\frac{.01p}{12})^{360}  =\amp 1200m/(1200m-Ap)\\
+\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360} =\amp 1200m\\
+1200m\left((1+\frac{.01p}{12})^{360}-1\right) =\amp  Ap(1+\frac{.01p}{12})^{360}\\
+m  =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}
 \end{align*}
 is our monthly payment.%
 
@@ -4356,12 +4356,12 @@ Find a recurrence relation for the number of ways to divide a convex \(n\)-gon i
 \par
 The number of triangulations of the original polygon that we get from case 1 is \(2d_{n-1}\). The number of triangulations we get from the second case is \(\sum_{i=3}^{n-2} d_id_{n-i+1}\). Thus the total number of triangulations is \(2d_{n-1}+d_{n-2}d_3 + d_{n-3}d_4 +\cdots + d_3d_{n-2}\). If we take \(d_2=1\), then we may write \(d_n = d_{n-1}d_2+d_{n-2}d_3 +\cdots+d_3d_{n-2} + d_2d_{n-1}=\sum\limits_{i=2}^{n-1} d_id_{n-i+1}\). This is very similar to the recurrence in \hyperref[CatalanRecurrence]{Problem~\ref{CatalanRecurrence}} for the Catalan numbers. We could apply the generating function method we used with the Catalan numbers to find a formula for \(d_n\). We could also experiment with the first few Catalan numbers and the first few ``triangulation'' numbers to see if they are related. We have \(C_0=1\), \(C_1=1\), \(C_2=2\), \(C_3=C_0C_2+C_1C_1 +C_2C_0=5\), and \(C_4=C_0C_3+C_1C_2+C_2C_1+C_3C_0=14\). We have that \(d_2=1\), \(d_3=1\), \(d_4=2\), \(d_5=d_4d_2+d_3d_3+d_2d_4=5\), and \(d_6=d_5d_2+d_4d_3+d_3d_4+d_5d_2=14\). This makes pretty convincing evidence that \(d_i= C_{i-2}\). We have already done a base case (and more) for an inductive proof. So assume inductively that \(d_{i}=C_{i-2}\) for \(i\lt n\). Then%
 \begin{align*}
-d_n\amp =\amp \sum\limits_{i=2}^{n-1} d_id_{n-i+1}\\
-\amp =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i+1-2}\\
-\amp =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i-1}\\
-\amp =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{n-(k+1)-1}\\
-\amp =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{(n-2)-k}\\
-\amp =\amp C_{n-2}
+d_n =\amp \sum\limits_{i=2}^{n-1} d_id_{n-i+1}\\
+=\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i+1-2}\\
+=\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i-1}\\
+=\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{n-(k+1)-1}\\
+=\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{(n-2)-k}\\
+=\amp C_{n-2}
 \end{align*}
 %
 \par
@@ -4373,11 +4373,11 @@ How does \(\sum_{k=0}^n\binom{n-k}{k}\) relate to the Fibonacci Numbers?%
 \textbf{Solution.}\quad We begin by computing a few values of \(a_n=\sum_{k=0}^n\binom{n-k}{k}\). We have \(a_0=1\), \(a_1=1\), \(a_2=2\), \(a_3=1+2=3\), \(a_4=1+3+1=5\), \(a_5=1+4+3=8\) and \(a_6=1+5+6+1=13\). So far the sequence agrees with the Fibonacci Numbers. Each term of the sequence is the sum of the two preceding terms, so it makes sense to try to prove that \(a_n=a_{n-1}+a_{n-2}\). We may write%
 \begin{align*}
 a_{n-1}+a_{n-2}
-\amp =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}
+=\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}
 +\sum_{k=0}^{n-2} \binom{n-2-k}{k}\\
-\amp =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}+\sum_{j=1}^{n-1}\binom{n-1-j}{j-1}\\
-\amp =\amp 1+\sum_{k=1}^{n-1}\binom{n-1-k}{k}+\binom{n-1-k}{k-1}\\
-\amp =\amp 1+\sum_{k=1}^{n-1}\binom{n-k}{k} \rangle =\rangle  \sum_{k=0}^{n-1}\binom{n-k}{k}
+=\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}+\sum_{j=1}^{n-1}\binom{n-1-j}{j-1}\\
+=\amp 1+\sum_{k=1}^{n-1}\binom{n-1-k}{k}+\binom{n-1-k}{k-1}\\
+=\amp 1+\sum_{k=1}^{n-1}\binom{n-k}{k} \rangle =\rangle  \sum_{k=0}^{n-1}\binom{n-k}{k}
 \rangle =\rangle  a_n
 \end{align*}
 %
@@ -4395,20 +4395,20 @@ One natural but oversimplified model for the growth of a tree is that all new wo
 \textbf{Solution.}\quad \(a_n= a_{n-1} +c(a_{n-1}-a_{n-2})=(1+c)a_{n-1}-ca_{n-2}\).%
 \begin{align*}
 \sum_{n=2}^\infty
-a_nx^n\amp =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n\\
-(1-(1+c)x +cx^2)\sum_{n=0}^\infty a_nx^n\amp =\amp a_0+a_1x-a_0(1+c)x\\
-\sum_{n=0}^\infty a_nx^n \amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{1-(1+c)x +cx^2}\\
-\amp =\amp  \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}
+a_nx^n =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n\\
+(1-(1+c)x +cx^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0(1+c)x\\
+\sum_{n=0}^\infty a_nx^n  =\amp  \frac{a_0+(a_1-a_0(1+c))x}{1-(1+c)x +cx^2}\\
+=\amp  \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}
 \end{align*}
 %
 \par
 Assuming \(c\not=1\) and using the method of partial fractions gives us%
 \begin{align*}
-\amp \amp \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}\\
-\amp =\amp  (a_0+(a_1-a_0(1+c))x)
+\amp \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}\\
+=\amp  (a_0+(a_1-a_0(1+c))x)
 \left[\frac{1/(1-c)}{(1-x)} -\frac{c/(1-c)}{1-cx}\right]\\
-\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]\\
-\amp =\amp  \frac{(a_0+(a_1-a_0(1+c))x)}{1-c}\sum_{i=0}^\infty
+=\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]\\
+=\amp  \frac{(a_0+(a_1-a_0(1+c))x)}{1-c}\sum_{i=0}^\infty
 (1-c^{i+1})x^i.
 \end{align*}
 %
@@ -4426,9 +4426,9 @@ Assuming that we begin with one meter of new wood means \(a_0=1\), and assuming 
 \par\medskip\noindent%
 \textbf{Solution.}\quad The generating function for the number of ways to paint \(n\) chairs is%
 \begin{align*}
-\amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
+\amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
 (1+x^4+x^8+\cdots)\\
-\amp =\amp
+=\amp
 \frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}
 \end{align*}
 %
@@ -4512,7 +4512,7 @@ to mean the intersection over all elements \(i\) in the set \(I\) of \(A_i\). Th
 This kind of notation, consisting of an operator with a description underneath of the values of a dummy variable of interest to us, can be extended in many ways. For example%
 \begin{align*}
 \sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
-A_i| \amp =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
+A_i|  =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
 +|A_1\cap A_4|\nonumber\\
 \amp +\amp  |A_2\cap A_3|+
 |A_2\cap A_4| +|A_3\cap A_4|.
@@ -4533,14 +4533,14 @@ A group of \(n\) students goes to a restaurant carrying backpacks. The manager i
 \par\medskip\noindent%
 \textbf{Solution.}\quad First we compute the number of ways to pass out the backpacks so that at least one student gets the correct one, then we divide by \(n!\) the total number of ways to pass out the backpacks to get the probability that at least one student gets the correct one. If we let \(A_i\) be the set of backpack distributions in which student \(i\) gets the correct backpack, then the number we want to compute is the size of the union of the sets \(A_i\). For this purpose we need to know, for every subset \(S\subseteq [n]\) the size of \(\cap_{i\in S}A_i\). That is, we need to know the number of ways to pass out the backpacks so that student \(i\) gets the correct one for each \(i\) in \(S\). It won't matter whether or not other students get the correct backpacks, so we can just assume that for each \(i\in S\), student \(i\) gets the correct backpack and then hand out the remaining \(n-|S|\) backpacks to the remaining \(n-|S|\) students in \((n-|S|)!\) ways. Thus \((n-|S|)!\) is \(|\cap_{i:i\in S}A_i|\). Using our formula from \hyperref[inclusion-exclusionunion]{Problem~\ref{inclusion-exclusionunion}} we get%
 \begin{align*}
-\left|\bigcup_{i=1}^n A_i \right| \amp =\amp  \sum_{S:
+\left|\bigcup_{i=1}^n A_i \right|  =\amp  \sum_{S:
 S\subseteq [n], S\not=\emptyset}
 (-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|\\
-\amp =\amp \sum_{S:
+=\amp \sum_{S:
 S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\\
-\amp =\amp
+=\amp
 \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!\\
-\amp =\amp \sum_{s=1}^n
+=\amp \sum_{s=1}^n
 (-1)^{s-1}\frac{n!}{s!}
 \end{align*}
 %
@@ -4599,15 +4599,15 @@ Verify that the formula for the number of ways to pass back the backpacks in \hy
 \textbf{Solution.}\quad Suppose we take property \(i\) to be the property that student \(i\) gets the correct backpack. In our solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}} we thought of \(S\) as a subset of \([n]\). Since we are numbering our properties from \(1\) to \(n\), each set \(S\) determines a corresponding set \(S'\) of properties: those properties numbered by the elements of \(S\). We will use \(P\) to stand for the set of all properties, that is property 1 through property \(n\). The number of ways to pass back the hats so that nobody gets the correct hat is \(n!\) minus the number of ways to pass back the hats so that somebody does get the correct hat back. From our solution to \hyperref[hatcheck]{Problem~\ref{hatcheck}}, we see that one way to express this is as%
 \begin{align*}
 n!-\sum_{S:
-S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp
+S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)! =\amp
 n!+\sum_{S:
 S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!\\
-\amp =\amp
+=\amp
 \sum_{S:
 S\subseteq [n]}(-1)^{|S|} (n-|S|)!\\
-\amp =\amp \sum_{S:
+=\amp \sum_{S:
 S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')\\
-\amp =\amp
+=\amp
 \sum_{S':
 S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')
 \end{align*}
@@ -4627,25 +4627,25 @@ J\subseteq P}N_{\mbox{e} }(J)\). In particular, we get by substitution that \(N_
 \textbf{Solution.}\quad Since \hyperref[incexempty]{Equation~(\ref{incexempty})} is a special case of \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})}, we will just substitute the formula from \hyperref[incexsystemeq]{Problem~\ref{incexsystemeq}} into the right-hand side of \hyperref[incexnonempty]{Equation~(\ref{incexnonempty})}. This gives us%
 \begin{align*}
 \hspace{-.25 in}\sum_{S: K\subseteq S\subseteq P}
-(-1)^{|S|-|K|}N_{\mbox{a} }(S)\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+(-1)^{|S|-|K|}N_{\mbox{a} }(S) =\amp \sum_{S: K\subseteq S\subseteq P}
 (-1)^{|S|-|K|}\sum_{J: S\subseteq
 J\subseteq P}N_{\mbox{e} }(J)\\
-\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+=\amp \sum_{S: K\subseteq S\subseteq P}
 \sum_{J: S\subseteq
 J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e} }(J)\\
-\amp =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+=\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
 (-1)^{|S|-|K|}N_{\mbox{e} }(J)\\
-\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
+=\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
 S\subseteq J} (-1)^{|S|-|K|}\\
-\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
+=\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
 \binom{|J|-|K|
 }{s-|K|}(-1)^{s-|K|}\\
-\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
+=\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
 \binom{|J|-|K|
 }{i}(-1)^{i}\\
-\amp =\amp \sum_{J:K\subseteq J\subseteq
+=\amp \sum_{J:K\subseteq J\subseteq
 P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}\\
-\amp =\amp N_{\mbox{e} }(K).
+=\amp N_{\mbox{e} }(K).
 \end{align*}
 %
 \par
@@ -4657,10 +4657,10 @@ In the fourth-to-last line of our equations, we used the fact that the number of
 \textbf{Solution.}\quad Let property \(i\) be ``Child \(i\) gets four or more apples.'' Then we are asking for the number of ways to pass out the apples that have none of the properties, so we are asking for \(N_{\mbox{e} }(\emptyset)\). From \hyperref[incexempty]{Equation~(\ref{incexempty})} we see that to find this number we need to know \(N_{\mbox{a} }(S)\) for every subset \(S\) of our set of properties. But if \(S\) has size \(s\), then having the properties in \(S\) means that all the children in a particular set of size \(s\) will get four or more apples. We already know how to pass out the apples so that the children in a particular set \(\hat S\) of children get at least four apples: we give everyone in \(\hat
 S\) four apples, and then pass out the remaining \(k-4s\) apples to the children in \(\binom{k-4s+n-1}{k-4s}= \binom{k-4s+n-1}{n-1}\) ways. This counts the number of ways to give at least four apples to every child in \(\hat S\), and maybe give four apples to some other children as well. Thus \(N_{\mbox{a} }(S) = \binom{k-4|S|+n-1}{n-1}\). Applying \hyperref[incexempty]{Equation~(\ref{incexempty})} gives us%
 \begin{align*}
-N_{\mbox{e} }(\emptyset)\amp =\amp \sum_{S:S\subseteq
+N_{\mbox{e} }(\emptyset) =\amp \sum_{S:S\subseteq
 P}(-1)^{|S|}N_{\mbox{a} }(S)\\
-\amp =\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}\\
-\amp =\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}
+=\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}\\
+=\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}
 \end{align*}
 %
 
@@ -4671,9 +4671,9 @@ A group of \(n\) married couples comes to a group discussion session where they 
 \par\medskip\noindent%
 \textbf{Solution.}\quad Let Property \(i\) be that couple \(i\) sits together. We are interested in the number of seating arrangements that have none of the properties. Thus for a set \(S\) of properties, we need to compute \(N_{\mbox{a} }(S)\). If we let each couple described by \(S\) sit together, we will seat \(|S|\) couples and \(2n-2|S|\) individuals around the table. We can do this in \(2^{|S|}(|S| + 2n-2 |S|-1)!\) ways, because once we chose a place for a couple (i.e. two adjacent seats) there are two ways the couple can sit down. Thus \(N_{\mbox{a} }(S) =2^{|S|}(2n-|S|-1)!\). Substituting this into \hyperref[incexempty]{Equation~(\ref{incexempty})} with \(P\) as the set of all properties gives us%
 \begin{align*}
-N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:S\subseteq P}
+N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:S\subseteq P}
 (-1)^{|S|} N_{\mbox{a} }(S)\\
-\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!
+=\amp \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!
 \end{align*}
 %
 \end{activity}
@@ -4684,8 +4684,8 @@ A group of \(n\) married couples comes to a group discussion session where they 
 \par
 Now if \(S\) is nonempty, and has \(s\) members, we seat one of the couples that must sit together (say the first in alphabetical order), and this determines the sex of the person that must sit at each other place. There are \(2n\) pairs of adjacent seats where we can seat that couple and two ways they can sit in the pair of adjacent seats that we choose. Then we have \(s-1\) couples, \(n-s\) men and \(n-s\) women to seat in the remaining places. First we arrange the \(s-1\) couples and \(2n-2s\) identical empty chairs in places at the table in \((2n-2s+s-1)!/(2n-2s)!=(2n-s-1)!/(2n-2s)!\) ways. Each couple can sit in only one way in the places they have chosen, because the sex of the person in a given place has been determined by how the first couple sits. The sex of the person in each of the remaining chairs has been determined, so we assign the men to their seats in \((n-s)!\) ways and we assign the women to their seats in \((n-s)!\) ways. Thus we have \(2\cdot2n(2n-s-1)!(n-s)!^2/(2n-2s)!\) ways to place the people. But we can partition the placements into blocks of \(2n\) equivalent placements, because shifting everyone the same number of places to the right or left gives an equivalent placement. Thus the number of inequivalent seating arrangements is%
 \begin{align*}
-\frac{2(2n-s-1)!(n-s)!^2}{(2n-2s)!}\amp =\amp \frac{2(2n-s-1)!(n-s)!^2}{2(n-s)(2n-2s-1)!}\\
-\amp =\amp \frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
+\frac{2(2n-s-1)!(n-s)!^2}{(2n-2s)!} =\amp \frac{2(2n-s-1)!(n-s)!^2}{2(n-s)(2n-2s-1)!}\\
+=\amp \frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
 \end{align*}
 %
 \par
@@ -4697,12 +4697,12 @@ N_{\mbox{a} }(S)=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
 \par
 Then from \hyperref[incexempty]{Equation~(\ref{incexempty})}%
 \begin{align*}
-N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+N_{\mbox{e} }  =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
 }{(2n-2|S|-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s \frac{n!(2n-s-1)!(n-s-1)!}{s!(2n-2s-1)!}\\
-\amp =\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!
+=\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
+=\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}\\
+=\amp \sum_{s=0}^n(-1)^s \frac{n!(2n-s-1)!(n-s-1)!}{s!(2n-2s-1)!}\\
+=\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!
 \end{align*}
 is the number of ways to seat the people, alternating sex, so that no couple sits together.%
 \end{activity}
@@ -4715,9 +4715,9 @@ Given a function \(f\) from the \(k\)-element set \(K\) to the \(n\)-element set
 \par\medskip\noindent%
 \textbf{Solution.}\quad An onto function has none of these properties. Thus, using this set \(P\) of properties, the number of onto functions is \(N_{\mbox{e} }(\emptyset)\). For a set \(S\) of these properties, \(N_{\mbox{a} }(S)\) is the number of functions from \(K\) to \([n]-S'\), where \(S'\) is the set of all \(i\) such that property \(i\) is in \(S\). This number of functions is \((n-|S|)^k\). Thus by \hyperref[incexempty]{Equation~(\ref{incexempty})}%
 \begin{align*}
-N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
+N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
 (n-|S|)^k\\
-\amp =\amp \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k
+=\amp \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k
 \end{align*}
 is the number of functions from \(K\) onto \([n]\).%
 \end{activity}
@@ -4783,14 +4783,14 @@ The formula you found in \hyperref[chromaticpoly]{Problem~} is a formula that in
 \end{figure}
 The chromatic polynomial of a triangle is \(x(x-1)(x-2)\) because for one vertex we have \(x\) colors, for a second we have \(x-1\), and for the third vertex, because it is adjacent to both of the other vertices, we have \(x-2\) choices of colors. For a vertex of degree 1 there are \(x-1\) choices of colors, those colors not used on the one vertex it is adjacent to. As we mentioned, the extra edges do not change the chromatic polynomial, so we have that the chromatic polynomial of \((G-\{1,2\})-\{2,3\}\) is \(x(x-1)^3(x-2)\), the chromatic polynomial of \((G-\{1,2\})/\{2,3\}\) is \(x(x-1)^2(x-2)\), as is that of \((G-\{2,3\})/\{1,2\}\), and the chromatic polynomial of \((G/\{2,3\})/\{1,2\}\) is \((x-1)(x-2)(x-3)\). Using the deletion-contraction recurrence, we get that%
 \begin{align*}
-\chi_G(x) \amp =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)\\
-\amp =\amp
+\chi_G(x)  =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)\\
+=\amp
 \chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
 \chi_{(G/\{1,2\})-\{2,3\}}(x)\\
 \amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)\\
-\amp =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)\\
-\amp =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)\\
-\amp =\amp  x^3(x-1)(x-2)
+=\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)\\
+=\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)\\
+=\amp  x^3(x-1)(x-2)
 \end{align*}
 for the chromatic polynomial of \(G\).%
 
@@ -4808,18 +4808,18 @@ for the chromatic polynomial of \(G\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad To color the vertices of a path, start at one end. There are \(x\) colors for that vertex, and \(x-1\) colors for each of the next \(n-1\), since each of them must be different from the preceding one. Thus the chromatic polynomial of a path on \(n\) vertices is \(x(x-1)^{n-1}\). The dependence on the number of vertices appears in the exponent on \(x-1\). If we use \(C_n\) to stand for a path on \(n\) vertices and \(P_n\) to stand for a path on \(n\) vertices, then by the deletion-contraction recurrence, we may write%
 \begin{align*}
-\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp
+\hspace{-.4 in}\chi_{C_n}(x)  =\amp
 \chi_{P_n}(x)-\chi_{C_{n-1}}(x)\\
-\amp =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)\\
-\amp =\amp
+=\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)\\
+=\amp
 \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
 \cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))\\
-\amp =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots\\
+=\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots\\
 \amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]\\
-\amp =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}\\
-\amp =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i\\
-\amp =\amp x(x-1)(-1)^{n-2}\frac{1-(1-x)^{n-1}}{1-(1-x)}\\
-\amp =\amp (x-1)[(x-1)^{n-1}+(-1)^n].
+=\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}\\
+=\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i\\
+=\amp x(x-1)(-1)^{n-2}\frac{1-(1-x)^{n-1}}{1-(1-x)}\\
+=\amp (x-1)[(x-1)^{n-1}+(-1)^n].
 \end{align*}
 %
 \par
@@ -4894,9 +4894,9 @@ Suppose that \(n\) children join hands in a circle for a game at nursery school.
 \textbf{Solution.}\quad We use inclusion and exclusion, with property \(i\) being the property that child \(i\) has the same child to the right the second time they join hands.  Given a set \(S\) of properties, we can think of arranging units consisting of individual children and strings of children holding hands in a circle. If we have \(s\) properties, then we have \(n-s\) of these units. Each string of children can be arranged in only one way, because our set specifies who has to have the same child on the right. Thus \(N_{\mbox{a} }(S) = (n-s-1)!\). This gives us%
 \begin{align*}
 N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-(-1)^{|S|}(n-|S|-1)!\amp =\amp 
+(-1)^{|S|}(n-|S|-1)! =\amp 
 \sum_{s=0}^n (-1)^s \binom{n}{s} (n-s-1)!\\
-\amp =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}
+=\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}
 \end{align*}
 ways for the children to join hands the second time so that none of them has the same child to the right.%
 \end{activity}
@@ -5071,32 +5071,32 @@ still hold if one or more of the exponents may be negative?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We give the first and last proof. We will induct on \(n\) in the first proof. If \(n=0\) the formula automatically holds. Assume inductively that \(\varphi^m\circ\varphi^{-(n-1)} = \varphi^{m-(n-1)}\). Compose both sides of this equation on the right by \(\sigma^{-1}\) and use the associative law for composition of functions to get, in the case that \(m-n\) is nonnegative%
 \begin{align*}
-\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp
+\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1})  =\amp
 \varphi^{m-(n-1)}\circ\varphi^{-1}\\
-\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp
+\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1} =\amp
 (\varphi^{m-n}\circ\varphi)\circ\varphi^{-1}\\
-\varphi^m\circ(\varphi^{-1})^n \amp =\amp  \varphi^{m-n}.
+\varphi^m\circ(\varphi^{-1})^n  =\amp  \varphi^{m-n}.
 \end{align*}
 %
 \par
 We do the same in the case that \(m-n\) is negative, getting%
 \begin{align*}
-\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1}) \amp =\amp
+\varphi^m\circ(\varphi^{-(n-1)}\circ\varphi^{-1})  =\amp
 \varphi^{m-(n-1)}\circ\varphi^{-1}\\
-\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1}\amp =\amp
+\varphi^m\circ(\varphi^{-1})^{n-1}\varphi^{-1} =\amp
 (\varphi^{-1})^{n-m-1}\circ\varphi^{-1}\\
-\varphi^m\circ(\varphi^{-1})^n \amp =\amp  (\varphi^{-1})^{n-m}\\
-\varphi^m\circ\varphi^{-n}\amp =\amp \varphi^{m-n}.
+\varphi^m\circ(\varphi^{-1})^n  =\amp  (\varphi^{-1})^{n-m}\\
+\varphi^m\circ\varphi^{-n} =\amp \varphi^{m-n}.
 \end{align*}
 %
 \par
 To prove the last statement we need to prove, we write the following, in which the line {$\langle\langle$Unresolved xref, reference "crucialline"; check spelling or use "provisional" attribute$\rangle\rangle$} follows from the first equation we proved and the line {$\langle\langle$Unresolved xref, reference "modestlyimportant"; check spelling or use "provisional" attribute$\rangle\rangle$} follows from the fact that \((\varphi^{-1})^{-1} = \varphi\).%
 \begin{align*}
-(\varphi^{-m})^{-n} \amp =\amp  ([\varphi^{-1})^m]^{-1})^n\nonumber\\
-\amp =\amp [(\varphi^{-1})^{-m}]^n\\
-\amp =\amp ([(\varphi^{-1})^{-1}]^m)^n\nonumber\\
-\amp =\amp (\varphi^m)^n\\
-\amp =\amp \varphi^{mn}\nonumber
+(\varphi^{-m})^{-n}  =\amp  ([\varphi^{-1})^m]^{-1})^n\nonumber\\
+=\amp [(\varphi^{-1})^{-m}]^n\\
+=\amp ([(\varphi^{-1})^{-1}]^m)^n\nonumber\\
+=\amp (\varphi^m)^n\\
+=\amp \varphi^{mn}\nonumber
 \end{align*}
 %
 
@@ -5132,10 +5132,10 @@ If \(\sigma\) and \(\varphi\) are permutations, why must \(\sigma\circ\varphi\) 
 \varphi)^{-1}= \varphi^{-1}\circ \sigma^{-1}\). In the dihedral group \(D_4\), \(\rho^{-1}= \rho^3\) and \(\varphi_{1/3}^{-1} = \varphi{1/3}\). Thus%
 \begin{align*}
 (\rho\circ \varphi_{1/3})\circ (\rho^{-1}\circ
-\varphi_{1/3}^{-1})\amp =\amp \rho\circ
+\varphi_{1/3}^{-1}) =\amp \rho\circ
 \varphi_{1/3})\circ(\rho^3\varphi_{1/3})\\
-\amp =\amp \varphi_{12/34}\circ \varphi_{14/23}\\
-\amp =\amp \rho^2.
+=\amp \varphi_{12/34}\circ \varphi_{14/23}\\
+=\amp \rho^2.
 \end{align*}
 %
 \par
@@ -5431,10 +5431,10 @@ Write a recurrence for the number \(c(k,n)\) for the number of permutations of \
 We see that the table is identical with our earlier table of the Stirling numbers of the first kind, except that in that table there was an alternating pattern of minus signs, offset by one place in successive rows. Thus it must be the case that \(c(k,n)=
 |s(k,n)|\). To prove this, note that it is the case when \(k=0\), and also when \(n=1\). Now assume inductively it is true when \(k= m-1\) and notice that if \(n>0\), \(s(m,n)=s(m-1,n-1)-(m-1)s(m-1,n)\), that \(s(m-1,n-1)\) and \(s(m-1,n)\) have opposite signs, so%
 \begin{align*}
-\hspace{-.5in}|s(m-1)-(m-1)s(m-1,n)|\amp =\amp  |s(m-1| +
+\hspace{-.5in}|s(m-1)-(m-1)s(m-1,n)| =\amp  |s(m-1| +
 (m-1)|s(m-1,n)|\\
-\amp =\amp c(m-1,n-1)+(m-1)c(m-1,n)\\
-\amp =\amp  c(m,n).
+=\amp c(m-1,n-1)+(m-1)c(m-1,n)\\
+=\amp  c(m,n).
 \end{align*}
 %
 \par
@@ -5566,7 +5566,7 @@ In \hyperref[cube1]{Figure~\ref{cube1}} we show a cube with the positions of its
 \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
 2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
 \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-\end{pmatrix} \amp =\amp
+\end{pmatrix}  =\amp
 \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
 \end{pmatrix} \amp \amp
 \end{align*}
@@ -5574,7 +5574,7 @@ In \hyperref[cube1]{Figure~\ref{cube1}} we show a cube with the positions of its
 \begin{align*}
 \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
 \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-\end{pmatrix} \amp =\amp
+\end{pmatrix}  =\amp
 \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
 \end{pmatrix} \amp \amp
 \end{align*}
@@ -5633,11 +5633,11 @@ The group \(D_4\) is a group of permutations of \(\{1,2,3,4\}\) as in \hyperref[
 \par
 To show that \(\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}\), we note that%
 \begin{align*}
-(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) \amp =\amp
+(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\})  =\amp
 \beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
 \tau(j)\})=\\
-\sigma({\tau(i),\tau(j)})\amp =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =\\
-\amp \amp \beta_{\sigma\circ\tau}(\{i,j\})
+\sigma({\tau(i),\tau(j)}) =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =\\
+\amp \beta_{\sigma\circ\tau}(\{i,j\})
 \end{align*}
 %
 \end{activity}
@@ -5670,14 +5670,14 @@ Recall that when you were asked in \hyperref[twocolorsofbeads]{Problem~\ref{twoc
 \par
 If \(\beta_{\sigma}(f) = f\circ\sigma^{-1}\), then%
 \begin{align*}
-(\beta_{\sigma}\circ\beta_{\tau})(f)\amp =\amp \beta_{\sigma}(\beta_{\tau}(f))\\
-\amp =\amp
+(\beta_{\sigma}\circ\beta_{\tau})(f) =\amp \beta_{\sigma}(\beta_{\tau}(f))\\
+=\amp
 \beta_{\sigma}(f\circ \tau^{-1})\\
-\amp =\amp (f\circ\tau^{-1})\circ\sigma^{-1}\\
-\amp =\amp
+=\amp (f\circ\tau^{-1})\circ\sigma^{-1}\\
+=\amp
 f\circ(\tau^{-1}\circ \sigma^{-1})\\
-\amp =\amp  f\circ (\sigma\circ\tau)^{-1}\\
-\amp =\amp \beta_{\sigma\circ\tau}(f).
+=\amp  f\circ (\sigma\circ\tau)^{-1}\\
+=\amp \beta_{\sigma\circ\tau}(f).
 \end{align*}
 %
 \par
@@ -6124,9 +6124,9 @@ S_2\) by \(P(x_1,x_2) = P_1(x_1)P_2(x_2)\). How are \(E_{P_1}\), \(E_{P_1}\), an
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-E_P(S_1\times S_2)\amp =\amp \sum_{x_1\in S_1,\ x_2\in
+E_P(S_1\times S_2) =\amp \sum_{x_1\in S_1,\ x_2\in
 S_2}P(x_1)P(x_2)=\sum_{x_1\in S_1}\sum_{x_2 \in S_2}P(x_1)P(x_2)\\
-\amp =\amp  \sum_{x_1\in
+=\amp  \sum_{x_1\in
 S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2).
 \end{align*}
 \end{activity}
@@ -6156,19 +6156,19 @@ Suppose now we have a group \(G\) acting on a set and we have a picture function
 \par\medskip\noindent%
 \textbf{Solution.}\quad Let \(E\), for enumerator, be the sum of all the pictures of all the elements in the union of the multiorbits of \(G\) acting on a set \(S\). Recall that for any multiorbit \(M\) the picture \(P(M)\) is the picture \(P(x)\) of any element \(x\) of \(M\), and the number of elements of a multiorbit \(M\) is always the size of \(G\). This lets us write%
 \begin{align*}
-E\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)\\
-\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)\\
-\amp =\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)\\
-\amp =\amp |G|{ Orb}(G,S)
+E =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)\\
+=\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)\\
+=\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)\\
+=\amp |G|{ Orb}(G,S)
 \end{align*}
 %
 \par
 Recall also that the multiplicity of an element \(x\) in its multiorbit, and thus in the union of the multiorbits is \(|Fix(x)|\). This lets us write%
 \begin{align*}
-E\amp =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)\\
-\amp =\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)\\
-\amp =\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)\\
-\amp =\amp  { Fix}(G,S).
+E =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)\\
+=\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)\\
+=\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)\\
+=\amp  { Fix}(G,S).
 \end{align*}
 %
 \par
@@ -6209,8 +6209,8 @@ Thus we have one all-red orbit, one all-blue orbit, one orbit with five reds and
 \par\medskip\noindent%
 \textbf{Solution.}\quad We want to think of the rotation group of the cube acting on the faces of the cube, in order to see what kinds of colorings are left fixed. For this purpose we note that each element of the rotation group gives us a permutation of the faces of the cube, and if two faces are in the same cycle of this permutation, they must have the same color, but if they are in different cycles, they may get different colors. The 90 and 270 degree rotations around an axis through two faces have a four-cycle and two one-cycles. The 180 degree rotation around an axis through two faces has two two-cycles and two one-cycles. The 120 and 240 degree rotations around an axis connecting diagonally opposite vertices have two three-cycles. The 180 degree rotations around an axis connecting two opposite edges have three two-cycles, and the identity has six one-cycles. A coloring is fixed by a permutation if and only if it is constant on (i.e. assigns the same color to all elements of) each cycle of the permutation. The picture enumerator for (constant) colorings of an \(i\)-cycle is \(R^i+B^i\). Thus, using \hyperref[PictureEnumeratorforFunctions]{Problem~\ref{PictureEnumeratorforFunctions}}, if \(\sigma\) is a 90 or 270 degree rotation, its fixed point enumerator is \((R^4+B^4)(R+B)^2\), if it is a 180 degree rotation around an axis connecting two opposite faces, its fixed point enumerator is \((R^2+B^2)^2(R+B)^2\), if it is a 180 degree rotation around an axis connecting two opposite edges, its fixed point enumerator is \((R^2+B^2)^3\), if it is a 120 or 240 degree rotation its fixed point enumerator is \((R^3+B^3)^2\), and if it is the identity, then its fixed point enumerator is \((R+B)^6\). Therefore the generating function is%
 \begin{align*}
-\amp \amp \frac{1}{24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +\\
-\amp \amp 6
+\amp \frac{1}{24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +\\
+\amp 6
 (R^2+B^2)^3 + 6 (R^4+B^4)(R+B)^2\big),
 \end{align*}
 which expands to%
@@ -6278,7 +6278,7 @@ What is the cycle index for the group \(D_6\) acting on the vertices of a hexago
 \textbf{Solution.}\quad For \(D_6\), we get%
 \begin{align*}
 \frac{1}{12}\left(z_1^6
-+2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right) \amp =\amp\\
++2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right)  =\amp\\
 \frac{1}{12}\left(z_1^6
 +2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)\amp \amp
 \end{align*}
@@ -6286,8 +6286,8 @@ What is the cycle index for the group \(D_6\) acting on the vertices of a hexago
 \par
 For the rotation group of the cube, we get%
 \begin{align*}
-\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)\amp =\amp\\
-\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)\amp \amp
+\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right) =\amp\\
+\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right) \amp
 \end{align*}
 %
 \end{activity}
@@ -6301,9 +6301,9 @@ Suppose we make a necklace by stringing 12 pieces of brightly colored plastic tu
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are asking for a generating function for the orbits of a colored 12-gon under the action of \(D_{12}\). To apply the Pólya-Redfield theorem we need the cycle index for \(D_{12}\). If \(\rho\) is a 30 degree rotation, then \(\rho\), \(\rho^5\), \(\rho^7\) and \(\rho^{11}\) are 12-cycles. The elements \(\rho^2\) and \(\rho^{10}\) are products of two six-cycles. The elements \(\rho^3\) and \(\rho^9\) are products of three four-cycles. The elements \(\rho^4\) and \(\rho^8\) are products of four three-cycles. The element \(\rho^6\) is a product of six two-cycles. The element \(\iota=\rho^0\) is a product of 12 one-cycles. There are six flips around axes through opposite vertices; each is a product of five two-cycles and two one-cycles. There are six flips around axes perpendicular to two opposite sides; each is a product of six two-cycles. Summarizing this in the cycle index, we write%
 \begin{align*}
-Z(G,S) \amp =\amp \frac{1}{24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
+Z(G,S)  =\amp \frac{1}{24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
 6z_2^5z_1^2 + 6z_2^6\right)\\
-\amp =\amp \frac{1}{24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
+=\amp \frac{1}{24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
 2z_6^2 +4z_{12} + 6z_2^5z_1^2\right).
 \end{align*}
 %
@@ -6317,11 +6317,11 @@ When we substitute \(B^i+G^i+R^i+Y^i\) for \(z_i\) and expand, we would get get 
 \par
 We can compute the coefficient of \(B^3G^3R^2Y^4\) by computing the contribution of each term of the sum to the coefficient. We get%
 \begin{align*}
-\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp \frac{12!}{24\cdot3!3!2!4!}+\frac{6\cdot5!2!}{24\cdot2!}\\
-\amp =\amp \frac{11!}{2\cdot3!3!2!4!}+5
+\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right) =\amp \frac{12!}{24\cdot3!3!2!4!}+\frac{6\cdot5!2!}{24\cdot2!}\\
+=\amp \frac{11!}{2\cdot3!3!2!4!}+5
 \cdot3\cdot2\\
-\amp =\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30\\
-\amp =\amp 11,550+30=11,580
+=\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30\\
+=\amp 11,550+30=11,580
 \end{align*}
 %
 \end{activity}
@@ -6374,15 +6374,15 @@ The coefficient of \(R^4B^4G^4\) is%
 \begin{align*}
 \frac{1}{24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
 6\binom{3}{1}\binom{5}{2,2,1}\binom{2}{2,0,0}
-\right)\amp =\amp\\
-\frac{1}{24}\left(\frac{12!}{4!4!4!}+6\cdot3!+3\frac{6!}{2!2!2!}+6\cdot3\frac{5!}{2!2!1!}\right)=1479\amp \amp
+\right) =\amp\\
+\frac{1}{24}\left(\frac{12!}{4!4!4!}+6\cdot3!+3\frac{6!}{2!2!2!}+6\cdot3\frac{5!}{2!2!1!}\right)=1479 \amp
 \end{align*}
 %
 \par
 The coefficient of \(R^2B^4G^6\) is%
 \begin{align*}
 \frac{1}{24}\left(\binom{12}{2,4,6}
-+3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right)\amp =\amp\\
++3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right) =\amp\\
 \frac{1}{24}\left(\frac{12!}{2!4!6!}+3\frac{6!}{1!2!3!}+6\left(\frac{5!}{2!3!}+\frac{5!}{1!1!3!}
 +\frac{5!}{1!2!2!}\right)\right)=600.
 \end{align*}
@@ -6878,11 +6878,11 @@ Use mathematical induction to prove your formula from {$\langle\langle$Unresolve
 \par\medskip\noindent%
 \textbf{Solution.}\quad When \(n=0\), \(0=0(0+1)/2\), so our formula holds. Now suppose that\(k>0\) and that our formula holds when \(n=k-1\), so that \(1+2+\cdots+k-1=(k-1)k/2\). Add \(k\) to both sides of this equation to get%
 \begin{align*}
-1+2+\cdots+(k-1)+k\amp =\amp  (k-1)k/2 +k\\
-\amp =\amp  k^2/2-k/2+k\\
-\amp =\amp
+1+2+\cdots+(k-1)+k =\amp  (k-1)k/2 +k\\
+=\amp  k^2/2-k/2+k\\
+=\amp
 k^2/2+k/2\\
-\amp =\amp k(k+1)/2.
+=\amp k(k+1)/2.
 \end{align*}
 %
 \par
@@ -6913,10 +6913,10 @@ When \(n=1\) this formula says that \(\frac{1}{1\cdot2}=\frac{1}{1\cdot
 \par
 Adding \(\frac{1}{ k(k+1)}\) to both sides of this equation gives us%
 \begin{align*}
-\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}\\
-\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}\\
-\amp =\amp \frac{k^2 -1 +1}{k(k+1)}\\
-\amp =\amp  \frac{k}{k+1}.
+\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)}  =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}\\
+\sum_{i=1}^k \frac{1}{i(i+1)} =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}\\
+=\amp \frac{k^2 -1 +1}{k(k+1)}\\
+=\amp  \frac{k}{k+1}.
 \end{align*}
 %
 \par
@@ -7063,11 +7063,11 @@ rather than by using the limit definitions from calculus.  It is then possible t
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp
+\ln(\frac{1}{1-x}) =-\ln(1-x)  =\amp
 \int_0^x \frac{1}{1-t}dt\\
-\amp =\amp \int_0^x (1+t+t^2+\cdots)dt\\
-\amp =\amp \sum_{i=1}^\infty \frac{x^i}{i}\\
-\amp =\amp  \sum_{i=1}^\infty (i-1)!\frac{x^i}{i!}
+=\amp \int_0^x (1+t+t^2+\cdots)dt\\
+=\amp \sum_{i=1}^\infty \frac{x^i}{i}\\
+=\amp  \sum_{i=1}^\infty (i-1)!\frac{x^i}{i!}
 \end{align*}
 so the sequence is \(a_n = (n-1)!\).%
 \end{activity}
@@ -7137,11 +7137,11 @@ Consider the recurrence \(a_n=na_{n-1} +n(n-1)\). Multiply both sides by \(\frac
 \textbf{Solution.}\quad %
 \begin{align*}
 \sum_{n=2}^\infty a_n\frac{x^n}{n!}
-\amp =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
+=\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
 \frac{x^n}{(n-2)!}\\
-\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
+=\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!} - a_0\right) +
 x^2\sum_{n=0}^\infty \frac{x^n}{n!}\\
-\amp =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
+=\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
 +x^2e^x
 \end{align*}
 We sum from \(n=2\) because otherwise we would have a factorial of a negative number in the denominator. Thus \(\sum_{n=0}^\infty a_n\frac{x^n}{n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
@@ -7183,11 +7183,11 @@ Your recurrence in \hyperref[telephonenetwork]{Problem~\ref{telephonenetwork}} s
 \textbf{Solution.}\quad %
 \begin{align*}
 \sum_{n=2}^\infty c_n\frac{x^{n-1}}{(n-1)!}
-\!\amp =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
+\! =\amp \!\sum_{n=2}^\infty(n-1) c_{n-2}\frac{x^{n-1}}{(n-1)!} +
 \sum_{n=2}^\infty c_{n-1}\frac{x^{n-1}}{(n-1)!}\\
-\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \!\amp =\amp \! x\sum_{n=2}^\infty
+\sum_{n=1}^\infty c_n\frac{x^{n-1}}{(n-1)!}- c_1 \! =\amp \! x\sum_{n=2}^\infty
 c_{n-2}\frac{x^{n-2}}{(n-2)!} + \sum_{n=0}^\infty c_n\frac{x^n}{n!} -c_0\\
-T'(x)\!\amp =\amp \!xT(x) +T(x)
+T'(x)\! =\amp \!xT(x) +T(x)
 \end{align*}
 \(T(0) = c_0 =1\). Then \(\frac{T'(x)}{T(x)} = x+1\), giving \(\ln T(x)
 =x^2/2+x+k\), and \(T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }\), since \(T(0)=1\).%
@@ -7215,18 +7215,18 @@ Your recurrence in \hyperref[derangementrecurrence]{Problem~\ref{derangementrecu
 \textbf{Solution.}\quad %
 \begin{align*}
 \sum_{n=2}^\infty d_n\frac{x^{n-1}}{(n-1)!}
-\amp =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
+=\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
 d_{n-2}\frac{x^{n-1}}{(n-2)!}\\
-\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp
+\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1  =\amp
 x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)\\
-D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)\\
-D'(x)(1-x) \amp =\amp  xD(x)\\
-\frac{D'(x)}{D(x)} \amp =\amp  \frac{x}{1-x}
+D'(x) -d_1  =\amp  xD'(x) +xD(x)\\
+D'(x)(1-x)  =\amp  xD(x)\\
+\frac{D'(x)}{D(x)}  =\amp  \frac{x}{1-x}
 \end{align*}
 This gives us \(\ln D(x) = -\ln(1-x) -x +c\), so that \(D(x) = \frac{1}{1-x}e^{-x}e^c\). Since \(d_0=1\), we have \(d(0)=1\), so \(c=0\) and%
 \begin{align*}
-D(x) \amp =\amp  \frac{e^{-x}}{1-x}\\
-\amp =\amp
+D(x)  =\amp  \frac{e^{-x}}{1-x}\\
+=\amp
 \sum_{i=0}^\infty(-1)^i\frac{x^i}{i!}\cdot\sum_{j=0}^\infty
 x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i \frac{(-1)^j}{j!}\right)
 x^i.

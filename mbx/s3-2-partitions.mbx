@@ -517,8 +517,8 @@
         <p>
           How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some experimentation would help us guess how to do so; however there is a really nice trick that also isn't hard to see. Namely, we can write
           <md>
-            <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i</mrow>
-            <mrow>\amp =\amp 
+            <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i</mrow>
+            <mrow> =\amp 
             \sum_{i=0}^n \binom{n}{i}(x+1)^i(-1)^{n-i}</mrow>
           </md>
         </p>
@@ -562,11 +562,11 @@
             of an inductive definition of <m>x^{\underline{k}}</m>. With this
             equation we can write
             <md>
-              <mrow>\sum_{n=0}^k s(k,n)x^n\amp =\amp x^{\underline{k}} =
+              <mrow>\sum_{n=0}^k s(k,n)x^n =\amp x^{\underline{k}} =
               x^{\underline{k-1}}(x-k+1)</mrow>
-              <mrow>\amp =\amp \left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)</mrow>
-              <mrow>\amp =\amp \sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n</mrow>
-              <mrow>\amp =\amp \sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.</mrow>
+              <mrow> =\amp \left(\sum_{n=0}^{k-1}s(k-1,n)x^n\right)(x-k+1)</mrow>
+              <mrow> =\amp \sum_{n=0}^{k-1}s(k-1,n)x^{n+1} - \sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n</mrow>
+              <mrow> =\amp \sum_{n=1}^k s(k-1,n-1)x^n-\sum_{n=0}^{k-1}(k-1)s(k-1,n)x^n.</mrow>
             </md>
           </p>
 
@@ -710,14 +710,14 @@
         </statement>
         <solution>
           <md>
-            <mrow>\amp \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
+            <mrow> \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
             x^{\overline{k-1}}(x+k-1)</mrow>
-            <mrow>\amp =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)</mrow>
-            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)</mrow>
-            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)</mrow>
-            <mrow>\amp =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
+            <mrow> =\amp \left(\sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}\right)(x+k-1)</mrow>
+            <mrow> =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x+k-1)</mrow>
+            <mrow> =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n}}(x-n+n+k-1)</mrow>
+            <mrow> =\amp \sum_{n=0}^{k-1} b(k-1,n) x^{\underline{n+1}} +(n+k-1)b(k-1,n)
             x^{\underline{n}}</mrow>
-            <mrow>\amp =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
+            <mrow> =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
             (n+k-1)b(k-1,n)x^{\underline{n}}</mrow>
           </md>
           <p>
@@ -809,10 +809,10 @@
             <m>(-x)^{\underline{k}}=(-1)^kx^{\overline{k}}</m> and
             <m>(-x)^{\overline{k}}= (-1)^k x^{\underline{k}}</m>. This lets us write
             <md>
-              <mrow>(-x)^{\overline{k}}\amp =\amp \sum_{n=0}^k
+              <mrow>(-x)^{\overline{k}} =\amp \sum_{n=0}^k
               b(k,n)(-x)^{\underline{n}}</mrow>
-              <mrow>(-1)^kx^{\underline{k}}\amp =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}</mrow>
-              <mrow>x^{\underline{k}}\amp =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.</mrow>
+              <mrow>(-1)^kx^{\underline{k}} =\amp \sum_{n=0}^k(-1)^nb(k,n)x^{\overline{n}}</mrow>
+              <mrow>x^{\underline{k}} =\amp \sum_{n=0}^k (-1)^{n-k}b(k,n)x^{\overline{n}}.</mrow>
             </md>
           </p>
 

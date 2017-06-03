@@ -119,14 +119,14 @@
               <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
               2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
               \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-              \end{pmatrix} \amp =\amp
+              \end{pmatrix}  =\amp
               \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
               \end{pmatrix} \amp \amp</mrow>
             </md>
             <md>
               <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
               \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-              \end{pmatrix} \amp =\amp
+              \end{pmatrix}  =\amp
               \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
               \end{pmatrix} \amp \amp</mrow>
             </md>
@@ -289,11 +289,11 @@
           To show that <m>\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}</m>, we
           note that
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) \amp =\amp
+            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\})  =\amp
             \beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
             \tau(j)\})=</mrow>
-            <mrow>\sigma({\tau(i),\tau(j)})\amp =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
-            <mrow>\amp \amp \beta_{\sigma\circ\tau}(\{i,j\})</mrow>
+            <mrow>\sigma({\tau(i),\tau(j)}) =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
+            <mrow> \amp \beta_{\sigma\circ\tau}(\{i,j\})</mrow>
           </md>
         </p>
       </solution>
@@ -408,14 +408,14 @@
         <p>
           If <m>\beta_{\sigma}(f) = f\circ\sigma^{-1}</m>, then
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f)\amp =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
-            <mrow>\amp =\amp
+            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f) =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
+            <mrow> =\amp
             \beta_{\sigma}(f\circ \tau^{-1})</mrow>
-            <mrow>\amp =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
-            <mrow>\amp =\amp
+            <mrow> =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
+            <mrow> =\amp
             f\circ(\tau^{-1}\circ \sigma^{-1})</mrow>
-            <mrow>\amp =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
-            <mrow>\amp =\amp \beta_{\sigma\circ\tau}(f).</mrow>
+            <mrow> =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
+            <mrow> =\amp \beta_{\sigma\circ\tau}(f).</mrow>
           </md>
         </p>
 
