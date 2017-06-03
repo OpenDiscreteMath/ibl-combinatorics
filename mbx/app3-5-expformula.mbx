@@ -103,8 +103,8 @@
     <solution>
       <p>
         In <xref ref="exponentialroundtable">Problem</xref> we showed that <m>f(x) =
-        \ln\left({1\over 1-x}\right)</m>. In <xref ref="exponentialpermutations">Problem</xref>
-        we showed that <m>g(x)={1\over 1-x}</m>. Therefore <m>g(x)= \exp(f(x))</m>.
+        \ln\left(\frac{1}{1-x}\right)</m>. In <xref ref="exponentialpermutations">Problem</xref>
+        we showed that <m>g(x)=\frac{1}{1-x}</m>. Therefore <m>g(x)= \exp(f(x))</m>.
       </p>
     </solution>
   </activity>
@@ -559,7 +559,7 @@
       </statement>
       <solution>
         <me>
-          \log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
+          \log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
           (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
         </me>
       </solution>

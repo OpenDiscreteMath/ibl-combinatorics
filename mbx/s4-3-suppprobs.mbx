@@ -185,7 +185,7 @@
       </statement>
       <solution>
         <p>
-          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.  Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
+          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.  Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
         </p>
       </solution>
   </activity>
@@ -213,8 +213,7 @@
             <mrow>\amp \amp {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}</mrow>
             <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)
             \left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]</mrow>
-            <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[{1\over 1-c}\sum_{i=0}^\infty x^i-{c\over
-            1-c}\sum_{i=0}^\infty c^ix^i\right]</mrow>
+            <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]</mrow>
             <mrow>\amp =\amp  {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
             (1-c^{i+1})x^i.</mrow>
           </md>
@@ -251,8 +250,7 @@
             <mrow>\amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
             (1+x^4+x^8+\cdots)</mrow>
             <mrow>\amp =\amp 
-            {(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  {1\over
-            (1-x)^4}</mrow>
+            {(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}</mrow>
           </md>
         </p>
 

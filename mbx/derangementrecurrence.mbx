@@ -49,11 +49,11 @@
         <p>
           This gives us
           <me>
-            \sum_{n=0}^\infty a_n{x^n\over n!}={1\over 1-x}(a_0+a_1x-a_0x
+            \sum_{n=0}^\infty a_n{x^n\over n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
             +x^2e^x).
           </me>
           computing the coefficient of <m>a_n</m> gives us <m>a_n = a_1 +\sum_{i=0}^{n-2}
-          {1\over i!}</m>.
+          \frac{1}{i!}</m>.
         </p>
       </solution>
     </activity>
@@ -223,8 +223,7 @@
             <mrow>D'(x)\over D(x) \amp =\amp  x\over 1-x</mrow>
           </md>
           <p>
-            This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = {1\over
-            1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
+            This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = \frac{1}{1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
             <md>
               <mrow>D(x) \amp =\amp  {e^{-x}\over 1-x}</mrow>
               <mrow>\amp =\amp 

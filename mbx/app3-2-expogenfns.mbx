@@ -76,7 +76,7 @@
   <activity xml:id="ln1over1-x" category="essential for this or the next section">
     <statement>
       <p>
-        For what sequence is <m>\ln({1\over 1-x})</m> the EGF? (<m>\ln (y)</m> stands for the natural logarithm of <m>y</m>.
+        For what sequence is <m>\ln(\frac{1}{1-x})</m> the EGF? (<m>\ln (y)</m> stands for the natural logarithm of <m>y</m>.
         People often write
         <m>\log(y)</m> instead.) Hint: Think of the definition of the logarithm as an
         integral, and don't worry at this stage whether or not the usual laws of
@@ -85,7 +85,7 @@
         get. <fn>It is possible to define the derivatives
         and integrals of power series by the formulas
         <me>
-          {d\over dx}
+          \frac{d}{dx}
           \sum_{i=0}^\infty b_ix^i = \sum_{i=1}^\infty ib_ix^{i-1}
         </me>
         and
@@ -102,8 +102,8 @@
     </statement>
     <solution>
       <md>
-        <mrow>\ln({1\over 1-x}) =-\ln(1-x) \amp =\amp 
-        \int_0^x {1\over 1-t}dt</mrow>
+        <mrow>\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp 
+        \int_0^x \frac{1}{1-t}dt</mrow>
         <mrow>\amp =\amp \int_0^x (1+t+t^2+\cdots)dt</mrow>
         <mrow>\amp =\amp \sum_{i=1}^\infty {x^i\over i}</mrow>
         <mrow>\amp =\amp  \sum_{i=1}^\infty (i-1)!{x^i\over
@@ -141,7 +141,7 @@
     </statement>
     <solution>
       <p>
-        By <xref ref="ln1over1-x">Problem</xref> the EGF is <m>\ln{1\over 1-x}</m>.
+        By <xref ref="ln1over1-x">Problem</xref> the EGF is <m>\ln\frac{1}{1-x}</m>.
       </p>
     </solution>
   </activity>

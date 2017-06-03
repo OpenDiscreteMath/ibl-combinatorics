@@ -369,9 +369,9 @@
         <m>n</m> factors) <m>(1+x)^n</m>. However the number of <m>n</m>-tuples of 0s and 1s with
         <m>k</m> ones is the number of <m>k</m>-element subsets of an <m>n</m>-element set.
         Therefore <m>(1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i</m>. To get the <m>(x+y)^n</m> form
-        of the binomial theorem, note that <m>x+y = y(1+{x\over y})</m>, so that
+        of the binomial theorem, note that <m>x+y = y(1+\frac{x}{y})</m>, so that
         <md>
-          <mrow>(x+y)^n \amp =\amp  y^n\left({x\over y}+1\right)^n</mrow>
+          <mrow>(x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n</mrow>
           <mrow>\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}{x^i\over y^i}</mrow>
           <mrow>\amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.</mrow>
         </md>
@@ -444,13 +444,13 @@
         <p>
           Since <m>(1-x)\sum_{k=0}^\infty x^k=1</m>, we have that
           <me>
-            \sum_{k=0}^\infty x^k={1\over 1-x}.
+            \sum_{k=0}^\infty x^k=\frac{1}{1-x}.
           </me>
         </p>
 
         <p>
           Therefore <m>\left(\sum_{k=0}^\infty
-          x^k\right)^n= {1\over(1-x)^n}</m> is the generating function for multisets of
+          x^k\right)^n= \frac{1}{(1-x)^n}</m> is the generating function for multisets of
           size <m>k</m> chosen from an <m>n</m> element set.
         </p>
       </solution>
@@ -480,7 +480,7 @@
       </statement>
       <solution>
         <p>
-          <m>(x+y)^n=\sum_{i=0}^\infty\binom{n}{i}x^i</m>. The proof consists of writing <m>(x+y)=y({x\over y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>\binom{n}{k}</m> is zero when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the binomial theorem by <m>\infty</m> doesn't change the value of the sum.
+          <m>(x+y)^n=\sum_{i=0}^\infty\binom{n}{i}x^i</m>. The proof consists of writing <m>(x+y)=y(\frac{x}{y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>\binom{n}{k}</m> is zero when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the binomial theorem by <m>\infty</m> doesn't change the value of the sum.
         </p>
       </solution>
     </activity>
@@ -551,7 +551,7 @@
 
         <p>Although we could write this as a polynomial times a product of four power series, doing so would not significantly increase our understanding, though it would let us make some painful computations of the number of ways to make a certain number of cents. If we actually wanted such numbers we would be better off asking a computer algebra package to expand the product of the polynomials on the left. With unlimited supplies the generating function becomes
           <me>
-            {1\over1-x}\cdot{1\over 1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
+            \frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
           </me>
         </p>
 
@@ -567,7 +567,7 @@
       </statement>
       <solution>
         <p>
-          <m>\prod_{i=1}^{10}{1\over1-q^i}</m>, <m>\prod_{i=1}^m{1\over 1-q^i}</m>.
+          <m>\prod_{i=1}^{10}\frac{1}{1-q^i}</m>, <m>\prod_{i=1}^m\frac{1}{1-q^i}</m>.
         </p>
       </solution>
     </activity>
@@ -602,7 +602,7 @@
           </me>
         </p>
 
-        <p>To get the coefficient of <m>q^k</m> in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get <m>q^k</m>, and add all these products up. That is, the coefficient of <m>q^k</m> is the number of ways of making these choices of one summand from each series so that the product of our choices is <m>q^k</m>. We can rewrite the infinite product as <m>\displaystyle\prod_{i=0}^\infty{1\over 1-q^i}</m>.
+        <p>To get the coefficient of <m>q^k</m> in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get <m>q^k</m>, and add all these products up. That is, the coefficient of <m>q^k</m> is the number of ways of making these choices of one summand from each series so that the product of our choices is <m>q^k</m>. We can rewrite the infinite product as <m>\displaystyle\prod_{i=0}^\infty\frac{1}{1-q^i}</m>.
         </p>
       </solution>
     </activity>
@@ -707,8 +707,7 @@
             <p>
             <me>
             \displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
-            m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m{1\over
-            1-q^2}
+            m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m\frac{1}{1-q^2}
             </me>
             is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
             <me>
@@ -841,7 +840,7 @@
           <md>
             <mrow>\amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}</mrow>
             <mrow>\amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
-            +{1\over[n]!_q[m-1]!_q}\right)</mrow>
+            +\frac{1}{[n]!_q[m-1]!_q}\right)</mrow>
             <mrow>\amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
             [n]!_q[m]!_q}\right)</mrow>
             <mrow>\amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +

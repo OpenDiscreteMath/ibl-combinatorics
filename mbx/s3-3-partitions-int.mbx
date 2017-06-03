@@ -359,7 +359,7 @@
       <task>
         <statement>
           <p>
-            Show that <m>P(k,n)</m> is at least <m>{1\over n!}\binom{k-1}{n-1}</m>.
+            Show that <m>P(k,n)</m> is at least <m>\frac{1}{n!}\binom{k-1}{n-1}</m>.
           </p>
         </statement>
         <solution>
@@ -805,13 +805,13 @@
         <p>
           Show that
           <me>
-            Q(k,n) \le {1\over n!}\binom{k-1}{n-1}.
+            Q(k,n) \le \frac{1}{n!}\binom{k-1}{n-1}.
           </me>
         </p>
       </statement>
       <solution>
         <p>
-          The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>{1\over n!}  \binom{k-1}{n-1}</m>.
+          The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>\frac{1}{n!}  \binom{k-1}{n-1}</m>.
         </p>
       </solution>
     </activity>

@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-02T20:51:33-06:00    *%
+%*    on 2017-06-02T21:03:41-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -1176,7 +1176,7 @@ Notice that a lattice path from \((0,0)\) to \((n,n)\) stays inside (or on the e
 ~\par
 \item Find a formula for the number of lattice paths from \((0,0)\) to \((n,n)\) that do not cross the line \(y=x\).  The number of such paths is called a \emph{Catalan Number}\index{Catalan Number} and is usually denoted by \(C_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(C_n=\binom{2n}{n} - \binom{2n }{n+1}={1\over n+1}\binom{2n}{n}.\)%
+\textbf{Solution.}\quad \(C_n=\binom{2n}{n} - \binom{2n }{n+1}=\frac{1}{n+1}\binom{2n}{n}.\)%
 
 \end{enumerate}
 \end{activity}
@@ -1211,8 +1211,7 @@ Your formula for the Catalan Number can be expressed as a binomial coefficient d
 ~\par
 \item Explain how you have just given another proof of the formula for the Catalan Numbers.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We have taken the set of all \(\binom{2n}{n}\) diagonal lattice paths of length \(2n\) from \((0,0)\) to \((2n,0)\) and partitioned it into \(n+1\) blocks all of size \(C_n\). Thus by the quotient principle, \(C_n={1\over
-n+1}\binom{2n
+\textbf{Solution.}\quad We have taken the set of all \(\binom{2n}{n}\) diagonal lattice paths of length \(2n\) from \((0,0)\) to \((2n,0)\) and partitioned it into \(n+1\) blocks all of size \(C_n\). Thus by the quotient principle, \(C_n=\frac{1}{n+1}\binom{2n
 }{n}\).%
 
 \end{enumerate}
@@ -2321,7 +2320,7 @@ Thus the correctness of the formula for \(n=m-1\) implies its correctness for \(
 \begin{align*}
 \amp \amp \binom{n}{4}\left((n-4){(n-2)!\over 3!} +{(n-4)(n-3)\over
 2}{(n-2)!\over 4}\right)\\
-\amp =\amp {n!\over 48}(n-2)^{\underline{3}}\left({1\over3} +{n-3\over 4}\right)
+\amp =\amp {n!\over 48}(n-2)^{\underline{3}}\left(\frac{1}{3} +{n-3\over 4}\right)
 \end{align*}
 possible Prüfer codes and therefore the same number of labelled trees.%
 %
@@ -3046,7 +3045,7 @@ On the other hand, a partition \(\lambda\) that results in \(1\) after two encom
 where \(\lambda_i>\lambda_{i+1}\) and \(\lambda_0>\lambda_1+1\). Thus a partition results in a single part of size 1 after some number of encomplementations if and only if it has the form of \hyperref[form1]{Equation~(\ref{form1})} or \hyperref[form2]{Equation~(\ref{form2})}.%
 
 ~\par
-\item Show that \(P(k,n)\) is at least \({1\over n!}\binom{k-1}{n-1}\).%
+\item Show that \(P(k,n)\) is at least \(\frac{1}{n!}\binom{k-1}{n-1}\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The number of compositions of \(k\) into \(n\) parts is \(\binom{k-1}{n-1}\). We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of \(k\) into \(n\) parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from \(1\) to \(n!\).  But then if we divide the number of compositions by \(n!\) we will get a number less than the number of blocks because \(n!\) times the number of blocks would be, by the sum principle, greater than the number of partitions.%
 
@@ -3166,11 +3165,11 @@ Often \(Q(k,n)\) is used to denote the number of partitions of \(k\) into distin
 \begin{activity}[]\label{activity-145}
 Show that%
 \begin{equation*}
-Q(k,n) \le {1\over n!}\binom{k-1}{n-1}.
+Q(k,n) \le \frac{1}{n!}\binom{k-1}{n-1}.
 \end{equation*}
 %
 \par\medskip\noindent%
-\textbf{Solution.}\quad The number of compositions of \(k\) into \(n\) parts is \(\binom{k-1}{n-1}\). Thus the number of compositions of \(k\) into \(n\) distinct parts is less than \(\binom{k-1}{n-1}\). Divide the compositions of \(k\) into \(n\) distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has \(n!\) members. Further, there is a bijection between the blocks of this partition and the partitions of \(k\) into \(n\) distinct parts. Since the number of compositions of \(k\) into \(n\) distinct parts is less than \(\binom{k-1}{n-1}\), the number of partitions of \(k\) into \(n\) distinct parts is less than \({1\over n!}  \binom{k-1}{n-1}\).%
+\textbf{Solution.}\quad The number of compositions of \(k\) into \(n\) parts is \(\binom{k-1}{n-1}\). Thus the number of compositions of \(k\) into \(n\) distinct parts is less than \(\binom{k-1}{n-1}\). Divide the compositions of \(k\) into \(n\) distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has \(n!\) members. Further, there is a bijection between the blocks of this partition and the partitions of \(k\) into \(n\) distinct parts. Since the number of compositions of \(k\) into \(n\) distinct parts is less than \(\binom{k-1}{n-1}\), the number of partitions of \(k\) into \(n\) distinct parts is less than \(\frac{1}{n!}  \binom{k-1}{n-1}\).%
 \end{activity}
 \begin{activity}[]\label{activity-146}
 Show that the number of partitions of 7 into 3 parts equals the number of partitions of 10 into three distinct parts.%
@@ -3506,9 +3505,9 @@ Let \(i\) denote an integer between 1 and \(n\).%
 ~\par
 \item Use the product principle for generating functions to prove the binomial theorem.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The generating function for number of \(n\)-tuples of 0s and 1s with \(k\) ones is, by the product principle for generating functions (extended to \(n\) factors) \((1+x)^n\). However the number of \(n\)-tuples of 0s and 1s with \(k\) ones is the number of \(k\)-element subsets of an \(n\)-element set. Therefore \((1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i\). To get the \((x+y)^n\) form of the binomial theorem, note that \(x+y = y(1+{x\over y})\), so that%
+\textbf{Solution.}\quad The generating function for number of \(n\)-tuples of 0s and 1s with \(k\) ones is, by the product principle for generating functions (extended to \(n\) factors) \((1+x)^n\). However the number of \(n\)-tuples of 0s and 1s with \(k\) ones is the number of \(k\)-element subsets of an \(n\)-element set. Therefore \((1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i\). To get the \((x+y)^n\) form of the binomial theorem, note that \(x+y = y(1+\frac{x}{y})\), so that%
 \begin{align*}
-(x+y)^n \amp =\amp  y^n\left({x\over y}+1\right)^n\\
+(x+y)^n \amp =\amp  y^n\left(\frac{x}{y}+1\right)^n\\
 \amp =\amp y^n\sum_{i=0}^n \binom{n}{i}{x^i\over y^i}\\
 \amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.
 \end{align*}
@@ -3559,12 +3558,12 @@ Express the generating function for the number of multisets of size \(k\) chosen
 \par\medskip\noindent%
 \textbf{Solution.}\quad Since \((1-x)\sum_{k=0}^\infty x^k=1\), we have that%
 \begin{equation*}
-\sum_{k=0}^\infty x^k={1\over 1-x}.
+\sum_{k=0}^\infty x^k=\frac{1}{1-x}.
 \end{equation*}
 %
 \par
 Therefore \(\left(\sum_{k=0}^\infty
-x^k\right)^n= {1\over(1-x)^n}\) is the generating function for multisets of size \(k\) chosen from an \(n\) element set.%
+x^k\right)^n= \frac{1}{(1-x)^n}\) is the generating function for multisets of size \(k\) chosen from an \(n\) element set.%
 \end{activity}
 \begin{activity}[]\label{negnchoosek}
 Find a formula for \((1+x)^{-n}\) as a power series whose coefficients involve binomial coefficients. What does this formula tell you about how we should define \(\binom{-n}{k}\) when \(n\) is positive?%
@@ -3579,7 +3578,7 @@ We want the coefficient of \(x^k\) in \((1+x)^{-n}\) to be \(\binom{-n}{k}\), so
 \begin{activity}[]\label{activity-170}
 If you define \(\binom{-n}{k}\) in the way you described in \hyperref[negnchoosek]{Problem~\ref{negnchoosek}}, you can write down a version of the binomial theorem for \((x+y)^n\) that is valid for both nonnegative and negative values of \(n\). Do so. This is called the \terminology{extended binomial theorem}\index{binomial theorem!extended}\index{extended binomial theorem}.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \((x+y)^n=\sum_{i=0}^\infty\binom{n}{i}x^i\). The proof consists of writing \((x+y)=y({x\over y}+1)\) and applying the \hyperref[negnchoosek]{Problem~\ref{negnchoosek}} when \(n\) is negative. When \(n\) is positive, we recall that \(\binom{n}{k}\) is zero when \(k>n\), so replacing the upper limit of \(n\) in the standard version of the binomial theorem by \(\infty\) doesn't change the value of the sum.%
+\textbf{Solution.}\quad \((x+y)^n=\sum_{i=0}^\infty\binom{n}{i}x^i\). The proof consists of writing \((x+y)=y(\frac{x}{y}+1)\) and applying the \hyperref[negnchoosek]{Problem~\ref{negnchoosek}} when \(n\) is negative. When \(n\) is positive, we recall that \(\binom{n}{k}\) is zero when \(k>n\), so replacing the upper limit of \(n\) in the standard version of the binomial theorem by \(\infty\) doesn't change the value of the sum.%
 \end{activity}
 \begin{activity}[]\label{activity-171}
 Write down the generating function for the number of ways to distribute identical pieces of candy to three children so that no child gets more than 4 pieces. Write this generating function as a quotient of polynomials. Using both the extended binomial theorem and the original binomial theorem, find out in how many ways we can pass out exactly ten pieces. Use one of our earlier counting techniques to verify your answer.%
@@ -3629,7 +3628,7 @@ x^{25i}={1-x^6\over1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
 \par
 Although we could write this as a polynomial times a product of four power series, doing so would not significantly increase our understanding, though it would let us make some painful computations of the number of ways to make a certain number of cents. If we actually wanted such numbers we would be better off asking a computer algebra package to expand the product of the polynomials on the left. With unlimited supplies the generating function becomes%
 \begin{equation*}
-{1\over1-x}\cdot{1\over 1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
+\frac{1}{1-x}\cdot\frac{1}{1-x^5}\cdot{1\over 1-x^{10}}\cdot{1\over 1-x^{25}}.
 \end{equation*}
 %
 \par
@@ -3638,7 +3637,7 @@ Again, we could write this as a product of power series, and that would allow us
 \begin{activity}[]\label{largestpartatmostm}
 Recall that a partition of an integer \(k\) is a multiset of numbers that adds to \(k\). In \hyperref[change-making]{Problem~\ref{change-making}} we found the generating function for the number of partitions of an integer into parts of size 1, 5, 10, and 25. Give the generating function for the number partitions of an integer into parts of size one through ten. Give the generating function for the number of partitions of an integer \(k\) into parts of size at most \(m\). (Where \(m\) is fixed but \(k\) may vary.) Notice this is the generating function for partitions whose Young diagram fits into the space between the line \(x=0\) and the line \(x=m\) in a coordinate plane. (We assume the boxes in the Young diagram are one unit by one unit.) When working with generating functions for partitions, it is becoming standard to use \(q\) rather than \(x\) as the variable in the generating function.  Write your answers in this notation.\footnote{The reason for this change in the notation relates to the subject of finite fields in abstract algebra, where \(q\) is the standard notation for the size of a finite field.  While we will make no use of this connection, it will be easier for you to read more advanced work if you get used to the different notation.\label{fn-12}}%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\prod_{i=1}^{10}{1\over1-q^i}\), \(\prod_{i=1}^m{1\over 1-q^i}\).%
+\textbf{Solution.}\quad \(\prod_{i=1}^{10}\frac{1}{1-q^i}\), \(\prod_{i=1}^m\frac{1}{1-q^i}\).%
 \end{activity}
 \begin{activity}[]\label{atmostmparts}
 In \hyperref[largestpartatmostm]{Problem~\ref{largestpartatmostm}} you gave the generating function for the number of partitions of an integer into parts of size at most \(m\). Explain why this is also the generating function for partitions of an integer into at most \(m\) parts. Notice that this is the generating function for the number of partitions whose Young diagram fits into the space between the line \(y=0\) and the line \(y=m\).%
@@ -3658,7 +3657,7 @@ which we can write more precisely as%
 \end{equation*}
 %
 \par
-To get the coefficient of \(q^k\) in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get \(q^k\), and add all these products up. That is, the coefficient of \(q^k\) is the number of ways of making these choices of one summand from each series so that the product of our choices is \(q^k\). We can rewrite the infinite product as \(\displaystyle\prod_{i=0}^\infty{1\over 1-q^i}\).%
+To get the coefficient of \(q^k\) in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get \(q^k\), and add all these products up. That is, the coefficient of \(q^k\) is the number of ways of making these choices of one summand from each series so that the product of our choices is \(q^k\). We can rewrite the infinite product as \(\displaystyle\prod_{i=0}^\infty\frac{1}{1-q^i}\).%
 \end{activity}
 \begin{activity}[]\label{activity-177}
 In \hyperref[genfunpartitions]{Problem~\ref{genfunpartitions}}, we multiplied together infinitely many power series. Here are two notations for infinite products that look rather similar:%
@@ -3721,8 +3720,7 @@ which is the generating function for partitions of integers into parts that are 
 \textbf{Solution.}\quad %
 \begin{equation*}
 \displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
-m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m{1\over
-1-q^2}
+m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m\frac{1}{1-q^2}
 \end{equation*}
 is the generating function for the number of ways to partition an integer into parts of size at most \(m\), each used an odd number of times.%
 \begin{equation*}
@@ -3798,7 +3796,7 @@ While this doesn't {quite} look like the Pascal recurrence, it is still a correc
 \begin{align*}
 \amp \amp q^m{[m+n-1]!_q\over [n-1]!_q[m]!_q}+{[m+n-1]!_q\over [n]!_q[m-1]!_q}\\
 \amp =\amp \relax[m+n-1]!_q\left({q^m\over[n-1]!_q[m]!_q}
-+{1\over[n]!_q[m-1]!_q}\right)\\
++\frac{1}{[n]!_q[m-1]!_q}\right)\\
 \amp \amp \relax[m+n-1]!_q\left({[n]_qq^m\over [n]!_q[m]_q}+{[m]_q\over
 [n]!_q[m]!_q}\right)\\
 \amp =\amp \relax{[m+n-1]!_q\over [n]!_q[m]!_q}\left((1+q+\cdots+q^{n-1})q^m +
@@ -3913,9 +3911,9 @@ a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
 \sum_{i=1}^\infty a_ix^i\amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}+
 \sum_{i=0}^\infty 3^ix^i-3^0x^0\\
 \sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 3x\sum_{i=0}^\infty a_{i}x^{i}+
-{1\over 1-3x}-1\\
-(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+{1\over 1-3x} -1\\
-\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+{1\over (1-3x)^2}
+\frac{1}{1-3x}-1\\
+(1-3x)\sum_{i=0}^\infty a_ix^i \amp =\amp a_0+\frac{1}{1-3x} -1\\
+\sum_{i=0}^\infty a_ix^i \amp =\amp {a_0-1\over 1-3x}+\frac{1}{(1-3x)^2}
 \end{align*}
 %
 
@@ -3924,7 +3922,7 @@ a_{i-1}x^i+\sum_{i=1}^i3^ix^i\\
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{i=0}^\infty a_i x^i \amp =\amp {a_0-1\over 1-3x} + {1\over(1-3x)^2}\\
+\sum_{i=0}^\infty a_i x^i \amp =\amp {a_0-1\over 1-3x} + \frac{1}{(1-3x)^2}\\
 \amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty \binom{i+1}{i}3^ix^i,
 \end{align*}
 which gives us \(a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i\).%
@@ -3938,9 +3936,9 @@ which gives us \(a_n=(a_0-1) 3^i + (i+1)3^i=(a_0+i)3^i\).%
 a_{i-1}x^i +\sum_{i=1}^\infty 2^ix^i\\
 \sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=1}^\infty a_{i-1}x^{i-1}
 +\sum_{i=0}^\infty (2x)^i -1\\
-\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +{1\over 1-2x} -1\\
-(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +{1\over 1-2x}-1\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+{1\over(1-2x)(1-3x)}\\
+\sum_{i=0}^\infty a_ix^i -a_0 \amp =\amp 3x\sum_{i=0}^\infty a_ix^i +\frac{1}{1-2x} -1\\
+(1-3x)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0 +\frac{1}{1-2x}-1\\
+\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1\over 1-3x}+\frac{1}{(1-2x)(1-3x)}\\
 \sum_{i=0}^\infty a_ix^i\amp =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
 2^ix^i\sum_{j=0}^\infty 3^jx^j
 \end{align*}
@@ -3951,8 +3949,7 @@ But%
 \sum_{k=0}^\infty
 \sum_{i=0}^k 2^i3^{k-i}x^k=
 \sum_{k=0}^\infty3^kx^k
-\sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left({2\over
-3}\right)^{k+1}\over 1-{2\over 3}}3^kx^k=\sum_{k=0}^\infty
+\sum_{i=0}^k {2^i\over3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
 (3^{k+1}-2^{k+1})x^k\text{.}
 \end{equation*}
 Substituting this into the equation for \(\sum_{i=0}^\infty a_ix^i\) gives us \(a_i =(a_0+2)3^i -2^{i+1}\).%
@@ -4030,7 +4027,7 @@ a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n\\
 %
 \par
 Since now \(a_0=a_1=1\), we have \(\displaystyle \sum_{n=0}^\infty a_nx^n=
-{1\over 1-x-x^2}\).%
+\frac{1}{1-x-x^2}\).%
 \end{activity}
 \begin{activity}[]\label{secondordernonhomo}
 Find the generating function for the solutions to the recurrence%
@@ -4049,8 +4046,7 @@ a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
 2^ix^i-1-2x\\
 \hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i\amp =\amp a_0-1+(a_1-5a_0-2)x +
 \sum_{n=0}^\infty 2^ix^i\\
-\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ {1\over
-1-5x+6x^2}\cdot{1\over 1-2x}
+\sum_{i=0}^\infty a_ix^i\amp =\amp  {a_0-1+(a_1-5a_0-2)x\over 1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}
 \end{align*}
 %
 \end{activity}
@@ -4061,22 +4057,20 @@ The recurrence relations we have seen in this section are called \terminology{se
 \subsection[{Partial fractions}]{Partial fractions}\label{subsection-49}
 The generating functions you found in the previous section all can be expressed in terms of the reciprocal of a quadratic polynomial. However without a power series representation, the generating function doesn't tell us what the sequence is. It turns out that whenever you can factor a polynomial into linear factors (and over the complex numbers such a factorization always exists) you can use that factorization to express the reciprocal in terms of power series.%
 \begin{activity}[]\label{simplifysumoffractions}
-Express \({1\over x-3 } + {2\over x-2}\) as a single fraction.%
+Express \(\frac{1}{x-3 } + \frac{2}{x-2}\) as a single fraction.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \({x-2 +2(x-3)\over(x-3)(x-2)}={3x-8\over x^2-5x+6}\)%
 \end{activity}
 \begin{activity}[]\label{partialfractionsintro}
 In \hyperref[simplifysumoffractions]{Problem~\ref{simplifysumoffractions}} you see that when we added numerical multiples of the reciprocals of first degree polynomials we got a fraction in which the denominator is a quadratic polynomial. This will always happen unless the two denominators are multiples of each other, because their least common multiple will simply be their product, a quadratic polynomial. This leads us to ask whether a fraction whose denominator is a quadratic polynomial can always be expressed as a sum of fractions whose denominators are first degree polynomials. Find numbers \(c\) and \(d\) so that%
 \begin{equation*}
-{5x+1\over(x-3)(x+5)} = {c\over x-3} + {d\over
-x+5}.
+{5x+1\over(x-3)(x+5)} = \frac{c}{x-3} + \frac{d}{x+5}.
 \end{equation*}
 %
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-{5x+1\over(x-3)(x+5)} \amp =\amp  {c\over x-3} + {d\over
-x+5}\\
+{5x+1\over(x-3)(x+5)} \amp =\amp  \frac{c}{x-3} + \frac{d}{x+5}\\
 {5x+1\over(x-3)(x-5)} \amp =\amp cx+5c+dx-3d
 \end{align*}
 gives us%
@@ -4093,15 +4087,13 @@ Which gives us \(16=8c\) so that \(c=2\) and then \(d=3\).%
 \begin{activity}[]\label{partialfractions1}
 In \hyperref[partialfractionsintro]{Problem~\ref{partialfractionsintro}} you may have simply guessed at values of \(c\) and \(d\), or you may have solved a system of equations in the two unknowns \(c\) and \(d\). Given constants \(a\), \(b\), \(r_1\), and \(r_2\) (with \(r_1\not= r_2\)), write down a system of equations we can solve for \(c\) and \(d\) to write%
 \begin{equation*}
-{ax+b\over (x-r_1)(x-r_2)} = {c\over x-r_1} + {d\over
-x-r_2}.
+{ax+b\over (x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
 \end{equation*}
 %
 \par\medskip\noindent%
 \textbf{Solution.}\quad To have%
 \begin{equation*}
-{ax+b\over (x-r_1)(x-r_2)} =  {c\over x-r_1} + {d\over
-x-r_2}
+{ax+b\over (x-r_1)(x-r_2)} =  \frac{c}{x-r_1} + \frac{d}{x-r_2}
 \end{equation*}
 we must have%
 \begin{equation*}
@@ -4115,14 +4107,13 @@ Writing down the equations in \hyperref[partialfractions1]{Problem~\ref{partialf
 \begin{activity}[]\label{activity-191}
 Use the method of partial fractions to convert the generating function of \hyperref[secondorderintroduction]{Problem~\ref{secondorderintroduction}} into the form%
 \begin{equation*}
-{c\over x-r_1} + {d\over x-r_2}.
+\frac{c}{x-r_1} + \frac{d}{x-r_2}.
 \end{equation*}
 %
 \par
 Use this to find a formula for \(a_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \({10\over (1-x-2x^2)}={10\over (1-2x)(1+x)} = {c\over1-2x} +{d\over
-1+x}\). This gives us the equations \(c+d=10\) and \(c-2d=0\). Thus \(3d=10\), so \(d={10\over3}\), and \(c=2d\) so \(c={20\over3}\). Thus%
+\textbf{Solution.}\quad \({10\over (1-x-2x^2)}={10\over (1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}\). This gives us the equations \(c+d=10\) and \(c-2d=0\). Thus \(3d=10\), so \(d={10\over3}\), and \(c=2d\) so \(c={20\over3}\). Thus%
 \begin{align*}
 \sum_{i=0}^\infty a_ix^i \amp =\amp  {10\over 1-x-2x^2}\\
 \amp =\amp {20/3\over 1-2x} + {10/3\over 1+x}\\
@@ -4144,16 +4135,15 @@ Use the factors you found in \hyperref[factorFibonacci]{Problem~\ref{factorFibon
 \end{equation*}
 in the form%
 \begin{equation*}
-{c\over x-r_1} + {d\over x-r_2}.
+\frac{c}{x-r_1} + \frac{d}{x-r_2}.
 \end{equation*}
 %
 \par\medskip\noindent%
 \textbf{Hint.}\quad You can save yourself a tremendous amount of frustrating algebra if you arbitrarily choose one of the solutions and call it \(r_1\) and call the other solution \(r_2\) and solve the problem using these algebraic symbols in place of the actual roots.\footnote{We use the words roots and solutions interchangeably.\label{fn-14}} Not only will you save yourself some work, but you will get a formula you could use in other problems. When you are done, substitute in the actual values of the solutions and simplify.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \({1\over x^2+x-1}={c\over x-r_1}+{d\over x-r_2}\) gives us \(cx-cr_2+dx-dr_1=1\). Thus \(c+d=0\), and \(cr_2+dr_1 =-1\). This gives us \(d=-c\) and so \(cr_2-cr_1=-1\), which yields \(c={1\over r_1-r_2}\), and \(d={1\over
-r_2-r_1}\). By substitution, \(c=1/\sqrt{5}\) and \(d=-1/\sqrt{5}\). This gives us%
+\textbf{Solution.}\quad \(\frac{1}{x^2+x-1}=\frac{c}{x-r_1}+\frac{d}{x-r_2}\) gives us \(cx-cr_2+dx-dr_1=1\). Thus \(c+d=0\), and \(cr_2+dr_1 =-1\). This gives us \(d=-c\) and so \(cr_2-cr_1=-1\), which yields \(c=\frac{1}{r_1-r_2}\), and \(d=\frac{1}{r_2-r_1}\). By substitution, \(c=1/\sqrt{5}\) and \(d=-1/\sqrt{5}\). This gives us%
 \begin{equation*}
-{1\over x^2+x-1} = {1/\sqrt{5}\over x-{-1+\sqrt{5}\over2}}
+\frac{1}{x^2+x-1} = {1/\sqrt{5}\over x-{-1+\sqrt{5}\over2}}
 +{-1/\sqrt{5}\over x- {-1-\sqrt{5}\over2}}.
 \end{equation*}
 %
@@ -4171,13 +4161,11 @@ and use this to give an explicit formula for \(a_n\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\sum_{n=0}^\infty a_nx^n \amp =\amp {1\over 1-x-x^2}\rangle =\rangle -{1\over
-x^2+x-1}\\
-\amp =\amp {1\over\sqrt{5}}\cdot{1\over r_1-x} -{1\over\sqrt{5}}\cdot{1\over r_2-x}\\
-\amp =\amp {1\over r_1\sqrt{5}}\cdot{1\over1-x/r_1} -{1\over r_2\sqrt{5}}\cdot{1\over
-1-x/r_2}\\
-\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left({x\over r_1}\right)^n
--{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left({x\over r_2}\right)^n
+\sum_{n=0}^\infty a_nx^n \amp =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}\\
+\amp =\amp {1\over\sqrt{5}}\cdot\frac{1}{r_1-x} -{1\over\sqrt{5}}\cdot\frac{1}{r_2-x}\\
+\amp =\amp {1\over r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -{1\over r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}\\
+\amp =\amp {1\over r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
+-{1\over r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n
 \end{align*}
 This gives us that%
 \begin{align*}
@@ -4217,7 +4205,7 @@ odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i\\
 odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}\\
 \amp =\amp {1\over2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
 even} }  \binom{n+1}{i+1}5^{i/2}\\
-\amp =\amp {1\over 2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
+\amp =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,
 \end{align*}
 which makes it clear that \(a_n\) is at least a rational number. It is not clear from this new formula why the result is always an integer. Since \(\left|{1-\sqrt{5}\over 2}\right|\lt 1\), \({1\over\sqrt{5}}\left({1-\sqrt{5}\over 2}\right)^{n-1}\) approaches 0 as \(n\) becomes large. Therefore if we take \(b\) to be \(\left({1+\sqrt{5}\over
 2}\right)^n\) and we take \(c\) to be \({1+\sqrt{5}\over 2\sqrt{5}}\) then then \(n\)th Fibonacci number is almost exactly \(cb^n\) when \(n\) is large. In particular, it is the nearest integer to \(cb^n\).%
@@ -4297,16 +4285,16 @@ This gives us \(xy^2-y+1=0\), and solving for \(y\) by the quadratic formula giv
 \end{equation*}
 %
 \par
-The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-{1\over2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=({1\over2})({-1\over2})({-3\over2})({-5\over2})\cdots ({-2i+3\over 2})\), so%
+The first term of this power series is 1, so to get a power series for \(y\), we must take the negative square root so that the \(x\) in the denominator will cancel out. Thus \(y=-\frac{1}{2}\sum_{i=1}^\infty {(1/2)^{\underline{i}}\over i!}(-1)^i4^ix^i\). But \((1/2)^{\underline{i}}=(\frac{1}{2})({-1\over2})({-3\over2})({-5\over2})\cdots ({-2i+3\over 2})\), so%
 \begin{align*}
-y\amp =\amp -{1\over2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
+y\amp =\amp -\frac{1}{2}\sum_{i=1}^\infty{1\cdot3\cdot5\cdots(2i-3)\over
 i!}(-1)^{2i-1}2^ix^{i-1}\\
 \amp =\amp  \sum_{i=1}^\infty {(2i-2)!\over
 (i-1)!2^{i}i!}2^ix^{i-1}\\
 \amp =\amp  \sum_{i=1}^\infty{2i-2!\over i!(i-1)!}x^{i-1}\\
 \amp =\amp \sum_{j=0}^\infty{2j!\over (j+1)!j!}x^j
 \end{align*}
-giving us \(C_j={1\over j+1}\binom{2j}{j}\), which is our earlier formula for the Catalan Number \(C_j\).%
+giving us \(C_j=\frac{1}{j+1}\binom{2j}{j}\), which is our earlier formula for the Catalan Number \(C_j\).%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section 3.3 Supplementary Problems}
@@ -4421,7 +4409,7 @@ Thus the sequence satisfies the same recurrence as the Fibonacci numbers and its
 \begin{activity}[]\label{activity-202}
 Let \(m\) and \(n\) be fixed. Express the generating function for the number of \(k\)-element multisets of an \(n\)-element set such that no element appears more than \(m\) times as a quotient of two polynomials. Use this expression to get a formula for the number of \(k\)-element multisets of an \(n\)-element set such that no element appears more than \(m\) times.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \((1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}\).  Expanding this gives us \({(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}\). The coefficient of \(x^k\) in this product is the number of \(k\)-element multisets chosen from an \(n\)-element set in which no element appears more than \(m\) times. This coefficient is \(\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}\).%
+\textbf{Solution.}\quad \((1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}\).  Expanding this gives us \({(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}\). The coefficient of \(x^k\) in this product is the number of \(k\)-element multisets chosen from an \(n\)-element set in which no element appears more than \(m\) times. This coefficient is \(\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}\).%
 \end{activity}
 \begin{activity}[]\label{activity-203}
 One natural but oversimplified model for the growth of a tree is that all new wood grows from the previous year's growth and is proportional to it in amount. To be more precise, assume that the (total) length of the new growth in a given year is the constant \(c\) times the (total) length of new growth in the previous year. Write down a recurrence for the total length \(a_n\) of all the branches of the tree at the end of growing season \(n\). Find the general solution to your recurrence relation. Assume that we begin with a one meter cutting of new wood (from the previous year) which branches out and grows a total of two meters of new wood in the first year.  What will the total length of all the branches of the tree be at the end of \(n\) years?%
@@ -4441,8 +4429,7 @@ Assuming \(c\not=1\) and using the method of partial fractions gives us%
 \amp \amp {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}\\
 \amp =\amp  (a_0+(a_1-a_0(1+c))x)
 \left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]\\
-\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[{1\over 1-c}\sum_{i=0}^\infty x^i-{c\over
-1-c}\sum_{i=0}^\infty c^ix^i\right]\\
+\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]\\
 \amp =\amp  {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
 (1-c^{i+1})x^i.
 \end{align*}
@@ -4464,8 +4451,7 @@ Assuming that we begin with one meter of new wood means \(a_0=1\), and assuming 
 \amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
 (1+x^4+x^8+\cdots)\\
 \amp =\amp 
-{(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  {1\over
-(1-x)^4}
+{(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}
 \end{align*}
 %
 \par
@@ -4766,7 +4752,7 @@ Find a formula for the Stirling number (of the second kind) \(S(k,n)\).\index{St
 \par\medskip\noindent%
 \textbf{Solution.}\quad Since the number of functions from \([k]\) onto \([n]\) is \(S(k,n)n!\), we get from the solution to \hyperref[numontofun]{Problem~\ref{numontofun}}%
 \begin{equation*}
-S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k.
+S(k,n) = \frac{1}{n!}\sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k.
 \end{equation*}
 %
 \end{activity}
@@ -4993,7 +4979,7 @@ Suppose we take two graphs \(G_1\) and \(G_2\) with disjoint vertex sets, we cho
 \end{equation*}
 %
 \par
-Now \(\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)\) because each ordered pair of proper colorings of \(G_1\) and \(G_2\) is a proper coloring of \(G_{12}-e\). \(G_{12}/e\) is the graph we get by identifying the endpoint of \(e\) in \(G_1\) with the endpoint of \(e\) in \(G_2\). Notice that if you fix one vertex of a graph \(G\), fix one color, and ask how many proper colorings with \(x\) colors \(G\) has in which the fixed vertex is the fixed color, you get \(\chi_G(x)/x\).  (By the quotient principle.) Thus \(\chi_{G_2}(x)/x\) is the number of ways to extend a proper coloring of \(G_1\) to a proper coloring of \(G_{12}/e\). Then, by the product principle, the number of proper colorings of \(G_{12}/e\) with \(x\) colors is \(\chi_{G_1}(x)\chi_{G_2}(x)/x\). Therefore by the deletion-contraction recurrence, \(\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-{1\over x})\).%
+Now \(\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)\) because each ordered pair of proper colorings of \(G_1\) and \(G_2\) is a proper coloring of \(G_{12}-e\). \(G_{12}/e\) is the graph we get by identifying the endpoint of \(e\) in \(G_1\) with the endpoint of \(e\) in \(G_2\). Notice that if you fix one vertex of a graph \(G\), fix one color, and ask how many proper colorings with \(x\) colors \(G\) has in which the fixed vertex is the fixed color, you get \(\chi_G(x)/x\).  (By the quotient principle.) Thus \(\chi_{G_2}(x)/x\) is the number of ways to extend a proper coloring of \(G_1\) to a proper coloring of \(G_{12}/e\). Then, by the product principle, the number of proper colorings of \(G_{12}/e\) with \(x\) colors is \(\chi_{G_1}(x)\chi_{G_2}(x)/x\). Therefore by the deletion-contraction recurrence, \(\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-\frac{1}{x})\).%
 \end{activity}
 \typeout{************************************************}
 \typeout{Chapter 5 Groups acting on sets}
@@ -5417,7 +5403,7 @@ We regard a cycle \((i\
 \end{equation*}
 %
 \par
-Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \({1\over 2}\) and \(2\over 4\) to be equal. In particular, this means that \((i_1\ i_2\
+Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \(\frac{1}{2}\) and \(2\over 4\) to be equal. In particular, this means that \((i_1\ i_2\
 \ldots i_n) = (i_j\ \ i_{j+1}\ \ldots\ i_n\ \ i_1\ \ i_2\ \ldots\ i_{j-1})\).%
 \par
 If \(\gamma_1\), \(\gamma_2\), \dots{}, \(\gamma_n\) are the (inequivalent) cycles of a permutation \(\sigma\) of the set \(S\), then we write%
@@ -6008,8 +5994,7 @@ m|G|=\sum_{x:x\in S} |{ Fix}(x).
 \par
 Therefore,%
 \begin{equation*}
-m={1\over
-|G|}\sum_{x:x\in S} |{ Fix}(x)|.
+m=\frac{1}{|G|}\sum_{x:x\in S} |{ Fix}(x)|.
 \end{equation*}
 %
 \end{activity}
@@ -6025,7 +6010,7 @@ In \hyperref[numbermultiorbits3]{Problem~\ref{numbermultiorbits3}} you stated an
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
+m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
 \chi(\sigma,x).
 \end{equation*}
 
@@ -6039,7 +6024,7 @@ m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
+m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
 \end{equation*}
 
 \end{enumerate}
@@ -6050,8 +6035,7 @@ In how many ways may we string four (identical) red, six (identical) blue, and s
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are stringing 17 beads on our necklace, so we are asking for the number of orbits of the group \(D_{17}\) on lists of four \(R\)s, six \(B\)s, and seven \(G\)s. For a rotation \(\rho^i\) to fix a list, it must take an \(R\) to a \(R\). The powers of \(\rho^i\) form a group. Thus the set of places that contain an \(R\) in a list that is fixed by \(\rho^i\) must be an orbit of that group. But the size of the orbit must be a divisor of the size of the subgroup, which must be a divisor of seventeen, so the size of the orbit is one or 17. If it is 1, then \(i=0\). Thus no elements are fixed by any nontrivial rotation, and all \(\binom{17}{4,6,7}\) lists of \(R\)s, \(B\)s and \(G\)s are fixed by the identity. Each flip will be a flip \strut around a line from a bead to the spot between the two ``opposite'' beads. This line divides the list into the eight beads on its left, the eight beads on its right and the one bead it goes through. If a flip fixes a list, the eight beads on the left must be identical to the eight beads on the right, meaning that the bead the line goes through must be one of the seven green beads. Thus the number of lists that are fixed by a flip is the number of ways to place three green beads, two red beads, and three blue beads in 8 slots, which is \(\binom{8}{3,2,3}\), or \(8!\over3!2!3!\). There are 17 flips, so there are \(17\cdot8!\over3!2!3!\) elements fixed by flips. Therefore we have%
 \begin{equation*}
-{1\over
-2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
+\frac{1}{2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
 {8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400
 \end{equation*}
 necklaces. The numerical answer, which is unimportant here, was obtained from Maple.%
@@ -6061,7 +6045,7 @@ If we have an unlimited supply of identical red beads and identical blue beads, 
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are asking for the number of orbits of \(D_{17}\) on the set of functions from \([17]\) to \(\{R,B\}\). Every function is fixed by the identity. The only functions fixed by a nontrivial rotation are the constant functions. Each flip is around a line from a bead to the space between the two ``opposite'' beads. The bead the line goes through can be either color, and then the eight beads to the left of this one must be identical to the eight beads to the right of this one. There are \(2^8\) ways to assign beads to the positions on the left, so a flip fixes \(2^9\) functions. Therefore by the CFB theorem, we have%
 \begin{equation*}
-{1\over 2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
+\frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
 17}+2^8 +{2^4\over 17}=16{4097\over17}+256=4112
 \end{equation*}
 necklaces.%
@@ -6071,7 +6055,7 @@ If we have five (identical) red, five (identical) blue, and five (identical) gre
 \par\medskip\noindent%
 \textbf{Solution.}\quad Here we need to consider the action of \(D_{15}\) on lists (functions from \([15]\) to \(\{R,B,G\}\)) with five \(R\)s, five \(B\)s, and five \(G\)s. The identity will fix \(\binom{15}{5,5,5}\) lists. A rotation through 3,6,9,or 12 places will fix any function that has the same value in places 1, 4, 7, 10, and 13, the same value in places 2, 5, 8, 11, and 14, and the same value in places 3, 6, 9, 12, and 15. There are \(3!\) such lists. There is no other rotation that fixes any lists. Each flip is around an axis that goes from bead to the space between two opposite beads. If it fixed a list, the seven colors to the left of the axis would have to equal the seven colors to the right of the axis. Thus the number of beads of each color on the left and right sides would have to be equal. So except for the color of the bead the axis goes through, we would have to have an even number of beads of each color for a flip to fix a list of beads. Thus no flip fixes any functions. Therefore by the CFB theorem we have%
 \begin{equation*}
-{1\over2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226
+\frac{1}{2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226
 \end{equation*}
 necklaces. (The numerical answer, which was obtained from Maple, is not important here.)%
 \end{activity}
@@ -6087,7 +6071,7 @@ necklaces. (The numerical answer, which was obtained from Maple, is not importan
 \par\medskip\noindent%
 \textbf{Solution.}\quad We must consider the action of the rotation group of the cube on functions from \([6]\) to \(\{R,B\}\) or some other two-element set of colors. There are five kinds of elements in the rotation group of the cube. There is one identity, there are six rotations by 90 degrees or 270 degrees around an axis connecting the centers of two opposite faces, there are three rotations of 180 degrees around such an axis, there are 8 rotations (of 120 degrees and 240 degrees, respectively) around an axis connecting two diagonally opposite vertices, and there are 6 rotations of 180 degrees around an axis connecting the centers of two opposite edges. The identity fixes \(2^6\) functions. There are eight functions fixed by a 90 degree or 270 degree rotation. There are 16 functions fixed by a 180 degree rotation along an axis through two faces. There are 8 functions fixed by a 180 degree rotation along an axis joining the centers of two opposite sides. There are 4 functions fixed by a 120 degree or 240 degree rotation. Thus by the CFB theorem, we have%
 \begin{equation*}
-{1\over24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10
+\frac{1}{24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10
 \end{equation*}
 ways to paint the faces of a cube with two colors of paint. Two of these colorings use only one color, so there are eight colorings that use both colors.%
 
@@ -6098,7 +6082,7 @@ In how many ways may we color the edges of a (regular) \((2n+1)\)-gon free to mo
 \par\medskip\noindent%
 \textbf{Solution.}\quad The set of all powers of a rotation is a subgroup of the rotation group of the \((2n+1)\)-gon. If a given rotation fixes a coloring, all powers of that rotation fix the coloring. The set of edges to which a given edge is taken by that rotation is an orbit of the group of powers of the rotation. The size of this orbit is a divisor of the size of the subgroup, which is a divisor of \(2n+1\). If the edge is colored red, the size of the orbit is also a divisor of \(n\), and if the edge is colored blue, the size of the orbit is also a divisor of \(n+1\). But neither \(n\) nor \(n+1\) have common divisors with \(2n+1\), except for one. Therefore the only rotation that fixes a coloring is the identity rotation, and it fixes all \(\binom{2n+1}{n}\) colorings. Thus the number of orbits is%
 \begin{equation*}
-{1\over 2n+1}\binom{2n+1 }{n} = {1\over n+1}\binom{2n}{n},
+\frac{1}{2n+1}\binom{2n+1 }{n} = \frac{1}{n+1}\binom{2n}{n},
 \end{equation*}
 a Catalan number.%
 \end{activity}
@@ -6111,14 +6095,14 @@ A flip, on the other hand can fix some colorings. In particular, if \(n\) is eve
 \par
 Thus the number of orbits is%
 \begin{equation*}
-{1\over 2(2n+1)}\left(\binom{2n+1}{n} +
+\frac{1}{2(2n+1)}\left(\binom{2n+1}{n} +
 (2n+1)\binom{n}{n/2}\right).
 \end{equation*}
 %
 \par
 If \(n\) is odd, we color one edge red, leaving an even number \(n-1\) of edges to be colored red and an even number \(n+1\) of edges to be colored blue. With an argument similar to the previous one we see that there are%
 \begin{equation*}
-{1\over 2(2n+1)}\left(\binom{2n+1}{n} + (2n+1)(\binom{n}{(n-1)/2}\right)
+\frac{1}{2(2n+1)}\left(\binom{2n+1}{n} + (2n+1)(\binom{n}{(n-1)/2}\right)
 \end{equation*}
 orbits.%
 \end{activity}
@@ -6218,7 +6202,7 @@ E\amp =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)\\
 \par
 Setting these two values of \(E\) equal and solving for \({ Orb}(G,S)\) gives us%
 \begin{equation*}
-{ Orb}(G,S) ={1\over |G|}{ Fix}(G,S).
+{ Orb}(G,S) =\frac{1}{|G|}{ Fix}(G,S).
 \end{equation*}
 %
 \end{activity}
@@ -6235,7 +6219,7 @@ Setting these two values of \(E\) equal and solving for \({ Orb}(G,S)\) gives us
 \par
 Then the orbit enumerator for the action of \(G\) on the colorings is%
 \begin{equation*}
-{ Orb}(G,S)={1\over 6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
+{ Orb}(G,S)=\frac{1}{6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
 2(R^6+B^6)\right).
 \end{equation*}
 %
@@ -6253,7 +6237,7 @@ Thus we have one all-red orbit, one all-blue orbit, one orbit with five reds and
 \par\medskip\noindent%
 \textbf{Solution.}\quad We want to think of the rotation group of the cube acting on the faces of the cube, in order to see what kinds of colorings are left fixed. For this purpose we note that each element of the rotation group gives us a permutation of the faces of the cube, and if two faces are in the same cycle of this permutation, they must have the same color, but if they are in different cycles, they may get different colors. The 90 and 270 degree rotations around an axis through two faces have a four-cycle and two one-cycles. The 180 degree rotation around an axis through two faces has two two-cycles and two one-cycles. The 120 and 240 degree rotations around an axis connecting diagonally opposite vertices have two three-cycles. The 180 degree rotations around an axis connecting two opposite edges have three two-cycles, and the identity has six one-cycles. A coloring is fixed by a permutation if and only if it is constant on (i.e. assigns the same color to all elements of) each cycle of the permutation. The picture enumerator for (constant) colorings of an \(i\)-cycle is \(R^i+B^i\). Thus, using \hyperref[PictureEnumeratorforFunctions]{Problem~\ref{PictureEnumeratorforFunctions}}, if \(\sigma\) is a 90 or 270 degree rotation, its fixed point enumerator is \((R^4+B^4)(R+B)^2\), if it is a 180 degree rotation around an axis connecting two opposite faces, its fixed point enumerator is \((R^2+B^2)^2(R+B)^2\), if it is a 180 degree rotation around an axis connecting two opposite edges, its fixed point enumerator is \((R^2+B^2)^3\), if it is a 120 or 240 degree rotation its fixed point enumerator is \((R^3+B^3)^2\), and if it is the identity, then its fixed point enumerator is \((R+B)^6\). Therefore the generating function is%
 \begin{align*}
-\amp \amp {1\over 24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +\\
+\amp \amp \frac{1}{24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +\\
 \amp \amp 6
 (R^2+B^2)^3 + 6 (R^4+B^4)(R+B)^2\big),
 \end{align*}
@@ -6313,7 +6297,7 @@ z(\sigma) = z_1^{c_1}z_2^{c_2}\cdots z_n^{c_n}.
 \par
 The \emph{cycle indicator} or \emph{cycle index}\index{cycle index} of \(G\) acting on \(S\) is%
 \begin{equation*}
-Z(G,S) = {1\over |G|}\sum_{\sigma: \sigma \in G} z(\sigma).
+Z(G,S) = \frac{1}{|G|}\sum_{\sigma: \sigma \in G} z(\sigma).
 \end{equation*}
 %
 \par
@@ -6321,17 +6305,17 @@ What is the cycle index for the group \(D_6\) acting on the vertices of a hexago
 \par\medskip\noindent%
 \textbf{Solution.}\quad For \(D_6\), we get%
 \begin{align*}
-{1\over 12}\left(z_1^6
+\frac{1}{12}\left(z_1^6
 +2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right) \amp =\amp\\
-{1\over 12}\left(z_1^6
+\frac{1}{12}\left(z_1^6
 +2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)\amp \amp
 \end{align*}
 %
 \par
 For the rotation group of the cube, we get%
 \begin{align*}
-{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)\amp =\amp\\
-{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)\amp \amp
+\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)\amp =\amp\\
+\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)\amp \amp
 \end{align*}
 %
 \end{activity}
@@ -6345,23 +6329,23 @@ Suppose we make a necklace by stringing 12 pieces of brightly colored plastic tu
 \par\medskip\noindent%
 \textbf{Solution.}\quad We are asking for a generating function for the orbits of a colored 12-gon under the action of \(D_{12}\). To apply the Pólya-Redfield theorem we need the cycle index for \(D_{12}\). If \(\rho\) is a 30 degree rotation, then \(\rho\), \(\rho^5\), \(\rho^7\) and \(\rho^{11}\) are 12-cycles. The elements \(\rho^2\) and \(\rho^{10}\) are products of two six-cycles. The elements \(\rho^3\) and \(\rho^9\) are products of three four-cycles. The elements \(\rho^4\) and \(\rho^8\) are products of four three-cycles. The element \(\rho^6\) is a product of six two-cycles. The element \(\iota=\rho^0\) is a product of 12 one-cycles. There are six flips around axes through opposite vertices; each is a product of five two-cycles and two one-cycles. There are six flips around axes perpendicular to two opposite sides; each is a product of six two-cycles. Summarizing this in the cycle index, we write%
 \begin{align*}
-Z(G,S) \amp =\amp {1\over 24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
+Z(G,S) \amp =\amp \frac{1}{24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
 6z_2^5z_1^2 + 6z_2^6\right)\\
-\amp =\amp {1\over24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
+\amp =\amp \frac{1}{24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
 2z_6^2 +4z_{12} + 6z_2^5z_1^2\right).
 \end{align*}
 %
 \par
 When we substitute \(B^i+G^i+R^i+Y^i\) for \(z_i\) and expand, we would get get \(12^4\) terms, one for each possible term \(B^iG^jR^kY^h\). Thus it does not make sense to expand the polynomial. The unexpanded form is%
 \par
-\({1\over 24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
+\(\frac{1}{24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
 2(B^3+G^3+R^3+Y^3)^4+\\
 2(B^4+G^4+R^4+Y^4)^3 +  2(B^6+G^6+R^6+Y^6)^2
 +\\4(B^{12}+G^{12}+R^{12}+Y^{12}) +  6((B^2+G^2+R^2+Y^2)^5)(B+G+R+Y)^2\Big)\)%
 \par
 We can compute the coefficient of \(B^3G^3R^2Y^4\) by computing the contribution of each term of the sum to the coefficient. We get%
 \begin{align*}
-{1\over24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
+\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
 24\cdot2!}\\
 \amp =\amp {11!\over2\cdot3!3!2!4!}+5
 \cdot3\cdot2\\
@@ -6375,11 +6359,11 @@ What should we substitute for the pictures of each of the elements of \(T\) in t
 \par\medskip\noindent%
 \textbf{Solution.}\quad Substitute the number one for each picture in the picture enumerator. Substitute \(|T|\) for each variable in the cycle index. The cycle index for the rotation group of the cube acting on the faces is%
 \begin{equation*}
-{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)
+\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)
 \end{equation*}
 %
 \par
-Substituting 4 for each variable gives us \({1\over 24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228\).%
+Substituting 4 for each variable gives us \(\frac{1}{24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228\).%
 \end{activity}
 \begin{activity}[]\label{coloredsticks}
 We have red, green, and blue sticks all of the same length, with a dozen sticks of each color. We are going to make the skeleton of a cube by taking eight identical lumps of modeling clay and pushing three sticks into each lump so that the lumps become the vertices of the cube. (Clearly we won't need all the sticks!) In how many different ways could we make our cube? How many cubes have four edges of each color? How many have two red, four green, and six blue edges? For this problem we are interested in the action of the rotation group of the cube on the edges. Now we think of the group elements as permutations of the edges and analyze their cycle structure.%
@@ -6402,36 +6386,33 @@ We have red, green, and blue sticks all of the same length, with a dozen sticks 
 \end{enumerate}
 Thus the cycle index is%
 \begin{equation*}
-{1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
+\frac{1}{24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
 \end{equation*}
 %
 \par
 We substitute the number three for each of the variables to get%
 \begin{equation*}
-{1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
+\frac{1}{24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
 \end{equation*}
 ways to make the cube. To compute the number of ways with four sticks of each color, we need to apply the Pólya-Redfield theorem. Substituting \(R^i+B^i+G^i\) for \(z_i\) in the cycle index gives us%
 \par
-\({1\over
-24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
+\(\frac{1}{24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
 +8(R^3+B^3+G^3)^4\Big)\).%
 \par
 The coefficient of \(R^4B^4G^4\) is%
 \begin{align*}
-{1\over
-24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
+\frac{1}{24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
 6\binom{3}{1}\binom{5}{2,2,1}\binom{2}{2,0,0}
 \right)\amp =\amp\\
-{1\over
-24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp
+\frac{1}{24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp
 \end{align*}
 %
 \par
 The coefficient of \(R^2B^4G^6\) is%
 \begin{align*}
-{1\over 24}\left(\binom{12}{2,4,6}
+\frac{1}{24}\left(\binom{12}{2,4,6}
 +3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right)\amp =\amp\\
-{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
+\frac{1}{24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
 +{5!\over1!2!2!}\right)\right)=600.
 \end{align*}
 %
@@ -6452,13 +6433,13 @@ We can first consider all ways of coloring the vertices of the cube with the fou
 \par
 Thus the cycle index for this action is%
 \begin{equation*}
-{1\over 24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
+\frac{1}{24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
 \end{equation*}
 %
 \par
 Substituting 4 for each variable gives us%
 \begin{equation*}
-{1\over 24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.
+\frac{1}{24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.
 \end{equation*}
 %
 \par
@@ -6499,7 +6480,7 @@ D_6\cup (1\ 4)D_6 \cup(2\ 5)D_6 \cup (3\ 6)D_6.
 \par
 But by symmetry, the cycle structure of \((1\ 4)D_6\), \((2\ 5)D_6\) and \((3\ 6)D_6\) will be the same, so the cycle index for our group is.%
 \begin{equation*}
-{1 \over 48} \left(Z^6_1 + 8Z^2_3
+\frac{1}{48} \left(Z^6_1 + 8Z^2_3
 +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
 6z_2z_4+6z_1^2z_4\right).
 \end{equation*}
@@ -6507,7 +6488,7 @@ But by symmetry, the cycle structure of \((1\ 4)D_6\), \((2\ 5)D_6\) and \((3\ 6
 \par
 Since we have three kinds of computers, we substitute 3 for each variable to get%
 \begin{equation*}
-{1 \over 48} \left(3^6 + 8\cdot3^2
+\frac{1}{48} \left(3^6 + 8\cdot3^2
 +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
 6\cdot3^2+6\cdot3^3\right)=56.
 \end{equation*}
@@ -6539,14 +6520,14 @@ Thus we can think of the set of graphs as a set of functions defined on the set 
 \end{itemize}
 Thus for the group \(S_5\) acting on pairs from \([5]\), the cycle index is%
 \begin{equation*}
-{1\over120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
+\frac{1}{120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
 30z_4^2z_2+ 24z_5^2\right).
 \end{equation*}
 %
 \par
 Substituting 2 for each variable gives us that there are%
 \begin{equation*}
-{1\over120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
+\frac{1}{120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
 24\cdot2^2\right)=30
 \end{equation*}
 graphs on five vertices.%
@@ -6939,8 +6920,8 @@ Thus the truth of our formula for \(n=k-1\) implies its truth for \(n=k\). There
 ~\par
 \item Experiment with various values of \(n\) in the sum%
 \begin{equation*}
-{1\over 1\cdot2}+{1\over 2\cdot3} + {1\over3\cdot
-4}+\cdots+{1\over n\cdot (n+1)} = \sum_{i=1}^n {1\over i\cdot(i+1)}.
+\frac{1}{1\cdot2}+\frac{1}{2\cdot3} + \frac{1}{3\cdot
+4}+\cdots+\frac{1}{n\cdot (n+1)} = \sum_{i=1}^n \frac{1}{i\cdot(i+1)}.
 \end{equation*}
 %
 \par
@@ -6948,25 +6929,23 @@ Guess a formula for this sum and prove your guess is correct by induction.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We guess the formula%
 \begin{equation*}
-\sum_{i=1}^n{1\over i(i+1)} = {n\over
-n+1}.
+\sum_{i=1}^n\frac{1}{i(i+1)} = \frac{n}{n+1}.
 \end{equation*}
 %
 \par
-When \(n=1\) this formula says that \({1\over 1\cdot2}={1\over 1\cdot
+When \(n=1\) this formula says that \(\frac{1}{1\cdot2}=\frac{1}{1\cdot
 2}\), so our formula holds when \(n=1\). Now assume that \(k>1\) and that our formula holds when \(n=k-1\). Then%
 \begin{equation*}
-\sum_{i=1}^{k-1} {1\over i(i+1)}= {k-1\over k}.
+\sum_{i=1}^{k-1} \frac{1}{i(i+1)}= {k-1\over k}.
 \end{equation*}
 %
 \par
 Adding \(1\over k(k+1)\) to both sides of this equation gives us%
 \begin{align*}
-\sum_{i=1}^{k-1} {1\over i(i+1)}+{1\over k(k+1)} \amp =\amp  {k-1\over k}+{1\over
-k(k+1)}\\
-\sum_{i=1}^k {1\over i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+{1\over k(k+1)}\\
+\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)} \amp =\amp  {k-1\over k}+\frac{1}{k(k+1)}\\
+\sum_{i=1}^k \frac{1}{i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+\frac{1}{k(k+1)}\\
 \amp =\amp {k^2 -1 +1\over k(k+1)}\\
-\amp =\amp  {k\over k+1}.
+\amp =\amp  \frac{k}{k+1}.
 \end{align*}
 %
 \par
@@ -7099,9 +7078,9 @@ Find the EGF (exponential generating function) for the sequence \(a_n=2^n\). Wha
 \end{enumerate}
 \end{activity}
 \begin{activity}[]\label{ln1over1-x}
-For what sequence is \(\ln({1\over 1-x})\) the EGF? (\(\ln (y)\) stands for the natural logarithm of \(y\). People often write \(\log(y)\) instead.) Hint: Think of the definition of the logarithm as an integral, and don't worry at this stage whether or not the usual laws of calculus apply, just use them as if they do! We will then define \(\ln({ 1-x})\) to be the power series you get. \footnote{It is possible to define the derivatives and integrals of power series by the formulas%
+For what sequence is \(\ln(\frac{1}{1-x})\) the EGF? (\(\ln (y)\) stands for the natural logarithm of \(y\). People often write \(\log(y)\) instead.) Hint: Think of the definition of the logarithm as an integral, and don't worry at this stage whether or not the usual laws of calculus apply, just use them as if they do! We will then define \(\ln({ 1-x})\) to be the power series you get. \footnote{It is possible to define the derivatives and integrals of power series by the formulas%
 \begin{equation*}
-{d\over dx}
+\frac{d}{dx}
 \sum_{i=0}^\infty b_ix^i = \sum_{i=1}^\infty ib_ix^{i-1}
 \end{equation*}
 and%
@@ -7113,8 +7092,8 @@ rather than by using the limit definitions from calculus.  It is then possible t
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{align*}
-\ln({1\over 1-x}) =-\ln(1-x) \amp =\amp 
-\int_0^x {1\over 1-t}dt\\
+\ln(\frac{1}{1-x}) =-\ln(1-x) \amp =\amp 
+\int_0^x \frac{1}{1-t}dt\\
 \amp =\amp \int_0^x (1+t+t^2+\cdots)dt\\
 \amp =\amp \sum_{i=1}^\infty {x^i\over i}\\
 \amp =\amp  \sum_{i=1}^\infty (i-1)!{x^i\over
@@ -7130,7 +7109,7 @@ What is the EGF for the number of permutations of an \(n\)-element set?%
 \begin{activity}[]\label{exponentialroundtable}
 What is the EGF for the number of ways to arrange \(n\) people around a round table? Notice that we may think of this as the EGF for the number of permutations on \(n\) elements that are cycles.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad By \hyperref[ln1over1-x]{Problem~\ref{ln1over1-x}} the EGF is \(\ln{1\over 1-x}\).%
+\textbf{Solution.}\quad By \hyperref[ln1over1-x]{Problem~\ref{ln1over1-x}} the EGF is \(\ln\frac{1}{1-x}\).%
 \end{activity}
 \begin{activity}[]\label{exponentialtennisparings}
 What is the EGF \(\sum_{n=0}^\infty
@@ -7207,11 +7186,11 @@ n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n{x^n\over n!}\right) - a_0x
 \par
 This gives us%
 \begin{equation*}
-\sum_{n=0}^\infty a_n{x^n\over n!}={1\over 1-x}(a_0+a_1x-a_0x
+\sum_{n=0}^\infty a_n{x^n\over n!}=\frac{1}{1-x}(a_0+a_1x-a_0x
 +x^2e^x).
 \end{equation*}
 computing the coefficient of \(a_n\) gives us \(a_n = a_1 +\sum_{i=0}^{n-2}
-{1\over i!}\).%
+\frac{1}{i!}\).%
 \end{activity}
 \begin{activity}[]\label{telephonenetwork}
 The telephone company in a city has \(n\) subscribers. Assume a telephone call involves exactly two subscribers (that is, there are no calls to outside the network and no conference calls), and that the configuration of the telephone network is determined by which pairs of subscribers are talking. Give a recurrence for the number \(c_n\) of configurations of the network. )Hint: Person \(n\) is either on the phone or not.) What are \(c_0\) and \(c_1\)? What are \(c_2\) through \(c_6\)? Notice that we may think of a configuration of the telephone network as a permutation that is a product of disjoint two-cycles (and one-cycles\footnote{When we think of writing a permutation as a product of disjoint cycles, we often do not include the one-cycles in our notation because a one-cycle is an identity permutation.  However any element not moved by the cycles we do write down is in a one cycle, and those one cycles are implicit in the product of cycles we do write down.\label{fn-26}}), that is, we may think of a configuration as an involution in the symmetric group \(S_n\).%
@@ -7279,8 +7258,7 @@ D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)\\
 D'(x)(1-x) \amp =\amp  xD(x)\\
 D'(x)\over D(x) \amp =\amp  x\over 1-x
 \end{align*}
-This gives us \(\ln D(x) = -\ln(1-x) -x +c\), so that \(D(x) = {1\over
-1-x}e^{-x}e^c\). Since \(d_0=1\), we have \(d(0)=1\), so \(c=0\) and%
+This gives us \(\ln D(x) = -\ln(1-x) -x +c\), so that \(D(x) = \frac{1}{1-x}e^{-x}e^c\). Since \(d_0=1\), we have \(d(0)=1\), so \(c=0\) and%
 \begin{align*}
 D(x) \amp =\amp  {e^{-x}\over 1-x}\\
 \amp =\amp
@@ -7459,7 +7437,7 @@ Thus the coefficient of \(x^n\over n!\) is \(n2^{n-1}\), as well as \(\sum_{k=1}
 \begin{activity}[]\label{activity-368}
 In light of \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}}, why is the EGF for the Stirling numbers \(S(n,k)\) of the second kind not \((e^x -1)^n\)? What is it equal to instead?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Notice that a one block partition is the same thing as a function from that block onto a one element set. However a partition with \(n\) blocks is not an \(n\)-tuple of blocks, but rather a set of \(n\) blocks. An \(n\)-tuple of blocks corresponds to a function from the union of the blocks onto an \(n\)-element set, and \(n!\) different onto functions correspond to the same partition into \(n\) blocks. Thus the EGF for partitions of an \(n\)-element set into \(k\) parts (where \(n\) is fixed but \(k\) varies) is \({1\over n!} (e^x -1)^n\).%
+\textbf{Solution.}\quad Notice that a one block partition is the same thing as a function from that block onto a one element set. However a partition with \(n\) blocks is not an \(n\)-tuple of blocks, but rather a set of \(n\) blocks. An \(n\)-tuple of blocks corresponds to a function from the union of the blocks onto an \(n\)-element set, and \(n!\) different onto functions correspond to the same partition into \(n\) blocks. Thus the EGF for partitions of an \(n\)-element set into \(k\) parts (where \(n\) is fixed but \(k\) varies) is \(\frac{1}{n!} (e^x -1)^n\).%
 \end{activity}
 The idea of the set-value function in the product principle for exponential generating functions helps to resolve a mystery that you may have been consciously or unconsciously wondering about. How do we know when ordinary generating functions will be most useful and how do we know when exponential generating functions will be most useful? When we are in a situation\textemdash{}such as distributing fruit to children, or partitioning an integer\textemdash{}where a combinatorial structure is determined by the number of objects of a certain type (for example a partition of an integer is determined by the number of ones, the number of twos and so on), ordinary generating functions are most likely to be useful. However when what determines a combinatorial structure is the set of objects, or some structure (such as a permutation) on a set of objects, then exponential generating functions are most likely to be useful. In particular, in situations where our structure comes with labels, then exponential generating functions are likely to be useful. However there is a grey area. When we are distributing identical candy to children, the children are labelled (they have names), but the candy is not. Experience tells us, though that since the candy is not labelled, ordinary generating functions are useful. So while the question of whether the most natural value function seems to be an integer value or a set-value is a good guideline, in the end experience helps tremendously!%
 \typeout{************************************************}
@@ -7487,7 +7465,7 @@ Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set t
 Let \(f(x)\) be the EGF for the number of permutations of an \(n\)-element set that have exactly one cycle. (This is the same as the EGF for the number of ways to arrange \(n\) people around a round table.) Let \(g(x)\) be the EGF for the total number of permutations of an \(n\)-element set. What is \(f(x)\)? What is \(g(x)\)? How are \(f(x)\) and \(g(x)\) related?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad In \hyperref[exponentialroundtable]{Problem~\ref{exponentialroundtable}} we showed that \(f(x) =
-\ln\left({1\over 1-x}\right)\). In \hyperref[exponentialpermutations]{Problem~\ref{exponentialpermutations}} we showed that \(g(x)={1\over 1-x}\). Therefore \(g(x)= \exp(f(x))\).%
+\ln\left(\frac{1}{1-x}\right)\). In \hyperref[exponentialpermutations]{Problem~\ref{exponentialpermutations}} we showed that \(g(x)=\frac{1}{1-x}\). Therefore \(g(x)= \exp(f(x))\).%
 \end{activity}
 There was one element that our last four problems had in common. In each case our EGF \(f(x)\) involved the number of structures of a certain type (partitions, telephone networks, tennis pairings, permutations) that used only one set of an appropriate kind. (That is, we had a partition with one part, a telephone network consisting either of one person or two people connected to each other, a tennis pairing of one set of two people, or a permutation with one cycle.) Our EGF \(g(x)\) was the number of structures of the same ``type'' (we put type in quotation marks here because we don't plan to define it formally) that could consist of any number of sets of the appropriate kind. Notice that the order of these sets was irrelevant. For example we don't order the blocks of a partition and a product of disjoint cycles is the same no matter what order we use to write down the product. Thus we were relating the EGF for structures which were somehow ``building blocks'' to the EGF for structures which were sets of building blocks. For a reason that you will see later, it is common to call the building blocks \emph{connected}\index{connected structures and EGFs}\index{exponential generating functions for connected structures} structures. Notice that our connected structures were all based on nonempty sets, so we had no connected structures whose value was the empty set. Thus in each case, if \(f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}\), we would have \(a_0=0\). The relationship between the EGFs was always \(g(x) = e^{f(x)}\). We now give a combinatorial explanation for this relationship.%
 \begin{activity}[]\label{exponentialformula}
@@ -7593,7 +7571,7 @@ Suppose that \(f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}\) is the exponential g
 \par\medskip\noindent%
 \textbf{Solution.}\quad %
 \begin{equation*}
-\log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
+\log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
 (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
 \end{equation*}
 
