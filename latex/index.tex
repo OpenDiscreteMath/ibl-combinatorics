@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T14:51:40-06:00    *%
+%*    on 2017-06-03T15:14:33-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -3613,8 +3613,8 @@ If we have five identical pennies, five identical nickels, five identical dimes,
 (1+Q+Q^2+Q^3+Q^4+Q^5)\). Substituting \(x\) for \(P\), \(x^5\) for \(N\), \(x^{10}\) for \(D\) and \(x^{25}\) for \(Q\) gives us%
 \begin{equation*}
 \sum_{i=0}^5x^i\sum_{i=0}^5x^{5i}\sum_{i=0}^5 x^{10i} \sum_{i=0}^5
-x^{25i}=\frac{1-x^6}{1-x}\cdot{1-x^{30}\over 1-x^5}\cdot{1-x^{60}\over
-1-x^{10}}\cdot{1-x^{150}\over 1-x^{25}}.
+x^{25i}=\frac{1-x^6}{1-x}\cdot\frac{1-x^{30}}{1-x^5}\cdot\frac{1-x^{60}}{
+1-x^{10}}\cdot \frac{1-x^{150}}{1-x^{25}}.
 \end{equation*}
 %
 \par
@@ -3938,7 +3938,7 @@ But%
 \sum_{k=0}^\infty
 \sum_{i=0}^k 2^i3^{k-i}x^k=
 \sum_{k=0}^\infty3^kx^k
-\sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
+\sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty\frac{1-\left(\frac{2}{3}\right)^{k+1}}{1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
 (3^{k+1}-2^{k+1})x^k\text{.}
 \end{equation*}
 Substituting this into the equation for \(\sum_{i=0}^\infty a_ix^i\) gives us \(a_i =(a_0+2)3^i -2^{i+1}\).%
@@ -3952,7 +3952,7 @@ Suppose we deposit \textdollar{}5000 in a savings certificate that pays ten perc
 \begin{align*}
 \sum_{i=1}^\infty
 a_ix^i\amp =\amp 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i\\
-\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 
+\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp
 1.1x\sum_{i=0}^\infty a_ix^i +1000(\sum_{i=0}^\infty x^i-1)\\
 \hspace{-.5
 in}(1-1.1x)\sum_{i=0}^\infty a_ix^i \amp =\amp  a_0 +1000\sum_{i=10}^\infty x^i-1000\\
@@ -4029,7 +4029,7 @@ a_i=5a_{i-1}-6a_{i-2} + 2^i.
 \begin{align*}
 \sum_{i=2}^\infty a_ix^i \amp =\amp  \sum_{i=2}^\infty
 5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i\\
-\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp 
+\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp
 5x\left(\sum_{i=0}^\infty
 a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
 2^ix^i-1-2x\\
@@ -4115,7 +4115,7 @@ Thus \(a_i=\frac{20}{3}2^i +\frac{10}{3}(-1)^i\).%
 \begin{activity}[]\label{factorFibonacci}
 Use the quadratic formula to find the solutions to \(x^2+x-1=0\), and use that information to factor \(x^2+x-1\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(r_1={-1+\sqrt{5}\over2}\), \(r_2 = {-1-\sqrt{5}\over 2}\). These roots give us the equation \(x^2+x-1=(x-{-1+\sqrt{5}\over2})(x-{-1-\sqrt{5}\over 2})\).%
+\textbf{Solution.}\quad \(r_1=\frac{-1+\sqrt{5}}{2}\), \(r_2 = \frac{-1-\sqrt{5}}{2}\). These roots give us the equation \(x^2+x-1=(x-\frac{-1+\sqrt{5}}{2})(x-\frac{-1-\sqrt{5}}{2})\).%
 \end{activity}
 \begin{activity}[]\label{fractionFibonacci}
 Use the factors you found in \hyperref[factorFibonacci]{Problem~\ref{factorFibonacci}} to write%
@@ -4132,8 +4132,8 @@ in the form%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\frac{1}{x^2+x-1}=\frac{c}{x-r_1}+\frac{d}{x-r_2}\) gives us \(cx-cr_2+dx-dr_1=1\). Thus \(c+d=0\), and \(cr_2+dr_1 =-1\). This gives us \(d=-c\) and so \(cr_2-cr_1=-1\), which yields \(c=\frac{1}{r_1-r_2}\), and \(d=\frac{1}{r_2-r_1}\). By substitution, \(c=1/\sqrt{5}\) and \(d=-1/\sqrt{5}\). This gives us%
 \begin{equation*}
-\frac{1}{x^2+x-1} = {1/\sqrt{5}\over x-{-1+\sqrt{5}\over2}}
-+{-1/\sqrt{5}\over x- {-1-\sqrt{5}\over2}}.
+\frac{1}{x^2+x-1} = \frac{1/\sqrt{5}}{x-\frac{-1+\sqrt{5}}{2}}
++{-1/\sqrt{5}\over x- \frac{-1-\sqrt{5}}{2}}.
 \end{equation*}
 %
 \end{activity}
@@ -4166,7 +4166,7 @@ a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 \sqrt{5}\cdot
 4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}\\
 \amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
-\frac{1}{\sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.
+\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.
 \end{align*}
 %
 
@@ -4181,9 +4181,8 @@ a_n\amp =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
 \textbf{Solution.}\quad From the binomial theorem,%
 \begin{align*}
 \amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
-2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left({1-\sqrt{5}
-\over2}\right)^{n+1}\\
-\amp =\amp 
+2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}\\
+\amp =\amp
 \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]\\
 \amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
 [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
@@ -4215,7 +4214,7 @@ which makes it clear that \(a_n\) is at least a rational number. It is not clear
 4\sum_{n=2}^\infty a_{n-2}x^n\\
 \sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
 -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n\\
-(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
+(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp
 a_0+a_1x-4a_0x\\
 \sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}\\
 \sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}\\
@@ -4825,7 +4824,7 @@ for the chromatic polynomial of \(G\).%
 \amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]\\
 \amp =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}\\
 \amp =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i\\
-\amp =\amp x(x-1)(-1)^{n-2}{1-(1-x)^{n-1}\over 1-(1-x)}\\
+\amp =\amp x(x-1)(-1)^{n-2}\frac{1-(1-x)^{n-1}}{1-(1-x)}\\
 \amp =\amp (x-1)[(x-1)^{n-1}+(-1)^n].
 \end{align*}
 %
@@ -7202,8 +7201,8 @@ T'(x)\!\amp =\amp \!xT(x) +T(x)
 ~\par
 \item Use your generating function to compute a formula for \(c_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!\). By the binomial theorem, this gives \(T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl(\frac{x^2}{2}\bigr)^{i-j}\over
-i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}\). Then the coefficient \(c_n\) of \(x^n\) is the sum over all \(i\) and \(j\) with \(2i-j=n\) and \(j\le i\) of \(\binom{i}{j}\frac{n!}{i!}2^{j-i}\). But if \(2i-j=n\), then \(j= 2i-n\), and if \(2i-n\le i\), then \(i\le n\), so that \(c_n
+\textbf{Solution.}\quad \(T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!\). By the binomial theorem, this gives \(T(x) = \sum_{i=0}^\infty \frac{\sum_{j=0}^i \binom{i}{j}x^j\bigl(\frac{x^2}{2}\bigr)^{i-j}}{
+i!}=\sum_{i=0}^\infty\frac{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}}{i!}\). Then the coefficient \(c_n\) of \(x^n\) is the sum over all \(i\) and \(j\) with \(2i-j=n\) and \(j\le i\) of \(\binom{i}{j}\frac{n!}{i!}2^{j-i}\). But if \(2i-j=n\), then \(j= 2i-n\), and if \(2i-n\le i\), then \(i\le n\), so that \(c_n
 = \frac{n!}{2^n}\sum_{i=0}^n\binom{i}{2i-n}\frac{2^i}{i!}\). Note that \(\binom{i}{2i-n}\) is the same as \(\binom{i}{n-i}\), which is 0 unless \(i\ge
 n/2\), which reduces our sum to \(c_n = \frac{n!}{2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}\frac{2^i}{i!}\).%
 

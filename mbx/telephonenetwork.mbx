@@ -156,7 +156,7 @@
           <p>
             <m>T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!</m>. By the binomial
             theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl(\frac{x^2}{2}\bigr)^{i-j}\over
-            i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}</m>.
+            i!}=\sum_{i=0}^\infty\frac{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}}{i!}</m>.
             Then the coefficient <m>c_n</m> of <m>x^n</m> is the sum over all <m>i</m> and <m>j</m> with
             <m>2i-j=n</m> and <m>j\le i</m> of <m>\binom{i}{j}\frac{n!}{i!}2^{j-i}</m>. But if
             <m>2i-j=n</m>, then <m>j= 2i-n</m>, and if <m>2i-n\le i</m>, then <m>i\le n</m>, so that <m>c_n
@@ -194,7 +194,7 @@
             <mrow>\sum_{n=2}^\infty d_n\frac{x^{n-1}}{(n-1)!}
             \amp =\amp \sum_{n=2}^\infty d_{n-1}\frac{x^{n-1}}{(n-2)!} +\sum_{n=2}^\infty
             d_{n-2}\frac{x^{n-1}}{(n-2)!}</mrow>
-            <mrow>\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp 
+            <mrow>\sum_{n=1}^\infty d_n\frac{x^{n-1}}{(n-1)!} -d_1 \amp =\amp
             x\sum_{n=2}^\infty d_{n-1}\frac{x^{n-2}}{(n-2)!} +xD(x)</mrow>
             <mrow>D'(x) -d_1 \amp =\amp  xD'(x) +xD(x)</mrow>
             <mrow>D'(x)(1-x) \amp =\amp  xD(x)</mrow>
@@ -204,7 +204,7 @@
             This gives us <m>\ln D(x) = -\ln(1-x) -x +c</m>, so that <m>D(x) = \frac{1}{1-x}e^{-x}e^c</m>. Since <m>d_0=1</m>, we have <m>d(0)=1</m>, so <m>c=0</m> and
             <md>
               <mrow>D(x) \amp =\amp  \frac{e^{-x}}{1-x}</mrow>
-              <mrow>\amp =\amp 
+              <mrow>\amp =\amp
               \sum_{i=0}^\infty(-1)^i\frac{x^i}{i!}\cdot\sum_{j=0}^\infty
               x^j=\sum_{i=0}^\infty\left(\sum_{j=0}^i \frac{(-1)^j}{j!}\right)
               x^i.</mrow>

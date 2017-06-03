@@ -97,7 +97,7 @@
             \sum_{k=0}^\infty
             \sum_{i=0}^k 2^i3^{k-i}x^k=
             \sum_{k=0}^\infty3^kx^k
-            \sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty{1-\left(\frac{2}{3}\right)^{k+1}\over 1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
+            \sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty\frac{1-\left(\frac{2}{3}\right)^{k+1}}{1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
             (3^{k+1}-2^{k+1})x^k</me>. Substituting this into the equation for
             <m>\sum_{i=0}^\infty a_ix^i</m> gives us
             <m>a_i =(a_0+2)3^i -2^{i+1}</m>.
@@ -117,7 +117,7 @@
           <md>
             <mrow>\sum_{i=1}^\infty
             a_ix^i\amp =\amp 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i</mrow>
-            <mrow>\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp 
+            <mrow>\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0\amp =\amp
             1.1x\sum_{i=0}^\infty a_ix^i +1000(\sum_{i=0}^\infty x^i-1)</mrow>
             <mrow>\hspace{-.5
             in}(1-1.1x)\sum_{i=0}^\infty a_ix^i \amp =\amp  a_0 +1000\sum_{i=10}^\infty x^i-1000</mrow>
@@ -217,7 +217,7 @@
           <md>
           <mrow>\sum_{i=2}^\infty a_ix^i \amp =\amp  \sum_{i=2}^\infty
           5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i</mrow>
-          <mrow>\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp 
+          <mrow>\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x \amp =\amp
           5x\left(\sum_{i=0}^\infty
           a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
           2^ix^i-1-2x</mrow>
@@ -347,9 +347,9 @@
       </statement>
       <solution>
         <p>
-          <m>r_1={-1+\sqrt{5}\over2}</m>, <m>r_2 = {-1-\sqrt{5}\over 2}</m>. These roots
+          <m>r_1=\frac{-1+\sqrt{5}}{2}</m>, <m>r_2 = \frac{-1-\sqrt{5}}{2}</m>. These roots
           give us the equation
-          <m>x^2+x-1=(x-{-1+\sqrt{5}\over2})(x-{-1-\sqrt{5}\over 2})</m>.
+          <m>x^2+x-1=(x-\frac{-1+\sqrt{5}}{2})(x-\frac{-1-\sqrt{5}}{2})</m>.
         </p>
       </solution>
     </activity>
@@ -380,8 +380,8 @@
           and so <m>cr_2-cr_1=-1</m>, which yields <m>c=\frac{1}{r_1-r_2}</m>, and <m>d=\frac{1}{r_2-r_1}</m>. By substitution, <m>c=1/\sqrt{5}</m> and <m>d=-1/\sqrt{5}</m>. This gives
           us
           <me>
-            \frac{1}{x^2+x-1} = {1/\sqrt{5}\over x-{-1+\sqrt{5}\over2}}
-            +{-1/\sqrt{5}\over x- {-1-\sqrt{5}\over2}}.
+            \frac{1}{x^2+x-1} = \frac{1/\sqrt{5}}{x-\frac{-1+\sqrt{5}}{2}}
+            +{-1/\sqrt{5}\over x- \frac{-1-\sqrt{5}}{2}}.
           </me>
         </p>
       </solution>
@@ -420,7 +420,7 @@
               \sqrt{5}\cdot
               4^{n+1}}-{2^{n+1}(1-\sqrt{5})^{n+1}\over\sqrt{5}\cdot4^{n+1}}</mrow>
               <mrow>\amp =\amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over 2}\right)^{n+1}-
-              \frac{1}{\sqrt{5}}\left({1-\sqrt{5} \over2}\right)^{n+1}.</mrow>
+              \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.</mrow>
             </md>
             </p>
         </solution>
@@ -445,9 +445,8 @@
             From the binomial theorem,
             <md>
               <mrow>\amp \amp \frac{1}{\sqrt{5}}\left({1+\sqrt{5}\over
-              2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left({1-\sqrt{5}
-              \over2}\right)^{n+1}</mrow>
-              <mrow>\amp =\amp 
+              2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}</mrow>
+              <mrow>\amp =\amp
               \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
               <mrow>\amp =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
               [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
@@ -497,7 +496,7 @@
         4\sum_{n=2}^\infty a_{n-2}x^n</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
         -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-        <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp  
+        <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n  \amp =\amp
         a_0+a_1x-4a_0x</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}</mrow>
         <mrow>\sum_{n=0}^\infty a_nx^n\amp =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}</mrow>
