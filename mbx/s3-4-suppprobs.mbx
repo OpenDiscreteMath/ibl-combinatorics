@@ -3,14 +3,14 @@
     <ol>
     <li>
       <p>
-        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the above".
+        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>\binom{n+k-1}{k}</m>, <m>\binom{n+k-1}{n}</m>, <m>\binom{n-1}{k-1}</m>, <m>\binom{k-1}{n-1}</m>, or ``none of the above".
         <ol>
           <li>
             <p>
               In how many ways may we pass out <m>k</m> identical pieces of candy to <m>n</m> children?
               <solution>
                 <p>
-                  <m>n+k-1\choose k</m>
+                  <m>\binom{n+k-1}{k}</m>
                 </p>
               </solution>
             </p>
@@ -69,7 +69,7 @@
               <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
               <solution>
                 <p>
-                  <m>k-1\choose n-1</m>
+                  <m>\binom{k-1}{n-1}</m>
                 </p>
               </solution>
             </p>
@@ -142,7 +142,7 @@
             identical and anyone may receive any number of trees?
             <solution>
               <p>
-                <m>r+s-1\choose r</m>
+                <m>\binom{r+s-1}{r}</m>
               </p>
             </solution>
           </p>
@@ -180,7 +180,7 @@
             each family must get at least one tree.
             <solution>
               <p>
-                <m>r-1\choose s-1</m>
+                <m>\binom{r-1}{s-1}</m>
               </p>
             </solution>
           </p>
@@ -314,7 +314,7 @@
             A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
             <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
             of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
-            size <m>i</m> containing <m>k</m> is <m>k-1\choose i-1</m>, and <m>i</m> can be any number
+            size <m>i</m> containing <m>k</m> is <m>\binom{k-1}{i-1}</m>, and <m>i</m> can be any number
             between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
             constructed exactly once by first choosing the block containing <m>k</m> and
             then partitioning the remaining elements into <m>n-1</m> blocks. This proves

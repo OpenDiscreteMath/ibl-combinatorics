@@ -364,7 +364,7 @@
         </statement>
         <solution>
           <p>
-            The number of compositions of <m>k</m> into <m>n</m> parts is <m>k-1\choose n-1</m>. We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.  But then if we divide the number of compositions by <m>n!</m> we will get a number less than the number of blocks because <m>n!</m> times the number of blocks would be, by the sum principle, greater than the number of partitions.
+            The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.  But then if we divide the number of compositions by <m>n!</m> we will get a number less than the number of blocks because <m>n!</m> times the number of blocks would be, by the sum principle, greater than the number of partitions.
           </p>
         </solution>
       </task>
@@ -732,7 +732,7 @@
         </row>
         <row>
           <cell>7.  Identical</cell>
-          <cell><m>n+k-1\choose k</m></cell>
+          <cell><m>\binom{n+k-1}{k}</m></cell>
           <cell><m>\sum_{i=1}^nP(k,i)</m></cell>
         </row>
         <row>
@@ -762,7 +762,7 @@
         </row>
         <row>
           <cell>9.  Identical</cell>
-          <cell><m>k-1\choose n-1</m></cell>
+          <cell><m>\binom{k-1}{n-1}</m></cell>
           <cell><m>P(k,n)</m></cell>
         </row>
         <row>
@@ -811,7 +811,7 @@
       </statement>
       <solution>
         <p>
-          The number of compositions of <m>k</m> into <m>n</m> parts is <m>k-1\choose n-1</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>k-1\choose n-1</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>k-1 \choose n-1</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>{1\over n!}  \binom{k-1}{n-1}</m>.
+          The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>{1\over n!}  \binom{k-1}{n-1}</m>.
         </p>
       </solution>
     </activity>

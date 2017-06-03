@@ -562,7 +562,7 @@
           each block consists of all arrangements that we get just by permuting the
           books among themselves. Thus each block has <m>k!</m> arrangements in it, and
           each arrangement corresponds to an arrangement of identical books. Thus
-          there are <m>k-1\choose n-1</m> ways to arrange identical books.
+          there are <m>\binom{k-1}{n-1}</m> ways to arrange identical books.
         </p>
       </solution>
     </activity>
@@ -574,7 +574,7 @@
         </p>
       </statement>
       <solution>
-        <p>There is a bijection between compositions of <m>k</m> into <m>n</m> parts and arrangements of <m>k</m> identical books on <m>n</m> shelves so that each shelf gets a book. Namely, the number of books on shelf <m>i</m> is the <m>i</m>th element of the list. Thus the number of compositions of <m>k</m> into <m>n</m> parts is <m>k-1 \choose n-1</m>.
+        <p>There is a bijection between compositions of <m>k</m> into <m>n</m> parts and arrangements of <m>k</m> identical books on <m>n</m> shelves so that each shelf gets a book. Namely, the number of books on shelf <m>i</m> is the <m>i</m>th element of the list. Thus the number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>.
         </p>
       </solution>
     </activity>
@@ -660,7 +660,7 @@
           There is a bijection between arrangements of identical books on
           <m>n</m> shelves and multisets chosen from an <m>n</m>-element set: the
           multiplicity of element <m>i</m> is the number of books on shelf <m>i</m>. Thus we
-          have <m>n+k-1\choose k</m> ways to choose a <m>k</m>-element multiset from an
+          have <m>\binom{n+k-1}{k}</m> ways to choose a <m>k</m>-element multiset from an
           <m>n</m>-element set by <xref ref="identicalbooks">Problem</xref>.
         </p>
       </solution>
@@ -690,7 +690,7 @@
         </statement>
         <solution>
           <p>
-            We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a multiset chosen from among <m>m</m> things. The total number of elements of the multiset will be <m>r</m>. Thus we have <m>m+r-1\choose r</m> solutions.
+            We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a multiset chosen from among <m>m</m> things. The total number of elements of the multiset will be <m>r</m>. Thus we have <m>\binom{m+r-1}{r}</m> solutions.
           </p>
         </solution>
       </task>

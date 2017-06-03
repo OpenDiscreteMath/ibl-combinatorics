@@ -2062,7 +2062,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </hint>
       <solution>
         <p>
-          <m>12\choose 5</m>. In the more realistic version,
+          <m>\binom{12}{5}</m>. In the more realistic version,
           <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>. Finally, either the versatile
           player is playing center or not, and in the second case is available to play
           forward. This gives us
@@ -2229,9 +2229,9 @@ many ways can you pair up the next person who isn’t already paired up?
       <solution>
         <p>
           For another solution,
-          choose people in pairs. There are <m>2n\choose 2</m> ways to choose one pair,
-          <m>2n-2\choose 2</m> ways to choose a second pair, and once <m>k</m> pairs have been
-          chosen, there are <m>2n-2k\choose 2</m> ways to choose the next pair. The number
+          choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair,
+          <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been
+          chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair. The number
           of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
           \binom{2n-2i}{2}= {(2n)!\over 2^i}</m>. However each way of pairing people gets
           listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
@@ -2281,7 +2281,7 @@ many ways can you pair up the next person who isn’t already paired up?
         <p>
           While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
           it doesn't give us a sense of how big the binomial coefficients are. We can
-          get a very rough idea, for example, of the size of <m>2n\choose n</m> by
+          get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by
           recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>{2n\over n}\cdot
           {2n-1\over n-1}\cdots {n+1\over 1}</m>, and each quotient is at least <m>2</m>, so the
           product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
@@ -2290,7 +2290,7 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
           However it is pretty clear the approximation will not be a very good one,
           because some of the terms in that product are much larger than 2. In fact,
-          if <m>2n\choose k</m> were the same for every <m>k</m>, then each would be the fraction
+          if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction
           <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
           <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
           much larger than <m>\binom{2n}{1}</m> and is likely larger than

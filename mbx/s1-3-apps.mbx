@@ -14,7 +14,7 @@
       </hint>
       <solution>
         <p>
-          The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>10\choose 4</m> ways to make this selection.
+          The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>\binom{10}{4}</m> ways to make this selection.
         </p>
       </solution>
     </activity>
@@ -43,10 +43,10 @@
       <solution>
         <p>
           The length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m> is <m>m+n</m>. The
-          number of such paths is <m>m+n\choose n</m>. Since lattice paths move up and to
+          number of such paths is <m>\binom{m+n}{n}</m>. Since lattice paths move up and to
           the right, there are no paths from <m>(i,j)</m> to <m>(m,n)</m> unless <m>i\le m</m> and
-          <m>j\le n</m>. In that case, the number of paths is <m>m+n-i-j\choose n-j</m> which is
-          the same as <m>m+n-i-j\choose m-i</m>.
+          <m>j\le n</m>. In that case, the number of paths is <m>\binom{m+n-i-j}{n-j}</m> which is
+          the same as <m>\binom{m+n-i-j}{m-i}</m>.
         </p>
       </solution>
     </activity>
@@ -57,7 +57,7 @@
         </p>
       </statement>
       <solution>
-        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>m-n\over 2</m> downsteps and <m>m+n\over2</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>{m+n\over2}-{m-n\over2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>m\choose{m+n\over2}</m>.
+        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>m-n\over 2</m> downsteps and <m>m+n\over2</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>{m+n\over2}-{m-n\over2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>\binom{m}{{m+n\over2}}</m>.
         </p>
       </solution>
     </activity>
@@ -215,7 +215,7 @@
         </statement>
         <solution>
           <p>
-            We have taken the set of all <m>2n\choose n</m> diagonal lattice paths
+            We have taken the set of all <m>\binom{2n}{n}</m> diagonal lattice paths
             of length <m>2n</m> from <m>(0,0)</m> to <m>(2n,0)</m> and partitioned it into <m>n+1</m> blocks
             all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n={1\over
             n+1}\binom{2n
@@ -249,8 +249,8 @@
 
         <p>
           and <m>(x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5.</m>
-          The pattern is that the coefficient of <m>x^iy^j</m> is <m>i+j\choose i</m> which is
-          the same as <m>i+j\choose j</m>. Said differently, the coefficient of
+          The pattern is that the coefficient of <m>x^iy^j</m> is <m>\binom{i+j}{i}</m> which is
+          the same as <m>\binom{i+j}{j}</m>. Said differently, the coefficient of
           <m>x^{n-i}y^i</m> is <m>\binom{n}{i}</m> or the coefficient of <m>x^iy^{n-i}</m> is <m>\binom{n}{i}</m>. We conjecture that
           <me>
             (x+y)^n=\sum_{i=0}^n \binom{n}{i}x^{n-i}y^i.
@@ -431,7 +431,7 @@
         <p>
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
           binomial theorem we get <m>\sum_{i=0}^m\binom{m}{i}\binom{n}{k-i}</m> as the
-          coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>m+n\choose k</m> on the
+          coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>\binom{m+n}{k}</m> on the
           right hand side.
         </p>
         <p>For a second explanation, to choose <m>k</m> elements out of the union of an <m>m</m>-element set and a disjoint <m>n</m>-element set, chose some number <m>i\le m</m> of them from the <m>m</m>-element set and the remaining <m>k-i</m> of them from the <m>n</m>-element set. The sum on the left hand side of the equation simply sums the number of such choices over all possible <m>i</m>, and the binomial coefficient on the right hand side of the equation says we will end up choosing <m>k</m> elements from among our <m>m+n</m> elements.

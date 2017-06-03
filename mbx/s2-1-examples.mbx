@@ -549,11 +549,11 @@
       that when there are <m>R</m> people together, there are either <m>m</m> mutual
       acquaintances or <m>n</m> mutual strangers, this shows that the Ramsey Number
       <m>R(m,n)</m> exists, because it is the smallest such <m>R</m>. Mathematical
-      induction allows us to show that one such <m>R</m> is <m>m+n-2\choose m-1</m>. The
+      induction allows us to show that one such <m>R</m> is <m>\binom{m+n-2}{m-1}</m>. The
       question is, what should we induct on, <m>m</m> or <m>n</m>? In other words, do we
-      use the fact that with <m>m+n-3\choose m-2</m> people in a room there are at
+      use the fact that with <m>\binom{m+n-3}{m-2}</m> people in a room there are at
       least <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers, or do we use
-      the fact that with at least <m>m+n-3\choose n-2</m> people in a room there are
+      the fact that with at least <m>\binom{m+n-3}{n-2}</m> people in a room there are
       at least <m>m</m> mutual acquaintances or at least <m>n-1</m> mutual strangers? It
       turns out that we use both. Thus we want to be able to simultaneously
       induct on <m>m</m> and <m>n</m>. One way to do that is to use yet another
@@ -601,7 +601,7 @@
       <statement>
         <p>
           Prove that <m>R(m,n)</m> exists by proving that if there are
-          <m>m+n-2\choose m-1</m> people in a room, then there are either at least <m>m</m>
+          <m>\binom{m+n-2}{m-1}</m> people in a room, then there are either at least <m>m</m>
           mutual acquaintances or at least <m>n</m> mutual strangers.
         </p>
       </statement>
@@ -615,34 +615,34 @@
           then either there are two people who know each other or they are all
           mutual strangers.)<fn>Note that we have covered both steps 1 and 2
           of a double induction proof now.</fn> Now assume that whenever there are
-          <m>m+n-3\choose m-1</m> people in a room there are either at least <m>m</m> mutual
+          <m>\binom{m+n-3}{m-1}</m> people in a room there are either at least <m>m</m> mutual
           acquaintances or <m>n-1</m> mutual strangers, and that whenever there are at
-          least <m>m+n-3\choose m-2</m> people in a room there are either at least
+          least <m>\binom{m+n-3}{m-2}</m> people in a room there are either at least
           <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers. Suppose that we have
-          <m>m+n-2\choose m-1</m> people in a room. Choose a person, say <m>P</m>. Then
+          <m>\binom{m+n-2}{m-1}</m> people in a room. Choose a person, say <m>P</m>. Then
           since <m>\binom{m+n-2}{m-1} = \binom{m-n-3}{m-1} +\binom{m+n-3}{m-2}</m>,
           person <m>P</m> is, by the generalized pigeonhole principle, either acquainted
-          with <m>m+n-3\choose m-2</m> people or unacquainted with <m>m+n-3\choose m-1</m>
+          with <m>\binom{m+n-3}{m-2}</m> people or unacquainted with <m>\binom{m+n-3}{m-1}</m>
           people. In the first case, among the people with whom <m>P</m> is
           acquainted, either <m>m-1</m> are mutual acquaintances or <m>n</m> are mutual
           strangers. If <m>m</m> are mutual strangers, we are done, while if <m>m-1</m> are
           mutual acquaintances, these <m>m-1</m> people, together with person <m>P</m>, are
           <m>m</m> mutual acquaintances, in which case we are done as well. In the
-          second case, among the <m>m+n-3\choose m-1</m> people with whom person <m>P</m> is
+          second case, among the <m>\binom{m+n-3}{m-1}</m> people with whom person <m>P</m> is
           unacquainted, there are either <m>m</m> mutual acquaintances, in which case we
           are done, or there are <m>n-1</m> mutual strangers. In this event, these <m>n-1</m>
           mutual strangers, along with person <m>P</m> make up <m>n</m> mutual strangers.
-          Thus in every case, if we know that with <m>m+n-3\choose m-2</m> people in a
+          Thus in every case, if we know that with <m>\binom{m+n-3}{m-2}</m> people in a
           room there are either <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers,
-          and we know that with <m>m+n-3\choose m-1</m> people in a room there are
+          and we know that with <m>\binom{m+n-3}{m-1}</m> people in a room there are
           either <m>m</m> mutual acquaintances or <m>n-1</m> mutual strangers, we can
-          conclude that with <m>m+n-2\choose m-1</m> people in a room there are either
+          conclude that with <m>\binom{m+n-2}{m-1}</m> people in a room there are either
           <m>m</m> mutual acquaintances or <m>n</m> mutual strangers. Therefore by the
           principle of double mathematical induction we know that for all <m>m</m> and
-          <m>n</m> greater than or equal to 2, if there are <m>m+n-2\choose m-1</m> people
+          <m>n</m> greater than or equal to 2, if there are <m>\binom{m+n-2}{m-1}</m> people
           in a room, then there are either <m>m</m> mutual acquaintances of <m>n</m> mutual
           strangers. This shows that <m>R(m,n)</m> exists and is no more than
-          <m>m+n-2\choose m-1</m>.
+          <m>\binom{m+n-2}{m-1}</m>.
         </p>
       </solution>
     </activity>
@@ -739,26 +739,25 @@
       <solution>
         <p>
           We want to prove that if <m>m\ge 2</m> and <m>n\ge 2</m>, then when there are
-          <m>m+n-2\choose m-1</m> people in a room, there are either <m>m</m> mutual
+          <m>\binom{m+n-2}{m-1}</m> people in a room, there are either <m>m</m> mutual
           acquaintances or <m>n</m> mutual strangers. If <m>m+n=4</m>, then <m>m=2</m> and
           <m>n=2</m>, and if there are <m>\binom{2+2-2}{1}=2</m> people in a room, there are
           either two who know each other or two who don't.
         </p>
 
         <p>
-          Now assume that when <m>m+n=k-1</m>, it is the case that if there are <m>m+n-2\choose
-          m-1</m> people in a room, then there are either <m>m</m> mutual acquaintances or <m>n</m>
-          mutual strangers. Suppose that <m>m'+n'=k</m> and there are <m>m'+n'-2\choose m'-1</m>
+          Now assume that when <m>m+n=k-1</m>, it is the case that if there are <m>\binom{m+n-2}{m-1}</m> people in a room, then there are either <m>m</m> mutual acquaintances or <m>n</m>
+          mutual strangers. Suppose that <m>m'+n'=k</m> and there are <m>\binom{m'+n'-2}{m'-1}</m>
           people in a room. If <m>n'=2</m>, then we know that with
           <m>\binom{m'+2-2}{m'-1}=m'</m> people in a room, there are either <m>m'</m> mutual
           acquaintances or two mutual strangers, and similarly if <m>m'=2</m> there are
           either two mutual acquaintances or <m>n</m> mutual strangers among
-          <m>m'+n'-2\choose m-1</m> people. Thus we may assume that both
+          <m>\binom{m'+n'-2}{m-1}</m> people. Thus we may assume that both
           <m>m'</m> and <m>n'</m> are greater than two. Since <m>\binom{m'+n'-2}{m-1}=
           \binom{(m'-1)+n-2}{m'-2} +\binom{m+(n-1) -2}{m-1}</m>, if there are
-          <m>m'+n'-2\choose m'-1</m> people in a room, then a given person, say person
-          <m>P</m>, is either acquainted with <m>(m'-1)+n'-2\choose m'-1</m> of them (call
-          this case 1) or is a stranger with <m>m'+(n-1)-2\choose m-1</m> of them (call
+          <m>\binom{m'+n'-2}{m'-1}</m> people in a room, then a given person, say person
+          <m>P</m>, is either acquainted with <m>\binom{(m'-1)+n'-2}{m'-1}</m> of them (call
+          this case 1) or is a stranger with <m>\binom{m'+(n-1)-2}{m-1}</m> of them (call
           this case 2). Notice that
           <m>m'-1+n'=k-1</m> and <m>m'+n'-1=k-1</m>. Thus in case 1, our inductive hypothesis
           tells us that either <m>m'-1</m> of person <m>P</m>'s acquaintances are mutually
@@ -767,9 +766,9 @@
           which case we have <m>n'</m> mutual strangers. Similarly in case 2 we have
           either <m>m'</m> mutual acquaintances or <m>n'</m> mutual strangers. Thus by the
           principle of mathematical induction, for all values of <m>m+n</m> greater than
-          or equal to 4, if we have <m>m+n-2\choose m-1</m> people in a room, then we
+          or equal to 4, if we have <m>\binom{m+n-2}{m-1}</m> people in a room, then we
           have either <m>m</m> mutual acquaintances or <m>n</m> mutual strangers, so that
-          <m>R(m,n)</m> exists and is no more than <m>m+n-2\choose m-1</m>.
+          <m>R(m,n)</m> exists and is no more than <m>\binom{m+n-2}{m-1}</m>.
         </p>
       </solution>
       </task>

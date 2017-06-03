@@ -18,7 +18,7 @@
           corresponds to a part of a composition of
           <m>n</m>. Thus the number of compositions of <m>n</m> with <m>k</m> parts is the number of
           ways to choose the <m>k-1</m> places, which is
-          <m>n-1\choose k-1</m>.
+          <m>\binom{n-1}{k-1}</m>.
         </p>
       </solution>
     </p>
@@ -247,7 +247,7 @@
           We can line up the identical ping-pong balls and break them into
           four groups, those of each color, by inserting dividers. If we want to paint
           at least one in each color, we can choose three of the spaces between the
-          balls in which to insert dividers, so we can paint them in <m>n-1\choose k</m>.
+          balls in which to insert dividers, so we can paint them in <m>\binom{n-1}{k}</m>.
           But the problem didn't require us to use each color, so we can put two
           dividers adjacent to each other. Thus there are <m>n+1</m> places where we can
           put the first divider (putting it before all the balls means we use no red,

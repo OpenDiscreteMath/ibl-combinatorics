@@ -459,7 +459,7 @@
     <activity xml:id="negnchoosek" category="essential">
       <statement>
         <p>
-          Find a formula for <m>(1+x)^{-n}</m> as a power series whose coefficients involve binomial coefficients. What does this formula tell you about how we should define <m>-n\choose k</m> when <m>n</m> is positive?
+          Find a formula for <m>(1+x)^{-n}</m> as a power series whose coefficients involve binomial coefficients. What does this formula tell you about how we should define <m>\binom{-n}{k}</m> when <m>n</m> is positive?
         </p>
       </statement>
       <solution>
@@ -468,14 +468,14 @@
                   (1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
                   \binom{n+i-1}{i}(-x)^i=\sum_{i=0}^\infty (-1)^i\binom{n+i-1}{i}x^i.
               </me>
-              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>-n\choose k</m>, so we want <m>\binom{-n }{k}= (-1)^k\binom{n+k-1}{k}</m>.
+              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>\binom{-n}{k}</m>, so we want <m>\binom{-n }{k}= (-1)^k\binom{n+k-1}{k}</m>.
         </p>
       </solution>
     </activity>
 
     <activity category="essential and interesting">
       <statement>
-        <p>If you define <m>-n \choose k</m> in the way you described in <xref ref="negnchoosek">Problem</xref>, you can write down a version of the binomial theorem for <m>(x+y)^n</m> that is valid for both nonnegative and negative values of <m>n</m>. Do so. This is called the <term>extended binomial theorem</term><index><main>binomial theorem</main><sub> extended</sub></index><index><main>extended binomial theorem</main></index>.
+        <p>If you define <m>\binom{-n}{k}</m> in the way you described in <xref ref="negnchoosek">Problem</xref>, you can write down a version of the binomial theorem for <m>(x+y)^n</m> that is valid for both nonnegative and negative values of <m>n</m>. Do so. This is called the <term>extended binomial theorem</term><index><main>binomial theorem</main><sub> extended</sub></index><index><main>extended binomial theorem</main></index>.
         </p>
       </statement>
       <solution>
@@ -505,7 +505,7 @@
         <p>The coefficient of <m>x^{10}</m> is the number of ways to pass out ten pieces of candy, and is <m>\binom{12}{10}-3\binom{7}{5} +3\binom{2}{0}</m>.  Thus the number of ways to pass out ten pieces of candy is <m>66-3\cdot21+3=6</m>.)
         </p>
 
-        <p>A second solution technique that is appropriate is inclusion-exclusion counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of size <m>j</m> properties is <m>\binom{n-5j+3-1}{n-5j}=\binom{n-5j+2}{2}</m>. By <xref ref="incexempty">Equation</xref> we have <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3 (-1)^j\binom{3}{j}\binom{n-5j+2}{2}</m>. Using <m>n=10</m> gives us <m>\binom{12}{2}-3\binom{7}{2} +3\binom{2}{2} =6.</m> (You can either note that <m>\binom{-3}{2}</m> is 0 or note that with 10 pieces of candy, there is no way to pass out five pieces to each of three children. In this second case we would revise our statement about the number of ways to pass out <m>n</m> pieces of fruit to three children with the properties in <m>J</m> to note that it is zero if <m>5j>n</m>, and otherwise is <m>n-5j+2\choose2</m>.)
+        <p>A second solution technique that is appropriate is inclusion-exclusion counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of size <m>j</m> properties is <m>\binom{n-5j+3-1}{n-5j}=\binom{n-5j+2}{2}</m>. By <xref ref="incexempty">Equation</xref> we have <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3 (-1)^j\binom{3}{j}\binom{n-5j+2}{2}</m>. Using <m>n=10</m> gives us <m>\binom{12}{2}-3\binom{7}{2} +3\binom{2}{2} =6.</m> (You can either note that <m>\binom{-3}{2}</m> is 0 or note that with 10 pieces of candy, there is no way to pass out five pieces to each of three children. In this second case we would revise our statement about the number of ways to pass out <m>n</m> pieces of fruit to three children with the properties in <m>J</m> to note that it is zero if <m>5j>n</m>, and otherwise is <m>\binom{n-5j+2}{2}</m>.)
         </p>
       </solution>
     </activity>
@@ -723,7 +723,7 @@
 
     <!-- This is, in some sense, the problem from hell when it comes to structure. In the first pass, we're going to break into more tasks than Bogart had. This really should become more than one activity in the final version. -->
     <activity xml:id="qtorialformula" category="interesting">
-        <p>In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref> you gave the generating functions for, respectively, the number of partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem we will give the generating function for the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. Geometrically, it is the generating function for partitions whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant analogs to the binomial coefficient <m>m+n\choose n</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called a <term><m>q</m>-binomial coefficient</term>.<index><main><m>q</m>-binomial coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
+        <p>In <xref ref="largestpartatmostm">Problem</xref> and <xref ref="atmostmparts">Problem</xref> you gave the generating functions for, respectively, the number of partitions of <m>k</m> into parts the largest of which is at most <m>m</m> and for the number of partitions of <m>k</m> into at most <m>m</m> parts. In this problem we will give the generating function for the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. That is we will analyze <m>\sum_{i=0}^\infty a_kq^k</m> where <m>a_k</m> is the number of partitions of <m>k</m> into at most <m>n</m> parts, the largest of which is at most <m>m</m>. Geometrically, it is the generating function for partitions whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle, as in <xref ref="rectanglecomplement">Problem</xref>. This generating function has significant analogs to the binomial coefficient <m>\binom{m+n}{n}</m>, and so it is denoted by <m>\qchoose{m+n}{n}</m>. It is called a <term><m>q</m>-binomial coefficient</term>.<index><main><m>q</m>-binomial coefficient</main></index><index><main>binomial coefficient</main><sub><m>q</m>-binomial</sub></index>
         </p>
         <task>
             <statement>
@@ -766,7 +766,7 @@
       </task>
       <task>
         <statement>
-          <p>So far the analogy to <m>m+n\choose n</m> is rather thin! If we had a recurrence like the Pascal recurrence, that would demonstrate a real analogy. Is <m>\qchoose{m+n}{n}= \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
+          <p>So far the analogy to <m>\binom{m+n}{n}</m> is rather thin! If we had a recurrence like the Pascal recurrence, that would demonstrate a real analogy. Is <m>\qchoose{m+n}{n}= \qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}</m>?
           </p>
         </statement>
         <solution>
@@ -880,7 +880,7 @@
                       </li>
                       <li><m>n!</m>
                       </li>
-                      <li><m>m+n\choose n</m>
+                      <li><m>\binom{m+n}{n}</m>
                       </li>
                   </ol>
                   Since the generating function is a finite sum (we are talking about partitions whose Young diagram into a finite rectangle), the limit is obtained by setting <m>q=1</m>, and this sums the number of partitions of each possible number <m>k</m> that have at most <m>n</m> parts all of size at most <m>m</m>. We want a bijection between such partitions and the <m>n</m> element subsets of an <m>m+n</m> element set. Recall that there is a bijection between subsets of an <m>n</m> element set and lattice paths from <m>(0,0)</m> to <m>m,n</m> in a coordinate plane. If we draw our rectangle of width <m>m</m> and depth <m>n</m> with its lower left corner at <m>(0,0)</m>, then each Young diagram gives us such a lattice path and each such lattice path gives us a Young diagram.

@@ -111,12 +111,12 @@
   <activity category="interesting">
     <statement>
       <p>
-        We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define <m>-n\choose i</m> to be <m>n+i-1\choose i</m>. If we want the Pascal recurrence to be valid, how should we define <m>-n\choose -i</m> when <m>n</m> and <m>i</m> are both positive?
+        We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define <m>\binom{-n}{i}</m> to be <m>\binom{n+i-1}{i}</m>. If we want the Pascal recurrence to be valid, how should we define <m>\binom{-n}{-i}</m> when <m>n</m> and <m>i</m> are both positive?
       </p>
     </statement>
     <solution>
       <p>
-        The number <m>\binom{n}{k}</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>\binom{-n}{0}=\binom{n+0-1}{0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>\binom{-n}{0}=\binom{-n-1}{-1} +\binom{-n-1}{0}</m>, so that <m>\binom{-n}{-1}=0</m>, as does <m>\binom{0}{-1}</m>. Applying the Pascal recurrence again gives us <m>\binom{-n}{-1}= \binom{-n-1}{-2} +\binom{-n-1}{-1}</m>, so we have <m>\binom{-n-1}{-2}=0</m> as well. Following this pattern, we can prove by induction that <m>-n\choose -k</m> is zero whenever <m>k</m> and <m>n</m> are positive.
+        The number <m>\binom{n}{k}</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>\binom{-n}{0}=\binom{n+0-1}{0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>\binom{-n}{0}=\binom{-n-1}{-1} +\binom{-n-1}{0}</m>, so that <m>\binom{-n}{-1}=0</m>, as does <m>\binom{0}{-1}</m>. Applying the Pascal recurrence again gives us <m>\binom{-n}{-1}= \binom{-n-1}{-2} +\binom{-n-1}{-1}</m>, so we have <m>\binom{-n-1}{-2}=0</m> as well. Following this pattern, we can prove by induction that <m>\binom{-n}{-k}</m> is zero whenever <m>k</m> and <m>n</m> are positive.
       </p>
     </solution>
   </activity>
