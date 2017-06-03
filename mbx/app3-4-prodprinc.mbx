@@ -136,7 +136,7 @@
         written as
         <me>
           \sum_{i=0}^n{n!\over i!(n-i)!} a_i
-          b_{n-i}=\sum_{i=0}^n{n\choose i} a_i b_{n-i}.
+          b_{n-i}=\sum_{i=0}^n\binom{n}{i} a_i b_{n-i}.
         </me>
       </p>
     </solution>
@@ -208,7 +208,7 @@
     </statement>
     <solution>
       <p>
-        <m>{n\choose i}a_ib_j</m>. This shows that the coefficient of <m>x^n\over n!</m>
+        <m>\binom{n}{i}a_ib_j</m>. This shows that the coefficient of <m>x^n\over n!</m>
         in the EGF for painting poles with four colors is the coefficient of
         <m>x^n\over n!</m> in the product of the EGF for painting poles with two
         colors and the EGF for painting poles with two colors.
@@ -558,16 +558,16 @@
         <m>n</m>-element set onto a <m>k</m>-element set is <m>(e^x-1)^k</m>. By the binomial
         theorem, this is
         <me>
-          \kern-.25 in\sum_{i=0}^k{k\choose i}(-1)^{k-i}e^{ix} 
+          \kern-.25 in\sum_{i=0}^k\binom{k}{i}(-1)^{k-i}e^{ix} 
           =
-          \sum_{i=0}^k {k\choose i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
-          \sum_{i=0}^k (-1)^{k-i}{k\choose i} \sum_{j=0}^\infty i^j{(x)^j\over
+          \sum_{i=0}^k \binom{k}{i} (-1)^{k-i} \sum_{j=0}^\infty {(ix)^j\over j!} = 
+          \sum_{i=0}^k (-1)^{k-i}\binom{k}{i} \sum_{j=0}^\infty i^j{(x)^j\over
           j!}.
         </me>
       </p>
 
       <p>
-        Thus <m>c_n= \sum_{i=0}^k(-1)^{k-i}{k\choose i}n^i</m>, which is consistent
+        Thus <m>c_n= \sum_{i=0}^k(-1)^{k-i}\binom{k}{i}n^i</m>, which is consistent
         with the formula we got by inclusion and exclusion.
       </p>
     </solution>
@@ -579,7 +579,7 @@
         In <xref ref="BellNumberIntro">Problem</xref> You showed that the Bell Numbers
         <m>B_n</m> satisfy the equation
         <m>B_{n+1} =
-        \sum_{k=0}^{n} {n\choose k}B_{n-k}</m> (or a similar equation for <m>B_n</m>.)
+        \sum_{k=0}^{n} \binom{n}{k}B_{n-k}</m> (or a similar equation for <m>B_n</m>.)
         Multiply both sides of this equation by <m>x^n\over n!</m> and sum from <m>n=0</m>
         to infinity. On the left hand side you have a derivative of a certain
         EGF we might call <m>B(x)</m>. On the right hand side, you
@@ -591,8 +591,7 @@
     </statement>
     <solution>
       <me>
-        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty{n\choose
-        k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
+        \sum_{n=0}^\infty B_{n+1}{x^n\over n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}{x^n\over n!} =\sum_{i=0}^\infty B_{i}{x^{i}\over
         (i)!}\sum_{j=0}^\infty {x^j\over j!}.
       </me>
       <p>
@@ -606,7 +605,7 @@
   <activity category="interesting">
     <statement>
       <p>
-        Prove that <m>n2^{n-1} = \sum_{k=1}^n {n\choose k}k</m> by using
+        Prove that <m>n2^{n-1} = \sum_{k=1}^n \binom{n}{k}k</m> by using
         EGFs.
       </p>
     </statement>
@@ -623,7 +622,7 @@
 
       <p>
         Thus the coefficient of <m>x^n\over n!</m> is
-        <m>n2^{n-1}</m>, as well as <m>\sum_{k=1}^n {n\choose k}k</m>.
+        <m>n2^{n-1}</m>, as well as <m>\sum_{k=1}^n \binom{n}{k}k</m>.
       </p>
     </solution>
   </activity>

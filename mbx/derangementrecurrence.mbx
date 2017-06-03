@@ -171,16 +171,15 @@
         <solution>
           <p>
             <m>T(x) = \sum_{i=0}^\infty (x+x^2/2)^i/i!</m>. By the binomial
-            theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i {i\choose
-            j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
-            i!}=\sum_{i=0}^\infty{\sum_{j=0}^i{i\choose j}x^{2i-j}2^{j-i}\over i!}</m>.
+            theorem, this gives <m>T(x) = \sum_{i=0}^\infty {\sum_{j=0}^i \binom{i}{j}x^j\bigl({x^2\over2}\bigr)^{i-j}\over
+            i!}=\sum_{i=0}^\infty{\sum_{j=0}^i\binom{i}{j}x^{2i-j}2^{j-i}\over i!}</m>.
             Then the coefficient <m>c_n</m> of <m>x^n</m> is the sum over all <m>i</m> and <m>j</m> with
-            <m>2i-j=n</m> and <m>j\le i</m> of <m>{i\choose j}{n!\over i!}2^{j-i}</m>. But if
+            <m>2i-j=n</m> and <m>j\le i</m> of <m>\binom{i}{j}{n!\over i!}2^{j-i}</m>. But if
             <m>2i-j=n</m>, then <m>j= 2i-n</m>, and if <m>2i-n\le i</m>, then <m>i\le n</m>, so that <m>c_n
-            = {n!\over 2^n}\sum_{i=0}^n{i\choose 2i-n}{2^i\over i!}</m>. Note that
-            <m>i\choose 2i-n</m> is the same as <m>i\choose n-i</m>, which is 0 unless <m>i\ge
+            = {n!\over 2^n}\sum_{i=0}^n\binom{i}{2i-n}{2^i\over i!}</m>. Note that
+            <m>\binom{i}{2i-n}</m> is the same as <m>\binom{i}{n-i}</m>, which is 0 unless <m>i\ge
             n/2</m>, which reduces our sum to <m>c_n = {n!\over
-            2^n}\sum_{i=\lceil n/2\rceil}^n{i\choose n-i}{2^i\over i!}</m>.
+            2^n}\sum_{i=\lceil n/2\rceil}^n\binom{i}{n-i}{2^i\over i!}</m>.
           </p>
         </solution>
       </task>

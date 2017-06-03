@@ -177,16 +177,16 @@
       </statement>
       <solution>
         <p>
-          The picture enumerator for choosing <m>1</m> or not choosing 1 is <m>x_1+1</m>. The picture enumerator for choosing or not choosing <m>i</m> is <m>x_i+1</m>.  The picture enumerator for choosing all possible subsets of <m>[n]</m> is <m>(x_1+1)(x_2+1)\cdots(x_n+1).</m> We should substitute <m>x</m> for <m>x_i</m>, thus getting <m>(1+x)^n</m>. Since the number of ways to choose an <m>n</m>-element subset is <m>n\choose k</m>, we have just proved the version of the binomial theorem that says
+          The picture enumerator for choosing <m>1</m> or not choosing 1 is <m>x_1+1</m>. The picture enumerator for choosing or not choosing <m>i</m> is <m>x_i+1</m>.  The picture enumerator for choosing all possible subsets of <m>[n]</m> is <m>(x_1+1)(x_2+1)\cdots(x_n+1).</m> We should substitute <m>x</m> for <m>x_i</m>, thus getting <m>(1+x)^n</m>. Since the number of ways to choose an <m>n</m>-element subset is <m>\binom{n}{k}</m>, we have just proved the version of the binomial theorem that says
           <me>
-            (x+1)^n=\sum_{i=0}^n {n\choose i}x^i.
+            (x+1)^n=\sum_{i=0}^n \binom{n}{i}x^i.
           </me>
         </p>
       </solution>
     </activity>
 
     <p>
-      In <xref ref="reprovingbinomialtheorem">Problem</xref> we see that we can think of the process of expanding the polynomial <m>(1+x)^n</m> as a way of <q>generating</q> the binomial coefficients <m>n\choose k</m> as the coefficients of <m>x^k</m> in the expansion of <m>(1+x)^n</m>. For this reason, we say that <m>(1+x)^n</m> is the <q>generating function</q> for the binomial coefficients <m>n\choose k</m>. More generally, the <term>generating function</term> for a sequence <m>a_i</m>, defined for <m>i</m> with <m>0\le i\le n</m> is the expression <m>\sum_{i=0}^n a_ix^i</m>, and the <term>generating function</term><index><main>generating function</main></index> for the sequence <m>a_i</m> with <m>i\ge 0</m> is the expression <m>\sum_{i=0}^\infty a_ix^i</m>. This last expression is an example of a power series. In calculus it is important to think about whether a power series converges in order to determine whether or not it represents a function. In a nice twist of language, even though we use the phrase generating function as the name of a power series in combinatorics, we don't require the power series to actually represent a function in the usual sense, and so we don't have to worry about convergence.<fn>In the evolution of our current mathematical terminology, the word function evolved through several meanings, starting with very imprecise meanings and ending with our current rather precise meaning.  The terminology <q>generating function</q> may be thought of as an example of one of the earlier usages of the term function.</fn> Instead we think of a power series as a convenient way of representing the terms of a sequence of numbers of interest to us. The only justification for saying that such a representation is convenient is because of the way algebraic properties of power series capture some of the important properties of some sequences that are of combinatorial importance. The remainder of this chapter is devoted to giving examples of how the algebra of power series reflects combinatorial ideas.
+      In <xref ref="reprovingbinomialtheorem">Problem</xref> we see that we can think of the process of expanding the polynomial <m>(1+x)^n</m> as a way of <q>generating</q> the binomial coefficients <m>\binom{n}{k}</m> as the coefficients of <m>x^k</m> in the expansion of <m>(1+x)^n</m>. For this reason, we say that <m>(1+x)^n</m> is the <q>generating function</q> for the binomial coefficients <m>\binom{n}{k}</m>. More generally, the <term>generating function</term> for a sequence <m>a_i</m>, defined for <m>i</m> with <m>0\le i\le n</m> is the expression <m>\sum_{i=0}^n a_ix^i</m>, and the <term>generating function</term><index><main>generating function</main></index> for the sequence <m>a_i</m> with <m>i\ge 0</m> is the expression <m>\sum_{i=0}^\infty a_ix^i</m>. This last expression is an example of a power series. In calculus it is important to think about whether a power series converges in order to determine whether or not it represents a function. In a nice twist of language, even though we use the phrase generating function as the name of a power series in combinatorics, we don't require the power series to actually represent a function in the usual sense, and so we don't have to worry about convergence.<fn>In the evolution of our current mathematical terminology, the word function evolved through several meanings, starting with very imprecise meanings and ending with our current rather precise meaning.  The terminology <q>generating function</q> may be thought of as an example of one of the earlier usages of the term function.</fn> Instead we think of a power series as a convenient way of representing the terms of a sequence of numbers of interest to us. The only justification for saying that such a representation is convenient is because of the way algebraic properties of power series capture some of the important properties of some sequences that are of combinatorial importance. The remainder of this chapter is devoted to giving examples of how the algebra of power series reflects combinatorial ideas.
     </p>
 
     <p>Because we choose to think of power series as strings of symbols that we manipulate by using the ordinary rules of algebra and we choose to ignore issues of convergence, we have to avoid manipulating power series in a way that would require us to add infinitely many real numbers. For example, we cannot make the substitution of <m>y+1</m> for <m>x</m> in the power series <m>\sum_{i=0}^\infty x^i</m>, because in order to interpret <m>\sum_{i=0}^\infty (y+1)^i</m> as a power series we would have to apply the binomial theorem to each of the <m>(y+1)^i</m> terms, and then collect like terms, giving us infinitely many ones added together as the coefficient of <m>y^0</m>, and in fact infinitely many numbers added together for the coefficient of any<nbsp /><m>y^i</m>. (On the other hand, it would be fine to substitute <m>y+y^2</m> for <m>x</m>. Can you see why?)
@@ -368,12 +368,12 @@
         <m>k</m> ones is, by the product principle for generating functions (extended to
         <m>n</m> factors) <m>(1+x)^n</m>. However the number of <m>n</m>-tuples of 0s and 1s with
         <m>k</m> ones is the number of <m>k</m>-element subsets of an <m>n</m>-element set.
-        Therefore <m>(1+x)^n =\sum_{i=0}^n {n\choose i}x^i</m>. To get the <m>(x+y)^n</m> form
+        Therefore <m>(1+x)^n =\sum_{i=0}^n \binom{n}{i}x^i</m>. To get the <m>(x+y)^n</m> form
         of the binomial theorem, note that <m>x+y = y(1+{x\over y})</m>, so that
         <md>
           <mrow>(x+y)^n \amp =\amp  y^n\left({x\over y}+1\right)^n</mrow>
-          <mrow>\amp =\amp y^n\sum_{i=0}^n {n\choose i}{x^i\over y^i}</mrow>
-          <mrow>\amp =\amp  \sum_{i=0}^n{n\choose i}x^iy^{n-i}.</mrow>
+          <mrow>\amp =\amp y^n\sum_{i=0}^n \binom{n}{i}{x^i\over y^i}</mrow>
+          <mrow>\amp =\amp  \sum_{i=0}^n\binom{n}{i}x^iy^{n-i}.</mrow>
         </md>
       </p>
         </solution>
@@ -404,7 +404,7 @@
           </p>
         </statement>
         <solution>
-          <p>The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.  <xref ref="multiset">Problem</xref> tells us that this equals <m>\sum_{i=0}^\infty{n+i-1\choose i}x^i</m>.
+          <p>The generating function is <m>\left(\sum_{i=0}^\infty x^i\right)^n</m>.  <xref ref="multiset">Problem</xref> tells us that this equals <m>\sum_{i=0}^\infty\binom{n+i-1}{i}x^i</m>.
           </p>
         </solution>
       </task>
@@ -466,9 +466,9 @@
           <p>
               <me>
                   (1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
-                  {n+i-1\choose i}(-x)^i=\sum_{i=0}^\infty (-1)^i{n+i-1\choose i}x^i.
+                  \binom{n+i-1}{i}(-x)^i=\sum_{i=0}^\infty (-1)^i\binom{n+i-1}{i}x^i.
               </me>
-              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>-n\choose k</m>, so we want <m>{-n \choose k}= (-1)^k{n+k-1\choose k}</m>.
+              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>-n\choose k</m>, so we want <m>\binom{-n }{k}= (-1)^k\binom{n+k-1}{k}</m>.
         </p>
       </solution>
     </activity>
@@ -480,7 +480,7 @@
       </statement>
       <solution>
         <p>
-          <m>(x+y)^n=\sum_{i=0}^\infty{n\choose i}x^i</m>. The proof consists of writing <m>(x+y)=y({x\over y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>n\choose k</m> is zero when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the binomial theorem by <m>\infty</m> doesn't change the value of the sum.
+          <m>(x+y)^n=\sum_{i=0}^\infty\binom{n}{i}x^i</m>. The proof consists of writing <m>(x+y)=y({x\over y}+1)</m> and applying the <xref ref="negnchoosek">Problem</xref> when <m>n</m> is negative. When <m>n</m> is positive, we recall that <m>\binom{n}{k}</m> is zero when <m>k>n</m>, so replacing the upper limit of <m>n</m> in the standard version of the binomial theorem by <m>\infty</m> doesn't change the value of the sum.
         </p>
       </solution>
     </activity>
@@ -497,15 +497,15 @@
           <md>
             <mrow>\amp \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left({1-x^5\over 1-x}\right)^3</mrow>
             <mrow>\amp =\amp (1-x^5)^3(1-x)^{-3}</mrow>
-            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty {3+i-1\choose i}x^i</mrow>
-            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty {2+i\choose i}x^i</mrow>
+            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i</mrow>
+            <mrow>\amp =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i</mrow>
           </md>
         </p>
 
-        <p>The coefficient of <m>x^{10}</m> is the number of ways to pass out ten pieces of candy, and is <m>{12\choose 10}-3{7\choose 5} +3{2\choose 0}</m>.  Thus the number of ways to pass out ten pieces of candy is <m>66-3\cdot21+3=6</m>.)
+        <p>The coefficient of <m>x^{10}</m> is the number of ways to pass out ten pieces of candy, and is <m>\binom{12}{10}-3\binom{7}{5} +3\binom{2}{0}</m>.  Thus the number of ways to pass out ten pieces of candy is <m>66-3\cdot21+3=6</m>.)
         </p>
 
-        <p>A second solution technique that is appropriate is inclusion-exclusion counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of size <m>j</m> properties is <m>{n-5j+3-1\choose n-5j}={n-5j+2\choose 2}</m>. By <xref ref="incexempty">Equation</xref> we have <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3 (-1)^j{3\choose j}{n-5j+2\choose 2}</m>. Using <m>n=10</m> gives us <m>{12\choose2}-3{7\choose2} +3{2\choose2} =6.</m> (You can either note that <m>{-3\choose 2}</m> is 0 or note that with 10 pieces of candy, there is no way to pass out five pieces to each of three children. In this second case we would revise our statement about the number of ways to pass out <m>n</m> pieces of fruit to three children with the properties in <m>J</m> to note that it is zero if <m>5j>n</m>, and otherwise is <m>n-5j+2\choose2</m>.)
+        <p>A second solution technique that is appropriate is inclusion-exclusion counting. We let property <m>i</m> be that child <m>i</m> gets more than four pieces of fruit. The number of ways to pass out <m>n</m> pieces of fruit with a set <m>J</m> of size <m>j</m> properties is <m>\binom{n-5j+3-1}{n-5j}=\binom{n-5j+2}{2}</m>. By <xref ref="incexempty">Equation</xref> we have <m>N_{\mbox{e} }(\emptyset) = \sum_{j=0}^3 (-1)^j\binom{3}{j}\binom{n-5j+2}{2}</m>. Using <m>n=10</m> gives us <m>\binom{12}{2}-3\binom{7}{2} +3\binom{2}{2} =6.</m> (You can either note that <m>\binom{-3}{2}</m> is 0 or note that with 10 pieces of candy, there is no way to pass out five pieces to each of three children. In this second case we would revise our statement about the number of ways to pass out <m>n</m> pieces of fruit to three children with the properties in <m>J</m> to note that it is zero if <m>5j>n</m>, and otherwise is <m>n-5j+2\choose2</m>.)
         </p>
       </solution>
     </activity>
@@ -523,7 +523,7 @@
           <mrow>\amp =\amp 
           \left(x^j{1-x^{m-j}\over 1-x}\right)^n</mrow>
           <mrow>\amp =\amp \left({x^j-x^m\over1-x}\right)^n</mrow>
-          <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty {n+i-1\choose i}x^i.</mrow>
+          <mrow>\amp =\amp  (x^j-x^m)^n\sum_{i=0}^\infty \binom{n+i-1}{i}x^i.</mrow>
           </md>
           </p>
       </solution>
@@ -707,7 +707,7 @@
             <p>
             <me>
             \displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
-            m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^{n+1\choose 2}\prod_{i=1}^m{1\over
+            m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m{1\over
             1-q^2}
             </me>
             is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
@@ -715,7 +715,7 @@
               \displaystyle
               \prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m {1\over1-q^{2i}}
             </me>
-            is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+{m+1\choose 2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
+            is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+\binom{m+1}{2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
           </p>
         </solution>
       </task>
@@ -912,12 +912,11 @@
           </me>
         </p>
 
-        <p>We could compute some more values of the limit by going back to the definition in this way, but it seems unlikely that we could get enough data to make a good conjecture. However we have the recurrence, and setting <m>q=-1</m> in the recurrence gives us <xref ref="q-binomial-tab" autoname="yes" />.  From the table, it is clear that we get binomial coefficients interspersed with 0s in the even numbered rows of our table and repeated binomial coefficients in the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both even, <m>\neg1choose{m+n}{n}={(m+n)/2\choose n/2}</m>, and if <m>m+n</m> is even and <m>n</m> is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it appears that we get <m>\neg1choose{m+n}{n}={\lfloor(m+n)/2\rfloor\choose \lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to construct the table, we can prove by induction that
+        <p>We could compute some more values of the limit by going back to the definition in this way, but it seems unlikely that we could get enough data to make a good conjecture. However we have the recurrence, and setting <m>q=-1</m> in the recurrence gives us <xref ref="q-binomial-tab" autoname="yes" />.  From the table, it is clear that we get binomial coefficients interspersed with 0s in the even numbered rows of our table and repeated binomial coefficients in the odd numbered rows of our table. In particular when <m>m+n</m> and <m>n</m> are both even, <m>\neg1choose{m+n}{n}=\binom{(m+n)/2}{n/2}</m>, and if <m>m+n</m> is even and <m>n</m> is odd, <m>\neg1choose{m+n}{n}=0</m>. In our table, at least, if <m>m+n</m> is odd, it appears that we get <m>\neg1choose{m+n}{n}=\binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}</m>. In fact, using the recurrence just as we used it to construct the table, we can prove by induction that
           <me>
             \neg1choose{m+n}{n}=\left\{ 
             \begin{array}{ll}0\amp \mbox{if \(mn\) is odd} \\
-            {\lfloor(m+n)/2\rfloor\choose
-            \lfloor n/2\rfloor}\amp \mbox{otherwise.} 
+            \binom{\lfloor(m+n)/2\rfloor}{\lfloor n/2\rfloor}\amp \mbox{otherwise.} 
             \end{array} \right.
           </me>
         </p>

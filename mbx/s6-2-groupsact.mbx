@@ -1332,7 +1332,7 @@
           seven green beads. Thus the number of lists that are fixed by a flip is the
           number of ways to place three green beads, two red beads, and three blue
           beads in 8 slots, which is
-          <m>8\choose3,2,3</m>, or <m>8!\over3!2!3!</m>. There are 17 flips, so there are
+          <m>\binom{8}{3,2,3}</m>, or <m>8!\over3!2!3!</m>. There are 17 flips, so there are
           <m>17\cdot8!\over3!2!3!</m> elements fixed by flips. Therefore we have
           <me>
             {1\over
@@ -1484,7 +1484,7 @@
           rotation, and it fixes all <m>2n+1\choose n</m> colorings. Thus the number of
           orbits is
           <me>
-            {1\over 2n+1}{2n+1 \choose n} = {1\over n+1}{2n\choose n},
+            {1\over 2n+1}\binom{2n+1 }{n} = {1\over n+1}\binom{2n}{n},
           </me>
           a
           Catalan number.
@@ -1524,19 +1524,19 @@
           blue and an even number <m>n</m> of edges to be colored red. It the flip over
           the axis perpendicular to the side we picked fixes the coloring, the <m>n</m>
           edges to the right of the chosen edge must be colored identically with
-          the <m>n</m> edges to the left of the chosen edge. There are <m>n\choose n/2</m>
+          the <m>n</m> edges to the left of the chosen edge. There are <m>\binom{n}{n/2}</m>
           ways to color the <m>n</m> edges to the right of the chosen edge (choose which
           edges get red), and so this is the number of colorings fixed by this
           flip. We have <m>2n+1</m> flips, and since we have one flip of the type described for each
           edge, all flips have the form given above. Thus each flip fixes
-          <m>n\choose n/2</m> colorings.
+          <m>\binom{n}{n/2}</m> colorings.
         </p>
 
         <p>
           Thus the number of orbits is
           <me>
-            {1\over 2(2n+1)}\left({2n+1\choose n} +
-            (2n+1){n\choose n/2}\right).
+            {1\over 2(2n+1)}\left(\binom{2n+1}{n} +
+            (2n+1)\binom{n}{n/2}\right).
           </me>
         </p>
 
@@ -1545,7 +1545,7 @@
           colored red and an even number <m>n+1</m> of edges to be colored blue. With an argument
           similar to the previous one we see that there are
           <me>
-            {1\over 2(2n+1)}\left({2n+1\choose n} + (2n+1)({n\choose (n-1)/2}\right)
+            {1\over 2(2n+1)}\left(\binom{2n+1}{n} + (2n+1)(\binom{n}{(n-1)/2}\right)
           </me>
           orbits.
         </p>

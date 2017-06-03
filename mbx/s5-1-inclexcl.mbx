@@ -223,8 +223,7 @@
             <mrow>\amp =\amp \sum_{S:
             S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!</mrow>
             <mrow>\amp =\amp
-            \sum_{s=1}^n {n\choose
-            s}(-1)^{s-1}(n-s)!</mrow>
+            \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!</mrow>
             <mrow>\amp =\amp \sum_{s=1}^n
             (-1)^{s-1}{n!\over s!}</mrow>
           </md>
@@ -482,11 +481,11 @@
               <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
               S\subseteq J} (-1)^{|S|-|K|}</mrow>
               <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
-              {|J|-|K|
-              \choose s-|K|}(-1)^{s-|K|}</mrow>
+              \binom{|J|-|K|
+              }{s-|K|}(-1)^{s-|K|}</mrow>
               <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
-              {|J|-|K|
-              \choose i}(-1)^{i}</mrow>
+              \binom{|J|-|K|
+              }{i}(-1)^{i}</mrow>
               <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq
               P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}</mrow>
               <mrow>\amp =\amp N_{\mbox{e} }(K).</mrow>
@@ -531,15 +530,15 @@
             particular set
             <m>\hat S</m> of children get at least four apples: we give everyone in <m>\hat
             S</m> four apples, and then pass out the remaining <m>k-4s</m> apples to the
-            children in <m>{k-4s+n-1\choose k-4s}= {k-4s+n-1\choose n-1}</m> ways. This
+            children in <m>\binom{k-4s+n-1}{k-4s}= \binom{k-4s+n-1}{n-1}</m> ways. This
             counts the number of ways to give at least four apples to every child in
             <m>\hat S</m>, and maybe give four apples to some other children as well. Thus
-            <m>N_{\mbox{a} }(S) = {k-4|S|+n-1\choose n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
+            <m>N_{\mbox{a} }(S) = \binom{k-4|S|+n-1}{n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
             <md>
               <mrow>N_{\mbox{e} }(\emptyset)\amp =\amp \sum_{S:S\subseteq
               P}(-1)^{|S|}N_{\mbox{a} }(S)</mrow>
-              <mrow>\amp =\amp \sum_{s=0}^k {k\choose s}(-1)^s {k-4s+n-1\choose n-1}</mrow>
-              <mrow>\amp =\amp \sum_{s=0}^k (-1)^s{k\choose s}{k-4s+n-1\choose n-1}</mrow>
+              <mrow>\amp =\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}</mrow>
+              <mrow>\amp =\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}</mrow>
             </md>
           </p>
         </solution>
@@ -571,7 +570,7 @@
           <md>
             <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:S\subseteq P}
             (-1)^{|S|} N_{\mbox{a} }(S)</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}2^{s}(2n- s-1)!</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!</mrow>
           </md>
         </p>
       </solution>
@@ -653,11 +652,11 @@
           <md>
             <mrow>N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
             \over(2n-2|S|-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
             <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
             s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
             <mrow>\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{2n-s-1\choose s}n!(n-s-1)!</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!</mrow>
           </md>
           is the number of ways to seat the people, alternating sex, so
           that no couple sits together.
@@ -691,7 +690,7 @@
           <md>
             <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
             (n-|S|)^k</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k</mrow>
+            <mrow>\amp =\amp \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k</mrow>
           </md>
           is the number of functions from <m>K</m> onto <m>[n]</m>.
         </p>
@@ -710,7 +709,7 @@
           Since the number of functions from <m>[k]</m> onto <m>[n]</m> is <m>S(k,n)n!</m>,
           we get from the solution to <xref ref="numontofun">Problem</xref>
           <me>
-            S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k.
+            S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k.
           </me>
         </p>
       </solution>

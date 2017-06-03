@@ -656,8 +656,7 @@
           <m>B^3G^3R^2Y^4</m> by computing the contribution of each term of the sum to the coefficient.
           We get
           <md>
-            <mrow>{1\over24}\left({12\choose 3,3,2,4}+ 6{5\choose
-            1,1,1,2}{2\choose1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
+            <mrow>{1\over24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
             24\cdot2!}</mrow>
             <mrow>\amp =\amp {11!\over2\cdot3!3!2!4!}+5
             \cdot3\cdot2</mrow>
@@ -769,8 +768,8 @@
         The coefficient of <m>R^4B^4G^4</m> is
         <md>
           <mrow>{1\over
-          24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
-          6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
+          24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
+          6\binom{3}{1}\binom{5}{2,2,1}\binom{2}{2,0,0}
           \right)\amp =\amp</mrow>
           <mrow>{1\over
           24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp</mrow>
@@ -780,9 +779,8 @@
       <p>
         The coefficient of <m>R^2B^4G^6</m> is
         <md>
-          <mrow>{1\over 24}\left({12\choose2,4,6}
-          +3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
-          1,1,3}+{5\choose1,2,2}\right)\right)\amp =\amp</mrow>
+          <mrow>{1\over 24}\left(\binom{12}{2,4,6}
+          +3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right)\amp =\amp</mrow>
           <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
           +{5!\over1!2!2!}\right)\right)=600.</mrow>
         </md>
@@ -981,7 +979,7 @@
         <li>
           <p>
             <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
-            subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
+            subsets the identity is a product of <m>\binom{5}{2}=10</m> one-cycles.  Of course there is only
             one identity permutation.
           </p>
         </li>
@@ -991,7 +989,7 @@
             the two cycle and each pair of the three elements outside for a total of four
             one-cycles; each pair of an element in the two cycle and an element not will be in a
             two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
-            has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
+            has 3 two-cycles and four one-cycles.  There are <m>\binom{5}{2}=10</m> such permutations.
           </p>
         </li>
         <li>
@@ -999,27 +997,27 @@
             A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
             for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
             such two-sets and thus four two-cycles, so such a permutation has four two cycles
-            and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
+            and two one cycles.  There are <m>\binom{5}{2}\binom{3}{2}/2 =15</m> such permutations.
           </p>
         </li>
         <li>
           <p>
             A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
             two-sets from the two one-element cycles of the original action; each other two-element
-            subset will be in a three cycle.  There are <m>{3\choose 2}+3\cdot2=9</m> such pairs, and so
+            subset will be in a three cycle.  There are <m>\binom{3}{2}+3\cdot2=9</m> such pairs, and so
             there are three three-cycles of two-element subsets.  Thus such a permutation has one
-            one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
+            one-cycle and three three-cycles in its action of two-sets. There are <m>2\binom{5}{3}=20</m>
             such permutations.
           </p>
         </li>
         <li>
           <p>
             A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
-            the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
+            the two-cycle of the original action, it will have <m>\binom{3}{2}</m>  two-sets in three
             cycles,  and will have six two-sets in
             six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
             permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
-            two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
+            two-sets.  There are <m>2\binom{5}{3}=20</m> such permutations.
           </p>
         </li>
         <li>
@@ -1028,7 +1026,7 @@
             and one two-cycle of two-subsets from its own four-cycle and another four cycle of
             pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
             two one-cycles There are
-            <m>6{5\choose4}=30</m> such permutations.
+            <m>6\binom{5}{4}=30</m> such permutations.
           </p>
         </li>
         <li>

@@ -19,17 +19,15 @@
         <md>
           <mrow>(x^3+x^4+x^5+x^6)^n\amp =\amp x^{3n}(1+x+x^2+x^3)^n</mrow>
           <mrow>\amp =\amp x^{3n}\left({1-x^4\over 1-x}\right)^n</mrow>
-          <mrow>\amp =\amp x^{3n}\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty
-          {n+i-1\choose i}x^i</mrow>
+          <mrow>\amp =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
+          \binom{n+i-1}{i}x^i</mrow>
         </md>
       </p>
 
       <p>
-        The number of ways to pass out <m>k</m> pieces of candy is the coefficient of <m>x^k</m> in this expression. Thus the answer is zero if <m>k\lt 3n</m> because of the <m>x^{3n}</m> in front. Otherwise the answer is the coefficient of <m>^{k-3n}</m> in <m>\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty {n+i-1\choose i}x^i</m>, which is
+        The number of ways to pass out <m>k</m> pieces of candy is the coefficient of <m>x^k</m> in this expression. Thus the answer is zero if <m>k\lt 3n</m> because of the <m>x^{3n}</m> in front. Otherwise the answer is the coefficient of <m>^{k-3n}</m> in <m>\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty \binom{n+i-1}{i}x^i</m>, which is
         <me>
-          \sum_{i,j:4j+i=k-3n}(-1)^j{n\choose
-          j}{n+i-1\choose i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j{n\choose
-          j}{k-2n-4j-1\choose n-1}.
+          \sum_{i,j:4j+i=k-3n}(-1)^j\binom{n}{j}\binom{n+i-1}{i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j\binom{n}{j}\binom{k-2n-4j-1}{n-1}.
         </me>
       </p>
 
@@ -118,7 +116,7 @@
     </statement>
     <solution>
       <p>
-        The number <m>n\choose k</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>{-n\choose 0}={n+0-1\choose 0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>{-n\choose 0}={-n-1\choose-1} +{-n-1\choose 0}</m>, so that <m>{-n\choose-1}=0</m>, as does <m>0\choose -1</m>. Applying the Pascal recurrence again gives us <m>{-n\choose -1}= {-n-1\choose -2} +{-n-1\choose -1}</m>, so we have <m>{-n-1\choose -2}=0</m> as well. Following this pattern, we can prove by induction that <m>-n\choose -k</m> is zero whenever <m>k</m> and <m>n</m> are positive.
+        The number <m>\binom{n}{k}</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>\binom{-n}{0}=\binom{n+0-1}{0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>\binom{-n}{0}=\binom{-n-1}{-1} +\binom{-n-1}{0}</m>, so that <m>\binom{-n}{-1}=0</m>, as does <m>\binom{0}{-1}</m>. Applying the Pascal recurrence again gives us <m>\binom{-n}{-1}= \binom{-n-1}{-2} +\binom{-n-1}{-1}</m>, so we have <m>\binom{-n-1}{-2}=0</m> as well. Following this pattern, we can prove by induction that <m>-n\choose -k</m> is zero whenever <m>k</m> and <m>n</m> are positive.
       </p>
     </solution>
   </activity>
@@ -157,19 +155,19 @@
   <activity category="interesting">
       <statement>
           <p>
-          How does <m>\sum_{k=0}^n{n-k\choose k}</m> relate to the Fibonacci Numbers?
+          How does <m>\sum_{k=0}^n\binom{n-k}{k}</m> relate to the Fibonacci Numbers?
         </p>
       </statement>
       <solution>
         <p>
-          We begin by computing a few values of <m>a_n=\sum_{k=0}^n{n-k\choose k}</m>. We have <m>a_0=1</m>, <m>a_1=1</m>, <m>a_2=2</m>, <m>a_3=1+2=3</m>, <m>a_4=1+3+1=5</m>, <m>a_5=1+4+3=8</m> and <m>a_6=1+5+6+1=13</m>. So far the sequence agrees with the Fibonacci Numbers. Each term of the sequence is the sum of the two preceding terms, so it makes sense to try to prove that <m>a_n=a_{n-1}+a_{n-2}</m>. We may write
+          We begin by computing a few values of <m>a_n=\sum_{k=0}^n\binom{n-k}{k}</m>. We have <m>a_0=1</m>, <m>a_1=1</m>, <m>a_2=2</m>, <m>a_3=1+2=3</m>, <m>a_4=1+3+1=5</m>, <m>a_5=1+4+3=8</m> and <m>a_6=1+5+6+1=13</m>. So far the sequence agrees with the Fibonacci Numbers. Each term of the sequence is the sum of the two preceding terms, so it makes sense to try to prove that <m>a_n=a_{n-1}+a_{n-2}</m>. We may write
           <md>
             <mrow>a_{n-1}+a_{n-2}
-            \amp =\amp \sum_{k=0}^{n-1} {n-1-k\choose k}
-            +\sum_{k=0}^{n-2} {n-2-k\choose k}</mrow>
-            <mrow>\amp =\amp \sum_{k=0}^{n-1} {n-1-k\choose k}+\sum_{j=1}^{n-1}{n-1-j\choose j-1}</mrow>
-            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}{n-1-k\choose k}+{n-1-k\choose k-1}</mrow>
-            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}{n-k\choose k} \rangle =\rangle  \sum_{k=0}^{n-1}{n-k\choose k}
+            \amp =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}
+            +\sum_{k=0}^{n-2} \binom{n-2-k}{k}</mrow>
+            <mrow>\amp =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}+\sum_{j=1}^{n-1}\binom{n-1-j}{j-1}</mrow>
+            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}\binom{n-1-k}{k}+\binom{n-1-k}{k-1}</mrow>
+            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}\binom{n-k}{k} \rangle =\rangle  \sum_{k=0}^{n-1}\binom{n-k}{k}
             \rangle =\rangle  a_n</mrow>
           </md>
         </p>
@@ -187,7 +185,7 @@
       </statement>
       <solution>
         <p>
-          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.  Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i {n\choose i}x^{(m+1)i} \sum_{j=0}^\infty {n+j-1\choose j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i{n\choose i}{n+j-1\choose j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i{n\choose i}{n+k-(m+1)i-1\choose n-1}</m>.
+          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.  Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
         </p>
       </solution>
   </activity>
@@ -259,7 +257,7 @@
         </p>
 
         <p>
-          Thus the number of ways to paint <m>n</m> chairs is <m>{n+4-1\choose n}={n+3\choose n}</m>
+          Thus the number of ways to paint <m>n</m> chairs is <m>\binom{n+4-1}{n}=\binom{n+3}{n}</m>
         </p>
       </solution>
   </activity>

@@ -502,7 +502,7 @@
       <statement>
         <p>
           If we make a sequence of <m>m</m> choices for
-          which 
+          which
           <ul>
             <li>
               there are <m>k_1</m> possible first choices, and
@@ -528,7 +528,7 @@
       how much easier it makes it to explain why we multiplied the things we
       did in <xref ref="completelunch">Problem</xref> and <xref ref="tripledeckercone">Problem</xref>.
     </p>
- 
+
     <activity xml:id="tennispairings1" category="interesting">
       <p>
         A tennis club has <m>2n</m> members. We want to pair up the
@@ -768,7 +768,7 @@ many ways can you pair up the next person who isn’t already paired up?
       <statement>
         <p>
           Another name for a list, in a specific order, of <m>k</m> distinct things
-          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of 
+          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of
           <m>S</m>.<index><main>permutation</main><sub>
           <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
           one-to-one function (or, in other words, injection) from
@@ -821,7 +821,7 @@ many ways can you pair up the next person who isn’t already paired up?
       notation</main></index> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the <m>\Sigma</m> notation works for
       summations.
     </p>
- 
+
     <activity category="essential">
       <statement>
         <p>
@@ -926,7 +926,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
 
-      <!-- I cannot find an image for this solution. "initialdigraph" is not the right one. 
+      <!-- I cannot find an image for this solution. "initialdigraph" is not the right one.
 
       <solution>
         <p>
@@ -959,7 +959,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </solution>
     </activity>
- 
+
     <activity category="motivation">
       <statement>
         <p>
@@ -1104,10 +1104,10 @@ many ways can you pair up the next person who isn’t already paired up?
       Notice that the first question in <xref ref="icecreaminpints">Problem</xref> asked
       you for the number of ways to choose a three element subset from a 12
       element subset. You may have seen a notation like
-      <m>n\choose k</m>, <m>C(n,k)</m>, or <m>_nC_k</m> which stands for the number of ways to
+      <m>\binom{n}{k}</m>, <m>C(n,k)</m>, or <m>_nC_k</m> which stands for the number of ways to
       choose a
       <m>k</m>-element subset from an
-      <m>n</m>-element set. The number <m>n\choose k</m> is read as <q><m>n</m> choose <m>k</m></q> and is
+      <m>n</m>-element set. The number <m>\binom{n}{k}</m> is read as <q><m>n</m> choose <m>k</m></q> and is
       called a
       <index><main>binomial coefficient</main></index><term>binomial coefficient</term> for
       reasons we will see later on. Another frequently used way to read the
@@ -1126,7 +1126,7 @@ many ways can you pair up the next person who isn’t already paired up?
 
     <p>
       This
-      example tells us that <m>{4\choose 2} = 6</m>.
+      example tells us that <m>\binom{4}{2} = 6</m>.
     </p>
 
     <activity xml:id="Pascal" category="essential">
@@ -1183,7 +1183,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </statement>
         <solution>
           <p>
-            <m>|C|= {n-1\choose k-1}</m>; <m>|D| = {n-1\choose k}</m>
+            <m>|C|= \binom{n-1}{k-1}</m>; <m>|D| = \binom{n-1}{k}</m>
           </p>
         </solution>
       </task>
@@ -1191,7 +1191,7 @@ many ways can you pair up the next person who isn’t already paired up?
         <statement>
           <p>
             Apply the sum principle to <m>C</m> and <m>D</m> and obtain a
-            formula that expresses <m>n\choose k</m> in terms of two binomial
+            formula that expresses <m>\binom{n}{k}</m> in terms of two binomial
             coefficients involving
             <m>n-1</m>.  You have just derived the Pascal Equation that is the
             basis for the famous Pascal's Triangle.
@@ -1199,7 +1199,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </statement>
         <solution>
           <p>
-            <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m>.
+            <m>\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}</m>.
           </p>
         </solution>
       </task>
@@ -1216,7 +1216,7 @@ many ways can you pair up the next person who isn’t already paired up?
       <m>n</m>th row (we call the top row the zeroth row and the
       beginning entry of a row the zeroth number over). You'll see
       that your formula doesn't say anything about
-      <m>n\choose k</m> if
+      <m>\binom{n}{k}</m> if
       <m>k=0</m> or
       <m>k=n</m>, but otherwise it says that each entry is the sum of
       the two that are above it and just to the left or right.
@@ -1289,13 +1289,13 @@ many ways can you pair up the next person who isn’t already paired up?
       triangle, but it actually makes your formula easier to
       interpret. In Pascal's Right Triangle, the element in row <m>n</m>
       and column <m>k</m> (with the convention that the first row is row
-      zero and the first column is column zero) is <m>n\choose k</m>. In
+      zero and the first column is column zero) is <m>\binom{n}{k}</m>. In
       this case your formula says each entry in a row is the sum of
       the one above and the one above and to the left, except for
       the leftmost and rightmost entries of a row, for which that
-      doesn't make sense. Since the leftmost entry is <m>n\choose 0</m>
+      doesn't make sense. Since the leftmost entry is <m>\binom{n}{0}</m>
       and the rightmost entry is
-      <m>n\choose n</m>, these entries are both one (to see why, ask yourself how
+      <m>\binom{n}{n}</m>, these entries are both one (to see why, ask yourself how
       many <m>0</m>-element subsets and how many <m>n</m>-element subsets an
       <m>n</m>-element set has), and
       your formula then tells how to fill in the rest of the table.
@@ -1422,7 +1422,7 @@ many ways can you pair up the next person who isn’t already paired up?
       If we did have a rectangular table of binomial coefficients, counting
       the first row as row zero (i.e., <m>n=0</m>) and the first column as column
       zero (i.e., <m>k=0</m>), the entries we don't yet have are values of
-      <m>n\choose k</m> for <m>k>n</m>. But how many <m>k</m>-element subsets does
+      <m>\binom{n}{k}</m> for <m>k>n</m>. But how many <m>k</m>-element subsets does
       an
       <m>n</m>-element set have if <m>k>n</m>? The answer, of course, is
       zero, so all the other entries we would fill in would be zero,
@@ -1558,7 +1558,7 @@ many ways can you pair up the next person who isn’t already paired up?
       <task>
         <statement>
           <p>
-            Is there any other way to define <m>n \choose k</m> when <m>k>n</m>
+            Is there any other way to define <m>\binom{n}{k}</m> when <m>k>n</m>
             in order to get a rectangular table that agrees with Pascal's Right
             Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
           </p>
@@ -1578,7 +1578,7 @@ many ways can you pair up the next person who isn’t already paired up?
         <statement>
           <p>
             Suppose we
-            want to extend Pascal's Rectangle to the left and define <m>n\choose -k</m>
+            want to extend Pascal's Rectangle to the left and define <m>\binom{n}{-k}</m>
             for <m>n\ge 0</m> and <m>k>0</m> so that <m>-k\lt 0</m>. What should we put into row
             <m>n</m> and column
             <m>-k</m> of Pascal's Rectangle in order for the Pascal Equation to
@@ -1609,7 +1609,7 @@ many ways can you pair up the next person who isn’t already paired up?
         </hint>
         <solution>
           <p>
-            Above row zero, we have some freedom. The <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the form <m>{n-1\choose k-1} = {n\choose k} - {n-1\choose k}</m>) to compute all the entries to the left of it, and (in a different form) to compute all the entries to the right of it. Thus we may be arbitrary about the entries in column 0 (or, in fact, one entry in each row) and then the Pascal Equation tells us how to fill in the rest of each row. We shall see later on that there is one very natural choice for how to fill in all the rows above row zero.
+            Above row zero, we have some freedom. The <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the form <m>\binom{n-1}{k-1} = \binom{n}{k} - \binom{n-1}{k}</m>) to compute all the entries to the left of it, and (in a different form) to compute all the entries to the right of it. Thus we may be arbitrary about the entries in column 0 (or, in fact, one entry in each row) and then the Pascal Equation tells us how to fill in the rest of each row. We shall see later on that there is one very natural choice for how to fill in all the rows above row zero.
           </p>
         </solution>
       </task>
@@ -1640,7 +1640,7 @@ many ways can you pair up the next person who isn’t already paired up?
           the subset
           <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
             <ol label="(i)">
-        
+
             <li><m>\chi_{\{1,3\}}(1)</m>?</li>
 
             <li><m>\chi_{\{1,3\}}(2)</m>?</li>
@@ -1781,12 +1781,12 @@ many ways can you pair up the next person who isn’t already paired up?
       <statement>
         <p>
           The formula you proved in <xref ref="nchoosek">Problem</xref> is symmetric in <m>k</m>
-          and <m>n-k</m>; that is, it gives the same number for <m>n\choose k</m> as it gives
-          for <m>n\choose n-k</m>. Whenever two quantities are counted by the same formula
+          and <m>n-k</m>; that is, it gives the same number for <m>\binom{n}{k}</m> as it gives
+          for <m>\binom{n}{n-k}</m>. Whenever two quantities are counted by the same formula
           it is good for our insight to find a bijection that demonstrates the two sets
           being counted have the same size. In fact this is a guiding principle of
           research in combinatorial mathematics. Find a bijection that proves that
-          <m>n\choose k</m> equals <m>n\choose n-k</m>.
+          <m>\binom{n}{k}</m> equals <m>\binom{n}{n-k}</m>.
         </p>
       </statement>
       <hint>
@@ -1815,7 +1815,7 @@ many ways can you pair up the next person who isn’t already paired up?
       </hint>
       <solution>
         <p>
-          <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
+          <m>\binom{n}{k}</m>, because we choose the <m>k</m> children to whom we give
           ping-pong balls.
         </p>
       </solution>
@@ -2004,7 +2004,7 @@ many ways can you pair up the next person who isn’t already paired up?
           <statement>
           <p>
             What formula does this give you for the
-              number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
+              number <m>\binom{n}{k}</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
           </p>
         </statement>
         <hint>
@@ -2063,10 +2063,10 @@ many ways can you pair up the next person who isn’t already paired up?
       <solution>
         <p>
           <m>12\choose 5</m>. In the more realistic version,
-          <m>{5\choose2}{4\choose2}{3\choose1}=180</m>. Finally, either the versatile
+          <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>. Finally, either the versatile
           player is playing center or not, and in the second case is available to play
           forward. This gives us
-          <m>{5\choose2}{4\choose2}{1\choose1}+{5\choose2}{5\choose2}{2\choose1}=260</m> ways
+          <m>\binom{5}{2}\binom{4}{2}\binom{1}{1}+\binom{5}{2}\binom{5}{2}\binom{2}{1}=260</m> ways
           to choose the players.
         </p>
       </solution>
@@ -2094,7 +2094,7 @@ many ways can you pair up the next person who isn’t already paired up?
     </activity>
 
 <!-- Activity 42 -->
-    <activity xml:id="quotientprinciple" category="essential"> 
+    <activity xml:id="quotientprinciple" category="essential">
       <statement>
         <p>
           In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
@@ -2123,7 +2123,7 @@ many ways can you pair up the next person who isn’t already paired up?
     </p>
 
     <blockquote>
-        <p>If we partition a set <m>P</m> 
+        <p>If we partition a set <m>P</m>
     into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m></p>
     </blockquote>
 
@@ -2233,7 +2233,7 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>2n-2\choose 2</m> ways to choose a second pair, and once <m>k</m> pairs have been
           chosen, there are <m>2n-2k\choose 2</m> ways to choose the next pair. The number
           of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
-          {2n-2i\choose 2}= {(2n)!\over 2^i}</m>. However each way of pairing people gets
+          \binom{2n-2i}{2}= {(2n)!\over 2^i}</m>. However each way of pairing people gets
           listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
           Therefore the number of actual pairings is <m>{(2n)!\over 2^n n!}= ={2n!\over
           2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
@@ -2322,4 +2322,3 @@ many ways can you pair up the next person who isn’t already paired up?
     </activity>
   </subsection>
 </section>
-

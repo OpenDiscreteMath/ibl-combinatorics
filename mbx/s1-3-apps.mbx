@@ -140,7 +140,7 @@
         </statement>
         <solution>
           <p>
-            <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
+            <m>C_n=\binom{2n}{n} - \binom{2n }{n+1}={1\over n+1}\binom{2n}{n}.</m>
           </p>
         </solution>
       </task>
@@ -218,8 +218,8 @@
             We have taken the set of all <m>2n\choose n</m> diagonal lattice paths
             of length <m>2n</m> from <m>(0,0)</m> to <m>(2n,0)</m> and partitioned it into <m>n+1</m> blocks
             all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n={1\over
-            n+1}{2n
-            \choose n}</m>.
+            n+1}\binom{2n
+            }{n}</m>.
           </p>
         </solution>
       </task>
@@ -251,10 +251,9 @@
           and <m>(x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5.</m>
           The pattern is that the coefficient of <m>x^iy^j</m> is <m>i+j\choose i</m> which is
           the same as <m>i+j\choose j</m>. Said differently, the coefficient of
-          <m>x^{n-i}y^i</m> is <m>n\choose i</m> or the coefficient of <m>x^iy^{n-i}</m> is <m>n\choose
-          i</m>. We conjecture that
+          <m>x^{n-i}y^i</m> is <m>\binom{n}{i}</m> or the coefficient of <m>x^iy^{n-i}</m> is <m>\binom{n}{i}</m>. We conjecture that
           <me>
-            (x+y)^n=\sum_{i=0}^n {n\choose i}x^{n-i}y^i.
+            (x+y)^n=\sum_{i=0}^n \binom{n}{i}x^{n-i}y^i.
           </me>
         </p>
 
@@ -274,7 +273,7 @@
           </p>
         </statement>
         <solution>
-          <p>The number of ways to choose an <m>x</m> from <m>i</m> of the factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m> factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+          <p>The number of ways to choose an <m>x</m> from <m>i</m> of the factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m> factors from the <m>n</m> factors; that is, <m>\binom{n}{i}</m>.
           </p>
         </solution>
       </task>
@@ -335,7 +334,7 @@
           <solution>
               <p>
                   You can choose the set
-            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways.
+            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>\binom{n}{i}</m> ways.
               </p>
           </solution>
       </task>
@@ -362,7 +361,7 @@
               </p>
           </statement>
           <solution>
-              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>.
+              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>\binom{n}{i}</m> terms of the form <m>x^iy^{n-i}</m>.
               </p>
           </solution>
       </task>
@@ -374,7 +373,7 @@
           </statement>
           <solution>
               <p>
-                  You will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+                  You will also get <m>\binom{n}{i}</m> terms of the form <m>x^{n-i}y^i</m>.
               </p>
           </solution>
       </task>
@@ -388,29 +387,29 @@
         <solution>
           <p>
             We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
-            <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
-            <m>(x+y)^n</m> is <m>n\choose i</m>.
+            <m>\binom{n}{i}</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
+            <m>(x+y)^n</m> is <m>\binom{n}{i}</m>.
           </p>
         </solution>
       </task>
   </activity>
   <activity>
       <statement>
-          <p>What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
+          <p>What is <m>\sum_{i=1}^n \binom{10}{i}3^i</m>?
           </p>
       </statement>
       <solution>
         <p>
-          <m>\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
-          {10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
+          <m>\sum_{i=1}^n \binom{10}{i}3^i=\sum_{i=0}^n
+          \binom{10}{i}3^i-\binom{10}{0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
       </solution>
   </activity>
   <activity>
       <statement>
       <p>
-      What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
-      {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
+      What is <m>\binom{n}{0}-\binom{n}{1}+\binom{n}{2}-\cdots \pm
+      \binom{n}{n}</m> if <m>n</m> is an integer bigger than 0?
       </p>
       </statement>
       <solution>
@@ -423,8 +422,7 @@
         <p>
           Explain why
           <me>
-            \sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
-            k}.
+            \sum_{i=0}^m\binom{m}{i}\binom{n}{k-i} = \binom{m+n}{k}.
           </me>
           Find two different explanations.
         </p>
@@ -432,7 +430,7 @@
       <solution>
         <p>
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
-          binomial theorem we get <m>\sum_{i=0}^m{m\choose i}{n\choose  k-i}</m> as the
+          binomial theorem we get <m>\sum_{i=0}^m\binom{m}{i}\binom{n}{k-i}</m> as the
           coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>m+n\choose k</m> on the
           right hand side.
         </p>
@@ -448,7 +446,7 @@
         </p>
       </statement>
       <solution>
-        <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> odd.
+        <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> odd.
         </p>
       </solution>
     </activity>
@@ -456,15 +454,15 @@
     <activity category="interesting">
       <statement>
         <p>
-          What is <m>\sum_{i=0}^n i{n\choose i}</m>? (Hint: think about how you
+          What is <m>\sum_{i=0}^n i\binom{n}{i}</m>? (Hint: think about how you
           might use calculus.)
         </p>
       </statement>
       <solution>
         <p>
-          <m>\sum_{i=0}^n({n\choose i}x^i = (1+x)^n</m>. Taking derivatives of
-          both sides gives us <m>\sum_{i=0}^ni{n\choose i}x^{i-1} = n(1+x)^{n-1}.</m>. Now
-          substitute 1 for <m>x</m> and you get <m>\sum_{i=0}^n i{n\choose i} = n2^{n-1}</m>.
+          <m>\sum_{i=0}^n(\binom{n}{i}x^i = (1+x)^n</m>. Taking derivatives of
+          both sides gives us <m>\sum_{i=0}^ni\binom{n}{i}x^{i-1} = n(1+x)^{n-1}.</m>. Now
+          substitute 1 for <m>x</m> and you get <m>\sum_{i=0}^n i\binom{n}{i} = n2^{n-1}</m>.
         </p>
       </solution>
     </activity>

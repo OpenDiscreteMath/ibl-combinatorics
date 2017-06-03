@@ -16,16 +16,16 @@
     the coefficient
     <m>a_i</m>.) One example of a generating function is given by
     <me>
-      (1+x)^n = \sum_{i=0}^\infty {n\choose i}x^i.
+      (1+x)^n = \sum_{i=0}^\infty \binom{n}{i}x^i.
     </me>
   </p>
 
   <p>
     Thus we say that <m>(1+x)^n</m> is the generating function for the
-    binomial coefficients <m>n \choose i</m>. The notation tells us that we are
+    binomial coefficients <m>\binom{n}{i}</m>. The notation tells us that we are
     assuming that only <m>i</m> varies in the sum on the right, but that the
     equation holds for each fixed integer <m>n</m>. This is implicit when we say
-    that <m>(1+x)^n</m> is the generating function for <m>n\choose i</m>, because we
+    that <m>(1+x)^n</m> is the generating function for <m>\binom{n}{i}</m>, because we
     haven't written <m>i</m> anywhere in <m>(1+x)^n</m>, so it is free to vary.
   </p>
 
@@ -72,7 +72,7 @@
     <solution>
       <me>
         (1+x)^n =
-        \sum_{i=0}^\infty {n\choose i}x^i=\sum_{i=0}^\infty {n!\over i!(n-i)!}x^i
+        \sum_{i=0}^\infty \binom{n}{i}x^i=\sum_{i=0}^\infty {n!\over i!(n-i)!}x^i
         =
         \sum_{i=0}^\infty {n!\over (n-i)!}{x^i\over i!} = \sum_{i=0}^\infty
         n^{\underline{i}} {x^i\over i!}.

@@ -192,7 +192,7 @@
         </row>
         <row>
           <cell>8.  Identical</cell>
-          <cell><m>n\choose k</m></cell>
+          <cell><m>\binom{n}{k}</m></cell>
           <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
         </row>
         <row>
@@ -350,7 +350,7 @@
           an
           <m>n</m>-element set is given by
           <me>
-            {n\choose k} = {n^{\underline{k}}\over k!}
+            \binom{n}{k} = {n^{\underline{k}}\over k!}
             = {n!\over k!(n-k)!}.
           </me>
         </p>
@@ -358,7 +358,7 @@
     </theorem>
 
     <p>
-      We define <m>n \choose k</m> to be 0 if <m>k>n</m>, because then there are no
+      We define <m>\binom{n}{k}</m> to be 0 if <m>k>n</m>, because then there are no
       <m>k</m>-element subsets of an <m>n</m>-element set. Notice that this is what the
       middle term of the formula in the theorem gives us. This explains the
       entries of row 8 of our table. For now we jump over row 9.
@@ -430,7 +430,7 @@
         </statement>
         <solution>
           <p>
-            Choose <m>n</m> books from the <m>k</m> books in <m>k\choose n</m> ways, and
+            Choose <m>n</m> books from the <m>k</m> books in <m>\binom{k}{n}</m> ways, and
             assign them to the <m>n</m> places shelves in <m>n!</m> ways, giving us <m>k!/(k-n)!</m>
             ways to put a book on each shelf. Now leaving these books at the far
             left of each shelf, place the remaining books in
@@ -441,7 +441,7 @@
             ways. Thus we
             have
             <me>
-              {k!(k-1)!\over(k-n)!(n-1)!}=k!{k-1\choose n-1}
+              {k!(k-1)!\over(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
             </me>
             ways to place the books. Of course the right hand side of that equation
             cries out for a combinatorial explanation. Here it is. Imagine lining
@@ -498,13 +498,13 @@
           list the boxes is irrelevant, so we have equivalence classes of <m>n!</m>
           arrangements for each way of putting the books into boxes. Thus we can
           put the books in boxes in
-          <m>k!{k-1\choose n-1}/n!</m> ways.
+          <m>k!\binom{k-1}{n-1}/n!</m> ways.
         </p>
 
         <p>
           Alternately, we can take the number of ways to put <m>k</m> books onto <m>n</m>
           bookshelves so that each shelf gets at least one, and then divide by the
-          number of shelves factorial. That gives us <m>k!{k-1\choose n-1}/n!</m> ways
+          number of shelves factorial. That gives us <m>k!\binom{k-1}{n-1}/n!</m> ways
           to arrange the books.
         </p>
       </solution>
@@ -526,7 +526,7 @@
       distribution problem.</fn> The number of broken permutations of a
       <m>k</m>-element set with
       <m>n</m> blocks is denoted by <m>L(k,n)</m>. The number <m>L(k,n)</m> is called a
-      <term>Lah Number</term> and, from our solution to <xref ref="brokenpermutation">Problem</xref>, is equal to <m>k!{k-1\choose n-1}/n!</m>.<index><main>Lah
+      <term>Lah Number</term> and, from our solution to <xref ref="brokenpermutation">Problem</xref>, is equal to <m>k!\binom{k-1}{n-1}/n!</m>.<index><main>Lah
       number</main></index>
     </p>
 
@@ -557,7 +557,7 @@
       <solution>
         <p>
           In <xref ref="bookcaseeveryshelf">problem</xref> we showed that with <m>k</m>
-          distinct books we could place the books in <m>k!{k-1\choose n-1}</m> ways.
+          distinct books we could place the books in <m>k!\binom{k-1}{n-1}</m> ways.
           We can partition these arangements of distinct books into blocks, where
           each block consists of all arrangements that we get just by permuting the
           books among themselves. Thus each block has <m>k!</m> arrangements in it, and
@@ -642,8 +642,7 @@
           of blocks is the number of ways to place identical books on the shelves.
           However, there are <m>k!</m> arrangements per block, so there are
           <me>
-            {\prod_{i=1}^k (n+i-1)\over k!}=(n+k-1)^{\underline{k}}= {n+k-1\choose
-            k}
+            {\prod_{i=1}^k (n+i-1)\over k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
           </me>
           ways to arrange identical books.
         </p>
@@ -679,7 +678,7 @@
         </statement>
         <solution>
           <p>
-            Note that <m>{n+k-1\choose k} = {n+k-1 \choose n-1}</m>. We will show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m> things and multisets. Namely, take <m>n+k-1</m> objects and line them up in a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing we choose. Let the multiplicity of the <m>n</m>th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element <m>n</m> is the number of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the <m>i</m>th plus sign.
+            Note that <m>\binom{n+k-1}{k} = \binom{n+k-1 }{n-1}</m>. We will show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m> things and multisets. Namely, take <m>n+k-1</m> objects and line them up in a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing we choose. Let the multiplicity of the <m>n</m>th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element <m>n</m> is the number of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the <m>i</m>th plus sign.
           </p>
         </solution>
       </task>

@@ -1,7 +1,7 @@
 <section>
   <title>Partitions and Stirling Numbers</title>
   <introduction>
-    <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><index><main>recurrence</main><sub>two variable</sub></index>; that is it lets us compute <m>n\choose k</m> in terms of values of <m>m\choose i</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>n\choose 0</m> and <m>n\choose n</m> that let us create Pascal's triangle.
+    <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><index><main>recurrence</main><sub>two variable</sub></index>; that is it lets us compute <m>\binom{n}{k}</m> in terms of values of <m>m\choose i</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>\binom{n}{0}</m> and <m>\binom{n}{n}</m> that let us create Pascal's triangle.
     </p>
   </introduction>
 
@@ -173,7 +173,7 @@
         </statement>
         <solution>
           <p>
-            <m>{9\choose 3}{6\choose 3}{3\choose 3}/3!</m>. First we choose
+            <m>\binom{9}{3}\binom{6}{3}\binom{3}{3}/3!</m>. First we choose
             three sandwiches for bag 1, then three for bag 2, and put the remainder in
             bag 3. However, it doesn't matter which bags the sandwiches
             are in so we have counted each partition <m>3!</m> times.
@@ -265,12 +265,12 @@
             If we delete the block containing <m>k</m>, we get a partition of
             a subset of <m>[k-1]</m>. Thus <m>B(k)</m> is the sum over all subsets of
             <m>[k-1]</m> of the number of partitions of that subset. This gives us
-            <m>B(k)= \sum_{n=0}^{k-1}{k-1\choose n}B(n)</m>.
+            <m>B(k)= \sum_{n=0}^{k-1}\binom{k-1}{n}B(n)</m>.
           </p>
 
           <p>
             Alternatively, we can show by the same sort of argument that
-            <m>S(k,n)=\sum_{i=0}^{k-1} {k-1\choose i}S(i,n-1)</m> and then use the fact
+            <m>S(k,n)=\sum_{i=0}^{k-1} \binom{k-1}{i}S(i,n-1)</m> and then use the fact
             that <m>B(k)=\sum_{n=0}^k S(k,n)</m> to get the recurrence for <m>B(k)</m>.
           </p>
         </solution>
@@ -283,14 +283,14 @@
         </statement>
         <solution>
           <me>
-            B(4) ={3\choose 0}B_0 +{3\choose1}B_1 +{3\choose2}B_2 +
-            {3\choose3}B_3=1 +3+3\cdot2 +5=15
+            B(4) =\binom{3}{0}B_0 +\binom{3}{1}B_1 +\binom{3}{2}B_2 +
+            \binom{3}{3}B_3=1 +3+3\cdot2 +5=15
           </me>
           <me>
-            B(5) = \sum_{n=0}^4 {4\choose n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
+            B(5) = \sum_{n=0}^4 \binom{4}{n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
           </me>
           <me>
-            B(6) = \sum_{n=0}^5 {5\choose n}B_n =1+5 +10\cdot2 +10\cdot 5
+            B(6) = \sum_{n=0}^5 \binom{5}{n}B_n =1+5 +10\cdot2 +10\cdot 5
             +5\cdot 15 +52=203
           </me>
         </solution>
@@ -322,8 +322,8 @@
       <solution>
         <p>
           The sum should equal the number of functions, <m>n^k</m>. Thus
-          we get <m>\sum_{j=0}^n {n\choose j}S(k,j)j! = n^k</m>. By using the fact
-          that <m>{n\choose j}= n^{\underline{j}}/j!</m>, this may be rewritten as
+          we get <m>\sum_{j=0}^n \binom{n}{j}S(k,j)j! = n^k</m>. By using the fact
+          that <m>\binom{n}{j}= n^{\underline{j}}/j!</m>, this may be rewritten as
           <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k.</m>
         </p>
       </solution>
@@ -350,7 +350,7 @@
       </statement>
       <solution>
         <p>
-          Choose three sandwiches for bag one in <m>9\choose3</m> ways, three for bag two in <m>6\choose3</m> ways and put the remainder in bag 3.  This gives us <m>{9\choose3}{6\choose3}={9!\over3!3!3!}=1680</m> ways.
+          Choose three sandwiches for bag one in <m>\binom{9}{3}</m> ways, three for bag two in <m>\binom{6}{3}</m> ways and put the remainder in bag 3.  This gives us <m>\binom{9}{3}\binom{6}{3}={9!\over3!3!3!}=1680</m> ways.
         </p>
 
         <p>
@@ -370,19 +370,17 @@
           <p>
             How many functions are there from a <m>k</m>-element set <m>K</m> to a set <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of <m>K</m> for each <m>i</m> from 1 to <m>n</m>? This number is called a <em>multinomial coefficient</em><index><main>multinomial coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
             <me>
-              {k\choose
-              j_1,j_2,\ldots, j_n}.
+              \binom{k}{j_1,j_2,\ldots, j_n}.
             </me>
           </p>
         </statement>
         <solution>
           <p>
-            <m>{k\choose j_1,j_2,\ldots, j_n} =
+            <m>\binom{k}{j_1,j_2,\ldots, j_n} =
             {k!\over j_1!j_2!\cdots j_n!}</m>. We get this either as the
             product of binomial coefficients
             <me>
-              {k\choose j_1}{k-j_1\choose
-              j_2}{k-j_1-j_2\choose j_3}\cdots{j_n\choose j_n},
+              \binom{k}{j_1}\binom{k-j_1}{j_2}\binom{k-j_1-j_2}{j_3}\cdots\binom{j_n}{j_n},
             </me>
             or more elegantly, by lining up the elements of the domain in <m>k!</m> ways, taking the first <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.  However the order of the <m>j_i</m> elements that go to <m>y_i</m> is irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same function, giving us <m>k!\over j_1!j_2!,\cdots j_n!</m> functions.
           </p>
@@ -396,7 +394,7 @@
         </statement>
         <solution>
           <p>
-            Add the multinomial coefficients <m>k\choose j_1,j_2,\ldots,j_n</m> in which each <m>j_i</m> is different from zero. To see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
+            Add the multinomial coefficients <m>\binom{k}{j_1,j_2,\ldots,j_n}</m> in which each <m>j_i</m> is different from zero. To see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
           </p>
         </solution>
       </task>
@@ -412,7 +410,7 @@
       </statement>
       <solution>
         <p>
-          When we use the distributive law to multiply out <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the form <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.  The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of exponents will arise from choosing, as we apply the distributive law over and over again, <m>x_1</m> from <m>i_1</m> of the factors, <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2, <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i) =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the coefficient of <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial coefficient <m>k\choose i_1,i_2,\ldots, i_n</m>.
+          When we use the distributive law to multiply out <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the form <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.  The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of exponents will arise from choosing, as we apply the distributive law over and over again, <m>x_1</m> from <m>i_1</m> of the factors, <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2, <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i) =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the coefficient of <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial coefficient <m>\binom{k}{i_1,i_2,\ldots, i_n}</m>.
         </p>
       </solution>
     </activity>
@@ -429,7 +427,7 @@
       <solution>
         <p>
           In <xref ref="Stirlingfalling">Problem</xref>, we saw that <m>\sum_{j=0}^n
-          {n\choose j}S(k,j)j! = n^k</m>. Using the relationship between binomial
+          \binom{n}{j}S(k,j)j! = n^k</m>. Using the relationship between binomial
           coefficients and falling factorials, we may rewrite this as
           <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>. This expresses <m>n^k</m>
           in terms of <m>k^{\underline{j}}</m>. To be precise, we define
@@ -511,28 +509,26 @@
         <p>
           We know that
           <men xml:id="usingbinomialtheorem" >
-            (x+1)^n=\sum_{i=0}^n {n\choose
-            i}x^{i}
+            (x+1)^n=\sum_{i=0}^n \binom{n}{i}x^{i}
           </men>
-          from the binomial theorem. (In the way we stated the binomial theorem, instead of <m>{n\choose i}x^i</m> we would have gotten <m>{n\choose i}x^{n-i}</m>. There are two ways to fix this. One is to observe that the coefficient of <m>x^i</m> in that expansion is <m>n\choose n-i</m>, which equals <m>n\choose i</m>. The other is to observe that when we expand <m>(1+x)^n</m> according to the binomial theorem we get exactly what we wrote on the right hand side in <xref ref="usingbinomialtheorem">Equation</xref>.) Therefore every power of <m>x+1</m> is expressible in terms of powers of <m>x</m>.
+          from the binomial theorem. (In the way we stated the binomial theorem, instead of <m>\binom{n}{i}x^i</m> we would have gotten <m>\binom{n}{i}x^{n-i}</m>. There are two ways to fix this. One is to observe that the coefficient of <m>x^i</m> in that expansion is <m>\binom{n}{n-i}</m>, which equals <m>\binom{n}{i}</m>. The other is to observe that when we expand <m>(1+x)^n</m> according to the binomial theorem we get exactly what we wrote on the right hand side in <xref ref="usingbinomialtheorem">Equation</xref>.) Therefore every power of <m>x+1</m> is expressible in terms of powers of <m>x</m>.
         </p>
 
         <p>
           How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some experimentation would help us guess how to do so; however there is a really nice trick that also isn't hard to see. Namely, we can write
           <md>
-            <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n {n\choose
-            i}(x+1)^{n-i}(-1)^i</mrow>
+            <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n\amp =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i</mrow>
             <mrow>\amp =\amp 
-            \sum_{i=0}^n {n\choose i}(x+1)^i(-1)^{n-i}</mrow>
+            \sum_{i=0}^n \binom{n}{i}(x+1)^i(-1)^{n-i}</mrow>
           </md>
         </p>
 
         <p>
           This means that every power of <m>x</m> is expressible in terms of powers
           of <m>x+1</m> and the change of basis coefficients to express powers of <m>x</m>
-          in terms of powers of <m>x+1</m> are <m>(-1)^{n-i}{n\choose i}</m> while the
+          in terms of powers of <m>x+1</m> are <m>(-1)^{n-i}\binom{n}{i}</m> while the
           change of basis coefficients used to express powers of <m>x+1</m> in terms
-          of powers of <m>x</m> are <m>n\choose i</m>.
+          of powers of <m>x</m> are <m>\binom{n}{i}</m>.
         </p>
       </solution>
     </activity>
@@ -756,7 +752,7 @@
             and
             <m>b(k,k)=L(k,k) =1</m>. Thus <m>b(k,n)</m> and <m>L(k,n)</m> are identical. This and
             the formula from <xref ref="brokenpermutation">Problem</xref> gives one proof that
-            <m>b(k,n)=k!{k-1\choose n-1}/n!</m>.
+            <m>b(k,n)=k!\binom{k-1}{n-1}/n!</m>.
           </p>
 
           <p>

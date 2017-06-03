@@ -533,9 +533,8 @@
           To specify a simple graph on a vertex set <m>V</m>, we have to
           specify its set of edges. The possible sets of edges thus correspond
           bijectively to sets of two-element subsets of <m>V</m>. But if <m>V</m> has size
-          <m>i</m> the set of all two element subsets of <m>V</m> has <m>i\choose 2</m> elements.
-          Thus the number of sets of two element subsets of <m>V</m> is <m>2^{i\choose
-          2}</m>. Therefore <m>a_i = 2^{i\choose 2}</m>.
+          <m>i</m> the set of all two element subsets of <m>V</m> has <m>\binom{i}{2}</m> elements.
+          Thus the number of sets of two element subsets of <m>V</m> is <m>2^\binom{i}{2}</m>. Therefore <m>a_i = 2^\binom{i}{2}</m>.
         </p>
       </solution>
     </task>
@@ -599,18 +598,17 @@
         <me>
           f(x) = 1+\sum_{j=1}^\infty
           (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
-          (-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.
+          (-1)^{j-1}{(\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!})^j\over j}.
         </me>
         <p>
           From the right-hand expression, we get a term involving <m>x^n</m> whenever we
-          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{i\choose
-          2}{x^i\over i!}</m>. So the coefficient of
+          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^\binom{i}{2}{x^i\over i!}</m>. So the coefficient of
           <m>x^n\over n!</m> is the sum over all <m>j</m> and all sequences
           <m>i_1,i_2,\ldots,i_j</m> with
           <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
           <me>
             {n!\over
-            j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
+            j}(-1)^j\prod_{k=1}^j {2^\binom{i_k}{2}
             \over i_k!},
           </me>
           where each <m>i_k>0</m>. Notice that reordering the numbers
@@ -625,13 +623,13 @@
           <m>(p_1,p_2, \ldots, p_n)</m> is the number of ways to take <m>j</m> places in a
           vector and label <m>p_1</m> of them with 1, <m>p_2</m> of them with 2, and so on
           until we label <m>p_n</m> of them with <m>n</m>. This number is the multinomial
-          coefficient <m>j\choose p_1,p_2,\ldots, p_n</m>. Thus our sum over all j and
+          coefficient <m>\binom{j}{p_1,p_2,\ldots, p_n}</m>. Thus our sum over all j and
           all compositions of <m>n</m> into <m>j</m> parts becomes
           <me>
             \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
             p_n}
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
             \over (r!)^{p_r}}.
           </me>
         </p>
@@ -643,7 +641,7 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
             \over (r!)^{p_r}p_r!}
           </me>
           for the number of connected graphs on <m>n</m> vertices. If we want to
@@ -652,7 +650,7 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^j(j-1)!
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
+            \prod_{r=1}^n{2^{^{\binom{r}{2}p_r}}
             \over (r!)^{p_r}p_r!},
           </me>
           where <m>j=\sum_{r=1}^n p_r</m>.

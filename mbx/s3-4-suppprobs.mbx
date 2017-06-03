@@ -3,7 +3,7 @@
     <ol>
     <li>
       <p>
-        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>n \choose k</m>, <m>k \choose n</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the above".
+        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the above".
         <ol>
           <li>
             <p>
@@ -33,7 +33,7 @@
               <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
               <solution>
                 <p>
-                  <m>n\choose k</m>.
+                  <m>\binom{n}{k}</m>.
                 </p>
               </solution>
             </p>
@@ -116,7 +116,7 @@
               receives at most one?
               <solution>
                 <p>
-                  <m>s\choose r</m>
+                  <m>\binom{s}{r}</m>
                 </p>
               </solution>
             </p>
@@ -129,7 +129,7 @@
               receives at most one (so there could be some leftover trees)?
               <solution>
                 <p>
-                  <m>\sum_{k=0}^s {s\choose k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}{r\choose k}</m>
+                  <m>\sum_{k=0}^s \binom{s}{k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}\binom{r}{k}</m>
                 </p>
               </solution>
             </p>
@@ -168,7 +168,7 @@
             assuming that every family must get a tree.
             <solution>
               <p>
-                <m>r!{r-1\choose s-1}</m>
+                <m>r!\binom{r-1}{s-1}</m>
               </p>
             </solution>
           </p>
@@ -208,7 +208,7 @@
         (interesting)
         One formula for the Lah numbers is
         <me>
-          L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}
+          L(k,n) = \binom{k}{n}(k-1)^{\underline{k-n}}
         </me>
         Find a proof that explains this product.
         <solution>
@@ -307,7 +307,7 @@
         Show that the Stirling numbers of the second kind satisfy the
         recurrence
         <me>
-          S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.
+          S(k,n) = \sum_{i=1}^kS(k-i,n-1)\binom{n-1}{i-1}.
         </me>
         <solution>
           <p>

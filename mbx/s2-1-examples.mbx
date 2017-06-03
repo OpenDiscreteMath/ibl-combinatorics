@@ -155,29 +155,29 @@
         <p>
           When we studied the Pascal Equation and subsets in Chapter 1, it
           may have appeared that there is no connection between the Pascal relation
-          <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m> and the formula
-          <m>{n\choose k}={n!\over k!(n-k)!}</m>. Of course you probably realize you
+          <m>\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}</m> and the formula
+          <m>\binom{n}{k}={n!\over k!(n-k)!}</m>. Of course you probably realize you
           can prove the Pascal relation by substituting the values the formula
           gives you into the right-hand side of the equation and simplifying to
           give you the left hand side. In fact, from the Pascal Relation and the
-          facts that <m>{n\choose 0}=1</m> and <m>{n\choose n}=1</m>, you can actually prove
-          the formula for <m>n\choose k</m> by induction on <m>n</m>. Do so.
+          facts that <m>\binom{n}{0}=1</m> and <m>\binom{n}{n}=1</m>, you can actually prove
+          the formula for <m>\binom{n}{k}</m> by induction on <m>n</m>. Do so.
         </p>
       </statement>
       <solution>
         <p>
-          We wish to prove that <m>{n\choose i} ={n!\over i!(n-i)!}</m>. We
-          note that since <m>{n\choose 0}=1</m> and <m>{n\choose n} =1</m> are in agreement
+          We wish to prove that <m>\binom{n}{i} ={n!\over i!(n-i)!}</m>. We
+          note that since <m>\binom{n}{0}=1</m> and <m>\binom{n}{n} =1</m> are in agreement
           with this formula, we only have to consider the cases in which <m>0\lt i\lt n</m>,
           which by the way, requires that <m>n\ge 2</m>. We will prove that our formula
           holds by induction on <m>n</m> for <m>n\ge 2</m>. If <m>n=2</m>, the only <m>i</m> we need
-          to consider is <m>i=1</m>, and we know that <m>{2\choose1}=2</m>, the number of
+          to consider is <m>i=1</m>, and we know that <m>\binom{2}{1}=2</m>, the number of
           one-element subsets of a two-element set. But <m>2!\over1!(2-1)!</m> is 2
           also, so our formula holds when <m>n=2</m>. Now suppose our formula holds
-          when <m>n=k-1</m>, so that for every <m>i</m> with <m>0\lt i\lt n-1</m>, <m>{k-1\choose i} =
+          when <m>n=k-1</m>, so that for every <m>i</m> with <m>0\lt i\lt n-1</m>, <m>\binom{k-1}{i} =
           {(k-1)!\over i!(k-1-i)!}</m>. Then by the Pascal Equation
           <md>
-            <mrow>{k\choose i}\amp =\amp {k-1\choose i-1}+{k-1\choose i}</mrow>
+            <mrow>\binom{k}{i}\amp =\amp \binom{k-1}{i-1}+\binom{k-1}{i}</mrow>
             <mrow>\amp =\amp
             {(k-1)!\over (i-1)!(k-1-i+1)!} + {(k-1)!\over
             i!(k-1-i)!}</mrow>
@@ -208,24 +208,19 @@
         <solution>
           <p>
             We prove the binomial theorem by induction on <m>n</m>. When <m>n=0</m>,
-            <m>(x+y)^n=(x+y)^0=1=\sum_{i=0}^0 {n\choose i}x^{0-i}y^i</m> since that last
-            summation consists of the one term <m>{0\choose 0}x^0y^0</m>.
+            <m>(x+y)^n=(x+y)^0=1=\sum_{i=0}^0 \binom{n}{i}x^{0-i}y^i</m> since that last
+            summation consists of the one term <m>\binom{0}{0}x^0y^0</m>.
           </p>
 
           <p>
-            Now suppose that when <m>n=k-1</m>, <m>(x+y)^n=\sum_{i=0}^n {n\choose
-            i}x^{n-i}y^i.</m> This gives us
+            Now suppose that when <m>n=k-1</m>, <m>(x+y)^n=\sum_{i=0}^n \binom{n}{i}x^{n-i}y^i.</m> This gives us
             <md>
-              <mrow>(x+y)^k\amp =\amp (x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}{k-1\choose
-              i}x^{k-1-i}y^i</mrow>
-              <mrow>\amp =\amp \sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=0}^{k-1} {k-1\choose
-              i}x^{k-1-i}y^{i+1}</mrow>
-              <mrow>\amp =\amp \sum_{i=0}^{k-1}{k-1\choose i}x^{k-i}y^i+\sum_{i=1}^{k} {k-1\choose
-              i-1}x^{k-i}y^{i}</mrow>
-              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1}{k-1\choose i}x^{k-i}y^i+{k-1\choose
-              i-1}x^{k-i}y^i\right) +y^k</mrow>
-              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1} {k\choose i}x^{k-i}y^i\right) +y^k\ =\
-              \sum_{i=0}^k {k\choose i}x^{k-i}y^i.</mrow>
+              <mrow>(x+y)^k\amp =\amp (x+y)(x+y)^{k-1}=(x+y)\sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-1-i}y^i</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=0}^{k-1} \binom{k-1}{i}x^{k-1-i}y^{i+1}</mrow>
+              <mrow>\amp =\amp \sum_{i=0}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\sum_{i=1}^{k} \binom{k-1}{i-1}x^{k-i}y^{i}</mrow>
+              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1}\binom{k-1}{i}x^{k-i}y^i+\binom{k-1}{i-1}x^{k-i}y^i\right) +y^k</mrow>
+              <mrow>\amp =\amp  x^k+\left(\sum_{i=1}^{k-1} \binom{k}{i}x^{k-i}y^i\right) +y^k\ =\
+              \sum_{i=0}^k \binom{k}{i}x^{k-i}y^i.</mrow>
             </md>
           </p>
 
@@ -613,8 +608,8 @@
       <solution>
         <p>
           We use double induction on <m>m</m> and <m>n</m> to prove this for
-          <m>m,n\ge 2</m>. Note first that <m>R(m,2)=m={m+2-2\choose m-1}</m> and <m>R(2,n)
-          =n={2+n-2\choose 1}</m>. (In words, if there are
+          <m>m,n\ge 2</m>. Note first that <m>R(m,2)=m=\binom{m+2-2}{m-1}</m> and <m>R(2,n)
+          =n=\binom{2+n-2}{1}</m>. (In words, if there are
           <m>m</m> people in a room, then either all <m>m</m> people know each other or there
           are two mutual nonacquaintances, and if there are <m>n</m> people in a room,
           then either there are two people who know each other or they are all
@@ -625,7 +620,7 @@
           least <m>m+n-3\choose m-2</m> people in a room there are either at least
           <m>m-1</m> mutual acquaintances or <m>n</m> mutual strangers. Suppose that we have
           <m>m+n-2\choose m-1</m> people in a room. Choose a person, say <m>P</m>. Then
-          since <m>{m+n-2\choose m-1} = {m-n-3\choose m-1} +{m+n-3\choose m-2}</m>,
+          since <m>\binom{m+n-2}{m-1} = \binom{m-n-3}{m-1} +\binom{m+n-3}{m-2}</m>,
           person <m>P</m> is, by the generalized pigeonhole principle, either acquainted
           with <m>m+n-3\choose m-2</m> people or unacquainted with <m>m+n-3\choose m-1</m>
           people. In the first case, among the people with whom <m>P</m> is
@@ -746,7 +741,7 @@
           We want to prove that if <m>m\ge 2</m> and <m>n\ge 2</m>, then when there are
           <m>m+n-2\choose m-1</m> people in a room, there are either <m>m</m> mutual
           acquaintances or <m>n</m> mutual strangers. If <m>m+n=4</m>, then <m>m=2</m> and
-          <m>n=2</m>, and if there are <m>{2+2-2\choose1}=2</m> people in a room, there are
+          <m>n=2</m>, and if there are <m>\binom{2+2-2}{1}=2</m> people in a room, there are
           either two who know each other or two who don't.
         </p>
 
@@ -755,12 +750,12 @@
           m-1</m> people in a room, then there are either <m>m</m> mutual acquaintances or <m>n</m>
           mutual strangers. Suppose that <m>m'+n'=k</m> and there are <m>m'+n'-2\choose m'-1</m>
           people in a room. If <m>n'=2</m>, then we know that with
-          <m>{m'+2-2\choose m'-1}=m'</m> people in a room, there are either <m>m'</m> mutual
+          <m>\binom{m'+2-2}{m'-1}=m'</m> people in a room, there are either <m>m'</m> mutual
           acquaintances or two mutual strangers, and similarly if <m>m'=2</m> there are
           either two mutual acquaintances or <m>n</m> mutual strangers among
           <m>m'+n'-2\choose m-1</m> people. Thus we may assume that both
-          <m>m'</m> and <m>n'</m> are greater than two. Since <m>{m'+n'-2\choose m-1}=
-          {(m'-1)+n-2\choose m'-2} +{m+(n-1) -2\choose m-1}</m>, if there are
+          <m>m'</m> and <m>n'</m> are greater than two. Since <m>\binom{m'+n'-2}{m-1}=
+          \binom{(m'-1)+n-2}{m'-2} +\binom{m+(n-1) -2}{m-1}</m>, if there are
           <m>m'+n'-2\choose m'-1</m> people in a room, then a given person, say person
           <m>P</m>, is either acquainted with <m>(m'-1)+n'-2\choose m'-1</m> of them (call
           this case 1) or is a stranger with <m>m'+(n-1)-2\choose m-1</m> of them (call
@@ -789,7 +784,7 @@
         </statement>
         <solution>
           <p>
-            <m>R(n,n)\le {n+n-2\choose m-1}={(2n-2)!\over (n-1)!^2}</m>. For
+            <m>R(n,n)\le \binom{n+n-2}{m-1}={(2n-2)!\over (n-1)!^2}</m>. For
             <m>n</m> sufficiently large, this is approximately
             <md>
               <mrow>\amp \amp \sqrt{2\pi (2n-2)}(2n-2)^{2n-2}/e^{2n-2}\over
@@ -887,7 +882,7 @@
         </statement>
         <solution>
           <me>
-            {1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+            {1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
             of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N).
           </me>
         </solution>
@@ -895,35 +890,34 @@
       <task>
         <statement>
           <p>
-            Show that your formula for the average reduces to <m>2{m\choose
-            n}\cdot2^{-{n\choose 2}}</m>
+            Show that your formula for the average reduces to <m>2\binom{m}{n}\cdot2^{-\binom{n}{2}}</m>
           </p>
         </statement>
         <solution>
           <md>
-            <mrow>\amp \amp {1\over 2^{^{m\choose 2}}}\sum_{c:c\mbox{~is a coloring
+            <mrow>\amp \amp {1\over 2^{^\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
             of~} K_m}\sum_{N:N\subseteq M,~|N|=n}{ mono}(c,N)</mrow>
-            <mrow>\amp =\amp {1\over 2^{^{m\choose 2}}} \sum_{N:N\subseteq
+            <mrow>\amp =\amp {1\over 2^{^\binom{m}{2}}} \sum_{N:N\subseteq
             M,~|N|=n}\sum_{c:c\mbox{~is a coloring of~} K_m}{ mono}(c,N)</mrow>
             <mrow>\amp =\amp
-            2^{-{m\choose2}}\sum_{N:N\subseteq
-            M,~|N|=n}2\cdot2^{{m\choose2}-{n\choose2}}</mrow>
-            <mrow>\amp =\amp  2{m\choose n}2^{-{n\choose 2}}</mrow>
+            2^{-\binom{m}{2}}\sum_{N:N\subseteq
+            M,~|N|=n}2\cdot2^{\binom{m}{2}-\binom{n}{2}}</mrow>
+            <mrow>\amp =\amp  2\binom{m}{n}2^{-\binom{n}{2}}</mrow>
           </md>
         </solution>
       </task>
       <task>
         <statement>
           <p>
-            Explain why <m>R(n,n)>m</m> if <m>{m\choose n}\le 2^{{n\choose 2} -1}</m>.
+            Explain why <m>R(n,n)>m</m> if <m>\binom{m}{n}\le 2^{\binom{n}{2} -1}</m>.
           </p>
         </statement>
         <solution>
           <p>
             <m>R(n,n)>m</m> if the average above is less than 1. Thus <m>R(n,n)>m</m>
             if
-            <m>2{m\choose 2}2^{-{n\choose 2}}\lt 1</m>, which is equivalent to
-            <m>{m\choose n}\lt 2^{{n\choose 2}-1}</m>.
+            <m>2\binom{m}{2}2^{-\binom{n}{2}}\lt 1</m>, which is equivalent to
+            <m>\binom{m}{n}\lt 2^{\binom{n}{2}-1}</m>.
           </p>
         </solution>
       </task>
@@ -931,21 +925,21 @@
         <title>\ <m>*</m>\ (\theenumii)</title>
         <statement>
           <p>
-            Explain why <m>R(n,n)>\root n \of {n!2^{{n\choose 2}-1}}</m>.
+            Explain why <m>R(n,n)>\root n \of {n!2^{\binom{n}{2}-1}}</m>.
           </p>
         </statement>
         <solution>
           <p>
-            <m>{m\choose n} \lt 2^{{n\choose 2}-1}</m> is the same as
-            <m>{m^{\underline{n}}\over n!}\lt 2^{{n\choose 2}-1}</m>. And since
+            <m>\binom{m}{n} \lt 2^{\binom{n}{2}-1}</m> is the same as
+            <m>{m^{\underline{n}}\over n!}\lt 2^{\binom{n}{2}-1}</m>. And since
             <m>m^{\underline{n}}\lt m^n</m>, the inequality <m>{m^{\underline{n}}\over
-            n!}\lt  2^{{n\choose 2}-1}</m> holds if the inequality <m>{m^n\over
-            n!}\le2^{{n\choose2}-1}</m> holds. And this last inequality holds if
+            n!}\lt  2^{\binom{n}{2}-1}</m> holds if the inequality <m>{m^n\over
+            n!}\le2^{\binom{n}{2}-1}</m> holds. And this last inequality holds if
             <m>m\le\root n
-            \of {n!2^{{n\choose2}-1}}</m> holds. Thus <m>R(n,n)>m</m> for any <m>m</m> such that
+            \of {n!2^{\binom{n}{2}-1}}</m> holds. Thus <m>R(n,n)>m</m> for any <m>m</m> such that
             <m>m\le\root n
-            \of {n!2^{{n\choose2}-1}}</m>, which implies that <m>R(n,n)> \root n
-            \of {n!2^{{n\choose2}-1}}</m>.
+            \of {n!2^{\binom{n}{2}-1}}</m>, which implies that <m>R(n,n)> \root n
+            \of {n!2^{\binom{n}{2}-1}}</m>.
           </p>
         </solution>
       </task>
