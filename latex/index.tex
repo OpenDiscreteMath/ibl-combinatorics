@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T18:19:57-06:00    *%
+%*    on 2017-06-03T19:55:13-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -214,7 +214,14 @@
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 
 \usepackage{pgfplots}
+
+\tikzset{vertex/.style = {shape=circle, draw, minimum size = 3ex, inner sep = 2pt}}
+\tikzset{evertex/.style = {shape=ellipse, draw, minimum width = 6ex, inner sep = 2pt}}
+\tikzset{dedge/.style = {->, > = latex'}}
 %% If tikz has been loaded, replace ampersand with \amp macro
+\ifdefined\tikzset
+    \tikzset{ampersand replacement = \amp}
+\fi
 %% extpfeil package for certain extensible arrows,
 %% as also provided by MathJax extension of the same name
 %% NB: this package loads mtools, which loads calc, which redefines
@@ -399,7 +406,7 @@ Five schools are going to send their baseball teams to a tournament, in which ea
 \par\medskip\noindent%
 \textbf{Hint.}\quad Answer the questions in Problem 2 for the case of five schools.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Think of numbering the five teams. The first team must play all four others, the second team will be in one of these games but must play in three more games, with the third, fourth and fifth team. The third team is in two of the games we've already mentioned, and must still play the fourth and fifth team for two more games, and the fourth team must play the fifth team in addition to playing in three of the games already mentioned. Thus there are \(4+3+2+1 = 10\) games. Alternatively, there are five teams, each of which must play in four games, giving us 20 pairings of two teams each. However each game involves two of these pairings, so there are \(20/2 =10\) games.%
+\textbf{Solution.}\quad Think of numbering the five teams. The first team must play all four others, the second team will be in one of these games but must play in three more games, with the third, fourth and fifth team. The third team is in two of the games we've already mentioned, and must still play the fourth and fifth team for two more games, and the fourth team must play the fifth team in addition to playing in three of the first already mentioned. Thus there are \(4+3+2+1 = 10\) games. Alternatively, there are five teams, each of which must play in four games, giving us 20 pairings of two teams each. However each game involves two of these pairings, so there are \(20/2 =10\) games.%
 \end{activity}
 \begin{activity}[]\label{baseball2}
 Now some number \(n\) of schools are going to send their baseball teams to a tournament, and each team must play each other team exactly once. Let us think of the teams as numbered 1 through \(n\).%
@@ -695,22 +702,85 @@ f(X) = \mbox{the first
 letter of the name \(X\)} .
 \end{equation*}
 %
+\par\medskip\noindent%
+\textbf{Solution.}\quad \leavevmode%
+\begin{figure}
+\centering
+{
+\begin{tikzpicture}[scale=0.85]
+  \node[evertex] (alice) at (0,2) {Alice};
+  \node[evertex] (bob) at (2,2) {Bob};
+  \node[evertex] (dawn) at (4,2) {Dawn};
+  \node[evertex] (bill) at (6,2) {Bill};
+  \node[vertex] (a) at (0,0) {A};
+  \node[vertex] (b) at (1.5,0) {B};
+  \node[vertex] (c) at (3,0) {C};
+  \node[vertex] (d) at (4.5,0) {D};
+  \node[vertex] (e) at (6,0) {E};
+
+  \draw[dedge] (alice) -- (a);
+  \draw[dedge] (bob) -- (b);
+  \draw[dedge] (dawn) -- (d);
+  \draw[dedge] (bill) -- (b);
+\end{tikzpicture}
+}
+\end{figure}
 \end{activity}
 \begin{activity}[]\label{activity-24}
 A function \(f:S\rightarrow T\) is called an \index{onto function}\index{function!onto}\emph{onto function} or \index{surjection}\index{function!surjection}\emph{surjection} if each element of \(T\) is \(f(x)\) for some \(x\in S\). Choose a set \(S\) and a set \(T\) so that you can draw the digraph of a function from \(S\) to \(T\) that is one-to-one but not onto, and draw the digraph of such a function.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The digraph of one such function follows%
-\par
-\includegraphics[width=0.73\linewidth]{images/OnetoOneNotOnto}
-%
+\begin{figure}
+\centering
+{
+\begin{tikzpicture}[yscale=0.75]
+  \node[vertex] (a) at (0,2) {$a$};
+  \node[vertex] (b) at (1,2) {$b$};
+  \node[vertex] (c) at (2,2) {$c$};
+  \node[vertex] (d) at (3,2) {$d$};
+  \node[vertex] (t1) at (0,0) {$1$};
+  \node[vertex] (t2) at (1,0) {$2$};
+  \node[vertex] (t3) at (2,0) {$3$};
+  \node[vertex] (t4) at (3,0) {$4$};
+  \node[vertex] (t5) at (4,0) {$5$};
+
+  \draw[dedge] (a) -- (t1);
+  \draw[dedge] (b) -- (t2);
+  \draw[dedge] (c) -- (t3);
+  \draw[dedge] (d) -- (t4);
+
+  \node[left = 3ex of a]{$S$};
+  \node[left = 3ex of t1]{$T$};
+\end{tikzpicture}
+}
+\end{figure}
 \end{activity}
 \begin{activity}[]\label{activity-25}
 Choose a set \(S\) and a set \(T\) so that you can draw the digraph of a function from \(S\) to \(T\) that is onto but not one-to-one, and draw the digraph of such a function.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The digraph of one such function follows%
-\par
-\includegraphics[width=0.73\linewidth]{images/OntoNotOnetoOne}
-%
+\begin{figure}
+\centering
+{
+\begin{tikzpicture}[yscale=0.75]
+  \node[vertex] (a) at (0,2) {$a$};
+  \node[vertex] (b) at (1,2) {$b$};
+  \node[vertex] (c) at (2,2) {$c$};
+  \node[vertex] (d) at (3,2) {$d$};
+  \node[vertex] (t1) at (0,0) {$1$};
+  \node[vertex] (t2) at (1,0) {$2$};
+  \node[vertex] (t3) at (2,0) {$3$};
+
+  \draw[dedge] (a) -- (t1);
+  \draw[dedge] (b) -- (t2);
+  \draw[dedge] (c) -- (t3);
+  \draw[dedge] (d) -- (t3);
+
+  \node[left = 3ex of a]{$S$};
+  \node[left = 3ex of t1]{$T$};
+\end{tikzpicture}
+}
+\end{figure}
 \end{activity}
 \begin{activity}[]\label{activity-26}
 Digraphs of functions help us visualize the ideas of one-to-one functions and onto functions.%
@@ -7089,7 +7159,7 @@ n!}\). Thus%
 \begin{equation*}
 \sum_{n=0}^\infty
 p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
-\sum_{n=0 }^\infty \frac{({x^2/2})^n}{n!} = e^{x^2/2} .
+\sum_{n=0}^\infty \frac{({x^2/2})^n}{n!} = e^{x^2/2} .
 \end{equation*}
 %
 \end{activity}
@@ -7188,7 +7258,7 @@ c_{n-2}\frac{x^{n-2}}{(n-2)!} + \sum_{n=0}^\infty c_n\frac{x^n}{n!} -c_0\\
 T'(x)\! =\amp \!xT(x) +T(x)
 \end{align*}
 \(T(0) = c_0 =1\). Then \(\frac{T'(x)}{T(x)} = x+1\), giving \(\ln T(x)
-=x^2/2+x+k\), and \(T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2 }\), since \(T(0)=1\).%
+=x^2/2+x+k\), and \(T(x) =e^ke^{x+ x^2/2}=e^{x+x^2/2}\), since \(T(0)=1\).%
 
 ~\par
 \item Use your generating function to compute a formula for \(c_n\).%
