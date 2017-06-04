@@ -415,7 +415,7 @@
           three more choices we can make for the degree one vertex attached to the degree
           2 vertex. Thus we have 60 trees with a vertex of degree three. If we have
           neither a vertex of degree four nor a vertex of degree three, then the tree is
-          a path. We have <m>{5\choose2}=10</m> ways to choose the two vertices of degree
+          a path. We have <m>\binom{5}{2}=10</m> ways to choose the two vertices of degree
           one, and then there are <m>3!=6</m> ways to arrange the remaining vertices along
           the path, so we have 60 paths. Thus we have <m>125</m> trees on five vertices.
           These computations suggest there are <m>n^{n-2}</m> labelled trees on <m>n</m> vertices,
@@ -508,14 +508,14 @@
       </statement>
       <solution>
         <p>
-          There are <m>n\choose 3</m> ways to choose the three vertices of degree
+          There are <m>\binom{n}{3}</m> ways to choose the three vertices of degree
           one. Each of the other <m>n-3</m> vertices must appear in the Pr&#xfc;fer Code, so one
           must appear twice. We have <m>n-3</m> ways to choose that one vertex and
-          <m>{n-2\choose 2}{n-4\choose1}{n-5\choose1}\cdots{1\choose1} ={(n-2)!\over 2!}</m>
+          <m>\binom{n-2}{2}\binom{n-4}{1}\binom{n-5}{1}\cdots\binom{1}{1} =\frac{(n-2)!}{2!}</m>
           ways to choose which of the
           <m>n-2</m> places to use for which vertices in the Pr&#xfc;fer code.
           Thus there are
-          <m>{n\choose3}(n-3){(n-2)!\over 2}= {n!(n-2)(n-3)\over 12}</m> labelled trees with
+          <m>\binom{n}{3}(n-3)\frac{(n-2)!}{2}= \frac{n!(n-2)(n-3)}{12}</m> labelled trees with
           three vertices of degree one.
         </p>
       </solution>
@@ -791,7 +791,7 @@
           +\#(G/e)</m>. Applying the formula twice to <m>G</m> gives
           <md>
             <mrow>\#(G)
-            \amp =\amp \#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})</mrow>
+             =\amp \#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})</mrow>
             <mrow>\amp +\amp
             \#((G/\{1,2\})-\{2,3\}) +
             \#(G/\{1,2\}/\{2,3\}).</mrow>

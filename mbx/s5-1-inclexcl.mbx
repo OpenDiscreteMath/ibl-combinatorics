@@ -140,7 +140,7 @@
       extended in many ways. For example
       <md>
         <mrow>\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
-        A_i| \amp =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
+        A_i|  =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
          +|A_1\cap A_4|\nonumber</mrow>
         <mrow>\amp +\amp  |A_2\cap A_3|+
         |A_2\cap A_4| +|A_3\cap A_4|.</mrow>
@@ -217,29 +217,27 @@
           the remaining <m>n-|S|</m> students in <m>(n-|S|)!</m> ways. Thus <m>(n-|S|)!</m> is
           <m>|\cap_{i:i\in S}A_i|</m>. Using our formula from <xref ref="inclusion-exclusionunion">Problem</xref> we get
           <md>
-            <mrow>\left|\bigcup_{i=1}^n A_i \right| \amp =\amp  \sum_{S:
+            <mrow>\left|\bigcup_{i=1}^n A_i \right|  =\amp  \sum_{S:
             S\subseteq [n], S\not=\emptyset}
             (-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|</mrow>
-            <mrow>\amp =\amp \sum_{S:
+            <mrow> =\amp \sum_{S:
             S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!</mrow>
-            <mrow>\amp =\amp
-            \sum_{s=1}^n {n\choose
-            s}(-1)^{s-1}(n-s)!</mrow>
-            <mrow>\amp =\amp \sum_{s=1}^n
-            (-1)^{s-1}{n!\over s!}</mrow>
+            <mrow> =\amp
+            \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!</mrow>
+            <mrow> =\amp \sum_{s=1}^n
+            (-1)^{s-1}\frac{n!}{s!}</mrow>
           </md>
         </p>
 
         <p>
           Dividing this by
           <m>n!</m>, the total number of ways to pass back the backpacks, we get
-          <m>\displaystyle \sum_{s=1}^n {(-1)^{s-1}\over s!}</m> for the probability
+          <m>\displaystyle \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}</m> for the probability
           that at least one student gets the correct backpack. Subtracting from
           1 to get the probability that no student gets the correct backpack
           gives us
           <me>
-            1- \sum_{s=1}^n {(-1)^{s-1}\over
-            s!}=\sum_{s=0}^n{(-1)^s\over s!}.
+            1- \sum_{s=1}^n \frac{(-1)^{s-1}}{s!}=\sum_{s=0}^n\frac{(-1)^s}{s!}.
           </me>
         </p>
       </solution>
@@ -254,9 +252,8 @@
       </statement>
       <solution>
         <p>
-          From calculus, we know that <m>e^x=\sum_{j=0}^\infty {x^j\over
-          j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
-          {(-1)^j\over j!}</m> which is the limit as <m>n</m> becomes infinite of the
+          From calculus, we know that <m>e^x=\sum_{j=0}^\infty \frac{x^j}{j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
+          \frac{(-1)^j}{j!}</m> which is the limit as <m>n</m> becomes infinite of the
           probability in the solution to <xref ref="hatcheck">Problem</xref>. Thus the
           probability approaches <m>1/e</m>.
         </p>
@@ -417,15 +414,15 @@
           solution to <xref ref="hatcheck">Problem</xref>, we see that one way to express this is as
           <md>
             <mrow>n!-\sum_{S:
-            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!\amp =\amp
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)! =\amp
             n!+\sum_{S:
             S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!</mrow>
-            <mrow>\amp =\amp
+            <mrow> =\amp
             \sum_{S:
             S\subseteq [n]}(-1)^{|S|} (n-|S|)!</mrow>
-            <mrow>\amp =\amp \sum_{S:
+            <mrow> =\amp \sum_{S:
             S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
-            <mrow>\amp =\amp
+            <mrow> =\amp
             \sum_{S':
             S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
           </md>
@@ -471,25 +468,25 @@
             Since <xref ref="incexempty">Equation</xref> is a special case of <xref ref="incexnonempty">Equation</xref>, we will just substitute the formula from <xref ref="incexsystemeq">Problem</xref> into the right-hand side of <xref ref="incexnonempty">Equation</xref>. This gives us
             <md>
               <mrow>\hspace{-.25 in}\sum_{S: K\subseteq S\subseteq P}
-              (-1)^{|S|-|K|}N_{\mbox{a} }(S)\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+              (-1)^{|S|-|K|}N_{\mbox{a} }(S) =\amp \sum_{S: K\subseteq S\subseteq P}
               (-1)^{|S|-|K|}\sum_{J: S\subseteq
               J\subseteq P}N_{\mbox{e} }(J)</mrow>
-              <mrow>\amp =\amp \sum_{S: K\subseteq S\subseteq P}
+              <mrow> =\amp \sum_{S: K\subseteq S\subseteq P}
               \sum_{J: S\subseteq
               J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
-              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
               (-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
-              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
               S\subseteq J} (-1)^{|S|-|K|}</mrow>
-              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
-              {|J|-|K|
-              \choose s-|K|}(-1)^{s-|K|}</mrow>
-              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
-              {|J|-|K|
-              \choose i}(-1)^{i}</mrow>
-              <mrow>\amp =\amp \sum_{J:K\subseteq J\subseteq
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
+              \binom{|J|-|K|
+              }{s-|K|}(-1)^{s-|K|}</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
+              \binom{|J|-|K|
+              }{i}(-1)^{i}</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq
               P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}</mrow>
-              <mrow>\amp =\amp N_{\mbox{e} }(K).</mrow>
+              <mrow> =\amp N_{\mbox{e} }(K).</mrow>
             </md>
           </p>
 
@@ -531,15 +528,15 @@
             particular set
             <m>\hat S</m> of children get at least four apples: we give everyone in <m>\hat
             S</m> four apples, and then pass out the remaining <m>k-4s</m> apples to the
-            children in <m>{k-4s+n-1\choose k-4s}= {k-4s+n-1\choose n-1}</m> ways. This
+            children in <m>\binom{k-4s+n-1}{k-4s}= \binom{k-4s+n-1}{n-1}</m> ways. This
             counts the number of ways to give at least four apples to every child in
             <m>\hat S</m>, and maybe give four apples to some other children as well. Thus
-            <m>N_{\mbox{a} }(S) = {k-4|S|+n-1\choose n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
+            <m>N_{\mbox{a} }(S) = \binom{k-4|S|+n-1}{n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
             <md>
-              <mrow>N_{\mbox{e} }(\emptyset)\amp =\amp \sum_{S:S\subseteq
+              <mrow>N_{\mbox{e} }(\emptyset) =\amp \sum_{S:S\subseteq
               P}(-1)^{|S|}N_{\mbox{a} }(S)</mrow>
-              <mrow>\amp =\amp \sum_{s=0}^k {k\choose s}(-1)^s {k-4s+n-1\choose n-1}</mrow>
-              <mrow>\amp =\amp \sum_{s=0}^k (-1)^s{k\choose s}{k-4s+n-1\choose n-1}</mrow>
+              <mrow> =\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}</mrow>
+              <mrow> =\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}</mrow>
             </md>
           </p>
         </solution>
@@ -569,9 +566,9 @@
           Substituting this into <xref ref="incexempty">Equation</xref> with <m>P</m> as the set of
           all properties gives us
           <md>
-            <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:S\subseteq P}
+            <mrow>N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:S\subseteq P}
             (-1)^{|S|} N_{\mbox{a} }(S)</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}2^{s}(2n- s-1)!</mrow>
+            <mrow> =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!</mrow>
           </md>
         </p>
       </solution>
@@ -633,9 +630,8 @@
           gives an equivalent placement. Thus the number of inequivalent seating
           arrangements is
           <md>
-            <mrow>{2(2n-s-1)!(n-s)!^2\over(2n-2s)!}\amp =\amp {2(2n-s-1)!(n-s)!^2\over
-            2(n-s)(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp {(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.</mrow>
+            <mrow>\frac{2(2n-s-1)!(n-s)!^2}{(2n-2s)!} =\amp \frac{2(2n-s-1)!(n-s)!^2}{2(n-s)(2n-2s-1)!}</mrow>
+            <mrow> =\amp \frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.</mrow>
           </md>
         </p>
 
@@ -644,20 +640,19 @@
           if we take
           <m>s=0</m>, this formula reduces to <m>(n-1)!n!</m>. Thus for all sets <m>S</m>
           <me>
-            N_{\mbox{a} }(S)={(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}.
+            N_{\mbox{a} }(S)=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
           </me>
         </p>
 
         <p>
           Then from <xref ref="incexempty">Equation</xref>
           <md>
-            <mrow>N_{\mbox{e} } \amp =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
-            \over(2n-2|S|-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n\choose s}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{n!\over
-            s!(n-s)!}{(2n-s-1)!(n-s)!(n-s-1)!\over(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s {n!(2n-s-1)!(n-s-1)!\over s!(2n-2s-1)!}</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n(-1)^s{2n-s-1\choose s}n!(n-s-1)!</mrow>
+            <mrow>N_{\mbox{e} }  =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+            }{(2n-2|S|-1)!}</mrow>
+            <mrow> =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
+            <mrow> =\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
+            <mrow> =\amp \sum_{s=0}^n(-1)^s \frac{n!(2n-s-1)!(n-s-1)!}{s!(2n-2s-1)!}</mrow>
+            <mrow> =\amp \sum_{s=0}^n(-1)^s\binom{2n-s-1}{s}n!(n-s-1)!</mrow>
           </md>
           is the number of ways to seat the people, alternating sex, so
           that no couple sits together.
@@ -689,9 +684,9 @@
           is the set of all <m>i</m> such that property <m>i</m> is in <m>S</m>. This number of
           functions is <m>(n-|S|)^k</m>. Thus by <xref ref="incexempty">Equation</xref>
           <md>
-            <mrow>N_{\mbox{e} }(\emptyset) \amp =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
+            <mrow>N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
             (n-|S|)^k</mrow>
-            <mrow>\amp =\amp \sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k</mrow>
+            <mrow> =\amp \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k</mrow>
           </md>
           is the number of functions from <m>K</m> onto <m>[n]</m>.
         </p>
@@ -710,7 +705,7 @@
           Since the number of functions from <m>[k]</m> onto <m>[n]</m> is <m>S(k,n)n!</m>,
           we get from the solution to <xref ref="numontofun">Problem</xref>
           <me>
-            S(k,n) = {1\over n!}\sum_{s=0}^n (-1)^s{n\choose s}(n-s)^k.
+            S(k,n) = \frac{1}{n!}\sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k.
           </me>
         </p>
       </solution>
@@ -949,14 +944,14 @@
             <m>(G-\{2,3\})/\{1,2\}</m>, and the chromatic polynomial of <m>(G/\{2,3\})/\{1,2\}</m> is
             <m>(x-1)(x-2)(x-3)</m>. Using the deletion-contraction recurrence, we get that
             <md>
-              <mrow>\chi_G(x) \amp =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)</mrow>
-              <mrow>\amp =\amp
+              <mrow>\chi_G(x)  =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)</mrow>
+              <mrow> =\amp
               \chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
               \chi_{(G/\{1,2\})-\{2,3\}}(x)</mrow>
               <mrow>\amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)</mrow>
-              <mrow>\amp =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)</mrow>
-              <mrow>\amp =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)</mrow>
-              <mrow>\amp =\amp  x^3(x-1)(x-2)</mrow>
+              <mrow> =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)</mrow>
+              <mrow> =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)</mrow>
+              <mrow> =\amp  x^3(x-1)(x-2)</mrow>
             </md>
             for the chromatic polynomial of <m>G</m>.
           </p>
@@ -992,18 +987,18 @@
             for a path on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then
             by the deletion-contraction recurrence, we may write
             <md>
-              <mrow>\hspace{-.4 in}\chi_{C_n}(x) \amp =\amp
+              <mrow>\hspace{-.4 in}\chi_{C_n}(x)  =\amp
               \chi_{P_n}(x)-\chi_{C_{n-1}}(x)</mrow>
-              <mrow>\amp =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)</mrow>
-              <mrow>\amp =\amp
+              <mrow> =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)</mrow>
+              <mrow> =\amp
               \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
               \cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))</mrow>
-              <mrow>\amp =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots</mrow>
+              <mrow> =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots</mrow>
               <mrow>\amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]</mrow>
-              <mrow>\amp =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}</mrow>
-              <mrow>\amp =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i</mrow>
-              <mrow>\amp =\amp x(x-1)(-1)^{n-2}{1-(1-x)^{n-1}\over 1-(1-x)}</mrow>
-              <mrow>\amp =\amp (x-1)[(x-1)^{n-1}+(-1)^n].</mrow>
+              <mrow> =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}</mrow>
+              <mrow> =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i</mrow>
+              <mrow> =\amp x(x-1)(-1)^{n-2}\frac{1-(1-x)^{n-1}}{1-(1-x)}</mrow>
+              <mrow> =\amp (x-1)[(x-1)^{n-1}+(-1)^n].</mrow>
             </md>
           </p>
 

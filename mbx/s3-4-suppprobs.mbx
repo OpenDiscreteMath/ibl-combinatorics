@@ -3,14 +3,14 @@
     <ol>
     <li>
       <p>
-        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>n \choose k</m>, <m>k \choose n</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>n+k-1\choose k</m>, <m>n+k-1\choose n</m>, <m>n-1\choose k-1</m>, <m>k-1\choose n-1</m>, or ``none of the above".
+        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>\binom{n+k-1}{k}</m>, <m>\binom{n+k-1}{n}</m>, <m>\binom{n-1}{k-1}</m>, <m>\binom{k-1}{n-1}</m>, or ``none of the above".
         <ol>
           <li>
             <p>
               In how many ways may we pass out <m>k</m> identical pieces of candy to <m>n</m> children?
               <solution>
                 <p>
-                  <m>n+k-1\choose k</m>
+                  <m>\binom{n+k-1}{k}</m>
                 </p>
               </solution>
             </p>
@@ -33,7 +33,7 @@
               <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
               <solution>
                 <p>
-                  <m>n\choose k</m>.
+                  <m>\binom{n}{k}</m>.
                 </p>
               </solution>
             </p>
@@ -69,7 +69,7 @@
               <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
               <solution>
                 <p>
-                  <m>k-1\choose n-1</m>
+                  <m>\binom{k-1}{n-1}</m>
                 </p>
               </solution>
             </p>
@@ -116,7 +116,7 @@
               receives at most one?
               <solution>
                 <p>
-                  <m>s\choose r</m>
+                  <m>\binom{s}{r}</m>
                 </p>
               </solution>
             </p>
@@ -129,7 +129,7 @@
               receives at most one (so there could be some leftover trees)?
               <solution>
                 <p>
-                  <m>\sum_{k=0}^s {s\choose k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}{r\choose k}</m>
+                  <m>\sum_{k=0}^s \binom{s}{k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}\binom{r}{k}</m>
                 </p>
               </solution>
             </p>
@@ -142,7 +142,7 @@
             identical and anyone may receive any number of trees?
             <solution>
               <p>
-                <m>r+s-1\choose r</m>
+                <m>\binom{r+s-1}{r}</m>
               </p>
             </solution>
           </p>
@@ -168,7 +168,7 @@
             assuming that every family must get a tree.
             <solution>
               <p>
-                <m>r!{r-1\choose s-1}</m>
+                <m>r!\binom{r-1}{s-1}</m>
               </p>
             </solution>
           </p>
@@ -180,7 +180,7 @@
             each family must get at least one tree.
             <solution>
               <p>
-                <m>r-1\choose s-1</m>
+                <m>\binom{r-1}{s-1}</m>
               </p>
             </solution>
           </p>
@@ -197,7 +197,7 @@
         (Assume there is no limit on the number of books per shelf.)
         <solution>
           <p>
-            <m>{(n+r+s+t+2)! \over n!r!s!t!2!}</m>
+            <m>\frac{(n+r+s+t+2)!}{n!r!s!t!2!}</m>
           </p>
         </solution>
       </p>
@@ -208,7 +208,7 @@
         (interesting)
         One formula for the Lah numbers is
         <me>
-          L(k,n) = {k\choose n}(k-1)^{\underline{k-n}}
+          L(k,n) = \binom{k}{n}(k-1)^{\underline{k-n}}
         </me>
         Find a proof that explains this product.
         <solution>
@@ -307,14 +307,14 @@
         Show that the Stirling numbers of the second kind satisfy the
         recurrence
         <me>
-          S(k,n) = \sum_{i=1}^kS(k-i,n-1){n-1\choose i-1}.
+          S(k,n) = \sum_{i=1}^kS(k-i,n-1)\binom{n-1}{i-1}.
         </me>
         <solution>
           <p>
             A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
             <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
             of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
-            size <m>i</m> containing <m>k</m> is <m>k-1\choose i-1</m>, and <m>i</m> can be any number
+            size <m>i</m> containing <m>k</m> is <m>\binom{k-1}{i-1}</m>, and <m>i</m> can be any number
             between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
             constructed exactly once by first choosing the block containing <m>k</m> and
             then partitioning the remaining elements into <m>n-1</m> blocks. This proves

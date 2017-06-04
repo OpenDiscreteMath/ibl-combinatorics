@@ -359,12 +359,12 @@
       <task>
         <statement>
           <p>
-            Show that <m>P(k,n)</m> is at least <m>{1\over n!}{k-1\choose n-1}</m>.
+            Show that <m>P(k,n)</m> is at least <m>\frac{1}{n!}\binom{k-1}{n-1}</m>.
           </p>
         </statement>
         <solution>
           <p>
-            The number of compositions of <m>k</m> into <m>n</m> parts is <m>k-1\choose n-1</m>. We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.  But then if we divide the number of compositions by <m>n!</m> we will get a number less than the number of blocks because <m>n!</m> times the number of blocks would be, by the sum principle, greater than the number of partitions.
+            The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.  But then if we divide the number of compositions by <m>n!</m> we will get a number less than the number of blocks because <m>n!</m> times the number of blocks would be, by the sum principle, greater than the number of partitions.
           </p>
         </solution>
       </task>
@@ -717,7 +717,7 @@
           matters</cell>
           <cell><m>(k)^{\underline{n}}(k-1)^{\underline{k-n}}</m></cell>
           <cell><m>L(k,n)=
-          { k\choose n}(k-1)^{\underline{k-n}}</m></cell>
+          \binom{k}{n}(k-1)^{\underline{k-n}}</m></cell>
         </row>
         <row>
           <cell>Each
@@ -732,7 +732,7 @@
         </row>
         <row>
           <cell>7.  Identical</cell>
-          <cell><m>n+k-1\choose k</m></cell>
+          <cell><m>\binom{n+k-1}{k}</m></cell>
           <cell><m>\sum_{i=1}^nP(k,i)</m></cell>
         </row>
         <row>
@@ -747,7 +747,7 @@
         </row>
         <row>
           <cell>8.  Identical</cell>
-          <cell><m>n\choose k</m></cell>
+          <cell><m>\binom{n}{k}</m></cell>
           <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
         </row>
         <row>
@@ -762,7 +762,7 @@
         </row>
         <row>
           <cell>9.  Identical</cell>
-          <cell><m>k-1\choose n-1</m></cell>
+          <cell><m>\binom{k-1}{n-1}</m></cell>
           <cell><m>P(k,n)</m></cell>
         </row>
         <row>
@@ -805,13 +805,13 @@
         <p>
           Show that
           <me>
-            Q(k,n) \le {1\over n!}{k-1\choose n-1}.
+            Q(k,n) \le \frac{1}{n!}\binom{k-1}{n-1}.
           </me>
         </p>
       </statement>
       <solution>
         <p>
-          The number of compositions of <m>k</m> into <m>n</m> parts is <m>k-1\choose n-1</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>k-1\choose n-1</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>k-1 \choose n-1</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>{1\over n!}  {k-1\choose n-1}</m>.
+          The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>\frac{1}{n!}  \binom{k-1}{n-1}</m>.
         </p>
       </solution>
     </activity>
@@ -838,7 +838,7 @@
       </statement>
       <solution>
         <p>
-          The number of partitions of <m>k</m> into <m>n</m> parts is equal to the number of partitions of <m>k+{n\choose2}</m> into n distinct parts.  The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of <m>k+{n\choose2}</m> with <m>n</m> distinct parts that proves this is the one that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get <m>\lambda'_i</m>. Then <m>\lambda'</m> is a partition into distinct parts, and the number it partitions is <m>k+1+2+\cdots+n-1=k+{n\choose 2}</m>. The proof that it is a bijection is the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m> is at least <m>j</m> smaller than part <m>i</m>.
+          The number of partitions of <m>k</m> into <m>n</m> parts is equal to the number of partitions of <m>k+\binom{n}{2}</m> into n distinct parts.  The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of <m>k+\binom{n}{2}</m> with <m>n</m> distinct parts that proves this is the one that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get <m>\lambda'_i</m>. Then <m>\lambda'</m> is a partition into distinct parts, and the number it partitions is <m>k+1+2+\cdots+n-1=k+\binom{n}{2}</m>. The proof that it is a bijection is the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m> is at least <m>j</m> smaller than part <m>i</m>.
         </p>
       </solution>
     </activity>
@@ -871,7 +871,7 @@
 
     <activity category="interesting and difficult">
       <statement>
-        <p>Euler showed that if <m>k\not= {3j^2+j\over 2}</m>, then the number of partitions of <m>k</m> into an even number of distinct parts is the same as the number of partitions of <m>k</m> into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.
+        <p>Euler showed that if <m>k\not= \frac{3j^2+j}{2}</m>, then the number of partitions of <m>k</m> into an even number of distinct parts is the same as the number of partitions of <m>k</m> into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.
         </p>
       </statement>
       <solution>
@@ -885,10 +885,10 @@
         <p>Here is the second part of the description of the transformation. Suppose now that <m>m</m> is larger than the number <m>j</m> of rows of the top trapezoid in the Young diagram. Suppose also that the Young diagram has at least two trapezoids or it has one trapezoid and <m>j\ge m-2</m>. Take one square from each of the <m>j</m> rows of the top trapezoid (which is the whole diagram if there is only one trapezoid) and also add a row of <m>j</m> squares at the bottom of the diagram. (Since <m>m>j</m>, this gives us a Young diagram of a partition of the same integer into distinct parts.) The parity of the number of rows has changed, and now the number of rows of the top trapezoid is at least as large as the smallest part of the partition. (Note, two previously distinct trapezoids may have joined together to form one on top.)  (Notice that if we have one trapezoid and <m>j= m+1</m>, then the construction yields a partition with two equal parts, which is why we made the special assumption above.) Now let <m>T</m> be the transformation described by the two constructions above. Its domain is all Young diagrams except those with one trapezoid and <m>m\le j\le m+1</m>. <m>T^2</m> is the identity, and so <m>T</m> is a bijection.  When restricted to partitions with an odd number of parts, <m>T</m> gives partitions with an even number of parts, so on its domain it gives a bijection between partitions with an even number of parts and partitions with an odd number of parts.
         </p>
 
-        <p>If <m>m=j</m> and the diagram has just one trapezoid, then the diagram has <m>3j^2-j\over 2</m> squares, and if <m>m=j+1</m> and the diagram has just one trapezoid, then the diagram has <m>3j^2+j\over 2</m> squares. Thus if <m>k\ne {3j^2\pm j\over 2}</m>, the number of partitions of <m>k</m> into distinct even parts equals the number of partitions of <m>k</m> into distinct odd parts.
+        <p>If <m>m=j</m> and the diagram has just one trapezoid, then the diagram has <m>\frac{3j^2-j}{2}</m> squares, and if <m>m=j+1</m> and the diagram has just one trapezoid, then the diagram has <m>\frac{3j^2+j}{2}</m> squares. Thus if <m>k\ne \frac{3j^2\pm j}{2}</m>, the number of partitions of <m>k</m> into distinct even parts equals the number of partitions of <m>k</m> into distinct odd parts.
         </p>
 
-        <p>If <m>k= {3j^2\pm j\over 2}</m> and <m>j</m> is even, then there is one diagram of a partition of <m>k</m> that is not in the domain of the bijection and has an even number of rows, so in this case there will be one more partition with an even number of parts than with an odd number. If <m>k= {3j^2\pm j\over 2}</m> and <m>j</m> is odd, there is one diagram with an odd number of rows not in the domain and so in this case there is one more partition with an odd number of parts than with an even number. This completes the exceptional cases of the problem.
+        <p>If <m>k= \frac{3j^2\pm j}{2}</m> and <m>j</m> is even, then there is one diagram of a partition of <m>k</m> that is not in the domain of the bijection and has an even number of rows, so in this case there will be one more partition with an even number of parts than with an odd number. If <m>k= \frac{3j^2\pm j}{2}</m> and <m>j</m> is odd, there is one diagram with an odd number of rows not in the domain and so in this case there is one more partition with an odd number of parts than with an even number. This completes the exceptional cases of the problem.
         </p>
       </solution>
     </activity>

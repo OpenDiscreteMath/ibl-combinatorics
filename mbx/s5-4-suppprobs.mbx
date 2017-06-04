@@ -13,7 +13,7 @@
           We use inclusion and exclusion. Property <m>P_i</m> is that person <m>i</m> gets the prize he or she brought. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. If <m>P</m> is the set of all properties, we need to compute <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of <m>P</m>. But <m>N_{\mbox{a} }(S)</m> is the number of functions from the prizes to the people that give each prize represented by a property in <m>S</m> to the person who brought it. Think in terms of distributing those prizes first. Then there are <m>n-|S|</m> other prizes that we may pass out to the <m>n</m> people as we please, so we may do that in <m>n^{n-|S|}</m> ways. Thus <m>N_{\mbox{a} }(S)=n^{n-|S|}</m>. Applying <xref ref="incexempty">Equation</xref>, we get
           <me>
             N_{\mbox{e} }(\emptyset)=\sum_{S:s\subseteq P}(-1)^{|S|} n^{n-|S|} =
-            \sum_{s=0}^n (-1)^{|S|}{n\choose s}n^{n-s}.
+            \sum_{s=0}^n (-1)^{|S|}\binom{n}{s}n^{n-s}.
           </me>
         </p>
       </solution>
@@ -29,8 +29,7 @@
           We use inclusion and exclusion. We let property <m>P_i</m> be the property that student <m>i</m> sits in the same seat as before. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. For this purpose, for each subset <m>S</m> of the set <m>P</m> of all properties, we need to compute <m>N_{\mbox{a} }(S)</m>, the number of ways for the students to return so that every student represented by a property in <m>S</m> sits in his or her previous seat. This leaves us with <m>n-|S|</m> seats to be filled in a one-to-one fashion in <m>m-|S|</m> students. There are <m>(n-|S|)^{\underline{m-|S|}}</m> such seating arrangements, so <m>N_{\mbox{a} }(S)= (n-|S|)^{\underline{m-|S|}}</m>. Thus we have
           <me>
             N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-            (-1)^{|S|}(n-|S|)^{\underline{m-|S|}} = \sum_{s=0}^m (-1)^s{m\choose
-            s}(n-s)^{\underline{m-s}}
+            (-1)^{|S|}(n-|S|)^{\underline{m-|S|}} = \sum_{s=0}^m (-1)^s\binom{m}{s}(n-s)^{\underline{m-s}}
           </me>
           ways for the students to return so that nobody sits
           in his or her previous place.
@@ -44,7 +43,7 @@
           </p>
       </statement>
       <solution>
-          <p>As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m> gets more than six pieces of candy. We would then observe that the number of ways to pass out the candy so that the children determined by a set <m>S</m> of properties all get more than six pieces, and everyone else gets at least 3, is the number of ways to pass out the remaining candy after giving 7 pieces to each child identified by <m>S</m> and 3 pieces to each other child. This number is <m>{k-7|S|-3(n-|S|)-1\choose n-1}={k-2n-4|S|-1\choose n-1}</m>. From here we would substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.</p>
+          <p>As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m> gets more than six pieces of candy. We would then observe that the number of ways to pass out the candy so that the children determined by a set <m>S</m> of properties all get more than six pieces, and everyone else gets at least 3, is the number of ways to pass out the remaining candy after giving 7 pieces to each child identified by <m>S</m> and 3 pieces to each other child. This number is <m>\binom{k-7|S|-3(n-|S|)-1}{n-1}=\binom{k-2n-4|S|-1}{n-1}</m>. From here we would substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.</p>
       </solution>
   </activity>
   <activity category="interesting">
@@ -59,7 +58,7 @@
         <me>
           N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P} (-1)^{|S|}
           k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}=\sum_{s=0}^n
-          (-1)^s{n\choose s}k^{\underline{(m+1)s}}n^{\underline{k-(m+1)s}}
+          (-1)^s\binom{n}{s}k^{\underline{(m+1)s}}n^{\underline{k-(m+1)s}}
         </me>
         is the number of ways to arrange the books so that no shelf gets more than <m>m</m>.
       </p>
@@ -78,10 +77,9 @@
         We use inclusion and exclusion, with property <m>i</m> being the property that child <m>i</m> has the same child to the right the second time they join hands.  Given a set <m>S</m> of properties, we can think of arranging units consisting of individual children and strings of children holding hands in a circle. If we have <m>s</m> properties, then we have <m>n-s</m> of these units. Each string of children can be arranged in only one way, because our set specifies who has to have the same child on the right. Thus <m>N_{\mbox{a} }(S) = (n-s-1)!</m>. This gives us
         <md>
           <mrow>N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-          (-1)^{|S|}(n-|S|-1)!\amp =\amp 
-          \sum_{s=0}^n (-1)^s {n\choose s} (n-s-1)!</mrow>
-          <mrow>\amp =\amp \sum_{s=0}^n (-1)^s {n!\over
-          s!(n-s)}</mrow>
+          (-1)^{|S|}(n-|S|-1)! =\amp 
+          \sum_{s=0}^n (-1)^s \binom{n}{s} (n-s-1)!</mrow>
+          <mrow> =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}</mrow>
         </md>
         ways for the children to join hands the second time so that none
         of them has the same child to the right.
@@ -118,12 +116,12 @@
       </p>
 
       <p>
-        Picking out runs in a circular arrangement adds a layer of difficulty, so to compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m> runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.  Imagine writing 1 through <m>n</m> in a straight line, each integer occupying one unit of distance along the line. We now place <m>r</m> sticks whose lengths add to <m>s</m> (each stick has positive integer length) along that line. Each stick picks out a set of consecutive integers, as many as its length, so the sticks together pick out <m>s</m> integers. In order to be sure the sticks correspond to runs, we need to make sure they do not touch each other, so we place <m>n-s</m> identical stones along the line too, making sure there is at least one stone between any two sticks. The stones thus pick out the integers not in <m>S</m>. The sticks are not quite identical, though the sticks of a given length are. In other words, which lengths of sticks are in which places is what matters. So the sticks give us a composition of <m>s</m>, a list of distinct positive integers that add to <m>s</m>. We know there are <m>s-1\choose r-1</m> such compositions. Once we have chosen an ordering for the sticks, we need to distribute the stones among the sticks so that no two sticks are adjacent.  Since the stones are identical, we can do this by putting one stone between each pair of sticks in our composition, and then distribute the remaining <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks and the two places to the left and right of all the sticks.. We can do this in
+        Picking out runs in a circular arrangement adds a layer of difficulty, so to compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m> runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.  Imagine writing 1 through <m>n</m> in a straight line, each integer occupying one unit of distance along the line. We now place <m>r</m> sticks whose lengths add to <m>s</m> (each stick has positive integer length) along that line. Each stick picks out a set of consecutive integers, as many as its length, so the sticks together pick out <m>s</m> integers. In order to be sure the sticks correspond to runs, we need to make sure they do not touch each other, so we place <m>n-s</m> identical stones along the line too, making sure there is at least one stone between any two sticks. The stones thus pick out the integers not in <m>S</m>. The sticks are not quite identical, though the sticks of a given length are. In other words, which lengths of sticks are in which places is what matters. So the sticks give us a composition of <m>s</m>, a list of distinct positive integers that add to <m>s</m>. We know there are <m>\binom{s-1}{r-1}</m> such compositions. Once we have chosen an ordering for the sticks, we need to distribute the stones among the sticks so that no two sticks are adjacent.  Since the stones are identical, we can do this by putting one stone between each pair of sticks in our composition, and then distribute the remaining <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks and the two places to the left and right of all the sticks.. We can do this in
         <me>
-          {r+1 + (n-s-r+1)-1\choose n-s-r+1}={n-s+1\choose n-s-r+1}={n-s+1\choose r}
+          \binom{r+1 + (n-s-r+1)-1}{n-s-r+1}=\binom{n-s+1}{n-s-r+1}=\binom{n-s+1}{r}
         </me>
         ways. Thus there are
-        <m>{s-1\choose r-1}{n-s+1\choose r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
+        <m>\binom{s-1}{r-1}\binom{n-s+1}{r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
         has
         <m>r</m> runs.
       </p>
@@ -131,31 +129,25 @@
       <p>
         Now we have to deal with the fact that our <m>n</m> people (who we have replaced with the integers 1 through <m>n</m> in order) were arranged around a circle. That means that a run is now a set of consecutive integers on the circle, where <m>n</m> and 1 are considered consecutive. Recall that the set <m>S</m> is picked out by the sticks. If we arrange 1 through <m>n</m> around a circle in order, the set <m>S</m> that originally had <m>r</m> runs will have <m>r-1</m> runs if sticks covered both the first and last integer (1 and <m>n</m>), but otherwise it will still have <m>n</m> runs. Thus the number of subsets of <m>[n]</m> that have <m>n</m> runs when <m>1</m> through <m>n</m> are arranged in a circle is the number of subsets of <m>[n]</m> with <m>r+1</m> runs that have both 1 and <m>n</m> in <m>S</m> plus the number of subsets of <m>[n]</m> with <m>r</m> runs that do not have both <m>1</m> and <m>n</m> in <m>S</m>. To compute the number of subsets <m>S</m> that <em>do</em> contain both 1 and <m>n</m>, we compute the number of arrangements of <m>r</m> sticks and <m>n-s</m> stones that do start and end with a stick; that means that after we choose our composition into <m>r</m> parts to get our arrangement of sticks and place one stone between each pair of previously adjacent sticks, we now place the remaining <m>n-s-r+1</m> stones in the <m>r-1</m> places between previously adjacent sticks in
         <me>
-          {r-1 + (n-s-r+1)-1\choose n-s-r+1}={n-s-1\choose n-s-r+1}={n-s-1\choose r-2}
+          \binom{r-1 + (n-s-r+1)-1}{n-s-r+1}=\binom{n-s-1}{n-s-r+1}=\binom{n-s-1}{r-2}
         </me>
-        ways. For the sticks and stones to determine a subset we must assign lengths to the sticks; the number of ways to do this is, as above, <m>s-1\choose r-1</m>, the number of compositions of <m>s</m> with <m>r</m> parts. Thus there are <m>{s-1\choose r-1}{n-s-1\choose r-2}</m> subsets of <m>[n]</m> that have <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m> this is <m>{s-1\choose r}{n-s-1\choose r-1}</m>.
+        ways. For the sticks and stones to determine a subset we must assign lengths to the sticks; the number of ways to do this is, as above, <m>\binom{s-1}{r-1}</m>, the number of compositions of <m>s</m> with <m>r</m> parts. Thus there are <m>\binom{s-1}{r-1}\binom{n-s-1}{r-2}</m> subsets of <m>[n]</m> that have <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m> this is <m>\binom{s-1}{r}\binom{n-s-1}{r-1}</m>.
       </p>
 
       <p>
         On the other hand, the number of subsets of <m>[n]</m> that have <m>r</m> runs and do not contain both <m>1</m> and <m>n</m> is the total number of subsets with <m>r</m> runs minus the number that do contain both <m>1</m> and <m>n</m>; this is
         <me>
-          {s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right).
+          \binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right).
         </me>
       </p>
 
       <p>
         This gives us
         <me>
-          N(s,r) ={s-1\choose r}{n-s-1\choose r-1}+{s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right)
+          N(s,r) =\binom{s-1}{r}\binom{n-s-1}{r-1}+\binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right)
         </me>
         ways to choose an <m>s</m>-element subset of <m>[n]</m> that has <m>r</m> runs when <m>[n]</m> is arranged around a circle. Thus there are
-        <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[{s-1\choose
-        r}{n-s-1\choose r-1}+{s-1\choose r-1}\left({n-s+1\choose r}- {n-s-1\choose
-        r-2}\right)\right](n-s-1)!2^r</m>
+        <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[\binom{s-1}{r}\binom{n-s-1}{r-1}+\binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right)\right](n-s-1)!2^r</m>
         ways for people to arrange themselves in the second circle so that no-one is adjacent to anyone he or she was previously adjacent to.
       </p>
     </solution>
@@ -190,7 +182,7 @@
       </p>
 
       <p>
-        Now <m>\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)</m> because each ordered pair of proper colorings of <m>G_1</m> and <m>G_2</m> is a proper coloring of <m>G_{12}-e</m>. <m>G_{12}/e</m> is the graph we get by identifying the endpoint of <m>e</m> in <m>G_1</m> with the endpoint of <m>e</m> in <m>G_2</m>. Notice that if you fix one vertex of a graph <m>G</m>, fix one color, and ask how many proper colorings with <m>x</m> colors <m>G</m> has in which the fixed vertex is the fixed color, you get <m>\chi_G(x)/x</m>.  (By the quotient principle.) Thus <m>\chi_{G_2}(x)/x</m> is the number of ways to extend a proper coloring of <m>G_1</m> to a proper coloring of <m>G_{12}/e</m>. Then, by the product principle, the number of proper colorings of <m>G_{12}/e</m> with <m>x</m> colors is <m>\chi_{G_1}(x)\chi_{G_2}(x)/x</m>. Therefore by the deletion-contraction recurrence, <m>\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-{1\over x})</m>.
+        Now <m>\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)</m> because each ordered pair of proper colorings of <m>G_1</m> and <m>G_2</m> is a proper coloring of <m>G_{12}-e</m>. <m>G_{12}/e</m> is the graph we get by identifying the endpoint of <m>e</m> in <m>G_1</m> with the endpoint of <m>e</m> in <m>G_2</m>. Notice that if you fix one vertex of a graph <m>G</m>, fix one color, and ask how many proper colorings with <m>x</m> colors <m>G</m> has in which the fixed vertex is the fixed color, you get <m>\chi_G(x)/x</m>.  (By the quotient principle.) Thus <m>\chi_{G_2}(x)/x</m> is the number of ways to extend a proper coloring of <m>G_1</m> to a proper coloring of <m>G_{12}/e</m>. Then, by the product principle, the number of proper colorings of <m>G_{12}/e</m> with <m>x</m> colors is <m>\chi_{G_1}(x)\chi_{G_2}(x)/x</m>. Therefore by the deletion-contraction recurrence, <m>\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-\frac{1}{x})</m>.
       </p>
     </solution>
   </activity>

@@ -7,10 +7,10 @@
     give a combinatorial interpretation to the composition of two exponential
     generating functions. In particular, if
     <m>f(x) =
-    \sum_{i=0}^n a_i{x^i\over i!}</m> and
-    <m>g(x) = \sum_{j=1}^\infty b_j {x^j\over j!}</m>, it makes sense to form the
+    \sum_{i=0}^n a_i\frac{x^i}{i!}</m> and
+    <m>g(x) = \sum_{j=1}^\infty b_j \frac{x^j}{j!}</m>, it makes sense to form the
     composition <m>f(g(x))</m> because in so doing we need add together only
-    finitely many terms in order to find the coefficient of <m>x^n\over n!</m> in
+    finitely many terms in order to find the coefficient of <m>\frac{x^n}{n!}</m> in
     <m>f(g(x))</m> since in the EGF <m>g(x)</m> the dummy variable <m>j</m> starts at 1.
     Since our study of combinatorial structures has not been advanced enough
     to give us applications of a general formula for the composition of the
@@ -59,7 +59,7 @@
       <p>
         There is one permutation with one cycle of size 1, and one
         permutation with one cycle of size 2. Therefore the EGF for such
-        permutations is <m>x+{x^2\over 2!}= x+x^2/2</m>. The EGF for involutions
+        permutations is <m>x+\frac{x^2}{2!}= x+x^2/2</m>. The EGF for involutions
         is <m>e^{x+x^2/2}</m>. Thus <m>g(x) = \exp(f(x))</m>.
       </p>
     </solution>
@@ -82,7 +82,7 @@
     <solution>
       <p>
         The EGF <m>f(x)</m> for permutations of an <m>n</m> element set that have exactly
-        one two-cycle (and no other cycles) is <m>x^2\over 2!</m> or <m>x^2/2</m>. By
+        one two-cycle (and no other cycles) is <m>\frac{x^2}{2!}</m> or <m>x^2/2</m>. By
         <xref ref="exponentialtennisparings">Problem</xref>, the EGF to permutations that are products
         of two-cycles only is <m>\exp(x^2/2)</m>. Thus <m>g(x)=\exp(f(x))=e^{x^2/2}</m>.
       </p>
@@ -103,8 +103,8 @@
     <solution>
       <p>
         In <xref ref="exponentialroundtable">Problem</xref> we showed that <m>f(x) =
-        \ln\left({1\over 1-x}\right)</m>. In <xref ref="exponentialpermutations">Problem</xref>
-        we showed that <m>g(x)={1\over 1-x}</m>. Therefore <m>g(x)= \exp(f(x))</m>.
+        \ln\left(\frac{1}{1-x}\right)</m>. In <xref ref="exponentialpermutations">Problem</xref>
+        we showed that <m>g(x)=\frac{1}{1-x}</m>. Therefore <m>g(x)= \exp(f(x))</m>.
       </p>
     </solution>
   </activity>
@@ -129,7 +129,7 @@
     generating functions for connected structures</main></index> structures. Notice that
     our connected structures were all based on nonempty sets, so we had no
     connected structures whose value was the empty set. Thus in each case,
-    if <m>f(x) = \sum_{i=0}^\infty a_i{x^i\over i!}</m>, we would have <m>a_0=0</m>.
+    if <m>f(x) = \sum_{i=0}^\infty a_i\frac{x^i}{i!}</m>, we would have <m>a_0=0</m>.
     The relationship between the EGFs was always
     <m>g(x) = e^{f(x)}</m>. We now give a combinatorial explanation for
     this relationship.
@@ -148,10 +148,10 @@
         <p>
           In the power series
           <me>
-            e^{f(x)} = 1 + f(x) + {f(x)^2\over 2!} +
-            \cdots + {f(x)^k\over k!} + \cdots= \sum_{k=0}^\infty {f(x)^k\over k!},
+            e^{f(x)} = 1 + f(x) + \frac{f(x)^2}{2!} +
+            \cdots + \frac{f(x)^k}{k!} + \cdots= \sum_{k=0}^\infty \frac{f(x)^k}{k!},
           </me>
-          the product principle tells us that the coefficient of <m>x^n\over n!</m> in
+          the product principle tells us that the coefficient of <m>\frac{x^n}{n!}</m> in
           <m>f(x)^k</m> is the number of <m>k</m>-tuples of elements of <m>S</m> whose
           values are disjoint sets whose union is any one particular subset <m>N</m> of
           <m>Y</m> of size <m>n</m>.  How do you know that all of the elements of the
@@ -168,7 +168,7 @@
     <task>
       <statement>
         <p>
-          When you divide the coefficient of <m>x^n\over n!</m> in <m>f(x)^k</m> by
+          When you divide the coefficient of <m>\frac{x^n}{n!}</m> in <m>f(x)^k</m> by
           <m>k!</m>, it no longer counts <m>k</m>-tuples whose values are disjoint sets whose
           union is that set <m>N</m>.  What does it count instead?  (Hint: how many
           <m>k</m>-tuples can you form with a set of <m>k</m> distinct elements?)
@@ -184,7 +184,7 @@
     <task>
       <statement>
         <p>
-          Why does this prove that the coefficient of <m>x^n\over n!</m> in
+          Why does this prove that the coefficient of <m>\frac{x^n}{n!}</m> in
           <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of th
           elements of the subset partition any one particular set <m>N\subseteq T</m> of
           size
@@ -193,7 +193,7 @@
       </statement>
       <solution>
         <p>
-          We know that the coefficient of <m>x^n\over n!</m> in <m>e^{f(x)}</m> is
+          We know that the coefficient of <m>\frac{x^n}{n!}</m> in <m>e^{f(x)}</m> is
           the sum over all <m>k</m> of the number of <m>k</m>-element subsets of <m>S</m> whose
           values partition a particular set <m>N</m>. (The values must partition <m>N</m>
           because none of them are empty, they are disjoint, and their union is
@@ -216,7 +216,7 @@
         set
         <m>Y</m> such that no element of <m>S</m> has the empty set as a value. Let <m>f(x)</m>
         be the generating function for <m>S</m> according to the value function
-        <m>V</m>. Then the coefficient of <m>x^n\over n!</m> in
+        <m>V</m>. Then the coefficient of <m>\frac{x^n}{n!}</m> in
         <m>e^{f(x)}</m> is the number of subsets of <m>S</m> such that the values of the
         elements of the subset partition any one particular set <m>N\subseteq T</m> of
         size
@@ -270,10 +270,10 @@
         <m>Y</m> to be the set of positive integers. Then by the Exponential Formula,
         if
         <m>f(x)</m> is the EGF for permutations with one cycle, <m>\exp(f(x))=g(x)</m> is
-        the EGF in which the coefficient of <m>x^n\over n!</m> is the number of sets of
+        the EGF in which the coefficient of <m>\frac{x^n}{n!}</m> is the number of sets of
         permutations with one cycle whose support sets partition any given set <m>N</m>
         of size
-        <m>n</m>. That is, the coefficient of <m>x^n\over n!</m> in <m>g(x)</m> is the the
+        <m>n</m>. That is, the coefficient of <m>\frac{x^n}{n!}</m> in <m>g(x)</m> is the the
         number of products of disjoint cycles which partition any given set <m>N</m>;
         that is, it is the EGF for permutations of
         <m>N</m>.
@@ -489,10 +489,10 @@
 
   <activity category="essential for this or the next section, and interesting">
     <p>
-      Suppose that <m>f(x) = \sum_{n=0}^\infty c_n {x^n\over n!}</m> is
+      Suppose that <m>f(x) = \sum_{n=0}^\infty c_n \frac{x^n}{n!}</m> is
       the exponential generating function for the number of simple
       connected graphs on
-      <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i {x^i\over i!}</m> is the
+      <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> is the
       exponential generating function for the number of simple graphs on <m>i</m>
       vertices.
     </p>
@@ -533,9 +533,8 @@
           To specify a simple graph on a vertex set <m>V</m>, we have to
           specify its set of edges. The possible sets of edges thus correspond
           bijectively to sets of two-element subsets of <m>V</m>. But if <m>V</m> has size
-          <m>i</m> the set of all two element subsets of <m>V</m> has <m>i\choose 2</m> elements.
-          Thus the number of sets of two element subsets of <m>V</m> is <m>2^{i\choose
-          2}</m>. Therefore <m>a_i = 2^{i\choose 2}</m>.
+          <m>i</m> the set of all two element subsets of <m>V</m> has <m>\binom{i}{2}</m> elements.
+          Thus the number of sets of two element subsets of <m>V</m> is <m>2^\binom{i}{2}</m>. Therefore <m>a_i = 2^\binom{i}{2}</m>.
         </p>
       </solution>
     </task>
@@ -560,8 +559,8 @@
       </statement>
       <solution>
         <me>
-          \log(1+y)=\int_0^y {1\over 1+x}dx =\int_0^y \sum_{i=0}^\infty
-          (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}{y^j\over j}.
+          \log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
+          (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}\frac{y^j}{j}.
         </me>
       </solution>
     </task>
@@ -570,17 +569,17 @@
         <p>
           Why is the coefficient
           of
-          <m>x^0\over 0!</m> in <m>g(x)</m> equal to one?  Write <m>f(x)</m> as a power series in
+          <m>\frac{x^0}{0!}</m> in <m>g(x)</m> equal to one?  Write <m>f(x)</m> as a power series in
           <m>g(x) -1</m>.
         </p>
       </statement>
       <solution>
         <p>
-          The coefficient of <m>x^0\over 0!</m> is 1 because there is one
+          The coefficient of <m>\frac{x^0}{0!}</m> is 1 because there is one
           graph on the empty set; the one with no edges.
           <me>
             f(x) = 1 +\ln(1 +
-            (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}{(g(x)-1)^j\over j}.
+            (g(x)-1))=1+\sum_{j=1}^\infty (-1)^{j-1}\frac{(g(x)-1)^j}{j}.
           </me>
         </p>
       </solution>
@@ -598,20 +597,18 @@
       <solution>
         <me>
           f(x) = 1+\sum_{j=1}^\infty
-          (-1)^{j-1}{(g(x)-1)^j\over j}= 1+\sum_{j=1}^\infty
-          (-1)^{j-1}{(\sum_{i=1}^\infty 2^{i\choose 2}{x^i\over i!})^j\over j}.
+          (-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
+          (-1)^{j-1}\frac{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j}{j}.
         </me>
         <p>
           From the right-hand expression, we get a term involving <m>x^n</m> whenever we
-          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{i\choose
-          2}{x^i\over i!}</m>. So the coefficient of
-          <m>x^n\over n!</m> is the sum over all <m>j</m> and all sequences
+          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}</m>. So the coefficient of
+          <m>\frac{x^n}{n!}</m> is the sum over all <m>j</m> and all sequences
           <m>i_1,i_2,\ldots,i_j</m> with
           <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
           <me>
-            {n!\over
-            j}(-1)^j\prod_{k=1}^j {2^{i_k\choose 2}
-            \over i_k!},
+            \frac{n!}{j}(-1)^j\prod_{k=1}^j \frac{2^\binom{i_k}{2}
+            }{i_k!},
           </me>
           where each <m>i_k>0</m>. Notice that reordering the numbers
           <m>i_1</m>, <m>i_2</m>, <ellipsis /> <m>i_k</m> does not change the value of the expression.
@@ -625,14 +622,14 @@
           <m>(p_1,p_2, \ldots, p_n)</m> is the number of ways to take <m>j</m> places in a
           vector and label <m>p_1</m> of them with 1, <m>p_2</m> of them with 2, and so on
           until we label <m>p_n</m> of them with <m>n</m>. This number is the multinomial
-          coefficient <m>j\choose p_1,p_2,\ldots, p_n</m>. Thus our sum over all j and
+          coefficient <m>\binom{j}{p_1,p_2,\ldots, p_n}</m>. Thus our sum over all j and
           all compositions of <m>n</m> into <m>j</m> parts becomes
           <me>
-            \sum_{j=1}^n {n!\over j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
-            rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}{j\choose p_1, p_2, \ldots,
+            \sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
+            rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
             p_n}
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-            \over (r!)^{p_r}}.
+            \prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}}.
           </me>
         </p>
 
@@ -643,8 +640,8 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^{^{\sum_{r=1}^n p_r}}\left(\sum_{r=1}^n p_r -1\right)!
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-            \over (r!)^{p_r}p_r!}
+            \prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}p_r!}
           </me>
           for the number of connected graphs on <m>n</m> vertices. If we want to
           shorten the appearance of the formula we can keep <m>j</m> in our sum and
@@ -652,8 +649,8 @@
           <me>
             \sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n }}{n!}(-1)^j(j-1)!
-            \prod_{r=1}^n{2^{^{{r\choose 2}p_r}}
-            \over (r!)^{p_r}p_r!},
+            \prod_{r=1}^n \frac{2^{^{\binom{r}{2}p_r}}
+            }{(r!)^{p_r}p_r!},
           </me>
           where <m>j=\sum_{r=1}^n p_r</m>.
         </p>

@@ -163,7 +163,7 @@
         </solution>
       </task>
     </activity>
-    
+
       <figure xml:id="Hanoi" >
         <caption>The
         Towers of Hanoi Puzzle</caption>
@@ -414,9 +414,9 @@
           induction on <m>n</m>. It is clearly true when <m>n=0</m> as there are no terms in the
           sum and <m>b^0=1</m>. If we assume the formula is true when <m>n=k-1</m>, we may write
           <md>
-            <mrow>a_k \amp =\amp  ba_{k-1}+d</mrow>
-            <mrow>\amp =\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d</mrow>
-            <mrow>\amp =\amp a_0b^n +\sum_{i=0}^{n-1}db^i</mrow>
+            <mrow>a_k  =\amp  ba_{k-1}+d</mrow>
+            <mrow> =\amp b(a_0b^{k-1}+ b\left(\sum_{i=0}^{n-2}db^i\right) +d</mrow>
+            <mrow> =\amp a_0b^n +\sum_{i=0}^{n-1}db^i</mrow>
           </md>
         </p>
 
@@ -433,26 +433,26 @@
           x^{n-1}))(1-x) = 1-x^n</m>. If you do not recall this formula, you can prove it
           by induction, or observe that
           <md>
-            <mrow>\amp \amp (1+x+x^2+\cdots
+            <mrow> \amp (1+x+x^2+\cdots
             x^{n-1}))(1-x)</mrow>
-            <mrow>\amp =\amp  (1+x+x^2+\cdots
+            <mrow> =\amp  (1+x+x^2+\cdots
             x^{n-1})\cdot 1-(1+x+x^2+\cdots
             x^{n-1})\cdot x</mrow>
-            <mrow>\amp =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.</mrow>
+            <mrow> =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.</mrow>
           </md>
         </p>
 
         <p>
           Dividing the first and last terms by <m>1-x</m> gives us
           <me>
-            \sum_{i=1}^{n-1}x^i={1-x^n\over 1-x}.
+            \sum_{i=1}^{n-1}x^i=\frac{1-x^n}{1-x}.
           </me>
         </p>
 
         <p>
           Using this in our formula for <m>a_n</m>
           gives us
-          <m>a_n =a_ob^n+d{1-b^n\over 1-b}.</m> This is valid except in the case <m>b=1</m> (in
+          <m>a_n =a_ob^n+d\frac{1-b^n}{1-b}.</m> This is valid except in the case <m>b=1</m> (in
           our computation with <m>x</m> above, we would be dividing by 0.) If <m>b=1</m> we get
           <m>a_n =a_0 +nd</m> for the sum.
         </p>
@@ -504,15 +504,15 @@
         <solution>
           <p>
             We expect <m>(1-b)\sum_{i=0}^{n-1} db^i</m> to be <m>d(1-b^n)</m>. If
-            <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d{1-b^n\over 1-b}.</m> We can
-            prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>1-b^n\over 1-b</m>, and
+            <m>b\not=1</m>, this gives us <m>\sum_{i=0}^{n-1}db^i=d\frac{1-b^n}{1-b}.</m> We can
+            prove this by induction on <m>n</m>. If <m>n=0</m> we get 0 for <m>\frac{1-b^n}{1-b}</m>, and
             also for the sum <m>\sum_{i=0}^{-1}db^i</m>, since that sum has no terms. Assuming
             the formula holds when <m>n=k-1</m>, we may write
             <md>
-              <mrow>\amp \amp \sum_{i=0}^{k-1} db^i</mrow>
-              <mrow>\amp =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
-              <mrow>\amp =\amp d{1-b^{k-1}\over 1-b}+db^{k-1}</mrow>
-              <mrow>\amp =\amp { d-db^{k-1}  +db^{k-1}-db^k\over 1-b}\rangle =\rangle  d{1-b^k\over 1-b}.</mrow>
+              <mrow> \amp \sum_{i=0}^{k-1} db^i</mrow>
+              <mrow> =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
+              <mrow> =\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}</mrow>
+              <mrow> =\amp \frac{d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.</mrow>
             </md>
           </p>
 
@@ -536,7 +536,7 @@
       <statement>
         <p>
           If <m>b\not=1</m> and <m>a_n=ba_{n-1} +d</m>, then <m>\displaystyle a_n =
-          a_0b^n + d{1-b^n\over 1-b}</m>. If <m>b=1</m>, then, <m>\displaystyle a_n =
+          a_0b^n + d\frac{1-b^n}{1-b}</m>. If <m>b=1</m>, then, <m>\displaystyle a_n =
           a_0 +nd</m>
         </p>
       </statement>
@@ -546,7 +546,7 @@
       <statement>
         <p>
           If <m>b\not=1</m>, then <m>\displaystyle \sum_{i=0}^{n-1}b^i =
-          {1-b^n\over 1-b}</m>. If <m>b=1</m>, <m>\displaystyle \sum_{i=0}^{n-1}b^i =n</m>.
+          \frac{1-b^n}{1-b}</m>. If <m>b=1</m>, <m>\displaystyle \sum_{i=0}^{n-1}b^i =n</m>.
         </p>
       </statement>
     </corollary>

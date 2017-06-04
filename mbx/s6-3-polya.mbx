@@ -97,9 +97,9 @@
       </statement>
       <solution>
         <md>
-          <mrow>E_P(S_1\times S_2)\amp =\amp \sum_{x_1\in S_1,\ x_2\in
+          <mrow>E_P(S_1\times S_2) =\amp \sum_{x_1\in S_1,\ x_2\in
           S_2}P(x_1)P(x_2)=\sum_{x_1\in S_1}\sum_{x_2 \in S_2}P(x_1)P(x_2)</mrow>
-          <mrow>\amp =\amp  \sum_{x_1\in
+          <mrow> =\amp  \sum_{x_1\in
           S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2).</mrow>
         </md>
       </solution>
@@ -181,10 +181,10 @@
           <m>P(M)</m> is the picture <m>P(x)</m> of any element <m>x</m> of <m>M</m>, and the number of elements
           of a multiorbit <m>M</m> is always the size of <m>G</m>. This lets us write
           <md>
-            <mrow>E\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)</mrow>
-            <mrow>\amp =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)</mrow>
-            <mrow>\amp =\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)</mrow>
-            <mrow>\amp =\amp |G|{ Orb}(G,S)</mrow>
+            <mrow>E =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)</mrow>
+            <mrow> =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)</mrow>
+            <mrow> =\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)</mrow>
+            <mrow> =\amp |G|{ Orb}(G,S)</mrow>
           </md>
         </p>
 
@@ -192,17 +192,17 @@
           Recall also that the multiplicity of an element <m>x</m> in its multiorbit, and thus in
           the union of the multiorbits is <m>|Fix(x)|</m>. This lets us write
           <md>
-            <mrow>E\amp =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)</mrow>
-            <mrow>\amp =\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)</mrow>
-            <mrow>\amp =\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)</mrow>
-            <mrow>\amp =\amp  { Fix}(G,S).</mrow>
+            <mrow>E =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)</mrow>
+            <mrow> =\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)</mrow>
+            <mrow> =\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)</mrow>
+            <mrow> =\amp  { Fix}(G,S).</mrow>
           </md>
         </p>
 
         <p>
           Setting these two values of <m>E</m> equal and solving for <m>{ Orb}(G,S)</m> gives us
           <me>
-            { Orb}(G,S) ={1\over |G|}{ Fix}(G,S).
+            { Orb}(G,S) =\frac{1}{|G|}{ Fix}(G,S).
           </me>
         </p>
       </solution>
@@ -264,7 +264,7 @@
             Then the orbit
             enumerator for the action of <m>G</m> on the colorings is
             <me>
-              { Orb}(G,S)={1\over 6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
+              { Orb}(G,S)=\frac{1}{6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
               2(R^6+B^6)\right).
             </me>
           </p>
@@ -321,8 +321,8 @@
             <m>(R^3+B^3)^2</m>, and if it is the identity, then its fixed point enumerator is
             <m>(R+B)^6</m>. Therefore the generating function is
             <md>
-              <mrow>\amp \amp {1\over 24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +</mrow>
-              <mrow>\amp \amp 6
+              <mrow> \amp \frac{1}{24}\big((R+B)^6 + 8(R^3+B^3)^2 + 3(R^2+B^2)^2(R+B)^2 +</mrow>
+              <mrow> \amp 6
               (R^2+B^2)^3 + 6 (R^4+B^4)(R+B)^2\big),</mrow>
             </md>
             which expands to
@@ -540,7 +540,7 @@
           The <em>cycle indicator</em> or
           <em>cycle index</em><index><main>cycle index</main></index> of <m>G</m> acting on <m>S</m> is
           <me>
-            Z(G,S) = {1\over |G|}\sum_{\sigma: \sigma \in G} z(\sigma).
+            Z(G,S) = \frac{1}{|G|}\sum_{\sigma: \sigma \in G} z(\sigma).
           </me>
         </p>
 
@@ -553,9 +553,9 @@
         <p>
           For <m>D_6</m>, we get
           <md>
-            <mrow>{1\over 12}\left(z_1^6
-            +2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right) \amp =\amp</mrow>
-            <mrow>{1\over 12}\left(z_1^6
+            <mrow>\frac{1}{12}\left(z_1^6
+            +2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right)  =\amp</mrow>
+            <mrow>\frac{1}{12}\left(z_1^6
             +2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)\amp \amp</mrow>
           </md>
         </p>
@@ -563,8 +563,8 @@
         <p>
           For the rotation group of the cube, we get
           <md>
-            <mrow>{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right)\amp =\amp</mrow>
-            <mrow>{1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right)\amp \amp</mrow>
+            <mrow>\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right) =\amp</mrow>
+            <mrow>\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right) \amp</mrow>
           </md>
         </p>
       </solution>
@@ -630,9 +630,9 @@
           opposite sides; each is a product of six two-cycles. Summarizing this in the cycle index,
           we write
           <md>
-            <mrow>Z(G,S) \amp =\amp {1\over 24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
+            <mrow>Z(G,S)  =\amp \frac{1}{24}\left( z_1^{12}+z_2^6+ 2z_3^4+ 2z_4^3 + 2z_6^2 +4z_{12} +
             6z_2^5z_1^2 + 6z_2^6\right)</mrow>
-            <mrow>\amp =\amp {1\over24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
+            <mrow> =\amp \frac{1}{24}\left( z_1^{12}+7z_2^6+ 2z_3^4+ 2z_4^3 +
             2z_6^2 +4z_{12} + 6z_2^5z_1^2\right).</mrow>
           </md>
         </p>
@@ -644,7 +644,7 @@
         </p>
 
         <p>
-          <m>{1\over 24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
+          <m>\frac{1}{24}\Big((B+G+R+Y)^{12}+7(B^2+G^2+R^2+Y^2)^6+
           2(B^3+G^3+R^3+Y^3)^4+\\
           2(B^4+G^4+R^4+Y^4)^3 +  2(B^6+G^6+R^6+Y^6)^2
           +\\4(B^{12}+G^{12}+R^{12}+Y^{12}) +  6((B^2+G^2+R^2+Y^2)^5)(B+G+R+Y)^2\Big)</m>
@@ -656,13 +656,11 @@
           <m>B^3G^3R^2Y^4</m> by computing the contribution of each term of the sum to the coefficient.
           We get
           <md>
-            <mrow>{1\over24}\left({12\choose 3,3,2,4}+ 6{5\choose
-            1,1,1,2}{2\choose1,1}\right)\amp =\amp {12!\over 24\cdot3!3!2!4!}+{6\cdot5!2!\over
-            24\cdot2!}</mrow>
-            <mrow>\amp =\amp {11!\over2\cdot3!3!2!4!}+5
+            <mrow>\frac{1}{24}\left(\binom{12}{3,3,2,4}+ 6\binom{5}{1,1,1,2}\binom{2}{1,1}\right) =\amp \frac{12!}{24\cdot3!3!2!4!}+\frac{6\cdot5!2!}{24\cdot2!}</mrow>
+            <mrow> =\amp \frac{11!}{2\cdot3!3!2!4!}+5
             \cdot3\cdot2</mrow>
-            <mrow>\amp =\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30</mrow>
-            <mrow>\amp =\amp 11,550+30=11,580</mrow>
+            <mrow> =\amp 11\cdot5\cdot3\cdot2\cdot7\cdot5+30</mrow>
+            <mrow> =\amp 11,550+30=11,580</mrow>
           </md>
         </p>
       </solution>
@@ -688,13 +686,13 @@
           <m>|T|</m> for each variable in the cycle index. The cycle index for the rotation group of
           the cube acting on the faces is
           <me>
-            {1\over 24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)
+            \frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right.)
           </me>
         </p>
 
         <p>
           Substituting 4 for
-          each variable gives us <m>{1\over 24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228</m>.
+          each variable gives us <m>\frac{1}{24}\left(3\cdot4^4+6\cdot4^3+14\cdot 4^2+4^6\right)\\=228</m>.
         </p>
       </solution>
     </activity>
@@ -743,7 +741,7 @@
       <p>
         Thus the cycle index is
         <me>
-          {1\over 24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
+          \frac{1}{24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
         </me>
       </p>
 
@@ -751,7 +749,7 @@
         We substitute
         the number three for each of the variables to get
         <me>
-          {1\over24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
+          \frac{1}{24}\left(3^{12}+6\cdot 3^3+3\cdot3^6+6\cdot 3^7 +8\cdot3^4\right)=22815
         </me>
         ways to
         make the cube. To compute the number of ways with four sticks of each color, we
@@ -760,31 +758,27 @@
       </p>
 
       <p>
-        <m>{1\over
-        24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
+        <m>\frac{1}{24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
         +8(R^3+B^3+G^3)^4\Big)</m>.
       </p>
 
       <p>
         The coefficient of <m>R^4B^4G^4</m> is
         <md>
-          <mrow>{1\over
-          24}\left({12\choose4,4,4}+6{3\choose1,1,1}+3{6\choose2,2,2}+
-          6{3\choose1}{5\choose2,2,1}{2\choose2,0,0}
-          \right)\amp =\amp</mrow>
-          <mrow>{1\over
-          24}\left({12!\over4!4!4!}+6\cdot3!+3{6!\over2!2!2!}+6\cdot3{5!\over2!2!1!}\right)=1479\amp \amp</mrow>
+          <mrow>\frac{1}{24}\left(\binom{12}{4,4,4}+6\binom{3}{1,1,1}+3\binom{6}{2,2,2}+
+          6\binom{3}{1}\binom{5}{2,2,1}\binom{2}{2,0,0}
+          \right) =\amp</mrow>
+          <mrow>\frac{1}{24}\left(\frac{12!}{4!4!4!}+6\cdot3!+3\frac{6!}{2!2!2!}+6\cdot3\frac{5!}{2!2!1!}\right)=1479 \amp</mrow>
         </md>
       </p>
 
       <p>
         The coefficient of <m>R^2B^4G^6</m> is
         <md>
-          <mrow>{1\over 24}\left({12\choose2,4,6}
-          +3{6\choose1,2,3}+6\left({5\choose0,2,3}+{5\choose
-          1,1,3}+{5\choose1,2,2}\right)\right)\amp =\amp</mrow>
-          <mrow>{1\over24}\left({12!\over2!4!6!}+3{6!\over1!2!3!}+6\left({5!\over2!3!}+{5!\over1!1!3!}
-          +{5!\over1!2!2!}\right)\right)=600.</mrow>
+          <mrow>\frac{1}{24}\left(\binom{12}{2,4,6}
+          +3\binom{6}{1,2,3}+6\left(\binom{5}{0,2,3}+\binom{5}{1,1,3}+\binom{5}{1,2,2}\right)\right) =\amp</mrow>
+          <mrow>\frac{1}{24}\left(\frac{12!}{2!4!6!}+3\frac{6!}{1!2!3!}+6\left(\frac{5!}{2!3!}+\frac{5!}{1!1!3!}
+          +\frac{5!}{1!2!2!}\right)\right)=600.</mrow>
         </md>
       </p>
       </activity>
@@ -832,14 +826,14 @@
           <p>
             Thus the cycle index for this action is
             <me>
-              {1\over 24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
+              \frac{1}{24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
             </me>
           </p>
 
           <p>
             Substituting 4 for each variable gives us
             <me>
-              {1\over 24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.
+              \frac{1}{24}\left(4^8+6\cdot4^2 +9\cdot 4^4 + 8\cdot4^2\cdot4^2\right)=2916.
             </me>
           </p>
 
@@ -921,7 +915,7 @@
             <m>(2\ 5)D_6</m> and
             <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is.
             <me>
-              {1 \over 48} \left(Z^6_1 + 8Z^2_3
+              \frac{1}{48} \left(Z^6_1 + 8Z^2_3
               +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
               6z_2z_4+6z_1^2z_4\right).
             </me>
@@ -930,7 +924,7 @@
           <p>
             Since we have three kinds of computers, we substitute 3 for each variable to get
             <me>
-              {1 \over 48} \left(3^6 + 8\cdot3^2
+              \frac{1}{48} \left(3^6 + 8\cdot3^2
               +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
               6\cdot3^2+6\cdot3^3\right)=56.
             </me>
@@ -981,7 +975,7 @@
         <li>
           <p>
             <m>(1,1,1,1,1) =1^5</m> is the cycle structure of the identity; acting on two-element
-            subsets the identity is a product of <m>{5\choose2}=10</m> one-cycles.  Of course there is only
+            subsets the identity is a product of <m>\binom{5}{2}=10</m> one-cycles.  Of course there is only
             one identity permutation.
           </p>
         </li>
@@ -991,7 +985,7 @@
             the two cycle and each pair of the three elements outside for a total of four
             one-cycles; each pair of an element in the two cycle and an element not will be in a
             two cycle.  There are 6 such pairs and thus three two-cycles, so such a permutation
-            has 3 two-cycles and four one-cycles.  There are <m>{5\choose 2}=10</m> such permutations.
+            has 3 two-cycles and four one-cycles.  There are <m>\binom{5}{2}=10</m> such permutations.
           </p>
         </li>
         <li>
@@ -999,27 +993,27 @@
             A permutation with cycle structure <m>2^2 1^1</m> will have a one-cycle of two-sets
             for each two cycle, any other two-set will be in a  two cycle.  There are <m>4+2+2=8</m>
             such two-sets and thus four two-cycles, so such a permutation has four two cycles
-            and two one cycles.  There are <m>{5\choose2}{3\choose2}/2 =15</m> such permutations.
+            and two one cycles.  There are <m>\binom{5}{2}\binom{3}{2}/2 =15</m> such permutations.
           </p>
         </li>
         <li>
           <p>
             A permutation with cycle structure <m>3^1 1^2</m> will have one cycle of size 1 on
             two-sets from the two one-element cycles of the original action; each other two-element
-            subset will be in a three cycle.  There are <m>{3\choose 2}+3\cdot2=9</m> such pairs, and so
+            subset will be in a three cycle.  There are <m>\binom{3}{2}+3\cdot2=9</m> such pairs, and so
             there are three three-cycles of two-element subsets.  Thus such a permutation has one
-            one-cycle and three three-cycles in its action of two-sets. There are <m>2{5\choose 3}=20</m>
+            one-cycle and three three-cycles in its action of two-sets. There are <m>2\binom{5}{3}=20</m>
             such permutations.
           </p>
         </li>
         <li>
           <p>
             A permutation with cycle structure <m>3^1 2^1</m> will have one one-cycle on two-sets from
-            the two-cycle of the original action, it will have <m>3\choose 2</m>  two-sets in three
+            the two-cycle of the original action, it will have <m>\binom{3}{2}</m>  two-sets in three
             cycles,  and will have six two-sets in
             six-cycles, and so will have just one six-cycle of two-sets.  Thus such a
             permutation has one one-cycle, one three-cycle and one six-cycle when it acts on
-            two-sets.  There are <m>2{5\choose 3}=20</m> such permutations.
+            two-sets.  There are <m>2\binom{5}{3}=20</m> such permutations.
           </p>
         </li>
         <li>
@@ -1028,7 +1022,7 @@
             and one two-cycle of two-subsets from its own four-cycle and another four cycle of
             pairs of members of the four-cycle and one cycle. thus it has two four-cycles and
             two one-cycles There are
-            <m>6{5\choose4}=30</m> such permutations.
+            <m>6\binom{5}{4}=30</m> such permutations.
           </p>
         </li>
         <li>
@@ -1041,7 +1035,7 @@
         <p>
           Thus for the group <m>S_5</m> acting on pairs from <m>[5]</m>, the cycle index is
           <me>
-            {1\over120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
+            \frac{1}{120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+
             30z_4^2z_2+ 24z_5^2\right).
           </me>
         </p>
@@ -1050,7 +1044,7 @@
           Substituting 2 for each variable gives us that there
           are
           <me>
-            {1\over120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
+            \frac{1}{120}\left(2^{10}+10\cdot2^7+15\cdot2^5+20\cdot2^4+20\cdot2^3+30\cdot2^3+
             24\cdot2^2\right)=30
           </me>
           graphs on five vertices.

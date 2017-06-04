@@ -119,14 +119,14 @@
               <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
               2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
               \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-              \end{pmatrix} \amp =\amp
+              \end{pmatrix}  =\amp
               \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
               \end{pmatrix} \amp \amp</mrow>
             </md>
             <md>
               <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
               \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-              \end{pmatrix} \amp =\amp
+              \end{pmatrix}  =\amp
               \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
               \end{pmatrix} \amp \amp</mrow>
             </md>
@@ -289,11 +289,11 @@
           To show that <m>\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}</m>, we
           note that
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\}) \amp =\amp
+            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\})  =\amp
             \beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
             \tau(j)\})=</mrow>
-            <mrow>\sigma({\tau(i),\tau(j)})\amp =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
-            <mrow>\amp \amp \beta_{\sigma\circ\tau}(\{i,j\})</mrow>
+            <mrow>\sigma({\tau(i),\tau(j)}) =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
+            <mrow> \amp \beta_{\sigma\circ\tau}(\{i,j\})</mrow>
           </md>
         </p>
       </solution>
@@ -408,14 +408,14 @@
         <p>
           If <m>\beta_{\sigma}(f) = f\circ\sigma^{-1}</m>, then
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f)\amp =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
-            <mrow>\amp =\amp
+            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f) =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
+            <mrow> =\amp
             \beta_{\sigma}(f\circ \tau^{-1})</mrow>
-            <mrow>\amp =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
-            <mrow>\amp =\amp
+            <mrow> =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
+            <mrow> =\amp
             f\circ(\tau^{-1}\circ \sigma^{-1})</mrow>
-            <mrow>\amp =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
-            <mrow>\amp =\amp \beta_{\sigma\circ\tau}(f).</mrow>
+            <mrow> =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
+            <mrow> =\amp \beta_{\sigma\circ\tau}(f).</mrow>
           </md>
         </p>
 
@@ -1231,8 +1231,7 @@
         <p>
           Therefore,
           <me>
-            m={1\over
-            |G|}\sum_{x:x\in S} |{ Fix}(x)|.
+            m=\frac{1}{|G|}\sum_{x:x\in S} |{ Fix}(x)|.
           </me>
         </p>
       </solution>
@@ -1260,7 +1259,7 @@
         </statement>
         <solution>
           <me>
-            m={1\over |G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
+            m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
             \chi(\sigma,x).
           </me>
         </solution>
@@ -1282,7 +1281,7 @@
         </statement>
         <solution>
           <me>
-            m={1\over |G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
+            m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
           </me>
         </solution>
       </task>
@@ -1322,7 +1321,7 @@
           <m>\rho^i</m> must be an orbit of that group. But the size of the orbit must be
           a divisor of the size of the subgroup, which must be a divisor of seventeen,
           so the size of the orbit is one or 17. If it is 1, then <m>i=0</m>. Thus no
-          elements are fixed by any nontrivial rotation, and all <m>17\choose 4,6,7</m>
+          elements are fixed by any nontrivial rotation, and all <m>\binom{17}{4,6,7}</m>
           lists of <m>R</m>s, <m>B</m>s and <m>G</m>s are fixed by the identity. Each flip will be a
           flip \strut around a line from a bead to the spot between the two <q>opposite</q>
           beads. This line divides the list into the eight beads on its left, the
@@ -1332,12 +1331,11 @@
           seven green beads. Thus the number of lists that are fixed by a flip is the
           number of ways to place three green beads, two red beads, and three blue
           beads in 8 slots, which is
-          <m>8\choose3,2,3</m>, or <m>8!\over3!2!3!</m>. There are 17 flips, so there are
-          <m>17\cdot8!\over3!2!3!</m> elements fixed by flips. Therefore we have
+          <m>\binom{8}{3,2,3}</m>, or <m>\frac{8!}{3!2!3!}</m>. There are 17 flips, so there are
+          <m>\frac{17\cdot8!}{3!2!3!}</m> elements fixed by flips. Therefore we have
           <me>
-            {1\over
-            2\cdot 17}\left({17!\over 4!6!7!} + {17\cdot8!\over 3!2!2!}\right) =
-            {8\cdot15!\over 4!6!7!} + {4\cdot7!\over 3!2!3!}= 120,400
+            \frac{1}{2\cdot 17}\left(\frac{17!}{4!6!7!} + \frac{17\cdot8!}{3!2!2!}\right) =
+            \frac{8\cdot15!}{4!6!7!} + \frac{4\cdot7!}{3!2!3!}= 120,400
           </me>
           necklaces. The
           numerical answer, which is unimportant here, was obtained from Maple.
@@ -1364,8 +1362,7 @@
           to the positions on the left, so a flip fixes <m>2^9</m> functions. Therefore by
           the CFB theorem, we have
           <me>
-            {1\over 2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)={2^{16}\over
-            17}+2^8 +{2^4\over 17}=16{4097\over17}+256=4112
+            \frac{1}{2\cdot 17}\left(2^{17}+ 17\cdot2^9+16\cdot 2\right)=\frac{2^{16}}{17}+2^8 +\frac{2^4}{17}=16\frac{4097}{17}+256=4112
           </me>
           necklaces.
         </p>
@@ -1384,7 +1381,7 @@
         <p>
           Here we need to consider the action of <m>D_{15}</m> on lists
           (functions from <m>[15]</m> to <m>\{R,B,G\}</m>) with five <m>R</m>s, five <m>B</m>s, and five
-          <m>G</m>s. The identity will fix <m>15\choose5,5,5</m> lists. A rotation through
+          <m>G</m>s. The identity will fix <m>\binom{15}{5,5,5}</m> lists. A rotation through
           3,6,9,or 12 places will fix any function that has the same value in places
           1, 4, 7, 10, and 13, the same value in places 2, 5, 8, 11, and 14, and the
           same value in places 3, 6, 9, 12, and 15. There are <m>3!</m> such lists. There
@@ -1397,7 +1394,7 @@
           beads of each color for a flip to fix a list of beads. Thus no flip fixes
           any functions. Therefore by the CFB theorem we have
           <me>
-            {1\over2\cdot15}\left({15!\over5!5!5!} +4\cdot 3!\right)=25,226
+            \frac{1}{2\cdot15}\left(\frac{15!}{5!5!5!} +4\cdot 3!\right)=25,226
           </me>
           necklaces. (The numerical answer, which was obtained from Maple, is not
           important here.)
@@ -1449,7 +1446,7 @@
             There are 4 functions fixed by a 120 degree or 240 degree rotation. Thus by
             the CFB theorem, we have
             <me>
-              {1\over24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10
+              \frac{1}{24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10
             </me>
             ways to paint
             the faces of a cube with two colors of paint. Two of these colorings use
@@ -1481,10 +1478,10 @@
           edge is colored blue, the size of the orbit is also a divisor of <m>n+1</m>.
           But neither <m>n</m> nor <m>n+1</m> have common divisors with <m>2n+1</m>, except for
           one. Therefore the only rotation that fixes a coloring is the identity
-          rotation, and it fixes all <m>2n+1\choose n</m> colorings. Thus the number of
+          rotation, and it fixes all <m>\binom{2n+1}{n}</m> colorings. Thus the number of
           orbits is
           <me>
-            {1\over 2n+1}{2n+1 \choose n} = {1\over n+1}{2n\choose n},
+            \frac{1}{2n+1}\binom{2n+1}{n} = \frac{1}{n+1}\binom{2n}{n},
           </me>
           a
           Catalan number.
@@ -1514,7 +1511,7 @@
           edge is colored blue, the size of the orbit is also a divisor of <m>n+1</m>.
           But neither <m>n</m> nor <m>n+1</m> have common divisors with <m>2n+1</m>, except for
           one. Therefore the only rotation that fixes a coloring is the identity
-          rotation, and it fixes all <m>2n+1\choose n</m> colorings.
+          rotation, and it fixes all <m>\binom{2n+1}{n}</m> colorings.
         </p>
 
         <p>
@@ -1524,19 +1521,19 @@
           blue and an even number <m>n</m> of edges to be colored red. It the flip over
           the axis perpendicular to the side we picked fixes the coloring, the <m>n</m>
           edges to the right of the chosen edge must be colored identically with
-          the <m>n</m> edges to the left of the chosen edge. There are <m>n\choose n/2</m>
+          the <m>n</m> edges to the left of the chosen edge. There are <m>\binom{n}{n/2}</m>
           ways to color the <m>n</m> edges to the right of the chosen edge (choose which
           edges get red), and so this is the number of colorings fixed by this
           flip. We have <m>2n+1</m> flips, and since we have one flip of the type described for each
           edge, all flips have the form given above. Thus each flip fixes
-          <m>n\choose n/2</m> colorings.
+          <m>\binom{n}{n/2}</m> colorings.
         </p>
 
         <p>
           Thus the number of orbits is
           <me>
-            {1\over 2(2n+1)}\left({2n+1\choose n} +
-            (2n+1){n\choose n/2}\right).
+            \frac{1}{2(2n+1)}\left(\binom{2n+1}{n} +
+            (2n+1)\binom{n}{n/2}\right).
           </me>
         </p>
 
@@ -1545,7 +1542,7 @@
           colored red and an even number <m>n+1</m> of edges to be colored blue. With an argument
           similar to the previous one we see that there are
           <me>
-            {1\over 2(2n+1)}\left({2n+1\choose n} + (2n+1)({n\choose (n-1)/2}\right)
+            \frac{1}{2(2n+1)}\left(\binom{2n+1}{n} + (2n+1)(\binom{n}{(n-1)/2}\right)
           </me>
           orbits.
         </p>
@@ -1587,7 +1584,7 @@
           have the same color. No proper coloring is fixed by a flip, because for a
           flip to fix a coloring, the coloring must give the same color to two
           adjacent vertices. Thus the number of really different proper four-colorings
-          of a cycle on 5 vertices is <m>{240\over 10}=24</m>.
+          of a cycle on 5 vertices is <m>\frac{240}{10}=24</m>.
         </p>
       </solution>
     </activity>
