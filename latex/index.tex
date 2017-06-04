@@ -1,6 +1,6 @@
 %**************************************%
 %* Generated from MathBook XML source *%
-%*    on 2017-06-03T16:49:11-06:00    *%
+%*    on 2017-06-03T18:19:57-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -1099,7 +1099,7 @@ We first gave this problem as \hyperref[tennispairings1a]{Problem~}. Now we have
 \end{activity}
 \begin{activity}[]\label{Stirling_sapproximation}
 While the formula you proved in \hyperref[nchoosek]{Problems~\ref{nchoosek}} and \hyperref[formulanchoosekfinal]{Task~} is very useful, it doesn't give us a sense of how big the binomial coefficients are. We can get a very rough idea, for example, of the size of \(\binom{2n}{n}\) by recognizing that we can write \((2n)^{\underline{n}}/n!\) as \(\frac{2n}{n}\cdot
-\frac{2n-1}{n-1}\cdots \frac{n+1}{1}\), and each quotient is at least \(2\), so the product is at least \(2^n\). If this were an accurate estimate, it would mean the fraction of \(n\)-element subsets of a \(2n\)-element set would be about \(2^n/2^{2n}=1/2^n\), which becomes very small as \(n\) becomes large. However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if \(\binom{2n}{k}\) were the same for every \(k\), then each would be the fraction \(\frac{1}{ 2n+1}\) of \(2^{2n}\). This is much larger than the fraction \(\frac{1}{2^n}\). But our intuition suggets that \(\binom{2n}{n}\) is much larger than \(\binom{2n}{1}\) and is likely larger than \(\binom{2n}{n-1}\) so we can be sure our approximation is a bad one. For estimates like this, James Stirling developed a formula to approximate \(n!\) when \(n\) is large, namely \(n!\) is about \(\left(\sqrt{2\pi
+\frac{2n-1}{n-1}\cdots \frac{n+1}{1}\), and each quotient is at least \(2\), so the product is at least \(2^n\). If this were an accurate estimate, it would mean the fraction of \(n\)-element subsets of a \(2n\)-element set would be about \(2^n/2^{2n}=1/2^n\), which becomes very small as \(n\) becomes large. However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if \(\binom{2n}{k}\) were the same for every \(k\), then each would be the fraction \(\frac{1}{2n+1}\) of \(2^{2n}\). This is much larger than the fraction \(\frac{1}{2^n}\). But our intuition suggets that \(\binom{2n}{n}\) is much larger than \(\binom{2n}{1}\) and is likely larger than \(\binom{2n}{n-1}\) so we can be sure our approximation is a bad one. For estimates like this, James Stirling developed a formula to approximate \(n!\) when \(n\) is large, namely \(n!\) is about \(\left(\sqrt{2\pi
 n}\right){n^n/ e^n}\).\index{Stirling's formula for \(n"!\)}\index{\(n"!\)!Stirling's formula for} In fact the ratio of \(n!\) to this expression approaches 1 as \(n\) becomes infinite.\footnote{Proving this takes more of a detour than is advisable here; however there is an elementary proof which you can work through in the problems of the end of Section 1 of Chapter 1 of \emph{Introductory Combinatorics} by Kenneth P. Bogart, Harcourt Academic Press, (2000).\label{fn-2}} We write this as%
 \begin{equation*}
 n!\sim \sqrt{2\pi
@@ -1107,7 +1107,7 @@ n}\frac{n^n}{e^n}.
 \end{equation*}
 %
 \par
-We read this notation as \(n!\) is asymptotic to \(\sqrt{2\pi n}\frac{n^n}{e^n}\). Use Stirling's formula to show that the fraction of subsets of size \(n\) in an \(2n\)-element set is approximately \(1/\sqrt{\pi n}\). This is a much bigger fraction than \(\frac{1}{ 2^n}\)!%
+We read this notation as \(n!\) is asymptotic to \(\sqrt{2\pi n}\frac{n^n}{e^n}\). Use Stirling's formula to show that the fraction of subsets of size \(n\) in an \(2n\)-element set is approximately \(1/\sqrt{\pi n}\). This is a much bigger fraction than \(\frac{1}{2^n}\)!%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section 0.3 Some Applications of the Basic Principles}
@@ -1175,7 +1175,7 @@ Notice that a lattice path from \((0,0)\) to \((n,n)\) stays inside (or on the e
 ~\par
 \item Find a formula for the number of lattice paths from \((0,0)\) to \((n,n)\) that do not cross the line \(y=x\).  The number of such paths is called a \emph{Catalan Number}\index{Catalan Number} and is usually denoted by \(C_n\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(C_n=\binom{2n}{n} - \binom{2n }{n+1}=\frac{1}{n+1}\binom{2n}{n}.\)%
+\textbf{Solution.}\quad \(C_n=\binom{2n}{n} - \binom{2n}{n+1}=\frac{1}{n+1}\binom{2n}{n}.\)%
 
 \end{enumerate}
 \end{activity}
@@ -1210,8 +1210,7 @@ Your formula for the Catalan Number can be expressed as a binomial coefficient d
 ~\par
 \item Explain how you have just given another proof of the formula for the Catalan Numbers.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We have taken the set of all \(\binom{2n}{n}\) diagonal lattice paths of length \(2n\) from \((0,0)\) to \((2n,0)\) and partitioned it into \(n+1\) blocks all of size \(C_n\). Thus by the quotient principle, \(C_n=\frac{1}{n+1}\binom{2n
-}{n}\).%
+\textbf{Solution.}\quad We have taken the set of all \(\binom{2n}{n}\) diagonal lattice paths of length \(2n\) from \((0,0)\) to \((2n,0)\) and partitioned it into \(n+1\) blocks all of size \(C_n\). Thus by the quotient principle, \(C_n=\frac{1}{n+1}\binom{2n}{n}\).%
 
 \end{enumerate}
 \end{activity}
@@ -1987,7 +1986,7 @@ Do this problem only if your final answer (so far) to \hyperref[firstordlinconst
 \amp \sum_{i=0}^{k-1} db^i\\
 =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}\\
 =\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}\\
-=\amp \frac{ d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
+=\amp \frac{d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.
 \end{align*}
 %
 \par
@@ -2534,7 +2533,7 @@ A \terminology{multiset}\index{multiset} chosen from a set \(S\) may be thought 
 \begin{enumerate}[label=(\alph*)]
  \item Your answer in the previous problem should be expressible as a binomial coefficient. Since a binomial coefficient counts subsets, find a bijection between subsets of something and multisets chosen from a set \(S\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Note that \(\binom{n+k-1}{k} = \binom{n+k-1 }{n-1}\). We will show a bijection between ways of choosing \(n-1\) things our of \(n+k-1\) things and multisets. Namely, take \(n+k-1\) objects and line them up in a row. Choose \(n-1\) of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if \(1\lt i\lt n\), let the multiplicity of element \(i\) of our multiset be the number of things between the \(i-1\)th thing we chose and the \(i\)th thing we choose. Let the multiplicity of the \(n\)th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of \(n+k-1\) blank spaces. We choose \(k\) of them in which we put ones and \(n-1\) of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element \(n\) is the number of ones after the last plus sign and if \(1\lt i\lt n\), the multiplicity of element \(i\) is the number of ones between the \((i-1)\)th plus sign and the \(i\)th plus sign.%
+\textbf{Solution.}\quad Note that \(\binom{n+k-1}{k} = \binom{n+k-1}{n-1}\). We will show a bijection between ways of choosing \(n-1\) things our of \(n+k-1\) things and multisets. Namely, take \(n+k-1\) objects and line them up in a row. Choose \(n-1\) of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if \(1\lt i\lt n\), let the multiplicity of element \(i\) of our multiset be the number of things between the \(i-1\)th thing we chose and the \(i\)th thing we choose. Let the multiplicity of the \(n\)th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of \(n+k-1\) blank spaces. We choose \(k\) of them in which we put ones and \(n-1\) of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element \(n\) is the number of ones after the last plus sign and if \(1\lt i\lt n\), the multiplicity of element \(i\) is the number of ones between the \((i-1)\)th plus sign and the \(i\)th plus sign.%
 
 ~\par
 \item How many solutions are there in nonnegative integers to the equation \(x_1+x_2+ \cdots +x_m = r\), where \(m\) and \(r\) are constants?%
@@ -3129,7 +3128,7 @@ Each gets exactly one&permutations&\tabularnewline[0pt]
 &ordered functions&\hglue -3 pt broken permutations (\(\le n\) parts)\kern -3 pt\tabularnewline[0pt]
 &&\tabularnewline\hrulethin
 6.  Distinct, order matters&\((k)^{\underline{n}}(k-1)^{\underline{k-n}}\)&\(L(k,n)=
-\binom{ k}{n}(k-1)^{\underline{k-n}}\)\tabularnewline[0pt]
+\binom{k}{n}(k-1)^{\underline{k-n}}\)\tabularnewline[0pt]
 Each gets at least one&ordered onto functions&broken permutations (\(n\) parts)\tabularnewline[0pt]
 &&\tabularnewline\hrulethin
 7.  Identical&\(\binom{n+k-1}{k}\)&\(\sum_{i=1}^nP(k,i)\)\tabularnewline[0pt]
@@ -3238,7 +3237,7 @@ If \(k= \frac{3j^2\pm j}{2}\) and \(j\) is even, then there is one diagram of a 
 %
 \end{enumerate}
 %
-\item\hypertarget{li-65}{}In how many ways can \(n\) identical chemistry books, \(r\) identical mathematics books, \(s\) identical physics books, and \(t\) identical astronomy books be arranged on three bookshelves? (Assume there is no limit on the number of books per shelf.) \(\frac{(n+r+s+t+2)! }{n!r!s!t!2!}\)%
+\item\hypertarget{li-65}{}In how many ways can \(n\) identical chemistry books, \(r\) identical mathematics books, \(s\) identical physics books, and \(t\) identical astronomy books be arranged on three bookshelves? (Assume there is no limit on the number of books per shelf.) \(\frac{(n+r+s+t+2)!}{n!r!s!t!2!}\)%
 %
 \item\hypertarget{li-66}{}(interesting) One formula for the Lah numbers is%
 \begin{equation*}
@@ -3563,7 +3562,7 @@ Find a formula for \((1+x)^{-n}\) as a power series whose coefficients involve b
 (1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
 \binom{n+i-1}{i}(-x)^i=\sum_{i=0}^\infty (-1)^i\binom{n+i-1}{i}x^i.
 \end{equation*}
-We want the coefficient of \(x^k\) in \((1+x)^{-n}\) to be \(\binom{-n}{k}\), so we want \(\binom{-n }{k}= (-1)^k\binom{n+k-1}{k}\).%
+We want the coefficient of \(x^k\) in \((1+x)^{-n}\) to be \(\binom{-n}{k}\), so we want \(\binom{-n}{k}= (-1)^k\binom{n+k-1}{k}\).%
 \end{activity}
 \begin{activity}[]\label{activity-170}
 If you define \(\binom{-n}{k}\) in the way you described in \hyperref[negnchoosek]{Problem~\ref{negnchoosek}}, you can write down a version of the binomial theorem for \((x+y)^n\) that is valid for both nonnegative and negative values of \(n\). Do so. This is called the \terminology{extended binomial theorem}\index{binomial theorem!extended}\index{extended binomial theorem}.%
@@ -3691,7 +3690,7 @@ Use generating functions to explain why the number of partitions of an integer i
 \end{equation*}
 and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer \(k\) into distinct parts is related to the number of partitions of an integer \(k\) into odd parts.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
+\textbf{Solution.}\quad \(\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i}}{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
 =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}\), because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of \(q\). But%
 \begin{align*}
 \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
@@ -3776,11 +3775,11 @@ While this doesn't {quite} look like the Pascal recurrence, it is still a correc
 ~\par
 \item Define \([n]_q\) to be \(1+q+\cdots+q^{n-1}\) for \(n>0\) and \([0]_q =1\).  We read this simply as \(n\)-sub-\(q\). Define \([n]!_q\) to be \([n]_q[n-1]_q\cdots [3]_q[2]_q[1]_q\). We read this as \(n\) cue-torial, and refer to it as a \terminology{\(q\)-ary factorial}.\index{factorial!\(q\)-ary}\index{\(q\)-ary factorial} Show that%
 \begin{equation*}
-\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.
+\qchoose{m+n}{n} = \frac{[m+n]!_q}{[m]!_q[n]!_q}.
 \end{equation*}
 %
 \par\medskip\noindent%
-\textbf{Solution.}\quad Note that \(\qchoose{n}{0}= \qchoose{n}{n} = 1\), because only the partition with no parts sits in a rectangle of width or depth 0. But \(\frac{[m+0]!_q }{[m]!_q[0]!_q} =1\) and \(\frac{[0+n]!_q }{[0]!_q[n]!_q} =1\). Thus the formula holds when \(m=0\) or \(n=0\). But%
+\textbf{Solution.}\quad Note that \(\qchoose{n}{0}= \qchoose{n}{n} = 1\), because only the partition with no parts sits in a rectangle of width or depth 0. But \(\frac{[m+0]!_q}{[m]!_q[0]!_q} =1\) and \(\frac{[0+n]!_q}{[0]!_q[n]!_q} =1\). Thus the formula holds when \(m=0\) or \(n=0\). But%
 \begin{align*}
 \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}\\
 =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
@@ -3793,7 +3792,7 @@ While this doesn't {quite} look like the Pascal recurrence, it is still a correc
 \end{align*}
 %
 \par
-Thus \(\frac{[m+n]!_q }{[m]!_q[n]!_q}\) satisfies our recurrence and so by the principle of mathematical induction, \(\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.\)%
+Thus \(\frac{[m+n]!_q}{[m]!_q[n]!_q}\) satisfies our recurrence and so by the principle of mathematical induction, \(\qchoose{m+n}{n} = \frac{[m+n]!_q}{[m]!_q[n]!_q}.\)%
 
 ~\par
 \item Now think of \(q\) as a variable that we will let approach \(1\). Find an explicit formula for \leavevmode%
@@ -4042,7 +4041,7 @@ The recurrence relations we have seen in this section are called \terminology{se
 \subsection[{Partial fractions}]{Partial fractions}\label{subsection-49}
 The generating functions you found in the previous section all can be expressed in terms of the reciprocal of a quadratic polynomial. However without a power series representation, the generating function doesn't tell us what the sequence is. It turns out that whenever you can factor a polynomial into linear factors (and over the complex numbers such a factorization always exists) you can use that factorization to express the reciprocal in terms of power series.%
 \begin{activity}[]\label{simplifysumoffractions}
-Express \(\frac{1}{x-3 } + \frac{2}{x-2}\) as a single fraction.%
+Express \(\frac{1}{x-3} + \frac{2}{x-2}\) as a single fraction.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\frac{x-2 +2(x-3)}{(x-3)(x-2)}=\frac{3x-8}{x^2-5x+6}\)%
 \end{activity}
@@ -5376,7 +5375,7 @@ We regard a cycle \((i\
 \end{equation*}
 %
 \par
-Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \(\frac{1}{2}\) and \(\frac{2}{ 4}\) to be equal. In particular, this means that \((i_1\ i_2\
+Since interchanging the columns in the two row notation for a permutation does not change the permutation\footnote{Note that not all ways of interchanging the columns list the bottom row in the order of a cycle of \(\sigma\), though.\label{fn-20}}, this means that equivalent cycles represent the same permutation. Thus we consider equivalent cycles to be equal in the same way we consider \(\frac{1}{2}\) and \(\frac{2}{4}\) to be equal. In particular, this means that \((i_1\ i_2\
 \ldots i_n) = (i_j\ \ i_{j+1}\ \ldots\ i_n\ \ i_1\ \ i_2\ \ldots\ i_{j-1})\).%
 \par
 If \(\gamma_1\), \(\gamma_2\), \dots{}, \(\gamma_n\) are the (inequivalent) cycles of a permutation \(\sigma\) of the set \(S\), then we write%
@@ -6054,7 +6053,7 @@ In how many ways may we color the edges of a (regular) \((2n+1)\)-gon free to mo
 \par\medskip\noindent%
 \textbf{Solution.}\quad The set of all powers of a rotation is a subgroup of the rotation group of the \((2n+1)\)-gon. If a given rotation fixes a coloring, all powers of that rotation fix the coloring. The set of edges to which a given edge is taken by that rotation is an orbit of the group of powers of the rotation. The size of this orbit is a divisor of the size of the subgroup, which is a divisor of \(2n+1\). If the edge is colored red, the size of the orbit is also a divisor of \(n\), and if the edge is colored blue, the size of the orbit is also a divisor of \(n+1\). But neither \(n\) nor \(n+1\) have common divisors with \(2n+1\), except for one. Therefore the only rotation that fixes a coloring is the identity rotation, and it fixes all \(\binom{2n+1}{n}\) colorings. Thus the number of orbits is%
 \begin{equation*}
-\frac{1}{2n+1}\binom{2n+1 }{n} = \frac{1}{n+1}\binom{2n}{n},
+\frac{1}{2n+1}\binom{2n+1}{n} = \frac{1}{n+1}\binom{2n}{n},
 \end{equation*}
 a Catalan number.%
 \end{activity}
@@ -6686,7 +6685,7 @@ R b\) to mean that \(a\) is related to \(b\). For example, if our relation is th
 ~\par
 \item A relation \(R\) on the set of ordered pairs of positive integers that you learned about in grade school in another notation is the relation that says \((m,n)\) is related to \((h,k)\) if \(mk =hn\). Show that this relation is an equivalence relation. In what context did you learn about this relation in grade school?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(mn=mn\) so the relation is reflexive. If \(mk=hn\), then \(hn=mk\), so if \((m,n)\) is related to \((h,k)\), then \((h,k)\) is related to \((m,n)\). If \((m,n)\) is related to \((h,k)\) and \((h,k)\) is related to \((p,q)\), then \(mk=hn\) and \(hq=pk\), which gives us \(mkhq=hnpk\), and cancelling \(h\) and \(k\) gives us \(mq=np=pn\), so \((m,n)\) is related to \((p,q)\). Therefore, the relation is transitive. This is the relation of equality of the fractions \(\frac{m}{ n}\) and \(\frac{h}{ k}\).%
+\textbf{Solution.}\quad \(mn=mn\) so the relation is reflexive. If \(mk=hn\), then \(hn=mk\), so if \((m,n)\) is related to \((h,k)\), then \((h,k)\) is related to \((m,n)\). If \((m,n)\) is related to \((h,k)\) and \((h,k)\) is related to \((p,q)\), then \(mk=hn\) and \(hq=pk\), which gives us \(mkhq=hnpk\), and cancelling \(h\) and \(k\) gives us \(mq=np=pn\), so \((m,n)\) is related to \((p,q)\). Therefore, the relation is transitive. This is the relation of equality of the fractions \(\frac{m}{n}\) and \(\frac{h}{k}\).%
 
 ~\par
 \item Another relation that you may have learned about in school, perhaps in the guise of ``clock arithmetic,'' is the relation of equivalence modulo \(n\). For integers (positive, negative, or zero) \(a\) and \(b\), we write \(a
@@ -6792,12 +6791,12 @@ There is a variant of one of the bijections we used to prove the Pascal Equation
 \begin{activity}[]\label{subsetsbysmallestcounterexample}
 ~\par
 \begin{enumerate}[label=(\alph*)]
- \item Write down a list of the subsets of \(\{ 1, 2 \}\). Don't forget the empty set! Group the sets containing containing 2 separately from the others.%
+ \item Write down a list of the subsets of \(\{1, 2 \}\). Don't forget the empty set! Group the sets containing containing 2 separately from the others.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\emptyset\), \(\{1\}\), \(\{2\}\), \(\{1, 2\}\).%
 
 ~\par
-\item Write down a list of the subsets of \(\{ 1, 2, 3 \}\). Group the sets containing 3 separately from the others.%
+\item Write down a list of the subsets of \(\{1, 2, 3 \}\). Group the sets containing 3 separately from the others.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\emptyset\), \(\{1\}\), \(\{2\}\), \(\{1, 2\}\), \(\{3\}\), \(\{1,3\}\), \(\{2,3\}\), \(\{1,2,3\}\).%
 
@@ -6807,13 +6806,13 @@ There is a variant of one of the bijections we used to prove the Pascal Equation
 \textbf{Solution.}\quad Adjoin \(2\) to each subset not containing \(2\) and you get each set containing 2. Adjoin 3 to each subset not containing 3, and you get each subset containing 3.%
 
 ~\par
-\item On the basis of the previous part, you should be able to find a bijection between the collection of subsets of \(\{1, 2, \ldots , n \}\) containing \(n\) and those not containing \(n\). (If you are having difficulty figuring out the bijection, try rethinking Parts (a) and (b), perhaps by doing a similar exercise with the set \(\{1,2,3,4\}\).) Describe the bijection (unless you are very familiar with the notation of sets, it is probably easier to describe to describe the function in words rather than symbols) and explain why it is a bijection. Explain why the number of subsets of \(\{ 1, 2, \ldots , n \}\) containing \(n\) equals the number of subsets of \(\{ 1, 2, \ldots, n-1 \}\).%
+\item On the basis of the previous part, you should be able to find a bijection between the collection of subsets of \(\{1, 2, \ldots , n \}\) containing \(n\) and those not containing \(n\). (If you are having difficulty figuring out the bijection, try rethinking Parts (a) and (b), perhaps by doing a similar exercise with the set \(\{1,2,3,4\}\).) Describe the bijection (unless you are very familiar with the notation of sets, it is probably easier to describe to describe the function in words rather than symbols) and explain why it is a bijection. Explain why the number of subsets of \(\{1, 2, \ldots , n \}\) containing \(n\) equals the number of subsets of \(\{1, 2, \ldots, n-1 \}\).%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If we adjoin \(n\) to the subsets not containing \(n\) we get the subsets containing \(n\). This is a bijection because if we start with two different sets, adjoining \(n\) to them can't make them the same, and every subset \(S\) containing \(n\) must arise in this way from the set \(S-\{n\}\) not containing \(n\).%
 
 ~\par
-\item Parts (a) and (b) suggest strongly that the number of subsets of a \(n\)-element set is \(2^n\). In particular, the empty set has \(2^0\) subsets, a one-element set has \(2^1\) subsets, itself and the empty set, and in Parts a and b we saw that two-element and three-element sets have \(2^2\) and \(2^3\) subsets respectively. So there are certainly some values of \(n\) for which an \(n\)-element set has \(2^n\) subsets. One way to prove that an \(n\)-element set has \(2^n\) subsets for all values of \(n\) is to argue by contradiction. For this purpose, suppose there is a nonnegative integer \(n\) such that an \(n\)-element set doesn't have exactly \(2^n\) subsets. In that case there may be more than one such \(n\). Choose \(k\) to be the smallest such \(n\). Notice that \(k -1\) is still a positive integer, because \(k\) can't be 0, 1, 2, or 3. Since \(k\) was the smallest value of \(n\) we could choose to make the statement ``An \(n\)-element set has \(2^n\) subsets'' false, what do you know about the number of subsets of a \((k - 1)\)-element set? What do you know about the number of subsets of the \(k\)-element set \(\{ 1, 2, \ldots, k \}\) that don't contain \(k\)? What do you know about the number of subsets of \(\{ 1,
-2, \ldots,  k \}\) that do contain \(k\)? What does the sum principle tell you about the number of subsets of \(\{ 1, 2, \ldots, k \}\)? Notice that this contradicts the way in which we chose \(k\), and the only assumption that went into our choice of \(k\) was that ``there is a nonnegative integer \(n\) such that an \(n\)-element set doesn't have exactly \(2^n\) subsets." Since this assumption has led us to a contradiction, it must be false. What can you now conclude about the statement ``for every nonnegative integer \(n\), an n-element set has exactly \(2^n\) subsets?"%
+\item Parts (a) and (b) suggest strongly that the number of subsets of a \(n\)-element set is \(2^n\). In particular, the empty set has \(2^0\) subsets, a one-element set has \(2^1\) subsets, itself and the empty set, and in Parts a and b we saw that two-element and three-element sets have \(2^2\) and \(2^3\) subsets respectively. So there are certainly some values of \(n\) for which an \(n\)-element set has \(2^n\) subsets. One way to prove that an \(n\)-element set has \(2^n\) subsets for all values of \(n\) is to argue by contradiction. For this purpose, suppose there is a nonnegative integer \(n\) such that an \(n\)-element set doesn't have exactly \(2^n\) subsets. In that case there may be more than one such \(n\). Choose \(k\) to be the smallest such \(n\). Notice that \(k -1\) is still a positive integer, because \(k\) can't be 0, 1, 2, or 3. Since \(k\) was the smallest value of \(n\) we could choose to make the statement ``An \(n\)-element set has \(2^n\) subsets'' false, what do you know about the number of subsets of a \((k - 1)\)-element set? What do you know about the number of subsets of the \(k\)-element set \(\{1, 2, \ldots, k \}\) that don't contain \(k\)? What do you know about the number of subsets of \(\{1,
+2, \ldots,  k \}\) that do contain \(k\)? What does the sum principle tell you about the number of subsets of \(\{1, 2, \ldots, k \}\)? Notice that this contradicts the way in which we chose \(k\), and the only assumption that went into our choice of \(k\) was that ``there is a nonnegative integer \(n\) such that an \(n\)-element set doesn't have exactly \(2^n\) subsets." Since this assumption has led us to a contradiction, it must be false. What can you now conclude about the statement ``for every nonnegative integer \(n\), an n-element set has exactly \(2^n\) subsets?"%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We know that the number of subsets of a \((k-1)\)-element set is \(2^{k-1}\). The number of subsets of \(\{1,2,\ldots,k\}\) that do not contain \(k\) is the number of subsets of the \(k-1\)-element set \(\{1,2,\ldots,
 k-1\}\), so we know this number is \(2^{k-1}\). We know that the number of subsets that do contain \(k\) equals the number that don't, so the number that do contain \(k\) is also \(2^{k-1}\). The sum principle tells us that the number os subsets of \(\{1,2,\ldots, k\}\) is \(2^{k-1}+2^{k-1}=2^k\). We can conclude that the statement ``for every nonnegative integer \(n\), an \(n\)-element set has exactly \(2^n\) subsets" is true.%
@@ -6911,7 +6910,7 @@ When \(n=1\) this formula says that \(\frac{1}{1\cdot2}=\frac{1}{1\cdot
 \end{equation*}
 %
 \par
-Adding \(\frac{1}{ k(k+1)}\) to both sides of this equation gives us%
+Adding \(\frac{1}{k(k+1)}\) to both sides of this equation gives us%
 \begin{align*}
 \sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)}  =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}\\
 \sum_{i=1}^k \frac{1}{i(i+1)} =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}\\
@@ -7074,7 +7073,7 @@ so the sequence is \(a_n = (n-1)!\).%
 \begin{activity}[]\label{exponentialpermutations}
 What is the EGF for the number of permutations of an \(n\)-element set?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\frac{1}{ 1-x}\).%
+\textbf{Solution.}\quad \(\frac{1}{1-x}\).%
 \end{activity}
 \begin{activity}[]\label{exponentialroundtable}
 What is the EGF for the number of ways to arrange \(n\) people around a round table? Notice that we may think of this as the EGF for the number of permutations on \(n\) elements that are cycles.%
@@ -7097,10 +7096,9 @@ p_{2n}\frac{x^{2n}}{(2n)!}= \sum_{n=0}^\infty \frac{x^{2n}}{2^n n!} =
 \begin{activity}[]\label{activity-343}
 What is the EGF for the sequence \(0,1,2,3,\ldots\)? You may think of this as the EFG for the number of ways to select one element from an \(n\) element set. What is the EGF for the number of ways to select two elements from an \(n\)-element set?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\sum_{n=0}^\infty\frac{ nx^n}{n!}=\sum_{n=1}^\infty\frac{
-x^n}{(n-1)!}=x\sum_{n=1}^\infty\frac{ x^{n-1}}{(n-1)!}=xe^x\).%
+\textbf{Solution.}\quad \(\sum_{n=0}^\infty\frac{nx^n}{n!}=\sum_{n=1}^\infty\frac{x^n}{(n-1)!}=x\sum_{n=1}^\infty\frac{x^{n-1}}{(n-1)!}=xe^x\).%
 \par
-\(\sum_{n=0}^\infty\frac{ n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2\).%
+\(\sum_{n=0}^\infty\frac{n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2\).%
 \end{activity}
 \begin{activity}[]\label{allonessequence}
 What is the EGF for the sequence \(1,1,\cdots,1,\cdots\)? Notice that we may think of this as the EGF for the number of identity permutations on an \(n\)-element set, which is the same as the number of permutations of \(n\) elements that are products of 1-cycles, or as the EGF for the number of ways to select an \(n\)-element set (or, if you prefer, an empty set) from an \(n\)-element set.%
@@ -7120,7 +7118,7 @@ What is the EGF for the number of partitions of a \(k\)-element set into exactly
 \begin{activity}[]\label{exponentialbookshelf}
 What is the EGF for the number of ways to arrange \(k\) books on one shelf (assuming they all fit)? What is the EGF for the number of ways to arrange \(k\) books on a fixed number \(n\) of shelves, assuming that all the books can fit on any one shelf?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\frac{1}{ 1-x}\), \(\sum_{k=0}^\infty \binom{n+k-1 }{k}k!\frac{x^k}{k!} = (1-x)^{-n}\).%
+\textbf{Solution.}\quad \(\frac{1}{1-x}\), \(\sum_{k=0}^\infty \binom{n+k-1}{k}k!\frac{x^k}{k!} = (1-x)^{-n}\).%
 \end{activity}
 \typeout{************************************************}
 \typeout{Section  Applications to recurrences.}
@@ -7241,7 +7239,7 @@ Thus \(d_n = n!\sum_{j=0}^n\frac{(-1)^j}{j!}\), as we computed by inclusion and 
 \typeout{Section  The product principle}
 \typeout{************************************************}
 \section[{The product principle}]{The product principle}\label{section-27}
-One of our major tools for ordinary generating functions was the product principle. It is thus natural to ask if there is a product principle for exponential generating functions. In \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}} you likely found that the EGF for the number of ways of arranging \(n\) books on one shelf was exactly the same as the EGF for the number of permutations of \([n]\), namely \(\frac{1}{ 1-x}\) or \((1-x)^{-1}\). Then using our formula from \hyperref[bookcase]{Problem~\ref{bookcase}} and the generating function for multisets, you probably found that the EGF for number of ways of arranging \(n\) books on some fixed number \(m\) of bookshelves was \((1-x)^{-m}\). Thus the EGF for \(m\) shelves is a product of \(m\) copies of the EGF for one shelf.%
+One of our major tools for ordinary generating functions was the product principle. It is thus natural to ask if there is a product principle for exponential generating functions. In \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}} you likely found that the EGF for the number of ways of arranging \(n\) books on one shelf was exactly the same as the EGF for the number of permutations of \([n]\), namely \(\frac{1}{1-x}\) or \((1-x)^{-1}\). Then using our formula from \hyperref[bookcase]{Problem~\ref{bookcase}} and the generating function for multisets, you probably found that the EGF for number of ways of arranging \(n\) books on some fixed number \(m\) of bookshelves was \((1-x)^{-m}\). Thus the EGF for \(m\) shelves is a product of \(m\) copies of the EGF for one shelf.%
 \begin{activity}[]\label{paintinglightpoles2}
 In \hyperref[paintinglightpoles]{Problem~\ref{paintinglightpoles}} what would the exponential generating function have been if we had asked for the number of ways to paint the poles with just one color of paint? With two colors of paint? What is the relationship between the EGF for painting the \(n\) poles with one color of paint and the EGF for painting the \(n\) poles with four colors of paint? What is the relationship between the EGF for painting the \(n\) poles with two colors of paint and the EGF for painting the poles with four colors of paint?%
 \par\medskip\noindent%
@@ -7258,7 +7256,7 @@ In \hyperref[exponentialderangements]{Problem~\ref{exponentialderangements}} you
 \begin{activity}[]\label{derangementsand1cycles}
 If we multiply the generating function for derangements times the generating function for the number of permutations that are products of one-cycles only, what EGF for what set of permutations do we get? (Notice that there are two questions here.)%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We get the EGF \(\frac{1}{ 1-x}\) for all permutations of \([n]\). Notice that any permutation is a product of a derangement of the elements not fixed by the permutation times the one cycles of elements that are fixed by the permutation.%
+\textbf{Solution.}\quad We get the EGF \(\frac{1}{1-x}\) for all permutations of \([n]\). Notice that any permutation is a product of a derangement of the elements not fixed by the permutation times the one cycles of elements that are fixed by the permutation.%
 \end{activity}
 We now have four examples in which the EGF for a sequence or a pair of objects is the product of the EGFs for the individual objects making up the sequence or pair.%
 \begin{activity}[]\label{exponentialpp1}
@@ -7268,7 +7266,7 @@ b_j\frac{x^j}{j!}\)? (A summation sign is appropriate in your answer.)%
 \textbf{Solution.}\quad %
 \begin{equation*}
 \sum_{i,j\mbox{:\ }
-i+j=n} n!\frac{a_i}{i!}\frac{b_j }{j!},
+i+j=n} n!\frac{a_i}{i!}\frac{b_j}{j!},
 \end{equation*}
 which can be better written as%
 \begin{equation*}

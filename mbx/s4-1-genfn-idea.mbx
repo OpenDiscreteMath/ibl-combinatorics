@@ -468,7 +468,7 @@
                   (1+x)^{-n}=(1-(-x))^{-n}=\sum_{i=0}^\infty
                   \binom{n+i-1}{i}(-x)^i=\sum_{i=0}^\infty (-1)^i\binom{n+i-1}{i}x^i.
               </me>
-              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>\binom{-n}{k}</m>, so we want <m>\binom{-n }{k}= (-1)^k\binom{n+k-1}{k}</m>.
+              We want the coefficient of <m>x^k</m> in <m>(1+x)^{-n}</m> to be <m>\binom{-n}{k}</m>, so we want <m>\binom{-n}{k}= (-1)^k\binom{n+k-1}{k}</m>.
         </p>
       </solution>
     </activity>
@@ -680,7 +680,7 @@
         </statement>
         <solution>
           <p>
-            <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i} }{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
+            <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i}}{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
             =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}</m>, because all the terms in the numerator
             cancel with alternate terms in the denominator leaving only terms with odd
             powers of <m>q</m>. But
@@ -829,12 +829,12 @@
           <statement>
               <p>Define <m>[n]_q</m> to be <m>1+q+\cdots+q^{n-1}</m> for <m>n>0</m> and <m>[0]_q =1</m>.  We read this simply as <m>n</m>-sub-<m>q</m>. Define <m>[n]!_q</m> to be <m>[n]_q[n-1]_q\cdots [3]_q[2]_q[1]_q</m>. We read this as <m>n</m> cue-torial, and refer to it as a <term><m>q</m>-ary factorial</term>.<index><main>factorial</main><sub><m>q</m>-ary</sub></index><index><main><m>q</m>-ary factorial</main></index> Show that
         <me>
-          \qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.
+          \qchoose{m+n}{n} = \frac{[m+n]!_q}{[m]!_q[n]!_q}.
         </me>
       </p>
       </statement>
       <solution>
-        <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>\frac{[m+0]!_q }{[m]!_q[0]!_q} =1</m> and <m>\frac{[0+n]!_q }{[0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
+        <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>\frac{[m+0]!_q}{[m]!_q[0]!_q} =1</m> and <m>\frac{[0+n]!_q}{[0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
           <md>
             <mrow> \amp q^m\frac{[m+n-1]!_q}{[n-1]!_q[m]!_q}+\frac{[m+n-1]!_q}{[n]!_q[m-1]!_q}</mrow>
             <mrow> =\amp \relax[m+n-1]!_q\left(\frac{q^m}{[n-1]!_q[m]!_q}
@@ -848,8 +848,8 @@
         </p>
 
         <p>
-          Thus <m>\frac{[m+n]!_q }{[m]!_q[n]!_q}</m> satisfies our recurrence and so by the
-          principle of mathematical induction, <m>\qchoose{m+n}{n} = \frac{[m+n]!_q }{[m]!_q[n]!_q}.</m>
+          Thus <m>\frac{[m+n]!_q}{[m]!_q[n]!_q}</m> satisfies our recurrence and so by the
+          principle of mathematical induction, <m>\qchoose{m+n}{n} = \frac{[m+n]!_q}{[m]!_q[n]!_q}.</m>
         </p>
       </solution>
       </task>
