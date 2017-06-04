@@ -21,7 +21,7 @@
           three more games, with the third, fourth and fifth team. The third team is
           in two of the games we've already mentioned, and must still play the fourth
           and fifth team for two more games, and the fourth team must play the fifth
-          team in addition to playing in three of the games already mentioned. Thus
+          team in addition to playing in three of the first already mentioned. Thus
           there are <m>4+3+2+1 = 10</m> games. Alternatively, there are five teams, each of
           which must play in four games, giving us 20 pairings of two teams each.
           However each game involves two of these pairings, so there are <m>20/2 =10</m>
@@ -926,14 +926,34 @@ many ways can you pair up the next person who isn’t already paired up?
         </p>
       </statement>
 
-      <!-- I cannot find an image for this solution. "initialdigraph" is not the right one.
 
       <solution>
-        <p>
-          <image width="73%" source="images/" />
-        </p>
+        <figure>
+          <image xml:id="initialdigraph" width="50%">
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}[scale=0.85]
+                \node[evertex] (alice) at (0,2) {Alice};
+                \node[evertex] (bob) at (2,2) {Bob};
+                \node[evertex] (dawn) at (4,2) {Dawn};
+                \node[evertex] (bill) at (6,2) {Bill};
+                \node[vertex] (a) at (0,0) {A};
+                \node[vertex] (b) at (1.5,0) {B};
+                \node[vertex] (c) at (3,0) {C};
+                \node[vertex] (d) at (4.5,0) {D};
+                \node[vertex] (e) at (6,0) {E};
+
+                \draw[dedge] (alice) -- (a);
+                \draw[dedge] (bob) -- (b);
+                \draw[dedge] (dawn) -- (d);
+                \draw[dedge] (bill) -- (b);
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+        </figure>
       </solution>
-        -->
+
     </activity>
 
     <activity category="essential">
@@ -954,9 +974,36 @@ many ways can you pair up the next person who isn’t already paired up?
           The digraph of one such function follows
         </p>
 
-        <p>
+        <!-- <p>
           <image width="73%" source="images/OnetoOneNotOnto" />
-        </p>
+        </p> -->
+          <figure>
+            <image xml:id="oneToOneNotOnto" width="73%">
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}[yscale=0.75]
+                  \node[vertex] (a) at (0,2) {$a$};
+                  \node[vertex] (b) at (1,2) {$b$};
+                  \node[vertex] (c) at (2,2) {$c$};
+                  \node[vertex] (d) at (3,2) {$d$};
+                  \node[vertex] (t1) at (0,0) {$1$};
+                  \node[vertex] (t2) at (1,0) {$2$};
+                  \node[vertex] (t3) at (2,0) {$3$};
+                  \node[vertex] (t4) at (3,0) {$4$};
+                  \node[vertex] (t5) at (4,0) {$5$};
+
+                  \draw[dedge] (a) -- (t1);
+                  \draw[dedge] (b) -- (t2);
+                  \draw[dedge] (c) -- (t3);
+                  \draw[dedge] (d) -- (t4);
+
+                  \node[left = 3ex of a]{$S$};
+                  \node[left = 3ex of t1]{$T$};
+                \end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+          </figure>
       </solution>
     </activity>
 
@@ -973,9 +1020,34 @@ many ways can you pair up the next person who isn’t already paired up?
           The digraph of one such function follows
         </p>
 
-        <p>
+        <!-- <p>
           <image width="73%" source="images/OntoNotOnetoOne" />
-        </p>
+        </p> -->
+        <figure>
+          <image xml:id="ontoNotOneToOne" width="73%">
+            <latex-image-code>
+              <![CDATA[
+              \begin{tikzpicture}[yscale=0.75]
+                \node[vertex] (a) at (0,2) {$a$};
+                \node[vertex] (b) at (1,2) {$b$};
+                \node[vertex] (c) at (2,2) {$c$};
+                \node[vertex] (d) at (3,2) {$d$};
+                \node[vertex] (t1) at (0,0) {$1$};
+                \node[vertex] (t2) at (1,0) {$2$};
+                \node[vertex] (t3) at (2,0) {$3$};
+
+                \draw[dedge] (a) -- (t1);
+                \draw[dedge] (b) -- (t2);
+                \draw[dedge] (c) -- (t3);
+                \draw[dedge] (d) -- (t3);
+
+                \node[left = 3ex of a]{$S$};
+                \node[left = 3ex of t1]{$T$};
+              \end{tikzpicture}
+              ]]>
+            </latex-image-code>
+          </image>
+        </figure>
       </solution>
     </activity>
 
