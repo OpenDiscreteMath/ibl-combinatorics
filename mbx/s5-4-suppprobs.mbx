@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_inclexcl-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Supplementary Problems</title>
+  <activity>
+      <statement>
+        <p>
+          Each person attending a party has been asked to bring a prize. The person planning the party has arranged to give out exactly as many prizes as there are guests, but any person may win any number of prizes. If there are <m>n</m> guests, in how many ways may the prizes be given out so that nobody gets the prize that he or she brought?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use inclusion and exclusion. Property <m>P_i</m> is that person <m>i</m> gets the prize he or she brought. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. If <m>P</m> is the set of all properties, we need to compute <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of <m>P</m>. But <m>N_{\mbox{a} }(S)</m> is the number of functions from the prizes to the people that give each prize represented by a property in <m>S</m> to the person who brought it. Think in terms of distributing those prizes first. Then there are <m>n-|S|</m> other prizes that we may pass out to the <m>n</m> people as we please, so we may do that in <m>n^{n-|S|}</m> ways. Thus <m>N_{\mbox{a} }(S)=n^{n-|S|}</m>. Applying <xref ref="incexempty">Equation</xref>, we get
+          <me>
+            N_{\mbox{e} }(\emptyset)=\sum_{S:s\subseteq P}(-1)^{|S|} n^{n-|S|} =
+            \sum_{s=0}^n (-1)^{|S|}\binom{n}{s}n^{n-s}.
+          </me>
+        </p>
+      </solution>
+  </activity>
+  <activity>
+      <statement>
+        <p>
+          There are <m>m</m> students attending a seminar in a room with <m>n</m> seats. The seminar is a long one, and in the middle the group takes a break. In how many ways may the students return to the room and sit down so that nobody is in the same seat as before?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          We use inclusion and exclusion. We let property <m>P_i</m> be the property that student <m>i</m> sits in the same seat as before. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. For this purpose, for each subset <m>S</m> of the set <m>P</m> of all properties, we need to compute <m>N_{\mbox{a} }(S)</m>, the number of ways for the students to return so that every student represented by a property in <m>S</m> sits in his or her previous seat. This leaves us with <m>n-|S|</m> seats to be filled in a one-to-one fashion in <m>m-|S|</m> students. There are <m>(n-|S|)^{\underline{m-|S|}}</m> such seating arrangements, so <m>N_{\mbox{a} }(S)= (n-|S|)^{\underline{m-|S|}}</m>. Thus we have
+          <me>
+            N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
+            (-1)^{|S|}(n-|S|)^{\underline{m-|S|}} = \sum_{s=0}^m (-1)^s\binom{m}{s}(n-s)^{\underline{m-s}}
+          </me>
+          ways for the students to return so that nobody sits
+          in his or her previous place.
+        </p>
+      </solution>
+  </activity>
+
+  <activity>
+      <statement>
+          <p>What is the number of ways to pass out <m>k</m> pieces of candy from an unlimited supply of identical candy to <m>n</m> children (where <m>n</m> is fixed) so that each child gets between three and six pieces of candy (inclusive)? If you have done <xref ref="candy-genfn" autoname="yes" /> compare your answer in that problem with your answer in this one.
+          </p>
+      </statement>
+      <solution>
+          <p>As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m> gets more than six pieces of candy. We would then observe that the number of ways to pass out the candy so that the children determined by a set <m>S</m> of properties all get more than six pieces, and everyone else gets at least 3, is the number of ways to pass out the remaining candy after giving 7 pieces to each child identified by <m>S</m> and 3 pieces to each other child. This number is <m>\binom{k-7|S|-3(n-|S|)-1}{n-1}=\binom{k-2n-4|S|-1}{n-1}</m>. From here we would substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.</p>
+      </solution>
+  </activity>
+  <activity category="interesting">
+    <statement>
+      <p>
+        In how many ways may <m>k</m> distinct books be arranged on <m>n</m> shelves so that no shelf gets more than <m>m</m> books?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We use inclusion and exclusion. Let property <m>P_i</m> be that shelf <m>i</m> gets more than <m>m</m> books. Then the number of arrangements of books with at least the properties in a subset <m>S</m> of the set <m>P</m> of all properties is <m>N_{\mbox{a} }(S) = k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}</m>, because in order to have at least the properties in <m>S</m> we may choose <m>(m+1)|S|</m> books and arrange <m>m+1</m> of them on each of the shelves represented by the properties in <m>S</m>, after which we arrange the remainder of the books. Thus
+        <me>
+          N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P} (-1)^{|S|}
+          k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}=\sum_{s=0}^n
+          (-1)^s\binom{n}{s}k^{\underline{(m+1)s}}n^{\underline{k-(m+1)s}}
+        </me>
+        is the number of ways to arrange the books so that no shelf gets more than <m>m</m>.
+      </p>
+    </solution>
+  </activity>
+
+
+  <activity category="interesting">
+    <statement>
+      <p>
+        Suppose that <m>n</m> children join hands in a circle for a game at nursery school. The game involves everyone falling down (and letting go). In how many ways may they join hands in a circle again so that nobody is to the right of the same child that was previously to his or her right?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We use inclusion and exclusion, with property <m>i</m> being the property that child <m>i</m> has the same child to the right the second time they join hands.  Given a set <m>S</m> of properties, we can think of arranging units consisting of individual children and strings of children holding hands in a circle. If we have <m>s</m> properties, then we have <m>n-s</m> of these units. Each string of children can be arranged in only one way, because our set specifies who has to have the same child on the right. Thus <m>N_{\mbox{a} }(S) = (n-s-1)!</m>. This gives us
+        <md>
+          <mrow>N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
+          (-1)^{|S|}(n-|S|-1)! =\amp 
+          \sum_{s=0}^n (-1)^s \binom{n}{s} (n-s-1)!</mrow>
+          <mrow> =\amp \sum_{s=0}^n (-1)^s \frac{n!}{s!(n-s)}</mrow>
+        </md>
+        ways for the children to join hands the second time so that none
+        of them has the same child to the right.
+      </p>
+    </solution>
+  </activity>
+
+  <activity xml:id="Hora" category="interesting and difficult">
+      <statement>
+          <p>
+              Suppose that <m>n</m> people link arms in a folk-dance and dance in a circle. Later on they let go and dance some more, after which they link arms in a circle again. In how many ways can they link arms the second time so that no-one is next to a person with whom he or she linked arms before.
+          </p>
+      </statement>
+    <solution>
+      <p>
+      We use the Principle of Inclusion and Exclusion. Property <m>P_i</m> will be the property that person <m>i</m> links arms with someone previously to his or her right. (Saying it is the person to the right gives us more control over our formulas.) Given a subset <m>S</m> of the set <m>P</m> of all properties, the number of ways for the people in that set to link arms with the people previously on their right is the number of ways to arrange <m>n-|S|</m> strings of people around a circle with strings of length more than 1 having two ways to arrange themselves.  (Once we have two or more people linked, another person can be added to this string only at one end or not at all, because this person must have been to the right of one of the people on an end of the string. However a string of length two or more can unlink and then link in the opposite order, and each person will still be linked to exactly the same people.) Thus <m>N_{\mbox{a} }(S)= (n-|S|-1)!2^{m(S)}</m>, where <m>m(S)</m> is the number of strings of length more than one determined by <m>S</m>. The number <m>m(S)</m> can be any number from 1 to <m>S</m>, so long as <m>S</m> is not too big; namely so long as <m>|S|\le \lfloor n/1\rfloor</m>. (This is because if <m>m(S)=|S|</m>, then each person determined by a property in <m>S</m> must be adjacent to a person not determined by a property in <m>S</m>.) In particular, <m>N_{\mbox{a} }(S)</m> is not completely determined by the size of <m>S</m>, as in all our other inclusion-exclusion problems. How do we compute <m>m(S)</m>? Let us call a subset <m>R</m> of <m>S</m> a run if
+<ol>
+        <li>
+          the people determined by <m>R</m> sit together in a
+          row in both seatings, and
+        </li>
+        <li>
+          no other person in <m>S</m> is in a row with these
+          people in both seatings.
+        </li>
+</ol>
+        Some runs might determine just one person, but a run could also equal all of <m>S</m>. Each run will have one more person not in <m>S</m> who was originally to the right of the person in the run who was rightmost in the first seating, and so this person will have to sit in a row with the people in <m>R</m> in the second seating as well. Thus the number <m>r</m> of runs in <m>S</m> is the number of strings <m>m(S)</m> that may be seated in two ways, and there are <m>n-|S|-r</m> people who do not have to be seated with runs. Thus <m>N_{\mbox{a} }(S) = (n-|S|-1)!2^r</m>, because the total number of strings of people (including strings of just one person) we need to seat is <m>n-|S| -r</m>, and there are <m>(k-1)!</m> ways to arrange <m>k</m> objects in a circle.. If we try to use the information we have so far to compute <m>N_{\mbox{e} }(\emptyset)</m>, we get
+        <me>
+          N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}(-1)^{|S|}(n-|S|_1)!2^r
+          =\sum_{s=0}^n\sum_{r=1}^{|S|}N(s,r)(n-s-1)!2^r,
+        </me>
+        in which <m>N(s,r)</m> stands for
+        the number of property sets with size <m>s</m> and <m>r</m> runs.
+      </p>
+
+      <p>
+        Picking out runs in a circular arrangement adds a layer of difficulty, so to compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m> runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.  Imagine writing 1 through <m>n</m> in a straight line, each integer occupying one unit of distance along the line. We now place <m>r</m> sticks whose lengths add to <m>s</m> (each stick has positive integer length) along that line. Each stick picks out a set of consecutive integers, as many as its length, so the sticks together pick out <m>s</m> integers. In order to be sure the sticks correspond to runs, we need to make sure they do not touch each other, so we place <m>n-s</m> identical stones along the line too, making sure there is at least one stone between any two sticks. The stones thus pick out the integers not in <m>S</m>. The sticks are not quite identical, though the sticks of a given length are. In other words, which lengths of sticks are in which places is what matters. So the sticks give us a composition of <m>s</m>, a list of distinct positive integers that add to <m>s</m>. We know there are <m>\binom{s-1}{r-1}</m> such compositions. Once we have chosen an ordering for the sticks, we need to distribute the stones among the sticks so that no two sticks are adjacent.  Since the stones are identical, we can do this by putting one stone between each pair of sticks in our composition, and then distribute the remaining <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks and the two places to the left and right of all the sticks.. We can do this in
+        <me>
+          \binom{r+1 + (n-s-r+1)-1}{n-s-r+1}=\binom{n-s+1}{n-s-r+1}=\binom{n-s+1}{r}
+        </me>
+        ways. Thus there are
+        <m>\binom{s-1}{r-1}\binom{n-s+1}{r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
+        has
+        <m>r</m> runs.
+      </p>
+
+      <p>
+        Now we have to deal with the fact that our <m>n</m> people (who we have replaced with the integers 1 through <m>n</m> in order) were arranged around a circle. That means that a run is now a set of consecutive integers on the circle, where <m>n</m> and 1 are considered consecutive. Recall that the set <m>S</m> is picked out by the sticks. If we arrange 1 through <m>n</m> around a circle in order, the set <m>S</m> that originally had <m>r</m> runs will have <m>r-1</m> runs if sticks covered both the first and last integer (1 and <m>n</m>), but otherwise it will still have <m>n</m> runs. Thus the number of subsets of <m>[n]</m> that have <m>n</m> runs when <m>1</m> through <m>n</m> are arranged in a circle is the number of subsets of <m>[n]</m> with <m>r+1</m> runs that have both 1 and <m>n</m> in <m>S</m> plus the number of subsets of <m>[n]</m> with <m>r</m> runs that do not have both <m>1</m> and <m>n</m> in <m>S</m>. To compute the number of subsets <m>S</m> that <em>do</em> contain both 1 and <m>n</m>, we compute the number of arrangements of <m>r</m> sticks and <m>n-s</m> stones that do start and end with a stick; that means that after we choose our composition into <m>r</m> parts to get our arrangement of sticks and place one stone between each pair of previously adjacent sticks, we now place the remaining <m>n-s-r+1</m> stones in the <m>r-1</m> places between previously adjacent sticks in
+        <me>
+          \binom{r-1 + (n-s-r+1)-1}{n-s-r+1}=\binom{n-s-1}{n-s-r+1}=\binom{n-s-1}{r-2}
+        </me>
+        ways. For the sticks and stones to determine a subset we must assign lengths to the sticks; the number of ways to do this is, as above, <m>\binom{s-1}{r-1}</m>, the number of compositions of <m>s</m> with <m>r</m> parts. Thus there are <m>\binom{s-1}{r-1}\binom{n-s-1}{r-2}</m> subsets of <m>[n]</m> that have <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m> this is <m>\binom{s-1}{r}\binom{n-s-1}{r-1}</m>.
+      </p>
+
+      <p>
+        On the other hand, the number of subsets of <m>[n]</m> that have <m>r</m> runs and do not contain both <m>1</m> and <m>n</m> is the total number of subsets with <m>r</m> runs minus the number that do contain both <m>1</m> and <m>n</m>; this is
+        <me>
+          \binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right).
+        </me>
+      </p>
+
+      <p>
+        This gives us
+        <me>
+          N(s,r) =\binom{s-1}{r}\binom{n-s-1}{r-1}+\binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right)
+        </me>
+        ways to choose an <m>s</m>-element subset of <m>[n]</m> that has <m>r</m> runs when <m>[n]</m> is arranged around a circle. Thus there are
+        <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[\binom{s-1}{r}\binom{n-s-1}{r-1}+\binom{s-1}{r-1}\left(\binom{n-s+1}{r}- \binom{n-s-1}{r-2}\right)\right](n-s-1)!2^r</m>
+        ways for people to arrange themselves in the second circle so that no-one is adjacent to anyone he or she was previously adjacent to.
+      </p>
+    </solution>
+  </activity>
+
+  <activity category="interesting and difficult">
+    <statement>
+      <p>
+        (A challenge; the author has not tried to solve this one!) Redo <xref ref="Hora">Problem</xref> in the case that there are <m>n</m> men and <m>n</m> women and when people arrange themselves in a circle they do so alternating gender.
+      </p>
+    </statement>
+  </activity>
+  
+  <activity category="interesting">
+    <statement>
+      <p>
+        Suppose we take two graphs <m>G_1</m> and <m>G_2</m> with disjoint vertex sets, we
+        choose one vertex on each graph, and connect these two graphs by an edge <m>e</m> to
+        get a graph <m>G_{12}</m>. How does the chromatic polynomial of <m>G_{12}</m> relate to
+        those of
+        <m>G_1</m> and
+        <m>G_2</m>?
+      </p>
+    </statement>
+    <solution>
+      <p>
+        By the deletion-contraction recurrence,
+        <me>
+          \chi_{G_{12}}(x) =
+          \chi_{G_{12}-e}(x)-\chi_{G_{12/e}}(x).
+        </me>
+      </p>
+
+      <p>
+        Now <m>\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)</m> because each ordered pair of proper colorings of <m>G_1</m> and <m>G_2</m> is a proper coloring of <m>G_{12}-e</m>. <m>G_{12}/e</m> is the graph we get by identifying the endpoint of <m>e</m> in <m>G_1</m> with the endpoint of <m>e</m> in <m>G_2</m>. Notice that if you fix one vertex of a graph <m>G</m>, fix one color, and ask how many proper colorings with <m>x</m> colors <m>G</m> has in which the fixed vertex is the fixed color, you get <m>\chi_G(x)/x</m>.  (By the quotient principle.) Thus <m>\chi_{G_2}(x)/x</m> is the number of ways to extend a proper coloring of <m>G_1</m> to a proper coloring of <m>G_{12}/e</m>. Then, by the product principle, the number of proper colorings of <m>G_{12}/e</m> with <m>x</m> colors is <m>\chi_{G_1}(x)\chi_{G_2}(x)/x</m>. Therefore by the deletion-contraction recurrence, <m>\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-\frac{1}{x})</m>.
+      </p>
+    </solution>
+  </activity>
+</section>

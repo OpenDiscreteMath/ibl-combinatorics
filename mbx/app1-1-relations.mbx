@@ -1,4 +1,4 @@
-
+ 
 <section>
   <title>Relations as sets of Ordered Pairs</title>
   <subsection xml:id="functionrelation">
@@ -69,13 +69,14 @@
       function. <m>S</m> will stand for a set of size
       <m>s</m> and
       <m>T</m> will stand for a set of size <m>t</m>.
+      </p>
+      </statement>
       <task>
         <statement>
           <p>
             What is the size of the largest relation from <m>S</m> to <m>T</m>?
+          </p>
           </statement>
-        </p>
-        </statement>
         <solution>
           <p>
             <m>st</m> because that is the size of the relation that has
@@ -134,15 +135,18 @@
         </solution>
       </task>
       <task xml:id="onto" >
+        <statement>
         <p>
-        A function <m>f:S\rightarrow T</m> is called an <index><main>onto
-        function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
-        <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
-        element of
-        <m>T</m> is <m>f(x)</m> for some <m>x\in S</m> What is the minimum size that
-        <m>S</m> can have if there is a  surjection from
-        <m>S</m> to
-        <m>T</m>?
+          A function <m>f:S\rightarrow T</m> is called an <index><main>onto
+          function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
+          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+          element of
+          <m>T</m> is <m>f(x)</m> for some <m>x\in S</m> What is the minimum size that
+          <m>S</m> can have if there is a  surjection from
+          <m>S</m> to
+          <m>T</m>?
+        </p>
+        </statement>
         <solution>
           <p>
             In order to have a surjection from <m>S</m> to <m>T</m>, the size
@@ -213,7 +217,7 @@
       <caption>The alphabet
       digraph.</caption>
       \mbox{
-      <image width="73%" source="images/" />
+      <image width="10%" source="images/alphabetdigraph" />
       }
     </figure>
 
@@ -265,7 +269,7 @@
         <solution>
           <p>
             \mbox{
-            <image width="73%" source="images/" />
+            <image width="20%" source="images/Subsetsof2set" />
             }
             We would need to draw 19 arrows, some of them curved,
             for the subsets of a three-element set.
@@ -282,7 +286,7 @@
         </statement>
         <solution>
           <p>
-            <img src="MISSINGFILE"  width="400" /> figure=initialdigraph.eps
+            <image width="50%" source="images/initialdigraph" />
           </p>
         </solution>
       </task>
@@ -341,14 +345,15 @@
         </p>
       </statement>
       <solution>
+
         <p>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
           We used double-headed arrows in place of one arrow going in each
           direction to reduce the clutter in the picture. Note that there is
           an arrow from each vertex to itself. We may choose 3 flavors in
           four ways.
+        </p>
+        <p>
+          <image width="70%" source="images/flavordigraph" />
         </p>
       </solution>
     </activity>
@@ -377,23 +382,26 @@
         </p>
       </statement>
       <solution>
+      <p>
+        We can distinguish eight different dishes of ice
+        cream.
+      </p>
         <p>
-          <img src="MISSINGFILE"  width="400" /> figure=icecreamindish.eps,
+          <image width="70%" source="images/icecreamindish" /> 
         </p>
       </solution>
+    </activity>
+    <activity>
+      <statement>
       <p>
-        }We can distinguish eight different dishes of ice
-        cream.}
-      </p>
-
-      <p>
-        \item Draw the digraph for <xref ref="roundtable">Problem</xref> in the
+        Draw the digraph for <xref ref="roundtable">Problem</xref> in the
         special case where we have four people sitting around the table.
       </p>
+    </statement>
       <solution>
-        <p>
-          <img src="MISSINGFILE"  width="400" /> figure=4AROUNDATABLE.eps,
-        </p>
+        
+          <image source="images/4AROUNDATABLE"  width="70%" />
+        
       </solution>
     </activity>
 
@@ -563,7 +571,7 @@
             <m>mkhq=hnpk</m>, and cancelling <m>h</m> and <m>k</m> gives us <m>mq=np=pn</m>, so
             <m>(m,n)</m> is related to <m>(p,q)</m>. Therefore, the relation is
             transitive. This is the relation of equality of the fractions
-            <m>m\over n</m> and <m>h\over k</m>.
+            <m>\frac{m}{n}</m> and <m>\frac{h}{k}</m>.
           </p>
         </solution>
       </task>
@@ -873,7 +881,7 @@
           <p>
             There are <m>n!</m> lists, and each is in an equivalence
             class of size <m>k!(n-k)!</m>, so the number of equivalence classes is
-            <m>n!\over k!(n-k)!</m> by <xref ref="EquivPrincipleProblem">Problem</xref>. This
+            <m>\frac{n!}{k!(n-k)!}</m> by <xref ref="EquivPrincipleProblem">Problem</xref>. This
             is a way of computing the number of <m>k</m>-element subsets that shows
             why the final answer we got in <xref ref="formulanchoosek">Problem</xref> is
             symmetric in <m>k</m> and <m>n-k</m>.

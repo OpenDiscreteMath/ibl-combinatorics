@@ -18,7 +18,7 @@
           corresponds to a part of a composition of
           <m>n</m>. Thus the number of compositions of <m>n</m> with <m>k</m> parts is the number of
           ways to choose the <m>k-1</m> places, which is
-          <m>n-1\choose k-1</m>.
+          <m>\binom{n-1}{k-1}</m>.
         </p>
       </solution>
     </p>
@@ -135,9 +135,7 @@
         <figure xml:id="hexagonalnetwork" >
           <caption>A computer
           network.</caption>
-          \mbox{
-          <image width="73%" source="images/" />
-          }
+          <image width="33%" source="images/HexagonalNetwork" />
         </figure>
         <solution>
           <p>
@@ -166,7 +164,7 @@
             we get by rotating the dish. This divides the arrangements of four flavors
             of ice cream into blocks of size 4. Thus we may arrange the ice cream we have
             chosen in the dish in
-            <m>4!/4=6</m> ways. We may choose the ice cream in <m>{12\choose 4}=495</m> ways, and
+            <m>4!/4=6</m> ways. We may choose the ice cream in <m>\binom{12}{4}=495</m> ways, and
             so we may choose it and put it into the dish in 2970 ways.
           </p>
         </solution>
@@ -176,11 +174,11 @@
     <li>
       <p>
         (interesting)
-        In as many ways as you can, show that <m>{n\choose k}{n-k\choose m} =
-        {n\choose m}{n-m\choose k}</m>.
+        In as many ways as you can, show that <m>\binom{n}{k}\binom{n-k}{m} =
+        \binom{n}{m}\binom{n-m}{k}</m>.
         <solution>
           <p>
-            You can prove this by plugging in the formula for <m>n\choose k</m> on
+            You can prove this by plugging in the formula for <m>\binom{n}{k}</m> on
             both sides and cancelling stuff until you get the same thing on both sides.
             However a much more interesting proof is that the right hand side counts the
             number of ways to choose a <m>k</m>-element set form an <m>n</m>-element set and then
@@ -190,8 +188,8 @@
             you are counting the number of ways to choose an ordered pair consisting of an
             <m>m</m>-element subset and a disjoint <m>k</m>-element subset from an <m>n</m>-element set.
             You can also base a proof on the observation that <m>(x+y+x)^n=
-            \sum_{k=0}^n{n\choose k}(x+y)^kz^{n-k}</m> and
-            <m>(x+y+z)^n=\sum_{m=0}^n{n\choose m}x^m(y+z)^{n-m}</m> and asking for the
+            \sum_{k=0}^n\binom{n}{k}(x+y)^kz^{n-k}</m> and
+            <m>(x+y+z)^n=\sum_{m=0}^n\binom{n}{m}x^m(y+z)^{n-m}</m> and asking for the
             coefficient of <m>x^my^{n-m-k}z^k</m>. You do have to use the binomial theorem
             with an eye to the result you are looking for, however.
           </p>
@@ -232,7 +230,7 @@
           <p>
             We can think of first choosing the set of even size of poles to
             be painted green, and the painting the remaining poles red, white, and blue.
-            We may do this in <m>\sum_{k=0}^{\lfloor n/2\rfloor}{n\choose 2k}3^{n-2k}</m>
+            We may do this in <m>\sum_{k=0}^{\lfloor n/2\rfloor}\binom{n}{2k}3^{n-2k}</m>
             ways.
           </p>
         </solution>
@@ -249,7 +247,7 @@
           We can line up the identical ping-pong balls and break them into
           four groups, those of each color, by inserting dividers. If we want to paint
           at least one in each color, we can choose three of the spaces between the
-          balls in which to insert dividers, so we can paint them in <m>n-1\choose k</m>.
+          balls in which to insert dividers, so we can paint them in <m>\binom{n-1}{k}</m>.
           But the problem didn't require us to use each color, so we can put two
           dividers adjacent to each other. Thus there are <m>n+1</m> places where we can
           put the first divider (putting it before all the balls means we use no red,
@@ -259,8 +257,7 @@
           interchange two dividers we still paint the balls before the first divider
           red, those between then next two white, and so on. Thus <m>3!=6</m> of these
           arrangements of balls and dividers correspond to the same paint job, so the
-          number of ways to paint the balls is <m>{(n+1)(n+2)(n+3)\over6} ={n+3\choose
-          3}</m>. This suggests that another way to think of the problem is to consider
+          number of ways to paint the balls is <m>\frac{(n+1)(n+2)(n+3)}{6} =\binom{n+3}{3}</m>. This suggests that another way to think of the problem is to consider
           <m>n+3</m> slots in a row, and fill <m>n</m> of them with balls and <m>3</m> of them with
           dividers; since the balls are identical and the dividers might as well be
           identical, the number of ways to do this is the number of ways to choose the
@@ -281,7 +278,7 @@
             remainder with the other three colors as in <xref ref="pingpongpaint">Problem</xref> This
             gives us
             <me>
-              \sum_{k=0}^{\lfloor n/2\rfloor}{n-2k+2\choose 2}
+              \sum_{k=0}^{\lfloor n/2\rfloor}\binom{n-2k+2}{2}
             </me>
             ways to paint the balls.
           </p>

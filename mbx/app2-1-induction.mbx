@@ -17,10 +17,9 @@
       <task>
         <statement>
           <p>
-            Write down a list of the subsets of <m>\{ 1, 2 \}</m>.
+            Write down a list of the subsets of <m>\{1, 2 \}</m>.
             Don't forget the empty set! Group the sets containing containing 2
             separately from the others.
-          </statement>
         </p>
         </statement>
         <solution>
@@ -32,7 +31,7 @@
       <task>
         <statement>
           <p>
-            Write down a list of the subsets of <m>\{ 1, 2, 3 \}</m>. Group the sets
+            Write down a list of the subsets of <m>\{1, 2, 3 \}</m>. Group the sets
              containing 3 separately from the others.
           </p>
         </statement>
@@ -72,8 +71,8 @@
             probably easier to describe to describe the function in words rather than
             symbols) and explain why it is a bijection. Explain why the number of
             subsets of
-            <m>\{ 1, 2, \ldots , n \}</m> containing
-            <m>n</m> equals the number of subsets of <m>\{ 1, 2, \ldots, n-1 \}</m>.
+            <m>\{1, 2, \ldots , n \}</m> containing
+            <m>n</m> equals the number of subsets of <m>\{1, 2, \ldots, n-1 \}</m>.
           </p>
         </statement>
         <solution>
@@ -105,10 +104,10 @@
           statement
           <q>An <m>n</m>-element set has <m>2^n</m> subsets</q> false, what do you know about the
           number of subsets of a <m>(k - 1)</m>-element set? What do you know about the
-          number of subsets of the <m>k</m>-element set <m>\{ 1, 2, \ldots, k \}</m> that
-          don't contain <m>k</m>? What do you know about the number of subsets of <m>\{ 1,
+          number of subsets of the <m>k</m>-element set <m>\{1, 2, \ldots, k \}</m> that
+          don't contain <m>k</m>? What do you know about the number of subsets of <m>\{1,
           2, \ldots,  k \}</m> that do contain <m>k</m>? What does the sum principle tell
-          you about the number of subsets of <m>\{ 1, 2, \ldots, k \}</m>? Notice that
+          you about the number of subsets of <m>\{1, 2, \ldots, k \}</m>? Notice that
           this contradicts the way in which we chose <m>k</m>, and the only assumption
           that went into our choice of <m>k</m> was that ``there is a nonnegative integer
           <m>n</m> such that an <m>n</m>-element set doesn't have exactly <m>2^n</m> subsets."
@@ -116,6 +115,7 @@
           What can you now conclude about the statement ``for every nonnegative
           integer <m>n</m>, an n-element set has exactly <m>2^n</m> subsets?"
         </p>
+        </statement>
         <solution>
         <p>
           We know that the number of subsets of a <m>(k-1)</m>-element set is
@@ -130,8 +130,10 @@
         </p>
         </solution>
       </task>
-      <p>
-        \item The expression
+      </activity>
+      <activity>
+        <statement>
+          <p> The expression
         <me>
           1+3+5+\cdots+2n-1
         </me>
@@ -139,6 +141,7 @@
         for the first few positive integers and guess its value in terms of <m>n</m>.
         Now apply the technique of <xref ref="subsetsbysmallestcounterexample">Problem</xref> to prove that you are right.
       </p>
+      </statement>
       <solution>
       <p>
         We guess that <m>1+3+5+\cdots+2n-1=n^2</m>. Clearly this is true when
@@ -248,7 +251,7 @@
     empty set has <m>1=2^0</m> subsets. (This step of our proof is called a <em>base step</em>.)
 
     Now suppose that <m>k>0</m> and every set with <m>k-1</m> elements has <m>2^{k-1}</m>
-    subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements. 
+    subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements.
     We partition the subsets of <m>S</m> into two blocks.  Block <m>B_1</m> consists of
     the subsets that do not contain <m>a_n</m> and block <m>B_2</m> consists of the
     subsets that do contain <m>a_n</m>.  Each set in <m>B_1</m> is a subset of
@@ -319,7 +322,7 @@
             Use mathematical induction to prove the well-known formula that for
             all positive integers <m>n</m>,
             <me>
-              1+2 + \cdots +n = {n(n+1)\over 2}.
+              1+2 + \cdots +n = \frac{n(n+1)}{2}.
             </me>
           </p>
         </statement>
@@ -329,11 +332,11 @@
             that<m>k>0</m> and that our formula holds when <m>n=k-1</m>, so that
             <m>1+2+\cdots+k-1=(k-1)k/2</m>. Add <m>k</m> to both sides of this equation to get
             <md>
-              <mrow>1+2+\cdots+(k-1)+k\amp =\amp  (k-1)k/2 +k</mrow>
-              <mrow>\amp =\amp  k^2/2-k/2+k</mrow>
-              <mrow>\amp =\amp 
+              <mrow>1+2+\cdots+(k-1)+k =\amp  (k-1)k/2 +k</mrow>
+              <mrow> =\amp  k^2/2-k/2+k</mrow>
+              <mrow> =\amp
               k^2/2+k/2</mrow>
-              <mrow>\amp =\amp k(k+1)/2.</mrow>
+              <mrow> =\amp k(k+1)/2.</mrow>
             </md>
           </p>
 
@@ -349,8 +352,8 @@
           <p>
             Experiment with various values of <m>n</m> in the sum
             <me>
-              {1\over 1\cdot2}+{1\over 2\cdot3} + {1\over3\cdot
-              4}+\cdots+{1\over n\cdot (n+1)} = \sum_{i=1}^n {1\over i\cdot(i+1)}.
+              \frac{1}{1\cdot2}+\frac{1}{2\cdot3} + \frac{1}{3\cdot
+              4}+\cdots+\frac{1}{n\cdot (n+1)} = \sum_{i=1}^n \frac{1}{i\cdot(i+1)}.
             </me>
           </p>
 
@@ -362,28 +365,26 @@
           <p>
             We guess the formula
             <me>
-              \sum_{i=1}^n{1\over i(i+1)} = {n\over
-              n+1}.
+              \sum_{i=1}^n\frac{1}{i(i+1)} = \frac{n}{n+1}.
             </me>
           </p>
 
           <p>
-            When <m>n=1</m> this formula says that <m>{1\over 1\cdot2}={1\over 1\cdot
+            When <m>n=1</m> this formula says that <m>\frac{1}{1\cdot2}=\frac{1}{1\cdot
             2}</m>, so our formula holds when <m>n=1</m>. Now assume that <m>k>1</m> and that our
             formula holds when <m>n=k-1</m>. Then
             <me>
-              \sum_{i=1}^{k-1} {1\over i(i+1)}= {k-1\over k}.
+              \sum_{i=1}^{k-1} \frac{1}{i(i+1)}= \frac{k-1}{k}.
             </me>
           </p>
 
           <p>
-            Adding <m>1\over k(k+1)</m> to both sides of this equation gives us
+            Adding <m>\frac{1}{k(k+1)}</m> to both sides of this equation gives us
             <md>
-              <mrow>\sum_{i=1}^{k-1} {1\over i(i+1)}+{1\over k(k+1)} \amp =\amp  {k-1\over k}+{1\over
-              k(k+1)}</mrow>
-              <mrow>\sum_{i=1}^k {1\over i(i+1)}\amp =\amp {(k-1)(k+1)\over k(k+1)}+{1\over k(k+1)}</mrow>
-              <mrow>\amp =\amp {k^2 -1 +1\over k(k+1)}</mrow>
-              <mrow>\amp =\amp  {k\over k+1}.</mrow>
+              <mrow>\sum_{i=1}^{k-1} \frac{1}{i(i+1)}+\frac{1}{k(k+1)}  =\amp  \frac{k-1}{k}+\frac{1}{k(k+1)}</mrow>
+              <mrow>\sum_{i=1}^k \frac{1}{i(i+1)} =\amp \frac{(k-1)(k+1)}{k(k+1)}+\frac{1}{k(k+1)}</mrow>
+              <mrow> =\amp \frac{k^2 -1 +1}{k(k+1)}</mrow>
+              <mrow> =\amp  \frac{k}{k+1}.</mrow>
             </md>
           </p>
 
@@ -546,41 +547,32 @@
       that we could make 20 cents and 21 cents! So long as one point of view
       or the other satisfies you, you are ready to use this kind of argument in
       proofs.
-      <ol>
-        {\setcounter{enumi}{\value{problemnumber}}}
+    </p>
 
-        <li>
+      <activity>
+          <statement>
           <p>
             A number greater than one is called prime if it has no factors other
             than itself and one. Show that each positive number is either a prime or
             a power of a prime or a product of powers of prime numbers.
+          </p>
+          </statement>
             <solution>
               <p>
-                We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose
-                that all positive numbers less than <m>n</m> are primes, powers of primes, or
-                products of powers of primes. If <m>n</m> has no proper factors, it is a prime.
-                If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m>
-                and greater than 1. Therefore each factor is a prime, a power of a prime,
-                or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together,
-                the result will still be a power of a prime or a product of powers of
-                primes. Thus the statement that all positive numbers less than
-                <m>n</m> are primes, powers of primes, or products of powers of primes implies
-                the statement that <m>n</m> is a prime, a power of a prime, or a product of
-                powers of primes. Therefore by the strong principle of mathematical
-                induction, all positive numbers are either primes, powers of primes, or
-                products of powers of primes.
+                We note that <m>1=2^0</m>, so 1 is a power of a prime. Now suppose that all positive numbers less than <m>n</m> are primes, powers of primes, or products of powers of primes. If <m>n</m> has no proper factors, it is a prime.  If it does have proper factors, say <m>n=mk</m>, both factors are less than <m>n</m> and greater than 1. Therefore each factor is a prime, a power of a prime, or a product of powers of primes. When we multiply <m>m</m> and <m>k</m> together, the result will still be a power of a prime or a product of powers of primes. Thus the statement that all positive numbers less than <m>n</m> are primes, powers of primes, or products of powers of primes implies the statement that <m>n</m> is a prime, a power of a prime, or a product of powers of primes. Therefore by the strong principle of mathematical induction, all positive numbers are either primes, powers of primes, or products of powers of primes.
               </p>
             </solution>
-          </p>
-        </li>
-
-        <li>
+      </activity>
+      <activity>
+          <statement>
           <p>
             Show that the number of prime factors of a positive number <m>n\ge 2</m>
             is less than or equal to <m>\log_2 n</m>.  (If a prime occurs to the <m>k</m>th
             power in a factorization of <m>n</m>, you can consider that power as <m>k</m> prime
             factors.)  (There is a way to do this by induction and a way to do it
             without induction.  It would be ideal to find both ways.)
+          </p>
+          </statement>
             <solution>
               <p>
                 First, we will prove this by induction. The number of prime
@@ -601,7 +593,8 @@
                 equal to
                 <m>\log_2 n</m> for all integers <m>n\ge 2</m>.
               </p>
-
+            </solution>
+            <solution>
               <p>
                 For a noninductive proof, note that all factors of <m>n</m> are at least 2. If
                 <m>n</m> is a power of two, then the number of times <m>2</m> is a factor of <m>n</m> is
@@ -615,10 +608,6 @@
                 <m>\log_2 n</m>.
               </p>
             </solution>
-            \setcounter{problemnumber}{\value{enumi}}
-          </p>
-        </li>
-      </ol>
-    </p>
+      </activity>
   </subsection>
 </section>

@@ -1,375 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xml:id="sec_genfns-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Supplementary Problems</title>
-  <activity>
-    <task>
-      <statement>
-        <p>
-          Each person attending a party has been asked to bring a prize. The
-          person planning the party has arranged to give out exactly as many prizes
-          as there are guests, but any person may win any number of prizes. If
-          there are <m>n</m> guests, in how many ways may the prizes be given out so
-          that nobody gets the prize that he or she brought?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          We use inclusion and exclusion. Property <m>P_i</m> is that person <m>i</m>
-          gets the prize he or she brought. We are interested in
-          <m>N_{\mbox{e} }(\emptyset)</m>. If
-          <m>P</m> is the set of all properties, we need to compute <m>N_{\mbox{a} }(S)</m> for every
-          subset
-          <m>S</m> of
-          <m>P</m>. But <m>N_{\mbox{a} }(S)</m> is the number of
-          functions from the prizes to the people that give each prize represented by a
-          property in
-          <m>S</m> to the person who brought it. Think in terms of distributing those prizes
-          first. Then there are
-          <m>n-|S|</m> other prizes that we may pass out to the <m>n</m> people as we please, so we
-          may do that in <m>n^{n-|S|}</m> ways. Thus <m>N_{\mbox{a} }(S)=n^{n-|S|}</m>. Applying
-          <xref ref="incexempty">Equation</xref>, we get
-          <me>
-            N_{\mbox{e} }(\emptyset)=\sum_{S:s\subseteq P}(-1)^{|S|} n^{n-|S|} =
-            \sum_{s=0}^n (-1)^{|S|}{n\choose s}n^{n-s}.
-          </me>
-        </p>
-      </solution>
-    </task>
-    <task>
-      <statement>
-        <p>
-          There are <m>m</m> students attending a seminar in a room with <m>n</m>
-          seats. The seminar is a long one, and in the middle the group takes a
-          break. In how many ways may the students return to the room and sit down
-          so that nobody is in the same seat as before?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          We use inclusion and exclusion. We let property <m>P_i</m> be the
-          property that student <m>i</m> sits in the same seat as before. We are interested
-          in <m>N_{\mbox{e} }(\emptyset)</m>. For this purpose, for each subset <m>S</m> of the set
-          <m>P</m> of all properties, we need to compute <m>N_{\mbox{a} }(S)</m>, the number of
-          ways for the students to return so that every student represented by a property
-          in <m>S</m> sits in his or her previous seat. This leaves us with <m>n-|S|</m> seats to
-          be filled in a one-to-one fashion in <m>m-|S|</m> students. There are
-          <m>(n-|S|)^{\underline{m-|S|}}</m> such seating arrangements, so <m>N_{\mbox{a} }(S)=
-          (n-|S|)^{\underline{m-|S|}}</m>. Thus we have
-          <me>
-            N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-            (-1)^{|S|}(n-|S|)^{\underline{m-|S|}} = \sum_{s=0}^m (-1)^s{m\choose
-            s}(n-s)^{\underline{m-s}}
-          </me>
-          ways for the students to return so that nobody sits
-          in his or her previous place.
-        </p>
-      </solution>
-    </task>
-  </activity>
 
-  <activity category="interesting">
+  <activity xml:id="candy-genfn" category="interesting and difficult">
     <statement>
-      <p>
-        In how many ways may <m>k</m> distinct books be arranged on <m>n</m> shelves
-        so that no shelf gets more than <m>m</m> books?
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We use inclusion and exclusion. Let property <m>P_i</m> be that shelf <m>i</m>
-        gets more than <m>m</m> books. Then the number of arrangements of books with at
-        least the properties in a subset <m>S</m> of the set <m>P</m> of all properties is
-        <m>N_{\mbox{a} }(S) = k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}</m>, because
-        in order to have at least the properties in <m>S</m> we may choose <m>(m+1)|S|</m> books
-        and arrange <m>m+1</m> of them on each of the shelves represented by the properties in
-        <m>S</m>, after which we arrange the remainder of the books. Thus
-        <me>
-          N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P} (-1)^{|S|}
-          k^{\underline{(m+1)|S|}}n^{\underline{k-(m+1)|S|}}=\sum_{s=0}^n
-          (-1)^s{n\choose s}k^{\underline{(m+1)s}}n^{\underline{k-(m+1)s}}
-        </me>
-        is the number of ways to arrange the books so that no shelf gets more than <m>m</m>.
-      </p>
-    </solution>
-  </activity>
-
-  <activity category="interesting">
-    <statement>
-      <p>
-        We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define
-        <m>-n\choose i</m> to be <m>n+i-1\choose i</m>. If we want the Pascal recurrence to be
-        valid, how should we define <m>-n\choose -i</m> when <m>n</m> and <m>i</m> are both positive?
-      </p>
-    </statement>
-    <solution>
-      <p>
-        The number <m>n\choose k</m> is the number in row <m>n</m> and column <m>k</m> of
-        the Pascal (right) triangle. We have said we want to have <m>{-n\choose
-        0}={n+0-1\choose 0}</m>, so we want ones everywhere in that column. Now the Pascal
-        recurrence gives us that
-        <m>{-n\choose 0}={-n-1\choose-1} +{-n-1\choose 0}</m>, so that <m>{-n\choose-1}=0</m>,
-        as does <m>0\choose -1</m>. Applying the Pascal recurrence again gives us
-        <m>{-n\choose -1}= {-n-1\choose -2} +{-n-1\choose -1}</m>, so we have <m>{-n-1\choose
-        -2}=0</m> as well. Following this pattern, we can prove by induction that
-        <m>-n\choose -k</m> is zero whenever <m>k</m> and <m>n</m> are positive.
-      </p>
-    </solution>
-  </activity>
-
-  <activity category="interesting">
-    <statement>
-      <p>
-        Suppose that <m>n</m> children join hands in a circle for a game at
-        nursery school. The game involves everyone falling down (and letting
-        go). In how many ways may they join hands in a circle again so that
-        nobody is to the right of the same child that was previously to his or
-        her right?
-      </p>
-    </statement>
-    <solution>
-      <p>
-        We use inclusion and exclusion, with property <m>i</m> being the property
-        that child <m>i</m> has the same child to the right the second time they join hands.
-        Given a set <m>S</m> of properties, we can think of arranging units consisting of
-        individual children and strings of children holding hands in a circle. If we
-        have <m>s</m> properties, then we have <m>n-s</m> of these units. Each string of
-        children can be arranged in only one way, because our set specifies who has to
-        have the same child on the right. Thus <m>N_{\mbox{a} }(S) = (n-s-1)!</m>. This
-        gives us
-        <md>
-          <mrow>N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}
-          (-1)^{|S|}(n-|S|-1)!\amp =\amp 
-          \sum_{s=0}^n (-1)^s {n\choose s} (n-s-1)!</mrow>
-          <mrow>\amp =\amp \sum_{s=0}^n (-1)^s {n!\over
-          s!(n-s)}</mrow>
-        </md>
-        ways for the children to join hands the second time so that none
-        of them has the same child to the right.
-      </p>
-    </solution>
-  </activity>
-
-  <activity xml:id="Hora" category="interesting and difficult">
-    Suppose that <m>n</m> people link arms in a folk-dance and dance in a
-    circle. Later on they let go and dance some more, after which they
-    link arms in a circle again. In how many ways can they link arms the
-    second time so that no-one is next to a person with whom he or she
-    linked arms before.
-    <solution>
-      <p>
-      We use the Principle of Inclusion and Exclusion. Property <m>P_i</m> will
-      be the property that person <m>i</m> links arms with someone previously to his or
-      her right. (Saying it is the person to the right gives us more control over
-      our formulas.) Given a subset <m>S</m> of the set <m>P</m> of all properties, the number
-      of ways for the people in that set to link arms with the people previously on
-      their right is the number of ways to arrange <m>n-|S|</m> strings of people around a
-      circle with strings of length more than 1 having two ways to arrange themselves.
-      (Once we have two or more people linked, another person can be added to this
-      string only at one end or not at all, because this person must have been to the
-      right of one of the people on an end of the string. However a string of length
-      two or more can unlink and then link in the opposite order, and each person will
-      still be linked to exactly the same people.) Thus <m>N_{\mbox{a} }(S)=
-      (n-|S|-1)!2^{m(S)}</m>, where <m>m(S)</m> is the number of strings of length more than
-      one determined by <m>S</m>. The number <m>m(S)</m> can be any number from 1 to <m>S</m>, so
-      long as
-      <m>S</m> is not too big; namely so long as <m>|S|\le \lfloor n/1\rfloor</m>. (This is
-      because if <m>m(S)=|S|</m>, then each person determined by a property in <m>S</m> must be
-      adjacent to a person not determined by a property in <m>S</m>.) In particular,
-      <m>N_{\mbox{a} }(S)</m> is not completely determined by the size of <m>S</m>, as in all our
-      other inclusion-exclusion problems. How do we compute <m>m(S)</m>? Let us call a
-      subset <m>R</m> of <m>S</m> a run if
-      <task>
-        <p>
-          the people determined by <m>R</m> sit together in a
-          row in both seatings, and
-        </p>
-      </task>
-      <task>
-        <p>
-          no other person in <m>S</m> is in a row with these
-          people in both seatings.
-        </p>
-      </task>
-      <p>
-        Some runs might determine just one person, but a run could
-        also equal all of <m>S</m>. Each run will have one more person not in <m>S</m> who was
-        originally to the right of the person in the run who was rightmost in the first
-        seating, and so this person will have to sit in a row with the people in <m>R</m> in
-        the second seating as well. Thus the number <m>r</m> of runs in <m>S</m> is the number of
-        strings
-        <m>m(S)</m> that may be seated in two ways, and there are <m>n-|S|-r</m> people who do not
-        have to be seated with runs. Thus <m>N_{\mbox{a} }(S) = (n-|S|-1)!2^r</m>, because
-        the total number of strings of people (including strings of just one person) we
-        need to seat is <m>n-|S| -r</m>, and there are <m>(k-1)!</m> ways to arrange <m>k</m> objects
-        in a circle.. If we try to use the information we have so far to compute
-        <m>N_{\mbox{e} }(\emptyset)</m>, we get
-        <me>
-          N_{\mbox{e} }(\emptyset)=\sum_{S:S\subseteq P}(-1)^{|S|}(n-|S|_1)!2^r
-          =\sum_{s=0}^n\sum_{r=1}^{|S|}N(s,r)(n-s-1)!2^r,
-        </me>
-        in which <m>N(s,r)</m> stands for
-        the number of property sets with size <m>s</m> and <m>r</m> runs.
-      </p>
-
-      <p>
-        Picking out runs in a circular arrangement adds a layer of difficulty, so to
-        compute <m>N(s,r)</m>, we first compute how many subsets of <m>[n]</m> we have with <m>r</m>
-        runs and then adjust for putting <m>1</m> through <m>n</m> around a circle in order.
-        Imagine writing 1 through
-        <m>n</m> in a straight line, each integer occupying one unit of distance along the
-        line. We now place
-        <m>r</m> sticks whose lengths add to
-        <m>s</m> (each stick has positive integer length) along that line. Each stick
-        picks out a set of consecutive integers, as many as its length, so the
-        sticks together pick out <m>s</m> integers. In order to be sure the sticks
-        correspond to runs, we need to make sure they do not touch each other, so we
-        place <m>n-s</m> identical stones along the line too, making sure there is at
-        least one stone between any two sticks. The stones thus pick out the integers
-        not in <m>S</m>. The sticks are not quite identical, though the sticks of a given
-        length are. In other words, which lengths of sticks are in which places is
-        what matters. So the sticks give us a composition of <m>s</m>, a list of distinct
-        positive integers that add to <m>s</m>. We know there are <m>s-1\choose r-1</m> such
-        compositions. Once we have chosen an ordering for the sticks, we need to
-        distribute the stones among the sticks so that no two sticks are adjacent.
-        Since the stones are identical, we can do this by putting one stone between
-        each pair of sticks in our composition, and then distribute the remaining
-        <m>n-s-r+1</m> stones in any way we want among the <m>r-1</m> places between the sticks
-        and the two places to the left and right of all the sticks.. We can do this in
-        <me>
-          {r+1 + (n-s-r+1)-1\choose n-s-r+1}={n-s+1\choose n-s-r+1}={n-s+1\choose r}
-        </me>
-        ways. Thus there are
-        <m>{s-1\choose r-1}{n-s+1\choose r}</m> ways to choose a subset <m>S</m> of <m>[n]</m> that
-        has
-        <m>r</m> runs.
-      </p>
-
-      <p>
-        Now we have to deal with the fact that our <m>n</m> people (who we have replaced
-        with the integers 1 through <m>n</m> in order) were arranged around a circle. That
-        means that a run is now a set of consecutive integers on the circle, where <m>n</m>
-        and 1 are considered consecutive. Recall that the set <m>S</m> is picked out by the
-        sticks. If we arrange 1 through
-        <m>n</m> around a circle in order, the set
-        <m>S</m> that originally had
-        <m>r</m> runs will have <m>r-1</m> runs if sticks covered both the first and last integer
-        (1 and <m>n</m>), but otherwise it will still have <m>n</m> runs. Thus the number of
-        subsets of <m>[n]</m> that have <m>n</m> runs when <m>1</m> through <m>n</m> are arranged in a
-        circle is the number of subsets of <m>[n]</m> with <m>r+1</m> runs that have both 1 and
-        <m>n</m> in <m>S</m> plus the number of subsets of <m>[n]</m> with <m>r</m> runs that do not have
-        both <m>1</m> and
-        <m>n</m> in <m>S</m>. To compute the number of subsets <m>S</m> that <em>do</em> contain both 1
-        and <m>n</m>, we compute the number of arrangements of <m>r</m> sticks and <m>n-s</m> stones
-        that do start and end with a stick; that means that after we choose our
-        composition into <m>r</m> parts to get our arrangement of sticks and place one stone
-        between each pair of previously adjacent sticks, we now place the remaining
-        <m>n-s-r+1</m> stones in the <m>r-1</m> places between previously adjacent sticks in
-        <me>
-          {r-1 + (n-s-r+1)-1\choose n-s-r+1}={n-s-1\choose n-s-r+1}={n-s-1\choose r-2}
-        </me>
-        ways. For the sticks and stones to determine a subset we must assign lengths to
-        the sticks; the number of ways to do this is, as above, <m>s-1\choose r-1</m>, the
-        number of compositions of <m>s</m> with <m>r</m> parts. Thus there are
-        <m>{s-1\choose r-1}{n-s-1\choose r-2}</m> subsets of
-        <m>[n]</m> that have
-        <m>r</m> runs and include both 1 and <m>n</m>. For our computation we will also want the
-        number of subsets of <m>[n]</m> that have <m>r+1</m> runs and contain both <m>1</m> and <m>n</m>
-        this is
-        <m>{s-1\choose r}{n-s-1\choose r-1}</m>.
-      </p>
-
-      <p>
-        On the other hand, the number of subsets of <m>[n]</m> that have <m>r</m> runs and do not
-        contain both <m>1</m> and <m>n</m> is the total number of subsets with <m>r</m> runs minus the
-        number that do contain both <m>1</m> and <m>n</m>; this is
-        <me>
-          {s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right).
-        </me>
-      </p>
-
-      <p>
-        This gives us
-        <me>
-          N(s,r) ={s-1\choose r}{n-s-1\choose r-1}+{s-1\choose
-          r-1}\left({n-s+1\choose r}- {n-s-1\choose
-          r-2}\right)
-        </me>
-        ways to choose an <m>s</m>-element subset of <m>[n]</m> that has <m>r</m> runs when <m>[n]</m> is
-        arranged around a circle. Thus there are
-      </p>
-
-      <p>
-        <m>\sum\limits_{s=0}^n\sum\limits_{r=1}^{s}(-1)^s\left[{s-1\choose
-        r}{n-s-1\choose r-1}+{s-1\choose r-1}\left({n-s+1\choose r}- {n-s-1\choose
-        r-2}\right)\right](n-s-1)!2^r</m>
-      </p>
-
-      <p>
-        ways for people to arrange themselves in the
-        second circle so that no-one is adjacent to anyone he or she was previously
-        adjacent to.
-      </p>
-    </solution>
-  </activity>
-
-  <activity category="interesting and difficult">
-    <statement>
-      <p>
-        (A challenge; the author has not tried to solve this one!) Redo
-        <xref ref="Hora">Problem</xref> in the case that there are <m>n</m> men and <m>n</m> women and
-        when people arrange themselves in a circle they do so alternating gender.
-      </p>
-
-      <p>
-        \item What is the generating function for the number of ways to pass out
-        <m>k</m> pieces of candy from
-        an unlimited supply of identical candy to <m>n</m> children (where
-        <m>n</m> is fixed) so that each child gets between three and six pieces of
-        candy (inclusive)? Use the fact that
+      <p>What is the generating function for the number of ways to pass out <m>k</m> pieces of candy from an unlimited supply of identical candy to <m>n</m> children (where <m>n</m> is fixed) so that each child gets between three and six pieces of candy (inclusive)? Use the fact that
         <me>
           (1+x+x+x^3)(1-x) = 1-x^4
         </me>
         to find a formula for the number of ways to
-        pass out the candy. Reformulate this problem as an inclusion-exclusion
-        problem and describe what you would need to do to solve it.
+        pass out the candy.
       </p>
     </statement>
     <solution>
       <p>
         <m>(x^3+x^4+x^5+x^6)^n</m>;
         <md>
-          <mrow>(x^3+x^4+x^5+x^6)^n\amp =\amp x^{3n}(1+x+x^2+x^3)^n</mrow>
-          <mrow>\amp =\amp x^{3n}\left({1-x^4\over 1-x}\right)^n</mrow>
-          <mrow>\amp =\amp x^{3n}\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty
-          {n+i-1\choose i}x^i</mrow>
+          <mrow>(x^3+x^4+x^5+x^6)^n =\amp x^{3n}(1+x+x^2+x^3)^n</mrow>
+          <mrow> =\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n</mrow>
+          <mrow> =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
+          \binom{n+i-1}{i}x^i</mrow>
         </md>
       </p>
 
       <p>
-        The number of ways to pass out <m>k</m> pieces of candy is the
-        coefficient of <m>x^k</m> in this expression. Thus the answer is zero if <m>k\lt  3n</m>
-        because of the <m>x^{3n}</m> in front. Otherwise the answer is the coefficient of
-        <m>^{k-3n}</m> in <m>\sum_{j=0}^n (-1)^j{n\choose j}x^{4j}\sum_{i=0}^\infty
-        {n+i-1\choose i}x^i</m>, which is
+        The number of ways to pass out <m>k</m> pieces of candy is the coefficient of <m>x^k</m> in this expression. Thus the answer is zero if <m>k\lt 3n</m> because of the <m>x^{3n}</m> in front. Otherwise the answer is the coefficient of <m>^{k-3n}</m> in <m>\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty \binom{n+i-1}{i}x^i</m>, which is
         <me>
-          \sum_{i,j:4j+i=k-3n}(-1)^j{n\choose
-          j}{n+i-1\choose i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j{n\choose
-          j}{k-2n-4j-1\choose n-1}.
+          \sum_{i,j:4j+i=k-3n}(-1)^j\binom{n}{j}\binom{n+i-1}{i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j\binom{n}{j}\binom{k-2n-4j-1}{n-1}.
         </me>
       </p>
 
-      <p>
-        As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m>
-        gets more than six pieces of candy. We would then observe that the number of
-        ways to pass out the candy so that the children determined by a set <m>S</m> of
-        properties all get more than six pieces, and everyone else gets at least 3, is
-        the number of ways to pass out the remaining candy after giving 7 pieces to each
-        child identified by <m>S</m> and 3 pieces to each other child. This number is
-        <m>{k-7|S|-3(n-|S|)-1\choose n-1}={k-2n-4|S|-1\choose n-1}</m>. From here we would
-        substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.
-      </p>
     </solution>
   </activity>
 
@@ -377,37 +38,27 @@
     <task>
       <statement>
         <p>
-          In paying off a mortgage loan with initial amount A,
-          annual interest rate
-          <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence
-          describes the amount owed after <m>n</m> months of payments in terms of the
-          amount owed after <m>n-1</m> months?  Some technical details:  You make the
-          first payment after one month.  The amount of interest included in your
-          monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount
-          you owed immediately after making your last monthly payment.
+          In paying off a mortgage loan with initial amount <m>A</m>, annual interest rate <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence describes the amount owed after <m>n</m> months of payments in terms of the amount owed after <m>n-1</m> months?  Some technical details: You make the first payment after one month.  The amount of interest included in your monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount you owed immediately after making your last monthly payment.
         </p>
       </statement>
       <solution>
         <p>
-          <m>a_n=(1+{.01p\over 12})a_{n-1}-m</m>.
+          <m>a_n=(1+\frac{.01p}{12})a_{n-1}-m</m>.
         </p>
       </solution>
     </task>
     <task>
       <statement>
         <p>
-          Find a
-          formula for the amount owed after <m>n</m> months.
+          Find a formula for the amount owed after <m>n</m> months.
         </p>
       </statement>
       <solution>
         <p>
           From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
           <md>
-            <mrow>a_n \amp =\amp  A(1+{.01p\over 12})^n-m{1-(1+{.01p\over
-            12})^n\over 1-(1+{.01p\over 12})}</mrow>
-            <mrow>\amp =\amp  \left(A-{1200m\over
-            p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}</mrow>
+            <mrow>a_n  =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}</mrow>
+            <mrow> =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}</mrow>
           </md>
         </p>
       </solution>
@@ -415,51 +66,37 @@
     <task>
       <statement>
         <p>
-          Find a formula for the
-          number of months needed to bring the amount owed to zero.  Another
-          technical point:  If you were to make the standard monthly payment <m>m</m> in
-          the last month, you might actually end up owing a negative amount of
-          money.  Therefore it is ok if the result of your formula for the number
-          of months needed gives a non-integer number of months.  The bank would
-          just round up to the next integer and adjust your payment so your balance
-          comes out to zero.
+          Find a formula for the number of months needed to bring the amount owed to zero.  Another technical point: If you were to make the standard monthly payment <m>m</m> in the last month, you might actually end up owing a negative amount of money.  Therefore it is ok if the result of your formula for the number of months needed gives a non-integer number of months.  The bank would just round up to the next integer and adjust your payment so your balance comes out to zero.
         </p>
       </statement>
       <solution>
         <p>
-          <m>\left(A-{1200m\over
-          p}\right)\left(1+{.01p\over 12}\right)^n+{1200m\over p}=0</m> gives us the
-          equation <m>\left(1+{.01p\over 12}\right)^n={1200m\over 1200m-Ap}</m>. Taking
-          logarithms to any base we choose gives us <m>n\log (1+{.01p\over 12})=\log
-          1200m-\log (1200m-Ap)</m> and so <m>n={\log
-          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m>.
+          <m>\left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}=0</m> gives us the equation <m>\left(1+\frac{.01p}{12}\right)^n=\frac{1200m}{1200m-Ap}</m>. Taking logarithms to any base we choose gives us <m>n\log (1+\frac{.01p}{12})=\log 1200m-\log (1200m-Ap)</m> and so <m>n=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m>.
         </p>
       </solution>
     </task>
     <task>
       <statement>
         <p>
-          What should the monthly payment be to pay off the loan over a period of 30
-          years?
+          What should the monthly payment be to pay off the loan over a period of 30 years?
         </p>
       </statement>
       <solution>
         <p>
-          <m>360={\log
-          1200m-\log (1200m-Ap)\over \log (1+{.01p\over 12})}</m> is the equation we need to
+          <m>360=\frac{\log
+          1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m> is the equation we need to
           solve for <m>m</m>, the monthly payment. We need to chose some base for the
           logarithm so we can write its inverse function; suppose we use logs to the base
           10. Then
           <md>
-            <mrow>360\log (1+{.01p\over 12}) \amp =\amp  \log
+            <mrow>360\log (1+\frac{.01p}{12})  =\amp  \log
             1200m-\log (1200m-Ap)</mrow>
-            <mrow>10^{360\log (1+{.01p\over 12})}\amp =\amp 10^{\log
+            <mrow>10^{360\log (1+\frac{.01p}{12})} =\amp 10^{\log
             1200m/(1200m-Ap)}</mrow>
-            <mrow>(1+{.01p\over 12})^{360} \amp =\amp 1200m/(1200m-Ap)</mrow>
-            <mrow>\left(1200m-Ap\right)(1+{.01p\over 12})^{360}\amp =\amp 1200m</mrow>
-            <mrow>1200m\left((1+{.01p\over 12})^{360}-1\right)\amp =\amp  Ap(1+{.01p\over 12})^{360}</mrow>
-            <mrow>m \amp =\amp  {Ap(1+{.01p\over 12})^{360}\over 1200\left((1+{.01p\over
-            12})^{360}-1\right)}</mrow>
+            <mrow>(1+\frac{.01p}{12})^{360}  =\amp 1200m/(1200m-Ap)</mrow>
+            <mrow>\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360} =\amp 1200m</mrow>
+            <mrow>1200m\left((1+\frac{.01p}{12})^{360}-1\right) =\amp  Ap(1+\frac{.01p}{12})^{360}</mrow>
+            <mrow>m  =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
           </md>
           is our monthly payment.
         </p>
@@ -467,147 +104,92 @@
     </task>
   </activity>
 
+
   <activity category="interesting">
     <statement>
       <p>
-        Find a recurrence relation for the number of ways to divide a
-        convex <m>n</m>-gon into triangles by means of non-intersecting diagonals.
-        How do these numbers relate to the Catalan numbers?<index><main>Catalan
-        Number</main><sub>recurrence for</sub></index>
+        We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define <m>\binom{-n}{i}</m> to be <m>\binom{n+i-1}{i}</m>. If we want the Pascal recurrence to be valid, how should we define <m>\binom{-n}{-i}</m> when <m>n</m> and <m>i</m> are both positive?
       </p>
     </statement>
     <solution>
       <p>
-        Let <m>d_n</m> be the number of ways to divide an <m>n</m>-gon into triangles
-        by means of nonintersecting diagonals. Take an <m>n</m>-gon and label its vertices
-        cyclically from 1 to <m>n</m>. Any triangulation must have a triangle containing
-        the edge <m>1n</m> between vertex 1 and vertex <m>n</m>. The third vertex can be any
-        number between 2 and
-        <m>n-1</m>. We consider two cases. First, if the third vertex is 2 or <m>n-1</m>, then we
-        have divided our polygon up into a triangle and an
-        <m>(n-1)</m>-gon, and any triangulation of that <m>(n-1)</m>-gon joins with our original
-        triangle to give us a triangulation of the <m>n</m>-gon. Second, if the third vertex
-        of our original triangle is vertex <m>i</m> with <m>3\le i\le n-2</m> then we have divided
-        our polygon into the polygon with the <m>i</m> edges <m>12</m>, <m>23</m>, <ellipsis />,
-        <m>(i-1)i</m>, <m>i1</m>, the polygon with <m>n-i+1</m> edges <m>ni</m>, <m>i(i+1)</m>, <ellipsis />, <m>(n-1)n</m>,
-        and the original triangle with edges
-        <m>n1</m>, <m>1i</m>, <m>in</m>. Triangulations of the first two of these polygons join with the
-        original triangle to give us a triangulation of the original polygon.
+        The number <m>\binom{n}{k}</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>\binom{-n}{0}=\binom{n+0-1}{0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>\binom{-n}{0}=\binom{-n-1}{-1} +\binom{-n-1}{0}</m>, so that <m>\binom{-n}{-1}=0</m>, as does <m>\binom{0}{-1}</m>. Applying the Pascal recurrence again gives us <m>\binom{-n}{-1}= \binom{-n-1}{-2} +\binom{-n-1}{-1}</m>, so we have <m>\binom{-n-1}{-2}=0</m> as well. Following this pattern, we can prove by induction that <m>\binom{-n}{-k}</m> is zero whenever <m>k</m> and <m>n</m> are positive.
+      </p>
+    </solution>
+  </activity>
+
+
+
+  <activity category="interesting">
+    <statement>
+      <p>
+        Find a recurrence relation for the number of ways to divide a convex <m>n</m>-gon into triangles by means of non-intersecting diagonals.  How do these numbers relate to the Catalan numbers?<index><main>Catalan Number</main><sub>recurrence for</sub></index>
+      </p>
+    </statement>
+    <solution>
+      <p>
+        Let <m>d_n</m> be the number of ways to divide an <m>n</m>-gon into triangles by means of nonintersecting diagonals. Take an <m>n</m>-gon and label its vertices cyclically from 1 to <m>n</m>. Any triangulation must have a triangle containing the edge <m>1n</m> between vertex 1 and vertex <m>n</m>. The third vertex can be any number between 2 and <m>n-1</m>. We consider two cases. First, if the third vertex is 2 or <m>n-1</m>, then we have divided our polygon up into a triangle and an <m>(n-1)</m>-gon, and any triangulation of that <m>(n-1)</m>-gon joins with our original triangle to give us a triangulation of the <m>n</m>-gon. Second, if the third vertex of our original triangle is vertex <m>i</m> with <m>3\le i\le n-2</m> then we have divided our polygon into the polygon with the <m>i</m> edges <m>12</m>, <m>23</m>, <ellipsis />, <m>(i-1)i</m>, <m>i1</m>, the polygon with <m>n-i+1</m> edges <m>ni</m>, <m>i(i+1)</m>, <ellipsis />, <m>(n-1)n</m>, and the original triangle with edges <m>n1</m>, <m>1i</m>, <m>in</m>. Triangulations of the first two of these polygons join with the original triangle to give us a triangulation of the original polygon.
       </p>
 
       <p>
-        The number of triangulations of the original polygon that we get from case 1 is
-        <m>2d_{n-1}</m>. The number of triangulations we get from the second case is
-        <m>\sum_{i=3}^{n-2} d_id_{n-i+1}</m>. Thus the total number of triangulations is
-        <m>2d_{n-1}+d_{n-2}d_3 + d_{n-3}d_4 +\cdots + d_3d_{n-2}</m>. If we take <m>d_2=1</m>,
-        then we may write <m>d_n = d_{n-1}d_2+d_{n-2}d_3 +\cdots+d_3d_{n-2} +
-        d_2d_{n-1}=\sum\limits_{i=2}^{n-1} d_id_{n-i+1}</m>. This is very similar to the
-        recurrence in <xref ref="CatalanRecurrence">Problem</xref> for the Catalan numbers. We could
-        apply the generating function method we used with the Catalan numbers to find a
-        formula for <m>d_n</m>. We could also experiment with the first few Catalan numbers
-        and the first few <q>triangulation</q> numbers to see if they are related. We
-        have <m>C_0=1</m>, <m>C_1=1</m>, <m>C_2=2</m>, <m>C_3=C_0C_2+C_1C_1 +C_2C_0=5</m>, and
-        <m>C_4=C_0C_3+C_1C_2+C_2C_1+C_3C_0=14</m>. We have that <m>d_2=1</m>, <m>d_3=1</m>, <m>d_4=2</m>,
-        <m>d_5=d_4d_2+d_3d_3+d_2d_4=5</m>, and <m>d_6=d_5d_2+d_4d_3+d_3d_4+d_5d_2=14</m>. This
-        makes pretty convincing evidence that <m>d_i= C_{i-2}</m>. We have already done a
-        base case (and more) for an inductive proof. So assume inductively that
-        <m>d_{i}=C_{i-2}</m> for <m>i\lt n</m>. Then
+        The number of triangulations of the original polygon that we get from case 1 is <m>2d_{n-1}</m>. The number of triangulations we get from the second case is <m>\sum_{i=3}^{n-2} d_id_{n-i+1}</m>. Thus the total number of triangulations is <m>2d_{n-1}+d_{n-2}d_3 + d_{n-3}d_4 +\cdots + d_3d_{n-2}</m>. If we take <m>d_2=1</m>, then we may write <m>d_n = d_{n-1}d_2+d_{n-2}d_3 +\cdots+d_3d_{n-2} + d_2d_{n-1}=\sum\limits_{i=2}^{n-1} d_id_{n-i+1}</m>. This is very similar to the recurrence in <xref ref="CatalanRecurrence">Problem</xref> for the Catalan numbers. We could apply the generating function method we used with the Catalan numbers to find a formula for <m>d_n</m>. We could also experiment with the first few Catalan numbers and the first few <q>triangulation</q> numbers to see if they are related. We have <m>C_0=1</m>, <m>C_1=1</m>, <m>C_2=2</m>, <m>C_3=C_0C_2+C_1C_1 +C_2C_0=5</m>, and <m>C_4=C_0C_3+C_1C_2+C_2C_1+C_3C_0=14</m>. We have that <m>d_2=1</m>, <m>d_3=1</m>, <m>d_4=2</m>, <m>d_5=d_4d_2+d_3d_3+d_2d_4=5</m>, and <m>d_6=d_5d_2+d_4d_3+d_3d_4+d_5d_2=14</m>. This makes pretty convincing evidence that <m>d_i= C_{i-2}</m>. We have already done a base case (and more) for an inductive proof. So assume inductively that <m>d_{i}=C_{i-2}</m> for <m>i\lt n</m>. Then
         <md>
-          <mrow>d_n\amp =\amp \sum\limits_{i=2}^{n-1} d_id_{n-i+1}</mrow>
-          <mrow>\amp =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i+1-2}</mrow>
-          <mrow>\amp =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i-1}</mrow>
-          <mrow>\amp =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{n-(k+1)-1}</mrow>
-          <mrow>\amp =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{(n-2)-k}</mrow>
-          <mrow>\amp =\amp C_{n-2}</mrow>
+          <mrow>d_n =\amp \sum\limits_{i=2}^{n-1} d_id_{n-i+1}</mrow>
+          <mrow> =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i+1-2}</mrow>
+          <mrow> =\amp \sum\limits_{i=2}^{n-1} C_{i-2}C_{n-i-1}</mrow>
+          <mrow> =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{n-(k+1)-1}</mrow>
+          <mrow> =\amp \sum\limits_{k=1}^{n-2} C_{k-1}C_{(n-2)-k}</mrow>
+          <mrow> =\amp C_{n-2}</mrow>
         </md>
       </p>
 
       <p>
-        Thus by the principle of mathematical induction, <m>d_n=C_{n-2}</m> for all integers
-        <m>n\ge 2</m>.
+        Thus by the principle of mathematical induction, <m>d_n=C_{n-2}</m> for all integers <m>n\ge 2</m>.
       </p>
     </solution>
   </activity>
 
   <activity category="interesting">
-    <task>
       <statement>
-        <p>
-          How does <m>\sum_{k=0}^n{n-k\choose k}</m> relate to the Fibonacci
-          Numbers?
+          <p>
+          How does <m>\sum_{k=0}^n\binom{n-k}{k}</m> relate to the Fibonacci Numbers?
         </p>
       </statement>
       <solution>
         <p>
-          We begin by computing a few values of
-          <m>a_n=\sum_{k=0}^n{n-k\choose
-          k}</m>. We have <m>a_0=1</m>, <m>a_1=1</m>, <m>a_2=2</m>, <m>a_3=1+2=3</m>, <m>a_4=1+3+1=5</m>,
-          <m>a_5=1+4+3=8</m> and <m>a_6=1+5+6+1=13</m>. So far the sequence agrees with the
-          Fibonacci Numbers. Each term of the sequence is the sum of the two preceding
-          terms, so it makes sense to try to prove that <m>a_n=a_{n-1}+a_{n-2}</m>. We may
-          write
+          We begin by computing a few values of <m>a_n=\sum_{k=0}^n\binom{n-k}{k}</m>. We have <m>a_0=1</m>, <m>a_1=1</m>, <m>a_2=2</m>, <m>a_3=1+2=3</m>, <m>a_4=1+3+1=5</m>, <m>a_5=1+4+3=8</m> and <m>a_6=1+5+6+1=13</m>. So far the sequence agrees with the Fibonacci Numbers. Each term of the sequence is the sum of the two preceding terms, so it makes sense to try to prove that <m>a_n=a_{n-1}+a_{n-2}</m>. We may write
           <md>
             <mrow>a_{n-1}+a_{n-2}
-            \amp =\amp \sum_{k=0}^{n-1} {n-1-k\choose k}
-            +\sum_{k=0}^{n-2} {n-2-k\choose k}</mrow>
-            <mrow>\amp =\amp \sum_{k=0}^{n-1} {n-1-k\choose k}+\sum_{j=1}^{n-1}{n-1-j\choose j-1}</mrow>
-            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}{n-1-k\choose k}+{n-1-k\choose k-1}</mrow>
-            <mrow>\amp =\amp 1+\sum_{k=1}^{n-1}{n-k\choose k} \rangle =\rangle  \sum_{k=0}^{n-1}{n-k\choose k}
+             =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}
+            +\sum_{k=0}^{n-2} \binom{n-2-k}{k}</mrow>
+            <mrow> =\amp \sum_{k=0}^{n-1} \binom{n-1-k}{k}+\sum_{j=1}^{n-1}\binom{n-1-j}{j-1}</mrow>
+            <mrow> =\amp 1+\sum_{k=1}^{n-1}\binom{n-1-k}{k}+\binom{n-1-k}{k-1}</mrow>
+            <mrow> =\amp 1+\sum_{k=1}^{n-1}\binom{n-k}{k} \rangle =\rangle  \sum_{k=0}^{n-1}\binom{n-k}{k}
             \rangle =\rangle  a_n</mrow>
           </md>
         </p>
 
         <p>
-          Thus the sequence satisfies the same recurrence as the Fibonacci
-          numbers and its first two values are the same as the Fibonacci numbers. This
-          lets us prove by induction that <m>a_n</m> is the <m>n</m>th Fibonacci number. More
-          generally, given any second order recurrence, if two sequences satisfy that
-          recurrence and have the same first two values, then they are equal.
+          Thus the sequence satisfies the same recurrence as the Fibonacci numbers and its first two values are the same as the Fibonacci numbers. This lets us prove by induction that <m>a_n</m> is the <m>n</m>th Fibonacci number. More generally, given any second order recurrence, if two sequences satisfy that recurrence and have the same first two values, then they are equal.
         </p>
       </solution>
-    </task>
-    <task>
+  </activity>
+  <activity>
       <statement>
-        <p>
-          Let <m>m</m> and <m>n</m> be fixed. Express the generating function for the
-          number of
-          <m>k</m>-element multisets of an <m>n</m>-element set such that no element appears
-          more than
-          <m>m</m> times as a quotient of two polynomials. Use this expression to get a
-          formula for the number of <m>k</m>-element
-          multisets of an <m>n</m>-element set such that no element appears more than
-          <m>m</m> times.
+          <p>
+          Let <m>m</m> and <m>n</m> be fixed. Express the generating function for the number of <m>k</m>-element multisets of an <m>n</m>-element set such that no element appears more than <m>m</m> times as a quotient of two polynomials. Use this expression to get a formula for the number of <m>k</m>-element multisets of an <m>n</m>-element set such that no element appears more than <m>m</m> times.
         </p>
       </statement>
       <solution>
         <p>
-          <m>(1+x+x^2+\cdots+x^m)^n={(1-x^{m+1})^n\over (1-x)^n}</m>.
-          Expanding this gives us <m>{(1-x^{m+1})^n\over (1-x)^n}=\sum_{i=0}^n(-1)^i
-          {n\choose i}x^{(m+1)i} \sum_{j=0}^\infty {n+j-1\choose j}</m>. The coefficient of
-          <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an
-          <m>n</m>-element set in which no element appears more than <m>m</m> times. This
-          coefficient is
-          <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i{n\choose i}{n+j-1\choose
-          j}=\sum\limits_{i=1}^{\lfloor{k\over m+1}\rfloor}(-1)^i{n\choose
-          i}{n+k-(m+1)i-1\choose n-1}</m>.
+          <m>(1+x+x^2+\cdots+x^m)^n=\frac{(1-x^{m+1})^n}{(1-x)^n}</m>.  Expanding this gives us <m>\frac{(1-x^{m+1})^n}{(1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
         </p>
       </solution>
-    </task>
-    <task>
+  </activity>
+<activity>
       <statement>
         <p>
-          One natural but oversimplified model for the growth of a tree is
-          that all new wood grows from the previous year's growth and is
-          proportional to it in amount. To be more precise, assume that the
-          (total) length of the new growth in a given year is the constant <m>c</m>
-          times the (total) length of new growth in the previous year. Write down
-          a recurrence for the total length <m>a_n</m> of all the branches of the tree
-          at the end of growing season
-          <m>n</m>. Find the general solution to your recurrence relation. Assume that
-          we begin with a one meter cutting of new wood (from the previous year) which
-          branches out and grows a total of two meters of new wood in the first year.
-          What will the total length of all the branches of the tree be at the end of <m>n</m>
-          years?
+          One natural but oversimplified model for the growth of a tree is that all new wood grows from the previous year's growth and is proportional to it in amount. To be more precise, assume that the (total) length of the new growth in a given year is the constant <m>c</m> times the (total) length of new growth in the previous year. Write down a recurrence for the total length <m>a_n</m> of all the branches of the tree at the end of growing season <m>n</m>. Find the general solution to your recurrence relation. Assume that we begin with a one meter cutting of new wood (from the previous year) which branches out and grows a total of two meters of new wood in the first year.  What will the total length of all the branches of the tree be at the end of <m>n</m> years?
         </p>
       </statement>
       <solution>
@@ -615,24 +197,21 @@
           <m>a_n= a_{n-1} +c(a_{n-1}-a_{n-2})=(1+c)a_{n-1}-ca_{n-2}</m>.
           <md>
             <mrow>\sum_{n=2}^\infty
-            a_nx^n\amp =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n</mrow>
-            <mrow>(1-(1+c)x +cx^2)\sum_{n=0}^\infty
-            a_nx^n\amp =\amp a_0+a_1x-a_0(1+c)x</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n \amp =\amp  {a_0+(a_1-a_0(1+c))x\over 1-(1+c)x +cx^2}</mrow>
-            <mrow>\amp =\amp  {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}</mrow>
+            a_nx^n =\amp \sum_{n=2}^\infty(1+c)a_{n-1}x^n-c\sum_{n=2}^\infty a_{n-2}x^n</mrow>
+            <mrow>(1-(1+c)x +cx^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0(1+c)x</mrow>
+            <mrow>\sum_{n=0}^\infty a_nx^n  =\amp  \frac{a_0+(a_1-a_0(1+c))x}{1-(1+c)x +cx^2}</mrow>
+            <mrow> =\amp  \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}</mrow>
           </md>
         </p>
 
         <p>
-          Assuming <m>c\not=1</m> and using the method of partial fractions
-          gives us
+          Assuming <m>c\not=1</m> and using the method of partial fractions gives us
           <md>
-            <mrow>\amp \amp {a_0+(a_1-a_0(1+c))x\over (1-x)(1-cx)}</mrow>
-            <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)
-            \left[{1/(1-c)\over (1-x)} -{c/(1-c)\over 1-cx}\right]</mrow>
-            <mrow>\amp =\amp  (a_0+(a_1-a_0(1+c))x)\left[{1\over 1-c}\sum_{i=0}^\infty x^i-{c\over
-            1-c}\sum_{i=0}^\infty c^ix^i\right]</mrow>
-            <mrow>\amp =\amp  {(a_0+(a_1-a_0(1+c))x)\over 1-c}\sum_{i=0}^\infty
+            <mrow> \amp \frac{a_0+(a_1-a_0(1+c))x}{(1-x)(1-cx)}</mrow>
+            <mrow> =\amp  (a_0+(a_1-a_0(1+c))x)
+            \left[\frac{1/(1-c)}{(1-x)} -\frac{c/(1-c)}{1-cx}\right]</mrow>
+            <mrow> =\amp  (a_0+(a_1-a_0(1+c))x)\left[\frac{1}{1-c}\sum_{i=0}^\infty x^i-\frac{c}{1-c}\sum_{i=0}^\infty c^ix^i\right]</mrow>
+            <mrow> =\amp  \frac{(a_0+(a_1-a_0(1+c))x)}{1-c}\sum_{i=0}^\infty
             (1-c^{i+1})x^i.</mrow>
           </md>
         </p>
@@ -640,26 +219,20 @@
         <p>
           From this we get that
           <me>
-            a_i={a_0\over 1-c}(1-c^{i+1}) +{a_1-a_0(1+c)\over
-            1-c}(1-c^i).
+            a_i=\frac{a_0}{1-c}(1-c^{i+1}) +\frac{a_1-a_0(1+c)}{1-c}(1-c^i).
           </me>
         </p>
 
         <p>
-          Assuming that we begin with one meter of new wood means <m>a_0=1</m>, and assuming
-          we have a total of two meters of new wood at the end of the first year means
-          <m>c=2</m> and <m>a_1=3</m>. Substituting these into our formula for <m>a_i</m> gives us
-          <m>a_i=2^{i+1}-1</m>
+          Assuming that we begin with one meter of new wood means <m>a_0=1</m>, and assuming we have a total of two meters of new wood at the end of the first year means <m>c=2</m> and <m>a_1=3</m>. Substituting these into our formula for <m>a_i</m> gives us <m>a_i=2^{i+1}-1</m>
         </p>
       </solution>
-    </task>
   </activity>
 
   <activity category="interesting">
-    <task>
       <statement>
         <p>
-          (Relevant to <xref ref="expogenfun">Appendix</xref>) We have some chairs which we are
+            (Relevant to <xref ref="expogenfun" autoname="yes" />) We have some chairs which we are
           going to paint with red, white, blue, green, yellow and purple paint. Suppose
           that we may paint any number of chairs red or white, that we may paint at most
           one chair blue, at most three chairs green, only an even number of chairs
@@ -670,85 +243,34 @@
       <solution>
         <p>
           The generating function for the number of ways to paint <m>n</m> chairs is
-          {
           <md>
-            <mrow>\amp \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
+            <mrow> \amp \hspace{-.5in}(1+x+x^2+\cdots)^2(1+x)(1+x+x^2+x^3)(1+x^2+x^4+\cdots)
             (1+x^4+x^8+\cdots)</mrow>
-            <mrow>\amp =\amp 
-            {(1+x)(1+x+x^2+x^3)\over(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  {1\over
-            (1-x)^4}</mrow>
+            <mrow> =\amp
+            \frac{(1+x)(1+x+x^2+x^3)}{(1-x)^2(1-x^2)(1-x^4)}\rangle =\rangle  \frac{1}{(1-x)^4}</mrow>
           </md>
         </p>
 
         <p>
-          } Thus the number of ways to paint <m>n</m> chairs is
-          <m>{n+4-1\choose n}={n+3\choose n}</m>
+          Thus the number of ways to paint <m>n</m> chairs is <m>\binom{n+4-1}{n}=\binom{n+3}{n}</m>
         </p>
       </solution>
-    </task>
-    <task>
-      <statement>
+  </activity>
+<activity>
+    <statement>
         <p>
-          What is the generating function for the number of partitions of an
-          integer in which each part is used at most <m>m</m> times? Why is this also
-          the generating function for partitions in which consecutive parts (in a
-          decreasing list representation) differ by at most <m>m</m>?
+          What is the generating function for the number of partitions of an integer in which each part is used at most <m>m</m> times? Why is this also the generating function for partitions in which consecutive parts (in a decreasing list representation) differ by at most <m>m</m>?
         </p>
       </statement>
       <solution>
-        <me>
-          (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots 
+        <p><me>
+          (1+q+\cdots+q^m)(1+q^2 +\cdots+q^{2m})\cdots
           =\prod_{i=1}^\infty\sum_{j=0}^m q^{ij}\\
-          =\prod_{i=1}^\infty {1-q^{i(m+1)}\over 1-q^i}
+          =\prod_{i=1}^\infty \frac{1-q^{i(m+1)}}{1-q^i}
         </me>
-        <p>
-          This is also the generating function for the number of
-          partitions of an integer in which consecutive parts differ by at most <m>m</m>,
-          because when we conjugate a partition in which each part is used at most <m>m</m>
-          times, we get a partition in which each distinct column of the Young diagram
-          occurs at most <m>m</m> times, which means that the difference between two
-          consecutive parts (in the decreasing list representation) is at most <m>m</m>.
+          This is also the generating function for the number of partitions of an integer in which consecutive parts differ by at most <m>m</m>, because when we conjugate a partition in which each part is used at most <m>m</m> times, we get a partition in which each distinct column of the Young diagram occurs at most <m>m</m> times, which means that the difference between two consecutive parts (in the decreasing list representation) is at most <m>m</m>.
         </p>
       </solution>
-    </task>
   </activity>
 
-  <activity category="interesting">
-    <statement>
-      <p>
-        Suppose we take two graphs <m>G_1</m> and <m>G_2</m> with disjoint vertex sets, we
-        choose one vertex on each graph, and connect these two graphs by an edge <m>e</m> to
-        get a graph <m>G_{12}</m>. How does the chromatic polynomial of <m>G_{12}</m> relate to
-        those of
-        <m>G_1</m> and
-        <m>G_2</m>?
-      </p>
-    </statement>
-    <solution>
-      <p>
-        By the deletion-contraction recurrence,
-        <me>
-          \chi_{G_{12}}(x) =
-          \chi_{G_{12}-e}(x)-\chi_{G_{12/e}}(x).
-        </me>
-      </p>
-
-      <p>
-        Now <m>\chi_{G_{12}-e}(x)=\chi_{G_1}(x)\times \chi_{G_2}(x)</m> because
-        each ordered pair of proper colorings of <m>G_1</m> and <m>G_2</m> is a proper coloring of
-        <m>G_{12}-e</m>. <m>G_{12}/e</m> is the graph we get by identifying the endpoint of <m>e</m>
-        in <m>G_1</m> with the endpoint of <m>e</m> in <m>G_2</m>. Notice that if you fix one vertex
-        of a graph <m>G</m>, fix one color, and ask how many proper colorings with <m>x</m>
-        colors
-        <m>G</m> has in which the fixed vertex is the fixed color, you get <m>\chi_G(x)/x</m>.
-        (By the quotient principle.) Thus <m>\chi_{G_2}(x)/x</m>
-        is the number of ways to extend a proper coloring of
-        <m>G_1</m> to a proper coloring of <m>G_{12}/e</m>. Then, by the product principle, the
-        number of proper colorings of <m>G_{12}/e</m> with <m>x</m> colors is
-        <m>\chi_{G_1}(x)\chi_{G_2}(x)/x</m>. Therefore by the deletion-contraction
-        recurrence,
-        <m>\chi_{G_{12}}(x) = \chi_{G_1}(x)\chi_{G_2}(x)(1-{1\over x})</m>.
-      </p>
-    </solution>
-  </activity>
 </section>

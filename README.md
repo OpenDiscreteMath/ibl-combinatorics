@@ -6,6 +6,17 @@ http://www.gnu.org/licenses/fdl-1.3.txt
 
 See `LICENSE.txt` for full details
 
+This is branch is a collaborative effort to migrate the LaTeX source
+of *Combinatorics through Guided Discovery* to [PreTeXt](http://mathbook.pugetsound.edu) (formerly
+Mathbook XML). As part of this effort, the source will be updated to
+match the final PDF, including the incorporation of the "online hints"
+and solutions. Eventually, both PDF and HTML versions will be
+published.
+
+Anticipated release date: Summer 2017
+
+# Original README from the Bogart archive follows
+
 The version of the textbook which has been distributed in the past is
 identified by the link:
 

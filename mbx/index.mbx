@@ -40,11 +40,11 @@ $\cdot$\ \theenumi.]}
 \newcommand{\ignore}[1]{}
 \renewcommand{\bottomfraction}{.8}
 \renewcommand{\topfraction}{.8}
-\newcommand{\apple}{\mbox{A}}
+\newcommand{\apple}{\text{&#x1F34E;}}
 \newcommand{\ap}{\apple}
-\newcommand{\banana}{\mbox{B}}
+\newcommand{\banana}{\text{&#x1F34C;}}
 \newcommand{\ba}{\banana}
-\newcommand{\pear}{\mbox{P}}
+\newcommand{\pear}{\text{&#x1F350;}}
 \newcommand{\pe}{\pear}
 </macros>
 
@@ -60,6 +60,10 @@ $\cdot$\ \theenumi.]}
 \usetikzlibrary{through,intersections,decorations,shadows,fadings}
 
 \usepackage{pgfplots}
+
+\tikzset{vertex/.style = {shape=circle, draw, minimum size = 3ex, inner sep = 2pt}}
+\tikzset{evertex/.style = {shape=ellipse, draw, minimum width = 6ex, inner sep = 2pt}}
+\tikzset{dedge/.style = {->, > = latex'}}
 
 </latex-image-preamble>
 
@@ -81,13 +85,11 @@ $\cdot$\ \theenumi.]}
 </frontmatter>
 <xi:include href="./ch1-whatis.mbx" />
 
-
 <xi:include href="./ch2-induction.mbx" />
 
 <xi:include href="./ch3-distribution.mbx" />
 
 <xi:include href="./ch4-genfns.mbx" />
-
 
 <xi:include href="./ch5-inclexcl.mbx" />
 
@@ -95,14 +97,12 @@ $\cdot$\ \theenumi.]}
 
 <backmatter>
 
-<!--
 
 <xi:include href="./app1-relations.mbx" />
 
 <xi:include href="./app2-induction.mbx" />
 
 <xi:include href="./app3-expogenfns.mbx" />
--->
 
 
 <xi:include href="./bibliography.mbx" />

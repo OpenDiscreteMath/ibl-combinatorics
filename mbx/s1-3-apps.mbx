@@ -14,7 +14,7 @@
       </hint>
       <solution>
         <p>
-          The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>10\choose 4</m> ways to make this selection.
+          The shortest possible walk is going to be ten blocks. To plan a walk, we must choose which four of those ten blocks go north; the other six blocks we will have to go east. There are <m>\binom{10}{4}</m> ways to make this selection.
         </p>
       </solution>
     </activity>
@@ -43,10 +43,10 @@
       <solution>
         <p>
           The length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m> is <m>m+n</m>. The
-          number of such paths is <m>m+n\choose n</m>. Since lattice paths move up and to
+          number of such paths is <m>\binom{m+n}{n}</m>. Since lattice paths move up and to
           the right, there are no paths from <m>(i,j)</m> to <m>(m,n)</m> unless <m>i\le m</m> and
-          <m>j\le n</m>. In that case, the number of paths is <m>m+n-i-j\choose n-j</m> which is
-          the same as <m>m+n-i-j\choose m-i</m>.
+          <m>j\le n</m>. In that case, the number of paths is <m>\binom{m+n-i-j}{n-j}</m> which is
+          the same as <m>\binom{m+n-i-j}{m-i}</m>.
         </p>
       </solution>
     </activity>
@@ -57,7 +57,7 @@
         </p>
       </statement>
       <solution>
-        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>m-n\over 2</m> downsteps and <m>m+n\over2</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>{m+n\over2}-{m-n\over2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>m\choose{m+n\over2}</m>.
+        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>\frac{m-n}{2}</m> downsteps and <m>\frac{m+n}{2}</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>\frac{m+n}{2}-\frac{m-n}{2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>\binom{m}{\frac{m+n}{2}}</m>.
         </p>
       </solution>
     </activity>
@@ -140,7 +140,7 @@
         </statement>
         <solution>
           <p>
-            <m>C_n={2n\choose n} - {2n \choose n+1}={1\over n+1}{2n\choose n}.</m>
+            <m>C_n=\binom{2n}{n} - \binom{2n}{n+1}=\frac{1}{n+1}\binom{2n}{n}.</m>
           </p>
         </solution>
       </task>
@@ -215,11 +215,9 @@
         </statement>
         <solution>
           <p>
-            We have taken the set of all <m>2n\choose n</m> diagonal lattice paths
+            We have taken the set of all <m>\binom{2n}{n}</m> diagonal lattice paths
             of length <m>2n</m> from <m>(0,0)</m> to <m>(2n,0)</m> and partitioned it into <m>n+1</m> blocks
-            all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n={1\over
-            n+1}{2n
-            \choose n}</m>.
+            all of size <m>C_n</m>. Thus by the quotient principle, <m>C_n=\frac{1}{n+1}\binom{2n}{n}</m>.
           </p>
         </solution>
       </task>
@@ -249,12 +247,11 @@
 
         <p>
           and <m>(x+y)^5=x^5+5x^4y+10x^3y^2+10x^2y^3+5xy^4+y^5.</m>
-          The pattern is that the coefficient of <m>x^iy^j</m> is <m>i+j\choose i</m> which is
-          the same as <m>i+j\choose j</m>. Said differently, the coefficient of
-          <m>x^{n-i}y^i</m> is <m>n\choose i</m> or the coefficient of <m>x^iy^{n-i}</m> is <m>n\choose
-          i</m>. We conjecture that
+          The pattern is that the coefficient of <m>x^iy^j</m> is <m>\binom{i+j}{i}</m> which is
+          the same as <m>\binom{i+j}{j}</m>. Said differently, the coefficient of
+          <m>x^{n-i}y^i</m> is <m>\binom{n}{i}</m> or the coefficient of <m>x^iy^{n-i}</m> is <m>\binom{n}{i}</m>. We conjecture that
           <me>
-            (x+y)^n=\sum_{i=0}^n {n\choose i}x^{n-i}y^i.
+            (x+y)^n=\sum_{i=0}^n \binom{n}{i}x^{n-i}y^i.
           </me>
         </p>
 
@@ -274,7 +271,7 @@
           </p>
         </statement>
         <solution>
-          <p>The number of ways to choose an <m>x</m> from <m>i</m> of the factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m> factors from the <m>n</m> factors; that is, <m>n\choose i</m>.
+          <p>The number of ways to choose an <m>x</m> from <m>i</m> of the factors and a <m>y</m> from the remaining ones is the way to choose the <m>i</m> factors from the <m>n</m> factors; that is, <m>\binom{n}{i}</m>.
           </p>
         </solution>
       </task>
@@ -335,7 +332,7 @@
           <solution>
               <p>
                   You can choose the set
-            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>n\choose i</m> ways.
+            <m>\{k_1,k_2,\ldots k_i\}</m> in <m>\binom{n}{i}</m> ways.
               </p>
           </solution>
       </task>
@@ -362,7 +359,7 @@
               </p>
           </statement>
           <solution>
-              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>n\choose i</m> terms of the form <m>x^iy^{n-i}</m>.
+              <p>If you substitute <m>x</m> for <m>x_i</m> and substitute <m>y</m> for <m>y_i</m>, you will get <m>\binom{n}{i}</m> terms of the form <m>x^iy^{n-i}</m>.
               </p>
           </solution>
       </task>
@@ -374,7 +371,7 @@
           </statement>
           <solution>
               <p>
-                  You will also get <m>n\choose i</m> terms of the form <m>x^{n-i}y^i</m>.
+                  You will also get <m>\binom{n}{i}</m> terms of the form <m>x^{n-i}y^i</m>.
               </p>
           </solution>
       </task>
@@ -388,29 +385,29 @@
         <solution>
           <p>
             We have proved that the coefficient of <m>x^iy^{n-i}</m> in <m>(x+y)^n</m> is
-            <m>n\choose i</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
-            <m>(x+y)^n</m> is <m>n\choose i</m>.
+            <m>\binom{n}{i}</m>, or equivalently that the coefficient of <m>x^{n-i}y^i</m> in
+            <m>(x+y)^n</m> is <m>\binom{n}{i}</m>.
           </p>
         </solution>
       </task>
   </activity>
   <activity>
       <statement>
-          <p>What is <m>\sum_{i=1}^n {10\choose i}3^i</m>?
+          <p>What is <m>\sum_{i=1}^n \binom{10}{i}3^i</m>?
           </p>
       </statement>
       <solution>
         <p>
-          <m>\sum_{i=1}^n {10\choose i}3^i=\sum_{i=0}^n
-          {10\choose i}3^i-{10\choose 0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
+          <m>\sum_{i=1}^n \binom{10}{i}3^i=\sum_{i=0}^n
+          \binom{10}{i}3^i-\binom{10}{0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
       </solution>
   </activity>
   <activity>
       <statement>
       <p>
-      What is <m>{n\choose 0}-{n\choose 1}+{n\choose 2}-\cdots \pm
-      {n\choose n}</m> if <m>n</m> is an integer bigger than 0?
+      What is <m>\binom{n}{0}-\binom{n}{1}+\binom{n}{2}-\cdots \pm
+      \binom{n}{n}</m> if <m>n</m> is an integer bigger than 0?
       </p>
       </statement>
       <solution>
@@ -423,8 +420,7 @@
         <p>
           Explain why
           <me>
-            \sum_{i=0}^m{m\choose i}{n\choose k-i} = {m+n\choose
-            k}.
+            \sum_{i=0}^m\binom{m}{i}\binom{n}{k-i} = \binom{m+n}{k}.
           </me>
           Find two different explanations.
         </p>
@@ -432,8 +428,8 @@
       <solution>
         <p>
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
-          binomial theorem we get <m>\sum_{i=0}^m{m\choose i}{n\choose  k-i}</m> as the
-          coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>m+n\choose k</m> on the
+          binomial theorem we get <m>\sum_{i=0}^m\binom{m}{i}\binom{n}{k-i}</m> as the
+          coefficient of <m>x^{m+n-k}y^k</m> on the left hand side and <m>\binom{m+n}{k}</m> on the
           right hand side.
         </p>
         <p>For a second explanation, to choose <m>k</m> elements out of the union of an <m>m</m>-element set and a disjoint <m>n</m>-element set, chose some number <m>i\le m</m> of them from the <m>m</m>-element set and the remaining <m>k-i</m> of them from the <m>n</m>-element set. The sum on the left hand side of the equation simply sums the number of such choices over all possible <m>i</m>, and the binomial coefficient on the right hand side of the equation says we will end up choosing <m>k</m> elements from among our <m>m+n</m> elements.
@@ -448,7 +444,7 @@
         </p>
       </statement>
       <solution>
-        <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>n\choose i</m> with <m>i</m> odd.
+        <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> odd.
         </p>
       </solution>
     </activity>
@@ -456,15 +452,15 @@
     <activity category="interesting">
       <statement>
         <p>
-          What is <m>\sum_{i=0}^n i{n\choose i}</m>? (Hint: think about how you
+          What is <m>\sum_{i=0}^n i\binom{n}{i}</m>? (Hint: think about how you
           might use calculus.)
         </p>
       </statement>
       <solution>
         <p>
-          <m>\sum_{i=0}^n({n\choose i}x^i = (1+x)^n</m>. Taking derivatives of
-          both sides gives us <m>\sum_{i=0}^ni{n\choose i}x^{i-1} = n(1+x)^{n-1}.</m>. Now
-          substitute 1 for <m>x</m> and you get <m>\sum_{i=0}^n i{n\choose i} = n2^{n-1}</m>.
+          <m>\sum_{i=0}^n(\binom{n}{i}x^i = (1+x)^n</m>. Taking derivatives of
+          both sides gives us <m>\sum_{i=0}^ni\binom{n}{i}x^{i-1} = n(1+x)^{n-1}.</m>. Now
+          substitute 1 for <m>x</m> and you get <m>\sum_{i=0}^n i\binom{n}{i} = n2^{n-1}</m>.
         </p>
       </solution>
     </activity>
@@ -520,7 +516,6 @@
     </activity>
 
     <activity category="essential for this or the next section">
-      <task>
         <statement>
           <p>There is a <term>generalized pigeonhole principle</term><index><main>pigeonhole principle</main><sub> generalized</sub></index> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
           </p>
@@ -529,8 +524,8 @@
           <p>Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m> blocks. If each block has at most <m>k</m> elements, the by the sum principle the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block has at least <m>k+1</m> elements.
           </p>
         </solution>
-      </task>
-      <task>
+    </activity>
+    <activity>
         <statement>
           <p>All the powers of five end in a five, and all the powers of two are even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of a prime other than two or five, one must have <q>01</q> as the last two digits.
           </p>
@@ -539,7 +534,6 @@
           <p>If we take 40 powers of such a prime, either one will end in <q>01</q> or some two, say <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j} -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j} -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two digits of <m>p^{i-j}</m> must be <q>01.</q>
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity xml:id="R_3_3_" category="essential for this or the next section, and interesting">
