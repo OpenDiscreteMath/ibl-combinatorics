@@ -704,13 +704,13 @@
         <solution>
             <p>
             <me>
-            \displaystyle\prod_{i=1}^m q^i+q^{3i}+q^{5i}= q^{1+2+\cdots
-            m}\prod_{i=1}^m 1+q^{2i}+q^{4i}+\cdots=q^\binom{n+1}{2}\prod_{i=1}^m\frac{1}{1-q^2}
+            \displaystyle\prod_{i=1}^m (q^i+q^{3i}+q^{5i}+\cdots )= q^{1+2+\cdots
+            m}\prod_{i=1}^m (1+q^{2i}+q^{4i}+\cdots )=q^{\binom{m+1}{2}}\prod_{i=1}^m\frac{1}{1-q^{2i}}
             </me>
             is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
             <me>
               \displaystyle
-              \prod_{i=1}^m 1 +q^{2i}+q^{4i}+q^{6i}+\cdots=\prod_{i=1}^m \frac{1}{1-q^{2i}}
+              \prod_{i=1}^m (1 +q^{2i}+q^{4i}+q^{6i}+\cdots )=\prod_{i=1}^m \frac{1}{1-q^{2i}}
             </me>
             is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+\binom{m+1}{2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
           </p>

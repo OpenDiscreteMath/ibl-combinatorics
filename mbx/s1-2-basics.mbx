@@ -1,7 +1,7 @@
 
 <section>
   <title>Basic Counting Principles</title>
-  <introduction>
+    <introduction>
     <activity xml:id="fiveteamtournament" category="motivation">
       <statement>
         <p>
@@ -12,7 +12,7 @@
         </p>
       </statement>
       <hint>
-          <p>Answer the questions in Problem 2 for the case of five schools.</p>
+        Answer the questions in Problem 2 for the case of five schools.
       </hint>
       <solution>
         <p>
@@ -21,7 +21,7 @@
           three more games, with the third, fourth and fifth team. The third team is
           in two of the games we've already mentioned, and must still play the fourth
           and fifth team for two more games, and the fourth team must play the fifth
-          team in addition to playing in three of the first already mentioned. Thus
+          team in addition to playing in three of the games already mentioned. Thus
           there are <m>4+3+2+1 = 10</m> games. Alternatively, there are five teams, each of
           which must play in four games, giving us 20 pairings of two teams each.
           However each game involves two of these pairings, so there are <m>20/2 =10</m>
@@ -409,6 +409,7 @@
     </activity>
   </introduction>
 
+
   <subsection>
     <title>The sum and product principles</title>
     <p>
@@ -465,8 +466,8 @@
     </p>
 
     <blockquote>
-        <p>if we have a partition of a set <m>S</m>, then the size of <m>S</m> is the
-    sum of the sizes of the blocks of the partition.</p>
+    if we have a partition of a set <m>S</m>, then the size of <m>S</m> is the
+    sum of the sizes of the blocks of the partition.
     </blockquote>
 
     <p>
@@ -476,9 +477,8 @@
     </p>
 
     <blockquote>
-        <p>
-    if we have a partition of a set <m>S</m> into <m>m</m> blocks, each of size <m>n</m>, then <m>S</m> has size <m>mn</m>.
-        </p>
+    if we have a partition of a set <m>S</m> into <m>m</m> blocks, each
+      of size <m>n</m>, then <m>S</m> has size <m>mn</m>.
     </blockquote>
 
     <p>
@@ -502,7 +502,7 @@
       <statement>
         <p>
           If we make a sequence of <m>m</m> choices for
-          which
+          which 
           <ul>
             <li>
               there are <m>k_1</m> possible first choices, and
@@ -597,14 +597,13 @@ many ways can you pair up the next person who isn’t already paired up?
         </solution>
       </task>
       <task xml:id="numberoffunctionsconjecture" >
-          <statement><p>
+        <p>
         Based on the examples you've seen so far, make a conjecture
           about how many functions there are from the set
         <me>
           [m] = \{1,2,3,\dots,m\}
         </me>
         to <m>[n]=\{1,2,3,\dots,n\}</m> and prove it.</p>
-        </statement>
         <solution>
           <p>
             <m>n^m</m>.
@@ -631,22 +630,26 @@ many ways can you pair up the next person who isn’t already paired up?
     <activity xml:id="generalproductprinciple" category="summary">
       <statement>
         <p>
-          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m> from <m>[m]</m>
- to some set <m>X</m>. (For example, in <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
- functions from the three possible places for scoops in an ice-cream 
-cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices for <m>f(1)</m>.
- (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>, because there were <m>12</m>
- ways to choose the first scoop.) Suppose that for each choice of <m>f(1)</m> there are <m>k_2</m>
- choices for <m>f(2)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was
- <m>12</m> if the second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> 
-if the flavors had to be different.) In general, suppose that for each choice of <m>f(1)</m>,
- <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for <m>f(i)</m>.
- (For example, in <xref ref="tripledeckercone">Problem</xref>, if the flavors have to be 
-different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
+          Now suppose we are thinking about a set <m>S</m> of functions <m>f</m>
+          from <m>[m]</m> to some set <m>X</m>. (For example, in
+          <xref ref="tripledeckercone">Problem</xref> we were thinking of the set of
+          functions from the three possible places for scoops in an ice-cream
+          cone to <m>12</m> flavors of ice cream.) Suppose there are <m>k_1</m> choices
+          for <m>f(1)</m>. (In <xref ref="tripledeckercone">Problem</xref>, <m>k_1</m> was <m>12</m>,
+          because there were <m>12</m> ways to choose the first scoop.) Suppose that
+          for each choice of <m>f(1)</m> there are <m>k_2</m> choices for <m>f(2)</m>. (For
+          example, in <xref ref="tripledeckercone">Problem</xref> <m>k_2</m> was <m>12</m> if the
+          second flavor could be the same as the first, but <m>k_2</m> was <m>11</m> if
+          the flavors had to be different.) In general, suppose that for each
+          choice of <m>f(1)</m>, <m>f(2)</m>, <ellipsis /> <m>f(i-1)</m>, there are <m>k_i</m> choices for
+          <m>f(i)</m>. (For example, in <xref ref="tripledeckercone">Problem</xref>, if the
+          flavors have to be different, then for each coice of <m>f(1)</m> and
+          <m>f(2)</m>, there are <m>10</m> choices for <m>f(3)</m>.)
         </p>
 
         <p>
-          What we have assumed so far about the functions in <m>S</m> may be summarized as
+          What we have assumed so far about the functions in <m>S</m> may be
+          summarized as
         <ul>
          <li>
            There are <m>k_1</m> choices for <m>f(1)</m>.
@@ -656,9 +659,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
          </li>
         </ul>
         </p>
-      <p>
-        How many functions are in the set <m>S</m>? Is there any practical difference between the result of this problem and the general product principle?
-      </p>
       </statement>
       <p>
         How many functions are in the set <m>S</m>? Is there any practical difference between the result of this problem and the general product principle?
@@ -783,7 +783,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       <statement>
         <p>
           Another name for a list, in a specific order, of <m>k</m> distinct things
-          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of
+          chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of 
           <m>S</m>.<index><main>permutation</main><sub>
           <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
           one-to-one function (or, in other words, injection) from
@@ -863,7 +863,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </solution>
     </activity>
-  </subsection>
+  
   <subsection>
     <title>Functions and directed graphs</title>
     <p>
@@ -941,34 +941,13 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </me>
         </p>
       </statement>
-
+      <!-- I cannot find an image for this solution. "initialdigraph" is not the right one. 
       <solution>
-        <figure>
-          <image xml:id="initialdigraph" width="50%">
-            <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}[scale=0.85]
-                \node[evertex] (alice) at (0,2) {Alice};
-                \node[evertex] (bob) at (2,2) {Bob};
-                \node[evertex] (dawn) at (4,2) {Dawn};
-                \node[evertex] (bill) at (6,2) {Bill};
-                \node[vertex] (a) at (0,0) {A};
-                \node[vertex] (b) at (1.5,0) {B};
-                \node[vertex] (c) at (3,0) {C};
-                \node[vertex] (d) at (4.5,0) {D};
-                \node[vertex] (e) at (6,0) {E};
-
-                \draw[dedge] (alice) -- (a);
-                \draw[dedge] (bob) -- (b);
-                \draw[dedge] (dawn) -- (d);
-                \draw[dedge] (bill) -- (b);
-              \end{tikzpicture}
-              ]]>
-            </latex-image-code>
-          </image>
-        </figure>
+        <p>
+          <image width="73%" source="images/" />
+        </p>
       </solution>
-
+        -->
     </activity>
 
     <activity category="essential">
@@ -989,36 +968,9 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           The digraph of one such function follows
         </p>
 
-        <!-- <p>
+        <p>
           <image width="73%" source="images/OnetoOneNotOnto" />
-        </p> -->
-          <figure>
-            <image xml:id="oneToOneNotOnto" width="73%">
-              <latex-image-code>
-                <![CDATA[
-                \begin{tikzpicture}[yscale=0.75]
-                  \node[vertex] (a) at (0,2) {$a$};
-                  \node[vertex] (b) at (1,2) {$b$};
-                  \node[vertex] (c) at (2,2) {$c$};
-                  \node[vertex] (d) at (3,2) {$d$};
-                  \node[vertex] (t1) at (0,0) {$1$};
-                  \node[vertex] (t2) at (1,0) {$2$};
-                  \node[vertex] (t3) at (2,0) {$3$};
-                  \node[vertex] (t4) at (3,0) {$4$};
-                  \node[vertex] (t5) at (4,0) {$5$};
-
-                  \draw[dedge] (a) -- (t1);
-                  \draw[dedge] (b) -- (t2);
-                  \draw[dedge] (c) -- (t3);
-                  \draw[dedge] (d) -- (t4);
-
-                  \node[left = 3ex of a]{$S$};
-                  \node[left = 3ex of t1]{$T$};
-                \end{tikzpicture}
-                ]]>
-              </latex-image-code>
-            </image>
-          </figure>
+        </p>
       </solution>
     </activity>
  
@@ -1035,34 +987,11 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           The digraph of one such function follows
         </p>
 
-        <!-- <p>
+        <p>
+          \mbox{
           <image width="73%" source="images/OntoNotOnetoOne" />
-        </p> -->
-        <figure>
-          <image xml:id="ontoNotOneToOne" width="73%">
-            <latex-image-code>
-              <![CDATA[
-              \begin{tikzpicture}[yscale=0.75]
-                \node[vertex] (a) at (0,2) {$a$};
-                \node[vertex] (b) at (1,2) {$b$};
-                \node[vertex] (c) at (2,2) {$c$};
-                \node[vertex] (d) at (3,2) {$d$};
-                \node[vertex] (t1) at (0,0) {$1$};
-                \node[vertex] (t2) at (1,0) {$2$};
-                \node[vertex] (t3) at (2,0) {$3$};
-
-                \draw[dedge] (a) -- (t1);
-                \draw[dedge] (b) -- (t2);
-                \draw[dedge] (c) -- (t3);
-                \draw[dedge] (d) -- (t3);
-
-                \node[left = 3ex of a]{$S$};
-                \node[left = 3ex of t1]{$T$};
-              \end{tikzpicture}
-              ]]>
-            </latex-image-code>
-          </image>
-        </figure>
+          }
+        </p>
       </solution>
     </activity>
 
@@ -1093,13 +1022,8 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </task>
         <hint>
-<<<<<<< HEAD
           For each part of this problem, think about how many arrows are allowed to
           enter a vertex representing a member of <m>Y</m>.
-=======
-            <p>For each part of this problem, think about how many arrows are allowed to
-          enter a vertex representing a member of <m>Y</m>.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
       <solution>
         <p>
@@ -1135,7 +1059,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
 
 
     <p>
-<<<<<<< HEAD
       Notice that there is a great deal of consistency between the use of
       the word permutation in <xref ref="permutationasbijection">Problem</xref> and the
       use in <xref ref="kelementpermutation">Problem</xref>. If we have
@@ -1145,9 +1068,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really
       very little difference between the idea of a permutation of <m>S</m> and an
       <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
-=======
-      Notice that there is a great deal of consistency between the use of the word permutation in <xref ref="permutationasbijection">Problem</xref> and the use in <xref ref="kelementpermutation">Problem</xref>. If we have some way <m>a_1,a_2,\ldots,a_n</m> of listing our set, then any other list <m>b_1,b_2,\ldots,b_n</m> gives us the permutation of <m>S</m> whose rule is <m>f(a_i) =b_i</m>, and any permutation of <m>S</m>, say the one given by <m>g(a_i)=c_i</m> gives us a list <m>c_1,c_2,\ldots,c_n</m> of <m>S</m>. Thus there is really very little difference between the idea of a permutation of <m>S</m> and an <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
     </p>
   
 
@@ -1165,7 +1085,8 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
     </p>
 
     <blockquote>
-        <p>Two sets have the same size if and only if there is a bijection between them.</p>
+    Two sets have the same size if and only if
+    there is a bijection between them.
     </blockquote>
 
     <p>
@@ -1189,7 +1110,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         The problem is asking you to describe a one-to-one function from the set
         of binary representations of numbers between <m>0</m> and <m>2^n-1</m> onto the set of
         subsets of the set <m>[n]</m>. Write down these two sets for <m>n = 2</m>. They should
@@ -1198,9 +1118,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         take no twos.'' In that context, what could you think of the string <m>11</m> as
         standing for? This should help you describe a function. Of course now you
         have to figure out how to show it is one-to-one and onto.
-=======
-       <p> The problem is asking you to describe a one-to-one function from the set of binary representations of numbers between <m>0</m> and <m>2^n-1</m> onto the set of subsets of the set <m>[n]</m>. Write down these two sets for <m>n = 2</m>. They should both have four elements. The set of binary representations should contain the string <m>00</m>. You could think of this as the instruction ``take no ones and take no twos.'' In that context, what could you think of the string <m>11</m> as standing for? This should help you describe a function. Of course now you have to figure out how to show it is one-to-one and onto.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
@@ -1219,10 +1136,10 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       Notice that the first question in <xref ref="icecreaminpints">Problem</xref> asked
       you for the number of ways to choose a three element subset from a 12
       element subset. You may have seen a notation like
-      <m>\binom{n}{k}</m>, <m>C(n,k)</m>, or <m>_nC_k</m> which stands for the number of ways to
+      <m>n\choose k</m>, <m>C(n,k)</m>, or <m>_nC_k</m> which stands for the number of ways to
       choose a
       <m>k</m>-element subset from an
-      <m>n</m>-element set. The number <m>\binom{n}{k}</m> is read as <q><m>n</m> choose <m>k</m></q> and is
+      <m>n</m>-element set. The number <m>n\choose k</m> is read as <q><m>n</m> choose <m>k</m></q> and is
       called a
       <index><main>binomial coefficient</main></index><term>binomial coefficient</term> for
       reasons we will see later on. Another frequently used way to read the
@@ -1241,7 +1158,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
 
     <p>
       This
-      example tells us that <m>\binom{4}{2} = 6</m>.
+      example tells us that <m>{4\choose 2} = 6</m>.
     </p>
 
     <activity xml:id="Pascal" category="essential">
@@ -1298,7 +1215,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </statement>
         <solution>
           <p>
-            <m>|C|= \binom{n-1}{k-1}</m>; <m>|D| = \binom{n-1}{k}</m>
+            <m>|C|= {n-1\choose k-1}</m>; <m>|D| = {n-1\choose k}</m>
           </p>
         </solution>
       </task>
@@ -1306,7 +1223,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         <statement>
           <p>
             Apply the sum principle to <m>C</m> and <m>D</m> and obtain a
-            formula that expresses <m>\binom{n}{k}</m> in terms of two binomial
+            formula that expresses <m>n\choose k</m> in terms of two binomial
             coefficients involving
             <m>n-1</m>.  You have just derived the Pascal Equation that is the
             basis for the famous Pascal's Triangle.
@@ -1314,7 +1231,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </statement>
         <solution>
           <p>
-            <m>\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}</m>.
+            <m>{n\choose k} = {n-1\choose k-1} +{n-1\choose k}</m>.
           </p>
         </solution>
       </task>
@@ -1331,17 +1248,15 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       <m>n</m>th row (we call the top row the zeroth row and the
       beginning entry of a row the zeroth number over). You'll see
       that your formula doesn't say anything about
-      <m>\binom{n}{k}</m> if
+      <m>n\choose k</m> if
       <m>k=0</m> or
       <m>k=n</m>, but otherwise it says that each entry is the sum of
       the two that are above it and just to the left or right.
     </p>
 
     <figure xml:id="Pascaltriangle" >
-        <index><main>Pascal's Triangle</main></index>
       <caption>Pascal's
       Triangle</caption>
-      <p>
       <me>
         \begin{matrix}\amp \amp \amp \amp \amp \amp \amp 1\amp \amp \amp \amp \amp \amp \amp \\
         \amp \amp \amp \amp \amp \amp 1\amp \amp 1\amp \amp \amp \amp \amp \amp \\
@@ -1353,9 +1268,11 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         1\amp \amp 7\amp \amp 21\amp \amp 35\amp \amp 35\amp \amp 21\amp \amp 7\amp \amp 1
         \end{matrix}
       </me>
-      </p>
     </figure>
 
+    <p>
+      <index><main>Pascal's Triangle</main></index>
+    </p>
 
     <activity>
       <statement>
@@ -1364,15 +1281,9 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <solution>
-<<<<<<< HEAD
         <me>
           1 \quad 8 \quad 28 \quad 56 \quad 70 \quad 56 \quad 28 \quad 8 \quad 1
         </me>
-=======
-          <p>        <me>
-          1 \quad 8 \quad 28 \quad 56 \quad 70 \quad 56 \quad 28 \quad 8 \quad 1
-        </me></p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </solution>
     </activity>
 
@@ -1384,21 +1295,13 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         Starting with the row 1 8 28 56 70 56 28 8 1, put dots below it where the
-=======
-        <p>Starting with the row 1 8 28 56 70 56 28 8 1, put dots below it where the
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         elements of row 9 should be. Then put dots below that where the elements
         of row 10 should be. Do the same for rows 11 and 12. Mark the dot where row 12
         should appear. Now mark the dots you need in row 11 to compute the
         entry in column 3 of row 12. Now mark the dots you need in row 10 to compute
         the marked entries in row 11. Do the same for rows 9 and 8. Now you should
-<<<<<<< HEAD
         be able to see what you need to do.
-=======
-        be able to see what you need to do.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
@@ -1418,17 +1321,13 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       triangle, but it actually makes your formula easier to
       interpret. In Pascal's Right Triangle, the element in row <m>n</m>
       and column <m>k</m> (with the convention that the first row is row
-      zero and the first column is column zero) is <m>\binom{n}{k}</m>. In
+      zero and the first column is column zero) is <m>n\choose k</m>. In
       this case your formula says each entry in a row is the sum of
       the one above and the one above and to the left, except for
       the leftmost and rightmost entries of a row, for which that
-<<<<<<< HEAD
       doesn't make sense. Since the leftmost entry is <m>n\choose 0</m>
-=======
-      doesn't make sense. Since the leftmost entry is <m>\binom{n}{0}</m>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       and the rightmost entry is
-      <m>\binom{n}{n}</m>, these entries are both one (to see why, ask yourself how
+      <m>n\choose n</m>, these entries are both one (to see why, ask yourself how
       many <m>0</m>-element subsets and how many <m>n</m>-element subsets an
       <m>n</m>-element set has), and
       your formula then tells how to fill in the rest of the table.
@@ -1555,7 +1454,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       If we did have a rectangular table of binomial coefficients, counting
       the first row as row zero (i.e., <m>n=0</m>) and the first column as column
       zero (i.e., <m>k=0</m>), the entries we don't yet have are values of
-      <m>\binom{n}{k}</m> for <m>k>n</m>. But how many <m>k</m>-element subsets does
+      <m>n\choose k</m> for <m>k>n</m>. But how many <m>k</m>-element subsets does
       an
       <m>n</m>-element set have if <m>k>n</m>? The answer, of course, is
       zero, so all the other entries we would fill in would be zero,
@@ -1691,18 +1590,14 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       <task>
         <statement>
           <p>
-            Is there any other way to define <m>\binom{n}{k}</m> when <m>k>n</m>
+            Is there any other way to define <m>n \choose k</m> when <m>k>n</m>
             in order to get a rectangular table that agrees with Pascal's Right
             Triangle for <m>k\le n</m> and satisfies the Pascal Equation?
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           Begin by trying to figure out what the entries just above the diagonal of the
           rectangle are. After that, what other entries can you figure out?
-=======
-            <p>Begin by trying to figure out what the entries just above the diagonal of the rectangle are. After that, what other entries can you figure out?</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         <solution>
           <p>
@@ -1716,7 +1611,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         <statement>
           <p>
             Suppose we
-            want to extend Pascal's Rectangle to the left and define <m>\binom{n}{-k}</m>
+            want to extend Pascal's Rectangle to the left and define <m>n\choose -k</m>
             for <m>n\ge 0</m> and <m>k>0</m> so that <m>-k\lt 0</m>. What should we put into row
             <m>n</m> and column
             <m>-k</m> of Pascal's Rectangle in order for the Pascal Equation to
@@ -1724,11 +1619,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           See if you can figure out what the entries in column -1 have to be.
-=======
-            <p>See if you can figure out what the entries in column <m>-1</m> have to be.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         <solution>
           <p>
@@ -1738,12 +1629,9 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </solution>
       </task>
-      <task category="difficult">
+      <task>
         <statement>
-<<<<<<< HEAD
           <title>\ <m>*</m>\ (\theenumii)</title>
-=======
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
           <p>
             What should we put into row <m>-n</m> and column <m>k</m> or
             column <m>-k</m> in order for the Pascal Equation to continue to
@@ -1751,7 +1639,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           What does the sum of two consecutive values in row <m>-1</m> have to be? Could
           this sum depend on which two consecutive values we take? Is there some
           value of row <m>-1</m> that we could choose arbitrarily? Now what about row <m>-2</m>?
@@ -1773,13 +1660,6 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
             tells us how to fill in the rest of each row. We shall see later on that
             there is one very natural choice for how to fill in all the rows above row
             zero.
-=======
-            <p>What does the sum of two consecutive values in row <m>-1</m> have to be? Could this sum depend on which two consecutive values we take? Is there some value of row <m>-1</m> that we could choose arbitrarily? Now what about row <m>-2</m>?  Can we make arbitrary choices there? If so, how many can we make, and is their position arbitrary?</p>
-        </hint>
-        <solution>
-          <p>
-            Above row zero, we have some freedom. The <m>-1,-1</m> and the <m>-1,0 </m>entry must add to one, so they can be <m>-x</m> and <m>x+1</m> for any number <m>x</m>. To the right of the <m>-1,0</m> entry they must alternate between <m>(-x-1)</m> and <m>x+1</m> while to the left of the <m>-1,1</m> entry they must alternate between <m>-x</m> and <m>x</m>, ending with the <m>-x</m> in position <m>-1,1</m>. Now if we know the entry in row <m>-2</m> and column 0, we can use the Pascal equation (in the form <m>\binom{n-1}{k-1} = \binom{n}{k} - \binom{n-1}{k}</m>) to compute all the entries to the left of it, and (in a different form) to compute all the entries to the right of it. Thus we may be arbitrary about the entries in column 0 (or, in fact, one entry in each row) and then the Pascal Equation tells us how to fill in the rest of each row. We shall see later on that there is one very natural choice for how to fill in all the rows above row zero.
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
           </p>
         </solution>
       </task>
@@ -1787,7 +1667,12 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
 
     <activity xml:id="charfunction">
       <p>
-        There is yet another bijection that lets us prove that a set of size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally denoted by <m>\chi_S</m>) as follows.<fn>The symbol <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the <m>i</m> sounding like <q>eye.</q></fn>
+        There is yet another bijection that lets us prove that a set of
+        size <m>n</m> has <m>2^n</m> subsets. Namely, for each subset <m>S</m> of
+        <m>[n]=\{1,2,\ldots, n\}</m>, define a function (traditionally
+        denoted by <m>\chi_S</m>) as follows.<fn>The symbol
+        <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
+        <m>i</m> sounding like <q>eye.</q></fn>
         <me>
           \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
           S
@@ -1810,11 +1695,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           the subset
           <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
             <ol label="(i)">
-<<<<<<< HEAD
         
-=======
-
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
             <li><m>\chi_{\{1,3\}}(1)</m>?</li>
 
             <li><m>\chi_{\{1,3\}}(2)</m>?</li>
@@ -1929,7 +1810,11 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </task>
       <solution>
         <p>
-          What is different is that the order in which we put the scoops into the cone matters, but for simply choosing three flavors, the order of the choices doesn't matter. Six different triple decker cones have the same three flavors. Thus we have <m>1320/6=220</m> different ways to choose three flavors of ice cream from 12 flavors.
+          What is different is that the order in which we put the scoops into
+          the cone matters, but for simply choosing three flavors, the order of the
+          choices doesn't matter. Six different triple decker cones have the same
+          three flavors. Thus we have <m>1320/6=220</m> different ways to choose three
+          flavors of ice cream from 12 flavors.
         </p>
       </solution>
     </activity>
@@ -1946,7 +1831,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           Following the reasoning of <xref ref="twelvechoosethree">Problem</xref>, there
           are <m>n^{\underline{k}}</m> <m>k</m>-element permutations of an <m>n</m>-element set, and
           <m>k!</m> of these permutations list the same set of <m>k</m> elements, so the number of
-          <m>k</m>-element sets is <m>\frac{n^{\underline{k}}}{k!}= \frac{n!}{k!(n-k)!}</m>.
+          <m>k</m>-element sets is <m>{n^{\underline{k}}\over k!}= {n!\over k!(n-k)!}</m>.
         </p>
       </solution>
     </activity>
@@ -1955,24 +1840,18 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
       <statement>
         <p>
           The formula you proved in <xref ref="nchoosek">Problem</xref> is symmetric in <m>k</m>
-          and <m>n-k</m>; that is, it gives the same number for <m>\binom{n}{k}</m> as it gives
-          for <m>\binom{n}{n-k}</m>. Whenever two quantities are counted by the same formula
+          and <m>n-k</m>; that is, it gives the same number for <m>n\choose k</m> as it gives
+          for <m>n\choose n-k</m>. Whenever two quantities are counted by the same formula
           it is good for our insight to find a bijection that demonstrates the two sets
           being counted have the same size. In fact this is a guiding principle of
           research in combinatorial mathematics. Find a bijection that proves that
-          <m>\binom{n}{k}</m> equals <m>\binom{n}{n-k}</m>.
+          <m>n\choose k</m> equals <m>n\choose n-k</m>.
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         The first thing you need to decide is “What are the two sets whose elements
         we are counting?” Then it will be easier to think of a bijection between these
         two sets. It turns out that these two sets are sets of sets!
-=======
-        <p>The first thing you need to decide is <q>What are the two sets whose elements
-        we are counting?</q> Then it will be easier to think of a bijection between these
-        two sets. It turns out that these two sets are sets of sets!</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
@@ -1991,17 +1870,13 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         Ask yourself “What is a problem like this doing in the middle of a bunch of
         problems about counting subsets of a set? Is it related, or is it supposed to
         gives us a break from sets?”
-=======
-          <p>Ask yourself <q>What is a problem like this doing in the middle of a bunch of problems about counting subsets of a set? Is it related, or is it supposed to gives us a break from sets?</q></p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
-          <m>\binom{n}{k}</m>, because we choose the <m>k</m> children to whom we give
+          <m>n\choose k</m>, because we choose the <m>k</m> children to whom we give
           ping-pong balls.
         </p>
       </solution>
@@ -2010,11 +1885,20 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
     <activity xml:id="roundtable" category="essential">
       <statement>
         <p>
-          In how many ways may <m>n</m> people sit around a round table? (Assume that when people are sitting around a round table, all that really matters is who is to each person's right. For example, if we can get one arrangement of people around the table from another by having everyone get up and move to the right one place and sit back down, we get an equivalent arrangement of people. Notice that you can get a list from a seating arrangement by marking a place at the table, and then listing the people at the table, starting at that place and moving around to the right.) There are at least two different ways of doing this problem. Try to find them both.
+          In how many ways may <m>n</m> people sit around a round
+          table? (Assume
+          that when people are sitting around a round table, all that
+          really matters is who is to each person's right. For example, if we can get
+          one arrangement of people around the table from another by having everyone
+          get up and move to the right one place and sit back down, we get an
+          equivalent arrangement of people. Notice that you can get a
+          list from a seating arrangement by marking a place at the
+          table, and then listing the people at the table, starting at
+          that place and moving around to the right.) There are at least two
+          different ways of doing this problem. Try to find them both.
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         The problem suggests that you think about how to get a list from a seating
         arrangement. Could every list of n distinct people come from a seating chart?
         How many lists of n distinct people are there? How many lists could we get
@@ -2027,21 +1911,24 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         name. Now seat that person. Does it matter where they sit? In ways can
         you seat the remaining people? Does it matter where the second person in
         alphabetical order sits?
-=======
-          <p>The problem suggests that you think about how to get a list from a seating
-        arrangement. Could every list of n distinct people come from a seating chart?
-        How many lists of n distinct people are there? How many lists could we get
-        from a given seating chart by taking different starting places?</p>
-      </hint>
-      <hint>
-          <p>
-        For a different way of doing the problem, suppose that you have chosen one person, say the first one in a list of the people in alphabetical order by name. Now seat that person. Does it matter where they sit? In ways can you seat the remaining people? Does it matter where the second person in alphabetical order sits?
-          </p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
-          The total number of ways to list how the <m>n</m> people sit around the table is <m>n!</m>. However, two lists are the same if we get one from the other by shifting everyone right the same number of places. This divides the set of lists up into sets of <m>n</m> mutually equivalent lists. The number <m>m</m> of such sets is the number of seating arrangements. However by the product principle, <m>mn=n!</m>, because we have partitioned up the set of <m>n!</m> lists into <m>m</m> sets of size <m>n</m>. Therefore <m>m=(n-1)!</m> A second solution may be obtained by choosing one of the <m>n</m> people and letting this person sit anywhere. Since all that matters is who is to the right of each person, it doesn't matter where this person sits. Once this person is seated, let everybody else sit down. If they sit down first in one order clockwise around the table and then in some other order, the person to the right of somebody has changed. Thus there are <m>(n-1)!</m> ways (the number of ways to seat everybody else) to seat the people around the table.
+          The total number of ways to list how the <m>n</m> people sit around the
+          table is <m>n!</m>. However, two lists are the same if we get one from the other
+          by shifting everyone right the same number of places. This divides the set
+          of lists up into sets of <m>n</m> mutually equivalent lists. The number <m>m</m> of
+          such sets is the number of seating arrangements. However by the product
+          principle, <m>mn=n!</m>, because we have partitioned up the set of <m>n!</m> lists into
+          <m>m</m> sets of size <m>n</m>. Therefore <m>m=(n-1)!</m> A second solution may be
+          obtained by choosing one of the <m>n</m> people and letting this person sit
+          anywhere. Since all that matters is who is to the right of each person, it
+          doesn't matter where this person sits. Once this person is seated, let
+          everybody else sit down. If they sit down first in one order clockwise around
+          the table and then in some other order, the person to the right of somebody
+          has changed. Thus there are
+          <m>(n-1)!</m> ways (the number of ways to seat everybody else) to seat the people
+          around the table.
         </p>
       </solution>
     </activity>
@@ -2178,11 +2065,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
-=======
-          <p>A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         </task>
         <task>
@@ -2203,36 +2086,28 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           What sets are listed, and how many times is each one listed if you take one list from each row of Table 1.2? How does this choice of lists give you the bijection in this special case?
-=======
-            <p>What sets are listed, and how many times is each one listed if you take one list from each row of XREF NEEDED? How does this choice of lists give you the bijection in this special case?</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         </task>
         <task xml:id="formulanchoosekfinal" >
           <statement>
           <p>
             What formula does this give you for the
-              number <m>\binom{n}{k}</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
+              number <m>n\choose k</m> of <m>k</m>-element subsets of an <m>n</m>-element set?
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           You can make good use of the product principle here.
-=======
-            <p>You can make good use of the product principle here.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         </task>
       <solution>
         <p>
           The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
-          <m>k</m>-element permutations is <m>n^{\underline{k}}=\frac{n!}{(n-k)!}</m>.
+          <m>k</m>-element permutations is <m>n^{\underline{k}}={n!\over (n-k)!}</m>.
           Each <m>k</m>-element set corresponds to the block of all permutations of
           that set. It is immediate that this is a bijection. Assuming there
           are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so
-          <m>k!s=\frac{n!}{(n-k)!}</m> or <m>s= \frac{n!}{k!(n-k)!}</m>.
+          <m>k!s={n!\over (n-k)!}</m> or <m>s= {n!\over k!(n-k)!}</m>.
         </p>
       </solution>
     </activity>
@@ -2260,11 +2135,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           </p>
         </statement>
         <hint>
-<<<<<<< HEAD
           The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
-=======
-            <p>The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         </task>
         <task>
@@ -2276,19 +2147,15 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </statement>
         </task>
         <hint>
-<<<<<<< HEAD
           As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.
-=======
-            <p>As with any counting problem whose context does not suggest an approach, it is useful to ask yourself if you could decompose the problem into simpler parts by using either the sum or product principle.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
       <solution>
         <p>
-          <m>\binom{12}{5}</m>. In the more realistic version,
-          <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>. Finally, either the versatile
+          <m>12\choose 5</m>. In the more realistic version,
+          <m>{5\choose2}{4\choose2}{3\choose1}=180</m>. Finally, either the versatile
           player is playing center or not, and in the second case is available to play
           forward. This gives us
-          <m>\binom{5}{2}\binom{4}{2}\binom{1}{1}+\binom{5}{2}\binom{5}{2}\binom{2}{1}=260</m> ways
+          <m>{5\choose2}{4\choose2}{1\choose1}+{5\choose2}{5\choose2}{2\choose1}=260</m> ways
           to choose the players.
         </p>
       </solution>
@@ -2316,11 +2183,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
     </activity>
 
 <!-- Activity 42 -->
-<<<<<<< HEAD
     <activity xml:id="quotientprinciple" category="essential"> 
-=======
-    <activity xml:id="quotientprinciple" category="essential">
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       <statement>
         <p>
           In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
@@ -2349,8 +2212,8 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
     </p>
 
     <blockquote>
-        <p>If we partition a set <m>P</m>
-    into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m></p>
+    If we partition a set <m>P</m> 
+    into <m>q</m> blocks, each of size <m>r</m>, then <m>q=p/r.</m>
     </blockquote>
 
     <p>
@@ -2388,17 +2251,10 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         How could we get a list of beads from a necklace?
       </hint>
       <hint>
         When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?
-=======
-          <p>How could we get a list of beads from a necklace?</p>
-      </hint>
-      <hint>
-          <p>When we cut the necklace and string it out on a table, there are 2n lists of beads we could get. Why is it <m>2n</m> rather than <m>n</m>?</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
@@ -2433,11 +2289,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </statement>
         </task>
         <hint>
-<<<<<<< HEAD
           You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
-=======
-            <p>You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
         </hint>
         <task>
           <statement>
@@ -2447,14 +2299,9 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
               specify our pairs? Try to find as many solutions as you can.
           </p>
         </statement>
-<<<<<<< HEAD
         </task>
        <hint>
          You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.
-=======
-       <hint>
-           <p>You might first choose ordered pairs of people, and have the first person in each pair serve first. You might also choose to make a list of all the people and then take them by twos from the list in order.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
        </hint>
       <solution>
         <p>
@@ -2468,30 +2315,28 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           can arise in this way, and no pairing can arise twice in this process. Thus
           the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
         </p>
-      </solution>
-      <solution>
+
         <p>
           For another solution,
-          choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair,
-          <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been
-          chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair. The number
+          choose people in pairs. There are <m>2n\choose 2</m> ways to choose one pair,
+          <m>2n-2\choose 2</m> ways to choose a second pair, and once <m>k</m> pairs have been
+          chosen, there are <m>2n-2k\choose 2</m> ways to choose the next pair. The number
           of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
-          \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>. However each way of pairing people gets
+          {2n-2i\choose 2}= {(2n)!\over 2^i}</m>. However each way of pairing people gets
           listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
-          Therefore the number of actual pairings is <m>\frac{(2n)!}{2^n n!}= =\frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
+          Therefore the number of actual pairings is <m>{(2n)!\over 2^n n!}= ={2n!\over
+          2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
         </p>
-      </solution>
-        <solution>
+
         <p>
           For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
           we can take the first two as a tennis pair, the next two, and so on. There
           are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
           each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings
           partition the set of all permutations of the <m>2n</m> members into blocks of size
-          <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
+          <m>n!2^n</m>. Thus we have <m>(2n)!\over n!2^n</m> tennis pairings once again.
         </p>
       </solution>
-        </task>
     </activity>
 
 <!-- Activity 45 -->
@@ -2506,11 +2351,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         </p>
       </statement>
       <hint>
-<<<<<<< HEAD
         It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.
-=======
-          <p>It might be helpful to just draw some pictures of the possible configurations. There aren’t that many.</p>
->>>>>>> 9da21bceeb89f47796324f946ffdb1839a627427
       </hint>
       <solution>
         <p>
@@ -2527,17 +2368,17 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
         <p>
           While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
           it doesn't give us a sense of how big the binomial coefficients are. We can
-          get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by
-          recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>\frac{2n}{n}\cdot
-          \frac{2n-1}{n-1}\cdots \frac{n+1}{1}</m>, and each quotient is at least <m>2</m>, so the
+          get a very rough idea, for example, of the size of <m>2n\choose n</m> by
+          recognizing that we can write <m>(2n)^{\underline{n}}/n!</m> as <m>{2n\over n}\cdot
+          {2n-1\over n-1}\cdots {n+1\over 1}</m>, and each quotient is at least <m>2</m>, so the
           product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
           the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
           about
           <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
           However it is pretty clear the approximation will not be a very good one,
           because some of the terms in that product are much larger than 2. In fact,
-          if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction
-          <m>\frac{1}{2n+1}</m> of <m>2^{2n}</m>. This is much larger than the fraction
+          if <m>2n\choose k</m> were the same for every <m>k</m>, then each would be the fraction
+          <m>1\over 2n+1</m> of <m>2^{2n}</m>. This is much larger than the fraction
           <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
           much larger than <m>\binom{2n}{1}</m> and is likely larger than
           <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
@@ -2552,7 +2393,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           (2000).</fn> We write this as
           <me>
             n!\sim \sqrt{2\pi
-            n}\frac{n^n}{e^n}.
+            n}{n^n\over e^n}.
           </me>
         </p>
 
@@ -2562,7 +2403,7 @@ different, then for each coice of <m>f(1)</m> and <m>f(2)</m>, there are <m>10</
           subsets of size
           <m>n</m> in an
           <m>2n</m>-element set is approximately <m>1/\sqrt{\pi n}</m>. This is a much bigger
-          fraction than <m>\frac{1}{2^n}</m>!
+          fraction than <m>1\over 2^n</m>!
         </p>
       </statement>
     </activity>

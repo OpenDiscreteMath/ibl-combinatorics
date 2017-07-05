@@ -598,16 +598,16 @@
         <me>
           f(x) = 1+\sum_{j=1}^\infty
           (-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
-          (-1)^{j-1}\frac{(\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!})^j}{j}.
+          (-1)^{j-1}\frac{(\sum_{i=1}^\infty 2^{\binom{i}{2}}\frac{x^i}{i!})^j}{j}.
         </me>
         <p>
           From the right-hand expression, we get a term involving <m>x^n</m> whenever we
-          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^\binom{i}{2}\frac{x^i}{i!}</m>. So the coefficient of
+          have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{\binom{i}{2}}\frac{x^i}{i!}</m>. So the coefficient of
           <m>\frac{x^n}{n!}</m> is the sum over all <m>j</m> and all sequences
           <m>i_1,i_2,\ldots,i_j</m> with
           <m>i_1+i_2+\cdots+i_j = n</m> of terms of the form
           <me>
-            \frac{n!}{j}(-1)^j\prod_{k=1}^j \frac{2^\binom{i_k}{2}
+            \frac{n!}{j}(-1)^j\prod_{k=1}^j \frac{2^{\binom{i_k}{2}}
             }{i_k!},
           </me>
           where each <m>i_k>0</m>. Notice that reordering the numbers
@@ -628,7 +628,7 @@
             \sum_{j=1}^n \frac{n!}{j}(-1)^j\sum_{{p_1,p_2,\ldots,p_n: \sum_{r=1}^n
             rp_r =n \atop \mbox{and}  \sum_{r=1}^n p_r =j}}\binom{j}{p_1, p_2, \ldots,
             p_n}
-            \prod_{r=1}^n\frac{2^{^{\binom{r}{2}p_r}}
+            \prod_{r=1}^n\frac{2^{{\binom{r}{2}p_r}}
             }{(r!)^{p_r}}.
           </me>
         </p>
