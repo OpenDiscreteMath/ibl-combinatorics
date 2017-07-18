@@ -20,7 +20,6 @@
     </activity>
 
     <activity xml:id="latticepaths" category="essential for this or the next section">
-      <statement>
         <p>
           <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
           coordinate plane. A <em>lattice path</em><index><main>lattice
@@ -29,26 +28,58 @@
           <m>(i,j)</m> to the point
           <m>(i+1,j)</m> or from a point <m>(i,j)</m> to the point <m>(i,j+1)</m>, where <m>i</m> and <m>j</m>
           are integers. (Thus lattice paths always move either up or to the right.) The
-          length of the path is the number of such line segments. What is the length
-          of a lattice path from
-          <m>(0,0)</m> to
-          <m>(m,n)</m>? How many such lattice paths of that length are
-          there? How many lattice paths are there from <m>(i,j)</m> to <m>(m,n)</m>,
-          assuming <m>i</m>,
-          <m>j</m>,
-          <m>m</m>, and
-          <m>n</m> are integers?
+          length of the path is the number of such line segments.
         </p>
-      </statement>
-      <solution>
-        <p>
-          The length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m> is <m>m+n</m>. The
-          number of such paths is <m>\binom{m+n}{n}</m>. Since lattice paths move up and to
-          the right, there are no paths from <m>(i,j)</m> to <m>(m,n)</m> unless <m>i\le m</m> and
-          <m>j\le n</m>. In that case, the number of paths is <m>\binom{m+n-i-j}{n-j}</m> which is
-          the same as <m>\binom{m+n-i-j}{m-i}</m>.
+        <task>
+          <statement>
+            <p> What is the length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m>?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              The length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m> is <m>m+n</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>How many such lattice paths of that length are there?</p>
+         </statement>
+         <hint>
+           <p>
+         In Problem 47 you saw that we had to make ten choices of north or east,
+         choosing north four times.
+           </p>
+         </hint>
+         <solution>
+           <p>
+             The number of such paths is <m>\binom{m+n}{n}</m>.
+           </p>
+         </solution>
+         </task>
+
+        <task>
+          <statement>
+            <p>
+              How many lattice paths are there from <m>(i,j)</m> to <m>(m,n)</m>, assuming <m>i</m>, <m>j</m>, <m>m</m>, and <m>n</m> are integers?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          This problem is actually a bit tricky. What happens to the answer if <m>i \gt m</m> or <m>j \gt n</m>? Remember that paths go up or to the right.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Since lattice paths move up and to
+              the right, there are no paths from <m>(i,j)</m> to <m>(m,n)</m> unless <m>i\le m</m> and
+              <m>j\le n</m>. In that case, the number of paths is <m>\binom{m+n-i-j}{n-j}</m> which is
+              the same as <m>\binom{m+n-i-j}{m-i}</m>.
+            </p>
+          </solution>
+        </task>
         </p>
-      </solution>
     </activity>
 
     <activity xml:id="diagonallattice" category="essential for this or the next section">
