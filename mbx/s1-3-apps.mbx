@@ -79,18 +79,68 @@
             </p>
           </solution>
         </task>
-        </p>
     </activity>
 
     <activity xml:id="diagonallattice" category="essential for this or the next section">
-      <statement>
-        <p>Another kind of geometric path in the plane is a <em>diagonal lattice path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.) Describe which points are connected to <m>(0,0)</m> by diagonal lattice paths. What is the length of a diagonal lattice path from <m>(0,0)</m> to <m>(m,n)</m>? Assuming that <m>(m,n)</m> is such a point, how many diagonal lattice paths are there from <m>(0,0)</m> to <m>(m,n)</m>?
+        <p>
+          Another kind of geometric path in the plane is a <em>diagonal lattice path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.)
         </p>
-      </statement>
-      <solution>
-        <p>The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>m,n</m> by making <m>\frac{m-n}{2}</m> downsteps and <m>\frac{m+n}{2}</m> upsteps. In this way we will make a total of <m>m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>\frac{m+n}{2}-\frac{m-n}{2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps. The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>\binom{m}{\frac{m+n}{2}}</m>.
-        </p>
-      </solution>
+
+        <task>
+          <statement>
+            <p>
+              Describe which points are connected to <m>(0,0)</m> by diagonal lattice paths.
+            </p>
+          </statement>
+          <hint>
+            <p>
+          Where can you go from (0,0) in one step? In two steps? In any of these cases,
+          what can you say about the sum of the coordinates of a point you can get
+          to? Can you find any other relationship between the x- and y-coordinates of
+          a point you can get to? For example, can you get to the point (1, 3)?
+            </p>
+          </hint>
+          <solutions>
+            <p>
+              The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>(m,n)</m> by making <m>\frac{m-n}{2}</m> downsteps and <m>\frac{m+n}{2}</m> upsteps.
+            </p>
+          </solutions>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              What is the length of a diagonal lattice path from <m>(0,0)</m> to <m>(m,n)</m>?
+
+            </p>
+          </statement>
+         <solution>
+           <p>
+             From the previous part of this problem, we will make a total of  <m>\frac{m-n}{2} + \frac{m+n}{2} = m</m> steps, and our total motion parallel to the <m>y</m> axis will be <m>\frac{m+n}{2}-\frac{m-n}{2} = n</m>.  The length of such a path is <m>m\sqrt{2}</m>; we might informally just call it <m>m</m> steps.
+           </p>
+         </solution>
+
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Assuming that <m>(m,n)</m> is such a point, how many diagonal lattice paths are there from <m>(0,0)</m> to <m>(m,n)</m>?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          How many choices do you have to make in order to choose a path?
+            </p>
+          </hint>
+
+          <solution>
+            <p>
+
+              The number of possible paths is the number of ways we can choose which of the <m>m</m>steps are upsteps (or equivalently downsteps) this number is <m>\binom{m}{\frac{m+n}{2}}</m>.
+            </p>
+          </solution>
+        </task>
     </activity>
 
     <activity category="motivation">
@@ -121,6 +171,11 @@
           <p>In each case, what is the geometric interpretation of a sequence that does not require the teacher to give any IOUs?
           </p>
         </statement>
+        <hint>
+          <p>
+        In each part, each such sequence corresponds to a path that can’t cross over (but may touch) a certain line.
+          </p>
+        </hint>
         <solution>
           <p>In the first case a sequence that does not require the teacher to give any IOUs will correspond to a lattice path that stays on or below the line <m>y=x</m>, and in the second case such a sequence will correspond to a diagonal lattice path that stays on or above the <m>x</m>-axis.
           </p>
@@ -159,6 +214,12 @@
             <m>(-1,1)</m> to <m>(n,n)</m>.
           </p>
           </statement>
+          <hint>
+            <p>
+          Given a path from <m>(0, 0)</m> to <m>(n, n)</m> which touches or crosses the line <m>y = x + 1</m>,
+          how can you modify the part of the path from <m>(0, 0)</m> to the first touch of <m>y = x + 1</m> so that the modified path starts instead at <m>(−1, 1)</m>? The trick is to do this in a systematic way that will give you your bijection.
+            </p>
+          </hint>
           <solution>
               <p>Suppose we have a lattice path form <m>(0,0)</m> to <m>(n,n)</m> which touches or crosses the line <m>y=x+1</m>. Let <m>(k,k+1)</m> be the first point on the line <m>y=x+1</m> that the lattice path touches. From that point, work backwards, replacing every upstep with a step one unit to the left and every rightstep with a step one unit down. The segment of the path you just changed will have moved left <m>k+1</m> times, so its leftmost <m>x</m> coordinate will be <m>-1</m>, and it will have moved down <m>k</m> times, so its lowest <m>y</m> coordinate will be 1.  Thus we now have a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>. Further, given a lattice path from <m>(-1,1)</m> to <m>(n,n)</m>, it must cross the line <m>y=x+1</m> at least once, because it starts above the line and ends below it. At the first point where such a path touches the line <m>y=x+1</m>, say <m>(k',k'+1)</m>, work backwards replacing every upstep with a step to the left and every rightstep with a step downwards. The leftmost point on this path will have <m>x</m> coordinate 0, and the lowest point will have <m>y</m> coordinate 0, so the new path will be a lattice path from <m>(0,0)</m> to <m>(n,n)</m> that touches the line <m>y=x+1</m>. Clearly these two processes reverse each other, and so they give us a bijection between paths form <m>(0,0)</m> to <m>(n,n)</m> that touch the line <m>y=x+1</m> and lattice lattice paths from <m>(-1,1)</m> to <m>(n,n)</m>. Notice that geometrically what we are doing to get the bijection is to take the portion of a lattice path that goes from the initial point till the first touch of the line <m>y=x+1</m> and reflecting it around that line. This idea of reflection was introduced by Feller, and is called Feller's reflection principle.
           </p>
@@ -169,6 +230,11 @@
           <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+        A path either touches the line <m>y = x + 1</m> or it doesn’t. This partitions the set of paths into two blocks.
+          </p>
+        </hint>
         <solution>
           <p>
             <m>C_n=\binom{2n}{n} - \binom{2n}{n+1}=\frac{1}{n+1}\binom{2n}{n}.</m>
@@ -195,11 +261,17 @@
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>Thought of as a curve in the plane, a diagonal lattice path can have many local maxima and minima, and can have several absolute maxima and minima, that is, several highest points and several lowest points. What is the <m>y</m>-coordinate of an absolute minimum point of a Dyck Path starting at <m>(0,0)</m>?  Explain why a Dyck Path whose rightmost absolute minimum point is its last point is a Catalan Path.
           </p>
         </statement>
+        <hint>
+          <p>
+        Look back at the definition of a Dyck Path and a Catalan Path.
+          </p>
+        </hint>
         <solution>
           <p>Since the path starts at <m>(0,0)</m> and can't go below it, the <m>y</m> coordinate of an absolute minimum must be zero. If the last point is an absolute minimum, then (because it ends with the same <m>y</m> coordinate with which it starts) the path has an even number <m>2k</m> of steps and ends at <m>(2k,0)</m>.
           </p>
@@ -210,6 +282,26 @@
           <p>Let <m>D</m> be the set of all diagonal lattice paths from <m>(0,0)</m> to <m>(2n,0)</m>.  (Thus these paths can go below the <m>x</m>-axis.) Suppose we partition <m>D</m> by letting <m>B_i</m> be the set of lattice paths in <m>D</m> that have <m>i</m> upsteps (perhaps mixed with some downsteps) following the last absolute minimum.  How many blocks does this partition have?  Give a succinct description of the block <m>B_0</m>.
           </p>
         </statement>
+        <hint>
+          <p> What makes this part difficult is understanding how we are
+        partitioning the paths. As an example, <m>B_0</m> is the set of all
+        paths that have no upsteps following the last absolute minimum. Can such
+        a path have downsteps after the last absolute minimum? (The description
+        we gave of <m>B_0</m> is not succinct enough to be the answer to the
+        second question of this part.) As another example <m>B_1</m> is the set
+        of all paths that have exactly one upstep and perhaps some downsteps
+        after the last absolute minimum. Is it possible, though, for a path in
+        <m>B_1</m> to have any downsteps after the last absolute minimum? A path
+        in <m>B_2</m> has exactly two upsteps after its last absolute minimum.
+        If is possible to have one downstep after the last absolute minimum, but
+        it has to be in a special place. What place is that? Now to figure out
+        how many parts our partition has, we need to know the maximum number of
+        upsteps a path can have following its last absolute minimum. What is
+        this maximum? It might help to draw some pictures with <m>n = 5</m> or
+        <m>6</m>. In particular, is it possible that all upsteps occur after the
+        last absolute minimum? </p>
+      </hint>
+
         <solution>
           <p>The path must have <m>n</m> upsteps total, and so can have any number between 0 and <m>n</m> upsteps after the rightmost absolute minimum. Thus the partition has <m>n+1</m> blocks. Block <m>B_0</m> consists of the Catalan Paths.
           </p>
@@ -232,6 +324,27 @@
           <p>We are going to give a bijection between the set of Catalan Paths and the block <m>B_i</m> for each <m>i</m> between <m>1</m> and <m>n</m>.  For now, suppose the value of <m>i</m>, while unknown, is fixed.  We take a Catalan path and break it into three pieces.  The piece <m>F</m> (for <q>front</q>) consists of all steps before the <m>i</m>th upstep in the Catalan path.  The piece <m>U</m> (for <q>up</q>) consists of the <m>i</m>th upstep.  The piece <m>B</m> (for <q>back</q>) is the portion of the path that follows the <m>i</m>th upstep.  Thus we can think of the path as <m>FUB</m>.  Show that the function that takes <m>FUB</m> to <m>BUF</m> is a bijection from the set of Catalan Paths onto the block <m>B_i</m> of the partition.  (Notice that <m>BUF</m> can go below the <m>x</m> axis.)
           </p>
         </statement>
+        <hint>
+          <p>
+        Using <m>d</m> for down and <m>u</m> for up, we could have <m>uudduuddudud</m> as our
+        Catalan path. Suppose that <m>i = 5</m>. The fifth upstep is the
+        <m>u</m> in position 9. Thus <m>F = uudduudd</m>, <m>U = u</m>, and <m>B = dud</m>. Now <m>BU F</m> is <m>duduuudduudd</m>. This is a Dyck path that begins by going below the <m>x</m>-axis. The <m>d</m>'s in
+        positions 1 and 3 take the path to the <m>y</m>-coordinate <m>-1</m>.
+        Then the <m>y</m> coordinate climbs to 2, goes back to 0, up to 2 again,
+        and finally down to 0. So the absolute minimum is <m>-1</m>, and it
+        occurs in the first and third position. There are five <m>u</m>’s after
+        the third positon. So this Dyck path is in the block <m>B_5</m> of our
+        partition. Now comes the crucial question. Why were there five u’s after
+        that last absolute minimum in position 3? Try with the same path and
+        <m>i = 3</m>. Figure out why there are three u’s after the last absolute
+        minimum in the resulting path. All this discussion should explain why
+        when <m>i = 5</m>, the set of all Catalan paths is mapped into the set
+        <m>B_5</m>. Keeping <m>i = 5</m> for a while, try to see why this
+        correspondence between Catalan paths and <m>B_5</m> is a bijection.
+        Then, if you need to, do the same thing with <m>i = 3</m>. This should
+        give you enough insight to do the general case.
+          </p>
+        </hint>
         <solution>
           <p>Since we are starting with a Catalan path, the point on the path at the beginning of the <m>i</m>th upstep must have <m>y</m> coordinate greater or equal to than zero. Thus wherever we start the sequence <m>F</m> of upsteps and downsteps, a path constructed by this sequence never goes lower than its starting point. Thus in <m>BUF</m> the last absolute minimum is either right before the <m>U</m> or earlier. But <m>B</m> is the final segment of a Catalan Path, so its final point is at least as low as its starting point. Thus the point at the beginning of the <m>U</m> in <m>BUF</m> is an absolute minimum, and there are <m>i</m> upsteps after that local minimum. If we take two different sequences and rearrange them in the same way, we get two different sequences, so the function we just described is a one-to-one function. If we take an arbitrary diagonal lattice path from <m>(0,0)</m> to <m>(2n,0)</m>, let <m>U'</m> be the first upstep after the last absolute minimum, <m>F'</m> be the portion of the path that follows <m>U'</m>, and <m>B'</m> be the portion that precedes <m>U'</m>, then <m>F'U'B'</m> is a Catalan Path, and <m>U'</m> is its <m>i</m>th upstep if and only if in <m>B'U'F'</m> there are <m>i</m> upsteps after the last absolute minimum. Thus the mapping from <m>FUB</m> to <m>BUF</m> is a bijection.
           </p>
@@ -253,6 +366,7 @@
         </solution>
       </task>
     </activity>
+
   </subsection>
 
   <subsection>
@@ -422,11 +536,18 @@
         </solution>
       </task>
   </activity>
+
   <activity>
       <statement>
           <p>What is <m>\sum_{i=1}^n \binom{10}{i}3^i</m>?
           </p>
       </statement>
+      <hint>
+        <p>
+      What would the lower limit of the sum have to be for this problem to be a
+      routine application of the binomial theorem?
+        </p>
+      </hint>
       <solution>
         <p>
           <m>\sum_{i=1}^n \binom{10}{i}3^i=\sum_{i=0}^n
@@ -434,6 +555,7 @@
         </p>
       </solution>
   </activity>
+
   <activity>
       <statement>
       <p>
@@ -441,6 +563,11 @@
       \binom{n}{n}</m> if <m>n</m> is an integer bigger than 0?
       </p>
       </statement>
+      <hint>
+        <p>
+      What does the binomial theorem give you for <m>(x − y)n</m>?
+        </p>
+      </hint>
       <solution>
           <p>The sum is <m>0</m> because it is <m>(-1+1)^n</m>.</p>
       </solution>
@@ -456,6 +583,16 @@
           Find two different explanations.
         </p>
       </statement>
+      <hint>
+        <p>
+      Consider <m>(x + y)m (x + y)n</m>.
+        </p>
+      </hint>
+      <hint>
+        <p>
+      What does <m>\binom{m+n}{k}</m> count? What does <m>\binom{m}{i}\binom{m}{k-1}</m> count?
+        </p>
+      </hint>
       <solution>
         <p>
           When we expand both sides of <m>(x+y)^m(x+y)^n=(x+y)^{m+n}</m> by the
@@ -474,6 +611,16 @@
           From the symmetry of the binomial coefficients, it is not too hard to see that when <m>n</m> is an odd number, the number of subsets of <m>\{1,2,\ldots,n\}</m> of odd size equals the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size. Is it true that when <m>n</m> is even the number of subsets of <m>\{1,2,\ldots,n\}</m> of even size equals the number of subsets of odd size? Why or why not?
         </p>
       </statement>
+      <hint>
+        <p>
+      For example when <m>n = 3</m>, we have <m>\binom{3}{0} = \binom{3}{3}</m>
+      and <m>\binom{3}{1} = \binom{3}{2}</m>.  The number of subsets of even
+      size is <m>\binom{3}{0}+\binom{3}{2}</m> and the number of subsets of odd
+      size is <m>\binom{3}{1} + \binom{3}{3}</m>, and the two sums can be paired off into equal terms.  When we subtract the number of subsets of odd size from the number of subsets of even size, the pairing also gives us <m>\binom{3}{0} - \binom{3}{1} + \binom{3}{2} - \binom{3}{3} =
+      0</m>.
+        </p>
+      </hint>
+
       <solution>
         <p>It is true, because if <m>n>0</m>, when you expand <m>(1-1)^n</m> by the binomial theorem, you get an alternating sum of binomial coefficients equal to 0, and so the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> even must equal the sum of the binomial coefficients <m>\binom{n}{i}</m> with <m>i</m> odd.
         </p>
@@ -487,6 +634,11 @@
           might use calculus.)
         </p>
       </statement>
+      <hint>
+        <p>
+      Take the derivative of something interesting.
+        </p>
+      </hint>
       <solution>
         <p>
           <m>\sum_{i=0}^n(\binom{n}{i}x^i = (1+x)^n</m>. Taking derivatives of
