@@ -680,6 +680,13 @@
         <p>Show that if we have a function from a set of size <m>n</m> to a set of size less than <m>n</m>, then <m>f</m> is not one-to-one.
         </p>
       </statement>
+      <hint>
+        <p>
+      To prove that each function from a set S of size n to a set of size less
+      than n is not one-to-one, we must prove that regardless of the function <m>f</m> that we choose, there are always two elements, say <m>x</m> and <m>y</m>, such that <m>f(x) = f(y)</m>.
+        </p>
+      </hint>
+
       <solution>
         <p>
           Let <m>T</m> be the set of size less than <m>n</m>, and <m>S</m> be the set of size <m>n</m>. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. Then the nonempty sets among the <m>B_j</m>s form a partition of <m>S</m> and the number of blocks is less than the size of <m>S</m>. Therefore by the pigeonhole principle, there is at least one block with at least two elements, so there are two elements <m>i_1</m> and <m>i_2</m> such that <m>f(i_1)=f(i_2)</m>.
@@ -692,8 +699,19 @@
         <p>Show that if <m>S</m> and <m>T</m> are finite sets of the same size, then a function <m>f</m> from <m>S</m> to <m>T</m> is one-to-one if and only if it is onto.
         </p>
       </statement>
+      <hint>
+        <p>
+      The previous exercise could help you prove that if <m>f</m> is one-to-one, then it is onto.
+        </p>
+      </hint>
+      <hint>
+        <p>
+      The sum principle can help you show that if <m>f</m> is an onto function, then <m>f</m> is one-to-one.
+        </p>
+      </hint>
       <solution>
-        <p>First suppose that <m>f</m> is a one-to-one function from <m>S</m> to <m>T</m>, sets which have the same size. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>..  If <m>f</m> is not onto, then the number of nonempty sets <m>B_j</m> is smaller than the number of elements of <m>T</m> and thus is smaller than the size of <m>S</m>. The nonempty sets <m>B_j</m> are a partition of <m>S</m>. But then by the pigeonhole principle, some nonempty <m>B_j</m> has two or more elements, contradicting the assumption that <m>f</m> is one-to-one. Therefore if <m>f</m> is one-to-one, then it is onto. Now suppose that <m>f</m> is an onto function from <m>S</m> to <m>T</m>, sets of the same size. Again let <m>B_j =\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>. The size of the union of the sets <m>B_j</m> is, by the sum principle, the sum of their sizes. Since <m>f</m> is onto, each <m>B_j</m> has at least one element. Since the number of sets <m>B_j</m> is the number of elements of <m>S</m>, if one of those sets has more than one element, the the size of their union is more than the size of <m>S</m>, which is a contradiction since they are subsets of <m>S</m>. Therefore each set <m>B_j</m> has exactly one element and therefore <m>f</m> is one-to-one.
+        <p>First suppose that <m>f</m> is a one-to-one function from <m>S</m> to <m>T</m>, sets which have the same size. Let <m>B_j=\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>..  If <m>f</m> is not onto, then the number of nonempty sets <m>B_j</m> is smaller than the number of elements of <m>T</m> and thus is smaller than the size of <m>S</m>. The nonempty sets <m>B_j</m> are a partition of <m>S</m>. But then by the pigeonhole principle, some nonempty <m>B_j</m> has two or more elements, contradicting the assumption that <m>f</m> is one-to-one. Therefore if <m>f</m> is one-to-one, then it is onto. Now suppose that <m>f</m> is an onto function from <m>S</m> to <m>T</m>, sets of the same size. Again let <m>B_j =\{i|f(i)=j\}</m> for each <m>j</m> in <m>T</m>.
+        The size of the union of the sets <m>B_j</m> is, by the sum principle, the sum of their sizes. Since <m>f</m> is onto, each <m>B_j</m> has at least one element. Since the number of sets <m>B_j</m> is the number of elements of <m>S</m>, if one of those sets has more than one element, the the size of their union is more than the size of <m>S</m>, which is a contradiction since they are subsets of <m>S</m>. Therefore each set <m>B_j</m> has exactly one element and therefore <m>f</m> is one-to-one.
         </p>
       </solution>
     </activity>
@@ -703,16 +721,30 @@
           <p>There is a <term>generalized pigeonhole principle</term><index><main>pigeonhole principle</main><sub> generalized</sub></index> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
           </p>
         </statement>
+        <hint>
+          <p>
+        The statement of the generalized pigeonhole principle involves the number
+        of elements in a block, so a counting principle is likely to help you.
+          </p>
+        </hint>
         <solution>
           <p>Suppose we partition a set <m>S</m> of more than <m>kn</m> elements into <m>n</m> blocks. If each block has at most <m>k</m> elements, the by the sum principle the size of <m>S</m> is at most <m>kn</m>. But this is a contradiction, so some block has at least <m>k+1</m> elements.
           </p>
         </solution>
     </activity>
+
     <activity>
         <statement>
           <p>All the powers of five end in a five, and all the powers of two are even. Show that for for some integer <m>n</m>, if you take the first <m>n</m> powers of a prime other than two or five, one must have <q>01</q> as the last two digits.
           </p>
         </statement>
+        <hint>
+          <p>
+        You may choose a specific number for <m>n</m> if you want to. Notice
+        that the last two digits of the powers of a prime other than two cannot
+        represent an even number.
+          </p>
+        </hint>
         <solution>
           <p>If we take 40 powers of such a prime, either one will end in <q>01</q> or some two, say <m>p^i</m> and <m>p^j</m> with <m>i>j</m> must have the same last two digits by the pigeon hole principle. Then <m>p^i-p^j=100k</m> for some integer <m>k</m>. Thus <m>p^j(p^{i-j} -1)</m> must be a multiple of 100, and since neither 2 nor 5 divide <m>p</m>, <m>p^{i-j} -1 = 100k'</m> for some integer <m>k'</m> then <m>p^{i-j} = 100k'+1</m>, so the last two digits of <m>p^{i-j}</m> must be <q>01.</q>
           </p>
@@ -724,6 +756,11 @@
         <p>Show that in a set of six people, there is a set of at least three people who all know each other, or a set of at least three people none of whom know each other. (We assume that if person 1 knows person 2, then person 2 knows person 1.)
         </p>
       </statement>
+      <hint>
+        <p>
+      While this sounds like a pigeonhole principle problem, the ordinary pigeonhole principle doesn’t guarantee three of something.
+        </p>
+      </hint>
       <solution>
         <p>By the generalized pigeonhole principle, person 1 either knows at least three people or doesn't know at least three people. Suppose person 1 knows three people. Then either two of these people know each other, giving us, with person 1, three mutual acquaintances, or no two of these people know each other, giving us three mutual strangers. On the other hand if there are three people person 1 does not know, then either two of these people don't know each other, giving us, with person 1, three mutual strangers, or all three of these people know each other, giving us three mutual acquaintances.
         </p>
@@ -768,6 +805,12 @@
         <p>Since <m>R(3,3)=6</m>, an uneducated guess might be that <m>R(4,4)=8</m>. Show that this is not the case.
         </p>
       </statement>
+      <hint>
+        <p>
+      What usually makes it hard for students to start this problem is the fact
+      that we just defined what <m>R(4, 4)</m> is, and not what it means for a number <emph>not</emph> to be <m>R(4, 4)</m>. So to get started, try to write down what it means to say <m>R(4, 4)</m> is not 8. You will see that there are two things that can keep <m>R(4, 4)</m> from being 8. You need to figure out which one happens and explain why. One such explanation could involve the graph <m>K_8</m> .
+        </p>
+      </hint>
       <solution>
         <p>
           In the graph of <xref ref="NonRamsey8" autoname="yes" />,
@@ -784,12 +827,17 @@
       </solution>
     </activity>
 
-    <activity category="essential for this or the next section">
+    <activity xml:id="not_R_4_3" category="essential for this or the next section">
       <statement>
         <p>
           Show that among ten people, there are either four mutual acquaintances or three mutual strangers. What does this say about <m>R(4,3)</m>?
         </p>
       </statement>
+      <hint>
+        <p>
+      Review <xref ref="R_3_3_" autoname="yes" /> and your solution of it.
+        </p>
+      </hint>
       <solution>
         <p>
           Take a person, say person 1. If person has six acquaintances, then by <xref ref="R_3_3_" autoname="yes" /> among them there are either three mutual strangers, in which case we are done, or three mutual acquaintances. These three acquaintances together with person 1 form a set of 4 mutual acquaintances in which case we are again done. Thus we may assume Person 1 has at most 5 acquaintances, and so has four non-acquaintances. Now either all four of these people are acquainted, in which case we are done, or else two of them are not acquainted. Then these two people, together with person 1 make three mutual nonacquaintances. Therefore in every possible case, we have either four mutual acquaintances or three mutual strangers. This means that <m>R(4,3) \le 10</m>.
@@ -805,6 +853,11 @@
           stranger to an even number of people.
         </p>
       </statement>
+      <hint>
+        <p>
+      Let <m>a_i</m> be the number of acquaintances of person <m>i</m>. Can you explain why the sum of the numbers <m>a_i</m> is even?
+        </p>
+      </hint>
       <solution>
         <p>Suppose we add, for each person, the number of people with whom he or she is acquainted. Then we get twice the number of acquaintance edges in the graph of acquaintance and non-acquaintance relationships. Thus the sum must be even. But if each person among an odd number of people were acquainted with an odd number of people, then the sum would be odd. Since this is a contradiction, among an odd number of people, there must be at least one who is acquainted with an even number of people. Since the number of people different from this person is even, the number of people with whom this person is not acquainted is also even.
         </p>
@@ -816,6 +869,16 @@
         <p>Find a way to color the edges of a <m>K_8</m> with red and green so that there is no red <m>K_4</m> and no green <m>K_3</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+      Often when there is a counter-example, there is one with a good deal of
+      symmetry. (Caution: there is a difference between often and always!) One
+      way to help yourself get a symmetric example, if there is one, is to put 8
+      vertices into a circle. Then, perhaps, you might draw green edges in some
+      sort of regular fashion until it is impossible to draw another green edge
+      between any two of the vertices without creating a green triangle.
+        </p>
+      </hint>
       <solution>
         <p>
           In the graph shown in <xref ref="NonRamsey8" autoname="yes" />, there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are solid. By symmetry, to verify this you need only look at vertex 1 and vertices connected to it by either dashed lines or by solid lines.
@@ -829,6 +892,12 @@
           Find <m>R(4,3)</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+      In <xref ref="not_R_4_3" autoname="yes" /> you showed that <m>R(4, 3) \le 10</m>. In <xref ref="R_4_3_not8" autoname="yes" /> you showed
+      that <m>R(4, 3) \gt 8</m>. Thus <m>R(4, 3)</m> is either 9 or 10. Deciding which is the case is just plain hard. But there is a relevant problem we have done that we haven’t used yet.
+        </p>
+      </hint>
       <solution>
         <p>
           <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8" autoname="yes" /> we showed that <m>R(4,3)</m> is more than 8. So we must show that if we have nine people, we either have 4 mutual acquaintances or three mutual strangers. By <xref ref="OddNoPeople" autoname="yes" /> there is at least one person (say person A) who is acquainted with an even number of people. If person A is acquainted with six or more people, then among these six people, there are either three mutual acquaintances or three mutual strangers. If there are three mutual strangers, we are done; if there are three mutual acquaintances, they, together with Person A are four mutual acquaintances. Thus we may assume Person A is acquainted with at most four people. Thus person A is a stranger to at least four people. If two of these people are strangers, then they, together with person A form three mutual strangers and we are done. Otherwise all of these people know each other and we have at least four mutual acquaintances, and so in every possible situation, we have either four mutual acquaintances or three mutual strangers.
