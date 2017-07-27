@@ -378,47 +378,118 @@
   <subsection xml:id="orderedfunctionsection">
     <title>Ordered functions</title>
     <activity xml:id="bookcase" category="essential and interesting">
-      <task>
-        <statement>
-          <p>
-            Suppose we wish to place <m>k</m> distinct books onto the shelves of
-            a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
-            the books would fit on any of the shelves. Also, let's imagine pushing
-            the books on a shelf as far to the left as we can, so that we are only
-            thinking about how the books sit relative to each other, not about the
-            exact places where we put the books. Since the books are distinct, we can
-            think of a the first book, the second book and so on. How many places
-            are there where we can place the first book? When we place the second
-            book, if we decide to place it on the shelf that already has a book, does
-            it matter if we place it to the left or right of the book that is already
-            there? How many places are there where we can place the second book?
-            Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
-            on a shelf that already has some books, is sliding it in to the left of
-            all the books already there different from placing it to the right of
-            all the books already or between two books already there? In how many
-            ways may we place the
-            <m>i</m>th book into the bookcase? In how many ways may we place all the
-            books?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            There are <m>n</m> places where we can place the first book. Once
-            we have placed it, there are <m>n+1</m> places where we can place the second
-            book, because on the shelf that has one book, we could put the second
-            book to the left or to the right of the book already there. Once we have
-            <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the
-            left of all books there, if any, giving us <m>n</m> places, or it could go to
-            the immediate right of any book already there, giving us another <m>i-1</m>
-            places. Thus there are <m>n+i-1</m> places where we could place book <m>i</m>.
-            From this, we can see that the number of ways to place all the books is
-            <me>
-              \prod_{i=1}^k (n+i-1).
-            </me>
-          </p>
-        </solution>
-      </task>
-      <task>
+          <p> Suppose we wish to place <m>k</m> distinct books onto the shelves
+          of a bookcase with <m>n</m> shelves. For simplicity, assume for now
+          that all of the books would fit on any of the shelves. Also, let's
+          imagine pushing the books on a shelf as far to the left as we can, so
+          that we are only thinking about how the books sit relative to each
+          other, not about the exact places where we put the books. Since the
+          books are distinct, we can think of a the first book, the second book
+          and so on. </p>
+
+
+        <task>
+          <statement>
+            <p>How many places are there where we can place the first book? </p>
+          </statement>
+          <solution>
+            <p>
+              There are <m>n</m> places where we can place the first book.
+            </p>
+          </solution>
+
+        </task>
+
+        <task>
+          <statement>
+            <p>When we place the second book, if we decide to place it on the shelf that already has a book, does it matter if we place it to the left or right of the book that is already there?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Yes.
+            </p>
+          </solution>
+        </task>
+
+
+        <task>
+          <statement>
+            <p>
+              How many places are there where we can place the second book?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          If you decide to put it on a shelf that already has a book, you have
+          two choices of where to put it on that shelf.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Once we have placed it, there are <m>n+1</m> places where we can
+              place the second book, because on the shelf that has one book, we
+              could put the second book to the left or to the right of the book
+              already there.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>  on a shelf that already has some books, is sliding it in to the left of all the books already there different from placing it to the right of all the books already or between two books already there?
+
+            </p>
+          </statement>
+          <solution>
+            <p>
+              All of these are different.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              In how many ways may we place the <m>i</m>th book into the bookcase?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          Among all the places you could put books, on all the shelves, how many are to the immediate left of some book? How many other places are there?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Once we have <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the left of all books there, if any, giving us <m>n</m> places, or it could go to the immediate right of any book already there, giving us another <m>i-1</m> places. Thus there are <m>n+i-1</m> places where we could place book  <m>i</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              In how many ways may we place all the books?
+
+            </p>
+          </statement>
+          <solution>
+            <p>
+              From this, we can see that the number of ways to place all the books is
+              <me>
+                \prod_{i=1}^k (n+i-1).
+              </me>
+            </p>
+          </solution>
+        </task>
+
+
+      </activity>
+
+
+
+      <activity>
         <statement>
           <p>
             Suppose we wish to place the books in <xref ref="bookcase">Problem</xref>
@@ -428,27 +499,34 @@
             the process described in <xref ref="bookcase">Problem</xref>?)
           </p>
         </statement>
+        <hint>
+          <p>
+        How can you make sure that each shelf gets at least one book before you
+        start the process described in <xref ref="bookcase">Problem</xref>?
+          </p>
+        </hint>
         <solution>
           <p>
-            Choose <m>n</m> books from the <m>k</m> books in <m>\binom{k}{n}</m> ways, and
-            assign them to the <m>n</m> places shelves in <m>n!</m> ways, giving us <m>k!/(k-n)!</m>
-            ways to put a book on each shelf. Now leaving these books at the far
-            left of each shelf, place the remaining books in
+            Choose <m>n</m> books from the <m>k</m> books in <m>\binom{k}{n}</m>
+            ways, and assign them to the <m>n</m> places shelves in <m>n!</m>
+            ways, giving us <m>k!/(k-n)!</m> ways to put a book on each shelf.
+            Now leaving these books at the far left of each shelf, place the
+            remaining books in
             <me>
               \prod_{i=1}^{k-n}
               (n+i-1)=\frac{(n+(k-n)-1)!}{(n-1)!}=\frac{(k-1)!}{(n-1)!}
             </me>
-            ways. Thus we
-            have
+            ways. Thus we have
             <me>
               \frac{k!(k-1)!}{(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
             </me>
-            ways to place the books. Of course the right hand side of that equation
-            cries out for a combinatorial explanation. Here it is. Imagine lining
-            up the <m>k</m> books in a row. Then there are <m>k-1</m> places in between them.
-            Choose <m>n-1</m> of these places, and slide a piece of paper in there as a
-            divider. Now put the books before the first divider on shelf one, and
-            the books after divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
+            ways to place the books. Of course the right hand side of that
+            equation cries out for a combinatorial explanation. Here it is.
+            Imagine lining up the <m>k</m> books in a row. Then there are
+            <m>k-1</m> places in between them. Choose <m>n-1</m> of these
+            places, and slide a piece of paper in there as a divider. Now put
+            the books before the first divider on shelf one, and the books after
+            divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
             the books on the shelves so that every shelf has a book!
           </p>
         </solution>
