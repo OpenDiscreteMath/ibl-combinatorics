@@ -16,39 +16,50 @@
     </p>
 
     <activity xml:id="secondstirlingrecurrence" category="essential and interesting">
-      <task>
         <statement>
           <p>
-            In a partition of the set <m>[k]</m>, the number <m>k</m> is either in a
-            block by itself, or it is not. How does the number of partitions of
-            <m>[k]</m> with <m>n</m> parts in which <m>k</m> is in a block with other elements of
-            <m>[k]</m> compare to the number of partitions of <m>[k-1]</m> into <m>n</m> blocks?
-            Find a two variable recurrence for <m>S(n,k)</m>, valid for <m>n</m> and
-            <m>k</m> larger than one.
+            In a partition of the set <m>[k]</m>, the number <m>k</m> is either
+            in a block by itself, or it is not. How does the number of
+            partitions of <m>[k]</m> with <m>n</m> parts in which <m>k</m> is in
+            a block with other elements of <m>[k]</m> compare to the number of
+            partitions of <m>[k-1]</m> into <m>n</m> blocks? Find a two variable
+            recurrence for <m>S(n,k)</m>, valid for <m>n</m> and <m>k</m> larger
+            than one.
           </p>
         </statement>
+        <hint>
+          <p>
+        The number of partitions of <m>[k]</m> into <m>n</m> parts in which <m>k</m> is not in a block
+        relates to the number of partitions of <m>k-1</m> into some number of blocks in a way that involves <m>n</m>. With this in mind, review how you proved Pascal's (recurrence) equation.
+          </p>
+        </hint>
+
         <solution>
           <p>
-            The number of partitions of <m>[k]</m> into <m>n</m> parts in which <m>k</m> is
-            in a block with other elements of <m>[k]</m> is equal <m>n</m> times the number
-            of partitions of <m>[k-1]</m> into <m>n</m> blocks, because <m>k</m> could be in any
-            of the
-            <m>n</m> parts, and since it is in a block with other elements of <m>[k-1]</m>,
-            removing it leaves a partition of <m>[k-1]</m> into <m>n</m> blocks. The number of
-            partitions of <m>[k]</m> into <m>n</m> blocks in which <m>k</m> is in a block by itself
-            is the number of partitions of <m>[k]</m> into <m>n-1</m> blocks, because you can
-            get any such partition in by deleting the block containing <m>k</m> from a
-            partition of <m>[k]</m> in which <m>k</m> is in a block by itself. Thus
-            <m>S(k,n))=S(k-1,n-1) +nS(k-1,n)</m>.
+            The number of partitions of <m>[k]</m> into <m>n</m> parts in which
+            <m>k</m> is in a block with other elements of <m>[k]</m> is equal
+            <m>n</m> times the number of partitions of <m>[k-1]</m> into
+            <m>n</m> blocks, because <m>k</m> could be in any of the <m>n</m>
+            parts, and since it is in a block with other elements of
+            <m>[k-1]</m>, removing it leaves a partition of <m>[k-1]</m> into
+            <m>n</m> blocks. The number of partitions of <m>[k]</m> into
+            <m>n</m> blocks in which <m>k</m> is in a block by itself is the
+            number of partitions of <m>[k]</m> into <m>n-1</m> blocks, because
+            you can get any such partition in by deleting the block containing
+            <m>k</m> from a partition of <m>[k]</m> in which <m>k</m> is in a
+            block by itself. Thus <m>S(k,n))=S(k-1,n-1) +nS(k-1,n)</m>.
           </p>
         </solution>
-      </task>
-      <task>
-        <statement>
+    </activity>
+
+
+    <activity>
+      <statement>
           <p>
             What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table is sometimes called <term>Stirling's Triangle (of the second kind)</term><index><main>Stirling's triangle</main><sub>second kind</sub></index> How would you define <m>S(k,n)</m> for the nonnegative values of <m>k</m> and <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is your two variable recurrence valid?
           </p>
         </statement>
+
         <solution>
           <p>
             <m>S(k,1)=1</m> and <m>S(k,k)=1</m>.
@@ -141,10 +152,12 @@
           <p>
             As you see in the table, we define <m>S(0,0)=1</m>, and <m>S(0,n)</m> or <m>S(k,0)</m> to be 0 otherwise. This makes sense because for <m>n>0</m> there is no partition of an empty set into <m>n</m> parts, and for <m>k>0</m> there is no partition of a <m>k</m>-element set into no parts, but saying there is one partition of the empty set into no parts allows us to use our recurrence to compute <m>S(1,1)</m>.  This makes our recurrence valid for all nonnegative values of <m>k</m> and <m>n</m>.
           </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
+      </solution>
+    </activity>
+
+
+    <activity xml:id="sandwiches">
+      <statement>
           <p>
             Extend Stirling's triangle enough to allow you to answer the
             following question and answer it. (Don't fill in the rows all the way;
@@ -164,13 +177,20 @@
             into the lunch bags.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+
+
+      <activity>
         <statement>
           <p>
             The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more realistic question; in how many ways may the caterer distribute the nine sandwich's into three identical bags so that each bag gets exactly three? Answer this question. (Hint, what if the question asked about six sandwiches and two distinct bags? How does having identical bags change the answer?)
           </p>
         </statement>
+        <hint>
+          <p>
+            What if the question asked about six sandwiches and two distinct bags? How does having identical bags change the answer?
+          </p>
+        </hint>
         <solution>
           <p>
             <m>\binom{9}{3}\binom{6}{3}\binom{3}{3}/3!</m>. First we choose
@@ -178,24 +198,50 @@
             bag 3. However, it doesn't matter which bags the sandwiches
             are in so we have counted each partition <m>3!</m> times.
           </p>
-        </solution>
-      </task>
+      </solution>
     </activity>
 
+
+    <activity category="essential for this or the next section">
+      <statement>
+        <p>
+          What is <m>S(k,k-1)</m>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What are the possible sizes of parts?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          If a partition has <m>k-1</m> parts, then one part has two elements, so once we choose those two elements from the <m>k</m> elements, we are done.  Therefore <m>S(k,k-1) = \binom{k}{2}</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+
     <activity xml:id="partitionsgivenpartsize" category="essential">
-      <task>
         <statement>
           <p>
             In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence <m>k_1,k_2,\ldots,k_n</m> is called the <term>type vector</term> of the partition.<index><main>partition of a set</main><sub>type vector</sub></index><index><main>type vector of a partition of a set</main></index>
           </p>
         </statement>
+        <hint>
+          <p>
+        Suppose we make a list of the <m>k</m> items. We take the first <m>k_1</m> elements to be the blocks of size 1. How many elements do we need to take to get <m>k_2</m> blocks of size two? Which elements does it make sense to choose for this purpose?
+          </p>
+        </hint>
         <solution>
           <p>
             <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m>. We can make a list in <m>n!</m> ways, and then break it into first <m>k_1</m> blocks of size 1, then <m>k_2</m> blocks of size 2, <m>k_3</m> blocks of size 3 up to <m>k_n</m> blocks of size <m>n</m>. But then we realize that we get the same partition if we permute the <m>i!</m> elements of a block of size <m>i</m> and we get the same partition if we permute the <m>k_i</m> blocks of size <m>i</m> so we apply the quotient principle.
           </p>
         </solution>
-      </task>
-      <task>
+    </activity>
+
+
+    <activity category="summary">
         <statement>
           <p>
             Describe how to compute <m>S(n,k)</m> in terms of quantities given by the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
@@ -206,15 +252,19 @@
             We can find <m>S(n,k)</m> by summing <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity category="interesting">
       <statement>
         <p>
-          Find a recurrence similar to the one in <xref ref="secondstirlingrecurrence">Problem</xref> for the Lah numbers <m>L(k,n)</m>.
+          Find a recurrence for the Lah numbers <m>L(k,n)</m> similar to the one in <xref ref="secondstirlingrecurrence">Problem</xref>.
         </p>
       </statement>
+      <hint>
+        <p>
+      To see how many broken permutations of a <m>k</m> element set into <m>n</m> parts do not have <m>k</m> is a part by itself, ask yourself how many broken permutations of <m>[7]</m> result from adding 7 to the one of the two permutations in the broken permutation <m>\{14, 2356\}</m>.
+        </p>
+      </hint>
       <solution>
         <p>
           <m>L(k,n)</m> is the number of broken permutations of a
@@ -229,13 +279,11 @@
 
     <activity xml:id="BellNumberIntro" category="essential for this or the next section">
       <p>
-        (Relevant in <xref ref="expogenfun" autoname="yes" />.) The total number of
-        partitions of a
-        <m>k</m>-element set is denoted by
-        <m>B(k)</m> and is called the <m>k</m>-th <em>Bell number</em><index><main>Bell
-        Number</main></index><index><main>partitions of a set</main><sub>number of</sub></index>. Thus
-        <m>B(1)=1</m> and
-        <m>B(2) =2</m>.
+        (Relevant in <xref ref="expogenfun" autoname="yes" />.) The total number
+        of partitions of a <m>k</m>-element set is denoted by <m>B(k)</m> and is
+        called the <m>k</m>-th <em>Bell number</em><index><main>Bell
+        Number</main></index><index><main>partitions of a set</main><sub>number
+        of</sub></index>. Thus <m>B(1)=1</m> and <m>B(2) =2</m>.
       </p>
       <task>
         <statement>
@@ -253,6 +301,7 @@
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -260,6 +309,11 @@
             <m>n\lt  k</m> and prove your formula correct in as many ways as you can.
           </p>
         </statement>
+        <hint>
+          <p>
+        Here it is helpful to think about what happens if you delete the entire block containing <m>k</m> rather than thinking about whether <m>k</m> is in a block by itself or not.
+          </p>
+        </hint>
         <solution>
           <p>
             If we delete the block containing <m>k</m>, we get a partition of
@@ -275,6 +329,7 @@
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -298,6 +353,9 @@
     </activity>
   </subsection>
 
+
+
+
   <subsection>
     <title>Stirling Numbers and onto functions</title>
     <activity category="motivation">
@@ -306,6 +364,13 @@
           Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does the partition have if <m>f</m> is onto? How is the number of functions from a <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be as precise in your answer as you can.<index><main>function</main><sub>onto!and Stirling Numbers</sub></index><index><main>onto function</main><sub>counting</sub></index>
         </p>
       </statement>
+      <hint>
+        <p>
+      You can think of a function as assigning values to the blocks of its
+      partition. If you permute the values assigned to the blocks, do you always
+      change the function?
+        </p>
+      </hint>
       <solution>
         <p>
           If <m>f</m> is onto, the number of blocks of the partition is <m>n</m>. The number of onto functions from a <m>k</m>-element set onto an <m>n</m>-element set is <m>S(k,n)n!</m>, because we have a one-to-one function from the blocks to the <m>n</m>-element set.
@@ -313,12 +378,43 @@
       </solution>
     </activity>
 
+
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          How many labeled trees on <m>n</m> vertices have exactly 3 vertices of degree one?  Note that this problem has appeared before in <xref ref="InductionRecursion">Chapter</xref>.
+        </p>
+      </statement>
+
+      <hint>
+        <p>
+          The Pr&#xfc;fer code of a labeled tree is a sequence of <m>n-2</m> entries that must be chose from the vertices that do not have degree 1. The sequence can be
+          though of as a function from the set <m>[n-2]</m> to the set of vertices that do not have degree 1. What is special about this function?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          There are <m>\binom{n}{3}</m> ways to choose the three vertices of degree 1.  The remaining <m>n-3</m> vertices must appear in the Pr&#xfc;fer code for the tree.  We can think of the Pr&#xfc;fer code as a function from the <m>n-2</m> places of the code onto the <m>n-2</m> remaining vertices, so that there are <m>S(n-2, n-3)(n-3)!</m> possible Pr&#xfc;fer codes.  Thus we have <m>\binom{n}{3}\binom{n-2}{2}(n-3)! = n!(n-2)(n-3)/12</m> labeled trees on <m>n</m> vertices.
+        </p>
+      </solution>
+    </activity>
+
+
+
+
+
     <activity xml:id="Stirlingfalling" category="essential">
       <statement>
         <p>
           Each function from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m> is a function from <m>K</m> onto <em>some</em> subset of <m>N</m>. If <m>J</m> is a subset of <m>N</m> of size <m>j</m>, you know how to compute the number of functions that map onto <m>J</m> in terms of Stirling numbers. Suppose you add the number of functions mapping onto <m>J</m> over all possible subsets <m>J</m> of <m>N</m>. What simple value should this sum equal? Write the equation this gives you.
         </p>
       </statement>
+      <hint>
+        <p>
+      When you add the number of functions mapping onto <m>J</m> over all possible subsets <m>J</m> of <m>N</m>, what is the set of functions whose size you are computing?
+        </p>
+      </hint>
       <solution>
         <p>
           The sum should equal the number of functions, <m>n^k</m>. Thus
@@ -365,18 +461,29 @@
     </activity>
 
     <activity category="essential">
-      <task>
         <statement>
           <p>
-            How many functions are there from a <m>k</m>-element set <m>K</m> to a set <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of <m>K</m> for each <m>i</m> from 1 to <m>n</m>? This number is called a <em>multinomial coefficient</em><index><main>multinomial coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
+            In how many ways may we label the elements of a <m>k</m>-element set with <m>n</m> distinct labels (numbered 1 through <m>n</m>) so that label <m>i</m> is used <m>j_i</m> times?
+            (If we think of the labels as <m>y_1, y_2, \ldots, y_n</m>, then we can rephrase this question as follows.  How many functions are there from a <m>k</m>-element set <m>K</m> to a set <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of <m>K</m>?)
+            This number is called a <term>multinomial coefficient</term><index><main>multinomial coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
             <me>
               \binom{k}{j_1,j_2,\ldots, j_n}.
             </me>
           </p>
         </statement>
+        <hint>
+          <p>
+        What if the <m>j_i</m>'s don’t add to <m>k</m>?
+          </p>
+        </hint>
+        <hint>
+          <p>
+        Think about listing the elements of the <m>k</m>-element set and labeling the first <m>j_1</m> elements with label number 1.
+          </p>
+        </hint>
         <solution>
           <p>
-            <m>\binom{k}{j_1,j_2,\ldots, j_n} =
+            If the <m>j_i</m>'s don't add to <m>k</m>, it is zero.  Otherwise <m>\binom{k}{j_1,j_2,\ldots, j_n} =
             \frac{k!}{j_1!j_2!\cdots j_n!}</m>. We get this either as the
             product of binomial coefficients
             <me>
@@ -385,20 +492,51 @@
             or more elegantly, by lining up the elements of the domain in <m>k!</m> ways, taking the first <m>j_1</m> elements to <m>y_1</m>, the next <m>j_2</m> elements to <m>y_2</m> and so on.  However the order of the <m>j_i</m> elements that go to <m>y_i</m> is irrelevant, so <m>j_1!j_2!\cdots j_n!</m> lists all correspond to the same function, giving us <m>\frac{k!}{j_1!j_2!,\cdots j_n!}</m> functions.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+
+
+      <activity>
+        <statement>
+          <p>
+            Explain how to compute the number of functions from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m> by using multinomial coefficients.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            The sum principle will help here.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            Add the multinomial coefficients <m>\binom{k}{j_1,j_2,\ldots,j_n}</m> over all possible nonnegative values of the <m>j_i</m>'s that add to <m>k</m>.  To see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and apply the definition of multinomial coefficients.
+          </p>
+        </solution>
+      </activity>
+
+
+
+
+    <activity>
         <statement>
           <p>
             Explain how to compute the number of functions from a <m>k</m>-element set <m>K</m> onto an <m>n</m>-element set <m>N</m> by using multinomial coefficients.
           </p>
         </statement>
+        <hint>
+          <p>
+        How are the relevant <m>j_i</m>'s in the multinomial coefficients you use here different from the <m>j_i</m>'s in the previous problem.
+          </p>
+        </hint>
         <solution>
           <p>
             Add the multinomial coefficients <m>\binom{k}{j_1,j_2,\ldots,j_n}</m> in which each <m>j_i</m> is different from zero. To see why, let <m>N=\{y_1,y_2,\ldots,y_n\}</m> and note that we are counting functions that send at least one element of <m>K</m> to each element <m>y_i</m>.
           </p>
         </solution>
-      </task>
     </activity>
+
+
+
+
 
     <activity category="essential">
       <statement>
@@ -408,6 +546,12 @@
           the <em>multinomial theorem</em>.
         </p>
       </statement>
+      <hint>
+        <p>
+          Think about how binomial coefficients relate to expanding a power of a binomial and note that the binomial coefficient <m>\binom{n}{k}</m> and the multinomial coefficient <m>\binom{n}{k,n-k}</m> are the same.
+        </p>
+      </hint>
+
       <solution>
         <p>
           When we use the distributive law to multiply out <m>(x_1+x_2+\cdots +x_n)^k</m>, we will get a sum of a bunch of terms of the form <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> where <m>i_1+i_2+\cdots+ i_n=k</m>.  The terms with a given sequence <m>i_1,i_2,\ldots, i_n</m> of exponents will arise from choosing, as we apply the distributive law over and over again, <m>x_1</m> from <m>i_1</m> of the factors, <m>x_2</m> from <m>i_2</m> of the factors, and so on. Thus the number of terms <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the number of ways to label <m>i_1</m> of the factors with a 1, <m>i_2</m> of the factors with a 2, <ellipsis />, and <m>i_n</m> of the factors with an <m>n</m>. The number of ways to do this is a multinomial coefficient, as we now explain. This labeling gives us a function from <m>[k]</m> to <m>[n]</m> as follows. If factor <m>i</m> is labelled <m>j</m> we let <m>f(i) =j</m>. Further each function <m>f</m> from <m>[k]</m> to <m>[n]</m> gives us that maps <m>i_j</m> elements of <m>[k]</m> to <m>j</m> will give us such a labelling. Thus the coefficient of <m>x_1^{i_1}x_2^{i_2}\cdots x_n^{i_n}</m> will be the multinomial coefficient <m>\binom{k}{i_1,i_2,\ldots, i_n}</m>.
@@ -419,66 +563,73 @@
   <subsection>
     <title>Stirling Numbers and bases for polynomials</title>
     <activity xml:id="powersfromfalling" category="essential for this or the next section">
+      <task>
       <statement>
         <p>
-          Find a way to express <m>n^k</m> in terms of <m>k^{\underline{j}}</m> for appropriate values <m>j</m>. You may use Stirling numbers if they help you. Notice that <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming <m>n</m> does), just as <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain why your formula is correct.
+          Find a way to express <m>n^k</m> in terms of <m>k^{\underline{j}}</m> for appropriate values <m>j</m>. You may use Stirling numbers if they help you.
         </p>
       </statement>
+      <hint>
+        <p>
+      We have related Stirling numbers to powers <m>n^k</m>. How are binomial coefficients related to falling factorial powers?
+        </p>
+      </hint>
+
       <solution>
         <p>
-          In <xref ref="Stirlingfalling">Problem</xref>, we saw that <m>\sum_{j=0}^n
-          \binom{n}{j}S(k,j)j! = n^k</m>. Using the relationship between binomial
-          coefficients and falling factorials, we may rewrite this as
-          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>. This expresses <m>n^k</m>
-          in terms of <m>k^{\underline{j}}</m>. To be precise, we define
-          <m>x^{\underline{j}}</m> to be <m>x(x-1)\cdots (x-j+1)</m>. At first glance it
-          looks like we could express <m>x^{\underline{j}}</m> in terms of powers of
-          <m>x</m> by simply substituting <m>x</m> for <m>n</m> in the equation <m>\sum_{j=0}^n
-          n^{\underline{j}}S(k,j) = n^k</m>. However this gives us <m>\sum_{j=0}^x
-          x^{\underline{j}}S(k,j) = x^k</m>, and we have never defined what we mean
-          by a sum whose upper limit is a variable <m>x</m>. Thus we need to examine
-          the equation <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m> to see if we
-          can replace the <m>n</m> that is the upper limit of the sum with something
-          else. Notice that
-          <m>S(k,j)=0</m> when <m>j>k</m>. This means that if <m>k\le j</m>, then <m>\sum_{j=0}^n
+          In <xref ref="Stirlingfalling">Problem</xref>, we saw that
+          <m>\sum_{j=0}^n \binom{n}{j}S(k,j)j! = n^k</m>. Using the relationship
+          between binomial coefficients and falling factorials, we may rewrite
+          this as <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>. This
+          expresses <m>n^k</m> in terms of <m>k^{\underline{j}}</m>.
+        </p>
+      </solution>
+    </task>
+
+    <task>
+      <statment>
+        <p>
+          Notice that <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming <m>n</m> does), just as <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain why your formula is correct.
+        </p>
+      </statment>
+      <hint>
+        <p>
+      In the equation <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>, we might try substituting <m>x</m> for <m>n</m>.
+      However we don’t know what <m>\sum_{j=0}^x</m> means when <m>x</m> is a variable. Is there anything other than <m>n</m> that makes a suitable upper limit for the sum? (Think about what you know about <m>S(k,j)</m>.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          To be precise, we define <m>x^{\underline{j}}</m> to be
+          <m>x(x-1)\cdots (x-j+1)</m>. At first glance it looks like we could
+          express <m>x^{\underline{j}}</m> in terms of powers of <m>x</m> by
+          simply substituting <m>x</m> for <m>n</m> in the equation
+          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>. However this gives
+          us <m>\sum_{j=0}^x x^{\underline{j}}S(k,j) = x^k</m>, and we have
+          never defined what we mean by a sum whose upper limit is a variable
+          <m>x</m>. Thus we need to examine the equation <m>\sum_{j=0}^n
+          n^{\underline{j}}S(k,j) = n^k</m> to see if we can replace the
+          <m>n</m> that is the upper limit of the sum with something else.
+          Notice that <m>S(k,j)=0</m> when <m>j>k</m>. This means that if
+          <m>k\le j</m>, then <m>\sum_{j=0}^n
           n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)</m>.
-          Notice also that <m>n^{\underline{j}}= n(n-1)\cdots(n-j+1)</m> is zero when
-          <m>j>n</m> because one of its factors is zero then. This implies that if
-          <m>k>j</m>, then <m>\sum_{j=0}^n
+          Notice also that <m>n^{\underline{j}}= n(n-1)\cdots(n-j+1)</m> is zero
+          when <m>j>n</m> because one of its factors is zero then. This implies
+          that if <m>k>j</m>, then <m>\sum_{j=0}^n
           n^{\underline{j}}S(k,j)=\sum_{j=0}^k n^{\underline{j}}S(k,j)</m>.
-          Therefore, regardless of the relative size of <m>k</m> and <m>n</m>, we have
-          that
-          <m>\sum_{j=0}^n n^{\underline{j}}S(k,j)=\sum_{j=0}^k
+          Therefore, regardless of the relative size of <m>k</m> and <m>n</m>,
+          we have that <m>\sum_{j=0}^n n^{\underline{j}}S(k,j)=\sum_{j=0}^k
           n^{\underline{j}}S(k,j)</m>. Therefore
-          <men xml:id="changeupperlimit" >
-            \sum_{j=0}^k
-            n^{\underline{j}}S(k,j)=n^k.
-          </men>
+          <men xml:id="changeupperlimit">
+          \sum_{j=0}^k n^{\underline{j}}S(k,j)=n^k. </men>
         </p>
 
         <p>
-          It
-          makes sense to write the polynomial
-          <m>\sum_{j=0}^k
-          x^{\underline{j}}S(k,j)</m>; this is simply a polynomial of degree <m>k</m> in
-          the variable <m>x</m>. The expression <m>\sum_{j=0}^k
-          x^{\underline{j}}S(k,j)-x^k</m> is also a polynomial in <m>x</m>, but it
-          might not be of degree <m>k</m> since we are subtracting a degree <m>k</m> term
-          from a degree <m>k</m> polynomial. In fact for every positive integer
-          value <m>n</m> of <m>x</m>, this polynomial is zero. That is, <m>\sum_{j=0}^k
-          n^{\underline{j}}S(k,j)-n^k=0</m>, which is just a restatement of
-          <xref ref="changeupperlimit">Equation</xref>. But it is a fact of algebra that the
-          number of solutions of a nontrivial polynomial equation is no more
-          than the degree of the polynomial. Since the polynomial equation
-          <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k</m> has infinitely many
-          different solutions, it must be a trivial equation; that is
-          <m>\sum_{j=0}^k
-          x^{\underline{j}}S(k,j)-x^k</m> must be zero for every real (and even
-          every complex) number <m>x</m>. Thus <m>\sum_{j=0}^k
-          x^{\underline{j}}S(k,j)=x^k</m>, and we have expressed <m>x^k</m> in terms of
-          <m>x^{\underline{j}}</m> for <m>j\le k</m>.
+            It makes sense to write the polynomial <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)</m>; this is simply a polynomial of degree <m>k</m> in the variable <m>x</m>. The expression <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k</m> is also a polynomial in <m>x</m>, but it might not be of degree <m>k</m> since we are subtracting a degree <m>k</m> term from a degree <m>k</m> polynomial. In fact for every positive integer value <m>n</m> of <m>x</m>, this polynomial is zero. That is, <m>\sum_{j=0}^k n^{\underline{j}}S(k,j)-n^k=0</m>, which is just a restatement of  <xref ref="changeupperlimit">Equation</xref>. But it is a fact of algebra that the number of solutions of a nontrivial polynomial equation is no more than the degree of the polynomial.
+            Since the polynomial equation <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k</m> has infinitely many different solutions, it must be a trivial equation; that is <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)-x^k</m> must be zero for every real (and even every complex) number <m>x</m>. Thus <m>\sum_{j=0}^k x^{\underline{j}}S(k,j)=x^k</m>, and we have expressed <m>x^k</m> in terms of <m>x^{\underline{j}}</m> for <m>j\le k</m>.
         </p>
       </solution>
+    </task>
     </activity>
 
     <p>
@@ -505,6 +656,11 @@
           Show that every power of <m>x+1</m> is expressible as a sum of numerical multiples of powers of <m>x</m>. Now show that every power of <m>x</m> (and thus every polynomial in <m>x</m>) is a sum of numerical multiples (some of which could be negative) of powers of <m>x+1</m>. This means that the powers of <m>x+1</m> are a basis for the space of polynomials as well. Describe the change of basis coefficients that we use to express the binomial powers <m>(x+1)^n</m> in terms of the ordinary <m>x^j</m> explicitly. Find the change of basis coefficients we use to express the ordinary powers <m>x^n</m> in terms of the binomial powers <m>(x+1)^k</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          For the last question, you might try taking advantage of the fact that <m>x = x + 1 - 1</m>.
+        </p>
+      </hint>
       <solution>
         <p>
           We know that
@@ -518,7 +674,7 @@
           How do we express powers of <m>x</m> in terms of powers of <m>x+1</m>? Some experimentation would help us guess how to do so; however there is a really nice trick that also isn't hard to see. Namely, we can write
           <md>
             <mrow>x^n =(x+1-1)^n= [(x+1) -1]^n =\amp  \sum_{i=0}^n \binom{n}{i}(x+1)^{n-i}(-1)^i</mrow>
-            <mrow> =\amp 
+            <mrow> =\amp
             \sum_{i=0}^n \binom{n}{i}(x+1)^i(-1)^{n-i}</mrow>
           </md>
         </p>
@@ -534,7 +690,6 @@
     </activity>
 
     <activity xml:id="Stirlingfirst" category="essential for this or the next section, and interesting">
-      <task>
         <statement>
           <p>
             By multiplication, we can see that every falling factorial
@@ -556,6 +711,16 @@
             terms of <m>s(k-1,n-1)</m> and <m>s(k-1,n)</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+        What does induction have to do with <xref ref="stirling1">Equation</xref>?
+          </p>
+        </hint>
+        <hint>
+          <p>
+            What could you assume inductively about <m>x^{\underline{k-1}}</m> if you were trying to prove <m>x^{\underline{k}} = \sum_{n=0}^k s(k,n)x^n</m>?
+          </p>
+        </hint>
         <solution>
           <p>
             <xref ref="stirling1">Equation</xref> is effectively the inductive step
@@ -576,8 +741,10 @@
             <m>s(k,n) = s(k-1,n-1) -(k-1)s(k-1,n)</m>, for <m>n</m> between 1 and <m>k-1</m>..
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+
+
+      <activity>
         <statement>
           <p>
             Write down the rows of Stirling's triangle of the first kind
@@ -678,7 +845,6 @@
             </row>
           </tabular>
         </solution>
-      </task>
     </activity>
 
     <p>
@@ -704,10 +870,14 @@
       <task>
         <statement>
           <p>
-            Find a recurrence
-            for <m>b(k,n)</m>.
+            Find a recurrence for <m>b(k,n)</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+        There is a solution for this problem similar to the solution to <xref ref="Stirlingfirst">Problem</xref>.
+          </p>
+        </hint>
         <solution>
           <md>
             <mrow> \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
@@ -737,13 +907,19 @@
           </p>
         </solution>
       </task>
+
+
       <task>
         <statement>
           <p>
-            Find a formula for <m>b(k,n)</m> and prove the correctness of what you
-            say in as many ways as you can.
+            Find a formula for <m>b(k,n)</m> and prove the correctness of what you say in as many ways as you can.
           </p>
         </statement>
+        <hint>
+          <p>
+            Is the recurrence you got familiar?
+          </p>
+        </hint>
         <solution>
           <p>
             We will answer the next part of the problem here! The
@@ -779,6 +955,9 @@
           </p>
         </solution>
       </task>
+
+
+
       <task>
         <statement>
           <p>
@@ -794,6 +973,7 @@
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
@@ -802,6 +982,19 @@
             <m>x^{\overline{n}}</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            Show that <m>(-x)^{\underline{k}} = (-1)^k x^{\overline{k}}</m> and <m>(-x)^{\overline{k}} = (-1)^k x^{\underline{k}}</m>.
+          </p>
+        </hint>
+        <hint>
+          <p>
+        The first hint lets you write an equation for <m>(-1)^k x^{\underline{k}}</m> as a rising factorial of
+        something else and then use what you know about expressing rising factorials
+        in terms of falling factorials, after which you have to convert back to factorial
+        powers of <m>x</m>.
+          </p>
+        </hint>
         <solution>
           <p>
             There are several ways of finding this relationship, but the
