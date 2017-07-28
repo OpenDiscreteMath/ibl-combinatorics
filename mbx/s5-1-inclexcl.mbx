@@ -46,6 +46,11 @@
           <m>A\cap B</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          Try drawing a Venn Diagram.
+        </p>
+      </hint>
       <solution>
         <p>
           <m>|A\cup B|=|A| + |B| - |A\cap B|</m>.
@@ -81,11 +86,16 @@
     <activity xml:id="threesetintersection" category="essential">
       <statement>
         <p>
-          Give a formula for the size of <m>A_1\cup A_2\cup A_3</m> in terms of
-          the sizes of <m>A_1</m>, <m>A_2</m>, <m>A_3</m> and the intersections of these
+          Give a formula for the size of <m>A\cup B\cup C</m> in terms of
+          the sizes of <m>A</m>, <m>B</m>, <m>C</m> and the intersections of these
           sets.
         </p>
       </statement>
+      <hint>
+        <p>
+          Try drawing a Venn Diagram.
+        </p>
+      </hint>
       <solution>
         <p>
           <m>|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
@@ -184,6 +194,7 @@
 
     <activity xml:id="hatcheck" category="essential">
       <statement>
+        <p> TODO: Break this up!</p>
         <p>
           A group of <m>n</m> students goes to a restaurant carrying backpacks.
           The manager invites everyone to check their backpack at the check desk and
@@ -199,6 +210,16 @@
           own backpack?
         </p>
       </statement>
+
+      <hint>
+        <p>
+      For part b: For each pair of students (say Mary and Jim, for example) how big is the set
+      of backpack distributions in which the students in this pair get the correct
+      backpack. What does the question have to do with unions or intersections of
+      sets. Keep on increasing the number of students for which you ask this kind
+      of question.
+        </p>
+      </hint>
       <solution>
         <p>
           First we compute the number of ways to pass out the
@@ -515,6 +536,13 @@
             children so that no child gets more than three apples?
           </p>
         </statement>
+        <hint>
+          <p>
+        Notice that it is straightforward to figure out how many ways we may pass
+        out the apples so that child <m>i</m> gets five or more apples: give five apples to
+        child <m>i</m> and then pass out the remaining apples however you choose. And if  we want to figure out how many ways we may pass out the apples so that a given set <m>C</m> of children each get five or more apples, we give five to each child in <m>C</m> and then pass out the remaining <m>k-5|C|</m> apples however we choose.
+          </p>
+        </hint>
         <solution>
           <p>
             Let property <m>i</m> be <q>Child <m>i</m> gets four or more apples.</q> Then
