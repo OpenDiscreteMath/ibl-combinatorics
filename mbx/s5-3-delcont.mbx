@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_inclexcl-delcont" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Deletion-Contraction and the Chromatic Polynomial</title>
+
+    <activity xml:id="chrompolydel_cont" category="interesting">
+        <statement>
+        <p>
+          In <xref ref="InductionRecursion">Chapter</xref> we introduced the deletion-contraction
+          recurrence<index><main>deletion-contraction recurrence</main></index> for counting spanning
+          trees of a graph. Figure out how the chromatic polynomial of a graph is
+          related to those resulting from deletion of an edge <m>e</m> and from
+          contraction of that same edge <m>e</m>. Try to find a recurrence like the one
+          for counting spanning trees that expresses the chromatic polynomial of a
+          graph in terms of the chromatic polynomials of <m>G-e</m> and <m>G/e</m> for an
+          arbitrary edge <m>e</m>. Use this recurrence to give another proof that the
+          number of ways to color a graph with <m>x</m> colors is a polynomial function
+          of <m>x</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          One way to get a proper coloring of <m>G-e</m> is to start with a proper coloring of <m>G</m> and remove <m>e</m>. But there are other colorings of <m>G</m> that become proper when you remove <m>e</m>.
+        </p>
+      </hint>
+        <solution>
+        <p>
+          The number of colorings of <m>G-e</m> is equal to the number of proper
+          colorings of <m>G</m> plus the number of colorings of <m>G</m> that are proper except
+          for giving both ends of <m>e</m> the same color. But the number of colorings of
+          <m>G</m> that are proper except for giving both ends of <m>e</m> the same color is the
+          number of proper colorings of <m>G/e</m>. Therefore <m>\chi_{G-e}(x) =\chi_G(x)
+          -\chi_{G/e}(x)</m>. This gives us <m>\chi_G(x) = \chi_{G-e}(x)
+          -\chi_{G/e}(x)</m>. We can use this to prove inductively that <m>\chi_G(x)</m> is a
+          polynomial in <m>x</m>. If <m>G</m> has one vertex, then the number of ways to color
+          <m>G</m> properly with <m>x</m> colors is <m>x</m>. This is a polynomial in <m>x</m>. Now
+          suppose inductively that <m>G</m> has more than one vertex and whenever a graph <m>H</m>
+          has fewer vertices than
+          <m>G</m>, the function <m>\chi_H(x)</m> is a polynomial function in <m>x</m>. Then
+          <m>\chi_G(x)= \chi_{G-e}(x)-\chi_{G/e}(x)</m>, is a difference of of two polynomial
+          functions in <m>x</m>, so it is a polynomial function in <m>x</m>. Therefore by the
+          principle of mathematical induction, for all graphs <m>G</m> on a finite vertex
+          set, the number of ways to properly color <m>G</m> in <m>x</m> colors is a polynomial in
+          <m>x</m>.
+        </p>
+        </solution>
+      </activity>
+
+      <activity>
+        <statement>
+          <p>
+            Use the deletion-contraction recurrence to compute the
+            chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>. (You can
+            simplify your computations by thinking about the effect on the chromatic
+            polynomial of deleting an edge that is a loop, or deleting one of several
+            edges between the same two vertices.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If a graph has a loop it has no proper colorings. The graph in
+            <xref ref="del-cont">Figure</xref> has no loops and no multiple edges between two
+            vertices. The only way we could get a loop is by contracting one of several
+            multiple edges between two vertices, and the resulting graph would have no
+            contribution to the chromatic polynomial of the original graph. Thus whenever
+            a contraction gives us a graph with multiple edges between two vertices, we
+            can replace the multiple edges by one edge and go on with our computation from
+            there. The graphs we get when we delete and contract the edges <m>\{1,2\}</m> and
+            <m>\{2,3\}</m> are <m>(G-\{1,2\})-\{2,3\}</m>, <m>(G-\{1,2\})/\{2,3\}</m>,
+            <m>(G-\{2,3\})/\{1,2\}</m>, and <m>(G/\{2,3\})/\{1,2\}</m>. These are shown in the
+            following picture.
+          </p>
+          <figure xml:id="delete-contract">
+              <caption>Graphs obtained through deletions and contractions</caption>
+              <image width="95%" source="images/spantreeexerciseresult" />
+          </figure>
+            <p>The chromatic polynomial of a triangle is <m>x(x-1)(x-2)</m> because
+            for one vertex we have <m>x</m> colors, for a second we have <m>x-1</m>, and for the
+            third vertex, because it is adjacent to both of the other vertices, we have
+            <m>x-2</m> choices of colors. For a vertex of degree 1 there are <m>x-1</m> choices of
+            colors, those colors not used on the one vertex it is adjacent to. As we
+            mentioned, the extra edges do not change the chromatic polynomial, so we have
+            that the chromatic polynomial of <m>(G-\{1,2\})-\{2,3\}</m> is <m>x(x-1)^3(x-2)</m>, the
+            chromatic polynomial of <m>(G-\{1,2\})/\{2,3\}</m> is <m>x(x-1)^2(x-2)</m>, as is that of
+            <m>(G-\{2,3\})/\{1,2\}</m>, and the chromatic polynomial of <m>(G/\{2,3\})/\{1,2\}</m> is
+            <m>(x-1)(x-2)(x-3)</m>. Using the deletion-contraction recurrence, we get that
+            <md>
+              <mrow>\chi_G(x)  =\amp  \chi_{G-\{1,2\}}(x) - \chi_{G/\{1,2\}}(x)</mrow>
+              <mrow> =\amp
+              \chi_{G-\{1,2\}-\{2,3\}}(x)-\chi_{(G-\{1,2\})/\{2,3\}}(x)-
+              \chi_{(G/\{1,2\})-\{2,3\}}(x)</mrow>
+              <mrow>\amp +\amp  \chi_{G/\{1,2\}/\{2,3\}}(x)</mrow>
+              <mrow> =\amp  x(x-1)^3(x-2)-2x(x-1)^2(x-2) + x(x-1)(x-2)</mrow>
+              <mrow> =\amp  x(x-1)(x-2)(x^2-2x+1 +2x-2 +1)</mrow>
+              <mrow> =\amp  x^3(x-1)(x-2)</mrow>
+            </md>
+            for the chromatic polynomial of <m>G</m>.
+          </p>
+        </solution>
+      <figure xml:id="del-cont" >
+        <caption>A
+        graph.</caption>
+        <image width="73%" source="images/spantreeexercise" />
+      </figure>
+    </activity>
+
+    <activity category="interesting">
+      <task>
+        <statement>
+          <p>
+            In how many ways may you properly color the vertices of a path on
+            <m>n</m> vertices with
+            <m>x</m> colors? Describe any dependence of the chromatic polynomial of a path
+            on the number of vertices. In how many ways may you properly color the
+            vertices of a cycle on <m>n</m> vertices with
+            <m>x</m> colors? Describe any dependence of the chromatic polynomial of a
+            cycle on the number of vertices.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            To color the vertices of a path, start at one end. There are <m>x</m>
+            colors for that vertex, and <m>x-1</m> colors for each of the next <m>n-1</m>, since
+            each of them must be different from the preceding one. Thus the chromatic
+            polynomial of a path on <m>n</m> vertices is <m>x(x-1)^{n-1}</m>. The dependence on the
+            number of vertices appears in the exponent on <m>x-1</m>. If we use <m>C_n</m> to stand
+            for a path on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then
+            by the deletion-contraction recurrence, we may write
+            <md>
+              <mrow>\hspace{-.4 in}\chi_{C_n}(x)  =\amp
+              \chi_{P_n}(x)-\chi_{C_{n-1}}(x)</mrow>
+              <mrow> =\amp \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{C_{n-2}}(x)</mrow>
+              <mrow> =\amp
+              \chi_{P_n}(x)-\chi_{P_{n-1}}(x)+\chi_{P_{n-3}}(x)-
+              \cdots+(-1)^{n-3}(\chi_{P_3}(x)-\chi_{C_2}(x))</mrow>
+              <mrow> =\amp x(x-1)^{n-1}-x(x-1)^{n-2}+x(x-1)^{n-3}\cdots</mrow>
+              <mrow>\amp +\amp (-1)^{n-3}[x(x-1)^2-x(x-1)]</mrow>
+              <mrow> =\amp x(x-1)\sum_{i=0}^{n-2}(x-1)^i(-1)^{n-2-i}</mrow>
+              <mrow> =\amp x(x-1)(-1)^{n-2}\sum_{i=0}^{n-2}(1-x)^i</mrow>
+              <mrow> =\amp x(x-1)(-1)^{n-2}\frac{1-(1-x)^{n-1}}{1-(1-x)}</mrow>
+              <mrow> =\amp (x-1)[(x-1)^{n-1}+(-1)^n].</mrow>
+            </md>
+          </p>
+
+          <p>
+            Here the dependence on <m>n</m> is
+            interesting; effectively, we are taking <m>(x-1)</m> times the result of dropping
+            the constant term from <m>(x-1)^{n-1}</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            (Not tremendously hard.) In how many ways may you properly color the vertices of a tree on <m>n</m> vertices with <m>x</m> colors?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            One approach would be to try to guess the result by doing a bunch of
+            examples and use induction to prove you are right. If you try this,
+            what will you be able to use to make the induction step work? There
+            are other approaches as well.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            Color an arbitrary vertex; you have <m>x</m> choices for the color
+            of that vertex. No two vertices adjacent to it are adjacent
+            (otherwise we'd have a cycle), so for for each of them you have
+            <m>x-1</m> choices of colors. No two vertices adjacent to colored
+            vertices are adjacent to each other, nor is one of them adjacent to
+            two colored vertices (in either case you'd have a cycle), so for
+            each of them you'd have <m>x-1</m> colors. You can continue this
+            argument until all vertices are colored, so you have
+            <m>x(x-1)^{n-1}</m> ways to color the vertices.
+          </p>
+
+          <p>
+            You can also prove by induction that the chromatic polynomial of a
+            tree is <m>x(x-1)^{n-1}</m>. This is clearly true if there is one
+            vertex. Otherwise, choose a vertex of degree 1 in an <m>n</m>-vertex
+            tree and remove it. You may inductively assume that the chromatic
+            polynomial of the remaining tree is <m>x(x-1)^{n-2}</m>. Now there
+            are <m>x-1</m> choices for the color of the vertex you removed since
+            it has degree 1, and so the chromatic polynomial of the tree is
+            <m>x(x-1)^{n-1}</m>. There is also an inductive argument in which
+            you delete and contract an arbitrary edge.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>
+          What do you observe about the signs of the coefficients of the
+          chromatic polynomial of the graph in <xref
+          ref="del-cont">Figure</xref>? What about the signs of the coefficients
+          of the chromatic polynomial of a path? Of a cycle? Of a tree? Make a
+          conjecture about the signs of the coefficients of a chromatic
+          polynomial and prove it.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          not all powers of <m>x</m> appear, but the signs alternate as the power
+          of
+          <m>x</m> increases; that is, the sign of
+          <m>x^i</m> is opposite that of <m>x^{i+1}</m>. More precisely, if <m>c_i</m> is the
+          coefficient of <m>x^i</m>, then <m>(-1)^{n-i}c_i\ge 0</m>. To prove this, note it is
+          trivially true for a graph with no edges. Choose an edge <m>e</m> of
+          <m>G</m>. Then
+          <m>\chi_G(x) =
+          \chi_{G-e}(x)-\chi_{G/e}(x)</m>. In <m>G-e</m>, we may assume inductively that
+          <m>(-1)^{n-i}c'_i\ge0</m> and in <m>G-/e</m> we can assume inductively that
+          <m>c''_i(-1)^{n-1-i}\ge0</m>, where we use <m>c'_i</m> and <m>c''_i</m> as the coefficient of
+          <m>x^i</m> in <m>\chi_{G-e}(x)</m> and <m>\chi_{G/e}(x)</m>, respectively. Then <m>c_i=c'_i
+          -c''_i</m>, and
+          <me>
+            c_i(-1)^{n-i}=c'_i(-1)^{n-i}-c''_i(-1)^{n-i}=c'_i(-1)^{n-i}+c''_i(-1)^{n-1-i}
+            \ge0.
+          </me>
+        </p>
+
+        <p>
+          Therefore by the principle of mathematical induction, <m>c_i(-1)^i\ge0</m>
+          for all finite graphs.
+        </p>
+      </solution>
+    </activity>
+
+</section>
