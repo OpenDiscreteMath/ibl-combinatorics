@@ -154,13 +154,13 @@
       This kind of notation, consisting of an operator with a description
       underneath of the values of a dummy variable of interest to us, can be
       extended in many ways. For example
-      <md>
-        <mrow>\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
-        A_i|  =\amp  |A_1\cap A_2|+ |A_1\cap A_3|
-         +|A_1\cap A_4|\nonumber</mrow>
-        <mrow>\amp +\amp  |A_2\cap A_3|+
+      <mdn>
+        <mrow number="no">\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
+        A_i|  \amp =  |A_1\cap A_2|+ |A_1\cap A_3|
+         +|A_1\cap A_4|</mrow>
+        <mrow xml:id="notationsolution"> \amp +  |A_2\cap A_3|+
         |A_2\cap A_4| +|A_3\cap A_4|.</mrow>
-      </md>
+      </mdn>
     </p>
 
     <activity xml:id="inclusion-exclusionunion" category="essential">
@@ -278,7 +278,7 @@
         </solution>
       </task>
 
-      <task>
+      <task xml:id="hatcheckprobpart">
         <statement>
           <p>
             What is the probability that no student gets his or her own backpack?
@@ -386,10 +386,10 @@
           By the inductive hypothesis, we may apply the principle of inclusion and exclusion to the first and last term in the last line above, and can rewrite it as
           <md>
           <mrow>
-          \sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right| + |A_n| - sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \cap A_n \right|
+          \sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right| + |A_n| - \sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \cap A_n \right|
           </mrow>
           <mrow>
-          = sum_{S:S\subseteq [n],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right|,
+          = \sum_{S:S\subseteq [n],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right|,
           </mrow>
           </md>
           where the last line follows because every nonempty subset of <m>[n]</m> is either (1) a nonempty subset of <m>[n-1]</m>, (2) a nonempty subset of <m>[n-1]</m> with  <m>n</m> added in, or (3) the set <m>\{n\}</m>.  Thus by the principle of mathematical induction, the formula for the principle of inclusion and exclusion holds for all nonnegative integers <m>n</m>.
@@ -397,105 +397,117 @@
       </solution>
     </activity>
 
-<p>TODO: Finish adding this section</p>
 
-  <activity category="interseting">
+
+    <activity category="interseting">
+      <p>
+        We get a more elegant proof if we ask for a picture enumerator for <m>A_1 \cup A_2 \cup \cdots \cup A_n</m>.  so let us assume <m>A</m> is a set with a picture function <m>P</m> defined on it and that each set <m>A_i</m> is a subset of <m>A</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            By thinking about how we got the formula for the size of a union, write down instead a conjecture for the picture enumerator of a union.  You could use notation like <m>E_P(\bigcap_{i:i\in S} A_i)</m> for the picture enumerator of the intersection of the sets <m>A_i</m> for <m>i</m> in a subset of <m>S</m> of <m>[n]</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>E_P(\bigcup_{i=1}^n A_i) =  \sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1}E_P(\bigcap_{i:i\in S}A_i)</m>.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>x \in \bigcup_{i=1}^n A_i</m>, what is the coefficient for <m>P(x)</m> in (the inclusion-exclusion side of) your formula for <m>E_P(\bigcup_{i=1}^n A_i)</m>?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Let <m>T</m> be the set of all <m>i</m> such that <m>x \in A_i</m>. In terms of <m>x</m>, what is different about the <m>i</m> in <m>T</m> and those not in <m>T</m>?
+          </p>
+        </hint>
+        <hint>
+          <p>
+            You may come to a point where the binomial theorem would be helpful.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            Let <m>T</m> be the set of all <m>i</m> such that <m>x\in A_i</m>.  Then <m>x \in A_i</m> for exactly those <m>i \in T</m>.  Note that <m>|T| \gt 0</m> because <m>x</m> is in at least one <m>A_i</m>.  Then the coefficient of <m>P(x)</m> is <m>\sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1}</m>.  But
+            <me>
+              \sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1} = -\sum_{i=1}^T\binom{|T|}{i}(-1)^i = -[(1-1)^{|T|} - 1] = 0+1 = 1.
+            </me>
+            Thus if <m>x \in E_P(\bigcup_{i=1}^n A_i)</m>, then the coefficient of <m>P(x)</m> in <m>E_P(\bigcup_{i=1}^n A_i)</m> is 1.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>x \notin \bigcup_{i=1}^n A_i</m>, what is the coefficient of <m>P(x)</m> in (the inclusion-exclusion side of) your formula for <m>E_P(\bigcup_{i=1}^n A_i)</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>P(x)</m> is not in any of the enumerators <m>E_P(\bigcap_{i:i\in S} A_i)</m>, its coefficient is 0.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How have you proved your conjecture for the picture enumerator of the union of the sets <m>A_i</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have shown that <m>P(x)</m> appears in the right hand side of our formula with coefficeint 1 if it is in the union and with coefficient 0 otherwise.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How can you get the formula for the principle of inclusion and exclusion from your formula for the picture enumerator of the union?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Substitute 1 for the picture of each element <m>x</m>.  Then <m>E_P(\bigcap_{i:i \in S}A_i)</m> becausem <m>\left| \bigcap_{i:i \in S}A_i\right|</m>, and our formula follows.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="compunion">
+      <statement>
+        <p>
+          Frequently when we apply the principle of inclusion and exclusion, we will have a situation like that of part (d) of <xref ref="hatcheckprobpart">Problem</xref>.  That is, we will have a set <m>A</m> and subsets <m>A_1, A_2, \ldots, A_n</m> and we will want the size or the probability of the set of elements in <m>A</m> that are <em>not</em> in the union.  This set is known as the <term>complement</term> <index><main>complement</main></index> of the union of the <m>A_i</m>s in <m>A</m>, and is denoted by <m>A \setminus \bigcup_{i=1}^n A_i</m>, or if <m>A</m> is clear from context, by <m>\overline{\bigcup_{i=1}^n A_i}</m>.
+          Give the fomula for <m>\overline{\bigcup_{i=1}^n A_i}</m>.  The principle of inclusion and exclusion generall refers to both this formula and the one for the union.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since all the <m>A_i</m>s are subsets of <m>A</m>, one way to write this size is as <m>|A| - \sum_{S:S \subseteq [n], S \ne \emptyset}(-1)^{|S|-1} |\bigcap_{i:i \in S}A_i|</m>.  Letting <m>|A| = \left|\bigcap_{i:i \in \emptyset} A_i\right|</m>, we may write <m>\left|\overline{\bigcup_{i=1}^n A_i}\right| = \sum_{S:S \subseteq [n]} (-1)^{|S|}\left| \bigcap_{i:i\in S} A_i\right|</m>.
+        </p>
+      </solution>
+    </activity>
+
+
     <p>
-      We get a more elegant proof if we ask for a picture enumerator for <m>A_1 \cup A_2 \cup \cdots \cup A_n</m>.  so let us assume <m>A</m> is a set with a picture function <m>P</m> defined on it and that each set <m>A_i</m> is a subset of <m>A</m>.
+      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<footnote>
+      For those interested in logic and set theory, given a family of subsets <m>A_i</m> of a set <m>A</m>, we define <m>\bigcap_{i:i\in S}A_i</m> to be the set of all members <m>x</m> of <m>A</m> that are in <m>A_i</m> for all <m>i \in S</m>.  (Note that this allows <m>x</m> to be in some other <m>A_j</m>s as well.)  Then if <m>S = \emptyset</m>, our intersection consists of all members <m>x</m> of <m>A</m> that satisfy the statement <q>if <m>i\in \emptyset</m>, then <m>x \in A_i</m>.</q>
+      But since the hypothesis of the <q>if-then</q> statement is false, the statement itself is true for all <m>x \in A</m>.  Therefor <m>\bigcap_{i:i \in \emptyset}A_i = A</m>.
+      </footnote> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
     </p>
-    <task>
-      <statement>
-        <p>
 
-        </p>
-      </statement>
-      <solution>
-        <p>
+  </subsection>
+</section>
 
-        </p>
-      </solution>
-    </task>
-
-    <task>
-      <statement>
-        <p>
-
-        </p>
-      </statement>
-      <hint>
-        <p>
-          Let <m>T</m> be the set of all <m>i</m> such that <m>x \in A_i</m>. In terms of <m>x</m>, what is different about the <m>i</m> in <m>T</m> and those not in <m>T</m>?
-        </p>
-      </hint>
-      <hint>
-        <p>
-          You may come to a point where the binomial theorem would be helpful.
-        </p>
-      </hint>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
-    </task>
-
-    <task>
-      <statement>
-        <p>
-
-        </p>
-      </statement>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
-    </task>
-
-    <task>
-      <statement>
-        <p>
-
-        </p>
-      </statement>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
-    </task>
-
-    <task>
-      <statement>
-        <p>
-
-        </p>
-      </statement>
-      <solution>
-        <p>
-
-        </p>
-      </solution>
-    </task>
-  </activity>
-
-  <activity>
-    <statement>
-      <p>
-        Frequently when we apply...
-      </p>
-    </statement>
-    <solution>
-      <p>
-
-      </p>
-    </solution>
-  </activity>
-
-
-<p>
-  We can find a very elegan way of writing the formula ... FINISH.
-</p>
   <!-- <subsection>
 
 We will first
@@ -721,6 +733,3 @@ We will first
         </solution>
       </activity>
  -->
-
-  </subsection>
-</section>
