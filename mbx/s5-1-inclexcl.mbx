@@ -581,6 +581,22 @@
           each other.)
         </p>
       </statement>
+      <hint>
+        <p>
+          Start with two questions that can apply to any inclusion-exclusion
+          problem. Do you think you would be better off trying to compute the
+          size of a union of sets or the size of a complement of a union of
+          sets? What kinds of sets (that are conceivably of use to you) is it
+          easy to compute the size of? (The second question can be interpreted
+          in different ways, and for each way of interpreting it, the answer may
+          help you see something you can use in solving the problem.)
+        </p>
+      </hint>
+      <hint>
+        <p>
+      Suppose we have a set <m>S</m> of couples whom we want to seat side by side. We can think of lining up <m>|S|</m> couples and <m>2n − 2|S|</m> individual people in a circle.  In how many ways can we arrange this many items in a circle?
+        </p>
+      </hint>
       <solution>
         <p>
           Let Property <m>i</m> be that couple <m>i</m> sits together. We are
@@ -614,6 +630,11 @@
           table is determined once we seat one couple in that set.)
         </p>
       </statement>
+      <hint>
+        <p>
+          Think in terms of the sets <m>A_i</m> of arrangements of people in which couple <m>i</m> sits side-by-side. What does the union of the sets <m>A_i</m> have to do with the problem?
+        </p>
+      </hint>
       <solution>
         <p>
           We are going to consider arrangements of the couples alternating
@@ -728,6 +749,11 @@
           <m>S(k,n)</m>.<index><main>Stirling Number</main><sub>second kind</sub></index>
         </p>
       </statement>
+      <hint>
+        <p>
+      What does <xref ref="numontofun">Problem</xref> have to do with this question?
+        </p>
+      </hint>
       <solution>
         <p>
           Since the number of functions from <m>[k]</m> onto <m>[n]</m> is <m>S(k,n)n!</m>,
@@ -823,7 +849,7 @@
 
     <activity category="essential for this or the next section">
       <p>
-        Suppose we have a graph G with vertex set V and edge set <m>E</m>.
+        Suppose we have a graph <m>G</m> with vertex set <m>V</m> and edge set <m>E</m>.
         Suppose <m>F</m> is a subset of <m>E</m>. Suppose we have a set <m>C</m> of <m>c</m> colors
         with which to color the vertices.
       </p>
@@ -835,6 +861,11 @@
             two vertices of the same color?
           </p>
         </statement>
+        <hint>
+          <p>
+            For each edge in <m>F</m> to connect two vertices of the same color, we must have all the vertices in a connected component of the graph  with vertex set <m>V</m> and edge set <m>F</m> colored the same color.
+          </p>
+        </hint>
         <solution>
           <p>
             For each edge in <m>F</m> to connect two vertices of the same color, we
@@ -871,6 +902,11 @@
           <m>G</m> using colors in the set <m>C</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          How does the number you are trying to compute relate to the union of the sets <m>A_i</m>?
+        </p>
+      </hint>
         <solution>
           <p>
             <m>N_{\mbox{e} }(\emptyset)=\sum_{F:F\subseteq E}
@@ -895,10 +931,9 @@
     </p>
 
     <activity xml:id="chrompolydel_cont" category="interesting">
-      <task>
         <statement>
         <p>
-          In Chapter 2 we introduced the deletion-contraction
+          In <xref ref="InductionRecursion">Chapter</xref> we introduced the deletion-contraction
           recurrence<index><main>deletion-contraction recurrence</main></index> for counting spanning
           trees of a graph. Figure out how the chromatic polynomial of a graph is
           related to those resulting from deletion of an edge <m>e</m> and from
@@ -910,6 +945,11 @@
           of <m>x</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          One way to get a proper coloring of <m>G-e</m> is to start with a proper coloring of <m>G</m> and remove <m>e</m>. But there are other colorings of <m>G</m> that become proper when you remove <m>e</m>.
+        </p>
+      </hint>
         <solution>
         <p>
           The number of colorings of <m>G-e</m> is equal to the number of proper
@@ -931,9 +971,9 @@
           <m>x</m>.
         </p>
         </solution>
-      </task>
+      </activity>
 
-      <task>
+      <activity>
         <statement>
           <p>
             Use the deletion-contraction recurrence to compute the
@@ -984,7 +1024,6 @@
             for the chromatic polynomial of <m>G</m>.
           </p>
         </solution>
-      </task>
       <figure xml:id="del-cont" >
         <caption>A
         graph.</caption>
@@ -1040,32 +1079,40 @@
       <task>
         <statement>
           <p>
-            In how many ways may you properly color the vertices of a tree on
-            <m>n</m> vertices with
-            <m>x</m> colors?
+            (Not tremendously hard.) In how many ways may you properly color the vertices of a tree on <m>n</m> vertices with <m>x</m> colors?
           </p>
         </statement>
+        <hint>
+          <p>
+            One approach would be to try to guess the result by doing a bunch of
+            examples and use induction to prove you are right. If you try this,
+            what will you be able to use to make the induction step work? There
+            are other approaches as well.
+          </p>
+        </hint>
         <solution>
           <p>
-            Color an arbitrary vertex; you have <m>x</m> choices for the color of
-            that vertex. No two vertices adjacent to it are adjacent (otherwise we'd have
-            a cycle), so for for each of them you have <m>x-1</m> choices of colors. No two
-            vertices adjacent to colored vertices are adjacent to each other, nor is
-            one of them adjacent to two colored vertices (in either case you'd have a
-            cycle), so for each of them you'd have <m>x-1</m> colors. You can continue this
-            argument until all vertices are colored, so you have <m>x(x-1)^{n-1}</m> ways to
-            color the vertices.
+            Color an arbitrary vertex; you have <m>x</m> choices for the color
+            of that vertex. No two vertices adjacent to it are adjacent
+            (otherwise we'd have a cycle), so for for each of them you have
+            <m>x-1</m> choices of colors. No two vertices adjacent to colored
+            vertices are adjacent to each other, nor is one of them adjacent to
+            two colored vertices (in either case you'd have a cycle), so for
+            each of them you'd have <m>x-1</m> colors. You can continue this
+            argument until all vertices are colored, so you have
+            <m>x(x-1)^{n-1}</m> ways to color the vertices.
           </p>
 
           <p>
-            You can also prove by induction that the chromatic polynomial of a tree is
-            <m>x(x-1)^{n-1}</m>. This is clearly true if there is one vertex. Otherwise,
-            choose a vertex of degree 1 in an <m>n</m>-vertex tree and remove it. You may
-            inductively assume that the chromatic polynomial of the remaining tree is
-            <m>x(x-1)^{n-2}</m>. Now there are <m>x-1</m> choices for the color of the vertex you
-            removed since it has degree 1, and so the chromatic polynomial of the tree is
-            <m>x(x-1)^{n-1}</m>. There is also an inductive argument in which you delete and
-            contract an arbitrary edge.
+            You can also prove by induction that the chromatic polynomial of a
+            tree is <m>x(x-1)^{n-1}</m>. This is clearly true if there is one
+            vertex. Otherwise, choose a vertex of degree 1 in an <m>n</m>-vertex
+            tree and remove it. You may inductively assume that the chromatic
+            polynomial of the remaining tree is <m>x(x-1)^{n-2}</m>. Now there
+            are <m>x-1</m> choices for the color of the vertex you removed since
+            it has degree 1, and so the chromatic polynomial of the tree is
+            <m>x(x-1)^{n-1}</m>. There is also an inductive argument in which
+            you delete and contract an arbitrary edge.
           </p>
         </solution>
       </task>
@@ -1075,10 +1122,11 @@
       <statement>
         <p>
           What do you observe about the signs of the coefficients of the
-          chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>? What about
-          the signs of the coefficients of the chromatic polynomial of a path? Of
-          a cycle? Of a tree? Make a conjecture about the signs of the
-          coefficients of a chromatic polynomial and prove it.
+          chromatic polynomial of the graph in <xref
+          ref="del-cont">Figure</xref>? What about the signs of the coefficients
+          of the chromatic polynomial of a path? Of a cycle? Of a tree? Make a
+          conjecture about the signs of the coefficients of a chromatic
+          polynomial and prove it.
         </p>
       </statement>
       <solution>
