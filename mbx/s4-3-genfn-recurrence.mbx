@@ -26,8 +26,7 @@
             <me>
               \sum_{i=1}^\infty a_ix^i = (\sum_{i=0}^\infty x^i) -a_0
             </me>
-            and in the
-            right hand side, use the fact that
+            and in the right hand side, use the fact that
             <me>
               \sum_{i=1}^\infty a_{i-1}x^i = x\sum_{i=1}^\infty a_ix^{i-1}
               =x\sum_{j=0}^\infty a_jx^j =x\sum_{i=0}^\infty a_ix^i
@@ -36,7 +35,7 @@
             <m>j</m> for <m>i-1</m> to see explicitly how to change the limits of summation, a
             surprisingly useful trick) to rewrite the equation in terms of the power series
             <m>\sum_{i=0}^\infty a_ix^i</m>.  Solve the resulting equation for the power series
-            <m>\sum_{i=0}^\infty a_ix^i</m>.
+            <m>\sum_{i=0}^\infty a_ix^i</m>. You can save a lot of writing by using a variable like <m>y</m> to stand for the power series.
           </p>
         </statement>
         <solution>
@@ -79,6 +78,11 @@
             to deal with the kind of generating function that arises here.)
           </p>
         </statement>
+        <hint>
+            <p>
+                You may run into a product of the form <m>\sum_{i=0}^\infty a^ix^i\sum_{j=0}^\infty b^jx^j</m>. Note that in the product, the coefficient of <m>x^k</m> is <m>\sum_{i=0}^k a^ib^{k-i} = \sum_{i=0}^k \frac{a^i}{b^i}</m>. 
+            </p>
+        </hint>
         <solution>
             <p>
           <md>
@@ -92,13 +96,19 @@
             <mrow>\sum_{i=0}^\infty a_ix^i =\amp (a_0-1)\sum_{i=0}^\infty 3^ix^i +\sum_{i=0}^\infty
             2^ix^i\sum_{j=0}^\infty 3^jx^j</mrow>
           </md>
-            But<me>\displaystyle\sum_{i=0}^\infty
-            2^ix^i\sum_{j=0}^\infty 3^jx^j=
-            \sum_{k=0}^\infty
-            \sum_{i=0}^k 2^i3^{k-i}x^k=
-            \sum_{k=0}^\infty3^kx^k
-            \sum_{i=0}^k \frac{2^i}{3^i}=\\ \sum_{k=0}^\infty\frac{1-\left(\frac{2}{3}\right)^{k+1}}{1-\frac{2}{3}}3^kx^k=\sum_{k=0}^\infty
-            (3^{k+1}-2^{k+1})x^k</me>. Substituting this into the equation for
+          But
+          <md>
+              <mrow>\sum_{i=0}^\infty
+              2^ix^i\sum_{j=0}^\infty 3^jx^j\amp=
+              \sum_{k=0}^\infty
+              \sum_{i=0}^k 2^i3^{k-i}x^k=
+              \sum_{k=0}^\infty3^kx^k
+              \sum_{i=0}^k \frac{2^i}{3^i}
+              </mrow>
+              <mrow>\amp=\sum_{k=0}^\infty \frac{1-\left(\frac{2}{3}\right)^{k+1}}{1-\frac{2}{3}}3^kx^k =\sum_{k=0}^\infty
+              (3^{k+1}-2^{k+1})x^k
+              </mrow>
+          </md>. Substituting this into the equation for
             <m>\sum_{i=0}^\infty a_ix^i</m> gives us
             <m>a_i =(a_0+2)3^i -2^{i+1}</m>.
           </p>
@@ -116,62 +126,56 @@
           <m>a_n=1.1a_{n-1}+1000</m>, and <m>a_0=5000</m>.
           <md>
             <mrow>\sum_{i=1}^\infty
-            a_ix^i =\amp 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i</mrow>
-            <mrow>\hspace{-.25 in}\sum_{i=0}^\infty a_ix^i -a_0 =\amp
+            a_ix^i \amp= 1.1x\sum_{i=1}^\infty a_{i-1}x^{i-1} + 1000\sum_{i=1}^\infty x^i</mrow>
+            <mrow>\sum_{i=0}^\infty a_ix^i -a_0 \amp=
             1.1x\sum_{i=0}^\infty a_ix^i +1000(\sum_{i=0}^\infty x^i-1)</mrow>
-            <mrow>\hspace{-.5
-            in}(1-1.1x)\sum_{i=0}^\infty a_ix^i  =\amp  a_0 +1000\sum_{i=10}^\infty x^i-1000</mrow>
-            <mrow>\sum_{i=0}^\infty a_i x^i =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
+            <mrow>(1-1.1x)\sum_{i=0}^\infty a_ix^i  \amp=  a_0 +1000\sum_{i=10}^\infty x^i-1000</mrow>
+            <mrow>\sum_{i=0}^\infty a_i x^i \amp=  a_0\sum_{i=0}^\infty (1.1)^ix^i
             +1000\sum_{i=0}^\infty (1.1)^ix^i\sum_{i=0}^\infty x^i -1000</mrow>
-            <mrow>\sum_{i=0}^\infty a_i x^i =\amp  a_0\sum_{i=0}^\infty (1.1)^ix^i
+            <mrow>\sum_{i=0}^\infty a_i x^i \amp=  a_0\sum_{i=0}^\infty (1.1)^ix^i
             +1000\sum_{k=0}^\infty \left(\sum_{i=0}^k(1.1)^i\right)x^k
             - 1000\sum_{i=0}^\infty (1.1)^ix^i</mrow>
           </md>
-        </p>
-
-        <p>
-          This gives us that <m>a_n= 4000(1.1)^n +1000 \frac{1-(1.1)^{n+1}}{-.1}</m>. This simplifies to <m>a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 =
-          15,000(1.1)^n-10000</m>. Courtesy of Maple, after ten years we have <dollar />28,906.14
-          and after 20 years we have <dollar />90,912.50.
+          This gives us that <m>a_n= 4000(1.1)^n +1000 \frac{1-(1.1)^{n+1}}{-.1}</m>. This simplifies to <m>a_n= 4000(1.1)^n+10000(1.1)^{n+1}-10000 = 15,000(1.1)^n-10000</m>. Courtesy of Maple, after ten years we have <dollar />28,906.14 and after 20 years we have <dollar />90,912.50.
         </p>
       </solution>
     </activity>
   </subsection>
 
-  <subsection>
-    <title>Fibonacci Numbers</title>
-    <p>The sequence of problems that follows describes a number of hypotheses we might make about a fictional population of rabbits. We use the example of a rabbit population for historic reasons; our goal is a classical sequence of numbers called Fibonacci numbers. When Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci posthumously</fn> introduced them, he did so with a fictional population of rabbits.
-    </p>
-  </subsection>
 
   <subsection>
     <title>Second order linear recurrence relations</title>
+
+    <paragraphs>
+        <title>Fibonacci numbers</title>
+        <p>The sequence of problems that follows (culminating in <xref ref="solveFibonacci" />) describes a number of hypotheses we might make about a fictional population of rabbits. We use the example of a rabbit population for historic reasons; our goal is a classical sequence of numbers called Fibonacci numbers. When Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci posthumously. It is a shortening of <q>son of Bonacci</q> in Italian.</fn> introduced them, he did so with a fictional population of rabbits.<index><main>Fibonacci numbers</main></index>
+        </p>
+    </paragraphs>
+    
     <activity xml:id="secondorderintroduction" category="essential">
       <statement>
         <p>Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the number of rabbits we have at the end of month <m>n</m>. Show that <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <term>second order</term><index><main>recurrence</main><sub>second order</sub></index><index><main>second order recurrence</main></index> <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main><sub>second order</sub></index> recurrence with constant coefficients.<index><main>recurrence</main><sub>constant coefficient</sub></index> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
           <me>
             \sum_{i=0}^\infty a_ix^i = \frac{10}{1-x-2x^2}.
           </me>
-        </p>
-
-        <p>This gives us the generating function for the sequence <m>a_i</m> giving the population in month <m>i</m>; shortly we shall see a method for converting this to a solution to the recurrence.
+          This gives us the generating function for the sequence <m>a_i</m> giving the population in month <m>i</m>; shortly we shall see a method for converting this to a solution to the recurrence.
         </p>
       </statement>
       <solution>
           <p>
               <md>
-            <mrow>\sum_{n=2}^\infty a_nx^n =\amp \sum_{n=2}^\infty a_{n-1}x^n +
+            <mrow>\sum_{n=2}^\infty a_nx^n \amp= \sum_{n=2}^\infty a_{n-1}x^n +
           2\sum_{n=2}^\infty a_{n-2}x^n</mrow>
-          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x  =\amp x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
+          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x  \amp= x\sum_{n=2}^\infty a_{n-1}x^{n-1} +
           2x^2\sum_{n=2}^\infty a_{n-2}x^{n-2}</mrow>
-          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x =\amp x\sum_{n=1}^\infty a_{n}x^{n} +
+          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp= x\sum_{n=1}^\infty a_{n}x^{n} +
           2x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x =\amp x\left(\sum_{n=0}^\infty
+          <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x \amp= x\left(\sum_{n=0}^\infty
           a_{n}x^{n}-a_0\right) + 2x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-          <mrow>(1-x-2x^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0x</mrow>
-          <mrow>\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}</mrow>
+          <mrow>(1-x-2x^2)\sum_{n=0}^\infty a_nx^n \amp= a_0+a_1x-a_0x</mrow>
+          <mrow>\sum_{n=0}^\infty a_nx^n \amp= \frac{a_0+a_1x-a_0x}{(1-x-2x^2)}</mrow>
         </md>
-          In this problem <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus <m>\displaystyle\sum_{n=0}^\infty a_nx^n = \frac{10}{(1-x-2x^2)}</m>
+          In this problem <m>a_0=a_1=10</m> because we start with ten pairs of baby rabbits, so they have to mature for a month before they begin reproducing. Thus <m>\displaystyle\sum_{n=0}^\infty a_nx^n = \frac{10}{(1-x-2x^2)}</m>.
         </p>
       </solution>
     </activity>
@@ -181,21 +185,23 @@
         <p>In Fibonacci's original problem, each pair of mature rabbits produces one new pair at the end of each month, but otherwise the situation is the same as in <xref ref="secondorderintroduction">Problem</xref>.  Assuming that we start with one pair of baby rabbits (at the end of month 0), find the generating function for the number of pairs of rabbits we have at the end on <m>n</m> months.
         </p>
       </statement>
+      <hint>
+          <p>
+              Our recurrence becomes <m>a_n = a_{n-1} + a_{n-2}</m>.
+          </p>
+      </hint>
       <solution>
         <p>
           Our recurrence becomes <m>a_n=a_{n-1}+a_{n-2}</m>, and following the
           pattern of <xref ref="secondorderintroduction">Problem</xref> we get
           <md>
-            <mrow>\sum_{n=2}^\infty a_nx^n =\amp \sum_{n=2}^\infty a_{n-1}x^n +
+            <mrow>\sum_{n=2}^\infty a_nx^n \amp= \sum_{n=2}^\infty a_{n-1}x^n +
             \sum_{n=2}^\infty a_{n-2}x^n</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n-a_0-a_1x  =\amp x\left(\sum_{n=0}^\infty
+            <mrow>\sum_{n=0}^\infty a_nx^n-a_0-a_1x  \amp= x\left(\sum_{n=0}^\infty
             a_{n}x^{n}-a_0\right) + x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-            <mrow>(1-x-x^2)\sum_{n=0}^\infty a_nx^n =\amp a_0+a_1x-a_0x</mrow>
-            <mrow>\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-a_0x}{(1-x-x^2)}</mrow>
-          </md>
-        </p>
-
-        <p>
+            <mrow>(1-x-x^2)\sum_{n=0}^\infty a_nx^n \amp= a_0+a_1x-a_0x</mrow>
+            <mrow>\sum_{n=0}^\infty a_nx^n \amp= \frac{a_0+a_1x-a_0x}{(1-x-x^2)}</mrow>
+          </md>.
           Since now <m>a_0=a_1=1</m>, we have <m>\displaystyle \sum_{n=0}^\infty a_nx^n=
           \frac{1}{1-x-x^2}</m>.
         </p>
@@ -214,15 +220,15 @@
       <solution>
           <p>
           <md>
-          <mrow>\sum_{i=2}^\infty a_ix^i  =\amp  \sum_{i=2}^\infty
+          <mrow>\sum_{i=2}^\infty a_ix^i  \amp=  \sum_{i=2}^\infty
           5a_{i-1}x^i-\sum_{i=2}^\infty 6a_{i-2}x^i + \sum_{i=2}^\infty 2^ix^i</mrow>
-          <mrow>\hspace{-.3in}\sum_{i=0}^\infty a_ix^i -a_0-a_1x  =\amp
+          <mrow>\sum_{i=0}^\infty a_ix^i -a_0-a_1x  \amp=
           5x\left(\sum_{i=0}^\infty
           a_{i}x^i-a_0\right)-6x^2\sum_{i=0}^\infty a_{i}x^i + \sum_{n=0}^\infty
           2^ix^i-1-2x</mrow>
-          <mrow>\hspace{-.55in}(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i =\amp a_0-1+(a_1-5a_0-2)x +
+          <mrow>(1-5x+6x^2)\sum_{i=0}^\infty a_ix^i \amp= a_0-1+(a_1-5a_0-2)x +
           \sum_{n=0}^\infty 2^ix^i</mrow>
-          <mrow>\sum_{i=0}^\infty a_ix^i =\amp  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}</mrow>
+          <mrow>\sum_{i=0}^\infty a_ix^i \amp=  \frac{a_0-1+(a_1-5a_0-2)x}{1-5x+6x^2}+ \frac{1}{1-5x+6x^2}\cdot\frac{1}{1-2x}</mrow>
           </md>
           </p>
       </solution>
@@ -261,23 +267,30 @@
           </me>
         </p>
       </statement>
+      <hint>
+          <p>
+              <me>\frac{5x+1}{(x-3)(x-5)} = \frac{cx+5c+dx-3d}{(x-3)(x-5)}</me>
+              gives us
+              <md>
+                  <mrow>5x \amp = cx+dx</mrow>
+                  <mrow>1 \amp= 5c-3d</mrow>
+              </md>.
+          </p>
+      </hint>
       <solution>
           <p>
               <md>
-          <mrow>\frac{5x+1}{(x-3)(x+5)}  =\amp  \frac{c}{x-3} + \frac{d}{x+5}</mrow>
-          <mrow>\frac{5x+1}{(x-3)(x-5)}  =\amp cx+5c+dx-3d</mrow>
+          <mrow>\frac{5x+1}{(x-3)(x+5)}  \amp=  \frac{c}{x-3} + \frac{d}{x+5}</mrow>
+          <mrow>\frac{5x+1}{(x-3)(x-5)}  \amp= cx+5c+dx-3d</mrow>
         </md>
           gives us
           <md>
-            <mrow>5x =\amp cx+dx</mrow>
-            <mrow>1 =\amp 5c-3d</mrow>
-            <mrow>5 =\amp c+d</mrow>
-            <mrow>1 =\amp 5c-3d</mrow>
+            <mrow>5x \amp= cx+dx</mrow>
+            <mrow>1 \amp= 5c-3d</mrow>
+            <mrow>5 \amp= c+d</mrow>
+            <mrow>1 \amp= 5c-3d</mrow>
           </md>
-        </p>
-
-        <p>
-          Which gives us <m>16=8c</m> so that <m>c=2</m> and then <m>d=3</m>.
+          This gives us <m>16=8c</m> so that <m>c=2</m> and then <m>d=3</m>.
         </p>
       </solution>
     </activity>
@@ -286,10 +299,18 @@
       <statement>
         <p>In <xref ref="partialfractionsintro">Problem</xref> you may have simply guessed at values of <m>c</m> and <m>d</m>, or you may have solved a system of equations in the two unknowns <m>c</m> and <m>d</m>. Given constants <m>a</m>, <m>b</m>, <m>r_1</m>, and <m>r_2</m> (with <m>r_1\not= r_2</m>), write down a system of equations we can solve for <m>c</m> and <m>d</m> to write
           <me>
-            \frac{ax+b}{(x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}.
-          </me>
+            \frac{ax+b}{(x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}
+          </me>.
         </p>
       </statement>
+      <hint>
+          <p>
+              To have
+              <me>\frac{ax+b}{(x-r_1)(x-r_2)} = \frac{c}{x-r_1} + \frac{d}{x-r_2}</me>
+              we must have
+              <me>cx-r_2c+dx-r_1d =ax+b</me>.
+          </p>
+      </hint>
       <solution>
         <p>
           To have
@@ -300,25 +321,20 @@
           <me>
             cx-r_2c+dx-r_2d = ax+b.
           </me>
-        </p>
-
-        <p>This gives us the equations <m>cx+dx=ax</m> and <m>-r_2c-r_1d=b</m>. Since <m>x</m> can be any value, in particular it can be nonzero, so we can divide by it. This gives us the equations <m>c+d=a</m> and <m>r_2c+r_1d=-b</m>.
+          This gives us the equations <m>cx+dx=ax</m> and <m>-r_2c-r_1d=b</m>. Since <m>x</m> can be any value, in particular it can be nonzero, so we can divide by it. This gives us the equations <m>c+d=a</m> and <m>r_2c+r_1d=-b</m>.
         </p>
       </solution>
     </activity>
 
-    <p>Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving them is called the <em>method of partial fractions</em>.<index><main>partial fractions</main><sub>method of</sub></index> This method will let you find power series expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the quadratic polynomials that are in the denominators of your generating functions.
+    <p>Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving them is called the <term>method of partial fractions</term>.<index><main>partial fractions</main><sub>method of</sub></index> This method will let you find power series expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the quadratic polynomials that are in the denominators of your generating functions.
     </p>
 
     <activity category="essential">
       <statement>
         <p>Use the method of partial fractions to convert the generating function of <xref ref="secondorderintroduction">Problem</xref> into the form
           <me>
-            \frac{c}{x-r_1} + \frac{d}{x-r_2}.
-          </me>
-        </p>
-
-        <p>
+            \frac{c}{x-r_1} + \frac{d}{x-r_2}
+          </me>.
           Use this to find a formula for <m>a_n</m>.
         </p>
       </statement>
@@ -327,13 +343,10 @@
           <m>\frac{10}{(1-x-2x^2)}=\frac{10}{(1-2x)(1+x)} = \frac{c}{1-2x} +\frac{d}{1+x}</m>. This gives us the equations <m>c+d=10</m> and <m>c-2d=0</m>. Thus <m>3d=10</m>, so
           <m>d=\frac{10}{3}</m>, and <m>c=2d</m> so <m>c=\frac{20}{3}</m>. Thus
           <md>
-            <mrow>\sum_{i=0}^\infty a_ix^i  =\amp  \frac{10}{1-x-2x^2}</mrow>
-            <mrow> =\amp \frac{20/3}{1-2x} + \frac{10/3}{1+x}</mrow>
-            <mrow> =\amp \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i</mrow>
-          </md>
-        </p>
-
-        <p>
+            <mrow>\sum_{i=0}^\infty a_ix^i  \amp=  \frac{10}{1-x-2x^2}</mrow>
+            <mrow> \amp= \frac{20/3}{1-2x} + \frac{10/3}{1+x}</mrow>
+            <mrow> \amp= \frac{20}{3}\sum_{i=0}^\infty (2x)^i + \frac{10}{3}\sum_{i=0}^\infty (-1)^ix^i</mrow>
+          </md>.
           Thus <m>a_i=\frac{20}{3}2^i +\frac{10}{3}(-1)^i</m>.
         </p>
       </solution>
@@ -380,13 +393,13 @@
           us
           <me>
             \frac{1}{x^2+x-1} = \frac{1/\sqrt{5}}{x-\frac{-1+\sqrt{5}}{2}}
-            + \frac{-1/\sqrt{5}}{x- \frac{-1-\sqrt{5}}{2}}.
-          </me>
+            + \frac{-1/\sqrt{5}}{x- \frac{-1-\sqrt{5}}{2}}
+          </me>.
         </p>
       </solution>
     </activity>
 
-    <activity category="essential">
+    <activity xml:id="solveFibonacci" category="essential">
       <task>
         <statement>
           <p>Use the partial fractions decomposition you found in <xref ref="factorFibonacci">Problem</xref> to write the generating function you found in <xref ref="originalFibonacci">Problem</xref> in the form
@@ -403,23 +416,23 @@
         <solution>
             <p>
             <md>
-              <mrow>\sum_{n=0}^\infty a_nx^n  =\amp \frac{1}{1-x-x^2}\rangle =\rangle -\frac{1}{x^2+x-1}</mrow>
-              <mrow> =\amp \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}</mrow>
-              <mrow> =\amp \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}</mrow>
-              <mrow> =\amp \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
+              <mrow>\sum_{n=0}^\infty a_nx^n  \amp= \frac{1}{1-x-x^2}= -\frac{1}{x^2+x-1}</mrow>
+              <mrow> \amp= \frac{1}{\sqrt{5}}\cdot\frac{1}{r_1-x} -\frac{1}{\sqrt{5}}\cdot\frac{1}{r_2-x}</mrow>
+              <mrow> \amp= \frac{1}{r_1\sqrt{5}}\cdot\frac{1}{1-x/r_1} -\frac{1}{r_2\sqrt{5}}\cdot\frac{1}{1-x/r_2}</mrow>
+              <mrow> \amp= \frac{1}{r_1\sqrt{5}}\sum_{n=0}^\infty\left(\frac{x}{r_1}\right)^n
               -\frac{1}{r_2\sqrt{5}}\sum_{n=0}^\infty  \left(\frac{x}{r_2}\right)^n</mrow>
             </md>
             This gives us that
             <md>
-              <mrow>a_n =\amp \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
+              <mrow>a_n \amp= \frac{1}{\sqrt{5}\cdot r_1^{n+1}}
               +\frac{1}{\sqrt{5}\cdot r_2^{n+1}}</mrow>
-              <mrow> =\amp \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
+              <mrow> \amp= \frac{2^{n+1}}{\sqrt{5}(-1+\sqrt{5})^{n+1}}
               +
               \frac{2^{n+1}}{\sqrt{5}(-1-\sqrt{5})^{n+1}}</mrow>
-              <mrow> =\amp \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
+              <mrow> \amp= \frac{2^{n+1}(1+\sqrt{5})^{n+1}}{\sqrt{5}\cdot
               4^{n+1}}-
               \frac{2^{n+1}(1-\sqrt{5})^{n+1}}{\sqrt{5}\cdot4^{n+1}}</mrow>
-              <mrow> =\amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
+              <mrow> \amp= \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{2}\right)^{n+1}-
               \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}.</mrow>
             </md>
             </p>
@@ -434,38 +447,47 @@
           <p>Using the recurrence, the Fibonacci numbers from <m>a_0</m> to <m>a_8</m> are 1, 1, 2, 3, 5, 8, 13, 21, 34. The recurrence says each term is the sum of the two preceding terms, and since the first two terms are integers, all the sums must be integers.
           </p>
         </solution>
-      </task>
-      <task category="important">
-        <statement>
-          <p>Find an algebraic explanation (not using the recurrence equation) of what happens to make the square roots of five go away. Explain why there is a real number <m>b</m> such that, for large values of <m>n</m>, the value of the <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant times <m>b^n</m>.  (Find <m>b</m> and the constant.)
-          </p>
-        </statement>
-        <solution>
-          <p>
-            From the binomial theorem,
-            <md>
-              <mrow> \amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}</mrow>
-              <mrow> =\amp
-              \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
-              <mrow> =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
-              [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
-              -(-1)^i\left(\sqrt{5}\right)^i\right)</mrow>
-              <mrow> =\amp \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
-              odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i</mrow>
-              <mrow> =\amp \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
-              odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}</mrow>
-              <mrow> =\amp \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
-              even} }  \binom{n+1}{i+1}5^{i/2}</mrow>
-              <mrow> =\amp \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,</mrow>
-            </md>
-            which makes it clear that <m>a_n</m> is at least a rational
-            number. It is not clear from this new formula why the result is always an
-            integer. Since
-            <m>\left|\frac{1-\sqrt{5}}{2}\right|\lt 1</m>,
-            <m>\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}</m> approaches 0 as <m>n</m>
-            becomes large. Therefore if we take <m>b</m> to be <m>\left(\frac{1+\sqrt{5}}{2}\right)^n</m> and we take <m>c</m> to be <m>\frac{1+\sqrt{5}}{2\sqrt{5}}</m> then then
-            <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large. In
-            particular, it is the nearest integer to <m>cb^n</m>.
+        </task>
+        <task>
+            <statement>
+                <p>Explain why there is a real number <m>b</m> such that, for large values of <m>n</m>, the value of the <m>n</m>th Fibonacci number is almost exactly (but not quite) some constant times <m>b^n</m>. (Find <m>b</m> and the constant.)
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Since <m>\displaystyle \left|\frac{1-\sqrt{5}}{2}\right| \lt 1</m>, <m>\displaystyle\frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}</m> approaches 0 as <m>n</m> becomes large. Therefore if we take <m>b</m> to be <m>\displaystyle \left(\frac{1+\sqrt{5}}{2}^n\right)^n</m> and we take <m>c</m> to be <m>\frac{1+\sqrt{5}}{2\sqrt{5}}</m>, then the <m>n</m>th Fibonacci number is almost exactly <m>cb^n</m> when <m>n</m> is large. In particular, it is the nearest integer to <m>cb^n</m>.
+                </p>
+            </solution>
+        </task>
+        <task category="important">
+            <statement>
+                <p>Find an algebraic explanation (not using the recurrence equation) of what happens to make the square roots of five go away. 
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Think about how the binomial theorem might help you.
+                </p>
+            </hint>
+            <solution>
+                <p>
+                    From the binomial theorem,
+                    <md>
+                        <mrow> \amp \frac{1}{\sqrt{5}}\left(\frac{1+\sqrt{5}}{   2}\right)^{n+1}- \frac{1}{\sqrt{5}}\left(\frac{1-\sqrt{5}}{2}\right)^{n+1}</mrow>
+                        <mrow> \amp=
+                        \frac{1}{2^{n+1}\sqrt{5}}\left[\sum_{i=0}^{n+1}\binom{n+1}{i}\left(\sqrt{5}\right)^i -\sum_{i=0}^{n+1} \binom{n+1}{i}(-1)^i\left(\sqrt{5}\right)^i\right]</mrow>
+                        <mrow> \amp= \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in
+                        [n+1],\ i\mbox{\scriptsize~is odd} }\binom{n+1}{i}\left(\left(\sqrt{5}\right)^i
+                        -(-1)^i\left(\sqrt{5}\right)^i\right)</mrow>
+                        <mrow> \amp= \frac{1}{2^{n+1}\sqrt{5}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+                        odd} }  2\binom{n+1}{i}\left(\sqrt{5}\right)^i</mrow>
+                        <mrow> \amp= \frac{1}{2^{n}}\sum_{i:i\in[n+1],\ i\mbox{\scriptsize~is
+                        odd} }  \binom{n+1}{i}\left(\sqrt{5}\right)^{i-1}</mrow>
+                        <mrow> \amp= \frac{1}{2^{n}}\sum_{i:i\in[n],\ i\mbox{\scriptsize~is
+                        even} }  \binom{n+1}{i+1}5^{i/2}</mrow>
+                        <mrow> \amp= \frac{1}{2^n}\sum_{k=0}^{\lfloor n/2 \rfloor}\binom{n+1}{2k+1}5^k,</mrow>
+                    </md>
+                    which makes it clear that <m>a_n</m> is at least a rational number. It is not clear from this new formula why the result is always an integer.
           </p>
         </solution>
       </task>
@@ -484,23 +506,23 @@
   <activity>
       <statement>
       <p>
-        \item Solve the recurrence <m>a_n= 4a_{n-1} - 4a_{n-2}</m>.
+        Solve the recurrence <m>a_n= 4a_{n-1} - 4a_{n-2}</m>.
       </p>
       </statement>
       <solution>
           <p>
               <md>
-                  <mrow>\sum_{n=2}^\infty a_nx^n  =\amp  4\sum_{n=2}^\infty a_{n-1}x^n -
+                  <mrow>\sum_{n=2}^\infty a_nx^n  \amp=  4\sum_{n=2}^\infty a_{n-1}x^n -
         4\sum_{n=2}^\infty a_{n-2}x^n</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x  =\amp  4x(\sum_{n=0}^\infty a_{n}x^n
+        <mrow>\sum_{n=0}^\infty a_nx^n -a_0-a_1x  \amp=  4x(\sum_{n=0}^\infty a_{n}x^n
         -a_0) - 4x^2\sum_{n=0}^\infty a_{n}x^n</mrow>
-        <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n   =\amp
+        <mrow>(1-4x+4x^2)\sum_{n=0}^\infty a_nx^n   \amp=
         a_0+a_1x-4a_0x</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n =\amp \frac{a_0+a_1x-4a_0x}{(1-2x)^2}</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
+        <mrow>\sum_{n=0}^\infty a_nx^n \amp= \frac{a_0+a_1x-4a_0x}{(1-4x+4x^2)}</mrow>
+        <mrow>\sum_{n=0}^\infty a_nx^n \amp= \frac{a_0+a_1x-4a_0x}{(1-2x)^2}</mrow>
+        <mrow>\sum_{n=0}^\infty a_nx^n \amp= (a_0+a_1x-4a_0x)\sum_{n=0}^\infty \binom{n+2-1}{n}
         2^nx^n</mrow>
-        <mrow>\sum_{n=0}^\infty a_nx^n =\amp (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
+        <mrow>\sum_{n=0}^\infty a_nx^n \amp= (a_0+a_1x-4a_0x)\sum_{n=0}^\infty (n+1)
         2^nx^n</mrow>
       </md>
         Thus <m>a_n=a_0(n+1)2^n
@@ -513,64 +535,85 @@
   <subsection>
     <title>Catalan Numbers</title>
     <activity xml:id="CatalanRecurrence" category="interesting">
-      <statement>
-        <p>Using either lattice paths or diagonal lattice paths, explain why the Catalan Number<index><main>Catalan Number</main><sub>recurrence for</sub></index> <m>c_n</m> satisfies the recurrence
-          <me>
-            C_n = \sum_{i=1}^{n-1} C_{i-1}C_{n-i}.
-          </me>
+        <task>
+            <statement>
+                <p>Using either lattice paths or diagonal lattice paths, explain why the Catalan Number<index><main>Catalan Number</main><sub>recurrence for</sub></index> <m>c_n</m> satisfies the recurrence
+                <me>
+                    C_n = \sum_{i=1}^{n-1} C_{i-1}C_{n-i}
+                    </me>.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    A Catalan path could touch the <m>x</m>-axis several times before it reaches <m>(2n, 0)</m>.  Its first touch can be any point <m>(2i, 0)</m> between <m>(2, 0)</m> and <m>(2n, 0)</m>. For the path to touch first at <m>(2i, 0)</m>, the path must start with an upstep and then proceed as a Dyck path from <m>(1, 1)</m> to <m>(2i - 1, 1)</m>. From there it must take a downstep. Can you see a bijection between such Dyck paths and Catalan paths of a certain kind?
+                </p>
+            </hint>
+            <solution>
+                <p>Recall that a Dyck Path is a diagonal lattice path that never goes lower than its starting point and a Catalan Path of length <m>2n</m> is a Dyck path that goes from <m>(0,0)</m> to <m>(2n,0)</m> The Catalan number <m>C_n</m> is the number of Catalan paths of length <m>2n</m>. We take <m>C_0=1</m>. A Catalan path could touch the <m>x</m>-axis several times before it reaches <m>(2n,0)</m>. Its first touch can be any point <m>(2i,0)</m> between <m>(2,0)</m> and <m>(2n,0)</m>. For the path to touch first at <m>(0,2i)</m>, the path must start with an upstep and then proceed as a Dyck path from <m>(1,1)</m> to <m>(2i-1,1)</m>. From there it must take a downstep. But the number of Dyck paths from <m>(1,1)</m> to <m>(2i-1,1)</m> is the same as the number of Catalan paths from <m>(0,0)</m> to <m>(2i-2,0)</m>. The number of Catalan paths is the number whose first touch of the <m>x</m>-axis is at <m>x=2</m> plus the number whose first touch is at <m>x=4</m>,<ellipsis />, through the number whose first touch is at <m>2n</m>. After the first touch at <m>x=2i</m>, the path then behaves as a Catalan path from <m>(2i,0)</m> to <m>(2n,0)</m>. The number of such paths is <m>C_{n-i}</m>. By the product principle, the number of Catalan paths whose first touch is at <m>x=2i</m> is <m>C_{i-1}C_{n-i}</m>. Then by the sum principle, the number of Catalan paths of length 1 or more is
+                <me>
+                    C_n=\sum_{i=1}^nC_{i-1}C_{n-i}
+                </me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Show that if we use <m>y</m> to stand for the power series <m>\sum_{n=0}^\infty c_nx^n</m>, then we can find <m>y</m> by solving a quadratic equation. Find <m>y</m>.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Does the right-hand side of the recurrence remind you of some products you have worked with?
+                </p>
+            </hint>
+            <solution>
+                <p>
+                    To solve for <m>C_n</m>, write
+                    <md>
+                        <mrow>\sum_{n=0}^\infty C_nx^n \amp= 1+\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}C_{n-i}x^n</mrow>
+                        <mrow>\sum_{n=0}^\infty C_nx^n
+                        \amp= 1+x\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}x^{i-1}C_{n-i}x^{n-i}</mrow>
+                        <mrow>\sum_{n=0}^\infty C_nx^n
+                        \amp= 1+x\sum_{i=1}^\infty C_{i-1}x^{i-1}\sum_{j=0}^\infty C_{j}x^{j}</mrow>
+                        <mrow>y \amp= 1 + xy^2</mrow>
+                    </md>. This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y=\frac{1\pm \sqrt{1-4x}}{2x}</m>. 
         </p>
-
-        <p>
-          Show that if we use <m>y</m> to stand for the power series <m>\sum_{i=0}^\infty c_nx^n</m>, then we can find <m>y</m> by solving a quadratic equation. Solve for <m>y</m>. Taylor's theorem from calculus tells us that the extended binomial theorem
-          <me>
-            (1+x)^r = \sum_{i=0}^\infty \binom{r}{i}x^i
-          </me>
-          holds for any number real number <m>r</m>, where <m>\binom{r}{i}</m> is defined to be
-          <me>
-            \frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}.
-          </me>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>Taylor's theorem from calculus tells us that the extended binomial theorem
+                <me>
+                    (1+x)^r = \sum_{i=0}^\infty \binom{r}{i}x^i
+                </me>
+                holds for any number real number <m>r</m>, where <m>\binom{r}{i}</m> is defined to be
+                <me>
+                    \frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}  </me>.  Use this and your solution for <m>y</m> (note that of the two possible values for <m>y</m> that you get from the quadratic formula, only one gives an actual power series) to get a formula for the Catalan numbers.<index><main>Catalan number</main><sub>generating function for</sub></index>
         </p>
-
-        <p>Use this and your solution for <m>y</m> (note that of the two possible values for <m>y</m> that you get from the quadratic formula, only one gives an actual power series) to get a formula for the Catalan numbers.<index><main>Catalan number</main><sub>generating function for</sub></index>
-        </p>
-      </statement>
+            </statement>
+            <hint>
+                <p>
+                    <me>\frac{1\cdot 3\cdot 5\cdots (2i-3)}{i!} = \frac{(2i-2)!}{(i-1)!2^i i!}</me>.
+                </p>
+            </hint>
       <solution>
-        <p>Recall that a Dyck Path is a diagonal lattice path that never goes lower than its starting point and a Catalan Path of length <m>2n</m> is a Dyck path that goes from <m>(0,0)</m> to <m>(2n,0)</m> The Catalan number <m>C_n</m> is the number of Catalan paths of length <m>2n</m>. We take <m>C_0=1</m>. A Catalan path could touch the <m>x</m>-axis several times before it reaches <m>(2n,0)</m>. Its first touch can be any point <m>(2i,0)</m> between <m>(2,0)</m> and <m>(2n,0)</m>. For the path to touch first at <m>(0,2i)</m>, the path must start with an upstep and then proceed as a Dyck path from <m>(1,1)</m> to <m>(2i-1,1)</m>. From there it must take a downstep. But the number of Dyck paths from <m>(1,1)</m> to <m>(2i-1,1)</m> is the same as the number of Catalan paths from <m>(0,0)</m> to <m>(2i-2,0)</m>. The number of Catalan paths is the number whose first touch of the <m>x</m>-axis is at <m>x=2</m> plus the number whose first touch is at <m>x=4</m>,<ellipsis />, through the number whose first touch is at <m>2n</m>. After the first touch at <m>x=2i</m>, the path then behaves as a Catalan path from <m>(2i,0)</m> to <m>(2n,0)</m>. The number of such paths is <m>C_{n-i}</m>. By the product principle, the number of Catalan paths whose first touch is at <m>x=2i</m> is <m>C_{i-1}C_{n-i}</m>. Then by the sum principle, the number of Catalan paths of length 1 or more is
-          <me>
-            C_n=\sum_{i=1}^nC_{i-1}C_{n-i}.
-          </me>
-        </p>
-
-        <p>
-          To solve for <m>C_n</m>, write
-          <md>
-            <mrow>\sum_{n=0}^\infty C_nx^n  =\amp 1+\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}C_{n-i}x^n</mrow>
-            <mrow>\sum_{n=0}^\infty C_nx^n
-             =\amp 1+x\sum_{n=1}^\infty\sum_{i=1}^nC_{i-1}x^{i-1}C_{n-i}x^{n-i}</mrow>
-            <mrow>\sum_{n=0}^\infty C_nx^n
-             =\amp 1+x\sum_{i=1}^\infty C_{i-1}x^{i-1}\sum_{j=0}^\infty C_{j}x^{j}</mrow>
-            <mrow>y =\amp 1 + xy^2</mrow>
-          </md>
-        </p>
-
-        <p>This gives us <m>xy^2-y+1=0</m>, and solving for <m>y</m> by the quadratic formula gives us <m>y=\frac{1\pm \sqrt{1-4x}}{2x}</m>. By the extended binomial theorem,
+        <p>By the extended binomial theorem,
           <me>
             \sqrt{1-4x}=(1-4x)^{1/2} = \sum_{i=0}^\infty \binom{1/2}{i}(-4x)^i=
-            \sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i.
-          </me>
-        </p>
-
-        <p>The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})</m>, so
+            \sum_{i=0}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i
+          </me>. The first term of this power series is 1, so to get a power series for <m>y</m>, we must take the negative square root so that the <m>x</m> in the denominator will cancel out. Thus <m>y=-\frac{1}{2}\sum_{i=1}^\infty \frac{(1/2)^{\underline{i}}}{i!}(-1)^i4^ix^i</m>. But <m>(1/2)^{\underline{i}}=(\frac{1}{2})(\frac{-1}{2})(\frac{-3}{2})(\frac{-5}{2})\cdots (\frac{-2i+3}{2})</m>, so
           <md>
-            <mrow>y =\amp -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
-            <mrow> =\amp  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}</mrow>
-            <mrow> =\amp  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}</mrow>
-            <mrow> =\amp \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j</mrow>
+            <mrow>y \amp= -\frac{1}{2}\sum_{i=1}^\infty\frac{1\cdot3\cdot5\cdots(2i-3)}{i!}(-1)^{2i-1}2^ix^{i-1}</mrow>
+            <mrow> \amp=  \sum_{i=1}^\infty \frac{(2i-2)!}{(i-1)!2^{i}i!}2^ix^{i-1}</mrow>
+            <mrow> \amp=  \sum_{i=1}^\infty\frac{2i-2!}{i!(i-1)!}x^{i-1}</mrow>
+            <mrow> \amp= \sum_{j=0}^\infty\frac{2j!}{(j+1)!j!}x^j</mrow>
           </md>
           giving us <m>C_j=\frac{1}{j+1}\binom{2j}{j}</m>, which is our earlier formula for the
           Catalan Number <m>C_j</m>.
         </p>
       </solution>
+        </task>
     </activity>
   </subsection>
 </section>
