@@ -1,10 +1,17 @@
-<section xml:id="sec_genfns-int-parts">
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_genfns-int-parts" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title>Generating functions for integer partitions</title>
         <activity xml:id="change-making" category="essential">
             <statement>
                 <p>If we have five identical pennies, five identical nickels, five identical dimes, and five identical quarters, give the picture enumerator for the combinations of coins we can form and convert it to a generating function for the number of ways to make <m>k</m> cents with the coins we have. Do the same thing assuming we have an unlimited supply of pennies, nickels, dimes, and quarters.
                 </p>
             </statement>
+            <hint>
+                <p>
+                    This is a good place to apply the product principle for picture enumerators.
+                </p>
+            </hint>
             <solution>
                 <p>
                     <m>(1+P+P^2+P^3+P^4+P^5)(1+N+N^2+N^3+N^4+N^5)(1+D+D^2+D^3+D^4+D^5)
@@ -28,16 +35,43 @@
             </solution>
         </activity>
 
-        <activity xml:id="largestpartatmostm" category="essential">
-            <statement>
-                <p>Recall that a partition of an integer <m>k</m> is a multiset of numbers that adds to <m>k</m>. In <xref ref="change-making">Problem</xref> we found the generating function for the number of partitions of an integer into parts of size 1, 5, 10, and 25. Give the generating function for the number partitions of an integer into parts of size one through ten. Give the generating function for the number of partitions of an integer <m>k</m> into parts of size at most <m>m</m>. (Where <m>m</m> is fixed but <m>k</m> may vary.) Notice this is the generating function for partitions whose Young diagram fits into the space between the line <m>x=0</m> and the line <m>x=m</m> in a coordinate plane. (We assume the boxes in the Young diagram are one unit by one unit.) When working with generating functions for partitions, it is becoming standard to use <m>q</m> rather than <m>x</m> as the variable in the generating function.  Write your answers in this notation.<fn>The reason for this change in the notation relates to the subject of finite fields in abstract algebra, where <m>q</m> is the standard notation for the size of a finite field.  While we will make no use of this connection, it will be easier for you to read more advanced work if you get used to the different notation.</fn>
+        <activity category="essential">
+                <p>Recall that a partition of an integer <m>k</m> is a multiset of numbers that adds to <m>k</m>. In <xref ref="change-making">Problem</xref> we found the generating function for the number of partitions of an integer into parts of size 1, 5, 10, and 25. When working with generating functions for partitions, it is becoming standard to use <m>q</m> rather than <m>x</m> as the variable in the generating function.  Write your answers in this notation.<fn>The reason for this change in the notation relates to the subject of finite fields in abstract algebra, where <m>q</m> is the standard notation for the size of a finite field.  While we will make no use of this connection, it will be easier for you to read more advanced work if you get used to the different notation.</fn> 
                 </p>
-            </statement>
-            <solution>
-                <p>
-                    <m>\prod_{i=1}^{10}\frac{1}{1-q^i}</m>, <m>\prod_{i=1}^m\frac{1}{1-q^i}</m>.
-                </p>
-            </solution>
+                <task>
+                    <statement>
+                        <p>
+            Give the generating function for the number partitions of an integer into parts of size one through ten.
+                        </p>
+                    </statement>
+                    <hint>
+                        <p>
+                            The product principle for generating functions helps you break the generating function into a product of ten simpler ones.
+                        </p>
+                    </hint>
+                    <solution>
+                        <p>
+                            <m>\prod_{i=1}^{10}\frac{1}{1-q^i}</m>         
+                        </p>
+                    </solution>
+                </task>
+                <task xml:id="largestpartatmostm">
+                    <statement>
+                        <p>
+                            Give the generating function for the number of partitions of an integer <m>k</m> into parts of size at most <m>m</m>, where <m>m</m> is fixed but <m>k</m> may vary. Notice this is the generating function for partitions whose Young diagram fits into the space between the line <m>x=0</m> and the line <m>x=m</m> in a coordinate plane. (We assume the boxes in the Young diagram are one unit by one unit.)
+                        </p>
+                    </statement>
+                    <hint>
+                        <p>
+                            <m>m</m> was 10 in the previous part of this problem.
+                        </p>
+                    </hint>
+                    <solution>
+                        <p>
+                            <m>\prod_{i=1}^m\frac{1}{1-q^i}</m>.
+                        </p>
+                    </solution>
+                </task>
         </activity>
 
         <activity xml:id="atmostmparts" category="essential">
@@ -46,6 +80,11 @@
                     In <xref ref="largestpartatmostm">Problem</xref> you gave the generating function for the number of partitions of an integer into parts of size at most <m>m</m>. Explain why this is also the generating function for partitions of an integer into at most <m>m</m> parts. Notice that this is the generating function for the number of partitions whose Young diagram fits into the space between the line <m>y=0</m> and the line <m>y=m</m>.
                 </p>
             </statement>
+            <hint>
+                <p>
+                    Think about conjugate partitions.
+                </p>
+            </hint>
             <solution>
                 <p>
                     Conjugation is a bijection between partitions with largest part at most <m>m</m> and partitions with at most <m>m</m> parts. Thus the coefficient of <m>q^i</m> (the number of partitions of <m>i</m> into parts of size at most <m>m</m>) in the generating function for the number of partitions of integers into parts of size at most <m>m</m> will be the coefficient of <m>q^i</m> (the number of partitions of <m>i</m> with at most <m>m</m> parts) in the generating function for the number of partitions of integers into parts of size at most <m>m</m>. Thus the two generating functions are the same.
@@ -54,32 +93,93 @@
         </activity>
 
         <activity xml:id="genfunpartitions" category="essential">
-            <statement>
-                <p>Give the generating function for the number of partitions of an integer into parts of any size. Don't forget to use <m>q</m> rather than <m>x</m> as your variable.  This generating function involves an infinite product. Describe the kinds of terms you actually multiply and add together to get the last generating function. Rewrite any power series that appear in your product as quotients of polynomials or as integers divided by polynomials.
+            <p>When studying partitions of integers, it is inconvenient to restrict ourselves to partitions with at most <m>m</m> parts or partitions with maximum part size <m>m</m>.
+            </p>
+            <task>
+                <statement>
+                    <p>Give the generating function for the number of partitions of an integer into parts of any size. Don't forget to use <m>q</m> rather than <m>x</m> as your variable. 
+                    </p>
+                </statement>
+                <hint>
+                    <p>
+                        Don’t be afraid of writing down a product of infinitely many power series.
+                    </p>
+                </hint>
+                <solution>
+                    <p>
+                        We start with
+                        <me>
+                            (1+q+q^2+\cdots)(1+q^2+q^4+\cdots)\cdots(1+q^i+q^{2i})\cdots,
+                        </me>
+                        which we can write more precisely as
+                        <me>
+                            \prod_{i=1}^\infty \sum_{j=0}^\infty q^{ij}.
+                        </me>
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>Find the coefficient of <m>q^4</m> in this generating function.</p>
+                </statement>
+                <hint>
+                    <p>
+                        From the fifth factor on, there is no way to choose a q i that has i nonzero and less than five from the factor.
+                    </p>
+                </hint>
+                <solution>
+                    <p>
+                        From the fifth factor on, there is no way to choose a <m>q^i</m> that has <m>i</m> nonzero and less than five from the factor. Thus we choose a 1 from each of these factors. We can choose a <m>q^4</m> from the fourth factor and 1 from the rest, a <m>q^3</m> from the third factor, a <m>q</m> from the first and a 1 from the rest, a <m>q^2</m> from the second factor, a <m>q^2</m> from the first and a 1 from the rest, or we can choose a <m>q^4</m> from the first factor and a 1 from the rest. Therefore the coefficient of <m>q^4</m> is five.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        find the coefficient of <m>q^5</m> in this generating function.
+                    </p>
+                </statement>
+                <solution>
+                    <p>
+                        From the sixth factor of the product on, there is no way to choose a <m>q^i</m> that has <m>i</m> nonzero and less than six from the factor, so when we compute the coefficient of <m>q^5</m>, we can only choose the 1 from each of these terms. In the first five factors, we choose any combination of powers that adds to 5. We can choose <m>q^5</m> from the fifth and 1 from the rest, q from the first, <m>q^4</m> from the second and 1 from the rest, <m>q^2</m> from the second, <m>q^3</m> from the third and 1 from the rest, <m>q^2</m> from the first and <m>q^3</m> from the third and 1 from the rest, <m>q^3</m> from the first, <m>q^2</m> from the second, and 1 from the rest <m>q^5</m> from the first and 1 from the rest, and these are the only ways to get a <m>q^5</m> in the product. Thus the coefficient of <m>q^5</m> is 7.
+                    </p>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        This generating function involves an infinite product. Describe the process you would use to expand this product into as many terms of a power series as you choose.
+                    </p>
+                </statement>
+                <hint>
+                    <p>
+                        Describe to yourself how to get the coefficient of a given power of <m>q</m>.
+                    </p>
+                </hint>
+                <solution>
+                    <p>To get the coefficient of <m>q^k</m> in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get <m>q^k</m>, and add all these products up. That is, the coefficient of <m>q^k</m> is the number of ways of making these choices of one summand from each series so that the product of our choices is <m>q^k</m>. This lets us write down as many terms of the series as we want, or as we have patience for!
                 </p>
-            </statement>
-            <solution>
-                <p>
-                    We start with
-                    <me>
-                        (1+q+q^2+\cdots)(1+q^2+q^4+\cdots)\cdots(1+q^i+q^{2i})\cdots,
-                    </me>
-                    which we can write more precisely as
-                    <me>
-                        \prod_{i=1}^\infty \sum_{j=0}^\infty q^{ij}.
-                    </me>
-                </p>
-
-                <p>To get the coefficient of <m>q^k</m> in this product, we look at all ways of choosing one summand from each of the infinite series and multiplying them together to get <m>q^k</m>, and add all these products up. That is, the coefficient of <m>q^k</m> is the number of ways of making these choices of one summand from each series so that the product of our choices is <m>q^k</m>. We can rewrite the infinite product as <m>\displaystyle\prod_{i=0}^\infty\frac{1}{1-q^i}</m>.
-                </p>
-            </solution>
+                </solution>
+            </task>
+            <task>
+                <statement>
+                    <p>
+                        Rewrite any power series that appear in your product as quotients of polynomials or as integers divided by polynomials.
+                    </p>
+                </statement>
+                <solution>
+                     <p>
+                         We can rewrite the infinite product as <m>\displaystyle\prod_{i=0}^\infty\frac{1}{1-q^i}</m>.
+                     </p>
+                 </solution>   
+            </task>
         </activity>
 
         <activity category="interesting">
             <statement>
                 <p>In <xref ref="genfunpartitions">Problem</xref>, we multiplied together infinitely many power series. Here are two notations for infinite products that look rather similar:
                 <me>
-                    \prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\mbox{and}
+                    \prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i\qquad\mbox{and}\qquad
                     \prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}.
                 </me>
                 </p>
@@ -91,6 +191,12 @@
                 where each <m>p_i(x)</m> is a nonzero polynomial in <m>x</m> to make sense, describe a relatively simple assumption about the polynomials <m>p_i(x)</m> that will make the product make sense. If we assumed the terms <m>p_i(x)</m> were nonzero power series, is there a relatively simple assumption we could make about them in order to make the product make sense? (Describe such a condition or explain why you think there couldn't be one.)
                 </p>
             </statement>
+            <hint>
+                <p>
+If infinitely many of the polynomials had a nonzero coefficient for <m>q</m>, would the product make any sense?
+                </p>
+            </hint>
+
             <solution>
                 <p>
                     <m>\prod_{i=1}^\infty 1 +x^i +x^{2i} +\cdots + x^{i^2}</m> makes sense because when we look for ways of choosing one summand from each factor so that the summands multiply together to give us <m>x^k</m>, we will find only finitely many ways of making those choices, so the coefficient of <m>x^k</m> can be taken to be the number of such choices. On the other hand, in the expression <m>\prod_{i=1}^\infty 1 + x + x^2 +\cdots+ x^i</m>, there are infinitely many ways to choose <m>x</m> from one term and <m>1</m> from all the rest of the terms so that the product of these summands is <m>x</m>. Thus we can't even specify what the coefficient of <m>x</m> is in the product. On the basis of this analysis, we see that for <m>\prod_{i=1}^\infty 1 +p_i(x)</m> to make sense, we need to assume that for each possible positive integer <m>n</m>, there are only a finite number of polynomials <m>p_i</m> whose lowest degree term has degree less than or equal to <m>n</m>. In that way, for each positive integer, there will be only finitely many ways to chose a summand from each factor so that the product of the summands is a multiple of <m>x^k</m>. The same assumption works when the <m>p_i</m> are power series, for the same reason.
@@ -103,6 +209,12 @@
                 <p>What is the generating function (using <m>q</m> for the variable) for the number of partitions of an integer in which each part is even?
                 </p>
             </statement>
+            <hint>
+                <p>
+                    <m>(1 + q^2 + q^4 )(1 + q^3 + q^9 )</m> is the generating function for partitions of an integer into at most two twos and at most two threes.
+                </p>
+            </hint>
+
             <solution>
                 <p>
                     <m>(1+q^2+q^4+\cdots)(1+q^4+q^8+\cdots)(1+q^6+q^{12}+\cdots)\cdots</m>,
@@ -117,6 +229,12 @@
                 <p>What is the generating function (using <m>q</m> as the variable) for the number of partitions of an integer into distinct parts, that is, in which each part is used at most once?
                 </p>
             </statement>
+            <hint>
+                <p>
+                    <m>(1 + q^2 + q^4 )(1 + q^3 + q^9 )</m> is the generating function for partitions of an integer into at most two twos and at most two threes. (This is intentionally the same hint as in the previous problem, but it has a different point in this problem.)
+                </p>
+            </hint>
+
             <solution>
                 <p>
                     <m>\displaystyle (1+q)(1+q^2)(1+q^3)\cdots=
@@ -130,50 +248,63 @@
                 <p>Use generating functions to explain why the number of partitions of an integer in which each part is used an even number of times equals the generating function for the number of partitions of an integer in which each part is even.
                 </p>
             </statement>
+            <hint>
+                <p>
+                    In the power series <m>\sum_{j=0}^\infty q^{2ij}</m>, the <m>2ij</m> has a different interpretation if you think
+of it as <m>(2i) \cdot j</m> or if you think of it as <m>i \cdot (2j)</m>.
+
+P
+  </p>
+</hint>
+
             <solution>
-                <p>In the generating function <m>\displaystyle\prod_{i=1}^\infty \sum_{j=0}^\infty q^{2ij}</m>, we may interpret the <m>2ij</m> in <m>q^{2ji}</m> the value of using <m>2i</m> as a part <m>j</m> times or as the value of using <m>i</m> as a part <m>2j</m> times. Therefore this is the generating function both for the number of partitions of integers into parts that are even and the number of partitions into parts that are used an even number of times. Therefore the number of partitions of <m>n</m> in which each part is even equals the number of partitions of <m>n</m> in which each part is used an even number of times.
+                <p>In the generating function <m>\displaystyle\prod_{i=1}^\infty \sum_{j=0}^\infty q^{2ij}</m>, we may interpret the <m>2ij</m> in <m>q^{2ji}</m> the value of using <m>2i</m> as a part <m>j</m> times or as the value of using <m>i</m> as a part <m>2j</m> times. Therefore this is the generating function both for the number of partitions of integers into parts that are even and the number of partitions into parts that are used an even number of times. Therefore the number of partitions of <m>n</m> in which each part is even equals the number of partitions of <m>n</m> in which each part is used an even number of times. In <xref ref="partition-even-mult-even-use" /> we got the same result bijectively.
                 </p>
             </solution>
         </activity>
 
         <activity category="essential and interesting">
-            <task>
-                <statement>
-                    <p>Use the fact that
-                    <me>
-                        \frac{1-q^{2i}}{1-q^i}= 1+q^i
-                    </me>
-                    and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer <m>k</m> into distinct parts is related to the number of partitions of an integer <m>k</m> into odd parts.
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                        <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i}}{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j}
-                        =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}</m>, because all the terms in the numerator
-                        cancel with alternate terms in the denominator leaving only terms with odd
-                        powers of <m>q</m>. But
-                        <md>
-                            <mrow> \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty
-                            \sum_{i=0}^\infty
-                            (q^{2j-1})^i</mrow>
-                            <mrow> =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
+            <statement>
+                <p>Use the fact that
+                <me>
+                    \frac{1-q^{2i}}{1-q^i}= 1+q^i
+                </me>
+                and the generating function for the number of partitions of an integer into distinct parts to show how the number of partitions of an integer <m>k</m> into distinct parts is related to the number of partitions of an integer <m>k</m> into odd parts.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Note that
+                    <me>\frac{1-q^2}{1-q}\cdot \frac{1-q^4}{1-q^2}\cdot \frac{1-q^6}{1-q^3}\cdot \frac{1-q^8}{1-q^4} = \frac{(1-q^6)(1-q^8)}{(1-q)(1-q^3)} </me>.
+                </p>
+            </hint>
+            <solution>
+                <p>
+                    <m>\displaystyle\prod_{i=1}^\infty 1+q^i=\prod_{i=1}^n \frac{1-q^{2i}}{1-q^i}=\frac{\prod_{i=1}^\infty1-q^{2i}}{\prod_{j=1}^\infty 1-q^j} =\prod_{i=j}^\infty \frac{1}{1-q^{2j-1}}</m>, because all the terms in the numerator cancel with alternate terms in the denominator leaving only terms with odd powers of <m>q</m>. But
+                    <md>
+                        <mrow> \amp \prod_{j=1}^\infty\frac{1}{1-q^{2j-1}}\rangle =\rangle \prod_{j=1}^\infty \sum_{i=0}^\infty (q^{2j-1})^i</mrow>
+                        <mrow> =\amp (1+q+q^{2\cdot1}+\cdots)(1+q^3+q^{2\cdot3}+\cdots)(1
                             +q^5+q^{2\cdot5}+\cdots)\cdots,</mrow>
                         </md>
                         which is the generating function for partitions of integers into parts that
                         are odd numbers.
                     </p>
                 </solution>
-            </task>
-            <task>
-                <statement>
-                    <p>Write down the generating function for the number of ways to partition an integer into parts of size no more than <m>m</m>, each used an odd number of times. Write down the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Use these two generating functions to get a relationship between the two sequences for which you wrote down the generating functions.
-                    </p>
-                </statement>
-                <solution>
-                    <p>
-                        <me>
-                            \displaystyle\prod_{i=1}^m (q^i+q^{3i}+q^{5i}+\cdots )= q^{1+2+\cdots
-                            m}\prod_{i=1}^m (1+q^{2i}+q^{4i}+\cdots )=q^{\binom{m+1}{2}}\prod_{i=1}^m\frac{1}{1-q^{2i}}
+        </activity>
+        <activity>
+            <statement>
+                <p>Write down the generating function for the number of ways to partition an integer into parts of size no more than <m>m</m>, each used an odd number of times. Write down the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Use these two generating functions to get a relationship between the two sequences for which you wrote down the generating functions.
+                </p>
+            </statement>
+            <hint>
+                <p>
+                    Note that <m>q^i + q^{3i} + q^{5i} + \cdots = q^i (1 + q^2 + q^4 + \cdots)</m>.
+                </p>
+            </hint>
+            <solution>
+                <p>
+                    <me>
+                            \displaystyle\prod_{i=1}^m (q^i+q^{3i}+q^{5i}+\cdots )= q^{1+2+\cdots m}\prod_{i=1}^m (1+q^{2i}+q^{4i}+\cdots )=q^{\binom{m+1}{2}}\prod_{i=1}^m\frac{1}{1-q^{2i}}
                         </me>
                         is the generating function for the number of ways to partition an integer into parts of size at most <m>m</m>, each used an odd number of times.
                         <me>
@@ -181,9 +312,8 @@
                             \prod_{i=1}^m (1 +q^{2i}+q^{4i}+q^{6i}+\cdots )=\prod_{i=1}^m \frac{1}{1-q^{2i}}
                         </me>
                         is the generating function for the number of partitions of an integer into parts of size no more than <m>m</m>, each used an even number of times. Therefore the number of partitions of <m>k</m> into parts of size no more than <m>m</m>, each used an even number of times is the number of partitions of <m>k+\binom{m+1}{2}</m>, into parts of size no more than <m>m</m>, each used an odd number of times.
-                    </p>
-                </solution>
-            </task>
+                </p>
+            </solution>
         </activity>
 
         <!-- This is, in some sense, the problem from hell when it comes to structure. In the first pass, we're going to break into more tasks than Bogart had. This really should become more than one activity in the final version. -->
@@ -195,14 +325,14 @@
                     <p>Compute <m>\qchoose{4}{2}=\qchoose{2+2}{2}</m>.
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        We want to calculate the number of partitions whose Young diagrams fit into a two by two square. These partitions have at most two parts and the parts have size at most two. Thus they are partitions of 1, 2, 3, or 4. However not all partitions of 3 or 4 have diagrams that fit into a two by two square. Try writing down the relevant diagrams.
+                    </p>
+                </hint>
                 <solution>
                     <p>
-                        A partition with up to two parts of size up to two can have no
-                        parts, one part of size 1, which makes it a partition of 1, one part of
-                        size 2 which makes it a partition of 2, two parts of size 1, which makes
-                        it a partition of 2, a part of size 2 and a part of size 1, which makes
-                        it a partition of 3, or two parts of size 2, which makes it a partition
-                        of 4. Thus <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>.
+                        A partition with up to two parts of size up to two can have no parts, one part of size 1, which makes it a partition of 1, one part of size 2 which makes it a partition of 2, two parts of size 1, which makes it a partition of 2, a part of size 2 and a part of size 1, which makes it a partition of 3, or two parts of size 2, which makes it a partition of 4. Thus <m>\qchoose{4}{2}=1+q+2q^2+q^3+q^4</m>.
                     </p>
                 </solution>
             </task>
@@ -213,6 +343,11 @@
                         <m>\qchoose{n}{n-1}</m>.
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        They are the generating function for the number of partitions whose Young diagram fits into a rectangle <m>n - 1</m> units wide and 1 unit deep or into a rectangle 1 unit wide and <m>n - 1</m> units deep respectively.
+                    </p>
+                </hint>
                 <solution>
                     <p>Both are <m>1+q+q^2+\cdots+q^{n-1} = \frac{1-q^{n-1}}{1-q}</m>, because they are the generating function for the number of partitions whose Young diagram fits into a rectangle <m>n-1</m> units wide and 1 unit deep or into a rectangle 1 unit wide and <m>n-1</m> units deep respectively.
                     </p>
@@ -223,6 +358,11 @@
                     <p>How are <m>\qchoose{m+n}{n}</m> and <m>\qchoose{m+n}{n}</m> related? Prove it. (Note this is the same as asking how <m>\qchoose{r}{s}</m> and <m>\qchoose{r}{r-s}</m> are related.)
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        How can you get a diagram of a partition counted by partition is counted by <m>\qchoose{m+n}{n}</m> from one whose partition is counted by <m>\qchoose{m+n}{m}</m>?
+                    </p>
+                </hint>
                 <solution>
                     <p>
                         By conjugation, <m>\qchoose{m+n}{n}=\qchoose{m+n}{m}</m>.
@@ -244,8 +384,7 @@
             </task>
             <task>
                 <statement>
-                    <p>Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.
-                    The largest part of a partition counted by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>.  In the second case, the partition fits into a rectangle that is at most <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating function for partitions of this type?  In the first case, what kind of rectangle does the partition we get by removing the largest part sit in?  What is the generating function for partitions that sit in this kind of rectangle?  What is the generating function for partitions that sit in this kind of rectangle after we remove a largest part of size <m>m</m>?  What recurrence relation does this give you?
+                    <p>Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.  The largest part of a partition counted by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>.  In the second case, the partition fits into a rectangle that is at most <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating function for partitions of this type?  In the first case, what kind of rectangle does the partition we get by removing the largest part sit in?  What is the generating function for partitions that sit in this kind of rectangle?  What is the generating function for partitions that sit in this kind of rectangle after we remove a largest part of size <m>m</m>?  What recurrence relation does this give you?
                     </p>
                 </statement>
                 <solution>
@@ -262,16 +401,14 @@
                     </p>
 
                     <p>
-                        While this doesn't {quite} look like the Pascal recurrence, it is still a
-                        correct answer.
+                        While this doesn't <em>quite</em> look like the Pascal recurrence, it is still a correct answer.
                     </p>
                 </solution>
             </task>
             <task>
                 <statement>
                     <p>
-                        What recurrence do you get from the other operation we studied in
-                        <xref ref="numberpartitionrecurrence">Problem</xref>?
+                        What recurrence do you get from the other operation we studied in <xref ref="numberpartitionrecurrence">Problem</xref>?
                     </p>
                 </statement>
                 <solution>
@@ -287,6 +424,11 @@
                     <p>It is quite likely that the two recurrences you got are different.  One would expect that they might give different values for <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        Think about geometric operations on Young Diagrams
+                    </p>
+                </hint>
                 <solution>
                     <p>
                         Yes, by conjugation.
@@ -301,6 +443,11 @@
                     </me>
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        How would you use the Pascal recurrence to prove the corresponding result for binomial coefficients?
+                    </p>
+                </hint>
                 <solution>
                     <p>Note that <m>\qchoose{n}{0}= \qchoose{n}{n} = 1</m>, because only the partition with no parts sits in a rectangle of width or depth 0. But <m>\frac{[m+0]!_q}{[m]!_q[0]!_q} =1</m> and <m>\frac{[0+n]!_q}{[0]!_q[n]!_q} =1</m>. Thus the formula holds when <m>m=0</m> or <m>n=0</m>. But
                     <md>
@@ -336,6 +483,11 @@
                     Why is the limit in <xref ref="q-binomial-lim">Part</xref> equal to the number of partitions (of any number) with at most <m>n</m> parts all of size most <m>m</m>? Can you explain bijectively why this quantity equals the formula you got?
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        For finding a bijection, think about lattice paths.
+                    </p>
+                </hint>
                 <solution>
                     <p>
                         <ol>
@@ -355,6 +507,16 @@
                     <p>What happens to <m>\qchoose{m+n}{n}</m> if we let <m>q</m> approach <m>-1</m>?
                     </p>
                 </statement>
+                <hint>
+                    <p>
+                        If you could prove <m>\qchoose{m+n}{n}</m> is a polynomial function of <m>q</m>, what would that tell you about how to compute the limit as <m>q</m> approaches <m>-1</m>?
+                    </p>
+                </hint>
+                <hint>
+                    <p>
+                        Try computing a table of values of <m>\qchoose{m+n}{n}</m> with <m>q=-1</m> by using the recurrence relation. Make a pretty big table so you can see what is happening.
+                    </p>
+                </hint>
                 <solution>
                     <p><m>\qchoose{m+n}{n}</m> is the generating function for the number of partitions whose Young diagram fits into an <m>m</m> by <m>n</m> rectangle. That is,
                     <me>
@@ -384,8 +546,10 @@
                     </me>
                     </p>
                     <table xml:id="q-binomial-tab">
+                        <caption><m>-1</m>-binomial coefficients</caption>
                         <tabular>
-                            <row>
+                            <col right="minor" /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col />
+                            <row bottom="minor">
                                 <cell><m>m+n\backslash n</m></cell>
                                 <cell>0</cell>
                                 <cell>1</cell>
@@ -397,19 +561,6 @@
                                 <cell>7</cell>
                                 <cell>8</cell>
                                 <cell>9</cell>
-                            </row>
-                            <row bottom="minor">
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
-                                <cell></cell>
                             </row>
                             <row>
                                 <cell>0</cell>
@@ -544,10 +695,9 @@
                         </tabular>
                     </table>
                     <p>
-                        (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) It would be fascinating to know what we are counting here!
+                        (Note that <m>mn</m> is odd if and only if <m>m+n</m> is even and <m>n</m> is odd.) Wouldn’t it be fascinating to know what we are counting here? It is the number of lattice paths from <m>(0, 0)</m> to <m>(n - k, k)</m> that are symmetric under 180 degree rotation. This and other results are discussed in the paper by John R. Stembridge <q>Some hidden relations involving the ten symmetry classes of plane partitions.</q> <booktitle>J. Combin. Theory Ser. A</booktitle> 68 (1994), no. 2, 372–409.
                     </p>
                 </solution>
             </task>
         </activity>
-    </subsection>
 </section>
