@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec_genfns-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<exercises xml:id="sec_genfns-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Supplementary Problems</title>
 
-  <activity xml:id="candy-genfn" category="interesting and difficult">
+  <exercise xml:id="candy-genfn" category="interesting and difficult">
     <statement>
       <p>What is the generating function for the number of ways to pass out <m>k</m> pieces of candy from an unlimited supply of identical candy to <m>n</m> children (where <m>n</m> is fixed) so that each child gets between three and six pieces of candy (inclusive)? Use the fact that
         <me>
-          (1+x+x+x^3)(1-x) = 1-x^4
+          (1+x+x^2+x^3)(1-x) = 1-x^4
         </me>
         to find a formula for the number of ways to
         pass out the candy.
@@ -21,91 +21,87 @@
           <mrow> =\amp x^{3n}\left(\frac{1-x^4}{1-x}\right)^n</mrow>
           <mrow> =\amp x^{3n}\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty
           \binom{n+i-1}{i}x^i</mrow>
-        </md>
-      </p>
-
-      <p>
+        </md>.
         The number of ways to pass out <m>k</m> pieces of candy is the coefficient of <m>x^k</m> in this expression. Thus the answer is zero if <m>k\lt 3n</m> because of the <m>x^{3n}</m> in front. Otherwise the answer is the coefficient of <m>^{k-3n}</m> in <m>\sum_{j=0}^n (-1)^j\binom{n}{j}x^{4j}\sum_{i=0}^\infty \binom{n+i-1}{i}x^i</m>, which is
         <me>
           \sum_{i,j:4j+i=k-3n}(-1)^j\binom{n}{j}\binom{n+i-1}{i}= \sum_{j=0}^{\lfloor (k-3n)/4\rfloor} (-1)^j\binom{n}{j}\binom{k-2n-4j-1}{n-1}.
         </me>
       </p>
-
     </solution>
-  </activity>
+  </exercise>
 
-  <activity category="motivation">
-    <task>
+  <exercise category="motivation">
       <statement>
-        <p>
-          In paying off a mortgage loan with initial amount <m>A</m>, annual interest rate <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence describes the amount owed after <m>n</m> months of payments in terms of the amount owed after <m>n-1</m> months?  Some technical details: You make the first payment after one month.  The amount of interest included in your monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount you owed immediately after making your last monthly payment.
-        </p>
+          <p>
+              <ol>
+                  <li>
+                      <p>
+                          In paying off a mortgage loan with initial amount <m>A</m>, annual interest rate <m>p</m><percent /> on a monthly basis with a monthly payment of <m>m</m>, what recurrence describes the amount owed after <m>n</m> months of payments in terms of the amount owed after <m>n-1</m> months?  Some technical details: You make the first payment after one month.  The amount of interest included in your monthly payment is <m>.01p/12</m>.  This interest rate is applied to the amount you owed immediately after making your last monthly payment.
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          Find a formula for the amount owed after <m>n</m> months.
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          Find a formula for the number of months needed to bring the amount owed to zero.  Another technical point: If you were to make the standard monthly payment <m>m</m> in the last month, you might actually end up owing a negative amount of money.  Therefore it is ok if the result of your formula for the number of months needed gives a non-integer number of months.  The bank would just round up to the next integer and adjust your payment so your balance comes out to zero.
+                      </p>
+                  </li>
+                  <li>
+                      <p>
+                          What should the monthly payment be to pay off the loan over a period of 30 years?
+                      </p>
+                  </li>
+              </ol>
+          </p>
       </statement>
       <solution>
-        <p>
-          <m>a_n=(1+\frac{.01p}{12})a_{n-1}-m</m>.
+          <p>
+          <ol>
+              <li>
+                  <p>
+                      <m>a_n=(1+\frac{.01p}{12})a_{n-1}-m</m>.
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
+                      <md>
+                          <mrow>a_n  =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}</mrow>
+                          <mrow> =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}</mrow>
+                      </md>
+                  </p>
+              </li>
+              <li>
+                  <p>
+                      <m>\left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}=0</m> gives us the equation <m>\left(1+\frac{.01p}{12}\right)^n=\frac{1200m}{1200m-Ap}</m>. Taking logarithms to any base we choose gives us <m>n\log (1+\frac{.01p}{12})=\log 1200m-\log (1200m-Ap)</m> and so <m>n=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m>.
         </p>
+              </li>
+              <li>
+                  <p>
+                      <m>360=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m> is the equation we need to solve for <m>m</m>, the monthly payment. We need to chose some base for the logarithm so we can write its inverse function; suppose we use logs to the base 10. Then
+                      <md>
+                          <mrow>360\log (1+\frac{.01p}{12})  =\amp  \log
+                          1200m-\log (1200m-Ap)</mrow>
+                          <mrow>10^{360\log (1+\frac{.01p}{12})} =\amp 10^{\log
+                          1200m/(1200m-Ap)}</mrow>
+                          <mrow>(1+\frac{.01p}{12})^{360}  =\amp 1200m/(1200m-Ap)</mrow>
+                          <mrow>\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360} =\amp 1200m</mrow>
+                          <mrow>1200m\left((1+\frac{.01p}{12})^{360}-1\right) =\amp  Ap(1+\frac{.01p}{12})^{360}</mrow>
+                          <mrow>m  =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
+                      </md>
+                      is our monthly payment.
+        </p>
+              </li>
+          </ol>
+          </p>
       </solution>
-    </task>
-    <task>
-      <statement>
-        <p>
-          Find a formula for the amount owed after <m>n</m> months.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          From <xref ref="firstordlinconst">Problem</xref> or by applying generating functions we have
-          <md>
-            <mrow>a_n  =\amp  A(1+\frac{.01p}{12})^n-m\frac{1-(1+\frac{.01p}{12})^n}{1-(1+\frac{.01p}{12})}</mrow>
-            <mrow> =\amp  \left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}</mrow>
-          </md>
-        </p>
-      </solution>
-    </task>
-    <task>
-      <statement>
-        <p>
-          Find a formula for the number of months needed to bring the amount owed to zero.  Another technical point: If you were to make the standard monthly payment <m>m</m> in the last month, you might actually end up owing a negative amount of money.  Therefore it is ok if the result of your formula for the number of months needed gives a non-integer number of months.  The bank would just round up to the next integer and adjust your payment so your balance comes out to zero.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>\left(A-\frac{1200m}{p}\right)\left(1+\frac{.01p}{12}\right)^n+\frac{1200m}{p}=0</m> gives us the equation <m>\left(1+\frac{.01p}{12}\right)^n=\frac{1200m}{1200m-Ap}</m>. Taking logarithms to any base we choose gives us <m>n\log (1+\frac{.01p}{12})=\log 1200m-\log (1200m-Ap)</m> and so <m>n=\frac{\log 1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m>.
-        </p>
-      </solution>
-    </task>
-    <task>
-      <statement>
-        <p>
-          What should the monthly payment be to pay off the loan over a period of 30 years?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          <m>360=\frac{\log
-          1200m-\log (1200m-Ap)}{\log (1+\frac{.01p}{12})}</m> is the equation we need to
-          solve for <m>m</m>, the monthly payment. We need to chose some base for the
-          logarithm so we can write its inverse function; suppose we use logs to the base
-          10. Then
-          <md>
-            <mrow>360\log (1+\frac{.01p}{12})  =\amp  \log
-            1200m-\log (1200m-Ap)</mrow>
-            <mrow>10^{360\log (1+\frac{.01p}{12})} =\amp 10^{\log
-            1200m/(1200m-Ap)}</mrow>
-            <mrow>(1+\frac{.01p}{12})^{360}  =\amp 1200m/(1200m-Ap)</mrow>
-            <mrow>\left(1200m-Ap\right)(1+\frac{.01p}{12})^{360} =\amp 1200m</mrow>
-            <mrow>1200m\left((1+\frac{.01p}{12})^{360}-1\right) =\amp  Ap(1+\frac{.01p}{12})^{360}</mrow>
-            <mrow>m  =\amp  \frac{Ap(1+\frac{.01p}{12})^{360}}{1200\left((1+\frac{.01p}{12})^{360}-1\right)}</mrow>
-          </md>
-          is our monthly payment.
-        </p>
-      </solution>
-    </task>
-  </activity>
+  </exercise>
 
 
-  <activity category="interesting">
+  <exercise category="interesting">
     <statement>
       <p>
         We have said that for nonnegative <m>i</m> and positive <m>n</m> we want to define <m>\binom{-n}{i}</m> to be <m>\binom{n+i-1}{i}</m>. If we want the Pascal recurrence to be valid, how should we define <m>\binom{-n}{-i}</m> when <m>n</m> and <m>i</m> are both positive?
@@ -116,11 +112,11 @@
         The number <m>\binom{n}{k}</m> is the number in row <m>n</m> and column <m>k</m> of the Pascal (right) triangle. We have said we want to have <m>\binom{-n}{0}=\binom{n+0-1}{0}</m>, so we want ones everywhere in that column. Now the Pascal recurrence gives us that <m>\binom{-n}{0}=\binom{-n-1}{-1} +\binom{-n-1}{0}</m>, so that <m>\binom{-n}{-1}=0</m>, as does <m>\binom{0}{-1}</m>. Applying the Pascal recurrence again gives us <m>\binom{-n}{-1}= \binom{-n-1}{-2} +\binom{-n-1}{-1}</m>, so we have <m>\binom{-n-1}{-2}=0</m> as well. Following this pattern, we can prove by induction that <m>\binom{-n}{-k}</m> is zero whenever <m>k</m> and <m>n</m> are positive.
       </p>
     </solution>
-  </activity>
+  </exercise>
 
 
 
-  <activity category="interesting">
+  <exercise category="interesting">
     <statement>
       <p>
         Find a recurrence relation for the number of ways to divide a convex <m>n</m>-gon into triangles by means of non-intersecting diagonals.  How do these numbers relate to the Catalan numbers?<index><main>Catalan Number</main><sub>recurrence for</sub></index>
@@ -147,9 +143,9 @@
         Thus by the principle of mathematical induction, <m>d_n=C_{n-2}</m> for all integers <m>n\ge 2</m>.
       </p>
     </solution>
-  </activity>
+  </exercise>
 
-  <activity category="interesting">
+  <exercise category="interesting">
       <statement>
           <p>
           How does <m>\sum_{k=0}^n\binom{n-k}{k}</m> relate to the Fibonacci Numbers?
@@ -173,8 +169,8 @@
           Thus the sequence satisfies the same recurrence as the Fibonacci numbers and its first two values are the same as the Fibonacci numbers. This lets us prove by induction that <m>a_n</m> is the <m>n</m>th Fibonacci number. More generally, given any second order recurrence, if two sequences satisfy that recurrence and have the same first two values, then they are equal.
         </p>
       </solution>
-  </activity>
-  <activity>
+  </exercise>
+  <exercise>
       <statement>
           <p>
           Let <m>m</m> and <m>n</m> be fixed. Express the generating function for the number of <m>k</m>-element multisets of an <m>n</m>-element set such that no element appears more than <m>m</m> times as a quotient of two polynomials. Use this expression to get a formula for the number of <m>k</m>-element multisets of an <m>n</m>-element set such that no element appears more than <m>m</m> times.
@@ -185,8 +181,8 @@
           <m>(1+x+x^2+\cdots+x^m)^n=\frac{(1-x^{m+1})^n}{(1-x)^n}</m>.  Expanding this gives us <m>\frac{(1-x^{m+1})^n}{(1-x)^n}=\sum_{i=0}^n(-1)^i \binom{n}{i}x^{(m+1)i} \sum_{j=0}^\infty \binom{n+j-1}{j}</m>. The coefficient of <m>x^k</m> in this product is the number of <m>k</m>-element multisets chosen from an <m>n</m>-element set in which no element appears more than <m>m</m> times. This coefficient is <m>\sum\limits_{i,j:(m+1)i+j=k}(-1)^i\binom{n}{i}\binom{n+j-1}{j}=\sum\limits_{i=1}^{\lfloor\frac{k}{m+1}\rfloor}(-1)^i\binom{n}{i}\binom{n+k-(m+1)i-1}{n-1}</m>.
         </p>
       </solution>
-  </activity>
-<activity>
+  </exercise>
+<exercise>
       <statement>
         <p>
           One natural but oversimplified model for the growth of a tree is that all new wood grows from the previous year's growth and is proportional to it in amount. To be more precise, assume that the (total) length of the new growth in a given year is the constant <m>c</m> times the (total) length of new growth in the previous year. Write down a recurrence for the total length <m>a_n</m> of all the branches of the tree at the end of growing season <m>n</m>. Find the general solution to your recurrence relation. Assume that we begin with a one meter cutting of new wood (from the previous year) which branches out and grows a total of two meters of new wood in the first year.  What will the total length of all the branches of the tree be at the end of <m>n</m> years?
@@ -227,9 +223,9 @@
           Assuming that we begin with one meter of new wood means <m>a_0=1</m>, and assuming we have a total of two meters of new wood at the end of the first year means <m>c=2</m> and <m>a_1=3</m>. Substituting these into our formula for <m>a_i</m> gives us <m>a_i=2^{i+1}-1</m>
         </p>
       </solution>
-  </activity>
+  </exercise>
 
-  <activity category="interesting">
+  <exercise category="interesting">
       <statement>
         <p>
             (Relevant to <xref ref="expogenfun" autoname="yes" />) We have some chairs which we are
@@ -255,11 +251,11 @@
           Thus the number of ways to paint <m>n</m> chairs is <m>\binom{n+4-1}{n}=\binom{n+3}{n}</m>
         </p>
       </solution>
-  </activity>
-<activity>
+  </exercise>
+<exercise>
     <statement>
         <p>
-          What is the generating function for the number of partitions of an integer in which each part is used at most <m>m</m> times? Why is this also the generating function for partitions in which consecutive parts (in a decreasing list representation) differ by at most <m>m</m>?
+          What is the generating function for the number of partitions of an integer in which each part is used at most <m>m</m> times? Why is this also the generating function for partitions in which consecutive parts (in a decreasing list representation) differ by at most <m>m</m> and the smallest part is also at most <m>m</m>?
         </p>
       </statement>
       <solution>
@@ -271,6 +267,5 @@
           This is also the generating function for the number of partitions of an integer in which consecutive parts differ by at most <m>m</m>, because when we conjugate a partition in which each part is used at most <m>m</m> times, we get a partition in which each distinct column of the Young diagram occurs at most <m>m</m> times, which means that the difference between two consecutive parts (in the decreasing list representation) is at most <m>m</m>.
         </p>
       </solution>
-  </activity>
-
-</section>
+  </exercise>
+</exercises>
