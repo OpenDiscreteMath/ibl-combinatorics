@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec_inclexcl-sizeunion" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>The size of a union of sets</title>
+
+<introduction>
+    <p>
+      One of our very first counting
+      principles was the <em>sum principle</em><index><main>sum principle</main></index> which says that
+      the size of a union of disjoint sets is the sum of their sizes.
+      Computing the size of overlapping sets requires, quite naturally,
+      information about how they overlap. Taking such information into account
+      will allow us to develop a powerful extension of the sum principle known
+      as the <q>principle of inclusion and exclusion.</q><index><main>principle of
+      inclusion and exclusion</main></index><index><main>inclusion and exclusion principle</main></index>
+    </p>
+</introduction>
+<subsection>
+  <title>Unions of two or three sets</title>
+    <activity xml:id="fertilizer2" category="motivation">
+      <statement>
+        <p> In a biology lab study of the effects of basic fertilizer
+        ingredients on plants, 16 plants are treated with potash, 16 plants are
+        treated with phosphate, and among these plants, eight are treated with
+        both phosphate and potash. No other treatments are used. How many plants
+        receive at least one treatment? If 32 plants are studied, how many
+        receive no treatment?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          The number of plants receiving treatment was <m>16+16-8 = 24</m>.
+          The number of plants receiving no treatment was eight.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="twosetintersection" category="summary">
+      <statement>
+        <p>
+          Give a formula for the size of the union <m>A\cup B</m> of two
+          sets
+          <m>A</m> in terms of the sizes <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>. If <m>A</m> and <m>B</m> are subsets of some <q>universal</q> set <m>U</m>,
+          express the size of the complement <m>U-(A\cup B)</m> in terms of the sizes
+          <m>|U|</m> of <m>U</m>, <m>|A|</m> of <m>A</m>, <m>|B|</m> of <m>B</m>, and <m>|A\cap B|</m> of
+          <m>A\cap B</m>.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Try drawing a Venn Diagram.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>|A\cup B|=|A| + |B| - |A\cap B|</m>.
+        </p>
+
+        <p>
+          <m>|U-(A\cup B)| = |U|-|A|-|B| + |A
+          \cap B|</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          In <xref ref="fertilizer2">Problem</xref>, there were just two fertilizers used
+          to treat the sample plants. Now suppose there are three fertilizer
+          treatments, and 15 plants are treated with nitrates, 16 with potash, 16
+          with phosphate, 7 with nitrate and potash, 9 with nitrate and phosphate,
+          8 with potash and phosphate and 4 with all three. Now how many plants
+          have been treated? If 32 plants were studied, how many received no
+          treatment at all?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>15+16+16-7-9-8+4=27</m> plants were treated and five received
+          no treatment.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="threesetintersection" category="essential">
+      <statement>
+        <p>
+          Give a formula for the size of <m>A\cup B\cup C</m> in terms of
+          the sizes of <m>A</m>, <m>B</m>, <m>C</m> and the intersections of these
+          sets.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Try drawing a Venn Diagram.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          <m>|A\cup B\cup C|=|A|+|B|+|C|-|A\cap B|- |A\cap C| - |B\cap
+          C| +|A\cap B\cap C|</m>.
+        </p>
+      </solution>
+    </activity>
+
+  </subsection>
+
+  <subsection>
+    <title>Unions of an arbitrary number of sets</title>
+
+    <activity xml:id="nsetintersection" category="essential">
+      <statement>
+        <p>
+          Conjecture a formula for the size of a union of sets
+          <me>
+            A_1\cup
+            A_2\cup \cdots\cup A_n = \bigcup_{i=1}^n A_i
+          </me>
+          in terms of the sizes of
+          the sets <m>A_i</m> and their intersections.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
+          \sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
+          A_2\cap\cdots \cap A_n|.
+        </me>
+      </solution>
+    </activity>
+
+    <p>
+      The difficulty of generalizing <xref ref="threesetintersection">Problem</xref> to
+      <xref ref="nsetintersection">Problem</xref> is not likely to be one of being able to
+      see what the right conjecture is, but of finding a good notation to
+      express your conjecture. In fact, it would be easier for some people to
+      express the conjecture in words than to express it in a notation. Here
+      is some notation that will make your task easier. Let us define
+      <me>
+        \bigcap_{i:i\in I}A_i
+      </me>
+      to mean the intersection over all elements <m>i</m>
+      in the set <m>I</m> of
+      <m>A_i</m>. Thus
+      <men xml:id="intersectionnotation" >
+        \bigcap_{i:i\in
+        \{1,3,4,6\}} = A_1\cap A_3\cap A_4 \cap A_6.
+      </men>
+    </p>
+
+    <p>
+      This kind of notation, consisting of an operator with a description
+      underneath of the values of a dummy variable of interest to us, can be
+      extended in many ways. For example
+      <mdn>
+        <mrow number="no">\sum_{I:I \subseteq \{1,2,3,4\}, \ |I|=2} |\cap_{i\in I}
+        A_i|  \amp =  |A_1\cap A_2|+ |A_1\cap A_3|
+         +|A_1\cap A_4|</mrow>
+        <mrow xml:id="notationsolution"> \amp +  |A_2\cap A_3|+
+        |A_2\cap A_4| +|A_3\cap A_4|.</mrow>
+      </mdn>
+    </p>
+
+    <activity xml:id="inclusion-exclusionunion" category="essential">
+      <statement>
+        <p>
+          Use notation something like that of <xref ref="intersectionnotation">Equation</xref> and <xref ref="notationsolution">Equation</xref> to express
+          the answer to <xref ref="nsetintersection">Problem</xref>. Note there are many
+          different correct ways to do this problem. Try to write down more
+          than one and choose the nicest one you can. Say why you chose it
+          (because your view of what makes a formula nice may be different from
+          somebody else's). The nicest formula won't necessarily involve all the
+          elements of <xref ref="intersectionnotation">Equations</xref> and <xref ref="notationsolution"></xref>.
+        </p>
+      </statement>
+      <solution>
+        <me>
+          \left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
+          S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|
+        </me>
+        <p>
+          I chose this
+          way of writing the formula partly because it is efficient with symbols;
+          for example, it uses only one sum sign. But more importantly I chose it
+          because it captures what I would want to say in words: ``You sum, over
+          all ways of choosing an intersection of the sets <m>A_i</m>, the size of the
+          intersection times a sign factor that is -1 if you are intersecting
+          an even number of sets and 1 if you are intersecting an odd number."
+          If I were writing my solution out in words, I would probably assume
+          that nobody would think about the possibility of an intersection of the
+          empty set of the
+          <m>A_i</m>s, but I had to put the <m>S\not=\emptyset</m> in my formula because
+          otherwise the formula would have had us consider the possibility that
+          <m>S</m> was empty.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="hatcheck" category="essential">
+        <p>
+          A group of <m>n</m> students goes to a restaurant carrying backpacks.
+          The manager invites everyone to check their backpack at the check desk and everyone does. While they are eating, a child playing in the check room randomly moves around the claim check stubs on the backpacks. We will try to compute the probability that, at the end of the meal, at least one student receives his or her own backpack.  This probability is the fraction of the total number of ways to return the backpacks in which at least one student gets his or her own backpack back.
+        </p>
+      <task>
+        <statement>
+          <p>
+            What is the total number of ways to pass back the backpacks?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>n!</m>, because there are <m>n</m> students and <m>n</m> backpacks and a distribution of backpacks to students will be a bijection.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            In how many of the distributions of backpacks to students does at least one student get his or her own backpack?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            For each student, how big is the set of backpack distributions in which that student gets the correct backpack?  It might be a good idea to first consider cases with <m>n=3</m>, <m>4</m>, and <m>5</m>.
+          </p>
+        </hint>
+
+        <hint>
+          <p>
+            For each pair of students (say Mary and Jim, for example) how big is
+            the set of backpack distributions in which the students in this pair
+            get the correct backpack. What does the question have to do with
+            unions or intersections of sets. Keep on increasing the number of
+            students for which you ask this kind of question.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            If we let <m>A_i</m> be the set of backpack distributions in which student
+            <m>i</m> gets the correct backpack, then the number we want to compute is
+            the size of the union of the sets <m>A_i</m>. For this purpose we need to
+            know, for every subset <m>S\subseteq [n]</m> the size of <m>\cap_{i\in S}A_i</m>.
+            That is, we need to know the number of ways to pass out the backpacks
+            so that student <m>i</m> gets the correct one for each <m>i</m> in <m>S</m>. It
+            won't matter whether or not other students get the correct backpacks,
+            so we can just assume that for each <m>i\in S</m>, student <m>i</m> gets the
+            correct backpack and then hand out the remaining <m>n-|S|</m> backpacks to
+            the remaining <m>n-|S|</m> students in <m>(n-|S|)!</m> ways. Thus <m>(n-|S|)!</m> is
+            <m>|\cap_{i:i\in S}A_i|</m>. Using our formula from <xref ref="inclusion-exclusionunion">Problem</xref> we get
+            <md>
+              <mrow>\left|\bigcup_{i=1}^n A_i \right|  =\amp  \sum_{S:
+              S\subseteq [n], S\not=\emptyset}
+              (-1)^{|S|-1}\left|\bigcap_{i:i\in S} A_i \right|</mrow>
+              <mrow> =\amp \sum_{S:
+              S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)!</mrow>
+              <mrow> =\amp
+              \sum_{s=1}^n \binom{n}{s}(-1)^{s-1}(n-s)!</mrow>
+              <mrow> =\amp \sum_{s=1}^n
+              (-1)^{s-1}\frac{n!}{s!}</mrow>
+            </md>
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            What is the probability that at least one student gets the correct backpack?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Dividing the answer in the last part by <m>n!</m>, the total number of ways to pass back the backpacks, we get <m>\sum_{s=1}^n \frac{(-1)^{s-1}}{s!}</m> for the probability that at least one student gets the correct backpack.
+          </p>
+        </solution>
+      </task>
+
+      <task xml:id="hatcheckprobpart">
+        <statement>
+          <p>
+            What is the probability that no student gets his or her own backpack?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Subtracting from 1 to get the probability that no student gets the correct backpack gives us
+            <me>
+              1-\sum_{s=1}^n  \frac{(-1)^{s-1}}{s!} = \sum_{s=0}^n \frac{(-1)^s}{s!}.
+            </me>
+          </p>
+        </solution>
+      </task>
+
+    <task category="interesting">
+      <statement>
+        <p>
+          As the number of students becomes large, what does the probability
+          that no student gets the correct backpack approach?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From calculus, we know that <m>e^x=\sum_{j=0}^\infty \frac{x^j}{j!}</m>. Substituting <m>x=-1</m> gives us <m>e^{-1}=\sum_{j=0}^\infty
+          \frac{(-1)^j}{j!}</m> which is the limit as <m>n</m> becomes infinite of the
+          probability in the solution to <xref ref="hatcheck">Problem</xref>. Thus the
+          probability approaches <m>1/e</m>.
+        </p>
+      </solution>
+    </task>
+    </activity>
+
+    <p>
+      <xref ref="hatcheck">Problem</xref> is <q>classically</q> called the <em>hatcheck
+      problem</em><index><main>hatcheck problem</main></index>; the name comes from substituting hats
+      for backpacks. If is also sometimes called the <em>derangement
+      problem</em><index><main>derangement problem</main></index>. A <em>derangement</em><index><main>derangement</main></index> of an
+      <m>n</m>-element set is a permutation of that set (thought of as a bijection)
+      that maps no element of the set to itself. One can think of a way of
+      handing back the backpacks as a permutation <m>f</m> of the students: <m>f(i)</m> is
+      the owner of the backpack that student <m>i</m> receives. Then a derangement
+      is a way to pass back the backpacks so that no student gets his or her
+      own.
+    </p>
+
+
+  </subsection>
+
+  <subsection>
+    <title>The Principle of Inclusion and Exclusion</title>
+
+    <p>
+      The formula you have given in <xref ref="inclusion-exclusionunion">Problem</xref> is
+      often called <em>the principle of inclusion and
+      exclusion</em><index><main>inclusion and exclusion principle
+      </main><sub>for unions of sets</sub></index><index><main>principle of inclusion and exclusion</main><sub>for
+      unions of sets</sub></index> for unions of sets. The reason is the pattern in which
+      the formula first adds (includes) all the sizes of the sets, then
+      subtracts (excludes) all the sizes of the intersections of two sets, then
+      adds (includes) all the sizes of the intersections of three sets, and so
+      on.   Notice that we haven't yet proved the principle. There are a variety of proofs.  Perhaps one of the most straightforward (though not the most elegant) is an iductive proof that relies on the fact that
+      <me>
+        A_1 \cup A_2 \cup \cdots \cup A_n = \left(A_1 \cup A_2 \cup \cdots \cup A_{n-1}\right) \cup A_n
+      </me>
+      and the formula for the size of a union of two sets.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          Give a proof of your formula for the principle of inclusion and exclusion.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Try induction.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          We can apply the formula of <xref ref="twosetintersection">Problem</xref> to get
+          <md>
+          <mrow> \left|\bigcup_{i=1}^n A_i \right| \amp = \left|\left(\bigcup_{i=1}^{n-1} A_i\right) \cup A_n \right| </mrow>
+          <mrow> \amp = \left| \bigcup_{i=1}^{n-1} A_i\right| + |A_n| - \left|\left( \bigcup_{i=1}^{n-1} A_i\right) \cap A_n\right|</mrow>
+          <mrow> \amp = \left| \bigcup_{i=1}^{n-1} A_i\right| + |A_n| - \left|\bigcup_{i=1}^{n-1} A_i \cap A_n\right|</mrow>
+          </md>
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          The principle of inclusion and exclusion for one set says <m>|A_1| = |A_1|</m>.  The principle of inclusion and exclusion for two sets says <m>|A_1\cup A_2| = |A_1| + |A_2| - |A_1 \cap A_2|</m>, and was prove in our solution to <xref ref="twosetintersection">Problem</xref>.  Now suppose the formula is true for a union of <m>n-1</m> or fewer sets and <m>n \ge 2</m>.  Since
+          <me>
+            A_1 \cup A_2 \cup \cdots \cup A_n = \left(A_1 \cup A_2 \cup \cdots \cup A_{n-1}\right) \cup A_n
+          </me>
+          we can apply the formula of <xref ref="twosetintersection">Problem</xref> to get
+
+          <md>
+          <mrow> \left|\bigcup_{i=1}^n A_i \right| \amp = \left|\left(\bigcup_{i=1}^{n-1} A_i\right) \cup A_n \right| </mrow>
+          <mrow> \amp = \left| \bigcup_{i=1}^{n-1} A_i\right| + |A_n| - \left|\left( \bigcup_{i=1}^{n-1} A_i\right) \cap A_n\right|</mrow>
+          <mrow> \amp = \left| \bigcup_{i=1}^{n-1} A_i\right| + |A_n| - \left|\bigcup_{i=1}^{n-1} A_i \cap A_n\right|</mrow>
+          </md>
+
+          By the inductive hypothesis, we may apply the principle of inclusion and exclusion to the first and last term in the last line above, and can rewrite it as
+          <md>
+          <mrow>
+          \sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right| + |A_n| - \sum_{S:S\subseteq [n-1],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \cap A_n \right|
+          </mrow>
+          <mrow>
+          = \sum_{S:S\subseteq [n],S\ne \emptyset} (-1)^{|S|-1}\left|\bigcap_{i:i\in S}A_i \right|,
+          </mrow>
+          </md>
+          where the last line follows because every nonempty subset of <m>[n]</m> is either (1) a nonempty subset of <m>[n-1]</m>, (2) a nonempty subset of <m>[n-1]</m> with  <m>n</m> added in, or (3) the set <m>\{n\}</m>.  Thus by the principle of mathematical induction, the formula for the principle of inclusion and exclusion holds for all nonnegative integers <m>n</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+
+    <activity category="interseting">
+      <p>
+        We get a more elegant proof if we ask for a picture enumerator for <m>A_1 \cup A_2 \cup \cdots \cup A_n</m>.  so let us assume <m>A</m> is a set with a picture function <m>P</m> defined on it and that each set <m>A_i</m> is a subset of <m>A</m>.
+      </p>
+      <task>
+        <statement>
+          <p>
+            By thinking about how we got the formula for the size of a union, write down instead a conjecture for the picture enumerator of a union.  You could use notation like <m>E_P(\bigcap_{i:i\in S} A_i)</m> for the picture enumerator of the intersection of the sets <m>A_i</m> for <m>i</m> in a subset of <m>S</m> of <m>[n]</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>E_P(\bigcup_{i=1}^n A_i) =  \sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1}E_P(\bigcap_{i:i\in S}A_i)</m>.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>x \in \bigcup_{i=1}^n A_i</m>, what is the coefficient for <m>P(x)</m> in (the inclusion-exclusion side of) your formula for <m>E_P(\bigcup_{i=1}^n A_i)</m>?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Let <m>T</m> be the set of all <m>i</m> such that <m>x \in A_i</m>. In terms of <m>x</m>, what is different about the <m>i</m> in <m>T</m> and those not in <m>T</m>?
+          </p>
+        </hint>
+        <hint>
+          <p>
+            You may come to a point where the binomial theorem would be helpful.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            Let <m>T</m> be the set of all <m>i</m> such that <m>x\in A_i</m>.  Then <m>x \in A_i</m> for exactly those <m>i \in T</m>.  Note that <m>|T| \gt 0</m> because <m>x</m> is in at least one <m>A_i</m>.  Then the coefficient of <m>P(x)</m> is <m>\sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1}</m>.  But
+            <me>
+              \sum_{S:S\subseteq[n],S\ne\emptyset} (-1)^{|S|-1} = -\sum_{i=1}^T\binom{|T|}{i}(-1)^i = -[(1-1)^{|T|} - 1] = 0+1 = 1.
+            </me>
+            Thus if <m>x \in E_P(\bigcup_{i=1}^n A_i)</m>, then the coefficient of <m>P(x)</m> in <m>E_P(\bigcup_{i=1}^n A_i)</m> is 1.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            If <m>x \notin \bigcup_{i=1}^n A_i</m>, what is the coefficient of <m>P(x)</m> in (the inclusion-exclusion side of) your formula for <m>E_P(\bigcup_{i=1}^n A_i)</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <m>P(x)</m> is not in any of the enumerators <m>E_P(\bigcap_{i:i\in S} A_i)</m>, its coefficient is 0.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How have you proved your conjecture for the picture enumerator of the union of the sets <m>A_i</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have shown that <m>P(x)</m> appears in the right hand side of our formula with coefficeint 1 if it is in the union and with coefficient 0 otherwise.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How can you get the formula for the principle of inclusion and exclusion from your formula for the picture enumerator of the union?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Substitute 1 for the picture of each element <m>x</m>.  Then <m>E_P(\bigcap_{i:i \in S}A_i)</m> becausem <m>\left| \bigcap_{i:i \in S}A_i\right|</m>, and our formula follows.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity xml:id="compunion">
+      <statement>
+        <p>
+          Frequently when we apply the principle of inclusion and exclusion, we will have a situation like that of part (d) of <xref ref="hatcheckprobpart">Problem</xref>.  That is, we will have a set <m>A</m> and subsets <m>A_1, A_2, \ldots, A_n</m> and we will want the size or the probability of the set of elements in <m>A</m> that are <em>not</em> in the union.  This set is known as the <term>complement</term> <index><main>complement</main></index> of the union of the <m>A_i</m>s in <m>A</m>, and is denoted by <m>A \setminus \bigcup_{i=1}^n A_i</m>, or if <m>A</m> is clear from context, by <m>\overline{\bigcup_{i=1}^n A_i}</m>.
+          Give the fomula for <m>\overline{\bigcup_{i=1}^n A_i}</m>.  The principle of inclusion and exclusion generall refers to both this formula and the one for the union.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since all the <m>A_i</m>s are subsets of <m>A</m>, one way to write this size is as <m>|A| - \sum_{S:S \subseteq [n], S \ne \emptyset}(-1)^{|S|-1} |\bigcap_{i:i \in S}A_i|</m>.  Letting <m>|A| = \left|\bigcap_{i:i \in \emptyset} A_i\right|</m>, we may write <m>\left|\overline{\bigcup_{i=1}^n A_i}\right| = \sum_{S:S \subseteq [n]} (-1)^{|S|}\left| \bigcap_{i:i\in S} A_i\right|</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+    <p>
+      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<footnote>
+      For those interested in logic and set theory, given a family of subsets <m>A_i</m> of a set <m>A</m>, we define <m>\bigcap_{i:i\in S}A_i</m> to be the set of all members <m>x</m> of <m>A</m> that are in <m>A_i</m> for all <m>i \in S</m>.  (Note that this allows <m>x</m> to be in some other <m>A_j</m>s as well.)  Then if <m>S = \emptyset</m>, our intersection consists of all members <m>x</m> of <m>A</m> that satisfy the statement <q>if <m>i\in \emptyset</m>, then <m>x \in A_i</m>.</q>
+      But since the hypothesis of the <q>if-then</q> statement is false, the statement itself is true for all <m>x \in A</m>.  Therefor <m>\bigcap_{i:i \in \emptyset}A_i = A</m>.
+      </footnote> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
+    </p>
+
+  </subsection>
+</section>
+
+  <!-- <subsection>
+
+We will first
+  describe the principle in an apparently more general situation that
+  doesn't require us to translate each application into the language of
+  sets. While this new version of the principle might seem more general
+  than the principle for unions of sets; it is equivalent. However once one
+  understands the notation used to express it, it is more convenient to
+  apply.
+
+    <title>The hatcheck problem restated</title>
+    <p>
+      The last question in <xref ref="hatcheck">Problem</xref> requires that we compute the number of ways to hand back
+      the backpacks so that nobody gets his or her own backpack. We can think
+      of the set of ways to hand back the backpacks so that student <m>i</m> gets
+      the correct one as the set of permutations of the backpacks with the
+      property that student <m>i</m> gets his or her own backpack. Since there are
+      <m>n-1</m> other students and they can receive any of the remaining <m>n-1</m>
+      backpacks in <m>(n-1)</m> ways, the number of permutations with the property
+      that student <m>i</m> gets the correct backpack is <m>(n-1)!</m>. How many
+      permutations are there with the properties that student <m>i</m> gets the
+      correct backpack <em>and</em> student <m>j</m> gets the correct backpack? (Let's
+      call these properties <m>i</m> and <m>j</m> for short.) Since there are <m>n-2</m>
+      remaining students and <m>n-2</m> remaining backpacks, the number of
+      permutations with properties <m>i</m> and <m>j</m> is <m>(n-2)!</m>. Similarly, the
+      number of permutations with properties <m>i_1,i_2,\ldots,i_k</m> is <m>(n-k)!</m>.
+      Thus when we compute the size of the union of the sets
+      <me>
+        S_i=\{f: f\mbox{ is a permutation with property } i\},
+      </me>
+      we are
+      computing the number of ways to pass back the backpacks so that at least
+      one student gets the correct backpack. This answers the first question
+      in <xref ref="hatcheck">Problem</xref>. The last question in <xref ref="hatcheck">Problem</xref>
+      is asking us for the number of ways to pass back the backpacks that have
+      <em>none</em> of the properties. To say this in a different way, the
+      question is asking us to compute the number of ways of passing back the
+      backpacks that have exactly the <em>empty set</em>, <m>\emptyset</m>, of
+      properties.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>Basic counting functions: <m>N_{ at least }</m> and
+    <m>N_{ exactly }</m></title>
+    <p>
+      Notice that the quantities that we were able to count easily were the
+      number of ways to pass back the backpacks so that we satisfy a certain
+      subset
+      <m>K= \{i_1,i_2,\ldots,i_k\}</m> of our properties. In fact, among the <m>(n-k)</m>
+      ways to pass back the backpacks with this particular set <m>K</m> of
+      properties is the permutation that gives each student the correct
+      backpack, and has not just the properties in <m>K</m>, but the whole set of
+      properties. Similarly, for any set <m>M</m> of properties with <m>K\subseteq
+      M</m>, the permutations that have all the properties in <m>M</m> are among the
+      <m>(n-k)!</m> permutations that have the properties in the set <m>K</m>. Thus we
+      can think of <m>(n-k)!</m> as counting the number of permutations that have
+      <em>at least</em> the properties in <m>K</m>. In particular, <m>n!</m> is the number
+      of ways to pass back the backpacks that have at least the empty set of
+      properties. We thus write <m>N_{\mbox{at least} }(\emptyset)=n!</m>, or
+      <m>N_{\mbox{a} }(\emptyset)=n!</m> for short. For a <m>k</m>-element subset <m>K</m> of
+      the properties, we write <m>N_{\mbox{at least} }(K) =(n-k)!</m> or
+      <m>N_{\mbox{a} }(K) =(n-k)!</m> for short.
+    </p>
+
+    <p>
+      The question we are trying to answer is ``How many of the
+      distributions of backpacks have exactly the empty set of properties?"
+      For this purpose we introduce one more piece of notation. We use
+      <m>N_{\mbox{exactly} }(\emptyset)</m> or <m>N_{\mbox{e} }(\emptyset)</m> to stand for
+      the number of backpack distributions with exactly the empty set of
+      properties, and for any set <m>K</m> of properties we use
+      <m>N_{\mbox{exactly} }(K)</m> or <m>N_{\mbox{e} }(K)</m> to stand for the number of
+      backpack distributions with exactly the set <m>K</m> of properties. Thus
+      <m>N_{\mbox{e} }(K)</m> is the number of distributions in which the students
+      represented by the set <m>K</m> of properties get the correct backpacks back
+      and no other students do.
+    </p>
+  </subsection>
+
+  <subsection>
+    <title>The principle of inclusion and exclusion for properties</title>
+    <p>
+      For the principle of inclusion and exclusion for properties, suppose we
+      have a set of arrangements (like backpack distributions) and a set <m>P</m> of
+      properties (like student <m>i</m> gets the correct backpack) that the
+      arrangements might or might not have. We suppose that we know (or can
+      easily compute) the numbers <m>N_{\mbox{a} }(K)</m> for every subset <m>K</m> of
+      <m>P</m>. We are most interested in computing <m>N_{\mbox{e} }(\emptyset)</m>, the
+      number of arrangements with none of the properties, but it will turn out
+      that with no more work we can compute <m>N_{\mbox{e} }(K)</m> for every subset
+      <m>K</m> of <m>P</m>. Based on our answer to <xref ref="hatcheck">Problem</xref> we expect that
+      <men xml:id="incexempty" >
+        N_{\mbox{e} }(\emptyset) = \sum_{S: S\subseteq P} (-1)^{|S|}N_{\mbox{a} }(S)
+      </men>
+      and it is a natural guess that, for every subset <m>K</m> of <m>S</m>,
+      <men xml:id="incexnonempty" >
+        N_{\mbox{e} }(K) = \sum_{S: K\subseteq S\subseteq P}
+        (-1)^{|S|-|K|}N_{\mbox{a} }(S).
+      </men>
+    </p>
+
+    <p>
+      <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> are called <em>the
+      principle of inclusion and exclusion for properties</em>.<index><main>inclusion and
+      exclusion principle</main><sub>for properties</sub></index><index><main>principle of inclusion and
+      exclusion</main><sub>for properties</sub></index>
+    </p>
+
+    <activity category="motivation">
+      <statement>
+        <p>
+          Verify that the formula for the number of ways to pass back the
+          backpacks in <xref ref="hatcheck">Problem</xref> so that nobody gets the correct backpack has the form of
+          <xref ref="incexempty">Equation</xref>.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose we take property <m>i</m> to be the property that student <m>i</m>
+          gets the correct backpack. In our solution to <xref ref="hatcheck">Problem</xref> we
+          thought of <m>S</m> as a subset of <m>[n]</m>. Since we are numbering our
+          properties from <m>1</m> to <m>n</m>, each set <m>S</m> determines a corresponding set
+          <m>S'</m> of properties: those properties numbered by the elements of <m>S</m>. We
+          will use <m>P</m> to stand for the set of all properties, that is property 1
+          through property <m>n</m>. The number of ways to pass back the hats so that
+          nobody gets the correct hat is <m>n!</m> minus the number of ways to pass back
+          the hats so that somebody does get the correct hat back. From our
+          solution to <xref ref="hatcheck">Problem</xref>, we see that one way to express this is as
+          <md>
+            <mrow>n!-\sum_{S:
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|-1} (n-|S|)! =\amp
+            n!+\sum_{S:
+            S\subseteq [n], S\not=\emptyset}(-1)^{|S|} (n-|S|)!</mrow>
+            <mrow> =\amp
+            \sum_{S:
+            S\subseteq [n]}(-1)^{|S|} (n-|S|)!</mrow>
+            <mrow> =\amp \sum_{S:
+            S\subseteq [n]}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
+            <mrow> =\amp
+            \sum_{S':
+            S'\subseteq P}(-1)^{|S|} N_{\mbox{a} }(S')</mrow>
+          </md>
+          because <m>N_{\mbox{a} }(S')</m> is the number of ways to pass back the backpacks
+          so that at least the students in <m>S</m> get the correct backpacks, which is
+          the same as the size of <m>\bigcap_{i:i\in S} A_i</m>, and which we computed to
+          be <m>(n-|S|)!</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="incexsystemeq" category="essential">
+      <statement>
+        <p>
+          Find a way to express <m>N_{\mbox{a} }(S)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m> containing <m>S</m>. In particular,
+          what is the equation that expresses <m>N_{\mbox{a} }(\emptyset)</m> in terms of
+          <m>N_{\mbox{e} }(J)</m> for subsets <m>J</m> of <m>P</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>N_{\mbox{a} }(S) = \sum_{J: S\subseteq
+          J\subseteq P}N_{\mbox{e} }(J)</m>. In particular, we get by substitution that
+          <m>N_{\mbox{a} }(\emptyset)=\sum_{J:J\subseteq P} N_{\mbox{e} }(J)</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential">
+        <statement>
+          <p>
+            Substitute the formula for <m>N_{\mbox{a} }</m> from <xref ref="incexsystemeq">Problem</xref> into the right hand sides of the formulas of <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> and simplify what you get to show that for <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> the right-hand sides are indeed
+            equal to the left-hand sides. This will prove that those equations are
+            true. (Hint: You will get a double sum. If you can figure out how to
+            reverse the order of the two summations, the binomial theorem may help you
+            simplify the formulas you get.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Since <xref ref="incexempty">Equation</xref> is a special case of <xref ref="incexnonempty">Equation</xref>, we will just substitute the formula from <xref ref="incexsystemeq">Problem</xref> into the right-hand side of <xref ref="incexnonempty">Equation</xref>. This gives us
+            <md>
+              <mrow>\hspace{-.25 in}\sum_{S: K\subseteq S\subseteq P}
+              (-1)^{|S|-|K|}N_{\mbox{a} }(S) =\amp \sum_{S: K\subseteq S\subseteq P}
+              (-1)^{|S|-|K|}\sum_{J: S\subseteq
+              J\subseteq P}N_{\mbox{e} }(J)</mrow>
+              <mrow> =\amp \sum_{S: K\subseteq S\subseteq P}
+              \sum_{J: S\subseteq
+              J\subseteq P}(-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}\sum_{S:K\subseteq S\subseteq J}
+              (-1)^{|S|-|K|}N_{\mbox{e} }(J)</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{S:K\subseteq
+              S\subseteq J} (-1)^{|S|-|K|}</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{s=|K|}^{|J|}
+              \binom{|J|-|K|
+              }{s-|K|}(-1)^{s-|K|}</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq P}N_{\mbox{e} }(J)\sum_{i=0}^{|J|-|K|}
+              \binom{|J|-|K|
+              }{i}(-1)^{i}</mrow>
+              <mrow> =\amp \sum_{J:K\subseteq J\subseteq
+              P}N_{\mbox{e} }(J)(1-1)^{|J|-|K|}</mrow>
+              <mrow> =\amp N_{\mbox{e} }(K).</mrow>
+            </md>
+          </p>
+
+          <p>
+            In the fourth-to-last line of our equations, we used the fact that the
+            number of subsets <m>S</m> of <m>J</m> that contain <m>K</m> is the number of ways to
+            choose the elements of the set <m>S-K</m> of elements in <m>S</m> but not <m>K</m> from
+            the elements of <m>J-K</m>, the set of elements of <m>J</m> that are not in <m>K</m>. In
+            the second-to-last line of the equations, we recognized that the second
+            sum in the third-to-last line is the kind of sum we would get by applying
+            the binomial theorem to something of the form <m>(x+y)^{|J|-|K|}</m> for a
+            suitable <m>x</m> and <m>y</m>, and then saw that <m>x=1</m> and <m>y=-1</m> would give us
+            exactly the second sum in the third-to-last line. In going from the
+            second-to-last line to the last line we used the facts that <m>0^n=o</m> if <m>n>0</m>
+            and <m>0^0=1</m>. This proves that <xref ref="incexnonempty">Equation</xref> is true for all
+            <m>K</m>, and in particular when
+            <m>K=\emptyset</m>, which also proves <xref ref="incexempty">Equation</xref>. We have just
+            proved the Principle of inclusion and exclusion.
+          </p>
+        </solution>
+      </activity>
+ -->
