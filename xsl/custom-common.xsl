@@ -59,6 +59,25 @@
 <xsl:param name="exercise.backmatter.hint" select="'yes'" />
 <xsl:param name="exercise.backmatter.answer" select="'yes'" />
 <xsl:param name="exercise.backmatter.solution" select="'yes'" />
+<!-- Now project-like elements, in main text.  -->
+<!-- A task is a division of a project         -->
+<xsl:param name="project.text.statement" select="'yes'" /> <!-- not implemented -->
+<xsl:param name="project.text.hint" select="'yes'" />
+<xsl:param name="project.text.answer" select="'yes'" />
+<xsl:param name="project.text.solution" select="'yes'" />
+<xsl:param name="task.text.statement" select="'yes'" /> <!-- not implemented -->
+<xsl:param name="task.text.hint" select="'yes'" />
+<xsl:param name="task.text.answer" select="'yes'" />
+<xsl:param name="task.text.solution" select="'yes'" />
+<!-- And project-like elements, in back matter (none implemented). -->
+<xsl:param name="project.backmatter.statement" select="'yes'" />
+<xsl:param name="project.backmatter.hint" select="'yes'" />
+<xsl:param name="project.backmatter.answer" select="'yes'" />
+<xsl:param name="project.backmatter.solution" select="'yes'" />
+<xsl:param name="task.backmatter.statement" select="'yes'" />
+<xsl:param name="task.backmatter.hint" select="'yes'" />
+<xsl:param name="task.backmatter.answer" select="'yes'" />
+<xsl:param name="task.backmatter.solution" select="'yes'" />
 <!-- Author tools are for drafts, mostly "todo" items                 -->
 <!-- and "provisional" citations and cross-references                 -->
 <!-- Default is to hide todo's, inline provisionals                   -->
@@ -102,73 +121,6 @@
 <!-- Pointers to realizations of the actual document -->
 <xsl:param name="address.html" select="''" />
 <xsl:param name="address.pdf" select="''" />
-
-
-<!-- Redefine chapter numbering to start at 0 -->
-<xsl:template match="chapter" mode="raw-serial-number">
-    <xsl:variable name="n">
-      <xsl:number count="chapter|references|exercises"/>
-    </xsl:variable>
-    <xsl:number value="$n - 1" format="1" />
-</xsl:template>
-
-<xsl:template match="exercises|references" mode="raw-serial-number">
-    <xsl:number count="part|chapter|appendix|section|subsection|subsubsection|references|exercises" format="1" />
-</xsl:template>
-
-<!-- Set exercises blocks to be numbered by their parent section   -->
-<xsl:template match="exercises" mode="number">
-    <xsl:variable name="serial">
-        <xsl:apply-templates select="parent::*" mode="serial-number" />
-    </xsl:variable>
-    <xsl:if test="not($serial = '')">
-        <xsl:apply-templates select="parent::*" mode="structure-number" />
-        <xsl:value-of select="$serial" />
-    </xsl:if>
-</xsl:template>
-
-
-<!-- Reload this to get exercise numbers to respect exercise block numbers -->
-<xsl:template match="exercises/exercise|exercises/exercisegroup/exercise" mode="serial-number">
-    <xsl:number from="exercises" level="any" count="exercise" />
-</xsl:template>
-<xsl:template match="exercises/exercise[@number]|exercisegroup/exercise[@number]" mode="serial-number">
-    <xsl:apply-templates select="@number" />
-</xsl:template>
-
-<!-- Hints, answers, solutions may be numbered (for cross-reference knowls) -->
-<xsl:template match="hint|answer|solution" mode="serial-number">
-    <xsl:number />
-</xsl:template>
-
-
-
-
-<!-- Hack tasks to look like we want temporarily -->
-
-
-<xsl:template match="task" mode="serial-number">
-    <xsl:variable name="relative-level">
-        <xsl:apply-templates select="." mode="level" />
-    </xsl:variable>
-    <xsl:choose>
-        <xsl:when test="$relative-level > $numbering-maxlevel">
-            <xsl:text></xsl:text>
-        </xsl:when>
-        <xsl:otherwise>
-            <xsl:apply-templates select="." mode="raw-serial-number" />
-        </xsl:otherwise>
-    </xsl:choose>
-</xsl:template>
-
-<xsl:template match="task" mode="raw-serial-number">
-  <xsl:number format="(a)"/>
-</xsl:template>
-
-<xsl:template match="task">
-  <xsl:apply-templates select="." mode="raw-serial-number" />
-  <xsl:apply-templates />
-</xsl:template>
 
 
 </xsl:stylesheet>
