@@ -378,47 +378,118 @@
   <subsection xml:id="orderedfunctionsection">
     <title>Ordered functions</title>
     <activity xml:id="bookcase" category="essential and interesting">
-      <task>
-        <statement>
-          <p>
-            Suppose we wish to place <m>k</m> distinct books onto the shelves of
-            a bookcase with <m>n</m> shelves. For simplicity, assume for now that all of
-            the books would fit on any of the shelves. Also, let's imagine pushing
-            the books on a shelf as far to the left as we can, so that we are only
-            thinking about how the books sit relative to each other, not about the
-            exact places where we put the books. Since the books are distinct, we can
-            think of a the first book, the second book and so on. How many places
-            are there where we can place the first book? When we place the second
-            book, if we decide to place it on the shelf that already has a book, does
-            it matter if we place it to the left or right of the book that is already
-            there? How many places are there where we can place the second book?
-            Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>
-            on a shelf that already has some books, is sliding it in to the left of
-            all the books already there different from placing it to the right of
-            all the books already or between two books already there? In how many
-            ways may we place the
-            <m>i</m>th book into the bookcase? In how many ways may we place all the
-            books?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            There are <m>n</m> places where we can place the first book. Once
-            we have placed it, there are <m>n+1</m> places where we can place the second
-            book, because on the shelf that has one book, we could put the second
-            book to the left or to the right of the book already there. Once we have
-            <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the
-            left of all books there, if any, giving us <m>n</m> places, or it could go to
-            the immediate right of any book already there, giving us another <m>i-1</m>
-            places. Thus there are <m>n+i-1</m> places where we could place book <m>i</m>.
-            From this, we can see that the number of ways to place all the books is
-            <me>
-              \prod_{i=1}^k (n+i-1).
-            </me>
-          </p>
-        </solution>
-      </task>
-      <task>
+          <p> Suppose we wish to place <m>k</m> distinct books onto the shelves
+          of a bookcase with <m>n</m> shelves. For simplicity, assume for now
+          that all of the books would fit on any of the shelves. Also, let's
+          imagine pushing the books on a shelf as far to the left as we can, so
+          that we are only thinking about how the books sit relative to each
+          other, not about the exact places where we put the books. Since the
+          books are distinct, we can think of a the first book, the second book
+          and so on. </p>
+
+
+        <task>
+          <statement>
+            <p>How many places are there where we can place the first book? </p>
+          </statement>
+          <solution>
+            <p>
+              There are <m>n</m> places where we can place the first book.
+            </p>
+          </solution>
+
+        </task>
+
+        <task>
+          <statement>
+            <p>When we place the second book, if we decide to place it on the shelf that already has a book, does it matter if we place it to the left or right of the book that is already there?
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Yes.
+            </p>
+          </solution>
+        </task>
+
+
+        <task>
+          <statement>
+            <p>
+              How many places are there where we can place the second book?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          If you decide to put it on a shelf that already has a book, you have
+          two choices of where to put it on that shelf.
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Once we have placed it, there are <m>n+1</m> places where we can
+              place the second book, because on the shelf that has one book, we
+              could put the second book to the left or to the right of the book
+              already there.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              Once we have <m>i-1</m> books placed, if we want to place book <m>i</m>  on a shelf that already has some books, is sliding it in to the left of all the books already there different from placing it to the right of all the books already or between two books already there?
+
+            </p>
+          </statement>
+          <solution>
+            <p>
+              All of these are different.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              In how many ways may we place the <m>i</m>th book into the bookcase?
+            </p>
+          </statement>
+          <hint>
+            <p>
+          Among all the places you could put books, on all the shelves, how many are to the immediate left of some book? How many other places are there?
+            </p>
+          </hint>
+          <solution>
+            <p>
+              Once we have <m>i-1</m> books on the shelves the <m>i</m>th book could go on any shelf to the left of all books there, if any, giving us <m>n</m> places, or it could go to the immediate right of any book already there, giving us another <m>i-1</m> places. Thus there are <m>n+i-1</m> places where we could place book  <m>i</m>.
+            </p>
+          </solution>
+        </task>
+
+        <task>
+          <statement>
+            <p>
+              In how many ways may we place all the books?
+
+            </p>
+          </statement>
+          <solution>
+            <p>
+              From this, we can see that the number of ways to place all the books is
+              <me>
+                \prod_{i=1}^k (n+i-1).
+              </me>
+            </p>
+          </solution>
+        </task>
+
+
+      </activity>
+
+
+
+      <activity>
         <statement>
           <p>
             Suppose we wish to place the books in <xref ref="bookcase">Problem</xref>
@@ -428,35 +499,47 @@
             the process described in <xref ref="bookcase">Problem</xref>?)
           </p>
         </statement>
+        <hint>
+          <p>
+        How can you make sure that each shelf gets at least one book before you
+        start the process described in <xref ref="bookcase">Problem</xref>?
+          </p>
+        </hint>
         <solution>
           <p>
-            Choose <m>n</m> books from the <m>k</m> books in <m>\binom{k}{n}</m> ways, and
-            assign them to the <m>n</m> places shelves in <m>n!</m> ways, giving us <m>k!/(k-n)!</m>
-            ways to put a book on each shelf. Now leaving these books at the far
-            left of each shelf, place the remaining books in
+            Choose <m>n</m> books from the <m>k</m> books in <m>\binom{k}{n}</m>
+            ways, and assign them to the <m>n</m> places shelves in <m>n!</m>
+            ways, giving us <m>k!/(k-n)!</m> ways to put a book on each shelf.
+            Now leaving these books at the far left of each shelf, place the
+            remaining books in
             <me>
               \prod_{i=1}^{k-n}
               (n+i-1)=\frac{(n+(k-n)-1)!}{(n-1)!}=\frac{(k-1)!}{(n-1)!}
             </me>
-            ways. Thus we
-            have
+            ways. Thus we have
             <me>
               \frac{k!(k-1)!}{(k-n)!(n-1)!}=k!\binom{k-1}{n-1}
             </me>
-            ways to place the books. Of course the right hand side of that equation
-            cries out for a combinatorial explanation. Here it is. Imagine lining
-            up the <m>k</m> books in a row. Then there are <m>k-1</m> places in between them.
-            Choose <m>n-1</m> of these places, and slide a piece of paper in there as a
-            divider. Now put the books before the first divider on shelf one, and
-            the books after divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
+            ways to place the books. Of course the right hand side of that
+            equation cries out for a combinatorial explanation. Here it is.
+            Imagine lining up the <m>k</m> books in a row. Then there are
+            <m>k-1</m> places in between them. Choose <m>n-1</m> of these
+            places, and slide a piece of paper in there as a divider. Now put
+            the books before the first divider on shelf one, and the books after
+            divider <m>i</m> on shelf <m>i+1</m>. This gives an arrangement of
             the books on the shelves so that every shelf has a book!
           </p>
         </solution>
-      </task>
     </activity>
 
     <p>
-      The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters.  Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function. More precisely, an <term>ordered function</term><index><main>ordered function</main></index><index><main>function</main><sub>ordered</sub></index> from a set <m>S</m> to a set <m>T</m> is a function that assigns an (ordered) list of elements of <m>S</m> to some, but not necessarily all, elements of <m>T</m> in such a way that each element of <m>S</m> appears on one and only one of the lists.<fn>The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.</fn> (Notice that although it is not the usual definition of a function from <m>S</m> to <m>T</m>, a function<index><main>function</main><sub>alternate definition</sub></index> can be described as an assignment of subsets of <m>S</m> to some, but not necessarily all, elements of <m>T</m> so that each element of <m>S</m> is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table. An <term>ordered onto function</term><index><main>function</main><sub>ordered!onto</sub></index><index><main>ordered onto function</main></index><index><main>onto function</main><sub>ordered</sub></index> is one which assigns a list to each element of <m>T</m>. In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^n (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><index><main>factorial power</main><sub>rising</sub></index><index><main>rising factorial power</main></index> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.<index><main><m>n^{\overline{k}}</m></main></index> It is read as ``<m>n</m> to the <m>k</m> rising." (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)<index><main>factorial</main></index> We can summarize with a theorem that adds two more formulas for the number of ordered functions.<index><main>factorial</main><sub>falling</sub></index><index><main>falling factorial power</main></index>
+      The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters.  Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function.
+      More precisely, an <term>ordered function</term><index><main>ordered function</main></index><index><main>function</main><sub>ordered</sub></index> from a set <m>S</m> to a set <m>T</m> is a function that assigns an (ordered) list of elements of <m>S</m> to some, but not necessarily all, elements of <m>T</m> in such a way that each element of <m>S</m> appears on one and only one of the lists.<fn>The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.</fn>
+      (Notice that although it is not the usual definition of a function from <m>S</m> to <m>T</m>, a function<index><main>function</main><sub>alternate definition</sub></index> can be described as an assignment of subsets of <m>S</m> to some, but not necessarily all, elements of <m>T</m> so that each element of <m>S</m> is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table.
+      An <term>ordered onto function</term><index><main>function</main><sub>ordered!onto</sub></index><index><main>ordered onto function</main></index><index><main>onto function</main><sub>ordered</sub></index> is one which assigns a list to each element of <m>T</m>.
+      In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^n (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><index><main>factorial power</main><sub>rising</sub></index><index><main>rising factorial power</main></index> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.
+      <index><main><m>n^{\overline{k}}</m></main></index> It is read as ``<m>n</m> to the <m>k</m> rising.''
+      (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)<index><main>factorial</main></index> We can summarize with a theorem that adds two more formulas for the number of ordered functions.<index><main>factorial</main><sub>falling</sub></index><index><main>falling factorial power</main></index>
     </p>
 
     <theorem>
@@ -472,6 +555,250 @@
       </statement>
     </theorem>
   </subsection>
+
+
+
+
+  <subsection>
+    <title>Multisets</title>
+    <p>
+      In the middle column of row 7 of our table, we are asking for the number
+      of ways to distribute <m>k</m> identical objects (say ping-pong balls) to <m>n</m>
+      distinct recipients (say children).
+    </p>
+
+    <activity xml:id="identicalbooks" category="essential">
+      <statement>
+        <p>
+          In how many ways may we distribute <m>k</m> identical books on the
+          shelves of a bookcase with <m>n</m> shelves, assuming that any shelf can hold
+          all the books?
+        </p>
+      </statement>
+      <hint>
+        <p>
+      What is the relationship between the number of ways to distribute identical books and the number of ways to distribute distinct books?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          We saw that we could arrange <m>k</m> distinct books on <m>n</m> shelves in <m>\prod_{i=1}^k (n+i-1)</m> ways. We partition these arrangements into blocks by putting two arrangements in the same block if we can get one from the other by permuting the books among themselves. Then the number of blocks is the number of ways to place identical books on the shelves. However, there are <m>k!</m> arrangements per block, so there are
+          <me>
+            \frac{\prod_{i=1}^k (n+i-1)}{k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
+          </me>
+          ways to arrange identical books.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="multiset" category="essential">
+      <statement>
+        <p>
+          A <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> may be thought of as a subset with repeated elements allowed. For example the multiset of letters of the word Mississippi is <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how many times (including, perhaps, zero) each member of <m>S</m> appears in the multiset. The number of times an element appears is called its <term>multiplicity</term>.<index><main>multiplicity in a multiset</main></index> The size of a multiset chosen from <m>S</m> is the total number of times any member of <m>S</m> appears. For example, the size of the multiset of letters of Mississippi is 11. What is the number of multisets of size <m>k</m> that can be chosen from an <m>n</m>-element set?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          Look for a relationship between a multiset of shelves and a way of distributing identical books to shelves
+        </p>
+      </hint>
+      <solution>
+        <p>
+          There is a bijection between arrangements of identical books on
+          <m>n</m> shelves and multisets chosen from an <m>n</m>-element set:
+          the multiplicity of element <m>i</m> is the number of books on shelf
+          <m>i</m>. Thus we have <m>\binom{n+k-1}{k}</m> ways to choose a
+          <m>k</m>-element multiset from an <m>n</m>-element set by <xref ref="identicalbooks">Problem</xref>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+        <statement>
+          <p>
+            Your answer in the previous problem should be expressible as a
+            binomial coefficient. Since a binomial coefficient counts subsets,
+            find a bijection between subsets of something and multisets chosen
+            from a set <m>S</m>.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Note that <m>\binom{n+k−1}{k} = \binom{n+k-1}{n-1}</m>. So we have to figure out how choosing either <m>k</m> elements or <m>n − 1</m> elements out of <m>n + k − 1</m> elements constitutes the choice
+        of a multiset. We really have no idea what set of <m>n + k − 1</m> objects to use, so why not use <m>[n + k − 1]</m>? If we choose <m>n − 1</m> of these objects, there are <m>k</m> left over, the same number as the number of elements of our multiset.
+        Since our multiset is supposed to be chosen from an <m>n</m>-element set, perhaps we should let the <m>n</m>-element set be <m>[n]</m>. From our choice of <m>n − 1</m> numbers, we have to decide on the multiplicity of 1 through <m>n</m>. For example with <m>n = 4</m> and <m>k = 6</m>, we have <m>n+k-1=9</m>. Here, shown with underlines, is a selection of <m>3=n-1</m> elements from <m>[9]</m>: <m>1, 2, \underline{3}, 4 \underline{5}, 6, 7, \underline{8}, 9</m>.
+        How do the underlined elements give us a multiset of size 6 chosen from
+        an [4]-element set? In this case, 1 has multiplicity 2, 2 has
+        multiplicity 1, 3 has multiplicity 2, and 4 has multiplicity 1.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            Note that <m>\binom{n+k-1}{k} = \binom{n+k-1}{n-1}</m>. We will show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m> things and multisets. Namely, take <m>n+k-1</m> objects and line them up in a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing we choose. Let the multiplicity of the <m>n</m>th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element <m>n</m> is the number of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the <m>i</m>th plus sign.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            How many solutions are there in nonnegative integers to the equation <m>x_1+x_2+ \cdots +x_m = r</m>, where <m>m</m> and <m>r</m> are constants?
+          </p>
+        </statement>
+        <hint>
+          <p>
+        A solution to the equations assigns a nonnegative number to each of <m>1,2,\ldots, m</m> so that the nonnegative numbers add to <m>r</m>. Does such an assignment have a combinatorial meaning?
+          </p>
+        </hint>
+        <solution>
+          <p>
+            We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a multiset chosen from among <m>m</m> things. The total number of elements of the multiset will be <m>r</m>. Thus we have <m>\binom{m+r-1}{r}</m> solutions.
+          </p>
+        </solution>
+    </activity>
+
+    <activity>
+      <statement>
+        <p>
+          In how many ways can we distribute <m>k</m> identical objects to <m>n</m> distinct recipients so that each recipient gets at least <m>m</m>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+      Can you think of some way of guaranteeing that each recipient gets <m>m</m> objects (assuming <m>k \ge mn</m>) right at the beginning of the process of passing the objects out?
+        </p>
+      </hint>
+      <solution>
+        <p>
+            First give each recipient <m>m</m> objects.  This leaves <m>k-mn</m> identical objects to be distributed among <m>n</m> recipients, so we may do this in the number of ways to choose a (<m>k-mn</m>)-element multiset from <m>n</m> things.  This is <m>\binom{n+k-mn+1}{k-mn}</m>, or <m>\binom{k-(m-1)n+1}{n+1}</m>.
+        </p>
+      </solution>
+
+    </activity>
+
+
+    <!-- <p>
+      A more precise definition of a <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> is that it is a function <m>m</m>, called a <term>multiplicity function</term><index><main>multiplicity function</main></index>, from <m>S</m> to the nonnegative integers. For each <m>x</m> in <m>S</m>, <m>m(x)</m> specifies how many times <m>x</m> appears in the multiset. In our example of the word Mississippi above, our set <m>S</m> can be taken to be the set of alphabet letters and the multiplicity function <m>m</m> is given by <m>m({ i})=4</m>, <m>m({ m}) =1</m>, <m>m({ p})=2</m>, <m>m({ s}) =4</m>, and <m>m</m> of any other member of <m>S</m> is 0. When we list the members of a multiset in braces, it will be clear from context that we are thinking of a multiset. However when we use braces in another way, it may not be clear what we mean. For example, when we write
+      <me>
+        \{x|x \mbox{~is a letter of Mississippi} \},
+      </me>
+      do we mean the set <m>\{i,m,p,s\}</m> or the multiset
+      <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>? To resolve this, whenever it is not clear
+      from context whether we are talking about a set or multiset we will use
+      the subscript multi on the right brace enclosing the multiset to
+      distinguish a multiset. Thus we write
+      <me>
+        \{x|x \mbox{\ is a letter of
+        Mississippi} \}_{\mbox{\scriptsize multi} }=\{i,i,i,i,m,p,p,s,s,s,s\}.
+      </me>
+    </p>
+
+    <p>
+      In this case it is probably clear from the right-hand side of the equation
+      that we are thinking of the left-hand side as a multiset, but we will
+      always try to err in the direction of clarity rather than brevity.
+    </p>
+
+    <p>
+      The sequence of problems you just completed should explain the entry in the middle column of row 7 of our table of distribution problems. In the next two sections we will give ways of computing the remaining entries.
+    </p> -->
+
+    <p>
+      Multisets explain the entry in the middle column of row 7 of our table of distribution problems.
+    </p>
+  </subsection>
+
+
+
+  <subsection>
+    <title>Compositions of integers</title>
+    <activity category="essential for this or the next section">
+      <statement>
+        <p>
+          In how many ways may we put <m>k</m> identical books onto <m>n</m>
+          shelves if each shelf must get at least one book?
+        </p>
+      </statement>
+      <hint>
+        <p>
+      We already know how to place k distinct books onto n distinct shelves so
+      that each shelf gets at least one. Suppose we replace the distinct books
+      with identical ones. If we permute the distinct books before replacement,
+      does that affect the final outcome? There are other ways to solve this problem.
+        </p>
+      </hint>
+      <solution>
+        <p>
+          In <xref ref="bookcaseeveryshelf">problem</xref> we showed that with
+          <m>k</m> distinct books we could place the books in
+          <m>k!\binom{k-1}{n-1}</m> ways. We can partition these arangements of
+          distinct books into blocks, where each block consists of all
+          arrangements that we get just by permuting the books among themselves.
+          Thus each block has <m>k!</m> arrangements in it, and each arrangement
+          corresponds to an arrangement of identical books. Thus there are <m>\binom{k-1}{n-1}</m> ways to arrange identical books.
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="compositionagian" category="essential for this or the next section">
+      <statement>
+        <p>
+          A <term>composition</term> of the integer <m>k</m> into <m>n</m> parts is a list of <m>n</m> positive integers that add to <m>k</m>.  How many compositions are there of an integer <m>k</m> into <m>n</m> parts?
+        </p>
+      </statement>
+      <hint>
+        <p>
+      Do you see a relationship between compositions and something else we have
+      counted already?
+        </p>
+      </hint>
+      <solution>
+        <p>There is a bijection between compositions of <m>k</m> into <m>n</m> parts and arrangements of <m>k</m> identical books on <m>n</m> shelves so that each shelf gets a book. Namely, the number of books on shelf <m>i</m> is the <m>i</m>th element of the list. Thus the number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="interesting">
+      <statement>
+        <p>Your answer in <xref ref="compositionagian">Problem</xref> can be expressed as a binomial coefficient. This means it should be possible to interpret a composition as a subset of some set. Find a bijection between compositions of <m>k</m> into <m>n</m> parts and certain subsets of some set.  Explain explicitly how to get the composition from the subset and the subset from the composition.
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If we line up <m>k</m> identical books, how many adjacencies are there in between books?
+        </p>
+      </hint>
+      <solution>
+        <p>If we line up <m>k</m> identical books, there are <m>k-1</m> places in between two books. If we choose <m>n-1</m> of these places and slip dividers into those places, then we have a first clump of books, a second clump of books, and so on. The <m>i</m>th element of our list is the number of books in the <m>i</m>th clump. Clearly using books is irrelevant; we could line up any <m>k</m> identical objects and make the same argument. Our bijection is between compositions and <m>(n-1)</m>-element subsets of the set of <m>k-1</m> spaces between our objects.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential for this or the next section">
+      <statement>
+        <p>
+          Explain the connection between compositions of <m>k</m> into <m>n</m>
+          parts and the problem of distributing <m>k</m> identical objects to
+          <m>n</m> recipients so that each recipient gets at least one.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Since the recipients are distinct, we can think of them as a first
+          recipient, a second, and so on. Given a composition of <m>k</m> into
+          <m>n</m> parts, let the <m>i</m>th element of the list be the number
+          of objects given to recipient number <m>i</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      The sequence of problems you just completed should explain the entry in
+      the middle column of row 9 of our table of distribution problems.
+    </p>
+  </subsection>
+
+
+
 
   <subsection>
     <title>Broken permutations and Lah numbers</title>
@@ -543,183 +870,9 @@
       We have seen that ordered functions and broken permutations explain the
       entries in rows 5 and 6 of our table.
     </p>
-  </subsection>
-
-  <subsection>
-    <title>Compositions of integers</title>
-    <activity category="essential for this or the next section">
-      <statement>
-        <p>
-          In how many ways may we put <m>k</m> identical books onto <m>n</m> shelves
-          if each shelf must get at least one book?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          In <xref ref="bookcaseeveryshelf">problem</xref> we showed that with <m>k</m>
-          distinct books we could place the books in <m>k!\binom{k-1}{n-1}</m> ways.
-          We can partition these arangements of distinct books into blocks, where
-          each block consists of all arrangements that we get just by permuting the
-          books among themselves. Thus each block has <m>k!</m> arrangements in it, and
-          each arrangement corresponds to an arrangement of identical books. Thus
-          there are <m>\binom{k-1}{n-1}</m> ways to arrange identical books.
-        </p>
-      </solution>
-    </activity>
-
-    <activity xml:id="compositionagian" category="essential for this or the next section">
-      <statement>
-        <p>
-          A <term>composition</term> of the integer <m>k</m> into <m>n</m> parts is a list of <m>n</m> positive integers that add to <m>k</m>.  How many compositions are there of an integer <m>k</m> into <m>n</m> parts?
-        </p>
-      </statement>
-      <solution>
-        <p>There is a bijection between compositions of <m>k</m> into <m>n</m> parts and arrangements of <m>k</m> identical books on <m>n</m> shelves so that each shelf gets a book. Namely, the number of books on shelf <m>i</m> is the <m>i</m>th element of the list. Thus the number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>.
-        </p>
-      </solution>
-    </activity>
-
-    <activity category="interesting">
-      <statement>
-        <p>Your answer in <xref ref="compositionagian">Problem</xref> can be expressed as a binomial coefficient. This means it should be possible to interpret a composition as a subset of some set. Find a bijection between compositions of <m>k</m> into <m>n</m> parts and certain subsets of some set.  Explain explicitly how to get the composition from the subset and the subset from the composition.
-        </p>
-      </statement>
-      <solution>
-        <p>If we line up <m>k</m> identical books, there are <m>k-1</m> places in between two books. If we choose <m>n-1</m> of these places and slip dividers into those places, then we have a first clump of books, a second clump of books, and so on. The <m>i</m>th element of our list is the number of books in the <m>i</m>th clump. Clearly using books is irrelevant; we could line up any <m>k</m> identical objects and make the same argument. Our bijection is between compositions and <m>(n-1)</m>-element subsets of the set of <m>k-1</m> spaces between our objects.
-        </p>
-      </solution>
-    </activity>
-
-    <activity category="essential for this or the next section">
-      <statement>
-        <p>
-          Explain the connection between compositions of <m>k</m> into <m>n</m> parts
-          and the problem of distributing <m>k</m> identical objects to <m>n</m> recipients
-          so that each recipient gets at least one.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Since the recipients are distinct, we can think of them as
-          a first recipient, a second, and so on. Given a composition of
-          <m>k</m> into
-          <m>n</m> parts, let the
-          <m>i</m>th element of the list be the number of objects given to recipient
-          number
-          <m>i</m>.
-        </p>
-      </solution>
-    </activity>
 
     <p>
-      The sequence of problems you just completed should explain the entry in
-      the middle column of row 9 of our table of distribution problems.
-    </p>
-  </subsection>
-
-  <subsection>
-    <title>Multisets</title>
-    <p>
-      In the middle column of row 7 of our table, we are asking for the number
-      of ways to distribute <m>k</m> identical objects (say ping-pong balls) to <m>n</m>
-      distinct recipients (say children).
-    </p>
-
-    <activity xml:id="identicalbooks" category="essential">
-      <statement>
-        <p>
-          In how many ways may we distribute <m>k</m> identical books on the
-          shelves of a bookcase with <m>n</m> shelves, assuming that any shelf can hold
-          all the books?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          We saw that we could arrange <m>k</m> distinct books on <m>n</m> shelves
-          in <m>\prod_{i=1}^k (n+i-1)</m> ways. We partition these arrangements into
-          blocks by putting two arrangements in the same block if we can get one
-          from the other by permuting the books among themselves. Then the number
-          of blocks is the number of ways to place identical books on the shelves.
-          However, there are <m>k!</m> arrangements per block, so there are
-          <me>
-            \frac{\prod_{i=1}^k (n+i-1)}{k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
-          </me>
-          ways to arrange identical books.
-        </p>
-      </solution>
-    </activity>
-
-    <activity xml:id="multiset" category="essential">
-      <statement>
-        <p>
-          A <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> may be thought of as a subset with repeated elements allowed. For example the multiset of letters of the word Mississippi is <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how many times (including, perhaps, zero) each member of <m>S</m> appears in the multiset. The number of times an element appears is called its <term>multiplicity</term>.<index><main>multiplicity in a multiset</main></index> The size of a multiset chosen from <m>S</m> is the total number of times any member of <m>S</m> appears. For example, the size of the multiset of letters of Mississippi is 11. What is the number of multisets of size <m>k</m> that can be chosen from an <m>n</m>-element set?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          There is a bijection between arrangements of identical books on
-          <m>n</m> shelves and multisets chosen from an <m>n</m>-element set: the
-          multiplicity of element <m>i</m> is the number of books on shelf <m>i</m>. Thus we
-          have <m>\binom{n+k-1}{k}</m> ways to choose a <m>k</m>-element multiset from an
-          <m>n</m>-element set by <xref ref="identicalbooks">Problem</xref>.
-        </p>
-      </solution>
-    </activity>
-
-    <activity category="interesting">
-      <task>
-        <statement>
-          <p>
-            Your answer in the previous problem should be expressible as a
-            binomial coefficient. Since a binomial coefficient counts subsets, find
-            a bijection between subsets of something and multisets chosen from a set
-            <m>S</m>.
-          </p>
-        </statement>
-        <solution>
-          <p>
-            Note that <m>\binom{n+k-1}{k} = \binom{n+k-1}{n-1}</m>. We will show a bijection between ways of choosing <m>n-1</m> things our of <m>n+k-1</m> things and multisets. Namely, take <m>n+k-1</m> objects and line them up in a row. Choose <m>n-1</m> of them. Now let the multiplicity of element 1 of our multiset be the number of objects before the first thing we chose.  if <m>1\lt i\lt n</m>, let the multiplicity of element <m>i</m> of our multiset be the number of things between the <m>i-1</m>th thing we chose and the <m>i</m>th thing we choose. Let the multiplicity of the <m>n</m>th element of our multiset be the number of objects after the last one we chose. Another way to say the essentially same thing is to make a list of <m>n+k-1</m> blank spaces. We choose <m>k</m> of them in which we put ones and <m>n-1</m> of them in which we put plus signs. Then the multiplicity of element 1 is the number of ones before the first plus sign, the multiplicity of element <m>n</m> is the number of ones after the last plus sign and if <m>1\lt i\lt n</m>, the multiplicity of element <m>i</m> is the number of ones between the <m>(i-1)</m>th plus sign and the <m>i</m>th plus sign.
-          </p>
-        </solution>
-      </task>
-      <task>
-        <statement>
-          <p>
-            How many solutions are there in nonnegative integers to the equation <m>x_1+x_2+ \cdots +x_m = r</m>, where <m>m</m> and <m>r</m> are constants?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            We can think of <m>x_i</m> as the multiplicity of element <m>i</m> of a multiset chosen from among <m>m</m> things. The total number of elements of the multiset will be <m>r</m>. Thus we have <m>\binom{m+r-1}{r}</m> solutions.
-          </p>
-        </solution>
-      </task>
-    </activity>
-
-    <p>
-      A more precise definition of a <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> is that it is a function <m>m</m>, called a <term>multiplicity function</term><index><main>multiplicity function</main></index>, from <m>S</m> to the nonnegative integers. For each <m>x</m> in <m>S</m>, <m>m(x)</m> specifies how many times <m>x</m> appears in the multiset. In our example of the word Mississippi above, our set <m>S</m> can be taken to be the set of alphabet letters and the multiplicity function <m>m</m> is given by <m>m({ i})=4</m>, <m>m({ m}) =1</m>, <m>m({ p})=2</m>, <m>m({ s}) =4</m>, and <m>m</m> of any other member of <m>S</m> is 0. When we list the members of a multiset in braces, it will be clear from context that we are thinking of a multiset. However when we use braces in another way, it may not be clear what we mean. For example, when we write
-      <me>
-        \{x|x \mbox{~is a letter of Mississippi} \},
-      </me>
-      do we mean the set <m>\{i,m,p,s\}</m> or the multiset
-      <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>? To resolve this, whenever it is not clear
-      from context whether we are talking about a set or multiset we will use
-      the subscript multi on the right brace enclosing the multiset to
-      distinguish a multiset. Thus we write
-      <me>
-        \{x|x \mbox{\ is a letter of
-        Mississippi} \}_{\mbox{\scriptsize multi} }=\{i,i,i,i,m,p,p,s,s,s,s\}.
-      </me>
-    </p>
-
-    <p>
-      In this case it is probably clear from the right-hand side of the equation
-      that we are thinking of the left-hand side as a multiset, but we will
-      always try to err in the direction of clarity rather than brevity.
-    </p>
-
-    <p>
-      The sequence of problems you just completed should explain the entry in the middle column of row 7 of our table of distribution problems. In the next two sections we will give ways of computing the remaining entries.
+      In the next two sections we will give ways of computing the remaining entries.
     </p>
   </subsection>
 </section>

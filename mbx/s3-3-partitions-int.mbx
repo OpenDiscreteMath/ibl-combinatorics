@@ -106,6 +106,11 @@
             partitions of <m>k+1</m> whose smallest part is one?
           </p>
         </statement>
+        <hint>
+          <p>
+        How can you start with a partition of k and make it into a new partition of <m>k+1</m> that is guaranteed to have a part of size one, even if the original partition didn’t?
+          </p>
+        </hint>
         <solution>
           <p>
             They are equal, because if we take two different partitions
@@ -142,6 +147,11 @@
           Draw the Young diagram of the partition (4,4,3,1,1). Describe the geometric relationship between the Young diagram of (5,3,3,2) and the Young diagram of (4,4,3,1,1).
         </p>
       </statement>
+      <hint>
+        <p>
+          Draw a line through the top-left corner and bottom-right corner of the topleft box.
+        </p>
+      </hint>
       <solution>
           <figure xml:id="Young44311">
               <caption>Forming the conjugate of a Young diagram</caption>
@@ -172,6 +182,11 @@
           number of partitions of a positive integer <m>k</m> with largest part <m>m</m>?
         </p>
       </statement>
+      <hint>
+        <p>
+          The largest part of a partition is the maximum number of boxes in a row of its Young diagram. What does the maximum number of boxes in a column tell us?
+        </p>
+      </hint>
       <solution>
         <p>
           <m>(5,3,3,2)</m>. The largest part of a partition equals the
@@ -183,7 +198,6 @@
     </activity>
 
     <activity category="interesting">
-      <task>
         <statement>
           <p>
             A partition is called <em>self-conjugate</em><index><main>self-conjugate
@@ -193,6 +207,11 @@
             distinct odd parts.
           </p>
         </statement>
+        <hint>
+          <p>
+            Draw all self conjugate partitions of integers less than or equal to 8.  Draw all partitions of integers less than or equal to 8 into distinct odd parts (many of these will have just one part). Now try to see how to get from one set of drawings to the other in a consistent way.
+          </p>
+        </hint>
         <solution>
           <p>
             The number of self-conjugate partitons of <m>k</m> equals the
@@ -225,8 +244,9 @@
             bijection.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+
+      <activity xml:id="partition-even-mult-even-use">
         <statement>
           <p>
             Explain the relationship between the number of partitions of <m>k</m>
@@ -235,6 +255,11 @@
             in (3,3,3,3,2,2,1,1).
           </p>
         </statement>
+        <hint>
+          <p>
+            Draw the partitions of six into even parts. Draw the partitions of six into parts used an even number of times. Look for a relationship between one set of diagrams and the other set of diagrams. If you have trouble, repeat the process using 8 or even 10 in place of 6.
+          </p>
+        </hint>
         <solution>
           <p>
             The number of partitions of <m>k</m> into even parts equals the
@@ -255,16 +280,20 @@
             of the resulting partition will be even.
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity xml:id="rectanglecomplement" category="interesting">
-      <task>
         <statement>
           <p>
             Show that the number of partitions of <m>k</m> into <m>4</m> parts equals the number of partitions of <m>3k</m> (or <m>3k+4</m> or <m>3k-4</m>) into <m>4</m> parts.
           </p>
         </statement>
+        <hint>
+          <p>
+        Draw a partition of ten into 4 parts. Assume each square has area one. Then draw a rectangle of area 40 enclosing your diagram that touches the top of your diagram, the left side of your diagram and the bottom of your diagram. How does this rectangle give you a partition of 30 into four parts?
+          </p>
+        </hint>
+
         <solution>
           <p>
             Think about putting the Young diagram of the partition into
@@ -282,9 +311,9 @@
             results.
           </p>
         </solution>
-      </task>
-      <task>
-        <statement>
+      </activity>
+
+      <activity>
           <p>
             The idea of conjugation of a partition could be defined without the geometric interpretation of a Young diagram, but it would seem far less natural without the geometric interpretation. Another idea that seems much more natural in a geometric context is this. Suppose we have a partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>. Then the Young diagram of the partition can fit into a rectangle that is <m>m</m> or more units wide (horizontally) and <m>n</m> or more units deep. Suppose we place the Young diagram of our partition in the top left-hand corner of an <m>m'</m> unit wide and <m>n'</m> unit deep rectangle with <m>m'\ge m</m> and <m>n' \ge n</m>, as in <xref ref="complementpartition">Figure</xref>.
           </p>
@@ -294,25 +323,114 @@
             <image width="33%" source="images/complementpartition" />
           </figure>
 
-          <p>
-            Why can we interpret the part of the rectangle not occupied by our Young diagram, rotated in the plane, as the Young diagram of another partition? This is called the <term>complement</term><index><main>complement of a partition</main></index> of our partition in the rectangle. What integer is being partitioned by the complement? What conditions on <m>m'</m> and <m>n'</m> guarantee that the complement has the same number of parts as the original one? What conditions on <m>m'</m> and <m>n'</m> guarantee that the complement has the same largest part as the original one? Is it possible for the complement to have both the same number of parts and the same largest part as the original one? If we complement a partition in an <m>m'</m> by <m>n'</m> box and then complement that partition in an <m>m'</m> by <m>n'</m> box again, do we get the same partition that we started with?
-          </p>
-        </statement>
-        <solution>
-          <p>
-            If we fill the rectangle with unit squares, those not in the Young diagram of the original partition <m>\lambda</m> will fall into rows.  The lengths of the rows are nonnegative, and are nondecreasing as we move down. Therefore, after we rotate through 180 degrees, these same rows will be listed in the opposite order, lined up along the left sides, and will have nonincreasing length. Thus they will be the Young diagram of a partition. The integer being partitioned will be <m>m'n'-k</m>. If <m>m'>m</m> and <m>n'=n</m>. the two partitions will have the same number of parts, because we will have a nonzero number of empty squares at the end of each row of the Young diagram of <m>\lambda</m>. If <m>m'=m</m> and <m>n'-n</m> is the multiplicity of the largest part of <m>\lambda</m>, they will have the same number of parts. Otherwise, their numbers of parts will differ. If <m>n'>n</m> and <m>m=m'</m>, then the two partitions will have the same largest part. If <m>n'=n</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>, then they will have the same largest part. Otherwise, their largest parts will differ. Thus for the two partitions to have the same number of parts, either <m>m'=m</m> or <m>n'=n</m>. If <m>m'=m</m> and they have the same largest part, then <m>n'>n</m>. But this is consistent with <m>n'-n</m> being the multiplicity of the largest part of <m>\lambda</m>. Thus they can have the same number of parts and the same largest part if <m>m'=m</m> and <m>n'-n</m> is the multiplicity of the largest part of <m>\lambda</m>, or similarly if <m>n=n'</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>.
-          </p>
-        </solution>
-      </task>
+          <task>
+            <statement>
+              <p>
+                Why can we interpret the part of the rectangle not occupied by our Young diagram, rotated in the plane, as the Young diagram of another partition? This is called the <term>complement</term><index><main>complement of a partition</main></index> of our partition in the rectangle.
+              </p>
+            </statement>
+            <solution>
+              <p>
+                If we fill the rectangle with unit squares, those not in the Young diagram of the original partition <m>\lambda</m> will fall into rows.  The lengths of the rows are nonnegative, and are nondecreasing as we move down. Therefore, after we rotate through 180 degrees, these same rows will be listed in the opposite order, lined up along the left sides, and will have nonincreasing length. Thus they will be the Young diagram of a partition.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                What integer is being partitioned by the complement?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                The integer being partitioned will be <m>m'n'-k</m>.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                What conditions on <m>m'</m> and <m>n'</m> guarantee that the complement has the same number of parts as the original one?
+              </p>
+            </statement>
+            <hint>
+              <p>
+            Consider two cases, <m>m' \gt m</m> and <m>m' = m</m>.
+              </p>
+            </hint>
+            <solution>
+              <p>
+                If <m>m'>m</m> and <m>n'=n</m>. the two partitions will have the same number of parts, because we will have a nonzero number of empty squares at the end of each row of the Young diagram of <m>\lambda</m>. If <m>m'=m</m> and <m>n'-n</m> is the multiplicity of the largest part of <m>\lambda</m>, they will have the same number of parts. Otherwise, their numbers of parts will differ.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                What conditions on <m>m'</m> and <m>n'</m> guarantee that the complement has the same largest part as the original one?
+              </p>
+            </statement>
+            <hint>
+              <p>
+                Consider two cases, <m>n' \gt n</m> and <m>n' = n</m>.
+              </p>
+            </hint>
+            <solution>
+              <p>
+                If <m>n'\gt n</m> and <m>m=m'</m>, then the two partitions will have the same largest part. If <m>n'=n</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>, then they will have the same largest part. Otherwise, their largest parts will differ.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                Is it possible for the complement to have both the same number of parts and the same largest part as the original one?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                For the two partitions to have the same number of parts, either <m>m'=m</m> or <m>n'=n</m>. If <m>m'=m</m> and they have the same largest part, then <m>n'>n</m>. But this is consistent with <m>n'-n</m> being the multiplicity of the largest part of <m>\lambda</m>. Thus they can have the same number of parts and the same largest part if <m>m'=m</m> and <m>n'-n</m> is the multiplicity of the largest part of <m>\lambda</m>, or similarly if <m>n=n'</m> and <m>m'-m</m> is the smallest part of <m>\lambda</m>.
+              </p>
+            </solution>
+          </task>
+
+          <task>
+            <statement>
+              <p>
+                If we complement a partition in an <m>m'</m> by <m>n'</m> box and then complement that partition in an <m>m'</m> by <m>n'</m> box again, do we get the same partition that we started with?
+              </p>
+            </statement>
+            <solution>
+              <p>
+                If we complement a partition in an <m>m'</m> by <m>n'</m> box and then complement that partition in <em>the same rectangle</em>, then we get the original partition back.
+              </p>
+            </solution>
+          </task>
     </activity>
 
     <activity category="interesting">
-      <task>
         <statement>
           <p>
             Suppose we take a partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>, complement it in the smallest rectangle it will fit into, complement the result in the smallest rectangle it will fit into, and continue the process until we get the partition 1 of one into one part.  What can you say about the partition with which we started?
           </p>
         </statement>
+        <hint>
+          <p>
+            Suppose we take two repetitions of this complementation process. What rows and columns do we remove from the diagram?
+          </p>
+        </hint>
+        <hint>
+          <p>
+        To deal with an odd number of repetitions of the complementation
+        process, think of it as an even number plus 1. Thus ask what kind of
+        partition gives us the partition of one into one part after this
+        complementation process.
+          </p>
+        </hint>
         <solution>
           <p>
             Let us call the process of enclosing <m>\lambda</m> in the smallest rectangle possible and then forming the complement in that rectangle <term>encomplementation</term> (This is short for <em>en</em>\/closure and <em>complementation</em> and is not a standard term<mdash />there is no standard term for this operation.) and call the result of it the <term>encomplement</term><index><main>encomplement of a partition</main></index> of <m>\lambda</m>.  The result of two encomplementations on the Young diagram of a partition is to remove all rows of maximum length and all columns of maximum length from the Young diagram. Thus the description of the result of an even number <m>2j</m> of encomplementations is straightforward; we remove all the rows of the <m>j</m> largest distinct lengths and all columns of the <m>j</m> largest distinct lengths. So if an even number of encomplementations brings us to a partition with one block of size one, we should be able to describe the original partition fairly easily. To deal with the result of an odd number of encomplementations, we ask what happens if we encomplement just once.  If the complement of <m>\lambda</m> in the smallest rectangle in which if fits has one square, then <m>\lambda =\lambda_1^{n_1}\lambda_1-1</m>. Thus we are asking for the partitions which, after an even number of encomplementations, give us either the partition with one block or a partition of the form <m>\lambda_1^{n_1}(\lambda_1-1)</m>. First we ask what kind of partition results in the second one after two encomplementations. If we get <m>\lambda_1^{n_1}(\lambda_1-1)</m> from two encomplementations, the partition we started with had the form
@@ -355,19 +473,23 @@
             where <m>\lambda_i>\lambda_{i+1}</m> and <m>\lambda_0>\lambda_1+1</m>. Thus a partition results in a single part of size 1 after some number of encomplementations if and only if it has the form of <xref ref="form1">Equation</xref> or <xref ref="form2">Equation</xref>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             Show that <m>P(k,n)</m> is at least <m>\frac{1}{n!}\binom{k-1}{n-1}</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            How many compositions are there of <m>k</m> into n parts? What is the maximum number of compositions that could correspond to a given partition of <m>k</m> into <m>n</m> parts?
+          </p>
+        </hint>
         <solution>
           <p>
             The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. We can divide the compositions into blocks, where two compositions are in the same block if and only if one is a rearrangement of the other. Then the blocks correspond bijectively to partitions of <m>k</m> into <m>n</m> parts. However we cannot compute the number of blocks by dividing by the number of compositions per block since the number of compositions per block ranges from <m>1</m> to <m>n!</m>.  But then if we divide the number of compositions by <m>n!</m> we will get a number less than the number of blocks because <m>n!</m> times the number of blocks would be, by the sum principle, greater than the number of partitions.
           </p>
         </solution>
-      </task>
     </activity>
 
     <p>
@@ -403,18 +525,29 @@
             How many parts does the remaining partition have when we remove the largest part (more precisely, we reduce its multiplicity by one) from a partition of <m>k</m> into <m>n</m> parts?  What can you say about the number of parts of the remaining partition if we remove one from each part?
           </p>
         </statement>
+        <hint>
+          <p>
+            These two operations do rather different things to the number of parts, and you can describe exactly what only one of the operations does. Think about the Young diagram.
+          </p>
+        </hint>
         <solution>
           <p>
             Reducing the multiplicity of the largest part by one reduces the number of parts by one. Removing 1 from each part reduces the number of parts by the multiplicity of the smallest part, so it strictly reduces the number of parts, perhaps even to one.
           </p>
         </solution>
       </task>
+
       <task>
         <statement>
           <p>
-            If the largest part of a partition is <m>j</m> and we remove it, what integer is being partitioned by the remaining parts of the partition? If we remove one from each part of a partition of <m>k</m> into <m>n</m> parts, what integer is being partitioned by the remaining parts?
+            If we remove the largest part from a partition, what can we say about the integer that is being partitioned by the remaining parts of the partition? If we remove one from each part of a partition of <m>k</m> into <m>n</m> parts, what integer is being partitioned by the remaining parts? (Another way to describe this is that we remove the first column from the Young diagram of the partition.)
           </p>
         </statement>
+        <hint>
+          <p>
+            Think about the Young diagram. In only one of the two cases can you give an exact answer to the question.
+          </p>
+        </hint>
         <solution>
           <p>
             If we remove the largest part, the integer being partitioned is <m>k</m> minus the largest part. Thus it is a number less than <m>k</m> and at least <m>n-1</m>. If we remove one from each part of the partition, the integer being partitioned is <m>k-n</m>.
@@ -424,9 +557,14 @@
       <task>
         <statement>
           <p>
-            The last two questions are designed to get you thinking about how we can get a bijection between the set of partitions of <m>k</m> into <m>n</m> parts and some other set of partitions that are partitions of a smaller number.  These questions describe two different strategies for getting that set of partitions of a smaller number or of smaller numbers.  Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m> parts and a set of partitions of a smaller number or numbers.  For each strategy, use the answers to the last two questions to find and describe this set of partitions into a smaller number and a bijection between partitions of <m>k</m> into <m>n</m> parts and partitions of the smaller integer or integers into appropriate numbers of parts.
+            The last two questions are designed to get you thinking about how we can get a bijection between the set of partitions of <m>k</m> into <m>n</m> parts and some other set of partitions that are partitions of a smaller number.  These questions describe two different strategies for getting that set of partitions of a smaller number or of smaller numbers.  Each strategy leads to a bijection between partitions of <m>k</m> into <m>n</m> parts and a set of partitions of a smaller number or numbers.  For each strategy, use the answers to the last two questions to find and describe this set of partitions into a smaller number and a bijection between partitions of <m>k</m> into <m>n</m> parts and partitions of the smaller integer or integers into appropriate numbers of parts. (In one case the set of partitions and bijection are relatively straightforward to describe and in the other case not so easy.)
           </p>
         </statement>
+        <hint>
+          <p>
+            Here the harder part requires that, after removal, you consider a range of possible numbers being partitioned and that you give an upper bound on the part size. However it lets you describe the number of parts exactly.
+          </p>
+        </hint>
         <solution>
           <p>
             Removing the largest part of a partition of <m>k</m> into <m>n</m> parts gives us a bijection between partitions of <m>k</m> into <m>n</m> parts and and partitions of numbers <m>k'</m> between <m>n-1</m> and <m>k-1</m> into <m>n-1</m> parts of size at most <m>k-k'</m>. (Removing the largest part gives us such a partition, and adjoining a part of size <m>k-k'</m> to such a partition gives us a partition of <m>k</m> with <m>n</m> parts.)
@@ -444,9 +582,11 @@
           </p>
         </statement>
         <hint>
-            <p>One of the two sets of partitions of smaller numbers from the previous part is more amenable to finding a recurrence than the other.
-            </p>
+          <p>
+            One of the two sets of partitions of smaller numbers from the previous part is more amenable to finding a recurrence than the other. The resulting recurrence does not have just two terms though.
+          </p>
         </hint>
+
         <solution>
           <p>
             The second bijection is to the set of partitions of <m>k-1</m> into <m>n</m> or fewer parts, and this makes the second bijection sound easier to work with. We get <m>P(k,n)=\sum_{i=1}^n P(k-n,i)</m>. The proof is the bijection we already described; in particular a partition of <m>k-n</m> into <m>i</m> parts corresponds to the partition of <m>k</m> we get by adding one to each of the <m>i</m> parts and then creating <m>n-i</m> parts of size one.
@@ -584,6 +724,11 @@
             What would you want to fill into row 0 and column 0 of your table in order to make it consistent with your recurrence.  What does this say <m>P(0,0)</m> should be?  We usually define a sum with no terms in it to be zero. Is that consistent with the way the recurrence says we should define <m>P(0,0)</m>?
           </p>
         </statement>
+        <hint>
+          <p>
+            If there is a sum equal to zero, there may very well be a partition of zero.
+          </p>
+        </hint>
         <solution>
           <p>
             We would want to have <m>P(0,0)=1</m> and <m>P(k,0)=P(0,n)=0</m> for positive integer <m>k</m> or <m>n</m>. Since the sum of the empty multiset of positive integers is zero, this gives us one partition of the number zero, namely the empty multiset of positive integers.
@@ -809,6 +954,12 @@
           </me>
         </p>
       </statement>
+      <hint>
+        <p>
+      How does the number of compositions of <m>k</m> into <m>n</m> distinct parts compare to the number of compositions of <m>k</m> into <m>n</m> parts (not necessarily distinct)?
+      What do compositions have to do with partitions?
+        </p>
+      </hint>
       <solution>
         <p>
           The number of compositions of <m>k</m> into <m>n</m> parts is <m>\binom{k-1}{n-1}</m>. Thus the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>. Divide the compositions of <m>k</m> into <m>n</m> distinct parts into blocks with two compositions in the same block if one is a rearrangement of the other. Because the parts are distinct, each block has <m>n!</m> members. Further, there is a bijection between the blocks of this partition and the partitions of <m>k</m> into <m>n</m> distinct parts. Since the number of compositions of <m>k</m> into <m>n</m> distinct parts is less than <m>\binom{k-1}{n-1}</m>, the number of partitions of <m>k</m> into <m>n</m> distinct parts is less than <m>\frac{1}{n!}  \binom{k-1}{n-1}</m>.
@@ -823,6 +974,11 @@
           number of partitions of 10 into three distinct parts.
         </p>
       </statement>
+      <hint>
+        <p>
+          While you could simply display partitions of 7 into three parts and partitions of 10 into three parts, we hope you won’t. Perhaps you could write down the partitions of 4 into two parts and the partitions of 5 into two distinct parts and look for a natural bijection between them. So the hope is that you will discover a bijection from the set of partitions of 7 into three parts and the partitions of 10 into three distinct parts. It could help to draw the Young diagrams of partitions of 4 into two parts and the partitions of 5 into two distinct parts.
+        </p>
+      </hint>
       <solution>
         <p>
           Given a partition <m>\lambda</m> of 7 in decreasing list form <m>\lambda_1,\lambda_2,\lambda_3</m>, if we add 0 to <m>\lambda_3</m>, <m>1</m> to <m>\lambda_2</m> and 2 to <m>\lambda_1</m> the resulting partition of 10 has distinct parts. If we take a partition <m>\lambda'</m> of 10 with distinct parts, then <m>\lambda'_1\ge\lambda'_2+1</m>, <m>\lambda'_1\ge\lambda'_2+2</m>, and <m>\lambda'_2\ge \lambda'_3+1</m>. Therefore if we subtract 2 from <m>\lambda'_1</m> to get <m>\lambda_1</m>, subtract 1 from <m>\lambda'_2</m> to get <m>\lambda_2</m> and let <m>\lambda_3= \lambda'_3</m>, then <m>\lambda_1,\lambda_2,\lambda_3</m> is the decreasing list representation of a partition of <m>10-3=7</m>. Thus there is a bijection between partitions of <m>7</m> into three parts and partitions of <m>10</m> into three distinct parts.
@@ -836,6 +992,12 @@
           There is a relationship between <m>P(k,n)</m> and <m>Q(m,n)</m> for some other number <m>m</m>. Find the number <m>m</m> that gives you the nicest possible relationship.
         </p>
       </statement>
+      <hint>
+        <p>
+      In the case <m>k=4</m> and <m>n=2</m>, we have <m>m=5</m>. In the case <m>k = 7</m> and <m>n = 3</m>,
+      we have <m>m = 10</m>.
+        </p>
+      </hint>
       <solution>
         <p>
           The number of partitions of <m>k</m> into <m>n</m> parts is equal to the number of partitions of <m>k+\binom{n}{2}</m> into n distinct parts.  The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of <m>k+\binom{n}{2}</m> with <m>n</m> distinct parts that proves this is the one that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get <m>\lambda'_i</m>. Then <m>\lambda'</m> is a partition into distinct parts, and the number it partitions is <m>k+1+2+\cdots+n-1=k+\binom{n}{2}</m>. The proof that it is a bijection is the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m> is at least <m>j</m> smaller than part <m>i</m>.
@@ -848,6 +1010,11 @@
         <p>Find a recurrence that expresses <m>Q(k,n)</m> as a sum of <m>Q(k-n,m)</m> for appropriate values of <m>m</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          What can you do to a Young diagram for a partition of <m>k</m> into <m>n</m> distinct parts to get a Young diagram of a partition of <m>k-n</m> into some number of distinct parts?
+        </p>
+      </hint>
       <solution>
         <p>
           Suppose <m>\lambda</m> is a partition of <m>k</m> into <m>n</m> distinct parts. Either 1 is one of those parts or not. Thus if we subtract 1 from each part, we either get a partition of <m>k-n</m> into <m>n-1</m> parts or a partition of <m>k-n</m> into <m>n</m> parts. If <m>\lambda</m> and <m>\lambda'</m> are different partitions of <m>k</m> into <m>n</m> distinct parts, they go to different partitions. Each partition of <m>k-n</m> into <m>n-1</m> parts or <m>n</m> parts can be gotten in this way from a corresponding partition of <m>k</m> into <m>n</m> parts. Thus we have a bijective correspondence and <m>Q(k,n)=Q(k-n,n-1) +Q(k-n,n)</m>.
@@ -860,6 +1027,11 @@
         <p>Show that the number of partitions of <m>k</m> into distinct parts equals the number of partitions of <m>k</m> into odd parts.
         </p>
       </statement>
+      <hint>
+        <p>
+          For any partition of <m>k</m> into parts <m>\lambda_1</m>, <m>\lambda_2</m>, etc. we can get a partition of <m>k</m> into odd parts by factoring the highest power of two that we can from each <m>\lambda_i</m>, writing <m>\lambda_i = \gamma_i\cdot 2^k_i</m>.  Why is <m>\gamma_i</m> odd? Now partition <m>k</m> into <m>2^{k_1}</m> parts of size <m>\gamma_1</m>, <m>2^{k_2}</m> parts of size <m>\gamma_2</m>, etc. and you have a partition of <m>k</m> into odd parts.
+        </p>
+      </hint>
       <solution>
         <p>We start by giving a function from the set of partitions of <m>k</m> to the set of partitions of <m>k</m> with (only) odd parts. Clearly such a function cannot be one to one. Then we show that when restricted to the partitions with distinct parts it is one-to-one and onto by constructing an inverse. Given a partition <m>\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}</m>, write <m>\lambda_i=\gamma_i2^{k_i}</m>, where <m>\gamma_i</m> is odd. (Thus <m>2^{k_i}</m> is the highest power of 2 that is a factor of <m>\lambda_i</m>, so it is 1 if <m>\lambda_i</m> is odd.). It is possible that <m>\gamma_i=\gamma_j</m>, for example if <m>\lambda_i=36</m> and <m>\lambda_j=18</m>, then <m>\gamma_i=\gamma_j=9</m>. We construct a new partition <m>\pi</m> whose parts are the numbers <m>\gamma_j</m> as follows: Given an odd number <m>p</m>, let the multiplicity <m>m(p)</m> of <m>p</m> in <m>\pi</m> be <m>\sum_{j: \gamma_j=m} 2^{k_j}</m>. Thus <m>\sum_{p: m(p)\not=0}m(p)p = k</m>. Therefore, <m>\pi</m> is a partition of <m>k</m> whose parts are all odd.
         </p>
@@ -874,6 +1046,11 @@
         <p>Euler showed that if <m>k\not= \frac{3j^2+j}{2}</m>, then the number of partitions of <m>k</m> into an even number of distinct parts is the same as the number of partitions of <m>k</m> into an odd number of distinct parts. Prove this, and in the exceptional case find out how the two numbers relate to each other.
         </p>
       </statement>
+      <hint>
+        <p>
+          Suppose we have a partition of <m>k</m> into distinct parts. If the smallest part, say <m>m</m>, is smaller than the number of parts, we may add one to each of the <m>m</m> largest parts and delete the smallest part, and we have changed the parity of the number of parts, but we still have distinct parts. On the other hand, suppose the smallest part, again say <m>m</m>, is larger than or equal to the number of parts. Then we can subtract 1 from each part larger than <m>m</m>, and add a part equal to the number of parts larger than <m>m</m>. This changes the parity of the number of parts, but if the second smallest part is <m>m+1</m>, the resulting partition does not have distinct parts. Thus this method does not work. Further, if it did always work, the case <m>k \ne \frac{3j^2+j}{2}</m> would be covered also. However you can modify this method by comparing <m>m</m> not to the total number of parts, but to the number of rows at the top of the Young diagram that differ by exactly one from the row above. Even in this situation, there are certain slight additional assumptions you need to make, so this hint leaves you a lot of work to do. (It is reasonable to expect problems because of that exceptional case.) However, it should lead you in a useful direction.
+        </p>
+      </hint>
       <solution>
         <p>This solution is taken largely from the book <booktitle>Introduction to Combinatorics</booktitle> by Ioan Tomescu (published in London by Collet's in 1975). Tomescu calls a collection of rows in a Young diagram a <q>trapezoid</q> if each row contains one less cell than the row above and the number of cells in the rows above and below the trapezoid differ by two or more from the number of cells in rows of the trapezoid. Thus in (8,6,5,4,2,1) we have 3 trapezoids, the first row, the next three rows, and the last two. Since we are dealing with partitions with distinct parts, we don't have to worry about how two equal rows affect the definition of a trapezoid. We will describe a way to transform a partition with an even number of distinct parts into a partition with an odd number of distinct parts and vice versa.
         </p>
