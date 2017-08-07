@@ -47,7 +47,7 @@
       <m>\rho</m> is a permutation on the set <m>\{1,2,3,4\}</m>.
     </p>
 
-    <activity category="motivation">
+    <!-- <activity category="motivation">
       <statement>
         <p>
           Find <m>\rho^2</m> of 1, 2, 3, and 4. Find <m>\rho^3</m> of 1, 2, 3, and 4.
@@ -61,7 +61,7 @@
           permutations of <m>\{1,2,3,4\}</m>.
         </p>
       </solution>
-    </activity>
+    </activity> -->
 
     <activity xml:id="composition1" category="essential">
       <statement>
@@ -105,18 +105,16 @@
       In <xref ref="composition1">Problem</xref> you see that we can think of
       <m>\rho^2\circ\rho</m> as the result of first rotating by 90 degrees and then
       by another 180 degrees. In other words, the composition of two rotations
-      is the same thing as first doing one and then doing the other. If we
-      first rotate by 90 degrees and then by 270 degrees then we have rotated
+      is the same thing as first doing one and then doing the other. Of course there is nothing special about 90 degrees and 180 degrees.  As long as we first do one rotation through a multiple of 90 degrees and then another rotation through a multiple of 90 degrees, the composition of these rotations is a rotation through a multiple of 90 degrees.
+    </p>
+    <p>
+      If we first rotate by 90 degrees and then by 270 degrees then we have rotated
       by 360 degrees, which does nothing visible to the square. Thus we say
-      that <m>\rho^4</m> is the <q>identity function.</q> In general the <em>identity
-      function</em><index><main>function</main><sub>identity</sub></index><index><main>identity function</main></index> on a set <m>S</m>,
+      that <m>\rho^4</m> is the <q>identity function.</q> In general the <term>identity
+      function</term><index><main>function</main><sub>identity</sub></index><index><main>identity function</main></index> on a set <m>S</m>,
       denoted by
       <m>\iota</m> (the Greek letter iota, pronounced eye-oh-ta) is the function
-      that takes each element of the set to itself. In symbols, <m>\iota(x) =x</m>
-      for every
-      <m>x</m> in
-      <m>S</m>. Of course the identity function on a set is a permutation of that
-      set.
+      that takes each element of the set to itself. In symbols, <m>\iota(x) =x</m> for every <m>x</m> in <m>S</m>. Of course the identity function on a set is a permutation of that set.
     </p>
   </subsection>
 
@@ -175,13 +173,14 @@
       effect as doing nothing, we can think of the 270 degree rotation as
       undoing what the 90 degree rotation does. For this reason we say that in
       the rotations of the square, <m>\rho^3</m> is the <q>inverse</q> of <m>\rho</m>. In
-      general, a function <m>\varphi:T\rightarrow S</m> is called an <em>inverse</em><index><main>inverse function</main></index><index><main>function</main><sub>inverse</sub></index> of a function <m>\sigma:S
+      general, a function <m>\varphi:T\rightarrow S</m> is called an <term>inverse</term><index><main>inverse function</main></index><index><main>function</main><sub>inverse</sub></index> of a function <m>\sigma:S
       \rightarrow T</m> (the lower case Greek letter sigma) if <m>\varphi\circ \sigma= \sigma
       \circ\varphi =
       \iota</m>.
+      For a slower introduction to inverses and practice with them, see Section A.1.3 in Appendix A TODO: FIX LINK.  Since a permutation is a bijection, it has a unique inverse, as in Section A.1.3 of Appendix A.  And since the inverse of a bijection is a bijection (again, as in the Appendix), the inverse of a permutation is a permutation.
     </p>
 
-    <activity category="essential">
+    <!-- <activity category="essential">
       <statement>
         <p>
           Does every permutation have an inverse? If so, why, and is it
@@ -229,7 +228,7 @@
           because for each <m>y</m> in its range, <m>\sigma(\varphi(y)) = y</m>
         </p>
       </solution>
-    </activity>
+    </activity> -->
 
     <p>
       We use <m>\varphi^{-1}</m> to denote the inverse of the permutation <m>\varphi</m>.
@@ -264,15 +263,14 @@
     </p>
 
     <p>
-      A set of permutations with these three properties is called a <em>permutation group</em><fn>The concept of a permutation group is a
+      A set of permutations with these three properties is called a <term>permutation group</term><fn>The concept of a permutation group is a
       special case of the concept of a <em>group</em> that one studies in abstract
       algebra.  When we refer to a group in what follows, if you  know what
       groups are in the more abstract sense, you may use the word in this way.
       If you do not know about groups in this more abstract sense, then you may
       assume we mean permutation group when we say group.</fn> or a group of
-      permutations.<index><main>group of permutations</main></index><index><main>permutation group</main></index> We
-      will denote the group of permutations corresponding to rotations of the
-      square by <m>R_4</m> and call it the <em>rotation group</em><index><main>rotation
+      permutations.<index><main>group of permutations</main></index><index><main>permutation group</main></index> We call the group of permutations corresponding to rotations of the
+      square by <m>R_4</m> and call it the <term>rotation group</term><index><main>rotation
       group</main></index> of the square. There is a similar rotation group with <m>n</m>
       elements for any regular <m>n</m>-gon.
     </p>
@@ -280,21 +278,34 @@
     <activity category="essential">
       <statement>
         <p>
-          If a finite set of permutations satisfies the closure
-          property is it a permutation group?
+          If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
+          <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
+          What does this say about the status of the <em>associative
+          law</em><index><main>associative law</main></index>
+          <me>
+            \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
+          </me>
+          in a
+          group of permutations?
         </p>
       </statement>
       <solution>
         <p>
-          Yes, because the permutations <m>\sigma</m>, <m>\sigma^2</m>, <ellipsis />, <m>\sigma^n</m>,
-          <ellipsis /> must eventually start repeating. But if <m>\sigma^i=\sigma^j</m>, and <m>i\lt j</m>, then
-          <m>\sigma^{j-i} =1</m>, so <m>\sigma^{j-i-1}</m> is the inverse of <m>\sigma</m>. This means that
-          every member of the set of permutations has an inverse in that set. But then since
-          <m>\sigma\circ\sigma^{-1} = \iota</m>, we have that the identity is in the set as well.
-          Thus it is a permutation group.
+          Since <m>(h\circ(g\circ f)) (x) = h((g\circ f)(x)) = h(g(f(x)))</m> and <m>((h\circ
+          g)\circ f) (x) = (h\circ g)(f(x)) = h(g(f(x)))</m>, we have that
+          <me>
+            h\circ (g\circ f) =
+            (h\circ g)\circ f.
+          </me>
+        </p>
+
+        <p>
+          This says that the associative law holds for the composition
+          operation in a group of permutations.
         </p>
       </solution>
     </activity>
+
 
     <activity category="essential">
       <task>
@@ -304,6 +315,11 @@
             <m>\varphi</m> of a permutation group?
           </p>
         </statement>
+        <hint>
+          <p>
+            What do you want <m>\varphi^n\circ\varphi^{-1}</m> to be?
+          </p>
+        </hint>
         <solution>
           <p>
             We define <m>\varphi^{-n}=\left(\varphi^{-1}\right)^n</m>.
@@ -397,6 +413,32 @@
       </task>
     </activity>
 
+
+    <activity category="essential">
+      <statement>
+        <p>
+          If a finite set of permutations satisfies the closure
+          property is it a permutation group?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If <m>\sigma^i = \sigma^j</m> and <m>i \ne j</m>, what can you conclude about <m>\iota</m>?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Yes, because the permutations <m>\sigma</m>, <m>\sigma^2</m>, <ellipsis />, <m>\sigma^n</m>,
+          <ellipsis /> must eventually start repeating. But if <m>\sigma^i=\sigma^j</m>, and <m>i\lt j</m>, then
+          <m>\sigma^{j-i} =1</m>, so <m>\sigma^{j-i-1}</m> is the inverse of <m>\sigma</m>. This means that
+          every member of the set of permutations has an inverse in that set. But then since
+          <m>\sigma\circ\sigma^{-1} = \iota</m>, we have that the identity is in the set as well.
+          Thus it is a permutation group.
+        </p>
+      </solution>
+    </activity>
+
+
     <activity xml:id="dihedral1" category="essential">
       <statement>
         <p>
@@ -411,76 +453,70 @@
       </statement>
     </activity>
 
-    <activity category="essential">
-      <statement>
-        <p>
-          If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
-          <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
-          What does this say about the status of the <em>associative
-          law</em><index><main>associative law</main></index>
-          <me>
-            \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
-          </me>
-          in a
-          group of permutations?
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Since <m>(h\circ(g\circ f)) (x) = h((g\circ f)(x)) = h(g(f(x)))</m> and <m>((h\circ
-          g)\circ f) (x) = (h\circ g)(f(x)) = h(g(f(x)))</m>, we have that
-          <me>
-            h\circ (g\circ f) =
-            (h\circ g)\circ f.
-          </me>
-        </p>
 
-        <p>
-          This says that the associative law holds for the composition
-          operation in a group of permutations.
-        </p>
-      </solution>
-    </activity>
 
     <activity category="essential and interesting">
+      <introduction>
+        <p>
+          Let <m>\sigma</m> and <m>\varphi</m> be permutations.
+        </p>
+      </introduction>
+      <task>
       <statement>
         <p>
-          If <m>\sigma</m> and <m>\varphi</m> are permutations, why must
-          <m>\sigma\circ\varphi</m> have an inverse? Is <m>(\sigma\circ\varphi)^{-1}=
-          \sigma^{-1}\varphi^{-1}</m>? (Prove or give a counter-example.) Is
-          <m>(\sigma\circ\varphi)^{-1}=
-          \varphi^{-1}\sigma^{-1}</m>? (Prove or give a counter-example.)
+          Why must
+          <m>\sigma\circ\varphi</m> have an inverse?
         </p>
       </statement>
       <solution>
         <p>
-          One could either say that the composition of one-to-one and onto functions
-          is one-to-one and onto, or note that <m>(\sigma\circ\varphi)\circ (\varphi^{-1}\circ
-          \sigma^{-1}) =\iota</m> by the associative law. Note that this says that <m>(\sigma \circ
-          \varphi)^{-1}= \varphi^{-1}\circ \sigma^{-1}</m>. In the dihedral group <m>D_4</m>,
-          <m>\rho^{-1}= \rho^3</m> and <m>\varphi_{1/3}^{-1} = \varphi{1/3}</m>. Thus
-          <md>
-            <mrow>(\rho\circ \varphi_{1/3})\circ (\rho^{-1}\circ
-            \varphi_{1/3}^{-1}) =\amp \rho\circ
-            \varphi_{1/3})\circ(\rho^3\varphi_{1/3})</mrow>
-            <mrow> =\amp \varphi_{12/34}\circ \varphi_{14/23}</mrow>
-            <mrow> =\amp \rho^2.</mrow>
-          </md>
+          One could either say that the composition of one-to-one and onto functions is one-to-one and onto, or note that <m>(\sigma\circ\varphi)\circ(\varphi^{-1}\circ \sigma^{-1}) =\iota</m> by the associative law. Note that this says that <m>(\sigma \circ \varphi)^{-1}= \varphi^{-1}\circ \sigma^{-1}</m>.
         </p>
+      </solution>
+    </task>
 
+    <task>
+      <statement>
         <p>
-          This shows that <m>(\sigma\circ\varphi)^{-1}\not=
+          Is <m>(\sigma\circ\varphi)^{-1}=\sigma^{-1}\varphi^{-1}</m>? (Prove or give a counter-example.)
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What does it mean for one function to be the inverse of another one?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          The set of all permutations of <m>\{1,2,3\}</m> is a permutation group.  Let <m>\sigma</m> be given by <m>\sigma(1) = 2</m>, <m>\sigma(2) = 3</m>, and <m>\sigma(3) = 1</m>.  Let <m>\varphi</m> be given by <m>\varphi(1) = 1</m>, <m>\varphi(2) = 3</m>, and <m>\varphi(3) = 2</m>.  Then <m>\sigma \circ \varphi(1) = 2</m>, <m>\sigma\circ\varphi(2) = 1</m>, and <m>\sigma\circ\varphi(3) = 3</m>.
+          But <m>\sigma^{-1} \circ \varphi^{-1}(2) = \sigma^{-1}(3) = 2</m>.  thus <m>(\sigma\circ\varphi)^{-1}\ne
           \sigma^{-1}\varphi^{-1}</m>.
         </p>
       </solution>
-    </activity>
+
+    </task>
+
+    <task>
+      <statement>
+        <p>
+          Is <m>(\sigma\circ\varphi)^{-1}= \varphi^{-1}\sigma^{-1}</m>? (Prove or give a counter-example.)
+        </p>
+      </statement>
+      <solution>
+        <p>
+          See the second solution for part (a).
+        </p>
+
+      </solution>
+    </task>
+  </activity>
 
     <activity category="essential">
       <statement>
         <p>
           Explain why the set of all permutations of four elements is a
           permutation group. How many elements does this group have? This group
-          is called the <em>symmetric group on four letters</em><index><main>symmetric
+          is called the <term>symmetric group on four letters</term><index><main>symmetric
           group</main></index> and is denoted by <m>S_4</m>.
         </p>
       </statement>
@@ -493,6 +529,9 @@
     </activity>
   </subsection>
 
+
+
+<!-- 6.1.3 The Symmetric group -->
   <subsection>
     <title>The symmetric group</title>
     <p>
@@ -580,6 +619,8 @@
     </activity>
   </subsection>
 
+
+<!-- 6.1.4 -->
   <subsection>
     <title>The dihedral group</title>
     <p>
@@ -663,6 +704,49 @@
       places.)
     </p>
 
+    <activity>
+      <statement>
+        <p>
+          Another view of the dihedral group of the square is that it is the group of all distance preserving functions, also called <term>isometires</term>, <index><main>isometiry</main></index> from a square to itself.  Notice that an isometry must be a bijection.  Any rigid motion of the square preserves the distances between all points of the square.  However, it is conceivable that there might be some isometries that do not arise from rigid motions.  (We will see some later on in the case of a cube.)  Show that there are exactly eight isometires (dinsce preserving functions) from a square to itself.
+        </p>
+      </statement>
+      <hint>
+        <p>
+      Once you know where the corners of the square go under the action of an
+      isometry, how much do you know about the isometry?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          We can use three of the vertices of a square to set up a rectangular
+          coordinate system, and every point is determined by its signed
+          distances from the two coordinate lines. But the distance of a point
+          from a line is simply the height of a triangle given by that point and
+          two points on the line. All unsigned distances of points in the square
+          from the coordinate lines are determined by the distances of points
+          from the three points we use to construct our coordinate system. We
+          can set up our coordinate system so all distances of points in the
+          square from the coordinate lines are positive. Therefore each point in
+          the square is determined by its distances from the three points we
+          have chosen. But a distance preserving map must take corners of the
+          square to corners of the square (it has to preserve diagonal
+          distances). Therefore any isometry is determined by what it does to
+          the corners of the square. But two adjacent corners must go to two
+          adjacent corners for distances to be preserved and so a corner and the
+          two edges adjacent to it must be mapped to a corner and the two edges
+          adjacent to it. There are four choices for the corner that we map to
+          and two choices of which edges go to which once the corner is chosen.
+          Thus there are 8 choices for an isometry of the square. Each element
+          of the dihedral group of the square is a permutation of the corners
+          determined by a rigid motion, and thus an isometry. Thus the dihedral
+          group can also be thought of as the permutations of the vertices
+          (corners) of a square induced by isometries.
+        </p>
+      </solution>
+    </activity>
+
+
+
     <activity category="essential and interesting">
       <statement>
         <p>
@@ -678,10 +762,156 @@
         </p>
       </solution>
     </activity>
+
+
+    <activity>
+      <introduction>
+        <p>
+          In <xref ref="face-labeled-cube" /> we show a cube with the positions of its vertices and faces labeled.  As with motions of the square, we let <m>\varphi(x)</m> be the label of the place where vertex previously in position <m>x</m> is now.
+        </p>
+        <figure xml:id="face-labeled-cube">
+          <caption>A cube with the positions of its vertices and faces labeled.  The curved arrows point to the faces that are blocked by the cube.</caption>
+          <image width="60%" source="images/faceLabeledCube" />
+        </figure>
+      </introduction>
+
+      <task>
+        <statement>
+          <p>
+            Write in two row notation the permutation <m>\rho</m> of the vertices that corresponds to rotating the cube 90 degrees around a vertical axis through the faces <m>t</m> (for top) and <m>u</m> (for underneath). (Rotate in a right-handed fashion around this axis, meaning that vertex 6 goes to the back and vertex 8 comes to the front.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\rho = \begin{pmatrix}1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp 8 \\ 2 \amp 3 \amp 4 \amp 1 \amp 6 \amp 7 \amp 8 \amp 5 \end{pmatrix}</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Write in two row notation the permutation <m>\varphi</m> that rotates the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and carries vertex 8 to vertex 6.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\varphi = \begin{pmatrix}1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp 8 \\
+             1 \amp 4 \amp 8 \amp 5 \amp 2 \amp 3 \amp 7 \amp 6 \end{pmatrix}</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Compute the two row notation for <m>\rho \circ \varphi</m>
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>\rho \circ \varphi = \begin{pmatrix}
+            1 \amp 2 \amp 3 \amp 4 \amp 5 \amp 6 \amp 7 \amp 8 \\
+             2 \amp 1 \amp 5 \amp 6 \amp 3 \amp 4 \amp 8 \amp 7 \end{pmatrix}</m>
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Is the permutation <m>\rho\circ\varphi</m> a rotation of the cube around some axis?  If so, say what the axis is and how many degrees we rotate around the axis.  If <m>\rho\circ\varphi</m> is not a rotation, give a geometic description of it.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            It is a rotation of 180 degrees around the axis between the center of the edge 1,2 and the center of the edge 7,8.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <activity category="essential and interesting">
+      <statement>
+        <p>How many permutations are in the group <m>R</m>? <m>R</m> is sometimes called the “rotation group” of the cube. Can you justify this?</p>
+      </statement>
+      <hint>
+        <p>
+          In how many ways can you choose a place to which you can move vertex
+          1? Having done that, in how many ways can you place the three vertices
+          adjacent to vertex 1?
+        </p>
+      </hint>
+
+      <solution>
+        <p>
+          There are eight places where vertex one can go. Once vertex 1 is
+          placed, there are three ways the three faces including vertex 1 can be
+          placed so that the cube returns to its original location, and then the
+          location of all the vertices is determined. Thus there are 24 elements
+          of the group. Of them, we have the identity, three rotations about
+          each of the three axes through the midpoints of the faces, one
+          additional rotation about each of the six axes joining opposite faces,
+          and <m>2\cdot 4 = 8</m> additional rotations about each of the four axes joining a vertex to the diagonally (in three dimensions) opposite vertex. This gives us a total of <m>10+6+8=24</m> rotations, so every element of the group is a rotation.
+        </p>
+      </solution>
+    </activity>
+
+    <activity category="essential and intereseting">
+      <introduction>
+        <p>
+          As with a two-dimensional figure, it is possible to talk about
+        isometries of a three-dimensional figure. These are distance preserving
+        functions from the figure to itself. The function that reflects the cube
+        in <xref ref="face-labeled-cube"/> through a plane halfway between the bottom face and top face exchanges the vertices 1 and 5, 2 and 6, 3 and 7, and 4 and 8 of the cube. This function preserves distances between points in the cube.
+        However, it cannot be achieved by a rigid motion of the cube because a
+        rigid motion that takes vertex 1 to vertex 5, vertex 2 to vertex 6,
+        vertex 3 to vertex 7, and vertex 4 to vertex 8 would not return the cube
+        to its original location; rather it would put the bottom of the cube
+        where its top previously was and would put the rest of the cube above
+        that square rather than below it.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            How many elements are there in the group of permutations of <m>[8]</m>   that correspond to isometries of the cube?
+          </p>
+        </statement>
+        <hint>
+          <p>
+        In how many ways can you choose a place to which you can move vertex
+        1? Having done that, in how many ways can you place the three vertices
+        adjacent to vertex 1?
+          </p>
+        </hint>
+        <solution>
+          <p>
+            There are 48, because there are 8 places for vertex one to go, and once it is placed, there are six ways to place the three vertices adjacent to vertex 1, and each of them corresponds to an isometry.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Is every permutation of <m>[8]</m> that corresponds to an isometry either a rotation or a reflection?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Why is it sufficient to focus on permutations that take vertex 1 to itself?
+          </p>
+        </hint>
+        <solution>
+          <p>
+            It suffices by symmetry to show that half the permutations that take vertex 1 to itself are rotations and half are reflections. There are six permutations corresponding to isometries that take vertex 1 to vertex 1. We already know that three of them are rotations of the cube around an axis through vertex 1 and vertex 7. One of them reflects through the plane bisecting and perpendicular to the edges 1, 5 and 3, 7. One of them reflects through the plane bisecting and perpendicular to the edges 1, 4 and 6, 7. One of them reflects through the plane bisecting and perpendicular to the edges 1, 2 and 7, 8. Thus half of the isometries that take vertex 1 to vertex 1 are reflections, and by symmetry, half of the isometries (or in other words, 24 of them) are reflections. The other half (again, 24 isometries) are rotations. Thus every isometry is either a rotation or a reflection.
+          </p>
+        </solution>
+      </task>
+    </activity>
   </subsection>
 
+<!-- 6.1.5 -->
   <subsection>
-    <title>Group tables</title>
+    <title>Group tables (Optional)</title>
     <p>
       We can always figure out the composition of two permutations of the same
       set by using the definition of composition, but if we are going to work
