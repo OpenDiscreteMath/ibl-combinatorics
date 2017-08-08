@@ -17,8 +17,8 @@
     <introduction>
       <p>
         The <em>principle of mathematical
-        induction</em><index><main>mathematical induction</main><sub>principle of</sub></index><index><main>principle of
-        mathematical induction</main></index><index><main>induction</main><sub>mathematical, the principle of</sub></index>
+        induction</em><idx><main>mathematical induction</main><sub>principle of</sub></idx><idx><main>principle of
+        mathematical induction</main></idx><idx><main>induction</main><sub>mathematical, the principle of</sub></idx>
         states that
       </p>
 
@@ -164,6 +164,11 @@
           the formula for <m>\binom{n}{k}</m> by induction on <m>n</m>. Do so.
         </p>
       </statement>
+      <hint>
+        <p>
+        We wish to prove that <m>\binom{n}{i} =\frac{n!}{i!(n-i)!}</m>. Mathematical induction allows us to assume that <m>\binom{n-1}{j}=\frac{(n-1)!}{j! (n-1-j)!}</m> for every <m>j</m>between 0 and <m>n-1</m>. How does this put us into a position to use the Pascal relation? What special cases will be left over?
+        </p>
+      </hint>
       <solution>
         <p>
           We wish to prove that <m>\binom{n}{i} =\frac{n!}{i!(n-i)!}</m>. We
@@ -196,13 +201,16 @@
     </activity>
 
     <activity category="interesting">
-      <task>
         <statement>
           <p>
             Use the fact that <m>(x+y)^n = (x+y)(x+y)^{n-1}</m> to give an inductive
             proof of the binomial theorem.
           </p>
         </statement>
+        <hint>
+          <p>What sort of relationship do you know between values of the form <m>\binom{n}{i}</m> and values of the form <m>\binom{n-1}{j}</m>?
+          </p>
+        </hint>
         <solution>
           <p>
             We prove the binomial theorem by induction on <m>n</m>. When <m>n=0</m>,
@@ -228,8 +236,8 @@
             binomial theorem must be true for all integers <m>n\ge 0</m>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             Suppose that <m>f</m> is a function defined on the nonnegative integers
@@ -248,21 +256,30 @@
             nonnegative integers <m>n</m>.
           </p>
         </solution>
-      </task>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Prove the conjecture in Activity 13b for an arbitrary positive integer <m>m</m> without appealing to the general product principle.
+        </p>
+      </statement>
+      <hint>
+        We did something rather similar in our example of the inductive proof that a set with <m>n</m> elements has <m>2^n</m> subsets. The work you did in a previous problem may be similar to part of what you need to do here.
+      </hint>
     </activity>
   </subsection>
 
   <subsection>
     <title>Inductive definition</title>
     <p>
-      You may have seen <m>n!</m><index><main>factorial</main></index> described by the two equations
+      You may have seen <m>n!</m><idx><main>factorial</main></idx> described by the two equations
       <m>0!=1</m> and
       <m>n!=n(n-1)!</m> for <m>n>0</m>. By the principle of mathematical induction we
       know that this pair of equations defines <m>n!</m> for all nonnegative numbers
       <m>n</m>. For this reason we call such a definition an <em>inductive
-      definition</em><index><main>inductive definition</main></index><index><main>definition</main><sub>inductive</sub></index>. An
+      definition</em><idx><main>inductive definition</main></idx><idx><main>definition</main><sub>inductive</sub></idx>. An
       inductive definition is sometimes called a <em>recursive
-      definition</em><index><main>recursive definition</main></index><index><main>definition</main><sub>recursive</sub></index>.
+      definition</em><idx><main>recursive definition</main></idx><idx><main>definition</main><sub>recursive</sub></idx>.
       Often we can get very easy proofs of useful facts by using inductive
       definitions.
     </p>
@@ -283,6 +300,11 @@
             exponents <m>a^{m+n}=a^ma^n</m> for nonnegative <m>m</m> and <m>n</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            This may look difficult because one can’t decide in advance on whether to try to induct on <m>m</m>, on <m>n</m>, or on their sum. In some sense, it doesn’t matter which you choose to induct on, though inducting on the sum would look more complicated. For most people inducting on <m>n</m> fits their way of working with exponents best.
+          </p>
+        </hint>
         <solution>
           <p>
             We use induction on <m>n</m> to prove this. When <m>n=0</m>, the formula
@@ -310,6 +332,12 @@
             (a^m)^n</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            Here it matters whether you choose to induct on <m>m</m> or <m>n</m>. However, it matters only in the sense that you need to use more tools in one case. In one case, you are likely to need the rule <m>(cd)^n=c^n d^n</m>(, which we haven’t proved. (However, you might be able to prove that by induction!) In either case, you may find part (a) handy.
+
+          </p>
+        </hint>
         <solution>
           <p>
             We will use induction on <m>n</m> and part (a) of this problem to
@@ -414,6 +442,16 @@
           simplest form of the sum principle.
         </p>
       </statement>
+      <hint>
+        <p>
+          We didn’t explicitly say to use induction here, but, especially in this context,
+          induction is a natural tool to try here. But we don’t have a variable n to
+          induct on. That means you have to choose one. So what do you think is
+          most useful. The number of blocks in the partition? The size of the first
+          block of the partition? The size of the set we are partitioning? Or something
+          else?
+        </p>
+      </hint>
       <solution>
         <p>
           We prove by induction on <m>n</m> that the size of the union of <m>n</m>
@@ -451,8 +489,8 @@
     <p>
       In <xref ref="generalproductprinciple">Problem</xref> we gave a more
       general form of the product principle which can be stated as
-      <index><main>product principle</main><sub>general</sub></index><index><main>general product
-      principle</main></index>
+      <idx><main>product principle</main><sub>general</sub></idx><idx><main>general product
+      principle</main></idx>
     </p>
 
     <blockquote>
@@ -487,6 +525,12 @@
           principle.
         </p>
       </statement>
+      <hint>
+        <p>
+          Think about how you might have gone from the number of double decker
+          cones to the number of triple decker cones in Problem 6.
+        </p>
+      </hint>
       <solution>
         <p>
           We prove by induction that if <m>S</m> is a set of functions defined on
@@ -556,8 +600,8 @@
       turns out that we use both. Thus we want to be able to simultaneously
       induct on <m>m</m> and <m>n</m>. One way to do that is to use yet another
       variation on the principle of mathematical induction, the <em>Principle
-      of Double Mathematical Induction</em><index><main>double
-      induction</main></index><index><main>induction</main><sub>double</sub></index><index><main>mathematical induction</main><sub>double</sub></index>.
+      of Double Mathematical Induction</em><idx><main>double
+      induction</main></idx><idx><main>induction</main><sub>double</sub></idx><idx><main>mathematical induction</main><sub>double</sub></idx>.
       This principle (which can be derived from one of our earlier ones) states
       that
     </p>
@@ -603,6 +647,21 @@
           mutual acquaintances or at least <m>n</m> mutual strangers.
         </p>
       </statement>
+      <hint>
+        <p>
+          Perhaps the first thing one needs to ask is why proving that if there are 
+          <m>\binom{m+n-2}{m-1}</m>people in a room, then there are either at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers proves that <m>R(m, n)</m> exists. Can you see why this tells us that there is some number <m>R</m> of people such that if <m>R</m> people are in a room, then there are <m>m</m> mutual acquaintances or <m>n</m> mutual
+          strangers? And why does that mean the Ramsey Number exists?
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Naturally it should come as no surprise that you will use double induction,
+          and you can use either form. As you think about how to use induction, the
+          Pascal relation will come to mind. This suggests that you want to make
+          assumptions involving <m>\binom{m+n-3}{m-1}</m> people in a room, or <m>\binom{m+n-3}{m-2}</m> people in a room. Now you have to figure out what these assumptions are and how they help you prove the result! Recall that we have made progress before by choosing one person and asking whether this person is acquainted with at least some number of people or unacquainted with at least some other number of people.
+        </p>
+      </hint>
       <solution>
         <p>
           We use double induction on <m>m</m> and <m>n</m> to prove this for
@@ -651,6 +710,25 @@
           Prove that <m>R(m,n)\le R(m-1,n) + R(m,n-1)</m>.
         </p>
       </statement>
+      <hint>
+        <p>
+          One expects to need double induction again here. But only because of the
+location of the problem and because the sum looks like double induction.
+And those reasons aren’t enough to mean you have to use double induction.
+If you had this result in hand already, then you could us it with double
+induction to give a second proof that Ramsey Numbers exist.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          What you do need to show is that if there are <m>R(m − 1, n) + R(m, n − 1)</m>
+people in a room, then there are either m mutual acquaintances or n mutual
+strangers. As with earlier problems, it helps to start with a person and
+think about the number of people with whom this person is acquainted or
+nonacquainted. The generalized pigeonhole principle tells you something
+about these numbers.
+        </p>
+      </hint>
       <solution>
         <p>
           If there are <m>R(m-1,n) +R(m,n-1)</m> people in a room, choose one
@@ -698,6 +776,17 @@
             mutual strangers?
           </p>
         </statement>
+        <hint>
+          <p>
+            If you could find four mutual acquaintances, you could assume person 1 is
+            among them. And by the generalized pigeonhole principle and symmetry,
+            so are two of the people to the first, second, fourth and eighth to the right.
+            Now there are lots of possibilities for that fourth person. You now have the
+            hard work of using symmetry and the definition of who is acquainted with
+            whom to eliminate all possible combinations of four people. Then you have
+            to think about nonacquaintances.
+          </p>
+        </hint>
         <solution>
           <p>
             You cannot find either. If there were a set of four mutual
@@ -728,7 +817,8 @@
         <solution>
         </solution>
       </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
            (Optional) Prove the inequality of <xref ref="Ramseybound">Problem</xref> by induction on <m>m+n</m>.
@@ -769,9 +859,9 @@
           <m>R(m,n)</m> exists and is no more than <m>\binom{m+n-2}{m-1}</m>.
         </p>
       </solution>
-      </task>
+      </activity>
 
-      <task>
+      <activity>
         <statement>
           <p>
             Use Stirling's approximation (<xref ref="Stirling_sapproximation">Problem</xref>)
@@ -793,8 +883,7 @@
             </md>
           </p>
         </solution>
-      </task>
-    </activity>
+      </activity>
 
   </subsection>
 
@@ -806,7 +895,7 @@
       will give a lower bound. Since both bounds are exponential in <m>n</m>, they
       show that <m>R(n,n)</m> grows exponentially as <m>n</m> gets large. An analysis of
       what happens to a function of <m>n</m> as <m>n</m> gets large is usually called an
-      <em>asymptotic analysis</em>.<index><main>asymptotic combinatorics</main></index> The <em>probabilistic method</em><index><main>probabilistic method</main></index><index><main>method</main><sub>probabilistic</sub></index>,
+      <em>asymptotic analysis</em>.<idx><main>asymptotic combinatorics</main></idx> The <em>probabilistic method</em><idx><main>probabilistic method</main></idx><idx><main>method</main><sub>probabilistic</sub></idx>,
       at least in its simpler forms, can be expressed in terms of averages, so one
       does not need to know the language of probability in order to understand it.
       We will apply it to Ramsey numbers in the next problem. Combined with the
@@ -834,6 +923,9 @@
             <m>R(n,n)>m</m>?
           </p>
         </statement>
+        <hint>
+          What is the definition of <m>R(n, n)</m>?
+        </hint>
         <solution>
           <p>
             Another way to say there is no such subset is to say that it
@@ -854,6 +946,9 @@
             the same color.  Why does this mean that <m>R(n,n)>m</m>?
           </p>
         </statement>
+        <hint>
+          If you average a bunch of numbers and each one is bigger than one, what can you say about the average?
+        </hint>
         <solution>
           <p>
             If the average of <m>n</m> nonnegative integers is less than one,
@@ -866,7 +961,7 @@
       <task>
         <statement>
           <p>
-            We call a <m>K_N</m> <em>monochromatic</em><index><main>monochromatic subgraph</main></index>
+            We call a <m>K_N</m> <em>monochromatic</em><idx><main>monochromatic subgraph</main></idx>
             for a coloring <m>c</m> of <m>K_m</m> if the color <m>c(e)</m> assigned to edge <m>e</m> is
             the same for every edge <m>e</m> of <m>K_N</m>.  Let us define <m>{ mono}(c,N)</m> to
             be 1 if <m>N</m> is monochromatic for <m>c</m> and to be 0 otherwise.  Find a
@@ -876,6 +971,11 @@
             mono}(c,N)</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            Note that there are <m>2^{\binom{n}{2}}</m> graphs on a set of <m>n</m> vertices.
+          </p>
+        </hint>
         <solution>
           <me>
             \frac{1}{2^{\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
@@ -889,6 +989,17 @@
             Show that your formula for the average reduces to <m>2\binom{m}{n}\cdot2^{-\binom{n}{2}}</m>
           </p>
         </statement>
+        <hint>
+          <p>
+            A notation for the sum over all colorings <m>c</m> of <m>K_m</m> is
+            <me>
+              \sum_{c:c\mbox{~is a coloring of~} K_m},
+            </me> and a notation for the sum over all subsets <m>N</m> of <m>M</m> that have size <m>n</m> is
+            <me>
+              \sum_{N:N\subseteq M,~|N|=n}
+            </me> 
+          </p>
+        </hint>
         <solution>
           <md>
             <mrow> \amp \frac{1}{2^{\binom{m}{2}}}\sum_{c:c\mbox{~is a coloring
@@ -908,6 +1019,14 @@
             Explain why <m>R(n,n)>m</m> if <m>\binom{m}{n}\le 2^{\binom{n}{2} -1}</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            If you interchange the order of summation so that you sum over subsets
+            first and colorings second, you can take advantage of the fact that for a
+            fixed subset <m>N</m> , you can count count the number of colorings in which it is
+            monochromatic.
+          </p>
+        </hint>
         <solution>
           <p>
             <m>R(n,n)>m</m> if the average above is less than 1. Thus <m>R(n,n)>m</m>
@@ -924,6 +1043,11 @@
             Explain why <m>R(n,n)>\root n \of {n!2^{\binom{n}{2}-1}}</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            You have an inequality involving m and n that tells you that <m>R(n, n) > m</m>. Suppose you could work with that inequality in order to show that if the inequality holds, then <m>m</m> is bigger than something. What could you conclude about <m>R(n, n)</m>?
+          </p>
+        </hint>
         <solution>
           <p>
             <m>\binom{m}{n} \lt 2^{\binom{n}{2}-1}</m> is the same as
