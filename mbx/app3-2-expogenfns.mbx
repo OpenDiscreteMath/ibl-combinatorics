@@ -138,6 +138,11 @@
         permutations on <m>n</m> elements that are cycles.
       </p>
     </statement>
+    <hint>
+      <p>
+        An earlier problem may help you put your answer into a simpler form.
+      </p>
+    </hint>
     <solution>
       <p>
         By <xref ref="ln1over1-x">Problem</xref> the EGF is <m>\ln\frac{1}{1-x}</m>.
@@ -154,6 +159,11 @@
         <m>n</m> tennis matches (as in <xref ref="tennispairings1">Problems</xref> and <xref ref="tennispairings2"></xref>)?
       </p>
     </statement>
+    <hint>
+      <p>
+        What is the power series representation of <m>e^{x^2}</m>?
+      </p>
+    </hint>
     <solution>
       <p>
         Recall that <m>p_{2n} = (2n-1)(2n-3)\cdots 1= \frac{(2n)!}{2^n
@@ -192,7 +202,7 @@
     <statement>
       <p>
         What is the EGF for the sequence
-        <m>1,1,\cdots,1,\cdots</m>? Notice that we may think of this as the
+        <m>1,1,\ldots,1,\ldots</m>? Notice that we may think of this as the
         EGF for the number of identity permutations
         on an <m>n</m>-element set, which is the same as the number of permutations of
         <m>n</m> elements that are products of 1-cycles, or as the EGF for the number
@@ -212,11 +222,15 @@
     <statement>
       <p>
         What is the EGF for the number of ways
-        to select <m>n</m> elements from a one-element set? What is the EGF for the
-        number of ways to select a positive number <m>n</m> of elements from a one
-        element set?
+        to select <m>n</m> distinct elements from a one-element set? What is the EGF for the
+        number of ways to select a positive number <m>n</m> of elements from a one element set?  Hint: When you get the answer you will either say <q>of course,</q> or <q>this is a silly problem.</q>
       </p>
     </statement>
+    <hint>
+      <p>
+        There is only one element that you may choose. In the first case you either choose it or you don't.
+      </p>
+    </hint>
     <solution>
       <p>
         <m>1+x</m>, <m>x</m>.
