@@ -153,9 +153,9 @@
           the
           picture of an orbit or multiorbit to be the picture of any one of its members. The
           <em>orbit
-          enumerator</em><index><main>orbit enumerator</main></index> <m>{ Orb}(G,S)</m> is the sum of all the pictures
+          enumerator</em><idx><h>orbit enumerator</h></idx> <m>{ Orb}(G,S)</m> is the sum of all the pictures
           of all the orbits. The
-          <em>fixed point enumerator</em><index><main>fixed point enumerator</main></index> <m>{ Fix}(G,S)</m> is
+          <em>fixed point enumerator</em><idx><h>fixed point enumerator</h></idx> <m>{ Fix}(G,S)</m> is
           the sum of all the pictures of all
           the fixed points of all the elements of <m>G</m>. We are going to construct a
           generating function analog of the CFB theorem. The main idea of the proof of
@@ -212,7 +212,7 @@
       <task>
         <statement>
           <p>
-            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><index><main>Orbit-Fixed Point Theorem</main></index> the <em>Orbit-Fixed Point
+            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><idx><h>Orbit-Fixed Point Theorem</h></idx> the <em>Orbit-Fixed Point
             Theorem</em>. Use it to determine the Orbit Enumerator for the colorings, with two
             colors (red and blue), of six circles placed at the vertices of a hexagon which is
             free to move in the plane. Compare the coefficients of the resulting polynomial
@@ -468,7 +468,8 @@
     </p>
 
     <activity category="essential">
-      In <xref ref="polya4">Problem</xref>, each
+        <statement>
+            <p>In <xref ref="polya4">Problem</xref>, each
       <q>kind</q> of group element
       has a <q>kind</q> of cycle structure in the action of the rotation group of the cube on the
       faces of the cube. For example, a rotation of the cube through 180 degrees around a
@@ -477,12 +478,13 @@
       other <q>kinds</q> of group elements, and what are their cycle structures? Discuss the
       relationship between the cycle structure and the factored enumerator in
       <xref ref="polya4">Problem</xref>.
+            </p>
+        </statement>
       <solution>
         <p>
         We effectively answered this question in our solution to <xref ref="polya2">Problem</xref>.
         In particular, there are three rotations of 180 degrees through the centers of opposite
         faces. The other kinds of group elements are as follows.
-      </p>
         <ul>
         <li>
           <p>
@@ -509,7 +511,6 @@
           </p>
         </li>
       </ul>
-        <p>
           As we said in the solution to <xref ref="polya3_5">Problem</xref> ``The cycle structure
           determines the factored enumerator; a cycle of size <m>i</m> gives a factor of <m>(R^i+B^i)</m>.
           That is because a coloring fixed by a group element has to be constant on the cycles
@@ -538,7 +539,7 @@
 
         <p>
           The <em>cycle indicator</em> or
-          <em>cycle index</em><index><main>cycle index</main></index> of <m>G</m> acting on <m>S</m> is
+          <em>cycle index</em><idx><h>cycle index</h></idx> of <m>G</m> acting on <m>S</m> is
           <me>
             Z(G,S) = \frac{1}{|G|}\sum_{\sigma: \sigma \in G} z(\sigma).
           </me>
@@ -578,7 +579,7 @@
           <m>S</m> to a
           finite set <m>T</m> from the cycle index of <m>G</m> acting on <m>S</m>? (Use <m>P(t)</m> as the notation
           for the picture of an element <m>t</m> of <m>T</m>.) State and prove the relevant theorem! This is
-          P&#xf3;lya's and Redfield's famous enumeration theorem.<index><main>P&#xf3;lya-Redfield Theorem</main></index>
+          P&#xf3;lya's and Redfield's famous enumeration theorem.<idx><h>P&#xf3;lya-Redfield Theorem</h></idx>
         </p>
       </statement>
       <solution>
@@ -698,7 +699,7 @@
     </activity>
 
     <activity xml:id="coloredsticks" category="interesting">
-      <p>
+        <introduction><p>
         We have red, green, and blue sticks all of the same length, with a dozen
         sticks of each color. We are going to make the skeleton of a cube by taking eight
         identical lumps of modeling clay and pushing three sticks into each lump so that the
@@ -708,7 +709,8 @@
         edges? For this problem we are interested in the action of the rotation group of the
         cube on the edges. Now we think of the group elements as permutations of the edges and
         analyze their cycle structure.
-      </p>
+    </p>
+    </introduction>
       <task>
         <p>
           The identity is a product of 12 one-cycles.
@@ -737,7 +739,6 @@
           A 120 degree rotation around an axis connecting two diagonally opposite vertices is
           a product of four three-cycles.
         </p>
-      </task>
       <p>
         Thus the cycle index is
         <me>
@@ -781,6 +782,7 @@
           +\frac{5!}{1!2!2!}\right)\right)=600.</mrow>
         </md>
       </p>
+      </task>
       </activity>
 
       <activity category="interesting">
@@ -789,6 +791,7 @@
             How many cubes can we make in <xref ref="coloredsticks">Problem</xref> if
             the lumps of modelling clay can be any of four colors?
           </p>
+        </statement>
           <solution>
           <p>
             We can first consider all ways of coloring the vertices of the cube with the
@@ -797,33 +800,17 @@
             ways to choose the colors of the vertices and edges is the product of the number of
             ways to choose each. Thus we just need to consider the action of the rotation group
             of the cube on the vertices:
-          </p>
-
-          <p>
-            -+ identity is the product of eight one-cycles.
-          </p>
-
-          <p>
-            -+ 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
-            product of two four-cycles.
-          </p>
-
-          <p>
-            -+ 180 degree rotation around an axis perpendicular to two opposite faces is a
-            product of four two-cycles.
-          </p>
-
-          <p>
-            -+ 180 degree rotation around an axis joining two opposite edges is a product of four
-            two-cycles.
-          </p>
-
-          <p>
-            -+ 120 or 240 degree rotation around an axis through two diagonally opposite vertices
-            is a product of two three-cycles and two one-cycles.
-          </p>
-
-          <p>
+            <ul>
+                <li>identity is the product of eight one-cycles.</li>
+                <li>90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
+            product of two four-cycles.</li>
+            <li>180 degree rotation around an axis perpendicular to two opposite faces is a
+            product of four two-cycles.</li>
+            <li>180 degree rotation around an axis joining two opposite edges is a product of four
+            two-cycles.</li>
+            <li>120 or 240 degree rotation around an axis through two diagonally opposite vertices
+            is a product of two three-cycles and two one-cycles.</li>
+            </ul>
             Thus the cycle index for this action is
             <me>
               \frac{1}{24}\left(z_1^8+6z_4^2 + 9z_2^4 + 8z_3^2z_1^2\right).
@@ -842,13 +829,12 @@
             have <m>22815\cdot2916=66,528,540</m> possible colored cubes.
           </p>
           </solution>
+      </activity>
           <figure xml:id="HexNet" >
             <caption>A possible
             computer network.</caption>
             <image width="33%" source="images/NumberedHexagonalNetwork" />
           </figure>
-        </statement>
-      </activity>
 
       <activity category="interesting">
         <statement>
@@ -860,11 +846,21 @@
             can redraw one of the graphs so that it is identical to
             the other one.) This is equivalent to permuting the vertices in some way so that when we
             apply the permutation to the endpoints of the edges to get a new edge set, the new edge
-            set is equal to the old one. Such a permutation is called an <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Then two computer
+            set is equal to the old one. Such a permutation is called an <em>automorphism</em><idx><h>automorphism (of a graph)</h></idx> of the graph. Then two computer
             placements are the same if there is an automorphism of the graph that carries one to the
             other.
           </p>
         </statement>
+        <hint>
+          <p>
+            The group of automorphisms of the graph has 48 elements and contains <m>D_6</m> as a subgraph.
+          </p>
+        </hint>
+        <hint>
+          <p>
+            The permutations with four one-cycles and the two-cycle <m>(1\ 4)</m>, <m>(2\ 5)</m>, or <m>(3\ 6)</m> are in the group of automorphisms. Once you know the cycle structure of <m>D_6</m> and <m>(1\ 4)D_6 = \{(1\ 4)\sigma | \sigma \in D_6\}</m>, you know the cycle structure of every element of the group.
+          </p>
+        </hint>
         <solution>
           <p>
             The computer placements are functions from the vertices of the graph to the set
@@ -961,7 +957,11 @@
       vertices.
     </p>
   </statement>
-
+  <hint>
+    <p>
+      What does the symmetric group on five vertices have to do with this problem?
+    </p>
+  </hint>
       <solution>
         <p>
         For this problem we need the cycle index for the action of the symmetric group
@@ -970,7 +970,6 @@
         on <m>[5]</m>. The cycle structure of a permutation <m>\sigma</m> on the two-element subsets of
         <m>[5]</m> will be determined by its cycle structure on <m>[5]</m>. The partitions of five and
         the cycle structures they give on two-element subsets are:
-      </p>
         <ul>
         <li>
           <p>
@@ -1031,8 +1030,7 @@
             two-sets.  There are <m>4!=24</m> such permutations.
           </p>
         </li>
-    </ul>
-        <p>
+        </ul>
           Thus for the group <m>S_5</m> acting on pairs from <m>[5]</m>, the cycle index is
           <me>
             \frac{1}{120}\left(z_1^{10}+10z_2^3z_1^4+15z_2^4z_2+20z_3^3z_1+20z_6z_3z_1+

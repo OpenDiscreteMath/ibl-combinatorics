@@ -239,7 +239,7 @@
     </table>
 
     <p>
-      We describe these problems in <xref ref="firstdistributiontable">Table</xref>. Since there are twenty possible distribution problems, we call the table the <q>Twentyfold Way,</q><index><main>Twentyfold Way</main></index> adapting terminology suggested by Joel Spencer for a more restricted class of distribution problems. In the first column of the table we state whether the objects are distinct (like people) or identical (like ping-pong balls) and then give any conditions on how the objects may be received. The conditions we consider are whether each recipient gets at most one object, whether each recipient gets at least one object, whether each recipient gets exactly one object, and whether the order in which the objects are received matters. In the second column we give the solution to the problem and the name of the mathematical model for this kind of distribution problem when the recipients are distinct, and in the third column we give the same information when the recipients are identical. We use question marks as the answers to problems we have not yet solved and models we have not yet studied. We give explicit answers to problems we solved in <xref ref="whatis" autoname="yes" /> and problems whose answers are immediate. The goal of this chapter is to develop methods that will allow us to fill in the table with formulas or at least quantities we know how to compute, and we will give a completed table at the end of the chapter. We will now justify the answers that are not question marks and replace some question marks with answers as we cover relevant material.
+      We describe these problems in <xref ref="firstdistributiontable">Table</xref>. Since there are twenty possible distribution problems, we call the table the <q>Twentyfold Way,</q><idx><h>Twentyfold Way</h></idx> adapting terminology suggested by Joel Spencer for a more restricted class of distribution problems. In the first column of the table we state whether the objects are distinct (like people) or identical (like ping-pong balls) and then give any conditions on how the objects may be received. The conditions we consider are whether each recipient gets at most one object, whether each recipient gets at least one object, whether each recipient gets exactly one object, and whether the order in which the objects are received matters. In the second column we give the solution to the problem and the name of the mathematical model for this kind of distribution problem when the recipients are distinct, and in the third column we give the same information when the recipients are identical. We use question marks as the answers to problems we have not yet solved and models we have not yet studied. We give explicit answers to problems we solved in <xref ref="whatis" autoname="yes" /> and problems whose answers are immediate. The goal of this chapter is to develop methods that will allow us to fill in the table with formulas or at least quantities we know how to compute, and we will give a completed table at the end of the chapter. We will now justify the answers that are not question marks and replace some question marks with answers as we cover relevant material.
     </p>
 
     <p>
@@ -253,7 +253,7 @@
       <statement>
         <p>
           There are
-          <m>n^k</m><index><main>functions</main><sub>number of</sub></index> functions from a
+          <m>n^k</m><idx><h>functions</h><h>number of</h></idx> functions from a
           <m>k</m>-element set to an <m>n</m>-element set.
         </p>
       </statement>
@@ -291,8 +291,8 @@
         </p>
 
         <p>
-          <index><main>functions</main><sub>one-to-one!number
-          of</sub></index>
+          <idx><h>functions</h><h>one-to-one!number
+          of</h></idx>
         </p>
       </statement>
     </theorem>
@@ -378,7 +378,8 @@
   <subsection xml:id="orderedfunctionsection">
     <title>Ordered functions</title>
     <activity xml:id="bookcase" category="essential and interesting">
-          <p> Suppose we wish to place <m>k</m> distinct books onto the shelves
+        <introduction>
+            <p> Suppose we wish to place <m>k</m> distinct books onto the shelves
           of a bookcase with <m>n</m> shelves. For simplicity, assume for now
           that all of the books would fit on any of the shelves. Also, let's
           imagine pushing the books on a shelf as far to the left as we can, so
@@ -386,8 +387,7 @@
           other, not about the exact places where we put the books. Since the
           books are distinct, we can think of a the first book, the second book
           and so on. </p>
-
-
+        </introduction>
         <task>
           <statement>
             <p>How many places are there where we can place the first book? </p>
@@ -534,12 +534,12 @@
 
     <p>
       The assignment of which books go to which shelves of a bookcase is simply a function from the books to the shelves. But a function doesn't determine which book sits to the left of which others on the shelf, and this information is part of how the books are arranged on the shelves. In other words, the order in which the shelves receive their books matters.  Our function must thus assign an ordered list of books to each shelf. We will call such a function an ordered function.
-      More precisely, an <term>ordered function</term><index><main>ordered function</main></index><index><main>function</main><sub>ordered</sub></index> from a set <m>S</m> to a set <m>T</m> is a function that assigns an (ordered) list of elements of <m>S</m> to some, but not necessarily all, elements of <m>T</m> in such a way that each element of <m>S</m> appears on one and only one of the lists.<fn>The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.</fn>
-      (Notice that although it is not the usual definition of a function from <m>S</m> to <m>T</m>, a function<index><main>function</main><sub>alternate definition</sub></index> can be described as an assignment of subsets of <m>S</m> to some, but not necessarily all, elements of <m>T</m> so that each element of <m>S</m> is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table.
-      An <term>ordered onto function</term><index><main>function</main><sub>ordered!onto</sub></index><index><main>ordered onto function</main></index><index><main>onto function</main><sub>ordered</sub></index> is one which assigns a list to each element of <m>T</m>.
-      In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^n (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><index><main>factorial power</main><sub>rising</sub></index><index><main>rising factorial power</main></index> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.
-      <index><main><m>n^{\overline{k}}</m></main></index> It is read as ``<m>n</m> to the <m>k</m> rising.''
-      (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)<index><main>factorial</main></index> We can summarize with a theorem that adds two more formulas for the number of ordered functions.<index><main>factorial</main><sub>falling</sub></index><index><main>falling factorial power</main></index>
+      More precisely, an <term>ordered function</term><idx><h>ordered function</h></idx><idx><h>function</h><h>ordered</h></idx> from a set <m>S</m> to a set <m>T</m> is a function that assigns an (ordered) list of elements of <m>S</m> to some, but not necessarily all, elements of <m>T</m> in such a way that each element of <m>S</m> appears on one and only one of the lists.<fn>The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.</fn>
+      (Notice that although it is not the usual definition of a function from <m>S</m> to <m>T</m>, a function<idx><h>function</h><h>alternate definition</h></idx> can be described as an assignment of subsets of <m>S</m> to some, but not necessarily all, elements of <m>T</m> so that each element of <m>S</m> is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table.
+      An <term>ordered onto function</term><idx><h>function</h><h>ordered!onto</h></idx><idx><h>ordered onto function</h></idx><idx><h>onto function</h><h>ordered</h></idx> is one which assigns a list to each element of <m>T</m>.
+      In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^n (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><idx><h>factorial power</h><h>rising</h></idx><idx><h>rising factorial power</h></idx> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.
+      <idx><h><m>n^{\overline{k}}</m></h></idx> It is read as ``<m>n</m> to the <m>k</m> rising.''
+      (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)<idx><h>factorial</h></idx> We can summarize with a theorem that adds two more formulas for the number of ordered functions.<idx><h>factorial</h><h>falling</h></idx><idx><h>falling factorial power</h></idx>
     </p>
 
     <theorem>
@@ -594,7 +594,7 @@
     <activity xml:id="multiset" category="essential">
       <statement>
         <p>
-          A <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> may be thought of as a subset with repeated elements allowed. For example the multiset of letters of the word Mississippi is <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how many times (including, perhaps, zero) each member of <m>S</m> appears in the multiset. The number of times an element appears is called its <term>multiplicity</term>.<index><main>multiplicity in a multiset</main></index> The size of a multiset chosen from <m>S</m> is the total number of times any member of <m>S</m> appears. For example, the size of the multiset of letters of Mississippi is 11. What is the number of multisets of size <m>k</m> that can be chosen from an <m>n</m>-element set?
+          A <term>multiset</term><idx><h>multiset</h></idx> chosen from a set <m>S</m> may be thought of as a subset with repeated elements allowed. For example the multiset of letters of the word Mississippi is <m>\{i,i,i,i,m,p,p,s,s,s,s\}</m>. To determine a multiset we must say how many times (including, perhaps, zero) each member of <m>S</m> appears in the multiset. The number of times an element appears is called its <term>multiplicity</term>.<idx><h>multiplicity in a multiset</h></idx> The size of a multiset chosen from <m>S</m> is the total number of times any member of <m>S</m> appears. For example, the size of the multiset of letters of Mississippi is 11. What is the number of multisets of size <m>k</m> that can be chosen from an <m>n</m>-element set?
         </p>
       </statement>
       <hint>
@@ -677,7 +677,7 @@
 
 
     <!-- <p>
-      A more precise definition of a <term>multiset</term><index><main>multiset</main></index> chosen from a set <m>S</m> is that it is a function <m>m</m>, called a <term>multiplicity function</term><index><main>multiplicity function</main></index>, from <m>S</m> to the nonnegative integers. For each <m>x</m> in <m>S</m>, <m>m(x)</m> specifies how many times <m>x</m> appears in the multiset. In our example of the word Mississippi above, our set <m>S</m> can be taken to be the set of alphabet letters and the multiplicity function <m>m</m> is given by <m>m({ i})=4</m>, <m>m({ m}) =1</m>, <m>m({ p})=2</m>, <m>m({ s}) =4</m>, and <m>m</m> of any other member of <m>S</m> is 0. When we list the members of a multiset in braces, it will be clear from context that we are thinking of a multiset. However when we use braces in another way, it may not be clear what we mean. For example, when we write
+      A more precise definition of a <term>multiset</term><idx><h>multiset</h></idx> chosen from a set <m>S</m> is that it is a function <m>m</m>, called a <term>multiplicity function</term><idx><h>multiplicity function</h></idx>, from <m>S</m> to the nonnegative integers. For each <m>x</m> in <m>S</m>, <m>m(x)</m> specifies how many times <m>x</m> appears in the multiset. In our example of the word Mississippi above, our set <m>S</m> can be taken to be the set of alphabet letters and the multiplicity function <m>m</m> is given by <m>m({ i})=4</m>, <m>m({ m}) =1</m>, <m>m({ p})=2</m>, <m>m({ s}) =4</m>, and <m>m</m> of any other member of <m>S</m> is 0. When we list the members of a multiset in braces, it will be clear from context that we are thinking of a multiset. However when we use braces in another way, it may not be clear what we mean. For example, when we write
       <me>
         \{x|x \mbox{~is a letter of Mississippi} \},
       </me>
@@ -846,15 +846,15 @@
       of thinking actually led to the first hint in <xref ref="brokenpermutation">Problem</xref>. Instead of dividing a set up into
       nonoverlapping parts, we may think of dividing a <em>permutation</em>
       (thought of as a list) of our <m>k</m> objects up into <m>n</m> ordered blocks. We
-      will say that a set of ordered lists of elements of a set <m>S</m> is a <term>broken permutation</term><index><main>broken permutation</main></index><index><main>permutation</main><sub>broken</sub></index>
+      will say that a set of ordered lists of elements of a set <m>S</m> is a <term>broken permutation</term><idx><h>broken permutation</h></idx><idx><h>permutation</h><h>broken</h></idx>
       of <m>S</m> if each element of <m>S</m> is in one and only one of these
       lists.<fn>The phrase broken permutation is not standard,
       because there is no standard name for the solution to this kind  of
       distribution problem.</fn> The number of broken permutations of a
       <m>k</m>-element set with
       <m>n</m> blocks is denoted by <m>L(k,n)</m>. The number <m>L(k,n)</m> is called a
-      <term>Lah Number</term> and, from our solution to <xref ref="brokenpermutation">Problem</xref>, is equal to <m>k!\binom{k-1}{n-1}/n!</m>.<index><main>Lah
-      number</main></index>
+      <term>Lah Number</term> and, from our solution to <xref ref="brokenpermutation">Problem</xref>, is equal to <m>k!\binom{k-1}{n-1}/n!</m>.<idx><h>Lah
+      number</h></idx>
     </p>
 
     <p>
