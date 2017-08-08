@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section  xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="app2-1-induction">
   <title>The Principle of Mathematical Induction</title>
   <subsection>
     <title>The ideas behind mathematical induction</title>
@@ -131,6 +132,8 @@
         </solution>
       </task>
       </activity>
+
+
       <activity>
         <statement>
           <p> The expression
@@ -142,6 +145,11 @@
         Now apply the technique of <xref ref="subsetsbysmallestcounterexample">Problem</xref> to prove that you are right.
       </p>
       </statement>
+      <hint>
+        <p>
+      You've probably guessed that the sum is <m>n^2</m>. To prove this by contradiction, you have to assume it is false, that is, that there is an <m>n</m> such that <m>1 + 3 + 5 + \cdots + 2n - 1 \ne n^2</m>. Then the method of <xref ref="subsetsbysmallestcounterexample">Problem</xref> says there must be a smallest such <m>n</m> and suggests we call it <m>k</m>. Why do you know that <m>1 + 3 + 5 + \cdots + 2k - 3 = (k-1)2</m>? What happens if you add <m>2n-1</m> to both  sides of the equation?
+        </p>
+      </hint>
       <solution>
       <p>
         We guess that <m>1+3+5+\cdots+2n-1=n^2</m>. Clearly this is true when
@@ -315,8 +323,7 @@
 
   <subsection>
     <title>Proving algebraic statements by induction</title>
-    <activity>
-      <task>
+      <activity>
         <statement>
           <p>
             Use mathematical induction to prove the well-known formula that for
@@ -346,8 +353,8 @@
             formula holds for all nonnegative integers <m>n</m>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             Experiment with various values of <m>n</m> in the sum
@@ -394,14 +401,25 @@
             true for all positive integers.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             For large values of <m>n</m>, which is larger, <m>n^2</m> or <m>2^n</m>? Use
             mathematical induction to prove that you are correct.
           </p>
         </statement>
+        <hint>
+          <p>
+        You've probably already seen that, with small values of <m>n</m>, sometimes <m>n^2</m> and sometimes <m>2^n</m> is bigger. But if you keep experimenting one of the functions  seems to get bigger and stay bigger than the other. The number <m>n=b</m> where this change occurs is a good choice for a base case. So as not to spoil the problem for you, we won't say here what this value of <m>b</m> is. However you    shouldn't be surprised later in the proof if you need to use the assumption that <m>n /gt b</m>.
+          </p>
+        </hint>
+        <hint>
+          <p>
+            You may have reached the point of assuming that <m>2^{k-1} \gt (k-1)^2</m> and found yourself wondering how to prove that <m>2^k \gt k^2</m>. A natural thing to try is multiplying both sides of <m>2^{k-1} \gt (k-1)^2</m> by <m>2</m>. This ends up giving you <m>2^k \gt 2k^2 - 4k +2</m>. Based on previous experience it is natural for you to expect to see how to turn this new right hand side into <m>k^2</m> but not see how to do it. Here is the hint. You only need to show that the right hand side is greater than or equal to <m>k^2</m>. For this purpose you need to show that one of the two <m>k^2</m>s in <m>2k^2</m> somehow balances out the <m>-4k</m>. See if you can figure out how the fact that you are only considering <m>k</m>s with <m>k \gt b</m> can help you out.
+          </p>
+        </hint>
+
         <solution>
           <p>
             We note that <m>0^2=0</m>, while <m>2^0=1</m>, that <m>1^2=1</m>, while
@@ -416,8 +434,8 @@
             <m>2^n>n^2</m> for all <m>n\ge 5</m>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             What is wrong with the following attempt at an inductive proof that
@@ -433,6 +451,12 @@
             integers are equal.
           </p>
         </statement>
+        <hint>
+          <p>
+            When you suspect an argument is not valid, it may be helpful to explicitly try several values of <m>n</m> to see if it makes sense for them. Often small values of <m>n</m> are adequate to find the flaw. If you find one flaw, it invalidates everything that comes afterwards (unless, of course, you can fix the flaw).
+          </p>
+        </hint>
+
         <solution>
           <p>
             One possible value of <m>k</m> that is greater than 1 is 2. When we
@@ -447,9 +471,10 @@
             induction does not apply.
           </p>
         </solution>
-      </task>
-    </activity>
+      </activity>
   </subsection>
+
+
 
   <subsection>
     <title>Strong Induction</title>
@@ -608,6 +633,37 @@
                 <m>\log_2 n</m>.
               </p>
             </solution>
+      </activity>
+
+      <activity xml:id="euclidsdivthm">
+        <statement>
+          <p>
+            One of the most powerful statements in elementary number theory is
+            Euclid's Division Theorem.<fn>In a curious twist of language, mathematicians have long called The Division Algorithm or Euclid's Division Algorithm. However as computer science has grown in importance, the word algorithm has gotten a more precise definition: an algorithm is now a method to do something. There is a method (in fact there are more than one) to get the <m>q</m> and <m>r</m> that Euclid's Division Theorem gives us, and computer scientists would call these methods algorithms. Your author has chosen to break with mathematical tradition and restrict his use of the word algorithm to the more precise interpretation as a computer scientist probably would. We aren't giving a method here, so this is why the name used here is <q>Euclid's Division Theorem.</q></fn>
+            This states that if <m>m</m> and <m>n</m> are positive integers, then there are unique nonnegative intergers <m>q</m> and <m>r</m> with <m>0 \le r \lt n</m>, such that <m>m = nq + r</m>. The number <m>q</m> is called the quotient and the number <m>r</m> is called the remainder. In computer science it is common to denote <m>r</m> by <m>m \mod n</m>. In elementary school you learned how to use long division to find <m>q</m> and <m>r</m>. However, it is unlikely that anyone ever proved for you that for any pair of positive intgers, <m>m</m> and <m>n</m>, there is such a pair of nonnegative numbers <m>q</m> and <m>r</m>. You now have the tools needed to prove this. Do so.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You might start out by ignoring the word unique and give a proof of the simpler theorem that results. Then look at your proof to see how you can include uniqueness in it.
+          </p>
+        </hint>
+          <solution>
+            <p>
+              We prove our result by induction on <m>m</m>.  If <m>m=1</m>, then either <m>n = 1</m> and we can choose <m>q = 1</m> and <m>r = 0</m>, or <m>n \gt 1</m> and we can choose <m>q = 0</m> and <m>r = 1</m>.  Furthermore, if <m>m = 1</m> and <m>n = 1</m>, then <m>r</m> must equal zero (to be less than 1), and so <m>q</m> must equal 1.  In <m>m=1</m> and <m>n \gt 1</m>, then we must choose <m>q = 0</m> (because otherwise <m>nq+r</m> would have to be bigger than <m>m</m>) and therefore must choose <m>r = m</m>.  Therefore Euclid's theorem is true when <m>m = 1</m>.
+            </p>
+
+            <p>
+              Now assume that <m>m \gt 1</m> and that for any positive integer <m>m' \lt m</m>, there are unique nonnegative integers <m>q'</m> and <m>r'</m> such that <m>m' = q'n+r'</m>, with <m>0 \le r' \lt n</m>.  If <m>m \lt n</m>, then we can let <m>q = 0</m> and <m>r = m</m>, and we have our <m>q</m> and <m>r</m>.  If <m>m = n</m>, we may choose <m>q = 1</m> and <m>r = 0</m> and we have our <m>q</m> and <m>r</m> again.  Therefore we may assume that <m>m \gt n</m>.
+              In this case, <m>m-n</m> is a positive integer, and so since <m>m-n \lt n</m>, we have that, for unique nonnegative integers <m>q'</m> and <m>r'</m>,
+              <me>
+                m-n = q'n+r',
+              </me>
+              with <m>0 \le r \lt n</m>.  But then adding <m>n</m> to both sides of the equation gives us <m>m = (q'+1)n + r'</m>, with <m>0 \le r' \lt n</m>.  Therefore if we take <m>q = q'+1</m> and <m>r = r'</m> we have that <m>m = qn+r</m>, with <m>0 \le r \lt n</m>.  On the other hand, <m>q'</m> and <m>r'</m> are unique by our inductive hypothesis.  Thus if <m>m = qn + r</m>, subtracting <m>n</m> from both sides of the equation gives us <m>m-n = (q-1)n+r</m>.
+              This tells us that <m>q</m> <em>must</em> equal <m>q'+1</m> and <m>r</m> <em>must</em> equal <m>r'</m>.  Therefore by the strong principle of mathematical induction, Eulcid's Theorem holds for all positive integers <m>m</m>.
+            </p>
+          </solution>
+
       </activity>
   </subsection>
 </section>
