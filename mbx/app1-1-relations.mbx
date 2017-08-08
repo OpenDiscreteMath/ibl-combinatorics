@@ -29,20 +29,20 @@
       domain of interest to us. Most of the time when we are
       thinking about functions it is fine to think of a function
       casually as a relationship between two sets. In <xref ref="functionsasorderedpairs">Problem</xref> the set of ordered pairs you
-      wrote down for each function is called the <index><main>relation</main><sub>of a
-      function</sub></index><index><main>function</main><sub>relation of</sub></index><em>relation</em> of the function.
+      wrote down for each function is called the <idx><h>relation</h><h>of a
+      function</h></idx><idx><h>function</h><h>relation of</h></idx><em>relation</em> of the function.
       When we want to distinguish between the casual and the careful in
       talking about relationships, our casual term will be <q>relationship</q>
       and our careful term will be <q>relation.</q> So <em>relation</em>
       is a technical word in mathematics, and as such it has
-      a technical definition. A <index><main>relation</main></index><em>relation</em> from a set
+      a technical definition. A <idx><h>relation</h></idx><em>relation</em> from a set
       <m>S</m> to a set <m>T</m> is a set of ordered pairs whose first elements are in
       <m>S</m> and whose second elements are in <m>T</m>. Another way to say this is
       that a <em>relation</em> from <m>S</m> to <m>T</m> is a subset of <m>S\times T</m>.
     </p>
 
     <p>
-      A typical way to define a <em>function</em><index><main>function</main></index> <m>f</m> from a
+      A typical way to define a <em>function</em><idx><h>function</h></idx> <m>f</m> from a
       set
       <m>S</m> to a set
       <m>T</m> is that <m>f</m> is a relationship between <m>S</m> to <m>T</m> that relates
@@ -71,6 +71,7 @@
       <m>T</m> will stand for a set of size <m>t</m>.
       </p>
       </statement>
+      </task>
       <task>
         <statement>
           <p>
@@ -116,8 +117,8 @@
       <task>
         <statement>
           <p>
-            We say <m>f</m> is a <em>one-to-one</em><index><main>function</main><sub>one-to-one</sub></index><index><main>one-to-one
-            function</main></index><index><main>injection</main></index> function or <em>injection</em> from
+            We say <m>f</m> is a <em>one-to-one</em><idx><h>function</h><h>one-to-one</h></idx><idx><h>one-to-one
+            function</h></idx><idx><h>injection</h></idx> function or <em>injection</em> from
             <m>S</m> to
             <m>T</m> if each member of <m>S</m> is related to a <em>different</em> element
             of <m>T</m>. How many different elements must appear as second elements
@@ -137,9 +138,9 @@
       <task xml:id="onto" >
         <statement>
         <p>
-          A function <m>f:S\rightarrow T</m> is called an <index><main>onto
-          function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
-          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+          A function <m>f:S\rightarrow T</m> is called an <idx><h>onto
+          function</h></idx><idx><h>function</h><h>onto</h></idx><em>onto function</em> or
+          <idx><h>surjection</h></idx><idx><h>function</h><h>surjection</h></idx><em>surjection</em> if each
           element of
           <m>T</m> is <m>f(x)</m> for some <m>x\in S</m> What is the minimum size that
           <m>S</m> can have if there is a  surjection from
@@ -154,8 +155,9 @@
           </p>
         </solution>
       </task>
-      <p>
-        \item When <m>f</m> is a function from <m>S</m> to <m>T</m>, the sets <m>S</m> and
+      <task>
+          <statement>
+              <p> When <m>f</m> is a function from <m>S</m> to <m>T</m>, the sets <m>S</m> and
         <m>T</m> play a big role in determining whether a function is
         one-to-one or onto (as defined in <xref ref="formalrelations">Problem</xref>).
         For example, if <m>S</m> and <m>T</m> are both the nonnegative real numbers,
@@ -168,6 +170,7 @@
         <m>j:S'\rightarrow T'</m> is given by <m>j(x)=x^2</m>, is <m>j</m> one-to-one?
         Is <m>j</m> onto?
       </p>
+          </statement>
       <solution>
         <p>
           With <m>S</m> as domain, <m>f</m> is both one-to-one and onto.
@@ -208,7 +211,7 @@
       We visualize
       numerical functions like <m>f(x)=x^2</m> with their graphs in
       Cartesian coordinate systems. We will call these kinds of graphs
-      <index><main>graph</main><sub>coordinate</sub></index><em>coordinate graphs</em> to distinguish them
+      <idx><h>graph</h><h>coordinate</h></idx><em>coordinate graphs</em> to distinguish them
       from other kinds of graphs used to visualize relations that are
       non-numerical.
     </p>
@@ -216,25 +219,23 @@
     <figure xml:id="alphabetdigraph" >
       <caption>The alphabet
       digraph.</caption>
-      \mbox{
       <image width="10%" source="images/alphabetdigraph" />
-      }
     </figure>
 
     <p>
       In <xref ref="alphabetdigraph">Figure</xref> we illustrate another kind of graph, a
       <q>directed graph</q> or <q>digraph</q> of the ``comes before in
       alphabetical order" relation on the letters <m>a</m>, <m>b</m>, <m>c</m>, and
-      <m>d</m>. To draw a <index><main>graph</main><sub>directed</sub></index><index><main>directed
-      graph</main></index><index><main>digraph</main></index><em>directed graph</em> of a relation on a set
+      <m>d</m>. To draw a <idx><h>graph</h><h>directed</h></idx><idx><h>directed
+      graph</h></idx><idx><h>digraph</h></idx><em>directed graph</em> of a relation on a set
       <m>S</m>, we draw a circle (or dot, if we prefer), which we call a
-      <index><main>vertex</main></index><em>vertex</em><index><main>vertex</main><sub>of a complete graph</sub></index>, for
+      <idx><h>vertex</h></idx><em>vertex</em><idx><h>vertex</h><h>of a complete graph</h></idx>, for
       each element of the set, we usually label the vertex with the set
       element it corresponds to, and we draw an arrow from the vertex
       for <m>a</m>
       to that for <m>b</m> if <m>a</m> is related to <m>b</m>, that is, if
       the ordered pair
-      <m>(a,b)</m> is in our relation. We call such an arrow an <index><main>edge</main></index><em>edge</em><index><main>edge</main><sub> in a digraph</sub></index> or a <em>directed edge</em>. We draw
+      <m>(a,b)</m> is in our relation. We call such an arrow an <idx><h>edge</h></idx><em>edge</em><idx><h>edge</h><h> in a digraph</h></idx> or a <em>directed edge</em>. We draw
       the arrow from
       <m>a</m> to
       <m>b</m>, for example, because <m>a</m> comes before <m>b</m> in alphabetical
@@ -268,9 +269,7 @@
         </statement>
         <solution>
           <p>
-            \mbox{
             <image width="20%" source="images/Subsetsof2set" />
-            }
             We would need to draw 19 arrows, some of them curved,
             for the subsets of a three-element set.
           </p>
@@ -447,7 +446,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <index><main>reflexive</main></index><index><main>relation</main><sub>reflexive</sub></index><em>reflexive</em>  if <m>(x,x)\in
+            <idx><h>reflexive</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>reflexive</em>  if <m>(x,x)\in
             R</m> for every
             <m>x\in X</m>.
           </p>
@@ -456,7 +455,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <index><main>symmetric</main></index><index><main>relation</main><sub>reflexive</sub></index><em>symmetric</em> if <m>(x,y)</m> is
+            <idx><h>symmetric</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>symmetric</em> if <m>(x,y)</m> is
             in
             <m>R</m> whenever
             <m>(y,x)</m> is in <m>R</m>.
@@ -466,7 +465,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <index><main>transitive</main></index><index><main>relation</main><sub>transitive</sub></index><em>transitive</em> if
+            <idx><h>transitive</h></idx><idx><h>relation</h><h>transitive</h></idx><em>transitive</em> if
             whenever
             <m>(x,y)</m> is in
             <m>R</m> and
@@ -483,8 +482,8 @@
       <xref ref="fourchoosethree">Problem</xref>, <xref ref="icecreaminadish"></xref> and <xref ref="roundtablefour"></xref> had these three properties. Can you
       visualize the same three properties in the relations of
       equivalence that you would use in <xref ref="twelvechoosethree">problems</xref>, <xref ref="roundtable"></xref>, and <xref ref="formulanchoosek"></xref>? We call a relation an <em>equivalence
-      relation</em><index><main>equivalence
-      relation</main></index><index><main>relation</main><sub>equivalence</sub></index> if it is reflexive,
+      relation</em><idx><h>equivalence
+      relation</h></idx><idx><h>relation</h><h>equivalence</h></idx> if it is reflexive,
       symmetric and transitive.
     </p>
 
@@ -584,8 +583,8 @@
             <m>n</m>. For integers (positive, negative, or zero) <m>a</m> and <m>b</m>,
             we write <m>a
             \equiv b \pmod{n}</m> to mean that <m>a-b</m> is an integer multiple
-            of <m>n</m>, and in this case, we say that <m>a</m> is <index><main>congruence
-            modulo <m>n</m></main></index><em>congruent to
+            of <m>n</m>, and in this case, we say that <m>a</m> is <idx><h>congruence
+            modulo <m>n</m></h></idx><em>congruent to
             <m>b</m> modulo <m>n</m></em> and write <m>a\equiv b \pmod{n}</m>.. Show that the
             relation of congruence modulo
             <m>n</m> is an equivalence relation.
@@ -677,12 +676,12 @@
 
     <p>
       In <xref ref="equivalenceclasses">Problem</xref> the sets <m>C_x</m> are called
-      <index><main>equivalence class</main></index><em>equivalence classes</em> of the equivalence
+      <idx><h>equivalence class</h></idx><em>equivalence classes</em> of the equivalence
       relation
       <m>R</m>. You have just proved that if
       <m>R</m> is an equivalence relation of the set <m>X</m>, then each
       element of <m>X</m> is in exactly one equivalence class of <m>R</m>.
-      Recall that a <index><main>partition (of a set)</main></index><em>partition</em> of a set
+      Recall that a <idx><h>partition (of a set)</h></idx><em>partition</em> of a set
       <m>X</m> is a set of disjoint sets whose union is <m>X</m>. For example,
       <m>\{1,3\}</m>,
       <m>\{2,4,6\}</m>, <m>\{5\}</m> is a partition of the set
@@ -703,8 +702,8 @@
     <p>
       Since a partition of
       <m>S</m> is a set of subsets of <m>S</m>, it is common to call the
-      subsets into which we partition <m>S</m> the <index><main>block of a
-      partition</main></index><em>blocks</em> of the partition so that we don't find ourselves
+      subsets into which we partition <m>S</m> the <idx><h>block of a
+      partition</h></idx><em>blocks</em> of the partition so that we don't find ourselves
       in the uncomfortable position of referring to a set and not being
       sure whether it is the set being partitioned or one of the
       blocks of the partition.
@@ -811,8 +810,8 @@
     </theorem>
 
     <p>
-      <index><main>equivalence
-      relation</main></index><index><main>relation</main><sub>equivalence</sub></index>
+      <idx><h>equivalence
+      relation</h></idx><idx><h>relation</h><h>equivalence</h></idx>
     </p>
 
     <p>
@@ -949,7 +948,7 @@
       theorem. In Chapter 1 (<xref ref="quotientprinciple">Problem</xref>) we
       discovered and stated this theorem in the context of partitions
       and called it the
-      <index><main>quotient principle</main></index><index><main>principle</main><sub>quotient</sub></index><em>Quotient Principle</em>
+      <idx><h>quotient principle</h></idx><idx><h>principle</h><h>quotient</h></idx><em>Quotient Principle</em>
     </p>
 
     <theorem>

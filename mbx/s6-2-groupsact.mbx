@@ -4,7 +4,7 @@
   <title>Groups Acting on Sets</title>
   <introduction>
     <p>
-      We defined the rotation group <m>R_4</m> and the dihedral group <m>D_4</m> as
+      We defined the rotation group <m>C_4</m> and the dihedral group <m>D_4</m> as
       groups of permutations of the vertices of a square. These permutations
       represent rigid motions of the square in the plane and in three
       dimensional space respectively. The square has geometric features of interest other
@@ -52,13 +52,15 @@
     </figure>
 
     <activity category="essential">
-      <p>
+        <introduction>
+            <p>
         In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
         vertices and faces labelled. <em>Some of the arrows may be missing in this image. Cross check.</em> As with motions of the square, we let we let
         <m>\varphi(x)</m> be the label of the place where vertex previously in
         position
         <m>x</m> is now.
-      </p>
+            </p>
+        </introduction>
       <task xml:id="actsonparta" >
         <statement>
           <p>
@@ -164,8 +166,8 @@
     </activity>
 
     <p>
-      We say that a permutation group <m>G</m> <em>acts</em><index><main>group acting on a
-      set</main></index><index><main>action of a group on a set</main></index> on a set
+      We say that a permutation group <m>G</m> <em>acts</em><idx><h>group acting on a
+      set</h></idx><idx><h>action of a group on a set</h></idx> on a set
       <m>S</m> if, for each member
       <m>\sigma</m> of <m>G</m> there is a bijection <m>\beta_{\sigma}</m> of <m>S</m> such
       that
@@ -182,13 +184,15 @@
     </p>
 
     <activity category="essential">
-      <p>
+        <introduction>
+            <p>
         Suppose that <m>\sigma</m> and <m>\varphi</m> are permutations in the group
         <m>R</m> of rigid motions of the cube. We have argued already that each rigid
         motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
         vertices on one face to the vertices on another face. Let
         <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -328,6 +332,7 @@
           elements of <m>D_4</m> send each diagonal to itself? How many elements of
           <m>D_4</m> interchange the diagonals of a square?
         </p>
+      </statement>
         <solution>
         <p>
           The 180 degree rotation sends the diagonals to themselves, i.e.,
@@ -339,6 +344,7 @@
           interchange them.
         </p>
         </solution>
+    </activity>
         <figure xml:id="ColoredSquare" >
           <caption>The colored square corresponding to the
           function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
@@ -346,8 +352,6 @@
           <m>f(3)=B</m>, <m>f(4)=B</m>.</caption>
           <image width="20%" source="images/ColoredSquare" />
         </figure>
-      </statement>
-    </activity>
 
     <activity xml:id="actiononfunctions" category="essential">
       <statement>
@@ -478,7 +482,7 @@
       the dihedral group <m>D_4</m> on two element subsets of <m>\{1,2,3,4\}</m> seems to
       split them into two sets, one with two elements and one with 4. We call
       these two sets the <q>orbits</q> of <m>D_4</m> acting on the two elements subsets
-      of <m>\{1,2,3,4\}</m>. More generally, the <em>orbit</em><index><main>orbit</main></index> of a
+      of <m>\{1,2,3,4\}</m>. More generally, the <em>orbit</em><idx><h>orbit</h></idx> of a
       permutation group
       <m>G</m> determined by an element <m>x</m> of a set <m>S</m> on which <m>G</m> acts is
       <me>
@@ -944,7 +948,7 @@
       <me>
         H\sigma  = \{\varphi\sigma  |\varphi \in H\}
       </me>
-      a <em>right coset</em><index><main>coset</main></index><index><main>left coset</main></index><index><main>right coset</main></index> of
+      a <em>right coset</em><idx><h>coset</h></idx><idx><h>left coset</h></idx><idx><h>right coset</h></idx> of
       <m>H</m> in <m>G</m>. Notice that <m>H</m> is a coset of itself, since we may take
       <m>\sigma=\iota</m>. In <xref ref="cosetsize">Problem</xref> you showed that a subgroup
       and all its (left) cosets have the same size. Of course the right cosets
@@ -1241,13 +1245,15 @@
   <subsection>
     <title>The Cauchy-Frobenius-Burnside Theorem</title>
     <activity xml:id="numbermultiorbits4" category="essential">
-      <p>
+        <introduction>
+            <p>
         In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
         that expresses the number of orbits in terms of the number of group
         elements fixing each element of <m>S</m>. It is often easier to find the
         number of elements fixed by a given group element than to find the number
         of group elements fixing an element of <m>S</m>. For this purpose,
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -1258,10 +1264,12 @@
           </p>
         </statement>
         <solution>
+            <p>
           <me>
             m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
             \chi(\sigma,x).
           </me>
+            </p>
         </solution>
       </task>
       <task>
@@ -1295,10 +1303,10 @@
       Theory, Burnside used this result as a lemma, and while he attributed the
       result to Cauchy and Frobenius in the first edition of his book, in later
       editions, he did not. Later on, other mathematicians who used his book
-      named the result ``Burnside's Lemma,"<index><main>Burnside's Lemma</main></index> which is the
+      named the result ``Burnside's Lemma,"<idx><h>Burnside's Lemma</h></idx> which is the
       name by which it is still most commonly known. Let us agree to call this
       result the Cauchy-Frobenius-Burnside
-      Theorem,<index><main>Cauchy-Frobenius-Burnside Theorem</main></index> or CFB Theorem for short
+      Theorem,<idx><h>Cauchy-Frobenius-Burnside Theorem</h></idx> or CFB Theorem for short
       in a compromise between historical accuracy and common usage.
     </p>
 
@@ -1309,6 +1317,11 @@
           blue, and seven (identical) green beads on a necklace?
         </p>
       </statement>
+      <hint>
+        <p>
+          We are asking for the number of orbits of some group on lists of four <m>R</m>s, six <m>B</m>s, and seven <m>G</m>s.
+        </p>
+      </hint>
       <solution>
         <p>
           We are stringing 17 beads on our necklace, so we are asking for
@@ -1428,6 +1441,11 @@
             of paint? What if both colors must be used?
           </p>
         </statement>
+        <hint>
+          <p>
+            There are five kinds of elements in the rotation group of the cube. For example, there are six rotations by 90 degrees or 270 degrees around an axis connecting the centers of two opposite faces and there are 8 rotations (of 120 degrees and 240 degrees, respectively) around an axis connecting two diagonally opposite vertices.
+          </p>
+        </hint>
         <solution>
           <p>
             We must consider the action of the rotation group of the cube on
@@ -1463,9 +1481,14 @@
           free to move around in the <em>plane</em> (so it cannot be flipped) if we use
           red <m>n</m> times and blue
           <m>n+1</m> times? If this is a number you have seen before, identify
-          it. <index><main>Catalan Number</main><sub>(<xref ref="Catalancircle">Problem</xref>)</sub></index>
+          it. <idx><h>Catalan Number</h><h>(<xref ref="Catalancircle">Problem</xref>)</h></idx>
         </p>
       </statement>
+      <hint>
+        <p>
+          Is it possible for a nontrivial rotation to fix any coloring?
+        </p>
+      </hint>
       <solution>
         <p>
           The set of all powers of a rotation is a subgroup of the
@@ -1598,7 +1621,7 @@
           identical to the other one. This is equivalent to permuting the vertices in some
           way so that when we apply the permutation to the endpoints of the edges to get a new
           edge set, the new edge set is equal to the old one. Such a permutation is called an
-          <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Thus two
+          <em>automorphism</em><idx><h>automorphism (of a graph)</h></idx> of the graph. Thus two
           colorings are different if there is no automorphism of the graph that carries one to
           the other one.
         </p>
@@ -1608,7 +1631,16 @@
           <image width="33%" source="images/NumberedHexagonalNetwork" />
         </figure>
       </statement>
-
+      <hint>
+        <p>
+          There are 48 elements in the group of automorphisms of the graph.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          For this problem, it may be easier to ask which group elements fix a coloring rather than which colorings are fixed by a group element.
+        </p>
+      </hint>
       <solution>
         <p>
         We want the number of orbits of the set of proper colorings under the action of the group

@@ -6,13 +6,13 @@
 <introduction>
     <p>
       One of our very first counting
-      principles was the <em>sum principle</em><index><main>sum principle</main></index> which says that
+      principles was the <em>sum principle</em><idx><h>sum principle</h></idx> which says that
       the size of a union of disjoint sets is the sum of their sizes.
       Computing the size of overlapping sets requires, quite naturally,
       information about how they overlap. Taking such information into account
       will allow us to develop a powerful extension of the sum principle known
-      as the <q>principle of inclusion and exclusion.</q><index><main>principle of
-      inclusion and exclusion</main></index><index><main>inclusion and exclusion principle</main></index>
+      as the <q>principle of inclusion and exclusion.</q><idx><h>principle of
+      inclusion and exclusion</h></idx><idx><h>inclusion and exclusion principle</h></idx>
     </p>
 </introduction>
 <subsection>
@@ -123,11 +123,13 @@
         </p>
       </statement>
       <solution>
-        <me>
+          <p>
+              <me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
           \sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
           A_2\cap\cdots \cap A_n|.
-        </me>
+              </me>
+          </p>
       </solution>
     </activity>
 
@@ -176,11 +178,10 @@
         </p>
       </statement>
       <solution>
-        <me>
+          <p><me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
           S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|
         </me>
-        <p>
           I chose this
           way of writing the formula partly because it is efficient with symbols;
           for example, it uses only one sum sign. But more importantly I chose it
@@ -199,10 +200,12 @@
     </activity>
 
     <activity xml:id="hatcheck" category="essential">
-        <p>
+        <introduction>
+            <p>
           A group of <m>n</m> students goes to a restaurant carrying backpacks.
           The manager invites everyone to check their backpack at the check desk and everyone does. While they are eating, a child playing in the check room randomly moves around the claim check stubs on the backpacks. We will try to compute the probability that, at the end of the meal, at least one student receives his or her own backpack.  This probability is the fraction of the total number of ways to return the backpacks in which at least one student gets his or her own backpack back.
-        </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -314,9 +317,9 @@
 
     <p>
       <xref ref="hatcheck">Problem</xref> is <q>classically</q> called the <em>hatcheck
-      problem</em><index><main>hatcheck problem</main></index>; the name comes from substituting hats
+      problem</em><idx><h>hatcheck problem</h></idx>; the name comes from substituting hats
       for backpacks. If is also sometimes called the <em>derangement
-      problem</em><index><main>derangement problem</main></index>. A <em>derangement</em><index><main>derangement</main></index> of an
+      problem</em><idx><h>derangement problem</h></idx>. A <em>derangement</em><idx><h>derangement</h></idx> of an
       <m>n</m>-element set is a permutation of that set (thought of as a bijection)
       that maps no element of the set to itself. One can think of a way of
       handing back the backpacks as a permutation <m>f</m> of the students: <m>f(i)</m> is
@@ -334,9 +337,9 @@
     <p>
       The formula you have given in <xref ref="inclusion-exclusionunion">Problem</xref> is
       often called <em>the principle of inclusion and
-      exclusion</em><index><main>inclusion and exclusion principle
-      </main><sub>for unions of sets</sub></index><index><main>principle of inclusion and exclusion</main><sub>for
-      unions of sets</sub></index> for unions of sets. The reason is the pattern in which
+      exclusion</em><idx><h>inclusion and exclusion principle
+      </h><h>for unions of sets</h></idx><idx><h>principle of inclusion and exclusion</h><h>for
+      unions of sets</h></idx> for unions of sets. The reason is the pattern in which
       the formula first adds (includes) all the sizes of the sets, then
       subtracts (excludes) all the sizes of the intersections of two sets, then
       adds (includes) all the sizes of the intersections of three sets, and so
@@ -400,9 +403,11 @@
 
 
     <activity category="interseting">
-      <p>
+        <introduction>
+            <p>
         We get a more elegant proof if we ask for a picture enumerator for <m>A_1 \cup A_2 \cup \cdots \cup A_n</m>.  so let us assume <m>A</m> is a set with a picture function <m>P</m> defined on it and that each set <m>A_i</m> is a subset of <m>A</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -486,7 +491,7 @@
     <activity xml:id="compunion">
       <statement>
         <p>
-          Frequently when we apply the principle of inclusion and exclusion, we will have a situation like that of part (d) of <xref ref="hatcheckprobpart">Problem</xref>.  That is, we will have a set <m>A</m> and subsets <m>A_1, A_2, \ldots, A_n</m> and we will want the size or the probability of the set of elements in <m>A</m> that are <em>not</em> in the union.  This set is known as the <term>complement</term> <index><main>complement</main></index> of the union of the <m>A_i</m>s in <m>A</m>, and is denoted by <m>A \setminus \bigcup_{i=1}^n A_i</m>, or if <m>A</m> is clear from context, by <m>\overline{\bigcup_{i=1}^n A_i}</m>.
+          Frequently when we apply the principle of inclusion and exclusion, we will have a situation like that of part (d) of <xref ref="hatcheckprobpart">Problem</xref>.  That is, we will have a set <m>A</m> and subsets <m>A_1, A_2, \ldots, A_n</m> and we will want the size or the probability of the set of elements in <m>A</m> that are <em>not</em> in the union.  This set is known as the <term>complement</term> <idx><h>complement</h></idx> of the union of the <m>A_i</m>s in <m>A</m>, and is denoted by <m>A \setminus \bigcup_{i=1}^n A_i</m>, or if <m>A</m> is clear from context, by <m>\overline{\bigcup_{i=1}^n A_i}</m>.
           Give the fomula for <m>\overline{\bigcup_{i=1}^n A_i}</m>.  The principle of inclusion and exclusion generall refers to both this formula and the one for the union.
         </p>
       </statement>
@@ -499,10 +504,10 @@
 
 
     <p>
-      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<footnote>
+      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<fn>
       For those interested in logic and set theory, given a family of subsets <m>A_i</m> of a set <m>A</m>, we define <m>\bigcap_{i:i\in S}A_i</m> to be the set of all members <m>x</m> of <m>A</m> that are in <m>A_i</m> for all <m>i \in S</m>.  (Note that this allows <m>x</m> to be in some other <m>A_j</m>s as well.)  Then if <m>S = \emptyset</m>, our intersection consists of all members <m>x</m> of <m>A</m> that satisfy the statement <q>if <m>i\in \emptyset</m>, then <m>x \in A_i</m>.</q>
       But since the hypothesis of the <q>if-then</q> statement is false, the statement itself is true for all <m>x \in A</m>.  Therefor <m>\bigcap_{i:i \in \emptyset}A_i = A</m>.
-      </footnote> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
+      </fn> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
     </p>
 
   </subsection>
@@ -612,9 +617,9 @@ We will first
 
     <p>
       <xref ref="incexempty">Equations</xref> and <xref ref="incexnonempty"></xref> are called <em>the
-      principle of inclusion and exclusion for properties</em>.<index><main>inclusion and
-      exclusion principle</main><sub>for properties</sub></index><index><main>principle of inclusion and
-      exclusion</main><sub>for properties</sub></index>
+      principle of inclusion and exclusion for properties</em>.<idx><h>inclusion and
+      exclusion principle</h><h>for properties</h></idx><idx><h>principle of inclusion and
+      exclusion</h><h>for properties</h></idx>
     </p>
 
     <activity category="motivation">

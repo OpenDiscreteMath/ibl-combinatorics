@@ -16,9 +16,11 @@
     </p>
 
     <activity xml:id="substituteandsolve" category="essential">
-      <p>
+        <introduction>
+            <p>
         Suppose that <m>a_i=3a_{i-1} + 3^i</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -148,13 +150,13 @@
 
     <paragraphs>
         <title>Fibonacci numbers</title>
-        <p>The sequence of problems that follows (culminating in <xref ref="solveFibonacci" />) describes a number of hypotheses we might make about a fictional population of rabbits. We use the example of a rabbit population for historic reasons; our goal is a classical sequence of numbers called Fibonacci numbers. When Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci posthumously. It is a shortening of <q>son of Bonacci</q> in Italian.</fn> introduced them, he did so with a fictional population of rabbits.<index><main>Fibonacci numbers</main></index>
+        <p>The sequence of problems that follows (culminating in <xref ref="solveFibonacci" />) describes a number of hypotheses we might make about a fictional population of rabbits. We use the example of a rabbit population for historic reasons; our goal is a classical sequence of numbers called Fibonacci numbers. When Fibonacci<fn>Apparently Leanardo de Pisa was given the name Fibonacci posthumously. It is a shortening of <q>son of Bonacci</q> in Italian.</fn> introduced them, he did so with a fictional population of rabbits.<idx><h>Fibonacci numbers</h></idx>
         </p>
     </paragraphs>
     
     <activity xml:id="secondorderintroduction" category="essential">
       <statement>
-        <p>Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the number of rabbits we have at the end of month <m>n</m>. Show that <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <term>second order</term><index><main>recurrence</main><sub>second order</sub></index><index><main>second order recurrence</main></index> <em>linear</em><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main><sub>second order</sub></index> recurrence with constant coefficients.<index><main>recurrence</main><sub>constant coefficient</sub></index> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
+        <p>Suppose we start (at the end of month 0) with 10 pairs of baby rabbits, and that after baby rabbits mature for one month they begin to reproduce, with each pair producing two new pairs at the end of each month afterwards. Suppose further that over the time we observe the rabbits, none die. Let <m>a_n</m> be the number of rabbits we have at the end of month <m>n</m>. Show that <m>a_n=a_{n-1} + 2a_{n-2}</m>. This is an example of a <term>second order</term><idx><h>recurrence</h><h>second order</h></idx><idx><h>second order recurrence</h></idx> <em>linear</em><idx><h>recurrence</h><h>linear</h></idx><idx><h>linear recurrence</h><h>second order</h></idx> recurrence with constant coefficients.<idx><h>recurrence</h><h>constant coefficient</h></idx> Using a method similar to that of <xref ref="substituteandsolve">Problem</xref>, show that
           <me>
             \sum_{i=0}^\infty a_ix^i = \frac{10}{1-x-2x^2}.
           </me>
@@ -234,7 +236,7 @@
       </solution>
     </activity>
 
-    <p>The recurrence relations we have seen in this section are called <term>second order</term><index><main>recurrence</main><sub>second order</sub></index> because they specify <m>a_i</m> in terms of <m>a_{i-1}</m> and <m>a_{i-2}</m>, they are called <term>linear</term><index><main>recurrence</main><sub>linear</sub></index><index><main>linear recurrence</main></index> because <m>a_{i-1}</m> and <m>a_{i-2}</m> each appear to the first power, and they are called <term>constant coefficient recurrences</term><index><main>recurrence</main><sub>constant coefficient</sub></index> because the coefficients in front of <m>a_{i-1}</m> and <m>a_{i-2}</m> are constants.
+    <p>The recurrence relations we have seen in this section are called <term>second order</term><idx><h>recurrence</h><h>second order</h></idx> because they specify <m>a_i</m> in terms of <m>a_{i-1}</m> and <m>a_{i-2}</m>, they are called <term>linear</term><idx><h>recurrence</h><h>linear</h></idx><idx><h>linear recurrence</h></idx> because <m>a_{i-1}</m> and <m>a_{i-2}</m> each appear to the first power, and they are called <term>constant coefficient recurrences</term><idx><h>recurrence</h><h>constant coefficient</h></idx> because the coefficients in front of <m>a_{i-1}</m> and <m>a_{i-2}</m> are constants.
     </p>
   </subsection>
 
@@ -326,7 +328,7 @@
       </solution>
     </activity>
 
-    <p>Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving them is called the <term>method of partial fractions</term>.<index><main>partial fractions</main><sub>method of</sub></index> This method will let you find power series expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the quadratic polynomials that are in the denominators of your generating functions.
+    <p>Writing down the equations in <xref ref="partialfractions1">Problem</xref> and solving them is called the <term>method of partial fractions</term>.<idx><h>partial fractions</h><h>method of</h></idx> This method will let you find power series expansions for generating functions of the type you found in <xref ref="secondorderintroduction">Problems</xref> to <xref ref="secondordernonhomo"></xref>. However you have to be able to factor the quadratic polynomials that are in the denominators of your generating functions.
     </p>
 
     <activity category="essential">
@@ -440,7 +442,7 @@
         </task>
         <task>
             <statement>
-                <p>When we have <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the numbers <m>a_n</m> are called <em>Fibonacci Numbers</em><index><main>Fibonacci numbers</main></index>.  Use either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>.  Are you amazed that your general formula produces integers, or for that matter produces rational numbers?  Why does the recurrence equation tell you that the Fibonacci numbers are all integers?
+                <p>When we have <m>a_0=1</m> and <m>a_1=1</m>, i.e. when we start with one pair of baby rabbits, the numbers <m>a_n</m> are called <em>Fibonacci Numbers</em><idx><h>Fibonacci numbers</h></idx>.  Use either the recurrence or your final formula to find <m>a_2</m> through <m>a_8</m>.  Are you amazed that your general formula produces integers, or for that matter produces rational numbers?  Why does the recurrence equation tell you that the Fibonacci numbers are all integers?
                 </p>
           </statement>
         <solution>
@@ -537,7 +539,7 @@
     <activity xml:id="CatalanRecurrence" category="interesting">
         <task>
             <statement>
-                <p>Using either lattice paths or diagonal lattice paths, explain why the Catalan Number<index><main>Catalan Number</main><sub>recurrence for</sub></index> <m>c_n</m> satisfies the recurrence
+                <p>Using either lattice paths or diagonal lattice paths, explain why the Catalan Number<idx><h>Catalan Number</h><h>recurrence for</h></idx> <m>c_n</m> satisfies the recurrence
                 <me>
                     C_n = \sum_{i=1}^{n-1} C_{i-1}C_{n-i}
                     </me>.
@@ -589,7 +591,7 @@
                 </me>
                 holds for any number real number <m>r</m>, where <m>\binom{r}{i}</m> is defined to be
                 <me>
-                    \frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}  </me>.  Use this and your solution for <m>y</m> (note that of the two possible values for <m>y</m> that you get from the quadratic formula, only one gives an actual power series) to get a formula for the Catalan numbers.<index><main>Catalan number</main><sub>generating function for</sub></index>
+                    \frac{r^{\underline{i}}}{i!} = \frac{r(r-1)\cdots(r-i+1)}{i!}  </me>.  Use this and your solution for <m>y</m> (note that of the two possible values for <m>y</m> that you get from the quadratic formula, only one gives an actual power series) to get a formula for the Catalan numbers.<idx><h>Catalan number</h><h>generating function for</h></idx>
         </p>
             </statement>
             <hint>

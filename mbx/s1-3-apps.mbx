@@ -20,16 +20,18 @@
     </activity>
 
     <activity xml:id="latticepaths" category="essential for this or the next section">
-        <p>
+        <introduction>
+            <p>
           <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
-          coordinate plane. A <em>lattice path</em><index><main>lattice
-          path</main></index><index><main>path</main><sub>lattice</sub></index> in the plane is a <q>curve</q> made up of line segments
+          coordinate plane. A <em>lattice path</em><idx><h>lattice
+          path</h></idx><idx><h>path</h><h>lattice</h></idx> in the plane is a <q>curve</q> made up of line segments
           that either go from a point
           <m>(i,j)</m> to the point
           <m>(i+1,j)</m> or from a point <m>(i,j)</m> to the point <m>(i,j+1)</m>, where <m>i</m> and <m>j</m>
           are integers. (Thus lattice paths always move either up or to the right.) The
           length of the path is the number of such line segments.
-        </p>
+            </p>
+        </introduction>
         <task>
           <statement>
             <p> What is the length of a lattice path from <m>(0,0)</m> to <m>(m,n)</m>?
@@ -82,10 +84,11 @@
     </activity>
 
     <activity xml:id="diagonallattice" category="essential for this or the next section">
-        <p>
-          Another kind of geometric path in the plane is a <em>diagonal lattice path</em><index><main>lattice path</main><sub>diagonal</sub></index><index><main>path</main><sub>lattice!diagonal</sub></index>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.)
+        <introduction>
+            <p>
+          Another kind of geometric path in the plane is a <em>diagonal lattice path</em><idx><h>lattice path</h><h>diagonal</h></idx><idx><h>path</h><h>lattice!diagonal</h></idx>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.)
         </p>
-
+        </introduction>
         <task>
           <statement>
             <p>
@@ -100,11 +103,11 @@
           a point you can get to? For example, can you get to the point (1, 3)?
             </p>
           </hint>
-          <solutions>
+          <solution>
             <p>
               The points <m>(m,n)</m> connected to <m>(0,0)</m> by diagonal lattice paths will have <m>m+n</m> is even, because each upstep adds two to the sum of <m>i</m> and <m>j</m> while each downstep does not change the sum.  Further, since we go one step to the right each time we go up or down, we cannot get above the line <m>y=x</m> or below the line <m>y=-x</m>. However for any point <m>(m,n)</m> with <m>m</m> and <m>n</m> nonnegative integers such that <m>m+n</m> even and <m>-m\le n\le m</m>, we can get to <m>(m,n)</m> by making <m>\frac{m-n}{2}</m> downsteps and <m>\frac{m+n}{2}</m> upsteps.
             </p>
-          </solutions>
+          </solution>
         </task>
 
         <task>
@@ -144,8 +147,10 @@
     </activity>
 
     <activity category="motivation">
-      <p>A school play requires a ten dollar donation per person; the donation goes into the student activity fund. Assume that each person who comes to the play pays with a ten dollar bill or a twenty dollar bill. The teacher who is collecting the money forgot to get change before the event. If there are always at least as many people who have paid with a ten as a twenty as they arrive the teacher won't have to give anyone an IOU for change. Suppose <m>2n</m> people come to the play, and exactly half of them pay with ten dollar bills.
-      </p>
+        <introduction>
+            <p>A school play requires a ten dollar donation per person; the donation goes into the student activity fund. Assume that each person who comes to the play pays with a ten dollar bill or a twenty dollar bill. The teacher who is collecting the money forgot to get change before the event. If there are always at least as many people who have paid with a ten as a twenty as they arrive the teacher won't have to give anyone an IOU for change. Suppose <m>2n</m> people come to the play, and exactly half of them pay with ten dollar bills.
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>Describe a bijection between the set of sequences of tens and twenties people give the teacher and the set of lattice paths from <m>(0,0)</m> to <m>(n,n)</m>.
@@ -184,13 +189,15 @@
     </activity>
 
     <activity category="essential for this or the next section, and interesting">
-      <p>Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the <m>y</m>-axis, the line <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of lattice paths from (0,0) to <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
+        <introduction>
+            <p>Notice that a lattice path from <m>(0,0)</m> to <m>(n,n)</m> stays inside (or on the edges of) the square whose sides are the <m>x</m>-axis, the <m>y</m>-axis, the line <m>x=n</m> and the line <m>y=n</m>. In this problem we will compute the number of lattice paths from (0,0) to <m>(n,n)</m> that stay inside (or on the edges of) the triangle whose sides are the <m>x</m>-axis, the line <m>x=n</m> and the line <m>y=x</m>. For example, in <xref ref="CatalanPaths">Figure</xref> we show the grid of points with integer coordinates for the triangle whose sides are the <m>x</m>-axis, the line <m>x=4</m> and the line <m>y=x</m>.
       </p>
 
       <figure xml:id="CatalanPaths" >
           <caption>The lattice paths from <m>(0,0)</m> to <m>(i,i)</m> for <m>i=0,1,2,3,4</m>.  The number of paths to the point <m>(i,i)</m> is shown just above that point.</caption>
           <image width="33%" source="images/CatalanPaths" />
       </figure>
+        </introduction>
       <task>
         <statement>
           <p>Explain why the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that go outside the triangle is the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that either touch or cross the line <m>y=x+1</m>.
@@ -227,7 +234,7 @@
       </task>
       <task>
         <statement>
-          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><index><main>Catalan Number</main></index> and is usually denoted by <m>C_n</m>.
+          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><idx><h>Catalan Number</h></idx> and is usually denoted by <m>C_n</m>.
           </p>
         </statement>
         <hint>
@@ -244,8 +251,10 @@
     </activity>
 
     <activity category="interesting">
-      <p>Your formula for the Catalan Number can be expressed as a binomial coefficient divided by an integer. Whenever we have a formula that calls for division by an integer, an ideal combinatorial explanation of the formula is one that uses the quotient principle. The purpose of this problem is to find such an explanation using diagonal lattice paths.<fn>The result we will derive is called the Chung-Feller Theorem<index><main>Chung-Feller Theorem</main></index>; this approach is based of a paper of Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller Generalizations," <booktitle>American Mathematics Monthly 58</booktitle> June/July 2001, p556.</fn> A diagonal lattice path that never goes below the <m>y</m>-coordinate of its first point is called a <term>Dyck Path</term><index><main>Dyck path</main></index>. We will call a Dyck Path from <m>(0,0)</m> to <m>(2n,0)</m> a <term>Catalan Path</term><index><main>Catalan Path</main></index> of length <m>2n</m>. Thus the number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
+        <introduction>
+      <p>Your formula for the Catalan Number can be expressed as a binomial coefficient divided by an integer. Whenever we have a formula that calls for division by an integer, an ideal combinatorial explanation of the formula is one that uses the quotient principle. The purpose of this problem is to find such an explanation using diagonal lattice paths.<fn>The result we will derive is called the Chung-Feller Theorem<idx><h>Chung-Feller Theorem</h></idx>; this approach is based of a paper of Wen-jin Woan ``Uniform Partitions of Lattice Paths and Chung-Feller Generalizations," <booktitle>American Mathematics Monthly 58</booktitle> June/July 2001, p556.</fn> A diagonal lattice path that never goes below the <m>y</m>-coordinate of its first point is called a <term>Dyck Path</term><idx><h>Dyck path</h></idx>. We will call a Dyck Path from <m>(0,0)</m> to <m>(2n,0)</m> a <term>Catalan Path</term><idx><h>Catalan Path</h></idx> of length <m>2n</m>. Thus the number of Catalan Paths of length <m>2n</m> is the Catalan Number <m>C_n</m>.
       </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -408,8 +417,10 @@
     </activity>
 
     <activity category="essential">
-      <p>When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
-      </p>
+        <introduction>
+            <p>When we apply the distributive law <m>n</m> times to <m>(x+y)^n</m>, we get a sum of terms of the form <m>x^iy^{n-i}</m> for various values of the integer <m>i</m>.
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>If it is clear to you that each term of the form <m>x^iy^{n-i}</m> that we get comes from choosing an <m>x</m> from <m>i</m> of the <m>(x+y)</m> factors and a <m>y</m> from the remaining <m>n-i</m> of the factors and multiplying these choices together, then answer this part of the problem and skip the next part.  Otherwise, do the next part instead of this one.  In how many ways can we choose an <m>x</m> from <m>i</m> terms and a <m>y</m> from <m>n-i</m> terms?
@@ -524,7 +535,7 @@
         <statement>
           <p>
             Explain how you have just proved your conjecture from <xref ref="Conjecturebinomthm">Problem</xref>.  The theorem you have proved is called the
-            <em>Binomial Theorem</em>.<index><main>Binomial Theorem</main></index>
+            <em>Binomial Theorem</em>.<idx><h>Binomial Theorem</h></idx>
           </p>
         </statement>
         <solution>
@@ -664,7 +675,7 @@
       </solution>
     </activity>
 
-    <p>There are many ways in which you might explain your answer to <xref ref="elevencoins" autoname="yes" />. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in <xref ref="elevencoins" autoname="yes" />. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The <term>pigeonhole principle</term><index><main>pigeonhole principle</main></index> states that
+    <p>There are many ways in which you might explain your answer to <xref ref="elevencoins" autoname="yes" />. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in <xref ref="elevencoins" autoname="yes" />. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The <term>pigeonhole principle</term><idx><h>pigeonhole principle</h></idx> states that
     </p>
 
     <blockquote>
@@ -718,7 +729,7 @@
 
     <activity category="essential for this or the next section">
         <statement>
-          <p>There is a <term>generalized pigeonhole principle</term><index><main>pigeonhole principle</main><sub> generalized</sub></index> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
+          <p>There is a <term>generalized pigeonhole principle</term><idx><h>pigeonhole principle</h><h> generalized</h></idx> which says that if we partition a set with more than <m>kn</m> elements into <m>n</m> blocks, then at least one block has at least <m>k+1</m> elements. Prove the generalized pigeonhole principle.
           </p>
         </statement>
         <hint>
@@ -788,7 +799,7 @@
   <subsection xml:id="Ramseysection">
     <title>Ramsey Numbers</title>
     <p>
-      <xref first="R_3_3_" last="notR_3_3_" autoname="yes" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><index><main>graph</main><sub>complete</sub></index> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" autoname="yes" />.</fn> The points are called <term>vertices</term><index><main>vertex</main><sub>of a complete graph</sub></index><index><main>vertex</main></index> and the line segments are called <term>edges</term><index><main>edge</main><sub>of a complete graph</sub></index><index><main>edge</main></index>. In <xref ref="completegraph" autoname="yes" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
+      <xref first="R_3_3_" last="notR_3_3_" autoname="yes" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><idx><h>graph</h><h>complete</h></idx> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" autoname="yes" />.</fn> The points are called <term>vertices</term><idx><h>vertex</h><h>of a complete graph</h></idx><idx><h>vertex</h></idx> and the line segments are called <term>edges</term><idx><h>edge</h><h>of a complete graph</h></idx><idx><h>edge</h></idx>. In <xref ref="completegraph" autoname="yes" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
     </p>
 
     <figure xml:id="completegraph" >
@@ -808,7 +819,7 @@
       <hint>
         <p>
       What usually makes it hard for students to start this problem is the fact
-      that we just defined what <m>R(4, 4)</m> is, and not what it means for a number <emph>not</emph> to be <m>R(4, 4)</m>. So to get started, try to write down what it means to say <m>R(4, 4)</m> is not 8. You will see that there are two things that can keep <m>R(4, 4)</m> from being 8. You need to figure out which one happens and explain why. One such explanation could involve the graph <m>K_8</m> .
+      that we just defined what <m>R(4, 4)</m> is, and not what it means for a number <em>not</em> to be <m>R(4, 4)</m>. So to get started, try to write down what it means to say <m>R(4, 4)</m> is not 8. You will see that there are two things that can keep <m>R(4, 4)</m> from being 8. You need to figure out which one happens and explain why. One such explanation could involve the graph <m>K_8</m> .
         </p>
       </hint>
       <solution>
