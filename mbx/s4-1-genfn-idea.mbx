@@ -19,15 +19,15 @@
         </p>
 
         <p>Suppose now that we plan to choose between one and three apples, between one and two pears, and between one and two bananas. In a somewhat clumsy way we could describe our fruit selections as
-        <md >
-            <mrow xml:id="uptothreefruits">
+        <mdn>
+            <mrow number="no">
                 \ap\pe\ba\amp+\ap^2\pe\ba\amp+\cdots\amp+\ap^2\pe^2\ba
 \amp+\cdots \amp+
             \ap^2\pe^2\ba^2             </mrow>
-            <mrow number="yes">\amp+\ap^3\pe\ba\amp+
+            <mrow number="yes" xml:id="uptothreefruits" >\amp+\ap^3\pe\ba\amp+
             \cdots \amp+\ap^3\pe^2\ba\amp+\cdots \amp+
             \ap^3\pe^2\ba^2.</mrow>
-        </md>
+        </mdn>
         </p>
 
         <activity xml:id="twopiecesoffruit" category="essential">
@@ -427,9 +427,11 @@
     <subsection>
         <title>The extended binomial theorem and multisets</title>
         <activity category="essential">
-            <p>
-                Suppose once again that <m>i</m> is an integer between 1 and <m>n</m>.
-            </p>
+            <introduction>
+                <p>
+                    Suppose once again that <m>i</m> is an integer between 1 and <m>n</m>.
+                </p>
+            </introduction>
             <task>
                 <statement>
                     <p>What is the generating function in which the coefficient of <m>x^k</m> is <m>1</m>? This series is an example of what is called an <term>infinite geometric series</term>.<idx><h>geometric series</h></idx><idx><h>series</h><h>geometric</h></idx> In the next part of this problem, it will be useful to interpret the coefficient one as the number of multisets of size <m>k</m> chosen from the singleton set <m>\{i\}</m>. Namely, there is only one way to choose a multiset of size <m>k</m> from <m>\{i\}</m>: choose <m>i</m> exactly <m>k</m> times.
