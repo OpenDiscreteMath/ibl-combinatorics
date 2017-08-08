@@ -147,7 +147,7 @@
       </statement>
       <hint>
         <p>
-      You've probably guessed that the sum is <m>n^2</m>. To prove this by contradiction, you have to assume it is false, that is, that there is an <m>n</m> such that <m>1 + 3 + 5 + \cdots + 2n − 1 \ne n^2</m>. Then the method of <xref ref="subsetsbysmallestcounterexample">Problem</xref> says there must be a smallest such <m>n</m> and suggests we call it <m>k</m>. Why do you know that <m>1 + 3 + 5 + \cdots + 2k − 3 = (k-1)2</m>? What happens if you add <m>2n-1</m> to both  sides of the equation?
+      You've probably guessed that the sum is <m>n^2</m>. To prove this by contradiction, you have to assume it is false, that is, that there is an <m>n</m> such that <m>1 + 3 + 5 + \cdots + 2n - 1 \ne n^2</m>. Then the method of <xref ref="subsetsbysmallestcounterexample">Problem</xref> says there must be a smallest such <m>n</m> and suggests we call it <m>k</m>. Why do you know that <m>1 + 3 + 5 + \cdots + 2k - 3 = (k-1)2</m>? What happens if you add <m>2n-1</m> to both  sides of the equation?
         </p>
       </hint>
       <solution>
@@ -639,7 +639,7 @@
         <statement>
           <p>
             One of the most powerful statements in elementary number theory is
-            Euclid's Division Theorem.<fn>In a curious twist of language, mathematicians have long called The Division Algorithm or Euclid's Division Algorithm. However as computer science has grown in importance, the word algorithm has gotten a more precise definition: an algorithm is now a method to do something. There is a method (in fact there are more than one) to get the <m>q</m> and <m>r</m> that Euclid's Division Theorem gives us, and computer scientists would call these methods algorithms. Your author has chosen to break with mathematical tradition and restrict his use of the word algorithm to the more precise interpretation as a computer scientist probably would. We aren't giving a method here, so this is why the name used here is <q>Euclid’s Division Theorem.</q></fn>
+            Euclid's Division Theorem.<fn>In a curious twist of language, mathematicians have long called The Division Algorithm or Euclid's Division Algorithm. However as computer science has grown in importance, the word algorithm has gotten a more precise definition: an algorithm is now a method to do something. There is a method (in fact there are more than one) to get the <m>q</m> and <m>r</m> that Euclid's Division Theorem gives us, and computer scientists would call these methods algorithms. Your author has chosen to break with mathematical tradition and restrict his use of the word algorithm to the more precise interpretation as a computer scientist probably would. We aren't giving a method here, so this is why the name used here is <q>Euclid's Division Theorem.</q></fn>
             This states that if <m>m</m> and <m>n</m> are positive integers, then there are unique nonnegative intergers <m>q</m> and <m>r</m> with <m>0 \le r \lt n</m>, such that <m>m = nq + r</m>. The number <m>q</m> is called the quotient and the number <m>r</m> is called the remainder. In computer science it is common to denote <m>r</m> by <m>m \mod n</m>. In elementary school you learned how to use long division to find <m>q</m> and <m>r</m>. However, it is unlikely that anyone ever proved for you that for any pair of positive intgers, <m>m</m> and <m>n</m>, there is such a pair of nonnegative numbers <m>q</m> and <m>r</m>. You now have the tools needed to prove this. Do so.
           </p>
         </statement>
