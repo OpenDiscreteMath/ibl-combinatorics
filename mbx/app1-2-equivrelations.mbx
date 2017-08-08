@@ -1,0 +1,671 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="equivalencerelations">
+    <title>Equivalence relations</title>
+    <p>
+      So far we've used relations primarily to talk about functions.
+      There is another kind of relation, called an equivalence
+      relation, that comes up in the counting problems with which we
+      began.
+      In <xref ref="icecreaminpints">Problem</xref> with three distinct flavors, it was
+      probably tempting to say there are 12 flavors for the first
+      pint, 11 for the second, and 10 for the third, so there are
+      <m>12\cdot 11\cdot 10</m> ways to choose the pints of ice cream.
+      However, once the pints have been chosen, bought, and put into a
+      bag, there is no way to tell which is first, which is second and
+      which is third. What we just counted is lists of three
+      distinct flavors<mdash />one to one functions from the set
+      <m>\{1,2,3\}</m> in to the set of ice cream flavors. Two of those
+      lists become equivalent once the ice cream purchase is
+      made if they list the same ice cream. In other words, two of
+      those lists become equivalent (are related) if they list same
+      subset of the set of ice cream flavors. To visualize this
+      relation with a digraph, we would need one vertex for each of
+      the
+      <m>12\cdot 11\cdot 10</m> lists. Even with
+      five flavors of ice cream, we would need one vertex for each
+      of
+      <m>5\cdot4\cdot3=60</m> lists. So for now we will work with the easier
+      to draw question of choosing three pints of ice cream of different
+      flavors from four flavors of ice cream.
+    </p>
+
+    <activity xml:id="fourchoosethree">
+      <statement>
+        <p>
+          Suppose we have four flavors of ice cream, V(anilla),
+          C(hocolate), S(trawberry) and P(each). Draw the directed
+          graph whose vertices consist of all lists of three distinct
+          flavors of the ice cream, and whose edges connect two lists if
+          they list the same three flavors. This graph makes it
+          pretty clear in how many ways we may choose 3 flavors
+          out of four. How many is it?
+        </p>
+      </statement>
+      <solution>
+
+        <p>
+          We used double-headed arrows in place of one arrow going in each
+          direction to reduce the clutter in the picture. Note that there is
+          an arrow from each vertex to itself. We may choose 3 flavors in
+          four ways.
+        </p>
+        <p>
+          <image width="70%" source="images/flavordigraph" />
+        </p>
+      </solution>
+    </activity>
+
+    <activity xml:id="icecreaminadish" category="interesting">
+      <statement>
+        <p>
+          Now suppose again we are choosing three distinct flavors of
+          ice cream out of four, but instead of putting scoops in a cone or
+          choosing pints, we are going to have the three scoops arranged
+          symmetrically in a circular dish. Similarly to choosing three
+          pints, we can describe a selection of ice cream in terms of which
+          one goes in the dish first, which one goes in second (say to the
+          right of the first), and which one goes in third (say to the right
+          of the second scoop, which makes it to the left of the first
+          scoop). But again, two of these lists will sometimes be
+          equivalent. Once they are in the dish, we can't tell which one
+          went in first. However, there is a subtle difference between
+          putting each flavor in its own small dish and putting all three
+          flavors in a circle in a larger dish. Think about what makes the
+          lists of flavors equivalent, and draw the directed graph whose
+          vertices consist of all lists of three of the flavors of ice
+          cream and whose edges connect two lists that we cannot tell the
+          difference between as dishes of ice cream. How many dishes of ice
+          cream can we distinguish from one another?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          If we have scoops of vanilla, chocolate, and strawberry sitting in a circle in a dish, can we distinguish between VCS and VSC?
+        </p>
+      </hint>
+      <solution>
+      <p>
+        We can distinguish eight different dishes of ice
+        cream.
+      </p>
+        <p>
+          <image width="70%" source="images/icecreamindish" />
+        </p>
+      </solution>
+    </activity>
+
+    <activity>
+      <statement>
+      <p>
+        Draw the digraph for <xref ref="roundtable">Problem</xref> in the
+        special case where we have four people sitting around the table.
+      </p>
+    </statement>
+      <solution>
+
+          <image source="images/4AROUNDATABLE"  width="70%" />
+
+      </solution>
+    </activity>
+
+    <p>
+      In <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref>, and <xref ref="roundtablefour"></xref> (as well as <xref ref="twelvechoosethree">Problems</xref>, <xref ref="roundtable"></xref>, and <xref ref="formulanchoosek"></xref>) we can begin with a
+      set of lists, and say when two lists are equivalent as
+      representations of the objects we are trying to count. In
+      particular, in <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref>, and <xref ref="roundtablefour"></xref> you drew the directed graph for this
+      relation of equivalence. Technically, you should have had an
+      arrow from each vertex (list) to itself. This is what we mean
+      when we say a relation is <em>reflexive</em>. Whenever you had an
+      arrow from one vertex to a second, you had an arrow back to the
+      first. This is what we mean when we say a relation is <em>symmetric</em>.
+    </p>
+
+    <p>
+      When people sit
+      around a round table, each list is equivalent to itself:
+      if List1 and List 2 are identical, then everyone has the same
+      person to the right in both lists (including the first person in
+      the list being to the right of the last person). To see the
+      symmetric property of the equivalence of seating arrangements, if
+      List1 and List2 are different, but everyone has the same person to
+      the right when they sit according to List2 as when they sit
+      according to List1, then everybody better have the same person to
+      the right when they sit according to List1 as when they sit
+      according to List2.
+    </p>
+
+    <p>
+      In <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref> and <xref ref="roundtablefour"></xref> there is another property of those relations
+      you may have noticed from the directed graph. Whenever you had
+      an arrow from
+      <m>L_1</m> to
+      <m>L_2</m> and an arrow from
+      <m>L_2</m> to <m>L_3</m>, then there was an arrow from <m>L_1</m> to <m>L_3</m>.
+      This is what we mean when we say a relation is <em>transitive</em>. You also undoubtedly noticed how the directed
+      graph divides up into clumps of mutually connected vertices.
+      This is what equivalence relations are all about. Let's be a
+      bit more precise in our description of what it means for a
+      relation to be reflexive, symmetric or transitive.
+      <ul>
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <idx><h>reflexive</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>reflexive</em>  if <m>(x,x)\in
+            R</m> for every
+            <m>x\in X</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <idx><h>symmetric</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>symmetric</em> if <m>(x,y)</m> is
+            in
+            <m>R</m> whenever
+            <m>(y,x)</m> is in <m>R</m>.
+          </p>
+        </li>
+
+        <li>
+          <p>
+            If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
+            <idx><h>transitive</h></idx><idx><h>relation</h><h>transitive</h></idx><em>transitive</em> if
+            whenever
+            <m>(x,y)</m> is in
+            <m>R</m> and
+            <m>(y,z)</m> is in
+            <m>R</m>, then <m>(x,z)</m> is in
+            <m>R</m> as well.
+          </p>
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      Each of the relations of equivalence you worked with in the
+      <xref ref="fourchoosethree">Problem</xref>, <xref ref="icecreaminadish"></xref> and <xref ref="roundtablefour"></xref> had these three properties. Can you
+      visualize the same three properties in the relations of
+      equivalence that you would use in <xref ref="twelvechoosethree">problems</xref>, <xref ref="roundtable"></xref>, and <xref ref="formulanchoosek"></xref>? We call a relation an <em>equivalence
+      relation</em><idx><h>equivalence
+      relation</h></idx><idx><h>relation</h><h>equivalence</h></idx> if it is reflexive,
+      symmetric and transitive.
+    </p>
+
+    <p>
+      After some more examples, we will see how to show that
+      equivalence relations have the kind of clumping property you
+      saw in the directed graphs. In our first example, using the
+      notation <m>(a,b) \in R</m> to say that <m>a</m> is related to <m>B</m> is
+      going to get in the way. It is really more common to write <m>a
+      R b</m> to mean that <m>a</m> is related to <m>b</m>. For example, if our
+      relation is the less than relation on <m>\{1,2,3\}</m>, you are
+      much more likely to use <m>x\lt y</m> than you are <m>(x,y)\in \ \lt</m>,
+      aren't you? The reflexive law then says
+      <m>xRx</m> for every
+      <m>x</m> in
+      <m>X</m>, the symmetric law says that if <m>xRy</m>, then <m>yRx</m>, and the
+      transitive law says that if
+      <m>xRy</m> and <m>yRz</m>, then <m>xRz</m>.
+    </p>
+
+    <activity xml:id="nchoosekanotherway">
+        <statement>
+          <p>
+            For the necklace problem, <xref ref="necklace">Problem</xref>, our
+            lists are lists of beads. What makes two lists equivalent for
+            the purpose of describing a necklace? Verify explicitly that
+            this relationship of equivalence is reflexive, symmetric, and
+            transitive.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Two lists are equivalent if I can get one from the other
+            by some combination of cyclic permutations (putting the last thing
+            in the list at the front and moving everything else one place
+            right) and reversals. The combination could include no
+            operation at all. Since it is possible to have no operation, the
+            relation is reflexive. (Even without the opportunity to do no
+            operation, if we do two reversals to a list we get the original
+            list back so it is equivalent to itself.) Suppose we have <m>n</m>
+            beads. Then if I can get from list <m>A</m> to list <m>B</m> with a cyclic
+            permutations, then <m>n-1</m> more cyclic permutations give us the
+            original list. Also if I get from a list <m>A</m> to a list <m>B</m> by a
+            reversal, then another reversal takes <m>B</m> to <m>A</m>. Thus any
+            sequence of cyclic permutations and reversals can be undone.
+            Therefore if list <m>A</m> is equivalent to list <m>B</m>, then list <m>B</m> is
+            equivalent to list <m>A</m>. Following one combination of operations
+            with another one still gives a combination of operations, so our
+            relation is transitive.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Which of the reflexive, symmetric and transitive
+            properties does the <m>\lt</m> relation on the integers have?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            It is transitive, but not reflexive or symmetric.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            A relation <m>R</m> on the set of ordered pairs of positive
+            integers that you learned about in grade school in another
+            notation is the relation that says <m>(m,n)</m> is related to
+            <m>(h,k)</m> if <m>mk =hn</m>. Show that this relation is an
+            equivalence relation. In what context did you learn about
+            this relation in grade school?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            To show a relation is an equivalence relation, you need to show it satisfies the definition of an equivalence relation.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            <m>mn=mn</m> so the relation is reflexive. If <m>mk=hn</m>, then
+            <m>hn=mk</m>, so if <m>(m,n)</m> is related to <m>(h,k)</m>, then <m>(h,k)</m> is
+            related to <m>(m,n)</m>. If <m>(m,n)</m> is related to <m>(h,k)</m> and <m>(h,k)</m>
+            is related to <m>(p,q)</m>, then <m>mk=hn</m> and <m>hq=pk</m>, which gives us
+            <m>mkhq=hnpk</m>, and cancelling <m>h</m> and <m>k</m> gives us <m>mq=np=pn</m>, so
+            <m>(m,n)</m> is related to <m>(p,q)</m>. Therefore, the relation is
+            transitive. This is the relation of equality of the fractions
+            <m>\frac{m}{n}</m> and <m>\frac{h}{k}</m>.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Another relation that you may have learned about in school,
+            perhaps in the guise of <q>clock arithmetic,</q> is the
+            relation of equivalence modulo
+            <m>n</m>. For integers (positive, negative, or zero) <m>a</m> and <m>b</m>,
+            we write <m>a
+            \equiv b \pmod{n}</m> to mean that <m>a-b</m> is an integer multiple
+            of <m>n</m>, and in this case, we say that <m>a</m> is <idx><h>congruence
+            modulo <m>n</m></h></idx><em>congruent to
+            <m>b</m> modulo <m>n</m></em> and write <m>a\equiv b \pmod{n}</m>.. Show that the
+            relation of congruence modulo
+            <m>n</m> is an equivalence relation.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>a-a=0=0\cdot n</m>, so <m>a\equiv a\pmod{n}</m>. Thus the
+            relation is reflexive. If <m>a-b=kn</m> for some integer <m>k</m>, then
+            <m>b-a=-kn</m>, and -k is an integer, so if <m>a\equiv b \pmod{n}</m>, then
+            <m>b\equiv a \pmod{n}</m>. If <m>a-b=kn</m> and <m>b-c= jn</m>, then
+            <m>a-b+b-c=kn+jn</m>, so <m>a-c=(k+j)n</m> and since <m>k+j</m> is an integer
+            this means that <m>a\equiv c\pmod{n}</m>. Therefore the relation of
+            congruence mod <m>n</m> is an equivalence relation.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Define a relation on the set of all lists of <m>n</m> distinct
+            integers chosen from <m>\{1,2,\ldots, n\}</m>, by saying two lists are
+            related if they have the same elements (though perhaps in a
+            different order) in the first
+            <m>k</m> places, and the same elements (though perhaps in a
+            different order) in the last <m>n-k</m> places. Show this
+            relation is an equivalence relation.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The relation is reflexive, for a list <m>L</m> has the same
+            elements as the list <m>L</m> in the first <m>k</m> places and the last
+            <m>n-k</m> places. If <m>L_1</m> and <m>L_2</m> have the same elements in the
+            first <m>k</m> places and have the same elements in the last <m>k</m>
+            places, then <m>L_2</m> and <m>L_1</m> have the same elements in the first
+            <m>k</m> places and have the same elements in the last <m>n-k</m> places,
+            so our relation is symmetric. If <m>L_1</m> and <m>L_2</m> have the same
+            elements in the first
+            <m>k</m> places and <m>L_2</m> and <m>L_3</m> have the same elements in the first
+            <m>k</m> places, then <m>L_1</m> and <m>L_3</m> have the same elements in the
+            first
+            <m>k</m> places. Similarly with the last <m>n-k</m> places. Therefore our
+            relation is transitive, and so it is an equivalence relation.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Suppose that <m>R</m> is an equivalence relation on a set <m>X</m>
+            and for each <m>x\in X</m>, let <m>C_x = \{y| y\in X \mbox{ and }
+            yRx\}</m>. If <m>C_x</m> and
+            <m>C_z</m> have an element <m>y</m> in common, what can you conclude
+            about <m>C_x</m> and <m>C_z</m> (besides the fact that they have an
+            element in common!)? Be explicit about what property(ies) of
+            equivalence relations justify your answer. Why is every
+            element of
+            <m>X</m> in some set
+            <m>C_x</m>? Be explicit about what property(ies) of equivalence
+            relations you are using to answer this question. Notice that
+            we might simultaneously denote a set by <m>C_x</m> and <m>C_y</m>.
+            Explain why the union of the sets <m>C_x</m> is <m>X</m>. Explain why
+            two distinct sets <m>C_x</m> and <m>C_z</m> are disjoint. What do these
+            sets have to do with the <q>clumping</q> you saw in the digraph
+            of <xref ref="fourchoosethree">Problem</xref> and <xref ref="icecreaminadish"></xref>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            If <m>C_x</m> and <m>C_y</m> have the element <m>z</m> in common,
+            then by symmetry and transitivity, all elements in <m>C_x</m> are
+            related to
+            <m>z</m> and by symmetry and transitivity, all elements in <m>C_y</m> are
+            related to
+            <m>z</m>. Then by symmetry and transitivity again, all elements of
+            <m>C_y</m> are related to <m>x</m>, so <m>C_y\subseteq C_x</m>. By the same kind
+            of reasoning, <m>C_x\subseteq C_y</m>. Therefore, <m>C_x=C_y</m>. Every
+            element <m>x</m> is in the set <m>C_x</m> by reflexivity Thus the union of
+            the sets <m>C_x</m> is <m>X</m>. The sets
+            <m>C_x</m> and <m>C_y</m> are disjoint if they are different, because if
+            they have a common element <m>z</m> then they are equal. By definition,
+            the sets <m>C_x</m> form a partition of <m>X</m>. The clumps that we saw in
+            those problems are the blocks of the partition.
+          </p>
+        </solution>
+      </activity>
+
+    <p>
+      In <xref ref="equivalenceclasses">Problem</xref> the sets <m>C_x</m> are called
+      <idx><h>equivalence class</h></idx><em>equivalence classes</em> of the equivalence
+      relation
+      <m>R</m>. You have just proved that if
+      <m>R</m> is an equivalence relation of the set <m>X</m>, then each
+      element of <m>X</m> is in exactly one equivalence class of <m>R</m>.
+      Recall that a <idx><h>partition (of a set)</h></idx><em>partition</em> of a set
+      <m>X</m> is a set of disjoint sets whose union is <m>X</m>. For example,
+      <m>\{1,3\}</m>,
+      <m>\{2,4,6\}</m>, <m>\{5\}</m> is a partition of the set
+      <m>\{1,2,3,4,5,6\}</m>. Thus another way to describe what you
+      proved in <xref ref="equivalenceclasses">Problem</xref> is the following:
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          If <m>R</m>
+          is an equivalence relation on <m>X</m>, then the set of equivalence
+          classes of <m>R</m> is a partition of <m>X</m>.
+        </p>
+      </statement>
+    </theorem>
+
+    <p>
+      Since a partition of
+      <m>S</m> is a set of subsets of <m>S</m>, it is common to call the
+      subsets into which we partition <m>S</m> the <idx><h>block of a
+      partition</h></idx><em>blocks</em> of the partition so that we don't find ourselves
+      in the uncomfortable position of referring to a set and not being
+      sure whether it is the set being partitioned or one of the
+      blocks of the partition.
+    </p>
+
+    <activity xml:id="partitiontoequivalence">
+        <statement>
+          <p>
+            In each of <xref ref="roundtable">Problems</xref>, <xref ref="formulanchoosek"></xref>, <xref ref="necklace"></xref>, <xref ref="fourchoosethree"></xref>,
+            and <xref ref="icecreaminadish"></xref>,
+            what does an equivalence
+            class correspond to? (Five answers are expected here.)
+          </p>
+        </statement>
+        <hint>
+          <p>
+        To get you started, in <xref ref="roundtable">Problem</xref> the equivalence classes correspond to seating arrangements.
+          </p>
+        </hint>
+        <solution>
+          <p>
+            In <xref ref="roundtable">Problem</xref> the equivalence classes
+            correspond to seating arrangements. In <xref ref="formulanchoosek">Problem</xref> the equivalence classes correspond to the
+            <m>k</m>-element subsets of our <m>n</m>-element set <m>S</m>. In <xref ref="necklace">Problem</xref>, the equivalence classes correspond to necklaces.
+            In <xref ref="fourchoosethree">Problem</xref> the equivalence classes
+            correspond to choices of three flavors of ice cream out of a
+            possible four flavors. In <xref ref="icecreaminadish">Problem</xref> the
+            equivalence classes correspond to the ways we can choose
+            scoops of ice cream of three different flavors out of four and put
+            them into a dish in a symmetric fashion.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Given the partition <m>\{1,3\}</m>, <m>\{2,4,6\}</m>, <m>\{5\}</m>
+            of the set
+            <m>\{1,2,3,4,5,6\}</m>, define two elements of <m>\{1,2,3,4,5,6\}</m> to
+            be related if they are in the same part of the partition.
+            That is, define 1 to be related to 3 (and 1 and 3 each related
+            to itself), define 2 and 4, 2 and 6, and 4 and 6 to be related
+            (and each of 2, 4, and 6 to be related to itself), and define
+            5 to be related to itself. Show that this relation is an
+            equivalence relation.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            We have said for each element of our set that it is
+            related to itself, so the relation is reflexive. If <m>x</m> and <m>y</m>
+            are in a given one of those sets, then <m>y</m> and <m>x</m> are in that
+            same given set. If <m>x</m> and <m>y</m> are in the same set, and if <m>y</m>
+            and <m>z</m> are in the same set, then <m>x</m> and <m>z</m> must be in the same
+            set because there is one and only one set that <m>y</m> is in. Thus
+            the relation is an equivalence relation.
+          </p>
+        </solution>
+      </activity>
+      <activity>
+        <statement>
+          <p>
+            Suppose <m>P = \{S_1, S_2, S_3, \ldots, S_k\}</m> is a
+            partition of
+            <m>S</m>. Define two elements of <m>S</m> to be related if they are in
+            the same set <m>S_i</m>, and otherwise not to be related. Show
+            that this relation is an equivalence relation. Show that the
+            equivalence classes of the equivalence relation are the sets
+            <m>S_i</m>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Each element is in a set <m>S_i</m> with itself, so the
+            relation is reflexive. If <m>x</m> and <m>y</m>
+            are in a given one of those sets <m>S_i</m>, then <m>y</m> and <m>x</m> are in
+            that same set <m>S_i</m>. If <m>x</m> and <m>y</m> are in the same set <m>S_i</m>, and
+            if
+            <m>y</m> and <m>z</m> are in the same set <m>S_j</m>, then <m>S_i</m> must equal
+            <m>S_j</m> because <m>y</m> is in one and only one block of the partition.
+            Therefore, <m>x</m> and
+            <m>z</m> must be in the same set <m>S_i</m>. Thus the relation is an
+            equivalence relation. If <m>x\in S_i</m>, then by definition <m>S_i</m>
+            consists of all elements related to <m>x</m>, so it is the equivalence
+            class containing <m>x</m>.
+          </p>
+        </solution>
+      </activity>
+
+    <p>
+      In <xref ref="partitiontoequivalence">Problem</xref> you just proved that
+      each partition of a set gives rise to an equivalence relation
+      whose classes are just the parts of the partition. Thus in
+      <xref ref="equivalenceclasses">Problem</xref> and <xref ref="partitiontoequivalence">Problem</xref> you proved the following Theorem.
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          A relation <m>R</m> is an equivalence relation on a
+          set <m>S</m> if and only if
+          <m>S</m> may be partitioned into sets <m>S_1</m>, <m>S_2</m>, <ellipsis />, <m>S_n</m>
+          in such a way that <m>x</m> and <m>y</m> are related by <m>R</m> if and only
+          if they are in the same block <m>S_i</m> of the partition.
+          <idx><h>equivalence relation</h></idx><idx><h>relation</h><h>equivalence</h></idx>
+        </p>
+      </statement>
+    </theorem>
+
+
+
+    <p>
+      In <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish"></xref>, <xref ref="roundtable"></xref> and <xref ref="necklace"></xref> what we were doing in
+      each case was counting equivalence classes of an equivalence
+      relation. There was a special structure to the problems that
+      made this somewhat easier to do. For example, in <xref ref="fourchoosethree"></xref>, we had <m>4\cdot3\cdot2 =24</m> lists of
+      three distinct flavors chosen from V, C, S, and P. Each list
+      was equivalent to <m>3\cdot2\cdot1=3!=6</m> lists, including
+      itself, from the point of view of serving 3 small dishes of
+      ice cream. The order in which we selected the three flavors
+      was unimportant. Thus the set of all
+      <m>4\cdot3\cdot2</m> lists was a union of some number <m>n</m> of
+      equivalence classes, each of size 6. By the product
+      principle, if we have a union of <m>n</m> disjoint sets, each of
+      size 6, the union has <m>6n</m> elements. But we already knew that
+      the union was the set of all 24 lists of three distinct
+      letters chosen from our four letters. Thus we have <m>6n=24</m>,
+      or
+      <m>n=4</m> equivalence classes.
+    </p>
+
+    <p>
+      In <xref ref="icecreaminadish">Problem</xref> there is a subtle change. In
+      the language we adopted for seating people around a round
+      table, if we choose the flavors V, C, and S, and arrange them
+      in the dish with C to the right of V and S to the right of C,
+      then the scoops are in different relative positions than if we
+      arrange them instead with S to the right of V and C to the
+      right of S. Thus the order in which the scoops go into the
+      dish is somewhat important<mdash />somewhat, because putting in V
+      first, then C to its right and S to its right is the same as
+      putting in S first, then V to its right and C to its right.
+      In this case, each list of three flavors is equivalent to
+      only three lists, including itself, and so if there are
+      <m>n</m> equivalence classes, we have <m>3n=24</m>, so there are <m>24/3=8</m>
+      equivalence classes.
+    </p>
+
+    <activity xml:id="EquivPrincipleProblem">
+        <statement>
+          <p>
+            If we have an equivalence relation that divides a set
+            with <m>k</m> elements up into equivalence classes each of size <m>m</m>, what
+            is the number <m>n</m> of equivalence classes?
+            Explain why.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The number of equivalence classes is <m>k/m</m>, because by
+            the product principle, <m>mn=k</m>.
+          </p>
+        </solution>
+    </activity>
+    <activity>
+        <statement>
+          <p>
+            In <xref ref="nchoosekanotherway">Problem</xref>, what is the number
+            of equivalence classes? Explain in words the relationship
+            between this problem and the <xref ref="formulanchoosek">Problem</xref>.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            There are <m>n!</m> lists, and each is in an equivalence
+            class of size <m>k!(n-k)!</m>, so the number of equivalence classes is
+            <m>\frac{n!}{k!(n-k)!}</m> by <xref ref="EquivPrincipleProblem">Problem</xref>. This
+            is a way of computing the number of <m>k</m>-element subsets that shows
+            why the final answer we got in <xref ref="formulanchoosek">Problem</xref> is
+            symmetric in <m>k</m> and <m>n-k</m>.
+          </p>
+        </solution>
+    </activity>
+    <activity>
+        <statement>
+          <p>
+            Describe explicitly what makes two lists of beads
+            equivalent in <xref ref="necklace">Problem</xref> and how <xref ref="EquivPrincipleProblem">Problem</xref> can be used to compute the number
+            of different necklaces.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Two lists are equivalent if I can get one from the other
+            by some combination of cyclic shifts and reversals. A cyclic
+            shift on the list <m>a_1,a_2,\ldots,a_{n-1},a_n</m> gives either the
+            list <m>a_n,a_1,a_2,\ldots ,a_{n-1}</m> or the list
+            <m>a_2,\ldots,a_{n-1},a_n,a_1</m>. There are <m>n</m> possible results of
+            repeated cyclic shifts, and each of them may be reversed to give a
+            new list if <m>n\ge 3</m>. Further, these are the only lists we can
+            get from shifts and reversals. (<m>a_1</m> must go to one of <m>n</m>
+            places, and that leaves two choices for where <m>a_2</m> goes. Then
+            the rest of the list is determined.) Thus we can get exactly <m>2n</m>
+            lists from combinations of cyclic shifts and reversals. We define
+            two lists to be equivalent if they give the same necklace; we've
+            seen that this is an equivalence relation and that it has <m>2n</m>
+            elements per equivalence class. Since there are <m>n!</m> lists, this
+            gives us <m>(n-1)!/2</m> equivalence classes, or necklaces.
+          </p>
+        </solution>
+    </activity>
+    <activity>
+        <statement>
+          <p>
+            What are the equivalence classes (write them out as sets
+            of lists) in <xref ref="twocolorsofbeads">Problem</xref>, and why can't we
+            use <xref ref="EquivPrincipleProblem">Problem</xref> to compute the number of
+            equivalence classes?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The equivalence classes are
+            <me>
+              \{RRBB, BRRB, BBRR, RBBR\}
+              \mbox{~and~}
+              \{RBRB, BRBR\}.
+            </me>
+          </p>
+
+          <p>
+            We can't use <xref ref="EquivPrincipleProblem">Problem</xref> to compute the number of
+            equivalence classes because the equivalence classes don't have the
+            same size.
+          </p>
+        </solution>
+    </activity>
+
+    <p>
+      In <xref ref="EquivPrincipleProblem">Problem</xref> you proved our next
+      theorem. In Chapter 1 (<xref ref="quotientprinciple">Problem</xref>) we
+      discovered and stated this theorem in the context of partitions
+      and called it the
+      <idx><h>quotient principle</h></idx><idx><h>principle</h><h>quotient</h></idx><em>Quotient Principle</em>
+    </p>
+
+    <theorem>
+      <statement>
+        <p>
+          If an equivalence relation on a set <m>S</m> size
+          <m>k</m> has <m>n</m> equivalence classes each of size <m>m</m>, then the
+          number of equivalence classes is <m>k/m</m>.
+        </p>
+      </statement>
+    </theorem>
+
+</section>

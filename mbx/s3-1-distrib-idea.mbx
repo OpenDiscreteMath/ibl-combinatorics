@@ -624,9 +624,9 @@
         </statement>
         <hint>
           <p>
-            Note that <m>\binom{n+k−1}{k} = \binom{n+k-1}{n-1}</m>. So we have to figure out how choosing either <m>k</m> elements or <m>n − 1</m> elements out of <m>n + k − 1</m> elements constitutes the choice
-        of a multiset. We really have no idea what set of <m>n + k − 1</m> objects to use, so why not use <m>[n + k − 1]</m>? If we choose <m>n − 1</m> of these objects, there are <m>k</m> left over, the same number as the number of elements of our multiset.
-        Since our multiset is supposed to be chosen from an <m>n</m>-element set, perhaps we should let the <m>n</m>-element set be <m>[n]</m>. From our choice of <m>n − 1</m> numbers, we have to decide on the multiplicity of 1 through <m>n</m>. For example with <m>n = 4</m> and <m>k = 6</m>, we have <m>n+k-1=9</m>. Here, shown with underlines, is a selection of <m>3=n-1</m> elements from <m>[9]</m>: <m>1, 2, \underline{3}, 4 \underline{5}, 6, 7, \underline{8}, 9</m>.
+            Note that <m>\binom{n+k-1}{k} = \binom{n+k-1}{n-1}</m>. So we have to figure out how choosing either <m>k</m> elements or <m>n - 1</m> elements out of <m>n + k - 1</m> elements constitutes the choice
+        of a multiset. We really have no idea what set of <m>n + k - 1</m> objects to use, so why not use <m>[n + k - 1]</m>? If we choose <m>n - 1</m> of these objects, there are <m>k</m> left over, the same number as the number of elements of our multiset.
+        Since our multiset is supposed to be chosen from an <m>n</m>-element set, perhaps we should let the <m>n</m>-element set be <m>[n]</m>. From our choice of <m>n - 1</m> numbers, we have to decide on the multiplicity of 1 through <m>n</m>. For example with <m>n = 4</m> and <m>k = 6</m>, we have <m>n+k-1=9</m>. Here, shown with underlines, is a selection of <m>3=n-1</m> elements from <m>[9]</m>: <m>1, 2, \underline{3}, 4 \underline{5}, 6, 7, \underline{8}, 9</m>.
         How do the underlined elements give us a multiset of size 6 chosen from
         an [4]-element set? In this case, 1 has multiplicity 2, 2 has
         multiplicity 1, 3 has multiplicity 2, and 4 has multiplicity 1.
