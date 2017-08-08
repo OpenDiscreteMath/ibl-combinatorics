@@ -136,13 +136,15 @@
   </p>
 
   <activity xml:id="exponentialformula" category="essential for this or the next section">
-    <p>
+      <introduction>
+          <p>
       Suppose that <m>S</m> is a set with a set-value function <m>V</m> from <m>S</m>
       to a set
       <m>Y</m> such that no element of <m>S</m> has the empty set as a value. Let <m>f(x)</m>
       be the generating function for <m>S</m> according to the value function
       <m>V</m>.
-    </p>
+          </p>
+      </introduction>
     <task>
       <statement>
         <p>
@@ -390,10 +392,13 @@
   </p>
 
   <activity category="essential for this or the next section">
-    Show that every vertex of a graph lies in one and only one
+      <statement>
+          <p>Show that every vertex of a graph lies in one and only one
     connected component of a graph. (Notice that this shows that the
     connected components of a graph form a partition of the vertex set of the
     graph.)
+          </p>
+      </statement>
     <solution>
       <p>
       Let <m>C</m> be the set of all vertices connected by a walk to a vertex <m>x</m>.
@@ -488,14 +493,16 @@
   </p>
 
   <activity category="essential for this or the next section, and interesting">
-    <p>
+      <introduction>
+      <p>
       Suppose that <m>f(x) = \sum_{n=0}^\infty c_n \frac{x^n}{n!}</m> is
       the exponential generating function for the number of simple
       connected graphs on
       <m>n</m> vertices and <m>g(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> is the
       exponential generating function for the number of simple graphs on <m>i</m>
       vertices.
-    </p>
+      </p>
+      </introduction>
     <task>
       <statement>
         <p>
@@ -558,10 +565,12 @@
         </p>
       </statement>
       <solution>
-        <me>
+          <p>
+              <me>
           \log(1+y)=\int_0^y \frac{1}{1+x}dx =\int_0^y \sum_{i=0}^\infty
           (-1)^ix^i = \sum_{j=1}^\infty (-1)^{j-1}\frac{y^j}{j}.
-        </me>
+              </me>
+          </p>
       </solution>
     </task>
     <task>
@@ -595,12 +604,12 @@
         </p>
       </statement>
       <solution>
+          <p>
         <me>
           f(x) = 1+\sum_{j=1}^\infty
           (-1)^{j-1}\frac{(g(x)-1)^j}{j}= 1+\sum_{j=1}^\infty
           (-1)^{j-1}\frac{(\sum_{i=1}^\infty 2^{\binom{i}{2}}\frac{x^i}{i!})^j}{j}.
         </me>
-        <p>
           From the right-hand expression, we get a term involving <m>x^n</m> whenever we
           have an <m>x^n</m> term in the <m>j</m>th power of <m>\sum_{i=1}^\infty 2^{\binom{i}{2}}\frac{x^i}{i!}</m>. So the coefficient of
           <m>\frac{x^n}{n!}</m> is the sum over all <m>j</m> and all sequences

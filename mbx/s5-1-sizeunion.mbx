@@ -123,11 +123,13 @@
         </p>
       </statement>
       <solution>
-        <me>
+          <p>
+              <me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{i=1}^n|A_i| -
           \sum_{i=1}^n\sum_{j=i+1}^n |A_i \cap A_j| + \cdots +(-1)^{n-1} |A_1\cap
           A_2\cap\cdots \cap A_n|.
-        </me>
+              </me>
+          </p>
       </solution>
     </activity>
 
@@ -176,11 +178,10 @@
         </p>
       </statement>
       <solution>
-        <me>
+          <p><me>
           \left|\bigcup_{i=1}^n A_i\right| = \sum_{S:S\subseteq [n],
           S\not=\emptyset}(-1)^{|S|-1}|\bigcap_{i: i\in S}A_i|
         </me>
-        <p>
           I chose this
           way of writing the formula partly because it is efficient with symbols;
           for example, it uses only one sum sign. But more importantly I chose it
@@ -199,10 +200,12 @@
     </activity>
 
     <activity xml:id="hatcheck" category="essential">
-        <p>
+        <introduction>
+            <p>
           A group of <m>n</m> students goes to a restaurant carrying backpacks.
           The manager invites everyone to check their backpack at the check desk and everyone does. While they are eating, a child playing in the check room randomly moves around the claim check stubs on the backpacks. We will try to compute the probability that, at the end of the meal, at least one student receives his or her own backpack.  This probability is the fraction of the total number of ways to return the backpacks in which at least one student gets his or her own backpack back.
-        </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -400,9 +403,11 @@
 
 
     <activity category="interseting">
-      <p>
+        <introduction>
+            <p>
         We get a more elegant proof if we ask for a picture enumerator for <m>A_1 \cup A_2 \cup \cdots \cup A_n</m>.  so let us assume <m>A</m> is a set with a picture function <m>P</m> defined on it and that each set <m>A_i</m> is a subset of <m>A</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -499,10 +504,10 @@
 
 
     <p>
-      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<footnote>
+      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<fn>
       For those interested in logic and set theory, given a family of subsets <m>A_i</m> of a set <m>A</m>, we define <m>\bigcap_{i:i\in S}A_i</m> to be the set of all members <m>x</m> of <m>A</m> that are in <m>A_i</m> for all <m>i \in S</m>.  (Note that this allows <m>x</m> to be in some other <m>A_j</m>s as well.)  Then if <m>S = \emptyset</m>, our intersection consists of all members <m>x</m> of <m>A</m> that satisfy the statement <q>if <m>i\in \emptyset</m>, then <m>x \in A_i</m>.</q>
       But since the hypothesis of the <q>if-then</q> statement is false, the statement itself is true for all <m>x \in A</m>.  Therefor <m>\bigcap_{i:i \in \emptyset}A_i = A</m>.
-      </footnote> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
+      </fn> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
     </p>
 
   </subsection>

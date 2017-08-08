@@ -314,7 +314,8 @@
       </activity>
 
       <activity>
-          <p>
+          <introduction>
+              <p>
             The idea of conjugation of a partition could be defined without the geometric interpretation of a Young diagram, but it would seem far less natural without the geometric interpretation. Another idea that seems much more natural in a geometric context is this. Suppose we have a partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>. Then the Young diagram of the partition can fit into a rectangle that is <m>m</m> or more units wide (horizontally) and <m>n</m> or more units deep. Suppose we place the Young diagram of our partition in the top left-hand corner of an <m>m'</m> unit wide and <m>n'</m> unit deep rectangle with <m>m'\ge m</m> and <m>n' \ge n</m>, as in <xref ref="complementpartition">Figure</xref>.
           </p>
 
@@ -322,6 +323,7 @@
             <caption>To complement the partition <m>(5,3,3,2)</m> in a 6 by 5 rectangle: enclose it in the rectangle, rotate, and cut out the original Young diagram.</caption>
             <image width="33%" source="images/complementpartition" />
           </figure>
+          </introduction>
 
           <task>
             <statement>
@@ -516,9 +518,11 @@
     </p>
 
     <activity xml:id="numberpartitionrecurrence" category="essential for this or the next section, and interesting">
-      <p>
+        <introduction>
+            <p>
         In this problem we will study the two operations and see which one seems more useful for getting a recurrence for <m>P(k,n)</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
