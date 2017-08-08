@@ -10,10 +10,10 @@
       edges in much the same way as we describe points and lines in geometry:
       we don't really say what vertices and edges are, but we say what they
       do. We just don't have a complicated axiom system the way we do in
-      geometry. A <em>graph</em><index><main>graph</main></index> consists of a set <m>V</m> called a
+      geometry. A <em>graph</em><idx><h>graph</h></idx> consists of a set <m>V</m> called a
       vertex set and a set <m>E</m> called an edge set. Each member of <m>V</m> is
-      called a <em>vertex</em><index><main>vertex</main></index> and each member of <m>E</m> is called an
-      <em>edge</em>.<index><main>edge</main></index> Associated with each edge are two (not necessarily
+      called a <em>vertex</em><idx><h>vertex</h></idx> and each member of <m>E</m> is called an
+      <em>edge</em>.<idx><h>edge</h></idx> Associated with each edge are two (not necessarily
       different) vertices called its endpoints. We draw pictures of graphs by
       drawing points to represent the vertices and line segments (curved if we
       choose) whose endpoints are at vertices to represent the edges. In
@@ -33,7 +33,7 @@
       can choose names or not as we please. The third graph also shows that it
       is possible to have an edge that connects a vertex (like the one labelled
       <m>y</m>) to itself or it is possible to have two or more edges (like those
-      between vertices <m>v</m> and <m>y</m>) between two vertices. The <em>degree</em><index><main>vertex</main><sub>degree of</sub></index><index><main>degree of a vertex</main></index> of a vertex is
+      between vertices <m>v</m> and <m>y</m>) between two vertices. The <em>degree</em><idx><h>vertex</h><h>degree of</h></idx><idx><h>degree of a vertex</h></idx> of a vertex is
       the number of times it appears as the endpoint of edges; thus the degree
       of
       <m>y</m> in the third graph in the figure is four.
@@ -179,7 +179,7 @@
   <subsection>
     <title>Walks and paths in graphs</title>
     <p>
-      A <term>walk</term><index><main>walk</main></index> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
+      A <term>walk</term><idx><h>walk</h></idx> in a graph is an alternating sequence <m>v_0e_1v_1\ldots
       e_iv_i</m> of vertices and edges such that edge <m>e_i</m> connects vertices
       <m>v_{i-1}</m> and <m>v_i</m>. A graph is called connected if, for any pair of
       vertices, there is a walk starting at one and ending at the other.
@@ -200,7 +200,7 @@
         <activity category="motivation">
             <statement>
             <p>
-              A <term>path</term><index><main>path</main><sub>in graph</sub></index> in a graph is a walk with no repeated vertices.  Find the longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
+              A <term>path</term><idx><h>path</h><h>in graph</h></idx> in a graph is a walk with no repeated vertices.  Find the longest path you can in the third graph of <xref ref="Threegraphs">Figure</xref>.
           </p>
             </statement>
             <solution>
@@ -214,7 +214,7 @@
         <activity category ="motivation">
             <statement>
                 <p>
-                    A <term>cycle</term><index><main>cycle</main><sub>in graph</sub></index> in a graph is a walk whose first and last vertex are equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
+                    A <term>cycle</term><idx><h>cycle</h><h>in graph</h></idx> in a graph is a walk whose first and last vertex are equal but which has no other repeated vertices.  Which graphs in <xref ref="Threegraphs">Figure</xref> have cycles?  What is the largest number of edges in a cycle in the second graph in <xref ref="Threegraphs">Figure</xref>?  What is the smallest number of edges in a cycle in the third graph in <xref ref="Threegraphs">Figure</xref>?
                 </p>
             </statement>
             <solution>
@@ -228,7 +228,7 @@
         <activity category="motivation">
             <statement>
             <p>
-            A connected graph with no cycles is called a <term>tree</term><index><main>tree</main></index>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
+            A connected graph with no cycles is called a <term>tree</term><idx><h>tree</h></idx>.  Which graphs, if any, in <xref ref="Threegraphs">Figure</xref> are
             trees?
             </p>
             </statement>
@@ -533,8 +533,8 @@
       or channels may be thought of as edges of a graph and the places the wires
       connect may be thought of as vertices of that graph. A tree whose edges
       are some of the edges of a graph <m>G</m> and whose vertices are all of the
-      vertices of the graph <m>G</m> is called a <em>spanning tree</em><index><main>spanning
-      tree</main></index><index><main>tree</main><sub>spanning</sub></index> of <m>G</m>. A spanning tree for a telephone
+      vertices of the graph <m>G</m> is called a <em>spanning tree</em><idx><h>spanning
+      tree</h></idx><idx><h>tree</h><h>spanning</h></idx> of <m>G</m>. A spanning tree for a telephone
       network will give us a way to route calls between any two vertices in the
       network. In <xref ref="spanningtrees">Figure</xref> we show a graph and all its
       spanning trees.
@@ -614,8 +614,8 @@
       trees of the communications graph. For reasons of this application, if
       we have a graph with numbers assigned to its edges, the sum of the numbers
       on the edges of a spanning tree of
-      <m>G</m> will be called the <em>cost</em><index><main>spanning tree</main><sub>cost
-      of</sub></index><index><main>tree</main><sub>spanning!cost of</sub></index><index><main>cost of a spanning tree</main></index> of the
+      <m>G</m> will be called the <em>cost</em><idx><h>spanning tree</h><h>cost
+      of</h></idx><idx><h>tree</h><h>spanning!cost of</h></idx><idx><h>cost of a spanning tree</h></idx> of the
       spanning tree.
     </p>
 
@@ -626,8 +626,8 @@
           aspect) for finding a spanning tree of minimum cost in a graph whose edges
           are labelled with costs, the cost on an edge being the cost for including
           that edge in a spanning tree. Prove that your method(s)
-          work.<index><main>minimum cost spanning tree</main></index><index><main>spanning tree</main><sub>minimum
-          cost</sub></index><index><main>tree</main><sub>spanning!minimum cost</sub></index>
+          work.<idx><h>minimum cost spanning tree</h></idx><idx><h>spanning tree</h><h>minimum
+          cost</h></idx><idx><h>tree</h><h>spanning!minimum cost</h></idx>
         </p>
       </statement>
       <solution>
@@ -678,7 +678,7 @@
     </activity>
 
     <p>
-      The method you used in <xref ref="mincostspantree">Problem</xref> is called a <em>greedy method</em><index><main>greedy method</main></index>, because each time you made a choice of
+      The method you used in <xref ref="mincostspantree">Problem</xref> is called a <em>greedy method</em><idx><h>greedy method</h></idx>, because each time you made a choice of
       an edge, you chose the least costly edge available to you.
     </p>
   </subsection>
@@ -690,7 +690,7 @@
       recurrence (though a more general kind than those we have studied for
       sequences) which will let us compute the number of spanning trees of a
       graph. The operations each apply to an edge <m>e</m> of a graph <m>G</m>.
-      The first is called <em>deletion</em>;<index><main>deletion</main></index> we <em>delete</em> the
+      The first is called <em>deletion</em>;<idx><h>deletion</h></idx> we <em>delete</em> the
       edge
       <m>e</m> from the graph by removing it from the edge set. <xref ref="twodeletions">Figure</xref> shows how we can delete edges from a graph to get a
       spanning tree.
@@ -719,7 +719,7 @@
       different edges in the same graph are shown in <xref ref="threecontractions">Figure</xref>. Intuitively, we contract an edge by shrinking it
       in length until its endpoints coincide; we let the rest of the graph <q>go
       along for the ride.</q> To be more precise, we
-      <em>contract</em><index><main>contraction</main></index> the edge
+      <em>contract</em><idx><h>contraction</h></idx> the edge
       <m>e</m> with endpoints
       <m>v</m> and
       <m>w</m> as follows:
@@ -772,8 +772,8 @@
           stands for the number of spanning trees of <m>G/e</m>). Find an expression
           for
           <m>\#(G)</m> in terms of <m>\#(G/e)</m> and <m>\#(G-e)</m>. This expression is called
-          the <em>deletion-contraction recurrence</em><index><main>deletion-contraction
-          recurrence</main></index><index><main>recurrence</main><sub>deletion-contraction</sub></index>. Use it to compute the
+          the <em>deletion-contraction recurrence</em><idx><h>deletion-contraction
+          recurrence</h></idx><idx><h>recurrence</h><h>deletion-contraction</h></idx>. Use it to compute the
           number of spanning trees of the graph in <xref ref="spantreeexercise">Figure</xref>.
         </p>
 
@@ -829,10 +829,10 @@
       It is not clear that such a spanning tree even exists. This problem is
       a special case of the following. We have a connected graph with nonnegative
       numbers assigned to its edges. (In this situation these numbers are often
-      called weights.) The <em>(weighted) length</em><index><main>path</main><sub>length
-      of</sub></index><index><main>length (of a path)</main></index> of a path in the graph is the sum of the weights
-      of its edges. The <em>distance</em><index><main>distance in a weighted
-      graph</main></index><index><main>graph</main><sub>distance in</sub></index> between two vertices is the least
+      called weights.) The <em>(weighted) length</em><idx><h>path</h><h>length
+      of</h></idx><idx><h>length (of a path)</h></idx> of a path in the graph is the sum of the weights
+      of its edges. The <em>distance</em><idx><h>distance in a weighted
+      graph</h></idx><idx><h>graph</h><h>distance in</h></idx> between two vertices is the least
       (weighted) length of any path between the two vertices. Given a vertex
       <m>v</m>, we would like to know the distance between <m>v</m> and each other
       vertex, and we would like to know if there is a spanning tree in <m>G</m> such
@@ -842,7 +842,7 @@
     <activity xml:id="Dijkstra">
         <statement>
             <p>
-      Show that the following algorithm (known as Dijkstra's<index><main>Dijkstra's algorithm</main></index><index><main>distance in a graph</main></index> algorithm) applied to a weighted graph whose vertices are labelled 1 to <m>n</m> gives, for each <m>i</m>, the distance from vertex 1 to i as <m>d(i)</m>.
+      Show that the following algorithm (known as Dijkstra's<idx><h>Dijkstra's algorithm</h></idx><idx><h>distance in a graph</h></idx> algorithm) applied to a weighted graph whose vertices are labelled 1 to <m>n</m> gives, for each <m>i</m>, the distance from vertex 1 to i as <m>d(i)</m>.
     <ol>
       <li>
         <p>

@@ -153,9 +153,9 @@
           the
           picture of an orbit or multiorbit to be the picture of any one of its members. The
           <em>orbit
-          enumerator</em><index><main>orbit enumerator</main></index> <m>{ Orb}(G,S)</m> is the sum of all the pictures
+          enumerator</em><idx><h>orbit enumerator</h></idx> <m>{ Orb}(G,S)</m> is the sum of all the pictures
           of all the orbits. The
-          <em>fixed point enumerator</em><index><main>fixed point enumerator</main></index> <m>{ Fix}(G,S)</m> is
+          <em>fixed point enumerator</em><idx><h>fixed point enumerator</h></idx> <m>{ Fix}(G,S)</m> is
           the sum of all the pictures of all
           the fixed points of all the elements of <m>G</m>. We are going to construct a
           generating function analog of the CFB theorem. The main idea of the proof of
@@ -212,7 +212,7 @@
       <task>
         <statement>
           <p>
-            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><index><main>Orbit-Fixed Point Theorem</main></index> the <em>Orbit-Fixed Point
+            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><idx><h>Orbit-Fixed Point Theorem</h></idx> the <em>Orbit-Fixed Point
             Theorem</em>. Use it to determine the Orbit Enumerator for the colorings, with two
             colors (red and blue), of six circles placed at the vertices of a hexagon which is
             free to move in the plane. Compare the coefficients of the resulting polynomial
@@ -538,7 +538,7 @@
 
         <p>
           The <em>cycle indicator</em> or
-          <em>cycle index</em><index><main>cycle index</main></index> of <m>G</m> acting on <m>S</m> is
+          <em>cycle index</em><idx><h>cycle index</h></idx> of <m>G</m> acting on <m>S</m> is
           <me>
             Z(G,S) = \frac{1}{|G|}\sum_{\sigma: \sigma \in G} z(\sigma).
           </me>
@@ -578,7 +578,7 @@
           <m>S</m> to a
           finite set <m>T</m> from the cycle index of <m>G</m> acting on <m>S</m>? (Use <m>P(t)</m> as the notation
           for the picture of an element <m>t</m> of <m>T</m>.) State and prove the relevant theorem! This is
-          P&#xf3;lya's and Redfield's famous enumeration theorem.<index><main>P&#xf3;lya-Redfield Theorem</main></index>
+          P&#xf3;lya's and Redfield's famous enumeration theorem.<idx><h>P&#xf3;lya-Redfield Theorem</h></idx>
         </p>
       </statement>
       <solution>
@@ -860,11 +860,21 @@
             can redraw one of the graphs so that it is identical to
             the other one.) This is equivalent to permuting the vertices in some way so that when we
             apply the permutation to the endpoints of the edges to get a new edge set, the new edge
-            set is equal to the old one. Such a permutation is called an <em>automorphism</em><index><main>automorphism (of a graph)</main></index> of the graph. Then two computer
+            set is equal to the old one. Such a permutation is called an <em>automorphism</em><idx><h>automorphism (of a graph)</h></idx> of the graph. Then two computer
             placements are the same if there is an automorphism of the graph that carries one to the
             other.
           </p>
         </statement>
+        <hint>
+          <p>
+            The group of automorphisms of the graph has 48 elements and contains <m>D_6</m> as a subgraph.
+          </p>
+        </hint>
+        <hint>
+          <p>
+            The permutations with four one-cycles and the two-cycle <m>(1\ 4)</m>, <m>(2\ 5)</m>, or <m>(3\ 6)</m> are in the group of automorphisms. Once you know the cycle structure of <m>D_6</m> and <m>(1\ 4)D_6 = \{(1\ 4)\sigma | \sigma \in D_6\}</m>, you know the cycle structure of every element of the group.
+          </p>
+        </hint>
         <solution>
           <p>
             The computer placements are functions from the vertices of the graph to the set
@@ -961,7 +971,11 @@
       vertices.
     </p>
   </statement>
-
+  <hint>
+    <p>
+      What does the symmetric group on five vertices have to do with this problem?
+    </p>
+  </hint>
       <solution>
         <p>
         For this problem we need the cycle index for the action of the symmetric group

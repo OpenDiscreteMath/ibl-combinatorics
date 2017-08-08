@@ -1,7 +1,7 @@
 <section>
   <title>Partitions and Stirling Numbers</title>
   <introduction>
-    <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><index><main>recurrence</main><sub>two variable</sub></index>; that is it lets us compute <m>\binom{n}{k}</m> in terms of values of <m>\binom{m}{i}</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>\binom{n}{0}</m> and <m>\binom{n}{n}</m> that let us create Pascal's triangle.
+    <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><idx><h>recurrence</h><h>two variable</h></idx>; that is it lets us compute <m>\binom{n}{k}</m> in terms of values of <m>\binom{m}{i}</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>\binom{n}{0}</m> and <m>\binom{n}{n}</m> that let us create Pascal's triangle.
     </p>
   </introduction>
 
@@ -10,9 +10,9 @@
     <p>
       We use the notation <m>S(k,n)</m> to stand for the number of partitions of a
       <m>k</m> element set with <m>n</m> blocks. For historical reasons, <m>S(k,n)</m> is
-      called a <em>Stirling number of the second kind</em>. <index><main>partition</main><sub>of a
-      set</sub></index><index><main>partition</main><sub>of a set!!Stirling Numbers</sub></index><index><main>Stirling
-      Number</main><sub>second kind</sub></index><index><main><m>S(k,n)</m></main></index>
+      called a <em>Stirling number of the second kind</em>. <idx><h>partition</h><h>of a
+      set</h></idx><idx><h>partition</h><h>of a set!!Stirling Numbers</h></idx><idx><h>Stirling
+      Number</h><h>second kind</h></idx><idx><h><m>S(k,n)</m></h></idx>
     </p>
 
     <activity xml:id="secondstirlingrecurrence" category="essential and interesting">
@@ -56,7 +56,7 @@
     <activity>
       <statement>
           <p>
-            What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table is sometimes called <term>Stirling's Triangle (of the second kind)</term><index><main>Stirling's triangle</main><sub>second kind</sub></index> How would you define <m>S(k,n)</m> for the nonnegative values of <m>k</m> and <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is your two variable recurrence valid?
+            What is <m>S(k,1)</m>? What is <m>S(k,k)</m>? Create a table of values of <m>S(k,n)</m> for <m>k</m> between 1 and 5 and <m>n</m> between 1 and <m>k</m>. This table is sometimes called <term>Stirling's Triangle (of the second kind)</term><idx><h>Stirling's triangle</h><h>second kind</h></idx> How would you define <m>S(k,n)</m> for the nonnegative values of <m>k</m> and <m>n</m> that are not both positive? Now for what values of <m>k</m> and <m>n</m> is your two variable recurrence valid?
           </p>
         </statement>
 
@@ -225,7 +225,7 @@
     <activity xml:id="partitionsgivenpartsize" category="essential">
         <statement>
           <p>
-            In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence <m>k_1,k_2,\ldots,k_n</m> is called the <term>type vector</term> of the partition.<index><main>partition of a set</main><sub>type vector</sub></index><index><main>type vector of a partition of a set</main></index>
+            In how many ways can we partition <m>k</m> items into <m>n</m> blocks so that we have <m>k_i</m> blocks of size <m>i</m> for each <m>i</m>? (Notice that <m>\sum_{i=1}^k k_i = n</m> and <m>\sum_{i=1}^k ik_i = k</m>.) The sequence <m>k_1,k_2,\ldots,k_n</m> is called the <term>type vector</term> of the partition.<idx><h>partition of a set</h><h>type vector</h></idx><idx><h>type vector of a partition of a set</h></idx>
           </p>
         </statement>
         <hint>
@@ -281,9 +281,9 @@
       <p>
         (Relevant in <xref ref="expogenfun" autoname="yes" />.) The total number
         of partitions of a <m>k</m>-element set is denoted by <m>B(k)</m> and is
-        called the <m>k</m>-th <em>Bell number</em><index><main>Bell
-        Number</main></index><index><main>partitions of a set</main><sub>number
-        of</sub></index>. Thus <m>B(1)=1</m> and <m>B(2) =2</m>.
+        called the <m>k</m>-th <em>Bell number</em><idx><h>Bell
+        Number</h></idx><idx><h>partitions of a set</h><h>number
+        of</h></idx>. Thus <m>B(1)=1</m> and <m>B(2) =2</m>.
       </p>
       <task>
         <statement>
@@ -361,7 +361,7 @@
     <activity category="motivation">
       <statement>
         <p>
-          Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does the partition have if <m>f</m> is onto? How is the number of functions from a <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be as precise in your answer as you can.<index><main>function</main><sub>onto!and Stirling Numbers</sub></index><index><main>onto function</main><sub>counting</sub></index>
+          Given a function <m>f</m> from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set, we can define a partition of <m>K</m> by putting <m>x</m> and <m>y</m> in the same block of the partition if and only if <m>f(x)=f(y)</m>. How many blocks does the partition have if <m>f</m> is onto? How is the number of functions from a <m>k</m>-element set onto an <m>n</m>-element set related to a Stirling number? Be as precise in your answer as you can.<idx><h>function</h><h>onto!and Stirling Numbers</h></idx><idx><h>onto function</h><h>counting</h></idx>
         </p>
       </statement>
       <hint>
@@ -465,7 +465,7 @@
           <p>
             In how many ways may we label the elements of a <m>k</m>-element set with <m>n</m> distinct labels (numbered 1 through <m>n</m>) so that label <m>i</m> is used <m>j_i</m> times?
             (If we think of the labels as <m>y_1, y_2, \ldots, y_n</m>, then we can rephrase this question as follows.  How many functions are there from a <m>k</m>-element set <m>K</m> to a set <m>N=\{y_1,y_2,\ldots y_n\}</m> so that <m>y_i</m> is the image of <m>j_i</m> elements of <m>K</m>?)
-            This number is called a <term>multinomial coefficient</term><index><main>multinomial coefficient</main></index><index><main>coefficient</main><sub>multinomial</sub></index> and denoted by
+            This number is called a <term>multinomial coefficient</term><idx><h>multinomial coefficient</h></idx><idx><h>coefficient</h><h>multinomial</h></idx> and denoted by
             <me>
               \binom{k}{j_1,j_2,\ldots, j_n}.
             </me>
@@ -642,9 +642,9 @@
       <m>x</m> each form a basis for the
       <q>space</q> of polynomials, and that the numbers
       <m>S(k,n)</m> are <q>change of basis coefficients.</q> If you are not familiar
-      with linear algebra, a <term>basis</term><index><main>basis (for polynomials)</main></index> for the
+      with linear algebra, a <term>basis</term><idx><h>basis (for polynomials)</h></idx> for the
       <term>space of polynomials</term><fn>The space of polynomials is just
-      another name for the set of all polynomials.<index><main>space of polynomials</main></index></fn>
+      another name for the set of all polynomials.<idx><h>space of polynomials</h></idx></fn>
       is a set of polynomials such that each polynomial, whether in that set or
       not, can be expressed in one and only one way as a sum of numerical
       multiples of polynomials in the set.
@@ -697,9 +697,9 @@
             <m>x</m>. In symbols, this means that there are numbers <m>s(k,n)</m> (notice that
             this <m>s</m> is lower case, not upper case) such that we may write
             <m>x^{\underline{k}} =
-            \sum_{n=0}^k s(k,n)x^n</m>. These numbers <m>s(k,n)</m><index><main><m>s(k,n)</m></main></index> are
-            called Stirling Numbers of the first kind.<index><main>Stirling Number</main><sub>first
-            kind</sub></index> By thinking algebraically about what the formula
+            \sum_{n=0}^k s(k,n)x^n</m>. These numbers <m>s(k,n)</m><idx><h><m>s(k,n)</m></h></idx> are
+            called Stirling Numbers of the first kind.<idx><h>Stirling Number</h><h>first
+            kind</h></idx> By thinking algebraically about what the formula
             <men xml:id="stirling1" >
               x^{\underline{k}} =
               x^{\underline{k-1}}(x-k+1)
@@ -707,7 +707,7 @@
             means, we can
             find a recurrence for Stirling numbers of the first kind that gives us
             another triangular array of numbers called Stirling's triangle of the
-            first kind.<index><main>Stirling's triangle</main><sub>first kind</sub></index> Explain why <xref ref="stirling1">Equation</xref> is true and use it to derive a recurrence for <m>s(k,n)</m> in
+            first kind.<idx><h>Stirling's triangle</h><h>first kind</h></idx> Explain why <xref ref="stirling1">Equation</xref> is true and use it to derive a recurrence for <m>s(k,n)</m> in
             terms of <m>s(k-1,n-1)</m> and <m>s(k-1,n)</m>.
           </p>
         </statement>

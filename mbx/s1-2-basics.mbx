@@ -116,7 +116,7 @@
     <activity xml:id="orderedpair" category="summary">
       <statement>
         <p>
-          An <index><main>ordered pair</main></index><index><main>pair,ordered</main></index><em>ordered pair</em>
+          An <idx><h>ordered pair</h></idx><idx><h>pair,ordered</h></idx><em>ordered pair</em>
           <m>(a,b)</m> consists of two things we call <m>a</m> and
           <m>b</m>. We say <m>a</m> is the first member of the pair and <m>b</m> is
           the second member of the pair. If <m>M</m> is an <m>m</m> element set
@@ -195,7 +195,7 @@
     <activity xml:id="countingfunctions" category="essential">
       <p>
         The idea of a function is ubiquitous in mathematics. A
-        function<index><main>function</main></index> <m>f</m> from a set <m>S</m> to a set <m>T</m> is a relationship
+        function<idx><h>function</h></idx> <m>f</m> from a set <m>S</m> to a set <m>T</m> is a relationship
         between the two sets that associates exactly one member <m>f(x)</m>
         of <m>T</m> with each element <m>x</m> in <m>S</m>. We
         will come back to the ideas of functions and relationships in more detail and
@@ -282,8 +282,8 @@
         <statement>
           <p>
             The function <m>f</m> is called
-            <index><main>one-to-one</main></index><index><main>function</main><sub>one-to-one</sub></index><term>one-to-one</term> or an
-            <index><main>injection</main></index><index><main>function</main><sub>injection</sub></index><term>injection</term> if whenever
+            <idx><h>one-to-one</h></idx><idx><h>function</h><h>one-to-one</h></idx><term>one-to-one</term> or an
+            <idx><h>injection</h></idx><idx><h>function</h><h>injection</h></idx><term>injection</term> if whenever
             <m>x</m> is different from
             <m>y</m>,
             <m>f(x)</m> is different from <m>f(y)</m>.  How many one-to-one
@@ -369,11 +369,11 @@
       <statement>
         <p>
           Two sets are said to be
-          <index><main>disjoint</main></index><index><main>sets</main><sub>disjoint</sub></index><term>disjoint</term> if they have no
+          <idx><h>disjoint</h></idx><idx><h>sets</h><h>disjoint</h></idx><term>disjoint</term> if they have no
           elements in common. For example,
           <m>\{1,3,12\}</m> and <m>\{6, 4, 8, 2\}</m> are disjoint, but <m>\{1,3,12\}</m> and
           <m>\{3,5,7\}</m> are not. Three or more sets are said to be
-          <index><main>sets</main><sub>mutually disjoint</sub></index><term>mutually disjoint</term> if no two of them
+          <idx><h>sets</h><h>mutually disjoint</h></idx><term>mutually disjoint</term> if no two of them
           have any elements in common. What can you say about the size of the
           union of a finite number of finite (mutually) disjoint sets? Does
           this have anything to do with any of the previous problems?
@@ -415,9 +415,9 @@
     <p>
       These problems
       contain among them the kernels of many of the fundamental
-      ideas of combinatorics. For example, with luck, you just <index><main>sum
-      principle</main></index><index><main>principle</main><sub>sum</sub></index><index><main>principle</main><sub>product</sub></index> <index><main>product
-      principle</main></index>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These two counting principles are the basis on which we will develop many other counting principles.
+      ideas of combinatorics. For example, with luck, you just <idx><h>sum
+      principle</h></idx><idx><h>principle</h><h>sum</h></idx><idx><h>principle</h><h>product</h></idx> <idx><h>product
+      principle</h></idx>stated the sum principle (illustrated in <xref ref="sumprinc">Figure</xref>), and product principle (illustrated in <xref ref="prodprinc">Figure</xref>) in <xref ref="sum">Problems</xref> and <xref ref="product"></xref>. These two counting principles are the basis on which we will develop many other counting principles.
     </p>
 
     <figure xml:id="sumprinc" >
@@ -445,7 +445,7 @@
       and a filling choice. We use <m>A\times B</m> to stand for the set
       of all ordered pairs whose first element is in <m>A</m> and whose
       second element is in <m>B</m> and we call <m>A\times B</m> the
-      <index><main>Cartesian product</main></index><index><main>product</main><sub>Cartesian</sub></index><term>Cartesian
+      <idx><h>Cartesian product</h></idx><idx><h>product</h><h>Cartesian</h></idx><term>Cartesian
       product</term> of
       <m>A</m> and
       <m>B</m>, so you can think of <xref ref="orderedpair">Problem</xref> as asking you for the size of the Cartesian
@@ -456,13 +456,13 @@
 
     <p>
       When a set <m>S</m> is a union of disjoint sets <m>B_1, B_2, \ldots, B_m</m> we say
-      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <term>partition</term><index><main>partition</main><sub>of a set</sub></index> of the set
+      that the sets <m>B_1, B_2, \ldots, B_m</m> are a <term>partition</term><idx><h>partition</h><h>of a set</h></idx> of the set
       <m>S</m>. Thus a partition of <m>S</m> is a (special kind of) set of sets. So that
       we don't find ourselves getting confused between the set <m>S</m> and the sets
       <m>B_i</m> into which we have divided it, we often call the sets <m>B_1, B_2,
-      \ldots, B_m</m> the <em>blocks</em><index><main>partition</main><sub>blocks of</sub></index><index><main>block of a
-      partition</main></index> of the partition. In this language, the
-      <index><main>principle</main><sub>sum</sub></index><index><main>sum principle</main></index><term>sum principle</term>says that
+      \ldots, B_m</m> the <em>blocks</em><idx><h>partition</h><h>blocks of</h></idx><idx><h>block of a
+      partition</h></idx> of the partition. In this language, the
+      <idx><h>principle</h><h>sum</h></idx><idx><h>sum principle</h></idx><term>sum principle</term>says that
     </p>
 
     <blockquote>
@@ -472,7 +472,7 @@
 
     <p>
       The
-      <index><main>principle</main><sub>product</sub></index><index><main>product principle</main></index><term>product principle</term> says
+      <idx><h>principle</h><h>product</h></idx><idx><h>product principle</h></idx><term>product principle</term> says
       that
     </p>
 
@@ -520,8 +520,8 @@
 
     <p>
       The counting principle you gave in <xref ref="generalproductprincipleintro">Problem</xref> is called the <em>general product
-      principle</em>.<index><main>general product principle</main></index><index><main>product
-      principle</main><sub>general</sub></index><index><main>principle</main><sub>product!general</sub></index> We will outline
+      principle</em>.<idx><h>general product principle</h></idx><idx><h>product
+      principle</h><h>general</h></idx><idx><h>principle</h><h>product!general</h></idx> We will outline
       a proof of the general product pinciple from the original product
       principle in <xref ref="generalproductprincipleproof">Problem</xref>. Until then,
       let us simply accept it as another counting principle. For now, notice
@@ -784,8 +784,8 @@ many ways can you pair up the next person who isn’t already paired up?
         <p>
           Another name for a list, in a specific order, of <m>k</m> distinct things
           chosen from a set <m>S</m> is a <term><m>k</m>-element permutation</term> of
-          <m>S</m>.<index><main>permutation</main><sub>
-          <m>k</m>-element</sub></index> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
+          <m>S</m>.<idx><h>permutation</h><h>
+          <m>k</m>-element</h></idx> We can also think of a <m>k</m>-element permutation of <m>S</m> as a
           one-to-one function (or, in other words, injection) from
           <m>[k]=\{1,2,\ldots, k\}</m> to <m>S</m>. How many <m>k</m>-element permutations does an
           <m>n</m>-element set have? (For this problem it is
@@ -825,15 +825,15 @@ many ways can you pair up the next person who isn’t already paired up?
     </p>
 
     <p>
-      It is standard to call <m>n^{\underline{k}}</m><index><main><m>n^{\underline{k}}</m></main></index> the
-      <term><m>k</m>-th falling factorial power of <m>n</m></term><index><main>falling factorial
-      power</main></index><index><main>factorial power</main><sub>falling</sub></index>, which explains why we use exponential
+      It is standard to call <m>n^{\underline{k}}</m><idx><h><m>n^{\underline{k}}</m></h></idx> the
+      <term><m>k</m>-th falling factorial power of <m>n</m></term><idx><h>falling factorial
+      power</h></idx><idx><h>factorial power</h><h>falling</h></idx>, which explains why we use exponential
       notation. Of course we call it a <em>factorial</em> power since
       <m>n^{\underline{n}} = n(n-1)\cdots 1</m> which we call <em><m>n</m>-factorial</em> and
       denote by
-      <m>n!</m>.<index><main>factorial</main></index><index><main><m>n"!</m></main></index> If you are unfamiliar with the <m>\Pi</m>
-      notation, or <term>product notation</term><index><main>product notation</main></index><index><main><m>Pi</m>
-      notation</main></index> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the <m>\Sigma</m> notation works for
+      <m>n!</m>.<idx><h>factorial</h></idx><idx><h><m>n"!</m></h></idx> If you are unfamiliar with the <m>\Pi</m>
+      notation, or <term>product notation</term><idx><h>product notation</h></idx><idx><h><m>Pi</m>
+      notation</h></idx> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the <m>\Sigma</m> notation works for
       summations.
     </p>
 
@@ -886,7 +886,7 @@ many ways can you pair up the next person who isn’t already paired up?
 
     <p>
       However, there is another kind of graph called a <em>directed
-      graph</em><index><main>graph</main><sub> directed</sub></index><index><main>directed graph</main></index> or <em>digraph</em><index><main>digraph</main></index><index><main>function</main><sub>digraph of</sub></index> that is
+      graph</em><idx><h>graph</h><h> directed</h></idx><idx><h>directed graph</h></idx> or <em>digraph</em><idx><h>digraph</h></idx><idx><h>function</h><h>digraph of</h></idx> that is
       especially useful when dealing with functions between finite sets. We
       take up this topic in more detail in <xref ref="Relations">Appendix</xref>,
       particularly <xref ref="relationdigraph">Section</xref> and <xref ref="digraphsoffunctions">Section</xref>. In
@@ -955,8 +955,8 @@ many ways can you pair up the next person who isn’t already paired up?
         <p>
           A function
           <m>f:S\rightarrow T</m> is called an
-          <index><main>onto function</main></index><index><main>function</main><sub>onto</sub></index><em>onto function</em> or
-          <index><main>surjection</main></index><index><main>function</main><sub>surjection</sub></index><em>surjection</em> if each
+          <idx><h>onto function</h></idx><idx><h>function</h><h>onto</h></idx><em>onto function</em> or
+          <idx><h>surjection</h></idx><idx><h>function</h><h>surjection</h></idx><em>surjection</em> if each
           element of
           <m>T</m> is <m>f(x)</m> for some <m>x\in S</m>. Choose a set <m>S</m> and a set <m>T</m> so that you
           can draw the digraph of a function from <m>S</m> to <m>T</m> that is one-to-one but not
@@ -1045,7 +1045,7 @@ many ways can you pair up the next person who isn’t already paired up?
       <statement>
         <p>
           The word <em>permutation</em> is actually used in two different ways in
-          mathematics. A <term>permutation</term><index><main>permutation</main><sub>as a bijection</sub></index> of a set
+          mathematics. A <term>permutation</term><idx><h>permutation</h><h>as a bijection</h></idx> of a set
           <m>S</m> is one-to-one from <m>S</m> onto
           <m>S</m>. How many permutations does an <m>n</m>-element set have?
         </p>
@@ -1075,12 +1075,12 @@ many ways can you pair up the next person who isn’t already paired up?
     <title>The bijection principle</title>
     <p>
       Another name for a one-to-one
-      and onto function is <index><main>bijection</main></index><index><main>function</main><sub>bijection</sub></index><term>bijection</term>. The digraphs marked (a), (b), and (e) in <xref ref="functiondigraphs">Figure</xref> are
+      and onto function is <idx><h>bijection</h></idx><idx><h>function</h><h>bijection</h></idx><term>bijection</term>. The digraphs marked (a), (b), and (e) in <xref ref="functiondigraphs">Figure</xref> are
       digraphs of bijections. The description in <xref ref="bijectiondigraph">Problem</xref> of the digraph of a bijection from
       <m>X</m> to
       <m>Y</m> illustrates one of the fundamental principles of combinatorial
       mathematics, the
-      <index><main>principle</main><sub>bijection</sub></index><index><main>bijection principle</main></index><term>bijection
+      <idx><h>principle</h><h>bijection</h></idx><idx><h>bijection principle</h></idx><term>bijection
       principle</term>:
     </p>
 
@@ -1141,10 +1141,10 @@ many ways can you pair up the next person who isn’t already paired up?
       <m>k</m>-element subset from an
       <m>n</m>-element set. The number <m>n\choose k</m> is read as <q><m>n</m> choose <m>k</m></q> and is
       called a
-      <index><main>binomial coefficient</main></index><term>binomial coefficient</term> for
+      <idx><h>binomial coefficient</h></idx><term>binomial coefficient</term> for
       reasons we will see later on. Another frequently used way to read the
       binomial coefficient notation is ``the number of combinations
-      <index><main>combinations</main></index> of
+      <idx><h>combinations</h></idx> of
       <m>n</m> things taken <m>k</m> at a time." You are going to be asked to construct
       two bijections that relate to these numbers and figure out what famous
       formula they prove. We are going to think about subsets of the
@@ -1271,7 +1271,7 @@ many ways can you pair up the next person who isn’t already paired up?
     </figure>
 
     <p>
-      <index><main>Pascal's Triangle</main></index>
+      <idx><h>Pascal's Triangle</h></idx>
     </p>
 
     <activity>
@@ -1681,8 +1681,8 @@ many ways can you pair up the next person who isn’t already paired up?
       </p>
 
       <p>
-        The function <m>\chi_S</m> is called the <index><main>characteristic
-        function</main></index><index><main>function</main><sub>characteristic</sub></index><term>characteristic function</term> of
+        The function <m>\chi_S</m> is called the <idx><h>characteristic
+        function</h></idx><idx><h>function</h><h>characteristic</h></idx><term>characteristic function</term> of
         <m>S</m>. Notice that the characteristic function is a function
         from <m>[n]</m> to
         <m>\{0,1\}</m>.
@@ -2208,7 +2208,7 @@ many ways can you pair up the next person who isn’t already paired up?
     <p>
       The formula you found in the <xref ref="quotientprinciple">Problem</xref> is so useful that
       we are going to single it out as another principle. The <em>quotient
-      principle</em><index><main>quotient principle</main></index> says:
+      principle</em><idx><h>quotient principle</h></idx> says:
     </p>
 
     <blockquote>
@@ -2384,8 +2384,8 @@ many ways can you pair up the next person who isn’t already paired up?
           <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
           this, James Stirling developed a formula to approximate
           <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
-          n}\right){n^n/ e^n}</m>.<index><main>Stirling's formula for
-          <m>n"!</m></main></index><index><main><m>n"!</m></main><sub>Stirling's formula for</sub></index> In fact the ratio of
+          n}\right){n^n/ e^n}</m>.<idx><h>Stirling's formula for
+          <m>n"!</m></h></idx><idx><h><m>n"!</m></h><h>Stirling's formula for</h></idx> In fact the ratio of
           <m>n!</m> to this expression approaches 1 as
           <m>n</m> becomes infinite.<fn>Proving this takes more of a detour than is
           advisable here; however there is an elementary proof which you can work
