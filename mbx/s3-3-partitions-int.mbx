@@ -2,7 +2,7 @@
   <title>Partitions of Integers</title>
   <introduction>
     <p>
-      We have now completed all our distribution problems except for those in which both the objects and the recipients are identical. For example, we might be putting identical apples into identical paper bags. In this case all that matters is how many bags get one apple (how many recipients get one object), how many get two, how many get three, and so on. Thus for each bag we have a number, and the multiset of numbers of apples in the various bags is what determines our distribution of apples into identical bags. A multiset of positive integers that add to <m>n</m> is called a <term>partition</term><index><main>partition of an integer</main></index> of <m>n</m>. Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1) and 3. The number of partitions of <m>k</m> is denoted by <m>P(k)</m>; in computing the partitions of 3 we showed that <m>P(3) = 3</m>. It is traditional to use Greek letters like <m>\lambda</m> (the Greek letter <m>\lambda</m> is pronounced LAMB duh) to stand for partitons; we might write <m>\lambda= 1,1,1</m>, <m>\gamma= 2,1</m> and <m>\tau = 3</m> to stand for the three partitions we just described. We also write <m>\lambda = 1^3</m> as a shorthand for <m>\lambda = 1,1,1</m>, and we write <m>\lambda \dashv 3</m> as a shorthand for ``<m>\lambda</m> is a partition of three."
+      We have now completed all our distribution problems except for those in which both the objects and the recipients are identical. For example, we might be putting identical apples into identical paper bags. In this case all that matters is how many bags get one apple (how many recipients get one object), how many get two, how many get three, and so on. Thus for each bag we have a number, and the multiset of numbers of apples in the various bags is what determines our distribution of apples into identical bags. A multiset of positive integers that add to <m>n</m> is called a <term>partition</term><idx><h>partition of an integer</h></idx> of <m>n</m>. Thus the partitions of 3 are 1+1+1, 1+2 (which is the same as 2+1) and 3. The number of partitions of <m>k</m> is denoted by <m>P(k)</m>; in computing the partitions of 3 we showed that <m>P(3) = 3</m>. It is traditional to use Greek letters like <m>\lambda</m> (the Greek letter <m>\lambda</m> is pronounced LAMB duh) to stand for partitons; we might write <m>\lambda= 1,1,1</m>, <m>\gamma= 2,1</m> and <m>\tau = 3</m> to stand for the three partitions we just described. We also write <m>\lambda = 1^3</m> as a shorthand for <m>\lambda = 1,1,1</m>, and we write <m>\lambda \dashv 3</m> as a shorthand for ``<m>\lambda</m> is a partition of three."
     </p>
 
     <activity category="motivation">
@@ -25,8 +25,8 @@
   <subsection>
     <title>The number of partitions of <m>k</m> into <m>n</m> parts</title>
     <p>
-      A <term>partition of the integer <m>k</m> into <m>n</m> parts</term><index><main>partition
-      of an integer</main><sub>into <m>n</m> parts</sub></index> is a multiset of
+      A <term>partition of the integer <m>k</m> into <m>n</m> parts</term><idx><h>partition
+      of an integer</h><h>into <m>n</m> parts</h></idx> is a multiset of
       <m>n</m> positive integers that add to <m>k</m>. We use <m>P(k,n)</m> to denote the
       number of partitions of <m>k</m> into <m>n</m> parts. Thus <m>P(k,n)</m> is the number
       of ways to distribute <m>k</m> identical objects to <m>n</m> identical recipients
@@ -72,7 +72,7 @@
       <task>
         <statement>
           <p>
-            Explain the relationship between partitions of <m>k</m> into <m>n</m> parts and lists <m>x_1,x_2</m>,<ellipsis />, <m>x_n</m> of positive integers with <m>x_1\ge x_2\ge\ldots \ge x_n</m>. Such a representation of a partition is called a <term>decreasing list</term><index><main>partition of an integer</main><sub>decreasing list</sub></index> representation of the partition.
+            Explain the relationship between partitions of <m>k</m> into <m>n</m> parts and lists <m>x_1,x_2</m>,<ellipsis />, <m>x_n</m> of positive integers with <m>x_1\ge x_2\ge\ldots \ge x_n</m>. Such a representation of a partition is called a <term>decreasing list</term><idx><h>partition of an integer</h><h>decreasing list</h></idx> representation of the partition.
           </p>
         </statement>
         <solution>
@@ -87,7 +87,7 @@
       <task>
         <statement>
           <p>
-            Describe the relationship between partitions of <m>k</m> and lists or vectors <m>(x_1,x_2,\ldots,x_n)</m> such that <m>x_1+2x_2+\ldots kx_k = k</m>.  Such a representation of a partition is called a <term>type vector</term> representation of a partition, and it is typical to leave the trailing zeros out of such a representation; for example <m>(2,1)</m> stands for the same partition as <m>(2,1,0,0)</m>. What is the decreasing list representation for this partition, and what number does it partition?<index><main>partition of an integer</main><sub>type vector</sub></index><index><main>type vector for a partition of an integer</main></index>
+            Describe the relationship between partitions of <m>k</m> and lists or vectors <m>(x_1,x_2,\ldots,x_n)</m> such that <m>x_1+2x_2+\ldots kx_k = k</m>.  Such a representation of a partition is called a <term>type vector</term> representation of a partition, and it is typical to leave the trailing zeros out of such a representation; for example <m>(2,1)</m> stands for the same partition as <m>(2,1,0,0)</m>. What is the decreasing list representation for this partition, and what number does it partition?<idx><h>partition of an integer</h><h>type vector</h></idx><idx><h>type vector for a partition of an integer</h></idx>
           </p>
         </statement>
         <solution>
@@ -131,7 +131,7 @@
   <subsection>
     <title>Ferrers and Young Diagrams and the conjugate of a partition</title>
     <p>
-      The decreasing list representation of partitions leads us to a handy way to visualize partitions. Given a decreasing list <m>(\lambda_1,\lambda_2,\ldots \lambda_n)</m>, we draw a figure made up of rows of dots that has <m>\lambda_1</m> equally spaced dots in the first row, <m>\lambda_2</m> equally spaced dots in the second row, starting out right below the beginning of the first row and so on. Equivalently, instead of dots, we may use identical squares, drawn so that a square touches each one to its immediate right or immediately below it along an edge. See <xref ref="FerrersYoung">Figure</xref> for examples.<index><main>Ferrers diagram</main></index><index><main>Young diagram</main></index><index><main>partition of an integer</main><sub>Ferrers diagram</sub></index><index><main>partition of an integer</main><sub>Young diagram</sub></index><index><main>diagram</main><sub>of a partition!Ferrers</sub></index><index><main>diagram</main><sub>of a partition!Young</sub></index> The figure we draw with dots is called the <term>Ferrers diagram</term> of the partition; sometimes the figure with squares is also called a Ferrers diagram; sometimes it is called a <term>Young diagram</term>. At this stage it is irrelevant which name we choose and which kind of figure we draw; in more advanced work the squares are handy because we can put things like numbers or variables into them.  From now on we will use squares and call the diagrams Young diagrams.
+      The decreasing list representation of partitions leads us to a handy way to visualize partitions. Given a decreasing list <m>(\lambda_1,\lambda_2,\ldots \lambda_n)</m>, we draw a figure made up of rows of dots that has <m>\lambda_1</m> equally spaced dots in the first row, <m>\lambda_2</m> equally spaced dots in the second row, starting out right below the beginning of the first row and so on. Equivalently, instead of dots, we may use identical squares, drawn so that a square touches each one to its immediate right or immediately below it along an edge. See <xref ref="FerrersYoung">Figure</xref> for examples.<idx><h>Ferrers diagram</h></idx><idx><h>Young diagram</h></idx><idx><h>partition of an integer</h><h>Ferrers diagram</h></idx><idx><h>partition of an integer</h><h>Young diagram</h></idx><idx><h>diagram</h><h>of a partition!Ferrers</h></idx><idx><h>diagram</h><h>of a partition!Young</h></idx> The figure we draw with dots is called the <term>Ferrers diagram</term> of the partition; sometimes the figure with squares is also called a Ferrers diagram; sometimes it is called a <term>Young diagram</term>. At this stage it is irrelevant which name we choose and which kind of figure we draw; in more advanced work the squares are handy because we can put things like numbers or variables into them.  From now on we will use squares and call the diagrams Young diagrams.
     </p>
 
     <figure xml:id="FerrersYoung" >
@@ -165,7 +165,7 @@
     <activity category="essential">
       <statement>
         <p>
-          The partition <m>(\lambda_1,\lambda_2,\ldots, \lambda_n)</m> is called the <term>conjugate</term><index><main>conjugate of an integer partition</main></index><index><main>partition of an integer</main><sub>conjugate of</sub></index> of the partition <m>(\gamma_1,\gamma_2,\ldots, \gamma_m)</m> if we obtain the Young diagram of one from the Young diagram of the other by flipping one around the line with slope -1 that extends the diagonal of the top left square. See <xref ref="conjugateYoung">Figure</xref> for an example.
+          The partition <m>(\lambda_1,\lambda_2,\ldots, \lambda_n)</m> is called the <term>conjugate</term><idx><h>conjugate of an integer partition</h></idx><idx><h>partition of an integer</h><h>conjugate of</h></idx> of the partition <m>(\gamma_1,\gamma_2,\ldots, \gamma_m)</m> if we obtain the Young diagram of one from the Young diagram of the other by flipping one around the line with slope -1 that extends the diagonal of the top left square. See <xref ref="conjugateYoung">Figure</xref> for an example.
         </p>
 
         <figure xml:id="conjugateYoung" >
@@ -200,8 +200,8 @@
     <activity category="interesting">
         <statement>
           <p>
-            A partition is called <em>self-conjugate</em><index><main>self-conjugate
-            partition</main></index><index><main>partition of an integer</main><sub>self conjugate</sub></index> if it is equal
+            A partition is called <em>self-conjugate</em><idx><h>self-conjugate
+            partition</h></idx><idx><h>partition of an integer</h><h>self conjugate</h></idx> if it is equal
             to its conjugate. Find a relationship between the number of
             self-conjugate partitions of <m>k</m> and the number of partitions of <m>k</m> into
             distinct odd parts.
@@ -326,7 +326,7 @@
           <task>
             <statement>
               <p>
-                Why can we interpret the part of the rectangle not occupied by our Young diagram, rotated in the plane, as the Young diagram of another partition? This is called the <term>complement</term><index><main>complement of a partition</main></index> of our partition in the rectangle.
+                Why can we interpret the part of the rectangle not occupied by our Young diagram, rotated in the plane, as the Young diagram of another partition? This is called the <term>complement</term><idx><h>complement of a partition</h></idx> of our partition in the rectangle.
               </p>
             </statement>
             <solution>
@@ -433,7 +433,7 @@
         </hint>
         <solution>
           <p>
-            Let us call the process of enclosing <m>\lambda</m> in the smallest rectangle possible and then forming the complement in that rectangle <term>encomplementation</term> (This is short for <em>en</em>\/closure and <em>complementation</em> and is not a standard term<mdash />there is no standard term for this operation.) and call the result of it the <term>encomplement</term><index><main>encomplement of a partition</main></index> of <m>\lambda</m>.  The result of two encomplementations on the Young diagram of a partition is to remove all rows of maximum length and all columns of maximum length from the Young diagram. Thus the description of the result of an even number <m>2j</m> of encomplementations is straightforward; we remove all the rows of the <m>j</m> largest distinct lengths and all columns of the <m>j</m> largest distinct lengths. So if an even number of encomplementations brings us to a partition with one block of size one, we should be able to describe the original partition fairly easily. To deal with the result of an odd number of encomplementations, we ask what happens if we encomplement just once.  If the complement of <m>\lambda</m> in the smallest rectangle in which if fits has one square, then <m>\lambda =\lambda_1^{n_1}\lambda_1-1</m>. Thus we are asking for the partitions which, after an even number of encomplementations, give us either the partition with one block or a partition of the form <m>\lambda_1^{n_1}(\lambda_1-1)</m>. First we ask what kind of partition results in the second one after two encomplementations. If we get <m>\lambda_1^{n_1}(\lambda_1-1)</m> from two encomplementations, the partition we started with had the form
+            Let us call the process of enclosing <m>\lambda</m> in the smallest rectangle possible and then forming the complement in that rectangle <term>encomplementation</term> (This is short for <em>en</em>\/closure and <em>complementation</em> and is not a standard term<mdash />there is no standard term for this operation.) and call the result of it the <term>encomplement</term><idx><h>encomplement of a partition</h></idx> of <m>\lambda</m>.  The result of two encomplementations on the Young diagram of a partition is to remove all rows of maximum length and all columns of maximum length from the Young diagram. Thus the description of the result of an even number <m>2j</m> of encomplementations is straightforward; we remove all the rows of the <m>j</m> largest distinct lengths and all columns of the <m>j</m> largest distinct lengths. So if an even number of encomplementations brings us to a partition with one block of size one, we should be able to describe the original partition fairly easily. To deal with the result of an odd number of encomplementations, we ask what happens if we encomplement just once.  If the complement of <m>\lambda</m> in the smallest rectangle in which if fits has one square, then <m>\lambda =\lambda_1^{n_1}\lambda_1-1</m>. Thus we are asking for the partitions which, after an even number of encomplementations, give us either the partition with one block or a partition of the form <m>\lambda_1^{n_1}(\lambda_1-1)</m>. First we ask what kind of partition results in the second one after two encomplementations. If we get <m>\lambda_1^{n_1}(\lambda_1-1)</m> from two encomplementations, the partition we started with had the form
             <me>
               \lambda_0^{n_0}(\lambda_1+\lambda_{2})^{n_1}(\lambda_1+
               \lambda_2-1)\lambda_2^{n_2}.

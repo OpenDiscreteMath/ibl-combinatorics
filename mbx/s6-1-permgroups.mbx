@@ -66,8 +66,8 @@
     <activity xml:id="composition1" category="essential">
       <statement>
         <p>
-          The composition<index><main>composition of
-          functions</main></index><index><main>functions</main><sub>composition of</sub></index>
+          The composition<idx><h>composition of
+          functions</h></idx><idx><h>functions</h><h>composition of</h></idx>
           <m>f\circ g</m> of two functions
           <m>f</m> and
           <m>g</m> is defined by <m>f\circ g(x) = f(g(x))</m>. Is <m>\rho^3</m> the composition of
@@ -111,7 +111,7 @@
       If we first rotate by 90 degrees and then by 270 degrees then we have rotated
       by 360 degrees, which does nothing visible to the square. Thus we say
       that <m>\rho^4</m> is the <q>identity function.</q> In general the <term>identity
-      function</term><index><main>function</main><sub>identity</sub></index><index><main>identity function</main></index> on a set <m>S</m>,
+      function</term><idx><h>function</h><h>identity</h></idx><idx><h>identity function</h></idx> on a set <m>S</m>,
       denoted by
       <m>\iota</m> (the Greek letter iota, pronounced eye-oh-ta) is the function
       that takes each element of the set to itself. In symbols, <m>\iota(x) =x</m> for every <m>x</m> in <m>S</m>. Of course the identity function on a set is a permutation of that set.
@@ -162,8 +162,8 @@
 
     <p>
       What you have observed about iota in <xref ref="identityproperty">Problem</xref> is
-      called the <em>identity property</em><index><main>identity property (for
-      permutations)</main></index> of iota. In the context of permutations, people usually
+      called the <em>identity property</em><idx><h>identity property (for
+      permutations)</h></idx> of iota. In the context of permutations, people usually
       call the function
       <m>\iota</m> <q>the identity</q> rather than calling it <q>iota.</q>
     </p>
@@ -173,7 +173,7 @@
       effect as doing nothing, we can think of the 270 degree rotation as
       undoing what the 90 degree rotation does. For this reason we say that in
       the rotations of the square, <m>\rho^3</m> is the <q>inverse</q> of <m>\rho</m>. In
-      general, a function <m>\varphi:T\rightarrow S</m> is called an <term>inverse</term><index><main>inverse function</main></index><index><main>function</main><sub>inverse</sub></index> of a function <m>\sigma:S
+      general, a function <m>\varphi:T\rightarrow S</m> is called an <term>inverse</term><idx><h>inverse function</h></idx><idx><h>function</h><h>inverse</h></idx> of a function <m>\sigma:S
       \rightarrow T</m> (the lower case Greek letter sigma) if <m>\varphi\circ \sigma= \sigma
       \circ\varphi =
       \iota</m>.
@@ -239,14 +239,14 @@
       <ul>
         <li>
           <p>
-            (Identity Property)<index><main>identity property</main></index> These
+            (Identity Property)<idx><h>identity property</h></idx> These
             permutations include the identity permutation.
           </p>
         </li>
 
         <li>
           <p>
-            (Inverse Property)<index><main>inverse property</main></index> Whenever these
+            (Inverse Property)<idx><h>inverse property</h></idx> Whenever these
             permutations include
             <m>\varphi</m>, they also include <m>\varphi^{-1}</m>.
           </p>
@@ -254,7 +254,7 @@
 
         <li>
           <p>
-            (Closure Property)<index><main>closure property</main></index>  Whenever these
+            (Closure Property)<idx><h>closure property</h></idx>  Whenever these
             permutations include
             <m>\varphi</m> and <m>\sigma</m>, they also include <m>\varphi\circ\sigma</m>.
           </p>
@@ -269,9 +269,10 @@
       groups are in the more abstract sense, you may use the word in this way.
       If you do not know about groups in this more abstract sense, then you may
       assume we mean permutation group when we say group.</fn> or a group of
-      permutations.<index><main>group of permutations</main></index><index><main>permutation group</main></index> We call the group of permutations corresponding to rotations of the
-      square by <m>R_4</m> and call it the <term>rotation group</term><index><main>rotation
-      group</main></index> of the square. There is a similar rotation group with <m>n</m>
+      permutations.<idx><h>group of permutations</h></idx><idx><h>permutation group</h></idx> We
+      call the group of permutations corresponding to rotations of the
+      square the <term>rotation group</term><idx><h>rotation
+      group</h></idx> of the square. There is a similar rotation group with <m>n</m>
       elements for any regular <m>n</m>-gon.
     </p>
 
@@ -281,7 +282,7 @@
           If <m>f:S\rightarrow T</m>, <m>g:T\rightarrow X</m>, and
           <m>h:X \rightarrow Y</m>, is <m>h\circ(g\circ f) = (h\circ g)\circ f</m>?
           What does this say about the status of the <em>associative
-          law</em><index><main>associative law</main></index>
+          law</em><idx><h>associative law</h></idx>
           <me>
             \rho\circ(\sigma\circ \varphi) = (\rho\circ \sigma)\circ\varphi
           </me>
@@ -516,8 +517,8 @@
         <p>
           Explain why the set of all permutations of four elements is a
           permutation group. How many elements does this group have? This group
-          is called the <term>symmetric group on four letters</term><index><main>symmetric
-          group</main></index> and is denoted by <m>S_4</m>.
+          is called the <term>symmetric group on four letters</term><idx><h>symmetric
+          group</h></idx> and is denoted by <m>S_4</m>.
         </p>
       </statement>
       <solution>
@@ -537,7 +538,7 @@
     <p>
       In general, the set of all permutations of an <m>n</m>-element set is a
       group. It is called the <em>symmetric group on <m>\mathbf n</m>
-      letters</em><index><main>symmetric group</main></index>. We don't have nice geometric
+      letters</em><idx><h>symmetric group</h></idx>. We don't have nice geometric
       descriptions (like rotations) for all its elements, and it would be
       inconvenient to have to write down something like <q>Let <m>\sigma(1) =3</m>,
       <m>\sigma(2) =1</m>, <m>\sigma(3)=4</m>, and <m>\sigma(4)=1</m></q> each time we need to
@@ -556,8 +557,8 @@
     </p>
 
     <p>
-      We call this notation the <em>two row notation</em><index><main>permutation</main><sub>two
-      row notation</sub></index><index><main>two row notation</main></index> for permutations. In the two row
+      We call this notation the <em>two row notation</em><idx><h>permutation</h><h>two
+      row notation</h></idx><idx><h>two row notation</h></idx> for permutations. In the two row
       notation for a permutation of <m>\{a_1,a_2,\ldots, a_n\}</m>, we write the
       numbers <m>a_1</m> through
       <m>a_n</m> in a one row and we write <m>\sigma(a_1)</m> through <m>\sigma(a_n)</m> in a
@@ -707,7 +708,7 @@
     <activity>
       <statement>
         <p>
-          Another view of the dihedral group of the square is that it is the group of all distance preserving functions, also called <term>isometires</term>, <index><main>isometiry</main></index> from a square to itself.  Notice that an isometry must be a bijection.  Any rigid motion of the square preserves the distances between all points of the square.  However, it is conceivable that there might be some isometries that do not arise from rigid motions.  (We will see some later on in the case of a cube.)  Show that there are exactly eight isometires (dinsce preserving functions) from a square to itself.
+          Another view of the dihedral group of the square is that it is the group of all distance preserving functions, also called <term>isometries</term>, <idx><h>isometry</h></idx> from a square to itself.  Notice that an isometry must be a bijection.  Any rigid motion of the square preserves the distances between all points of the square.  However, it is conceivable that there might be some isometries that do not arise from rigid motions.  (We will see some later on in the case of a cube.)  Show that there are exactly eight isometires (dinsce preserving functions) from a square to itself.
         </p>
       </statement>
       <hint>
@@ -1167,7 +1168,7 @@
       inverse property are three of the most important rules that we use in
       regrouping parentheses in algebraic expressions when solving equations.
       There is one property we have not yet mentioned, the <em>commutative
-      law</em><index><main>commutative law</main></index> which would say that <m>\sigma\circ \varphi =
+      law</em><idx><h>commutative law</h></idx> which would say that <m>\sigma\circ \varphi =
       \varphi\circ\sigma</m>. It is easy to see from the group table of <m>R_4</m> that it
       satisfies the commutative law.
     </p>
@@ -1195,7 +1196,7 @@
 
     <p>
       We have seen that the dihedral group <m>D_4</m> contains a copy of the
-      group of rotations of the square. When one group <m>G</m> of permutations of a set <m>S</m> is a subset of another group <m>G'</m> of permutations of <m>S</m>, we say that <m>G</m> is a <term>subgroup</term><index><main>subgroup</main></index> of <m>G'</m>.
+      group of rotations of the square. When one group <m>G</m> of permutations of a set <m>S</m> is a subset of another group <m>G'</m> of permutations of <m>S</m>, we say that <m>G</m> is a <term>subgroup</term><idx><h>subgroup</h></idx> of <m>G'</m>.
       <!-- The reason why we
       introduce the new word subgroup is to emphasize that the composition
       operation gives the same result whether it is performed in the larger
@@ -1279,8 +1280,8 @@
       graph has two directed cycles, the rather trivial one with vertex 4
       pointing to itself, and the nontrivial one with vertex 1 pointing to
       vertex 2 pointing to vertex 3 which points back to vertex 1. A
-      permutation is called a <term>cycle</term><index><main>cycle (of a
-      permutation)</main></index><index><main>permutation</main><sub>cycle of</sub></index> if its digraph consists of
+      permutation is called a <term>cycle</term><idx><h>cycle (of a
+      permutation)</h></idx><idx><h>permutation</h><h>cycle of</h></idx> if its digraph consists of
       exactly one
       cycle. Thus <m>\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
       \end{pmatrix}</m> is a cycle but
@@ -1288,12 +1289,10 @@
       \end{pmatrix}</m> is not a cycle by our definition. We write
       <m>(1\ 2\ 3)</m> or <m>(2\ 3\ 1)</m> or <m>(3\ 1\ 2)</m> to stand for the cycle
       <m>\sigma =\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
-      \end{pmatrix}</m>.
-    </p>
-    <p>
-      We can describe cycles in another way
-      as well. A <term>cycle</term><index><main>cycle of a
-      permutation</main></index><index><main>permutation</main><sub>cycle of</sub></index> of the permutation
+\end{pmatrix}</m>.</p>
+<p>We can describe cycles in another way
+      as well. A <term>cycle</term><idx><h>cycle of a
+      permutation</h></idx><idx><h>permutation</h><h>cycle of</h></idx> of the permutation
       <m>\sigma</m> is a list
       <m>(i\
       \sigma(i)\
@@ -1520,7 +1519,7 @@
       identify <m>(3)</m> with <m>(1)(2)(3)(4)(5)(6)</m>. But when we use <m>(3)</m> as a notation for
       <m>(1)(2)(3)(4)(5)(6)</m>, we still say its support set is <m>\{3\}</m>. Then the product above
       is simply composition of functions. We can summarize this discussion with the
-      following theorem<index><main>disjoint cycles</main></index><index><main>cycles</main><sub>disjoint</sub></index><fn>In the
+      following theorem<idx><h>disjoint cycles</h></idx><idx><h>cycles</h><h>disjoint</h></idx><fn>In the
       statement of the theorem we use the word disjoint; two cycles are said to be <em>disjoint</em> if their support sets are disjoint.</fn>. The proof of the theorem is
       essentially your solution to <xref ref="cyclepartition">Problem</xref>.
     </p> -->
@@ -1610,7 +1609,7 @@
     </p>
 
     <p>
-      The group of all rotations of the square is simply the set of the four powers of the cycle <m>\rho = (1\ 2\ 3\ 4)</m>.  for this reason it is called a <term>cyclic group</term><fn>The phrace cyclic group applies in a more general (but similar) situation.  Namely the set of all powers of any member of a group is called a cyclic group.</fn><index><main>cyclic group</main></index> and is often denoted by <m>C_4</m>.  Similarly, the rotation group of an <m>n</m>-gon is usually denoted <m>C_n</m>.
+      The group of all rotations of the square is simply the set of the four powers of the cycle <m>\rho = (1\ 2\ 3\ 4)</m>.  for this reason it is called a <term>cyclic group</term><fn>The phrace cyclic group applies in a more general (but similar) situation.  Namely the set of all powers of any member of a group is called a cyclic group.</fn><idx><h>cyclic group</h></idx> and is often denoted by <m>C_4</m>.  Similarly, the rotation group of an <m>n</m>-gon is usually denoted <m>C_n</m>.
     </p>
 
 
@@ -1780,7 +1779,7 @@
         <statement>
           <p>
             (Relevant to <xref ref="expogenfun">Appendix</xref>.) A permutation <m>\sigma</m> is called an
-            <term>involution</term><index><main>involution</main></index> if <m>\sigma^2=\iota</m>. When you write an
+            <term>involution</term><idx><h>involution</h></idx> if <m>\sigma^2=\iota</m>. When you write an
             involution as a product of disjoint cycles, what is special about the
             cycles?
           </p>
@@ -1862,8 +1861,8 @@
         The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
         defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
         <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
-        cycles is the product of the signs of its cycles.<index><main>permutation</main><sub>sign
-        of</sub></index><index><main>sign of a permutation</main></index>
+        cycles is the product of the signs of its cycles.<idx><h>permutation</h><h>sign
+        of</h></idx><idx><h>sign of a permutation</h></idx>
       </p>
       <task>
         <statement>
@@ -1932,7 +1931,7 @@
       <task>
         <statement>
           <p>
-            A 2-cycle is often called a <em>transposition</em><index><main>transposition</main></index>.  What is the sign of a product of
+            A 2-cycle is often called a <em>transposition</em><idx><h>transposition</h></idx>.  What is the sign of a product of
             <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
             correct.)
           </p>
@@ -1987,7 +1986,7 @@
       <statement>
         <p>
           Describe a subgroup of <m>S_n</m> of size <m>n!/2</m>. This subgroup is
-          called the <em>alternating group</em><index><main>alternating group</main></index> <m>A_n</m>.
+          called the <em>alternating group</em><idx><h>alternating group</h></idx> <m>A_n</m>.
           Describe explicitly a partition of <m>S_n</m> that you can use with the
           quotient principle to prove bijectively that the subgroup you described has size
           <m>n!/2</m>.
