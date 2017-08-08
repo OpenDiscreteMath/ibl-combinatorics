@@ -1,5 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
 
-<section>
+<section xmlns:xi="http://www.w3.org/2001/XInclude"  >
   <title>The product principle</title>
   <p>
     One of our major tools for ordinary
@@ -101,6 +102,13 @@
         here.)
       </p>
     </statement>
+    <hint>
+      <p>
+    Notice that any permutation is a product of a derangement of the elements
+    not fixed by the permutation times a permutation whose cycle decomposition
+    consists of one-cycles.
+      </p>
+    </hint>
     <solution>
       <p>
         We get the EGF <m>\frac{1}{1-x}</m>
@@ -126,6 +134,11 @@
         answer.)
       </p>
     </statement>
+    <hint>
+      <p>
+        A binomial coefficient is likely to appear in your answer.
+      </p>
+    </hint>
     <solution>
       <me>
         \sum_{i,j\mbox{:\ }
@@ -476,7 +489,6 @@
   </activity>
 
   <activity category="interesting">
-    <task>
       <statement>
         <p>
           (Optional) Our very first example of exponential generating
@@ -487,6 +499,15 @@
           function in <xref ref="orderedfunctionsection">Section</xref>.
         </p>
       </statement>
+      <hint>
+        <p>
+      The alternate definition of a funciton in <xref ref="orderedfunctionsection">Section</xref> can be restated to
+      say that a function from a <m>k</m>-element set <m>K</m> to an <m>n</m>-element set <m>N</m> can be thought of as an <m>n</m>-tuple of sets, perhaps with some empty, whose union is
+      <m>K</m>. In order to think of the function as an <m>n</m>-tuple, we number the elements
+      of <m>N</m> as number 1 through number <m>n</m>. Then the <m>i</m>th set in the <m>n</m>-tuple is the
+      set of elements mapped to the <m>i</m>th element of <m>N</m> in our numbering?
+        </p>
+      </hint>
       <solution>
         <p>
           In <xref ref="orderedfunctionsection">Section</xref> we remarked that an
@@ -507,16 +528,20 @@
           <m>[n]</m>.
         </p>
       </solution>
-    </task>
-    <task>
+    </activity>
+    <activity>
       <statement>
         <p>
           What is the EGF for the number of ways to paint <m>n</m>
           streetlight poles red, white blue, green and yellow, assuming an even
-          number of poles must be painted green and an even number of poles must be
-          painted yellow?
+          number of poles must be painted green and an even number of poles must be  painted yellow? Give a formula for the number of ways to paint <m>n</m> poles.  (Don't forget the factorial!)
         </p>
       </statement>
+      <hint>
+        <p>
+          Don't be surprised if you see a hyperbolic sine or hyperbolic cosine in your answer. If you aren't familiar with these functions, look them up in a calculus book.
+        </p>
+      </hint>
       <solution>
         <p>
           By the product principle for exponential generating functions it
@@ -527,8 +552,8 @@
           </me>
         </p>
       </solution>
-    </task>
-  </activity>
+    </activity>
+
 
   <activity category="essential for this or the next section, and interesting">
     <statement>
@@ -606,6 +631,12 @@
         EGFs.
       </p>
     </statement>
+    <hint>
+      <p>
+        The EGF for <m>\sum_{i=1}^n\binom{n}{k}k</m> is <m>\sum_{n=1}^\infty \sum_{i=1}^n \frac{n!}{k!(n-k)!}k\frac{x^n}{n!}</m>.  You can cancel out the <m>n!</m> terms and the <m>k</m> terms.  Now try to see if what is left can be regarded as the product of two EGFs.
+      </p>
+    </hint>
+
     <solution>
       <p>
         By the product principle for EGFs, the EGF for the right hand
@@ -647,7 +678,7 @@
     </solution>
   </activity>
 
-  <p>
+  <!-- <p>
     The idea of the set-value function in the product principle for
     exponential generating functions helps to resolve a mystery that you may
     have been consciously or unconsciously wondering about. How do we know
@@ -669,5 +700,5 @@
     functions are useful. So while the question of whether the most natural
     value function seems to be an integer value or a set-value is a good
     guideline, in the end experience helps tremendously!
-  </p>
+  </p> -->
 </section>
