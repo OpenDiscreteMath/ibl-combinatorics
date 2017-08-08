@@ -1,6 +1,6 @@
 %**************************************%
 %*    Generated from PreTeXt source   *%
-%*    on 2017-08-07T17:10:53-06:00    *%
+%*    on 2017-08-07T19:29:51-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -5064,11 +5064,11 @@ How many elements does the group \(D_n\) have? Prove that you are correct.%
 \textbf{Solution.}\quad \(D_n\) has \(2n\) elements, because once you have chosen one of the \(n\) places for vertex one, there are two choices for vertex two, and the remaining vertices can go in only one place each.%
 \end{activity}
 \begin{activity}[]\label{activity-256}
-In \hyperref[face-labeled-cube]{Figure~\ref{face-labeled-cube}} we show a cube with the positions of its vertices and faces labeled.  As with motions of the square, we let \(\varphi(x)\) be the label of the place where vertex previously in position \(x\) is now.%
+In \hyperref[cube1]{Figure~\ref{cube1}} we show a cube with the positions of its vertices and faces labeled.  As with motions of the square, we let \(\varphi(x)\) be the label of the place where vertex previously in position \(x\) is now.%
 \begin{figure}
 \centering
-\includegraphics[width=0.6\linewidth]{images/faceLabeledCube}
-\caption{A cube with the positions of its vertices and faces labeled.  The curved arrows point to the faces that are blocked by the cube.\label{face-labeled-cube}}
+\includegraphics[width=0.5\linewidth]{images/cube1}
+\caption{A cube with the positions of its vertices and faces labelled.  The curved arrows point to the positions that are blocked by the cube.\label{cube1}}
 \end{figure}
 \begin{enumerate}[font=\bfseries,label=(\alph*),ref=\alph*]
 \item\label{task-191} Write in two row notation the permutation \(\rho\) of the vertices that corresponds to rotating the cube 90 degrees around a vertical axis through the faces \(t\) (for top) and \(u\) (for underneath). (Rotate in a right-handed fashion around this axis, meaning that vertex 6 goes to the back and vertex 8 comes to the front.)%
@@ -5096,7 +5096,7 @@ How many permutations are in the group \(R\)? \(R\) is sometimes called the “r
 \textbf{Solution.}\quad There are eight places where vertex one can go. Once vertex 1 is placed, there are three ways the three faces including vertex 1 can be placed so that the cube returns to its original location, and then the location of all the vertices is determined. Thus there are 24 elements of the group. Of them, we have the identity, three rotations about each of the three axes through the midpoints of the faces, one additional rotation about each of the six axes joining opposite faces, and \(2\cdot 4 = 8\) additional rotations about each of the four axes joining a vertex to the diagonally (in three dimensions) opposite vertex. This gives us a total of \(10+6+8=24\) rotations, so every element of the group is a rotation.%
 \end{activity}
 \begin{activity}[]\label{activity-258}
-As with a two-dimensional figure, it is possible to talk about isometries of a three-dimensional figure. These are distance preserving functions from the figure to itself. The function that reflects the cube in \hyperref[face-labeled-cube]{Figure~\ref{face-labeled-cube}} through a plane halfway between the bottom face and top face exchanges the vertices 1 and 5, 2 and 6, 3 and 7, and 4 and 8 of the cube. This function preserves distances between points in the cube. However, it cannot be achieved by a rigid motion of the cube because a rigid motion that takes vertex 1 to vertex 5, vertex 2 to vertex 6, vertex 3 to vertex 7, and vertex 4 to vertex 8 would not return the cube to its original location; rather it would put the bottom of the cube where its top previously was and would put the rest of the cube above that square rather than below it.%
+As with a two-dimensional figure, it is possible to talk about isometries of a three-dimensional figure. These are distance preserving functions from the figure to itself. The function that reflects the cube in \hyperref[cube1]{Figure~\ref{cube1}} through a plane halfway between the bottom face and top face exchanges the vertices 1 and 5, 2 and 6, 3 and 7, and 4 and 8 of the cube. This function preserves distances between points in the cube. However, it cannot be achieved by a rigid motion of the cube because a rigid motion that takes vertex 1 to vertex 5, vertex 2 to vertex 6, vertex 3 to vertex 7, and vertex 4 to vertex 8 would not return the cube to its original location; rather it would put the bottom of the cube where its top previously was and would put the rest of the cube above that square rather than below it.%
 \begin{enumerate}[font=\bfseries,label=(\alph*),ref=\alph*]
 \item\label{task-195} How many elements are there in the group of permutations of \([8]\)   that correspond to isometries of the cube?%
 \par\medskip\noindent%
@@ -5301,7 +5301,7 @@ We see that the table is identical with our earlier table of the Stirling number
 Thus by the principle of mathematical induction \(c(k,n) = |s(k,n)|\) for all nonnegative numbers \(k\) (and all \(n\) between 0 and \(k\).)%
 \end{activity}
 \begin{activity}[]\label{activity-271}
-(Relevant to \hyperref[expogenfun]{Appendix~\ref{expogenfun}}.) A permutation \(\sigma\) is called an \emph{involution}\index{involution} if \(\sigma^2=\iota\). When you write an involution as a product of disjoint cycles, what is special about the cycles?%
+(Relevant to \hyperref[expogenfun]{Appendix~\ref{expogenfun}}.) A permutation \(\sigma\) is called an \terminology{involution}\index{involution} if \(\sigma^2=\iota\). When you write an involution as a product of disjoint cycles, what is special about the cycles?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad They are all 2-cycles or 1-cycles.%
 \end{activity}
@@ -5309,7 +5309,7 @@ Thus by the principle of mathematical induction \(c(k,n) = |s(k,n)|\) for all no
 \typeout{Section 6.2 Groups Acting on Sets}
 \typeout{************************************************}
 \section[{Groups Acting on Sets}]{Groups Acting on Sets}\label{sec_groups-groupsact}
-We defined the rotation group \(R_4\) and the dihedral group \(D_4\) as groups of permutations of the vertices of a square. These permutations represent rigid motions of the square in the plane and in three dimensional space respectively. The square has geometric features of interest other than its vertices; for example its diagonals, or its edges. Any geometric motion of the square that returns it to its original position takes each diagonal to a possibly different diagonal, and takes each edge to a possibly different edge.%
+We defined the rotation group \(C_4\) and the dihedral group \(D_4\) as groups of permutations of the vertices of a square. These permutations represent rigid motions of the square in the plane and in three dimensional space respectively. The square has geometric features of interest other than its vertices; for example its diagonals, or its edges. Any geometric motion of the square that returns it to its original position takes each diagonal to a possibly different diagonal, and takes each edge to a possibly different edge.%
 \par
 We could similarly define the group \(R\) of rigid motions of a cube as the group of permutations of its eight vertices that correspond to three dimensional motions that return the cube to its original position, but perhaps with vertices in different places than they were originally. Now each of these motions also takes the 12 edges of the cube to (possibly different) edges and takes the six faces of the cube to (possible different) faces. So we can think of our group \(R\) as acting not only on the vertices of our geometric figure, but on edges, diagonals, faces, or perhaps other geometric features.%
 \par
@@ -5765,6 +5765,8 @@ In \hyperref[numbermultiorbits4]{Problem~\ref{numbermultiorbits4}} you gave a fo
 \begin{activity}[]\label{activity-305}
 In how many ways may we string four (identical) red, six (identical) blue, and seven (identical) green beads on a necklace?%
 \par\medskip\noindent%
+\textbf{Hint.}\quad We are asking for the number of orbits of some group on lists of four \(R\)s, six \(B\)s, and seven \(G\)s.%
+\par\medskip\noindent%
 \textbf{Solution.}\quad We are stringing 17 beads on our necklace, so we are asking for the number of orbits of the group \(D_{17}\) on lists of four \(R\)s, six \(B\)s, and seven \(G\)s. For a rotation \(\rho^i\) to fix a list, it must take an \(R\) to a \(R\). The powers of \(\rho^i\) form a group. Thus the set of places that contain an \(R\) in a list that is fixed by \(\rho^i\) must be an orbit of that group. But the size of the orbit must be a divisor of the size of the subgroup, which must be a divisor of seventeen, so the size of the orbit is one or 17. If it is 1, then \(i=0\). Thus no elements are fixed by any nontrivial rotation, and all \(\binom{17}{4,6,7}\) lists of \(R\)s, \(B\)s and \(G\)s are fixed by the identity. Each flip will be a flip \strut around a line from a bead to the spot between the two ``opposite'' beads. This line divides the list into the eight beads on its left, the eight beads on its right and the one bead it goes through. If a flip fixes a list, the eight beads on the left must be identical to the eight beads on the right, meaning that the bead the line goes through must be one of the seven green beads. Thus the number of lists that are fixed by a flip is the number of ways to place three green beads, two red beads, and three blue beads in 8 slots, which is \(\binom{8}{3,2,3}\), or \(\frac{8!}{3!2!3!}\). There are 17 flips, so there are \(\frac{17\cdot8!}{3!2!3!}\) elements fixed by flips. Therefore we have%
 \begin{equation*}
 \frac{1}{2\cdot 17}\left(\frac{17!}{4!6!7!} + \frac{17\cdot8!}{3!2!2!}\right) =
@@ -5798,6 +5800,8 @@ necklaces. (The numerical answer, which was obtained from Maple, is not importan
 \textbf{Solution.}\quad Here we must consider the action of the rotation group of the cube on lists of six distinct colors. But no nontrivial rotation will fix a cube with all its faces colored differently. The identity rotation will fix all \(6!\) lists, and there are 24 members of the rotation group, so we have \(6!/24=6\cdot5=30\) ways to paint the faces of a cube with six distinct colors, using each color%
 \item\label{task-209} In how many ways may we paint the faces of a cube with two colors of paint? What if both colors must be used?%
 \par\medskip\noindent%
+\textbf{Hint.}\quad There are five kinds of elements in the rotation group of the cube. For example, there are six rotations by 90 degrees or 270 degrees around an axis connecting the centers of two opposite faces and there are 8 rotations (of 120 degrees and 240 degrees, respectively) around an axis connecting two diagonally opposite vertices.%
+\par\medskip\noindent%
 \textbf{Solution.}\quad We must consider the action of the rotation group of the cube on functions from \([6]\) to \(\{R,B\}\) or some other two-element set of colors. There are five kinds of elements in the rotation group of the cube. There is one identity, there are six rotations by 90 degrees or 270 degrees around an axis connecting the centers of two opposite faces, there are three rotations of 180 degrees around such an axis, there are 8 rotations (of 120 degrees and 240 degrees, respectively) around an axis connecting two diagonally opposite vertices, and there are 6 rotations of 180 degrees around an axis connecting the centers of two opposite edges. The identity fixes \(2^6\) functions. There are eight functions fixed by a 90 degree or 270 degree rotation. There are 16 functions fixed by a 180 degree rotation along an axis through two faces. There are 8 functions fixed by a 180 degree rotation along an axis joining the centers of two opposite sides. There are 4 functions fixed by a 120 degree or 240 degree rotation. Thus by the CFB theorem, we have%
 \begin{equation*}
 \frac{1}{24}(64+6\cdot8 + 3\cdot16+ 8\cdot 4 +6\cdot8)= 10
@@ -5807,6 +5811,8 @@ ways to paint the faces of a cube with two colors of paint. Two of these colorin
 \end{activity}
 \begin{activity}[]\label{Catalancircle}
 In how many ways may we color the edges of a (regular) \((2n+1)\)-gon free to move around in the \emph{plane} (so it cannot be flipped) if we use red \(n\) times and blue \(n+1\) times? If this is a number you have seen before, identify it. \index{Catalan Number!(\hyperref[Catalancircle]{Problem~\ref{Catalancircle}})}%
+\par\medskip\noindent%
+\textbf{Hint.}\quad Is it possible for a nontrivial rotation to fix any coloring?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad The set of all powers of a rotation is a subgroup of the rotation group of the \((2n+1)\)-gon. If a given rotation fixes a coloring, all powers of that rotation fix the coloring. The set of edges to which a given edge is taken by that rotation is an orbit of the group of powers of the rotation. The size of this orbit is a divisor of the size of the subgroup, which is a divisor of \(2n+1\). If the edge is colored red, the size of the orbit is also a divisor of \(n\), and if the edge is colored blue, the size of the orbit is also a divisor of \(n+1\). But neither \(n\) nor \(n+1\) have common divisors with \(2n+1\), except for one. Therefore the only rotation that fixes a coloring is the identity rotation, and it fixes all \(\binom{2n+1}{n}\) colorings. Thus the number of orbits is%
 \begin{equation*}
@@ -5847,6 +5853,10 @@ How many different proper colorings with four colors are there of the graph in \
 \includegraphics[width=0.33\linewidth]{images/NumberedHexagonalNetwork}
 \caption{A graph on six vertices.\label{starhexagon}}
 \end{figure}
+\par\medskip\noindent%
+\textbf{Hint.}\quad There are 48 elements in the group of automorphisms of the graph.%
+\par\medskip\noindent%
+\textbf{Hint.}\quad For this problem, it may be easier to ask which group elements fix a coloring rather than which colorings are fixed by a group element.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We want the number of orbits of the set of proper colorings under the action of the group of automorphisms of the graph. An automorphism \(\sigma\) maps vertex 1 to any of six vertices. Vertex 2 can be mapped to any of the four vertices adjacent to the image of vertex 1. Vertex 3 is adjacent to vertices 1 and 2, so it must be mapped to a vertex adjacent to the images of both vertex 1 and vertex 2; by checking cases you can see that there are always exactly two vertices adjacent to the images of vertex 1 and vertex 2, and mapping vertex 3 to either of these vertices preserves all the edges among vertices 1, 2, and 3. However each of the other three vertices is adjacent to exactly two vertices of the set \(\{1,2,3\}\), and thus it must be mapped to the unique vertex adjacent to the corresponding two of \(\sigma(1)\), \(\sigma(2)\) and \(\sigma(3)\). (It is always the case that each vertex is adjacent to exactly two of these, as you can see by considering the cases with \(\sigma(1)=1\).) Thus there are \(6\cdot4\cdot2=48\) elements in the group. Now to apply the CFB theorem we would need to know how many proper colorings are fixed by each group element, so we would need to know what the group elements are. We have observed that a permutation that preserves the edges is determined by where the triangle \(\{1,2,3\}\) goes. We can see eight triangles in the graph, triangles of the form \(\{i,i+1,i+2\}\), where we identify 7 with 1 and 8 with 2, and the triangles \(\{1,3,5\}\) and \(\{2,4,6\}\). We can map the set \(\{1,2,3\}\) to any of these eight sets by six one-to-one maps, so each group element is determined uniquely by one of these mappings. However focusing on these triangles makes our job here simpler in another way. In a proper coloring, vertices 1, 2, and 3 must be colored differently. We have four choices for the color of vertex 1, three different ones for vertex 2 and two still different ones for vertex 3, so there are 24 ways to color this triangle. Clearly the only difference among these ways is the actual names of the colors. That is, we can assume that vertex 1 is colored red, vertex 2 is colored blue and vertex 3 is colored green, then determine the proper colorings starting with these three colors, and up to changing the names of the colors, we will have determined all the proper colorings. Then we can ask which group elements fix a coloring rather than which colorings are fixed by a group element. This turns out to be easier. Let us write \(RBGRBG\) for the coloring that colors vertices 1 and 4 red, two and five blue, and three and six green. An examination of the figure shows that this is a proper coloring. In fact, it is the only proper coloring that starts \(RBG\) and uses only three colors. Suppose we were to use a fourth color, \(Y\). Then among vertices 4, 5, and 6, it could be used in just one place, because those three vertices are mutually adjacent. Each of the other two vertices is adjacent to two of the original three vertices colored \(RBG\), and so there is only one color available to use on it. In summary, the colorings that start \(RBG\) are \leavevmode%
 \begin{enumerate}
@@ -6122,6 +6132,10 @@ Thus we have \(22815\cdot2916=66,528,540\) possible colored cubes.%
 \begin{activity}[]\label{activity-327}
 In \hyperref[HexNet]{Figure~\ref{HexNet}} we see a graph with six vertices. Suppose we have three different kinds of computers that can be placed at the six vertices of the graph to form a network. In how many different ways may the computers be placed? (Two graphs are not different if we can redraw one of the graphs so that it is identical to the other one.) This is equivalent to permuting the vertices in some way so that when we apply the permutation to the endpoints of the edges to get a new edge set, the new edge set is equal to the old one. Such a permutation is called an \emph{automorphism}\index{automorphism (of a graph)} of the graph. Then two computer placements are the same if there is an automorphism of the graph that carries one to the other.%
 \par\medskip\noindent%
+\textbf{Hint.}\quad The group of automorphisms of the graph has 48 elements and contains \(D_6\) as a subgraph.%
+\par\medskip\noindent%
+\textbf{Hint.}\quad The permutations with four one-cycles and the two-cycle \((1\ 4)\), \((2\ 5)\), or \((3\ 6)\) are in the group of automorphisms. Once you know the cycle structure of \(D_6\) and \((1\ 4)D_6 = \{(1\ 4)\sigma | \sigma \in D_6\}\), you know the cycle structure of every element of the group.%
+\par\medskip\noindent%
 \textbf{Solution.}\quad The computer placements are functions from the vertices of the graph to the set of three kinds of computers, say \(\{A,B,C\}\). Thus we are asking for the number of orbits of the automorphism group of the graph on functions from the vertices of \(\{A, B,
 C\}\). To find this number we need to compute the cycle index of the automorphism group. An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually connected; i.e. a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly two of vertices of 1, 2, and 3. In fact, for any of the eight triangles in the graph, each vertex not in the triangle is adjacent to exactly two vertices of the triangle (and a different two for each vertex). Therefore we can send the vertices 1, 2, and 3, to any of the eight triangles in any of six orders, and this completely determines an automorphism. Thus there are \(6\cdot8=48\) elements in the group of automorphisms. The dihedral group \(D_6\) is a subgroup of the group of automorphisms. The two-cycles \((1\ 4)\), \((2\ 5)\), and \((3\ 6)\) are also in the group of automorphisms. (For example, 1 is adjacent to everything but 4, and 4 is adjacent to everything but 1, so interchanging them leaves us with exactly the same edges.) We will write out \(D_6\) in disjoint cycle notation, and then the coset \((1\ 4)D_6\), and from those we will be able to get the cycle index of the automorphism group acting on the vertices. In cycle notation, \(D_6\) is%
 \begin{equation*}
@@ -6175,6 +6189,8 @@ Two simple graphs on the set \([n]= \{1,2,\ldots, n\}\) with edge sets \(E\) and
 %
 \par
 Thus we can think of the set of graphs as a set of functions defined on the set of all two-element subsets of \([n]\). The number of different graphs with vertex set \([n]\) is thus the number of orbits of this set of characteristic functions under the action of the symmetric group \(S_n\) on the set of two-element subsets of \([n]\). Use this to find the number of different graphs on five vertices.%
+\par\medskip\noindent%
+\textbf{Hint.}\quad What does the symmetric group on five vertices have to do with this problem?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad For this problem we need the cycle index for the action of the symmetric group on five letters acting on two-element subsets of those five letters. Each way of partitioning the number five describes the cycle structure of an element of \(S_5\) acting on \([5]\). The cycle structure of a permutation \(\sigma\) on the two-element subsets of \([5]\) will be determined by its cycle structure on \([5]\). The partitions of five and the cycle structures they give on two-element subsets are:%
 \leavevmode%
