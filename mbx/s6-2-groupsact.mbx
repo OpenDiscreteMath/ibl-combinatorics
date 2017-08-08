@@ -52,13 +52,15 @@
     </figure>
 
     <activity category="essential">
-      <p>
+        <introduction>
+            <p>
         In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
         vertices and faces labelled. <em>Some of the arrows may be missing in this image. Cross check.</em> As with motions of the square, we let we let
         <m>\varphi(x)</m> be the label of the place where vertex previously in
         position
         <m>x</m> is now.
-      </p>
+            </p>
+        </introduction>
       <task xml:id="actsonparta" >
         <statement>
           <p>
@@ -182,13 +184,15 @@
     </p>
 
     <activity category="essential">
-      <p>
+        <introduction>
+            <p>
         Suppose that <m>\sigma</m> and <m>\varphi</m> are permutations in the group
         <m>R</m> of rigid motions of the cube. We have argued already that each rigid
         motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
         vertices on one face to the vertices on another face. Let
         <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -328,6 +332,7 @@
           elements of <m>D_4</m> send each diagonal to itself? How many elements of
           <m>D_4</m> interchange the diagonals of a square?
         </p>
+      </statement>
         <solution>
         <p>
           The 180 degree rotation sends the diagonals to themselves, i.e.,
@@ -339,6 +344,7 @@
           interchange them.
         </p>
         </solution>
+    </activity>
         <figure xml:id="ColoredSquare" >
           <caption>The colored square corresponding to the
           function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
@@ -346,8 +352,6 @@
           <m>f(3)=B</m>, <m>f(4)=B</m>.</caption>
           <image width="20%" source="images/ColoredSquare" />
         </figure>
-      </statement>
-    </activity>
 
     <activity xml:id="actiononfunctions" category="essential">
       <statement>
@@ -1241,13 +1245,15 @@
   <subsection>
     <title>The Cauchy-Frobenius-Burnside Theorem</title>
     <activity xml:id="numbermultiorbits4" category="essential">
-      <p>
+        <introduction>
+            <p>
         In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
         that expresses the number of orbits in terms of the number of group
         elements fixing each element of <m>S</m>. It is often easier to find the
         number of elements fixed by a given group element than to find the number
         of group elements fixing an element of <m>S</m>. For this purpose,
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -1258,10 +1264,12 @@
           </p>
         </statement>
         <solution>
+            <p>
           <me>
             m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
             \chi(\sigma,x).
           </me>
+            </p>
         </solution>
       </task>
       <task>

@@ -278,13 +278,15 @@
     </activity>
 
     <activity xml:id="BellNumberIntro" category="essential for this or the next section">
-      <p>
+        <introduction>
+            <p>
         (Relevant in <xref ref="expogenfun" autoname="yes" />.) The total number
         of partitions of a <m>k</m>-element set is denoted by <m>B(k)</m> and is
         called the <m>k</m>-th <em>Bell number</em><idx><h>Bell
         Number</h></idx><idx><h>partitions of a set</h><h>number
         of</h></idx>. Thus <m>B(1)=1</m> and <m>B(2) =2</m>.
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -587,11 +589,11 @@
     </task>
 
     <task>
-      <statment>
+      <statement>
         <p>
           Notice that <m>x^{\underline{j}}</m> makes sense for a numerical variable <m>x</m> (that could range over the rational numbers, the real numbers, or even the complex numbers instead of only the nonnegative integers, as we are implicitly assuming <m>n</m> does), just as <m>x^j</m> does. Find a way to express the power <m>x^k</m> in terms of the polynomials <m>x^{\underline{j}}</m> for appropriate values of <m>j</m> and explain why your formula is correct.
         </p>
-      </statment>
+      </statement>
       <hint>
         <p>
       In the equation <m>\sum_{j=0}^n n^{\underline{j}}S(k,j) = n^k</m>, we might try substituting <m>x</m> for <m>n</m>.
@@ -856,7 +858,8 @@
     </p>
 
     <activity category="interesting">
-      <p>
+        <introduction>
+            <p>
         Explain why every rising factorial polynomial <m>x^{\overline{k}}</m>
         can be expressed in terms of the falling factorial polynomials
         <m>x^{\underline{n}}</m>. Let <m>b(k,n)</m> stand for the change of basis
@@ -866,7 +869,8 @@
         <me>
           x^{\overline{k}}=\sum_{n=0}^k b(k,n) x^{\underline{n}}.
         </me>
-      </p>
+            </p>
+        </introduction>
       <task>
         <statement>
           <p>
@@ -879,6 +883,7 @@
           </p>
         </hint>
         <solution>
+            <p>
           <md>
             <mrow> \amp \sum_{n=0}^k b(k,n) x^{\underline{n}} = x^{\overline{k}} =
             x^{\overline{k-1}}(x+k-1)</mrow>
@@ -890,7 +895,6 @@
             <mrow> =\amp \sum_{n=1}^k b(k-1,n-1)x^{\underline{n}} +\sum_{n=0}^{k-1}
             (n+k-1)b(k-1,n)x^{\underline{n}}</mrow>
           </md>
-          <p>
             Thus if <m>n</m> is not 0 or <m>k</m>, we equate the coefficient of
             <m>x^{\underline{n}}</m> in the first line and last line to get
             <me>
