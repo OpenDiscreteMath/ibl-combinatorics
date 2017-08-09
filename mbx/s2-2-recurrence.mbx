@@ -12,6 +12,19 @@
 
     <activity>
       <statement>
+      <p>
+        How is the number of subsets of an <m>n</m>-element set related to the number of subsets of an <m>(n - 1)</m>-element set? Prove that you are correct.
+      </p>
+      </statement>
+      <hint>
+        <p>
+          Remember, a subset of <m>[n]</m> either does or doesn't contain <m>n</m>.
+        </p>
+      </hint>
+    </activity>
+
+    <activity>
+      <statement>
         <p>
           Explain why it is that the number of
           bijections from an <m>n</m>-element set to an <m>n</m>-element set is equal to <m>n</m>
@@ -147,6 +160,11 @@
             fixed constant <m>a</m>.
           </p>
         </statement>
+        <hint>
+          <p>
+            A first order recurrence for <m>a_n</m> gives us <m>a_n</m> as a function of <m>a_{n-1}</m>.
+          </p>
+        </hint>
         <solution>
           <p>
             A first order recurrence will give <m>a_n</m> in terms of <m>a_{n-1}</m>, that
@@ -186,6 +204,11 @@
           puzzle with <m>n-1</m> rings.)
         </p>
       </statement>
+            <hint>
+        <p>
+          Suppose you already knew the number of moves needed to solve the puzzle with <m>n-1</m>rings.
+        </p>
+      </hint>
       <solution>
         <p>
           We can solve the puzzle in one step if there is one ring, so
@@ -212,6 +235,16 @@
           sets using circles to represent each of the sets?
         </p>
       </statement>
+      <hint>
+        <p>
+          If we have <m>n - 1</m>circles drawn in such a way that they define <m>r_{n-1}</m> regions, and we draw a new circle, each time it crosses another circle, except for the last time, it finishes dividing one region into two parts and starts dividing a new region into two parts.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Compare <m>r_n</m> with the number of subsets of an <m>n</m>-element set.
+        </p>
+      </hint>
       <solution>
         <p>
           One circle defines two regions, the inside and outside. When we
@@ -259,7 +292,6 @@
   <subsection>
     <title>Arithmetic Series (optional)</title>
     <activity xml:id="childsaving">
-      <task>
         <statement>
           <p>
             A child puts away two dollars from her allowance each week. If she
@@ -277,8 +309,8 @@
             proves the formula. We could have used induction to prove it as well.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity xml:id="arithmeticprogression">
         <statement>
           <p>
             A sequence that satisfies a recurrence of the form <m>a_n=a_{n-1} +c</m>
@@ -299,8 +331,8 @@
             <m>n</m>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             A person who is earning <dollar />50,000 per year gets a raise of <dollar />3000 a
@@ -321,8 +353,8 @@
             i= 50,000(n+1) + 1500(n(n+1)</m>.
           </p>
         </solution>
-      </task>
-      <task>
+      </activity>
+      <activity>
         <statement>
           <p>
             An <em>arithmetic
@@ -342,7 +374,6 @@
             +cn(n+1)/2</m>.
           </p>
         </solution>
-      </task>
     </activity>
   </subsection>
 
@@ -405,6 +436,12 @@
           summation by a more compact expression.
         </p>
       </statement>
+      <hint>
+        <p>
+          You might try working out the cases <m>n=2,3,4</m> and then look for a pattern.
+          Alternately, you could write <m>a_{n-1}=b a_{n-2} + d</m>, substitute the right hand side of this expression into <m>a_{n}=b a_{n-1} + d</m> to get a recurrence involving only <m>a_{n-2}</m> , and then repeat a similar process with <m>a_{n-2}</m> and perhaps <m>a_{n-3}</m> and see a pattern that is developing.
+        </p>
+      </hint>
       <solution>
         <p>
           Note that by the formula, <m>a_{n-1}=ba_{n-2} +d</m>. Substituting this

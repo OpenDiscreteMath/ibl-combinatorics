@@ -4,17 +4,189 @@
   <title>Groups Acting on Sets</title>
   <introduction>
     <p>
-      We defined the rotation group <m>C_4</m> and the dihedral group <m>D_4</m> as
-      groups of permutations of the vertices of a square. These permutations
-      represent rigid motions of the square in the plane and in three
-      dimensional space respectively. The square has geometric features of interest other
-      than its vertices; for example its diagonals, or
-      its edges. Any geometric motion of the square that returns it to its
-      original position takes each diagonal to a possibly different diagonal,
-      and takes each edge to a possibly different edge.
+      We defined the rotation group <m>R_4</m> and the dihedral group <m>D_4</m> as groups of permutations of the vertices of a square. These permutations represent rigid motions of the square in the plane and in three dimensional space respectively. The square has geometric features of interest other than its vertices; for example its diagonals, or its edges. Any geometric motion of the square that returns it to its original position takes each diagonal to a possibly different diagonal, and takes each edge to a possibly different edge. In <xref ref="rotate-square" /> we show the results on the sides and diagonals of the rotations of a square. The rotation group permutes the sides of the square and permutes the diagonals of the square as it rotates the square. Thus, we say the rotation group <q>acts</q> on the sides and diagonals of the square.
     </p>
-
-    <p>
+    <figure xml:id="rotate-square">
+        <caption>The results on the sides and diagonals of rotating the square</caption>
+        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto">
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \draw (0,0) -- (2,2);
+                    \draw (2,0) -- (0,2);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [above] at (0.8,1.35) {$d_{13}$};
+                    \node [above] at (0.8,0.15) {$d_{24}$};
+                    \node [left] at (0,1) {$s_4$};
+                    \node [below] at (1,0) {$s_3$};
+                    \node [right] at (2,1) {$s_2$};
+                    \node [above] at (1,2) {$s_1$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \draw (0,0) -- (2,2);
+                    \draw (2,0) -- (0,2);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [above] at (0.8,1.35) {$d_{24}$};
+                    \node [above] at (0.8,0.15) {$d_{13}$};
+                    \node [left] at (0,1) {$s_3$};
+                    \node [below] at (1,0) {$s_2$};
+                    \node [right] at (2,1) {$s_1$};
+                    \node [above] at (1,2) {$s_4$};
+                    \node [below] at (1,-0.5) {$\rho$};                    
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \draw (0,0) -- (2,2);
+                    \draw (2,0) -- (0,2);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [above] at (0.8,1.35) {$d_{13}$};
+                    \node [above] at (0.8,0.15) {$d_{24}$};
+                    \node [left] at (0,1) {$s_2$};
+                    \node [below] at (1,0) {$s_1$};
+                    \node [right] at (2,1) {$s_4$};
+                    \node [above] at (1,2) {$s_3$};
+                    \node [below] at (1,-0.5) {$\rho^2$};                    
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \draw (0,0) -- (2,2);
+                    \draw (2,0) -- (0,2);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [above] at (0.8,1.35) {$d_{24}$};
+                    \node [above] at (0.8,0.15) {$d_{13}$};
+                    \node [left] at (0,1) {$s_1$};
+                    \node [below] at (1,0) {$s_4$};
+                    \node [right] at (2,1) {$s_3$};
+                    \node [above] at (1,2) {$s_2$};
+                    \node [below] at (1,-0.5) {$\rho^3$};                                        
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \draw (0,0) -- (2,2);
+                    \draw (2,0) -- (0,2);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [above] at (0.8,1.35) {$d_{13}$};
+                    \node [above] at (0.8,0.15) {$d_{24}$};
+                    \node [left] at (0,1) {$s_4$};
+                    \node [below] at (1,0) {$s_3$};
+                    \node [right] at (2,1) {$s_2$};
+                    \node [above] at (1,2) {$s_1$};
+                    \node [below] at (1,-0.5) {$\begin{aligned}\rho^4 &amp;=\text{identity}\\&amp;=\rho^0\end{aligned}$};                                        
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+        </sidebyside>
+    </figure>
+    <activity category="motivational">
+        <task>
+            <statement>
+                <p>Write down the two-line notation for the permutation <m>\overline{\rho}</m> that a <m>90</m> degree rotation does to the sides of the square.</p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\displaystyle \begin{pmatrix} s_1&amp; s_2&amp; s_3&amp; s_4\\s_2&amp; s_3&amp; s_4&amp; s_1\end{pmatrix}</m>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Write down the two-line notation for the permutation <m>\overline{\rho^2}</m> that  a 180 degree rotation does to the sides of the square.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\displaystyle \begin{pmatrix} s_1&amp; s_2&amp; s_3&amp; s_4\\s_3&amp; s_4&amp; s_1&amp; s_2\end{pmatrix}</m>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Is <m>\overline{\rho^2} = \overline\rho\circ\overline\rho</m>? Why or why not?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Yes, because
+                    <me>\displaystyle \begin{pmatrix} s_1&amp; s_2&amp; s_3&amp; s_4\\s_2&amp; s_3&amp; s_4&amp; s_1\end{pmatrix} \begin{pmatrix} s_1&amp; s_2&amp; s_3&amp; s_4\\s_2&amp; s_3&amp; s_4&amp; s_1\end{pmatrix} = \begin{pmatrix} s_1&amp; s_2&amp; s_3&amp; s_4\\s_3&amp; s_4&amp; s_1&amp; s_2\end{pmatrix}</me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Write down the two-line notation for the permutation <m>\widehat{\rho}</m> that a 90 degree rotation does to the diagonals <m>d_{13}</m> and <m>d_{24}</m> of the square.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\displaystyle\begin{pmatrix} d_{13}&amp; d_{24}\\ d_{24}&amp; d_{13}\end{pmatrix}</m>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Write down the two-line notation for the permutation <m>\widehat{\rho^2}</m> that a 180 degree rotation does to the diagonals <m>d_{13}</m> and <m>d_{24}</m> of the square.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\displaystyle\begin{pmatrix} d_{13}&amp; d_{24}\\ d_{13}&amp; d_{24}\end{pmatrix}</m>
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Is <m>\widehat{\rho^2} = \widehat{\rho}\circ\widehat{\rho}</m>? Why or why not? What familiar permutation is <m>\widehat{\rho^2}</m> in this case?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Yes, because
+                    <me>\displaystyle\begin{pmatrix} d_{13}&amp; d_{24}\\ d_{24}&amp; d_{13}\end{pmatrix}\begin{pmatrix} d_{13}&amp; d_{24}\\ d_{24}&amp; d_{13}\end{pmatrix} = \begin{pmatrix} d_{13}&amp; d_{24}\\ d_{13}&amp; d_{24}\end{pmatrix}</me>. Interestingly, <m>\widehat{\rho^2} = \iota</m>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <p>We have seen that the fact that we have defined a permutation group as the permutations of some specific set doesn't preclude us from thinking of the elements of that group as permuting the elements of some other set as well. In order to keep track of which permutations of which set we are using to define our group and which other set is being permuted as well, we introduce some new language and notation. We are going to say that the group <m>D_4</m> <q>acts</q> on the edges and diagonals of a square and the group <m>R</m> of permutations of the vertices of a cube that arise from rigid motions of the cube <q>acts</q> on the edges, faces, diagonals, etc. of the cube.
+    </p>
+<!--    <p>
       We could similarly
       define the group <m>R</m> of rigid motions of a cube as the group of
       permutations of its eight vertices that correspond to three dimensional
@@ -49,36 +221,35 @@
       faces labelled.  The curved arrows point to the positions that are blocked by
       the cube.</caption>
       <image width="50%" source="images/cube1" />
-    </figure>
+    </figure>-->
 
     <activity category="essential">
         <introduction>
-            <p>
-        In <xref ref="cube1">Figure</xref> we show a cube with the positions of its
-        vertices and faces labelled. <em>Some of the arrows may be missing in this image. Cross check.</em> As with motions of the square, we let we let
-        <m>\varphi(x)</m> be the label of the place where vertex previously in
-        position
-        <m>x</m> is now.
+            <p>In <xref ref="cube1" /> we show a cube with the positions of its vertices and faces labeled. As with motions of the square, we let we let <m>\varphi(x)</m> be the label of the place where vertex previously in position <m>x</m> is now.
             </p>
+            <todo>Some of the arrows are missing in this image. Cross check.</todo>
         </introduction>
       <task xml:id="actsonparta" >
         <statement>
           <p>
-          Write in two row-notation the permutation <m>\rho</m> of the vertices
+              In <xref provisional="263" /> we wrote in two row notation the permutation <m>\rho</m> of the vertices that corresponds to rotating the cube 90 degrees around a vertical axis through the faces <m>t</m> (for top) and <m>u</m> (for underneath). (We rotated in a right-handed fashion around this axis, meaning that vertex 6 goes to the back and vertex 8 comes to the front.) Write in two row notation the permutation <m>\overline{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of <m>R</m>.
+              <!--
+              Write in two row-notation the permutation <m>\rho</m> of the vertices
           that corresponds to rotating the cube 90 degrees around a vertical axis
           through the faces <m>t</m> (for top) and <m>u</m> (for underneath).  (Rotate in a
           right-handed fashion around this axis, meaning that vertex 6 goes to the
           back and vertex 8 comes to the front.)  Write in two-row notation the
           bijection
           <m>\beta_{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of
-          <m>R</m>.
+          <m>R</m>.-->
         </p>
       </statement>
         <solution>
           <p>
-            <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
+<!--            <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
             2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
-            \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp /><m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
+            \end{pmatrix}</m><nbsp /><nbsp /><nbsp /><nbsp />-->
+<m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
             \end{pmatrix}</m>
           </p>
         </solution>
@@ -87,102 +258,83 @@
       <task>
         <statement>
           <p>
-            Write in two-row notation the permutation <m>\varphi</m> that rotates
-            the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and
-            carries vertex 8 to vertex 6.  Write in two-row notation the bijection
-            <m>\beta_\varphi</m> of the faces that corresponds to this member of <m>R</m>.
+            In <xref provisional="263" /> we wrote in two row notation the permutation <m>\varphi</m> that rotates the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and carries vertex 8 to vertex 6.  Write in two row notation the <m>\overline{\varphi}</m> of the faces that corresponds to this member of <m>R</m>.
           </p>
         </statement>
         <solution>
           <p>
-            <m>\!\!\!\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-            \end{pmatrix} ~
-            ~\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
+            <m>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
             \end{pmatrix}</m>
           </p>
         </solution>
       </task>
       <task xml:id="cube2" >
         <statement>
-          <p>
-          Compute the two-row notation for <m>\rho\circ\varphi</m>, for
-          <m>\beta_{\rho}\circ\beta_{\varphi}</m> (<m>\beta_{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two-row notation the bijection
-          <m>\beta_{\rho\circ\varphi}</m> of the faces that corresponds to the action of
-          the permutation <m>\rho\circ\varphi</m> on the faces of the cube (for this
-          question it helps to think geometrically about what motion of the cube is
-          carried out by <m>\rho\circ\varphi</m>).  What do you observe about
-          <m>\beta_{\rho\circ\varphi}</m> and
-          <m>\beta_{\rho}\circ\beta_{\varphi}</m>?
+            <p>
+                In <xref provisional="263" /> we computed the two row notation for <m>\rho\circ\varphi</m>. Now compute the two row notation for <m>\overline{\rho}\circ\overline{\varphi}</m> (<m>\overline{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two row notation the permutation <m>\overline{\rho\circ\varphi}</m> of the faces that corresponds to the action of the permutation <m>\rho\circ\varphi</m> on the faces of the cube. (For this question it helps to think geometrically about what motion of the cube is carried out by <m>\rho\circ\varphi</m>.)  What do you observe about <m>\overline{\rho\circ\varphi}</m> and <m>\overline{\rho}\circ\overline{\varphi}</m>?
         </p>
       </statement>
         <solution>
           <p>
-            <md>
-              <mrow>\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr
-              2\amp 3\amp 4\amp 1\amp 6\amp 7\amp 8\amp 5
-              \end{pmatrix} \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr1\amp 4\amp 8\amp 5\amp 2\amp 3\amp 7\amp 6
-              \end{pmatrix}  =\amp
-              \begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\cr 2\amp 1\amp 5\amp 6\amp 3\amp 4\amp 8\amp 7
-              \end{pmatrix} \amp \amp</mrow>
-            </md>
-            <md>
-              <mrow>\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
-              \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
-              \end{pmatrix}  =\amp
-              \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
-              \end{pmatrix} \amp \amp</mrow>
-            </md>
             <me>
-              \beta_{\rho\circ\varphi} =\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr
+              \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr t\amp r\amp b\amp l\amp f\amp u
+              \end{pmatrix} \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr r\amp u\amp b\amp t\amp f\amp l
+              \end{pmatrix}  =
+              \begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr b\amp u\amp l\amp t\amp r\amp f
+              \end{pmatrix}
+            </me>
+            <me>
+              \overline{\rho\circ\varphi} =\begin{pmatrix}t\amp f\amp r\amp b\amp l\amp u\cr
               b\amp u\amp l\amp t\amp r\amp f
-              \end{pmatrix} =\beta_{\rho}\circ\beta_{\varphi}
+              \end{pmatrix} =\overline{\rho}\circ\overline{\varphi}
             </me>
           </p>
         </solution>
       </task>
     </activity>
 
-    <activity category="essential and interesting">
+    <p>
+        We say that a permutation group <m>G</m> <term>acts</term><idx><h>group acting on a
+      set</h></idx><idx><h>action of a group on a set</h></idx> on a set <m>S</m> if, for each member <m>\sigma</m> of <m>G</m> there is a permutation <m>\overline{\sigma}</m> of <m>S</m> such that
+        <me>\overline{\sigma\circ\varphi} = \overline{\sigma}\circ\overline{\varphi}</me>
+        for every member <m>\sigma</m> and <m>\varphi</m> of <m>G</m>. In <xref ref="cube2">Problem</xref> you saw one example of this condition. If we think intuitively of <m>\rho</m> and <m>\varphi</m> as motions in space, then following the action of <m>\varphi</m> by the action of <m>\rho</m> does give us the action of <m>\rho\circ \varphi</m>. We can also reason directly with the permutations in the group <m>R</m> of rigid motions (rotations) of the cube to show that <m>R</m> acts on the faces of the cube.
+    </p>
+
+    <activity category="motivational">
+        <statement>
+            <p>
+                Show that a group <m>G</m> of permutations of a set <m>S</m> acts on <m>S</m> with <m>\overline{\varphi} = \varphi</m> for all <m>\varphi</m> in <m>G</m>.
+            </p>
+        </statement>
+        <solution>
+            <p>Clearly <m>\overline{\varphi}</m> is a permutation of <m>S</m>. Further, <m>\overline{\sigma}\circ\overline{\varphi} = \sigma\circ\varphi = \overline{\sigma\circ\varphi}</m>.</p>
+        </solution>
+    </activity>
+
+    <activity xml:id="D_4on2-sets" category="essential">
       <statement>
         <p>
-          How many permutations are in the group <m>R</m>? <m>R</m> is sometimes
-          called the <q>rotation group</q> of the cube. Can you justify this?
+          The group <m>D_4</m> is a group of permutations of <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1">Problem</xref>. We are going to show in this problem how this group acts on the two-element subsets of <m>\{1,2,3,4\}</m>. In <xref ref="287" /> we will see a natural geometric interpretation of this action. In particular, for each two-element subset <m>\{i,j\}</m> of <m>\{1,2,3,4\}</m> and each member <m>\sigma</m> of <m>D_4</m> we define <m>\overline{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.  Show that with this definition of <m>\overline{\sigma}</m>, the group <m>D_4</m> acts on the two-element subsets of <m>\{1,2,3,4\}</m>.
         </p>
       </statement>
       <solution>
         <p>
-          There are eight places where vertex one can go. Once vertex 1 is
-          placed, there are three ways the three edges <q>sticking out</q> of it can be
-          placed, and then the location of all the vertices is determined. Thus there
-          are 24 elements of the group. Of them, we have the identity, three
-          rotations about each of the three axes through the midpoints of the faces,
-          one additional rotation about each of the six axes joining opposite faces,
-          and <m>2\cdot4=8</m> additional rotations about each of the four axes joining a
-          vertex to the diagonally (in three dimensions) opposite vertex. This gives
-          us a total of 10+6+8=24 rotations, so every element of the group is a
-          rotation.
+          The action has been defined for us, so all we need to show is that it is indeed an action. We must show that for each permutation <m>\sigma</m> in <m>D_4</m>, <m>\overline{\sigma}</m> is a permutation of the two-element sets of <m>[4]</m> and in addition we must show that <m>\overline{\sigma}\circ\overline{\tau}= \overline{\sigma\circ\tau}</m>. If <m>\overline{\sigma}(\{i,j\})=\overline{\sigma}(\{h,k\})</m>, then either <m>\sigma(i)=\sigma(h)</m> and <m>\sigma(j)=\sigma(k)</m> or else <m>\sigma(i)=\sigma(k)</m> and <m>\sigma(j) =\sigma(h)</m>. Since <m>\sigma</m> is a permutation, in the first case we get <m>i=h</m> and <m>j=k</m>, so that <m>\{i,j\}= \{h,k\}</m>, and in the second case we get that <m>i=k</m> and <m>j=h</m> so that <m>\{i,j\} = \{k,h\} =\{h,k\}</m>. Thus in either case <m>\{i,j\} = \{h,k\}</m>, so that <m>\overline{\sigma}</m> a one-to-one function from the finite set of two element subsets of <m>\{1,2,3,4\}</m> to itself, and so it is a permutation.
+        </p>
+
+        <p>
+          To show that <m>\overline{\sigma}\circ\overline{\tau} = \overline{\sigma\circ\tau}</m>, we
+          note that
+          <md>
+            <mrow>(\overline{\sigma}\circ\overline{\tau})(\{i,j\})  =\amp
+            \overline{\sigma}(\overline{\tau}(\{i,j\})=\overline{\sigma}(\{\tau(i).
+            \tau(j)\})=</mrow>
+            <mrow>\sigma({\tau(i),\tau(j)}) =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
+            <mrow> \amp \overline{\sigma\circ\tau}(\{i,j\})</mrow>
+          </md>.
         </p>
       </solution>
     </activity>
-
-    <p>
-      We say that a permutation group <m>G</m> <em>acts</em><idx><h>group acting on a
-      set</h></idx><idx><h>action of a group on a set</h></idx> on a set
-      <m>S</m> if, for each member
-      <m>\sigma</m> of <m>G</m> there is a bijection <m>\beta_{\sigma}</m> of <m>S</m> such
-      that
-      <me>
-        \beta_{\sigma\circ\varphi} = \beta_{\sigma}\circ\beta_{\varphi}
-      </me>
-      for
-      every member <m>\sigma</m> and <m>\varphi</m> of <m>G</m>. In <xref ref="cube2">Problem</xref> you
-      saw one example of this condition. If we think intuitively of <m>\rho</m> and
-      <m>\varphi</m> as motions in space, then following the action of <m>\varphi</m> by
-      the action of <m>\rho</m> does give us the action of <m>\rho\circ\varphi</m>. We
-      can also reason directly with the permutations in <m>R</m> to show that <m>R</m>
-      acts on the faces of the cube.
-    </p>
-
     <activity category="essential">
         <introduction>
             <p>
@@ -190,16 +342,13 @@
         <m>R</m> of rigid motions of the cube. We have argued already that each rigid
         motion sends a face to a face. Thus <m>\sigma</m> and <m>\varphi</m> both send the
         vertices on one face to the vertices on another face. Let
-        <m>\{h,i,j,k\}</m> be the set of vertices on a face <m>F</m>.
+        <m>\{h,i,j,k\}</m> be the set of labels next to the vertices on a face <m>F</m>.
             </p>
         </introduction>
       <task>
         <statement>
           <p>
-            What
-            are the vertices of the face
-            <m>F'</m> that
-            <m>F</m> is sent to by <m>\varphi</m>?
+            What are the vertices of the face <m>F'</m> that <m>F</m> is sent to by <m>\varphi</m>?
           </p>
         </statement>
         <solution>
@@ -249,103 +398,486 @@
         <solution>
           <p>
             We have just shown that for each face <m>F</m>,
-            <m>\beta_{\sigma\circ\varphi}(F) = \beta_{\sigma} \circ \beta_{\varphi}(F)</m>,
-            so that <m>\beta_{\sigma\circ\varphi} = \beta_{\sigma} \circ
-            \beta_{\varphi}</m>.
+            <m>\overline{\sigma\circ\varphi}(F) = \overline{\sigma} \circ \overline{\varphi}(F)</m>,
+            so that <m>\overline{\sigma\circ\varphi} = \overline{\sigma} \circ
+            \overline{\varphi}</m>.
           </p>
         </solution>
       </task>
     </activity>
+</introduction>
+<subsection>
+    <title>Groups acting on colorings of sets</title>
+    <p>Recall that when you were asked in <xref provisional="45" /> to find the number of ways to place two red beads and two blue beads at the corners of a square free to move in three-dimensional space, you were not able to apply the quotient principle to answer the question. Instead you had to see that you could divide the set of six lists of two <m>R</m>s and two <m>B</m>s into two sets, one of size two in which the <m>R</m>s and <m>B</m>s alternated and one of size four in which the two reds (and therefore the two blues) would be side-by-side on the square. Saying that the square is free to move in space is equivalent to saying that two arrangements of beads on the square are equivalent if a member of the dihedral group carries one arrangement to the other. Thus an important ingredient in the analysis of such problems will be how a group can act on colorings of a set of vertices. We can describe the coloring of the square in <xref provisional="colored-square" /> as the function <m>f</m> with <me>f(1)=R,\; f(2)=R, \; f(3)=B,\;\text{ and }\;f(4)=B</me>, but it is more compact and turns out to be more suggestive to represent the coloring in <xref provisional="colored-square" /> as the set of ordered pairs
+    <men xml:id="coloring-pairs">
+        (1,R), (2,R), (3,B), (4,B)
+    </men>
+    </p>
+    <figure xml:id="colored-square">
+        <caption>The colored square with coloring <m>\left\{(1,R),(2,R),(3,B),(4,B)\right\}</m></caption>
+        <image>
+            <latex-image-code>
+                \begin{tikzpicture}
+                \draw (0,0) -- (0,2) -- (2,2) -- (2,0) -- (0,0);
+                \node [below left] at (0,0) {4};
+                \node [below right] at (2,0) {3};
+                \node [above left] at (0,2) {1};
+                \node [above right] at (2,2) {2};
+                \node [above right] at (0,0) {$B$};
+                \node [above left] at (2,0) {$B$};
+                \node [below right] at (0,2) {$R$};
+                \node [below left] at (2,2) {$R$};
+                \end{tikzpicture}
+            </latex-image-code>
+        </image>
+    </figure>
+    <p>This gives us an explicity list of which colors are assigned to which vertex.<fn>The reader who has studied <xref provisional="AppA" /> will recognize that this set of ordered pairs is the relation of the function <m>f</m>, but we won't need to make any specific references to the idea of a relation in what follows.</fn> Then if we rotate the square through 90 degrees, we see that the set of ordered pairs becomes
+    <men xml:id="coloring-pairs-rotate">\left\{(\rho(1),R),(\rho(2),R),(\rho(3),B),(\rho(4),B)\right\}</men>
+    which is the same as
+    <me>\left\{(2,R),(3,R),(4,B),(1,B)\right\}</me>. Or, in a more natural order,
+    <men xml:id="coloring-pairs-rotate-natural">\left\{(1,B),(2,R),(3,R),(4,B)\right\}</men>.
+    </p>
+    <p>
+        The reordering we did in <xref ref="coloring-pairs-rotate-natural" /> suggests yet another simplification of notation. So long as we know we that the first elements of our pairs are labeled by the members of <m>[n]</m> for some integer <m>n</m> and we are listing our pairs in increasing order by the first component, we can denote the coloring
+        <me>\left\{(1,B),(2,R),(3,R),(4,B)\right\}</me>
+        by <m>BRRB</m>. In the case where we have numbered the elements of the set <m>S</m> we are coloring, we will call this list of colors of the elements of <m>S</m> in order the <term>standard notation</term> for the coloring. We will call the ordering used in <xref ref="coloring-pairs-rotate-natural" />the <term>standard ordering</term> of the coloring.<idx><h>coloring</h><h>standard notation</h></idx><idx><h>coloring</h><h>standard ordering</h></idx>
+    </p>
+    <p>Thus we have three natural ways to represent a coloring of a set: as a function, as a set of ordered pairs, and as a list. Different representations are useful for different things. For example, the representation by ordered pairs will provide a natural way to define the action of a group on colorings of a set. Given a coloring as a function <m>f</m>, we denote the set of ordered pairs <me>\left\{(x,f(x))\mid x\in S\right\}</me>, suggestively as <m>(S,f)</m> for short. We use <m>f(1)f(2)\cdots f(n)</m> to stand for a particular coloring <m>(S,f)</m> in the standard notation.</p>
 
-    <activity xml:id="D_4on2-sets" category="essential">
-      <statement>
-        <p>
-          The group <m>D_4</m> is a group of permutations of
-          <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1">Problem</xref>. We are going to show in this
-          problem and in <xref ref="orbits1">Problem</xref> how this group acts in a natural way on the two-element subsets of
-          <m>\{1,2,3,4\}</m>. In particular, for each two-element subset <m>\{i,j\}</m> of
-          <m>\{1,2,3,4\}</m> and each member
-          <m>\sigma</m> of
-          <m>D_4</m> we define <m>\beta_{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.
-          Show that with this definition of <m>\beta</m>, the group <m>D_4</m> acts on the
-          two-element subsets of <m>\{1,2,3,4\}</m>.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          The action has been defined for us, so all we need to show is that
-          it is indeed an action. We must show that for each permutation <m>\sigma</m> in
-          <m>D_4</m>,
-          <m>\beta_{\sigma}</m> is a bijection and in addition we must show that
-          <m>\beta_{\sigma}\circ\beta_{\tau}=
-          \beta_{\sigma\circ\tau}</m>. If
-          <m>\beta_{\sigma}(\{i,j\})=\beta_{\sigma}(\{h,k\})</m>, then either
-          <m>\sigma(i)=\sigma(h)</m> and <m>\sigma(j)=\sigma(k)</m> or else
-          <m>\sigma(i)=\sigma(k)</m> and <m>\sigma(j) =\sigma(h)</m>. Since <m>\sigma</m> is a
-          permutation, in the first case we get <m>i=h</m> and <m>j=k</m>, so that <m>\{i,j\}=
-          \{h,k\}</m>, and in the second case we get that <m>i=k</m> and <m>j=h</m> so that
-          <m>\{i,j\} = \{k,h\} =\{h,k\}</m>. Thus in either case <m>\{i,j\} = \{h,k\}</m>, so
-          that <m>\beta_{\sigma}</m> a one-to-one function from the finite set of two
-          element subsets of <m>\{1,2,3,4\}</m> to itself, and so it is a bijection.
-        </p>
+    <activity category="motivational">
+        <introduction>
+            <p>
+                Suppose now that instead of coloring the vertices of a square, we color its edges. We will use the shorthand 12, 23, 34, and 41 to stand for the edges of the cube between vertex 1 and vertex 2, vertex 2 and vertex 3, and so on. Then a coloring of the edges with 12 red, 23 blue, 34 red and 41 blue can be represented as
+                <men xml:id="square-edge-coloring">\left\{(12,R),(23,B),(34,R),(41,B)\right\}</men>. If <m>\rho</m> is the rotation through 90 degrees, then we have a permutation <m>\overline{\rho}</m> acting on its edges. This permutation acts on the colorings to give us a permutation <m>\overline{\overline{\rho}}</m> of the set of colorings.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    What is <m>\overline{\overline{\rho}}</m> of the coloring in <xref ref="square-edge-coloring" />?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\left\{(12, B), (23, R), (34, B), (41, R)\right\}</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What is <m>\overline{\overline{\rho^2}}</m> of the coloring in <xref ref="square-edge-coloring" />?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\left\{(12, R), (23, B), (34, R), (41, B)\right\}</m>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <p>
+        If <m>G</m> is a group that acts on the set <m>S</m>, we define the <term>action of <m>G</m> on the colorings</term> <m>(S,f)</m> by<idx><h>group</h><h>action of on colorings</h></idx> by
+        <men xml:id="action-on-colorings">
+            \overline{\overline{\sigma}}((S,f))=\overline{\overline{\sigma}}\left(\left\{(x,f(x))\mid x\in S\right\}\right) = \left\{\left(\overline{\sigma}(x),f(x)\right)\mid x\in S\right\}.
+        </men>.
+        We have two bars over <m>\sigma</m> because <m>\sigma</m> is a permutation of one set that gives us a permutation <m>\overline{\sigma}</m> of a setcond set, and then <m>\overline{\sigma}</m> acts to give a permutation <m>\overline{\overline{\sigma}}</m> of a thid set, the set of colorings. For example, suppose we want to analyze colorings of the faces of a cube under the action of the rotation group of the cube as we have defined it on the vertices. Each vertex-permutation <m>\sigma</m> in the group gives a permutation <m>\overline{\sigma}</m> of the faces of the cube. Then each permutation <m>\overline{\sigma}</m> of the faces gives us a permutation <m>\overline{\overline{\sigma}}</m> of the colorings of the faces.
+    </p>
 
-        <p>
-          To show that <m>\beta_{\sigma}\circ\beta_{\tau} = \beta_{\sigma\circ\tau}</m>, we
-          note that
-          <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(\{i,j\})  =\amp
-            \beta_{\sigma}(\beta_{\tau}(\{i,j\})=\beta_{\sigma}(\{\tau(i).
-            \tau(j)\})=</mrow>
-            <mrow>\sigma({\tau(i),\tau(j)}) =\amp \{(\sigma\circ\tau)(i),(\sigma\circ\tau)(j)\} =</mrow>
-            <mrow> \amp \beta_{\sigma\circ\tau}(\{i,j\})</mrow>
-          </md>
-        </p>
-      </solution>
+    <p>
+        In the special case that <m>G</m> is a group of permutations of <m>S</m> rather than a group acting on <m>S</m>, <xref ref="action-on-colorings">Equation</xref> becomes
+        <me>\overline{\sigma}((S,f)) = \overline{\sigma}(\{(x,f(x))\mid x\in S\}) = \{(\sigma(x),f(x))\mid x\in S\}</me>. In the case where <m>G</m> is the rotation group of the square acting on the vertices of the square, the example of acting on a coloring by <m>\rho</m> that we saw in <xref ref="coloring-pairs-rotate-natural" /> is an example of this kind of action. In the standard notation, when we act on a coloring by <m>\sigma</m>, the color in position <m>i</m> moves to position <m>\sigma(i)</m>.
+    </p>
+
+    <activity xml:id="coloring-to-coloring">
+        <statement>
+            <p>
+                Why does the action we have defined on colorings in <xref ref="action-on-colorings">Equation</xref> take a coloring to a coloring?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <m>G</m> acts on <m>S</m>. Since <m>\overline{\sigma}</m> is a permutation of <m>S</m> when <m>\sigma\in G</m>, we get a set of pairs in which each element of <m>S</m> is listed once as a first element and in which each second element is a color. This is a coloring.
+            </p>
+        </solution>
     </activity>
 
+    <activity>
+        <statement>
+            <p>
+                Show that if <m>G</m> is a group of permutations of a set <m>S</m>, and <m>f</m> is a coloring function on <m>S</m>, then the equation
+                <me>\overline{\overline{\sigma}}(\{(x,f(x))\mid x\in S\}) = \{(\overline{\sigma}(x),f(x))\mid x\in S\}</me> defines an action of <m>G</m> on the colorings <m>(S,f)</m> of <m>S</m>.
+            </p>
+        </statement>
+        <hint>
+            <p>
+                Before you try to show that <m>\overline{\overline{\sigma}}</m> actually is a permutation of the colorings, it
+would be useful to verify the second part of the definition of a group action,
+namely that <m>\overline{\overline{\sigma}}\circ\overline{\overline{\varphi}} = \overline{\overline{\sigma\circ\varphi}}</m>.
+            </p>
+        </hint>
+        <solution>
+            <p>
+                By <xref ref="coloring-to-coloring" />, <m>\overline{\overline{\sigma}}</m> takes a coloring to a coloring. We will delay showing that <m>\overline{\overline{\sigma}}</m> is a permutation of the colorings of <m>S</m>. For the second condition for a group action,
+                <md>
+                    <mrow>\overline{\overline{\sigma}}\circ \overline{\overline{\varphi}}(\{(x,f(x))\mid x\in S\}) &amp;= \overline{\overline{\sigma}}(\overline{\overline{\varphi}}(\{(x,f(x))\mid x\in S\}))</mrow>
+                    <mrow>&amp; = \overline{\overline{\sigma}}(\{(\overline{\varphi}(x),f(x))\mid x\in S\})</mrow>
+                    <mrow>&amp; = \{(\overline{\sigma}(\overline{\varphi}(x)),f(x))\mid x\in S\}</mrow>
+                    <mrow>&amp; = \{(\overline{\sigma\circ\varphi}(x),f(x))\mid x\in S\}</mrow>
+                    <mrow>&amp; = \overline{\overline{\sigma\circ\varphi}}(S,f)</mrow>
+                    </md>,
+                    so that <m>\overline{\overline{\sigma}}\circ\overline{\overline{\varphi}} = \overline{\overline{\sigma\circ\varphi}}</m>.
+            </p>
+            <p>
+                By the condition we just proved, <m>\overline{\overline{\sigma}}\circ\overline{\overline{\sigma^{-1}}} = \overline{\overline{\sigma^{-1}}\circ\overline{\sigma}} = \overline{\overline{\iota}}</m>. Therefore, <m>\overline{\overline{\varphi}}</m> has an inverse (because <m>\overline{\overline{\iota}}</m> is the identity, so it is a permutation.
+            </p>
+        </solution>
+    </activity>
+</subsection>
+  <subsection>
+    <title>Orbits</title>
+
+
     <activity xml:id="orbits1" category="essential">
-      <statement>
-        <p>
-          In <xref ref="D_4on2-sets">Problem</xref>, what is the
-          set of two element subsets that you get by computing
-          <m>\beta_{\sigma}(\{1,2\})</m> for all <m>\sigma</m> in <m>D_4</m>? What is the set of
-          two-element subsets you get by computing <m>\beta_{\sigma}(\{1,3\})</m> for all
-          <m>\sigma</m> in <m>D_4</m>? Describe these two sets geometrically in terms of the
-          square.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          From <m>\{1,2\}</m> we get <m>\{1,2\}</m>, <m>\{2,3\}</m>, <m>\{3,4\}</m>, and
-          <m>\{3,4\}</m>. From <m>\{1,3\}</m> we get <m>\{1,3\}</m> and <m>\{2,4\}</m>. Thus we get the
-          set of edges and the set of diagonals of the square.
-        </p>
-      </solution>
+        <introduction>
+            <p>
+                Refer back to <xref ref="D_4on2-sets" /> in answering the following questions.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>What is the set of two element subsets that you get by computing <m>\overline{\sigma}(\{1,2\})</m> for all <m>\sigma</m> in <m>D_4</m>?</p>
+            </statement>
+            <solution>
+                <p>
+                    From <m>\{1,2\}</m> we get <m>\{1,2\}</m>, <m>\{2,3\}</m>, <m>\{3,4\}</m>, and <m>\{3,4\}</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What is the multiset of two-element subsets that you get by computing <m>\overline{\sigma}(\{1,2\})</m> for all <m>\sigma</m>in <m>D_4</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>
+                        \{\{1, 2\}, \{1, 2\}, \{2, 3\}, \{2, 3\}, \{3, 4\}, \{3, 4\}, \{1, 4\}, \{1, 4\}\}
+                    </m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What is the set of two-element subsets you get by computing <m>\overline{\sigma}(\{1,3\})</m> for all <m>\sigma</m> in <m>D_4</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    From <m>\{1,3\}</m> we get <m>\{1,3\}</m> and <m>\{2,4\}</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What is the multiset of two-element subsets that you get by computing <m>\overline{\sigma}(\{1,3\})</m> for all <m>\sigma</m> in <m>D_4</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>\{\{1, 3\}, \{1, 3\}, \{1, 3\}, \{1, 3\}, \{2, 4\}, \{2, 4\}, \{2, 4\}, \{2, 4\}\}</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>Describe these two sets geometrically in terms of the square.
+                </p>
+            </statement>
+            
+            <solution>
+                <p>
+                    We get the set of edges and the set of diagonals of the square.
+                </p>
+            </solution>
+        </task>
     </activity>
 
     <activity category="essential">
       <statement>
         <p>
-          Using the notation of <xref ref="dihedral3">Problem</xref>, what is the effect
-          of a 180 degree rotation on the diagonals of a square? What is the
-          effect of the flip <m>\varphi_{1/3}</m> on the diagonals of a square? How many
-          elements of <m>D_4</m> send each diagonal to itself? How many elements of
-          <m>D_4</m> interchange the diagonals of a square?
+            This problem uses the notation for permutations in the dihedral group of the square introduced before <xref ref="dihedral2">Problem</xref>. What is the effect of a 180 degree rotation <m>\rho^2</m> on the diagonals of a square? What is the effect of the flip <m>\varphi_{1|3}</m> on the diagonals of a square? How many elements of <m>D_4</m> send each diagonal to itself? How many elements of <m>D_4</m> interchange the diagonals of a square?
         </p>
       </statement>
         <solution>
         <p>
-          The 180 degree rotation sends the diagonals to themselves, i.e.,
-          it fixes the diagonals.
-          <m>\varphi_{1/3}</m> fixes the
-          diagonals. So does <m>\varphi_{2/4}</m> and the identity. However, <m>\rho</m>,
-          <m>\rho^3</m>, <m>\varphi_{12/34}</m> and <m>\varphi_{14/23}</m> all exchange the
-          diagonals. Thus four elements fix each diagonal and four elements
-          interchange them.
+            The 180 degree rotation sends the diagonals to themselves, <ie/>, it fixes the diagonals.  <m>\varphi_{1|3}</m> fixes the diagonals. So does <m>\varphi_{2|4}</m> and the identity. However, <m>\rho</m>, <m>\rho^3</m>, <m>\varphi_{12|34}</m> and <m>\varphi_{14|23}</m> all exchange the diagonals. Thus four elements fix each diagonal and four elements interchange them.
         </p>
         </solution>
     </activity>
-        <figure xml:id="ColoredSquare" >
+
+    <p>
+      In <xref ref="orbits1" /> you saw that the action of the dihedral group <m>D_4</m> on two element subsets of <m>\{1,2,3,4\}</m> seems to split them into two sets, one with two elements and one with 4. We call these two sets the <q>orbits</q> of <m>D_4</m> acting on the two elements subsets of <m>\{1,2,3,4\}</m>. More generally, the <term>orbit</term><idx><h>orbit</h></idx> of a permutation group <m>G</m> determined by an element <m>x</m> of a set <m>S</m> on which <m>G</m> acts is
+      <me>
+        \{\overline{\sigma}(x)| \sigma \in G\}
+      </me>,
+      and is denoted by <m>Gx</m>. In <xref ref="orbits1" /> it was possible to have <m>Gx = Gy</m>. In fact in that problem, <m>Gx = Gy</m> for every <m>y</m> in <m>Gx</m>.
+    </p>
+
+    <activity xml:id="disjoint-orbits">
+        <statement>
+            <p>
+                Suppose a group acts on a set <m>S</m>. Could an element of <m>S</m> be in two different orbits? (Say why or why not.)
+            </p>
+        </statement>
+        <hint>
+            <p>
+                If <m>z \in Gx</m> and <m>z \in Gy</m> , how can you use elements of <m>G</m> to explain the relationship between <m>x</m> and <m>y</m>?
+            </p>
+        </hint>
+        <hint>
+            <p>
+                Suppose <m>\sigma</m> is a fixed member of <m>G</m>. As <m>\tau</m> ranges over <m>G</m>, which elements of <m>G</m>
+occur as <m>\tau\sigma</m>?
+            </p>
+        </hint>
+        <solution>
+            <p>
+                No, because if <m>z = \overline{\sigma}(x)</m> and <m>z = \overline{\varphi}(y)</m>, then <m>Gz = Gx = Gy</m>, where the last two equalities follow from the fact that as <m>/tau</m> ranges over <m>G</m>, so does <m>\tau\sigma</m> and <m>\tau\varphi</m>.
+            </p>
+        </solution>
+    </activity>
+
+    <p><xref ref="disjoint-orbits" /> almost completes the proof of the following theorem.</p>
+    <theorem xml:id="thm-orbits-partition">
+        <statement>
+            <p>
+                Suppose a group acts on a set <m>S</m>. The orbits of <m>G</m> form a partition of <m>S</m>.
+            </p>
+        </statement>
+    </theorem>
+
+    <p>
+        It is probably worth pointing out that this theorem tells us that the orbit <m>Gx</m> is also the orbit <m>Gy</m> for any element <m>y</m> of <m>Gx</m>.
+    </p>
+    <activity>
+        <statement>
+            <p>
+                Complete the proof of <xref ref="thm-orbits-partition" />.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Every element <m>x</m> of <m>S</m> lies in the orbit <m>Gx</m>. In <xref ref="disjoint-orbits" /> we showed that the element <m>x</m> can lie in only one orbit. Therefore each <m>x</m> in <m>S</m> lies in one and only one orbit, so the orbits partition <m>S</m>.
+            </p>
+        </solution>
+    </activity>
+
+    
+    <p>
+        Notice that thinking in terms of orbits actually hides some information about the action of our group. When we computed the multiset of all results of acting on <m>\{1, 2\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each side twice. When we computed the multiset of all results of acting on <m>\{1,3\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each diagonal of the square four times. These multisets remind us that we are acting on our two-element sets with an eight-element group. The <term>multiorbit</term><idx>multiorbit</idx> of <m>G</m> determined by an element <m>x</m> of <m>S</m> is the multiset
+<me>\{\overline{\sigma}(x)\mid \sigma \in G\}</me>,
+and is denoted by <m>Gx_{\text{multi}}</m>.
+    </p>
+
+    <p>
+        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating n people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref provisional="45" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
+    </p>
+
+    <activity>
+        <task>
+            <statement>
+                <p>
+                    Find the orbit and multiorbit of <m>D_4</m> acting on the coloring
+                    <me>\{(1,R),(2,R),(3,B),(4,B)\}</me>,
+                    or, in standard notation, <m>RRBB</m> of the vertices of a square.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The orbit is, in the standard notation, <m>\{RRBB,BRRB,BBRR,RBBR\}</m>. The multiorbit, in the standard notation, is
+                    <me>\{RRBB,RRBB,BRRB,BRRB,BBRR,BBRR,RBBR,RBBR\}</me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many group elements map the coloring <m>RRBB</m> to itself? What is the multiplicity of <m>RRBB</m> in its multiorbit?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    2, 2.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Find the orbit and multiorbit of <m>D_4</m> acting on the coloring
+                    <me>\{(1,R),(2,B),(3,R),(4,B)\}</me>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The orbit is, in the standard notation, <m>\{RBRB,BRBR\}</m>. The multiorbit, in the standard notation, is
+                    <me>\{RBRB,RBRB,RBRB,RBRB,BRBR,BRBR,BRBR,BRBR\}</me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many elements of the group send the coloring <m>RBRB</m> to itself? What is the multiplicity of <m>RBRB</m> in its orbit?
+                </p>
+            </statement>
+            <solution>
+                <p>4, 4.</p>
+            </solution>
+        </task>
+    </activity>
+
+    <activity>
+        <task xml:id="compose-right">
+            <statement>
+                <p>
+                    If <m>G</m> is a group, how is the set <m>\{\tau\sigma\mid\tau\in G\}</m> related to <m>G</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    It is <m>G</m>, because composition on the right by <m>\sigma</m> gives a bijection from <m>G</m> to <m>G</m>.
+                </p>
+            </solution>
+        </task>
+        <task xml:id="disjoint-multiorbits">
+            <statement>
+                <p>
+                    Use this to show that <m>y</m> is in the multiorbit <m>Gx_{\text{multi}}</m> if and only if <m>Gx_{\text{multi}} = Gy_{\text{multi}}</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    If <m>y=\sigma x</m>, <xref ref="compose-right">part</xref> tells us that <md><mrow>Gy_{\text{multi}} &amp;= G\sigma(x)_{\text{multi}} = \{\tau\sigma(x)\mid \tau\in G\}_{\text{multi}}</mrow><mrow> &amp;= \{\sigma(x) \mid \tau\in G\}_{\text{multi}} = Gx_{\text{multi}}</mrow></md>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <p>
+        <xref ref="disjoint-multiorbits">Problem</xref> tells us that, when <m>G</m> acts on <m>S</m>, each element <m>x</m> of <m>S</m> is in one and only one multiorbit. Since each orbit is a subset of a multiorbit and each element <m>x</m> in <m>S</m> is in one and only one orbit, this also tells us there is a bijection between the orbits of <m>G</m> and the multiorbits of <m>G</m>, so that we have the same number of orbits as multiorbits.
+    </p>
+    <p>
+        When a group acts on a set, a group element is said to <term>fix</term><idx>fix</idx> an element of <m>x \in S</m> if <m>\overline{\sigma}(x) = x</m>. The set of all elements fixing an element <m>x</m> is denoted by <m>\Fix(x)</m>.
+    </p>
+
+    <activity>
+        <statement>
+            <p>
+                Suppose a group <m>G</m> acts on a set <m>S</m>. What is special about the subset <m>\Fix(x)</m> for an element <m>x</m> of <m>S</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <m>\Fix(x)</m> is a group; in fact a subgroup of <m>G</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity category="essential">
+        <statement>
+            <p>
+                Suppose a group <m>G</m> acts on a set <m>S</m>. What is the relationship of the multiplicity of <m>x\in S</m> in its multiorbit and the size of <m>\Fix(x)</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The multiplicity of <m>x</m> is the size of <m>\Fix(x)</m>, because in <m>Gx_{\text{multi}}</m> the multiplicity of <m>x</m> will be exactly the number of elements that send <m>x</m> to itself.
+            </p>
+        </solution>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+                What can you say about relationships between the multiplicity of an element <m>y</m> in the multiorbit <m>Gx_{\text{multi}}</m> and the multiplicites of other elements? Try to use this to get a relationship between the size of an orbit of <m>G</m> and the size of <m>G</m>.
+            </p>
+        </statement>
+        <hint>
+            <p>
+                How does the size of a multiorbit compare to the size of <m>G</m>?
+            </p>
+        </hint>
+        <solution>
+            <p>
+                Every element <m>y</m> of a multiorbit has the same multiplicity. This is because if <m>\sigma(x) = y</m>, then the permutations that send <m>x</m> to <m>y</m> are the permutations <m>\sigma\tau</m> where <m>\tau</m> fixes <m>x</m>. Thus the size of the multiorbit is <m>|\Fix(x)|\cdot |Gx|</m>, so the size of the orbit divides the size of the multiorbit, which is the size of <m>G</m>. In particular, the size of an orbit is <m>|G|/|\Fix(x)|</m> for any <m>x</m> in the orbit.
+            </p>
+        </solution>
+    </activity>
+
+    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union</h><h>of multisets</h></idx> of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family. Two multisets are said to be <term>disjoint</term><idx><h>disjoint</h><h>multisets</h></idx> if no element is a member of both, that is, if no element has multiplicity one or more in both. Since the size of a multiset is the sum of the multiplicities of its members, we immediately get the <term>sum principle for multisets</term>.<idx><h>sum principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            The size of a union of disjoint multisets is the sum of their sizes. <idx><h>sum principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <p>
+        Taking the multisets all to have the same size, we get the <term>product principle</term> for multisets.<idx><h>product principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>. <idx><h>product principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <p>
+        The <term>quotient principle</term> for multisets then follows immediately.<idx><h>quotient principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            If a <m>p</m>-element multiset is a union of <m>q</m> disjoint multisets, each of size <m>r</m>, then <m>q = p/r</m>.<idx><h>quotient principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <activity xml:id="union-multiorbit-size" category="essential">
+        <statement>
+            <p>
+                How does the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> relate to the number of multiorbits and the size of <m>G</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                It is simply the product of the number of multiorbits and the size of <m>G</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity xml:id="union-multiorbit-fix" category="essential">
+        <statement>
+            <p>
+                How does the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> relate to the numbers <m>|\Fix(x)|</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since the size of the union is the sum of the multiplicities of the elements of <m>S</m> in the union, it is the sum of <m>|\Fix(x)|</m> over all <m>x</m> in <m>S</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity xml:id="numbermultiorbits3" category="essential">
+        <statement>
+            <p>
+                In <xref ref="union-multiorbit-size">Problems</xref> and <xref ref="union-multiorbit-fix" text="global" /> you computed the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> in two different ways, getting two different expressions must be equal. Write the equation that says they are equal and solve for the number of multorbits, and therefore the number of orbits.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using <m>m</m> for the number of multiorbits, we get
+                <me>m|G| = \sum_{x\colon x\in S}|\Fix(x)|</me>.
+                Therefore, <me>m= \frac{1}{|G|} \sum_{x\colon x\in S}|\Fix(x)|</me>.
+            </p>
+        </solution>
+    </activity>
+    <!--<figure xml:id="ColoredSquare" >
           <caption>The colored square corresponding to the
           function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
           = R</m>,
@@ -392,16 +924,16 @@
           permutations of a set
           <m>S</m> and we want to know how it acts on the functions from <m>S</m> to a set <m>C</m>
           (of <q>colors</q>), we should define
-          <m>\beta_{\sigma}(f)</m> to be <m>f\circ\sigma^{-1}</m>. For the coloring function
+          <m>\overline{\sigma}(f)</m> to be <m>f\circ\sigma^{-1}</m>. For the coloring function
           <m>f</m> in <xref ref="ColoredSquare">Figure</xref>, let <m>g=f\circ\rho^{-1}</m> and compute <m>g(1)</m>, <m>g(2)</m>,
           <m>g(3)</m>, and <m>g(4)</m> so you can see how in this case <m>f\circ\rho^{-1}</m> is
           the coloring that results from rotating the colored square by the
           rotation <m>\rho</m>. Show if a group
           <m>G</m> of permutations acts on a set
           <m>S</m>, then
-          <m>\beta_{\sigma}(f) =f\circ\sigma^{-1}</m> satisfies the definition of of <m>G</m>
+          <m>\overline{\sigma}(f) =f\circ\sigma^{-1}</m> satisfies the definition of of <m>G</m>
           acting on the set of functions <m>f</m> from <m>S</m> to <m>C</m>, while
-          <m>\beta_{\sigma}(f) =f\circ\sigma</m> does not.
+          <m>\overline{\sigma}(f) =f\circ\sigma</m> does not.
         </p>
       </statement>
       <solution>
@@ -410,36 +942,36 @@
         </p>
 
         <p>
-          If <m>\beta_{\sigma}(f) = f\circ\sigma^{-1}</m>, then
+          If <m>\overline{\sigma}(f) = f\circ\sigma^{-1}</m>, then
           <md>
-            <mrow>(\beta_{\sigma}\circ\beta_{\tau})(f) =\amp \beta_{\sigma}(\beta_{\tau}(f))</mrow>
+            <mrow>(\overline{\sigma}\circ\overline{\tau})(f) =\amp \overline{\sigma}(\overline{\tau}(f))</mrow>
             <mrow> =\amp
-            \beta_{\sigma}(f\circ \tau^{-1})</mrow>
+            \overline{\sigma}(f\circ \tau^{-1})</mrow>
             <mrow> =\amp (f\circ\tau^{-1})\circ\sigma^{-1}</mrow>
             <mrow> =\amp
             f\circ(\tau^{-1}\circ \sigma^{-1})</mrow>
             <mrow> =\amp  f\circ (\sigma\circ\tau)^{-1}</mrow>
-            <mrow> =\amp \beta_{\sigma\circ\tau}(f).</mrow>
+            <mrow> =\amp \overline{\sigma\circ\tau}(f).</mrow>
           </md>
         </p>
 
         <p>
-          Therefore <m>\beta_{\sigma}(f) = f\circ\sigma^{-1}</m> defines an
+          Therefore <m>\overline{\sigma}(f) = f\circ\sigma^{-1}</m> defines an
           action of a group of permutations of a set <m>X</m> on functions defined from the
           set <m>X</m> to a set <m>Y</m>.
         </p>
 
         <p>
-          On the other hand, defining <m>\beta_{\sigma}(f) = f\circ\sigma</m> does not
+          On the other hand, defining <m>\overline{\sigma}(f) = f\circ\sigma</m> does not
           define a group action. For example, if we consider the function <m>f(i)=i</m>
           on the four numbered corners of the square in <xref ref="ColoredSquare">Figure</xref>,
-          and take the permutations <m>\rho</m> and <m>\varphi_{1/3}</m>, we know from the fact
-          that <m>f</m> is the identity function and <m>\rho</m> and <m>\varphi_{1/3}</m> do not
+          and take the permutations <m>\rho</m> and <m>\varphi_{1|3}</m>, we know from the fact
+          that <m>f</m> is the identity function and <m>\rho</m> and <m>\varphi_{1|3}</m> do not
           commute that
-          <m>\beta_{\varphi_{1/3}\circ\rho}(f) = f\circ(\varphi_{1/3}\circ\rho)\not =
-          f\circ(\rho\circ\varphi_{1/3})=(f\circ\rho)\circ\varphi_{1/3}=\beta_{\rho}(f)
-          \circ\varphi_{1/3}= \beta_{\varphi_{13}}(\beta_\rho(f)) =(\beta_{\varphi_{1/3}}\circ
-          \beta_{\rho})(f).</m> Thus defining <m>\beta_\sigma(f)= f\circ \sigma</m> does not give
+          <m>\overline{\varphi_{1|3}\circ\rho}(f) = f\circ(\varphi_{1|3}\circ\rho)\not =
+          f\circ(\rho\circ\varphi_{1|3})=(f\circ\rho)\circ\varphi_{1|3}=\overline{\rho}(f)
+          \circ\varphi_{1|3}= \overline{\varphi_{1|3}}(\overline\rho(f)) =(\overline{\varphi_{1|3}}\circ
+          \overline{\rho})(f).</m> Thus defining <m>\overline\sigma(f)= f\circ \sigma</m> does not give
           an action of <m>D_4</m> on functions from the vertices of the square to <m>\{1,2,3,4\}</m>.
         </p>
       </solution>
@@ -454,12 +986,12 @@
           rotation group acts on functions from the set of faces of the cube to the
           set of colors. The difference between this problem and <xref ref="actingonfunctions2">Problem</xref> is that in <xref ref="actingonfunctions2">Problem</xref> it
           was the members <m>\sigma</m> of our permutation group that were permuting the
-          elements of <m>S</m>, while now we have bijections <m>\beta_{\sigma}</m> that are
+          elements of <m>S</m>, while now we have bijections <m>\overline{\sigma}</m> that are
           permuting the elements of <m>S</m>, in this case the faces of the cube. We
           want to define a new action <m>\beta'_{\sigma}</m> of our permutation group on
           functions from <m>S</m> to a set <m>C</m>. How should we define
           <m>\beta'_{\sigma}(f)</m>? (Hint: think about the example of the faces of the
-          square. After we act on the faces with <m>\beta_{\sigma}</m>, what is the
+          square. After we act on the faces with <m>\overline{\sigma}</m>, what is the
           color of the vertex of the cube that is now in
           position<nbsp /><m>x</m>?)
         </p>
@@ -467,29 +999,13 @@
       <solution>
         <p>
           We should define <m>\beta'_{\sigma}(f) = f\circ
-          \beta_{\sigma}^{-1}</m>. The color of the vertex now in position <m>x</m> is
-          <m>f(\beta_{\sigma}^{-1}(x))</m> (which is the same as
-          <m>(f\circ\beta_{\sigma}^{-1})(x)</m>.
+          \overline{\sigma}^{-1}</m>. The color of the vertex now in position <m>x</m> is
+          <m>f(\overline{\sigma}^{-1}(x))</m> (which is the same as
+          <m>(f\circ\overline{\sigma}^{-1})(x)</m>.
         </p>
       </solution>
     </activity>
-  </introduction>
 
-  <subsection>
-    <title>Orbits</title>
-    <p>
-      In <xref ref="orbits1">Problem</xref> you saw that the action of
-      the dihedral group <m>D_4</m> on two element subsets of <m>\{1,2,3,4\}</m> seems to
-      split them into two sets, one with two elements and one with 4. We call
-      these two sets the <q>orbits</q> of <m>D_4</m> acting on the two elements subsets
-      of <m>\{1,2,3,4\}</m>. More generally, the <em>orbit</em><idx><h>orbit</h></idx> of a
-      permutation group
-      <m>G</m> determined by an element <m>x</m> of a set <m>S</m> on which <m>G</m> acts is
-      <me>
-        \{\beta_{\sigma}(x)| \sigma \in G\},
-      </me>
-      and is denoted by <m>Gx</m>.
-    </p>
 
     <p>
       When we used the quotient principle to count circular seating
@@ -532,7 +1048,7 @@
           illustrates the action of the dihedral group on the function <m>f</m> above.
           How many elements are in the orbit of <m>f</m> under the action of dihedral
           group? How many elements of the dihedral group fix <m>f</m>; that is, for how
-          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f) =
+          many <m>\sigma \in D_4</m> is <m>\overline{\sigma}(f) =
           f</m>? How many elements of the dihedral group take <m>f</m> to <m>g</m> (where <m>g=f\circ
           \rho^{-1}</m> as earlier)?
         </p>
@@ -557,7 +1073,7 @@
           If <m>f_1(1)=R</m>, <m>f_1(2) = B</m>, <m>f_1(3) = G</m> and <m>f_1(4) = G</m>, how many
           elements are in the orbit of <m>f_1</m> under the action of the dihedral group?
           How many elements of the dihedral group fix <m>f_1</m>; that is, for how
-          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_1) =
+          many <m>\sigma \in D_4</m> is <m>\overline{\sigma}(f_1) =
           f_1</m>? How many elements of the dihedral group
           take <m>f_1</m> to <m>f_1\circ\rho^{-1}</m>?
         </p>
@@ -572,7 +1088,7 @@
           If <m>f_2(1)=R</m>, <m>f_2(2) = B</m>, <m>f_2(3) = R</m> and <m>f_2(4) = B</m>, how many
           elements are in the orbit of <m>f_2</m> under the action of the dihedral group?
           How many elements of the dihedral group fix <m>f_2</m>; that is, for how
-          many <m>\sigma \in D_4</m> is <m>\beta_{\sigma}(f_2) =
+          many <m>\sigma \in D_4</m> is <m>\overline{\sigma}(f_2) =
           f_2</m>? How many elements of the dihedral group
           take <m>f_2</m> to <m>f_2\circ\rho^{-1}</m>?
         </p>
@@ -590,10 +1106,10 @@
           the axis that joins the center of the bottom face with the center of the
           top face. Recall that we have used <m>R</m> to stand for the rotation group of the
           cube. Does
-          <m>\beta_{\rho^i}(\sigma)=\rho^i\circ
-          \sigma</m> define an action of <m>R_4</m> on <m>R</m>? Does <m>\beta_{\rho^i}(\sigma) =
+          <m>\overline{\rho^i}(\sigma)=\rho^i\circ
+          \sigma</m> define an action of <m>R_4</m> on <m>R</m>? Does <m>\overline{\rho^i}(\sigma) =
           \sigma\circ\rho^i</m> define a group action of <m>R_4</m> on <m>R</m>? Does
-          <m>\beta_{\rho^i}(\sigma) =
+          <m>\overline{\rho^i}(\sigma) =
           \sigma\circ\rho^{-i}</m> define a group action of <m>R_4</m> on <m>R</m>? For each
           group action that you found, describe the orbits as simply as you
           can. How many orbits are there and what are their sizes? (Hint: to
@@ -605,17 +1121,17 @@
       </statement>
       <solution>
         <p>
-          Yes, <m>\beta_{\rho^i}(\sigma)=\rho^i\circ
+          Yes, <m>\overline{\rho^i}(\sigma)=\rho^i\circ
           \sigma</m> does define an action of <m>R_4</m> on <m>R</m>. The orbits are sets of the form
           <m>\{\rho^i\circ\sigma|i=0,1,2,3\}</m> for fixed elements <m>\sigma</m> of <m>R</m>. (For each
           fixed element <m>\sigma</m> we get an orbit, but four different elements <m>\sigma</m> can
           give the same orbit.) Yes,
-          <m>\beta_{\rho^i}(\sigma) =
+          <m>\overline{\rho^i}(\sigma) =
           \sigma\circ\rho^{i}</m> does define a group action of <m>R_4</m> on <m>R</m>. Notice
           that this gives a group action only because the group <m>R_4</m> is commutative. The
           orbits are sets of the form <m>\{\sigma\circ\rho^i|i=0,1,2,3\}</m> for fixed elements
           <m>\sigma</m> of <m>R</m>. Yes,
-          <m>\beta_{\rho^i}(\sigma) =
+          <m>\overline{\rho^i}(\sigma) =
           \sigma\circ\rho^{-i}</m> does define a group action of <m>R_4</m> on <m>R</m>. The orbits
           consist again of sets of the form <m>\{\sigma\circ\rho^i|i=0,1,2,3\}</m> for fixed
           elements <m>\sigma</m> of <m>R</m>. In each case the orbits have size 4 (because if
@@ -771,14 +1287,14 @@
       <solution>
         <p>
           In <xref ref="dihedralorbits1">Problem</xref>, the set of elements fixing <m>f</m>
-          is <m>\{\iota=\rho^0, \varphi_{1/3}\}</m>. The set of orbits taking <m>f</m> to <m>g</m>
-          is <m>\{\rho, \varphi_{12/34}\}</m>. In <xref ref="dihedralorbits2">Problem</xref> the set of elements fixing <m>f_1</m> is <m>\{\iota\}</m>, and
+          is <m>\{\iota=\rho^0, \varphi_{1|3}\}</m>. The set of orbits taking <m>f</m> to <m>g</m>
+          is <m>\{\rho, \varphi_{12|34}\}</m>. In <xref ref="dihedralorbits2">Problem</xref> the set of elements fixing <m>f_1</m> is <m>\{\iota\}</m>, and
           the set of elements taking <m>f_1</m> to <m>f_1\circ\rho^{-1}</m> is <m>\{\rho\}</m>. In
           <xref ref="dihedralorbits3">Problem</xref>, the set of elements fixing <m>f_2</m> is <m>\{\iota,\rho^2,
-          \varphi_{1/3}, \varphi_{2/4}\}</m>, and the set of elements taking <m>f_2</m> to
+          \varphi_{1|3}, \varphi_{2|4}\}</m>, and the set of elements taking <m>f_2</m> to
           <m>f_2\circ\rho^{-1}</m> is
           <m>\{\rho,
-          \rho^3, \varphi_{12/34}, \varphi_{14/23}\}</m>.
+          \rho^3, \varphi_{12|34}, \varphi_{14|23}\}</m>.
         </p>
       </solution>
     </activity>
@@ -815,9 +1331,9 @@
             a function has exactly one <m>R</m> (or
             <m>B</m> or <m>G</m>), then its orbit under the rotations has size 4. Since every flip
             is a rotation times
-            <m>\varphi_{1/3}</m>, if <m>\varphi_{1/3}</m> fixes the function, then the orbit has
-            size 4, but if <m>\varphi_{1/3}</m> does not take the function to the result of a
-            rotation, then neither does a rotation times <m>\varphi_{1/3}</m>, so the orbit
+            <m>\varphi_{1|3}</m>, if <m>\varphi_{1|3}</m> fixes the function, then the orbit has
+            size 4, but if <m>\varphi_{1|3}</m> does not take the function to the result of a
+            rotation, then neither does a rotation times <m>\varphi_{1|3}</m>, so the orbit
             has size 8. If the function has exactly three <m>R</m>'s, then it has exactly
             one element of some other color, so the argument is the same. If the
             function has exactly two <m>R</m>'s and exactly two elements of another color,
@@ -924,8 +1440,8 @@
     </p>
 
     <p>
-      In <xref ref="cosets1">Problem</xref> you probably saw that <m>\beta_{\rho^i}(\sigma) =
-      \rho^i\circ\sigma</m> and <m>\beta_{\rho^i}(\sigma) = \sigma\circ\rho^{-i}</m>
+      In <xref ref="cosets1">Problem</xref> you probably saw that <m>\overline{\rho^i}(\sigma) =
+      \rho^i\circ\sigma</m> and <m>\overline{\rho^i}(\sigma) = \sigma\circ\rho^{-i}</m>
       both describe actions of <m>R_4</m> on <m>R</m>. The orbits for the first action
       are of the form
       <me>
@@ -957,8 +1473,8 @@
 
     <p>
       When a group <m>G</m> acts on a set <m>S</m>, we say that an element <m>\sigma \in
-      G</m> fixes an element <m>x\in S</m> if <m>\beta_{\sigma}(x) = x</m>. We say that an
-      element <m>\sigma</m> takes <m>x</m> to <m>y</m> if <m>\beta_{\sigma}(x) =y</m>. In <xref ref="subgroupfixingfunction">Problem</xref> the subset of
+      G</m> fixes an element <m>x\in S</m> if <m>\overline{\sigma}(x) = x</m>. We say that an
+      element <m>\sigma</m> takes <m>x</m> to <m>y</m> if <m>\overline{\sigma}(x) =y</m>. In <xref ref="subgroupfixingfunction">Problem</xref> the subset of
       <m>D_4</m> that fixed
       <m>f</m> was a subgroup of <m>D_4</m>, the subset of <m>D_4</m> fixing <m>f_2</m> was a
       subgroup of <m>D_4</m> and the subset of <m>D_4</m> fixing <m>f_3</m> was a subgroup of
@@ -1019,22 +1535,22 @@
       <statement>
         <p>
           Show that whenever a group <m>G</m> acts on a set <m>S</m>, then for each <m>x</m>
-          and <m>y</m> the set of all <m>\tau \in G</m> such that <m>\beta_{\tau}(x) = y</m>
+          and <m>y</m> the set of all <m>\tau \in G</m> such that <m>\overline{\tau}(x) = y</m>
           is a coset of the subgroup <m>{ Fix}(x)</m> of all elements of <m>G</m> fixing <m>x</m>.
         </p>
       </statement>
       <solution>
         <p>
-          First, if <m>\beta_{\tau}(x)=y</m> and <m>\beta_{\sigma}</m> fixes <m>x</m>, then
-          <m>\beta_{\tau}\circ \beta_{\sigma}=\beta_{\tau\circ\sigma}</m> takes <m>x</m> to
-          <m>y</m>. Second, if <m>\beta_{\varphi}(x)=y</m> as well, then
-          <m>\beta_{\tau^{-1}}\circ\beta_{\varphi}=\beta_{\tau^{-1}\circ\varphi}</m>
+          First, if <m>\overline{\tau}(x)=y</m> and <m>\overline{\sigma}</m> fixes <m>x</m>, then
+          <m>\overline{\tau}\circ \overline{\sigma}=\overline{\tau\circ\sigma}</m> takes <m>x</m> to
+          <m>y</m>. Second, if <m>\overline{\varphi}(x)=y</m> as well, then
+          <m>\overline{\tau^{-1}}\circ\overline{\varphi}=\overline{\tau^{-1}\circ\varphi}</m>
           fixes <m>x</m> and so is in <m>{ Fix}(x)</m>, so that <m>\varphi</m> is <m>\tau</m> times
           an element (namely <m>\tau^{-1}\varphi</m>) of <m>{ Fix}(x)</m>. Thus every element of the
           coset
           <m>\tau{ Fix}(x)</m> takes <m>x</m> to <m>y</m>, and every element that takes <m>x</m> to <m>y</m> is an
           element of the coset <m>\tau{
-          Fix}(x)</m>. Thus the set of elements <m>\tau</m> such that <m>\beta_{\tau}(x)=y</m>
+          Fix}(x)</m>. Thus the set of elements <m>\tau</m> such that <m>\overline{\tau}(x)=y</m>
           is a coset of <m>{ Fix}(x)</m>.
         </p>
       </solution>
@@ -1077,7 +1593,7 @@
           When a group <m>G</m> acts on a set, the set <m>{ Fix}(x)</m> of
           group elements fixing any given any given element <m>x</m> of <m>S</m> is a
           subgroup of <m>G</m>. The set of group elements <m>\tau</m> such that
-          <m>\beta_{\tau}(x) = y</m> is a coset of <m>{ Fix}(x)</m>, and the size of the
+          <m>\overline{\tau}(x) = y</m> is a coset of <m>{ Fix}(x)</m>, and the size of the
           orbit of <m>x</m> under the action of <m>G</m> is <m>|G|/|{ Fix}(x)|</m>.
         </p>
       </statement>
@@ -1099,6 +1615,7 @@
           <image width="95%" source="images/MotionsOfColoredSquare" />
           <image width="95%" source="images/MotionsOfColoredSquare1" />
           <image width="95%" source="images/MotionsOfColoredSquare" />
+          <caption></caption>
         </figure>
       </solution>
     </activity>
@@ -1113,7 +1630,7 @@
       information. To avoid this, we define the <em>multiorbit</em> of an element
       <m>x</m> of a set <m>S</m> under the action of a group <m>G</m> to be the multiset
       <me>
-        Gx_{\mbox{\scriptsize multi} } = \{\beta_{\sigma}(x)|\sigma \in
+        Gx_{\mbox{\scriptsize multi} } = \{\overline{\sigma}(x)|\sigma \in
         G\}_{\mbox{\scriptsize multi} }.
       </me>
     </p>
@@ -1239,7 +1756,7 @@
           </me>
         </p>
       </solution>
-    </activity>
+    </activity>-->
   </subsection>
 
   <subsection>
@@ -1247,18 +1764,52 @@
     <activity xml:id="numbermultiorbits4" category="essential">
         <introduction>
             <p>
-        In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
-        that expresses the number of orbits in terms of the number of group
-        elements fixing each element of <m>S</m>. It is often easier to find the
-        number of elements fixed by a given group element than to find the number
-        of group elements fixing an element of <m>S</m>. For this purpose,
+        In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem that expresses the number of orbits in terms of the number of group elements fixing each element of <m>S</m>. It is often easier to find the number of elements fixed by a given group element than to find the number of group elements fixing an element of <m>S</m>.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    For this purpose, how does the sum <m>\sum_{x\colon x\in S}|\Fix(x)|</m> relate to the number of ordered pairs <m>(\sigma,x)</m> (with <m>\sigma\in G</m> and <m>x \in S</m>) such that <m>\sigma</m> fixes <m>x</m>?
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Let <m>\chi(\sigma)</m> denote the number of elements of <m>S</m> fixed by <m>\sigma</m>. How can the number of ordered pairs <m>(\sigma,x)</m> (with <m>\sigma\in G</m> and <m>x\in S</m>) such that <m>\sigma</m> fixes <m>x</m> be computed from <m>\chi(G)</m>? (It is ok to have a summation in your answer.)
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The number of ordered pairs is <m>\sum_{\sigma\colon \sigma\in G} \chi(\sigma)</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What does this tell you about the number of orbits?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>m = \frac{1}{|G|}\sum_{\sigma\colon \sigma\in G} \chi(\sigma)</m>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                A second computation of the result of <xref ref="numbermultiorbits4" /> can be done as follows.
             </p>
         </introduction>
       <task>
         <statement>
           <p>
-            Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
-            <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
+            Let <m>\widehat{\chi}(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
+            <m>\widehat{\chi}(\sigma,x) =0</m> otherwise.  Notice that <m>\widehat{\chi}</m> is different from the <m>\chi</m> in the previous problem, because it is a function of two variables. Use <m>\widehat{\chi}</m> to convert the single summation
             in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
             and elements <m>\sigma</m> of <m>G</m>.
           </p>
@@ -1267,7 +1818,7 @@
             <p>
           <me>
             m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
-            \chi(\sigma,x).
+            \widehat{\chi}(\sigma,x).
           </me>
             </p>
         </solution>
@@ -1276,11 +1827,7 @@
         <statement>
           <p>
             Reverse the order of the previous summation in order to convert it
-            into a single sum involving the function <m>\chi</m> given by<fn>The reason
-            for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
-            what is called a group character.  Character theory is a major ingredient of
-            the representation theory of groups, an advanced subject that combines
-            abstract beauty with amazing utility.</fn>
+            into a single sum involving the function <m>\chi</m> given by
             <me>
               \chi(\sigma) =
               \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
@@ -1288,9 +1835,9 @@
           </p>
         </statement>
         <solution>
-          <me>
-            m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
-          </me>
+            <p><me>
+            m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma)
+          </me>.</p>
         </solution>
       </task>
     </activity>
@@ -1416,7 +1963,6 @@
     </activity>
 
     <activity category="interesting">
-      <task>
         <statement>
           <p>
             In how many ways may we paint the faces of a cube with six
@@ -1433,8 +1979,8 @@
             colors, using each color
           </p>
         </solution>
-      </task>
-      <task>
+    </activity>
+    <activity>
         <statement>
           <p>
             In how many ways may we paint the faces of a cube with two colors
@@ -1471,7 +2017,6 @@
             only one color, so there are eight colorings that use both colors.
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity xml:id="Catalancircle" category="interesting">
@@ -1507,7 +2052,7 @@
             \frac{1}{2n+1}\binom{2n+1}{n} = \frac{1}{n+1}\binom{2n}{n},
           </me>
           a
-          Catalan number.
+          Catalan number.<idx><h>Catalan number</h></idx>
         </p>
       </solution>
     </activity>
@@ -1518,7 +2063,7 @@
           In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
           free to move in <em>three-dimensional space</em> so that <m>n</m> edges are
           colored red and
-          <m>n+1</m> edges are colored blue. Hint: your answer may depend on whether <m>n</m> is even or
+          <m>n+1</m> edges are colored blue. Your answer may depend on whether <m>n</m> is even or
           odd.
         </p>
       </statement>
@@ -1682,7 +2227,7 @@
         just one place, because those three vertices are mutually adjacent. Each of the other two
         vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
         only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
-        <ol>
+        <ol label="(a)">
         <li xml:id="coloring1" >
           <p>
             <m>RBGRBG</m>
@@ -1714,10 +2259,10 @@
           automorphism(this follows directly from the definition of automorphism) and so the eight
           permutations <m>\iota</m>, <m>(1\ 4)</m>, <m>(2\ 5)</m>, <m>(3\ 6)</m>, <m>(1\ 4)(2\ 5)</m>, <m>(1\ 4)
           (3\ 6)</m>, <m>(2\ 5)(3\ 6)</m>, and <m>(1\ 4)(2\ 5)(3\ 6)</m> all are automorphisms of the graph, and
-          they are all in the subgroup of the automorphism group that fixes the coloring in <xref ref="coloring1"></xref>. Any permutation not in the list will take some vertex to a vertex of
+          they are all in the subgroup of the automorphism group that fixes the coloring in <xref ref="coloring1" text="local">coloring</xref>. Any permutation not in the list will take some vertex to a vertex of
           another color, and so the eight permutations we listed are the subgroup fixing the
-          coloring in <xref ref="coloring1"></xref>. The subgroup fixing the coloring in <xref ref="coloring2"></xref> is
-          <m>\iota</m>, <m>(1\ 3)</m>, <m>(2\ 4)</m>, and <m>(1\ 3)(2\ 4)</m>. The subgroups fixing the colorings in <xref ref="coloring3"></xref> and <xref ref="coloring4"></xref> also have size 4. Thus there are <m>8+12=20</m> pairs of a
+          coloring in <xref ref="coloring1" text="local">coloring</xref>. The subgroup fixing the coloring in <xref ref="coloring2" text="local">coloring</xref> is
+          <m>\iota</m>, <m>(1\ 3)</m>, <m>(2\ 4)</m>, and <m>(1\ 3)(2\ 4)</m>. The subgroups fixing the colorings in <xref ref="coloring3" text="local">coloring</xref> and <xref ref="coloring4" text="local">coloring</xref> also have size 4. Thus there are <m>8+12=20</m> pairs of a
           coloring with <m>R</m>, <m>B</m>, and <m>G</m>, in that order, on vertices 1, 2, and 3 and an automorphism
           fixing that coloring. Since there are <m>4\cdot3\cdot2=24</m> ways to color vertices 1, 2, and
           3 properly, and each gives rise to 20 pairs of a proper coloring and an automorphism fixing
