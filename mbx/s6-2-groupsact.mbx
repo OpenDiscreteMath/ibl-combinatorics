@@ -677,8 +677,207 @@ occur as <m>\tau\sigma</m>?
     </activity>
 
     
-    
-    <figure xml:id="ColoredSquare" >
+    <p>
+        Notice that thinking in terms of orbits actually hides some information about the action of our group. When we computed the multiset of all results of acting on <m>\{1, 2\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each side twice. When we computed the multiset of all results of acting on <m>\{1,3\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each diagonal of the square four times. These multisets remind us that we are acting on our two-element sets with an eight-element group. The <term>multiorbit</term><idx>multiorbit</idx> of <m>G</m> determined by an element <m>x</m> of <m>S</m> is the multiset
+<me>\{\overline{\sigma}(x)\mid \sigma \in G\}</me>,
+and is denoted by <m>Gx_{\text{multi}}</m>.
+    </p>
+
+    <p>
+        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating n people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref provisional="45" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
+    </p>
+
+    <activity>
+        <task>
+            <statement>
+                <p>
+                    Find the orbit and multiorbit of <m>D_4</m> acting on the coloring
+                    <me>\{(1,R),(2,R),(3,B),(4,B)\}</me>,
+                    or, in standard notation, <m>RRBB</m> of the vertices of a square.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The orbit is, in the standard notation, <m>\{RRBB,BRRB,BBRR,RBBR\}</m>. The multiorbit, in the standard notation, is
+                    <me>\{RRBB,RRBB,BRRB,BRRB,BBRR,BBRR,RBBR,RBBR\}</me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many group elements map the coloring <m>RRBB</m> to itself? What is the multiplicity of <m>RRBB</m> in its multiorbit?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    2, 2.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Find the orbit and multiorbit of <m>D_4</m> acting on the coloring
+                    <me>\{(1,R),(2,B),(3,R),(4,B)\}</me>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The orbit is, in the standard notation, <m>\{RBRB,BRBR\}</m>. The multiorbit, in the standard notation, is
+                    <me>\{RBRB,RBRB,RBRB,RBRB,BRBR,BRBR,BRBR,BRBR\}</me>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many elements of the group send the coloring <m>RBRB</m> to itself? What is the multiplicity of <m>RBRB</m> in its orbit?
+                </p>
+            </statement>
+            <solution>
+                <p>4, 4.</p>
+            </solution>
+        </task>
+    </activity>
+
+    <activity>
+        <task xml:id="compose-right">
+            <statement>
+                <p>
+                    If <m>G</m> is a group, how is the set <m>\{\tau\sigma\mid\tau\in G\}</m> related to <m>G</m>?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    It is <m>G</m>, because composition on the right by <m>\sigma</m> gives a bijection from <m>G</m> to <m>G</m>.
+                </p>
+            </solution>
+        </task>
+        <task xml:id="disjoint-multiorbits">
+            <statement>
+                <p>
+                    Use this to show that <m>y</m> is in the multiorbit <m>Gx_{\text{multi}}</m> if and only if <m>Gx_{\text{multi}} = Gy_{\text{multi}}</m>.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    If <m>y=\sigma x</m>, <xref ref="compose-right">part</xref> tells us that <md><mrow>Gy_{\text{multi}} &amp;= G\sigma(x)_{\text{multi}} = \{\tau\sigma(x)\mid \tau\in G\}_{\text{multi}}</mrow><mrow> &amp;= \{\sigma(x) \mid \tau\in G\}_{\text{multi}} = Gx_{\text{multi}}</mrow></md>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <p>
+        <xref ref="disjoint-multiorbits">Problem</xref> tells us that, when <m>G</m> acts on <m>S</m>, each element <m>x</m> of <m>S</m> is in one and only one multiorbit. Since each orbit is a subset of a multiorbit and each element <m>x</m> in <m>S</m> is in one and only one orbit, this also tells us there is a bijection between the orbits of <m>G</m> and the multiorbits of <m>G</m>, so that we have the same number of orbits as multiorbits.
+    </p>
+    <p>
+        When a group acts on a set, a group element is said to <term>fix</term><idx>fix</idx> an element of <m>x \in S</m> if <m>\overline{\sigma}(x) = x</m>. The set of all elements fixing an element <m>x</m> is denoted by <m>\Fix(x)</m>.
+    </p>
+
+    <activity>
+        <statement>
+            <p>
+                Suppose a group <m>G</m> acts on a set <m>S</m>. What is special about the subset <m>\Fix(x)</m> for an element <m>x</m> of <m>S</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <m>\Fix(x)</m> is a group; in fact a subgroup of <m>G</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity category="essential">
+        <statement>
+            <p>
+                Suppose a group <m>G</m> acts on a set <m>S</m>. What is the relationship of the multiplicity of <m>x\in S</m> in its multiorbit and the size of <m>\Fix(x)</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The multiplicity of <m>x</m> is the size of <m>\Fix(x)</m>, because in <m>Gx_{\text{multi}}</m> the multiplicity of <m>x</m> will be exactly the number of elements that send <m>x</m> to itself.
+            </p>
+        </solution>
+    </activity>
+    <activity>
+        <statement>
+            <p>
+                What can you say about relationships between the multiplicity of an element <m>y</m> in the multiorbit <m>Gx_{\text{multi}}</m> and the multiplicites of other elements? Try to use this to get a relationship between the size of an orbit of <m>G</m> and the size of <m>G</m>.
+            </p>
+        </statement>
+        <hint>
+            <p>
+                How does the size of a multiorbit compare to the size of <m>G</m>?
+            </p>
+        </hint>
+        <solution>
+            <p>
+                Every element <m>y</m> of a multiorbit has the same multiplicity. This is because if <m>\sigma(x) = y</m>, then the permutations that send <m>x</m> to <m>y</m> are the permutations <m>\sigma\tau</m> where <m>\tau</m> fixes <m>x</m>. Thus the size of the multiorbit is <m>|\Fix(x)|\cdot |Gx|</m>, so the size of the orbit divides the size of the multiorbit, which is the size of <m>G</m>. In particular, the size of an orbit is <m>|G|/|\Fix(x)|</m> for any <m>x</m> in the orbit.
+            </p>
+        </solution>
+    </activity>
+
+    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union</h><h>of multisets</h></idx> of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family. Two multisets are said to be <term>disjoint</term><idx><h>disjoint</h><h>multisets</h></idx> if no element is a member of both, that is, if no element has multiplicity one or more in both. Since the size of a multiset is the sum of the multiplicities of its members, we immediately get the <term>sum principle for multisets</term>.<idx><h>sum principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            The size of a union of disjoint multisets is the sum of their sizes. <idx><h>sum principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <p>
+        Taking the multisets all to have the same size, we get the <term>product principle</term> for multisets.<idx><h>product principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>. <idx><h>product principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <p>
+        The <term>quotient principle</term> for multisets then follows immediately.<idx><h>quotient principle</h><h>for multisets</h></idx>
+    </p>
+    <blockquote>
+        <p>
+            If a <m>p</m>-element multiset is a union of <m>q</m> disjoint multisets, each of size <m>r</m>, then <m>q = p/r</m>.<idx><h>quotient principle</h><h>for multisets</h></idx>
+        </p>
+    </blockquote>
+    <activity xml:id="union-multiorbit-size" category="essential">
+        <statement>
+            <p>
+                How does the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> relate to the number of multiorbits and the size of <m>G</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                It is simply the product of the number of multiorbits and the size of <m>G</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity xml:id="union-multiorbit-fix" category="essential">
+        <statement>
+            <p>
+                How does the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> relate to the numbers <m>|\Fix(x)|</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since the size of the union is the sum of the multiplicities of the elements of <m>S</m> in the union, it is the sum of <m>|\Fix(x)|</m> over all <m>x</m> in <m>S</m>.
+            </p>
+        </solution>
+    </activity>
+    <activity xml:id="numbermultiorbits3" category="essential">
+        <statement>
+            <p>
+                In <xref ref="union-multiorbit-size">Problems</xref> and <xref ref="union-multiorbit-fix" text="global" /> you computed the size of the union of the set of multiorbits of a group <m>G</m> acting on a set <m>S</m> in two different ways, getting two different expressions must be equal. Write the equation that says they are equal and solve for the number of multorbits, and therefore the number of orbits.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Using <m>m</m> for the number of multiorbits, we get
+                <me>m|G| = \sum_{x\colon x\in S}|\Fix(x)|</me>.
+                Therefore, <me>m= \frac{1}{|G|} \sum_{x\colon x\in S}|\Fix(x)|</me>.
+            </p>
+        </solution>
+    </activity>
+    <!--<figure xml:id="ColoredSquare" >
           <caption>The colored square corresponding to the
           function <m>f</m> with <m>f(1) =R</m>, <m>f(2)
           = R</m>,
@@ -1557,7 +1756,7 @@ occur as <m>\tau\sigma</m>?
           </me>
         </p>
       </solution>
-    </activity>
+    </activity>-->
   </subsection>
 
   <subsection>
