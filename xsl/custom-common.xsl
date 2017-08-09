@@ -89,7 +89,7 @@
 <!-- This switch is global, override with @autoname='no'  -->
 <!-- on an <xref> where it is unjustified or a problem    -->
 <!-- Default is to have this feature off                  -->
-<xsl:param name="autoname" select="'yes'" />
+<!-- <xsl:param name="autoname" select="'yes'" /> -->
 <!-- How many levels to table of contents  -->
 <!-- Not peculiar to HTML or LaTeX or etc. -->
 <!-- Sentinel indicates no choice made     -->
