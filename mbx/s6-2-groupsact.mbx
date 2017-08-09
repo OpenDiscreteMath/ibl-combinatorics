@@ -328,7 +328,7 @@
         <p>
           Using the notation of <xref ref="dihedral3">Problem</xref>, what is the effect
           of a 180 degree rotation on the diagonals of a square? What is the
-          effect of the flip <m>\varphi_{1/3}</m> on the diagonals of a square? How many
+          effect of the flip <m>\varphi_{1|3}</m> on the diagonals of a square? How many
           elements of <m>D_4</m> send each diagonal to itself? How many elements of
           <m>D_4</m> interchange the diagonals of a square?
         </p>
@@ -337,9 +337,9 @@
         <p>
           The 180 degree rotation sends the diagonals to themselves, i.e.,
           it fixes the diagonals.
-          <m>\varphi_{1/3}</m> fixes the
-          diagonals. So does <m>\varphi_{2/4}</m> and the identity. However, <m>\rho</m>,
-          <m>\rho^3</m>, <m>\varphi_{12/34}</m> and <m>\varphi_{14/23}</m> all exchange the
+          <m>\varphi_{1|3}</m> fixes the
+          diagonals. So does <m>\varphi_{2|4}</m> and the identity. However, <m>\rho</m>,
+          <m>\rho^3</m>, <m>\varphi_{12|34}</m> and <m>\varphi_{14|23}</m> all exchange the
           diagonals. Thus four elements fix each diagonal and four elements
           interchange them.
         </p>
@@ -433,12 +433,12 @@
           On the other hand, defining <m>\beta_{\sigma}(f) = f\circ\sigma</m> does not
           define a group action. For example, if we consider the function <m>f(i)=i</m>
           on the four numbered corners of the square in <xref ref="ColoredSquare">Figure</xref>,
-          and take the permutations <m>\rho</m> and <m>\varphi_{1/3}</m>, we know from the fact
-          that <m>f</m> is the identity function and <m>\rho</m> and <m>\varphi_{1/3}</m> do not
+          and take the permutations <m>\rho</m> and <m>\varphi_{1|3}</m>, we know from the fact
+          that <m>f</m> is the identity function and <m>\rho</m> and <m>\varphi_{1|3}</m> do not
           commute that
-          <m>\beta_{\varphi_{1/3}\circ\rho}(f) = f\circ(\varphi_{1/3}\circ\rho)\not =
-          f\circ(\rho\circ\varphi_{1/3})=(f\circ\rho)\circ\varphi_{1/3}=\beta_{\rho}(f)
-          \circ\varphi_{1/3}= \beta_{\varphi_{13}}(\beta_\rho(f)) =(\beta_{\varphi_{1/3}}\circ
+          <m>\beta_{\varphi_{1|3}\circ\rho}(f) = f\circ(\varphi_{1|3}\circ\rho)\not =
+          f\circ(\rho\circ\varphi_{1|3})=(f\circ\rho)\circ\varphi_{1|3}=\beta_{\rho}(f)
+          \circ\varphi_{1|3}= \beta_{\varphi_{13}}(\beta_\rho(f)) =(\beta_{\varphi_{1|3}}\circ
           \beta_{\rho})(f).</m> Thus defining <m>\beta_\sigma(f)= f\circ \sigma</m> does not give
           an action of <m>D_4</m> on functions from the vertices of the square to <m>\{1,2,3,4\}</m>.
         </p>
@@ -771,14 +771,14 @@
       <solution>
         <p>
           In <xref ref="dihedralorbits1">Problem</xref>, the set of elements fixing <m>f</m>
-          is <m>\{\iota=\rho^0, \varphi_{1/3}\}</m>. The set of orbits taking <m>f</m> to <m>g</m>
-          is <m>\{\rho, \varphi_{12/34}\}</m>. In <xref ref="dihedralorbits2">Problem</xref> the set of elements fixing <m>f_1</m> is <m>\{\iota\}</m>, and
+          is <m>\{\iota=\rho^0, \varphi_{1|3}\}</m>. The set of orbits taking <m>f</m> to <m>g</m>
+          is <m>\{\rho, \varphi_{12|34}\}</m>. In <xref ref="dihedralorbits2">Problem</xref> the set of elements fixing <m>f_1</m> is <m>\{\iota\}</m>, and
           the set of elements taking <m>f_1</m> to <m>f_1\circ\rho^{-1}</m> is <m>\{\rho\}</m>. In
           <xref ref="dihedralorbits3">Problem</xref>, the set of elements fixing <m>f_2</m> is <m>\{\iota,\rho^2,
-          \varphi_{1/3}, \varphi_{2/4}\}</m>, and the set of elements taking <m>f_2</m> to
+          \varphi_{1|3}, \varphi_{2|4}\}</m>, and the set of elements taking <m>f_2</m> to
           <m>f_2\circ\rho^{-1}</m> is
           <m>\{\rho,
-          \rho^3, \varphi_{12/34}, \varphi_{14/23}\}</m>.
+          \rho^3, \varphi_{12|34}, \varphi_{14|23}\}</m>.
         </p>
       </solution>
     </activity>
@@ -815,9 +815,9 @@
             a function has exactly one <m>R</m> (or
             <m>B</m> or <m>G</m>), then its orbit under the rotations has size 4. Since every flip
             is a rotation times
-            <m>\varphi_{1/3}</m>, if <m>\varphi_{1/3}</m> fixes the function, then the orbit has
-            size 4, but if <m>\varphi_{1/3}</m> does not take the function to the result of a
-            rotation, then neither does a rotation times <m>\varphi_{1/3}</m>, so the orbit
+            <m>\varphi_{1|3}</m>, if <m>\varphi_{1|3}</m> fixes the function, then the orbit has
+            size 4, but if <m>\varphi_{1|3}</m> does not take the function to the result of a
+            rotation, then neither does a rotation times <m>\varphi_{1|3}</m>, so the orbit
             has size 8. If the function has exactly three <m>R</m>'s, then it has exactly
             one element of some other color, so the argument is the same. If the
             function has exactly two <m>R</m>'s and exactly two elements of another color,
@@ -1099,6 +1099,7 @@
           <image width="95%" source="images/MotionsOfColoredSquare" />
           <image width="95%" source="images/MotionsOfColoredSquare1" />
           <image width="95%" source="images/MotionsOfColoredSquare" />
+          <caption></caption>
         </figure>
       </solution>
     </activity>

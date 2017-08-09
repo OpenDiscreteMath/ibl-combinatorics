@@ -89,7 +89,7 @@
 <!-- This switch is global, override with @autoname='no'  -->
 <!-- on an <xref> where it is unjustified or a problem    -->
 <!-- Default is to have this feature off                  -->
-<xsl:param name="autoname" select="'yes'" />
+<!-- <xsl:param name="autoname" select="'yes'" /> -->
 <!-- How many levels to table of contents  -->
 <!-- Not peculiar to HTML or LaTeX or etc. -->
 <!-- Sentinel indicates no choice made     -->
@@ -111,7 +111,7 @@
 <!-- Last level where subdivision (section) numbering takes place     -->
 <!-- For example, "2" would mean subsections of a book are unnumbered -->
 <!-- N.B.: the levels above cannot be numerically larger              -->
-<xsl:param name="numbering.maximum.level" select="'2'" />
+<xsl:param name="numbering.maximum.level" select="'3'" />
 <!-- Image files, media files and knowls are placed in directories    -->
 <!-- The defaults are relative to wherever principal output goes      -->
 <!-- These can be overridden at the command-line or in customizations -->
