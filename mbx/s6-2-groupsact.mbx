@@ -1764,18 +1764,52 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     <activity xml:id="numbermultiorbits4" category="essential">
         <introduction>
             <p>
-        In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem
-        that expresses the number of orbits in terms of the number of group
-        elements fixing each element of <m>S</m>. It is often easier to find the
-        number of elements fixed by a given group element than to find the number
-        of group elements fixing an element of <m>S</m>. For this purpose,
+        In <xref ref="numbermultiorbits3">Problem</xref> you stated and proved a theorem that expresses the number of orbits in terms of the number of group elements fixing each element of <m>S</m>. It is often easier to find the number of elements fixed by a given group element than to find the number of group elements fixing an element of <m>S</m>.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    For this purpose, how does the sum <m>\sum_{x\colon x\in S}|\Fix(x)|</m> relate to the number of ordered pairs <m>(\sigma,x)</m> (with <m>\sigma\in G</m> and <m>x \in S</m>) such that <m>\sigma</m> fixes <m>x</m>?
+                </p>
+            </statement>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    Let <m>\chi(\sigma)</m> denote the number of elements of <m>S</m> fixed by <m>\sigma</m>. How can the number of ordered pairs <m>(\sigma,x)</m> (with <m>\sigma\in G</m> and <m>x\in S</m>) such that <m>\sigma</m> fixes <m>x</m> be computed from <m>\chi(G)</m>? (It is ok to have a summation in your answer.)
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    The number of ordered pairs is <m>\sum_{\sigma\colon \sigma\in G} \chi(\sigma)</m>.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    What does this tell you about the number of orbits?
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>m = \frac{1}{|G|}\sum_{\sigma\colon \sigma\in G} \chi(\sigma)</m>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <activity>
+        <introduction>
+            <p>
+                A second computation of the result of <xref ref="numbermultiorbits4" /> can be done as follows.
             </p>
         </introduction>
       <task>
         <statement>
           <p>
-            Let <m>\chi(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
-            <m>\chi(\sigma,x) =0</m> otherwise.  Use <m>\chi</m> to convert the single summation
+            Let <m>\widehat{\chi}(\sigma,x)=1</m> if <m>\sigma(x)=x</m> and let
+            <m>\widehat{\chi}(\sigma,x) =0</m> otherwise.  Notice that <m>\widehat{\chi}</m> is different from the <m>\chi</m> in the previous problem, because it is a function of two variables. Use <m>\widehat{\chi}</m> to convert the single summation
             in <xref ref="numbermultiorbits3">Problem</xref> into a double summation over elements <m>x</m> of <m>S</m>
             and elements <m>\sigma</m> of <m>G</m>.
           </p>
@@ -1784,7 +1818,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
             <p>
           <me>
             m=\frac{1}{|G|}\sum_{x:x\in S}\sum_{\sigma:\sigma\in G}
-            \chi(\sigma,x).
+            \widehat{\chi}(\sigma,x).
           </me>
             </p>
         </solution>
@@ -1793,11 +1827,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
         <statement>
           <p>
             Reverse the order of the previous summation in order to convert it
-            into a single sum involving the function <m>\chi</m> given by<fn>The reason
-            for using the Greek letter <m>\chi</m> is that <m>\chi(\sigma)</m> is an example of
-            what is called a group character.  Character theory is a major ingredient of
-            the representation theory of groups, an advanced subject that combines
-            abstract beauty with amazing utility.</fn>
+            into a single sum involving the function <m>\chi</m> given by
             <me>
               \chi(\sigma) =
               \mbox{the number of elements of \(S\) left fixed by \(\sigma\)} .
@@ -1805,9 +1835,9 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
           </p>
         </statement>
         <solution>
-          <me>
-            m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma).
-          </me>
+            <p><me>
+            m=\frac{1}{|G|}\sum_{\sigma:\sigma \in G} \chi(\sigma)
+          </me>.</p>
         </solution>
       </task>
     </activity>
@@ -1933,7 +1963,6 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     </activity>
 
     <activity category="interesting">
-      <task>
         <statement>
           <p>
             In how many ways may we paint the faces of a cube with six
@@ -1950,8 +1979,8 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
             colors, using each color
           </p>
         </solution>
-      </task>
-      <task>
+    </activity>
+    <activity>
         <statement>
           <p>
             In how many ways may we paint the faces of a cube with two colors
@@ -1988,7 +2017,6 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
             only one color, so there are eight colorings that use both colors.
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity xml:id="Catalancircle" category="interesting">
@@ -2024,7 +2052,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
             \frac{1}{2n+1}\binom{2n+1}{n} = \frac{1}{n+1}\binom{2n}{n},
           </me>
           a
-          Catalan number.
+          Catalan number.<idx><h>Catalan number</h></idx>
         </p>
       </solution>
     </activity>
@@ -2035,7 +2063,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
           In how many ways may we color the edges of a (regular) <m>(2n+1)</m>-gon
           free to move in <em>three-dimensional space</em> so that <m>n</m> edges are
           colored red and
-          <m>n+1</m> edges are colored blue. Hint: your answer may depend on whether <m>n</m> is even or
+          <m>n+1</m> edges are colored blue. Your answer may depend on whether <m>n</m> is even or
           odd.
         </p>
       </statement>
@@ -2199,7 +2227,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
         just one place, because those three vertices are mutually adjacent. Each of the other two
         vertices is adjacent to two of the original three vertices colored <m>RBG</m>, and so there is
         only one color available to use on it. In summary, the colorings that start <m>RBG</m> are
-        <ol>
+        <ol label="(a)">
         <li xml:id="coloring1" >
           <p>
             <m>RBGRBG</m>
@@ -2231,10 +2259,10 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
           automorphism(this follows directly from the definition of automorphism) and so the eight
           permutations <m>\iota</m>, <m>(1\ 4)</m>, <m>(2\ 5)</m>, <m>(3\ 6)</m>, <m>(1\ 4)(2\ 5)</m>, <m>(1\ 4)
           (3\ 6)</m>, <m>(2\ 5)(3\ 6)</m>, and <m>(1\ 4)(2\ 5)(3\ 6)</m> all are automorphisms of the graph, and
-          they are all in the subgroup of the automorphism group that fixes the coloring in <xref ref="coloring1"></xref>. Any permutation not in the list will take some vertex to a vertex of
+          they are all in the subgroup of the automorphism group that fixes the coloring in <xref ref="coloring1" text="local">coloring</xref>. Any permutation not in the list will take some vertex to a vertex of
           another color, and so the eight permutations we listed are the subgroup fixing the
-          coloring in <xref ref="coloring1"></xref>. The subgroup fixing the coloring in <xref ref="coloring2"></xref> is
-          <m>\iota</m>, <m>(1\ 3)</m>, <m>(2\ 4)</m>, and <m>(1\ 3)(2\ 4)</m>. The subgroups fixing the colorings in <xref ref="coloring3"></xref> and <xref ref="coloring4"></xref> also have size 4. Thus there are <m>8+12=20</m> pairs of a
+          coloring in <xref ref="coloring1" text="local">coloring</xref>. The subgroup fixing the coloring in <xref ref="coloring2" text="local">coloring</xref> is
+          <m>\iota</m>, <m>(1\ 3)</m>, <m>(2\ 4)</m>, and <m>(1\ 3)(2\ 4)</m>. The subgroups fixing the colorings in <xref ref="coloring3" text="local">coloring</xref> and <xref ref="coloring4" text="local">coloring</xref> also have size 4. Thus there are <m>8+12=20</m> pairs of a
           coloring with <m>R</m>, <m>B</m>, and <m>G</m>, in that order, on vertices 1, 2, and 3 and an automorphism
           fixing that coloring. Since there are <m>4\cdot3\cdot2=24</m> ways to color vertices 1, 2, and
           3 properly, and each gives rise to 20 pairs of a proper coloring and an automorphism fixing
