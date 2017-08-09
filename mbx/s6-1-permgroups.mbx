@@ -633,15 +633,15 @@
       here, and professional mathematicians sometimes suffer from it.  Just try to remember
       that when we describe the axis of a flip, we describe it relative to points given in
       space, not points on the square or other object we are flipping.</fn> Let us denote it by
-      <m>\varphi_{1/3}</m>. One flip fixes the vertices in positions 2 and 4 and
+      <m>\varphi_{1|3}</m>. One flip fixes the vertices in positions 2 and 4 and
       interchanges those in positions 1 and 3. Let us denote it by
-      <m>\varphi_{2/4}</m>. One flip interchanges the vertices in positions
+      <m>\varphi_{2|4}</m>. One flip interchanges the vertices in positions
       1 and 2 and also interchanges those in positions 3 and 4. Let us denote
       it by
-      <m>\varphi_{12/34}</m>. The fourth flip interchanges the vertices in positions
+      <m>\varphi_{12|34}</m>. The fourth flip interchanges the vertices in positions
       1 and 4 and interchanges those in positions 2 and 3. Let us denote it by
-      <m>\varphi_{14/23}</m>. Notice that <m>\varphi_{1/3}</m> is a permutation that takes vertex
-      1 to vertex 1 and vertex 3 to vertex 3, while <m>\varphi_{12/34}</m> is a permutation
+      <m>\varphi_{14|23}</m>. Notice that <m>\varphi_{1|3}</m> is a permutation that takes vertex
+      1 to vertex 1 and vertex 3 to vertex 3, while <m>\varphi_{12|34}</m> is a permutation
       that takes the edge from 1 to 2 to the edge from 1 to 2 and takes the edge from 3
       to 4 to the edge from 3 to 4.
     </p>
@@ -650,8 +650,8 @@
       <task>
         <statement>
           <p>
-            Write down the two-row notation for <m>\rho^3</m>, <m>\varphi_{2/4}</m>,
-            <m>\varphi_{12/34}</m> and <m>\varphi_{2/4}\circ \varphi_{12/34}</m>. Remember that <m>\sigma(i)</m>
+            Write down the two-row notation for <m>\rho^3</m>, <m>\varphi_{2|4}</m>,
+            <m>\varphi_{12|34}</m> and <m>\varphi_{2|4}\circ \varphi_{12|34}</m>. Remember that <m>\sigma(i)</m>
             stands for the position where the vertex that originated in position <m>i</m> is after we
             apply <m>\sigma</m>.
           </p>
@@ -1042,8 +1042,8 @@
           <m>\varphi</m> notation described above to denote the flips. (Hints: Part of the
           table has already been written down. Will you need to think hard to write
           down the last row? Will you need to think hard to write down the last
-          column? When you multiply a product like <m>\varphi_{1/3}
-          \circ \rho</m> remember that we defined <m>\varphi_{1/3}</m> to be the flip that
+          column? When you multiply a product like <m>\varphi_{1|3}
+          \circ \rho</m> remember that we defined <m>\varphi_{1|3}</m> to be the flip that
           fixes the vertex in position 1 and the vertex in position 3, <em>not</em> the
           one that fixes the vertex on the square labelled 1 and the vertex on the
           square labelled 3.)
@@ -1066,10 +1066,10 @@
             <cell><m>\rho</m></cell>
             <cell><m>\rho^2</m></cell>
             <cell><m>\rho^3</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
           </row>
           <row>
             <cell><m>\iota</m></cell>
@@ -1077,10 +1077,10 @@
             <cell><m>\rho</m></cell>
             <cell><m>\rho^2</m></cell>
             <cell><m>\rho^3</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
           </row>
           <row>
             <cell><m>\rho</m></cell>
@@ -1088,10 +1088,10 @@
             <cell><m>\rho^2</m></cell>
             <cell><m>\rho^3</m></cell>
             <cell><m>\iota</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{23/14}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{23|14}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
           </row>
           <row>
             <cell><m>\rho^2</m></cell>
@@ -1099,10 +1099,10 @@
             <cell><m>\rho^3</m></cell>
             <cell><m>\iota</m></cell>
             <cell><m>\rho</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
           </row>
           <row>
             <cell><m>\rho^3</m></cell>
@@ -1110,50 +1110,50 @@
             <cell><m>\iota</m></cell>
             <cell><m>\rho</m></cell>
             <cell><m>\rho^2</m></cell>
-            <cell><m>\varphi_{23/14}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{23|14}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
           </row>
           <row>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
             <cell><m>\iota</m></cell>
             <cell><m>\rho^2</m></cell>
             <cell><m>\rho</m></cell>
             <cell><m>\rho^3</m></cell>
           </row>
           <row>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
             <cell><m>\rho^2</m></cell>
             <cell><m>\iota</m></cell>
             <cell><m>\rho^3</m></cell>
             <cell><m>\rho</m></cell>
           </row>
           <row>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{13/24}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{13|24}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
             <cell><m>\rho</m></cell>
             <cell><m>\rho^3</m></cell>
             <cell><m>\iota</m></cell>
             <cell><m>\rho^2</m></cell>
           </row>
           <row>
-            <cell><m>\varphi_{14/23}</m></cell>
-            <cell><m>\varphi_{14/23}</m></cell>
-            <cell><m>\varphi_{2/4}</m></cell>
-            <cell><m>\varphi_{12/34}</m></cell>
-            <cell><m>\varphi_{1/3}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
+            <cell><m>\varphi_{14|23}</m></cell>
+            <cell><m>\varphi_{2|4}</m></cell>
+            <cell><m>\varphi_{12|34}</m></cell>
+            <cell><m>\varphi_{1|3}</m></cell>
             <cell><m>\rho^3</m></cell>
             <cell><m>\rho</m></cell>
             <cell><m>\rho^2</m></cell>
@@ -1216,11 +1216,11 @@
         </hint>
         <solution>
           <p>
-            <m>\{\rho^2,\!\iota\}</m>, <m>\{\varphi_{1/3},\!\iota\}</m>, <m>\{\varphi_{2/4},\!\iota\}</m>,
-            <m>\{\varphi_{12/34},\!\iota\}</m>, <m>\{\varphi_{14/23},\!\iota\}</m>,
+            <m>\{\rho^2,\!\iota\}</m>, <m>\{\varphi_{1|3},\!\iota\}</m>, <m>\{\varphi_{2|4},\!\iota\}</m>,
+            <m>\{\varphi_{12|34},\!\iota\}</m>, <m>\{\varphi_{14|23},\!\iota\}</m>,
             <m>\{\iota,\rho,\rho^2,\rho^3\}</m>,
-            <m>\{\iota,\varphi_{1/3},\rho^2,\varphi_{2/4}\}</m>,
-            <m>\{\iota,\varphi_{12/34},\rho^2,\varphi_{12/34}\}</m>, <m>\{\iota\}</m>, and all of <m>D_4</m>.
+            <m>\{\iota,\varphi_{1|3},\rho^2,\varphi_{2|4}\}</m>,
+            <m>\{\iota,\varphi_{12|34},\rho^2,\varphi_{12|34}\}</m>, <m>\{\iota\}</m>, and all of <m>D_4</m>.
             Notice that once a subgroup has <m>\rho</m> or <m>\rho^3</m> in it, it has all powers of <m>\rho</m>,
             and if it has all powers of <m>\rho</m> and just one flip, it has all the flips in it. But
             the product of two <q>different kinds</q> of flips is <m>\rho</m> or <m>\rho^3</m>, and this shows
@@ -1344,14 +1344,14 @@
     <activity xml:id="d4-cycles" category="essential">
         <statement>
           <p>
-            Find the cycles of the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and
-            <m>\varphi_{12/34}</m> in the group <m>D_4</m>.
+            Find the cycles of the permutations <m>\rho</m>, <m>\varphi_{1|3}</m> and
+            <m>\varphi_{12|34}</m> in the group <m>D_4</m>.
           </p>
         </statement>
         <solution>
           <p>
-            <m>\rho</m> has one cycle, <m>(1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3}</m> has one cycle
-            <m>(2\ 4)</m>, <m>\varphi_{12/34}</m> has two cycles, namely <m>(1\ 2)</m> and
+            <m>\rho</m> has one cycle, <m>(1\ 2\ 3\ 4)</m>, <m>\varphi_{1|3}</m> has one cycle
+            <m>(2\ 4)</m>, <m>\varphi_{12|34}</m> has two cycles, namely <m>(1\ 2)</m> and
             <m>(3\ 4)</m>.
           </p>
         </solution>
@@ -1550,14 +1550,14 @@
       <task>
         <statement>
           <p>
-            Write the permutations <m>\rho</m>, <m>\varphi_{1/3}</m> and <m>\varphi_{12/34}</m>
+            Write the permutations <m>\rho</m>, <m>\varphi_{1|3}</m> and <m>\varphi_{12|34}</m>
             in <m>D_4</m> as products of disjoint cycles.
           </p>
         </statement>
         <solution>
           <p>
-            <m>\rho = (1\ 2\ 3\ 4)</m>, <m>\varphi_{1/3} = (2\ 4) = (1)(2\ 4)(3)</m> (either side
-            of the equation is a right answer), <m>\varphi_{12/34} = (1\ 2)(3\        4)</m>.
+            <m>\rho = (1\ 2\ 3\ 4)</m>, <m>\varphi_{1|3} = (2\ 4) = (1)(2\ 4)(3)</m> (either side
+            of the equation is a right answer), <m>\varphi_{12|34} = (1\ 2)(3\        4)</m>.
           </p>
         </solution>
       </task>
