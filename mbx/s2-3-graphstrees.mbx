@@ -80,6 +80,15 @@
             What is the relationship?
           </p>
         </statement>
+        <hint>
+          <p>
+            There are several ways to see how to do this problem. One is to draw pictures
+            of graphs with one edge, two edges, three edges, perhaps four edges and figure
+            out the sum of the degrees. Another is to ask what deleting an edge does to
+            the sum of the degrees. Another is to ask what a given edge “contributes”
+            to the sum of the degrees.
+          </p>
+        </hint>
         <solution>
           <p>
             The sum of the degrees of the
@@ -95,6 +104,11 @@
             what happens to a graph if you delete an edge.
           </p>
         </statement>
+        <hint>
+          <p>
+            To make your inductive step, think about what happens to a graph if you delete an edge.
+          </p>
+        </hint>
         <solution>
           <p>
             If a graph has
@@ -150,6 +164,11 @@
             induction.
           </p>
         </statement>
+        <hint>
+          <p>
+            Suppose that instead of summing the degree of <m>v</m> over all vertices <m>v</m>, you sum some quantity defined for each edge <m>e</m> over all the edges.
+          </p>
+        </hint>
         <solution>
           <p>
             The sum of the degrees of the vertices is the sum over all
@@ -167,6 +186,11 @@
           graph?
         </p>
       </statement>
+      <hint>
+        <p>
+          Whatever you say should be consistent with what you already know about degrees of vertices.
+        </p>
+      </hint>
       <solution>
         <p>
           The number of vertices of odd degree must be even, because otherwise
@@ -251,6 +275,11 @@
           and delete it, but not its endpoints?)
         </p>
       </statement>
+      <hint>
+        <p>
+          What happens if you choose an edge and delete it, but not its endpoints?
+        </p>
+      </hint>
       <solution>
         <p>
           The number of edges of a tree is one less than the number of
@@ -298,6 +327,14 @@
           that you are correct.
         </p>
       </statement>
+      <hint>
+        <p>
+          One approach to the problem is to use facts that we already know about
+          degrees, vertices and edges. Another approach is to try deleting an edge
+          from a tree with more than one vertex and analyze the possible numbers of
+          vertices of degree one in what is left over.
+        </p>
+      </hint>
       <solution>
         <p>
           The minimum is zero, which happens with a tree
@@ -356,7 +393,7 @@
           consider the tree which has edges between vertices 1 and 2 and between
           vertices 2 and 3 different from the tree that has edges between vertices
           1 and 3 and between 2 and 3. See <xref ref="differenttrees">Figure</xref>.
-        </p>
+        
 
         <figure xml:id="differenttrees" >
           <caption>The three labelled
@@ -364,40 +401,21 @@
           <image width="80%" source="images/threetrees" />
         </figure>
 
-        <p>
+        
           How many
           (labelled) trees are there on four vertices? You don't have a lot of data
           to guess from, but try to guess a formula for the number of labelled trees
           with vertex set
-          <m>\{1,2,\cdots,n\}</m>. (If you organize carefully, you can figure out how
-          many labelled trees there are with vertex set <m>\{1,2,3,4,5\}</m> to help you
-          make your conjecture.) Given a tree with two or more vertices, labelled
-          with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of
-          integers inductively as follows: If the tree has two vertices, the
-          sequence consists of one entry, namely the label of the vertex with the
-          larger label. Otherwise, let
-          <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m>
-          be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write
-          down
-          <m>b_1</m>.
-          Given <m>a_{i-1}</m> and <m>b_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of
-          degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m> and let <m>b_i</m>
-          be the unique vertex in this new tree adjacent to <m>a_i</m>.
-          We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. For example
-          in the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and the sequence <m>b</m> is 234478. (If you are
-          unfamiliar with inductive (recursive) definition, you might want to write
-          down some other labelled trees on eight vertices and construct the
-          sequence of <m>b_i</m>s.) How long will the sequence
-          <m>b</m> be if it is applied to a tree with
-          <m>n</m> vertices (labelled with 1 through
-          <m>n</m>)? What can you say about the last member of the sequence of <m>b_i</m>s?
-          Can you tell from the sequence of
-          <m>b_i</m>s what
-          <m>a_1</m> is? Find a bijection between labelled trees and something you can
-          <q>count</q> that will tell you how many labelled trees there are on <m>n</m>
-          labelled vertices.
+          <m>\{1,2,\cdots,n\}</m>.
         </p>
       </statement>
+          <hint>
+            <p>
+              When you get to four and especially five vertices, draw all the unlabeled trees
+              you can think of, and then figure out in how many different ways you can put labels on the vertices.
+            </p>
+          </hint>
+
       <solution>
         <p>
           There is one labelled tree on two vertices. We know there are three
@@ -418,49 +436,59 @@
           a path. We have <m>\binom{5}{2}=10</m> ways to choose the two vertices of degree
           one, and then there are <m>3!=6</m> ways to arrange the remaining vertices along
           the path, so we have 60 paths. Thus we have <m>125</m> trees on five vertices.
-          These computations suggest there are <m>n^{n-2}</m> labelled trees on <m>n</m> vertices,
-          which is what we shall prove with the sequences of <m>a</m>\/s and <m>b</m>\/s.
-        </p>
-
-        <p>
-          On a tree with <m>n</m> vertices, the sequence <m>b</m> will have length <m>n-1</m>. The
-          last member of the sequence <m>b</m> will be <m>n</m>. Vertex <m>n</m> can not be in the
-          sequence <m>a</m>, because the tree that remains after we delete an <m>a_i</m> will have
-          at least two vertices of degree 1, so the one of smaller degree will be
-          <m>a_{i+1}</m>. Thus we never delete the vertex <m>n</m> from the tree. Therefore when
-          we choose the last <m>b</m>, we have vertex <m>n</m> and one other vertex, so the other
-          vertex is our <m>a</m>-vertex and <m>n</m> is the vertex adjacent to it. <m>a_1</m> will be
-          the smallest number that is not in the sequence of <m>b</m>'s. This tells us one
-          edge of the tree, namely the edge between <m>a_1</m> and <m>b_1</m>. The vertex <m>a_2</m>
-          will be the smallest number different from <m>a_1</m> not in the sequence <m>b_2</m>
-          through
-          <m>b_{n-1}</m>.
-          In general, <m>a_i</m>
-          will be the smallest vertex different from <m>a_1</m> through <m>a_{i-1}</m> not in the
-          sequence
-          <m>b_i</m> through
-          <m>b_{n-1}</m>, which gives us all <m>n-1</m> edges of the tree (edge <m>i</m> goes from
-          <m>a_i</m> to
-          <m>b_i</m>). Thus there is a bijection between trees and the sequences <m>b_1</m>
-          through <m>b_{n-1}</m>. But since <m>b_{n-1}=n</m>, there is also a bijection between
-          trees and the sequences <m>b_1</m> through <m>b_{n-2}</m>. But given a sequence of
-          numbers <m>c_1,c_2,\ldots,c_{n-2},c_{n-1}</m>, all between 1 and <m>n</m> and with
-          <m>c_{n-1}=n</m>, there is always a smallest number <m>a_1</m> not in the sequence, and
-          given
-          <m>a_1,
-          a_2, \ldots a_{i-1}</m>, there is always a smallest number
-          not in the sequence <m>c_i</m> through <m>c_{n-1}</m> and different from the <m>a_i</m>s
-          already chosen, so we can construct the edges from <m>a_i</m> to <m>c_i</m>. Further,
-          if we start with the edge from <m>a_{n-1}</m> to <m>c_{n-1}</m> and work backwards, we
-          will always have a connected graph and will always be adding a vertex of
-          degree 1 to it, so we will have no cycles. Therefore we will get a tree.
-          Thus we have a bijection between labelled trees on <m>n</m> vertices and sequences
-          of length <m>n-2</m> consisting of members of <m>[n]</m>. There are <m>n^{n-2}</m> such
-          sequences, and thus <m>n^{n-2}</m> labelled trees on <m>n</m> vertices.
+          These computations suggest there are <m>n^{n-2}</m> labelled trees on <m>n</m> vertices.
         </p>
       </solution>
     </activity>
 
+    <p>
+      We are now going to introduce a method to prove the formula you guessed. Given a tree with two or more vertices, labelled with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of integers inductively as follows: If the tree has two vertices, the sequence consists of one entry, namely the label of the vertex with the larger label. Otherwise, let <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m> be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write down <m>b_1</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and <m>b_1</m> is 2. Given <m>a_1</m> through <m>a_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m>and let <m>b_i</m> be the unique vertex in this new tree adjacent to <m>a_i</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_2=2</m> and <m>b_2=3</m>. Then <m>a_3=5</m> and <m>b_3=4</m>. We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. In the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, the sequence <m>b</m> is 2344378. (If you are unfamiliar with inductive (recursive) definition, you might want to write down some other labelled trees on eight vertices and construct the sequence of <m>b_i</m>s.)
+    </p>
+    <activity>
+      <task>
+        <statement>
+          <p>
+            How long will the sequence of <m>b_i</m>s be if it is computed from a tree with <m>n</m> vertices (labelled with 1 through <m>n</m>)?
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+          <p>
+            What can you say about the last member of the sequence of <m>b_i</m>s?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Do some examples.
+          </p>
+        </hint>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Can you tell from the sequence of <m>b_i</m>s what <m>a_1</m>is?
+          </p>
+        </statement>
+        <hint>
+          <p>
+            Is it possible for <m>a_1</m> to be equal to one of the <m>b_j</m>s?
+          </p>
+        </hint>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Find a bijection between labelled trees and something you can “count” that will tell you how many labelled trees there are on <m>n</m> labelled vertices.
+          </p>
+        </statement>
+        <hint>
+          <p>
+            You have seen that the sequence <m>b</m> determines <m>a_1</m>. Does it determine any other <m>a_j</m>s? If you knew all the <m>a_</m>s and all the <m>b_j</m>s, could you reconstruct the tree? What are the possible values of <m>b_1</m>? <m>b_j</m>?
+          </p>
+        </hint>
+      </task>
+    </activity>
     <p>
       The sequence <m>b_1,b_2,\ldots, b_{n-2}</m> in <xref ref="Prufer">Problem</xref> is called a
       <em>Pr&#xfc;fer coding</em> or <em>Pr&#xfc;fer code</em> for the tree. There is a good bit
@@ -474,6 +502,11 @@
           two vertices of degree 1? Does this characterize such trees?
         </p>
       </statement>
+      <hint>
+        <p>
+          What vertex or vertices in the sequence <m>b_1,b_2,\ldots,b_{n-1}</m> can have degree 1?
+        </p>
+      </hint>
       <solution>
         <p>
           It consists of
@@ -487,9 +520,14 @@
       <statement>
         <p>
           What can you determine about the degree of
-          the vertex labelled <m>i</m> from the Prufer code of the tree?
+          the vertex labelled <m>i</m> from the Pr&#xfc;fer code of the tree?
         </p>
       </statement>
+      <hint>
+        <p>
+          If a vertex has degree 1, how many times does it appear in the Pr&#xfc;fer code of the tree? What about a vertex of degree 2?
+        </p>
+      </hint>
       <solution>
         <p>
           The degree of a vertex in a tree is one more than the number of
@@ -506,6 +544,11 @@
           through <m>n</m>.)
         </p>
       </statement>
+      <hint>
+        <p>
+          How many vertices appear exactly once in the Pr&#xfc;fer code of the tree and how many appear exactly twice?
+        </p>
+      </hint>
       <solution>
         <p>
           There are <m>\binom{n}{3}</m> ways to choose the three vertices of degree
@@ -630,6 +673,23 @@
           cost</h></idx><idx><h>tree</h><h>spanning!minimum cost</h></idx>
         </p>
       </statement>
+      <hint>
+        <p>
+          Think of selecting one edge of the tree at a time. Given that you have chosen
+          some edges and have a graph whose connected components are trees, what
+          is a good way to choose the next edge? To prove your method correct, use
+          contradiction by assuming there is a spanning tree tree with lower total cost.
+        </p>
+      </hint>
+      <hint>
+        <p>
+          Think of selecting one edge of the tree at a time. But now do it in such a way
+          that one connected component is a tree and the other connected components
+          have just one vertex. What is a good way to make the component that is
+          a tree into a tree with one more vertex? To prove your method works, use
+          contradiction by assuming there is a spanning tree with lower total cost.
+        </p>
+      </hint>
       <solution>
         <p>
           Start with vertex, number it vertex 1, and choose
