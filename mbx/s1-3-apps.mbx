@@ -675,7 +675,7 @@
       </solution>
     </activity>
 
-    <p>There are many ways in which you might explain your answer to <xref ref="elevencoins" autoname="yes" />. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in <xref ref="elevencoins" autoname="yes" />. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The <term>pigeonhole principle</term><idx><h>pigeonhole principle</h></idx> states that
+    <p>There are many ways in which you might explain your answer to <xref ref="elevencoins" />. For example, you can partition the coins according to the last digit of their date; that is, you put all the coins with a given last digit in a block together, and put no other coins in that block; repeating until all coins are in some block. Then you have a partition of your set of coins. If no two coins have the same last digit, then each block has exactly one coin. Since there are only ten digits, there are at most ten blocks and so by the sum principle there are at most ten coins. In fact with ten coins it is possible to have no two with the same last digit, but with 11 coins some block must have at least two coins in order for the sum of the sizes of at most ten blocks to be 11. This is one explanation of why we need 11 coins in <xref ref="elevencoins" />. This kind of situation arises often in combinatorial situations, and so rather than always using the sum principle to explain our reasoning , we enunciate another principle which we can think of as yet another variant of the sum principle. The <term>pigeonhole principle</term><idx><h>pigeonhole principle</h></idx> states that
     </p>
 
     <blockquote>
@@ -789,8 +789,8 @@
           <figure>
               <image width="33%" source="images/NonRamsey5" />
           </figure>
-          <p><xref ref="R_3_3_" autoname="yes" /> says you can't do this with
-          six people's names. This problem says that the conclusion of <xref ref="R_3_3_" autoname="yes" /> does not hold when you have five people.
+          <p><xref ref="R_3_3_" /> says you can't do this with
+          six people's names. This problem says that the conclusion of <xref ref="R_3_3_" /> does not hold when you have five people.
         </p>
       </solution>
     </activity>
@@ -799,7 +799,7 @@
   <subsection xml:id="Ramseysection">
     <title>Ramsey Numbers</title>
     <p>
-      <xref first="R_3_3_" last="notR_3_3_" autoname="yes" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><idx><h>graph</h><h>complete</h></idx> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" autoname="yes" />.</fn> The points are called <term>vertices</term><idx><h>vertex</h><h>of a complete graph</h></idx><idx><h>vertex</h></idx> and the line segments are called <term>edges</term><idx><h>edge</h><h>of a complete graph</h></idx><idx><h>edge</h></idx>. In <xref ref="completegraph" autoname="yes" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
+      <xref first="R_3_3_" last="notR_3_3_" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><idx><h>graph</h><h>complete</h></idx> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" />.</fn> The points are called <term>vertices</term><idx><h>vertex</h><h>of a complete graph</h></idx><idx><h>vertex</h></idx> and the line segments are called <term>edges</term><idx><h>edge</h><h>of a complete graph</h></idx><idx><h>edge</h></idx>. In <xref ref="completegraph" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
     </p>
 
     <figure xml:id="completegraph" >
@@ -824,7 +824,7 @@
       </hint>
       <solution>
         <p>
-          In the graph of <xref ref="NonRamsey8" autoname="yes" />,
+          In the graph of <xref ref="NonRamsey8" />,
           each vertex has three dashed lines emanating from it, and there are no dashed
           lines connecting any of the three vertices adjacent to it by dashed lines.
           Each vertex has four solid lines emanating from it, and no three of the four
@@ -846,12 +846,12 @@
       </statement>
       <hint>
         <p>
-      Review <xref ref="R_3_3_" autoname="yes" /> and your solution of it.
+      Review <xref ref="R_3_3_" /> and your solution of it.
         </p>
       </hint>
       <solution>
         <p>
-          Take a person, say person 1. If person has six acquaintances, then by <xref ref="R_3_3_" autoname="yes" /> among them there are either three mutual strangers, in which case we are done, or three mutual acquaintances. These three acquaintances together with person 1 form a set of 4 mutual acquaintances in which case we are again done. Thus we may assume Person 1 has at most 5 acquaintances, and so has four non-acquaintances. Now either all four of these people are acquainted, in which case we are done, or else two of them are not acquainted. Then these two people, together with person 1 make three mutual nonacquaintances. Therefore in every possible case, we have either four mutual acquaintances or three mutual strangers. This means that <m>R(4,3) \le 10</m>.
+          Take a person, say person 1. If person has six acquaintances, then by <xref ref="R_3_3_" /> among them there are either three mutual strangers, in which case we are done, or three mutual acquaintances. These three acquaintances together with person 1 form a set of 4 mutual acquaintances in which case we are again done. Thus we may assume Person 1 has at most 5 acquaintances, and so has four non-acquaintances. Now either all four of these people are acquainted, in which case we are done, or else two of them are not acquainted. Then these two people, together with person 1 make three mutual nonacquaintances. Therefore in every possible case, we have either four mutual acquaintances or three mutual strangers. This means that <m>R(4,3) \le 10</m>.
         </p>
       </solution>
     </activity>
@@ -892,7 +892,7 @@
       </hint>
       <solution>
         <p>
-          In the graph shown in <xref ref="NonRamsey8" autoname="yes" />, there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are solid. By symmetry, to verify this you need only look at vertex 1 and vertices connected to it by either dashed lines or by solid lines.
+          In the graph shown in <xref ref="NonRamsey8" />, there is no <m>K_3</m> whose edges are dashed, and no <m>K_4</m> whose edges are solid. By symmetry, to verify this you need only look at vertex 1 and vertices connected to it by either dashed lines or by solid lines.
         </p>
       </solution>
     </activity>
@@ -905,13 +905,13 @@
       </statement>
       <hint>
         <p>
-      In <xref ref="not_R_4_3" autoname="yes" /> you showed that <m>R(4, 3) \le 10</m>. In <xref ref="R_4_3_not8" autoname="yes" /> you showed
+      In <xref ref="not_R_4_3" /> you showed that <m>R(4, 3) \le 10</m>. In <xref ref="R_4_3_not8" /> you showed
       that <m>R(4, 3) \gt 8</m>. Thus <m>R(4, 3)</m> is either 9 or 10. Deciding which is the case is just plain hard. But there is a relevant problem we have done that we haven't used yet.
         </p>
       </hint>
       <solution>
         <p>
-          <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8" autoname="yes" /> we showed that <m>R(4,3)</m> is more than 8. So we must show that if we have nine people, we either have 4 mutual acquaintances or three mutual strangers. By <xref ref="OddNoPeople" autoname="yes" /> there is at least one person (say person A) who is acquainted with an even number of people. If person A is acquainted with six or more people, then among these six people, there are either three mutual acquaintances or three mutual strangers. If there are three mutual strangers, we are done; if there are three mutual acquaintances, they, together with Person A are four mutual acquaintances. Thus we may assume Person A is acquainted with at most four people. Thus person A is a stranger to at least four people. If two of these people are strangers, then they, together with person A form three mutual strangers and we are done. Otherwise all of these people know each other and we have at least four mutual acquaintances, and so in every possible situation, we have either four mutual acquaintances or three mutual strangers.
+          <m>R(4,3)=9</m>. In <xref ref="R_4_3_not8" /> we showed that <m>R(4,3)</m> is more than 8. So we must show that if we have nine people, we either have 4 mutual acquaintances or three mutual strangers. By <xref ref="OddNoPeople" /> there is at least one person (say person A) who is acquainted with an even number of people. If person A is acquainted with six or more people, then among these six people, there are either three mutual acquaintances or three mutual strangers. If there are three mutual strangers, we are done; if there are three mutual acquaintances, they, together with Person A are four mutual acquaintances. Thus we may assume Person A is acquainted with at most four people. Thus person A is a stranger to at least four people. If two of these people are strangers, then they, together with person A form three mutual strangers and we are done. Otherwise all of these people know each other and we have at least four mutual acquaintances, and so in every possible situation, we have either four mutual acquaintances or three mutual strangers.
         </p>
       </solution>
     </activity>
