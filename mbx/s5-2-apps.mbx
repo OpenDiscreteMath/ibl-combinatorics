@@ -9,7 +9,7 @@
         <statement>
           <p>
             In how many ways may we distribute <m>k</m> identical apples to <m>n</m>
-            children so that no child gets more than three apples?
+            children so that no child gets more than three apples? Compare your result with your result in <xref provisional="197" />
           </p>
         </statement>
         <hint>
@@ -241,6 +241,50 @@
         </p>
       </solution>
     </activity>
+    <activity>
+        <introduction>
+            <p>
+                If we roll a die eight times, we get a sequence of 8 numbers, the number of dots on top on the first roll, the number on the second roll, and so on.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>
+                    What is the number of ways of rolling the die eight times so that each of the numbers one through six appears at least once in our sequence? To get a numerical answer, you will likely need a computer algebra package.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    By the formula for the number of onto functions, we have <m>\sum_{s=0}^6 (-1)^s\binom{6}{s}(6-s)^8</m> sequences in which each number between one and six appears. Courtesy of Maple, this number is 191,520.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                   What is the probability that we get a sequence in which all six numbers between one and six appear? To get a numerical answer, you will likely need a computer algebra package, programmable calculator, or spreadsheet. 
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>191520/6^8</m>, which is about <m>.1140260631</m>, courtesy of Maple.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    How many times do we have to roll the die to have probability at least one half that all six numbers appear in our sequence. To answer this question, you will likely need a computer algebra package, programmable calculator, or spreadsheet.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    Some experimenting with Maple shows that if we roll our die 13 times, we get probability approximately <m>.5138581940</m> of having all six numbers appear, but with 12 rolls the probability is approximately <m>.4378156806</m>. Thus, 13 rolls are required.
+                </p>
+            </solution>
+        </task>
+
+    </activity>
   </subsection>
 
   <subsection>
@@ -248,11 +292,11 @@
     <p>
       We defined a graph to consist of set <m>V</m> of elements called
       vertices and a set <m>E</m> of elements called edges such that each edge joins
-      two vertices. A <em>coloring</em><idx><h>coloring of a
+      two vertices. A <term>coloring</term><idx><h>coloring of a
       graph</h></idx><idx><h>graph</h><h>coloring of</h></idx> of a graph by the elements of a set
       <m>C</m> (of colors) is an assignment of an element of <m>C</m> to each vertex of
       the graph; that is, a function from the vertex set <m>V</m> of the graph to
-      <m>C</m>. A coloring is called <em>proper</em><idx><h>coloring of a
+      <m>C</m>. A coloring is called <term>proper</term><idx><h>coloring of a
       graph</h><h>proper</h></idx><idx><h>graph</h><h>coloring of!proper</h></idx><idx><h>proper coloring of
       a graph</h></idx> if for each edge joining two distinct vertices<fn>If a
       graph had a loop connecting a vertex to itself, that loop would connect a
@@ -269,8 +313,8 @@
       connected graphs. (Recall that a graph is connected if, for each pair of
       vertices, there is a walk between them.) Here, disconnected graphs will
       also be important to us. Given a graph which might or might not be
-      connected, we partition its vertices into blocks called <em>connected
-      components</em><idx><h>connected component of a graph</h></idx><idx><h>graph</h><h>connected
+      connected, we partition its vertices into blocks called <term>connected
+      components</term><idx><h>connected component of a graph</h></idx><idx><h>graph</h><h>connected
       component of</h></idx> as follows. For each vertex
       <m>v</m> we put all vertices connected to it by a walk into a block together.
       Clearly each vertex is in at least one block, because vertex

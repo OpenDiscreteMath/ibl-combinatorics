@@ -50,11 +50,17 @@
         <statement>
           <p>
             Use the deletion-contraction recurrence to compute the
-            chromatic polynomial of the graph in <xref ref="del-cont">Figure</xref>. (You can
+            chromatic polynomial of the graph in <xref ref="del-cont" />. (You can
             simplify your computations by thinking about the effect on the chromatic
             polynomial of deleting an edge that is a loop, or deleting one of several
             edges between the same two vertices.)
           </p>
+          <sidebyside widths="25%">
+              <figure xml:id="del-cont" >
+                  <caption>A graph.</caption>
+                  <image source="images/spantreeexercise" />
+              </figure>
+          </sidebyside>
         </statement>
         <solution>
           <p>
@@ -70,10 +76,12 @@
             <m>(G-\{2,3\})/\{1,2\}</m>, and <m>(G/\{2,3\})/\{1,2\}</m>. These are shown in the
             following picture.
           </p>
+          <sidebyside width="95%">
           <figure xml:id="delete-contract">
               <caption>Graphs obtained through deletions and contractions</caption>
-              <image width="95%" source="images/spantreeexerciseresult" />
+              <image source="images/spantreeexerciseresult" />
           </figure>
+          </sidebyside>
             <p>The chromatic polynomial of a triangle is <m>x(x-1)(x-2)</m> because
             for one vertex we have <m>x</m> colors, for a second we have <m>x-1</m>, and for the
             third vertex, because it is adjacent to both of the other vertices, we have
@@ -97,11 +105,6 @@
             for the chromatic polynomial of <m>G</m>.
           </p>
         </solution>
-      <figure xml:id="del-cont" >
-        <caption>A
-        graph.</caption>
-        <image width="73%" source="images/spantreeexercise" />
-      </figure>
     </activity>
 
     <activity category="interesting">
@@ -111,10 +114,7 @@
             In how many ways may you properly color the vertices of a path on
             <m>n</m> vertices with
             <m>x</m> colors? Describe any dependence of the chromatic polynomial of a path
-            on the number of vertices. In how many ways may you properly color the
-            vertices of a cycle on <m>n</m> vertices with
-            <m>x</m> colors? Describe any dependence of the chromatic polynomial of a
-            cycle on the number of vertices.
+            on the number of vertices.
           </p>
         </statement>
         <solution>
@@ -123,9 +123,19 @@
             colors for that vertex, and <m>x-1</m> colors for each of the next <m>n-1</m>, since
             each of them must be different from the preceding one. Thus the chromatic
             polynomial of a path on <m>n</m> vertices is <m>x(x-1)^{n-1}</m>. The dependence on the
-            number of vertices appears in the exponent on <m>x-1</m>. If we use <m>C_n</m> to stand
-            for a path on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then
-            by the deletion-contraction recurrence, we may write
+            number of vertices appears in the exponent on <m>x-1</m>.
+          </p>
+        </solution>
+      </task>
+      <task>
+          <statement>
+              <p>
+                  (Not tremendously hard.) In how many ways may you properly color the vertices of a cycle on <m>n</m> vertices with <m>x</m> colors? Describe any dependence of the chromatic polynomial of a cycle on the number of vertices.
+              </p>
+          </statement>
+          <solution>
+              <p>
+                  If we use <m>C_n</m> to stand for a cycle on <m>n</m> vertices and <m>P_n</m> to stand for a path on <m>n</m> vertices, then by the deletion-contraction recurrence, we may write
             <md>
               <mrow>\hspace{-.4 in}\chi_{C_n}(x)  \amp =
               \chi_{P_n}(x)-\chi_{C_{n-1}}(x)</mrow>
@@ -150,10 +160,11 @@
           </p>
         </solution>
       </task>
-      <task>
+    </activity>
+    <activity>
         <statement>
           <p>
-            (Not tremendously hard.) In how many ways may you properly color the vertices of a tree on <m>n</m> vertices with <m>x</m> colors?
+            In how many ways may you properly color the vertices of a tree on <m>n</m> vertices with <m>x</m> colors?
           </p>
         </statement>
         <hint>
@@ -189,7 +200,6 @@
             you delete and contract an arbitrary edge.
           </p>
         </solution>
-      </task>
     </activity>
 
     <activity category="interesting">
