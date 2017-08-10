@@ -444,7 +444,7 @@
     <p>
       We are now going to introduce a method to prove the formula you guessed. Given a tree with two or more vertices, labelled with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of integers inductively as follows: If the tree has two vertices, the sequence consists of one entry, namely the label of the vertex with the larger label. Otherwise, let <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m> be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write down <m>b_1</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and <m>b_1</m> is 2. Given <m>a_1</m> through <m>a_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m>and let <m>b_i</m> be the unique vertex in this new tree adjacent to <m>a_i</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_2=2</m> and <m>b_2=3</m>. Then <m>a_3=5</m> and <m>b_3=4</m>. We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. In the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, the sequence <m>b</m> is 2344378. (If you are unfamiliar with inductive (recursive) definition, you might want to write down some other labelled trees on eight vertices and construct the sequence of <m>b_i</m>s.)
     </p>
-    <activity>
+    <activity xml:id="prufer-props">
       <task>
         <statement>
           <p>

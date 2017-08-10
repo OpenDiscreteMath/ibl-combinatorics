@@ -232,7 +232,7 @@
       <task xml:id="actsonparta" >
         <statement>
           <p>
-              In <xref provisional="263" /> we wrote in two row notation the permutation <m>\rho</m> of the vertices that corresponds to rotating the cube 90 degrees around a vertical axis through the faces <m>t</m> (for top) and <m>u</m> (for underneath). (We rotated in a right-handed fashion around this axis, meaning that vertex 6 goes to the back and vertex 8 comes to the front.) Write in two row notation the permutation <m>\overline{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of <m>R</m>.
+              In <xref ref="cube1-prob" /> we wrote in two row notation the permutation <m>\rho</m> of the vertices that corresponds to rotating the cube 90 degrees around a vertical axis through the faces <m>t</m> (for top) and <m>u</m> (for underneath). (We rotated in a right-handed fashion around this axis, meaning that vertex 6 goes to the back and vertex 8 comes to the front.) Write in two row notation the permutation <m>\overline{\rho}</m> of the faces that corresponds to this member <m>\rho</m> of <m>R</m>.
               <!--
               Write in two row-notation the permutation <m>\rho</m> of the vertices
           that corresponds to rotating the cube 90 degrees around a vertical axis
@@ -258,7 +258,7 @@
       <task>
         <statement>
           <p>
-            In <xref provisional="263" /> we wrote in two row notation the permutation <m>\varphi</m> that rotates the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and carries vertex 8 to vertex 6.  Write in two row notation the <m>\overline{\varphi}</m> of the faces that corresponds to this member of <m>R</m>.
+            In <xref ref="cube1-prob" /> we wrote in two row notation the permutation <m>\varphi</m> that rotates the cube 120 degrees around the diagonal from vertex 1 to vertex 7 and carries vertex 8 to vertex 6.  Write in two row notation the <m>\overline{\varphi}</m> of the faces that corresponds to this member of <m>R</m>.
           </p>
         </statement>
         <solution>
@@ -271,7 +271,7 @@
       <task xml:id="cube2" >
         <statement>
             <p>
-                In <xref provisional="263" /> we computed the two row notation for <m>\rho\circ\varphi</m>. Now compute the two row notation for <m>\overline{\rho}\circ\overline{\varphi}</m> (<m>\overline{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two row notation the permutation <m>\overline{\rho\circ\varphi}</m> of the faces that corresponds to the action of the permutation <m>\rho\circ\varphi</m> on the faces of the cube. (For this question it helps to think geometrically about what motion of the cube is carried out by <m>\rho\circ\varphi</m>.)  What do you observe about <m>\overline{\rho\circ\varphi}</m> and <m>\overline{\rho}\circ\overline{\varphi}</m>?
+                In <xref ref="cube1-prob" /> we computed the two row notation for <m>\rho\circ\varphi</m>. Now compute the two row notation for <m>\overline{\rho}\circ\overline{\varphi}</m> (<m>\overline{\rho}</m> was defined in <xref ref="actsonparta">Part</xref>), and write in two row notation the permutation <m>\overline{\rho\circ\varphi}</m> of the faces that corresponds to the action of the permutation <m>\rho\circ\varphi</m> on the faces of the cube. (For this question it helps to think geometrically about what motion of the cube is carried out by <m>\rho\circ\varphi</m>.)  What do you observe about <m>\overline{\rho\circ\varphi}</m> and <m>\overline{\rho}\circ\overline{\varphi}</m>?
         </p>
       </statement>
         <solution>
@@ -314,7 +314,7 @@
     <activity xml:id="D_4on2-sets" category="essential">
       <statement>
         <p>
-          The group <m>D_4</m> is a group of permutations of <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1">Problem</xref>. We are going to show in this problem how this group acts on the two-element subsets of <m>\{1,2,3,4\}</m>. In <xref ref="287" /> we will see a natural geometric interpretation of this action. In particular, for each two-element subset <m>\{i,j\}</m> of <m>\{1,2,3,4\}</m> and each member <m>\sigma</m> of <m>D_4</m> we define <m>\overline{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.  Show that with this definition of <m>\overline{\sigma}</m>, the group <m>D_4</m> acts on the two-element subsets of <m>\{1,2,3,4\}</m>.
+          The group <m>D_4</m> is a group of permutations of <m>\{1,2,3,4\}</m> as in <xref ref="dihedral1" />. We are going to show in this problem how this group acts on the two-element subsets of <m>\{1,2,3,4\}</m>. In <xref ref="orbits1" /> we will see a natural geometric interpretation of this action. In particular, for each two-element subset <m>\{i,j\}</m> of <m>\{1,2,3,4\}</m> and each member <m>\sigma</m> of <m>D_4</m> we define <m>\overline{\sigma}(\{i,j\}) = \{\sigma(i),\sigma(j)\}</m>.  Show that with this definition of <m>\overline{\sigma}</m>, the group <m>D_4</m> acts on the two-element subsets of <m>\{1,2,3,4\}</m>.
         </p>
       </statement>
       <solution>
@@ -408,7 +408,7 @@
 </introduction>
 <subsection>
     <title>Groups acting on colorings of sets</title>
-    <p>Recall that when you were asked in <xref provisional="45" /> to find the number of ways to place two red beads and two blue beads at the corners of a square free to move in three-dimensional space, you were not able to apply the quotient principle to answer the question. Instead you had to see that you could divide the set of six lists of two <m>R</m>s and two <m>B</m>s into two sets, one of size two in which the <m>R</m>s and <m>B</m>s alternated and one of size four in which the two reds (and therefore the two blues) would be side-by-side on the square. Saying that the square is free to move in space is equivalent to saying that two arrangements of beads on the square are equivalent if a member of the dihedral group carries one arrangement to the other. Thus an important ingredient in the analysis of such problems will be how a group can act on colorings of a set of vertices. We can describe the coloring of the square in <xref provisional="colored-square" /> as the function <m>f</m> with <me>f(1)=R,\; f(2)=R, \; f(3)=B,\;\text{ and }\;f(4)=B</me>, but it is more compact and turns out to be more suggestive to represent the coloring in <xref provisional="colored-square" /> as the set of ordered pairs
+    <p>Recall that when you were asked in <xref ref="twocolorsofbeads" /> to find the number of ways to place two red beads and two blue beads at the corners of a square free to move in three-dimensional space, you were not able to apply the quotient principle to answer the question. Instead you had to see that you could divide the set of six lists of two <m>R</m>s and two <m>B</m>s into two sets, one of size two in which the <m>R</m>s and <m>B</m>s alternated and one of size four in which the two reds (and therefore the two blues) would be side-by-side on the square. Saying that the square is free to move in space is equivalent to saying that two arrangements of beads on the square are equivalent if a member of the dihedral group carries one arrangement to the other. Thus an important ingredient in the analysis of such problems will be how a group can act on colorings of a set of vertices. We can describe the coloring of the square in <xref ref="colored-square" /> as the function <m>f</m> with <me>f(1)=R,\; f(2)=R, \; f(3)=B,\;\text{ and }\;f(4)=B</me>, but it is more compact and turns out to be more suggestive to represent the coloring in <xref ref="colored-square" /> as the set of ordered pairs
     <men xml:id="coloring-pairs">
         (1,R), (2,R), (3,B), (4,B)
     </men>
@@ -431,7 +431,7 @@
             </latex-image-code>
         </image>
     </figure>
-    <p>This gives us an explicity list of which colors are assigned to which vertex.<fn>The reader who has studied <xref provisional="AppA" /> will recognize that this set of ordered pairs is the relation of the function <m>f</m>, but we won't need to make any specific references to the idea of a relation in what follows.</fn> Then if we rotate the square through 90 degrees, we see that the set of ordered pairs becomes
+    <p>This gives us an explicity list of which colors are assigned to which vertex.<fn>The reader who has studied <xref ref="Relations" /> will recognize that this set of ordered pairs is the relation of the function <m>f</m>, but we won't need to make any specific references to the idea of a relation in what follows.</fn> Then if we rotate the square through 90 degrees, we see that the set of ordered pairs becomes
     <men xml:id="coloring-pairs-rotate">\left\{(\rho(1),R),(\rho(2),R),(\rho(3),B),(\rho(4),B)\right\}</men>
     which is the same as
     <me>\left\{(2,R),(3,R),(4,B),(1,B)\right\}</me>. Or, in a more natural order,
@@ -684,7 +684,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     </p>
 
     <p>
-        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating n people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref provisional="45" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
+        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating n people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref ref="twocolorsofbeads" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
     </p>
 
     <activity>
@@ -1799,7 +1799,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
             </solution>
         </task>
     </activity>
-    <activity>
+    <activity xml:id="numbermultiorbits5">
         <introduction>
             <p>
                 A second computation of the result of <xref ref="numbermultiorbits4" /> can be done as follows.
