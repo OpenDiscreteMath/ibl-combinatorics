@@ -425,6 +425,335 @@
       </task>
     </activity>
 
+    <activity xml:id="functiondigraphs">
+      <introduction>
+        <p>
+          Digraphs of functions help us to visualize whether or not they are onto or one-to-one. For example, let both <m>S</m> and <m>T</m> be the set <m>\{-2, -1, 0 ,1, 2\}</m> and let <m>S'</m> and <m>T'</m> be the set <m>\{0,1,2\}</m>.  Let <m>f(x) = 2-|x|</m>.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Draw the digraph of the function <m>f</m> assuming its domain is <m>S</m> and its range is <m>T</m>.  Use the digraph to explain why or why not this function maps <m>S</m> onto <m>T</m>.
+          </p>
+        </statement>
+        <solution>
+       <figure>
+         <image xml:id="ontoNotOneToOne" width="73%">
+           <latex-image-code>
+             <![CDATA[
+             \begin{tikzpicture}[yscale=0.75]
+               \node[svertex, label=above:$-2$] (t-2) at (0,2) {};
+               \node[svertex, label=above:$-1$] (t-1) at (1,2) {};
+               \node[svertex, label=above:$0$] (t0) at (2,2) {};
+               \node[svertex, label=above:$1$] (t1) at (3,2) {};
+               \node[svertex, label=above:$2$] (t2) at (4,2) {};
+               \node[svertex, label=below:$-2$] (b-2) at (0,0) {};
+               \node[svertex, label=below:$-1$] (b-1) at (1,0) {};
+               \node[svertex, label=below:$0$] (b0) at (2,0) {};
+               \node[svertex, label=below:$1$] (b1) at (3,0) {};
+               \node[svertex, label=below:$2$] (b2) at (4,0) {};
+
+               \draw[dedge] (b-2) -- (t0);
+               \draw[dedge] (b-1) -- (t1);
+               \draw[dedge] (b0) -- (t2);
+               \draw[dedge] (b1) -- (t1);
+               \draw[dedge] (b2) -- (t0);
+
+               \end{tikzpicture}
+             ]]>
+           </latex-image-code>
+         </image>
+         <caption></caption>
+       </figure>
+          <p>
+            The function is not onto because there are vertices in the range
+            that do not have an arrow going to them.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            Use the digraph of the previous part to explain whether or not the function is one-to one.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The function is not one-to-one because there are two arrows entering vertex 0 and two arrows entering vertex 1.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Draw the digraph of the function <m>f</m> assuming its domain is <m>S</m> and its range is <m>T'</m>. Use the digraph to explain whether or not the function is onto.
+          </p>
+        </statement>
+        <solution>
+          <figure>
+            <image width="73%">
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}[yscale=0.75]
+                  \node[svertex, label=above:$0$] (t0) at (2,2) {};
+                  \node[svertex, label=above:$1$] (t1) at (3,2) {};
+                  \node[svertex, label=above:$2$] (t2) at (4,2) {};
+                  \node[svertex, label=below:$-2$] (b-2) at (0,0) {};
+                  \node[svertex, label=below:$-1$] (b-1) at (1,0) {};
+                  \node[svertex, label=below:$0$] (b0) at (2,0) {};
+                  \node[svertex, label=below:$1$] (b1) at (3,0) {};
+                  \node[svertex, label=below:$2$] (b2) at (4,0) {};
+
+                  \draw[dedge] (b-2) -- (t0);
+                  \draw[dedge] (b-1) -- (t1);
+                  \draw[dedge] (b0) -- (t2);
+                  \draw[dedge] (b1) -- (t1);
+                  \draw[dedge] (b2) -- (t0);
+
+                  \end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
+          </figure>
+          <p>
+            The function is onto because each vertex in the range that has at least one arrow going to it
+          </p>
+        </solution>
+      </task>
+
+      <!-- d -->
+      <task>
+        <statement>
+          <p>
+            Use the digraph of the previous part to explain whether or not the function is one-to-one.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The function is not one-to-one because there are two arrows entering vertex 0 and two arrows entering vertex 1.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Draw the digraph of the function <m>f</m> assuming its domain is <m>S'</m> and its range is <m>T'</m>. Use the digraph to explain whether the function is onto.
+          </p>
+        </statement>
+        <solution>
+          <figure>
+            <image width="50%">
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}[yscale=0.75]
+                  \node[svertex, label=above:$0$] (t0) at (2,2) {};
+                  \node[svertex, label=above:$1$] (t1) at (3,2) {};
+                  \node[svertex, label=above:$2$] (t2) at (4,2) {};
+                  \node[svertex, label=below:$0$] (b0) at (2,0) {};
+                  \node[svertex, label=below:$1$] (b1) at (3,0) {};
+                  \node[svertex, label=below:$2$] (b2) at (4,0) {};
+
+                  \draw[dedge] (b0) -- (t2);
+                  \draw[dedge] (b1) -- (t1);
+                  \draw[dedge] (b2) -- (t0);
+
+                  \end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
+          </figure>
+          <p>
+            The function is onto because each vertex in the range has an arrow entering it.
+          </p>
+        </solution>
+      </task>
+      <!-- f -->
+      <task>
+        <statement>
+          <p>
+            Use the digraph of the previous part to explain whether the function is one-to-one.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            The function is one-to-one because each element of the range has at most one arrow entering it.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Suppose the function <m>f</m> has domain <m>S'</m> and range <m>T</m>.  Draw the digraph of <m>f</m> and use it to explain whether <m>f</m> is onto.
+          </p>
+        </statement>
+        <solution>
+          <figure>
+            <image width="73%">
+              <latex-image-code>
+                <![CDATA[
+                \begin{tikzpicture}[yscale=0.75]
+                  \node[svertex, label=above:$-2$] (t-2) at (0,2) {};
+                  \node[svertex, label=above:$-1$] (t-1) at (1,2) {};
+                  \node[svertex, label=above:$0$] (t0) at (2,2) {};
+                  \node[svertex, label=above:$1$] (t1) at (3,2) {};
+                  \node[svertex, label=above:$2$] (t2) at (4,2) {};
+                  \node[svertex, label=below:$0$] (b0) at (2,0) {};
+                  \node[svertex, label=below:$1$] (b1) at (3,0) {};
+                  \node[svertex, label=below:$2$] (b2) at (4,0) {};
+
+                  \draw[dedge] (b0) -- (t2);
+                  \draw[dedge] (b1) -- (t1);
+                  \draw[dedge] (b2) -- (t0);
+
+                  \end{tikzpicture}
+                ]]>
+              </latex-image-code>
+            </image>
+            <caption></caption>
+          </figure>
+          <p>
+            The function is not onto because there are vertices in the range that do not have an arrow entering them.
+          </p>
+        </solution>
+      </task>
+      <task>
+        <statement>
+          <p>
+            Use the digraph of the previous part to explain whether <m>f</m> is one-to-one.
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>f</m> is one-to-one because each vertex of <m>T</m> has at most one arrow entering it.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+    <p>
+      A one-to-one function from a set <m>X</m> onto a set <m>Y</m> is frequently called a <term>bijection</term><idx><h>bijection</h></idx>, especially in combinatorics.  Your work in <xref ref="functiondigraphs" /> should show you that a digraph is the digraph of a bijection from <m>X</m> to <m>Y</m>
+
+      <ul>
+        <li><p>
+          if the vertices of the digraph represent the elements of <m>X</m> and <m>Y</m>,
+        </p></li>
+        <li><p>
+          if each vertex representing an element of <m>X</m> has one and only one arrow leaving it, and
+        </p></li>
+        <li><p>
+          each vertex representing an element of <m>Y</m> has one and only one arrow entering it.
+        </p></li>
+      </ul>
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          If we reverse all the arrows in the digraph of a bijection <m>f</m>, we get the digraph of another function <m>g</m>. Is <m>g</m> a bijection? What is <m>f(g(x))</m>? What is <m>g(f(x))</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          <m>g</m> is a bijection, because each vertex representing an element of <m>Y</m> has one arrow leaving it and each vertex representing an element of <m>X</m> has one arrow entering it.  For both of the next questions, the answer is <m>x</m>.
+        </p>
+      </solution>
+    </activity>
+
+    <p>
+      If <m>f</m> is a function from <m>S</m> to <m>T</m>, if <m>g</m> is a function from <m>T</m> to <m>S</m>, and if <m>f(g(x))= x</m> for each <m>x</m> in <m>T</m> and <m>g(f(x)) = x</m> for each <m>x</m> in <m>S</m>, then we say that <m>g</m> is an inverse of <m>f</m> (and <m>f</m> is an inverse of <m>g</m>).
+    </p>
+
+    <p>
+      More generally, if <m>f</m> is a function from a set <m>R</m> to a set <m>S</m>, and <m>g</m> is a function from <m>S</m> to <m>T</m>, then we define a new function <m>f \circ g</m>, called the <term>composition</term> of <m>f</m> and <m>g</m> <idx><h>composition</h></idx>, by <m>f\circ g(x) = f(g(x))</m>.  Composition of functions is a particularly important operatio in subjects such as calculus, where we represent a function like <m>h(x) = \sqrt{x^2 + 1}</m> as the composition of the square root function and the square and add one function in order to use the chain rule to take the derivative of <m>h</m>.
+    </p>
+
+    <p>
+      The function <m>\iota</m> (the Greek letter iota is pronounced eye-oh-ta) from a set <m>S</m> to itself, given by the rule <m>\iota(x) = x</m> for every <m>x</m> in <m>S</m>, is called the <term>identity function</term> on S. <idx><h>identity function</h></idx> If <m>f</m> is a function from <m>S</m> to <m>T</m> and <m>g</m> is a function from <m>T</m> to <m>S</m> such that <m>g(f(x)) = x</m> for every <m>x</m> in <m>S</m>, we can express this by saying that <m>g\circ f = \iota</m>, where <m>\iota</m> is the identity function of <m>S</m>.
+      Saying that <m>f(g(x)) = x</m> is the same as saying that <m>f\circ g = \iota</m>, where <m>\iota</m> stands for the identity function on <m>T</m>.  We use the same letter for the identity function on two different sets when we can use context to tell us on which set the identity function is being defined.
+    </p>
+
+    <activity>
+      <statement>
+        <p>
+          If <m>f</m> is a function from <m>S</m> to <m>T</m> and <m>g</m> is a function from <m>T</m> to <m>S</m> such that <m>g(f(x)) = x</m>, how can we tell from context that <m>g\circ f</m> is the identity function on <m>S</m> and not the identity function on <m>T</m>?
+        </p>
+      </statement>
+      <hint>
+        <p>
+          What is the domain of <m>g \circ f</m>?
+        </p>
+      </hint>
+      <solution>
+        <p>
+          Since <m>f</m> has <m>S</m> as its domain, <m>g \circ f</m> must have <m>S</m> as its domain as well, so that it is possible to compute <m>f(x)</m> in order to compute <m>g(f(x))</m>.  Thus <m>g \circ f</m> is the identity function on <m>S</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+    <activity xml:id="inversetobijection">
+      <statement>
+        <p>
+          Explain why a function that has an inverse must be a bijection.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          Suppose the function <m>f</m> from <m>S</m> to <m>T</m> has an inverse <m>g</m>.  If <m>f(x) = f(y)</m>, then <m>g(f(x)) = g(f(y))</m> and so <m>x = y</m>.  Therefore <m>f</m> is one-to-one.  If <m>y</m> is in <m>T</m>, then <m>f(g(y)) = y</m>, and so <m>g(y)</m> is an element <m>x</m> of <m>S</m> such that <m>f(x) = y</m>.  Therefore <m>f</m> is a bijection.
+        </p>
+      </solution>
+    </activity>
+
+
+    <activity>
+      <statement>
+        <p>
+          Is it true that the inverse of a bijection is a bijection?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          If <m>f</m> is the inverse of <m>g</m>, then <m>g</m> is the inverse of <m>f</m> (because the definitionis symmetric in <m>f</m> and <m>g</m>).  Thus the inverse of a bijection has an inverse and therefore by <xref ref="inversetobijection" /> it is a bijection as well.
+        </p>
+      </solution>
+    </activity>
+
+
+    <activity>
+      <statement>
+        <p>
+          If <m>g</m> and <m>h</m> are inverse of <m>f</m>, then what can we say about <m>g</m> and <m>h</m>?
+        </p>
+      </statement>
+      <solution>
+        <p>
+          They must be equal.  To see why, notice first that each element <m>y</m> of <m>T</m> must be <m>f(x)</m> for some <m>x</m> in <m>S</m>, because <m>f</m> is a bijection.  But then since <m>h(f(x)) = x = g(f(x))</m>, we have <m>h(y) = g(y)</m> for every <m>y</m> in <m>T</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+    <activity>
+      <statement>
+        <p>
+          Explain why a bijection must have an inverse.
+        </p>
+      </statement>
+      <solution>
+        <p>
+          From the point of view of digraphs, if <m>f</m> is a bijection, we can get the digraph of an inverse by reversing all the arrows in the digraph of <m>f</m>. If you prefer to use the definitions directly, suppose <m>f</m> is a bijection. For each <m>y</m> in <m>T</m>, let <m>g(y)</m> be the <m>x</m> such that <m>f(x) = y</m>. (There must be such an <m>x</m> because <m>f</m> is a bijection.) Then <m>g(f(x)) = x</m> by definition. To compute <m>f(g(y))</m>, we have to take <m>f(x)</m>, where <m>x</m> is the unique element of <m>S</m> such that <m>f(x) = y</m>. Thus <m>f(g(y)) = y</m>. Therefore <m>g</m> is an inverse to <m>f</m>.
+        </p>
+      </solution>
+    </activity>
+
+
+    <p>
+      Since a function with an inverse has exactly one inverse <m>g</m>, we call <m>g</m> <em>the</em> inverse of <m>f</m>.  From now on, when <m>f</m> has an inverse, we shall denote its inverse by <m>f^{-1}</m>.  Thus <m>f(f^{-1}(x)) = x</m> and <m>f^{-1}(f(x)) = x</m>.  Equivalenetly <m>f\circ f^{-1} = \iota</m> and <m>f^{-1} \circ f = \iota</m>.
+    </p>
 
 
 
