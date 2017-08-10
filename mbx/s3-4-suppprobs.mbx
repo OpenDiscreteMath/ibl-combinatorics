@@ -1,355 +1,407 @@
-  <section>
+<?xml version="1.0" encoding="UTF-8"?>
+<exercises xml:id="sec_distribution-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Supplementary Problems</title>
-    <ol>
-    <li>
-      <p>
-        Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>\binom{n+k-1}{k}</m>, <m>\binom{n+k-1}{n}</m>, <m>\binom{n-1}{k-1}</m>, <m>\binom{k-1}{n-1}</m>, or ``none of the above".
-        <ol>
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> identical pieces of candy to <m>n</m> children?
-              <solution>
-                <p>
-                  <m>\binom{n+k-1}{k}</m>
-                </p>
-              </solution>
+
+    <exercise>
+        <statement>
+            <p> Answer each of the following questions with <m>n^k</m>, <m>k^n</m>, <m>n!</m>, <m>k!</m>, <m>\binom{n}{k}</m>, <m>\binom{k}{n}</m>, <m>n^{\underline{k}}</m>, <m>k^{\underline{n}}</m>, <m>n^{\overline{k}}</m>, <m>k^{\overline{n}}</m>, <m>\binom{n+k-1}{k}</m>, <m>\binom{n+k-1}{n}</m>, <m>\binom{n-1}{k-1}</m>, <m>\binom{k-1}{n-1}</m>, or ``none of the above".
+            <ol>
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> identical pieces of candy to <m>n</m> children?
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> distinct pieces of candy to <m>n</m> children?
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> identical pieces of candy to
+                        <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> distinct pieces of candy to
+                        <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> distinct pieces of
+                        candy to <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+                    </p>
+                </li>
+                
+                <li>
+                    <p>
+                        In how many ways may we pass out <m>k</m> identical pieces of candy to
+                        <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
+                    </p>
+                </li>
+            </ol>
             </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> distinct pieces of candy to <m>n</m> children?
-              <solution>
-                <p>
-                  <m>n^k</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> identical pieces of candy to
-              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
-              <solution>
-                <p>
-                  <m>\binom{n}{k}</m>.
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> distinct pieces of candy to
-              <m>n</m> children so that each gets at most one?  (Assume <m>k\le n</m>.)
-              <solution>
-                <p>
-                  <m>n^{\underline{k}}</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> distinct pieces of
-              candy to <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
-              <solution>
-                <p>
-                  None of the above.
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways may we pass out <m>k</m> identical pieces of candy to
-              <m>n</m> children so that each gets at least one?  (Assume <m>k\ge n</m>.)
-              <solution>
-                <p>
-                  <m>\binom{k-1}{n-1}</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-        </ol>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        The neighborhood betterment committee has been given <m>r</m> trees to
-        distribute to <m>s</m> families living along one side of a street.
-        <ol>
-          <li>
-            <p>
-              In how many ways can they distribute all of
-              them if the trees are distinct, there are more families than trees, and
-              each family can get at most one?
-              <solution>
-                <p>
-                  <m>s^{\underline{r}}</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways can they
-              distribute all of them if the trees are distinct, any family can get any
-              number, and a family may plant its trees where it chooses?
-              <solution>
-                <p>
-                  <m>s^r</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways can they distribute all the trees if the trees are
-              identical, there are no more trees than families,   and any family
-              receives at most one?
-              <solution>
-                <p>
-                  <m>\binom{s}{r}</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li>
-            <p>
-              In how many ways can they distribute them if the trees are
-              distinct, there are more trees than families, and each family
-              receives at most one (so there could be some leftover trees)?
-              <solution>
-                <p>
-                  <m>\sum_{k=0}^s \binom{s}{k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}\binom{r}{k}</m>
-                </p>
-              </solution>
-            </p>
-          </li>
-
-          <li xml:id="multisetproblem" >
-
-          <p>
-            In how many ways can they distribute all the trees if they are
-            identical and anyone may receive any number of trees?
-            <solution>
-              <p>
-                <m>\binom{r+s-1}{r}</m>
-              </p>
-            </solution>
-          </p>
-        </li>
-
-        <li xml:id="orderedfunctionproblem" >
-
-        <p>
-          In how many ways can all the trees be distributed and planted if
-          the trees are distinct, any family can get any number, and a family must
-          plant its trees in an evenly spaced row along the road?
-          <solution>
-            <p>
-              <m>s^{\overline{r}}=(r+s-1)^{\underline{r}}</m>
-            </p>
-          </solution>
-        </p>
-        </li>
-
-        <li>
-          <p>
-            Answer the question in <xref ref="orderedfunctionproblem">Part</xref>
-            assuming that every family must get a tree.
-            <solution>
-              <p>
-                <m>r!\binom{r-1}{s-1}</m>
-              </p>
-            </solution>
-          </p>
-        </li>
-
-        <li>
-          <p>
-            Answer the question in <xref ref="multisetproblem">Part</xref> assuming that
-            each family must get at least one tree.
-            <solution>
-              <p>
-                <m>\binom{r-1}{s-1}</m>
-              </p>
-            </solution>
-          </p>
-        </li>
-      </ol>
-    </p>
-    </li>
-
-    <li>
-      <p>
-        In how many ways can <m>n</m> identical chemistry books, <m>r</m> identical
-        mathematics books, <m>s</m> identical physics books, and <m>t</m> identical astronomy books
-        be arranged on three bookshelves?
-        (Assume there is no limit on the number of books per shelf.)
+        </statement>
         <solution>
-          <p>
-            <m>\frac{(n+r+s+t+2)!}{n!r!s!t!2!}</m>
-          </p>
+            <p>
+                <ol>
+                    <li>
+                        <m>\binom{n+k-1}{k}</m>
+                    </li>
+                    <li>
+                        <m>n^k</m>
+                    </li>
+                    <li>
+                        <m>\binom{n}{k}</m>.
+                    </li>
+                    <li>
+                        <m>n^{\underline{k}}</m>
+                    </li>
+                    <li>
+                        None of the above.
+                    </li>
+                    <li>
+                        <m>\binom{k-1}{n-1}</m>
+                    </li>
+                </ol>
+            </p>
         </solution>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        (interesting)
-        One formula for the Lah numbers is
-        <me>
-          L(k,n) = \binom{k}{n}(k-1)^{\underline{k-n}}
-        </me>
-        Find a proof that explains this product.
+    </exercise>
+    
+    <exercise>
+        <statement>
+            <p>
+                The neighborhood betterment committee has been given <m>r</m> trees to distribute to <m>s</m> families living along one side of a street.
+                <ol>
+                    <li>
+                        <p>
+                            In how many ways can they distribute all of
+                            them if the trees are distinct, there are more families than trees, and
+                            each family can get at most one?
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            In how many ways can they
+                            distribute all of them if the trees are distinct, any family can get any
+                            number, and a family may plant its trees where it chooses?
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            In how many ways can they distribute all the trees if the trees are
+                            identical, there are no more trees than families,   and any family
+                            receives at most one?
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            In how many ways can they distribute them if the trees are
+                            distinct, there are more trees than families, and each family
+                            receives at most one (so there could be some leftover trees)?
+                        </p>
+                    </li>
+                    
+                    <li xml:id="multisetproblem" >
+                        
+                        <p>
+                            In how many ways can they distribute all the trees if they are
+                            identical and anyone may receive any number of trees?
+                        </p>
+                    </li>
+                    
+                    <li xml:id="orderedfunctionproblem" >
+                        
+                        <p>
+                            In how many ways can all the trees be distributed and planted if
+                            the trees are distinct, any family can get any number, and a family must
+                            plant its trees in an evenly spaced row along the road?
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            Answer the question in <xref ref="orderedfunctionproblem">Part</xref>
+                            assuming that every family must get a tree.
+                        </p>
+                    </li>
+                    
+                    <li>
+                        <p>
+                            Answer the question in <xref ref="multisetproblem">Part</xref> assuming that
+                            each family must get at least one tree.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
         <solution>
-          <p>
-            First choose the <m>n</m> elements which will be the first
-            member of the part they lie in. (This, in effect, labels the <m>n</m>
-            parts.) Then assign the remaining <m>k-n</m> elements to their parts
-            by making an ordered function of <m>n-k</m> objects to <m>n</m>
-            recipients in <m>(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}</m> ways.
-          </p>
+            <p>
+                <ol>
+                    <li>
+                        <m>s^{\underline{r}}</m>
+                    </li>
+                    <li>
+                        <m>s^r</m>
+                    </li>
+                    <li>
+                        <m>\binom{s}{r}</m>
+                    </li>
+                    <li>
+                        <m>\sum_{k=0}^s \binom{s}{k}r^{\underline{k}}</m> or<m>\sum_{k=0}^s s^{\underline{k}}\binom{r}{k}</m>
+                    </li>
+                    <li>
+                        <m>\binom{r+s-1}{r}</m>
+                    </li>
+                    <li>
+                        <m>s^{\overline{r}}=(r+s-1)^{\underline{r}}</m>
+                    </li>
+                    <li>
+                        <m>r!\binom{r-1}{s-1}</m>
+                    </li>
+                    <li>
+                        <m>\binom{r-1}{s-1}</m>
+                    </li>
+                </ol>
+            </p>
         </solution>
-      </p>
-    </li>
+    </exercise>
 
-    <li>
-      <p>
-        What is the number of partitions of <m>n</m> into two parts?
+    <exercise>
+        <statement>
+            <p> In how many ways can <m>n</m> identical chemistry books, <m>r</m> identical mathematics books, <m>s</m> identical physics books, and <m>t</m> identical astronomy books be arranged on three bookshelves?  (Assume there is no limit on the number of books per shelf.)
+            </p>
+        </statement>
         <solution>
-          <p>
-            <m>n/2</m> if <m>n</m> is even and <m>(n-1)/2</m> if <m>n</m> is odd, equivalently,
-            <m>\lfloor n/2\rfloor</m>
-          </p>
+            <p>
+                <m>\frac{(n+r+s+t+2)!}{n!r!s!t!2!}</m>
+            </p>
         </solution>
-      </p>
-    </li>
+    </exercise>
 
-    <li>
-      <p>
-        Show that the number of partitions of <m>k</m> into <m>n</m> parts of size at
-        most <m>m</m> equals the number of partitions of <m>mn-k</m> into no more than <m>n</m>
-        parts of size at most <m>m-1</m>.
+    <exercise category="interesting">
+        <statement>
+            <p>
+                One formula for the Lah numbers is
+                <me>
+                    L(k,n) = \binom{k}{n}(k-1)^{\underline{k-n}}
+                </me>
+                Find a proof that explains this product.
+            </p>
+        </statement>
         <solution>
-          <p>
-            If we take the complement of the Young diagram of a partition
-            of <m>k</m> into <m>n</m> parts of size at most <m>m</m> in an rectangle with <m>n</m> rows
-            and <m>m</m> columns, the number we partition will be <m>mn-k</m>, and we will have
-            no more than <m>n</m> parts, each of size at most <m>m-1</m>. And if we take the
-            complement of a partition of this second kind in the same rectangle, we
-            will get a partition of the first kind.
-          </p>
+            <p>
+                First choose the <m>n</m> elements which will be the first
+                member of the part they lie in. (This, in effect, labels the <m>n</m>
+                parts.) Then assign the remaining <m>k-n</m> elements to their parts
+                by making an ordered function of <m>n-k</m> objects to <m>n</m>
+                recipients in <m>(n + (k-n) - 1)^{{k-n}} = (k-1)^{{k-n}}</m> ways.
+            </p>
         </solution>
-      </p>
-    </li>
+    </exercise>
 
-    <li>
-      <p>
-        Show that the number of partitions of <m>k</m> into parts of size at
-        most <m>m</m> is equal to the number of partitions of of <m>k+m</m> into <m>m</m> parts.
+    <exercise>
+        <statement>
+        <p>        What is the number of partitions of <m>n</m> into two parts?</p></statement>
         <solution>
-          <p>
-            Given the first kind of partition, take the conjugate (giving a
-            partition of <m>k</m> into at most <m>m</m> parts), add one to each part, and then
-            add enough parts of size 1 to get a total of <m>m</m> parts. It is
-            straightforward that this process can be reversed.
-          </p>
+            <p>
+                <m>n/2</m> if <m>n</m> is even and <m>(n-1)/2</m> if <m>n</m> is odd, equivalently,
+                <m>\lfloor n/2\rfloor</m>
+            </p>
         </solution>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        You can say something pretty specific about 
-        self-conjugate partitions of <m>k</m> into distinct parts.  Figure out what
-        it is and prove it.  With that, you should be able to find a relationship
-        between these partitions and partitions whose parts are consecutive
-        integers, starting with 1.  What is that relationship?
+    </exercise>
+    <exercise xml:id="partitions-k-2-parts" category="essential for this section or the next">
+        <statement>
+            <p>
+                What is the number of partitions of <m>k</m> into <m>k - 2</m> parts?
+            </p>
+        </statement>
         <solution>
-          <p>
-            In a self-conjugate partition, the number of parts is the size
-            of the largest part. If these parts are distinct, this means that each
-            number between 1 and the largest part appears once as a part. That is,
-            the parts are a list of consecutive integers, starting with 1.
-          </p>
+            <p>
+                A partition of <m>k</m> into <m>k-2</m> parts will have either one part of size 3 and <m>k-3</m> parts of size 1, or two parts of size 2 and <m>k-4</m> parts of size 1. Thus, the number of partitions of <m>k</m> into <m>k-2</m> parts is
+                <md>
+                    <mrow>\binom{k}{3} + \binom{k}{2}\binom{k-2}{2}/2 &amp;=
+                    k(k-1)(n-2)/6 + k(k-1)(k-2)(k-3)/8</mrow>
+                    <mrow>&amp;= k(k-1)(k-2)(1/6 + (k-3)/8)</mrow>
+                    <mrow>&amp;= k(k-1)(k-2)(3k-5)/24</mrow>
+                    </md>.
+            </p>
         </solution>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        What is <m>s(k,1)</m>?
+    </exercise>
+    <exercise>
+        <statement>
+            <p>        Show that the number of partitions of <m>k</m> into <m>n</m> parts of size at
+            most <m>m</m> equals the number of partitions of <m>mn-k</m> into no more than <m>n</m>
+            parts of size at most <m>m-1</m>.
+            </p>
+        </statement>
         <solution>
-          <p>
-            Since s<m>(k,1)</m> is the coefficient of <m>x^1</m> in
+            <p>
+                If we take the complement of the Young diagram of a partition
+                of <m>k</m> into <m>n</m> parts of size at most <m>m</m> in an rectangle with <m>n</m> rows
+                and <m>m</m> columns, the number we partition will be <m>mn-k</m>, and we will have
+                no more than <m>n</m> parts, each of size at most <m>m-1</m>. And if we take the
+                complement of a partition of this second kind in the same rectangle, we
+                will get a partition of the first kind.
+            </p>
+        </solution>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>        Show that the number of partitions of <m>k</m> into parts of size at
+            most <m>m</m> is equal to the number of partitions of of <m>k+m</m> into <m>m</m> parts.
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Given the first kind of partition, take the conjugate (giving a
+                partition of <m>k</m> into at most <m>m</m> parts), add one to each part, and then
+                add enough parts of size 1 to get a total of <m>m</m> parts. It is
+                straightforward that this process can be reversed.
+            </p>
+        </solution>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>        You can say something pretty specific about 
+            self-conjugate partitions of <m>k</m> into distinct parts.  Figure out what
+            it is and prove it.  With that, you should be able to find a relationship
+            between these partitions and partitions whose parts are consecutive
+            integers, starting with 1.  What is that relationship?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                In a self-conjugate partition, the number of parts is the size
+                of the largest part. If these parts are distinct, this means that each
+                number between 1 and the largest part appears once as a part. That is,
+                the parts are a list of consecutive integers, starting with 1.
+            </p>
+        </solution>
+    </exercise>
+    <exercise>
+        <statement>
+            <p>        What is <m>s(k,1)</m>?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Since s<m>(k,1)</m> is the coefficient of <m>x^1</m> in
+                <me>
+                    x^{\underline{k}} = x(x-1)
+                    (x-2)\cdot (x-(k-1)),
+                </me>
+                it is <m>(-1)^{k-1}(k-1)!</m>.
+            </p>
+        </solution>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>        Show that the Stirling numbers of the second kind satisfy the
+            recurrence
             <me>
-              x^{\underline{k}} = x(x-1)
-              (x-2)\cdot (x-(k-1)),
-            </me>
-            it is <m>(-1)^{k-1}(k-1)!</m>.
-          </p>
-        </solution>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Show that the Stirling numbers of the second kind satisfy the
-        recurrence
-        <me>
-          S(k,n) = \sum_{i=1}^kS(k-i,n-1)\binom{n-1}{i-1}.
-        </me>
+                S(k,n) = \sum_{i=1}^kS(k-i,n-1)\binom{n-1}{i-1}
+                </me>.
+            </p>
+        </statement>
         <solution>
-          <p>
-            A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
-            <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
-            of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
-            size <m>i</m> containing <m>k</m> is <m>\binom{k-1}{i-1}</m>, and <m>i</m> can be any number
-            between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
-            constructed exactly once by first choosing the block containing <m>k</m> and
-            then partitioning the remaining elements into <m>n-1</m> blocks. This proves
-            the formula.
-          </p>
+            <p>
+                A partition of <m>[k]</m> into <m>n</m> blocks has a block containing
+                <m>k</m>. If this block has size <m>i</m>, when you remove it, you get a partition
+                of a set of size <m>k-i</m> into <m>n-1</m> blocks. The number of possible sets of
+                size <m>i</m> containing <m>k</m> is <m>\binom{k-1}{i-1}</m>, and <m>i</m> can be any number
+                between 1 and <m>k</m>. Each partition of <m>k</m> into <m>n</m> blocks may be
+                constructed exactly once by first choosing the block containing <m>k</m> and
+                then partitioning the remaining elements into <m>n-1</m> blocks. This proves
+                the formula.
+            </p>
         </solution>
-      </p>
-    </li>
+    </exercise>
 
-    <li>
-      <p>
-        (interesting)
-        Let <m>c(k,n)</m> be the number of ways for <m>k</m> children to hold hands
-        to form <m>n</m> circles, where one child clasping his or her hands together
-        and holding them out to form a circle is considered a circle.  Find a
-        recurrence for <m>c(k,n)</m>.  Is the family of numbers <m>c(k,n)</m> related to any
-        of the other families of numbers we have studied? If so, how?
+    <exercise category="interesting">
+        <statement>
+            <p>
+                Let <m>c(k,n)</m> be the number of ways for <m>k</m> children to hold hands to form <m>n</m> circles, where one child clasping his or her hands together and holding them out to form a circle is considered a circle.  Find a recurrence for <m>c(k,n)</m>.  Is the family of numbers <m>c(k,n)</m> related to any of the other families of numbers we have studied? If so, how?
+            </p>
+        </statement>
         <solution>
-          <p>
-            The <m>k</m>th child is either in a circle by him/her self, and
-            there are <m>c(k-1,n-1)</m> ways for this to happen, or is in a circle with
-            some other children. In the second case child <m>i</m> can be to the
-            immediate right of any of the other <m>k-1</m> children, so there are
-            <m>(k-1)c(k-1,n)</m> ways for this to happen. Thus <m>c(k,n)=c(k-1,n-1)
-            +(k-1)c(k-1,n)</m>. This recurrence is almost the same as the recurrence for
-            <m>s(k,n)</m>, except it has a plus sign where the recurrence for the Stirling
-            numbers of the first kind has a minus sign. Further <m>c(k,1)=(k-1)!</m> and
-            <m>c(k,k)=1</m>, which agrees, except for sign, with the Stirling numbers of
-            the first kind. If we experiment with applying the recurrence, we see
-            that whenever we use it to compute <m>c(k,n)</m>, we get that
-            <m>c(k,n)=|s(k,n)|</m>. It is now straightforward to prove by induction that
-            <m>c(k,n)=|s(k,n)|</m>.
-          </p>
+            <p>
+                The <m>k</m>th child is either in a circle by him/her self, and
+                there are <m>c(k-1,n-1)</m> ways for this to happen, or is in a circle with
+                some other children. In the second case child <m>i</m> can be to the
+                immediate right of any of the other <m>k-1</m> children, so there are
+                <m>(k-1)c(k-1,n)</m> ways for this to happen. Thus <m>c(k,n)=c(k-1,n-1)
+                +(k-1)c(k-1,n)</m>. This recurrence is almost the same as the recurrence for
+                <m>s(k,n)</m>, except it has a plus sign where the recurrence for the Stirling
+                numbers of the first kind has a minus sign. Further <m>c(k,1)=(k-1)!</m> and
+                <m>c(k,k)=1</m>, which agrees, except for sign, with the Stirling numbers of
+                the first kind. If we experiment with applying the recurrence, we see
+                that whenever we use it to compute <m>c(k,n)</m>, we get that
+                <m>c(k,n)=|s(k,n)|</m>. It is now straightforward to prove by induction that
+                <m>c(k,n)=|s(k,n)|</m>.
+            </p>
         </solution>
-      </p>
-    </li>
-    </ol>
-</section>
+    </exercise>
+    <exercise category="interesting">
+        <statement>
+            <p>
+                How many labeled trees on <m>n</m> vertices have exactly four vertices of degree 1?
+            </p>
+        </statement>
+        <solution>
+            <p>
+                The vertices of degree 1 are the vertices that do not appear in the Prüfer code for the tree. So we first choose four vertices out of <m>n</m> in <m>\binom{n}{4}</m> ways to be our vertices of degree 1, and the Prüfer code may be thought of as a function from the <m>n-2</m> places of the code onto the <m>n-4</m> remaining vertices, so there are <m>S(n-2,n-4)(n-4)!</m> Prüfer codes for each choice of the vertices of degree 1. Thus, using <xref ref="partitions-k-2-parts" />, we have that the number of labeled trees is
+                <me>\binom{n}{4}\frac{(n-2)(n-4)(3n-11)(n-4)!}{24} = \frac{n!(n-2)(n-3)(n-4)(3n-11)}{576}</me>.
+            </p>
+        </solution>
+    </exercise>
+    <exercise category="interesting">
+        <statement>
+            <p>
+                The <term>degree sequence</term><idx>degree sequence</idx> of a graph is a list of the degrees of the vertices in non-increasing order. For example the degree sequence of the first graph in <xref ref="spanningtrees" /> is <m>(4, 3, 2, 2, 1)</m>. For a graph with vertices labeled 1 through <m>n</m>, the ordered degree sequence of the graph is the sequence <m>d_1, d_2,\dots, d_n</m> in which <m>d_i</m> is the degree of vertex <m>i</m>. For example the ordered degree sequence of the first graph in <xref ref="Threegraphs" /> is <m>(1,2,3,3,1,1,2,1)</m>.
+            </p>
+            <p>
+                <ol label="(a)">
+                    <li>
+                        <p>How many labeled trees are there on <m>n</m> vertices with ordered degree sequence <m>d_1, d_2, \dots, d_n</m>?
+                        </p>
+                    </li>
+                    <li category="difficult">
+                        <p>How many labeled trees are there on <m>n</m> vertices with with the degree sequence in which the degree <m>d</m> appears <m>i_d</m> times?</p>
+                    </li>
+                </ol>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                <ol label="(a)">
+                    <li>
+                        <p>
+                            We first solve the ordered degree sequence problem in which we assume <m>d_i</m> is the degree of vertex <m>i</m>. The number of times <m>i</m> appears in the Prüfer code of a tree is one less than the degree of <m>i</m>, so vertex <m>i</m> appears <m>d_i - 1</m> times. Thus the sum of the <m>d_i -1</m> should be <m>2n-2-n = n-2</m>. Of the <m>n-2</m> places in the Prüfer code, we want to label <m>d_1 -1</m> of them with 1, <m>d_2 -1</m> of them with 2 and in general <m>d_i - 1</m> of them with <m>i</m>. There are
+                            <me>\binom{n-2}{d_1-1,d_2-1,d_3-1,\dots,d_n-1}</me>
+                            ways to do this, so the number of trees in which vertex <m>i</m> has degree <m>d_i</m> is <m>\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Now we modify the solution of the previous part by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in <m>n!</m> ways, choose the first <m>i_1</m> of these vertices to have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus, the number of ways to assign the degrees is <m>\frac{n!}{i_1!i_2!\cdots i_n!}</m>. Once the degrees are assigned, there are <m>\frac{(n-2)!}{\prod_{d=1}^n (d-1)! i_d}</m>, by translating our easier result. Thus, the total number of trees with the degree sequence in which there are <m>i_d</m> vertices of degree <m>d</m> is
+                            <me>\frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^i</me>.
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </solution>
+    </exercise>
+</exercises>

@@ -1,108 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec_groups-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
+<exercises xml:id="sec_groups-suppprobs" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Supplementary Problems</title>
-  <ol>
-    <li>
-      <p>
-        Show that a function from <m>S</m> to <m>T</m> has an inverse (defined on <m>T</m>)
-        if and only if it is a bijection.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        How many elements are in the dihedral group <m>D_3</m>?  The symmetric
+  <exercise>
+      <statement>
+          <p>
+              Show that a function from <m>S</m> to <m>T</m> has an inverse (defined on <m>T</m>) if and only if it is a bijection.
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              How many elements are in the dihedral group <m>D_3</m>?  The symmetric
         group <m>S_3</m>?  What can you conclude about <m>D_3</m> and <m>S_3</m>?
-      </p>
-    </li>
-
-    <li>
-      <p>
-        A tetrahedron is a thee dimensional geometric figure with four
-        vertices, six edges, and four triangular faces.  Suppose we start with a
-        tetrahedron in space and consider the set of all permutations of the
-        vertices of the tetrahedron that correspond to moving the tetrahedron in
-        space and returning it to its original location, perhaps with the
-        vertices in different places.  Explain why these permutations form a
-        group.  What is the size of this group?  Write down in two-row notation a
-        permutation that is <em>not</em> in this group.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Find a three-element subgroup of the group <m>S_3</m>.  Can you find a
-        different three-element subgroup of <m>S_3</m>?
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Prove true or demonstrate false with a counterexample:  <q>In a
-        permutation group, <m>(\sigma\varphi)^n = \sigma^n\varphi^n</m>.</q>
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Describe a permutation group with 60 elements.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        If a group <m>G</m> acts on a set <m>S</m>, and if <m>\sigma(x) =y</m>, is there
-        anything interesting we can say about the subgroups <m>{ Fix}(x)</m> and
-        <m>{ Fix}(y)</m>?
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Find the number of ways to color the faces of a tetrahedron with
+          </p>
+      </statement>
+      <solution>
+          <p>
+              Six, six. <m>D_3</m> and <m>S_3</m> are the same group.
+          </p>
+      </solution>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              A tetrahedron is a thee dimensional geometric figure with four vertices, six edges, and four triangular faces.  Suppose we start with a tetrahedron in space and consider the set of all permutations of the vertices of the tetrahedron that correspond to moving the tetrahedron in space and returning it to its original location, perhaps with the vertices in different places.
+              <ol>
+                  <li>Explain why these permutations form a group.</li>
+                  <li>What is the size of this group?</li>
+                  <li>Write down in two-row notation a permutation that is <em>not</em> in this group.</li>
+              </ol>
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Find a three-element subgroup of the group <m>S_3</m>.  Can you find a different three-element subgroup of <m>S_3</m>?
+          </p>
+      </statement>
+      <solution>
+          <p>
+              <m>\{\iota,(1\ 2\ 3),(1\ 3\ 2)</m>. This is the only three-element subgroup because the other elements of <m>S_3</m> are two cycles, so one of them forms a two-element subgroup with <m>\iota</m>, and two of them together with <m>\iota</m> are not a subgroup. Since a subgroup acts on <m>S_3</m> by composition, any subgroup must have 1, 2, 3, or 6 elements, because <m>S_3</m> is a union of orbits of that group and the orbits all have the same size.
+          </p>
+      </solution>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Prove true or demonstrate false with a counterexample: <q>In a permutation group, <m>(\sigma\varphi)^n = \sigma^n\varphi^n</m>.</q>
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              If a group <m>G</m> acts on a set <m>S</m>, and if <m>\sigma(x) =y</m>, is there anything interesting we can say about the subgroups <m> \Fix(x)</m> and <m>\Fix(y)</m>?
+          </p>
+      </statement>
+      <solution>
+          <p>
+              They have the same size; in fact, <me>\sigma\Fix(x) = \{\sigma\circ\tau\mid\tau\in\Fix(x)\} = \Fix(y)</me>.
+          </p>
+      </solution>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              <ol>
+                  <li><p>If a group <m>G</m> acts on a set <m>S</m>, does <m>\overline{\sigma}(f) = f\circ\sigma</m> define a group action on the functions from <m>S</m> to a set <m>T</m>? Why or why not?</p></li>
+                  <li><p>If a group <m>G</m> acts on a set <m>S</m>, does <m>\sigma(f)=f\circ\sigma^{-1}</m> define a group action on the functions from <m>S</m> to a set <m>T</m> ? Why or why not?</p>
+                  </li>
+                  <li><p>Is either of the possible group actions essentially the same as the action we described on colorings of a set, or is that an entirely different action?</p></li>
+              </ol>
+          </p>
+      </statement>
+      <solution>
+          <p>
+              <ol>
+                  <li><p>No, because <m>\overline{\sigma\tau(f) = f\circ\sigma\circ\tau</m>, but <m>\overline{\sigma}\circ\overline{\tau}(f) = f\circ\tau\circ\sigma</m>. Thus, if our group is not commutative, this is not a group action.</p></li>
+                  <li xml:id="group-act-comp"><p>Yes, because the action gives a permutation of the functions and <m>\overline{\sigma\tau}(f) = f\circ(\sigma\circ)^{-1} = f\circ\tau^{-1}\circ\sigma^{-1}</m>, while <m>\overline{\sigma}\circ\overline{\tau}(f) = f\circ\tau^{-1}\circ\sigma^{-1}</m>. Thus this is a group action.</p></li>
+                  <li>
+                      <p>The action proposed in <xref ref="group-act-comp">part</xref> is the same as our action on colorings. To see why, if
+                      <md>
+                          <mrow>&amp;\{(1,g(1)),(2,g(2)),\dots,(n,g(n))\}</mrow>
+                          <mrow>=&amp;\{(\sigma(1),f(1)),(\sigma(2),f(2)),\dots,(\sigma(n),f(n))\}</mrow>
+                          </md>,
+                          and <m>i=\sigma(j)</m>, then <m>j=\sigma^{-1}(i)</m> and so
+                          <me>(i,g(i)) = (\sigma(j),f(j)) = (\sigma(\sigma^{-1}(i)),f(\sigma^{-1}(i)) = (i,f(\sigma^{-1}(i))</me>. Therefore, <m>g=f\circ \sigma^{-1}</m>.
+                      </p>
+                  </li>
+              </ol>
+          </p>
+      </solution>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Find the number of ways to color the faces of a tetrahedron with
         two colors.
-      </p>
-    </li>
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Find the number of ways to color the faces of a tetrahedron with four colors so that each color is used.
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Find the cycle index of the group of spatial symmetries of the tetrahedron acting on the vertices.  Find the cycle index for the same group acting on the faces.
+          </p>
+      </statement>
+  </exercise>
+  <exercise>
+      <statement>
+          <p>
+              Find the generating function for the number of ways to color the faces of the tetrahedron with red, blue, green and yellow.
+          </p>
+      </statement>
+  </exercise>
 
-    <li>
-      <p>
-        Find the number of ways to color the faces of a tetrahedron with
-        four colors so that each color is used.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Find the cycle index of the group of spatial symmetries of the tetrahedron
-        acting on the vertices.  Find the cycle index for the same group acting on the
-        faces.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        Find the generating function for the number of ways to color the faces of
-        the tetrahedron with red, blue, green and yellow.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        (interesting)
-        Find the generating function for the number of ways to color the faces of a
-        cube with four colors so that all four colors are used.
-      </p>
-    </li>
-
-    <li>
-      <p>
-        (interesting)
-        How many different graphs are there on six vertices with seven edges?
-      </p>
-    </li>
-  </ol>
-  <p>
-    \appendix
-  </p>
-</section>
+  <exercise category="interesting">
+      <statement>
+          <p>
+              Find the generating function for the number of ways to color the faces of a cube with four colors so that all four colors are used.
+          </p>
+      </statement>
+  </exercise>
+  <exercise category="interesting">
+      <statement>
+          <p>
+              How many different graphs are there on six vertices with seven edges?
+          </p>
+      </statement>
+  </exercise>
+  <exercise category="interesting">
+      <statement>
+          <p>
+              Show that if <m>H</m> is a subgroup of the group <m>G</m>, then <m>H</m> acts on <m>G</m> by <m>\sigma(\tau) = \sigma\circ\tau</m> for all <m>\sigma</m> in <m>H</m> and <m>\tau</m> in <m>G</m>. What is the size of an orbit of this action? How does the size of a subgroup of a group relate to the size of the group?
+          </p>
+      </statement>
+      <solution>
+          <p>
+              Composition of the elements of a permutation group on the left by <m>\sigma</m> permutes the elements of the group, so <m>\overline{\sigma}</m> is a permutation of <m>G</m>. The size of an orbit is the size of the subgroup, because if <m>\sigma\circ\tau_1 = \sigma\circ\tau_2</m>, then <m>\tau_1 = \tau_2</m>. Since <m>G</m> is the union of the orbits of <m>H</m> and these orbits all have the same size, by the quotient principle the size of <m>H</m> divides the size of <m>G</m>.
+          </p>
+      </solution>
+  </exercise>
+</exercises>
