@@ -625,7 +625,7 @@
         </statement>
         <solution>
           <tabular>
-            <row>
+            <row bottom="minor">
               <cell><m>k\backslash n</m></cell>
               <cell>1</cell>
               <cell>2</cell>
@@ -634,16 +634,6 @@
               <cell>5</cell>
               <cell>6</cell>
               <cell>7</cell>
-            </row>
-            <row bottom="minor">
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
-              <cell></cell>
             </row>
             <row>
               <cell>1</cell>
@@ -747,50 +737,34 @@
 
     <table xml:id="lastdistributiontable" >
       <caption>The number of ways to distribute <m>k</m> objects to <m>n</m> recipients, with restrictions on how the objects are received</caption>
-      <tabular>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
-        <row>
-          <cell>The Twentyfold Way: A Table of Distribution
-          Problems</cell>
-        </row>
+      <tabular top="minor">
+        <col right="minor"/>
+        <col halign="center"/>
+        <col halign="center"/>
         <row bottom="medium">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
+          <cell colspan="3" halign="center">The Twentyfold Way: A Table of Distribution
+          Problems</cell>
         </row>
         <row>
           <cell  ><m>k</m> objects and conditions</cell>
-          <cell><m>n</m> recipients and
+          <cell colspan="2" halign="center" bottom="minor"><m>n</m> recipients and
           mathematical model for distribution</cell>
         </row>
-        <row>
+        <row bottom="major">
           <cell>on how they are received</cell>
-          <cell>Distinct</cell>
-          <cell>Identical</cell>
+          <cell halign="center">Distinct</cell>
+          <cell halign="center">Identical</cell>
         </row>
-        <row bottom="medium">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
+
         <row>
-          <cell  >1.  Distinct</cell>
+          <cell>1.  Distinct</cell>
           <cell><m>n^k</m></cell>
           <cell><m>\sum_{i=1}^kS(n,i)</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>no conditions</cell>
           <cell>functions</cell>
           <cell>set partitions (<m>\le n</m> parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>2.  Distinct</cell>
@@ -798,15 +772,10 @@
           <cell>1 if
           <m>k\le n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at most one</cell>
           <cell>\kern -2pt <m>k</m>-element
           permutations\kern -2 pt</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -814,31 +783,21 @@
           <cell><m>S(k,n)n!</m></cell>
           <cell><m>S(k,n)</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at least one</cell>
           <cell>onto functions</cell>
           <cell>set partitions
           (<m>n</m> parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>4. Distinct</cell>
           <cell><m>k!=n!</m></cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each
           gets exactly one</cell>
           <cell>permutations</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -846,16 +805,11 @@
           <cell><m>(k+n-1)^{\underline{k}}</m></cell>
           <cell><m>\sum_{i=1}^n L(k,i)</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell></cell>
           <cell>ordered functions</cell>
           <cell>\hglue -3 pt broken permutations (<m>\le n</m>
           parts)\kern -3 pt</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>6.  Distinct, order
@@ -864,45 +818,30 @@
           <cell><m>L(k,n)=
           \binom{k}{n}(k-1)^{\underline{k-n}}</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each
           gets at least one</cell>
           <cell>ordered onto functions</cell>
           <cell>broken permutations (<m>n</m> parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>7.  Identical</cell>
           <cell><m>\binom{n+k-1}{k}</m></cell>
           <cell><m>\sum_{i=1}^nP(k,i)</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>no conditions</cell>
           <cell>multisets</cell>
           <cell>number partitions (<m>\le n</m> parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>8.  Identical</cell>
           <cell><m>\binom{n}{k}</m></cell>
           <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at most one</cell>
           <cell>subsets</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -910,29 +849,19 @@
           <cell><m>\binom{k-1}{n-1}</m></cell>
           <cell><m>P(k,n)</m></cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at least one</cell>
           <cell>compositions (<m>n</m> parts)</cell>
           <cell>number partitions (<m>n</m>
           parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>10.  Identical</cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
         </row>
-        <row>
-          <cell>Each gets exactly one</cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
         <row bottom="minor">
-          <cell></cell>
+          <cell>Each gets exactly one</cell>
           <cell></cell>
           <cell></cell>
         </row>

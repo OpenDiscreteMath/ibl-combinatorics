@@ -50,66 +50,47 @@
       distribute <m>k</m> objects to <m>n</m> recipients, with
       restrictions on how the objects are
       received</caption>
-      <tabular>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
-        <row>
-          <cell>The Twentyfold Way: A Table of Distribution
+
+      <tabular top="minor">
+        <col right="minor"/>
+        <col halign="center"/>
+        <col halign="center"/>
+        <row bottom="medium">
+          <cell colspan="3" halign="center">The Twentyfold Way: A Table of Distribution
           Problems</cell>
         </row>
-        <row bottom="medium">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
         <row>
-          <cell  ><m>k</m> objects and conditions</cell>
-          <cell><m>n</m> recipients and
+          <cell><m>k</m> objects and conditions</cell>
+          <cell colspan="2" halign="center" bottom="minor"><m>n</m> recipients and
           mathematical model for distribution</cell>
         </row>
-        <row>
+        <row bottom="major">
           <cell>on how they are received</cell>
-          <cell>Distinct</cell>
-          <cell>Identical</cell>
+          <cell halign="center">Distinct</cell>
+          <cell halign="center">Identical</cell>
         </row>
-        <row bottom="medium">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
+
         <row>
-          <cell  >1.  Distinct</cell>
+          <cell>1.  Distinct</cell>
           <cell><m>n^k</m></cell>
           <cell>?</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>no conditions</cell>
           <cell>functions</cell>
           <cell>set partitions (<m>\le n</m> parts)</cell>
         </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
+
         <row>
           <cell>2.  Distinct</cell>
           <cell><m>n^{\underline{k}}</m></cell>
           <cell>1 if
           <m>k\le n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at most one</cell>
           <cell>\kern -2pt <m>k</m>-element
           permutations\kern -2 pt</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -117,31 +98,21 @@
           <cell>?</cell>
           <cell>?</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at least one</cell>
           <cell>onto functions</cell>
           <cell>set partitions
           (<m>n</m> parts)</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>4. Distinct</cell>
           <cell><m>k!=n!</m></cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each
           gets exactly one</cell>
           <cell>bijections</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -149,15 +120,10 @@
           <cell>?</cell>
           <cell>?</cell>
         </row>
-        <row>
-          <cell></cell>
-          <cell>?</cell>
-          <cell>?</cell>
-        </row>
         <row bottom="minor">
           <cell></cell>
-          <cell></cell>
-          <cell></cell>
+          <cell>?</cell>
+          <cell>?</cell>
         </row>
         <row>
           <cell>6.  Distinct, order
@@ -165,44 +131,29 @@
           <cell>?</cell>
           <cell>?</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at least one</cell>
           <cell>?</cell>
           <cell>?</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>7.  Identical</cell>
           <cell>?</cell>
           <cell>?</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>no conditions</cell>
           <cell>?</cell>
           <cell>?</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>8.  Identical</cell>
           <cell><m>\binom{n}{k}</m></cell>
           <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at most one</cell>
           <cell>subsets</cell>
-          <cell></cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
           <cell></cell>
         </row>
         <row>
@@ -210,28 +161,18 @@
           <cell>?</cell>
           <cell>?</cell>
         </row>
-        <row>
+        <row bottom="minor">
           <cell>Each gets at least one</cell>
           <cell>?</cell>
           <cell>?</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell>10.  Identical</cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
           <cell>1 if <m>k=n</m>; 0 otherwise</cell>
         </row>
-        <row>
-          <cell>Each gets exactly one</cell>
-          <cell></cell>
-          <cell></cell>
-        </row>
         <row bottom="minor">
-          <cell></cell>
+          <cell>Each gets exactly one</cell>
           <cell></cell>
           <cell></cell>
         </row>
