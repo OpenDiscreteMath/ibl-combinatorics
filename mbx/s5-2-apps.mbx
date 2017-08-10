@@ -9,7 +9,7 @@
         <statement>
           <p>
             In how many ways may we distribute <m>k</m> identical apples to <m>n</m>
-            children so that no child gets more than three apples? Compare your result with your result in <xref provisional="197" />
+            children so that no child gets more than four apples? Compare your result with your result in <xref provisional="197" />
           </p>
         </statement>
         <hint>
@@ -21,27 +21,22 @@
         </hint>
         <solution>
           <p>
-            Let property <m>i</m> be <q>Child <m>i</m> gets four or more apples.</q> Then
-            we are asking for the number of ways to pass out the apples that have none
-            of the properties, so we are asking for <m>N_{\mbox{e} }(\emptyset)</m>. From
-            <xref ref="incexempty">Equation</xref> we see that to find this number we need to know
-            <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of our set of properties. But if
-            <m>S</m> has size <m>s</m>, then having the properties in <m>S</m> means that all the
-            children in a particular set of size <m>s</m> will get four or more apples. We
-            already know how to pass out the apples so that the children in a
-            particular set
-            <m>\hat S</m> of children get at least four apples: we give everyone in <m>\hat
-            S</m> four apples, and then pass out the remaining <m>k-4s</m> apples to the
-            children in <m>\binom{k-4s+n-1}{k-4s}= \binom{k-4s+n-1}{n-1}</m> ways. This
-            counts the number of ways to give at least four apples to every child in
-            <m>\hat S</m>, and maybe give four apples to some other children as well. Thus
-            <m>N_{\mbox{a} }(S) = \binom{k-4|S|+n-1}{n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
+              Let <m>S</m> be the set of all distributions of <m>k</m> identical apples to the <m>n</m> children. Let <m>A_i</m> be the set of distributions in which child <m>i</m> gets five or more apples. Then
+            we are asking for the number of distributions of apples that lie in none of the sets, so we are asking for <m>|\overline{A_1\cup A_2\cup \cdots \cup A_n}|</m>. From the formula you gave in
+            <xref ref="compunion" /> we see that to find this number we need to know
+            <m>|\bigcap_{i\in S}A_i|</m> for every subset <m>S</m> of <m>[n]</m>. But if
+            <m>S</m> has size <m>s</m>, then <m>S</m> determines a distribution such that all the children in a particular set of size <m>s</m> will get five or more apples. By <xref ref="k-obj-n-recip" />, we can pass out the apples so that the children in a particular set 
+            <m>\hat S</m> of children get at least five apples as follows: we give everyone in <m>\hat
+            S</m> five apples, and then pass out the remaining <m>k-5s</m> apples to the
+            children in <m>\binom{k-5s+n-1}{k-5s}= \binom{k-5s+n-1}{n-1}</m> ways. This
+            counts the number of ways to give at least five apples to every child in
+            <m>\hat S</m>, and maybe give five apples to some other children as well. Thus
+            <m>|\bigcap_{i\in S}A_i| = = \binom{k-5|S|+n-1}{n-1}</m>. In particular, if <m>S=\empty</m>, we get <m>\binom{k+n-1}{n-1}</m>, which is the total number of ways to pass out <m>k</m> identical apples to <m>n</m> children. Applying the formula from <xref ref="compunion" /> gives us
             <md>
-              <mrow>N_{\mbox{e} }(\emptyset) =\amp \sum_{S:S\subseteq
-              P}(-1)^{|S|}N_{\mbox{a} }(S)</mrow>
-              <mrow> =\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}</mrow>
-              <mrow> =\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}</mrow>
-            </md>
+              <mrow>\left| \overline{\bigcup_{i=1}^n A_i}\right|&amp;= \sum_{S:S\subseteq [n]}(-1)^{|S|}\left|\bigcap _{i\colon i\in S} A_i\right|</mrow>
+              <mrow> &amp;= \sum_{s=0}^n \binom{n}{s}(-1)^s \binom{k-5s+n-1}{n-1}</mrow>
+              <mrow> &amp;= \sum_{s=0}^n (-1)^s\binom{n}{s}\binom{k-5s+n-1}{n-1}</mrow>
+            </md>.
           </p>
         </solution>
     </activity>

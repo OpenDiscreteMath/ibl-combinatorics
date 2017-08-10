@@ -504,7 +504,7 @@
 
 
     <p>
-      We can find a very elegan way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<fn>
+      We can find a very elegant way of writing the formula in <xref ref="compunion">Problem</xref> if we let <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.  for this reason, if we have a family of subsets <m>A_i</m> of a set <m>A</m>, we define<fn>
       For those interested in logic and set theory, given a family of subsets <m>A_i</m> of a set <m>A</m>, we define <m>\bigcap_{i:i\in S}A_i</m> to be the set of all members <m>x</m> of <m>A</m> that are in <m>A_i</m> for all <m>i \in S</m>.  (Note that this allows <m>x</m> to be in some other <m>A_j</m>s as well.)  Then if <m>S = \emptyset</m>, our intersection consists of all members <m>x</m> of <m>A</m> that satisfy the statement <q>if <m>i\in \emptyset</m>, then <m>x \in A_i</m>.</q>
       But since the hypothesis of the <q>if-then</q> statement is false, the statement itself is true for all <m>x \in A</m>.  Therefor <m>\bigcap_{i:i \in \emptyset}A_i = A</m>.
       </fn> <m>\bigcap_{i:i\in\emptyset}A_i = A</m>.
@@ -580,32 +580,7 @@ We will first
 
     <p>
       The question we are trying to answer is ``How many of the
-      distributions of backpacks have exactly the empty set of properties?"
-      For this purpose we introduce one more piece of notation. We use
-      <m>N_{\mbox{exactly} }(\emptyset)</m> or <m>N_{\mbox{e} }(\emptyset)</m> to stand for
-      the number of backpack distributions with exactly the empty set of
-      properties, and for any set <m>K</m> of properties we use
-      <m>N_{\mbox{exactly} }(K)</m> or <m>N_{\mbox{e} }(K)</m> to stand for the number of
-      backpack distributions with exactly the set <m>K</m> of properties. Thus
-      <m>N_{\mbox{e} }(K)</m> is the number of distributions in which the students
-      represented by the set <m>K</m> of properties get the correct backpacks back
-      and no other students do.
-    </p>
-  </subsection>
-
-  <subsection>
-    <title>The principle of inclusion and exclusion for properties</title>
-    <p>
-      For the principle of inclusion and exclusion for properties, suppose we
-      have a set of arrangements (like backpack distributions) and a set <m>P</m> of
-      properties (like student <m>i</m> gets the correct backpack) that the
-      arrangements might or might not have. We suppose that we know (or can
-      easily compute) the numbers <m>N_{\mbox{a} }(K)</m> for every subset <m>K</m> of
-      <m>P</m>. We are most interested in computing <m>N_{\mbox{e} }(\emptyset)</m>, the
-      number of arrangements with none of the properties, but it will turn out
-      that with no more work we can compute <m>N_{\mbox{e} }(K)</m> for every subset
-      <m>K</m> of <m>P</m>. Based on our answer to <xref ref="hatcheck">Problem</xref> we expect that
-      <men xml:id="incexempty" >
+      distributions of backpacks incexempty" >
         N_{\mbox{e} }(\emptyset) = \sum_{S: S\subseteq P} (-1)^{|S|}N_{\mbox{a} }(S)
       </men>
       and it is a natural guess that, for every subset <m>K</m> of <m>S</m>,
