@@ -389,57 +389,64 @@ P
                 </solution>
             </task>
             <task>
-                <statement>
-                    <p>Recall the two operations we studied in <xref ref="numberpartitionrecurrence">Problem</xref>.  The largest part of a partition counted by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>.  In the second case, the partition fits into a rectangle that is at most <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating function for partitions of this type?  In the first case, what kind of rectangle does the partition we get by removing the largest part sit in?  What is the generating function for partitions that sit in this kind of rectangle?  What is the generating function for partitions that sit in this kind of rectangle after we remove a largest part of size <m>m</m>?  What recurrence relation does this give you?
+                <introduction>
+                    <p>Recall the two operations we studied in <xref ref="numberpartitionrecurrence" />.
                     </p>
-                </statement>
-                <solution>
-                    <p>The generating function for partitions that arise in the second case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case, after we delete the largest part, the Young diagram sits in a rectangle of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that arise in the first case <em>after</em> we have deleted a part of size <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for partitions that arise in the first case (<em>before</em> we delete the part of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the generating function for all partitions that fit into a rectangle of width <m>m</m> and depth <m>n</m> is given by
-                    <me>
-                        \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.
-                    </me>
-                    </p>
+                </introduction>
+                <task>
+                    <statement>
+                        <p>
+                            The largest part of a partition counted by <m>\qchoose{m+n}{n}</m> is either <m>m</m> or is less than or equal to <m>m-1</m>.  In the second case, the partition fits into a rectangle that is at most <m>m-1</m> units wide and at most <m>n</m> units deep.  What is the generating function for partitions of this type?  In the first case, what kind of rectangle does the partition we get by removing the largest part sit in?  What is the generating function for partitions that sit in this kind of rectangle?  What is the generating function for partitions that sit in this kind of rectangle after we remove a largest part of size <m>m</m>?  What recurrence relation does this give you?
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>The generating function for partitions that arise in the second case is <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>. In the first case, after we delete the largest part, the Young diagram sits in a rectangle of width <m>m</m> and depth <m>n-1</m>. The generating function for partitions that arise in the first case <em>after</em> we have deleted a part of size <m>m</m> is <m>\qchoose{m+n-1}{n-1}</m>. Thus the generating function for partitions that arise in the first case (<em>before</em> we delete the part of size <m>m</m>) is <m>q^m\qchoose{m+n-1}{n-1}</m>. Thus by the sum principle the generating function for all partitions that fit into a rectangle of width <m>m</m> and depth <m>n</m> is given by
+                        <me>
+                            \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{n}.
+                        </me>
+                        </p>
 
-                    <p>If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>, you get
-                    <me>
-                        \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.
-                    </me>
-                    </p>
+                        <p>If you don't use the symmetry <m>\qchoose{m+n-1}{m-1}=\qchoose{m+n-1}{n}</m>, you get
+                        <me>
+                            \qchoose{m+n}{n}= q^m\qchoose{m+n-1}{n-1}+\qchoose{m+n-1}{m-1}.
+                        </me>
+                        </p>
 
-                    <p>
-                        While this doesn't <em>quite</em> look like the Pascal recurrence, it is still a correct answer.
-                    </p>
-                </solution>
-            </task>
-            <task>
-                <statement>
-                    <p>
-                        What recurrence do you get from the other operation we studied in <xref ref="numberpartitionrecurrence">Problem</xref>?
-                    </p>
-                </statement>
-                <solution>
-                    <p>We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In the first case, removing one from each part gives us a partition whose Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In the first case the partition we get partitions <m>k-n</m>, and in the second case it still partitions <m>k</m>. Thus we get
-                    <me>
-                        \qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.
-                    </me>
-                    </p>
-                </solution>
-            </task>
-            <task>
-                <statement>
-                    <p>It is quite likely that the two recurrences you got are different.  One would expect that they might give different values for <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
-                    </p>
-                </statement>
-                <hint>
-                    <p>
-                        Think about geometric operations on Young Diagrams
-                    </p>
-                </hint>
-                <solution>
-                    <p>
-                        Yes, by conjugation.
-                    </p>
-                </solution>
+                        <p>
+                            While this doesn't <em>quite</em> look like the Pascal recurrence, it is still a correct answer.
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>
+                            What recurrence do you get from the other operation we studied in <xref ref="numberpartitionrecurrence">Problem</xref>?
+                        </p>
+                    </statement>
+                    <solution>
+                        <p>We either have exactly <m>k</m> parts or fewer than <m>k</m> parts. In the first case, removing one from each part gives us a partition whose Young diagram fits into a <m>m-1</m> by <m>n</m> box, while in the second case doing nothing gives us a partition that fits into a <m>m</m> by <m>n-1</m> box. In the first case the partition we get partitions <m>k-n</m>, and in the second case it still partitions <m>k</m>. Thus we get
+                        <me>
+                            \qchoose{m+n}{n}= q^n\qchoose{m+n-1}{n}+\qchoose{m+n-1}{n-1}.
+                        </me>
+                        </p>
+                    </solution>
+                </task>
+                <task>
+                    <statement>
+                        <p>It is quite likely that the two recurrences you got are different.  One would expect that they might give different values for <m>\qchoose{m+n}{n}</m>.  Can you resolve this potential conflict?
+                        </p>
+                    </statement>
+                    <hint>
+                        <p>
+                            Think about geometric operations on Young Diagrams
+                        </p>
+                    </hint>
+                    <solution>
+                        <p>
+                            Yes, by conjugation.
+                        </p>
+                    </solution>
+                </task>
             </task>
             <task>
                 <statement>
@@ -477,7 +484,7 @@ P
             <task>
                 <statement>
                     <p>Now think of <m>q</m> as a variable that we will let approach <m>1</m>. Find an explicit formula for
-                    <ol>
+                    <ol label="(i)">
                         <li>
                             <m>\displaystyle\lim_{q\rightarrow 1} [n]_q</m>.
                         </li>
@@ -496,7 +503,7 @@ P
                 </hint>
                 <solution>
                     <p>
-                        <ol>
+                        <ol label="(i)">
                             <li><m>n</m>
                             </li>
                             <li><m>n!</m>
