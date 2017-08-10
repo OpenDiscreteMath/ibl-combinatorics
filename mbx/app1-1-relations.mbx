@@ -338,7 +338,7 @@
         We also draw digraphs for relations from finite set <m>S</m> to a finite set <m>T</m>; we simply draw vertices for the elements of <m>S</m> (usually in a row) and vertices for the elements of <m>T</m> (usually in a parallel row) and draw an arrow from <m>x</m> in <m>S</m> to <m>y</m> in <m>T</m> if <m>x</m> is related to <m>y</m>. Notice that instead of referring to the vertex representing <m>x</m>, we simply referred to <m>x</m>. This is a common shorthand.
       </p>
 
-      <activity>
+      <activity xml:id="initialdigraph">
         <statement>
           <p>
             Draw the digraph of the relation from the set \{A, M, P,
@@ -353,7 +353,7 @@
         </solution>
       </activity>
 
-      <activity>
+      <activity xml:id="initialdigraph2">
         <statement>
           <p>
             Draw the digraph of the relation from the set \{Sam, Mary, Pat, Ann, Polly, Sarah\} to the set \{A, M, P,
@@ -385,10 +385,50 @@
 
   <subsection xml:id="digraphsoffunctions">
     <title>Digraphs of Functions</title>
-    <p>
-      <em>Need to crosscheck some references back in 1.2.2, since they
-      likely aren't to the right thing at this point.</em>
-    </p>
+
+    <activity>
+      <introduction>
+        <p>
+          When we draw the digraph of a function <m>f</m>, we draw an arrow <em>from</em> the vertex representing <m>x</m> <em>to</em> the vertex representing <m>f(x)</m>.  One of the relations you considered in <xref ref="initialdigraph">Problems</xref> and <xref ref="initialdigraph2"></xref> is the relation of a function.
+        </p>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Which relation is the relation of a function?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            It is the relation of <xref ref="initialdigraph2" />.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            How does the digraph help you visualize that one relation is a function and the other is not?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            In <xref ref="initialdigraph2" />, each vertex representing a name has just one
+            arrow leaving it. This means exactly one letter is related to each
+            name, so this relation is the relation of a function from the set of
+            names to the set of letters. In <xref ref="initialdigraph" />, the vertex
+            <m>P</m> has two arrows leaving it. Therefore two elements are
+            associated with the letter <m>P</m>, so this relation is not the
+            relation of a function from the set of letters to the set of names.
+          </p>
+        </solution>
+      </task>
+    </activity>
+
+
+
+
+
   </subsection>
 
 
