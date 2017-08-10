@@ -494,12 +494,10 @@
       <em>Pr&#xfc;fer coding</em> or <em>Pr&#xfc;fer code</em> for the tree. There is a good bit
       of interesting information encoded into the Pr&#xfc;fer code for a tree.
     </p>
-
     <activity>
       <statement>
         <p>
-          What can you say about the Pr&#xfc;fer code for a tree with exactly
-          two vertices of degree 1? Does this characterize such trees?
+          What can you say about the vertices of degree one from the Pr&#xfc;fer code for a tree labeled with the integers from 1 to <m>b</m>?
         </p>
       </statement>
       <hint>
@@ -507,6 +505,14 @@
           What vertex or vertices in the sequence <m>b_1,b_2,\ldots,b_{n-1}</m> can have degree 1?
         </p>
       </hint>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          What can you say about the Pr&#xfc;fer code for a tree with exactly
+          two vertices of degree 1? (and perhaps some vertices with other degrees as well)? Does this characterize such trees?
+        </p>
+      </statement>
       <solution>
         <p>
           It consists of
@@ -541,7 +547,7 @@
         <p>
           What is the number of (labelled) trees on <m>n</m> vertices with three
           vertices of degree 1? (Assume they are labelled with the integers 1
-          through <m>n</m>.)
+          through <m>n</m>.) This problem will appear again in the next chapter after some material that will make it easier.
         </p>
       </statement>
       <hint>
@@ -823,19 +829,38 @@
     </p>
 
     <activity category="essential for this or the next section, and interesting">
-      <statement>
-        <p>
+        <task>
+          <statement>
+           <p>
           How do the number of spanning trees of <m>G</m> not containing the edge
           <m>e</m> and the number of spanning trees of <m>G</m> containing <m>e</m> relate to the
-          number of spanning trees of <m>G-e</m> and <m>G/e</m>? Use <m>\#(G)</m> to stand for
+          number of spanning trees of <m>G-e</m> and <m>G/e</m>? 
+           </p>
+         </statement>
+        <hint>
+          <p>
+            If you have a spanning tree of <m>G</m> that contains <m>e</m>, is the graph that results from that tree by contracting <m>e</m> still a tree?
+          </p>
+        </hint>
+      </task>
+      <task>
+        <statement>
+        <p>
+          Use <m>\#(G)</m> to stand for
           the number of spanning trees of <m>G</m> (so that, for example, <m>\#(G/e)</m>
           stands for the number of spanning trees of <m>G/e</m>). Find an expression
           for
           <m>\#(G)</m> in terms of <m>\#(G/e)</m> and <m>\#(G-e)</m>. This expression is called
           the <em>deletion-contraction recurrence</em><idx><h>deletion-contraction
-          recurrence</h></idx><idx><h>recurrence</h><h>deletion-contraction</h></idx>. Use it to compute the
-          number of spanning trees of the graph in <xref ref="spantreeexercise">Figure</xref>.
-        </p>
+          recurrence</h></idx><idx><h>recurrence</h><h>deletion-contraction</h></idx>.
+          </p>
+        </statement>
+      </task>
+      <task>
+        <statement>
+            <p>
+              Use the recurrence of the previous part to compute the number of spanning trees of the graph in <xref ref="spantreeexercise">Figure</xref>.
+            </p>
 
         <figure xml:id="spantreeexercise" >
           <caption>A
@@ -843,6 +868,7 @@
           <image width="20%" source="images/spantreeexercise" />
         </figure>
       </statement>
+    
       <solution>
         <p>
           The number of spanning trees of <m>G</m> not containing <m>e</m> is the number
@@ -874,6 +900,7 @@
           the fourth has seven, so the total number of spanning trees is <m>3+6+5+7=21</m>.
         </p>
       </solution>
+    </task>
     </activity>
   </subsection>
 
