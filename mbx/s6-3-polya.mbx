@@ -14,12 +14,7 @@
     </p>
 
     <p>
-      Our language will be more intuitive if we think of <m>T</m> as a set of <q>colors.</q>
-      To illustrate that using this language is not restrictive, the set <m>S</m> might be
-      the positions in a hydrocarbon molecule which are occupied by hydrogen, and the
-      group could be the group of spatial symmetries of the molecule (that is, the group of
-      permutations of the atoms of the molecule that move the molecule around so that in its
-      final position the molecule cannot be distinguished from the original molecule).
+        The idea of coloring a set <m>S</m> has many applications. For example, the set <m>S</m> might be the positions in a hydrocarbon molecule which are occupied by hydrogen, and the group could be the group of spatial symmetries of the molecule (that is, the group of permutations of the atoms of the molecule that move the molecule around so that in its final position the molecule cannot be distinguished from the original molecule).
       The colors could then be radicals (including hydrogen itself) that we could
       substitute for each hydrogen position in the molecule. Then the number of orbits
       of colorings is the number of chemically different compounds we could create by
@@ -33,9 +28,27 @@
       would consider them chemically different.  On the other hand if the two versions
       interact with other molecules in the same way, we would have no reason to
       consider them chemically different.  This kind of symmetry is an example of what is
-      called <em>chirality</em> in chemistry.</fn>
+      called <term>chirality</term> in chemistry.</fn>
     </p>
 
+    <p>
+        In <xref ref="butyl-alcohol-isomers" /> we show two different ways to substitute the OH radical for a hydrogen atom in the chemical diagram we gave for butane in Chapter 2. We have colored one vertex of degree 1 with the radical OH and the rest with the atom H. There are only two distinct ways to do this, as the OH must either connect to an <q>end</q> C or a <q>middle</q> C. This shows that there are two different forms, called isomers of the compound shown. This compound is known as butyl alcohol.
+    </p>
+    <figure xml:id="butyl-alcohol-isomers">
+        <caption>The two different isomers of butyl alcohol.</caption>
+        <sidebyside widths="47% 47%" margins="auto">
+        <image>
+            <latex-image-code>
+\chemfig{H-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]OH)-[:0]C(-[:90]H)(-[:270]H)-[:0]H}
+            </latex-image-code>
+        </image>
+        <image>
+            <latex-image-code>
+\chemfig{H-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]OH}
+            </latex-image-code>
+        </image>
+        </sidebyside>
+    </figure>
     <p>
       So think intuitively about some <q>figure</q> that has places to be colored.
       (Think of the faces of a cube, the beads on a necklace, circles at the
@@ -69,7 +82,56 @@
       it simply moves colors to different places. Thus the picture we now have of a
       given coloring is an equally appropriate picture for each coloring in an orbit.
       One natural question for us to ask is <q>How many orbits have a given picture?</q>
-      We can think of a multivariable generating function in which the letters we use
+    </p>
+    <activity xml:id="coloredhex">
+        <introduction>
+            <p>
+                Suppose we draw identical circles at the vertices of a regular hexagon. Suppose we color these circles with two colors, red and blue.
+            </p>
+        </introduction>
+        <task>
+            <statement>
+                <p>In how many ways may we color the set <m>\{1, 2, 3, 4, 5, 6\}</m> using the colors red and blue?</p>
+            </statement>
+            <solution>
+                <p>
+                    There are 64 functions from a six-element set to a two-element set, so there are 64 colorings.
+                </p>
+            </solution>
+        </task>
+        <task>
+            <statement>
+                <p>
+                    These colorings are partitioned into orbits by the action of the rotation group on the hexagon. Using our standard notation, write down all these orbits and observe how many orbits have each picture, assuming the picture of a coloring is the product of commuting variables representing the colors.
+                </p>
+            </statement>
+            <solution>
+                <p><m>
+                    \{RRRRRR\}</m>,
+<m>\{RRRRRB, BRRRRR, RBRRRR, RRBRRR, RRRBRR, RRRRBR\}</m>, <m>\{RRRRBB, BRRRRB, BBRRRR, RBBRRR, RRBBRR, RRRBBR\}</m>, <m>\{RRRBRB, BRRRBR, RBRRRB, BRBRRR, RBRBRR, RRBRBR\}</m>, <m>\{RRBRRB, BRRBRR, RBRRBR\}</m>,
+<m>\{RRRBBB, BRRRBB, BBRRRB, BBBRRR, RBBBRR, RRBBBR\}</m>, <m>\{RRBRBB, BRRBRB, BBRRBR, RBBRRB, BRBBRR, RBRBBR\}</m>, <m>\{RRBBRB, BRRBBR, RBRRBB, BRBRRB, BBRBRR, RBBRBR\}</m>, <m>\{RBRBRB, BRBRBR\}</m>,
+<m>\{RRBBBB, BRRBBB, BBRRBB, BBBRRB, BBBBRR, RBBBBR\}</m>, <m>\{RBRBBB, BRBRBB, BBRBRB, BBBRBR, RBBBRB, BRBBBR\}</m>, <m>\{RBBRBB, BRBBRB, BBRBBR\}</m>,
+<m>\{RBBBBB, BRBBBB, BBRBBB, BBBRBB, BBBBRB, BBBBBR\}</m>, <m>\{BBBBBB\}</m>
+                </p>
+                <p>
+                    We have one orbit with picture <m>R^6</m>, one with picture <m>R^5B</m>, three with picture <m>R^4B^2</m>, four with picture <m>R^3B^3</m>, three with picture <m>R^2B^4</m>, one with picture <m>RB^5</m>, and one with picture <m>B^6</m>.
+                </p>
+            </solution>
+        </task>
+        <task xml:id="picture-enumerator-hexagon">
+            <statement>
+                <p>
+                    Using the picture function of the previous part, write down the picture enumerator for the orbits of colorings of the vertices of a hexagon under the action of the rotation group.
+                </p>
+            </statement>
+            <solution>
+                <p>
+                    <m>R^6 + R^5B + 3R^4B^2 + 4R^3B^3 + 3R^2B^4 + RB^5 + B^6</m>.
+                </p>
+            </solution>
+        </task>
+    </activity>
+    <p>In <xref ref="picture-enumerator-hexagon" text="local">Problem</xref> we saw a picture enumerator for pictures of orbits of the action of a group on colorings. As above, we can ask how many orbits of the colorings have any given picture. We can think of a multivariable generating function in which the letters we use
       to picture individual colors are the variables, and the coefficient of a
       picture
       is the number of orbits with that picture. Such a generating function is an
@@ -84,6 +146,35 @@
 
   <subsection>
     <title>The Orbit-Fixed Point Theorem</title>
+    <activity xml:id="orbit-fixed-point-thm" category="essential">
+        <statement>
+            <p>
+                Suppose now we have a group <m>G</m> acting on a set and we have a picture function on that set with the additional feature that for each orbit of the group, all its elements have the same picture. In this circumstance we define the picture of an orbit or multiorbit to be the picture of any one of its members. The <term>orbit enumerator</term><idx>orbit enumerator</idx><idx><h>enumerator</h><h>orbit</h></idx> <m>\Orb(G,S)</m> is the sum of the pictures of the orbits. (Note that this is the same as the sum of the pictures of the <em>multiorbits</em><idx>multiorbits</idx>.) The <term>fixed point enumerator</term><idx>fixed point enumerator</idx><idx><h>enumerator</h><h>fixed point</h></idx> <m>\Fix(G, S)</m> is the sum of the pictures of each of the fixed points of each of the elements of <m>G</m>. We are going to construct a generating function analog of the CFB theorem. The main idea of the proof of the CFB theorem was to try to compute in two different ways the number of elements (i.e. the sum of all the multiplicities of the elements) in the union of all the multiorbits of a group acting on a set. Suppose instead we try to compute the sum of all the pictures of all the elements in the union of the multiorbits of a group acting on a set. By thinking about how this sum relates to <m>\Orb(G,S)</m> and <m>\Fix(G,S)</m>, find an analog of the CFB theorem that relates these two enumerators. State and prove this theorem. <idx>Orbit-Fixed Point Theorem</idx>
+            </p>
+        </statement>
+        <solution>
+            <p>
+                Let <m>E</m>, for enumerator, be the sum of all the pictures of all the elements in the union of the multiorbits of <m>G</m> acting on a set <m>S</m>. Recall that for any multiorbit <m>M</m> the picture <m>P(M)</m> is the picture <m>P(x)</m> of any element <m>x</m> of <m>M</m>, and the number of elements of a multiorbit <m>M</m> is always the size of <m>G</m>. This lets us write
+                <md>
+                    <mrow>E &amp;= \sum_{M\colon M\text{ is a multiorbit of }G}\sum_{x\colon x\in M} P(x)</mrow>
+                    <mrow>&amp;= \sum_{M\colon M\text{ is a multiorbit of }G}|G|P(M)</mrow>
+                    <mrow>&amp;= |G|\sum_{M\colon M\text{ is a multiorbit of }G}P(M)</mrow>
+                    <mrow>&amp;= |G|\Orb(G,S)</mrow>
+                    </md>. Recall also that the multiplicity of an element <m>x</m> in its multiorbit, and thus in the union of the multiorbits, is <m>|\Fix(x)|</m>. This lets us write <m>E = \sum_{x\colon x\in S}|\Fix(x)|P(x)</m>. Now we have two possible approaches. First, the sum we just gave for <m>E</m> is the sum, over all ordered pairs <m>(\sigma,x)</m> such that <m>\sigma</m> fixes <m>x</m>, of <m>P(x)</m>. But this is exactly <m>\Fix(G,S)</m>. Second, we can get the same formula for <m>E</m> by using <m>\chi(\sigma,x)</m> as in <xref provisional="300" />. We may write
+                    <md>
+                        <mrow>E&amp;= \sum_{x\colon x\in S} |\Fix(x)|P(x)</mrow>
+                        <mrow>&amp;=\sum_{x\colon x\in S}\sum_{\sigma\colon \sigma\in G}\chi(\sigma,x)P(x)</mrow>
+                        <mrow>&amp;= \sum_{\sigma\colon \sigma\in G}\sum_{x\colon \sigma x=x} P(x)</mrow>
+                        <mrow>&amp;=\Fix(G,S)</mrow>
+                        </md>. Setting our two values of <m>E</m> equal and solving for <m>\Orb(G,S)</m> gives us
+                        <me>\Orb(G,S) = \frac{1}{|G|}\Fix(G,S)</me>.
+            </p>
+        </solution>
+    </activity>
+
+    <p>
+        We call the theorem of <xref ref="orbit-fixed-point-thm" /> the <term>Orbit-Fixed Point Theorem</term>. In order to apply the Orbit-Fixed Point Theorem, we need some facts about picture enumerators.<idx>Orbit-Fixed Point Theorem</idx>
+    </p>
     <activity xml:id="ProdPrincPictureEnumerators" category="essential">
       <statement>
         <p>
@@ -91,131 +182,50 @@
           <m>S_2</m> in the sense of <xref ref="picturefunction">Section</xref>. Define <m>P</m> on <m>S_1 \times
           S_2</m> by
           <m>P(x_1,x_2) = P_1(x_1)P_2(x_2)</m>. How are
-          <m>E_{P_1}</m>, <m>E_{P_1}</m>, and <m>E_{P}</m> related? (Hint: you may have already done this
+          <m>E_{P_1}</m>, <m>E_{P_1}</m>, and <m>E_{P}</m> related? (You may have already done this
           problem in another context!)
         </p>
+        <todo>The official PDF points to Section 4.1.2 here. Make sure reference is correct.</todo>
       </statement>
       <solution>
-        <md>
+          <p>
+              <md>
           <mrow>E_P(S_1\times S_2) =\amp \sum_{x_1\in S_1,\ x_2\in
           S_2}P(x_1)P(x_2)=\sum_{x_1\in S_1}\sum_{x_2 \in S_2}P(x_1)P(x_2)</mrow>
           <mrow> =\amp  \sum_{x_1\in
-          S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2).</mrow>
-        </md>
+          S_1}P_1(x_1)\sum_{x_2 \in S_2}P_2(x_2)=E_{P_1}(S_1)E_{P_2}(S_2)</mrow>
+              </md>.
+          </p>
       </solution>
     </activity>
 
     <activity xml:id="PictureEnumeratorforFunctions" category="essential">
       <statement>
         <p>
-          Suppose <m>P</m> is a picture function on a set <m>T</m>. Suppose that we define
-          the picture of a function from some other set <m>S</m> to the set <m>T</m> to be the
-          product
-          of the pictures of the values of <m>f</m>, i.e.
+          Suppose <m>P_i</m> is a picture function on a set <m>S_i</m> for <m>i=1,\dots,k</m>. We define
+          the picture of a <m>k</m>-tuple <m>(x_1,x_2,\dots,x_k)</m> to be the product of the pictures of its elements, <ie />
           <me>
-            \hat P(f) = \prod_{x:x\in S}P(f(x)).
+            \widehat P((x_1,x_2,\dots,x_k)) = \prod_{i=1}^k P_i(x_i).
           </me>
         </p>
 
         <p>
-          How does the picture enumerator <m>E_{\hat P}</m> of the set <m>T^S</m> of all functions
-          from
-          <m>S</m> to <m>T</m> relate to the picture enumerator of <m>P</m> on the set <m>T</m>? (You may assume
-          that both
-          <m>S</m> and
-          <m>T</m> are finite.)
+          How does the picture enumerator <m>E_{\widehat P}</m> of the set <m>S_1\times S_2\times\cdots\times S_k</m> of all <m>k</m>-tuples with <m>x_i\in S</m> relate to the picture enumerators of the sets <m>S_i</m>? In the special case that <m>S_i = S</m> for all <m>i</m> and <m>P_i = P</m> for all <m>i</m>, what is <m>E_{\widehat{P}}(S^k)</m>?
         </p>
       </statement>
       <solution>
-        <p>
-          <m>E_{\hat P}(T^S)=E_P(T)^{|S|}</m>. To prove this, note that we can think of a
-          function <m>f</m> from <m>S</m> to <m>T</m> as an <m>|S|</m>-tuple of values,
-          <me>
-            (f(x_1),f(x_2),\ldots,
-            f(x_{|S|}),
-          </me>
-          then think of an <m>|S|</m>-tuple an the ordered pair
-          <me>
-            (f(x_1),(f(x_2),
-            f(x_3),\ldots f(x_{|S|})),
-          </me>
-          and apply induction and <xref ref="ProdPrincPictureEnumerators">Problem</xref>.
+          <p>Based on the previous problem, we expect that
+          <me>E_{\widehat{P}}(S_1\times S_2\times \cdots\times S_k) = \prod_{i=1}^k E_{P_i}(S_i)</me>. To prove it, we represent a <m>k</m>-tuple as the ordered pair <me>(x_1,(x_2,x_3,\dots,x_k))</me> and apply induction and <xref ref="ProdPrincPictureEnumerators" />. For the special case, <m>E_{\widehat{P}}(S^k) = (E_P(S))^k</m>.
         </p>
       </solution>
     </activity>
 
-    <activity xml:id="Orbit-FixedPoint" category="essential">
-      <statement>
-        <p>
-          Suppose now we have a group <m>G</m> acting on a set and we have a picture
-          function on that set with the additional feature that for each orbit of the
-          group, all its elements have the same picture. In this circumstance we define
-          the
-          picture of an orbit or multiorbit to be the picture of any one of its members. The
-          <em>orbit
-          enumerator</em><idx><h>orbit enumerator</h></idx> <m>{ Orb}(G,S)</m> is the sum of all the pictures
-          of all the orbits. The
-          <em>fixed point enumerator</em><idx><h>fixed point enumerator</h></idx> <m>{ Fix}(G,S)</m> is
-          the sum of all the pictures of all
-          the fixed points of all the elements of <m>G</m>. We are going to construct a
-          generating function analog of the CFB theorem. The main idea of the proof of
-          the
-          CFB theorem was to try to compute in two different ways the number of elements
-          (i.e. the sum of all the multiplicities of the elements) in the union of all
-          the
-          multiorbits of a group acting on a set. Suppose instead we try to compute the
-          sum of all the pictures of all the elements in the union of the multiorbits of
-          a
-          group acting on a set. By thinking about how this sum relates to <m>{ Orb}(G,S)</m>
-          and
-          <m>{ Fix}(G,S)</m>, find an analog of the CFB theorem that relates these two
-          enumerators.
-          State and prove this theorem.
-        </p>
-      </statement>
-      <solution>
-        <p>
-          Let <m>E</m>, for enumerator, be the sum of all the pictures of all the elements in the
-          union of the multiorbits of <m>G</m> acting on a set <m>S</m>. Recall that for any multiorbit
-          <m>M</m> the picture
-          <m>P(M)</m> is the picture <m>P(x)</m> of any element <m>x</m> of <m>M</m>, and the number of elements
-          of a multiorbit <m>M</m> is always the size of <m>G</m>. This lets us write
-          <md>
-            <mrow>E =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)\ \ } }\sum_{x:x\in M} P(x)</mrow>
-            <mrow> =\amp \sum_{M:M\mbox{\ is a multiorbit of \(G\)}  }|G|P(M)</mrow>
-            <mrow> =\amp |G|\sum_{M:M\mbox{\ is a multiorbit  of \(G\)} } P(M)</mrow>
-            <mrow> =\amp |G|{ Orb}(G,S)</mrow>
-          </md>
-        </p>
 
-        <p>
-          Recall also that the multiplicity of an element <m>x</m> in its multiorbit, and thus in
-          the union of the multiorbits is <m>|Fix(x)|</m>. This lets us write
-          <md>
-            <mrow>E =\amp \sum_{x: x\in S} {|Fix}(x)|P(x)</mrow>
-            <mrow> =\amp \sum_{x:x\in S}\sum_{\sigma: \sigma \in G} \chi(\sigma,x)P(x)</mrow>
-            <mrow> =\amp \sum_{\sigma: \sigma\in G}\sum_{x: \sigma{x}=x} P(x)</mrow>
-            <mrow> =\amp  { Fix}(G,S).</mrow>
-          </md>
-        </p>
-
-        <p>
-          Setting these two values of <m>E</m> equal and solving for <m>{ Orb}(G,S)</m> gives us
-          <me>
-            { Orb}(G,S) =\frac{1}{|G|}{ Fix}(G,S).
-          </me>
-        </p>
-      </solution>
-    </activity>
 
     <activity xml:id="polya1" category="essential">
         <statement>
           <p>
-            We will call the theorem of <xref ref="Orbit-FixedPoint">Problem</xref><idx><h>Orbit-Fixed Point Theorem</h></idx> the <em>Orbit-Fixed Point
-            Theorem</em>. Use it to determine the Orbit Enumerator for the colorings, with two
-            colors (red and blue), of six circles placed at the vertices of a hexagon which is
-            free to move in the plane. Compare the coefficients of the resulting polynomial
-            with the various orbits you found in <xref ref="coloredhex">Problem</xref>.
+           Use the Orbit-Fixed Point Theorem to determine the Orbit Enumerator for the colorings, with two colors (red and blue), of six circles placed at the vertices of a hexagon which is free to move in the plane. Compare the coefficients of the resulting polynomial with the various orbits you found in <xref ref="coloredhex" />.
           </p>
         </statement>
         <solution>
@@ -255,7 +265,7 @@
             <m>(R^2+B^2)^3</m>. Therefore the fixed point enumerator for the action of <m>G</m> on the
             colorings is
             <me>
-              { Fix}(G,S)= (R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3) + 2(R^6+B^6).
+              \Fix(G,S)= (R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3) + 2(R^6+B^6).
             </me>
           </p>
 
@@ -263,7 +273,7 @@
             Then the orbit
             enumerator for the action of <m>G</m> on the colorings is
             <me>
-              { Orb}(G,S)=\frac{1}{6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
+              \Orb(G,S)=\frac{1}{6}\left((R+B)^6 +(R^2+B^2)^3 +2(R^3+B^3)^2 +
               2(R^6+B^6)\right).
             </me>
           </p>
@@ -326,8 +336,8 @@
             </md>
             which expands to
             <me>
-              RB^5+2R^4B^2+R^5B+2R^3B^3+2R^2B^4+R^6+B^6.
-            </me>
+              RB^5+2R^4B^2+R^5B+2R^3B^3+2R^2B^4+R^6+B^6
+            </me>.
           </p>
 
           <p>
@@ -453,14 +463,14 @@
     <p>
       Recall that we said that a group of permutations acts on a set if, for each
       member
-      <m>\sigma</m> of <m>G</m> there is a bijection <m>\beta_{\sigma}</m> of <m>S</m> such
+      <m>\sigma</m> of <m>G</m> there is a bijection <m>\overline{\sigma}</m> of <m>S</m> such
       that
       <me>
-        \beta_{\sigma\circ\varphi} = \beta_{\sigma}\circ\beta_{\varphi}
+        \overline{\sigma\circ\varphi} = \overline{\sigma}\circ\overline{\varphi}
       </me>
       for
-      every member <m>\sigma</m> and <m>\varphi</m> of <m>G</m>. Since <m>\beta_{\sigma}</m> is a bijection of <m>S</m>
-      to itself, it is in fact a permutation of <m>S</m>. Thus <m>\beta_{\sigma}</m> has a cycle
+      every member <m>\sigma</m> and <m>\varphi</m> of <m>G</m>. Since <m>\overline{\sigma}</m> is a bijection of <m>S</m>
+      to itself, it is in fact a permutation of <m>S</m>. Thus <m>\overline{\sigma}</m> has a cycle
       structure (that is, it is a product of disjoint cycles) as a permutation of <m>S</m> (in
       addition to whatever its cycle structure is in the original permutation group <m>G</m>).
     </p>
@@ -521,52 +531,62 @@
     </activity>
 
     <activity category="essential">
-      <statement>
+        <introduction>
         <p>
           The usual way of describing the P&#xf3;lya-Redfield enumeration theorem
           involves the <q>cycle indicator</q> or <q>cycle index</q> of a group acting on a set.
           Suppose we have a group <m>G</m> acting on a finite set <m>S</m>. Since each group element
-          <m>\sigma</m> gives us a permutation <m>\beta_{\sigma}</m> of <m>S</m>, as such it has a
+          <m>\sigma</m> gives us a permutation <m>\overline{\sigma}</m> of <m>S</m>, as such it has a
           decomposition into disjoint cycles as a permutation of <m>S</m>. Suppose <m>\sigma</m> has
           <m>c_1</m> cycles of size 1, <m>c_2</m> cycles of size 2, ...,
-          <m>c_n</m> cycles of size <m>n</m>. Then the <em>cycle monomial</em> of <m>\sigma</m> is
+          <m>c_n</m> cycles of size <m>n</m>. Then the <term>cycle monomial</term><idx>cycle monomial</idx> of <m>\sigma</m> is
           <me>
             z(\sigma) = z_1^{c_1}z_2^{c_2}\cdots z_n^{c_n}.
           </me>
         </p>
 
         <p>
-          The <em>cycle indicator</em> or
-          <em>cycle index</em><idx><h>cycle index</h></idx> of <m>G</m> acting on <m>S</m> is
+          The <term>cycle indicator</term> or
+          <term>cycle index</term><idx><h>cycle index</h></idx> of <m>G</m> acting on <m>S</m> is
           <me>
             Z(G,S) = \frac{1}{|G|}\sum_{\sigma: \sigma \in G} z(\sigma).
           </me>
         </p>
+      </introduction>
 
-        <p>
-          What is the cycle index for the group <m>D_6</m> acting on the vertices of a hexagon? What is
-          the cycle index for the group of rotations of the cube acting on the faces of the cube?
-        </p>
-      </statement>
-      <solution>
-        <p>
+      <task>
+          <statement>
+              <p>
+                  What is the cycle index for the group <m>D_6</m> acting on the vertices of a hexagon?
+              </p>
+          </statement>
+          <solution>
+              <p>
           For <m>D_6</m>, we get
           <md>
             <mrow>\frac{1}{12}\left(z_1^6
             +2z_6+2z_3^2+z_2^3+3z_2^3+3z_2^2z_1^2\right)  =\amp</mrow>
             <mrow>\frac{1}{12}\left(z_1^6
             +2z_6+2z_3^2+4z_2^3+3z_1^2z_2^2\right)\amp \amp</mrow>
-          </md>
+          </md>.
+              </p>
+          </solution>
+      </task>
+      <task>
+          <statement>
+              <p>What is the cycle index for the group of rotations of the cube acting on the faces of the cube?
         </p>
-
+      </statement>
+      <solution>
         <p>
           For the rotation group of the cube, we get
           <md>
             <mrow>\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4+8z_3^2 +6z_3^2+z_1^6\right) =\amp</mrow>
             <mrow>\frac{1}{24}\left(3z_1^2z_2^2+ 6z_1^2z_4 +14z_3^2+z_1^6\right) \amp</mrow>
-          </md>
+          </md>.
         </p>
       </solution>
+      </task>
     </activity>
 
     <activity category="essential and interesting">
@@ -575,27 +595,25 @@
           How can you compute the Orbit Enumerator of
           <m>G</m> acting on functions from
           <m>S</m> to a
-          finite set <m>T</m> from the cycle index of <m>G</m> acting on <m>S</m>? (Use <m>P(t)</m> as the notation
-          for the picture of an element <m>t</m> of <m>T</m>.) State and prove the relevant theorem! This is
+          finite set <m>T</m> from the cycle index of <m>G</m> acting on <m>S</m>? (Use <m>t</m>, thought of as a variable, as the picture of an element <m>t</m> of <m>T</m>.) State and prove the relevant theorem! This is
           P&#xf3;lya's and Redfield's famous enumeration theorem.<idx><h>P&#xf3;lya-Redfield Theorem</h></idx>
         </p>
       </statement>
       <solution>
         <p>
           To compute the orbit enumerator of <m>G</m> acting on functions from <m>S</m> to a finite
-          set <m>T</m>, we substitute <m>\sum_{t:t\in T}P(t)^i</m> for <m>z_i</m> in the cycle index for <m>G</m>
-          acting on <m>S</m>. (This is the P&#xf3;lya-Redfield Theorem.) By the Orbit-Fixed Point
+          set <m>T</m>, we substitute <m>\sum_{t:t\in T}t^i</m> for <m>z_i</m> in the cycle index for <m>G</m>
+          acting on <m>S</m>. Here is the proof. By the Orbit-Fixed Point
           Theorem, we need to sum the fixed point enumerators of the permutations in <m>G</m>.
-          However if <m>\sigma</m> fixes <m>f</m>, then
+          However if <m>\sigma</m> fixes a coloring <m>(S,f)</m>, then
           <m>f</m> is constant on the cycles of
           <m>\sigma</m>. Thus we may think of our function <m>f</m> as a function defined on the cycles of
           <m>\sigma</m>. If an
-          <m>i</m>-cycle is sent to the member
-          <m>t</m> of
-          <m>T</m>, then the picture of the restriction of our function to that cycle is <m>P(t)^i</m>. The
-          picture enumerator for all functions defined and constant on that cycle is then
-          <m>\sum_{t:t\in T} P(t)^i</m>. By <xref ref="PictureEnumeratorforFunctions">Problem</xref> the picture enumerator for all functions constant on
-          the cycles of <m>\sigma</m>, then is the result of substituting <m>\sum_{t:t\in T}P(t)^i</m> for
+          <m>i</m>-cycle is colored by the member <m>t</m> of
+          <m>T</m>, then the picture of the restriction of our coloring to that cycle is <m>t^i</m>. The
+          picture enumerator for all colorings defined and constant on that cycle is then
+          <m>\sum_{t:t\in T} t^i</m>. By <xref ref="PictureEnumeratorforFunctions" /> the picture enumerator for all functions constant on
+          the cycles of <m>\sigma</m>, then, is the result of substituting <m>\sum_{t:t\in T}t^i</m> for
           <m>z_i</m> in <m>z(\sigma)</m>. This proves the P&#xf3;lya-Redfield Theorem.
         </p>
       </solution>
@@ -668,19 +686,18 @@
     <activity category="essential and interesting">
       <statement>
         <p>
-          What should we substitute for the pictures of each of the elements of <m>T</m> in
-          the orbit enumerator of <m>G</m> acting on the set of functions from <m>S</m> to <m>T</m> in order to
-          compute the total number of orbits of <m>G</m> acting on the set of functions? What should we
+          What should we substitute for the variables representing colorings in
+          the orbit enumerator of <m>G</m> acting on the set of colorings of <m>S</m> by a set <m>T</m> of colors in order to
+          compute the total number of orbits of <m>G</m> acting on the set of colorings? What should we
           substitute into the variables in the cycle index of a group <m>G</m> acting on a set <m>S</m> in
-          order to compute the total number of orbits of <m>G</m> acting on the functions from <m>S</m> to a
-          set <m>T</m>?
+          order to compute the total number of orbits of <m>G</m> acting on the colorings of <m>S</m> by a set <m>T</m>?
           Find the
           number of ways to color the faces of a cube with four colors.
         </p>
       </statement>
       <solution>
         <p>
-          Substitute the number one for each picture in the picture enumerator.
+          Substitute the number one for each color (variable) in the picture enumerator.
           Substitute
           <m>|T|</m> for each variable in the cycle index. The cycle index for the rotation group of
           the cube acting on the faces is
@@ -697,47 +714,43 @@
     </activity>
 
     <activity xml:id="coloredsticks" category="interesting">
-        <introduction><p>
+        <statement>
+            <p>
         We have red, green, and blue sticks all of the same length, with a dozen
         sticks of each color. We are going to make the skeleton of a cube by taking eight
         identical lumps of modeling clay and pushing three sticks into each lump so that the
         lumps become the vertices of the cube. (Clearly we won't need all the sticks!) In
         how many different ways could we make our cube? How many cubes have four edges of
         each color? How many have two red, four green, and six blue
-        edges? For this problem we are interested in the action of the rotation group of the
+        edges?
+    </p>
+        </statement>
+        <solution>
+            <p>
+        For this problem we are interested in the action of the rotation group of the
         cube on the edges. Now we think of the group elements as permutations of the edges and
         analyze their cycle structure.
-    </p>
-    </introduction>
-      <task>
-        <p>
+        <ul>
+            <li>
           The identity is a product of 12 one-cycles.
-        </p>
-      </task>
-      <task>
-        <p>
+        </li>
+        <li>
           A 90 or 270 degree rotation around an axis perpendicular to two opposite faces is a
           product of three four-cycles.
-        </p>
-      </task>
-      <task>
-        <p>
+        </li>
+        <li>
           A 180 degree rotation around an axis perpendicular to two opposite faces is a
           product of six two-cycles.
-        </p>
-      </task>
-      <task>
-        <p>
+        </li>
+        <li>
           A 180 degree rotation around an axis perpendicular to two opposite edges is a
           product of five two-cycles and two one-cycles.
-        </p>
-      </task>
-      <task>
-        <p>
+        </li>
+        <li>
           A 120 degree rotation around an axis connecting two diagonally opposite vertices is
           a product of four three-cycles.
-        </p>
-      <p>
+        </li>
+        </ul>
         Thus the cycle index is
         <me>
           \frac{1}{24}\left(z_1^{12}+6z_4^3+3z_2^6+6z_2^5z_1^2 + 8z_3^4\right).
@@ -757,7 +770,7 @@
       </p>
 
       <p>
-        <m>\frac{1}{24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
+<m>\frac{1}{24}\Big((R+B+G)^{12}+6((R^4+B^4+G^4)^3+3(R^2+B^2+G^2)^6+\\6(R^2+B^2+B^2)^5(R+B+G)^2
         +8(R^3+B^3+G^3)^4\Big)</m>.
       </p>
 
@@ -780,7 +793,7 @@
           +\frac{5!}{1!2!2!}\right)\right)=600.</mrow>
         </md>
       </p>
-      </task>
+        </solution>
       </activity>
 
       <activity category="interesting">
@@ -844,7 +857,7 @@
             can redraw one of the graphs so that it is identical to
             the other one.) This is equivalent to permuting the vertices in some way so that when we
             apply the permutation to the endpoints of the edges to get a new edge set, the new edge
-            set is equal to the old one. Such a permutation is called an <em>automorphism</em><idx><h>automorphism (of a graph)</h></idx> of the graph. Then two computer
+            set is equal to the old one. Such a permutation is called an <term>automorphism</term><idx><h>automorphism (of a graph)</h></idx> of the graph. Then two computer
             placements are the same if there is an automorphism of the graph that carries one to the
             other.
           </p>
@@ -861,24 +874,23 @@
         </hint>
         <solution>
           <p>
-            The computer placements are functions from the vertices of the graph to the set
+            The computer placements are colorings of the vertices of the graph by the set
             of three kinds of computers, say <m>\{A,B,C\}</m>. Thus we are asking for the number of
-            orbits of the automorphism group of the graph on functions from the vertices of <m>\{A, B,
+            orbits of the automorphism group of the graph on colorings of the vertices with the colors <m>\{A, B,
             C\}</m>. To find this number we need to compute the cycle index of the automorphism group.
             An automorphism will send vertices 1, 2, and 3 to three vertices that are mutually
-            connected; i.e. a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly
+            connected; <ie />, a triangle. Further, each of vertices 4, 5, and 6 is adjacent to exactly
             two of vertices of 1, 2, and 3. In fact, for any of the eight triangles in the graph,
             each vertex not in the triangle is adjacent to exactly two vertices of the triangle (and a
             different two for each vertex). Therefore we can send the vertices 1, 2, and 3, to
             any of the eight triangles in any of six orders, and this completely determines an
             automorphism. Thus there are <m>6\cdot8=48</m> elements in the group of automorphisms.
             The dihedral group
-            <m>D_6</m> is a subgroup of the group of automorphisms. The two-cycles <m>(1\ 4)</m>, <m>(2\ 5)</m>, and
+            <m>D_6</m> is a subgroup of the group of automorphisms. the permutations with four one-cycles and the two-cycle <m>(1\ 4)</m>, <m>(2\ 5)</m>, or
             <m>(3\ 6)</m> are also in the group of automorphisms. (For example, 1 is adjacent to
             everything but 4, and 4 is adjacent to everything but 1, so interchanging them leaves us
-            with exactly the same edges.) We will write out <m>D_6</m> in disjoint cycle notation, and
-            then the coset <m>(1\ 4)D_6</m>, and from those we will be able to get the cycle index of the
-            automorphism group acting on the vertices. In cycle notation, <m>D_6</m> is
+            with exactly the same edges.) We use the notation <m>(i\ j)</m> not onlly to stand for a two-cycle, but also to stand for the permutation with four one-cycles and the two-cycle <m>(i,\ j)</m>. We will write out the cycle decomposition of each element of <m>D_6</m>, and then do the same for the set <m>(1\ 4)D_6 = \{(1\ 4)\sigma\mid \sigma\in D_6\}</m>, and from those we will be able to get the cycle index of the
+            automorphism group acting on the vertices. The cycle decompositions of the elements of <m>D_6</m> are
             <me>
               \begin{array}{cccc}
               (1\ 2\ 3\ 4\ 5\ 6)\amp (1\ 3\ 5)(2\ 4\ 6)\amp (1\ 4)(2\ 5)(3 \ 6)\amp  (1\ 5\ 3)(2\ 6\ 4)\\(1\ 6\ 5\ 4\
@@ -886,7 +898,7 @@
               (3)(6)(1\ 5)(2\ 4)\amp (1\ 2)(3\ 6)(4\ 5)\amp (1\ 6)(2\ 5)(3\ 4)\amp (1\ 4)(2\ 3)(5\ 6)
               \end{array}
             </me>
-            and <m>(1\ 4)D_6</m> is
+            and the cycle decompositions of the elements of <m>(1\ 4)D_6</m> are
             <me>
               \begin{array}{cccc}
               (1\ 2\ 3) (4\ 5\ 6)\amp (1\ 3\ 5\ 4\ 6\ 2)\amp (1) (4)(2\ 5)(3 \ 6)\amp  (1\ 5\ 3\ 4\ 2\ 6)\\(1\ 6\
@@ -897,22 +909,22 @@
           </p>
 
           <p>
-            Notice that neither <m>(2\ 5)</m> nor <m>(3\ 6)</m> is in the coset, so our group is the union
+            Notice that neither <m>(2\ 5)</m> nor <m>(3\ 6)</m> is in either of our sets. From this, it is a straightforward series of steps to show that our group is the union
             <me>
               D_6\cup (1\ 4)D_6 \cup(2\ 5)D_6 \cup (3\ 6)D_6.
             </me>
           </p>
 
           <p>
-            But by symmetry, the cycle structure of
+            But by symmetry, the cycle decomposition of
             <m>(1\ 4)D_6</m>,
             <m>(2\ 5)D_6</m> and
-            <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is.
+            <m>(3\ 6)D_6</m> will be the same, so the cycle index for our group is
             <me>
               \frac{1}{48} \left(Z^6_1 + 8Z^2_3
               +8z_6^1 +7z_2^3+9z_1^2z_2^2 +3z_1^4z_2+
-              6z_2z_4+6z_1^2z_4\right).
-            </me>
+              6z_2z_4+6z_1^2z_4\right)
+            </me>.
           </p>
 
           <p>
@@ -920,8 +932,8 @@
             <me>
               \frac{1}{48} \left(3^6 + 8\cdot3^2
               +8\cdot3^1 +7\cdot3^3+9\cdot3^4 +3\cdot3^5+
-              6\cdot3^2+6\cdot3^3\right)=56.
-            </me>
+              6\cdot3^2+6\cdot3^3\right)=56
+            </me>.
           </p>
         </solution>
       </activity>
@@ -931,7 +943,7 @@
         <p>
         Two simple graphs on the set <m>[n]= \{1,2,\ldots, n\}</m> with edge sets <m>E</m> and
         <m>E'</m> (which we think of a sets of two-element sets for this problem) are said to be
-        <em>isomorphic</em> if there is a permutation <m>\sigma</m> of
+        <term>isomorphic</term><idx><h>graphs</h><h>isomorphic</h></idx><idx><h>isomorphic</h><h>graphs</h></idx> if there is a permutation <m>\sigma</m> of
         <m>[n]</m> which, in its action of two-element sets, carries <m>E</m> to <m>E'</m>. We say two graphs
         are different if they are not isomorphic. Thus the number of different graphs is the
         number of orbits of the set of all two-element subsets of <m>[n]</m> under the action of the
@@ -948,9 +960,9 @@
 
       <p>
       Thus we can think of the set of graphs as a
-      set of functions defined on the set of all two-element subsets of <m>[n]</m>. The number of
+      set of colorings with colors 0 and 1 of the set of all two-element subsets of <m>[n]</m>. The number of
       different graphs with vertex set <m>[n]</m> is thus the number of orbits of this set of
-      characteristic functions under the action of the symmetric group <m>S_n</m> on the set of
+      colorings under the action of the symmetric group <m>S_n</m> on the set of
       two-element subsets of <m>[n]</m>. Use this to find the number of different graphs on five
       vertices.
     </p>
