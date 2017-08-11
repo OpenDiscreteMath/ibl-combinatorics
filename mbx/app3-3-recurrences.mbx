@@ -28,7 +28,8 @@
         </p>
       </statement>
       <solution>
-        <md>
+          <p>
+              <md>
           <mrow>\sum_{n=2}^\infty a_n\frac{x^n}{n!}
            =\amp \sum_{n=2}^\infty a_{n-1}\frac{x^n}{(n-1)!} + \sum_{n=2}^\infty
           \frac{x^n}{(n-2)!}</mrow>
@@ -37,7 +38,6 @@
           <mrow> =\amp  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
           +x^2e^x</mrow>
         </md>
-        <p>
           We sum from <m>n=2</m> because otherwise we would have a factorial of a
           negative number in the denominator. Thus <m>\sum_{n=0}^\infty a_n\frac{x^n}{n!} -a_0-a_1x =  x\left(\sum_{n=0}^\infty a_n\frac{x^n}{n!}\right) - a_0x
           +x^2e^x</m>, or

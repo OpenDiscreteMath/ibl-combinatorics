@@ -4,11 +4,7 @@
   <title>Some Examples of Mathematical Induction</title>
   <introduction>
     <p>
-      In Chapter 1 (<xref ref="SubsetsByInduction">Problem</xref>), we used the principle of mathematical
-      induction to prove that a set of size <m>n</m> has
-      <m>2^n</m> subsets. If you were unable to do that problem and you haven't yet
-      read <xref ref="Induction">Appendix</xref> (a portion of which is repeated here), you
-      should do so now.
+        If you are unfamiliar with the Principle of Mathematical Induction, you should read <xref ref="Induction" /> (a portion of which is repeated here).
     </p>
   </introduction>
 
@@ -16,13 +12,14 @@
     <title>Mathematical induction</title>
     <introduction>
       <p>
-        The <em>principle of mathematical
-        induction</em><idx><h>mathematical induction</h><h>principle of</h></idx><idx><h>principle of
+        The <term>principle of mathematical
+        induction</term><idx><h>mathematical induction</h><h>principle of</h></idx><idx><h>principle of
         mathematical induction</h></idx><idx><h>induction</h><h>mathematical, the principle of</h></idx>
         states that
       </p>
 
-      <blockquote>
+      <blockquote><idx><h>mathematical induction</h><h>principle of</h></idx><idx><h>principle of
+        mathematical induction</h></idx><idx><h>induction</h><h>mathematical, the principle of</h></idx>
           <p>
       In order to prove a statement about an integer <m>n</m>, if we
       can
@@ -46,8 +43,7 @@
       </blockquote>
 
       <p>
-        As an example, let us return to <xref ref="SubsetsByInduction">Problem</xref>. The statement we wish to prove is the
-        statement that <q>A set of size <m>n</m> has <m>2^n</m> subsets.</q>
+        As an example, let us give yet another proof that a set with <m>n</m> elements has <m>2^n</m> subsets. This proof uses essentially the same bijections we used in proving the Pascal Equation. The statement we wish to prove is the statement that <q>A set of size <m>n</m> has <m>2^n</m> subsets.</q>
       </p>
 
       <blockquote>
@@ -83,17 +79,17 @@
       </blockquote>
 
       <p>
-        The first sentence of the last paragraph is called the <em>inductive
-        hypothesis</em>. In an inductive proof we always make an inductive
+        The first sentence of the last paragraph is called the <term>inductive
+        hypothesis</term>. In an inductive proof we always make an inductive
         hypothesis as part of proving that the truth of our statement when
         <m>n=k-1</m> implies the truth of our statement when <m>n=k</m>. The last
-        paragraph itself is called the <em>inductive step</em> of our proof. In an
+        paragraph itself is called the <term>inductive step</term> of our proof. In an
         inductive step we derive the statement for <m>n=k</m> from the statement for
         <m>n=k-1</m>, thus proving that the truth of our statement when <m>n=k-1</m>
         implies the truth of our statement when <m>n=k</m>. The last sentence in the
-        last paragraph is called the <em>inductive conclusion</em>. All inductive
+        last paragraph is called the <term>inductive conclusion</term>. All inductive
         proofs should have a base step, an inductive hypothesis, an inductive
-        step, and an inductive conclusion.
+        step, and an inductive conclusion.<idx><h>inductive</h><h>hypothesis</h></idx><idx><h>inductive</h><h>step</h></idx><idx><h>inductive</h><h>conclusion</h></idx>
       </p>
 
       <p>
@@ -120,10 +116,12 @@
       theorem is rather restrictive in that it requires us to derive each
       case from the immediately preceding case. This restriction is
       not necessary, and removing it leads us to a more general statement of
-      the principal of mathematical induction which people often call the <em>strong principle of mathematical induction</em>. It states:
+      the principal of mathematical induction which people often call the <term>strong principle of mathematical induction</term>. It states:
     </p>
 
     <blockquote>
+        <idx><h>strong mathematical induction</h><h>principle of</h></idx><idx><h>strong principle of
+        mathematical induction</h></idx><idx><h>induction</h><h>mathematical, the strong principle of</h></idx>
         <p>
     In order to prove a
     statement about an integer <m>n</m> if we can
@@ -270,7 +268,7 @@
         </p>
       </statement>
       <hint>
-        We did something rather similar in our example of the inductive proof that a set with <m>n</m> elements has <m>2^n</m> subsets. The work you did in a previous problem may be similar to part of what you need to do here.
+          <p>We did something rather similar in our example of the inductive proof that a set with <m>n</m> elements has <m>2^n</m> subsets. The work you did in a previous problem may be similar to part of what you need to do here.</p>
       </hint>
     </activity>
   </subsection>
@@ -602,14 +600,15 @@
       at least <m>m</m> mutual acquaintances or at least <m>n-1</m> mutual strangers? It
       turns out that we use both. Thus we want to be able to simultaneously
       induct on <m>m</m> and <m>n</m>. One way to do that is to use yet another
-      variation on the principle of mathematical induction, the <em>Principle
-      of Double Mathematical Induction</em><idx><h>double
+      variation on the principle of mathematical induction, the <term>Principle
+      of Double Mathematical Induction</term><idx><h>double
       induction</h></idx><idx><h>induction</h><h>double</h></idx><idx><h>mathematical induction</h><h>double</h></idx>.
       This principle (which can be derived from one of our earlier ones) states
       that
     </p>
 
-    <blockquote>
+    <blockquote><idx><h>double
+      induction</h></idx><idx><h>induction</h><h>double</h></idx><idx><h>mathematical induction</h><h>double</h></idx>
         <p>
     In order to prove a statement about  integers <m>m</m> and <m>n</m>, if
     we can
@@ -632,7 +631,7 @@
       <li>
         <p>
           Show that the truth of the statement for <m>m=j</m> and <m>n=k-1</m> (with
-          <m>j\ge a</m> and <m>k>j</m>) and the truth of the statement for <m>m=j-1</m> and <m>n=k</m>
+          <m>j\ge a</m> and <m>k>b</m>) and the truth of the statement for <m>m=j-1</m> and <m>n=k</m>
           (with <m>j>a</m> and <m>k\ge b</m>) imply the truth of the statement for <m>m=j</m> and
           <m>n=k</m>,
         </p>
@@ -643,7 +642,27 @@
     <m>n\ge b</m>.
         </p>
     </blockquote>
+    <p>
+        There is a strong version of double induction, and it is actually easier to state. The principle of <term>strong double mathematical induction</term>
+        <idx><h>strong double induction</h></idx>
+        <idx><h>induction</h><h>strong double</h></idx>
+        <idx><h>mathematical induction</h><h>strong double</h></idx> says the following.
+    </p>
 
+    <blockquote>
+        <p>
+            In order to prove a statement about integers <m>m</m> and <m>n</m>, if we can
+            <ol>
+                <li>
+                    Prove the statement when <m>m=a</m> and <m>n=b</m>, for fixed integers <m>a</m> and <m>b</m>.
+                </li>
+                <li>
+                    Show that the truth of the statemetn for values of <m>m</m> and <m>n</m> with <m>a+b\leq m+n \lt k</m> imples the truth of the statment for <m>m+n=k</m>,
+                </li>
+            </ol>
+            then we can conclude that the statement is true for all pairs of integers <m>m\geq a</m> and <m>n\geq b</m>.
+        </p>
+    </blockquote>
     <activity xml:id="Ramseybound" category="essential for this or the next section, and interesting">
       <statement>
         <p>
@@ -928,7 +947,7 @@ about these numbers.
           </p>
         </statement>
         <hint>
-          What is the definition of <m>R(n, n)</m>?
+            <p>What is the definition of <m>R(n, n)</m>?</p>
         </hint>
         <solution>
           <p>
@@ -951,7 +970,7 @@ about these numbers.
           </p>
         </statement>
         <hint>
-          If you average a bunch of numbers and each one is bigger than one, what can you say about the average?
+            <p>If you average a bunch of numbers and each one is bigger than one, what can you say about the average?</p>
         </hint>
         <solution>
           <p>
