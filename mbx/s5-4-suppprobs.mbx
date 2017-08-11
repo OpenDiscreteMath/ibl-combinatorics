@@ -10,7 +10,7 @@
       </statement>
       <solution>
         <p>
-          We use inclusion and exclusion. Property <m>P_i</m> is that person <m>i</m> gets the prize he or she brought. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. If <m>P</m> is the set of all properties, we need to compute <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of <m>P</m>. But <m>N_{\mbox{a} }(S)</m> is the number of functions from the prizes to the people that give each prize represented by a property in <m>S</m> to the person who brought it. Think in terms of distributing those prizes first. Then there are <m>n-|S|</m> other prizes that we may pass out to the <m>n</m> people as we please, so we may do that in <m>n^{n-|S|}</m> ways. Thus <m>N_{\mbox{a} }(S)=n^{n-|S|}</m>. Applying <xref ref="incexempty">Equation</xref>, we get
+          We use inclusion and exclusion. Property <m>P_i</m> is that person <m>i</m> gets the prize he or she brought. We are interested in <m>N_{\mbox{e} }(\emptyset)</m>. If <m>P</m> is the set of all properties, we need to compute <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of <m>P</m>. But <m>N_{\mbox{a} }(S)</m> is the number of functions from the prizes to the people that give each prize represented by a property in <m>S</m> to the person who brought it. Think in terms of distributing those prizes first. Then there are <m>n-|S|</m> other prizes that we may pass out to the <m>n</m> people as we please, so we may do that in <m>n^{n-|S|}</m> ways. Thus <m>N_{\mbox{a} }(S)=n^{n-|S|}</m>. Applying the formula from <xref ref="compunion" />, we get
           <me>
             N_{\mbox{e} }(\emptyset)=\sum_{S:s\subseteq P}(-1)^{|S|} n^{n-|S|} =
             \sum_{s=0}^n (-1)^{|S|}\binom{n}{s}n^{n-s}.
@@ -43,7 +43,7 @@
           </p>
       </statement>
       <solution>
-          <p>As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m> gets more than six pieces of candy. We would then observe that the number of ways to pass out the candy so that the children determined by a set <m>S</m> of properties all get more than six pieces, and everyone else gets at least 3, is the number of ways to pass out the remaining candy after giving 7 pieces to each child identified by <m>S</m> and 3 pieces to each other child. This number is <m>\binom{k-7|S|-3(n-|S|)-1}{n-1}=\binom{k-2n-4|S|-1}{n-1}</m>. From here we would substitute into <xref ref="incexempty">Equation</xref>, make any simplifications we could, and we would be done.</p>
+          <p>As an inclusion-exclusion problem, we would let property <m>i</m> be that child <m>i</m> gets more than six pieces of candy. We would then observe that the number of ways to pass out the candy so that the children determined by a set <m>S</m> of properties all get more than six pieces, and everyone else gets at least 3, is the number of ways to pass out the remaining candy after giving 7 pieces to each child identified by <m>S</m> and 3 pieces to each other child. This number is <m>\binom{k-7|S|-3(n-|S|)-1}{n-1}=\binom{k-2n-4|S|-1}{n-1}</m>. From here we would substitute into the formula from <xref ref="compunion" />, make any simplifications we could, and we would be done.</p>
       </solution>
   </exercise>
   <exercise category="interesting">
