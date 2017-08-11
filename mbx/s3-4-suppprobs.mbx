@@ -397,7 +397,7 @@
                     <li>
                         <p>
                             Now we modify the solution of the previous part by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in <m>n!</m> ways, choose the first <m>i_1</m> of these vertices to have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus, the number of ways to assign the degrees is <m>\frac{n!}{i_1!i_2!\cdots i_n!}</m>. Once the degrees are assigned, there are <m>\frac{(n-2)!}{\prod_{d=1}^n (d-1)! i_d}</m>, by translating our easier result. Thus, the total number of trees with the degree sequence in which there are <m>i_d</m> vertices of degree <m>d</m> is
-                            <me>\frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^i</me>.
+                            <me>\frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^i}</me>.
                         </p>
                     </li>
                 </ol>

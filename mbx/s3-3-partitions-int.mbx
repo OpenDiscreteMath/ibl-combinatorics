@@ -134,7 +134,7 @@
       <caption>The Ferrers
       and Young diagrams of the partition
       (5,3,3,2)</caption>
-      <image width="33%" source="images/FerrersYoung" />
+      <image width="45%" source="images/FerrersYoung" />
     </figure>
 
     <activity category="essential">
@@ -149,10 +149,9 @@
         </p>
       </hint>
       <solution>
-          <figure xml:id="Young44311">
-              <caption>Forming the conjugate of a Young diagram</caption>
-              <image width="33%" source="images/Young44311" />
-          </figure>
+          <sidebyside width="18%">
+              <image source="images/Young44311" />
+          </sidebyside>
         <p> We get the Young diagram of <m>(5,3,3,2)</m> by flipping the Young diagram of <m>(4,4,3,1,1)</m> around a line that includes the diagonal of the upper left box; if we think of the top left corner of the diagram as being at the origin, we flip around the line <m>y=-x</m>.
         </p>
       </solution>
@@ -217,7 +216,7 @@
           </p>
           <figure xml:id="selfconjugate-to-distinctodd">
               <caption>Transforming a self-conjugate partition</caption>
-              <image width="33%" source="images/selfconjugate" />
+              <image width="60%" source="images/selfconjugate" />
           </figure>
             <p>Take the top row and left
             column of squares of the Young diagram, and make them into one row in a
@@ -312,12 +311,11 @@
       <activity>
           <introduction>
               <p>
-            The idea of conjugation of a partition could be defined without the geometric interpretation of a Young diagram, but it would seem far less natural without the geometric interpretation. Another idea that seems much more natural in a geometric context is this. Suppose we have a partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>. Then the Young diagram of the partition can fit into a rectangle that is <m>m</m> or more units wide (horizontally) and <m>n</m> or more units deep. Suppose we place the Young diagram of our partition in the top left-hand corner of an <m>m'</m> unit wide and <m>n'</m> unit deep rectangle with <m>m'\ge m</m> and <m>n' \ge n</m>, as in <xref ref="complementpartition">Figure</xref>.
+            The idea of conjugation of a partition could be defined without the geometric interpretation of a Young diagram, but it would seem far less natural without the geometric interpretation. Another idea that seems much more natural in a geometric context is this. Suppose we have a partition of <m>k</m> into <m>n</m> parts with largest part <m>m</m>. Then the Young diagram of the partition can fit into a rectangle that is <m>m</m> or more units wide (horizontally) and <m>n</m> or more units deep. Suppose we place the Young diagram of our partition in the top left-hand corner of an <m>m'</m> unit wide and <m>n'</m> unit deep rectangle with <m>m'\ge m</m> and <m>n' \ge n</m>, as in <xref ref="complementpartition" />.
           </p>
-
           <figure xml:id="complementpartition" >
             <caption>To complement the partition <m>(5,3,3,2)</m> in a 6 by 5 rectangle: enclose it in the rectangle, rotate, and cut out the original Young diagram.</caption>
-            <image width="33%" source="images/complementpartition" />
+            <image width="70%" source="images/complementpartition" />
           </figure>
           </introduction>
 
@@ -624,88 +622,90 @@
           </p>
         </statement>
         <solution>
-          <tabular>
-            <row bottom="minor">
-              <cell><m>k\backslash n</m></cell>
-              <cell>1</cell>
-              <cell>2</cell>
-              <cell>3</cell>
-              <cell>4</cell>
-              <cell>5</cell>
-              <cell>6</cell>
-              <cell>7</cell>
-            </row>
-            <row>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>2</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>3</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>4</cell>
-              <cell>1</cell>
-              <cell>2</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>5</cell>
-              <cell>1</cell>
-              <cell>2</cell>
-              <cell>2</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>6</cell>
-              <cell>1</cell>
-              <cell>3</cell>
-              <cell>3</cell>
-              <cell>2</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>7</cell>
-              <cell>1</cell>
-              <cell>3</cell>
-              <cell>4</cell>
-              <cell>3</cell>
-              <cell>2</cell>
-              <cell>1</cell>
-              <cell>1</cell>
-            </row>
-          </tabular>
+            <sidebyside>
+                <tabular>
+                    <row bottom="minor">
+                        <cell><m>k\backslash n</m></cell>
+                        <cell>1</cell>
+                        <cell>2</cell>
+                        <cell>3</cell>
+                        <cell>4</cell>
+                        <cell>5</cell>
+                        <cell>6</cell>
+                        <cell>7</cell>
+                    </row>
+                    <row>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>2</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>3</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>4</cell>
+                        <cell>1</cell>
+                        <cell>2</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>5</cell>
+                        <cell>1</cell>
+                        <cell>2</cell>
+                        <cell>2</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>6</cell>
+                        <cell>1</cell>
+                        <cell>3</cell>
+                        <cell>3</cell>
+                        <cell>2</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>7</cell>
+                        <cell>1</cell>
+                        <cell>3</cell>
+                        <cell>4</cell>
+                        <cell>3</cell>
+                        <cell>2</cell>
+                        <cell>1</cell>
+                        <cell>1</cell>
+                    </row>
+                </tabular>
+            </sidebyside>
         </solution>
       </task>
       <task>
@@ -737,133 +737,173 @@
 
     <table xml:id="lastdistributiontable" >
       <caption>The number of ways to distribute <m>k</m> objects to <m>n</m> recipients, with restrictions on how the objects are received</caption>
-      <tabular top="minor">
-        <col right="minor"/>
+      <tabular top="major" left="major" right="major" >
+        <col right="major"/>
+        <col halign="center" right="minor" />
         <col halign="center"/>
-        <col halign="center"/>
-        <row bottom="medium">
-          <cell colspan="3" halign="center">The Twentyfold Way: A Table of Distribution
-          Problems</cell>
+        <row bottom="major">
+            <cell colspan="3" halign="center">The Twentyfold Way: A Table of Distribution
+            Problems</cell>
         </row>
         <row>
-          <cell  ><m>k</m> objects and conditions</cell>
-          <cell colspan="2" halign="center" bottom="minor"><m>n</m> recipients and
-          mathematical model for distribution</cell>
+            <cell >
+                <line><m>k</m> objects and conditions</line>
+                <line>on how they are received</line>
+            </cell>
+            <cell colspan="2" halign="center" bottom="minor">
+                <line><m>n</m> recipients and mathematical</line>
+                <line>model for distribution</line>
+            </cell>
         </row>
         <row bottom="major">
-          <cell>on how they are received</cell>
-          <cell halign="center">Distinct</cell>
-          <cell halign="center">Identical</cell>
-        </row>
-
-        <row>
-          <cell>1.  Distinct</cell>
-          <cell><m>n^k</m></cell>
-          <cell><m>\sum_{i=1}^kS(n,i)</m></cell>
+            <cell></cell>
+            <cell halign="center">Distinct</cell>
+            <cell halign="center">Identical</cell>
         </row>
         <row bottom="minor">
-          <cell>no conditions</cell>
-          <cell>functions</cell>
-          <cell>set partitions (<m>\le n</m> parts)</cell>
-        </row>
-        <row>
-          <cell>2.  Distinct</cell>
-          <cell><m>n^{\underline{k}}</m></cell>
-          <cell>1 if
-          <m>k\le n</m>; 0 otherwise</cell>
-        </row>
-        <row bottom="minor">
-          <cell>Each gets at most one</cell>
-          <cell>\kern -2pt <m>k</m>-element
-          permutations\kern -2 pt</cell>
-          <cell></cell>
-        </row>
-        <row>
-          <cell>3.  Distinct</cell>
-          <cell><m>S(k,n)n!</m></cell>
-          <cell><m>S(k,n)</m></cell>
+            <cell>
+                <line>1.  Distinct</line>
+                <line>no conditions</line>
+            </cell>
+            <cell>
+                <line><m>n^k</m></line>
+                <line>functions</line>
+            </cell>
+            <cell>
+                <line><m>\sum_{i=1}^kS(n,i)</m></line>
+                <line>set partitions (<m>\le n</m> parts)</line>
+            </cell>
         </row>
         <row bottom="minor">
-          <cell>Each gets at least one</cell>
-          <cell>onto functions</cell>
-          <cell>set partitions
-          (<m>n</m> parts)</cell>
-        </row>
-        <row>
-          <cell>4. Distinct</cell>
-          <cell><m>k!=n!</m></cell>
-          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
-        </row>
-        <row bottom="minor">
-          <cell>Each
-          gets exactly one</cell>
-          <cell>permutations</cell>
-          <cell></cell>
-        </row>
-        <row>
-          <cell>5.  Distinct, order matters</cell>
-          <cell><m>(k+n-1)^{\underline{k}}</m></cell>
-          <cell><m>\sum_{i=1}^n L(k,i)</m></cell>
+            <cell>
+                <line>2.  Distinct</line>
+                <line>Each gets at most one</line>
+            </cell>
+            <cell>
+                <line><m>n^{\underline{k}}</m></line>
+                <line><m>k</m>-element</line>
+                <line>permutations</line>
+            </cell>
+            <cell>
+                <line>1 if <m>k\le n</m>;</line>
+                <line>0 otherwise</line>
+            </cell>
         </row>
         <row bottom="minor">
-          <cell></cell>
-          <cell>ordered functions</cell>
-          <cell>\hglue -3 pt broken permutations (<m>\le n</m>
-          parts)\kern -3 pt</cell>
-        </row>
-        <row>
-          <cell>6.  Distinct, order
-          matters</cell>
-          <cell><m>(k)^{\underline{n}}(k-1)^{\underline{k-n}}</m></cell>
-          <cell><m>L(k,n)=
-          \binom{k}{n}(k-1)^{\underline{k-n}}</m></cell>
-        </row>
-        <row bottom="minor">
-          <cell>Each
-          gets at least one</cell>
-          <cell>ordered onto functions</cell>
-          <cell>broken permutations (<m>n</m> parts)</cell>
-        </row>
-        <row>
-          <cell>7.  Identical</cell>
-          <cell><m>\binom{n+k-1}{k}</m></cell>
-          <cell><m>\sum_{i=1}^nP(k,i)</m></cell>
+            <cell>
+                <line>3.  Distinct</line>
+                <line>Each gets at least one</line>
+            </cell>
+            <cell>
+                <line><m>S(k,n)n!</m></line>
+                <line>onto functions</line>
+            </cell>
+            <cell>
+                <line><m>S(k,n)</m></line>
+                <line>set partitions (<m>n</m> parts)</line>
+            </cell>
         </row>
         <row bottom="minor">
-          <cell>no conditions</cell>
-          <cell>multisets</cell>
-          <cell>number partitions (<m>\le n</m> parts)</cell>
+            <cell>
+                <line>4. Distinct</line>
+                <line>Each gets exactly one</line>
+            </cell>
+            <cell>
+                <line><m>k!=n!</m></line>
+                <line>permutations</line>
+            </cell>
+            <cell>
+                <line>1 if <m>k=n</m>;</line>
+                <line>0 otherwise</line>
+            </cell>
         </row>
-        <row>
-          <cell>8.  Identical</cell>
-          <cell><m>\binom{n}{k}</m></cell>
-          <cell>1 if <m>k\le n</m>; 0 otherwise</cell>
+        <row valign="top" bottom="minor">
+            <cell><line>5.  Distinct,</line><line> order matters</line></cell>
+            <cell>
+                <line><m>(k+n-1)^{\underline{k}}</m></line>
+                <line>ordered functions</line>
+            </cell>
+            <cell>
+                <line><m>\sum_{i=1}^n L(k,i)</m></line>
+                <line>broken permutations</line>
+                <line>(<m>\le n</m> parts)</line>
+            </cell>
         </row>
-        <row bottom="minor">
-          <cell>Each gets at most one</cell>
-          <cell>subsets</cell>
-          <cell></cell>
+        <row valign="top" bottom="minor">
+            <cell>
+                <line>6.  Distinct,</line>
+                <line>order matters</line>
+                <line>Each gets at least one</line>
+            </cell>
+            <cell>
+                <line><m>(k)^{\underline{n}}(k-1)^{\underline{k-n}}</m></line>
+                <line>ordered</line>
+                <line>onto functions</line>
+            </cell>
+            <cell>
+                <line><m>L(k,n)= \binom{k}{n}(k-1)^{\underline{k-n}}</m></line>
+                <line>broken permutations</line>
+                <line>(<m>n</m> parts)</line>
+            </cell>
         </row>
-        <row>
-          <cell>9.  Identical</cell>
-          <cell><m>\binom{k-1}{n-1}</m></cell>
-          <cell><m>P(k,n)</m></cell>
+        <row valign="top" bottom="minor">
+            <cell>
+                <line>7.  Identical</line>
+                <line>no conditions</line>
+            </cell>
+            <cell>
+                <line><m>\binom{n+k-1}{k}</m></line>
+                <line>multisets</line>
+            </cell>
+            <cell>
+                <line><m>\sum_{i=1}^nP(k,i)</m></line>
+                <line>number partitions</line>
+                <line>(<m>\le n</m> parts)</line>
+            </cell>
         </row>
-        <row bottom="minor">
-          <cell>Each gets at least one</cell>
-          <cell>compositions (<m>n</m> parts)</cell>
-          <cell>number partitions (<m>n</m>
-          parts)</cell>
+        <row bottom="minor" valign="top">
+            <cell>
+                <line>8.  Identical</line>
+                <line>Each gets at most one</line>
+            </cell>
+            <cell>
+                <line><m>\binom{n}{k}</m></line>
+                <line>subsets</line>
+            </cell>
+            <cell>
+                <line>1 if <m>k\le n</m>;</line>
+                <line>0 otherwise</line>
+            </cell>
         </row>
-        <row>
-          <cell>10.  Identical</cell>
-          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
-          <cell>1 if <m>k=n</m>; 0 otherwise</cell>
+        <row bottom="minor" valign="top">
+            <cell>
+                <line>9.  Identical</line>
+                <line>Each gets at least one</line>
+            </cell>
+            <cell>
+                <line><m>\binom{k-1}{n-1}</m></line>
+                <line>compositions</line>
+                <line>(<m>n</m> parts)</line>
+            </cell>
+            <cell>
+                <line><m>P(k,n)</m></line>
+                <line>number partitions</line>
+                <line>(<m>n</m> parts)</line>
+            </cell>
         </row>
-        <row bottom="minor">
-          <cell>Each gets exactly one</cell>
-          <cell></cell>
-          <cell></cell>
+        <row bottom="major" valign="top">
+            <cell>
+                <line>10.  Identical</line>
+                <line>Each gets exactly one</line>
+            </cell>
+            <cell>
+                <line>1 if <m>k=n</m>;</line>
+                <line>0 otherwise</line>
+            </cell>
+            <cell>
+                <line>1 if <m>k=n</m>;</line>
+                <line>0 otherwise</line>
+            </cell>
         </row>
       </tabular>
     </table>
