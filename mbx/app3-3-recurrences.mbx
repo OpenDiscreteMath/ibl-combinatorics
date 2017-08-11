@@ -59,38 +59,61 @@
     </activity>
 
     <activity xml:id="telephonenetwork" category="essential for this or the next section, and interesting">
-      <statement>
+      <introduction>
         <p>
           The telephone company in a city has <m>n</m> subscribers. Assume a
           telephone call involves exactly two subscribers (that is, there are no
           calls to outside the network and no conference calls), and that the
           configuration of the telephone network is determined by which pairs of
-          subscribers are talking. Give a recurrence for the number
-          <m>c_n</m> of configurations of the network. )Hint: Person <m>n</m> is either on
-          the phone or not.) What are <m>c_0</m> and <m>c_1</m>? What are <m>c_2</m> through
-          <m>c_6</m>? Notice that we may think of a configuration of the telephone
-          network as a permutation that is a product of disjoint two-cycles (and
-          one-cycles<fn>When we think of writing a
-          permutation as a product of disjoint cycles, we often do not include the
-          one-cycles in our notation because a one-cycle is an identity
-          permutation.  However any element not moved by the cycles we do write
-          down is in a one cycle, and those one cycles are implicit in the product
-          of cycles we do write down.</fn>), that is, we may think of a configuration
-          as an involution in the symmetric group <m>S_n</m>.
+          subscribers are talking. Notice that we may think of a configuration of the telephone network as a permutation whose cycle decomposition consists entirely of one-cycles and two-cycles, that is, we may think of a configuration as an involution in the symmetric group <m>S_n</m>.
+
         </p>
-      </statement>
-      <solution>
-        <p>
-          <m>c_n =(n-1)c_{n-2} + c_{n-1}</m>. (The first term counts the
-          number of network configurations in which person <m>n</m> is in a phone call
-          with someone else, and the second term counts the number of network
-          configurations in which person
-          <m>n</m> is not in a phone call.) <m>c_0 =1</m> and <m>c_1=1</m>, because there is only
-          one configuration of a network with 0 or one phones.) Then <m>c_2 =2</m>,
-          <m>c_3 =2\cdot1 +2=4</m>, <m>c_4= 3\cdot2+4=10</m>, <m>c_5= 4\cdot4 +10 = 26</m>, and
-          <m>c_6 = 5\cdot 10+26=76</m>.
-        </p>
-      </solution>
+      </introduction>
+      <task>
+        <statement>
+          <p>
+            Give a recurrence for the number <m>c_n</m> of configurations of the network. (Hint: Person <m>n</m> is either on  the phone or not.)
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>c_n =(n-1)c_{n-2} + c_{n-1}</m>. (The first term counts the
+            number of network configurations in which person <m>n</m> is in a phone call
+            with someone else, and the second term counts the number of network
+            configurations in which person
+            <m>n</m> is not in a phone call.)
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            What are <m>c_0</m> and <m>c_1</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            <m>c_0 =1</m> and <m>c_1=1</m>, because there is only
+            one configuration of a network with 0 or one phones.
+          </p>
+        </solution>
+      </task>
+
+      <task>
+        <statement>
+          <p>
+            What are <m>c_2</m> through <m>c_6</m>?
+          </p>
+        </statement>
+        <solution>
+          <p>
+            Using our recurrence and the v alues of <m>c_0</m> and <m>c_2</m>, we get <m>c_2 =2</m>,
+              <m>c_3 =2\cdot1 +2=4</m>, <m>c_4= 3\cdot2+4=10</m>, <m>c_5= 4\cdot4 +10 = 26</m>, and
+              <m>c_6 = 5\cdot 10+26=76</m>.
+          </p>
+        </solution>
+      </task>
     </activity>
 
     <activity xml:id="derangementrecurrence" category="essential for this or the next section, and interesting">
@@ -128,14 +151,16 @@
 
   <subsection>
     <title>Using calculus  with exponential generating functions</title>
-    <activity category="essential for this or the next section, and interesting">
+
+
+    <activity xml:id="telephonenetworkEGF"  category="essential for this or the next section, and interesting">
         <introduction>
             <p>
         Your recurrence in <xref ref="telephonenetwork">Problem</xref> should be a
         second order recurrence.
             </p>
         </introduction>
-      <task xml:id="telephonenetworkEGF" >
+      <task >
         <statement><p>
         Assuming that the left hand side is <m>c_n</m> and
         the right hand side involves <m>c_{n-1}</m> and <m>c_{n-2}</m>, decide on an
@@ -169,7 +194,7 @@
       <task>
         <statement>
           <p>
-            Use your generating function to compute a formula for <m>c_n</m>.
+            Use your EGF to compute a formula for <m>c_n</m>.
           </p>
         </statement>
         <hint>

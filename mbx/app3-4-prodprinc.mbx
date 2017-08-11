@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xmlns:xi="http://www.w3.org/2001/XInclude"  >
-  <title>The product principle</title>
+  <title>The Product Principle for EGFs</title>
   <p>
     One of our major tools for ordinary
     generating functions was the product principle. It is thus natural to
@@ -67,8 +67,7 @@
         one-cycles, i.e., are involutions, the exponential generating function for
         the number of permutations that are the product of disjoint two-cycles
         only and the generating function for the number of permutations that are
-        the product of disjoint one cycles
-        only?
+        the product of disjoint one cycles only (these are identity permutations on their domain)?
       </p>
     </statement>
     <solution>
@@ -95,11 +94,10 @@
   <activity xml:id="derangementsand1cycles" category="essential for this or the next section">
     <statement>
       <p>
-        If we multiply the generating function for derangements times the
-        generating function for the number of permutations that are products of
-        one-cycles only, what EGF for what set of permutations do
-        we get? (Notice that there are two questions
-        here.)
+        If we multiply the EGF for derangements times the
+        EGF for the number of permutations whose cycle decompositions consist of
+        one-cycles only, what EGF do
+        we get? for what set of objects have we found the EGF?
       </p>
     </statement>
     <hint>
@@ -112,9 +110,7 @@
     <solution>
       <p>
         We get the EGF <m>\frac{1}{1-x}</m>
-        for all permutations of <m>[n]</m>. Notice that any permutation is a product
-        of a derangement of the elements not fixed by the permutation times the
-        one cycles of elements that are fixed by the permutation.
+        for all permutations of <m>[n]</m>. Notice that any permutation is a product of a derangement of the elements not fixed by the permutation times a permutation whose cycle decomposition consists of one-cycles.
       </p>
     </solution>
   </activity>
@@ -155,7 +151,7 @@
     </solution>
   </activity>
 
-  <p>
+  <!-- <p>
     Our product principle for ordinary generating functions involved the idea
     of a value function. In particular, if we have a set <m>S</m> of objects we
     call a function <m>v</m> from <m>S</m> into the nonnegative
@@ -179,28 +175,14 @@
         ordinary generating function for <m>b_j</m>.
       </p>
     </statement>
-  </theorem>
+  </theorem> -->
 
   <p>
-    We ask if there is a similar
+    <!-- We ask if there is a similar
     interpretation for the products of exponential generating functions we
-    have just seen. In the case of painting streetlight poles in <xref ref="paintinglightpoles2">Problem</xref>, what is important is not just how many
-    light poles are painted with each color, but which set of poles is painted
-    with each color. Let us examine the relationship between the EGF for
-    painting poles with two colors, <m>e^{2x}</m> and the EGF for painting poles
-    with four colors,
-    <m>e^{4x}</m>. To be specific, the EGF for painting poles red and white is
-    <m>e^{2x}</m> and the EGF for painting poles blue and yellow is <m>e^{2x}</m>. To
-    decide how to paint poles with red, white, blue, and yellow, we can decide
-    which set of poles is to be painted with red and white, and which set of
-    poles is to be painted with blue and yellow. Notice that the number of
-    ways to paint a set of poles with red and white depends only on the size
-    of that set, and the number of ways to paint a
-    set of poles with blue and yellow depends only on the size of that set.
-    (It is a coincidence that the number of ways to paint a set of poles with
-    red and white equals the number of ways to paint the same set of poles
-    with blue and yellow. The coincidence is the result of trying to keep our
-    example simple!)
+    have just seen.  -->
+    In the case of painting streetlight poles in <xref ref="paintinglightpoles2">Problem</xref>, let us examine the relationship between the EGF for painting poles with two colors, the EGF for painting the poles with three colors, and the EGF for painting poles
+    with five colors, <m>e^{5x}</m>. To be specific, the EGF for painting poles red and white is <m>e^{2x}</m> and the EGF for painting poles blue, green, and yellow is <m>e^{3x}</m>. To decide how to paint poles with red, white, blue, green, and yellow, we can decide  which set of poles is to be painted with red and white, and which set of poles is to be painted with blue, green, and yellow. Notice that the number of ways to paint a set of poles with red and white depends only on the size of that set, and the number of ways to paint a set of poles with blue, green, and yellow depends only on the size of that set.
   </p>
 
   <activity xml:id="exponentialpp2" category="essential for this or the next section">
@@ -209,22 +191,15 @@
         Suppose that <m>a_i</m> is the number of ways to paint a set of <m>i</m>
         poles with red and white, and <m>b_j</m> is the number of ways to paint a set
         of
-        <m>j</m> poles with blue and yellow. In how many ways may we take a set <m>N</m>
-        of
-        <m>n</m> poles, divide it up into two sets <m>I</m> and <m>J</m> (using <m>i</m> to stand for
-        the size of <m>I</m> and <m>j</m> to stand for the size of the set <m>J</m>, and
-        allowing <m>i</m> and <m>j</m> to vary) and paint the poles in <m>I</m> red and white
-        and the poles in <m>J</m> blue and yellow? (Don't figure out formulas for
-        <m>a_i</m> and <m>b_j</m> to use in your answer; that will make it harder to get
-        the point of the problem!) How does this relate to <xref ref="exponentialpp1">Problem</xref>?
+        <m>j</m> poles with blue, green, and yellow. In how many ways may we take a set <m>N</m> of <m>n</m> poles, divide it up into two sets <m>I</m> and <m>J</m> (using <m>i</m> to stand for
+        the size of <m>I</m> and <m>j</m> to stand for the size of the set <m>J</m>, and allowing <m>i</m> and <m>j</m> to vary) and paint the poles in <m>I</m> red and white
+        and the poles in <m>J</m> blue, green, and yellow? (Give your answer in terms of <m>a_i</m> and <m>b_j</m>.  Don't figure out formulas for  <m>a_i</m> and <m>b_j</m> to use in your answer; that will make it harder to get the point of the problem!) How does this relate to <xref ref="exponentialpp1">Problem</xref>?
       </p>
     </statement>
     <solution>
       <p>
-        <m>\binom{n}{i}a_ib_j</m>. This shows that the coefficient of <m>\frac{x^n}{n!}</m>
-        in the EGF for painting poles with four colors is the coefficient of
-        <m>\frac{x^n}{n!}</m> in the product of the EGF for painting poles with two
-        colors and the EGF for painting poles with two colors.
+        <m>\binom{n}{i}a_ib_j</m>. You could also write the first answer as <m>\binom{n}{i}a_ib_{n-i}</m> or in some other form.  This shows that the coefficient of <m>\frac{x^n}{n!}</m> in the EGF for painting poles with five colors is the coefficient of  <m>\frac{x^n}{n!}</m> in the product of the EGF for painting poles with two
+        colors and the EGF for painting poles with three colors.
       </p>
     </solution>
   </activity>
@@ -234,13 +209,44 @@
     coefficient of <m>\frac{x^n}{n!}</m> in the product of two EGFs is the formula we
     get by splitting a set <m>N</m> of poles into two parts and painting the poles
     in the first part with red and white and the poles in the second part with
-    blue and yellow. More generally, you could interpret your result in
+    blue, green, and yellow.  More generally, you could interpret your result in
     <xref ref="exponentialpp1">Problem</xref> to say that the coefficient of <m>\frac{x^n}{n!}</m> in the product <m>\sum_{i=0}^\infty a_i \frac{x^i}{i!}
     \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m> of two EGFs is the sum, over all
-    ways of splitting a set
-    <m>N</m> of size
-    <m>n</m> into an ordered pair of disjoint sets <m>I</m> and <m>J</m>, of the product
-    <m>a_{|I|}b_{|J|}</m>. In contrast, when we multiplied ordinary generating
+    ways of splitting a set <m>N</m> of size <m>n</m> into an ordered pair of disjoint sets <m>I</m> and <m>J</m>, of the product
+    <m>a_{|I|}b_{|J|}</m>.
+  </p>
+
+  <p>
+    There seem to be two essential features that relate to the product of exponential generating functions. First, we are considering <term>structures</term><idx><h>structure</h></idx> that consist of a set and
+    some additional mathematical construction on or relationship among the
+    elements of that set. For example, our set might be a set of light poles and
+    the additional construction might be a coloring function defined on that
+    set. Other examples of additional mathematical constructions or
+    relationships on a set could include a permutation of that set; in
+    particular an involution or a derangement, a partition of that set, a graph
+    on that set, a connected graph on that set, an arrangement of the elements
+    of that set around a circle, or an arrangement of the elements of that set
+    on the shelves of a bookcase. In fact a set with no additional construction
+    or arrangement on it is also an example of a structure. Its additional
+    construction is the empty set!  When a structure consists of the set
+    <m>S</m> plus the additional construction, we say the structure
+    <em>uses</em> <m>S</m>. What all the examples we have mentioned in our
+    earlier discussion of exponential generating functions have in common is
+    that the number of structures that use a given set is determined by the size
+    of that set. We will call a family <m>\F</m> of structures a
+    <term>species</term> of structures on subsets of a set <m>X</m> if
+    structures are defined on finite subsets of <m>X</m> and if the number of
+    structures in the family using a finite set <m>S</m> is finite and is
+    determined by the size of <m>S</m> (that is, if there is a bijection between
+    subsets <m>S</m> and <m>T</m> of <m>X</m>, the number of structures in the
+    family that use <m>S</m> equals the number of structures in the family that
+    use <m>T</m>). We say a structure is an
+    <term><m>\F</m>-structure</term><idx><h>F-structures</h></idx> if it is a
+    member of the family <m>\F</m>.
+  </p>
+
+<!--
+    In contrast, when we multiplied ordinary generating
     functions, the coefficient of
     <m>x^n</m> in
     <m>\sum_{i=0}^\infty a_i x^i
@@ -276,15 +282,13 @@
     of ways to paint some of the poles red and white depends on the size of
     the set of poles being painted, so for each set of poles of a given size,
     the number of ways to paint that set of poles using red and white is the
-    same.
-  </p>
+    same. -->
+
 
   <activity category="essential for this or the next section">
     <statement>
       <p>
-        In <xref ref="exponentialbookshelf">Problem</xref>, why is the set of books
-        that we actually put onto a shelf a set-value function on the set of
-        all ways to put some of the books on that shelf?
+        In <xref ref="exponentialbookshelf">Problem</xref>, why is the family of arrangements of set of books on a single shelf (assuming they all fit) a species?
       </p>
     </statement>
     <solution>
@@ -298,27 +302,97 @@
   <activity category="essential for this or the next section">
     <statement>
       <p>
-        In <xref ref="telephonenetwork">Problem</xref>, why is the set of people
-        actually using their phones a set-value function (assume nobody is
-        calling outside the telephone network)? Equivalently, given an
-        involution, that is, a permutation that is a product of two cycles and one
-        cycles, why is the set of elements that are actually in two-cycles a
-        set-value function? Why is the set of people who are not using their
-        phones (or, equivalently, the set of elements in a product of two-cycles
-        and one-cycles that are in one-cycles) a set-value function?
+        In <xref ref="telephonenetwork">Problem</xref>, why is the family of people actually making phone calls (assuming nobody is
+        calling outside the telephone network) at any given time, with the added relationship of who is calling whome, a species? Why is the family of sets of people who are not using their phones a species (with no additional construction needed)?
       </p>
     </statement>
     <solution>
       <p>
         Because the number of ways to break a given set of <m>2n</m> people into
-        two-cycles depends only on <m>n</m> and not the particular set of <m>2n</m> people
-        we choose. The number of ways to break up a set of size <m>n</m> into
-        one-cycles is one, so it doesn't depend on which set of size <m>n</m> we are
-        breaking up. (In fact it doesn't depend on <m>n</m> either, but that is
-        irrelevant here.)
+        two-cycles depends only on <m>n</m> and not the particular set of <m>2n</m> people we choose.
+        The number of ways to break up a set of size <m>k</m> into
+        one-cycles is one, so it doesn't depend on which set of size <m>k</m> we are breaking up.
+        (In fact it doesn't depend on <m>k</m> either, but that is irrelevant here.) Of course since these people are doing nothing, the structure of one-cycles is just another way to say that our species consists of sets with no additional structure.
       </p>
     </solution>
   </activity>
+
+
+
+  <p>
+    The second essential feature of our examples of products of EGFs is that products of EGFs seem to count structures on ordered pairs of two disjoint sets (or more generally on <m>k</m>-tuples of mutually disjoint sets).
+    For example, we can determine a five coloring of a set <m>S</m> by partitioning it in all possible ways into two sets and coloring the first set in the pair with our first two colors and our second pair with the last three colors. Or we can partition our set in all possible ways into five parts and color part i with our ith color.
+    We don't have to do the same thing to each part of our partition; for example, we could define a derangement on one part and an identity permutation on the other; this defines a permutation on the set we are partitioning, and we have already noted that every permutation arises in this way.
+  </p>
+
+  <p>
+    Our combinatorial interpretation of EGFs will involve assuming that the coefficient of <m>\frac{x^i}{i!}</m> counts the number of structures on a particular set of of size <m>i</m> in a species of structures on subsets of a set <m>X</m>.
+    Thus in order to give an interpretation of the product of two EGFs we need to be able to think of ordered pairs of structures on disjoint sets or <m>k</m>-tuples of structures on disjoint sets as structures themselves.
+    Thus given a structure on a set <m>S</m> and another structure on a disjoint set <m>T</m>, we define the ordered pair of structures (which is a mathematical construction!) to be a structure on the set <m>S\cup T</m>.
+    We call this a <term>pair structure</term> on <m>S\cup T</m>.
+    We can get many structures on a set <m>S\cup T</m> in this way, because <m>S\cup T</m> can be divided into many other pairs of disjoint sets.
+    In particular, the set of pair structures whose first structure comes from <m>\F</m> and whose second element comes from <m>\G</m> is denoted by <m>\F\cdot \G</m>.
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        Show that if <m>\F</m> and <m>\G</m> are species of structures on subsets of a set <m>X</m>, then the pair of structures of <m>\F\cdot\G</m> for a species of structures
+      </p>
+    </statement>
+    <solution>
+      <p>
+        We must show that if <m>S</m> and <m>S'</m> are finite subsets of <m>X</m> with the same size, then the number of pair structures on <m>S</m> and the number of pair structures on <m>S'</m> are the same.
+        To get a pair structure on <m>S</m> we partition <m>S</m> into two parts, <m>S_1</m> and <m>S_2</m>, take an <m>\F</m> structure on <m>S_1</m> and a <m>\G</m> structure on <m>S_2</m> and form the ordered pair of these structures.
+        The number of ways to partition <m>S</m> into sets of size <m>s_1</m> and <m>s_2</m> is the same as the number of ways to partition <m>S'</m> into sets <m>S_1'</m> and <m>S_2'</m> of size <m>s_1</m> and <m>s_2</m> (there are intentionally no primes on the lower case <m>s_1</m> and <m>s_2</m>) and the number of ways to choose an <m>\F</m>-structure on <m>S_1'</m> and a <m>\G</m>-structure on <m>S_2'</m> is the number of ways to make the same choices on <m>S_1</m> and <m>S_2</m>.
+        Therefore the number of pairs of structures on the disjoint sets <m>S_1</m> and <m>S_2</m> whose union is <m>S</m> is the same as the number of pairs of structures on the disjoint sets <m>S_1'</m> and <m>S_2'</m> whose union is <m>S'</m>.
+        Summing over all ways to partition <m>S</m> or <m>S'</m> into two sets, we find that the number of pair structures on <m>S</m> equals the number of pair structures on <m>S'</m>. Thus the pair structure of <m>\F\cdot \G</m> forms a species of structures.
+      </p>
+    </solution>
+  </activity>
+
+  <p>
+    Given a species <m>\F</m> of structures, the number of structures using any particular set of size <m>i</m> is the same as the number of structures in the family using any other set of size <m>i</m>.  We can thus define the exponential generating function (EGF) for the family as the power series <m>\sum_{i=1}^\infty a_i \frac{x^i}{i!}</m>, where <m>a_i</m> is the number of structures of <m>\F</m> that use one particular set of size <m>i</m>.  In <xref ref="egf2n">Problems</xref>,
+    <xref ref="paintinglightpoles" text="global"/>,
+    <xref ref="exponentialpermutations" text="global"/>,
+    <xref ref="exponentialroundtable" text="global"/>,
+    <xref ref="exponentialtennisparings" text="global"/>,
+    <xref ref="allonessequence" text="global"/>,
+    <xref ref="oneblockpartitions" text="global"/>,
+    <xref ref="exponentialbookshelf" text="global"/>,
+    <xref ref="telephonenetworkEGF" text="global"/>, and
+    <xref ref="exponentialderangements" text="global"/>,
+    we were computaing EGFs for species of subsets of some set.
+  </p>
+
+  <activity>
+    <statement>
+      <p>
+        If <m>\F</m> and <m>\G</m> are species of subsets of <m>X</m>, how is the EGF for <m>\F\cdot \G</m> related to the EGFs for <m>F</m> and <m>G</m>?  Prove you are right.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        If <m>f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> and <m>g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m>, what is the coefficient of <m>\frac{x^n}{n!}</m> in <m>f(x)g(x)</m>?  don't be surprised if your answer has a binomial coefficient in it.  In fact, the binomial coefficient should help you finish the problem.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Let <m>f(x)</m>, <m>g(x)</m>, and <m>h(x)</m> be, respectively, the EGFs for the species <m>\F</m>, <m>\G</m>, and <m>\F\cdot\G</m>.  Suppose <m>f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> and <m>g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m>.
+        Then the coefficient of <m>x^n</m> in <m>f(x)g(x)</m> is <m>\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!}</m>, so the coefficient of <m>\frac{x^n}{n!}</m> is
+        <me>
+          n!\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!} = \sum_{k=0}^n \binom{n}{k} a_kb_{n-k}.
+        </me>
+        But <m>\binom{n}{k}a_kb_{n-k}</m> is the number of ways to partition a set of size <m>n</m> into a first set of size <m>k</m> and a second set of size <m>n-k</m> and to choose a structure for each of them.  That is, it is the number of pair structures on an ordered pair of sets of size <m>k</m> and <m>n-k</m>.  Thus the coefficient of <m>\frac{x^n}{n!}</m> in <m>h(x)</m> is the number of <m>\F\cdot\G</m> pair structures on a subset of <m>X</m> of size <m>n</m>.  This proves that <m>h(x) = f(x)g(x)</m>.
+      </p>
+    </solution>
+  </activity>
+
+  <!-- 398 -->
+
+
+
+
 
   <activity xml:id="exponentialpp3" category="essential for this or the next section, and interesting">
     <statement>
@@ -616,7 +690,7 @@
         <p>
             <me>
         \sum_{n=0}^\infty B_{n+1}\frac{x^n}{n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}\frac{x^n}{n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty \frac{x^j}{j!}
-      </me>. 
+      </me>.
         Thus <m>B'(x) = B(x)e^x</m>, which gives us <m>\ln B(x) = e^x+c</m>, or <m>B(x) =
         e^{ex+c} =e^ce^{(e^x)}</m>. Since <m>B_0=B(0)</m> and <m>B_0=1</m>, we have <m>c=-1</m> and
         <m>B(x) = \exp(e^x-1)</m>.
