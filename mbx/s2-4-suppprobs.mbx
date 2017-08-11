@@ -84,7 +84,17 @@
           degree one.  A hydrocarbon is called an <q>alkane</q> Common examples are
           methane (natural gas), butane (one version of which is shown in <xref ref="butane">Figure</xref>)propane, hexane (ordinary gasoline), octane (to
           make gasoline burn more slowly), etc.
-          <ol>
+        </p>
+        <figure xml:id="butane">
+            <caption>A model of a butane molecule</caption>
+            <image>
+                <latex-image-code>
+\chemfig{H-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270]H)-[:0]H}
+                </latex-image-code>
+            </image>
+        </figure>
+        <p>
+            <ol>
             <li>
               How many vertices are labelled <m>H</m> in the graph of an alkane with exactly <m>n</m> vertices labelled <m>C</m>?
             </li>
@@ -96,11 +106,23 @@
       </statement>
       <solution>
         <p>
-          We have <m>n</m> vertices of degree four, and so if we have <m>m</m> vertices
-          of degree 1, we get <m>4n+m=2(m+n-1)</m> from the fact that the sum of the degrees
-          of the vertices must be twice the number of edges. Thus we have <m>m=2n+2</m>
-          hydrogen atoms.
+            <ol>
+                <li>
+                    <p>We have <m>n</m> vertices of degree four, and so if we have <m>m</m> vertices of degree 1, we get <m>4n+m=2(m+n-1)</m> from the fact that the sum of the degrees of the vertices must be twice the number of edges. Thus we have <m>m=2n+2</m> hydrogen atoms.
+                    </p>
+                </li>
+                <li>There is another tree with four carbon atoms, sometimes called isobutane, as shown below.
+                </li>
+            </ol>
         </p>
+        <sidebyside>
+            <image>
+                <latex-image-code>
+
+\chemfig{H-[:0]C(-[:90]H)(-[:270]H)-[:0]C(-[:90]H)(-[:270,2]C(-[:0]H)(-[:270]H)(-[:180]H))-[:0]C(-[:90]H)(-[:270]H)-[:0]H}                    
+                </latex-image-code>
+            </image>
+        </sidebyside>
       </solution>
     </exercise>
 
@@ -247,48 +269,40 @@
   <exercise category="interesting and difficult">
     <statement>
       <p>
-        The degree sequence of a tree is a list of the degrees of the
+          The <term>degree sequence</term><idx>degree sequence</idx><idx><h>sequence</h><h>degree</h></idx> of a tree is a list of the degrees of the
         vertices in nonincreasing order.  For example the degree sequence of the
-        first graph in <xref ref="spanningtrees">Figure</xref> is 43221.  How many labelled
-        trees are there on <m>n</m> vertices with degree sequence <m>d_1,d_2,\ldots d_n</m>, or,
-        equivalently, with the degree sequence in which the degree <m>d</m> appears <m>i_d</m>
-        times?
+        first graph in <xref ref="spanningtrees" /> is <m>(4,3,2,2,1)</m>.  For a graph with vertices labeled 1 through <m>n</m>, the <term>ordered degree sequence</term> of the graph is the sequence <m>(d_1,d_2,\dots,d_n)</m> in which <m>d_i</m> is the degree of vertex <m>i</m>. For example, the ordered degree sqeuence of the first graph in <xref ref="Threegraphs" /> is <m>(1,2,3,3,1,1,2,1)</m>.
+        <ol>
+            <li>How many labelled
+            trees are there on <m>n</m> vertices with ordered degree sequence <m>d_1,d_2,\ldots d_n</m>? (This problem appears again in the next chapter since some ideas in that chapter make it more straightforward.)</li>
+            <li>How many labeled trees are there on <m>n</m> vertices with the degree sequence in which the degree <m>d</m> appears <m>i_d</m>
+            times?
+            </li>
+        </ol>
       </p>
     </statement>
     <solution>
-      <p>
-          We first solve the simpler problem in which we assume <m>d_i</m> is the
-          degree of vertex <m>i</m>. The number of times
-          <m>i</m> appears in the Pr&#xfc;fer code of a tree is one less than the degree of <m>i</m>,
-          so vertex
-          <m>i</m> appears
-          <m>d_i-1</m> times. Thus the sum of the <m>d_i-1</m> should be <m>2n-2-n=n-2</m>. Of the
-          <m>n-2</m> places in the Pr&#xfc;fer code, we want to label <m>d_1-1</m> of them with 1,
-          <m>d_2-1</m> of them with 2 and in general <m>d_i-1</m> of them with <m>i</m>. There are
-          <me>
-            \binom{n-2}{d_1-1}\binom{n-2-(d_1-1)}{d_2-1}\binom{n-2-(d_1-1+d_2-1)}{d_3-1}\cdots\binom{d_n-1}{d_n-1}
-          </me>
-          ways to do this, so the number of trees
-          in which vertex <m>i</m> has degree <m>d_i</m> is <m>\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
-      </p>
-
-      <p>
-          Now we modify the solution by observing that to count all graphs with a given
-          degree sequence, the actual vertices which have the given degrees is
-          irrelevant, so we must multiply the result of the easier problem by the number
-          of ways to assign the degrees to the vertices. To assign the degrees, we can
-          list the vertices in <m>n!</m> ways, choose the first <m>i_1</m> of these vertices to
-          have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order
-          in which we list the vertices of a given degree is irrelevant. Thus the number
-          of ways to assign the degrees is
-          <m>\frac{n!}{i_1!i_2!\cdots i_n!}</m>. Once the degrees are assigned, there are
-          <m>\frac{(n-2)!}{\prod_{d=1}^n (d-1)!^{i_d}}</m>, by translating our easier result. Thus the total
-          number of trees with the degree sequence in which there are <m>i_d</m> vertices of
-          degree <m>d</m> is
-          <me>
-            \frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^{i_j}}.
-          </me>
-      </p>
+        <p>
+            <ol>
+                <li>
+                    <p>
+                        We are given that<m>d_i</m> is the degree of vertex <m>i</m>. The number of times <m>i</m> appears in the Pr&#xfc;fer code of a tree is one less than the degree of <m>i</m>, so vertex <m>i</m> appears <m>d_i-1</m> times. Thus the sum of the <m>d_i-1</m> should be <m>2n-2-n=n-2</m>. Of the <m>n-2</m> places in the Pr&#xfc;fer code, we want to label <m>d_1-1</m> of them with 1, <m>d_2-1</m> of them with 2 and in general <m>d_i-1</m> of them with <m>i</m>. There are
+                        <me>
+\binom{n-2}{d_1-1}\binom{n-2-(d_1-1)}{d_2-1}\binom{n-2-(d_1-1+d_2-1)}{d_3-1}\cdots\binom{d_n-1}{d_n-1}
+                        </me>
+                        ways to do this, so the number of trees in which vertex <m>i</m> has degree <m>d_i</m> is <m>\frac{(n-2)!}{(d_1-1)!(d_2-1)!\cdots(d_n-1)!}</m>.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Now we modify the solution of the previous part by observing that to count all graphs with a given degree sequence, the actual vertices which have the given degrees is irrelevant, so we must multiply the result of the easier problem by the number of ways to assign the degrees to the vertices. To assign the degrees, we can list the vertices in <m>n!</m> ways, choose the first <m>i_1</m> of these vertices to have degree 1, then next <m>i_2</m> to have degree 2, and so on. But the order in which we list the vertices of a given degree is irrelevant. Thus the number of ways to assign the degrees is <m>\frac{n!}{i_1!i_2!\cdots i_n!}</m>. Once the degrees are assigned, there are <m>\frac{(n-2)!}{\prod_{d=1}^n (d-1)!^{i_d}}</m>, by translating our easier result. Thus the total number of trees with the degree sequence in which there are <m>i_d</m> vertices of degree <m>d</m> is
+                        <me>
+                            \frac{n!(n-2)!}{\prod_{j=1}^n i_j!(j-1)!^{i_j}}
+                        </me>.
+                    </p>
+                </li>
+            </ol>
+        </p>
     </solution>
   </exercise>
 </exercises>

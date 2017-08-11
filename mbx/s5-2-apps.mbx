@@ -9,7 +9,7 @@
         <statement>
           <p>
             In how many ways may we distribute <m>k</m> identical apples to <m>n</m>
-            children so that no child gets more than three apples? Compare your result with your result in <xref provisional="197" />
+            children so that no child gets more than four apples? Compare your result with your result in <xref ref="candygenfn" />
           </p>
         </statement>
         <hint>
@@ -21,27 +21,22 @@
         </hint>
         <solution>
           <p>
-            Let property <m>i</m> be <q>Child <m>i</m> gets four or more apples.</q> Then
-            we are asking for the number of ways to pass out the apples that have none
-            of the properties, so we are asking for <m>N_{\mbox{e} }(\emptyset)</m>. From
-            <xref ref="incexempty">Equation</xref> we see that to find this number we need to know
-            <m>N_{\mbox{a} }(S)</m> for every subset <m>S</m> of our set of properties. But if
-            <m>S</m> has size <m>s</m>, then having the properties in <m>S</m> means that all the
-            children in a particular set of size <m>s</m> will get four or more apples. We
-            already know how to pass out the apples so that the children in a
-            particular set
-            <m>\hat S</m> of children get at least four apples: we give everyone in <m>\hat
-            S</m> four apples, and then pass out the remaining <m>k-4s</m> apples to the
-            children in <m>\binom{k-4s+n-1}{k-4s}= \binom{k-4s+n-1}{n-1}</m> ways. This
-            counts the number of ways to give at least four apples to every child in
-            <m>\hat S</m>, and maybe give four apples to some other children as well. Thus
-            <m>N_{\mbox{a} }(S) = \binom{k-4|S|+n-1}{n-1}</m>. Applying <xref ref="incexempty">Equation</xref> gives us
+              Let <m>S</m> be the set of all distributions of <m>k</m> identical apples to the <m>n</m> children. Let <m>A_i</m> be the set of distributions in which child <m>i</m> gets five or more apples. Then
+            we are asking for the number of distributions of apples that lie in none of the sets, so we are asking for <m>|\overline{A_1\cup A_2\cup \cdots \cup A_n}|</m>. From the formula you gave in
+            <xref ref="compunion" /> we see that to find this number we need to know
+            <m>|\bigcap_{i\in S}A_i|</m> for every subset <m>S</m> of <m>[n]</m>. But if
+            <m>S</m> has size <m>s</m>, then <m>S</m> determines a distribution such that all the children in a particular set of size <m>s</m> will get five or more apples. By <xref ref="k-obj-n-recip" />, we can pass out the apples so that the children in a particular set 
+            <m>\hat S</m> of children get at least five apples as follows: we give everyone in <m>\hat
+            S</m> five apples, and then pass out the remaining <m>k-5s</m> apples to the
+            children in <m>\binom{k-5s+n-1}{k-5s}= \binom{k-5s+n-1}{n-1}</m> ways. This
+            counts the number of ways to give at least five apples to every child in
+            <m>\hat S</m>, and maybe give five apples to some other children as well. Thus
+            <m>|\bigcap_{i\in S}A_i| = = \binom{k-5|S|+n-1}{n-1}</m>. In particular, if <m>S=\emptyset</m>, we get <m>\binom{k+n-1}{n-1}</m>, which is the total number of ways to pass out <m>k</m> identical apples to <m>n</m> children. Applying the formula from <xref ref="compunion" /> gives us
             <md>
-              <mrow>N_{\mbox{e} }(\emptyset) =\amp \sum_{S:S\subseteq
-              P}(-1)^{|S|}N_{\mbox{a} }(S)</mrow>
-              <mrow> =\amp \sum_{s=0}^k \binom{k}{s}(-1)^s \binom{k-4s+n-1}{n-1}</mrow>
-              <mrow> =\amp \sum_{s=0}^k (-1)^s\binom{k}{s}\binom{k-4s+n-1}{n-1}</mrow>
-            </md>
+              <mrow>\left| \overline{\bigcup_{i=1}^n A_i}\right|&amp;= \sum_{S:S\subseteq [n]}(-1)^{|S|}\left|\bigcap _{i\colon i\in S} A_i\right|</mrow>
+              <mrow> &amp;= \sum_{s=0}^n \binom{n}{s}(-1)^s \binom{k-5s+n-1}{n-1}</mrow>
+              <mrow> &amp;= \sum_{s=0}^n (-1)^s\binom{n}{s}\binom{k-5s+n-1}{n-1}</mrow>
+            </md>.
           </p>
         </solution>
     </activity>
@@ -76,21 +71,19 @@
       </hint>
       <solution>
         <p>
-          Let Property <m>i</m> be that couple <m>i</m> sits together. We are
-          interested in the number of seating arrangements that have none of the
-          properties. Thus for a set <m>S</m> of properties, we need to compute
-          <m>N_{\mbox{a} }(S)</m>. If we let each couple described by <m>S</m> sit together,
+          Let <m>A</m> be the set of all seating arrangements for <m>2n</m> people around a round table. Let <m>A_i</m> be the set of arrangements in which couple <m>i</m> sits together. We are interested in <m>|\overline{A_1\cup A_2\cup \cdots \cup A_n}|</m>. Thus, for a set <m>S\subseteq [n]</m>, we need to compute <m>\left|\bigcup_{i\colon i\in S} A_i\right|</m>. If we let each couple described by <m>S</m> sit together,
           we will seat <m>|S|</m> couples and <m>2n-2|S|</m> individuals around the table. We
           can do this in <m>2^{|S|}(|S| + 2n-2 |S|-1)!</m> ways, because once we chose a
-          place for a couple (i.e. two adjacent seats) there are two ways the couple
-          can sit down. Thus <m>N_{\mbox{a} }(S) =2^{|S|}(2n-|S|-1)!</m>.
-          Substituting this into <xref ref="incexempty">Equation</xref> with <m>P</m> as the set of
-          all properties gives us
+          place for a couple (<ie />, two adjacent seats) there are two ways the couple
+          can sit down. Thus as long as <m>S</m> is nonempty, we have the right formula for <m>\left|\bigcap_{i\colon i\in S} A_i\right|</m>. Notice that in the case where <m>S=\emptyset</m> the formula gives us <m>(2n-1)!</m> seating arrangements, which is exactly the number of ways to seat <m>2n</m> people around a round table. This is the size of our set <m>A</m>. Therefore,
+          <me>\left|\bigcap_{i\colon i\in S} A_i\right| = 2^{|S|}(2n-|S|-1)!
+          </me>.
+          Substituting this into the formula from <xref ref="compunion" /> gives us
           <md>
-            <mrow>N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:S\subseteq P}
-            (-1)^{|S|} N_{\mbox{a} }(S)</mrow>
-            <mrow> =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!</mrow>
-          </md>
+            <mrow>\left|\overline{\bigcup_{i=1}^n A_i}\right| &amp;=  \sum_{S:S\subseteq [n]}
+            (-1)^{|S|} \left|\bigcap_{i\colon i\in S} A_i\right|</mrow>
+            <mrow> &amp;= \sum_{s=0}^n(-1)^s\binom{n}{s}2^{s}(2n- s-1)!</mrow>
+          </md>.
         </p>
       </solution>
     </activity>
@@ -101,12 +94,15 @@
           A group of <m>n</m> married couples comes to a group
           discussion session where they all sit around a round table. In how many
           ways can they sit so that no person is next to his or her spouse or a
-          person of the same sex? This problem is called the <em>menage
-          problem</em>.<idx><h>menage problem</h></idx> (Hint: Reason somewhat as you did in <xref ref="relaxedmenage">Problem</xref>, noting that if the set of couples who do sit
-          side-by-side is nonempty, then the sex of the person at each place at the
-          table is determined once we seat one couple in that set.)
+          person of the same sex? This problem is called the <term>menage
+          problem</term>.<idx><h>menage problem</h></idx>
         </p>
       </statement>
+      <hint>
+          <p>
+              Reason somewhat as you did in <xref ref="relaxedmenage" />, noting that if the set of couples who do sit side-by-side is nonempty, then the sex of the person at each place at the table is determined once we seat one couple in that set.
+          </p>
+      </hint>
       <hint>
         <p>
           Think in terms of the sets <m>A_i</m> of arrangements of people in which couple <m>i</m> sits side-by-side. What does the union of the sets <m>A_i</m> have to do with the problem?
@@ -115,24 +111,19 @@
       <solution>
         <p>
           We are going to consider arrangements of the couples alternating
-          sex around the table. Property <m>i</m> of an arrangement is that couple <m>i</m>
-          sits together. We are interested in the number of arrangements that have
-          exactly none of the properties. Thus for each subset <m>S</m> of the
-          properties, we consider the number of arrangements that has at least the
-          set <m>S</m> of properties. We distinguish the case that <m>S</m> is empty from the
-          others. <m>N_{\mbox{a} }(\emptyset)</m> is just the number of ways to seat <m>2n</m>
+          sex around the table. This will be our set <m>A</m>. The set <m>A_i</m> is the set of arrangements in which couple <m>i</m> siets together. We are interested in the number of arrangments that are in none of these sets. Thus for each subset <m>S</m> of <m>[n]</m>, we consider the number of arrangements in <m>\displaystyle\bigcap_{i\colon i\in S} A_i</m>. We distinguish the case that <m>S</m> is empty from the
+          others. The number of arrangements with <m>S</m> empty is just the number of ways to seat <m>2n</m>
           couples around the table, alternating sex, but with no other
           restrictions. We can arrange one of the sexes in a circle in <m>n-1!</m> ways
           and then assign the members of the opposite sex to the places between them
-          in <m>n!</m> ways, so <m>N_{\mbox{a} }(\emptyset) = (n-1)!n!</m>. (Another way to
+          in <m>n!</m> ways, so <m>\displaystyle \left|\bigcap_{i\colon i\in \emptyset} A_i \right| = (n-1)!n!</m>. (Another way to
           get this result is to let one person sit down. This determines the sex
           of the person at each place of the table, so there are <m>(n-1)!</m> ways to
           assign the people of the same sex of the first person, and <m>n!</m> ways to
           assign the people of the opposite. It appears that there are <m>2n</m>
           choices for where the first person sits, but we can break the seating
           charts up into blocks of <m>2n</m> seating charts, each of which gives the
-          same circular arrangement. Thus there are <m>(n-1)!n!</m> inequivalent ways
-          to seat the people with at least the empty set of properties.)
+          same circular arrangement. Thus there are <m>(n-1)!n!</m> inequivalent seating arrangments.)
         </p>
 
         <p>
@@ -166,14 +157,14 @@
           if we take
           <m>s=0</m>, this formula reduces to <m>(n-1)!n!</m>. Thus for all sets <m>S</m>
           <me>
-            N_{\mbox{a} }(S)=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}.
-          </me>
+            \left|\bigcap_{i\colon i\in S} A_i\right|=\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}
+          </me>.
         </p>
 
         <p>
-          Then from <xref ref="incexempty">Equation</xref>
+          Then from <xref ref="compunion" />
           <md>
-            <mrow>N_{\mbox{e} }  =\amp  \sum_{S:S\subseteq P} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
+            <mrow>\left|\overline{\bigcup_{i=1}^n A_i}\right|  &amp;= \sum_{S:S\subseteq [n]} (-1)^{|S|}\frac{(2n-|S|-1)!(n-|S|)!(n-|S|-1)!
             }{(2n-2|S|-1)!}</mrow>
             <mrow> =\amp \sum_{s=0}^n(-1)^s\binom{n}{s}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
             <mrow> =\amp \sum_{s=0}^n(-1)^s\frac{n!}{s!(n-s)!}\frac{(2n-s-1)!(n-s)!(n-s-1)!}{(2n-2s-1)!}</mrow>
@@ -193,9 +184,9 @@
       <statement>
         <p>
           Given a function <m>f</m> from the <m>k</m>-element set <m>K</m> to the
-          <m>n</m>-element set <m>[n]</m>, we say <m>f</m> has property <m>i</m> if <m>f(x)\not= i</m> for
+          <m>n</m>-element set <m>[n]</m>, we say <m>f</m> is in the set <m>A_i</m> if <m>f(x)\not= i</m> for
           every <m>x</m> in
-          <m>K</m>. How many of these properties does an onto function have? What is
+          <m>K</m>. How many of these  sets does an onto function belong to? What is
           the number of functions from a <m>k</m>-element set onto an <m>n</m>-element
           set?<idx><h>onto functions</h><h>number of</h></idx><idx><h>surjections</h><h>number
           of</h></idx><idx><h>functions</h><h>onto!number of</h></idx>
@@ -203,16 +194,12 @@
       </statement>
       <solution>
         <p>
-          An onto function has none of these properties. Thus, using this set
-          <m>P</m> of properties, the number of onto functions is
-          <m>N_{\mbox{e} }(\emptyset)</m>. For a set <m>S</m> of these properties,
-          <m>N_{\mbox{a} }(S)</m> is the number of functions from <m>K</m> to <m>[n]-S'</m>, where <m>S'</m>
-          is the set of all <m>i</m> such that property <m>i</m> is in <m>S</m>. This number of
-          functions is <m>(n-|S|)^k</m>. Thus by <xref ref="incexempty">Equation</xref>
+          An onto function is in none of these sets. Since we want the number of functions that are in none of these sets, we let our set <m>A</m> be the set of all functions from <m>K</m> to <m>[n]</m>. Then the number of onto functions is <m>|\overline{A_1\cup A_2\cup \cdots \cup A_n}|</m>. For a nonempty subset <m>S</m> of <m>[n]</m>, the set <m>\bigcap_{i\colon i\in S} A_i</m> is the set of functions functions from <m>K</m> to <m>[n]-S</m>. The size of this set
+           is <m>(n-|S|)^k</m>. When <m>S=\emptyset</m> this gives the size of <m>A</m>. Thus by <xref ref="compunion" />
           <md>
-            <mrow>N_{\mbox{e} }(\emptyset)  =\amp  \sum_{S:s\subseteq P} (-1)^{|S|}
+            <mrow>\left|\overline{\bigcup_{i=1}^n A_i}\right|&amp;=  \sum_{S:s\subseteq [n]} (-1)^{|S|}
             (n-|S|)^k</mrow>
-            <mrow> =\amp \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k</mrow>
+            <mrow> &amp;= \sum_{s=0}^n (-1)^s\binom{n}{s}(n-s)^k</mrow>
           </md>
           is the number of functions from <m>K</m> onto <m>[n]</m>.
         </p>

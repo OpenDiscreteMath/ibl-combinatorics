@@ -902,9 +902,9 @@ many ways can you pair up the next person who isn't already paired up?
       However, there is another kind of graph called a <em>directed
       graph</em><idx><h>graph</h><h> directed</h></idx><idx><h>directed graph</h></idx> or <em>digraph</em><idx><h>digraph</h></idx><idx><h>function</h><h>digraph of</h></idx> that is
       especially useful when dealing with functions between finite sets. We
-      take up this topic in more detail in <xref ref="Relations">Appendix</xref>,
-      particularly <xref ref="relationdigraph">Section</xref> and <xref ref="digraphsoffunctions">Section</xref>. In
-      <xref ref="functiondigraphs">Figure</xref> we show several examples of digraphs of functions.
+      take up this topic in more detail in <xref ref="Relations" />,
+      particularly <xref ref="relationdigraph" /> and <xref ref="digraphsoffunctions" />. In
+      <xref ref="functiondigraphs" /> we show several examples of digraphs of functions.
     </p>
 
     <figure xml:id="functiondigraphs" >
@@ -956,10 +956,10 @@ many ways can you pair up the next person who isn't already paired up?
         </p>
       </statement>
       <solution>
-        <figure>
-          <image xml:id="initialdigraph" width="50%">
-            <latex-image-code>
-              <![CDATA[
+          <sidebyside>
+              <image width="50%">
+                  <latex-image-code>
+                      <![CDATA[
               \begin{tikzpicture}[scale=0.85]
                 \node[evertex] (alice) at (0,2) {Alice};
                 \node[evertex] (bob) at (2,2) {Bob};
@@ -977,10 +977,9 @@ many ways can you pair up the next person who isn't already paired up?
                 \draw[dedge] (bill) -- (b);
               \end{tikzpicture}
               ]]>
-            </latex-image-code>
-          </image>
-          <caption></caption>
-        </figure>
+                  </latex-image-code>
+              </image>
+          </sidebyside>
       </solution>
 
     </activity>
@@ -1047,8 +1046,8 @@ many ways can you pair up the next person who isn't already paired up?
           The digraph of one such function follows
         </p>
 
-        <figure>
-          <image xml:id="ontoNotOneToOne" width="73%">
+        <sidebyside>
+          <image width="73%">
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}[yscale=0.75]
@@ -1071,8 +1070,7 @@ many ways can you pair up the next person who isn't already paired up?
               ]]>
             </latex-image-code>
           </image>
-          <caption></caption>
-        </figure>
+        </sidebyside>
 
       </solution>
     </activity>
@@ -2144,7 +2142,7 @@ many ways can you pair up the next person who isn't already paired up?
     </table>
 
     <p>
-      In Table<nbsp />ref{tab:permsof3} we list all three-element permutations of
+      In <xref ref="tab_permsof3" /> we list all three-element permutations of
       the <m>5</m>-element set <m>\{a,b,c,d,e\}</m>. Each row consists of all
       <m>3</m>-element permutations of some subset of <m>\{a,b,c,d,e\}</m>. Because a
       given <m>k</m>-element subset can be listed as a <m>k</m>-element permutation in
@@ -2205,7 +2203,7 @@ many ways can you pair up the next person who isn't already paired up?
         </statement>
         <hint>
             <p>
-          What sets are listed, and how many times is each one listed if you take one list from each row of <xref provisional="1.2" />? How does this choice of lists give you the bijection in this special case?
+          What sets are listed, and how many times is each one listed if you take one list from each row of <xref ref="tab_permsof3" />? How does this choice of lists give you the bijection in this special case?
             </p>
         </hint>
         </task>
@@ -2475,7 +2473,7 @@ many ways can you pair up the next person who isn't already paired up?
       <statement>
         <p>
           (This becomes especially relevant in
-          <xref ref="groupsonsets">Chapter</xref>, though it makes an important point here.) In how many ways may we attach two identical red beads
+          <xref ref="groupsonsets" />, though it makes an important point here.) In how many ways may we attach two identical red beads
           and two identical blue beads to the corners of a square (with one bead
           per corner) free
           to move around in (three-dimensional) space?

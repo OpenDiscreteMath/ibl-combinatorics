@@ -425,7 +425,7 @@
       </task>
     </activity>
 
-    <activity xml:id="functiondigraphs">
+    <activity xml:id="functiondigraphs-prob">
       <introduction>
         <p>
           Digraphs of functions help us to visualize whether or not they are onto or one-to-one. For example, let both <m>S</m> and <m>T</m> be the set <m>\{-2, -1, 0 ,1, 2\}</m> and let <m>S'</m> and <m>T'</m> be the set <m>\{0,1,2\}</m>.  Let <m>f(x) = 2-|x|</m>.
@@ -438,8 +438,8 @@
           </p>
         </statement>
         <solution>
-       <figure>
-         <image xml:id="ontoNotOneToOne" width="73%">
+            <sidebyside>
+                <image width="73%">
            <latex-image-code>
              <![CDATA[
              \begin{tikzpicture}[yscale=0.75]
@@ -464,8 +464,7 @@
              ]]>
            </latex-image-code>
          </image>
-         <caption></caption>
-       </figure>
+       </sidebyside>
           <p>
             The function is not onto because there are vertices in the range
             that do not have an arrow going to them.
@@ -635,7 +634,7 @@
     </activity>
 
     <p>
-      A one-to-one function from a set <m>X</m> onto a set <m>Y</m> is frequently called a <term>bijection</term><idx><h>bijection</h></idx>, especially in combinatorics.  Your work in <xref ref="functiondigraphs" /> should show you that a digraph is the digraph of a bijection from <m>X</m> to <m>Y</m>
+      A one-to-one function from a set <m>X</m> onto a set <m>Y</m> is frequently called a <term>bijection</term><idx><h>bijection</h></idx>, especially in combinatorics.  Your work in <xref ref="functiondigraphs-prob" /> should show you that a digraph is the digraph of a bijection from <m>X</m> to <m>Y</m>
 
       <ul>
         <li><p>

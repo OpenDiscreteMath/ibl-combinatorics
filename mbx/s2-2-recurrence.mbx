@@ -3,12 +3,6 @@
 <section xml:id="sec_induction-recurrence" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Recurrence Relations</title>
   <introduction>
-    <p>
-      We have seen in
-      <xref ref="SubsetsByInduction">Problem</xref> (or <xref ref="subsetsbysmallestcounterexample">Problem</xref> in the Appendix on Induction) that
-      the number of subsets of an <m>n</m>-element set is twice the number of
-      subsets of an <m>(n-1)</m>-element set.
-    </p>
 
     <activity>
       <statement>
@@ -21,6 +15,11 @@
           Remember, a subset of <m>[n]</m> either does or doesn't contain <m>n</m>.
         </p>
       </hint>
+      <solution>
+          <p>
+              Suppose that our <m>n</m>-element set is <m>N = \{a_1,a_2,\dots ,a_n\}</m>. Then a subset of <m>N</m> either contains an or it doesn't. In our discussion of the Pascal recurrence, we showed that the number of <m>k</m>-element subsets of N that contain an is the same as the number of <m>(k - 1)</m>-element subsets of <m>N - \{a_n\}</m>. The bijection we used to prove this consists of taking an away from a set containing <m>a_n</m>. Thus the number of subsets of <m>N</m> containing <m>a_n</m> is the same as the number of subsets of the <m>(n - 1)</m>-element set <m>N - \{a_n\}</m>. But the subsets of <m>N</m> not containing an are exactly the same as the subsets of <m>N - \{a_n\}</m>. Thus we can partition the subsets of <m>N</m> into two blocks, each of which has size equal to the number of subsets of <m>N - \{a_n\}</m>. Therefore, by the sum principle, the number of subsets of <m>N</m> is twice the number of subsets of <m>N - \{a_n\}</m>.
+          </p>
+      </solution>
     </activity>
 
     <activity>
