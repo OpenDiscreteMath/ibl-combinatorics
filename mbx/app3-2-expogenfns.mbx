@@ -82,9 +82,13 @@
         integral, and don't worry at this stage whether or not the usual laws of
         calculus apply, just use them as if they do! We will then define
         <m>\ln({ 1-x})</m> to be the power series you
-        get. <fn>It is possible to define the derivatives
+        get. 
+      </p>
+      <aside>
+          <title>Avoiding Calculus</title>
+        <p>It is possible to define the derivatives
         and integrals of power series by the formulas
-        <me>
+            <me>
           \frac{d}{dx}
           \sum_{i=0}^\infty b_ix^i = \sum_{i=1}^\infty ib_ix^{i-1}
         </me>
@@ -97,18 +101,19 @@
         possible to prove that the sum rule, product rule, etc. apply.  (There is
         a little technicality involving the meaning of composition for power
         series that turns into a technicality involving the chain rule, but it
-        needn't concern us at this time.)</fn>
-      </p>
+        needn't concern us at this time.)
+        </p>
+    </aside>
     </statement>
     <solution>
-      <md>
+        <p>
+            <md>
         <mrow>\ln(\frac{1}{1-x}) =-\ln(1-x)  =\amp
         \int_0^x \frac{1}{1-t}dt</mrow>
         <mrow> =\amp \int_0^x (1+t+t^2+\cdots)dt</mrow>
         <mrow> =\amp \sum_{i=1}^\infty \frac{x^i}{i}</mrow>
         <mrow> =\amp  \sum_{i=1}^\infty (i-1)!\frac{x^i}{i!}</mrow>
       </md>
-      <p>
         so the sequence is
         <m>a_n = (n-1)!</m>.
       </p>

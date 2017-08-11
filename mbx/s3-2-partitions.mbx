@@ -66,7 +66,8 @@
           </p>
           <table xml:id="stirling-triangle-second">
               <caption>Stirling's Triangle of the second kind</caption>
-          <tabular>
+              <tabular>
+                  <col halign="center" right="minor" /><col /><col /><col /><col /><col /><col /><col />
             <row bottom="minor">
               <cell><m>k\backslash n</m></cell>
               <cell>0</cell>
@@ -329,17 +330,19 @@
           </p>
         </statement>
         <solution>
-          <me>
-            B(4) =\binom{3}{0}B_0 +\binom{3}{1}B_1 +\binom{3}{2}B_2 +
-            \binom{3}{3}B_3=1 +3+3\cdot2 +5=15
-          </me>
-          <me>
-            B(5) = \sum_{n=0}^4 \binom{4}{n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
-          </me>
-          <me>
-            B(6) = \sum_{n=0}^5 \binom{5}{n}B_n =1+5 +10\cdot2 +10\cdot 5
-            +5\cdot 15 +52=203
-          </me>
+            <p>
+                <me>
+                    B(4) =\binom{3}{0}B_0 +\binom{3}{1}B_1 +\binom{3}{2}B_2 +
+                    \binom{3}{3}B_3=1 +3+3\cdot2 +5=15
+                </me>
+                <me>
+                    B(5) = \sum_{n=0}^4 \binom{4}{n}B_n = 1 +4+6\cdot2 +4\cdot5 + 15=52
+                </me>
+                <me>
+                    B(6) = \sum_{n=0}^5 \binom{5}{n}B_n =1+5 +10\cdot2 +10\cdot 5
+                    +5\cdot 15 +52=203
+                </me>
+            </p>
         </solution>
       </task>
     </activity>
@@ -636,7 +639,7 @@
       <m>S(k,n)</m> are <q>change of basis coefficients.</q> If you are not familiar
       with linear algebra, a <term>basis</term><idx><h>basis (for polynomials)</h></idx> for the
       <term>space of polynomials</term><fn>The space of polynomials is just
-      another name for the set of all polynomials.<idx><h>space of polynomials</h></idx></fn>
+      another name for the set of all polynomials.</fn><idx><h>space of polynomials</h></idx>
       is a set of polynomials such that each polynomial, whether in that set or
       not, can be expressed in one and only one way as a sum of numerical
       multiples of polynomials in the set.
@@ -744,89 +747,92 @@
           </p>
         </statement>
         <solution>
-          <tabular>
-            <row bottom="minor">
-              <cell><m>k\backslash n</m></cell>
-              <cell>0</cell>
-              <cell>1</cell>
-              <cell>2</cell>
-              <cell>3</cell>
-              <cell>4</cell>
-              <cell>5</cell>
-              <cell>6</cell>
-            </row>
-            <row>
-              <cell>0</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>2</cell>
-              <cell>0</cell>
-              <cell>-1</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>3</cell>
-              <cell>0</cell>
-              <cell>2</cell>
-              <cell>-3</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>4</cell>
-              <cell>0</cell>
-              <cell>-6</cell>
-              <cell>11</cell>
-              <cell>-6</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>5</cell>
-              <cell>0</cell>
-              <cell>24</cell>
-              <cell>-50</cell>
-              <cell>35</cell>
-              <cell>-10</cell>
-              <cell>1</cell>
-              <cell>0</cell>
-            </row>
-            <row>
-              <cell>6</cell>
-              <cell>0</cell>
-              <cell>-120</cell>
-              <cell>274</cell>
-              <cell>-225</cell>
-              <cell>85</cell>
-              <cell>-15</cell>
-              <cell>1</cell>
-            </row>
-          </tabular>
-        </solution>
+            <sidebyside>
+                <tabular>
+                    <col halign="center" right="minor" /><col halign="center" /><col halign="center" /><col halign="center" /><col halign="center" /><col halign="center" /><col halign="center" /><col halign="center" />
+                    <row bottom="minor">
+                        <cell><m>k\backslash n</m></cell>
+                        <cell>0</cell>
+                        <cell>1</cell>
+                        <cell>2</cell>
+                        <cell>3</cell>
+                        <cell>4</cell>
+                        <cell>5</cell>
+                        <cell>6</cell>
+                    </row>
+                    <row>
+                        <cell>0</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>2</cell>
+                        <cell>0</cell>
+                        <cell><m>-1</m></cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>3</cell>
+                        <cell>0</cell>
+                        <cell>2</cell>
+                        <cell><m>-3</m></cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>4</cell>
+                        <cell>0</cell>
+                        <cell><m>-6</m></cell>
+                        <cell>11</cell>
+                        <cell><m>-6</m></cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>5</cell>
+                        <cell>0</cell>
+                        <cell>24</cell>
+                        <cell><m>-50</m></cell>
+                        <cell>35</cell>
+                        <cell><m>-10</m></cell>
+                        <cell>1</cell>
+                        <cell>0</cell>
+                    </row>
+                    <row>
+                        <cell>6</cell>
+                        <cell>0</cell>
+                        <cell><m>-120</m></cell>
+                        <cell>274</cell>
+                        <cell><m>-225</m></cell>
+                        <cell>85</cell>
+                        <cell><m>-15</m></cell>
+                        <cell>1</cell>
+                    </row>
+                </tabular>
+            </sidebyside>
+            </solution>
     </activity>
 
     <p>

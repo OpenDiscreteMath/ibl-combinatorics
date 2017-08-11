@@ -140,11 +140,11 @@
       </p>
     </hint>
     <solution>
-      <me>
+        <p>
+            <me>
         \sum_{i,j\mbox{:\ }
         i+j=n} n!\frac{a_i}{i!}\frac{b_j}{j!},
       </me>
-      <p>
         which can be better
         written as
         <me>
@@ -342,7 +342,7 @@
         as a theorem,
       </p>
 
-      <paragraphs>
+      <blockquote>
         <title>Solution-Theorem</title>
         <p>
           If <m>S</m> is a set of objects with <m>V</m> a set-value function from <m>S</m>
@@ -360,7 +360,7 @@
           is, the number of ordered pairs of the type described is the coefficient
           of <m>\frac{x^n}{n!}</m> in <m>f(x)g(x)</m>.
         </p>
-      </paragraphs>
+      </blockquote>
       <p>
         The proof consists of interpreting <xref ref="exponentialpp1">Problem</xref> in this context.
       </p>
@@ -613,10 +613,10 @@
       </p>
     </statement>
     <solution>
-      <me>
-        \sum_{n=0}^\infty B_{n+1}\frac{x^n}{n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}\frac{x^n}{n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty \frac{x^j}{j!}.
-      </me>
-      <p>
+        <p>
+            <me>
+        \sum_{n=0}^\infty B_{n+1}\frac{x^n}{n!} = \sum_{n=0}^\infty\binom{n}{k}B_{n-k}\frac{x^n}{n!} =\sum_{i=0}^\infty B_{i}\frac{x^{i}}{(i)!}\sum_{j=0}^\infty \frac{x^j}{j!}
+      </me>. 
         Thus <m>B'(x) = B(x)e^x</m>, which gives us <m>\ln B(x) = e^x+c</m>, or <m>B(x) =
         e^{ex+c} =e^ce^{(e^x)}</m>. Since <m>B_0=B(0)</m> and <m>B_0=1</m>, we have <m>c=-1</m> and
         <m>B(x) = \exp(e^x-1)</m>.
