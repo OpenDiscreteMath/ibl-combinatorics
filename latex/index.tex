@@ -1,6 +1,6 @@
 %**************************************%
 %*    Generated from PreTeXt source   *%
-%*    on 2017-08-11T17:10:21-06:00    *%
+%*    on 2017-08-12T11:32:06-06:00    *%
 %*                                    *%
 %*   http://mathbook.pugetsound.edu   *%
 %*                                    *%
@@ -303,7 +303,6 @@ $\cdot$\ \theenumi.]}
 \DeclareMathOperator{\Fix}{Fix}
 \DeclareMathOperator{\Orb}{Orb}
 \newcommand{\F}{\mathcal{F}}
-\newcommand{\G}{\mathcal{G}}
 \newcommand{\lt}{<}
 \newcommand{\gt}{>}
 \newcommand{\amp}{&}
@@ -2467,8 +2466,8 @@ We use \(G-e\) (read as \(G\) minus \(e\)) to stand for the result of deleting \
 +\#(G/e)\). Applying the formula twice to \(G\) gives%
 \begin{align*}
 \#(G)
-=\amp \#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})\\
-\amp +\amp
+= &\#(G-\{1,2\}-\{2,3\}) + \#((G-\{1,2\})/\{2,3\})\\
+\amp +
 \#((G/\{1,2\})-\{2,3\}) +
 \#(G/\{1,2\}/\{2,3\}).
 \end{align*}
@@ -3075,8 +3074,14 @@ Find a recurrence for the Lah numbers \(L(k,n)\) similar to the one in \hyperref
 \begin{enumerate}[font=\bfseries,label=(\alph*),ref=\alph*]
 \item\label{task-104} Show, by explicitly exhibiting the partitions, that \(B(3)=5\).%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The five partitions of \([3]\) are the sets \(\{\{1\},
-\{2\},\{3\}\}\), \(\{\{1,2\},\{3\}\}\), \(\{\{1,3\},\{2\}\}\), \(\{\{1\},\{2,3\}\}\), and \(\{\{1,2,3\}\}\).%
+\textbf{Solution.}\quad The five partitions of \([3]\) are the sets%
+\begin{equation*}
+\{\{1\},
+\{2\},\{3\}\},\ 
+\{\{1,2\},\{3\}\},\ \{\{1,3\},\{2\}\},\ \{\{1\},\{2,3\}\},\text{ and }
+\{\{1,2,3\}\}\text{.}
+\end{equation*}
+%
 \item\label{task-105} Find a recurrence that expresses \(B(k)\) in terms of \(B(n)\) for \(n\lt  k\) and prove your formula correct in as many ways as you can.%
 \par\medskip\noindent%
 \textbf{Hint.}\quad Here it is helpful to think about what happens if you delete the entire block containing \(k\) rather than thinking about whether \(k\) is in a block by itself or not.%
@@ -5423,7 +5428,7 @@ Thus if \(x \in E_P(\bigcup_{i=1}^n A_i)\), then the coefficient of \(P(x)\) in 
 \textbf{Solution.}\quad We have shown that \(P(x)\) appears in the right hand side of our formula with coefficeint 1 if it is in the union and with coefficient 0 otherwise.%
 \item\label{task-173} How can you get the formula for the principle of inclusion and exclusion from your formula for the picture enumerator of the union?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Substitute 1 for the picture of each element \(x\).  Then \(E_P(\bigcap_{i:i \in S}A_i)\) becausem \(\left| \bigcap_{i:i \in S}A_i\right|\), and our formula follows.%
+\textbf{Solution.}\quad Substitute 1 for the picture of each element \(x\).  Then notice that \(E_P(\bigcap_{i:i \in S}A_i)\) becomes \(\left| \bigcap_{i:i \in S}A_i\right|\), and our formula follows.%
 \end{enumerate}
 \end{activity}
 \begin{activity}[]\label{compunion}
@@ -6197,7 +6202,7 @@ Find all subgroups of the group \(D_4\).%
 \par\medskip\noindent%
 \textbf{Hint.}\quad If a subgroup contains, say, \(\rho^3\) and some flip, how many elements of \(D_4\) must it contain?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\{\rho^2,\!\iota\}\), \(\{\varphi_{1|3},\!\iota\}\), \(\{\varphi_{2|4},\!\iota\}\), \(\{\varphi_{12|34},\!\iota\}\), \(\{\varphi_{14|23},\!\iota\}\), \(\{\iota,\rho,\rho^2,\rho^3\}\), \(\{\iota,\varphi_{1|3},\rho^2,\varphi_{2|4}\}\), \(\{\iota,\varphi_{12|34},\rho^2,\varphi_{12|34}\}\), \(\{\iota\}\), and all of \(D_4\). Notice that once a subgroup has \(\rho\) or \(\rho^3\) in it, it has all powers of \(\rho\), and if it has all powers of \(\rho\) and just one flip, it has all the flips in it. But the product of two ``different kinds'' of flips is \(\rho\) or \(\rho^3\), and this shows that our list of subgroups is complete.%
+\textbf{Solution.}\quad \(\{\rho^2,\!\iota\}\), \(\{\varphi_{1|3},\!\iota\}\), \(\{\varphi_{2|4},\!\iota\}\), \(\{\varphi_{12|34},\!\iota\}\), \(\{\varphi_{14|23},\!\iota\}\), \(\{\iota,\rho,\rho^2,\rho^3\}\), \(\{\iota\}\), \(\{\iota,\varphi_{1|3},\rho^2,\varphi_{2|4}\}\), \(\{\iota,\varphi_{12|34},\rho^2,\varphi_{12|34}\}\), and all of \(D_4\). Notice that once a subgroup has \(\rho\) or \(\rho^3\) in it, it has all powers of \(\rho\), and if it has all powers of \(\rho\) and just one flip, it has all the flips in it. But the product of two ``different kinds'' of flips is \(\rho\) or \(\rho^3\), and this shows that our list of subgroups is complete.%
 \end{activity}
 \begin{activity}[]\label{activity-271}
 Can you find subgroups of the symmetric group \(S_4\) with two elements? Three elements? Four elements? Six elements? (For each positive answer, describe a subgroup. For each negative answer, explain why not.)%
@@ -6252,9 +6257,13 @@ Find the cycles of the permutations \(\rho\), \(\varphi_{1|3}\) and \(\varphi_{1
 \textbf{Solution.}\quad \(\rho\) has one cycle, \((1\ 2\ 3\ 4)\), \(\varphi_{1|3}\) has one cycle \((2\ 4)\), \(\varphi_{12|34}\) has two cycles, namely \((1\ 2)\) and \((3\ 4)\).%
 \end{activity}
 \begin{activity}[]\label{permutation-cycles}
-Find the cycles of the permutation \(\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\amp 9\cr
+Find the cycles of the permutation%
+\begin{equation*}
+\begin{pmatrix}1\amp 2\amp 3\amp 4\amp 5\amp 6\amp 7\amp 8\amp 9\cr
 3\amp 4\amp 6\amp 2\amp 9\amp 7\amp 1\amp 5\amp 8
-\end{pmatrix}\).%
+\end{pmatrix}\text{.}
+\end{equation*}
+%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(\begin{pmatrix}1\amp 3\amp 6\amp 7
 \end{pmatrix}\), \(\begin{pmatrix}2\amp 4
@@ -6779,7 +6788,11 @@ When we used the quotient principle to count circular seating arrangements or ne
 \end{equation*}
 or, in standard notation, \(RRBB\) of the vertices of a square.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The orbit is, in the standard notation, \(\{RRBB,BRRB,BBRR,RBBR\}\). The multiorbit, in the standard notation, is%
+\textbf{Solution.}\quad The orbit is, in the standard notation,%
+\begin{equation*}
+\{RRBB,BRRB,BBRR,RBBR\}\text{.}
+\end{equation*}
+The multiorbit, in the standard notation, is%
 \begin{equation*}
 \{RRBB,RRBB,BRRB,BRRB,BBRR,BBRR,RBBR,RBBR\}\text{.}
 \end{equation*}
@@ -7077,7 +7090,24 @@ Suppose we draw identical circles at the vertices of a regular hexagon. Suppose 
 \textbf{Solution.}\quad There are 64 functions from a six-element set to a two-element set, so there are 64 colorings.%
 \item\label{task-227} These colorings are partitioned into orbits by the action of the rotation group on the hexagon. Using our standard notation, write down all these orbits and observe how many orbits have each picture, assuming the picture of a coloring is the product of commuting variables representing the colors.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad \(\{RRRRRR\}\), \(\{RRRRRB, BRRRRR, RBRRRR, RRBRRR, RRRBRR, RRRRBR\}\), \(\{RRRRBB, BRRRRB, BBRRRR, RBBRRR, RRBBRR, RRRBBR\}\), \(\{RRRBRB, BRRRBR, RBRRRB, BRBRRR, RBRBRR, RRBRBR\}\), \(\{RRBRRB, BRRBRR, RBRRBR\}\), \(\{RRRBBB, BRRRBB, BBRRRB, BBBRRR, RBBBRR, RRBBBR\}\), \(\{RRBRBB, BRRBRB, BBRRBR, RBBRRB, BRBBRR, RBRBBR\}\), \(\{RRBBRB, BRRBBR, RBRRBB, BRBRRB, BBRBRR, RBBRBR\}\), \(\{RBRBRB, BRBRBR\}\), \(\{RRBBBB, BRRBBB, BBRRBB, BBBRRB, BBBBRR, RBBBBR\}\), \(\{RBRBBB, BRBRBB, BBRBRB, BBBRBR, RBBBRB, BRBBBR\}\), \(\{RBBRBB, BRBBRB, BBRBBR\}\), \(\{RBBBBB, BRBBBB, BBRBBB, BBBRBB, BBBBRB, BBBBBR\}\), \(\{BBBBBB\}\)%
+\textbf{Solution.}\quad %
+\begin{align*}
+&\{RRRRRR\}\\
+&\{RRRRRB, BRRRRR, RBRRRR, RRBRRR, RRRBRR, RRRRBR\},\\
+&\{RRRRBB, BRRRRB, BBRRRR, RBBRRR, RRBBRR, RRRBBR\},\\
+&\{RRRBRB, BRRRBR, RBRRRB, BRBRRR, RBRBRR, RRBRBR\},\\
+&\{RRBRRB, BRRBRR, RBRRBR\},\\
+&\{RRRBBB, BRRRBB, BBRRRB, BBBRRR, RBBBRR, RRBBBR\},\\
+&\{RRBRBB, BRRBRB, BBRRBR, RBBRRB, BRBBRR, RBRBBR\},\\
+&\{RRBBRB, BRRBBR, RBRRBB, BRBRRB, BBRBRR, RBBRBR\},\\
+&\{RBRBRB, BRBRBR\},\\
+&\{RRBBBB, BRRBBB, BBRRBB, BBBRRB, BBBBRR, RBBBBR\},\\
+&\{RBRBBB, BRBRBB, BBRBRB, BBBRBR, RBBBRB, BRBBBR\},\\
+&\{RBBRBB, BRBBRB, BBRBBR\},\\
+&\{RBBBBB, BRBBBB, BBRBBB, BBBRBB, BBBBRB, BBBBBR\},\\
+&\{BBBBBB\}
+\end{align*}
+%
 \par
 We have one orbit with picture \(R^6\), one with picture \(R^5B\), three with picture \(R^4B^2\), four with picture \(R^3B^3\), three with picture \(R^2B^4\), one with picture \(RB^5\), and one with picture \(B^6\).%
 \item\label{picture-enumerator-hexagon} Using the picture function of the previous part, write down the picture enumerator for the orbits of colorings of the vertices of a hexagon under the action of the rotation group.%
@@ -8166,7 +8196,7 @@ In \hyperref[nchoosekanotherway]{Problem~\ref{nchoosekanotherway}}, what is the 
 \begin{activity}[]\label{activity-358}
 Describe explicitly what makes two lists of beads equivalent in \hyperref[necklace]{Problem~\ref{necklace}} and how \hyperref[EquivPrincipleProblem]{Problem~\ref{EquivPrincipleProblem}} can be used to compute the number of different necklaces.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Two lists are equivalent if I can get one from the other by some combination of cyclic shifts and reversals. A cyclic shift on the list \(a_1,a_2,\ldots,a_{n-1},a_n\) gives either the list \(a_n,a_1,a_2,\ldots ,a_{n-1}\) or the list \(a_2,\ldots,a_{n-1},a_n,a_1\). There are \(n\) possible results of repeated cyclic shifts, and each of them may be reversed to give a new list if \(n\ge 3\). Further, these are the only lists we can get from shifts and reversals. (\(a_1\) must go to one of \(n\) places, and that leaves two choices for where \(a_2\) goes. Then the rest of the list is determined.) Thus we can get exactly \(2n\) lists from combinations of cyclic shifts and reversals. We define two lists to be equivalent if they give the same necklace; we've seen that this is an equivalence relation and that it has \(2n\) elements per equivalence class. Since there are \(n!\) lists, this gives us \((n-1)!/2\) equivalence classes, or necklaces.%
+\textbf{Solution.}\quad Two lists are equivalent if I can get one from the other by some combination of cyclic shifts and reversals. Applying a cyclic shift on the list \(a_1,a_2,\ldots,a_{n-1},a_n\) gives either \(a_n,a_1,a_2,\ldots ,a_{n-1}\) or \(a_2,\ldots,a_{n-1},a_n,a_1\). There are \(n\) possible results of repeated cyclic shifts, and each of them may be reversed to give a new list if \(n\ge 3\). Further, these are the only lists we can get from shifts and reversals. (\(a_1\) must go to one of \(n\) places, and that leaves two choices for where \(a_2\) goes. Then the rest of the list is determined.) Thus we can get exactly \(2n\) lists from combinations of cyclic shifts and reversals. We define two lists to be equivalent if they give the same necklace; we've seen that this is an equivalence relation and that it has \(2n\) elements per equivalence class. Since there are \(n!\) lists, this gives us \((n-1)!/2\) equivalence classes, or necklaces.%
 \end{activity}
 \begin{activity}[]\label{activity-359}
 What are the equivalence classes (write them out as sets of lists) in \hyperref[twocolorsofbeads]{Problem~\ref{twocolorsofbeads}}, and why can't we use \hyperref[EquivPrincipleProblem]{Problem~\ref{EquivPrincipleProblem}} to compute the number of equivalence classes?%
@@ -8494,7 +8524,7 @@ What is the EGF for the number of permutations of an \(n\)-element set?%
 \textbf{Solution.}\quad \(\frac{1}{1-x}\).%
 \end{activity}
 \begin{activity}[]\label{exponentialroundtable}
-What is the EGF for the number of ways to arrange \(n\) people around a round table? Notice that we may think of this as the EGF for the number of permutations on \(n\) elements that are cycles.%
+What is the EGF for the number of ways to arrange \(n\) people around a round table? Try to find a recognizable function represented by the EGF. Notice that we may think of this as the EGF for the number of permutations on \(n\) elements that are cycles.%
 \par\medskip\noindent%
 \textbf{Hint.}\quad An earlier problem may help you put your answer into a simpler form.%
 \par\medskip\noindent%
@@ -8523,7 +8553,7 @@ What is the EGF for the sequence \(0,1,2,3,\ldots\)? You may think of this as th
 \(\sum_{n=0}^\infty\frac{n(n-1)x^n}{2 n!}=\sum_{i=2}^\infty \frac{x^n}{2(n-2)!}=x^2e^x/2\).%
 \end{activity}
 \begin{activity}[]\label{allonessequence}
-What is the EGF for the sequence \(1,1,\ldots,1,\ldots\)? Notice that we may think of this as the EGF for the number of identity permutations on an \(n\)-element set, which is the same as the number of permutations of \(n\) elements that are products of 1-cycles, or as the EGF for the number of ways to select an \(n\)-element set (or, if you prefer, an empty set) from an \(n\)-element set.  As you may have guessed, there are many other combinatorial interpretations we could give to this EGF.%
+What is the EGF for the sequence \(1,1,\ldots,1,\ldots\)? Notice that we may think of this as the EGF for the number of identity permutations on an \(n\)-element set, which is the same as the number of permutations of \(n\) elements that are products of 1-cycles, or as the EGF for the number of ways to select an \(n\)-element set (or, if you prefer, an empty set) from an \(n\)-element set. As you may have guessed, there are many other combinatorial interpretations we could give to this EGF.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad \(e^x\).%
 \end{activity}
@@ -8725,68 +8755,72 @@ In \hyperref[telephonenetwork]{Problem~\ref{telephonenetwork}}, why is the famil
 \end{activity}
 The second essential feature of our examples of products of EGFs is that products of EGFs seem to count structures on ordered pairs of two disjoint sets (or more generally on \(k\)-tuples of mutually disjoint sets). For example, we can determine a five coloring of a set \(S\) by partitioning it in all possible ways into two sets and coloring the first set in the pair with our first two colors and our second pair with the last three colors. Or we can partition our set in all possible ways into five parts and color part i with our ith color. We don't have to do the same thing to each part of our partition; for example, we could define a derangement on one part and an identity permutation on the other; this defines a permutation on the set we are partitioning, and we have already noted that every permutation arises in this way.%
 \par
-Our combinatorial interpretation of EGFs will involve assuming that the coefficient of \(\frac{x^i}{i!}\) counts the number of structures on a particular set of of size \(i\) in a species of structures on subsets of a set \(X\). Thus in order to give an interpretation of the product of two EGFs we need to be able to think of ordered pairs of structures on disjoint sets or \(k\)-tuples of structures on disjoint sets as structures themselves. Thus given a structure on a set \(S\) and another structure on a disjoint set \(T\), we define the ordered pair of structures (which is a mathematical construction!) to be a structure on the set \(S\cup T\). We call this a \terminology{pair structure} on \(S\cup T\). We can get many structures on a set \(S\cup T\) in this way, because \(S\cup T\) can be divided into many other pairs of disjoint sets. In particular, the set of pair structures whose first structure comes from \(\F\) and whose second element comes from \(\G\) is denoted by \(\F\cdot \G\).%
+Our combinatorial interpretation of EGFs will involve assuming that the coefficient of \(\frac{x^i}{i!}\) counts the number of structures on a particular set of of size \(i\) in a species of structures on subsets of a set \(X\). Thus in order to give an interpretation of the product of two EGFs we need to be able to think of ordered pairs of structures on disjoint sets or \(k\)-tuples of structures on disjoint sets as structures themselves. Thus given a structure on a set \(S\) and another structure on a disjoint set \(T\), we define the ordered pair of structures (which is a mathematical construction!) to be a structure on the set \(S\cup T\). We call this a \terminology{pair structure} on \(S\cup T\). We can get many structures on a set \(S\cup T\) in this way, because \(S\cup T\) can be divided into many other pairs of disjoint sets. In particular, the set of pair structures whose first structure comes from \(\F\) and whose second element comes from \(\mathcal{G}\) is denoted by \(\F\cdot \mathcal{G}\).%
 \begin{activity}[]\label{activity-396}
-Show that if \(\F\) and \(\G\) are species of structures on subsets of a set \(X\), then the pair of structures of \(\F\cdot\G\) for a species of structures%
+Show that if \(\F\) and \(\mathcal{G}\) are species of structures on subsets of a set \(X\), then the pair of structures of \(\F\cdot\mathcal{G}\) for a species of structures%
 \par\medskip\noindent%
-\textbf{Solution.}\quad We must show that if \(S\) and \(S'\) are finite subsets of \(X\) with the same size, then the number of pair structures on \(S\) and the number of pair structures on \(S'\) are the same. To get a pair structure on \(S\) we partition \(S\) into two parts, \(S_1\) and \(S_2\), take an \(\F\) structure on \(S_1\) and a \(\G\) structure on \(S_2\) and form the ordered pair of these structures. The number of ways to partition \(S\) into sets of size \(s_1\) and \(s_2\) is the same as the number of ways to partition \(S'\) into sets \(S_1'\) and \(S_2'\) of size \(s_1\) and \(s_2\) (there are intentionally no primes on the lower case \(s_1\) and \(s_2\)) and the number of ways to choose an \(\F\)-structure on \(S_1'\) and a \(\G\)-structure on \(S_2'\) is the number of ways to make the same choices on \(S_1\) and \(S_2\). Therefore the number of pairs of structures on the disjoint sets \(S_1\) and \(S_2\) whose union is \(S\) is the same as the number of pairs of structures on the disjoint sets \(S_1'\) and \(S_2'\) whose union is \(S'\). Summing over all ways to partition \(S\) or \(S'\) into two sets, we find that the number of pair structures on \(S\) equals the number of pair structures on \(S'\). Thus the pair structure of \(\F\cdot \G\) forms a species of structures.%
+\textbf{Solution.}\quad We must show that if \(S\) and \(S'\) are finite subsets of \(X\) with the same size, then the number of pair structures on \(S\) and the number of pair structures on \(S'\) are the same. To get a pair structure on \(S\) we partition \(S\) into two parts, \(S_1\) and \(S_2\), take an \(\F\) structure on \(S_1\) and a \(\mathcal{G}\) structure on \(S_2\) and form the ordered pair of these structures. The number of ways to partition \(S\) into sets of size \(s_1\) and \(s_2\) is the same as the number of ways to partition \(S'\) into sets \(S_1'\) and \(S_2'\) of size \(s_1\) and \(s_2\) (there are intentionally no primes on the lower case \(s_1\) and \(s_2\)) and the number of ways to choose an \(\F\)-structure on \(S_1'\) and a \(\mathcal{G}\)-structure on \(S_2'\) is the number of ways to make the same choices on \(S_1\) and \(S_2\). Therefore the number of pairs of structures on the disjoint sets \(S_1\) and \(S_2\) whose union is \(S\) is the same as the number of pairs of structures on the disjoint sets \(S_1'\) and \(S_2'\) whose union is \(S'\). Summing over all ways to partition \(S\) or \(S'\) into two sets, we find that the number of pair structures on \(S\) equals the number of pair structures on \(S'\). Thus the pair structure of \(\F\cdot \mathcal{G}\) forms a species of structures.%
 \end{activity}
 Given a species \(\F\) of structures, the number of structures using any particular set of size \(i\) is the same as the number of structures in the family using any other set of size \(i\).  We can thus define the exponential generating function (EGF) for the family as the power series \(\sum_{i=1}^\infty a_i \frac{x^i}{i!}\), where \(a_i\) is the number of structures of \(\F\) that use one particular set of size \(i\).  In \hyperref[egf2n]{Problems~\ref{egf2n}}, \hyperref[paintinglightpoles]{\ref{paintinglightpoles}}, \hyperref[exponentialpermutations]{\ref{exponentialpermutations}}, \hyperref[exponentialroundtable]{\ref{exponentialroundtable}}, \hyperref[exponentialtennisparings]{\ref{exponentialtennisparings}}, \hyperref[allonessequence]{\ref{allonessequence}}, \hyperref[oneblockpartitions]{\ref{oneblockpartitions}}, \hyperref[exponentialbookshelf]{\ref{exponentialbookshelf}}, \hyperref[telephonenetworkEGF]{\ref{telephonenetworkEGF}}, and \hyperref[exponentialderangements]{\ref{exponentialderangements}}, we were computaing EGFs for species of subsets of some set.%
 \begin{activity}[]\label{activity-397}
-If \(\F\) and \(\G\) are species of subsets of \(X\), how is the EGF for \(\F\cdot \G\) related to the EGFs for \(F\) and \(G\)?  Prove you are right.%
+If \(\F\) and \(\mathcal{G}\) are species of subsets of \(X\), how is the EGF for \(\F\cdot \mathcal{G}\) related to the EGFs for \(F\) and \(G\)?  Prove you are right.%
 \par\medskip\noindent%
 \textbf{Hint.}\quad If \(f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}\) and \(g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}\), what is the coefficient of \(\frac{x^n}{n!}\) in \(f(x)g(x)\)?  don't be surprised if your answer has a binomial coefficient in it.  In fact, the binomial coefficient should help you finish the problem.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad Let \(f(x)\), \(g(x)\), and \(h(x)\) be, respectively, the EGFs for the species \(\F\), \(\G\), and \(\F\cdot\G\).  Suppose \(f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}\) and \(g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}\). Then the coefficient of \(x^n\) in \(f(x)g(x)\) is \(\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!}\), so the coefficient of \(\frac{x^n}{n!}\) is%
+\textbf{Solution.}\quad Let \(f(x)\), \(g(x)\), and \(h(x)\) be, respectively, the EGFs for the species \(\F\), \(\mathcal{G}\), and \(\F\cdot\mathcal{G}\).  Suppose \(f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}\) and \(g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}\). Then the coefficient of \(x^n\) in \(f(x)g(x)\) is \(\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!}\), so the coefficient of \(\frac{x^n}{n!}\) is%
 \begin{equation*}
 n!\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!} = \sum_{k=0}^n \binom{n}{k} a_kb_{n-k}.
 \end{equation*}
-But \(\binom{n}{k}a_kb_{n-k}\) is the number of ways to partition a set of size \(n\) into a first set of size \(k\) and a second set of size \(n-k\) and to choose a structure for each of them.  That is, it is the number of pair structures on an ordered pair of sets of size \(k\) and \(n-k\).  Thus the coefficient of \(\frac{x^n}{n!}\) in \(h(x)\) is the number of \(\F\cdot\G\) pair structures on a subset of \(X\) of size \(n\).  This proves that \(h(x) = f(x)g(x)\).%
+But \(\binom{n}{k}a_kb_{n-k}\) is the number of ways to partition a set of size \(n\) into a first set of size \(k\) and a second set of size \(n-k\) and to choose a structure for each of them.  That is, it is the number of pair structures on an ordered pair of sets of size \(k\) and \(n-k\).  Thus the coefficient of \(\frac{x^n}{n!}\) in \(h(x)\) is the number of \(\F\cdot\mathcal{G}\) pair structures on a subset of \(X\) of size \(n\).  This proves that \(h(x) = f(x)g(x)\).%
 \end{activity}
-\begin{activity}[]\label{exponentialpp3}
-If \(S\) is a set of objects with \(V\) a set-value function from \(S\) to some set \(Y\) and \(T\) is a set of objects with \(U\) a set-value function from \(T\) to the same set \(Y\), then what is the relationship among the EGF for the number \(a_i\) of elements of \(S\) whose set-value is any one particular set of size \(i\), the EGF for the number \(b_j\) of elements of \(T\) whose set-value is any one particular set of size \(j\) and the EGF for the number \(c_n\) of ordered pairs \((s,t)\) in \(S\times
-T\) such that the set values of \(s\) and \(t\) are disjoint sets whose union is any one particular set of size \(n\)?%
+\begin{activity}[]\label{genspeciesproduct}
+Without giving the proof, how can you compute the EGF \(f(x)\) for the number of structures using a set of size \(n\) in the species \(\F_1\cdot\F_2\cdot \cdots\cdot \F_k\) of structures on \(k\)-tuples of subsets of \(X\) from the EGFs \(f_i(x)\) for \(\F_i\) for each \(i\) from \(1\) to \(k\)?  (Here we are using the natural extension of the idea of the pair of structures to the idea of a \(k\)-tuple structure.)%
 \par\medskip\noindent%
-\textbf{Solution.}\quad The EGF for \(a_i\) times the EGF for \(b_j\) is the EGF for \(c_n\). Stated as a theorem,%
-\begin{quote}\hypertarget{blockquote-20}{}
-If \(S\) is a set of objects with \(V\) a set-value function from \(S\) to some set \(Y\) and the EGF for the number \(a_i\) of elements of \(S\) whose \(V\)-value is any particular set \(N\) of size \(n\) is \(f(x)=\sum_{n=0}^\infty
-a_n\frac{x^n}{n!}\) and \(T\) is a set of objects with \(U\) a set-value function from \(T\) to the same set \(Y\) and the EGF for the number of elements \(b_n\) of \(T\) whose \(U\)-value is any particular set \(N\) of size \(n\) is \(g(x) = \sum_{i=0}^\infty b_n\frac{x^n}{n!}\), then the EGF for the number \(c_n\) of ordered pairs \((s,t)\) in \(S\times T\) such that the set values of \(s\) and \(t\) are disjoint sets whose union is any one particular set of size \(n\) is \(f(x)g(x)\). That is, the number of ordered pairs of the type described is the coefficient of \(\frac{x^n}{n!}\) in \(f(x)g(x)\).%
-\end{quote}
-The proof consists of interpreting \hyperref[exponentialpp1]{Problem~\ref{exponentialpp1}} in this context.%
+\textbf{Solution.}\quad \(f(x) = \prod_{i=1}^k f_i(x)\).%
 \end{activity}
-The theorem you proved in \hyperref[exponentialpp3]{Problem~\ref{exponentialpp3}} is called the \emph{product principle for exponential generating functions}\index{product principle for exponential generating functions}\index{exponential generating functions!product principle for}\index{generating function!exponential!product principle for}.%
+\begin{theorem}[{}]\label{genprodprincipleEGF}
+If \(\F_1, \F_2, \ldots, \F_n\) are species of subsets of the set \(X\) and \(\F_i\) has EGF \(f_i(x)\), then the family of \(k\)-tuple structures \(\F_1\cdot \F_2\cdot \cdots\cdot \F_n\) has EGF \(\prod_{i=1}^n f_i(x)\).%
+\end{theorem}
+We call \hyperref[genprodprincipleEGF]{Theorem~\ref{genprodprincipleEGF}} the \terminology{product principle for exponential generating functions}.\index{product principle for exponential generating functions}\index{exponential generating functions!product principle for}\index{generating function!exponential!product principle for} We give two corollaries; the proof of the second is not immediate though not particular difficult.%
+\begin{corollary}[{}]\label{fspeciescorollary1}
+If \(\F\) is a species of structures on subsets of \(X\) and \(f(x0)\) is the EGF for \(\F\), then \(f(x)^k\) is the EGF for the \(k\)-tuple structure on \(k\)-tuples of \(\F\)-structures using disjoint subsets of \(X\).%
+\end{corollary}
+Our next corollary uses the idea of a \(k\)-set structure. Suppose we have a species \(\F\) of structures on nonempty subsets of \(X\), that is, a species of structures which assigns no structures to the empty set. Then we can define a new species \(\F^{(k)}\) of structures, called ``\(k\)-set structures,'' using nonempty subsets of \(X\). Given a fixed positive integer \(k\), a \terminology{\(k\)-set structure}\index{k-set structures} on a subset \(Y\) of \(X\) consists of a \(k\)-element set of nonempty disjoint subsets of \(X\) whose union is \(Y\) and an assignment of an \(\F\)-structure to each of the disjoint subsets. This is a species on the set of subsets of \(X\); the subset used by a \(k\)-set structure is the union of the sets of the structure. To recapitulate, the set of \(k\)-set structures on a subset \(Y\) of \(X\) is the set of all possible assignments of \(\F\)-structures to \(k\) nonempty disjoint sets whose union is \(Y\). (You can also think of the \(k\)-set structures as a family of structures defined on blocks of partitions of subsets of \(X\) into \(k\) blocks.)%
+\begin{corollary}[{}]\label{fspeciescorollary2}
+If \(\F\) is a species of structures on nonempty subsets of \(X\) and \(f(x)\) is the EGF for \(\F\), then for each positive integer \(k\), \(\frac{f(x)^k}{k!}\) is the EGF for the family \(\F^{(k)}\) of \(k\)-set structures on subsets of \(X\)%
+\end{corollary}
 \begin{activity}[]\label{activity-399}
+Prove \hyperref[fspeciescorollary2]{Corollary~\ref{fspeciescorollary2}}.%
+\par\medskip\noindent%
+\textbf{Hint.}\quad Since the sets of a \(k\)-set structure are nonempty and disjoint, the \(k\)-element set of sets can be arranged as a \(k\)-tuple in \(k!\) ways.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad Since the sets of a \(k\)-set structure are nonepmty and disjoint, the \(k\)-element set of sets can be arranged as a \(k\)-tuple in \(k!\) ways.  Thus the number of \(k\)-set structures on a given set is \(\frac{1}{k!}\) times the number of \(k\)-tuple structures on that set.  Therefore the EGF for \(k\)-set structures is \(\frac{1}{k!}\) times the EGF for \(k\)-tuple structures.  By \hyperref[fspeciescorollary1]{Corollary~\ref{fspeciescorollary1}}, the EGF for \(k\)-set structures is thus \(\frac{f(x)^k}{k!}\).%
+\end{activity}
+\begin{activity}[]\label{activity-400}
 Use the product principle for EGFs to explain the results of \hyperref[x2cyclesand1cycles]{Problems~\ref{x2cyclesand1cycles}} and \hyperref[derangementsand1cycles]{Problem~\ref{derangementsand1cycles}}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Every involution is a unique product of disjoint two-cycles and one-cycles, so we can think of it as an ordered pair of whose first entry is a set of disjoint two-cycles and whose second element is a set of disjoint one-cycles. The value of a set of two-cycles is the union of their support sets and the value of a set of one-cycles is the union of their support sets. Then the EGF for involutions is the product of the EGF for permutations that are the product of only disjoint two-cycles and the EGF for permutations that are the product of only disjoint one-cycles (i.e. identity permutations).%
 \par
 We noted in the solution to \hyperref[derangementsand1cycles]{Problem~\ref{derangementsand1cycles}} that every permutation is the product of a derangement (on the elements that are not fixed by the permutation) and a product of one cycles (on the elements that are fixed by the permutation). Thus we can think of every permutation as an ordered pair consisting of a derangement and a product of one-cycles, and the product principle tells us that the EGF for all permutations is the product of the EGF for derangements and the EGF for identity permutations.%
 \end{activity}
-The product principle for EGFs has a natural extension to a product of some arbitrary number \(k\) of exponential generating functions. Instead of dealing with ordered pairs, it deals with (ordered) \(k\)-tuples. Since it is inconvenient to state unless one is careful with notation, we will state it here. The proof would be quite similar to your proof in \hyperref[exponentialpp3]{Problem~\ref{exponentialpp3}}.%
-\begin{theorem}[{}]\label{theorem-13}
-If \(f_1(x)\), \(f_2(x)\), \dots{}, \(f_k(x)\) are the exponential generating functions for sets \(S_1\), \(S_2\), \dots{}, \(S_k\) according to the set-value functions \(V_1\), \(V_2\), \dots{}, \(V_k\), then \(f_1(x)f_2(x)\cdots f_k(x)\) is the exponential generating function for the number \(c_n\) of (ordered) \(k\)-tuples \((s_1,s_2,\ldots,s_k)\) with \(s_i\in S_i\) such that \(V_1(s_1)\), \(V_2(s_2)\), \dots{}, \(V_k(s_k)\) are disjoint sets whose union is any one particular set \(N\) of size \(n\).%
-\end{theorem}
-\begin{corollary}[{}]\label{EGFtothen}
-If \(f(x)\) is the exponential generating function for a set \(S\) according to the set-value function \(V\), then \(f(x)^k\) is the exponential generating function in which \(a_n\) is the number of \(k\)-tuples of elements of \(S\) whose values are disjoint sets whose union is any particular set of size \(n\).%
-\end{corollary}
-\begin{activity}[]\label{activity-400}
-Use the general product principle for EGFs or its corollary to explain the relationship between the EGF for painting streetlight poles in only one color and the EGF for painting streetlight poles in \(4\) colors in \hyperref[paintinglightpoles]{Problems~\ref{paintinglightpoles}} and \hyperref[paintinglightpoles2]{Problem~\ref{paintinglightpoles2}}. What is the generating function for the number \(p_n\) of ways to paint \(n\) streetlight poles with some fixed number \(k\) of colors of paint.%
-\par\medskip\noindent%
-\textbf{Solution.}\quad We can think of a painting of a set of street poles as a four-tuple of sets, the sets painted each of the four colors. Then \hyperref[EGFtothen]{Corollary~\ref{EGFtothen}} tells us that the EGF for such four-tuples is the fourth power of the EGF for the number of ways to paint streetlight poles with one color. The EGF for painting streetlight poles with \(k\) colors of paint is \(e^{kx}\).%
-\end{activity}
 \begin{activity}[]\label{activity-401}
-Use the general product principle for EGFs or its corollary to explain the relationship between the EGF for arranging books on one shelf and the EGF for arranging books on \(n\) shelves in \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}}.%
+Use the general product principle for EGFs or one of its corollaries to explain the relationship between the EGF for painting streetlight poles in only one color and the EGF for painting streetlight poles in \(4\) colors in \hyperref[paintinglightpoles]{Problems~\ref{paintinglightpoles}} and \hyperref[paintinglightpoles2]{Problem~\ref{paintinglightpoles2}}. What is the EGF for the number \(p_n\) of ways to paint \(n\) streetlight poles with some fixed number \(k\) of colors of paint.%
 \par\medskip\noindent%
-\textbf{Solution.}\quad An arrangement of books on \(n\) shelves may be thought of as a \(n\)-tuple of arrangements of books on one shelf, and the value of an arrangement may be taken to be the set of books actually on the shelf (or shelves). The \hyperref[EGFtothen]{Corollary~\ref{EGFtothen}} tells us that the EGF is the \(n\)th power of the EGF for arranging books on one shelf, which is the EGF for permutations. Thus the EGF for arranging books on \(n\) shelves is \((1-x)^{-n}\).%
+\textbf{Solution.}\quad We can think of a painting of a set of street poles as a four-tuple of sets, the sets painted each of the four colors. Then \hyperref[fspeciescorollary1]{Corollary~\ref{fspeciescorollary1}} tells us that the EGF for such four-tuples is the fourth power of the EGF for the number of ways to paint streetlight poles with one color. The EGF for painting streetlight poles with \(k\) colors of paint is \(e^{kx}\).%
 \end{activity}
 \begin{activity}[]\label{activity-402}
+Use the general product principle for EGFs or one of its corollaries to explain the relationship between the EGF for arranging books on one shelf and the EGF for arranging books on \(n\) shelves in \hyperref[exponentialbookshelf]{Problem~\ref{exponentialbookshelf}}.%
+\par\medskip\noindent%
+\textbf{Solution.}\quad An arrangement of books on \(n\) shelves may be thought of as a \(n\)-tuple of arrangements of books on one shelf, and the value of an arrangement may be taken to be the set of books actually on the shelf (or shelves). The \hyperref[fspeciescorollary1]{Corollary~\ref{fspeciescorollary1}} tells us that the EGF is the \(n\)th power of the EGF for arranging books on one shelf, which is the EGF for permutations. Thus the EGF for arranging books on \(n\) shelves is \((1-x)^{-n}\).%
+\end{activity}
+\begin{activity}[]\label{activity-403}
 (Optional) Our very first example of exponential generating functions used the binomial theorem to show that the EGF for \(k\)-element permutations of an \(n\) element set is \((1+x)^n\). Use the EGF for \(k\)-element permutations of a one-element set and the product principle to prove the same thing. Hint: Review the alternate definition of a function in \hyperref[orderedfunctionsection]{Section~\ref{orderedfunctionsection}}.%
 \par\medskip\noindent%
 \textbf{Hint.}\quad The alternate definition of a funciton in \hyperref[orderedfunctionsection]{Section~\ref{orderedfunctionsection}} can be restated to say that a function from a \(k\)-element set \(K\) to an \(n\)-element set \(N\) can be thought of as an \(n\)-tuple of sets, perhaps with some empty, whose union is \(K\). In order to think of the function as an \(n\)-tuple, we number the elements of \(N\) as number 1 through number \(n\). Then the \(i\)th set in the \(n\)-tuple is the set of elements mapped to the \(i\)th element of \(N\) in our numbering?%
 \par\medskip\noindent%
-\textbf{Solution.}\quad In \hyperref[orderedfunctionsection]{Section~\ref{orderedfunctionsection}} we remarked that an alternate definition of a function from \(S\) to \(T\) is that it is an assignment of disjoint subsets of \(S\) to elements of \(T\) so that the union of the subsets is \(S\). Thus a function from \([k]\) to \([n]\) may be thought of as an \(n\)-tuple of disjoint subsets of \(S\) whose union is \([k]\). In particular, an injection from \([k]\) to \([n]\) (which is a \(k\)-element permutation of \([n]\)) can be thought of as a \(n\)-tuple of disjoint singleton sets and empty sets whose union is \(n\). The number of such \(n\)-tuples is therefore the number of \(k\)-element permutations of \([n]\). If \(n=1\), the possible \(n\)-tuples are \((\emptyset)\) and \(\{1\}\), and so the EGF for such \(n\)-tuples is \(1+x\). Then by \hyperref[EGFtothen]{Corollary~\ref{EGFtothen}}, if we let the value of an \(n\)-tuple of disjoint singletons and empty sets be the union of the sets in the \(n\)-tuple, the EGF for the number of \(n\)-tuples whose value is \([k]\) is \((1+x)^n\). Thus this is the EGF for \(k\)-element permutations of \([n]\).%
+\textbf{Solution.}\quad In \hyperref[orderedfunctionsection]{Section~\ref{orderedfunctionsection}} we remarked that an alternate definition of a function from \(S\) to \(T\) is that it is an assignment of disjoint subsets of \(S\) to elements of \(T\) so that the union of the subsets is \(S\). Thus a function from \([k]\) to \([n]\) may be thought of as an \(n\)-tuple of disjoint subsets of \(S\) whose union is \([k]\). In particular, an injection from \([k]\) to \([n]\) (which is a \(k\)-element permutation of \([n]\)) can be thought of as a \(n\)-tuple of disjoint singleton sets and empty sets whose union is \(n\). The number of such \(n\)-tuples is therefore the number of \(k\)-element permutations of \([n]\). If \(n=1\), the possible \(n\)-tuples are \((\emptyset)\) and \(\{1\}\), and so the EGF for such \(n\)-tuples is \(1+x\). Then by \hyperref[fspeciescorollary1]{Corollary~\ref{fspeciescorollary1}}, if we let the value of an \(n\)-tuple of disjoint singletons and empty sets be the union of the sets in the \(n\)-tuple, the EGF for the number of \(n\)-tuples whose value is \([k]\) is \((1+x)^n\). Thus this is the EGF for \(k\)-element permutations of \([n]\).%
 \end{activity}
-\begin{activity}[]\label{activity-403}
+\begin{activity}[]\label{activity-404}
 What is the EGF for the number of ways to paint \(n\) streetlight poles red, white blue, green and yellow, assuming an even number of poles must be painted green and an even number of poles must be  painted yellow? Give a formula for the number of ways to paint \(n\) poles.  (Don't forget the factorial!)%
 \par\medskip\noindent%
 \textbf{Hint.}\quad Don't be surprised if you see a hyperbolic sine or hyperbolic cosine in your answer. If you aren't familiar with these functions, look them up in a calculus book.%
@@ -8796,9 +8830,9 @@ What is the EGF for the number of ways to paint \(n\) streetlight poles red, whi
 e^{2x}\left(1+\frac{(2x)^2}{2!}+ \frac{(2x)^4}{4!} + \cdots \right) =
 e^{2x}\frac{e^{2x}-e^{-2x}}{2}=e^{2x}\cosh(2x).
 \end{equation*}
-%
+Since \(\cosh(2x) = \sum_{i=0}^\infty \frac{x^{2i}}{(2i)!}\) and \(e^{3x}\) is \(\sum_{i=0}^\infty 3^i \frac{x^i}{i!}\), we have the the coefficient of \(x^n\) is \(\sum_{i=0}^{\lfloor n/2 \rfloor} \frac{3^{n-2i}}{(n-2i)!}\frac{2^{2i}}{(2i)!}\), and so the number of ways to paint \(n\) lightpoles is \(n!\) times this, which simplifies to \(\sum_{i=1}^{\lfloor n/2 \rfloor} \binom{n}{2i} 3^{n-2i}2^{2i}\).%
 \end{activity}
-\begin{activity}[]\label{activity-404}
+\begin{activity}[]\label{activity-405}
 What is the EGF for the number of functions from an \(n\)-element set onto a one-element set? (Can there be any functions from the empty set onto a one-element set?) What is the EGF for the number \(c_n\) of functions from an \(n\)-element set onto a \(k\) element set (where \(k\) is fixed)? Use this EGF to find an explicit expression for the number of functions from a \(k\)-element set onto an \(n\)-element set and compare the result with what you got by inclusion and exclusion.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad There are no onto functions from a \(0\)-element set to a \(1\)-element set; otherwise there is exactly one function from an \(n\)-element set onto a one element set so the EGF for functions from an \(n\)-element set onto a one element set is \(e^x-1\). A function from an \(n\)-element set onto a \(k\)-element set may be thought of as a \(k-tuple\) of functions from disjoint subsets whose union is the \(n\)-element set onto the one element subsets of the \(k\)-element set. Therefore by the corollary to the product principle for EGFs the EGF for functions from an \(n\)-element set onto a \(k\)-element set is \((e^x-1)^k\). By the binomial theorem, this is%
@@ -8823,7 +8857,7 @@ In \hyperref[BellNumberIntro]{Problem~\ref{BellNumberIntro}} You showed that the
 Thus \(B'(x) = B(x)e^x\), which gives us \(\ln B(x) = e^x+c\), or \(B(x) =
 e^{ex+c} =e^ce^{(e^x)}\). Since \(B_0=B(0)\) and \(B_0=1\), we have \(c=-1\) and \(B(x) = \exp(e^x-1)\).%
 \end{activity}
-\begin{activity}[]\label{activity-406}
+\begin{activity}[]\label{activity-407}
 Prove that \(n2^{n-1} = \sum_{k=1}^n \binom{n}{k}k\) by using EGFs.%
 \par\medskip\noindent%
 \textbf{Hint.}\quad The EGF for \(\sum_{i=1}^n\binom{n}{k}k\) is \(\sum_{n=1}^\infty \sum_{i=1}^n \frac{n!}{k!(n-k)!}k\frac{x^n}{n!}\).  You can cancel out the \(n!\) terms and the \(k\) terms.  Now try to see if what is left can be regarded as the product of two EGFs.%
@@ -8838,7 +8872,7 @@ j2^{j-1}\frac{x^j}{j!}.
 \par
 Thus the coefficient of \(\frac{x^n}{n!}\) is \(n2^{n-1}\), as well as \(\sum_{k=1}^n \binom{n}{k}k\).%
 \end{activity}
-\begin{activity}[]\label{activity-407}
+\begin{activity}[]\label{activity-408}
 In light of \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}}, why is the EGF for the Stirling numbers \(S(n,k)\) of the second kind not \((e^x -1)^n\)? What is it equal to instead?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Notice that a one block partition is the same thing as a function from that block onto a one element set. However a partition with \(n\) blocks is not an \(n\)-tuple of blocks, but rather a set of \(n\) blocks. An \(n\)-tuple of blocks corresponds to a function from the union of the blocks onto an \(n\)-element set, and \(n!\) different onto functions correspond to the same partition into \(n\) blocks. Thus the EGF for partitions of an \(n\)-element set into \(k\) parts (where \(n\) is fixed but \(k\) varies) is \(\frac{1}{n!} (e^x -1)^n\).%
@@ -8895,22 +8929,22 @@ In \hyperref[exponentialformula]{Problem~\ref{exponentialformula}} we proved the
 Suppose that \(S\) is a set with a set-value function \(V\) from it to a set \(Y\) such that no element of \(S\) has the empty set as a value. Let \(f(x)\) be the generating function for \(S\) according to the value function \(V\). Then the coefficient of \(\frac{x^n}{n!}\) in \(e^{f(x)}\) is the number of subsets of \(S\) such that the values of the elements of the subset partition any one particular set \(N\subseteq T\) of size \(n\).%
 \end{theorem}
 Since the statement of the theorem is rather abstract, let us see how it applies to the examples in \hyperref[exp_oneblock_]{Problems~\ref{exp_oneblock_}}, \hyperref[exp_oneortwo-cycle_]{Problem~\ref{exp_oneortwo-cycle_}}, \hyperref[exp_two-cycle_]{Problem~\ref{exp_two-cycle_}} and \hyperref[exp_onecycle_]{Problem~\ref{exp_onecycle_}}. In \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}} our set \(S\) should consist of one-block partitions of sets; that is, it should be a set of nonempty sets. The value of a one-block partition will be the set it partitions, and we want every subset (of a given size) of our set \(Y\) to be the value of the same number of partitions. Thus we can take \(S\) to be the set of all nonempty finite subsets of the positive integers and take \(Y\) to be the set of positive integers. Since a partition of a set is a set of blocks whose union is \(S\), a one block partition whose block is \(B\) is the set \(\{B\}\). We take \(V(\{B\}) =B\). Then any nonempty finite subset of of the positive integers is the value of exactly one member of \(S\), and the empty set and all infinite subsets of the positive integers are the value of exactly zero members of \(S\). Thus we have a value function. As you showed in \hyperref[oneblockpartitions]{Problem~\ref{oneblockpartitions}} the generating function for partitions with just one block is \(e^x-1\). Thus by the exponential formula, \(\exp(e^x-1)\) is the generating function for sets of subsets of the positive integers whose values are disjoint sets whose union is any particular set \(N\) of size \(n\). Since the values are nonempty sets, this means they partition the set \(N\). Thus \(\exp(e^x-1)\) is the generating function for partitions of sets of size \(n\). (Technically, it is the generating function for partitions of subsets of the integers of size \(n\), but any two \(n\)-element sets have the same number of partitions.)%
-\begin{activity}[]\label{activity-413}
+\begin{activity}[]\label{activity-414}
 Explain how the exponential formula proves the relationship we saw in \hyperref[exp_onecycle_]{Problem~\ref{exp_onecycle_}}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We take \(S\) to be the set of permutations of sets of positive integers that have just one-cycle. We take the value of a one-cycle permutation to be the support set of the cycle. The number of one-cycle permutations whose value is any given \(n\)-element set of positive integers is \((n-1)!\), so we have defined a value function. We take the set \(Y\) to be the set of positive integers. Then by the Exponential Formula, if \(f(x)\) is the EGF for permutations with one cycle, \(\exp(f(x))=g(x)\) is the EGF in which the coefficient of \(\frac{x^n}{n!}\) is the number of sets of permutations with one cycle whose support sets partition any given set \(N\) of size \(n\). That is, the coefficient of \(\frac{x^n}{n!}\) in \(g(x)\) is the the number of products of disjoint cycles which partition any given set \(N\); that is, it is the EGF for permutations of \(N\).%
 \end{activity}
-\begin{activity}[]\label{activity-414}
+\begin{activity}[]\label{activity-415}
 Explain how the exponential formula proves the relationship we saw in \hyperref[exp_two-cycle_]{Problem~\ref{exp_two-cycle_}}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We let \(S\) be the set of permutations of sets of positive integers that consist of exactly one two-cycle. We take the set \(Y\) to be the set of positive integers. We take the value of a two-cycle to be its support set. Since the number of two-cycles with a given support set is one, this is a value function. We saw in \hyperref[exp_two-cycle_]{Problem~\ref{exp_two-cycle_}} that the EGF for \(S\) with this value function is \(x^2/2\). By the exponential formula, the EGF for sets of disjoint two-cycles is \(\exp(x^2/2)\). But a sets of disjoint two-cycles correspond bijectively with permutations of subsets of the positive integers which are products of disjoint two-cycles (only), and this confirms the result of \hyperref[exponentialtennisparings]{Problem~\ref{exponentialtennisparings}}.%
 \end{activity}
-\begin{activity}[]\label{activity-415}
+\begin{activity}[]\label{activity-416}
 Explain how the exponential formula proves the relationship we saw in \hyperref[exp_oneortwo-cycle_]{Problem~\ref{exp_oneortwo-cycle_}}.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad We let the set \(S\) be the set of permutations of subsets of the positive integers that consist of a one-cycle or consist of a two-cycle. We let the set \(Y\) be the set of positive integers. We let the value of a permutation in \(S\) be the support set of its cycle. We saw in \hyperref[exp_oneortwo-cycle_]{problem~\ref{exp_oneortwo-cycle_}} that the EGF for \(S\) is \(x+x^2/2\). By the exponential formula, the EGF for sets of disjoint one and two-cycles is \(e^x+x^2/2\). But there is a bijection between the sets of disjoint one and two-cycles and permutations that are a product of disjoint one and two-cycles. This confirms the result of \hyperref[telephonenetworkEGF]{Problem~\ref{telephonenetworkEGF}}.%
 \end{activity}
-\begin{activity}[]\label{activity-416}
+\begin{activity}[]\label{activity-417}
 In \hyperref[paintinglightpoles]{Problem~\ref{paintinglightpoles}} we saw that the generating function for the number of ways to use four colors of paint to paint \(n\) light poles along the north side of Main Street in Anytown was \(e^{4x}\). We should expect an explanation of this generating function using the exponential formula. Let \(S\) be the set of all ordered pairs consisting of a light pole and a color. Thus a given light pole occurs in four ordered pairs. What is a natural set-value function on \(S\)? What is the exponential generating function \(f(x)\) for \(S\) according to that value? Assuming that there is no upper limit on the number of light poles, what subsets of \(S\) does the exponential formula tell us are counted by the coefficient of \(x^n\) in \(e^{f(x)}\)? How do the sets being counted relate to ways to paint light poles?%
 \par\medskip\noindent%
 \textbf{Solution.}\quad A natural set-value function on \(S\) assigns to each ordered pair the singleton set consisting of the light pole in the pair. The EGF for \(S\) according to that value is \(4x\), because there are four ordered pairs with any given value. Note that a set of ordered pairs whose values partition a set \(N\) of light poles \(N\) is exactly a function from the set \(N\) of light poles to the set of colors. Then by the exponential formula, the generating function for the number of ways to paint \(n\) light poles with four colors is \(e^{4x}\).%
@@ -8923,7 +8957,7 @@ One of the most spectacular applications of the exponential formula is also the 
 %
 \par
 In \hyperref[conncomp]{Problem~\ref{conncomp}} we showed that each connected component of a graph consists of a vertex and all vertices connected to it by walks in the graph.%
-\begin{activity}[]\label{activity-417}
+\begin{activity}[]\label{activity-418}
 Show that every vertex of a graph lies in one and only one connected component of a graph. (Notice that this shows that the connected components of a graph form a partition of the vertex set of the graph.)%
 \par\medskip\noindent%
 \textbf{Solution.}\quad Let \(C\) be the set of all vertices connected by a walk to a vertex \(x\). Then \leavevmode%
@@ -8935,18 +8969,18 @@ Show that every vertex of a graph lies in one and only one connected component o
 \par
 Therefore \(C\) is a connected component containing \(x\). If connected component \(D\) contained \(x\), then every vertex in \(D\) would be connected by a walk to \(x\) and then by a walk from \(x\) to \(v\) for each other vertex in \(C\), and similarly, each vertex in \(C\) would be connected to each vertex in \(D\). Thus by the definition of connected component, \(C\) and \(D\) would have to be the same set. Therefore each vertex lies in one and only one connected component.%
 \end{activity}
-\begin{activity}[]\label{activity-418}
+\begin{activity}[]\label{activity-419}
 Explain why no edge of the graph connects two vertices in different connected components.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If an edge connected two vertices in different connected components, that edge would give a walk from a vertex in one of the connected components to a vertex in the other connected component, and thus not in the first component, violating the second part of the definition of a connected component.%
 \end{activity}
-\begin{activity}[]\label{activity-419}
+\begin{activity}[]\label{activity-420}
 Explain why it is that if \(C\) is a connected component of a graph and \(E'\) is the set of all edges of the graph that connect vertices in \(C\), then the graph with vertex set \(C\) and edge set \(E'\) is a connected graph. We call this graph a \emph{connected component graph}\index{connected component graph} of the original graph.%
 \par\medskip\noindent%
 \textbf{Solution.}\quad If there is a walk between two vertices in a connected component, all edges of the walk must connect two vertices in the connected component, because if there were an edge in the walk that did not do so, it would violate the second part of the definition of a connected component.%
 \end{activity}
 The last sequence of problems shows that we may think of any graph as the set of its connected component graphs. (Once we know them, we know all the vertices and all the edges of the graph). Notice that a graph is connected if and only if it has exactly one connected component. Since the connected components form a partition of the vertex set of a graph, the exponential formula will relate the generating function for the number of connected graphs on \(n\) vertices with the generating function for the number of graphs (connected or not) on \(n\) vertices. However because we can draw as many edges as we want between two vertices of a graph, there are infinitely many graphs on \(n\) vertices, and so the problem of counting them is uninteresting. We can make it interesting by considering \emph{simple graphs},\index{graph!simple}\index{simple graph} namely graphs in which each edge has two distinct endpoints and no two edges connect the same two vertices. It is because connected graphs form the building blocks for viewing all graphs as sets of connected components that we refer to the building blocks for structures counted by the generating functions in the exponential formula as connected structures.\index{exponential formula!connected structures for}%
-\begin{activity}[]\label{activity-420}
+\begin{activity}[]\label{activity-421}
 Suppose that \(f(x) = \sum_{n=0}^\infty c_n \frac{x^n}{n!}\) is the exponential generating function for the number of simple connected graphs on \(n\) vertices and \(g(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}\) is the exponential generating function for the number of simple graphs on \(i\) vertices.%
 \begin{enumerate}[font=\bfseries,label=(\alph*),ref=\alph*]
 \item\label{task-265} Is \(f(x) = e^{g(x)}\), is \(f(x) = e^{g(x)-1}\), is \(g(x) = e^{f(x)-1}\) or is \(g(x) = e^{f(x)}\)?%

@@ -331,22 +331,22 @@
     Thus given a structure on a set <m>S</m> and another structure on a disjoint set <m>T</m>, we define the ordered pair of structures (which is a mathematical construction!) to be a structure on the set <m>S\cup T</m>.
     We call this a <term>pair structure</term> on <m>S\cup T</m>.
     We can get many structures on a set <m>S\cup T</m> in this way, because <m>S\cup T</m> can be divided into many other pairs of disjoint sets.
-    In particular, the set of pair structures whose first structure comes from <m>\F</m> and whose second element comes from <m>\G</m> is denoted by <m>\F\cdot \G</m>.
+    In particular, the set of pair structures whose first structure comes from <m>\F</m> and whose second element comes from <m>\mathcal{G}</m> is denoted by <m>\F\cdot \mathcal{G}</m>.
   </p>
 
   <activity>
     <statement>
       <p>
-        Show that if <m>\F</m> and <m>\G</m> are species of structures on subsets of a set <m>X</m>, then the pair of structures of <m>\F\cdot\G</m> for a species of structures
+        Show that if <m>\F</m> and <m>\mathcal{G}</m> are species of structures on subsets of a set <m>X</m>, then the pair of structures of <m>\F\cdot\mathcal{G}</m> for a species of structures
       </p>
     </statement>
     <solution>
       <p>
         We must show that if <m>S</m> and <m>S'</m> are finite subsets of <m>X</m> with the same size, then the number of pair structures on <m>S</m> and the number of pair structures on <m>S'</m> are the same.
-        To get a pair structure on <m>S</m> we partition <m>S</m> into two parts, <m>S_1</m> and <m>S_2</m>, take an <m>\F</m> structure on <m>S_1</m> and a <m>\G</m> structure on <m>S_2</m> and form the ordered pair of these structures.
-        The number of ways to partition <m>S</m> into sets of size <m>s_1</m> and <m>s_2</m> is the same as the number of ways to partition <m>S'</m> into sets <m>S_1'</m> and <m>S_2'</m> of size <m>s_1</m> and <m>s_2</m> (there are intentionally no primes on the lower case <m>s_1</m> and <m>s_2</m>) and the number of ways to choose an <m>\F</m>-structure on <m>S_1'</m> and a <m>\G</m>-structure on <m>S_2'</m> is the number of ways to make the same choices on <m>S_1</m> and <m>S_2</m>.
+        To get a pair structure on <m>S</m> we partition <m>S</m> into two parts, <m>S_1</m> and <m>S_2</m>, take an <m>\F</m> structure on <m>S_1</m> and a <m>\mathcal{G}</m> structure on <m>S_2</m> and form the ordered pair of these structures.
+        The number of ways to partition <m>S</m> into sets of size <m>s_1</m> and <m>s_2</m> is the same as the number of ways to partition <m>S'</m> into sets <m>S_1'</m> and <m>S_2'</m> of size <m>s_1</m> and <m>s_2</m> (there are intentionally no primes on the lower case <m>s_1</m> and <m>s_2</m>) and the number of ways to choose an <m>\F</m>-structure on <m>S_1'</m> and a <m>\mathcal{G}</m>-structure on <m>S_2'</m> is the number of ways to make the same choices on <m>S_1</m> and <m>S_2</m>.
         Therefore the number of pairs of structures on the disjoint sets <m>S_1</m> and <m>S_2</m> whose union is <m>S</m> is the same as the number of pairs of structures on the disjoint sets <m>S_1'</m> and <m>S_2'</m> whose union is <m>S'</m>.
-        Summing over all ways to partition <m>S</m> or <m>S'</m> into two sets, we find that the number of pair structures on <m>S</m> equals the number of pair structures on <m>S'</m>. Thus the pair structure of <m>\F\cdot \G</m> forms a species of structures.
+        Summing over all ways to partition <m>S</m> or <m>S'</m> into two sets, we find that the number of pair structures on <m>S</m> equals the number of pair structures on <m>S'</m>. Thus the pair structure of <m>\F\cdot \mathcal{G}</m> forms a species of structures.
       </p>
     </solution>
   </activity>
@@ -368,7 +368,7 @@
   <activity>
     <statement>
       <p>
-        If <m>\F</m> and <m>\G</m> are species of subsets of <m>X</m>, how is the EGF for <m>\F\cdot \G</m> related to the EGFs for <m>F</m> and <m>G</m>?  Prove you are right.
+        If <m>\F</m> and <m>\mathcal{G}</m> are species of subsets of <m>X</m>, how is the EGF for <m>\F\cdot \mathcal{G}</m> related to the EGFs for <m>F</m> and <m>G</m>?  Prove you are right.
       </p>
     </statement>
     <hint>
@@ -378,75 +378,93 @@
     </hint>
     <solution>
       <p>
-        Let <m>f(x)</m>, <m>g(x)</m>, and <m>h(x)</m> be, respectively, the EGFs for the species <m>\F</m>, <m>\G</m>, and <m>\F\cdot\G</m>.  Suppose <m>f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> and <m>g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m>.
+        Let <m>f(x)</m>, <m>g(x)</m>, and <m>h(x)</m> be, respectively, the EGFs for the species <m>\F</m>, <m>\mathcal{G}</m>, and <m>\F\cdot\mathcal{G}</m>.  Suppose <m>f(x) = \sum_{i=0}^\infty a_i \frac{x^i}{i!}</m> and <m>g(x) = \sum_{j=0}^\infty b_j\frac{x^j}{j!}</m>.
         Then the coefficient of <m>x^n</m> in <m>f(x)g(x)</m> is <m>\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!}</m>, so the coefficient of <m>\frac{x^n}{n!}</m> is
         <me>
           n!\sum_{k=0}^n \frac{a_kb_{n-k}}{i!(n-k)!} = \sum_{k=0}^n \binom{n}{k} a_kb_{n-k}.
         </me>
-        But <m>\binom{n}{k}a_kb_{n-k}</m> is the number of ways to partition a set of size <m>n</m> into a first set of size <m>k</m> and a second set of size <m>n-k</m> and to choose a structure for each of them.  That is, it is the number of pair structures on an ordered pair of sets of size <m>k</m> and <m>n-k</m>.  Thus the coefficient of <m>\frac{x^n}{n!}</m> in <m>h(x)</m> is the number of <m>\F\cdot\G</m> pair structures on a subset of <m>X</m> of size <m>n</m>.  This proves that <m>h(x) = f(x)g(x)</m>.
+        But <m>\binom{n}{k}a_kb_{n-k}</m> is the number of ways to partition a set of size <m>n</m> into a first set of size <m>k</m> and a second set of size <m>n-k</m> and to choose a structure for each of them.  That is, it is the number of pair structures on an ordered pair of sets of size <m>k</m> and <m>n-k</m>.  Thus the coefficient of <m>\frac{x^n}{n!}</m> in <m>h(x)</m> is the number of <m>\F\cdot\mathcal{G}</m> pair structures on a subset of <m>X</m> of size <m>n</m>.  This proves that <m>h(x) = f(x)g(x)</m>.
       </p>
     </solution>
   </activity>
 
   <!-- 398 -->
-
-
-
-
-
-  <activity xml:id="exponentialpp3" category="essential for this or the next section, and interesting">
+  <activity xml:id="genspeciesproduct">
     <statement>
       <p>
-        If <m>S</m> is a set of objects with <m>V</m> a set-value function from
-        <m>S</m> to some set <m>Y</m> and <m>T</m> is a set of objects with <m>U</m> a set-value
-        function from <m>T</m> to the same set <m>Y</m>, then what is the relationship
-        among the EGF for the number
-        <m>a_i</m> of elements of <m>S</m> whose set-value is any one particular set of
-        size
-        <m>i</m>, the EGF for the number <m>b_j</m> of elements of <m>T</m> whose set-value is
-        any one particular set of size
-        <m>j</m> and the EGF for the number <m>c_n</m> of ordered pairs <m>(s,t)</m> in <m>S\times
-        T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets whose union
-        is any one particular set of size <m>n</m>?
+        Without giving the proof, how can you compute the EGF <m>f(x)</m> for the number of structures using a set of size <m>n</m> in the species <m>\F_1\cdot\F_2\cdot \cdots\cdot \F_k</m> of structures on <m>k</m>-tuples of subsets of <m>X</m> from the EGFs <m>f_i(x)</m> for <m>\F_i</m> for each <m>i</m> from <m>1</m> to <m>k</m>?  (Here we are using the natural extension of the idea of the pair of structures to the idea of a <m>k</m>-tuple structure.)
       </p>
     </statement>
     <solution>
       <p>
-        The EGF for <m>a_i</m> times the EGF for <m>b_j</m> is the EGF for <m>c_n</m>. Stated
-        as a theorem,
-      </p>
-
-      <blockquote>
-        <title>Solution-Theorem</title>
-        <p>
-          If <m>S</m> is a set of objects with <m>V</m> a set-value function from <m>S</m>
-          to some set <m>Y</m> and the EGF for the number <m>a_i</m> of elements of <m>S</m> whose
-          <m>V</m>-value is any particular set <m>N</m> of size <m>n</m> is <m>f(x)=\sum_{n=0}^\infty
-          a_n\frac{x^n}{n!}</m> and
-          <m>T</m> is a set of objects with
-          <m>U</m> a set-value function from <m>T</m> to the same set <m>Y</m> and the EGF for the
-          number of elements <m>b_n</m> of <m>T</m> whose <m>U</m>-value is any particular set <m>N</m>
-          of size <m>n</m> is <m>g(x) = \sum_{i=0}^\infty b_n\frac{x^n}{n!}</m>, then the EGF
-          for
-          the number <m>c_n</m> of ordered pairs <m>(s,t)</m> in
-          <m>S\times T</m> such that the set values of <m>s</m> and <m>t</m> are disjoint sets
-          whose union is any one particular set of size <m>n</m> is <m>f(x)g(x)</m>. That
-          is, the number of ordered pairs of the type described is the coefficient
-          of <m>\frac{x^n}{n!}</m> in <m>f(x)g(x)</m>.
-        </p>
-      </blockquote>
-      <p>
-        The proof consists of interpreting <xref ref="exponentialpp1">Problem</xref> in this context.
+        <m>f(x) = \prod_{i=1}^k f_i(x)</m>.
       </p>
     </solution>
   </activity>
 
+
+  <theorem xml:id="genprodprincipleEGF">
+    <statement>
+      <p>
+        If <m>\F_1, \F_2, \ldots, \F_n</m> are species of subsets of the set <m>X</m> and <m>\F_i</m> has EGF <m>f_i(x)</m>, then the family of <m>k</m>-tuple structures <m>\F_1\cdot \F_2\cdot \cdots\cdot \F_n</m> has EGF <m>\prod_{i=1}^n f_i(x)</m>.
+      </p>
+    </statement>
+  </theorem>
+
+
+
   <p>
-    The theorem you proved in <xref ref="exponentialpp3">Problem</xref> is called the <em>product principle for exponential generating functions</em><idx><h>product
+    We call <xref ref="genprodprincipleEGF" /> the <term>product principle for exponential generating functions</term>.<idx><h>product
     principle for exponential generating functions</h></idx><idx><h>exponential
     generating functions</h><h>product principle for</h></idx><idx><h>generating
-    function</h><h>exponential!product principle for</h></idx>.
+    function</h><h>exponential!product principle for</h></idx>
+    We give two corollaries; the proof of the second is not immediate though not particular difficult.
   </p>
+
+  <corollary xml:id="fspeciescorollary1">
+    <statement>
+      <p>
+        If <m>\F</m> is a species of structures on subsets of <m>X</m> and <m>f(x0)</m> is the EGF for <m>\F</m>, then <m>f(x)^k</m> is the EGF for the <m>k</m>-tuple structure on <m>k</m>-tuples of <m>\F</m>-structures using disjoint subsets of <m>X</m>.
+      </p>
+    </statement>
+  </corollary>
+
+  <p>
+    Our next corollary uses the idea of a <m>k</m>-set structure.
+    Suppose we have a species <m>\F</m> of structures on nonempty subsets of <m>X</m>, that is, a species of structures which assigns no structures to the empty set.
+    Then we can define a new species <m>\F^{(k)}</m> of structures, called <q><m>k</m>-set structures,</q> using nonempty subsets of <m>X</m>.
+    Given a fixed positive integer <m>k</m>, a <term><m>k</m>-set structure</term><idx><h>k-set structures</h></idx> on a subset <m>Y</m> of <m>X</m> consists of a <m>k</m>-element set of nonempty disjoint subsets of <m>X</m> whose union is <m>Y</m> and an assignment of an <m>\F</m>-structure to each of the disjoint subsets.
+    This is a species on the set of subsets of <m>X</m>; the subset used by a <m>k</m>-set structure is the union of the sets of the structure.
+    To recapitulate, the set of <m>k</m>-set structures on a subset <m>Y</m> of <m>X</m> is the set of all possible assignments of <m>\F</m>-structures to <m>k</m> nonempty disjoint sets whose union is <m>Y</m>.
+    (You can also think of the <m>k</m>-set structures as a family of structures defined on blocks of partitions of subsets of <m>X</m> into <m>k</m> blocks.)
+  </p>
+
+  <corollary xml:id="fspeciescorollary2">
+    <statement>
+      <p>
+        If <m>\F</m> is a species of structures on nonempty subsets of <m>X</m> and <m>f(x)</m> is the EGF for <m>\F</m>, then for each positive integer <m>k</m>, <m>\frac{f(x)^k}{k!}</m> is the EGF for the family <m>\F^{(k)}</m> of <m>k</m>-set structures on subsets of <m>X</m>
+      </p>
+    </statement>
+  </corollary>
+
+  <activity>
+    <statement>
+      <p>
+        Prove <xref ref="fspeciescorollary2" />.
+      </p>
+    </statement>
+    <hint>
+      <p>
+        Since the sets of a <m>k</m>-set structure are nonempty and disjoint, the <m>k</m>-element set of sets can be arranged as a <m>k</m>-tuple in <m>k!</m> ways.
+      </p>
+    </hint>
+    <solution>
+      <p>
+        Since the sets of a <m>k</m>-set structure are nonepmty and disjoint, the <m>k</m>-element set of sets can be arranged as a <m>k</m>-tuple in <m>k!</m> ways.  Thus the number of <m>k</m>-set structures on a given set is <m>\frac{1}{k!}</m> times the number of <m>k</m>-tuple structures on that set.  Therefore the EGF for <m>k</m>-set structures is <m>\frac{1}{k!}</m> times the EGF for <m>k</m>-tuple structures.  By <xref ref="fspeciescorollary1" />, the EGF for <m>k</m>-set structures is thus <m>\frac{f(x)^k}{k!}</m>.
+      </p>
+    </solution>
+  </activity>
+
 
   <activity category="essential for this or the next section">
     <statement>
@@ -481,50 +499,15 @@
     </solution>
   </activity>
 
-  <p>
-    The product principle for EGFs has a natural extension to a product of
-    some arbitrary number <m>k</m> of exponential generating functions. Instead
-    of dealing with ordered pairs, it deals with (ordered) <m>k</m>-tuples. Since
-    it is inconvenient to state unless one is careful with notation, we will
-    state it here. The proof would be quite similar to your proof in <xref ref="exponentialpp3">Problem</xref>.
-  </p>
-
-  <theorem>
-    <statement>
-      <p>
-        If <m>f_1(x)</m>, <m>f_2(x)</m>, <ellipsis />, <m>f_k(x)</m> are the
-        exponential generating functions for sets <m>S_1</m>, <m>S_2</m>, <ellipsis />, <m>S_k</m>
-        according to the set-value functions <m>V_1</m>, <m>V_2</m>, <ellipsis />, <m>V_k</m>, then
-        <m>f_1(x)f_2(x)\cdots f_k(x)</m> is the exponential generating function for the
-        number
-        <m>c_n</m> of (ordered) <m>k</m>-tuples <m>(s_1,s_2,\ldots,s_k)</m> with <m>s_i\in S_i</m>
-        such that
-        <m>V_1(s_1)</m>, <m>V_2(s_2)</m>, <ellipsis />, <m>V_k(s_k)</m> are disjoint sets whose union
-        is any one particular set <m>N</m> of size <m>n</m>.
-      </p>
-    </statement>
-  </theorem>
-
-  <corollary xml:id="EGFtothen">
-    <statement>
-      <p>
-        If <m>f(x)</m> is the exponential generating function for
-        a set <m>S</m> according to the set-value function <m>V</m>, then <m>f(x)^k</m> is the
-        exponential generating function in which <m>a_n</m> is the number of
-        <m>k</m>-tuples of elements of <m>S</m> whose values are disjoint sets whose union
-        is any particular set of size <m>n</m>.
-      </p>
-    </statement>
-  </corollary>
 
   <activity category="essential for this or the next section">
     <statement>
       <p>
-        Use the general product principle for EGFs or its corollary to
+        Use the general product principle for EGFs or one of its corollaries to
         explain the relationship between the EGF for painting streetlight poles
         in only one color and the EGF for painting streetlight poles in <m>4</m>
         colors in <xref ref="paintinglightpoles">Problems</xref> and <xref ref="paintinglightpoles2"></xref>.
-        What is the generating function
+        What is the EGF
         for the number <m>p_n</m> of ways to paint <m>n</m> streetlight poles
         with some fixed number <m>k</m> of colors of paint.
       </p>
@@ -532,7 +515,7 @@
     <solution>
       <p>
         We can think of a painting of a set of street poles as a four-tuple of
-        sets, the sets painted each of the four colors. Then <xref ref="EGFtothen">Corollary</xref> tells us that the EGF for such four-tuples is the fourth
+        sets, the sets painted each of the four colors. Then <xref ref="fspeciescorollary1">Corollary</xref> tells us that the EGF for such four-tuples is the fourth
         power of the EGF for the number of ways to paint streetlight poles with
         one color. The EGF for painting streetlight poles with <m>k</m> colors of
         paint is <m>e^{kx}</m>.
@@ -543,7 +526,7 @@
   <activity category="essential for this or the next section">
     <statement>
       <p>
-        Use the general product principle for EGFs or its corollary to
+        Use the general product principle for EGFs or one of its corollaries to
         explain the relationship between the EGF for arranging books on one shelf
         and the EGF for arranging books on
         <m>n</m> shelves in <xref ref="exponentialbookshelf">Problem</xref>.
@@ -554,7 +537,7 @@
         An arrangement of books on <m>n</m> shelves may be thought of as a <m>n</m>-tuple
         of arrangements of books on one shelf, and the value of an arrangement
         may be taken to be the set of books actually on the shelf (or shelves).
-        The <xref ref="EGFtothen">Corollary</xref> tells us that the EGF is the <m>n</m>th power of
+        The <xref ref="fspeciescorollary1">Corollary</xref> tells us that the EGF is the <m>n</m>th power of
         the EGF for arranging books on one shelf, which is the EGF for
         permutations. Thus the EGF for arranging books on <m>n</m> shelves is
         <m>(1-x)^{-n}</m>.
@@ -595,7 +578,7 @@
           such <m>n</m>-tuples is therefore the number of <m>k</m>-element permutations of
           <m>[n]</m>. If <m>n=1</m>, the possible <m>n</m>-tuples are <m>(\emptyset)</m> and <m>\{1\}</m>,
           and so the EGF for such <m>n</m>-tuples is <m>1+x</m>. Then by
-          <xref ref="EGFtothen">Corollary</xref>, if we let the value of an <m>n</m>-tuple of
+          <xref ref="fspeciescorollary1">Corollary</xref>, if we let the value of an <m>n</m>-tuple of
           disjoint singletons and empty sets be the union of the sets in the
           <m>n</m>-tuple, the EGF for the number of <m>n</m>-tuples whose value is <m>[k]</m> is
           <m>(1+x)^n</m>. Thus this is the EGF for <m>k</m>-element permutations of
@@ -624,6 +607,8 @@
             e^{2x}\left(1+\frac{(2x)^2}{2!}+ \frac{(2x)^4}{4!} + \cdots \right) =
             e^{2x}\frac{e^{2x}-e^{-2x}}{2}=e^{2x}\cosh(2x).
           </me>
+          Since <m>\cosh(2x) = \sum_{i=0}^\infty \frac{x^{2i}}{(2i)!}</m> and <m>e^{3x}</m> is <m>\sum_{i=0}^\infty 3^i \frac{x^i}{i!}</m>, we have the the coefficient of <m>x^n</m> is <m>\sum_{i=0}^{\lfloor n/2 \rfloor} \frac{3^{n-2i}}{(n-2i)!}\frac{2^{2i}}{(2i)!}</m>,
+          and so the number of ways to paint <m>n</m> lightpoles is <m>n!</m> times this, which simplifies to <m>\sum_{i=1}^{\lfloor n/2 \rfloor} \binom{n}{2i} 3^{n-2i}2^{2i}</m>.
         </p>
       </solution>
     </activity>
@@ -747,7 +732,7 @@
         of the blocks onto an <m>n</m>-element set, and <m>n!</m> different onto functions
         correspond to the same partition into <m>n</m> blocks. Thus the EGF for
         partitions of an <m>n</m>-element set into <m>k</m> parts (where <m>n</m> is fixed but
-        <m>k</m> varies) is <m>\frac{1}{n!} (e^x -1)^n</m>.
+        <m>k</m> varies) is <m>\frac{1}{n!} (e^x -1)^n</m>.  We could also use <xref ref="fspeciescorollary2" /> directly.
       </p>
     </solution>
   </activity>
