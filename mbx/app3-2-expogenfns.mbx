@@ -3,13 +3,13 @@
   <title>Exponential Generating Functions</title>
   <p>
     We say that the expression <m>\sum_{i=0}^\infty a_i\frac{x^i}{i!}</m> is the
-    <em>exponential generating function</em><idx><h>exponential generating
+    <term>exponential generating function</term><idx><h>exponential generating
     function</h></idx><idx><h>generating function</h><h>exponential</h></idx> for the sequence
-    <m>a_i</m>. It is standard to use <em>EGF</em><idx><h>EGF</h></idx> as a shorthand for
+    <m>a_i</m>. It is standard to use <term>EGF</term><idx><h>EGF</h></idx> as a shorthand for
     exponential generating function. In this context we call the generating
     function
-    <m>\sum_{i=0}^n a_ix^i</m> that we originally studied the <em>ordinary
-    generating function</em><idx><h>generating function</h><h>ordinary</h></idx><idx><h>ordinary
+    <m>\sum_{i=0}^n a_ix^i</m> that we originally studied the <term>ordinary
+    generating function</term><idx><h>generating function</h><h>ordinary</h></idx><idx><h>ordinary
     generating function</h></idx> for the sequence
     <m>a_i</m>. You can see why we use the term exponential generating function
     by thinking about the exponential generating function (EGF) for the all
@@ -25,7 +25,7 @@
     \frac{x^i}{i!}</m>.
   </p>
 
-  <activity category="motivation">
+  <activity xml:id="egf2n" category="motivation">
     <statement>
       <p>
         Find the EGF (exponential generating function) for the sequence
@@ -80,11 +80,11 @@
         integral, and don't worry at this stage whether or not the usual laws of
         calculus apply, just use them as if they do! We will then define
         <m>\ln({ 1-x})</m> to be the power series you
-        get. 
-      </p>
-      <aside>
-          <title>Avoiding Calculus</title>
-        <p>It is possible to define the derivatives
+        get.
+      <fn>
+          <!-- <title>Avoiding Calculus</title> -->
+        <!-- <p> -->
+          It is possible to define the derivatives
         and integrals of power series by the formulas
             <me>
           \frac{d}{dx}
@@ -100,8 +100,9 @@
         a little technicality involving the meaning of composition for power
         series that turns into a technicality involving the chain rule, but it
         needn't concern us at this time.)
-        </p>
-    </aside>
+        <!-- </p> -->
+    </fn>
+  </p>
     </statement>
     <solution>
         <p>
@@ -159,7 +160,7 @@
         What is the EGF <m>\sum_{n=0}^\infty
         p_{2n}\frac{x^{2n}}{(2n)!}</m> for the number of ways <m>p_{2n}</m> to pair up <m>2n</m>
         people to play a total of
-        <m>n</m> tennis matches (as in <xref ref="tennispairings1">Problems</xref> and <xref ref="tennispairings2"></xref>)?
+        <m>n</m> tennis matches (as in <xref ref="tennispairings1">Problems</xref> and <xref ref="tennispairings2" text="global" />)?
       </p>
     </statement>
     <hint>
@@ -252,7 +253,7 @@
     </statement>
     <solution>
       <p>
-        <m>e^x-1</m>.
+        There is one way to partition a set into one block, unless the set is empty, in which case it has no partition into one block. Thus our EGF is <m>e^x-1</m>.
       </p>
     </solution>
   </activity>
@@ -265,7 +266,7 @@
         EGF for the number of ways to arrange <m>k</m>
         books on a fixed number
         <m>n</m> of shelves, assuming that all the books can fit on any one
-        shelf?
+        shelf? (Remember <xref ref="bookcase">Problem</xref>.)
       </p>
     </statement>
     <solution>
