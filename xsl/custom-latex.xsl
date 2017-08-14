@@ -86,6 +86,12 @@
     <xsl:text>\newunicodechar{🍎}{\emojifont{🍎}} % Red apple &#xa;</xsl:text>
     <xsl:text>\newunicodechar{🍐}{{\emojifont{🍐}}} % Pear &#xa;</xsl:text>
     <xsl:text>\newunicodechar{🍌}{{\emojifont{🍌}}} % Banana &#xa;</xsl:text>
+    <xsl:text>% Redefine activity environment to get problem type labels&#xa;</xsl:text>
+    <xsl:text>\usepackage{tabto, pdfcomment}</xsl:text>
+    <xsl:text>\newcommand{\marginsymbol}[2][0]{\tabto*{#1}\makebox[1ex][r]{#2}\tabto*{\TabPrevPos}}</xsl:text>
+    <!-- For fonts and headers: -->
+    <xsl:text>\input{latex-preamble-styles}&#xa;</xsl:text>
+
 </xsl:param>
 <!--  -->
 <!-- Console characters allow customization of how    -->
@@ -137,6 +143,161 @@
 
 
 
+<!-- The following is an attempt at hacking in the category of the project/task.  Eventually this should be removed. -->
+
+<xsl:template name="problem-type">
+  <xsl:choose>
+    <xsl:when test="@category='essential'">
+      <xsl:text>\pdftooltip{$\bullet$}{essential}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='motivation'">
+      <xsl:text>\pdftooltip{$\circ$}{motivational material}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='summary'">
+      <xsl:text>\pdftooltip{\tiny$+$}{summary}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting'">
+      <xsl:text>\pdftooltip{\importantarrow}{especially intersting}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='difficult'">
+      <xsl:text>\pdftooltip{$*$}{difficult}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section'">
+      <xsl:text>\pdftooltip{\Large$\cdot$}{essential for this section or the next}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section, and interesting'">
+      <xsl:text>\pdftooltip{\importantarrow\ {\Large$\cdot$}}{especially interesting and essential for this or the next section}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='important and interesting'">
+      <xsl:text>\pdftooltip{\importantarrow\ $\bullet$}{especially interesting and essential}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting and difficult'">
+      <xsl:text>\pdftooltip{\importantarrow\ $*$}{especially interesting and difficult}</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<!-- Remark Like, Example Like, Project Like -->
+<!-- Simpler than theorems, definitions, etc            -->
+<!-- Information comes from self, so slightly different -->
+<xsl:template match="activity">
+    <xsl:if test="statement or ((self::project or self::activity or self::exploration or self::investigation) and task)">
+        <xsl:apply-templates select="prelude" />
+    </xsl:if>
+    <xsl:text>\begin{</xsl:text>
+        <xsl:value-of select="local-name(.)" />
+    <xsl:text>}</xsl:text>
+    <!-- optional argument to environment -->
+    <!-- TODO: and/or credit              -->
+    <xsl:text>[</xsl:text>
+    <xsl:apply-templates select="." mode="title-full" />
+    <xsl:text>]</xsl:text>
+    <!-- Start added problem type code: -->
+    <xsl:text>\marginsymbol[-1em]{</xsl:text>
+    <xsl:call-template name="problem-type" />
+    <xsl:text>} </xsl:text>
+    <!-- End added problem type code  -->
+    <xsl:apply-templates select="." mode="label"/>
+    <xsl:text>&#xa;</xsl:text>
+    <xsl:choose>
+        <!-- structured versions first      -->
+        <!-- prelude?, introduction?, task+,   -->
+        <!-- conclusion?, postlude? -->
+        <xsl:when test="(self::project or self::activity or self::exploration or self::investigation) and task">
+            <xsl:apply-templates select="introduction"/>
+            <!-- careful right after project heading -->
+            <xsl:if test="not(introduction)">
+                <xsl:call-template name="leave-vertical-mode" />
+            </xsl:if>
+            <xsl:apply-templates select="task"/>
+            <xsl:apply-templates select="conclusion"/>
+        </xsl:when>
+        <!-- Now no project/task possibility -->
+        <!-- prelude?, statement, hint*,   -->
+        <!-- answer*, solution*, postlude? -->
+        <xsl:when test="statement">
+            <xsl:apply-templates select="statement"/>
+            <xsl:apply-templates select="hint"/>
+            <xsl:apply-templates select="answer"/>
+            <xsl:apply-templates select="solution"/>
+        </xsl:when>
+        <!-- Potential common mistake, no content results-->
+        <xsl:when test="prelude|hint|answer|solution|postlude">
+            <xsl:message>MBX:WARNING: a &lt;prelude&gt;, &lt;hint&gt;, &lt;answer&gt;, &lt;solution&gt;, or &lt;postlude&gt; in a remark-like, example-like, or project-like block will need to also be structured with a &lt;statement&gt;.  Content will be missing from output.</xsl:message>
+            <xsl:apply-templates select="." mode="location-report" />
+        </xsl:when>
+        <!-- unstructured, no need to avoid dangerous misunderstandings -->
+        <xsl:otherwise>
+            <xsl:apply-templates select="*"/>
+        </xsl:otherwise>
+    </xsl:choose>
+    <xsl:text>\end{</xsl:text>
+        <xsl:value-of select="local-name(.)" />
+    <xsl:text>}&#xa;</xsl:text>
+    <xsl:if test="statement or ((self::project or self::activity or self::exploration or self::investigation) and task)">
+        <xsl:apply-templates select="postlude" />
+    </xsl:if>
+</xsl:template>
+
+<!-- Task (a part of a project) -->
+<xsl:template match="task">
+    <!-- if first at its level, start the list environment -->
+    <xsl:if test="not(preceding-sibling::task)">
+        <!-- set the label style of this list       -->
+        <!-- using features of the enumitem package -->
+        <xsl:text>\begin{enumerate}[font=\bfseries,label=</xsl:text>
+        <xsl:choose>
+            <!-- three deep -->
+            <xsl:when test="parent::task/parent::task">
+                <xsl:text>(\Alph*),ref=\theenumi.\theenumii.\Alph*</xsl:text>
+            </xsl:when>
+            <!-- two deep -->
+            <xsl:when test="parent::task">
+                <xsl:text>(\roman*),ref=\theenumi.\roman*</xsl:text>
+            </xsl:when>
+            <!-- one deep -->
+            <xsl:otherwise>
+                <xsl:text>(\alph*),ref=\alph*</xsl:text>
+            </xsl:otherwise>
+        </xsl:choose>
+        <xsl:text>]&#xa;</xsl:text>
+    </xsl:if>
+    <!-- always a list item, note space -->
+    <xsl:text>\item</xsl:text>
+    <xsl:apply-templates select="." mode="label" />
+    <xsl:text> </xsl:text>
+    <!-- Start added problem type code: -->
+    <xsl:text>\marginsymbol[-2.5em]{</xsl:text>
+    <xsl:call-template name="problem-type" />
+    <xsl:text>} </xsl:text>
+    <!-- End added problem type code  -->
+    <!-- more structured versions first -->
+    <xsl:choose>
+        <!-- introduction?, task+, conclusion? -->
+        <xsl:when test="task">
+            <xsl:apply-templates select="introduction"/>
+            <xsl:apply-templates select="task"/>
+            <xsl:apply-templates select="conclusion"/>
+        </xsl:when>
+        <!-- statement, hint*, answer*, solution* -->
+        <xsl:when test="statement">
+            <xsl:apply-templates select="statement"/>
+            <xsl:apply-templates select="hint"/>
+            <xsl:apply-templates select="answer"/>
+            <xsl:apply-templates select="solution"/>
+        </xsl:when>
+        <!-- unstructured -->
+        <xsl:otherwise>
+            <xsl:apply-templates />
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- if last at its level, end the list environment -->
+    <xsl:if test="not(following-sibling::task)">
+        <xsl:text>\end{enumerate}&#xa;</xsl:text>
+    </xsl:if>
+</xsl:template>
 
 
 
