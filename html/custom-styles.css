@@ -1,0 +1,46 @@
+/* This is the custom css file for Bogart's Combinatorics through Guided Discovery, mainly to insert problem type symbols */
+
+.essential::before {
+  display: inline!important;
+  content: "\2022";
+}
+
+.motivation::before {
+  display: inline!important;
+  content: "\00b0";
+}
+
+.summary::before {
+  display: inline!important;
+  content: "\002b";
+}
+
+.interesting::before {
+  display: inline!important;
+  content: "\21D2";
+}
+
+.difficult::before {
+  display: inline!important;
+  content: "\002a";
+}
+
+.forward-essential::before{
+  display: inline!important;
+  content: "\22C5";
+}
+
+.interesting-forward-essential::before{
+  display: inline!important;
+  content: "\21D2 \22C5";
+}
+
+.interesting-essential::before{
+  display: inline!important;
+  content: "\21D2 \2022";
+}
+
+.interesting-difficult::before{
+  display: inline!important;
+  content: "\21D2 \002a";
+}

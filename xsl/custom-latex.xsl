@@ -157,7 +157,7 @@
       <xsl:text>\pdftooltip{\tiny$+$}{summary}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='interesting'">
-      <xsl:text>\pdftooltip{\importantarrow}{especially intersting}</xsl:text>
+      <xsl:text>\pdftooltip{\importantarrow}{especially interesting}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='difficult'">
       <xsl:text>\pdftooltip{$*$}{difficult}</xsl:text>
