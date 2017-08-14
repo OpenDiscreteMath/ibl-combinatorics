@@ -301,6 +301,85 @@
 
 
 
+<xsl:template match="exercises/exercise|exercisegroup/exercise">
+    <!-- Start a list right before first exercise of subdivision, or of exercise group -->
+    <xsl:choose>
+        <xsl:when test="not(preceding-sibling::exercise) and parent::exercisegroup">
+            <xsl:text>\begin{exercisegroup}(</xsl:text>
+            <xsl:choose>
+                <xsl:when test="not(../@cols)">
+                    <xsl:text>1</xsl:text>
+                </xsl:when>
+                <xsl:when test="../@cols = 1 or ../@cols = 2 or ../@cols = 3 or ../@cols = 4 or ../@cols = 5 or ../@cols = 6">
+                    <xsl:value-of select="../@cols"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:message terminate="yes">MBX:ERROR: invalid value <xsl:value-of select="../@cols" /> for cols attribute of exercisegroup</xsl:message>
+                </xsl:otherwise>
+            </xsl:choose>
+            <xsl:text>)&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:when test="not(preceding-sibling::exercise) and parent::exercises">
+            <xsl:text>\begin{exerciselist}&#xa;</xsl:text>
+        </xsl:when>
+    </xsl:choose>
+    <xsl:choose>
+        <xsl:when test="parent::exercises">
+            <xsl:text>\item[</xsl:text>
+        </xsl:when>
+        <xsl:when test="parent::exercisegroup">
+            <xsl:text>\exercise[</xsl:text>
+        </xsl:when>
+    </xsl:choose>
+    <xsl:apply-templates select="." mode="serial-number" />
+    <xsl:text>.]</xsl:text>
+    <!-- Start added problem type code: -->
+    <xsl:text>\marginsymbol[-1em]{</xsl:text>
+    <xsl:call-template name="problem-type" />
+    <xsl:text>} </xsl:text>
+    <!-- End added problem type code  -->
+    <xsl:apply-templates select="." mode="label"/>
+    <xsl:if test="title">
+        <xsl:text>(</xsl:text>
+        <xsl:apply-templates select="." mode="title-full"/>
+        <xsl:text>)\space\space{}</xsl:text>
+    </xsl:if>
+    <!-- condition on webwork wrapper or not -->
+    <xsl:choose>
+        <xsl:when test="webwork">
+            <xsl:apply-templates select="introduction" />
+            <xsl:apply-templates select="webwork" />
+            <xsl:apply-templates select="conclusion" />
+        </xsl:when>
+        <xsl:otherwise>
+        <!-- Order enforced: statement, hint, answer, solution -->
+            <xsl:if test="$exercise.text.statement='yes'">
+                <xsl:apply-templates select="statement" />
+                <xsl:if test="not(parent::exercisegroup)">
+                    <xsl:text>\par\smallskip&#xa;</xsl:text>
+                </xsl:if>
+            </xsl:if>
+            <xsl:if test="hint and $exercise.text.hint='yes'">
+                <xsl:apply-templates select="hint" />
+            </xsl:if>
+            <xsl:if test="answer and $exercise.text.answer='yes'">
+                <xsl:apply-templates select="answer" />
+            </xsl:if>
+            <xsl:if test="solution and $exercise.text.solution='yes'">
+                <xsl:apply-templates select="solution" />
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+    <!-- close list if no more exercise in subdivision or in exercise group -->
+    <xsl:choose>
+        <xsl:when test="not(following-sibling::exercise) and parent::exercisegroup">
+            <xsl:text>\end{exercisegroup}&#xa;</xsl:text>
+        </xsl:when>
+        <xsl:when test="not(following-sibling::exercise) and parent::exercises">
+            <xsl:text>\end{exerciselist}&#xa;</xsl:text>
+        </xsl:when>
+    </xsl:choose>
+</xsl:template>
 
 
 </xsl:stylesheet>
