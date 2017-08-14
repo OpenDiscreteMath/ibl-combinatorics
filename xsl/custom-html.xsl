@@ -181,7 +181,7 @@
   </xsl:choose>
 </xsl:template>
 
-<xsl:template match="task" mode="body-css-class">
+<xsl:template match="task or exercise" mode="body-css-class">
   <xsl:choose>
     <xsl:when test="@category='essential'">
       <xsl:text>exercise-like essential</xsl:text>
