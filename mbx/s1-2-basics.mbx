@@ -429,14 +429,14 @@
     <figure xml:id="sumprinc" >
       <caption>The union of these
       two disjoint sets has size 17.</caption>
-      <image width="73%" source="images/SumPrinc" />
+      <image width="50%" source="images/SumPrinc" />
     </figure>
 
     <figure xml:id="prodprinc" >
       <caption>The
       union of four disjoint sets of size
       five.</caption>
-      <image width="73%" source="images/ProdPrinc" />
+      <image width="50%" source="images/ProdPrinc" />
     </figure>
 
     <p>
@@ -956,8 +956,8 @@ many ways can you pair up the next person who isn't already paired up?
         </p>
       </statement>
       <solution>
-          <sidebyside>
-              <image width="50%">
+          <sidebyside width="50%">
+              <image>
                   <latex-image-code>
                       <![CDATA[
               \begin{tikzpicture}[scale=0.85]
@@ -1045,8 +1045,8 @@ many ways can you pair up the next person who isn't already paired up?
           The digraph of one such function follows
         </p>
 
-        <sidebyside>
-          <image width="73%">
+        <sidebyside width="60%">
+          <image>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}[yscale=0.75]
@@ -1430,10 +1430,18 @@ many ways can you pair up the next person who isn't already paired up?
     <table xml:id="Pascalrighttriangle" >
       <caption>Pascal's Right
       Triangle</caption>
-      <tabular>
-        <row>
-          <cell></cell>
-          <cell><m>k=0</m></cell>
+      <tabular halign="right">
+        <col halign="center" right="minor"/>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <row bottom="minor">
+          <cell colspan="2" halign="right"><m>k=0</m></cell>
           <cell>1</cell>
           <cell>2</cell>
           <cell>3</cell>
@@ -1441,17 +1449,6 @@ many ways can you pair up the next person who isn't already paired up?
           <cell>5</cell>
           <cell>6</cell>
           <cell>7</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell><m>n=0</m></cell>
@@ -1561,10 +1558,18 @@ many ways can you pair up the next person who isn't already paired up?
     <table xml:id="Pascal_sRectangle" >
       <caption>Pascal's
       Rectangle</caption>
-      <tabular>
-        <row>
-          <cell></cell>
-          <cell><m>k=0</m></cell>
+      <tabular halign="right">
+        <col halign="center" right="minor"/>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <row bottom="minor">
+          <cell colspan="2" halign="right"><m>k=0</m></cell>
           <cell>1</cell>
           <cell>2</cell>
           <cell>3</cell>
@@ -1572,17 +1577,6 @@ many ways can you pair up the next person who isn't already paired up?
           <cell>5</cell>
           <cell>6</cell>
           <cell>7</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell><m>n=0</m></cell>
