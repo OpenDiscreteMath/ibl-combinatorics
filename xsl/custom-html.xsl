@@ -145,5 +145,77 @@
 
 
 
+<!-- Hack classes to allow for display of problem type markers -->
+<xsl:template match="activity" mode="body-css-class">
+  <xsl:choose>
+    <xsl:when test="@category='essential'">
+      <xsl:text>example-like essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='motivation'">
+      <xsl:text>example-like motivation</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='summary'">
+      <xsl:text>example-like summary</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting'">
+      <xsl:text>example-like interesting</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='difficult'">
+      <xsl:text>example-like difficult</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section'">
+      <xsl:text>example-like forward-essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section, and interesting'">
+      <xsl:text>example-like interesting-forward-essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='important and interesting'">
+      <xsl:text>example-like interesting-essential}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting and difficult'">
+      <xsl:text>example-like interesting-difficult}</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>example-like</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+<xsl:template match="task|exercise" mode="body-css-class">
+  <xsl:choose>
+    <xsl:when test="@category='essential'">
+      <xsl:text>exercise-like essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='motivation'">
+      <xsl:text>exercise-like motivation</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='summary'">
+      <xsl:text>exercise-like summary</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting'">
+      <xsl:text>exercise-like interesting</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='difficult'">
+      <xsl:text>exercise-like difficult</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section'">
+      <xsl:text>exercise-like forward-essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='essential for this or the next section, and interesting'">
+      <xsl:text>exercise-like interesting-forward-essential</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='important and interesting'">
+      <xsl:text>exercise-like interesting-essential}</xsl:text>
+    </xsl:when>
+    <xsl:when test="@category='interesting and difficult'">
+      <xsl:text>exercise-like interesting-difficult}</xsl:text>
+    </xsl:when>
+    <xsl:otherwise>
+      <xsl:text>exercise-like</xsl:text>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+
+
 
 </xsl:stylesheet>
