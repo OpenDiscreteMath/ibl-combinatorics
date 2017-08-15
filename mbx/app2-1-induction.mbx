@@ -15,7 +15,7 @@
     </p>
 
     <activity xml:id="subsetsbysmallestcounterexample">
-      <task>
+      <task xml:id="subsetsbysmallestcounterexample1">
         <statement>
           <p>
             Write down a list of the subsets of <m>\{1, 2 \}</m>.
@@ -29,7 +29,7 @@
           </p>
         </solution>
       </task>
-      <task>
+      <task xml:id="subsetsbysmallestcounterexample2">
         <statement>
           <p>
             Write down a list of the subsets of <m>\{1, 2, 3 \}</m>. Group the sets
@@ -47,8 +47,8 @@
         <statement>
           <p>
             Look for a natural way to match up the subsets containing 2 in
-            Part (a) with those not containing 2. Look for a way to match up
-            the subsets containing 3 in Part (b) containing 3 with those not
+            <xref ref="subsetsbysmallestcounterexample1" text="type-local"/> with those not containing 2. Look for a way to match up
+            the subsets containing 3 in <xref ref="subsetsbysmallestcounterexample2" text="type-local"/> containing 3 with those not
             containing 3.
           </p>
         </statement>
@@ -66,7 +66,7 @@
             On the basis of the previous part, you should be able to find a
             bijection between the collection of subsets of <m>\{1, 2, \ldots , n \}</m>
             containing <m>n</m> and those not containing <m>n</m>. (If you are having difficulty
-            figuring out the bijection, try rethinking Parts (a) and (b), perhaps by
+            figuring out the bijection, try rethinking <xref ref="subsetsbysmallestcounterexample1" text="local">Parts</xref> and <xref ref="subsetsbysmallestcounterexample2" text="local"/>, perhaps by
             doing a similar exercise with the set <m>\{1,2,3,4\}</m>.) Describe the
             bijection (unless you are very familiar with the notation of sets, it is
             probably easier to describe to describe the function in words rather than
@@ -89,10 +89,10 @@
       <task>
         <statement>
         <p>
-          Parts (a) and (b) suggest
+          <xref ref="subsetsbysmallestcounterexample1" text="local">Parts</xref> and <xref ref="subsetsbysmallestcounterexample2" text="local"/> suggest
           strongly that the number of subsets of a <m>n</m>-element set is <m>2^n</m>. In
           particular, the empty set has <m>2^0</m> subsets, a one-element set has <m>2^1</m>
-          subsets, itself and the empty set, and in Parts a and b we saw that
+          subsets, itself and the empty set, and in <xref ref="subsetsbysmallestcounterexample1" text="local">Parts</xref> and <xref ref="subsetsbysmallestcounterexample2" text="local"/> we saw that
           two-element and three-element sets have <m>2^2</m> and <m>2^3</m> subsets
           respectively. So there are certainly some values of <m>n</m> for which an
           <m>n</m>-element set has <m>2^n</m> subsets. One way to prove that an <m>n</m>-element
@@ -175,11 +175,11 @@
     </activity>
 
     <p>
-      In <xref ref="subsetsbysmallestcounterexample">Problems</xref> and <xref ref="sumodd"></xref> our
+      In <xref ref="subsetsbysmallestcounterexample">Problems</xref> and <xref ref="sumodd" text="global" /> our
       proofs had several distinct elements. We had a statement involving an
       integer <m>n</m>. We knew the statement was true for the first few
       nonnegative integers in <xref ref="subsetsbysmallestcounterexample">Problem</xref> and
-      for the first few positive integers in <xref ref="sumodd">problem</xref>. We wanted
+      for the first few positive integers in <xref ref="sumodd">Problem</xref>. We wanted
       to prove that the statement was true for all nonnegative integers in
       <xref ref="subsetsbysmallestcounterexample">Problem</xref> and for all positive
       integers in <xref ref="sumodd">Problem</xref>. In both cases we used the method of
