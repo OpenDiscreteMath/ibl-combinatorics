@@ -116,9 +116,9 @@
       particular, in <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish" text="global"></xref>, and <xref ref="roundtablefour" text="global"></xref> you drew the directed graph for this
       relation of equivalence. Technically, you should have had an
       arrow from each vertex (list) to itself. This is what we mean
-      when we say a relation is <em>reflexive</em>. Whenever you had an
+      when we say a relation is <term>reflexive</term>. Whenever you had an
       arrow from one vertex to a second, you had an arrow back to the
-      first. This is what we mean when we say a relation is <em>symmetric</em>.
+      first. This is what we mean when we say a relation is <term>symmetric</term>.
     </p>
 
     <p>
@@ -142,7 +142,7 @@
       <m>L_1</m> to
       <m>L_2</m> and an arrow from
       <m>L_2</m> to <m>L_3</m>, then there was an arrow from <m>L_1</m> to <m>L_3</m>.
-      This is what we mean when we say a relation is <em>transitive</em>. You also undoubtedly noticed how the directed
+      This is what we mean when we say a relation is <term>transitive</term>. You also undoubtedly noticed how the directed
       graph divides up into clumps of mutually connected vertices.
       This is what equivalence relations are all about. Let's be a
       bit more precise in our description of what it means for a
@@ -151,7 +151,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <idx><h>reflexive</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>reflexive</em>  if <m>(x,x)\in
+            <idx><h>reflexive</h></idx><idx><h>relation</h><h>reflexive</h></idx><term>reflexive</term>  if <m>(x,x)\in
             R</m> for every
             <m>x\in X</m>.
           </p>
@@ -160,7 +160,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <idx><h>symmetric</h></idx><idx><h>relation</h><h>reflexive</h></idx><em>symmetric</em> if <m>(x,y)</m> is
+            <idx><h>symmetric</h></idx><idx><h>relation</h><h>reflexive</h></idx><term>symmetric</term> if <m>(x,y)</m> is
             in
             <m>R</m> whenever
             <m>(y,x)</m> is in <m>R</m>.
@@ -170,7 +170,7 @@
         <li>
           <p>
             If <m>R</m> is a relation on a set <m>X</m>, we say <m>R</m> is
-            <idx><h>transitive</h></idx><idx><h>relation</h><h>transitive</h></idx><em>transitive</em> if
+            <idx><h>transitive</h></idx><idx><h>relation</h><h>transitive</h></idx><term>transitive</term> if
             whenever
             <m>(x,y)</m> is in
             <m>R</m> and
@@ -183,7 +183,7 @@
     </p>
 
     <p>
-      Each of the relations of equivalence you worked with in 
+      Each of the relations of equivalence you worked with in
       <xref ref="fourchoosethree">Problems</xref>, <xref ref="icecreaminadish" text="global"></xref> and <xref ref="roundtablefour" text="global"></xref> had these three properties. Can you
       visualize the same three properties in the relations of
       equivalence that you would use in <xref ref="twelvechoosethree">Problems</xref>, <xref ref="roundtable" text="global"></xref>, and <xref ref="formulanchoosek" text="global"></xref>? We call a relation an <term>equivalence
@@ -293,8 +293,8 @@
             we write <m>a
             \equiv b \pmod{n}</m> to mean that <m>a-b</m> is an integer multiple
             of <m>n</m>, and in this case, we say that <m>a</m> is <idx><h>congruence
-            modulo <m>n</m></h></idx><em>congruent to
-            <m>b</m> modulo <m>n</m></em> and write <m>a\equiv b \pmod{n}</m>.. Show that the
+            modulo <m>n</m></h></idx><term>congruent to
+            <m>b</m> modulo <m>n</m></term> and write <m>a\equiv b \pmod{n}</m>.. Show that the
             relation of congruence modulo
             <m>n</m> is an equivalence relation.
           </p>
@@ -303,7 +303,7 @@
           <p>
             <m>a-a=0=0\cdot n</m>, so <m>a\equiv a\pmod{n}</m>. Thus the
             relation is reflexive. If <m>a-b=kn</m> for some integer <m>k</m>, then
-            <m>b-a=-kn</m>, and -k is an integer, so if <m>a\equiv b \pmod{n}</m>, then
+            <m>b-a=-kn</m>, and <m>-k</m> is an integer, so if <m>a\equiv b \pmod{n}</m>, then
             <m>b\equiv a \pmod{n}</m>. If <m>a-b=kn</m> and <m>b-c= jn</m>, then
             <m>a-b+b-c=kn+jn</m>, so <m>a-c=(k+j)n</m> and since <m>k+j</m> is an integer
             this means that <m>a\equiv c\pmod{n}</m>. Therefore the relation of
@@ -384,12 +384,12 @@
 
     <p>
       In <xref ref="equivalenceclasses">Problem</xref> the sets <m>C_x</m> are called
-      <idx><h>equivalence class</h></idx><em>equivalence classes</em> of the equivalence
+      <idx><h>equivalence class</h></idx><term>equivalence classes</term> of the equivalence
       relation
       <m>R</m>. You have just proved that if
       <m>R</m> is an equivalence relation of the set <m>X</m>, then each
       element of <m>X</m> is in exactly one equivalence class of <m>R</m>.
-      Recall that a <idx><h>partition (of a set)</h></idx><em>partition</em> of a set
+      Recall that a <idx><h>partition (of a set)</h></idx><term>partition</term> of a set
       <m>X</m> is a set of disjoint sets whose union is <m>X</m>. For example,
       <m>\{1,3\}</m>,
       <m>\{2,4,6\}</m>, <m>\{5\}</m> is a partition of the set
@@ -411,7 +411,7 @@
       Since a partition of
       <m>S</m> is a set of subsets of <m>S</m>, it is common to call the
       subsets into which we partition <m>S</m> the <idx><h>block of a
-      partition</h></idx><em>blocks</em> of the partition so that we don't find ourselves
+      partition</h></idx><term>blocks</term> of the partition so that we don't find ourselves
       in the uncomfortable position of referring to a set and not being
       sure whether it is the set being partitioned or one of the
       blocks of the partition.
@@ -607,7 +607,7 @@
           <p>
             Two lists are equivalent if I can get one from the other
             by some combination of cyclic shifts and reversals. Applying a cyclic
-            shift on the list <m>a_1,a_2,\ldots,a_{n-1},a_n</m> gives either <m>a_n,a_1,a_2,\ldots ,a_{n-1}</m> or 
+            shift on the list <m>a_1,a_2,\ldots,a_{n-1},a_n</m> gives either <m>a_n,a_1,a_2,\ldots ,a_{n-1}</m> or
             <m>a_2,\ldots,a_{n-1},a_n,a_1</m>. There are <m>n</m> possible results of
             repeated cyclic shifts, and each of them may be reversed to give a
             new list if <m>n\ge 3</m>. Further, these are the only lists we can
@@ -651,10 +651,10 @@
 
     <p>
       In <xref ref="EquivPrincipleProblem">Problem</xref> you proved our next
-      theorem. In Chapter 1 (<xref ref="quotientprinciple">Problem</xref>) we
+      theorem. In <xref ref="what-is" /> (<xref ref="quotientprinciple">Problem</xref>) we
       discovered and stated this theorem in the context of partitions
       and called it the
-      <idx><h>quotient principle</h></idx><idx><h>principle</h><h>quotient</h></idx><em>Quotient Principle</em>
+      <idx><h>quotient principle</h></idx><idx><h>principle</h><h>quotient</h></idx><term>Quotient Principle</term>
     </p>
 
     <theorem>

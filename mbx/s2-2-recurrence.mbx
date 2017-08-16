@@ -60,8 +60,8 @@
 
     <p>
       <xref ref="subsetequation">Equations</xref> and <xref ref="bijectionequation"></xref> are examples
-      of <em>recurrence equations</em> or <em>recurrence relations</em>. A <em>recurrence relation</em><idx><h>relation</h><h>recurrence</h></idx><idx><h>recurrence
-      relation</h></idx> or simply a <em>recurrence</em><idx><h>recurrence</h></idx> is an equation
+      of <term>recurrence equations</term> or <term>recurrence relations</term>. A <term>recurrence relation</term><idx><h>relation</h><h>recurrence</h></idx><idx><h>recurrence
+      relation</h></idx> or simply a <term>recurrence</term><idx><h>recurrence</h></idx> is an equation
       that expresses the <m>n</m>th term of a sequence <m>a_n</m> in terms of values of
       <m>a_i</m> for <m>i\lt n</m>. Thus <xref ref="subsetequation">Equations</xref> and <xref ref="bijectionequation"></xref> are examples of recurrences.
     </p>
@@ -90,7 +90,7 @@
     </p>
 
     <p>
-      A <em>solution</em><idx><h>recurrence</h><h>solution to</h></idx> to a recurrence relation is a
+      A <term>solution</term><idx><h>recurrence</h><h>solution to</h></idx> to a recurrence relation is a
       sequence that satisfies the recurrence relation. Thus a solution to
       <xref ref="subsetequation">Recurrence</xref> is <m>s_n =2^n</m>. Note that
       <m>s_n=17\cdot2^n</m> and
@@ -313,7 +313,7 @@
         <statement>
           <p>
             A sequence that satisfies a recurrence of the form <m>a_n=a_{n-1} +c</m>
-            is called an <em>arithmetic progression</em><idx><h>arithmetic
+            is called an <term>arithmetic progression</term><idx><h>arithmetic
             progression</h></idx><idx><h>progression</h><h>arithmetic</h></idx>. Find a formula in terms of
             the initial value
             <m>a_0</m> and the common difference <m>c</m> for the term
@@ -356,8 +356,8 @@
       <activity>
         <statement>
           <p>
-            An <em>arithmetic
-            series</em><idx><h>series</h><h>arithmetic</h></idx><idx><h>arithmetic series</h></idx> is a sequence
+            An <term>arithmetic
+            series</term><idx><h>series</h><h>arithmetic</h></idx><idx><h>arithmetic series</h></idx> is a sequence
             <m>s_n</m> equal to the sum of the terms
             <m>a_0</m> through
             <m>a_n</m> of of an arithmetic progression. Find a recurrence for the sum
@@ -381,17 +381,17 @@
     <p>
       Recurrences such as those in
       <xref ref="subsetequation">Equations</xref> through <xref ref="secondorderlinear"></xref> are called
-      <em>linear recurrences</em>, as are the recurrences of <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref>. A <em>linear recurrence</em><idx><h>recurrence</h><h>linear</h></idx><idx><h>linear
+      <term>linear recurrences</term>, as are the recurrences of <xref ref="HanoiProblem">Problems</xref> and <xref ref="circlesinplane"></xref>. A <term>linear recurrence</term><idx><h>recurrence</h><h>linear</h></idx><idx><h>linear
       recurrence</h></idx> is one in which <m>a_n</m> is expressed as a sum of functions of
       <m>n</m> times values of (some of the terms) <m>a_i</m> for <m>i\lt n</m> plus (perhaps)
-      another function (called the <em>driving function</em><idx><h>driving
+      another function (called the <term>driving function</term><idx><h>driving
       function</h></idx><idx><h>function</h><h>driving</h></idx>) of
-      <m>n</m>. A linear equation is called <em>homogeneous</em><idx><h>homogeneous
+      <m>n</m>. A linear equation is called <term>homogeneous</term><idx><h>homogeneous
       linear recurrence</h></idx><idx><h>linear
       recurrence</h><h>homogeneous</h></idx><idx><h>recurrence</h><h>linear homogeneous</h></idx> if the
       driving function is zero (or, in other words, there is no driving
-      function). It is called a <em>constant coefficient linear
-      recurrence</em><idx><h>linear recurrence</h><h>constant coefficient</h></idx><idx><h>constant
+      function). It is called a <term>constant coefficient linear
+      recurrence</term><idx><h>linear recurrence</h><h>constant coefficient</h></idx><idx><h>constant
       coefficient linear recurrence</h></idx> if the functions that are multiplied by the
       <m>a_i</m> terms are all constants (but the driving function need not
       be constant).
@@ -502,15 +502,15 @@
     <title>Geometric Series</title>
     <p>
       A sequence that satisfies a recurrence of the form <m>a_n=ba_{n-1}</m> is
-      called a <em>geometric progression</em><idx><h>geometric
+      called a <term>geometric progression</term><idx><h>geometric
       progression</h></idx><idx><h>progression</h><h>geometric</h></idx>. Thus the sequence satisfying
       <xref ref="subsetequation">Equation</xref>, the recurrence for the number of subsets of an
       <m>n</m>-element set, is an example of a geometric progression. From your
       solution to <xref ref="firstordlinconst">Problem</xref>, a geometric progression has
       the form <m>a_n=a_0b^n</m>. In your solution to <xref ref="firstordlinconst">Problem</xref> you may have had to deal with the sum of a
       geometric progression in just slightly different notation, namely
-      <m>\sum_{i=0}^{n-1}db^i</m>. A sum of this form is called a <em>(finite)
-      geometric series</em>.<idx><h>geometric series</h></idx><idx><h>series</h><h>geometric</h></idx>
+      <m>\sum_{i=0}^{n-1}db^i</m>. A sum of this form is called a <term>(finite)
+      geometric series</term>.<idx><h>geometric series</h></idx><idx><h>series</h><h>geometric</h></idx>
     </p>
 
     <activity xml:id="sumgeometricseries">
