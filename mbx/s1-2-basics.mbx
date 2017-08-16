@@ -2198,6 +2198,12 @@ many ways can you pair up the next person who isn't already paired up?
           A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
             </p>
         </hint>
+        <solution>
+          <p>
+            The number of permutations in a block is <m>k!</m>.
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2207,6 +2213,12 @@ many ways can you pair up the next person who isn't already paired up?
               the total number of <m>k</m>-element permutations of <m>S</m>?
            </p>
           </statement>
+          <solution>
+            <p>
+              <xref ref="kelementpermutation">problem</xref> tell us that the total number of <m>k</m>-element permutations is <m>n^{\underline{k}} = \frac{n!}{(n-k)!}</m>
+            </p>
+          </solution>
+
         </task>
         <task>
           <statement>
@@ -2216,6 +2228,13 @@ many ways can you pair up the next person who isn't already paired up?
               <m>k</m>-element subsets of <m>S</m>.
           </p>
         </statement>
+        <statement>
+          <p>
+            Each <m>k</m>-element set corresponds to the block of all permutations of
+            that set. It is immediate that this is a bijection.
+          </p>
+        </statement>
+
         <hint>
             <p>
           What sets are listed, and how many times is each one listed if you take one list from each row of <xref ref="tab_permsof3" />? How does this choice of lists give you the bijection in this special case?
@@ -2236,12 +2255,7 @@ many ways can you pair up the next person who isn't already paired up?
         </hint>
       <solution>
         <p>
-          The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
-          <m>k</m>-element permutations is <m>n^\frac{\underline{k}}={n!}{ (n-k)!}</m>.
-          Each <m>k</m>-element set corresponds to the block of all permutations of
-          that set. It is immediate that this is a bijection. Assuming there
-          are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so
-          <m>k!s=\frac{n!}{(n-k)!}</m> or <m>s= \frac{n!}{k!(n-k)!}</m>.
+          Assuming there are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so <m>k!s=\frac{n!}{(n-k)!}</m> or <m>s= \frac{n!}{k!(n-k)!}</m>.
         </p>
       </solution>
         </task>
@@ -2258,6 +2272,12 @@ many ways can you pair up the next person who isn't already paired up?
             In how may ways may the coach choose the five players?
           </p>
         </statement>
+        <solution>
+          <p>
+            <m>\binom{12}{5}.</m>
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2274,6 +2294,13 @@ many ways can you pair up the next person who isn't already paired up?
           The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
             </p>
         </hint>
+        <solution>
+          <p>
+            In the more realistic version,
+            <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>.
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2287,10 +2314,7 @@ many ways can you pair up the next person who isn't already paired up?
         </hint>
       <solution>
         <p>
-          <m>\binom{12}{5}</m>. In the more realistic version,
-          <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>. Finally, either the versatile
-          player is playing center or not, and in the second case is available to play
-          forward. This gives us
+          Either the versatile player is playing center or not, and in the second case is available to play forward. This gives us
           <m>\binom{5}{2}\binom{4}{2} \binom{1}{1}+\binom{5}{2}\binom{5}{2}\binom{2}{1}=260</m> ways
           to choose the players.
         </p>
@@ -2323,10 +2347,9 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="quotientprinciple" category="essential">
       <statement>
         <p>
-          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
-          have been using the product principle in a new way. One of the ways in which
-          we previously stated the product principle was <q>If we partition a set into
-          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">problems</xref> and <xref ref="roundtablepartition"></xref> we knew the size <m>p</m> of a
+          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition" text="global" />, you have been using the product principle in a new way.
+          One of the ways in which we previously stated the product principle was <q>If we partition a set into
+          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition" text="global" /> we knew the size <m>p</m> of a
           set
           <m>P</m> of permutations of a set, and we knew we had partitioned <m>P</m> into some
           unknown number of blocks, each of a certain known size <m>r</m>. If we let
@@ -2380,7 +2403,7 @@ many ways can you pair up the next person who isn't already paired up?
         <p>
           In how many ways may we string <m>n</m> distinct beads on a necklace
           without a clasp? (Perhaps we make the necklace by stringing the beads
-          on a strong, and then carefully gluing the two ends of the string
+          on a string, and then carefully gluing the two ends of the string
           together so that the joint can't be seen. Assume someone can pick up the necklace,
           move it around in space and put it back down, giving an
           apparently different way of stringing the beads that is
@@ -2415,19 +2438,15 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="tennispairings2" category="interesting">
         <introduction>
             <p>
-        We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
-        tennis club has
-        <m>2n</m> members. We want to pair up the members by twos for singles matches.
+        We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A tennis club has <m>2n</m> members. We want to pair up the members by twos for singles matches.
             </p>
         </introduction>
       <task>
         <statement>
           <p>
             In how many ways may we pair up all the members of the club?
-              Give at least two solutions different from the one you gave in
-              <xref ref="tennispairings1a">Problem</xref>. (You may not have done
-              <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
-              three solutions.)
+            Give at least two solutions different from the one you gave in   <xref ref="tennispairings1a">Problem</xref>.
+            (You may not have done <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find three solutions.)
           </p>
         </statement>
         <hint>
@@ -2435,8 +2454,27 @@ many ways can you pair up the next person who isn't already paired up?
                 You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
             </p>
         </hint>
+        <solution>
+          <p>
+            <p>
+              Choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair, <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair.
+              The number of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1} \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>.
+              However each way of pairing people gets listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
+              Therefore the number of actual pairings is <me>\frac{(2n)!}{2^n n!} = \frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1.</me>
+              Notice how this combinatorial solution gives the formula that we found algebraically in <xref ref="tennispairings1a">Problem</xref>, which then turns out to be algebraically equivalent to the formula we first saw in the solution to <xref ref="tennispairings1a">Problem</xref>.
+            </p>
+
+            <p>
+              For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
+              we can take the first two as a tennis pair, the next two, and so on. There
+              are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
+              each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings partition the set of all permutations of the <m>2n</m> members into blocks of size <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
+            </p>
+          </p>
+        </solution>
       </task>
-        <task>
+
+      <task>
           <statement>
           <p>
             Suppose that in addition to specifying who plays whom, for each
@@ -2449,38 +2487,15 @@ many ways can you pair up the next person who isn't already paired up?
        </hint>
       <solution>
         <p>
-          Suppose we list the people in the club in some way, and keep that
-          list for the remainder of the problem. Take the first person from the list
-          and pair that person with any of the <m>2n-1</m> remaining people. Now take the
-          next <em>unpaired</em> person from the list and pair that person with any of the
-          remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
-          been selected, take the next unpaired person from the list and pair that
-          person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
-          can arise in this way, and no pairing can arise twice in this process. Thus
-          the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
+          Choose people in ordered piars.  The first person in an ordered pair serves first.  There are <m>2n(2n-1)</m> ways to choose one pair, <m>(2n-2)(2n-3)</m> ways to choose a second pair, and once <m>k</m> pairs have been chosen, there are <m>(2n-2k)(2n-2k-1)</m> ways to choose the next pair.  The number of <em>lists</em> o pairs we get in this way is <m>\prod_{i=0}^{n-1} (2n-2i)(2n-2i-1) = (2n)!</m>.
+          However, each way of pairing people gets listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.  Therefore the number of actual pairings is <m>\frac{(2n)!}{n!} = (2n)^{\underline{n}}</m>.
         </p>
 
         <p>
-          For another solution,
-          choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair,
-          <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been
-          chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair. The number
-          of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
-          \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>. However each way of pairing people gets
-          listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
-          Therefore the number of actual pairings is <m>\frac{(2n)!}{2^n n!}= = \frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
-        </p>
-
-        <p>
-          For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
-          we can take the first two as a tennis pair, the next two, and so on. There
-          are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
-          each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings
-          partition the set of all permutations of the <m>2n</m> members into blocks of size
-          <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
+          For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then we can take the first two as a tennis pair, with the first person serving first, the next two, and so on. There are <m>n!</m> ways that a given set of tennis pairings could be arranged, so the tennis pairings partition the set of all permutations of the <m>2n</m> members into blocks of size <m>n!</m>. Thus we have <m>\frac{(2n)!}{n!}</m> tennis pairings once again.
         </p>
       </solution>
-        </task>
+    </task>
     </activity>
 
 <!-- Activity 45 -->
