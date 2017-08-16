@@ -1,4 +1,6 @@
-<section>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="s3-2-partitions" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Partitions and Stirling Numbers</title>
   <introduction>
     <p>We have seen how the number of partitions of a set of <m>k</m> objects into <m>n</m> blocks corresponds to the distribution of <m>k</m> distinct objects to <m>n</m> identical recipients. While there is a formula that we shall eventually learn for this number, it requires more machinery than we now have available. However there is a good method for computing this number that is similar to Pascal's equation. Now that we have studied recurrences in one variable, we will point out that Pascal's equation is in fact a <em>recurrence in two variables</em><idx><h>recurrence</h><h>two variable</h></idx>; that is it lets us compute <m>\binom{n}{k}</m> in terms of values of <m>\binom{m}{i}</m> in which either <m>m\lt n</m> or <m>i\lt k</m> or both. It was the fact that we had such a recurrence and knew <m>\binom{n}{0}</m> and <m>\binom{n}{n}</m> that let us create Pascal's triangle.
