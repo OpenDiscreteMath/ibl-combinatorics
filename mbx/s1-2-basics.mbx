@@ -1087,19 +1087,37 @@ many ways can you pair up the next person who isn't already paired up?
             </p>
         </introduction>
       <task>
+        <statement>
           <p>
             What does the digraph of a one-to-one function (injection) from
               a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
               somewhat similar to the one we described for when a digraph is the
               digraph of a function.)
           </p>
-        </task>
-        <task>
+          </statement>
+          <hint>
+            <p>For each part of this problem, think about how many arrows are allowed to
+              enter a vertex representing a member of <m>Y</m>.</p>
+            </hint>
+        <solution>
           <p>
+            A function from <m>X</m> to <m>Y</m> is one-to-one if, in its digraph, at most one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
+          </p>
+        </solution>
+      </task>
+
+        <task>
+          <statement><p>
             What does the digraph of an onto function
               look like?
-          </p>
+          </p></statement>
         </task>
+        <solution>
+          <p>
+            A function is onto if, in its digraph, at least one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
+          </p>
+        </solution>
+
         <task xml:id="bijectiondigraph" >
             <statement>
                 <p>
@@ -1108,24 +1126,11 @@ many ways can you pair up the next person who isn't already paired up?
               like?
                 </p>
             </statement>
-        <hint>
-            <p>For each part of this problem, think about how many arrows are allowed to
-          enter a vertex representing a member of <m>Y</m>.</p>
-        </hint>
-      <solution>
-        <p>
-          One-to-one: One arrow comes out of each vertex representing a member
-          of
-          <m>X</m> and at most one arrow goes into each vertex representing a member of <m>Y</m>.
-          Onto: : One arrow comes out of each vertex representing a
-          member of <m>X</m> and at least one arrow goes into each vertex representing a
-          member of
-          <m>Y</m>. One-to-one and onto: One arrow comes out of each vertex representing a
-          member of
-          <m>X</m> and at exactly one arrow goes into each vertex representing a member of <m>Y</m>.
-          (The first half of each sentence is optional.)
-        </p>
-      </solution>
+        <solution>
+          <p>
+            A function from <m>X</m> to <m>Y</m> is one-to-one and onto if, in its digraph, exactly one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
+          </p>
+        </solution>
         </task>
   </activity>
 
@@ -1141,7 +1146,7 @@ many ways can you pair up the next person who isn't already paired up?
       </statement>
       <solution>
         <p>
-          <m>n!</m>.
+          <m>n!</m>, by the general product principle.
         </p>
       </solution>
     </activity>
