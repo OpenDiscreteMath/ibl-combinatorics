@@ -1110,13 +1110,14 @@ The figure needs to have part (e) added to it.
             What does the digraph of an onto function
               look like?
           </p></statement>
-        </task>
+
         <solution>
           <p>
             A function is onto if, in its digraph, at least one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
           </p>
         </solution>
-
+        </task>
+        
         <task xml:id="bijectiondigraph" >
             <statement>
                 <p>
@@ -2227,18 +2228,18 @@ The figure needs to have part (e) added to it.
               <m>k</m>-element subsets of <m>S</m>.
           </p>
         </statement>
-        <statement>
-          <p>
-            Each <m>k</m>-element set corresponds to the block of all permutations of
-            that set. It is immediate that this is a bijection.
-          </p>
-        </statement>
-
         <hint>
             <p>
           What sets are listed, and how many times is each one listed if you take one list from each row of <xref ref="tab_permsof3" />? How does this choice of lists give you the bijection in this special case?
             </p>
         </hint>
+        <solution>
+            <p>
+            Each <m>k</m>-element set corresponds to the block of all permutations of
+            that set. It is immediate that this is a bijection.
+          </p>
+        </solution>
+
         </task>
         <task xml:id="formulanchoosekfinal" >
           <statement>
@@ -2454,7 +2455,6 @@ The figure needs to have part (e) added to it.
             </p>
         </hint>
         <solution>
-          <p>
             <p>
               Choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair, <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair.
               The number of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1} \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>.
@@ -2469,7 +2469,6 @@ The figure needs to have part (e) added to it.
               are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
               each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings partition the set of all permutations of the <m>2n</m> members into blocks of size <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
             </p>
-          </p>
         </solution>
       </task>
 
