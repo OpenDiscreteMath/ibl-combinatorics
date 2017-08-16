@@ -2527,21 +2527,11 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="Stirling_sapproximation" category="interesting">
       <statement>
         <p>
-          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
-          it doesn't give us a sense of how big the binomial coefficients are. We can
-          get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by
-          recognizing that we can write <m>(2n)^\frac{\underline{n}}/n!</m> as <m>{2n}{n}\cdot
-          \frac{2n-1}{n-1}\cdots \frac{n+1}{1}</m>, and each quotient is at least <m>2</m>, so the
-          product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
-          the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
-          about
-          <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
-          However it is pretty clear the approximation will not be a very good one,
-          because some of the terms in that product are much larger than 2. In fact,
-          if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction
-          <m>\frac{1}{2n+1}</m> of <m>2^{2n}</m>. This is much larger than the fraction
-          <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
-          much larger than <m>\binom{2n}{1}</m> and is likely larger than
+          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal" text="global" /> is very useful,
+          it doesn't give us a sense of how big the binomial coefficients are. We can get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by recognizing that we can write <m>(2n)^\frac{\underline{n}}/n!</m> as <m>{2n}{n}\cdot
+          \frac{2n-1}{n-1}\cdots \frac{n+1}{1}</m>, and each quotient is at least <m>2</m>, so the product is at least <m>2^n</m>. If this were an accurate estimate, it would mean the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be about         <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
+          However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction <m>\frac{1}{2n+1}</m> of <m>2^{2n}</m>.
+          This is much larger than the fraction <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is much larger than <m>\binom{2n}{1}</m> and is likely larger than
           <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
           this, James Stirling developed a formula to approximate
           <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
