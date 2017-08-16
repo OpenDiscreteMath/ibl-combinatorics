@@ -26,22 +26,22 @@
         </p>
         </solution>
     </exercise>
-    <exercise xml:id="GreyCode" category="essential for this or the next section">
+    <exercise xml:id="GrayCode" category="essential for this or the next section">
         <statement>
             <p>
-                Write down a list of all 16 zero-one sequences of length four starting with 0000 in such a way that each entry differs from the precious one by changing just one digit.  This is called a Grey Code.<idx><h>Grey Code</h></idx> That is, a <term>Grey Code</term> for 0-1 sequences of length <m>n</m> is a list of the sequences so that each entry differs from the previous one in exactly one place.  Can you describe how to get a Grey Code for 0-1 sequences of length five from the one you found for sequences of length 4?  Can you describe how to prove that there is a Grey code for sequences of length <m>n</m>?
+                Write down a list of all 16 zero-one sequences of length four starting with 0000 in such a way that each entry differs from the precious one by changing just one digit.  This is called a Gray Code.<idx><h>Gray Code</h></idx> That is, a <term>Gray Code</term> for 0-1 sequences of length <m>n</m> is a list of the sequences so that each entry differs from the previous one in exactly one place.  Can you describe how to get a Gray Code for 0-1 sequences of length five from the one you found for sequences of length 4?  Can you describe how to prove that there is a Gray code for sequences of length <m>n</m>?
             </p>
         </statement>
         <solution>
             <p>
-                (One of many) 0000, 0001, 0011, 0010, 0110, 0111, 0101, 0100, 1100, 1101, 1111, 1110, 1010, 1011, 1001, 1000. To get a code for sequences of length 5, put a zero at the end of each of the sequences we have. Follow that revised sequence by 10001, and write the remainder of the sequence in reverse order with a 1 at the end of each term. (Don't reverse the individual length four sequences, just the sequence of sequences!) If we do this with a Gray code for sequences of length <m>n</m>, we get a Gray code for sequences of any length we wish. In the terminology of <xref ref="InductionRecursion" />, we just described the inductive step of an inductive proof that Grey codes exist for sequences of any length.
+                (One of many) 0000, 0001, 0011, 0010, 0110, 0111, 0101, 0100, 1100, 1101, 1111, 1110, 1010, 1011, 1001, 1000. To get a code for sequences of length 5, put a zero at the end of each of the sequences we have. Follow that revised sequence by 10001, and write the remainder of the sequence in reverse order with a 1 at the end of each term. (Don't reverse the individual length four sequences, just the sequence of sequences!) If we do this with a Gray code for sequences of length <m>n</m>, we get a Gray code for sequences of any length we wish. In the terminology of <xref ref="InductionRecursion" />, we just described the inductive step of an inductive proof that Gray codes exist for sequences of any length.
         </p>
         </solution>
     </exercise>
     <exercise category="interesting">
         <statement>
             <p>
-        Use the idea of a Gray code from <xref ref="GreyCode">Problem</xref> to prove
+        Use the idea of a Gray code from <xref ref="GrayCode">Problem</xref> to prove
         bijectively that the number of even-sized subsets of an <m>n</m>-element set
         equals the number of odd-sized subsets of an <m>n</m>-element set.
             </p>
