@@ -631,7 +631,7 @@
 
 <!-- 6.1.4 -->
   <subsection>
-    <title>The dihedral group</title>
+    <title>The dihedral group</title><idx><h>dihedral group</h></idx>
     <p>
       We found four permutations that correspond to rotations of the square.
       In <xref ref="dihedral1">Problem</xref> you found four permutations that correspond to
@@ -1284,8 +1284,7 @@
       <m>\sigma =\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
 \end{pmatrix}</m>.</p>
 <p>We can describe cycles in another way
-      as well. A <term>cycle</term><idx><h>cycle of a
-      permutation</h></idx><idx><h>permutation</h><h>cycle of</h></idx> of the permutation
+      as well. A <term>cycle</term> of the permutation
       <m>\sigma</m> is a list
       <m>(i\
       \sigma(i)\
@@ -1322,13 +1321,13 @@
 
 
     <p>
-      We say <m>\sigma^j(i)</m> is an <term>element</term> of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m>.  Notice that the case <m>j=0</m> means <m>i</m> is an element of the cycle.  Notice also that if <m>j\gt n</m>, <m>\sigma^j(i) = \sigma^{j-n-1}(i)</m>, so the distinct elements of the cycle are <m>i</m>, <m>\sigma(i)</m>, <m>\sigma^2(i)</m>, through <m>\sigma^n(i)</m>.
+      We say <m>\sigma^j(i)</m> is an <term>element</term> <idx><h>cycle (of a permutation)</h><h>element of</h></idx>of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m>.  Notice that the case <m>j=0</m> means <m>i</m> is an element of the cycle.  Notice also that if <m>j\gt n</m>, <m>\sigma^j(i) = \sigma^{j-n-1}(i)</m>, so the distinct elements of the cycle are <m>i</m>, <m>\sigma(i)</m>, <m>\sigma^2(i)</m>, through <m>\sigma^n(i)</m>.
       We think of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m> as representing the permutation <m>\sigma</m> restricted to the set of elements of the cycle.
       We say that the cycles <m>(i\
       \sigma(i)\
       \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\
       \sigma(j)\
-      \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <term>equivalent</term> if there is an
+      \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <term>equivalent</term> <idx><h>cycle (of a permutation)</h><h>equivalent</h></idx><idx><h>equivalent cycle</h></idx>if there is an
       integer <m>k</m> such that
       <m>j=
       \sigma^k(i)</m>.
