@@ -230,11 +230,11 @@
     or arrangement on it is also an example of a structure. Its additional
     construction is the empty set!  When a structure consists of the set
     <m>S</m> plus the additional construction, we say the structure
-    <em>uses</em> <m>S</m>. What all the examples we have mentioned in our
+    <em>uses</em> <m>S</m>.<idx><h>uses</h><h>a structure using a set</h></idx><idx><h>structure</h><h>using a set</h></idx> What all the examples we have mentioned in our
     earlier discussion of exponential generating functions have in common is
     that the number of structures that use a given set is determined by the size
     of that set. We will call a family <m>\F</m> of structures a
-    <term>species</term> of structures on subsets of a set <m>X</m> if
+    <term>species</term><idx><h>species</h></idx> of structures on subsets of a set <m>X</m> if
     structures are defined on finite subsets of <m>X</m> and if the number of
     structures in the family using a finite set <m>S</m> is finite and is
     determined by the size of <m>S</m> (that is, if there is a bijection between
@@ -326,10 +326,13 @@
   </p>
 
   <p>
-    Our combinatorial interpretation of EGFs will involve assuming that the coefficient of <m>\frac{x^i}{i!}</m> counts the number of structures on a particular set of of size <m>i</m> in a species of structures on subsets of a set <m>X</m>.
+    Our combinatorial interpretation of EGFs will involve assuming that the coefficient of <m>\frac{x^i}{i!}</m> counts the number of structures on a particular set of of size <m>i</m> in a species of structures on subsets of a set <m>X</m>. <idx><h>species</h><h>exponential generating function for</h></idx>
     Thus in order to give an interpretation of the product of two EGFs we need to be able to think of ordered pairs of structures on disjoint sets or <m>k</m>-tuples of structures on disjoint sets as structures themselves.
     Thus given a structure on a set <m>S</m> and another structure on a disjoint set <m>T</m>, we define the ordered pair of structures (which is a mathematical construction!) to be a structure on the set <m>S\cup T</m>.
-    We call this a <term>pair structure</term> on <m>S\cup T</m>.
+    We call this a <term>pair structure</term>
+    <idx><h>structure</h><h>pair</h></idx>
+    <idx><h>pair structure</h></idx>
+     on <m>S\cup T</m>.
     We can get many structures on a set <m>S\cup T</m> in this way, because <m>S\cup T</m> can be divided into many other pairs of disjoint sets.
     In particular, the set of pair structures whose first structure comes from <m>\F</m> and whose second element comes from <m>\mathcal{G}</m> is denoted by <m>\F\cdot \mathcal{G}</m>.
   </p>
