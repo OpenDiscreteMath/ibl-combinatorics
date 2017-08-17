@@ -1,36 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US">
+<mathbook xmlns:xi="http://www.w3.org/2001/XInclude" xml:lang="en-US" xml:id="home">
 <docinfo>
 <macros>
 \newcommand{\cycle}[1]{\arraycolsep 5 pt
 \left(\begin{array}#1\end{array}\right)}
-\newcommand{\iteme}{
-\item[\ $\bullet$\ \theenumi.]}
-\newcommand{\items}{
-\item[\ \tiny$+$\ \theenumi.]}
-\newcommand{\itemh}{
-\item[\ {$*$}\ \theenumi.]}
-\newcommand{\itemes}{
-\item[\ \Large$\cdot$\ \theenumi.]}
-\newcommand{\itemesi}{
- \item[\ \importantarrow\ \Large
-$\cdot$\ \theenumi.]}
-\newcommand{\itemm}{
-\item[\ $\circ$\ \theenumi.]}
-\newcommand{\importantarrow}{$\Rightarrow$}
-\newcommand{\itemi}{
-\item[\ \importantarrow\ \theenumi.]}
-\newcommand{\itemitemi}{
-\item[\ \importantarrow\ (\theenumii)]}
-\newcommand{\itemei}{
-\item[\ \importantarrow\ $\bullet$\ \theenumi.]}
-\newcommand{\itemih}{
-\item[\ \importantarrow\ $*$\ \theenumi.]}
-\newcommand{\itemitemih}{
-\item[\ \importantarrow\ $*$\ (\theenumii)]}
-\newcommand{\itemitemh}{
-\item[\ $*$\ (\theenumii)]}
+\newcommand{\importantarrow}{\Rightarrow}
 \newcommand{\qchoose}[2]{\left[{#1\atop#2}\right]_q}
 \def\neg1choose#1#2{\left[{#1\atop#2}\right]_{-1}}
 \newcommand{\bp}{
@@ -77,6 +52,7 @@ $\cdot$\ \theenumi.]}
 <rename element="activity" lang="en-US">Problem</rename>
 <rename  element="exercise" lang="en-US">Problem</rename>
 <rename element="exercises" lang="en-US">Supplementary Problems</rename>
+<rename element="task" lang="en-US">Part</rename>
 <cross-references text="type-global" />
 
 </docinfo>

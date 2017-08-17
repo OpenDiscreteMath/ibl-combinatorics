@@ -157,7 +157,7 @@
       <xsl:text>\pdftooltip{\tiny$+$}{summary}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='interesting'">
-      <xsl:text>\pdftooltip{\importantarrow}{especially interesting}</xsl:text>
+      <xsl:text>\pdftooltip{$\importantarrow$}{especially interesting}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='difficult'">
       <xsl:text>\pdftooltip{$*$}{difficult}</xsl:text>
@@ -166,13 +166,13 @@
       <xsl:text>\pdftooltip{\Large$\cdot$}{essential for this section or the next}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='essential for this or the next section, and interesting'">
-      <xsl:text>\pdftooltip{\importantarrow\ {\Large$\cdot$}}{especially interesting and essential for this or the next section}</xsl:text>
+      <xsl:text>\pdftooltip{$\importantarrow$\ {\Large$\cdot$}}{especially interesting and essential for this or the next section}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='important and interesting'">
-      <xsl:text>\pdftooltip{\importantarrow\ $\bullet$}{especially interesting and essential}</xsl:text>
+      <xsl:text>\pdftooltip{$\importantarrow$\ $\bullet$}{especially interesting and essential}</xsl:text>
     </xsl:when>
     <xsl:when test="@category='interesting and difficult'">
-      <xsl:text>\pdftooltip{\importantarrow\ $*$}{especially interesting and difficult}</xsl:text>
+      <xsl:text>\pdftooltip{$\importantarrow$\ $*$}{especially interesting and difficult}</xsl:text>
     </xsl:when>
     <xsl:otherwise>
     </xsl:otherwise>

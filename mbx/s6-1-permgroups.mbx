@@ -130,7 +130,7 @@
           Based on your experience with previous inductive proofs, what do you
           expect <m>\varphi^n\circ \varphi^m</m> to be? What do you expect
           <m>(\varphi^m)^n</m> to be? There is no need to prove these last two answers
-          are correct, for you have, in effect, already done so in Chapter 2.
+          are correct, for you have, in effect, already done so in <xref ref="InductionRecursion" />.
         </p>
       </statement>
       <solution>
@@ -162,7 +162,7 @@
 
     <p>
       What you have observed about iota in <xref ref="identityproperty">Problem</xref> is
-      called the <em>identity property</em><idx><h>identity property (for
+      called the <term>identity property</term><idx><h>identity property (for
       permutations)</h></idx> of iota. In the context of permutations, people usually
       call the function
       <m>\iota</m> <q>the identity</q> rather than calling it <q>iota.</q>
@@ -177,7 +177,7 @@
       \rightarrow T</m> (the lower case Greek letter sigma) if <m>\varphi\circ \sigma= \sigma
       \circ\varphi =
       \iota</m>.
-      For a slower introduction to inverses and practice with them, see Section A.1.3 in Appendix A TODO: FIX LINK.  Since a permutation is a bijection, it has a unique inverse, as in Section A.1.3 of Appendix A.  And since the inverse of a bijection is a bijection (again, as in the Appendix), the inverse of a permutation is a permutation.
+      For a slower introduction to inverses and practice with them, see <xref ref="digraphsoffunctions">Section</xref> in <xref ref="Relations" />.  Since a permutation is a bijection, it has a unique inverse, as in <xref ref="digraphsoffunctions">Section</xref>.  And since the inverse of a bijection is a bijection (again, as in the Appendix), the inverse of a permutation is a permutation.
     </p>
 
     <!-- <activity category="essential">
@@ -264,7 +264,7 @@
 
     <p>
       A set of permutations with these three properties is called a <term>permutation group</term><fn>The concept of a permutation group is a
-      special case of the concept of a <em>group</em> that one studies in abstract
+      special case of the concept of a <term>group</term> that one studies in abstract
       algebra.  When we refer to a group in what follows, if you  know what
       groups are in the more abstract sense, you may use the word in this way.
       If you do not know about groups in this more abstract sense, then you may
@@ -400,7 +400,7 @@
           </p>
 
           <p>
-            To prove the last statement we need to prove, we write the following, in which 
+            To prove the last statement we need to prove, we write the following, in which
             <xref ref="crucialline" /> follows from the first equation we proved and  <xref ref="modestlyimportant" /> follows from the fact that <m>(\varphi^{-1})^{-1} = \varphi</m>.
             <md>
               <mrow>(\varphi^{-m})^{-n}  =\amp  ([\varphi^{-1})^m]^{-1})^n</mrow>
@@ -631,7 +631,7 @@
 
 <!-- 6.1.4 -->
   <subsection>
-    <title>The dihedral group</title>
+    <title>The dihedral group</title><idx><h>dihedral group</h></idx>
     <p>
       We found four permutations that correspond to rotations of the square.
       In <xref ref="dihedral1">Problem</xref> you found four permutations that correspond to
@@ -1160,8 +1160,8 @@
       You may notice that the associative law, the identity property, and the
       inverse property are three of the most important rules that we use in
       regrouping parentheses in algebraic expressions when solving equations.
-      There is one property we have not yet mentioned, the <em>commutative
-      law</em><idx><h>commutative law</h></idx> which would say that <m>\sigma\circ \varphi =
+      There is one property we have not yet mentioned, the <term>commutative
+      law</term><idx><h>commutative law</h></idx> which would say that <m>\sigma\circ \varphi =
       \varphi\circ\sigma</m>. It is easy to see from the group table of <m>R_4</m> that it
       satisfies the commutative law.
     </p>
@@ -1284,8 +1284,7 @@
       <m>\sigma =\begin{pmatrix}1\amp 2\amp 3\cr2\amp 3\amp 1
 \end{pmatrix}</m>.</p>
 <p>We can describe cycles in another way
-      as well. A <term>cycle</term><idx><h>cycle of a
-      permutation</h></idx><idx><h>permutation</h><h>cycle of</h></idx> of the permutation
+      as well. A <term>cycle</term> of the permutation
       <m>\sigma</m> is a list
       <m>(i\
       \sigma(i)\
@@ -1322,13 +1321,13 @@
 
 
     <p>
-      We say <m>\sigma^j(i)</m> is an <term>element</term> of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m>.  Notice that the case <m>j=0</m> means <m>i</m> is an element of the cycle.  Notice also that if <m>j\gt n</m>, <m>\sigma^j(i) = \sigma^{j-n-1}(i)</m>, so the distinct elements of the cycle are <m>i</m>, <m>\sigma(i)</m>, <m>\sigma^2(i)</m>, through <m>\sigma^n(i)</m>.
+      We say <m>\sigma^j(i)</m> is an <term>element</term> <idx><h>cycle (of a permutation)</h><h>element of</h></idx>of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m>.  Notice that the case <m>j=0</m> means <m>i</m> is an element of the cycle.  Notice also that if <m>j\gt n</m>, <m>\sigma^j(i) = \sigma^{j-n-1}(i)</m>, so the distinct elements of the cycle are <m>i</m>, <m>\sigma(i)</m>, <m>\sigma^2(i)</m>, through <m>\sigma^n(i)</m>.
       We think of the cycle <m>(i\ \sigma(i)\ \sigma^2(i)\ \ldots\ \sigma^n(i))</m> as representing the permutation <m>\sigma</m> restricted to the set of elements of the cycle.
       We say that the cycles <m>(i\
       \sigma(i)\
       \sigma^2(i)\ \ldots\ \sigma^n(i))</m> and <m>(j\
       \sigma(j)\
-      \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <term>equivalent</term> if there is an
+      \sigma^2(j)\ \ldots\ \sigma^n(j))</m> are <term>equivalent</term> <idx><h>cycle (of a permutation)</h><h>equivalent</h></idx><idx><h>equivalent cycle</h></idx>if there is an
       integer <m>k</m> such that
       <m>j=
       \sigma^k(i)</m>.
@@ -1853,9 +1852,9 @@
 
     <activity category="essential for this or the next section">
       <p>
-        The <em>sign</em> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
-        defined to be 1, while the <em>sign</em> of a 2-cycle, 4-cycle, <ellipsis />,
-        <m>2k</m>-cycle is defined to be -1. The <em>sign</em> of a product of disjoint
+        The <term>sign</term> of a 1-cycle, 3-cycle, <ellipsis />, <m>(2k-1)</m>-cycle is
+        defined to be 1, while the <term>sign</term> of a 2-cycle, 4-cycle, <ellipsis />,
+        <m>2k</m>-cycle is defined to be -1. The <term>sign</term> of a product of disjoint
         cycles is the product of the signs of its cycles.<idx><h>permutation</h><h>sign
         of</h></idx><idx><h>sign of a permutation</h></idx>
       </p>
@@ -1926,7 +1925,7 @@
       <task>
         <statement>
           <p>
-            A 2-cycle is often called a <em>transposition</em><idx><h>transposition</h></idx>.  What is the sign of a product of
+            A 2-cycle is often called a <term>transposition</term><idx><h>transposition</h></idx>.  What is the sign of a product of
             <m>k</m> (not necessarily disjoint) transpositions? (Don't forget to prove you are
             correct.)
           </p>
@@ -1981,7 +1980,7 @@
       <statement>
         <p>
           Describe a subgroup of <m>S_n</m> of size <m>n!/2</m>. This subgroup is
-          called the <em>alternating group</em><idx><h>alternating group</h></idx> <m>A_n</m>.
+          called the <term>alternating group</term><idx><h>alternating group</h></idx> <m>A_n</m>.
           Describe explicitly a partition of <m>S_n</m> that you can use with the
           quotient principle to prove bijectively that the subgroup you described has size
           <m>n!/2</m>.

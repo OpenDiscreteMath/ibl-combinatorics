@@ -1,4 +1,6 @@
-<section>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s1-3-apps">
   <title>Some Applications of the Basic Principles</title>
   <subsection>
     <title>Lattice paths and Catalan Numbers</title>
@@ -23,7 +25,7 @@
         <introduction>
             <p>
           <xref ref="blockwalking">Problem</xref> has a geometric interpretation in a
-          coordinate plane. A <em>lattice path</em><idx><h>lattice
+          coordinate plane. A <term>lattice path</term><idx><h>lattice
           path</h></idx><idx><h>path</h><h>lattice</h></idx> in the plane is a <q>curve</q> made up of line segments
           that either go from a point
           <m>(i,j)</m> to the point
@@ -50,7 +52,7 @@
          </statement>
          <hint>
            <p>
-         In Problem 47 you saw that we had to make ten choices of north or east,
+         In <xref ref="blockwalking" /> you saw that we had to make ten choices of north or east,
          choosing north four times.
            </p>
          </hint>
@@ -86,7 +88,7 @@
     <activity xml:id="diagonallattice" category="essential for this or the next section">
         <introduction>
             <p>
-          Another kind of geometric path in the plane is a <em>diagonal lattice path</em><idx><h>lattice path</h><h>diagonal</h></idx><idx><h>path</h><h>lattice!diagonal</h></idx>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <em>upstep</em>) or <m>(i+1,j-1)</m> (this is often called a <em>downstep</em>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.)
+          Another kind of geometric path in the plane is a <term>diagonal lattice path</term><idx><h>lattice path</h><h>diagonal</h></idx><idx><h>path</h><h>lattice!diagonal</h></idx>. Such a path is a path made up of line segments that go from a point <m>(i,j)</m> to <m>(i+1,j+1)</m> (this is often called an <term>upstep</term>) or <m>(i+1,j-1)</m> (this is often called a <term>downstep</term>), again where <m>i</m> and <m>j</m> are integers. (Thus diagonal lattice paths always move towards the right but may move up or down.)
         </p>
         </introduction>
         <task>
@@ -234,7 +236,7 @@
       </task>
       <task>
         <statement>
-          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <em>Catalan Number</em><idx><h>Catalan Number</h></idx> and is usually denoted by <m>C_n</m>.
+          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <term>Catalan Number</term><idx><h>Catalan Number</h></idx> and is usually denoted by <m>C_n</m>.
           </p>
         </statement>
         <hint>
@@ -478,12 +480,12 @@
                   </p>
               </statement>
               <solution>
-                  
+
                   <p>
                       <m>\{k_1,k_2,\ldots, k_i\}\cup
                       \{j_1,j_2,\ldots, j_{n-i}\}=\{1,2,\ldots, n\}</m>.
                   </p>
-                  
+
               </solution>
           </task>
           <task>
@@ -793,8 +795,8 @@
       <solution>
           <p>In the figure that follows, we use solid lines for red and dashed lines for green. Clearly there is no solid triangle and no dashed triangle.
           </p>
-          <sidebyside>
-              <image width="33%" source="images/NonRamsey5" />
+          <sidebyside width="33%">
+              <image source="images/NonRamsey5" />
           </sidebyside>
           <p><xref ref="R_3_3_" /> says you can't do this with
           six people's names. This problem says that the conclusion of <xref ref="R_3_3_" /> does not hold when you have five people.
@@ -806,13 +808,13 @@
   <subsection xml:id="Ramseysection">
     <title>Ramsey Numbers</title>
     <p>
-      <xref first="R_3_3_" last="notR_3_3_" /> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <em>complete graph</em> on <m>R</m> vertices. A <em>complete graph</em><idx><h>graph</h><h>complete</h></idx> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" />.</fn> The points are called <term>vertices</term><idx><h>vertex</h><h>of a complete graph</h></idx><idx><h>vertex</h></idx> and the line segments are called <term>edges</term><idx><h>edge</h><h>of a complete graph</h></idx><idx><h>edge</h></idx>. In <xref ref="completegraph" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
+      <xref first="R_3_3_" last="notR_3_3_">Problems</xref> together show that six is the smallest number <m>R</m> with the property that if we have <m>R</m> people in a room, then there is either a set of (at least) three mutual acquaintances or a set of (at least) three mutual strangers. Another way to say the same thing is to say that six is the smallest number so that no matter how we connect 6 points in the plane (no three on a line) with red and green lines, we can find either a red triangle or a green triangle. There is a name for this property. The <term>Ramsey Number</term> <m>R(m,n)</m> is the smallest number <m>R</m> so that if we have <m>R</m> people in a room, then there is a set of at least <m>m</m> mutual acquaintances or at least <m>n</m> mutual strangers. There is also a geometric description of Ramsey Numbers; it uses the idea of a <term>complete graph</term> on <m>R</m> vertices. A <term>complete graph</term><idx><h>graph</h><h>complete</h></idx> on <m>R</m> vertices consists of <m>R</m> points in the plane together with line segments (or curves) connecting each two of the <m>R</m> vertices.<fn>As you may have guessed, a complete graph is a special case of something called a graph.  The word graph will be defined in <xref ref="graphsection" />.</fn> The points are called <term>vertices</term><idx><h>vertex</h><h>of a complete graph</h></idx><idx><h>vertex</h></idx> and the line segments are called <term>edges</term><idx><h>edge</h><h>of a complete graph</h></idx><idx><h>edge</h></idx>. In <xref ref="completegraph" /> we show three different ways to draw a complete graph on four vertices. We use <m>K_n</m> to stand for a complete graph on <m>n</m> vertices.
     </p>
 
     <figure xml:id="completegraph" >
       <caption>Three ways to draw a
       complete graph on four vertices</caption>
-      <image width="33%" source="images/threeK4s" />
+      <image width="50%" source="images/threeK4s" />
     </figure>
 
     <p>Our geometric description of <m>R(3,3)</m> may be translated into the language of graph theory (which is the subject that includes complete graphs) by saying <m>R(3,3)</m> is the smallest number <m>R</m> so that if we color the edges of a <m>K_R</m> with two colors, then we can find in our picture a <m>K_3</m> all of whose edges have the same color.  The graph theory description of <m>R(m,n)</m> is that <m>R(m,n)</m> is the smallest number <m>R</m> so that if we color the edges of a <m>K_R</m> with red and green, then we can find in our picture either a <m>K_m</m> all of whose edges are red or a <m>K_n</m> all of whose edges are green. Because we could have said our colors in the opposite order, we may conclude that <m>R(m,n) = R(n,m)</m>. In particular <m>R(n,n)</m> is the smallest number <m>R</m> such that if we color the edges of a <m>K_R</m> with two colors, then our picture contains a <m>K_n</m> all of whose edges have the same color.
