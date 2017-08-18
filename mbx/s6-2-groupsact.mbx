@@ -8,7 +8,7 @@
     </p>
     <figure xml:id="rotate-square">
         <caption>The results on the sides and diagonals of rotating the square</caption>
-        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto">
+        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto" valign="top">
             <image>
                 <latex-image-code>
                     \begin{tikzpicture}
@@ -416,7 +416,7 @@
     </p>
     <figure xml:id="colored-square">
         <caption>The colored square with coloring <m>\left\{(1,R),(2,R),(3,B),(4,B)\right\}</m></caption>
-        <image>
+        <image width="30%">
             <latex-image-code>
                 \begin{tikzpicture}
                 \draw (0,0) -- (0,2) -- (2,2) -- (2,0) -- (0,0);
@@ -818,7 +818,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
         </solution>
     </activity>
 
-    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union of multisets</h></idx> <idx><h>multisets</h><h>union</h></idx>of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family. 
+    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union of multisets</h></idx> <idx><h>multisets</h><h>union</h></idx>of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family.
     Two multisets are said to be <term>disjoint</term><idx><h>disjoint</h><h>multisets</h></idx> if no element is a member of both, that is, if no element has multiplicity one or more in both. Since the size of a multiset is the sum of the multiplicities of its members, we immediately get the <term>sum principle for multisets</term>.<idx><h>sum principle</h><h>for multisets</h></idx>
     </p>
     <blockquote>
@@ -832,7 +832,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     </p>
     <blockquote>
         <p>
-            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>. 
+            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>.
         </p>
     </blockquote>
     <p>
