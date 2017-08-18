@@ -50,7 +50,7 @@
           <p>
       Our statement
       is true when <m>n=0</m>, because a set of size 0 is the empty set and the
-      empty set has <m>1=2^0</m> subsets. (This step of our proof is called a <em>base step</em>.)
+      empty set has <m>1=2^0</m> subsets. (This step of our proof is called a <term>base step</term>.)
 
       Now suppose that <m>k>0</m> and every set with <m>k-1</m> elements has <m>2^{k-1}</m>
       subsets.  Suppose <m>S=\{a_1,a_2,\ldots a_k\}</m> is a set with <m>k</m> elements.
@@ -120,7 +120,7 @@
     </p>
 
     <blockquote>
-        <idx><h>strong mathematical induction</h><h>principle of</h></idx><idx><h>strong principle of
+        <idx><h>strong principle of
         mathematical induction</h></idx><idx><h>induction</h><h>mathematical, the strong principle of</h></idx>
         <p>
     In order to prove a
@@ -157,7 +157,7 @@
     <activity category="essential">
       <statement>
         <p>
-          When we studied the Pascal Equation and subsets in Chapter 1, it
+          When we studied the Pascal Equation and subsets in <xref ref="what-is" />, it
           may have appeared that there is no connection between the Pascal relation
           <m>\binom{n}{k} = \binom{n-1}{k-1} +\binom{n-1}{k}</m> and the formula
           <m>\binom{n}{k}=\frac{n!}{k!(n-k)!}</m>. Of course you probably realize you
@@ -280,10 +280,10 @@
       <m>0!=1</m> and
       <m>n!=n(n-1)!</m> for <m>n>0</m>. By the principle of mathematical induction we
       know that this pair of equations defines <m>n!</m> for all nonnegative numbers
-      <m>n</m>. For this reason we call such a definition an <em>inductive
-      definition</em><idx><h>inductive definition</h></idx><idx><h>definition</h><h>inductive</h></idx>. An
-      inductive definition is sometimes called a <em>recursive
-      definition</em><idx><h>recursive definition</h></idx><idx><h>definition</h><h>recursive</h></idx>.
+      <m>n</m>. For this reason we call such a definition an <term>inductive
+      definition</term><idx><h>inductive definition</h></idx><idx><h>definition</h><h>inductive</h></idx>. An
+      inductive definition is sometimes called a <term>recursive
+      definition</term><idx><h>recursive definition</h></idx><idx><h>definition</h><h>recursive</h></idx>.
       Often we can get very easy proofs of useful facts by using inductive
       definitions.
     </p>
@@ -540,7 +540,7 @@
       <hint>
         <p>
           Think about how you might have gone from the number of double decker
-          cones to the number of triple decker cones in Problem 6.
+          cones to the number of triple decker cones in <xref ref="tripledeckercone" />.
         </p>
       </hint>
       <solution>
@@ -645,6 +645,7 @@
     <p>
         There is a strong version of double induction, and it is actually easier to state. The principle of <term>strong double mathematical induction</term>
         <idx><h>strong double induction</h></idx>
+        <idx><h>double induction</h><h>strong</h></idx>
         <idx><h>induction</h><h>strong double</h></idx>
         <idx><h>mathematical induction</h><h>strong double</h></idx> says the following.
     </p>
@@ -916,7 +917,7 @@ about these numbers.
       will give a lower bound. Since both bounds are exponential in <m>n</m>, they
       show that <m>R(n,n)</m> grows exponentially as <m>n</m> gets large. An analysis of
       what happens to a function of <m>n</m> as <m>n</m> gets large is usually called an
-      <em>asymptotic analysis</em>.<idx><h>asymptotic combinatorics</h></idx> The <em>probabilistic method</em><idx><h>probabilistic method</h></idx><idx><h>method</h><h>probabilistic</h></idx>,
+      <term>asymptotic analysis</term>.<idx><h>asymptotic combinatorics</h></idx> The <term>probabilistic method</term><idx><h>probabilistic method</h></idx><idx><h>method</h><h>probabilistic</h></idx>,
       at least in its simpler forms, can be expressed in terms of averages, so one
       does not need to know the language of probability in order to understand it.
       We will apply it to Ramsey numbers in the next problem. Combined with the
@@ -984,7 +985,7 @@ about these numbers.
       <task>
         <statement>
           <p>
-            We call a <m>K_N</m> <em>monochromatic</em><idx><h>monochromatic subgraph</h></idx>
+            We call a <m>K_N</m> <term>monochromatic</term><idx><h>monochromatic subgraph</h></idx>
             for a coloring <m>c</m> of <m>K_m</m> if the color <m>c(e)</m> assigned to edge <m>e</m> is
             the same for every edge <m>e</m> of <m>K_N</m>.  Let us define <m>{ mono}(c,N)</m> to
             be 1 if <m>N</m> is monochromatic for <m>c</m> and to be 0 otherwise.  Find a

@@ -1,5 +1,8 @@
-<section>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="s1-2-basics">
   <title>Basic Counting Principles</title>
+  <introduction>
   <activity xml:id="fiveteamtournament" category="motivation">
       <statement>
         <p>
@@ -10,7 +13,7 @@
         </p>
       </statement>
       <hint>
-        <p>Answer the questions in Problem 2 for the case of five schools.</p>
+        <p>Answer the questions in <xref ref="baseball2" /> for the case of five schools.</p>
       </hint>
       <solution>
         <p>
@@ -116,7 +119,7 @@
     <activity xml:id="orderedpair" category="summary">
       <statement>
         <p>
-          An <idx><h>ordered pair</h></idx><idx><h>pair,ordered</h></idx><em>ordered pair</em>
+          An <idx><h>ordered pair</h></idx><idx><h>pair,ordered</h></idx><term>ordered pair</term>
           <m>(a,b)</m> consists of two things we call <m>a</m> and
           <m>b</m>. We say <m>a</m> is the first member of the pair and <m>b</m> is
           the second member of the pair. If <m>M</m> is an <m>m</m> element set
@@ -204,7 +207,7 @@
         above should probably let you answer these questions. If you have difficulty
         with them, it would be a good idea to go now to <xref ref="Relations">Appendix</xref> and
         work through <xref ref="relationsandfunctions">Section</xref> which covers this definition
-        in more detail. You might also want to study <xref ref="digraphsoffunctions">Section</xref> to learn
+        in more detail. You might also want to study <xref ref="digraphsoffunctions" text="global">Section</xref> to learn
         to visualize the properties of functions. We will take up the topic of
         this section later in this chapter as well, but in less detail than is
         in the appendix.
@@ -413,10 +416,10 @@
         </p>
       </solution>
     </activity>
+</introduction>
 
 
-
-  <paragraphs>
+  <subsection>
     <title>The sum and product principles</title>
     <p>
       These problems
@@ -429,19 +432,19 @@
     <figure xml:id="sumprinc" >
       <caption>The union of these
       two disjoint sets has size 17.</caption>
-      <image width="73%" source="images/SumPrinc" />
+      <image width="50%" source="images/SumPrinc" />
     </figure>
 
     <figure xml:id="prodprinc" >
       <caption>The
       union of four disjoint sets of size
       five.</caption>
-      <image width="73%" source="images/ProdPrinc" />
+      <image width="50%" source="images/ProdPrinc" />
     </figure>
 
     <p>
       You may have noticed some standard mathematical words and
-      phrases such as <em>set</em>, <em>ordered pair</em>, <em>function</em>
+      phrases such as <term>set</term>, <term>ordered pair</term>, <term>function</term>
       and so on creeping into the problems. One of our goals in
       these notes is to show how most counting problems can
       be recognized as counting all or some of the elements of a set
@@ -466,9 +469,9 @@
       <m>S</m>. Thus a partition of <m>S</m> is a (special kind of) set of sets. So that
       we don't find ourselves getting confused between the set <m>S</m> and the sets
       <m>B_i</m> into which we have divided it, we often call the sets <m>B_1, B_2,
-      \ldots, B_m</m> the <em>blocks</em><idx><h>partition</h><h>blocks of</h></idx><idx><h>block of a
+      \ldots, B_m</m> the <term>blocks</term><idx><h>partition</h><h>blocks of</h></idx><idx><h>block of a
       partition</h></idx> of the partition. In this language, the
-      <idx><h>principle</h><h>sum</h></idx><idx><h>sum principle</h></idx><term>sum principle</term>says that
+      <idx><h>principle</h><h>sum</h></idx><idx><h>sum principle</h></idx><term>sum principle</term> says that
     </p>
 
     <blockquote>
@@ -525,8 +528,8 @@
     </activity>
 
     <p>
-      The counting principle you gave in <xref ref="generalproductprincipleintro">Problem</xref> is called the <em>general product
-      principle</em>.<idx><h>general product principle</h></idx><idx><h>product
+      The counting principle you gave in <xref ref="generalproductprincipleintro">Problem</xref> is called the <term>general product
+      principle</term>.<idx><h>general product principle</h></idx><idx><h>product
       principle</h><h>general</h></idx><idx><h>principle</h><h>product!general</h></idx> We will outline
       a proof of the general product pinciple from the original product
       principle in <xref ref="generalproductprincipleproof">Problem</xref>. Until then,
@@ -639,7 +642,6 @@ many ways can you pair up the next person who isn't already paired up?
         </solution>
       </task>
     </activity>
-</paragraphs>
 
     <activity xml:id="generalproductprinciple" category="summary">
       <statement>
@@ -842,11 +844,11 @@ many ways can you pair up the next person who isn't already paired up?
       It is standard to call <m>n^{\underline{k}}</m><idx><h><m>n^{\underline{k}}</m></h></idx> the
       <term><m>k</m>-th falling factorial power of <m>n</m></term><idx><h>falling factorial
       power</h></idx><idx><h>factorial power</h><h>falling</h></idx>, which explains why we use exponential
-      notation. Of course we call it a <em>factorial</em> power since
-      <m>n^{\underline{n}} = n(n-1)\cdots 1</m> which we call <em><m>n</m>-factorial</em> and
+      notation. Of course we call it a <term>factorial</term> power since
+      <m>n^{\underline{n}} = n(n-1)\cdots 1</m> which we call <term><m>n</m>-factorial</term> and
       denote by
       <m>n!</m>.<idx><h>factorial</h></idx><idx><h><m>n"!</m></h></idx> If you are unfamiliar with the <m>\Pi</m>
-      notation, or <term>product notation</term><idx><h>product notation</h></idx><idx><h><m>Pi</m>
+      notation, or <term>product notation</term><idx><h>product notation</h></idx><idx><h><m>\Pi</m>
       notation</h></idx> we introduced for products in <xref ref="productnotation">Equation</xref>, it works just like the <m>\Sigma</m> notation works for
       summations.
     </p>
@@ -878,7 +880,11 @@ many ways can you pair up the next person who isn't already paired up?
       </solution>
     </activity>
 
-  <paragraphs>
+</subsection>
+
+
+
+  <subsection>
     <title>Functions and directed graphs</title>
     <p>
       As another example how standard mathematical language relates to
@@ -899,8 +905,8 @@ many ways can you pair up the next person who isn't already paired up?
     </p>
 
     <p>
-      However, there is another kind of graph called a <em>directed
-      graph</em><idx><h>graph</h><h> directed</h></idx><idx><h>directed graph</h></idx> or <em>digraph</em><idx><h>digraph</h></idx><idx><h>function</h><h>digraph of</h></idx> that is
+      However, there is another kind of graph called a <term>directed
+      graph</term><idx><h>graph</h><h> directed</h></idx><idx><h>directed graph</h></idx> or <term>digraph</term><idx><h>digraph</h></idx><idx><h>function</h><h>digraph of</h></idx> that is
       especially useful when dealing with functions between finite sets. We
       take up this topic in more detail in <xref ref="Relations" />,
       particularly <xref ref="relationdigraph" /> and <xref ref="digraphsoffunctions" />. In
@@ -915,7 +921,7 @@ many ways can you pair up the next person who isn't already paired up?
 
     <p>
       If we have a function <m>f</m> from a set <m>S</m> to a set <m>T</m>, we draw a line
-      of dots or circles, called <em>vertices</em> to represent the elements of <m>S</m> and another
+      of dots or circles, called <term>vertices</term> to represent the elements of <m>S</m> and another
       (usually parallel) line of circles or dots to represent the elements
       of <m>T</m>. We then draw an arrow from the circle for <m>x</m> to the circle
       for <m>y</m> if <m>f(x) = y</m>. Sometimes, as in part (e) of the figure, if we
@@ -927,9 +933,9 @@ many ways can you pair up the next person who isn't already paired up?
       putting them in a row.
     </p>
 
-    <p>
-      <em>The figure needs to have part (e) added to it.</em>
-    </p>
+<todo>
+The figure needs to have part (e) added to it.
+</todo>
 
     <p>
       Notice that there is a simple test for whether a digraph whose vertices
@@ -942,7 +948,7 @@ many ways can you pair up the next person who isn't already paired up?
       <m>S</m> to <m>S</m> and draw only one set of vertices representing the elements
       of <m>S</m>.) For further discussion of functions and digraphs see <xref ref="functionrelation">Sections</xref> and <xref ref="relationdigraph"></xref> of {<xref ref="Relations">Appendix</xref>}.
     </p>
-  </paragraphs>
+
 
     <activity category="motivation">
       <statement>
@@ -950,14 +956,13 @@ many ways can you pair up the next person who isn't already paired up?
           Draw the digraph of the function from the set <m>\{</m>Alice, Bob, Dawn,
           Bill<m>\}</m> to the set <m>\{</m>A, B, C, D, E<m>\}</m> given by
           <me>
-            f(X) = \mbox{the first
-            letter of the name \(X\)} .
+            f(X) = \text{ the first letter of the name }X .
           </me>
         </p>
       </statement>
       <solution>
-          <sidebyside>
-              <image width="50%">
+          <sidebyside width="40%">
+              <image>
                   <latex-image-code>
                       <![CDATA[
               \begin{tikzpicture}[scale=0.85]
@@ -989,8 +994,8 @@ many ways can you pair up the next person who isn't already paired up?
         <p>
           A function
           <m>f:S\rightarrow T</m> is called an
-          <idx><h>onto function</h></idx><idx><h>function</h><h>onto</h></idx><em>onto function</em> or
-          <idx><h>surjection</h></idx><idx><h>function</h><h>surjection</h></idx><em>surjection</em> if each
+          <idx><h>onto function</h></idx><idx><h>function</h><h>onto</h></idx><term>onto function</term> or
+          <idx><h>surjection</h></idx><idx><h>function</h><h>surjection</h></idx><term>surjection</term> if each
           element of
           <m>T</m> is <m>f(x)</m> for some <m>x\in S</m>. Choose a set <m>S</m> and a set <m>T</m> so that you
           can draw the digraph of a function from <m>S</m> to <m>T</m> that is one-to-one but not
@@ -1002,7 +1007,7 @@ many ways can you pair up the next person who isn't already paired up?
           The digraph of one such function follows
         </p>
 
-            <sidebyside width="73%">
+            <sidebyside width="50%">
               <image>
               <latex-image-code>
                 <![CDATA[
@@ -1045,8 +1050,8 @@ many ways can you pair up the next person who isn't already paired up?
           The digraph of one such function follows
         </p>
 
-        <sidebyside>
-          <image width="73%">
+        <sidebyside width="40%">
+          <image>
             <latex-image-code>
               <![CDATA[
               \begin{tikzpicture}[yscale=0.75]
@@ -1082,19 +1087,38 @@ many ways can you pair up the next person who isn't already paired up?
             </p>
         </introduction>
       <task>
+        <statement>
           <p>
             What does the digraph of a one-to-one function (injection) from
               a finite set <m>X</m> to a finite set <m>Y</m> look like? (Look for a test
               somewhat similar to the one we described for when a digraph is the
               digraph of a function.)
           </p>
-        </task>
-        <task>
+          </statement>
+          <hint>
+            <p>For each part of this problem, think about how many arrows are allowed to
+              enter a vertex representing a member of <m>Y</m>.</p>
+            </hint>
+        <solution>
           <p>
+            A function from <m>X</m> to <m>Y</m> is one-to-one if, in its digraph, at most one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
+          </p>
+        </solution>
+      </task>
+
+        <task>
+          <statement><p>
             What does the digraph of an onto function
               look like?
+          </p></statement>
+
+        <solution>
+          <p>
+            A function is onto if, in its digraph, at least one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
           </p>
+        </solution>
         </task>
+
         <task xml:id="bijectiondigraph" >
             <statement>
                 <p>
@@ -1103,24 +1127,11 @@ many ways can you pair up the next person who isn't already paired up?
               like?
                 </p>
             </statement>
-        <hint>
-            <p>For each part of this problem, think about how many arrows are allowed to
-          enter a vertex representing a member of <m>Y</m>.</p>
-        </hint>
-      <solution>
-        <p>
-          One-to-one: One arrow comes out of each vertex representing a member
-          of
-          <m>X</m> and at most one arrow goes into each vertex representing a member of <m>Y</m>.
-          Onto: : One arrow comes out of each vertex representing a
-          member of <m>X</m> and at least one arrow goes into each vertex representing a
-          member of
-          <m>Y</m>. One-to-one and onto: One arrow comes out of each vertex representing a
-          member of
-          <m>X</m> and at exactly one arrow goes into each vertex representing a member of <m>Y</m>.
-          (The first half of each sentence is optional.)
-        </p>
-      </solution>
+        <solution>
+          <p>
+            A function from <m>X</m> to <m>Y</m> is one-to-one and onto if, in its digraph, exactly one arrow goes into each vertex representing a member of <m>Y </m>.  (For a digraph to be the digraph of a function from <m>X</m> to <m>Y</m>, one and only one arrow must come out of each vertex representing a member of <m>X</m>.)
+          </p>
+        </solution>
         </task>
   </activity>
 
@@ -1136,7 +1147,7 @@ many ways can you pair up the next person who isn't already paired up?
       </statement>
       <solution>
         <p>
-          <m>n!</m>.
+          <m>n!</m>, by the general product principle.
         </p>
       </solution>
     </activity>
@@ -1153,9 +1164,10 @@ many ways can you pair up the next person who isn't already paired up?
       very little difference between the idea of a permutation of <m>S</m> and an
       <m>n</m>-element permutation of <m>S</m> when <m>n</m> is the size of <m>S</m>.
     </p>
+  </subsection>
 
 
-  <paragraphs>
+  <subsection>
     <title>The bijection principle</title>
     <p>
       Another name for a one-to-one
@@ -1180,9 +1192,9 @@ many ways can you pair up the next person who isn't already paired up?
       principle guides us into finding insight into some otherwise
       very complicated proofs.
     </p>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Counting subsets of a set</title>
     <activity xml:id="SubsetsBinaryRepresentation">
       <statement>
@@ -1326,9 +1338,9 @@ many ways can you pair up the next person who isn't already paired up?
         </solution>
       </task>
     </activity>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>Pascal's Triangle</title>
     <p>
       The Pascal Equation that you derived in <xref ref="Pascal">Problem</xref>
@@ -1430,10 +1442,18 @@ many ways can you pair up the next person who isn't already paired up?
     <table xml:id="Pascalrighttriangle" >
       <caption>Pascal's Right
       Triangle</caption>
-      <tabular>
-        <row>
-          <cell></cell>
-          <cell><m>k=0</m></cell>
+      <tabular halign="right">
+        <col halign="center" right="minor"/>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <row bottom="minor">
+          <cell colspan="2" halign="right"><m>k=0</m></cell>
           <cell>1</cell>
           <cell>2</cell>
           <cell>3</cell>
@@ -1441,17 +1461,6 @@ many ways can you pair up the next person who isn't already paired up?
           <cell>5</cell>
           <cell>6</cell>
           <cell>7</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell><m>n=0</m></cell>
@@ -1561,10 +1570,18 @@ many ways can you pair up the next person who isn't already paired up?
     <table xml:id="Pascal_sRectangle" >
       <caption>Pascal's
       Rectangle</caption>
-      <tabular>
-        <row>
-          <cell></cell>
-          <cell><m>k=0</m></cell>
+      <tabular halign="right">
+        <col halign="center" right="minor"/>
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <col />
+        <row bottom="minor">
+          <cell colspan="2" halign="right"><m>k=0</m></cell>
           <cell>1</cell>
           <cell>2</cell>
           <cell>3</cell>
@@ -1572,17 +1589,6 @@ many ways can you pair up the next person who isn't already paired up?
           <cell>5</cell>
           <cell>6</cell>
           <cell>7</cell>
-        </row>
-        <row bottom="minor">
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
-          <cell></cell>
         </row>
         <row>
           <cell><m>n=0</m></cell>
@@ -1776,7 +1782,7 @@ many ways can you pair up the next person who isn't already paired up?
         <m>\chi</m> is the Greek letter chi that is pronounced Ki, with the
         <m>i</m> sounding like <q>eye.</q></fn>
         <me>
-          \chi_S(i) = \begin{cases}1 \amp \mbox{ if }  i\in S \\ 0 \amp \mbox{ if }  i\not\in
+          \chi_S(i) = \begin{cases}1 \amp \text{ if }  i\in S \\ 0 \amp \text{ if }  i\not\in
           S
           \end{cases}
         </me>
@@ -1791,23 +1797,30 @@ many ways can you pair up the next person who isn't already paired up?
       </p>
         </introduction>
       <task>
-      <statement>
+        <introduction>
         <p>
           For practice, consider the function <m>\chi_{\{1,3\}}</m> for
           the subset
           <m>\{1,3\}</m> of the set <m>\{1,2,3,4\}</m>.  What are
-            <ol label="(i)">
-
-            <li><m>\chi_{\{1,3\}}(1)</m>?</li>
-
-            <li><m>\chi_{\{1,3\}}(2)</m>?</li>
-
-            <li><m>\chi_{\{1,3\}}(3)</m>?</li>
-
-            <li><m>\chi_{\{1,3\}}(4)</m>?</li>
-          </ol>
         </p>
-      </statement>
+        </introduction>
+          <task>
+            <statement><p><m>\chi_{\{1,3\}}(1)</m>?</p></statement>
+            <solution><p>1.</p></solution>
+          </task>
+          <task>
+            <statement><p><m>\chi_{\{1,3\}}(2)</m>?</p></statement>
+            <solution><p>0.</p></solution>
+          </task>
+          <task>
+            <statement><p><m>\chi_{\{1,3\}}(3)</m>?</p></statement>
+            <solution><p>1.</p></solution>
+          </task>
+          <task>
+            <statement><p><m>\chi_{\{1,3\}}(4)</m>?</p></statement>
+            <solution><p>0.</p></solution>
+          </task>
+
     </task>
     <task>
         <statement>
@@ -1819,7 +1832,7 @@ many ways can you pair up the next person who isn't already paired up?
         </statement>
         <solution>
           <p>
-            If <m>i\in S</m> but <m>i\not\in T</m>, then <m>\chi_S(i)=1</m> but <m>\chi_T(i)=0</m>.
+            Suppose <m>S</m> and <m>T</m> are subsets of <m>[n]</m>.  If <m>i\in S</m> but <m>i\not\in T</m>, then <m>\chi_S(i)=1</m> but <m>\chi_T(i)=0</m>.
             Thus if <m>S\not= T</m>, the <m>\chi_S\not=\chi_T</m>. Therefore <m>f</m> is one-to-one.
             Given a function <m>g</m> from <m>[n]</m> to <m>\{0,1\}</m>, let <m>S=\{i|g(i)=1\}</m>. Then by
             definition, <m>g=\chi_S=f(S)</m>. Therefore <m>f</m> is onto, so it is a bijection.
@@ -1864,9 +1877,9 @@ many ways can you pair up the next person who isn't already paired up?
       similar to those we used in proving the Pascal Equation, at the
       beginning of <xref ref="InductionRecursion">Chapter</xref>.
     </p>
-  </paragraphs>
+  </subsection>
 
-  <paragraphs>
+  <subsection>
     <title>The quotient principle</title>
     <activity xml:id="twelvechoosethree" category="essential">
         <introduction>
@@ -1894,32 +1907,36 @@ many ways can you pair up the next person who isn't already paired up?
               flavors of ice cream?
           </p>
         </statement>
-        </task>
-        <task xml:id="twelvechoosethreethree" >
+        <solution>
           <p>
-            In particular, how many different triple
-              decker cones use the same three flavors?  (Of course any three
-              distinct flavors could substitute for vanilla, chocolate and
-              strawberry without changing the answer.)
+            What is different is that the order in which we put the scoops into the cone matters, but for simply choosing three flavors, the order of the choices doesn't matter.
           </p>
+        </solution>
+        </task>
+
+        <task xml:id="twelvechoosethreethree" >
+          <statement>
+            <p>
+            In particular, how many different triple decker cones use the same three flavors?  (Of course any three distinct flavors could substitute for vanilla, chocolate and strawberry without changing the answer.)
+            </p>
+          </statement>
+          <solution>
+            <p>
+              Six different triple decker cones have the same three flavors.
+            </p>
+          </solution>
+
         </task>
         <task xml:id="twelvechoosethreefinal" >
             <statement>
                 <p>
-            Using your answer from <xref ref="twelvechoosethreethree">part</xref>,
-              compute the number of ways to choose three different flavors of ice
-              cream (out of twelve flavors) from the number of ways to choose a
-              triple decker cone with three different flavors (out of twelve
-              flavors).
+            Using your answer from <xref ref="twelvechoosethreethree" text="local">part</xref>,
+              compute the number of ways to choose three different flavors of ice cream (out of twelve flavors) from the number of ways to choose a triple decker cone with three different flavors (out of twelve  flavors).
                 </p>
             </statement>
       <solution>
         <p>
-          What is different is that the order in which we put the scoops into
-          the cone matters, but for simply choosing three flavors, the order of the
-          choices doesn't matter. Six different triple decker cones have the same
-          three flavors. Thus we have <m>1320/6=220</m> different ways to choose three
-          flavors of ice cream from 12 flavors.
+          Since each choice of three flavors corresonds to six cones, we have <m>1320/6=220</m> different ways to choose three flavors of ice cream from 12 flavors.
         </p>
       </solution>
         </task>
@@ -2051,7 +2068,7 @@ many ways can you pair up the next person who isn't already paired up?
       more detail in order to tease out another counting principle that we
       can use in a wide variety of situations.
     </p>
-</paragraphs>
+
 
     <table xml:id="tab_permsof3" >
       <caption>The <m>3</m>-element permutations of <m>\{a,b,c,d,e\}</m> organized
@@ -2182,6 +2199,12 @@ many ways can you pair up the next person who isn't already paired up?
           A block consists of all permutations of some subset <m>\{a_1 , a_2, \ldots, a_k \}</m> of <m>S</m>. How many permutations are there of the set <m>\{a_1 , a_2, \ldots, a_k \}</m>?
             </p>
         </hint>
+        <solution>
+          <p>
+            The number of permutations in a block is <m>k!</m>.
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2191,6 +2214,12 @@ many ways can you pair up the next person who isn't already paired up?
               the total number of <m>k</m>-element permutations of <m>S</m>?
            </p>
           </statement>
+          <solution>
+            <p>
+              <xref ref="kelementpermutation">problem</xref> tell us that the total number of <m>k</m>-element permutations is <m>n^{\underline{k}} = \frac{n!}{(n-k)!}</m>
+            </p>
+          </solution>
+
         </task>
         <task>
           <statement>
@@ -2205,6 +2234,13 @@ many ways can you pair up the next person who isn't already paired up?
           What sets are listed, and how many times is each one listed if you take one list from each row of <xref ref="tab_permsof3" />? How does this choice of lists give you the bijection in this special case?
             </p>
         </hint>
+        <solution>
+            <p>
+            Each <m>k</m>-element set corresponds to the block of all permutations of
+            that set. It is immediate that this is a bijection.
+          </p>
+        </solution>
+
         </task>
         <task xml:id="formulanchoosekfinal" >
           <statement>
@@ -2220,12 +2256,7 @@ many ways can you pair up the next person who isn't already paired up?
         </hint>
       <solution>
         <p>
-          The number of permutations in a block is <m>k!</m>. <xref ref="kelementpermutation">Problem</xref> tells us that the total number of
-          <m>k</m>-element permutations is <m>n^\frac{\underline{k}}={n!}{ (n-k)!}</m>.
-          Each <m>k</m>-element set corresponds to the block of all permutations of
-          that set. It is immediate that this is a bijection. Assuming there
-          are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so
-          <m>k!s=\frac{n!}{(n-k)!}</m> or <m>s= \frac{n!}{k!(n-k)!}</m>.
+          Assuming there are <m>s</m> subsets, we have <m>k!s</m> permutations in total, so <m>k!s=\frac{n!}{(n-k)!}</m> or <m>s= \frac{n!}{k!(n-k)!}</m>.
         </p>
       </solution>
         </task>
@@ -2242,6 +2273,12 @@ many ways can you pair up the next person who isn't already paired up?
             In how may ways may the coach choose the five players?
           </p>
         </statement>
+        <solution>
+          <p>
+            <m>\binom{12}{5}.</m>
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2258,6 +2295,13 @@ many ways can you pair up the next person who isn't already paired up?
           The coach is making a sequence of decisions. Can you figure out how many choices the coach has for each decision in the sequence?
             </p>
         </hint>
+        <solution>
+          <p>
+            In the more realistic version,
+            <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>.
+          </p>
+        </solution>
+
         </task>
         <task>
           <statement>
@@ -2271,10 +2315,7 @@ many ways can you pair up the next person who isn't already paired up?
         </hint>
       <solution>
         <p>
-          <m>\binom{12}{5}</m>. In the more realistic version,
-          <m>\binom{5}{2}\binom{4}{2}\binom{3}{1}=180</m>. Finally, either the versatile
-          player is playing center or not, and in the second case is available to play
-          forward. This gives us
+          Either the versatile player is playing center or not, and in the second case is available to play forward. This gives us
           <m>\binom{5}{2}\binom{4}{2} \binom{1}{1}+\binom{5}{2}\binom{5}{2}\binom{2}{1}=260</m> ways
           to choose the players.
         </p>
@@ -2307,10 +2348,9 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="quotientprinciple" category="essential">
       <statement>
         <p>
-          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition"></xref>, you
-          have been using the product principle in a new way. One of the ways in which
-          we previously stated the product principle was <q>If we partition a set into
-          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">problems</xref> and <xref ref="roundtablepartition"></xref> we knew the size <m>p</m> of a
+          In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition" text="global" />, you have been using the product principle in a new way.
+          One of the ways in which we previously stated the product principle was <q>If we partition a set into
+          <m>m</m> blocks each of size <m>n</m>, then the set has size <m>m\cdot n</m>.</q> In <xref ref="formulanchoosekfinal">Problems</xref> and <xref ref="roundtablepartition" text="global" /> we knew the size <m>p</m> of a
           set
           <m>P</m> of permutations of a set, and we knew we had partitioned <m>P</m> into some
           unknown number of blocks, each of a certain known size <m>r</m>. If we let
@@ -2328,8 +2368,8 @@ many ways can you pair up the next person who isn't already paired up?
 
     <p>
       The formula you found in the <xref ref="quotientprinciple">Problem</xref> is so useful that
-      we are going to single it out as another principle. The <em>quotient
-      principle</em><idx><h>quotient principle</h></idx> says:
+      we are going to single it out as another principle. The <term>quotient
+      principle</term><idx><h>quotient principle</h></idx> says:
     </p>
 
     <blockquote><p>
@@ -2364,7 +2404,7 @@ many ways can you pair up the next person who isn't already paired up?
         <p>
           In how many ways may we string <m>n</m> distinct beads on a necklace
           without a clasp? (Perhaps we make the necklace by stringing the beads
-          on a strong, and then carefully gluing the two ends of the string
+          on a string, and then carefully gluing the two ends of the string
           together so that the joint can't be seen. Assume someone can pick up the necklace,
           move it around in space and put it back down, giving an
           apparently different way of stringing the beads that is
@@ -2399,19 +2439,15 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="tennispairings2" category="interesting">
         <introduction>
             <p>
-        We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A
-        tennis club has
-        <m>2n</m> members. We want to pair up the members by twos for singles matches.
+        We first gave this problem as <xref ref="tennispairings1a">Problem</xref>. Now we have several ways to approach the problem. A tennis club has <m>2n</m> members. We want to pair up the members by twos for singles matches.
             </p>
         </introduction>
       <task>
         <statement>
           <p>
             In how many ways may we pair up all the members of the club?
-              Give at least two solutions different from the one you gave in
-              <xref ref="tennispairings1a">Problem</xref>. (You may not have done
-              <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find
-              three solutions.)
+            Give at least two solutions different from the one you gave in   <xref ref="tennispairings1a">Problem</xref>.
+            (You may not have done <xref ref="tennispairings1a">Problem</xref>. In that case, see if you can find three solutions.)
           </p>
         </statement>
         <hint>
@@ -2419,8 +2455,25 @@ many ways can you pair up the next person who isn't already paired up?
                 You might first choose the pairs of people. You might also choose to make a list of all the people and then take them by twos from the list.
             </p>
         </hint>
+        <solution>
+            <p>
+              Choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair, <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair.
+              The number of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1} \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>.
+              However each way of pairing people gets listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
+              Therefore the number of actual pairings is <me>\frac{(2n)!}{2^n n!} = \frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1.</me>
+              Notice how this combinatorial solution gives the formula that we found algebraically in <xref ref="tennispairings1a">Problem</xref>, which then turns out to be algebraically equivalent to the formula we first saw in the solution to <xref ref="tennispairings1a">Problem</xref>.
+            </p>
+
+            <p>
+              For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
+              we can take the first two as a tennis pair, the next two, and so on. There
+              are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
+              each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings partition the set of all permutations of the <m>2n</m> members into blocks of size <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
+            </p>
+        </solution>
       </task>
-        <task>
+
+      <task>
           <statement>
           <p>
             Suppose that in addition to specifying who plays whom, for each
@@ -2433,38 +2486,15 @@ many ways can you pair up the next person who isn't already paired up?
        </hint>
       <solution>
         <p>
-          Suppose we list the people in the club in some way, and keep that
-          list for the remainder of the problem. Take the first person from the list
-          and pair that person with any of the <m>2n-1</m> remaining people. Now take the
-          next <em>unpaired</em> person from the list and pair that person with any of the
-          remaining <m>2n-3</m> unpaired people. Continuing in this way, once <m>k</m> pairs have
-          been selected, take the next unpaired person from the list and pair that
-          person with any of the remaining <m>2n-2k-1</m> unpaired people. Every pairing
-          can arise in this way, and no pairing can arise twice in this process. Thus
-          the number of outcomes is <m>\prod_{i=0}^{n-1} (2n-2i-1)</m>.
+          Choose people in ordered piars.  The first person in an ordered pair serves first.  There are <m>2n(2n-1)</m> ways to choose one pair, <m>(2n-2)(2n-3)</m> ways to choose a second pair, and once <m>k</m> pairs have been chosen, there are <m>(2n-2k)(2n-2k-1)</m> ways to choose the next pair.  The number of <em>lists</em> o pairs we get in this way is <m>\prod_{i=0}^{n-1} (2n-2i)(2n-2i-1) = (2n)!</m>.
+          However, each way of pairing people gets listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.  Therefore the number of actual pairings is <m>\frac{(2n)!}{n!} = (2n)^{\underline{n}}</m>.
         </p>
 
         <p>
-          For another solution,
-          choose people in pairs. There are <m>\binom{2n}{2}</m> ways to choose one pair,
-          <m>\binom{2n-2}{2}</m> ways to choose a second pair, and once <m>k</m> pairs have been
-          chosen, there are <m>\binom{2n-2k}{2}</m> ways to choose the next pair. The number
-          of <em>lists</em> of pairs we get in this way is <m>\prod_{i=0}^{n-1}
-          \binom{2n-2i}{2}= \frac{(2n)!}{2^i}</m>. However each way of pairing people gets
-          listed <m>n!</m> times since we see all possible length <m>n</m> lists of pairs.
-          Therefore the number of actual pairings is <m>\frac{(2n)!}{2^n n!}= = \frac{2n!}{2n\cdot2n-2\cdot2n-4\cdot \cdots\cdot 2} =  \prod_{i=0}^{n-1} 2n-2i-1</m>.
-        </p>
-
-        <p>
-          For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then
-          we can take the first two as a tennis pair, the next two, and so on. There
-          are <m>n!</m> ways that a given set of tennis pairings could be arranged, and
-          each of the <m>n</m> pairs could appear in 2 ways, so the tennis pairings
-          partition the set of all permutations of the <m>2n</m> members into blocks of size
-          <m>n!2^n</m>. Thus we have <m>\frac{(2n)!}{n!2^n}</m> tennis pairings once again.
+          For yet another solution, we can list the <m>2n</m> members in <m>(2n)!</m> ways. Then we can take the first two as a tennis pair, with the first person serving first, the next two, and so on. There are <m>n!</m> ways that a given set of tennis pairings could be arranged, so the tennis pairings partition the set of all permutations of the <m>2n</m> members into blocks of size <m>n!</m>. Thus we have <m>\frac{(2n)!}{n!}</m> tennis pairings once again.
         </p>
       </solution>
-        </task>
+    </task>
     </activity>
 
 <!-- Activity 45 -->
@@ -2496,21 +2526,11 @@ many ways can you pair up the next person who isn't already paired up?
     <activity xml:id="Stirling_sapproximation" category="interesting">
       <statement>
         <p>
-          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal"></xref> is very useful,
-          it doesn't give us a sense of how big the binomial coefficients are. We can
-          get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by
-          recognizing that we can write <m>(2n)^\frac{\underline{n}}/n!</m> as <m>{2n}{n}\cdot
-          \frac{2n-1}{n-1}\cdots \frac{n+1}{1}</m>, and each quotient is at least <m>2</m>, so the
-          product is at least <m>2^n</m>. If this were an accurate estimate, it would mean
-          the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be
-          about
-          <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
-          However it is pretty clear the approximation will not be a very good one,
-          because some of the terms in that product are much larger than 2. In fact,
-          if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction
-          <m>\frac{1}{2n+1}</m> of <m>2^{2n}</m>. This is much larger than the fraction
-          <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is
-          much larger than <m>\binom{2n}{1}</m> and is likely larger than
+          While the formula you proved in <xref ref="nchoosek">Problems</xref> and <xref ref="formulanchoosekfinal" text="global" /> is very useful,
+          it doesn't give us a sense of how big the binomial coefficients are. We can get a very rough idea, for example, of the size of <m>\binom{2n}{n}</m> by recognizing that we can write <m>(2n)^\frac{\underline{n}}/n!</m> as <m>{2n}{n}\cdot
+          \frac{2n-1}{n-1}\cdots \frac{n+1}{1}</m>, and each quotient is at least <m>2</m>, so the product is at least <m>2^n</m>. If this were an accurate estimate, it would mean the fraction of <m>n</m>-element subsets of a <m>2n</m>-element set would be about         <m>2^n/2^{2n}=1/2^n</m>, which becomes very small as <m>n</m> becomes large.
+          However it is pretty clear the approximation will not be a very good one, because some of the terms in that product are much larger than 2. In fact, if <m>\binom{2n}{k}</m> were the same for every <m>k</m>, then each would be the fraction <m>\frac{1}{2n+1}</m> of <m>2^{2n}</m>.
+          This is much larger than the fraction <m>\frac{1}{2^n}</m>. But our intuition suggets that <m>\binom{2n}{n}</m> is much larger than <m>\binom{2n}{1}</m> and is likely larger than
           <m>\binom{2n}{n-1}</m> so we can be sure our approximation is a bad one. For estimates like
           this, James Stirling developed a formula to approximate
           <m>n!</m> when <m>n</m> is large, namely <m>n!</m> is about <m>\left(\sqrt{2\pi
@@ -2537,4 +2557,7 @@ many ways can you pair up the next person who isn't already paired up?
         </p>
       </statement>
     </activity>
+
+  </subsection>
+
 </section>

@@ -8,7 +8,7 @@
     </p>
     <figure xml:id="rotate-square">
         <caption>The results on the sides and diagonals of rotating the square</caption>
-        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto">
+        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto" valign="top">
             <image>
                 <latex-image-code>
                     \begin{tikzpicture}
@@ -44,7 +44,7 @@
                     \node [below] at (1,0) {$s_2$};
                     \node [right] at (2,1) {$s_1$};
                     \node [above] at (1,2) {$s_4$};
-                    \node [below] at (1,-0.5) {$\rho$};                    
+                    \node [below] at (1,-0.5) {$\rho$};
                     \end{tikzpicture}
                 </latex-image-code>
             </image>
@@ -64,7 +64,7 @@
                     \node [below] at (1,0) {$s_1$};
                     \node [right] at (2,1) {$s_4$};
                     \node [above] at (1,2) {$s_3$};
-                    \node [below] at (1,-0.5) {$\rho^2$};                    
+                    \node [below] at (1,-0.5) {$\rho^2$};
                     \end{tikzpicture}
                 </latex-image-code>
             </image>
@@ -84,7 +84,7 @@
                     \node [below] at (1,0) {$s_4$};
                     \node [right] at (2,1) {$s_3$};
                     \node [above] at (1,2) {$s_2$};
-                    \node [below] at (1,-0.5) {$\rho^3$};                                        
+                    \node [below] at (1,-0.5) {$\rho^3$};
                     \end{tikzpicture}
                 </latex-image-code>
             </image>
@@ -104,7 +104,7 @@
                     \node [below] at (1,0) {$s_3$};
                     \node [right] at (2,1) {$s_2$};
                     \node [above] at (1,2) {$s_1$};
-                    \node [below] at (1,-0.5) {$\begin{aligned}\rho^4 &amp;=\text{identity}\\&amp;=\rho^0\end{aligned}$};                                        
+                    \node [below] at (1,-0.5) {$\begin{aligned}\rho^4 &amp;=\text{identity}\\&amp;=\rho^0\end{aligned}$};
                     \end{tikzpicture}
                 </latex-image-code>
             </image>
@@ -408,6 +408,7 @@
 </introduction>
 <subsection>
     <title>Groups acting on colorings of sets</title>
+    <idx><h>set</h><h>colorings of action of a group on</h></idx>
     <p>Recall that when you were asked in <xref ref="twocolorsofbeads" /> to find the number of ways to place two red beads and two blue beads at the corners of a square free to move in three-dimensional space, you were not able to apply the quotient principle to answer the question. Instead you had to see that you could divide the set of six lists of two <m>R</m>s and two <m>B</m>s into two sets, one of size two in which the <m>R</m>s and <m>B</m>s alternated and one of size four in which the two reds (and therefore the two blues) would be side-by-side on the square. Saying that the square is free to move in space is equivalent to saying that two arrangements of beads on the square are equivalent if a member of the dihedral group carries one arrangement to the other. Thus an important ingredient in the analysis of such problems will be how a group can act on colorings of a set of vertices. We can describe the coloring of the square in <xref ref="colored-square" /> as the function <m>f</m> with <me>f(1)=R,\; f(2)=R, \; f(3)=B,\;\text{ and }\;f(4)=B</me>, but it is more compact and turns out to be more suggestive to represent the coloring in <xref ref="colored-square" /> as the set of ordered pairs
     <men xml:id="coloring-pairs">
         (1,R), (2,R), (3,B), (4,B)
@@ -415,7 +416,7 @@
     </p>
     <figure xml:id="colored-square">
         <caption>The colored square with coloring <m>\left\{(1,R),(2,R),(3,B),(4,B)\right\}</m></caption>
-        <image>
+        <image width="30%">
             <latex-image-code>
                 \begin{tikzpicture}
                 \draw (0,0) -- (0,2) -- (2,2) -- (2,0) -- (0,0);
@@ -441,6 +442,7 @@
         The reordering we did in <xref ref="coloring-pairs-rotate-natural" /> suggests yet another simplification of notation. So long as we know we that the first elements of our pairs are labeled by the members of <m>[n]</m> for some integer <m>n</m> and we are listing our pairs in increasing order by the first component, we can denote the coloring
         <me>\left\{(1,B),(2,R),(3,R),(4,B)\right\}</me>
         by <m>BRRB</m>. In the case where we have numbered the elements of the set <m>S</m> we are coloring, we will call this list of colors of the elements of <m>S</m> in order the <term>standard notation</term> for the coloring. We will call the ordering used in <xref ref="coloring-pairs-rotate-natural" />the <term>standard ordering</term> of the coloring.<idx><h>coloring</h><h>standard notation</h></idx><idx><h>coloring</h><h>standard ordering</h></idx>
+        <idx><h>standard notation for a coloring</h></idx>
     </p>
     <p>Thus we have three natural ways to represent a coloring of a set: as a function, as a set of ordered pairs, and as a list. Different representations are useful for different things. For example, the representation by ordered pairs will provide a natural way to define the action of a group on colorings of a set. Given a coloring as a function <m>f</m>, we denote the set of ordered pairs <me>\left\{(x,f(x))\mid x\in S\right\}</me>, suggestively as <m>(S,f)</m> for short. We use <m>f(1)f(2)\cdots f(n)</m> to stand for a particular coloring <m>(S,f)</m> in the standard notation.</p>
 
@@ -477,7 +479,7 @@
         </task>
     </activity>
     <p>
-        If <m>G</m> is a group that acts on the set <m>S</m>, we define the <term>action of <m>G</m> on the colorings</term> <m>(S,f)</m> by<idx><h>group</h><h>action of on colorings</h></idx> by
+        If <m>G</m> is a group that acts on the set <m>S</m>, we define the <term>action of <m>G</m> on the colorings</term> <m>(S,f)</m> by<idx><h>group action on colorings</h></idx> by
         <men xml:id="action-on-colorings">
             \overline{\overline{\sigma}}((S,f))=\overline{\overline{\sigma}}\left(\left\{(x,f(x))\mid x\in S\right\}\right) = \left\{\left(\overline{\sigma}(x),f(x)\right)\mid x\in S\right\}.
         </men>.
@@ -597,7 +599,7 @@ namely that <m>\overline{\overline{\sigma}}\circ\overline{\overline{\varphi}} = 
                 <p>Describe these two sets geometrically in terms of the square.
                 </p>
             </statement>
-            
+
             <solution>
                 <p>
                     We get the set of edges and the set of diagonals of the square.
@@ -676,7 +678,7 @@ occur as <m>\tau\sigma</m>?
         </solution>
     </activity>
 
-    
+
     <p>
         Notice that thinking in terms of orbits actually hides some information about the action of our group. When we computed the multiset of all results of acting on <m>\{1, 2\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each side twice. When we computed the multiset of all results of acting on <m>\{1,3\}</m> with the elements of <m>D_4</m>, we got an eight-element multiset containing each diagonal of the square four times. These multisets remind us that we are acting on our two-element sets with an eight-element group. The <term>multiorbit</term><idx>multiorbit</idx> of <m>G</m> determined by an element <m>x</m> of <m>S</m> is the multiset
 <me>\{\overline{\sigma}(x)\mid \sigma \in G\}</me>,
@@ -816,27 +818,29 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
         </solution>
     </activity>
 
-    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union</h><h>of multisets</h></idx> of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family. Two multisets are said to be <term>disjoint</term><idx><h>disjoint</h><h>multisets</h></idx> if no element is a member of both, that is, if no element has multiplicity one or more in both. Since the size of a multiset is the sum of the multiplicities of its members, we immediately get the <term>sum principle for multisets</term>.<idx><h>sum principle</h><h>for multisets</h></idx>
+    <p>We suggested earlier that a quotient principle for multisets might prove useful. The quotient principle came from the sum principle, and we do not have a sum principle for multisets. Such a principle would say that the size of a union of disjoint multisets is the sum of their sizes. We have not yet defined the union of multisets or disjoint multisets, because we haven't needed the ideas until now. We define the <term>union</term><idx><h>union of multisets</h></idx> <idx><h>multisets</h><h>union</h></idx>of two multisets <m>S</m> and <m>T</m> to be the multiset in which the multiplicity of an element <m>x</m> is the maximum<fn>We choose the maximum rather than the sum so that the union of sets is a special case of the union of multisets.</fn> of the multiplicity of <m>x</m> in <m>S</m> and its multiplicity in <m>T</m> . Similarly, the union of a family of multisets is defined by defining the multiplicity of an element <m>x</m> to be the maximum of its multiplicities in the members of the family.
+    Two multisets are said to be <term>disjoint</term><idx><h>disjoint</h><h>multisets</h></idx> if no element is a member of both, that is, if no element has multiplicity one or more in both. Since the size of a multiset is the sum of the multiplicities of its members, we immediately get the <term>sum principle for multisets</term>.<idx><h>sum principle</h><h>for multisets</h></idx>
     </p>
     <blockquote>
         <p>
-            The size of a union of disjoint multisets is the sum of their sizes. <idx><h>sum principle</h><h>for multisets</h></idx>
+            The size of a union of disjoint multisets is the sum of their sizes. <idx><h>sum principle</h><h>for multisets</h></idx><idx><h>multisets</h><h>sum principle</h></idx>
         </p>
     </blockquote>
     <p>
         Taking the multisets all to have the same size, we get the <term>product principle</term> for multisets.<idx><h>product principle</h><h>for multisets</h></idx>
+        <idx><h>multisets</h><h>product principle</h></idx>
     </p>
     <blockquote>
         <p>
-            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>. <idx><h>product principle</h><h>for multisets</h></idx>
+            The union of a set of <m>m</m> disjoint multisets, each of size <m>n</m> has size <m>mn</m>.
         </p>
     </blockquote>
     <p>
-        The <term>quotient principle</term> for multisets then follows immediately.<idx><h>quotient principle</h><h>for multisets</h></idx>
+        The <term>quotient principle</term> for multisets then follows immediately.<idx><h>quotient principle</h><h>for multisets</h></idx><idx><h>multisets</h><h>quotient principle</h></idx>
     </p>
     <blockquote>
         <p>
-            If a <m>p</m>-element multiset is a union of <m>q</m> disjoint multisets, each of size <m>r</m>, then <m>q = p/r</m>.<idx><h>quotient principle</h><h>for multisets</h></idx>
+            If a <m>p</m>-element multiset is a union of <m>q</m> disjoint multisets, each of size <m>r</m>, then <m>q = p/r</m>.
         </p>
     </blockquote>
     <activity xml:id="union-multiorbit-size" category="essential">
@@ -1436,7 +1440,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     <p>
       By <xref ref="cosetsize">problem</xref> <m>A_n</m> and <m>\tau A_n</m> have the same size and
       since their union has <m>n!</m> elements, each has size <m>n!/2</m>. The set <m>\tau
-      A_n</m> is called a <em>left coset</em> of the subgroup <m>A_n</m> of <m>S_n</m>.
+      A_n</m> is called a <term>left coset</term> of the subgroup <m>A_n</m> of <m>S_n</m>.
     </p>
 
     <p>
@@ -1454,17 +1458,17 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
         R_4,
       </me>
       for various elements <m>\sigma</m> of <m>R</m>. The set <m>R_4\sigma</m> is
-      called a <em>right coset</em> of <m>R_4</m> in <m>R</m>, and as before, the set <m>\sigma
+      called a <term>right coset</term> of <m>R_4</m> in <m>R</m>, and as before, the set <m>\sigma
       R_4</m> is called a left coset of <m>R_4</m> in <m>R</m>. In general when <m>H</m> is a
       subgroup of <m>G</m> and <m>\sigma \in G</m>, we call
       <me>
         \sigma H = \{\sigma \varphi|\varphi \in H\}
       </me>
-      a <em>left coset</em> of <m>H</m> in <m>G</m> and we call
+      a <term>left coset</term> of <m>H</m> in <m>G</m> and we call
       <me>
         H\sigma  = \{\varphi\sigma  |\varphi \in H\}
       </me>
-      a <em>right coset</em><idx><h>coset</h></idx><idx><h>left coset</h></idx><idx><h>right coset</h></idx> of
+      a <term>right coset</term><idx><h>coset</h></idx><idx><h>left coset</h></idx><idx><h>right coset</h></idx> of
       <m>H</m> in <m>G</m>. Notice that <m>H</m> is a coset of itself, since we may take
       <m>\sigma=\iota</m>. In <xref ref="cosetsize">Problem</xref> you showed that a subgroup
       and all its (left) cosets have the same size. Of course the right cosets
@@ -2166,7 +2170,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
           identical to the other one. This is equivalent to permuting the vertices in some
           way so that when we apply the permutation to the endpoints of the edges to get a new
           edge set, the new edge set is equal to the old one. Such a permutation is called an
-          <em>automorphism</em><idx><h>automorphism (of a graph)</h></idx> of the graph. Thus two
+          <term>automorphism</term><idx><h>automorphism (of a graph)</h></idx> of the graph. Thus two
           colorings are different if there is no automorphism of the graph that carries one to
           the other one.
         </p>
