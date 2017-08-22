@@ -126,12 +126,14 @@
 <xsl:param name="exercise.text.statement" select="'yes'" />
 <xsl:param name="exercise.text.hint" select="'yes'" />
 <xsl:param name="exercise.text.answer" select="'no'" />
-<xsl:param name="exercise.text.solution" select="'yes'" />
+<xsl:param name="exercise.text.solution" select="'no'" />
 <xsl:param name="exercise.backmatter.statement" select="'no'" />
 <xsl:param name="exercise.backmatter.hint" select="'no'" />
-<xsl:param name="exercise.backmatter.answer" select="'yes'" />
-<xsl:param name="exercise.backmatter.solution" select="'yes'" />
+<xsl:param name="exercise.backmatter.answer" select="'no'" />
+<xsl:param name="exercise.backmatter.solution" select="'no'" />
 
+<xsl:param name="project.text.hint" select="'no'" />
+<xsl:param name="task.text.hint" select="'no'" />
 
 
 <!-- Include a style file at the end of the preamble: -->
@@ -380,6 +382,57 @@
         </xsl:when>
     </xsl:choose>
 </xsl:template>
+
+
+
+<!-- Hack backmatter to get hints to projects and tasks: -->
+
+
+<xsl:template match="solution-list">
+    <!-- TODO: check here once for backmatter switches set to "knowl", which is unrealizable -->
+    <!-- <xsl:apply-templates select="activity" mode="backmatter" /> -->
+    <xsl:text>\begin{itemize}[itemsep=1em]&#xa;</xsl:text>
+   <xsl:apply-templates select="//activity" mode="backmatter"/>
+   <xsl:text>\end{itemize}&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="activity" mode="backmatter">
+  <xsl:if test="hint and $project.backmatter.hint='yes'">
+        <!-- Lead with the problem number and some space -->
+    <xsl:text>\item[\textbf{</xsl:text>
+    <xsl:apply-templates select="." mode="serial-number" />
+    <xsl:text>}.]</xsl:text>
+    <xsl:apply-templates select="hint" mode="backmatter" />
+  </xsl:if>
+  <xsl:apply-templates select="task" mode="backmatter" />
+</xsl:template>
+
+
+<xsl:template match="task" mode="backmatter">
+  <xsl:if test="hint and $task.backmatter.hint='yes'">
+        <!-- Lead with the problem number and some space -->
+    <xsl:text>\item[\textbf{</xsl:text>
+    <xsl:apply-templates select="." mode="number" />
+    <xsl:text>}.]</xsl:text>
+    <xsl:apply-templates select="hint" mode="backmatter" />
+  </xsl:if>
+  <xsl:apply-templates select="task" mode="backmatter" />
+</xsl:template>
+
+
+<!-- We print hints, answers, solutions with no heading. -->
+<!-- TODO: make heading on solution components configurable -->
+<xsl:template match="hint" mode="backmatter">
+    <xsl:apply-templates />
+    <xsl:text>&#xa;</xsl:text>
+</xsl:template>
+
+<xsl:template match="hint[2]" mode="backmatter">
+    <xsl:text>\par\smallskip&#xa;\noindent\textbf{Additional Hint}: </xsl:text>
+    <xsl:apply-templates />
+    <xsl:text>&#xa;</xsl:text>
+</xsl:template>
+
 
 
 </xsl:stylesheet>
