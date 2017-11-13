@@ -517,7 +517,7 @@
       More precisely, an <term>ordered function</term><idx><h>ordered function</h></idx><idx><h>function</h><h>ordered</h></idx> from a set <m>S</m> to a set <m>T</m> is a function that assigns an (ordered) list of elements of <m>S</m> to some, but not necessarily all, elements of <m>T</m> in such a way that each element of <m>S</m> appears on one and only one of the lists.<fn>The phrase ordered function is not a standard one, because there is as yet no standard name for the result of an ordered distribution problem.</fn>
       (Notice that although it is not the usual definition of a function from <m>S</m> to <m>T</m>, a function<idx><h>function</h><h>alternate definition</h></idx> can be described as an assignment of subsets of <m>S</m> to some, but not necessarily all, elements of <m>T</m> so that each element of <m>S</m> is in one and only one of these subsets.) Thus the number of ways to place the books into the bookcase is the entry in the middle column of row 5 of our table. If in addition we require each shelf to get at least one book, we are discussing the entry in the middle column of row 6 of our table.
       An <term>ordered onto function</term><idx><h>function</h><h>ordered!onto</h></idx><idx><h>ordered onto function</h></idx><idx><h>onto function</h><h>ordered</h></idx> is one which assigns a list to each element of <m>T</m>.
-      In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^n (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><idx><h>factorial power</h><h>rising</h></idx><idx><h>rising factorial power</h></idx> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.
+      In <xref ref="bookcase">Problem</xref> you showed that the number of ordered functions from a <m>k</m>-element set to an <m>n</m>-element set is <m>\displaystyle \prod_{i=1}^k (n+i-1)</m>. This product occurs frequently enough that it has a name; it is called the <m>k</m>\/th <term>rising factorial power</term><idx><h>factorial power</h><h>rising</h></idx><idx><h>rising factorial power</h></idx> of <m>n</m> and is denoted by <m>n^{\overline{k}}</m>.
       <idx><h><m>n^{\overline{k}}</m></h></idx> It is read as ``<m>n</m> to the <m>k</m> rising.''
       (This notation is due to Don Knuth, who also suggested the notation for falling factorial powers.)<idx><h>factorial</h></idx> We can summarize with a theorem that adds two more formulas for the number of ordered functions.<idx><h>factorial</h><h>falling</h></idx><idx><h>falling factorial power</h></idx>
     </p>
@@ -528,12 +528,15 @@
           The number of ordered functions from a <m>k</m>-element set to
           an <m>n</m>-element set is
           <me>
-            n^{\overline{k}}=\prod_{i=1}^n (n+i-1) = \frac{(n+i-1)!}{(n-1)!} =
+            n^{\overline{k}}=\prod_{i=1}^k (n+i-1) = \frac{(n+i-1)!}{(n-1)!} =
             (n+k-1)^{\underline{k}}.
           </me>
         </p>
       </statement>
     </theorem>
+    <p>
+      Ordered functions explain the entries in the middle column of rows 5 and 6 of our table of distribution problems.
+    </p>
   </subsection>
 
 
@@ -564,7 +567,7 @@
         <p>
           We saw that we could arrange <m>k</m> distinct books on <m>n</m> shelves in <m>\prod_{i=1}^k (n+i-1)</m> ways. We partition these arrangements into blocks by putting two arrangements in the same block if we can get one from the other by permuting the books among themselves. Then the number of blocks is the number of ways to place identical books on the shelves. However, there are <m>k!</m> arrangements per block, so there are
           <me>
-            \frac{\prod_{i=1}^k (n+i-1)}{k!}=(n+k-1)^{\underline{k}}= \binom{n+k-1}{k}
+            \frac{\prod_{i=1}^k (n+i-1)}{k!}=\frac{(n+k-1)^{\underline{k}}}{k!} = \binom{n+k-1}{k}
           </me>
           ways to arrange identical books.
         </p>
