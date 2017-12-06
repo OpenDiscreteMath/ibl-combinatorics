@@ -218,7 +218,7 @@
             </statement>
             <solution>
                 <p>
-                    <m>a_0b^2+a_1b_1+a_2b_0</m> is the coefficient of <m>x^2</m>. <m>a_1b_3+a_2b_2</m>
+                    <m>a_0b_2+a_1b_1+a_2b_0</m> is the coefficient of <m>x^2</m>. <m>a_1b_3+a_2b_2</m>
                     is the coefficient of <m>x^4</m>.
                 </p>
             </solution>
@@ -342,7 +342,7 @@
 
         <activity xml:id="ProductPrincipleOGF" category="essential">
             <statement>
-                <p>Suppose that we have two sets <m>S_1</m> and <m>S_2</m>. Let <m>v_1</m> (<m>v</m> stands for value) be a function from <m>S_1</m> to the nonnegative integers and let <m>v_2</m> be a function from <m>S_2</m> to the nonnegative integers.  Define a new function <m>v</m> on the set <m>S_1 \times S_2</m> by <m>v(x_1,x_2) = v_1(x_1) +v_2(x_2)</m>. Suppose further that <m>\sum_{i=0}^\infty a_ix^i</m> is the generating function for the number of elements <m>x_1</m> of <m>S_1</m> of value <m>i</m>, that is with <m>v_1(x_1)=i</m>. Suppose also that <m>\sum_{j=0}^\infty b_j x^j</m> is the generating function for the number of elements of <m>x_2</m> of <m>S_2</m> of value <m>j</m>, that is with <m>v_2(x_2) = j</m>.  Prove that the coefficient of <m>x^k</m> in
+                <p>Suppose that we have two sets <m>S_1</m> and <m>S_2</m>. Let <m>v_1</m> (<m>v</m> stands for value) be a function from <m>S_1</m> to the nonnegative integers and let <m>v_2</m> be a function from <m>S_2</m> to the nonnegative integers.  Define a new function <m>v</m> on the set <m>S_1 \times S_2</m> by <m>v(x_1,x_2) = v_1(x_1) +v_2(x_2)</m>. Suppose further that <m>\sum_{i=0}^\infty a_ix^i</m> is the generating function for the number of elements <m>x_1</m> of <m>S_1</m> of value <m>i</m>, that is with <m>v_1(x_1)=i</m>. Suppose also that <m>\sum_{j=0}^\infty b_j x^j</m> is the generating function for the number of elements <m>x_2</m> of <m>S_2</m> of value <m>j</m>, that is with <m>v_2(x_2) = j</m>.  Prove that the coefficient of <m>x^k</m> in
                 <me>
                     \left(\sum_{i=0}^\infty a_ix^i\right)\left(\sum_{j=0}^\infty
                     b_jx^j\right)
@@ -572,7 +572,7 @@
                 <p>
                     <m>(1+x+x^2+x^3+x^4)^3</m>. We can write
                     <md>
-                        <mrow> \amp (1+x+x^2+x^3+x^4)^3 \rangle =\rangle \left(\frac{1-x^5}{1-x}\right)^3</mrow>
+                        <mrow>  (1+x+x^2+x^3+x^4)^3 =\amp \left(\frac{1-x^5}{1-x}\right)^3</mrow>
                         <mrow> =\amp (1-x^5)^3(1-x)^{-3}</mrow>
                         <mrow> =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{3+i-1}{i}x^i</mrow>
                         <mrow> =\amp (1-3x^5+3x^{10}-x^{15})\sum_{i=0}^\infty \binom{2+i}{i}x^i</mrow>

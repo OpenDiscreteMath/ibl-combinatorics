@@ -73,7 +73,7 @@
     <activity>
         <statement>
           <p>
-            Explain the relationship between partitions of <m>k</m> into <m>n</m> parts and lists <m>x_1,x_2</m>,<ellipsis />, <m>x_n</m> of positive integers with <m>x_1\ge x_2\ge\ldots \ge x_n</m>. Such a representation of a partition is called a <term>decreasing list</term><idx><h>partition of an integer</h><h>decreasing list</h></idx> representation of the partition.
+            Explain the relationship between partitions of <m>k</m> into <m>n</m> parts and lists <m>x_1,x_2</m>,<ellipsis />, <m>x_n</m> of positive integers that add to <m>k</m> with <m>x_1\ge x_2\ge\ldots \ge x_n</m>. Such a representation of a partition is called a <term>decreasing list</term><idx><h>partition of an integer</h><h>decreasing list</h></idx> representation of the partition.
           </p>
         </statement>
         <solution>
@@ -101,28 +101,24 @@
     <activity>
         <statement>
           <p>
-            How does the number of partitions of <m>k</m> relate to the number of
-            partitions of <m>k+1</m> whose smallest part is one?
+            How does the number of partitions of <m>k</m> relate to the number of partitions of <m>k+1</m> whose smallest part is one?
           </p>
         </statement>
         <hint>
           <p>
-        How can you start with a partition of k and make it into a new partition of <m>k+1</m> that is guaranteed to have a part of size one, even if the original partition didn't?
+        How can you start with a partition of <m>k</m> and make it into a new partition of <m>k+1</m> that is guaranteed to have a part of size one, even if the original partition didn't?
           </p>
         </hint>
         <solution>
           <p>
             They are equal, because if we take two different partitions
-            of <m>k-1</m> and increase the multiplicity of 1 in each (by one), they are
-            still different; also if we take two different partitions of <m>k</m> that
-            have parts of size one, and decrease the multiplicity of 1 in each (by
-            one), they are still different.
+            of <m>k</m> and increase the multiplicity of 1 in each (by one), they are still different; also if we take two different partitions of <m>k+1</m> that have parts of size one, and decrease the multiplicity of 1 in each (by one), they are still different.
           </p>
         </solution>
     </activity>
 
     <p>
-      When we write a partition as <m>\lambda = \lambda_1,\lambda_2,\ldots,\lambda_n</m>, it is customary to write the list of <m>\lambda_i</m>s as a decreasing list. When we have a type vector <m>(t_1,t_2,\ldots,t_m)</m> for a partition, we write either <m>\lambda = 1^{t_1}2^{t_2}\cdots m^{t_m}</m> or <m>\lambda = m^{t_m}(m-1)^{t_{m-1}}\cdots 2^{t_2}1^{t_1}</m>. Henceforth we will use the second of these. When we write <m>\lambda=\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}</m>, we will assume that <m>\lambda_i>\lambda_i+1</m>.
+      When we write a partition as <m>\lambda = \lambda_1,\lambda_2,\ldots,\lambda_n</m>, it is customary to write the list of <m>\lambda_i</m>s as a decreasing list. When we have a type vector <m>(t_1,t_2,\ldots,t_m)</m> for a partition, we write either <m>\lambda = 1^{t_1}2^{t_2}\cdots m^{t_m}</m> or <m>\lambda = m^{t_m}(m-1)^{t_{m-1}}\cdots 2^{t_2}1^{t_1}</m>. Henceforth we will use the second of these. When we write <m>\lambda=\lambda_1^{i_1}\lambda_2^{i_2}\cdots\lambda_n^{i_n}</m>, we will assume that <m>\lambda_i>\lambda_{i+1}</m>.
     </p>
   </subsection>
 
@@ -282,12 +278,12 @@
     <activity xml:id="rectanglecomplement" category="interesting">
         <statement>
           <p>
-            Show that the number of partitions of <m>k</m> into <m>4</m> parts equals the number of partitions of <m>3k</m> (or <m>3k+4</m> or <m>3k-4</m>) into <m>4</m> parts.
+            Show that the number of partitions of <m>k</m> into four parts equals the number of partitions of <m>3k</m> into four parts of size at most <m>k-1</m> (or <m>3k-4</m> into four parts of size at most <m>k-2</m> or <m>3k-4</m> into four parts of size at most <m>k</m>).
           </p>
         </statement>
         <hint>
           <p>
-        Draw a partition of ten into 4 parts. Assume each square has area one. Then draw a rectangle of area 40 enclosing your diagram that touches the top of your diagram, the left side of your diagram and the bottom of your diagram. How does this rectangle give you a partition of 30 into four parts?
+        Draw a partition of ten into four parts. Assume each square has area one. Then draw a rectangle of area 40 enclosing your diagram that touches the top of your diagram, the left side of your diagram and the bottom of your diagram. How does this rectangle give you a partition of 30 into four parts?
           </p>
         </hint>
 
