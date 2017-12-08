@@ -1092,16 +1092,14 @@ about these numbers.
         <statement>
           <p>
             By using Stirling's formula, show that if <m>n</m> is large enough, then
-            <m>R(n,n) > \sqrt{2^n} = \sqrt{2}^{\rangle n}</m>
+            <m>R(n,n) > \sqrt{2^n} = \sqrt{2}^{n}</m>.  (Here large enough means large enough for Stiirling's formula to be reasonable accurate.)
           </p>
         </statement>
         <solution>
           <p>
             Using Stirling's approximation to <m>n!</m> we get
             <me>
-              R(n,n)>\root n \of
-              {\frac{n^n}{e^n}\sqrt{2\pi n}2^{^\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{^\frac{n^2-n-2}{2n}}\root 2n \of{2\pi
-              n}>2^n/2=\sqrt{2}^{\rangle n}.
+              R(n,n)\gt \sqrt[n]{\frac{n^n}{e^n}\sqrt{2\pi n}2^{\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{\frac{n^2-n-2}{2n}}\sqrt[2n]{2\pi n} \gt 2^{n/2} =\sqrt{2}^{n}.
             </me>
           </p>
         </solution>

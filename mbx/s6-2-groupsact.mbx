@@ -449,7 +449,7 @@
     <activity category="motivational">
         <introduction>
             <p>
-                Suppose now that instead of coloring the vertices of a square, we color its edges. We will use the shorthand 12, 23, 34, and 41 to stand for the edges of the cube between vertex 1 and vertex 2, vertex 2 and vertex 3, and so on. Then a coloring of the edges with 12 red, 23 blue, 34 red and 41 blue can be represented as
+                Suppose now that instead of coloring the vertices of a square, we color its edges. We will use the shorthand 12, 23, 34, and 41 to stand for the edges of the square between vertex 1 and vertex 2, vertex 2 and vertex 3, and so on. Then a coloring of the edges with 12 red, 23 blue, 34 red and 41 blue can be represented as
                 <men xml:id="square-edge-coloring">\left\{(12,R),(23,B),(34,R),(41,B)\right\}</men>. If <m>\rho</m> is the rotation through 90 degrees, then we have a permutation <m>\overline{\rho}</m> acting on its edges. This permutation acts on the colorings to give us a permutation <m>\overline{\overline{\rho}}</m> of the set of colorings.
             </p>
         </introduction>
@@ -483,7 +483,7 @@
         <men xml:id="action-on-colorings">
             \overline{\overline{\sigma}}((S,f))=\overline{\overline{\sigma}}\left(\left\{(x,f(x))\mid x\in S\right\}\right) = \left\{\left(\overline{\sigma}(x),f(x)\right)\mid x\in S\right\}.
         </men>.
-        We have two bars over <m>\sigma</m> because <m>\sigma</m> is a permutation of one set that gives us a permutation <m>\overline{\sigma}</m> of a setcond set, and then <m>\overline{\sigma}</m> acts to give a permutation <m>\overline{\overline{\sigma}}</m> of a thid set, the set of colorings. For example, suppose we want to analyze colorings of the faces of a cube under the action of the rotation group of the cube as we have defined it on the vertices. Each vertex-permutation <m>\sigma</m> in the group gives a permutation <m>\overline{\sigma}</m> of the faces of the cube. Then each permutation <m>\overline{\sigma}</m> of the faces gives us a permutation <m>\overline{\overline{\sigma}}</m> of the colorings of the faces.
+        We have two bars over <m>\sigma</m> because <m>\sigma</m> is a permutation of one set that gives us a permutation <m>\overline{\sigma}</m> of a second set, and then <m>\overline{\sigma}</m> acts to give a permutation <m>\overline{\overline{\sigma}}</m> of a thid set, the set of colorings. For example, suppose we want to analyze colorings of the faces of a cube under the action of the rotation group of the cube as we have defined it on the vertices. Each vertex-permutation <m>\sigma</m> in the group gives a permutation <m>\overline{\sigma}</m> of the faces of the cube. Then each permutation <m>\overline{\sigma}</m> of the faces gives us a permutation <m>\overline{\overline{\sigma}}</m> of the colorings of the faces.
     </p>
 
     <p>
@@ -648,7 +648,7 @@ occur as <m>\tau\sigma</m>?
         </hint>
         <solution>
             <p>
-                No, because if <m>z = \overline{\sigma}(x)</m> and <m>z = \overline{\varphi}(y)</m>, then <m>Gz = Gx = Gy</m>, where the last two equalities follow from the fact that as <m>/tau</m> ranges over <m>G</m>, so does <m>\tau\sigma</m> and <m>\tau\varphi</m>.
+                No, because if <m>z = \overline{\sigma}(x)</m> and <m>z = \overline{\varphi}(y)</m>, then <m>Gz = Gx = Gy</m>, where the last two equalities follow from the fact that as <m>\tau</m> ranges over <m>G</m>, so does <m>\tau\sigma</m> and <m>\tau\varphi</m>.
             </p>
         </solution>
     </activity>
@@ -686,7 +686,7 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
     </p>
 
     <p>
-        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating n people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref ref="twocolorsofbeads" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
+        When we used the quotient principle to count circular seating arrangements or necklaces, we partitioned up a set of lists of people or beads into blocks of equivalent lists. In the case of seating <m>n</m> people around a round table, what made two lists equivalent was, in retrospect, the action of the rotation group <m>C_n</m>. In the case of stringing <m>n</m> beads on a string to make a necklace, what made two lists equivalent was the action of the dihedral group. Thus the blocks of our partitions were orbits of the rotation group or the dihedral group, and we were counting the number of orbits of the group action. In <xref ref="twocolorsofbeads" />, we were not able to apply the quotient principle because we had blocks of different sizes. However, these blocks were still orbits of the action of the group <m>D_4</m>. And, even though the orbits have different sizes, we expect that each orbit corresponds naturally to a multiorbit and that the multiorbits all have the same size. Thus if we had a version of the quotient rule for a union of multisets, we could hope to use it to count the number of multiorbits.
     </p>
 
     <activity>
@@ -1777,6 +1777,12 @@ and is denoted by <m>Gx_{\text{multi}}</m>.
                     For this purpose, how does the sum <m>\sum_{x\colon x\in S}|\Fix(x)|</m> relate to the number of ordered pairs <m>(\sigma,x)</m> (with <m>\sigma\in G</m> and <m>x \in S</m>) such that <m>\sigma</m> fixes <m>x</m>?
                 </p>
             </statement>
+            <solution>
+              <p>
+                They are equal, because <m>\Fix(x)</m> computes the number of ordered pairs using that particular <m>x</m>.
+              </p>
+            </solution>
+
         </task>
         <task>
             <statement>
