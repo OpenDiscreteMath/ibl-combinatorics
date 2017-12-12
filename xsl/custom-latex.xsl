@@ -436,13 +436,13 @@
 <!-- Put hint markers on statements that have hints: -->
 <!-- This works, but does not look great. -->
 <!-- A project may have a hint, with switch control -->
-<!-- <xsl:template match="hint">
+<xsl:template match="hint">
     <xsl:if test="$project.text.hint = 'yes'">
         <xsl:apply-templates select="." mode="solution-heading" />
         <xsl:apply-templates />
     </xsl:if>
-    <xsl:text>\hfill {\footnotesize (h)}</xsl:text>
-</xsl:template> -->
+    <xsl:text>~{\tiny (h)}</xsl:text>
+</xsl:template>
 
 
 </xsl:stylesheet>
