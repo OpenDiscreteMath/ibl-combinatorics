@@ -433,6 +433,16 @@
     <xsl:text>&#xa;</xsl:text>
 </xsl:template>
 
+<!-- Put hint markers on statements that have hints: -->
+<!-- This works, but does not look great. -->
+<!-- A project may have a hint, with switch control -->
+<xsl:template match="hint">
+    <xsl:if test="$project.text.hint = 'yes'">
+        <xsl:apply-templates select="." mode="solution-heading" />
+        <xsl:apply-templates />
+    </xsl:if>
+    <xsl:text>~{\tiny (h)}</xsl:text>
+</xsl:template>
 
 
 </xsl:stylesheet>

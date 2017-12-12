@@ -69,49 +69,35 @@
 \usepackage{tcolorbox}
 \tcbuselibrary{skins}
 \tcbuselibrary{breakable}
-
-\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
-
-% \tcbuselibrary{theorems}
-%
-% \newtcbtheorem{myproblem}{Problem}{colback=green!5, colframe=black}{th}
+\usetikzlibrary{positioning,shadows}
 
 
-
-%Create indented ``problem'' environment:
-% \newmdtheoremenv[%
-% leftmargin=1.5ex, %left/right margins for oneside
-% rightmargin=1.5ex,
-% roundcorner=0pt,
-% topline=false,
-% leftline=false,
-% ]{mdproblem}[project]{Problem}
 \tcbset{probstyle/.style={%
 	breakable,
 	enhanced,
 	colback=white,
-	colframe=black!60,
-	toprule=0mm,
-	leftrule=0mm,
-	bottomrule=.5pt,
-	rightrule=.5pt,
-	% bottom=0pt,
-	top=2pt,
-	extras unbroken and last={drop lifted shadow},
+	top=.5em,
 	before skip=1em,
 	after skip=.5em,
 	sharp corners=all,
-	% after upper*={\quad $\sslash$},
-	% overlay last={%
-	% 	% \node at ([yshift=1em,xshift=-1em]frame.south east) {$\sslash$};
-	% 	\draw[#1, blue!20] ([xshift=-10pt, yshift=-5pt]frame.south east) -- ++(0,2.5em);
-	% 	\draw[#1, blue!20] ([xshift=-5pt]frame.south east) -- ++(-3em,0);
-	% 	},
-	% overlay unbroken={%
-	% 	% \node at ([yshift=1em,xshift=-1em]frame.south east) {$\sslash$};
-	% 	\draw[#1, blue!20] ([xshift=-10pt, yshift=-5pt]frame.south east) -- ++(0,2.5em);
-	% 	\draw[#1, blue!20] ([xshift=-5pt]frame.south east) -- ++(-3em,0);
-	% 	}
+	frame hidden,
+	%Draw breakable decorations:
+	overlay first={%
+		\draw[black!60, path fading=west] (frame.north) -- (frame.north east) -- (frame.south east);
+		},
+	overlay middle={%
+		\draw[black!60] (frame.south east) -- (frame.north east);
+		},
+	 overlay last={%
+		\fill[right color=black!40, left color=white, white] ([xshift=-4pt]frame.south east) -- ++(0,-4pt) to[out=176, in=-2] (frame.south) -- cycle;
+		\draw[black!60, path fading=west] (frame.south) -- (frame.south east);
+		\draw[black!60] (frame.north east) -- (frame.south east);
+		},
+	overlay unbroken={%
+		\fill[right color=black!40, left color=white, white] ([xshift=-4pt]frame.south east) -- ++(0,-4pt) to[out=176, in=-2] (frame.south) -- cycle;
+		\draw[black!60, path fading=west] (frame.south) -- (frame.south east);
+		\draw[black!60, path fading=west] (frame.north) -- (frame.north east) -- (frame.south east);
+		}
 	}
 }
 
