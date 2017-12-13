@@ -2,8 +2,9 @@
 
 <!-- This file is part of the book                 -->
 <!--                                               -->
-<!--   Discrete Mathematics: an Open Introduction  -->
-<!--                                               -->
+<!--   Combinatorics through Guided Discovery      -->
+<!-- Adapted from the corresponding file for       -->
+<!-- Discrete Mathematics: An Open Introduction    -->
 <!-- Copyright (C) 2015-2016 Oscar Levin           -->
 <!-- See the file COPYING for copying conditions.  -->
 
@@ -15,7 +16,7 @@
 
 
 
-<!-- Assumes current file is in discrete-text/xsl                         -->
+<!-- Assumes current file is in ibl-combinatorics/xsl                     -->
 <!-- These are defined in matbook-common.xsl, so these are overrides      -->
 <!-- Explanations are verbatim, from 2015/05/19                           -->
 
@@ -57,8 +58,8 @@
 <!-- Second, an exercise in a solutions list in backmatter.-->
 <xsl:param name="exercise.backmatter.statement" select="'no'" />
 <xsl:param name="exercise.backmatter.hint" select="'yes'" />
-<xsl:param name="exercise.backmatter.answer" select="'yes'" />
-<xsl:param name="exercise.backmatter.solution" select="'yes'" />
+<xsl:param name="exercise.backmatter.answer" select="'no'" />
+<xsl:param name="exercise.backmatter.solution" select="'no'" />
 <!-- Now project-like elements, in main text.  -->
 <!-- A task is a division of a project         -->
 <xsl:param name="project.text.statement" select="'yes'" /> <!-- not implemented -->
@@ -111,11 +112,11 @@
 <!-- Last level where subdivision (section) numbering takes place     -->
 <!-- For example, "2" would mean subsections of a book are unnumbered -->
 <!-- N.B.: the levels above cannot be numerically larger              -->
-<xsl:param name="numbering.maximum.level" select="'3'" />
+<xsl:param name="numbering.maximum.level" select="''" />
 <!-- Image files, media files and knowls are placed in directories    -->
 <!-- The defaults are relative to wherever principal output goes      -->
 <!-- These can be overridden at the command-line or in customizations -->
-<xsl:param name="directory.images" select="'images'" />
+<xsl:param name="directory.images" select="'../images'" />
 <xsl:param name="directory.media"  select="'media'" />
 <xsl:param name="directory.knowls" select="'knowls'" />
 <!-- Pointers to realizations of the actual document -->
