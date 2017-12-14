@@ -9,8 +9,8 @@
 \newcommand{\cycle}[1]{\arraycolsep 5 pt
 \left(\begin{array}#1\end{array}\right)}
 \newcommand{\importantarrow}{\Rightarrow}
-\newcommand{\qchoose}[2]{\left[{#1\atop#2}\right]_q}
-\def\neg1choose#1#2{\left[{#1\atop#2}\right]_{-1}}
+\newcommand{\qchoose}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
+\def\neg1choose#1#2{\genfrac{[}{]}{0pt}{}{#1}{#2}_{-1}}
 \newcommand{\bp}{
 \begin{enumerate}{\setcounter{enumi}{\value{problemnumber}}}}
 \newcommand{\ep}{\setcounter{problemnumber}{\value{enumi}}
