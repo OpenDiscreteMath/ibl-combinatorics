@@ -28,10 +28,10 @@
 
     <p>
       Each gray circle in the figure represents a vertex; each line segment
-      represents an edge. You will note that we labelled
+      represents an edge. You will note that we labeled
       the vertices; these labels are names we chose to give the vertices. We
       can choose names or not as we please. The third graph also shows that it
-      is possible to have an edge that connects a vertex (like the one labelled
+      is possible to have an edge that connects a vertex (like the one labeled
       <m>y</m>) to itself or it is possible to have two or more edges (like those
       between vertices <m>v</m> and <m>y</m>) between two vertices. The <term>degree</term><idx><h>vertex</h><h>degree of</h></idx><idx><h>degree of a vertex</h></idx> of a vertex is
       the number of times it appears as the endpoint of edges; thus the degree
@@ -397,14 +397,14 @@
           1 and 3 and between 2 and 3. See <xref ref="differenttrees">Figure</xref>.
         </p>
         <figure xml:id="differenttrees" >
-          <caption>The three labelled
+          <caption>The three labeled
           trees on three vertices</caption>
           <image width="80%" source="images/threetrees" />
         </figure>
         <p>
           How many
-          (labelled) trees are there on four vertices? You don't have a lot of data
-          to guess from, but try to guess a formula for the number of labelled trees
+          (labeled) trees are there on four vertices? You don't have a lot of data
+          to guess from, but try to guess a formula for the number of labeled trees
           with vertex set
           <m>\{1,2,\cdots,n\}</m>.
         </p>
@@ -418,8 +418,8 @@
 
       <solution>
         <p>
-          There is one labelled tree on two vertices. We know there are three
-          labelled trees on three vertices, and they all are paths. The difference
+          There is one labeled tree on two vertices. We know there are three
+          labeled trees on three vertices, and they all are paths. The difference
           among them is which vertex is the central vertex on the path. On four
           vertices a tree either has a vertex of degree 3 (there are four such trees) or
           it is a path, in which case there are six choices for the two vertices of
@@ -436,19 +436,19 @@
           a path. We have <m>\binom{5}{2}=10</m> ways to choose the two vertices of degree
           one, and then there are <m>3!=6</m> ways to arrange the remaining vertices along
           the path, so we have 60 paths. Thus we have <m>125</m> trees on five vertices.
-          These computations suggest there are <m>n^{n-2}</m> labelled trees on <m>n</m> vertices.
+          These computations suggest there are <m>n^{n-2}</m> labeled trees on <m>n</m> vertices.
         </p>
       </solution>
     </activity>
 
     <p>
-      We are now going to introduce a method to prove the formula you guessed. Given a tree with two or more vertices, labelled with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of integers inductively as follows: If the tree has two vertices, the sequence consists of one entry, namely the label of the vertex with the larger label. Otherwise, let <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m> be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write down <m>b_1</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and <m>b_1</m> is 2. Given <m>a_1</m> through <m>a_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m>and let <m>b_i</m> be the unique vertex in this new tree adjacent to <m>a_i</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_2=2</m> and <m>b_2=3</m>. Then <m>a_3=5</m> and <m>b_3=4</m>. We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. In the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, the sequence <m>b</m> is 2344378. (If you are unfamiliar with inductive (recursive) definition, you might want to write down some other labelled trees on eight vertices and construct the sequence of <m>b_i</m>s.)
+      We are now going to introduce a method to prove the formula you guessed. Given a tree with two or more vertices, labeled with positive integers, we define a sequence <m>b_1,b_2,\ldots</m> of integers inductively as follows: If the tree has two vertices, the sequence consists of one entry, namely the label of the vertex with the larger label. Otherwise, let <m>a_1</m> be the lowest numbered vertex of degree 1 in the tree. Let <m>b_1</m> be the label of the unique vertex in the tree adjacent to <m>a_1</m> and write down <m>b_1</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_1</m> is 1 and <m>b_1</m> is 2. Given <m>a_1</m> through <m>a_{i-1}</m>, let <m>a_i</m> be the lowest numbered vertex of degree 1 in the tree you get by deleting <m>a_1</m> through <m>a_{i-1}</m>and let <m>b_i</m> be the unique vertex in this new tree adjacent to <m>a_i</m>. For example, in the first graph in <xref ref="Threegraphs">Figure</xref>, <m>a_2=2</m> and <m>b_2=3</m>. Then <m>a_3=5</m> and <m>b_3=4</m>. We use <m>b</m> to stand for the sequence of <m>b_i</m>s we get in this way. In the tree (the first graph) in <xref ref="Threegraphs">Figure</xref>, the sequence <m>b</m> is 2344378. (If you are unfamiliar with inductive (recursive) definition, you might want to write down some other labeled trees on eight vertices and construct the sequence of <m>b_i</m>s.)
     </p>
     <activity xml:id="prufer-props">
       <task>
         <statement>
           <p>
-            How long will the sequence of <m>b_i</m>s be if it is computed from a tree with <m>n</m> vertices (labelled with 1 through <m>n</m>)?
+            How long will the sequence of <m>b_i</m>s be if it is computed from a tree with <m>n</m> vertices (labeled with 1 through <m>n</m>)?
           </p>
         </statement>
       </task>
@@ -479,7 +479,7 @@
       <task>
         <statement>
           <p>
-            Find a bijection between labelled trees and something you can <q>count</q> that will tell you how many labelled trees there are on <m>n</m> labelled vertices.
+            Find a bijection between labeled trees and something you can <q>count</q> that will tell you how many labeled trees there are on <m>n</m> labeled vertices.
           </p>
         </statement>
         <hint>
@@ -490,7 +490,7 @@
       </task>
     </activity>
     <p>
-      The sequence <m>b_1,b_2,\ldots, b_{n-2}</m> in <xref ref="Prufer">Problem</xref> is called a
+      The sequence <m>b_1,b_2,\ldots, b_{n-2}</m> in <xref ref="prufer-props">Problem</xref> is called a
       <term>Pr&#xfc;fer coding</term> or <term>Pr&#xfc;fer code</term> for the tree. There is a good bit
       of interesting information encoded into the Pr&#xfc;fer code for a tree.
     </p>
@@ -526,7 +526,7 @@
       <statement>
         <p>
           What can you determine about the degree of
-          the vertex labelled <m>i</m> from the Pr&#xfc;fer code of the tree?
+          the vertex labeled <m>i</m> from the Pr&#xfc;fer code of the tree?
         </p>
       </statement>
       <hint>
@@ -545,8 +545,8 @@
     <activity category="interesting">
       <statement>
         <p>
-          What is the number of (labelled) trees on <m>n</m> vertices with three
-          vertices of degree 1? (Assume they are labelled with the integers 1
+          What is the number of (labeled) trees on <m>n</m> vertices with three
+          vertices of degree 1? (Assume they are labeled with the integers 1
           through <m>n</m>.) This problem will appear again in the next chapter after some material that will make it easier.
         </p>
       </statement>
@@ -564,7 +564,7 @@
           ways to choose which of the
           <m>n-2</m> places to use for which vertices in the Pr&#xfc;fer code.
           Thus there are
-          <m>\binom{n}{3}(n-3)\frac{(n-2)!}{2}= \frac{n!(n-2)(n-3)}{12}</m> labelled trees with
+          <m>\binom{n}{3}(n-3)\frac{(n-2)!}{2}= \frac{n!(n-2)(n-3)}{12}</m> labeled trees with
           three vertices of degree one.
         </p>
       </solution>
@@ -673,7 +673,7 @@
         <p>
           Describe a method (or better, two methods different in at least one
           aspect) for finding a spanning tree of minimum cost in a graph whose edges
-          are labelled with costs, the cost on an edge being the cost for including
+          are labeled with costs, the cost on an edge being the cost for including
           that edge in a spanning tree. Prove that your method(s)
           work.<idx><h>minimum cost spanning tree</h></idx><idx><h>spanning tree</h><h>minimum
           cost</h></idx><idx><h>tree</h><h>spanning!minimum cost</h></idx>
@@ -929,7 +929,7 @@
     <activity xml:id="Dijkstra">
         <statement>
             <p>
-      Show that the following algorithm (known as Dijkstra's<idx><h>Dijkstra's algorithm</h></idx><idx><h>distance in a graph</h></idx> algorithm) applied to a weighted graph whose vertices are labelled 1 to <m>n</m> gives, for each <m>i</m>, the distance from vertex 1 to i as <m>d(i)</m>.
+      Show that the following algorithm (known as Dijkstra's<idx><h>Dijkstra's algorithm</h></idx><idx><h>distance in a graph</h></idx> algorithm) applied to a weighted graph whose vertices are labeled 1 to <m>n</m> gives, for each <m>i</m>, the distance from vertex 1 to i as <m>d(i)</m>.
     <ol>
       <li>
         <p>
