@@ -922,7 +922,7 @@ about these numbers.
       does not need to know the language of probability in order to understand it.
       We will apply it to Ramsey numbers in the next problem. Combined with the
       result of <xref ref="Ramseybound2">Problem</xref>, this problem will give us that
-      <m>\sqrt{2}^{\rangle n}\lt R(n,n)\lt 2^{2n-2}</m>, so that we know that the Ramsey number
+      <m>\sqrt{2}^{ n}\lt R(n,n)\lt 2^{2n-2}</m>, so that we know that the Ramsey number
       <m>R(n,n)</m> grows exponentially with<nbsp /><m>n</m>.
     </p>
 
@@ -1019,10 +1019,10 @@ about these numbers.
           <p>
             A notation for the sum over all colorings <m>c</m> of <m>K_m</m> is
             <me>
-              \sum_{c:c\mbox{~is a coloring of~} K_m},
+              \sum_{c:c\text{ is a coloring of } K_m},
             </me> and a notation for the sum over all subsets <m>N</m> of <m>M</m> that have size <m>n</m> is
             <me>
-              \sum_{N:N\subseteq M,~|N|=n}
+              \sum_{N:N\subseteq M,\text{ }|N|=n}
             </me>
           </p>
         </hint>
@@ -1092,16 +1092,14 @@ about these numbers.
         <statement>
           <p>
             By using Stirling's formula, show that if <m>n</m> is large enough, then
-            <m>R(n,n) > \sqrt{2^n} = \sqrt{2}^{\rangle n}</m>
+            <m>R(n,n) > \sqrt{2^n} = \sqrt{2}^{n}</m>.  (Here large enough means large enough for Stiirling's formula to be reasonable accurate.)
           </p>
         </statement>
         <solution>
           <p>
             Using Stirling's approximation to <m>n!</m> we get
             <me>
-              R(n,n)>\root n \of
-              {\frac{n^n}{e^n}\sqrt{2\pi n}2^{^\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{^\frac{n^2-n-2}{2n}}\root 2n \of{2\pi
-              n}>2^n/2=\sqrt{2}^{\rangle n}.
+              R(n,n)\gt \sqrt[n]{\frac{n^n}{e^n}\sqrt{2\pi n}2^{\frac{n^2-n-2}{2}}}=\frac{n}{e}2^{\frac{n^2-n-2}{2n}}\sqrt[2n]{2\pi n} \gt 2^{n/2} =\sqrt{2}^{n}.
             </me>
           </p>
         </solution>

@@ -83,7 +83,7 @@
         a_n = a_{n-1} + 3a_{n-2},\mbox{
         and}
       </men>
-      <men xml:id="Catalanrecurrence" >
+      <men xml:id="Catalan-recurrence" >
         a_n= a_1a_{n-1} + a_2a_{n-2}+\cdots +
         a_{n-1}a_1.
       </men>
@@ -139,14 +139,14 @@
         <statement>
           <p>
             Which of
-            the <xref ref="subsetequation">recurrences</xref> through <xref ref="Catalanrecurrence"></xref> are
+            the <xref ref="subsetequation">recurrences</xref> through <xref ref="Catalan-recurrence"></xref> are
             first order recurrences?
           </p>
         </statement>
         <solution>
           <p>
             The <xref ref="subsetequation">recurrences</xref>, <xref ref="bijectionequation"></xref>, <xref ref="arithmeticexample"></xref>, and <xref ref="geometricdriven"></xref> are all examples
-            of first order recurrences. The <xref ref="secondorderlinear">recurrences</xref> and <xref ref="Catalanrecurrence"></xref> are not.
+            of first order recurrences. The <xref ref="secondorderlinear">recurrences</xref> and <xref ref="Catalan-recurrence"></xref> are not.
           </p>
         </solution>
       </task>
@@ -476,7 +476,7 @@
             <mrow> =\amp  (1+x+x^2+\cdots
             x^{n-1})\cdot 1-(1+x+x^2+\cdots
             x^{n-1})\cdot x</mrow>
-            <mrow> =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n)\rangle =\rangle  1-x^n.</mrow>
+            <mrow> =\amp  1+x+x^2+\cdots x^{n-1}-(x+x^2+\cdots+x^n) =  1-x^n.</mrow>
           </md>
         </p>
 
@@ -552,7 +552,7 @@
               <mrow> \amp \sum_{i=0}^{k-1} db^i</mrow>
               <mrow> =\amp \sum_{i=0}^{k-2}db^i+db^{k-1}</mrow>
               <mrow> =\amp d\frac{1-b^{k-1}}{1-b}+db^{k-1}</mrow>
-              <mrow> =\amp \frac{d-db^{k-1}  +db^{k-1}-db^k}{1-b}\rangle =\rangle  d\frac{1-b^k}{1-b}.</mrow>
+              <mrow> =\amp \frac{d-db^{k-1}  +db^{k-1}-db^k}{1-b} =  d\frac{1-b^k}{1-b}.</mrow>
             </md>
           </p>
 

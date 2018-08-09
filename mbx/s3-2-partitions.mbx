@@ -13,7 +13,7 @@
       We use the notation <m>S(k,n)</m> to stand for the number of partitions of a
       <m>k</m> element set with <m>n</m> blocks. For historical reasons, <m>S(k,n)</m> is
       called a <term>Stirling number of the second kind</term>. <idx><h>partition</h><h>of a
-      set</h></idx><idx><h>partition</h><h>of a set!!Stirling Numbers</h></idx><idx><h>Stirling
+      set</h></idx><idx><h>partition</h><h>of a set</h><h>Stirling Numbers</h></idx><idx><h>Stirling
       Number</h><h>second kind</h></idx><idx><h><m>S(k,n)</m></h></idx>
     </p>
 
@@ -164,9 +164,42 @@
         <solution>
           <p>
             We need <m>S(9,3)</m>. Thus we need to extend our table for four
-            more rows, but only out to the column labelled 3. These rows are
-            6,0,1,31,90, 7,0,1,63,301, 7,0,1,127,966, 8,0,1,255,3025,
-            9,0,1,511,9330. Thus there are 9330 ways to distribute the sandwiches
+            more rows, but only out to the column labeled 3. These rows are,
+          </p>
+          <sidebyside width="50%">
+            <tabular>
+              <row>
+                <cell right="minor">6</cell>
+                <cell>1</cell>
+                <cell>31</cell>
+                <cell>90</cell>
+                <cell><ellipsis /></cell>
+              </row>
+              <row>
+                <cell right="minor">7</cell>
+                <cell>1</cell>
+                <cell>63</cell>
+                <cell>301</cell>
+                <cell><ellipsis /></cell>
+              </row>
+              <row>
+                <cell right="minor">8</cell>
+                <cell>1</cell>
+                <cell>127</cell>
+                <cell>966</cell>
+                <cell><ellipsis /></cell>
+              </row>
+              <row>
+                <cell right="minor">9</cell>
+                <cell>1</cell>
+                <cell>255</cell>
+                <cell>3025</cell>
+                <cell><ellipsis /></cell>
+              </row>
+            </tabular>
+          </sidebyside>
+          <p>
+            Thus there are 3025 ways to distribute the sandwiches
             into the lunch bags.
           </p>
         </solution>
@@ -176,7 +209,7 @@
       <activity xml:id="caterer2">
         <statement>
           <p>
-            The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more realistic question; in how many ways may the caterer distribute the nine sandwich's into three identical bags so that each bag gets exactly three? Answer this question. (Hint, what if the question asked about six sandwiches and two distinct bags? How does having identical bags change the answer?)
+            The question in <xref ref="sandwiches">Problem</xref> naturally suggests a more realistic question; in how many ways may the caterer distribute the nine sandwich's into three identical bags so that each bag gets exactly three? Answer this question.
           </p>
         </statement>
         <hint>
@@ -237,12 +270,12 @@
     <activity category="summary">
         <statement>
           <p>
-            Describe how to compute <m>S(n,k)</m> in terms of quantities given by the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
+            Describe how to compute <m>S(k,n)</m> in terms of quantities given by the formula you found in <xref ref="partitionsgivenpartsize">Problem</xref>.
           </p>
         </statement>
         <solution>
           <p>
-            We can find <m>S(n,k)</m> by summing <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
+            We can find <m>S(k,n)</m> by summing <m>\frac{n!}{\prod_{i=1}^n (i!)^{k_i}{k_i!}}</m> over all type vectors <m>(k_1,k_2,\ldots,k_n)</m> such that <m>k_1+k_2+\cdots+k_n=k</m>.
           </p>
         </solution>
     </activity>

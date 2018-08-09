@@ -135,7 +135,7 @@
       </statement>
       <solution>
         <p>
-          It is a permutation because the computation of permutations is a
+          It is a permutation because the composition of permutations is a
           permutation. (You could be more precise and use the inductive definition
           of <m>\varphi^n</m> to prove inductively that <m>\varphi^n</m> is a permutation.) We
           expect
@@ -443,7 +443,7 @@
     <activity xml:id="dihedral1" category="essential">
       <statement>
         <p>
-          There are three dimensional geometric motions of the square that
+          There are three-dimensional geometric motions of the square that
           return it to its original position but move some of the vertices to other
           positions. For example, if we flip the square around a diagonal, most of it moves out of
           the plane during the flip, but the square ends up in the same place. Draw a figure
@@ -453,9 +453,155 @@
         </p>
       </statement>
       <solution>
-          <todo>
-              There's a figure in the official PDF for this solution.
-          </todo>
+        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto" valign="top">
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$a$};
+                    \node [below left] at (2,2) {$b$};
+                    \node [above left] at (2,0) {$c$};
+                    \node [above right] at (0,0) {$d$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$d$};
+                    \node [below left] at (2,2) {$a$};
+                    \node [above left] at (2,0) {$b$};
+                    \node [above right] at (0,0) {$c$};
+                    \node [below] at (1,-0.5) {$\rho$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$c$};
+                    \node [below left] at (2,2) {$d$};
+                    \node [above left] at (2,0) {$a$};
+                    \node [above right] at (0,0) {$b$};
+                    \node [below] at (1,-0.5) {$\rho^2$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$b$};
+                    \node [below left] at (2,2) {$c$};
+                    \node [above left] at (2,0) {$d$};
+                    \node [above right] at (0,0) {$a$};
+                    \node [below] at (1,-0.5) {$\rho^3$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$a$};
+                    \node [below left] at (2,2) {$b$};
+                    \node [above left] at (2,0) {$c$};
+                    \node [above right] at (0,0) {$d$};
+                    \node [below] at (1,-0.5) {$\begin{aligned}\rho^4 &amp;=\text{identity}\\&amp;=\rho^0\end{aligned}$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+        </sidebyside>
+        <sidebyside widths="19% 19% 19% 19% 19%" margins="auto" valign="top">
+            <p>
+            </p>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$a$};
+                    \node [below left] at (2,2) {$d$};
+                    \node [above left] at (2,0) {$c$};
+                    \node [above right] at (0,0) {$b$};
+                    \node [below] at (1,-0.5) {$\varphi_{1|3}$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$c$};
+                    \node [below left] at (2,2) {$b$};
+                    \node [above left] at (2,0) {$a$};
+                    \node [above right] at (0,0) {$d$};
+                    \node [below] at (1,-0.5) {$\varphi_{2|4}$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$b$};
+                    \node [below left] at (2,2) {$a$};
+                    \node [above left] at (2,0) {$d$};
+                    \node [above right] at (0,0) {$c$};
+                    \node [below] at (1,-0.5) {$\varphi_{12|34}$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+            <image>
+                <latex-image-code>
+                    \begin{tikzpicture}
+                    \draw (0,0) --(0,2) -- (2,2) -- (2,0) -- (0,0);
+                    \node [above left] at (0,2) {1};
+                    \node [above right] at (2,2) {2};
+                    \node [below right] at (2,0) {3};
+                    \node [below left] at (0,0) {4};
+                    \node [below right] at (0,2) {$d$};
+                    \node [below left] at (2,2) {$c$};
+                    \node [above left] at (2,0) {$b$};
+                    \node [above right] at (0,0) {$a$};
+                    \node [below] at (1,-0.5) {$\varphi_{14|23}$};
+                    \end{tikzpicture}
+                </latex-image-code>
+            </image>
+        </sidebyside>
           <p>
               The set of all permutations corresponding to motions forms a group because it is closed under composition.
           </p>
@@ -545,7 +691,7 @@
     <title>The symmetric group</title>
     <p>
       In general, the set of all permutations of an <m>n</m>-element set is a
-      group. It is called the <term>symmetric group on <m>\mathbf n</m>
+      group. It is called the <term>symmetric group on <m>n</m>
       letters</term><idx><h>symmetric group</h></idx>. We don't have nice geometric
       descriptions (like rotations) for all its elements, and it would be
       inconvenient to have to write down something like <q>Let <m>\sigma(1) =3</m>,
@@ -698,7 +844,7 @@
     <activity>
       <statement>
         <p>
-          Another view of the dihedral group of the square is that it is the group of all distance preserving functions, also called <term>isometries</term>, <idx><h>isometry</h></idx> from a square to itself.  Notice that an isometry must be a bijection.  Any rigid motion of the square preserves the distances between all points of the square.  However, it is conceivable that there might be some isometries that do not arise from rigid motions.  (We will see some later on in the case of a cube.)  Show that there are exactly eight isometires (dinsce preserving functions) from a square to itself.
+          Another view of the dihedral group of the square is that it is the group of all distance preserving functions, also called <term>isometries</term>, <idx><h>isometry</h></idx> from a square to itself.  Notice that an isometry must be a bijection.  Any rigid motion of the square preserves the distances between all points of the square.  However, it is conceivable that there might be some isometries that do not arise from rigid motions.  (We will see some later on in the case of a cube.)  Show that there are exactly eight isometires (distance preserving functions) from a square to itself.
         </p>
       </statement>
       <hint>
@@ -760,7 +906,6 @@
         <p>
           In <xref ref="cube1" /> we show a cube with the positions of its vertices and faces labeled.  As with motions of the square, we let <m>\varphi(x)</m> be the label of the place where vertex previously in position <m>x</m> is now.
         </p>
-        <todo>Fix this figure so that all the arrows are present.</todo>
         <figure xml:id="cube1" >
           <caption>A cube with the positions of its vertices and
           faces labelled.  The curved arrows point to the positions that are blocked by

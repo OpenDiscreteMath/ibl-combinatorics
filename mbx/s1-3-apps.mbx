@@ -165,11 +165,11 @@
       </task>
       <task>
         <statement>
-          <p>Describe a bijection between the set of sequences of tens and twenties that people give the teacher and the set of diagonal lattice paths from <m>(0,0)</m> and <m>(0,2n)</m>.
+          <p>Describe a bijection between the set of sequences of tens and twenties that people give the teacher and the set of diagonal lattice paths from <m>(0,0)</m> and <m>(2n,0)</m>.
           </p>
         </statement>
         <solution>
-          <p>For each ten dollar bill take an upstep and for each twenty dollar bill take a downstep. Each sequence of tens and twenties will give us a diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path from<m>(0,0)</m> to <m>(0,2n)</m> will give us a sequence of tens and twenties with an equal number of tens and twenties, so we have a bijection.
+          <p>For each ten dollar bill take an upstep and for each twenty dollar bill take a downstep. Each sequence of tens and twenties will give us a diagonal lattice path from <m>(0,0)</m>, and each diagonal lattice path from<m>(0,0)</m> to <m>(2n,0)</m> will give us a sequence of tens and twenties with an equal number of tens and twenties, so we have a bijection.
           </p>
         </solution>
       </task>
@@ -236,7 +236,7 @@
       </task>
       <task>
         <statement>
-          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not cross the line <m>y=x</m>.  The number of such paths is called a <term>Catalan Number</term><idx><h>Catalan Number</h></idx> and is usually denoted by <m>C_n</m>.
+          <p>Find a formula for the number of lattice paths from <m>(0,0)</m> to <m>(n,n)</m> that do not go above the line <m>y=x</m>.  The number of such paths is called a <term>Catalan Number</term><idx><h>Catalan Number</h></idx> and is usually denoted by <m>C_n</m>.
           </p>
         </statement>
         <hint>
@@ -559,7 +559,7 @@
 
   <activity>
       <statement>
-          <p>What is <m>\sum_{i=1}^n \binom{10}{i}3^i</m>?
+          <p>What is <m>\sum_{i=1}^{10} \binom{10}{i}3^i</m>?
           </p>
       </statement>
       <hint>
@@ -570,7 +570,7 @@
       </hint>
       <solution>
         <p>
-          <m>\sum_{i=1}^n \binom{10}{i}3^i=\sum_{i=0}^n
+          <m>\sum_{i=1}^{10} \binom{10}{i}3^i=\sum_{i=0}^{10}
           \binom{10}{i}3^i-\binom{10}{0}3^0 =(1+3)^{10}-1=4^{10}-1</m>
         </p>
       </solution>
@@ -585,7 +585,7 @@
       </statement>
       <hint>
         <p>
-      What does the binomial theorem give you for <m>(x - y)n</m>?
+      What does the binomial theorem give you for <m>(x - y)^n</m>?
         </p>
       </hint>
       <solution>
@@ -605,7 +605,7 @@
       </statement>
       <hint>
         <p>
-      Consider <m>(x + y)m (x + y)n</m>.
+      Consider <m>(x + y)^m (x + y)^n</m>.
         </p>
       </hint>
       <hint>
