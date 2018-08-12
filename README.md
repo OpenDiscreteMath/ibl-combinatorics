@@ -12,6 +12,6 @@ of *Combinatorics through Guided Discovery* to [PreTeXt](http://mathbook.pugetso
 Mathbook XML). As part of this effort, the source was updated to
 match the final PDF, including the incorporation of the "online hints"
 and solutions. For easy access to HTML and PDF versions of the book,
-visit [this site](http://bogart.openmathbooks.org). A print-on-demand
-version is coming soon through Amazon's CreateSpace.
+visit [this site](http://bogart.openmathbooks.org). A printed
+version is available for less than $10.
 
