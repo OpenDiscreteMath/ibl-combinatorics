@@ -476,7 +476,7 @@
         </statement>
         <hint>
           <p>
-            How many compositions are there of <m>k</m> into n parts? What is the maximum number of compositions that could correspond to a given partition of <m>k</m> into <m>n</m> parts?
+            How many compositions are there of <m>k</m> into <m>n</m> parts? What is the maximum number of compositions that could correspond to a given partition of <m>k</m> into <m>n</m> parts?
           </p>
         </hint>
         <solution>
@@ -967,7 +967,7 @@
       </hint>
       <solution>
         <p>
-          The number of partitions of <m>k</m> into <m>n</m> parts is equal to the number of partitions of <m>k+\binom{n}{2}</m> into n distinct parts.  The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of <m>k+\binom{n}{2}</m> with <m>n</m> distinct parts that proves this is the one that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get <m>\lambda'_i</m>. Then <m>\lambda'</m> is a partition into distinct parts, and the number it partitions is <m>k+1+2+\cdots+n-1=k+\binom{n}{2}</m>. The proof that it is a bijection is the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m> is at least <m>j</m> smaller than part <m>i</m>.
+          The number of partitions of <m>k</m> into <m>n</m> parts is equal to the number of partitions of <m>k+\binom{n}{2}</m> into <m>n</m> distinct parts.  The bijection from partitions of <m>k</m> with <m>n</m> parts to partitions of <m>k+\binom{n}{2}</m> with <m>n</m> distinct parts that proves this is the one that takes a partition <m>\lambda_n\lambda_{n-1}\cdots\lambda_1</m> of <m>k</m> with <m>\lambda_i>\lambda_{i+1}</m> and adds <m>i-1</m> to <m>\lambda_i</m> to get <m>\lambda'_i</m>. Then <m>\lambda'</m> is a partition into distinct parts, and the number it partitions is <m>k+1+2+\cdots+n-1=k+\binom{n}{2}</m>. The proof that it is a bijection is the fact that subtracting <m>n-i</m> from the <m>i</m>\/th part of a partition of <m>k</m> into distinct parts yields a partition of <m>k</m>, because part <m>i+j</m> is at least <m>j</m> smaller than part <m>i</m>.
         </p>
       </solution>
     </activity>
